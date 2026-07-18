@@ -1,0 +1,84 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1c1b19;
+  --muted: #6b6862;
+  --border: #e4e0d8;
+  --accent: #7a4b2b;
+  --accent-weak: #f0e7dd;
+  --link: #6d3f1f;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171614;
+    --surface: #201e1b;
+    --text: #ece9e3;
+    --muted: #a29d94;
+    --border: #35322d;
+    --accent: #d69a6a;
+    --accent-weak: #2b2621;
+    --link: #e0a877;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+a { color: var(--link); }
+header.site, footer.site {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+}
+footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
+header.site nav { display: flex; gap: 1.25rem; align-items: baseline; flex-wrap: wrap; }
+header.site .brand { font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+main { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+.layout { display: grid; grid-template-columns: 16rem 1fr; gap: 2rem; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+
+.filters { font-size: .9rem; }
+.filters fieldset { border: 1px solid var(--border); border-radius: 8px; margin: 0 0 1rem; padding: .6rem .8rem; }
+.filters legend { font-weight: 700; color: var(--accent); padding: 0 .3rem; }
+.filters label { display: flex; gap: .4rem; align-items: center; cursor: pointer; padding: .12rem 0; }
+.filters .yearrow { display: flex; gap: .5rem; align-items: center; }
+.filters input[type="search"] { width: 100%; padding: .4rem .5rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); }
+
+.count { color: var(--muted); margin: 0 0 1rem; }
+ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.card { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); padding: .9rem 1.1rem; }
+.card h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+.card h3 a { text-decoration: none; }
+.card .meta { color: var(--muted); font-size: .85rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+
+.badge { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .02em;
+  padding: .12rem .5rem; border-radius: 999px; border: 1px solid var(--border); }
+.badge.ai-draft { background: #eceae6; color: #55524c; }
+.badge.spot-checked { background: #f3e7d6; color: #7a5a2c; }
+.badge.proofread { background: #e6e9ee; color: #46536b; }
+.badge.validated { background: #e7f0e5; color: #33613a; }
+@media (prefers-color-scheme: dark) {
+  .badge.ai-draft { background: #2c2a26; color: #b7b2a8; }
+  .badge.spot-checked { background: #3a2f20; color: #d8a662; }
+  .badge.proofread { background: #262b34; color: #9fb0cc; }
+  .badge.validated { background: #23301f; color: #8fc194; }
+}
+
+.pill { font-size: .72rem; padding: .1rem .5rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+
+.workhead h1 { margin: 0 0 .3rem; }
+.workhead .sub { color: var(--muted); margin: 0 0 1rem; }
+.attr { font-size: .85rem; color: var(--muted); }
+.tabs { display: flex; gap: .5rem; margin: 1.5rem 0 .5rem; border-bottom: 1px solid var(--border); }
+.tabs button { border: none; background: none; font: inherit; color: var(--muted); cursor: pointer;
+  padding: .5rem .8rem; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); font-weight: 700; }
+.text .origpage { display: block; margin: 1.2rem 0 .3rem; font-size: .72rem; color: var(--muted); border-top: 1px dashed var(--border); padding-top: .4rem; }
+.text h2 { font-size: 1.2rem; margin: 1.2rem 0 .5rem; }
+.uncertain { text-decoration: underline wavy var(--muted); }
+.notice { background: var(--accent-weak); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .9rem; font-size: .85rem; margin: 1rem 0; }

@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-07-18T13:16:33.626864+00:00",
+  "vocab": {
+    "disciplines": {
+      "mathematics": "Mathematics",
+      "physics": "Physics"
+    },
+    "tags": {
+      "analysis": "Analysis",
+      "geometry": "Geometry",
+      "number-theory": "Number theory",
+      "algebra": "Algebra",
+      "topology": "Topology",
+      "probability": "Probability",
+      "foundations": "Foundations & logic",
+      "mechanics": "Mechanics",
+      "thermodynamics": "Thermodynamics",
+      "statistical-mechanics": "Statistical mechanics",
+      "electromagnetism": "Electromagnetism",
+      "optics": "Optics",
+      "relativity": "Relativity",
+      "quantum": "Quantum theory"
+    },
+    "types": {
+      "paper": "Paper",
+      "book": "Book",
+      "chapter": "Chapter",
+      "letter": "Letter",
+      "lecture": "Lecture",
+      "manuscript": "Manuscript"
+    },
+    "languages": {
+      "de": "German",
+      "fr": "French",
+      "en": "English",
+      "la": "Latin",
+      "it": "Italian",
+      "ru": "Russian"
+    },
+    "venues": {
+      "crelle": "Journal für die reine und angewandte Mathematik (Crelle's Journal)",
+      "annalen-der-physik": "Annalen der Physik",
+      "goettingen-abhandlungen": "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen",
+      "phil-trans": "Philosophical Transactions of the Royal Society",
+      "comptes-rendus": "Comptes rendus de l'Académie des sciences",
+      "acta-mathematica": "Acta Mathematica",
+      "mathematische-annalen": "Mathematische Annalen",
+      "book": "(published as a book / monograph)",
+      "manuscript": "(unpublished manuscript)"
+    }
+  },
+  "count": 1,
+  "works": [
+    {
+      "id": "riemann-1868-hypothesen",
+      "title": "Über die Hypothesen, welche der Geometrie zu Grunde liegen",
+      "title_en": "On the Hypotheses which lie at the Bases of Geometry",
+      "authors": [
+        {
+          "name": "Bernhard Riemann",
+          "wikidata_id": "Q42299",
+          "birth_year": 1826,
+          "death_year": 1866
+        }
+      ],
+      "year": 1868,
+      "venue": "goettingen-abhandlungen",
+      "venue_label": "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen",
+      "publication_full": "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen, Band 13 (1868), pp. 133–150. Habilitationsvortrag held 1854, published posthumously by Richard Dedekind.",
+      "discipline": "mathematics",
+      "discipline_label": "Mathematics",
+      "tags": [
+        "geometry",
+        "foundations"
+      ],
+      "tag_labels": [
+        "Geometry",
+        "Foundations & logic"
+      ],
+      "language": "de",
+      "language_label": "German",
+      "type": "paper",
+      "type_label": "Paper",
+      "source": {
+        "scan_url": "https://www.digizeitschriften.de/id/252457811_0013",
+        "scan_id": "digizeitschriften:252457811_0013"
+      },
+      "sources": {
+        "death_date": "wikidata:Q42299",
+        "publication_date": "Göttinger Abhandlungen vol. 13 (1868); catalogue record digizeitschriften:252457811_0013.",
+        "edition": "digizeitschriften:252457811_0013 (first printing, 1868)"
+      },
+      "edition": {
+        "year": 1868,
+        "is_transcribed_edition": true,
+        "rights_cleared": true,
+        "rights_note": "Transcribed from the original 1868 first printing (posthumous). No modern critical apparatus, commentary, or re-typesetting is included; only Riemann's text is transcribed."
+      },
+      "copyright_assessment": {
+        "public_domain": true,
+        "evaluated": {
+          "pma_70": {
+            "verdict": "pass",
+            "inputs": {
+              "death_years": [
+                1866
+              ],
+              "term": 70
+            }
+          },
+          "us_publication": {
+            "verdict": "pass",
+            "inputs": {
+              "publication_year": 1868,
+              "term": 95
+            }
+          },
+          "edition_rights": {
+            "verdict": "pass",
+            "inputs": {
+              "rights_cleared": true
+            }
+          },
+          "translation_source": {
+            "verdict": "pass",
+            "inputs": {
+              "external_translations": 0
+            }
+          }
+        },
+        "evaluated_at": "2026-07-18"
+      },
+      "status": "spot-checked",
+      "original_tex": "% Faithful transcription — original German. Content and notation follow the 1868 printing;\n% only markup is standardized (PLAN.md §4.4). This fixture reproduces the opening of the\n% Plan der Untersuchung; it is a short excerpt for demonstration, not the full memoir.\n\\documentclass{article}\n\\usepackage{readmasters}\n\\begin{document}\n\n\\origpage{133}\n\\section*{Plan der Untersuchung}\n\nBekanntlich setzt die Geometrie sowohl den Begriff des Raumes, als die ersten\nGrundbegriffe für die Constructionen im Raume als etwas Gegebenes voraus. Sie giebt\nvon ihnen nur Nominaldefinitionen, während die wesentlichen Bestimmungen in Form von\nAxiomen auftreten.\n\nDas Verhältniss dieser Voraussetzungen bleibt dabei im Dunkeln; man sieht weder ein,\nob und in wie weit ihre Verbindung nothwendig, noch a~priori, ob sie möglich ist.\n\n\\origpage{134}\nDiese Dunkelheit wurde auch von Euklid bis auf Legendre, um den berühmtesten neueren\nBearbeiter der Geometrie zu nennen, weder von den Mathematikern, noch von den\nPhilosophen, welche sich damit beschäftigten, gehoben. Es hatte dies seinen Grund\nwohl darin, dass der allgemeine Begriff mehrfach ausgedehnter Grössen, unter welchem\ndie Raumgrössen enthalten sind, ganz unbearbeitet blieb.\n\nIch habe mir daher zunächst die Aufgabe gestellt, den Begriff einer mehrfach\nausgedehnten Grösse aus allgemeinen Grössenbegriffen zu construiren.\n\n\\end{document}\n",
+      "transcription_provenance": {
+        "status": "spot-checked",
+        "model": "claude-opus-4-8",
+        "effort": "high",
+        "prompt_version": "transcribe-v1",
+        "submitted_via": "pipeline",
+        "produced": "2026-07-18",
+        "reviewers": [
+          {
+            "name": "DvdL",
+            "level": "spot-checked",
+            "date": "2026-07-18"
+          }
+        ]
+      },
+      "translations": {
+        "en": {
+          "label": "English",
+          "tex": "% English translation, made from our own transcription (original.tex), not from any existing\n% modern translation. Math/notation preserved; \\origpage markers kept for alignment.\n\\documentclass{article}\n\\usepackage{readmasters}\n\\begin{document}\n\n\\origpage{133}\n\\section*{Plan of the Investigation}\n\nIt is well known that geometry presupposes both the concept of space and the first\nfundamental concepts for constructions in space as something given. It gives of them\nonly nominal definitions, while the essential determinations appear in the form of\naxioms.\n\nThe relationship of these presuppositions thereby remains obscure; one sees neither\nwhether, and to what extent, their connection is necessary, nor \\emph{a~priori}\nwhether it is possible.\n\n\\origpage{134}\nThis obscurity was, from Euclid down to Legendre --- to name the most celebrated modern\nreviser of geometry --- removed neither by the mathematicians nor by the philosophers\nwho occupied themselves with it. The reason for this lay presumably in the fact that\nthe general concept of multiply extended magnitudes, under which spatial magnitudes are\ncontained, remained wholly unelaborated.\n\nI have therefore first set myself the task of constructing the concept of a multiply\nextended magnitude out of general notions of magnitude.\n\n\\end{document}\n",
+          "provenance": {
+            "status": "ai-draft",
+            "model": "claude-opus-4-8",
+            "effort": "adaptive",
+            "prompt_version": "translate-v1",
+            "submitted_via": "pipeline",
+            "produced": "2026-07-18",
+            "source": "transcription"
+          }
+        }
+      },
+      "translation_langs": [
+        "en"
+      ],
+      "url": "/works/riemann-1868-hypothesen/"
+    }
+  ]
+}

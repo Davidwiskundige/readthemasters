@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+const { title, description } = Astro.props;
+const siteTitle = "ReadTheMastersAI";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · ${siteTitle}` : siteTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>📐</text></svg>" />
+  </head>
+  <body>
+    <header class="site">
+      <nav>
+        <a class="brand" href="/">📐 ReadTheMastersAI</a>
+        <a href="/">Catalog</a>
+        <a href="/about/">About</a>
+        <a href="/copyright/">Copyright</a>
+        <a href="/contribute/">Contribute</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      <p>
+        Transcriptions, translations and metadata are dedicated to the public domain (CC0).
+        Original texts are public domain worldwide. This is a good-faith project and not legal
+        advice — see <a href="/copyright/">Copyright &amp; takedown</a>.
+      </p>
+    </footer>
+  </body>
+</html>

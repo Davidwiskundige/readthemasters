@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  copyright-gate:
+    name: Copyright gate + tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r pipeline/requirements.txt
+          pip install pytest
+      - name: Copyright gate (validate corpus)
+        run: python pipeline/validate.py
+      - name: Run test suite
+        run: python -m pytest pipeline/tests -q
+      - name: Wikidata death-date cross-check (warn-only)
+        continue-on-error: true
+        run: python pipeline/wikidata_check.py
+
+  build-site:
+    name: Build site
+    runs-on: ubuntu-latest
+    needs: copyright-gate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build site data (only PD works, min status)
+        run: |
+          pip install -r pipeline/requirements.txt
+          python pipeline/build_site_data.py --out site/src/data/works.json
+      - name: Build Astro site
+        working-directory: site
+        run: |
+          npm install
+          npm run build
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: site/dist

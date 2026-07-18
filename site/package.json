@@ -1,0 +1,16 @@
+{
+  "name": "readthemasters-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "data": "python ../pipeline/build_site_data.py --corpus ../corpus --out src/data/works.json",
+    "dev": "npm run data && astro dev",
+    "build": "npm run data && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "katex": "^0.16.11"
+  }
+}

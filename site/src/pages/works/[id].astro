@@ -1,0 +1,105 @@
+---
+import Base from "../../layouts/Base.astro";
+import data from "../../data/works.json";
+import { texToHtml } from "../../lib/tex.js";
+
+export function getStaticPaths() {
+  return (data.works ?? []).map((w) => ({ params: { id: w.id }, props: { work: w } }));
+}
+
+const { work } = Astro.props;
+const authors = work.authors.map((a) => a.name).join(", ");
+const tp = work.transcription_provenance ?? {};
+
+function attribution(prov) {
+  if (!prov) return "";
+  const parts = [];
+  if (prov.model) parts.push(prov.model);
+  if (prov.effort) parts.push(`effort: ${prov.effort}`);
+  const who = (prov.reviewers ?? []).map((r) => r.name).join(", ");
+  let s = `Produced by ${parts.join(", ")}`;
+  if (prov.produced) s += ` (${prov.produced})`;
+  if (who) s += ` · reviewed by ${who}`;
+  return s;
+}
+
+const originalHtml = texToHtml(work.original_tex);
+const translations = Object.entries(work.translations ?? {}).map(([lang, t]) => ({
+  lang, label: t.label, html: texToHtml(t.tex), prov: t.provenance,
+}));
+
+// Prefilled "report an error" issue link (PLAN.md backlog #2).
+const repo = "https://github.com/OWNER/readthemasters"; // TODO: set real repo
+const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${work.id}`)}&body=${encodeURIComponent(`Work: ${work.id}\nWhere (page/paragraph):\nProblem:\n`)}`;
+---
+<Base title={work.title} description={work.title_en ?? work.title}>
+  <div class="workhead">
+    <h1>{work.title}</h1>
+    {work.title_en && <p class="sub"><em>{work.title_en}</em></p>}
+    <p class="sub">
+      {authors} · {work.year}
+      {work.venue_label && <> · {work.venue_label}</>}
+      · <span class={`badge ${work.status}`}>{work.status}</span>
+    </p>
+  </div>
+
+  <p>
+    <strong>Source:</strong>
+    <a href={work.source.scan_url} rel="noopener">original scan</a>
+    {work.source.scan_id && <> ({work.source.scan_id})</>}
+    {work.publication_full && <><br /><span class="attr">{work.publication_full}</span></>}
+  </p>
+
+  {work.status === "ai-draft" && (
+    <div class="notice">
+      This text is an <strong>AI draft</strong> and has not yet been human-checked.
+      Spotted a mistake? <a href={reportUrl} rel="noopener">Report an error</a>.
+    </div>
+  )}
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="original">Original ({work.language_label})</button>
+    {translations.map((t) => (
+      <button role="tab" aria-selected="false" data-tab={t.lang}>Translation ({t.label})</button>
+    ))}
+  </div>
+
+  <section class="text" data-panel="original">
+    <p class="attr">{attribution(tp)}</p>
+    <div set:html={originalHtml} />
+  </section>
+  {translations.map((t) => (
+    <section class="text" data-panel={t.lang} hidden>
+      <p class="attr">{attribution(t.prov)}</p>
+      <div set:html={t.html} />
+    </section>
+  ))}
+
+  <p style="margin-top:2rem"><a href={reportUrl} rel="noopener">Report an error in this text →</a></p>
+
+  <!-- KaTeX renders any inline math ($…$, \[…\]) present in the text. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script>
+    document.querySelectorAll('.tabs button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tabs button').forEach((b) =>
+          b.setAttribute('aria-selected', String(b === btn)));
+        document.querySelectorAll('[data-panel]').forEach((p) =>
+          (p.hidden = p.dataset.panel !== tab));
+      });
+    });
+  </script>
+  <script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
+    document.querySelectorAll('.text').forEach((el) =>
+      renderMathInElement(el, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      }));
+  </script>
+</Base>

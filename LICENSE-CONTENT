@@ -1,0 +1,20 @@
+CC0 1.0 Universal — Public Domain Dedication
+
+This dedication applies to the CORPUS CONTENT of ReadTheMastersAI: everything
+under the corpus/ directory (transcriptions, translations, metadata, and figure
+crops derived from public-domain scans).
+
+The person(s) who associated a work with this deed have dedicated the work to
+the public domain by waiving all of their rights to the work worldwide under
+copyright law, including all related and neighboring rights, to the extent
+allowed by law.
+
+You can copy, modify, distribute and perform the work, even for commercial
+purposes, all without asking permission.
+
+Full legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Note: The underlying original texts are already in the public domain (this is a
+precondition for publication — see PLAN.md section 2). This CC0 dedication
+concerns the project's own transcription/translation/metadata contributions,
+whose copyright status is in any case doubtful for purely AI-generated output.

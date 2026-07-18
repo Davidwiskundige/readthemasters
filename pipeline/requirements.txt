@@ -1,0 +1,3 @@
+PyYAML>=6.0
+# pytest is only needed to run the test suite:
+#   pip install pytest

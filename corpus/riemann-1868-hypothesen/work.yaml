@@ -1,0 +1,60 @@
+id: riemann-1868-hypothesen
+title: "Über die Hypothesen, welche der Geometrie zu Grunde liegen"
+title_en: "On the Hypotheses which lie at the Bases of Geometry"
+
+authors:
+  - name: "Bernhard Riemann"
+    wikidata_id: Q42299
+    birth_year: 1826
+    death_year: 1866
+
+publication:
+  year: 1868
+  venue: goettingen-abhandlungen
+  title_full: >-
+    Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen,
+    Band 13 (1868), pp. 133–150. Habilitationsvortrag held 1854, published
+    posthumously by Richard Dedekind.
+
+edition:
+  year: 1868
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original 1868 first printing (posthumous). No modern
+    critical apparatus, commentary, or re-typesetting is included; only Riemann's
+    text is transcribed.
+
+discipline: mathematics
+tags: [geometry, foundations]
+language: de
+type: paper
+
+source:
+  scan_url: "https://www.digizeitschriften.de/id/252457811_0013"
+  scan_id: "digizeitschriften:252457811_0013"
+
+sources:
+  death_date: "wikidata:Q42299"
+  publication_date: >-
+    Göttinger Abhandlungen vol. 13 (1868); catalogue record digizeitschriften:252457811_0013.
+  edition: "digizeitschriften:252457811_0013 (first printing, 1868)"
+
+# Written and verified by pipeline/validate.py. Recomputed from the sourced facts on
+# every run; the gate FAILS if this block does not match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1866], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1868, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-18"

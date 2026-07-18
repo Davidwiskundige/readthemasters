@@ -1,0 +1,169 @@
+---
+import Base from "../layouts/Base.astro";
+import data from "../data/works.json";
+
+const works = data.works ?? [];
+
+// Build facet option lists from the corpus.
+const uniq = (arr) => [...new Set(arr)].filter(Boolean);
+const disciplines = uniq(works.map((w) => w.discipline)).map((d) => ({
+  key: d, label: works.find((w) => w.discipline === d)?.discipline_label ?? d,
+}));
+const tags = uniq(works.flatMap((w) => w.tags)).map((t) => {
+  const src = works.find((w) => w.tags.includes(t));
+  return { key: t, label: src ? src.tag_labels[src.tags.indexOf(t)] : t };
+});
+const languages = uniq(works.map((w) => w.language)).map((l) => ({
+  key: l, label: works.find((w) => w.language === l)?.language_label ?? l,
+}));
+const types = uniq(works.map((w) => w.type)).map((t) => ({
+  key: t, label: works.find((w) => w.type === t)?.type_label ?? t,
+}));
+const translationLangs = uniq(works.flatMap((w) => w.translation_langs ?? []));
+const statuses = ["ai-draft", "spot-checked", "proofread", "validated"]
+  .filter((s) => works.some((w) => w.status === s));
+const years = works.map((w) => w.year).filter((y) => typeof y === "number");
+const minYear = years.length ? Math.min(...years) : 0;
+const maxYear = years.length ? Math.max(...years) : 0;
+---
+<Base title="Catalog" description="AI transcriptions and translations of public-domain mathematics and physics texts.">
+  <div class="layout">
+    <aside class="filters">
+      <input id="q" type="search" placeholder="Search title, author…" aria-label="Search" />
+      <fieldset><legend>Discipline</legend>
+        {disciplines.map((d) => (
+          <label><input type="checkbox" data-facet="discipline" value={d.key} />{d.label}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Topic</legend>
+        {tags.map((t) => (
+          <label><input type="checkbox" data-facet="tag" value={t.key} />{t.label}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Language</legend>
+        {languages.map((l) => (
+          <label><input type="checkbox" data-facet="language" value={l.key} />{l.label}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Has translation</legend>
+        {translationLangs.map((l) => (
+          <label><input type="checkbox" data-facet="translation" value={l} />{l.toUpperCase()}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Type</legend>
+        {types.map((t) => (
+          <label><input type="checkbox" data-facet="type" value={t.key} />{t.label}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Quality</legend>
+        {statuses.map((s) => (
+          <label><input type="checkbox" data-facet="status" value={s} />{s}</label>
+        ))}
+      </fieldset>
+      <fieldset><legend>Year</legend>
+        <div class="yearrow">
+          <input id="ymin" type="number" value={minYear} min={minYear} max={maxYear} aria-label="From year" style="width:5rem" />
+          <span>–</span>
+          <input id="ymax" type="number" value={maxYear} min={minYear} max={maxYear} aria-label="To year" style="width:5rem" />
+        </div>
+      </fieldset>
+    </aside>
+
+    <section>
+      <p class="count"><span id="count">{works.length}</span> of {works.length} works</p>
+      <ul class="works" id="works">
+        {works.map((w) => (
+          <li class="card"
+              data-title={(w.title ?? "").toLowerCase()}
+              data-title-en={(w.title_en ?? "").toLowerCase()}
+              data-authors={w.authors.map((a) => a.name).join(" ").toLowerCase()}
+              data-discipline={w.discipline}
+              data-tags={w.tags.join(",")}
+              data-language={w.language}
+              data-translations={(w.translation_langs ?? []).join(",")}
+              data-type={w.type}
+              data-status={w.status}
+              data-year={w.year}>
+            <h3><a href={w.url}>{w.title}</a></h3>
+            {w.title_en && <div class="meta"><em>{w.title_en}</em></div>}
+            <div class="meta">
+              <span>{w.authors.map((a) => a.name).join(", ")}</span>
+              <span>· {w.year}</span>
+              {w.venue_label && <span class="pill">{w.venue_label}</span>}
+              <span class={`badge ${w.status}`}>{w.status}</span>
+              {(w.translation_langs ?? []).map((l) => <span class="pill">→ {l.toUpperCase()}</span>)}
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p id="empty" hidden>No works match these filters.</p>
+    </section>
+  </div>
+
+  <script>
+    const cards = [...document.querySelectorAll("#works .card")];
+    const q = document.getElementById("q");
+    const ymin = document.getElementById("ymin");
+    const ymax = document.getElementById("ymax");
+    const boxes = [...document.querySelectorAll('input[data-facet]')];
+    const countEl = document.getElementById("count");
+    const emptyEl = document.getElementById("empty");
+
+    function selected(facet) {
+      return boxes.filter((b) => b.dataset.facet === facet && b.checked).map((b) => b.value);
+    }
+    function hasAny(csv, wanted) {
+      if (!wanted.length) return true;
+      const have = (csv || "").split(",").filter(Boolean);
+      return wanted.some((v) => have.includes(v));
+    }
+    function apply() {
+      const term = (q.value || "").trim().toLowerCase();
+      const disc = selected("discipline"), tags = selected("tag"), langs = selected("language"),
+            trans = selected("translation"), types = selected("type"), stat = selected("status");
+      const lo = Number(ymin.value), hi = Number(ymax.value);
+      let shown = 0;
+      for (const c of cards) {
+        const d = c.dataset;
+        const matchText = !term ||
+          d.title.includes(term) || d.titleEn.includes(term) || d.authors.includes(term);
+        const ok = matchText
+          && (!disc.length || disc.includes(d.discipline))
+          && hasAny(d.tags, tags)
+          && (!langs.length || langs.includes(d.language))
+          && hasAny(d.translations, trans)
+          && (!types.length || types.includes(d.type))
+          && (!stat.length || stat.includes(d.status))
+          && Number(d.year) >= lo && Number(d.year) <= hi;
+        c.hidden = !ok;
+        if (ok) shown++;
+      }
+      countEl.textContent = String(shown);
+      emptyEl.hidden = shown !== 0;
+      syncUrl(term);
+    }
+    function syncUrl(term) {
+      const p = new URLSearchParams();
+      if (term) p.set("q", term);
+      for (const f of ["discipline", "tag", "language", "translation", "type", "status"]) {
+        const v = selected(f); if (v.length) p.set(f, v.join(","));
+      }
+      const qs = p.toString();
+      history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+    }
+    function restore() {
+      const p = new URLSearchParams(location.search);
+      if (p.get("q")) q.value = p.get("q");
+      for (const f of ["discipline", "tag", "language", "translation", "type", "status"]) {
+        const vals = (p.get(f) || "").split(",").filter(Boolean);
+        boxes.filter((b) => b.dataset.facet === f && vals.includes(b.value))
+             .forEach((b) => (b.checked = true));
+      }
+    }
+    restore();
+    apply();
+    q.addEventListener("input", apply);
+    [ymin, ymax].forEach((el) => el.addEventListener("input", apply));
+    boxes.forEach((b) => b.addEventListener("change", apply));
+  </script>
+</Base>

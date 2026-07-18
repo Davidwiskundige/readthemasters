@@ -1,0 +1,54 @@
+# Controlled vocabulary for corpus metadata facets.
+# The validator rejects any work.yaml value not listed here (prevents facet drift).
+# Add new values via a pull request; keep keys stable (they appear in URLs and filters).
+
+disciplines:
+  mathematics: Mathematics
+  physics: Physics
+
+tags:
+  # mathematics
+  analysis: Analysis
+  geometry: Geometry
+  number-theory: Number theory
+  algebra: Algebra
+  topology: Topology
+  probability: Probability
+  foundations: Foundations & logic
+  # physics
+  mechanics: Mechanics
+  thermodynamics: Thermodynamics
+  statistical-mechanics: Statistical mechanics
+  electromagnetism: Electromagnetism
+  optics: Optics
+  relativity: Relativity
+  quantum: Quantum theory
+
+types:
+  paper: Paper
+  book: Book
+  chapter: Chapter
+  letter: Letter
+  lecture: Lecture
+  manuscript: Manuscript
+
+# ISO 639-1 codes -> display name
+languages:
+  de: German
+  fr: French
+  en: English
+  la: Latin
+  it: Italian
+  ru: Russian
+
+# Publication venues. Normalize aggressively — one canonical key per venue.
+venues:
+  crelle: "Journal für die reine und angewandte Mathematik (Crelle's Journal)"
+  annalen-der-physik: "Annalen der Physik"
+  goettingen-abhandlungen: "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen"
+  phil-trans: "Philosophical Transactions of the Royal Society"
+  comptes-rendus: "Comptes rendus de l'Académie des sciences"
+  acta-mathematica: "Acta Mathematica"
+  mathematische-annalen: "Mathematische Annalen"
+  book: "(published as a book / monograph)"
+  manuscript: "(unpublished manuscript)"

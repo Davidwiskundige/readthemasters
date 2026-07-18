@@ -1,0 +1,49 @@
+% readmasters.sty — shared LaTeX house style for the ReadTheMastersAI corpus.
+%
+% Policy (PLAN.md §4.4): standardize MARKUP; keep CONTENT and NOTATION faithful to the
+% original; normalize typography. Every transcription/translation \usepackage{readmasters}.
+%
+% Math must render in BOTH KaTeX (web) and a full LaTeX engine (Tectonic, for PDF). Keep
+% custom math macros within a KaTeX-supported subset and mirror them in the site's KaTeX
+% macro map (site/src/katex-macros.js). Do NOT add packages here that KaTeX cannot emulate
+% for the math parts — surrounding document structure is handled by the site build, not KaTeX.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{readmasters}[2026/07/18 ReadTheMastersAI house style]
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{graphicx}
+\RequirePackage[normalem]{ulem}   % \uwave for uncertain readings (PDF); site maps to a CSS style
+
+% ---------------------------------------------------------------------------
+% Scholarly apparatus macros — make transcription honesty machine-readable.
+% ---------------------------------------------------------------------------
+
+% \origpage{n} — marks the boundary of page n in the original scan.
+% Drives the side-by-side reader alignment and per-page citation anchors.
+% In PDF it is invisible (a margin note could be enabled later); the site turns
+% it into an anchor <span id="p-n">.
+\newcommand{\origpage}[1]{\ignorespaces}
+
+% \uncertain{text} — a reading the transcriber/AI was not fully sure of.
+\newcommand{\uncertain}[1]{\uwave{#1}}
+
+% \illegible — an unrecoverable passage in the scan.
+\newcommand{\illegible}{[\,\textit{illegible}\,]}
+
+% \ednote{text} — an editorial note (never part of the original text).
+\newcommand{\ednote}[1]{\footnote{\textit{Editorial note:} #1}}
+
+% \rmfigure{file}{caption}{alt} — a figure CROPPED from the public-domain scan
+% and embedded (PLAN.md §4.5), not redrawn. `alt` is used by the site for
+% accessibility; in PDF the caption carries it.
+\newcommand{\rmfigure}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[max width=\linewidth,width=\linewidth,keepaspectratio]{#1}%
+    \caption{#2}%
+  \end{figure}%
+}
+
+\endinput

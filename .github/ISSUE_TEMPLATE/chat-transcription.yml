@@ -1,0 +1,76 @@
+name: "Chat transcription submission"
+description: "Submit a LaTeX transcription you produced in your own AI chat app (Tier 1)."
+title: "[transcription] <work> — pages <n–m>"
+labels: ["contribution", "transcription"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Use the pinned prompt in `prompts/transcribe-chat.md`.
+        A maintainer will assemble this into the corpus format and credit you.
+  - type: input
+    id: work
+    attributes:
+      label: Work (author, title, year)
+      placeholder: "Bernhard Riemann, Über die Hypothesen…, 1868"
+    validations: { required: true }
+  - type: input
+    id: scan
+    attributes:
+      label: Scan source (URL or stable identifier)
+      placeholder: "https://…  /  digizeitschriften:252457811_0013"
+    validations: { required: true }
+  - type: input
+    id: pages
+    attributes:
+      label: Pages covered
+      placeholder: "133–140"
+    validations: { required: true }
+  - type: dropdown
+    id: model
+    attributes:
+      label: AI model / app used
+      options:
+        - Claude (Anthropic)
+        - ChatGPT (OpenAI)
+        - Gemini (Google)
+        - Other (note in the text box)
+    validations: { required: true }
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Thinking level (if you know it)
+      options:
+        - "unknown / standard"
+        - "extended thinking on"
+        - "reasoning model"
+    validations: { required: false }
+  - type: textarea
+    id: latex
+    attributes:
+      label: LaTeX output
+      description: "Paste the transcription (or attach a .tex file). Use the house-style macros."
+      render: latex
+    validations: { required: true }
+  - type: input
+    id: pubdate
+    attributes:
+      label: First-publication date + source
+      description: "Needed for the copyright gate — cite a catalog/bibliography/DOI."
+      placeholder: "1868 — Göttinger Abhandlungen vol. 13 (digizeitschriften:252457811_0013)"
+    validations: { required: true }
+  - type: input
+    id: death
+    attributes:
+      label: Author death year(s) + source
+      placeholder: "1866 — wikidata:Q42299"
+    validations: { required: true }
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licensing
+      options:
+        - label: "I release this contribution into the public domain under CC0 1.0."
+          required: true
+        - label: "This transcription is from the original/early edition, not a modern annotated edition."
+          required: true
