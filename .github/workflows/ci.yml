@@ -38,10 +38,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Build site data (only PD works, min status)
+      - name: Install Tectonic (for PDF compilation)
+        uses: wtfjoke/setup-tectonic@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Compile PDFs (deploy-time, not committed)
         run: |
           pip install -r pipeline/requirements.txt
-          python pipeline/build_site_data.py --out site/src/data/works.json
+          python pipeline/build_pdfs.py --out site/public/pdf
+      - name: Build site data (only PD works, min status)
+        run: python pipeline/build_site_data.py --out site/src/data/works.json
       - name: Build Astro site
         working-directory: site
         run: |

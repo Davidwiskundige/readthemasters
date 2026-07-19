@@ -106,6 +106,20 @@ def test_external_translation_fails():
     assert rules["translation_source"] == "fail"
 
 
+def test_external_open_translation_with_license_passes():
+    prov = pd_prov()
+    prov["translations"] = {"en": {"status": "ai-draft", "model": "m", "prompt_version": "v",
+                                   "source": "external-open", "license": "public-domain"}}
+    assert verdict(pd_work(), prov)[1]["translation_source"] == "pass"
+
+
+def test_external_open_translation_without_license_fails():
+    prov = pd_prov()
+    prov["translations"] = {"en": {"status": "ai-draft", "model": "m", "prompt_version": "v",
+                                   "source": "external-open"}}  # no license named
+    assert verdict(pd_work(), prov)[1]["translation_source"] == "fail"
+
+
 def test_unknown_death_recent_publication_blocks():
     w = pd_work()
     w["authors"][0].pop("death_year")

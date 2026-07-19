@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import data from "../../data/works.json";
 import { texToHtml } from "../../lib/tex.js";
+import { bibtexEntries } from "../../lib/bibtex.js";
 
 export function getStaticPaths() {
   return (data.works ?? []).map((w) => ({ params: { id: w.id }, props: { work: w } }));
@@ -25,8 +26,26 @@ function attribution(prov) {
 
 const originalHtml = texToHtml(work.original_tex);
 const translations = Object.entries(work.translations ?? {}).map(([lang, t]) => ({
-  lang, label: t.label, html: texToHtml(t.tex), prov: t.provenance,
+  lang, label: t.label, html: texToHtml(t.tex), prov: t.provenance, pdf: t.pdf, tex_url: t.tex_url,
 }));
+const externalTranslations = work.external_translations ?? [];
+
+// Ready-made BibTeX for the original, our edition, and translations, indexed by kind so each
+// entry can sit next to its own source/download row rather than in a block at the bottom.
+const citations = bibtexEntries(work, { base: Astro.site?.origin ?? "" });
+const citeOriginal = citations.find((c) => c.kind === "original");
+const citeTranscription = citations.find((c) => c.kind === "transcription");
+const citeByLang = Object.fromEntries(
+  citations.filter((c) => c.kind === "translation").map((c) => [c.lang, c]));
+const citeExternal = citations.filter((c) => c.kind === "external");
+
+// One consolidated download list, each row carrying its own citation.
+const downloads = [
+  { label: `Original (${work.language_label})`, tex: work.original_tex_url,
+    pdf: work.original_pdf, cite: citeTranscription },
+  ...translations.map((t) => ({ label: `${t.label} translation`, tex: t.tex_url,
+    pdf: t.pdf, cite: citeByLang[t.lang] })),
+];
 
 // Prefilled "report an error" issue link (PLAN.md backlog #2).
 const repo = "https://github.com/OWNER/readthemasters"; // TODO: set real repo
@@ -47,8 +66,34 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     <strong>Source:</strong>
     <a href={work.source.scan_url} rel="noopener">original scan</a>
     {work.source.scan_id && <> ({work.source.scan_id})</>}
+    {citeOriginal && <> <button class="chip copy" type="button" data-target={`bib-${citeOriginal.key}`}><span class="g">⧉</span> BibTeX</button></>}
     {work.publication_full && <><br /><span class="attr">{work.publication_full}</span></>}
   </p>
+
+  <section class="downloads">
+    <h2>Downloads</h2>
+    <ul>
+      {downloads.map((d) => (
+        <li>
+          <span>{d.label}:</span>
+          {d.tex && <a class="chip" href={d.tex} download rel="noopener"><span class="g">↓</span> .tex</a>}
+          {d.pdf
+            ? <a class="chip" href={d.pdf} download rel="noopener"><span class="g">↓</span> PDF</a>
+            : <span class="attr note">PDF on deploy</span>}
+          {d.cite && <button class="chip copy" type="button" data-target={`bib-${d.cite.key}`}><span class="g">⧉</span> BibTeX</button>}
+        </li>
+      ))}
+      <li>
+        <span class="attr">Shared preamble:</span>
+        <a class="chip" href="/tex/readmasters.sty" download rel="noopener"><span class="g">↓</span> readmasters.sty</a>
+        <span class="attr">(needed to compile a <code>.tex</code>)</span>
+      </li>
+      <li>
+        <span class="attr">All citations:</span>
+        <button id="dl-bib" class="chip" type="button" data-file={`${work.id}.bib`}><span class="g">↓</span> .bib</button>
+      </li>
+    </ul>
+  </section>
 
   {work.status === "ai-draft" && (
     <div class="notice">
@@ -75,7 +120,32 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     </section>
   ))}
 
+  {externalTranslations.length > 0 && (
+    <section style="margin-top:2rem">
+      <h2 style="font-size:1.1rem">Existing translations elsewhere</h2>
+      <p class="attr">These are hosted by others; we link rather than duplicate them.</p>
+      <ul>
+        {externalTranslations.map((x, i) => (
+          <li>
+            <a href={x.url} rel="noopener">{x.title ?? `${x.language?.toUpperCase()} translation`}</a>
+            {x.translator && <> — trans. {x.translator}</>}
+            {x.year && <> ({x.year})</>}
+            {x.venue && <>, {x.venue}</>}
+            {x.license && <> · <span class="pill">{x.license}</span></>}
+            {citeExternal[i] && <> · <button class="chip copy" type="button" data-target={`bib-${citeExternal[i].key}`}><span class="g">⧉</span> BibTeX</button></>}
+            {x.note && <><br /><span class="attr">{x.note}</span></>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <p style="margin-top:2rem"><a href={reportUrl} rel="noopener">Report an error in this text →</a></p>
+
+  {/* Hidden BibTeX source for the inline "copy BibTeX" buttons and the .bib download. */}
+  <div id="bib-store" hidden>
+    {citations.map((c) => <pre id={`bib-${c.key}`}>{c.text}</pre>)}
+  </div>
 
   <!-- KaTeX renders any inline math ($…$, \[…\]) present in the text. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
@@ -88,6 +158,50 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
         document.querySelectorAll('[data-panel]').forEach((p) =>
           (p.hidden = p.dataset.panel !== tab));
       });
+    });
+
+    // Copy text to clipboard, with a fallback for non-secure/no-gesture contexts.
+    async function copyText(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (_) { /* fall through */ }
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    // Copy a single BibTeX entry (buttons live inline next to source/download rows).
+    document.querySelectorAll('button.copy[data-target]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const pre = document.getElementById(btn.dataset.target);
+        if (!pre) return;
+        const ok = await copyText(pre.textContent);
+        const prev = btn.textContent;
+        btn.textContent = ok ? 'copied ✓' : 'press Ctrl+C';
+        setTimeout(() => (btn.textContent = prev), 1500);
+      });
+    });
+
+    // Download all entries as one .bib file.
+    const dl = document.getElementById('dl-bib');
+    if (dl) dl.addEventListener('click', () => {
+      const all = [...document.querySelectorAll('#bib-store pre')].map((p) => p.textContent).join('\n\n');
+      const blob = new Blob([all], { type: 'application/x-bibtex' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = dl.dataset.file;
+      a.click();
+      URL.revokeObjectURL(a.href);
     });
   </script>
   <script type="module">

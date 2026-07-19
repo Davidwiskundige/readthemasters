@@ -11,6 +11,8 @@ authors:
 publication:
   year: 1868
   venue: goettingen-abhandlungen
+  volume: "13"
+  pages: "133–150"
   title_full: >-
     Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen,
     Band 13 (1868), pp. 133–150. Habilitationsvortrag held 1854, published
@@ -33,6 +35,17 @@ type: paper
 source:
   scan_url: "https://www.digizeitschriften.de/id/252457811_0013"
   scan_id: "digizeitschriften:252457811_0013"
+
+# Existing translations elsewhere (referenced, not hosted). A link is always allowed.
+external_translations:
+  - language: en
+    title: "On the Hypotheses which lie at the Bases of Geometry"
+    translator: "William Kingdon Clifford"
+    year: 1873
+    license: public-domain   # Clifford d. 1879 — translation itself is public domain
+    venue: "Nature, vol. VIII, nos. 183, 184"
+    url: "https://www.nature.com/articles/008036a0"
+    note: "The classic first English rendering; we also provide our own translation."
 
 sources:
   death_date: "wikidata:Q42299"

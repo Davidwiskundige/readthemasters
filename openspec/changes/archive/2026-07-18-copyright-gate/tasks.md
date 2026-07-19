@@ -11,4 +11,5 @@
 - [x] Status/provenance consistency (validated needs 2 reviewers, etc.)
 - [x] Cross-work unique-id check
 - [x] Test suite: passing work + one failure per rule
-- [ ] (later) Wikidata death-date cross-check as a warn-only CI step
+- [x] `external-open` translation source allowed with a named license (added with site-catalog)
+- [x] Wikidata death-date cross-check as a warn-only CI step (`pipeline/wikidata_check.py`)

@@ -185,6 +185,21 @@ exists, else a DOI, else a deterministic slug (`author-year-shorttitle`). Stored
   Multiple editions may be recorded; we transcribe from the earliest clean public-domain edition
   and mark it — which is also what `edition_rights` in §2 evaluates.
 
+### 3.3 PDFs — compile at deploy time, don't commit
+
+Downloadable PDFs are built **once per deploy in CI with Tectonic**, not on every visit and not
+stored in git:
+
+- *Compile on every visit* — rejected: the site is static (no server), and full LaTeX in the
+  browser needs a heavy (~tens of MB) WASM TeX engine that is slow to load. On-page math is
+  already handled by KaTeX; the PDF is a separate downloadable artifact.
+- *Commit prebuilt PDFs* — rejected: binary blobs bloat a text corpus, churn on every edit, and
+  drift from source when the `.tex` changes but the PDF doesn't.
+- *Compile at deploy with Tectonic* — **chosen**: each `.tex` → PDF during the site build,
+  published under `/pdf/<id>/`, regenerated only for changed works (cached) and never committed.
+  A work MAY optionally ship a pre-made PDF as an override for the rare case Tectonic can't
+  reproduce it. Source stays clean; PDFs never drift.
+
 ---
 
 ## 4. AI pipeline design
@@ -325,6 +340,20 @@ original figure*, so it's exact and faithful with no redrawing. Because the scan
 - **Optional enhancement (backlog):** a redrawn vector version (TikZ/SVG) for print quality and
   screen-reader access, flagged `redrawn: true` and kept *alongside* — never replacing — the
   original crop.
+
+## 4.6 Referencing existing open translations
+
+A public-domain or openly-licensed translation often already exists (e.g. W. K. Clifford's 1873
+English rendering of Riemann's 1868 lecture). We **reference** these rather than duplicate them:
+`work.yaml` carries an `external_translations` list (language, translator, year, license, venue,
+url), and the work page shows an "Existing translations elsewhere" section. This is pure metadata —
+a link is always allowed, whatever the translation's copyright — and is separate from our own
+`translations/<lang>.tex`.
+
+Optionally, a translation that is *itself* public-domain or openly-licensed may be **imported** as
+a hosted artifact, with provenance `source: external-open` and its `license` recorded (the gate
+requires the license). A still-copyrighted translation may only be linked, never hosted, and our
+own translations are still made only from our transcription (the `translation_source` rule, §2.2).
 
 ---
 

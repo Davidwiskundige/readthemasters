@@ -12,10 +12,11 @@ A work MAY be published only if all applicable rules pass. `now_year` is the cur
 - **us_publication** — `now_year >= publication.year + 95 + 1` (public domain from 1 Jan of the
   year after publication+95). Equivalent to: published before `now_year - 95`.
 - **edition_rights** — `edition.rights_cleared` is true (with a non-empty `edition.rights_note`).
-- **translation_source** — for every translation, its provenance `submitted_via`/source indicates
-  derivation from our own transcription, never an external modern translation. (Enforced by
-  requiring translations to reference the in-corpus `original.tex`; a `translation_source: external`
-  marker FAILS.)
+- **translation_source** — for every hosted translation, its provenance `source` is either
+  `transcription` (derived from our own `original.tex`, the default) or `external-open` (imported
+  from a public-domain/openly-licensed translation, which then REQUIRES a `license` field). A
+  `source: external` marker (a still-copyrighted translation) FAILS — such translations may be
+  *referenced* via `external_translations` but never hosted.
 - **pma_100** (optional, config `strict_pma_100: true`, default false) — like pma_70 with term 100.
 
 ## ADDED: Sourced facts (§2.5)

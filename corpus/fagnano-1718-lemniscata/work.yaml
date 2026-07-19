@@ -1,0 +1,67 @@
+id: fagnano-1718-lemniscata
+title: "Metodo per misurare la lemniscata"
+title_en: "Method for Measuring the Lemniscate"
+
+authors:
+  - name: "Giulio Carlo de' Toschi di Fagnano"
+    wikidata_id: null          # add during review (Fagnano, 1682–1766)
+    birth_year: 1682
+    death_year: 1766
+
+publication:
+  year: 1718
+  venue: giornale-letterati-italia
+  volume: "29"
+  pages: "258"
+  title_full: >-
+    "Metodo per misurare la lemniscata, Schediasma I", first published in the Giornale de'
+    letterati d'Italia, tomo XXIX (1718), p. 258. Transcribed here from the complete reprint in
+    Opere Matematiche, vol. II (1911), printed pages 293–297 (= scan djvu pages 323–327).
+
+edition:
+  year: 1911
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from Fagnano's Opere Matematiche, vol. II (1911), eds. V. Volterra,
+    G. Loria & D. Gambioli — a faithful reprint of the public-domain original. Only
+    Fagnano's text is transcribed, not the editors' apparatus; and the 1911 edition is
+    itself public domain (published >95 years ago; all editors died by 1954).
+
+discipline: mathematics
+tags: [analysis, geometry]
+language: it
+type: paper
+
+source:
+  scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=323"
+  scan_id: "wikimedia:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu#page323"
+
+sources:
+  death_date: >-
+    Giulio Carlo de' Toschi di Fagnano, 1682–1766 (Encyclopedia.com; MacTutor archive).
+  publication_date: >-
+    First published 1718 in Giornale de' letterati d'Italia, tomo XXIX, p. 258 (per the
+    1911 edition's own footnote and Encyclopedia.com / Springer, "Fagnano and the Lemniscate").
+    First-edition scan for cross-checking: archive.org/details/giornaledeletter1718roya (tomo 29).
+  edition: >-
+    Fagnano, Opere Matematiche, vol. II (1911), eds. Volterra, Loria & Gambioli; scanned copy
+    on Wikimedia Commons (File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu, page 323).
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1766], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1718, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-19"

@@ -1,0 +1,15 @@
+transcription:
+  status: ai-draft
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: pipeline
+  produced: "2026-07-19"
+  note: >-
+    Complete memoir, printed pages 293–297 (= scan djvu pages 323–327). Transcribed from the
+    Wikimedia Commons scan, with zoomed crops used to confirm the integrals, the bisection
+    result, and archaic spellings. Not yet human-checked. Reviewer notes: (a) eq. (2) is
+    reproduced faithfully with denominator sqrt(a^2 - az) exactly as printed — likely a source
+    misprint (elsewhere sqrt(a^2 - z^2)); (b) Fagnano's "zz" for z^2 is kept where the print
+    uses it; (c) cross-check against the 1718 first edition
+    (archive.org/details/giornaledeletter1718roya) is recommended before promoting to proofread.

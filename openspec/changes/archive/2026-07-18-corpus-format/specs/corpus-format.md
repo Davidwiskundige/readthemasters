@@ -44,6 +44,10 @@ Required fields:
   - `death_date` (string) — e.g. `wikidata:Q42` (per author, or a map keyed by author name).
   - `publication_date` (string) — catalog/bibliography/DOI reference.
   - `edition` (string) — catalog reference for the edition.
+- `external_translations` (list, optional) — existing translations elsewhere, referenced not
+  hosted. Each: `language`, `title`, `translator`, `year`, `license`, `venue` (optional), `url`,
+  `note` (optional). Pure metadata (a link is always allowed); separate from hosted
+  `translations/<lang>.tex`.
 - `copyright_assessment` — written/verified by the gate; see copyright-gate spec.
 
 ## ADDED: provenance.yaml schema

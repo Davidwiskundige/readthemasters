@@ -1,0 +1,170 @@
+% Faithful transcription — original Italian (18th c.). Transcribed from the 1911 Opere
+% Matematiche, vol. II (Wikimedia Commons djvu), the complete memoir "Metodo per misurare la
+% lemniscata, Schediasma I", printed pages 293–297 (= djvu pages 323–327). \origpage uses the
+% PRINTED page numbers. Content and archaic spelling (ànno, à, Bernulli, elisse, abscisse,
+% elittico) follow the print; only markup is standardized (PLAN.md §4.4). NOTE: eq. (2) is
+% reproduced faithfully with the denominator \sqrt{a^2-az} exactly as printed (it differs from
+% the \sqrt{a^2-z^2} elsewhere — a probable misprint left for editorial review), and Fagnano's
+% era notation "zz" for z^2 is kept where the print uses it.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{293}
+\section*{XXXII. Metodo per misurare la lemniscata}
+\subsection*{Schediasma I (*)}
+\emph{(*) Giornale de' letterati d'Italia, tomo XXIX, pag.~258.}
+
+I due sommi geometri signor Giacomo e signor Giovanni fratelli Bernulli ànno renduta
+celebre la lemniscata, servendosi de' suoi archi per costruire l'isocrona paracentrica,
+come può vedersi negli Atti di Lipsia dell'anno 1694. Egli è visibile, che misurando la
+lemniscata mediante qualche altra curva di lei più semplice, si ottiene una costruzione
+più perfetta non solo dell'isocrona paracentrica, ma ancora delle altre infinite curve,
+che per essere costruite possono dipendere dalla lemniscata; e però mi lusingo, che non
+sieno per dispiacere agl'intendenti le misure di questa curva da me scoperte, le quali
+esporrò successivamente in due schediasmi.
+
+\emph{Supposizioni note agl'intendenti del calcolo infinitesimale.} --- Sia la lemniscata
+$CQACFC$ (fig.~24), il cui semiasse $CA = a$; si sa, che prendendo nel centro $C$ l'origine
+dell'abscisse $(x)$, e chiamando $(y)$ le ordinate che sono all'asse normali, la natura
+della lemniscata s'esprime con quest'equazione $x^{2} + y^{2} = a\sqrt{x^{2} - y^{2}}$.
+
+Si sa ancora che se si chiama $z$ la corda indeterminata $CQ = \sqrt{x^{2} + y^{2}}$, si à
+l'arco diretto $CQ = \int \dfrac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}$, e l'arco inverso
+\[ QA = \mathrm{arc.}\,CA - \mathrm{arc.}\,CQ = \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}. \]
+
+Sia l'elisse $ADFNA$ (fig.~24), il cui semiasse minore $CF = a$, e il semiasse maggiore
+$CD = a\sqrt{2}$; chiamasi $z$ l'abscissa indeterminata $CH$, che ha l'origine del centro
+$C$ dell'elisse, ed è uguale alla corda $CQ$ della lemniscata, e tirisi l'ordinata $HI$
+parallela all'asse maggiore; è già noto che l'arco diretto $DI$ di quest'elisse ha per sua
+espressione
+\[ \int dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}, \]
+\origpage{294}
+e che l'arco inverso
+\[ IF = \mathrm{arc.}\,DF - \mathrm{arc.}\,DI = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \]
+
+Sia finalmente l'iperbola equilatera $LMP$ (fig.~25), il cui semiasse $SM = a$. Si nomini
+$t$ l'applicata indeterminata $SO$, che partendo dal centro $S$ tagli l'arco $MO$; si sa,
+che questo medesimo arco s'esprime così
+\[ \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}}. \]
+
+\textbf{Teorema I.} --- Sieno le due infrascritte equazioni (1), e (2). Io dico, che posta
+la prima di esse, sussiste anche l'altra
+
+(1)
+\[ t = a\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \]
+
+(2)
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int dz\, \frac{\sqrt{a^{2} + zz}}{\sqrt{a^{2} - az}} + \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}} - \frac{zt}{a}. \]
+
+La verità di questo teorema si dimostra differenziando, e sostituendo in luogo di $t$, e di
+$dt$ i loro valori in $z$, e $dz$ tratti dall'equazione (1).
+
+\textbf{Corollario} (fig.~24 e 25). --- Se nella lemniscata la corda $CQ = z$, e nell'elisse
+l'abscissa $CH$ è anche essa $= z$, e nell'iperbola equilatera $LMP$ l'applicata centrale
+$SO = t$; assegnando a $t$ il suo valore espresso nell'equazione (1) e ponendo nell'equazione
+(2) gli archi delle curve invece delle loro espressioni già dichiarate nelle supposizioni
+superiori, s'ottiene
+
+(3)
+\[ \mathrm{Arc.}\,CQ = \mathrm{arc.}\,DI + \mathrm{arc.}\,MO = \frac{zt}{a}. \]
+
+\textbf{Scolio I.} --- Supponendo $z = 0$, gli archi diretti $CQ$ della lemniscata, e $DI$
+dell'elisse sono uguali a zero; è nullo ancora l'arco iperbolico $MO$, poichè in virtù
+dell'equazione (1) l'annullamento di $z$ rende $SO\,(t) = a = SM$; s'annienta eziandio
+l'espressione rettilinea, e tutto ciò è un certo indizio, che l'equazione (3) è completa, e
+non abbisogna dell'aggiunta, o sottrazione d'alcuna quantità costante. Ma facendo $z = a$,
+allora l'arco diretto della lemniscata diventa eguale all'arco $CQA$, e l'arco elittico $DI$
+all'arco $DIF$; ma per l'equazione (1) l'applicata centrale $SO\,(t)$ dell'iperbola diviene
+in questo caso infinita, rendendo infinito anche l'arco iperbolico $MO$, e però sembra
+impossibile di giungere a conoscere per questa strada il
+\origpage{295}
+valore del quadrante della lemniscata espresso in quantità finite, e per conseguenza la
+misura di questa curva non può dirsi ancora perfettamente scoperta.
+
+\textbf{Teorema II.} --- Sieno le due equazioni infrascritte (4) e (5); io dico, che posta
+la prima di esse, sussiste anche l'altra
+
+(4)
+\[ r = \frac{a^{2}}{z}. \]
+
+(5)
+\[ \int -\frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}} + \int \frac{r^{2}\,dr}{\sqrt{r^{4} - a^{4}}} - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \]
+
+La differenziazione e la sostituzione de' valori di $r$, e $dr$ in $z$, e $dz$ dedotti
+dall'equazione (4) dimostrano questo teorema.
+
+\textbf{Corollario I} (fig.~24 e 25). --- Facciasi, come sopra, nella lemniscata la corda
+$CQ = z$, nell'elisse l'abscissa $CH$ anch'essa $= z$, e nell'iperbola l'applicata centrale
+$SL = r$, attribuendo ad $r$ il suo valore notato nell'equazione (4), e surrogando
+nell'equazione (5) gli archi delle curve in vece delle loro espressioni, conforme si è fatto
+nel corollario del I teorema, ritrovasi
+
+(6)
+\[ \mathrm{Arc.}\,QA = \mathrm{arc.}\,IF + \mathrm{arc.}\,ML - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \]
+
+\textbf{Scolio II.} --- La supposizione di $z = a$ rende nulli gli archi inversi $QA$ della
+lemniscata, ed $IF$ dell'elisse; annulla ancora l'espressione rettilinea, e l'arco iperbolico
+$ML$, atteso che in vigore dell'equazione (4) l'applicata centrale dell'iperbola $SL\,(r)$
+diviene uguale al semiasse $SM\,(a)$, dunque l'equazione (5) è completa. Ma la supposizione
+di $z = 0$, prolunga in infinito l'applicata centrale dell'iperbola, e l'arco, di essa, nello
+stesso tempo, che fa divenire gli archi inversi della lemniscata, e dell'elisse uguali
+rispettivamente ai quadranti $ACQ$, $FID$; ed ecco rinascere il medesimo inconveniente
+esposto nel fine del I scolio; ma questa difficoltà resterà superata dal corollario, che
+segue. Intanto si noti; primo, che tirando nell'iperbola la $OP$ parallela al secondo asse,
+l'arco $LMP$ è uguale ai due archi $MO$, $ML$. Secondo, che assegnando a $t$ il suo valore
+espresso nell'equazione (1), questa quantità complessa $\dfrac{zt}{a} + \dfrac{1}{z}\sqrt{a^{4} - z^{4}}$
+equivale a quest'altra quantità più semplice $\dfrac{at}{z}$, come si esperimenterà col calcolo.
+\origpage{296}
+\textbf{Corollario II} (fig.~24 e 25). --- Aggiungendo le due equazioni (3) e (6), e
+servendosi dei due avvertimenti notati nel fine del precedente scolio, si scuopre
+$\mathrm{arc.}\,CQA = \mathrm{arc.}\,DIF + \mathrm{arc.}\,LMP - \dfrac{at}{z}$; e finalmente
+moltiplicando per 4 quest'ultima equazione, ritrovasi che l'intera periferia della lemniscata
+è uguale all'intera periferia dell'elisse circoscritta $ADFNA$, più il quadruplo dell'arco
+$LMP$ dell'iperbola equilatera meno $\dfrac{4at}{z}$ ch'è una nuova, ed egregia proprietà di
+queste curve.
+
+\textbf{Teorema III.} --- Sieno le due equazioni infrascritte (7) e (8); io dico, che posta
+la prima di esse, sussiste anche l'altra
+
+(7)
+\[ u = a\, \frac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}. \]
+
+(8)
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -\frac{a^{2}\,du}{\sqrt{a^{4} - u^{4}}}. \]
+
+Questo teorema si dimostra, come gli altri due, che lo precedono, differenziando, e facendo
+le debite sostituzioni tratte dall'equazione (7).
+
+\textbf{Corollario I} (fig.~24). --- Prendasi nella lemniscata la corda $CQ = z$, e l'altra
+corda $CE = u$, attribuiscasi ad $u$ il suo valore espresso nell'equazione (7), si
+sostituiscano nell'equazione (8) gli archi diretto, ed inverso della curva in luogo delle
+loro espressioni, e si troverà $\mathrm{arc.}\,CQ = \mathrm{arc.}\,EA$.
+
+\textbf{Scolio III} (fig.~24). --- Se $z = 0$ l'arco diretto $CQ$ è nullo, e in virtù
+dell'equazione (7) l'annullamento di $z$ rende $CE\,(u) = a$, di modo che l'arco inverso $EA$
+è nullo anch'esso; il che fa conoscere, che l'equazione notata nel fine del precedente
+corollario è completa. Questa insigne proprietà della lemniscata è stata da me scoperta, ed
+esposta in maniera diversa nel mio metodo per rettificare la differenza degli archi in infinite
+specie di parabole irrettificabili.
+
+\textbf{Corollario II} (fig.~24). --- Trovando, come qui sopra ho insegnato di fare, l'arco
+inverso $EA$ eguale all'arco diretto $CQ$, potrà misurarsi questo medesimo arco $CQ$ mediante
+il I.\ corollario del II teorema, e viceversa trovando l'arco diretto $CQ$ eguale all'arco
+inverso $EA$, potrà essere misurato questo medesimo arco $EA$ per mezzo del corollario del I
+teorema.
+\origpage{297}
+\textbf{Corollario III.} --- \textbf{Problema.} --- Tagliare per mezzo il quadrante della
+lemniscata (fig.~24).
+
+Se la corda $CQ\,(z)$ della lemniscata è uguale all'altra corda $CE\,(u)$ di essa, e se nel
+tempo stesso $u$ ha il suo valore notato nell'equazione (7), allora
+$z = u = a\, \dfrac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}$, donde risulta fatte le debite
+operazioni
+\[ z = u = \sqrt{a^{2}\sqrt{2} - a^{2}} \]
+e però attribuendo a $z$ quest'ultimo valore, i due punti della lemniscata $Q$ ed $E$
+coincideranno in $B$, in maniera che l'arco diretto $CB$ sarà eguale all'arco inverso $BA$, e
+la corda $CB = u = z$ taglierà per mezzo il quadrante della lemniscata. Il che dovea
+ritrovarsi.
+
+\end{document}

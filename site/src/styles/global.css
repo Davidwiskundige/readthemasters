@@ -74,6 +74,20 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .workhead h1 { margin: 0 0 .3rem; }
 .workhead .sub { color: var(--muted); margin: 0 0 1rem; }
 .attr { font-size: .85rem; color: var(--muted); }
+.downloads { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; margin: 1rem 0; }
+.downloads h2 { font-size: .95rem; margin: .2rem 0 .5rem; }
+.downloads ul { margin: 0; padding: 0; list-style: none; }
+.downloads li { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; margin: .35rem 0; }
+.downloads li .note { font-style: italic; }
+
+/* Neutral pill "chips" for actions — same rounded shape as the status badge, but not colored,
+   so actions read distinctly from state. ↓ = download, ⧉ = copy. Used on links and buttons. */
+.chip { display: inline-flex; align-items: center; gap: .3em; padding: .12rem .6rem;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+  color: var(--link); font-size: .74rem; font-weight: 700; line-height: 1.7;
+  text-decoration: none; cursor: pointer; white-space: nowrap; }
+.chip:hover { border-color: var(--accent); background: var(--accent-weak); color: var(--accent); }
+.chip .g { font-weight: 400; opacity: .8; }
 .tabs { display: flex; gap: .5rem; margin: 1.5rem 0 .5rem; border-bottom: 1px solid var(--border); }
 .tabs button { border: none; background: none; font: inherit; color: var(--muted); cursor: pointer;
   padding: .5rem .8rem; border-bottom: 2px solid transparent; }

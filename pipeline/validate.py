@@ -98,11 +98,18 @@ def evaluate_copyright(work: dict, provenance: dict, now_year: int,
     # edition_rights.
     edition_ok = bool(edition.get("rights_cleared")) and bool(edition.get("rights_note"))
 
-    # translation_source — no translation may derive from an external modern translation.
+    # translation_source — a hosted translation must derive from our transcription, or be imported
+    # from a public-domain/openly-licensed translation (source: external-open + a license). A
+    # still-copyrighted translation (source: external) is a violation.
     external = 0
     for _lang, rec in ((provenance or {}).get("translations") or {}).items():
-        if (rec or {}).get("source") == "external" or (rec or {}).get("translation_source") == "external":
-            external += 1
+        rec = rec or {}
+        src = rec.get("source")
+        if src in (None, "transcription"):
+            continue
+        if src == "external-open" and rec.get("license"):
+            continue
+        external += 1  # "external" (copyrighted), or "external-open" without a named license
     trans_ok = external == 0
 
     evaluated = {

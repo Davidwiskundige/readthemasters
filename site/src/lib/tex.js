@@ -22,16 +22,28 @@ export function texToHtml(tex) {
   // Drop comment lines.
   body = body.replace(/^\s*%.*$/gm, "");
 
+  // Promote block-level markers to their own paragraphs so they render even when they share a
+  // source line/paragraph with surrounding text (e.g. \origpage{n} immediately before \section).
+  body = body
+    .replace(/\\subsection\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
+    .replace(/\\section\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
+    .replace(/\\origpage\{\d+\}/g, (m) => `\n\n${m}\n\n`);
+
   const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   const out = [];
 
   for (let para of paras) {
-    // Section headings.
+    // Section / subsection headings.
     const sec = para.match(/^\\section\*?\{([^}]*)\}\s*([\s\S]*)$/);
+    const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
     let heading = "";
     if (sec) {
       heading = `<h2>${escapeHtml(sec[1])}</h2>`;
       para = sec[2].trim();
+      if (!para) { out.push(heading); continue; }
+    } else if (sub) {
+      heading = `<h3>${escapeHtml(sub[1])}</h3>`;
+      para = sub[2].trim();
       if (!para) { out.push(heading); continue; }
     }
 
