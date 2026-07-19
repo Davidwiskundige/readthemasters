@@ -22,9 +22,16 @@ public-domain digitization project. Follow these rules exactly:
    - `\uncertain{...}` for text you are not fully sure of; `\illegible` for unrecoverable text.
    - `\ednote{...}` only for genuinely editorial remarks (rare).
    - For a figure/diagram, output `\rmfigure{figures/fig-XX.png}{<caption>}{<alt text>}` — do
-     **not** attempt to redraw it; we crop the figure from the scan separately.
+     **not** attempt to redraw it; we crop the figure from the scan separately. The visible
+     `<caption>` is **only the original's figure number** (e.g. `Fig.~24.`); put any description of
+     what the figure shows in `<alt text>` (for accessibility), not in the caption.
 4. **Math in LaTeX.** Use standard LaTeX/`amsmath` math. Keep it within what KaTeX supports.
-   Preserve the author's notation even where it differs from modern usage.
+   Preserve the author's notation even where it differs from modern usage (e.g. `zz` for z²).
+   Follow the math-typography house style (see `corpus/HOUSESTYLE.md`): write multi-letter
+   geometric labels as plain math letters (`$CQ$`, `$ADFNA$` — no wrapper macro); for an inline
+   large operator with a fraction integrand use `\displaystyle\int \frac{...}{...}` (not
+   `\int \dfrac{...}{...}`); use `x^{2}` and `\,dz`. Put equation numbers on the right with the
+   author's own number via `\tag{n}` inside the display: `\[ ... \tag{1} \]`.
 5. **Structure.** Use `\section*{...}` for headings actually present. Output a paragraph break
    (blank line) where the original has one.
 6. **Output only LaTeX** for the body — no commentary, no preamble, no `\documentclass` or

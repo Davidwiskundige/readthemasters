@@ -96,3 +96,6 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .text h2 { font-size: 1.2rem; margin: 1.2rem 0 .5rem; }
 .uncertain { text-decoration: underline wavy var(--muted); }
 .notice { background: var(--accent-weak); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .9rem; font-size: .85rem; margin: 1rem 0; }
+.rmfig { margin: 1.5rem auto; text-align: center; max-width: 30rem; }
+.rmfig img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; background: #fff; padding: .4rem; }
+.rmfig figcaption { font-size: .85rem; color: var(--muted); margin-top: .4rem; }

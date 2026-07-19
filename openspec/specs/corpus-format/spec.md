@@ -51,3 +51,12 @@ Every `.tex` uses `corpus/preamble/readmasters.sty`. Content and notation stay f
 original; typography is normalized; markup is standardized. Apparatus macros: `\origpage{n}`,
 `\uncertain{}`, `\illegible`, `\ednote{}`, `\rmfigure{file}{caption}{alt}` (figures are crops from
 the scan, not redrawn).
+
+The house style distinguishes faithful **notation** (which symbols/formula, the author's notation —
+kept exactly) from house-style **presentation** (how the same math is set — made consistent).
+Math-typography conventions and the **rulings log** of boundary decisions live in
+`corpus/HOUSESTYLE.md`. Current conventions include: multi-letter geometric labels stay plain
+math letters (no `\pt`/`\mathit`); inline large operators with a fraction integrand use
+`\displaystyle` (not `\int \dfrac`); equation numbers go on the right via `\tag{n}` with the
+author's own numbers; author notation and printer's errors are kept faithfully (`zz` for z²,
+archaic spelling, `arc.`) and flagged for review, never silently corrected.

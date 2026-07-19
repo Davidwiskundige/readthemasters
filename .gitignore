@@ -17,6 +17,8 @@ site/src/data/works.json
 site/public/pdf/
 # Source .tex copies emitted by build_site_data.py (never committed)
 site/public/tex/
+# Figure crops copied into the site by build_site_data.py (source lives in corpus/<id>/figures/)
+site/public/figures/
 
 # Build artifacts
 *.pdf

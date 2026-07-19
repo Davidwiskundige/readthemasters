@@ -24,9 +24,10 @@ function attribution(prov) {
   return s;
 }
 
-const originalHtml = texToHtml(work.original_tex);
+const figOpts = { figureBase: `/figures/${work.id}/` };
+const originalHtml = texToHtml(work.original_tex, figOpts);
 const translations = Object.entries(work.translations ?? {}).map(([lang, t]) => ({
-  lang, label: t.label, html: texToHtml(t.tex), prov: t.provenance, pdf: t.pdf, tex_url: t.tex_url,
+  lang, label: t.label, html: texToHtml(t.tex, figOpts), prov: t.provenance, pdf: t.pdf, tex_url: t.tex_url,
 }));
 const externalTranslations = work.external_translations ?? [];
 

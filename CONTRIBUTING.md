@@ -44,8 +44,9 @@ python pipeline/validate.py
    `translations/<lang>.tex`. Copy an existing work (e.g. `corpus/riemann-1868-hypothesen/`) as a
    template. `<id>` follows PLAN.md §3.2 (Wikidata QID → DOI → `author-year-shorttitle`).
 2. Use the shared house style: every `.tex` does `\usepackage{readmasters}`. Transcribe
-   faithfully; normalize typography; keep the author's notation. Figures are crops from the scan,
-   embedded via `\rmfigure` (PLAN.md §4.5).
+   faithfully; normalize typography; keep the author's notation. Follow the math-typography
+   conventions and rulings in [`corpus/HOUSESTYLE.md`](corpus/HOUSESTYLE.md). Figures are crops
+   from the scan, embedded via `\rmfigure` (PLAN.md §4.5).
 3. Run `python pipeline/validate.py` and `python -m pytest pipeline/tests -q` — both must pass.
 4. Open a PR **with a DCO sign-off** (see below). A maintainer reviews against the scan and, on
    approval, the status advances up the ladder.

@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
+import shutil
 from pathlib import Path
 
 from build_catalog import max_status  # type: ignore
@@ -52,8 +53,21 @@ def pdf_url(pdf_root: Path, work_id: str, name: str) -> str | None:
     return None
 
 
+def copy_figures(fig_root: Path | None, work_dir: Path, work_id: str) -> None:
+    """Copy a work's figure crops into the site's public/ so they can be served."""
+    src = work_dir / "figures"
+    if fig_root is None or not src.is_dir():
+        return
+    dest = fig_root / work_id
+    dest.mkdir(parents=True, exist_ok=True)
+    for img in src.iterdir():
+        if img.is_file():
+            shutil.copyfile(img, dest / img.name)
+
+
 def build(corpus_dir: Path, now_year: int, min_status: str,
-          pdf_root: Path | None = None, tex_root: Path | None = None) -> dict:
+          pdf_root: Path | None = None, tex_root: Path | None = None,
+          fig_root: Path | None = None) -> dict:
     vocab = load_yaml(corpus_dir / "vocab.yaml") or {}
     min_rank = STATUS_LADDER.index(min_status)
     works = []
@@ -78,6 +92,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
         if STATUS_LADDER.index(status) < min_rank:
             continue
 
+        copy_figures(fig_root, wd, work["id"])
         pub = work.get("publication") or {}
         translations = {}
         for lang in sorted((prov.get("translations") or {}).keys()):
@@ -145,7 +160,8 @@ def main(argv: list[str] | None = None) -> int:
     site_public = out.parents[2] / "public" if len(out.parents) >= 3 else None
     pdf_root = site_public / "pdf" if site_public else None
     tex_root = site_public / "tex" if site_public else None
-    data = build(Path(args.corpus), args.now_year, args.min_status, pdf_root, tex_root)
+    fig_root = site_public / "figures" if site_public else None
+    data = build(Path(args.corpus), args.now_year, args.min_status, pdf_root, tex_root, fig_root)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {out}: {data['count']} work(s).")

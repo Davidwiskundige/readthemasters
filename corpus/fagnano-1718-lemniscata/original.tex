@@ -30,7 +30,7 @@ dell'abscisse $(x)$, e chiamando $(y)$ le ordinate che sono all'asse normali, la
 della lemniscata s'esprime con quest'equazione $x^{2} + y^{2} = a\sqrt{x^{2} - y^{2}}$.
 
 Si sa ancora che se si chiama $z$ la corda indeterminata $CQ = \sqrt{x^{2} + y^{2}}$, si à
-l'arco diretto $CQ = \int \dfrac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}$, e l'arco inverso
+l'arco diretto $CQ = \displaystyle\int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}$, e l'arco inverso
 \[ QA = \mathrm{arc.}\,CA - \mathrm{arc.}\,CQ = \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}. \]
 
 Sia l'elisse $ADFNA$ (fig.~24), il cui semiasse minore $CF = a$, e il semiasse maggiore
@@ -43,19 +43,21 @@ espressione
 e che l'arco inverso
 \[ IF = \mathrm{arc.}\,DF - \mathrm{arc.}\,DI = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \]
 
+\rmfigure{figures/fig-24.png}{Fig.~24.}{Fig. 24: the lemniscate CQACFC and its circumscribed ellipse ADFNA, from the original plate (Tav. II, Opere Matematiche vol. II).}
+
 Sia finalmente l'iperbola equilatera $LMP$ (fig.~25), il cui semiasse $SM = a$. Si nomini
 $t$ l'applicata indeterminata $SO$, che partendo dal centro $S$ tagli l'arco $MO$; si sa,
 che questo medesimo arco s'esprime così
 \[ \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}}. \]
 
+\rmfigure{figures/fig-25.png}{Fig.~25.}{Fig. 25: the equilateral hyperbola LMP with ordinate SO and arc MO, from the original plate (Tav. III, Opere Matematiche vol. II).}
+
 \textbf{Teorema I.} --- Sieno le due infrascritte equazioni (1), e (2). Io dico, che posta
 la prima di esse, sussiste anche l'altra
 
-(1)
-\[ t = a\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \]
+\[ t = a\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \tag{1} \]
 
-(2)
-\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int dz\, \frac{\sqrt{a^{2} + zz}}{\sqrt{a^{2} - az}} + \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}} - \frac{zt}{a}. \]
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int dz\, \frac{\sqrt{a^{2} + zz}}{\sqrt{a^{2} - az}} + \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}} - \frac{zt}{a}. \tag{2} \]
 
 La verità di questo teorema si dimostra differenziando, e sostituendo in luogo di $t$, e di
 $dt$ i loro valori in $z$, e $dz$ tratti dall'equazione (1).
@@ -66,8 +68,7 @@ $SO = t$; assegnando a $t$ il suo valore espresso nell'equazione (1) e ponendo n
 (2) gli archi delle curve invece delle loro espressioni già dichiarate nelle supposizioni
 superiori, s'ottiene
 
-(3)
-\[ \mathrm{Arc.}\,CQ = \mathrm{arc.}\,DI + \mathrm{arc.}\,MO = \frac{zt}{a}. \]
+\[ \mathrm{Arc.}\,CQ = \mathrm{arc.}\,DI + \mathrm{arc.}\,MO = \frac{zt}{a}. \tag{3} \]
 
 \textbf{Scolio I.} --- Supponendo $z = 0$, gli archi diretti $CQ$ della lemniscata, e $DI$
 dell'elisse sono uguali a zero; è nullo ancora l'arco iperbolico $MO$, poichè in virtù
@@ -85,11 +86,9 @@ misura di questa curva non può dirsi ancora perfettamente scoperta.
 \textbf{Teorema II.} --- Sieno le due equazioni infrascritte (4) e (5); io dico, che posta
 la prima di esse, sussiste anche l'altra
 
-(4)
-\[ r = \frac{a^{2}}{z}. \]
+\[ r = \frac{a^{2}}{z}. \tag{4} \]
 
-(5)
-\[ \int -\frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}} + \int \frac{r^{2}\,dr}{\sqrt{r^{4} - a^{4}}} - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \]
+\[ \int -\frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}} + \int \frac{r^{2}\,dr}{\sqrt{r^{4} - a^{4}}} - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \tag{5} \]
 
 La differenziazione e la sostituzione de' valori di $r$, e $dr$ in $z$, e $dz$ dedotti
 dall'equazione (4) dimostrano questo teorema.
@@ -100,8 +99,7 @@ $SL = r$, attribuendo ad $r$ il suo valore notato nell'equazione (4), e surrogan
 nell'equazione (5) gli archi delle curve in vece delle loro espressioni, conforme si è fatto
 nel corollario del I teorema, ritrovasi
 
-(6)
-\[ \mathrm{Arc.}\,QA = \mathrm{arc.}\,IF + \mathrm{arc.}\,ML - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \]
+\[ \mathrm{Arc.}\,QA = \mathrm{arc.}\,IF + \mathrm{arc.}\,ML - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \tag{6} \]
 
 \textbf{Scolio II.} --- La supposizione di $z = a$ rende nulli gli archi inversi $QA$ della
 lemniscata, ed $IF$ dell'elisse; annulla ancora l'espressione rettilinea, e l'arco iperbolico
@@ -127,11 +125,9 @@ queste curve.
 \textbf{Teorema III.} --- Sieno le due equazioni infrascritte (7) e (8); io dico, che posta
 la prima di esse, sussiste anche l'altra
 
-(7)
-\[ u = a\, \frac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}. \]
+\[ u = a\, \frac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}. \tag{7} \]
 
-(8)
-\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -\frac{a^{2}\,du}{\sqrt{a^{4} - u^{4}}}. \]
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -\frac{a^{2}\,du}{\sqrt{a^{4} - u^{4}}}. \tag{8} \]
 
 Questo teorema si dimostra, come gli altri due, che lo precedono, differenziando, e facendo
 le debite sostituzioni tratte dall'equazione (7).

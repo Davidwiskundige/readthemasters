@@ -11,8 +11,22 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;");
 }
 
-export function texToHtml(tex) {
+// Inline text niceties shared by paragraphs and figure captions.
+function inlineText(html) {
+  return html
+    .replace(/\\uncertain\{([^}]*)\}/g, '<span class="uncertain">$1</span>')
+    .replace(/\\illegible\b/g, '<span class="uncertain">[illegible]</span>')
+    .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
+    .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
+    .replace(/---/g, "—")
+    .replace(/~/g, " ");
+}
+
+const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
+
+export function texToHtml(tex, opts = {}) {
   if (!tex) return "";
+  const figureBase = opts.figureBase || "";
   let body = tex;
 
   // Keep only what is between \begin{document} and \end{document} if present.
@@ -27,12 +41,27 @@ export function texToHtml(tex) {
   body = body
     .replace(/\\subsection\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
     .replace(/\\section\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
+    .replace(/\\rmfigure\{[^}]*\}\{[^}]*\}\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
     .replace(/\\origpage\{\d+\}/g, (m) => `\n\n${m}\n\n`);
 
   const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   const out = [];
 
   for (let para of paras) {
+    // Figure: \rmfigure{path}{caption}{alt} — the crop from the scan (PLAN §4.5).
+    const fig = para.match(RMFIGURE);
+    if (fig) {
+      const file = fig[1].split("/").pop();
+      const src = `${figureBase}${file}`;
+      const caption = inlineText(escapeHtml(fig[2]));
+      const alt = escapeHtml(fig[3]).replace(/~/g, " ").replace(/"/g, "&quot;");
+      out.push(
+        `<figure class="rmfig"><img src="${src}" alt="${alt}" loading="lazy" />` +
+        `<figcaption>${caption}</figcaption></figure>`
+      );
+      continue;
+    }
+
     // Section / subsection headings.
     const sec = para.match(/^\\section\*?\{([^}]*)\}\s*([\s\S]*)$/);
     const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
@@ -47,17 +76,8 @@ export function texToHtml(tex) {
       if (!para) { out.push(heading); continue; }
     }
 
-    let html = escapeHtml(para);
-
-    // Apparatus + common inline macros (operate on the escaped string; braces survive escaping).
-    html = html
-      .replace(/\\origpage\{(\d+)\}/g, (_, n) => `<span class="origpage" id="p-${n}">page ${n}</span>`)
-      .replace(/\\uncertain\{([^}]*)\}/g, '<span class="uncertain">$1</span>')
-      .replace(/\\illegible\b/g, '<span class="uncertain">[illegible]</span>')
-      .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
-      .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
-      .replace(/---/g, "—")
-      .replace(/~/g, " ");
+    const html = inlineText(escapeHtml(para))
+      .replace(/\\origpage\{(\d+)\}/g, (_, n) => `<span class="origpage" id="p-${n}">page ${n}</span>`);
 
     out.push(`${heading}<p>${html}</p>`);
   }
