@@ -28,9 +28,14 @@ def load_yaml(path: Path):
         return yaml.safe_load(fh)
 
 
+# Wikidata rejects requests without a descriptive User-Agent (HTTP 403), per its policy.
+USER_AGENT = "ReadTheMastersAI/0.1 (public-domain digitization; https://github.com/OWNER/readthemasters)"
+
+
 def wikidata_death_year(qid: str, timeout: float = 15.0) -> int | None:
     url = WD_ENTITY.format(qid=qid)
-    with urllib.request.urlopen(url, timeout=timeout) as resp:  # noqa: S310 (trusted host)
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 (trusted host)
         data = json.load(resp)
     claims = data.get("entities", {}).get(qid, {}).get("claims", {})
     for claim in claims.get(DEATH_PROP, []):

@@ -4,7 +4,7 @@ title_en: "Method for Measuring the Lemniscate"
 
 authors:
   - name: "Giulio Carlo de' Toschi di Fagnano"
-    wikidata_id: null          # add during review (Fagnano, 1682–1766)
+    wikidata_id: Q1528006
     birth_year: 1682
     death_year: 1766
 
@@ -59,7 +59,8 @@ source:
 
 sources:
   death_date: >-
-    Giulio Carlo de' Toschi di Fagnano, 1682–1766 (Encyclopedia.com; MacTutor archive).
+    Giulio Carlo de' Toschi di Fagnano, 1682–1766 (wikidata:Q1528006; Encyclopedia.com;
+    MacTutor archive).
   publication_date: >-
     First published 1718 in Giornale de' letterati d'Italia, tomo XXIX, p. 258 (per the
     1911 edition's own footnote and Encyclopedia.com / Springer, "Fagnano and the Lemniscate").
