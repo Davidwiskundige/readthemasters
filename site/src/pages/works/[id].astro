@@ -24,6 +24,20 @@ function attribution(prov) {
   return s;
 }
 
+// Significance prose with inline [n] citation markers. Each renders as a small superscript
+// marker whose full citation is hidden until you hover or click it (a popover).
+function renderSignificance(text, sources) {
+  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return esc(text).replace(/\[(\d+)\]/g, (m, n) => {
+    const src = sources?.[Number(n) - 1];
+    if (!src) return m;
+    const cite = esc(src.citation);
+    const inner = src.url ? `<a href="${esc(src.url)}" rel="noopener">${cite}</a>` : cite;
+    return `<span class="cite"><button type="button" class="cite-marker" aria-label="Citation ${n}">${n}</button>` +
+           `<span class="cite-pop" role="note">${inner}</span></span>`;
+  });
+}
+
 const figOpts = { figureBase: `/figures/${work.id}/` };
 const originalHtml = texToHtml(work.original_tex, figOpts);
 const translations = Object.entries(work.translations ?? {}).map(([lang, t]) => ({
@@ -70,6 +84,13 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     {citeOriginal && <> <button class="chip copy" type="button" data-target={`bib-${citeOriginal.key}`}><span class="g">⧉</span> BibTeX</button></>}
     {work.publication_full && <><br /><span class="attr">{work.publication_full}</span></>}
   </p>
+
+  {work.significance && (
+    <aside class="significance">
+      <h2>Significance</h2>
+      <p set:html={renderSignificance(work.significance, work.significance_sources)} />
+    </aside>
+  )}
 
   <section class="downloads">
     <h2>Downloads</h2>
@@ -160,6 +181,44 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
           (p.hidden = p.dataset.panel !== tab));
       });
     });
+
+    // Significance citation popovers: hover shows them (CSS); click pins one open (touch-friendly).
+    // JS positions each popover so it always stays within the viewport.
+    const sigCites = () => document.querySelectorAll('.significance .cite');
+    function positionPop(cite) {
+      const pop = cite.querySelector('.cite-pop');
+      if (!pop) return;
+      pop.style.position = 'fixed';
+      const pw = pop.offsetWidth, ph = pop.offsetHeight, m = 8;
+      const r = (cite.querySelector('.cite-marker') || cite).getBoundingClientRect();
+      let left = Math.min(Math.max(m, r.left), window.innerWidth - pw - m);
+      left = Math.max(m, left);
+      let top = r.bottom + 4;
+      if (top + ph > window.innerHeight - m) top = Math.max(m, r.top - ph - 4);
+      pop.style.left = left + "px";
+      pop.style.top = top + "px";
+    }
+    const closeAllCites = () =>
+      document.querySelectorAll('.significance .cite.open').forEach((c) => c.classList.remove('open'));
+    sigCites().forEach((cite) => {
+      const marker = cite.querySelector('.cite-marker');
+      cite.addEventListener('mouseenter', () => positionPop(cite));
+      marker.addEventListener('focus', () => positionPop(cite));
+      marker.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wasOpen = cite.classList.contains('open');
+        closeAllCites();
+        if (!wasOpen) { cite.classList.add('open'); positionPop(cite); }
+      });
+    });
+    document.addEventListener('click', closeAllCites);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllCites(); });
+    const repositionVisibleCites = () => sigCites().forEach((cite) => {
+      const pop = cite.querySelector('.cite-pop');
+      if (pop && getComputedStyle(pop).display !== 'none') positionPop(cite);
+    });
+    window.addEventListener('scroll', repositionVisibleCites, { passive: true });
+    window.addEventListener('resize', repositionVisibleCites);
 
     // Copy text to clipboard, with a fallback for non-secure/no-gesture contexts.
     async function copyText(text) {

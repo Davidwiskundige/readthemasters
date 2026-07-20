@@ -24,6 +24,12 @@ transform (`site/src/lib/tex.js`: headings, `\origpage` page markers, emphasis, 
 math is rendered by KaTeX. An `ai-draft` work shows a "not yet human-checked" notice and a
 prefilled "report an error" link.
 
+## Requirement: Significance note
+
+When a work's `work.yaml` carries an optional `significance` field, the work page shows it as a
+clearly-labelled "Significance" callout, visually distinct from the transcription so it reads as
+editorial context (ours), not the author's text.
+
 ## Requirement: Downloads
 
 Each work page offers, in one consolidated list: the source `.tex` for the original and each

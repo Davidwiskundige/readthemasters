@@ -1,0 +1,165 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% modern translation. All mathematics, equation numbers (\tag), \origpage markers, and figures
+% are preserved unchanged; only the prose is translated. "Schediasma" (Gk. improvised essay) is
+% rendered "Sketch" in the translation (the transcription keeps the original term); "arc." (the
+% author's abbreviation for arco/arc) is kept. The eq. (2) misprint and the "zz" for z^2 are
+% reproduced from our transcription, not corrected.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{293}
+\section*{XXXII. Method for measuring the lemniscate}
+\subsection*{Sketch I (*)}
+\emph{(*) Giornale de' letterati d'Italia, vol.~XXIX, p.~258.}
+
+The two eminent geometers Signor Giacomo and Signor Giovanni, the brothers Bernoulli, have
+made the lemniscate famous, using its arcs to construct the paracentric isochrone, as may be
+seen in the Acta of Leipzig of the year 1694. It is evident that, by measuring the lemniscate
+by means of some other curve simpler than it, one obtains a more perfect construction not only
+of the paracentric isochrone, but also of the other infinite curves which, in order to be
+constructed, may depend on the lemniscate; and therefore I flatter myself that the measures of
+this curve discovered by me, which I shall set forth successively in two sketches, will not
+displease those versed in the matter.
+
+\emph{Assumptions known to those versed in the infinitesimal calculus.} --- Let $CQACFC$
+(fig.~24) be the lemniscate, whose semi-axis $CA = a$; it is known that, taking the origin of
+the abscissae $(x)$ at the centre $C$, and calling $(y)$ the ordinates normal to the axis, the
+nature of the lemniscate is expressed by this equation $x^{2} + y^{2} = a\sqrt{x^{2} - y^{2}}$.
+
+It is also known that if one calls $z$ the indeterminate chord $CQ = \sqrt{x^{2} + y^{2}}$, one
+has the direct arc $CQ = \displaystyle\int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}$, and the
+inverse arc
+\[ QA = \mathrm{arc.}\,CA - \mathrm{arc.}\,CQ = \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}}. \]
+
+Let $ADFNA$ (fig.~24) be the ellipse, whose minor semi-axis $CF = a$, and major semi-axis
+$CD = a\sqrt{2}$; call $z$ the indeterminate abscissa $CH$, which has its origin at the centre
+$C$ of the ellipse and is equal to the chord $CQ$ of the lemniscate, and let the ordinate $HI$
+be drawn parallel to the major axis; it is already known that the direct arc $DI$ of this
+ellipse has for its expression
+\[ \int dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}, \]
+\origpage{294}
+and that the inverse arc
+\[ IF = \mathrm{arc.}\,DF - \mathrm{arc.}\,DI = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \]
+
+\rmfigure{figures/fig-24.png}{Fig.~24.}{Fig. 24: the lemniscate CQACFC and its circumscribed ellipse ADFNA, from the original plate (Tav. II, Opere Matematiche vol. II).}
+
+Let there be, finally, the equilateral hyperbola $LMP$ (fig.~25), whose semi-axis $SM = a$. Let
+$t$ be named the indeterminate ordinate $SO$, which, starting from the centre $S$, cuts the arc
+$MO$; it is known that this same arc is expressed thus
+\[ \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}}. \]
+
+\rmfigure{figures/fig-25.png}{Fig.~25.}{Fig. 25: the equilateral hyperbola LMP with ordinate SO and arc MO, from the original plate (Tav. III, Opere Matematiche vol. II).}
+
+\textbf{Theorem I.} --- Let the two equations (1) and (2) written below be given. I say that,
+the first of them being posited, the other also holds
+
+\[ t = a\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}}. \tag{1} \]
+
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int dz\, \frac{\sqrt{a^{2} + zz}}{\sqrt{a^{2} - az}} + \int \frac{t^{2}\,dt}{\sqrt{t^{4} - a^{4}}} - \frac{zt}{a}. \tag{2} \]
+
+The truth of this theorem is demonstrated by differentiating, and substituting in place of $t$
+and $dt$ their values in $z$ and $dz$ drawn from equation (1).
+
+\textbf{Corollary} (fig.~24 and 25). --- If in the lemniscate the chord $CQ = z$, and in the
+ellipse the abscissa $CH$ is likewise $= z$, and in the equilateral hyperbola $LMP$ the central
+ordinate $SO = t$; assigning to $t$ its value expressed in equation (1), and putting in
+equation (2) the arcs of the curves instead of their expressions already declared in the
+assumptions above, one obtains
+
+\[ \mathrm{Arc.}\,CQ = \mathrm{arc.}\,DI + \mathrm{arc.}\,MO = \frac{zt}{a}. \tag{3} \]
+
+\textbf{Scholium I.} --- Supposing $z = 0$, the direct arcs $CQ$ of the lemniscate and $DI$ of
+the ellipse are equal to zero; the hyperbolic arc $MO$ is likewise null, since by virtue of
+equation (1) the vanishing of $z$ makes $SO\,(t) = a = SM$; the rectilinear expression is also
+annihilated, and all this is a sure indication that equation (3) is complete and needs no
+addition or subtraction of any constant quantity. But putting $z = a$, then the direct arc of
+the lemniscate becomes equal to the arc $CQA$, and the elliptic arc $DI$ to the arc $DIF$; but
+by equation (1) the central ordinate $SO\,(t)$ of the hyperbola becomes in this case infinite,
+rendering the hyperbolic arc $MO$ infinite as well, and therefore it seems impossible to arrive
+by this route at knowing the
+\origpage{295}
+value of the quadrant of the lemniscate expressed in finite quantities, and consequently the
+measure of this curve cannot yet be said to be perfectly discovered.
+
+\textbf{Theorem II.} --- Let the two equations (4) and (5) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ r = \frac{a^{2}}{z}. \tag{4} \]
+
+\[ \int -\frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -dz\, \frac{\sqrt{a^{2} + z^{2}}}{\sqrt{a^{2} - z^{2}}} + \int \frac{r^{2}\,dr}{\sqrt{r^{4} - a^{4}}} - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \tag{5} \]
+
+The differentiation and the substitution of the values of $r$ and $dr$ in $z$ and $dz$ deduced
+from equation (4) demonstrate this theorem.
+
+\textbf{Corollary I} (fig.~24 and 25). --- Let there be made, as above, in the lemniscate the
+chord $CQ = z$, in the ellipse the abscissa $CH$ likewise $= z$, and in the hyperbola the
+central ordinate $SL = r$, attributing to $r$ its value noted in equation (4), and substituting
+in equation (5) the arcs of the curves in place of their expressions, as was done in the
+corollary of Theorem I, one finds again
+
+\[ \mathrm{Arc.}\,QA = \mathrm{arc.}\,IF + \mathrm{arc.}\,ML - \frac{1}{z}\sqrt{a^{4} - z^{4}}. \tag{6} \]
+
+\textbf{Scholium II.} --- The supposition $z = a$ makes null the inverse arcs $QA$ of the
+lemniscate and $IF$ of the ellipse; it also annuls the rectilinear expression and the
+hyperbolic arc $ML$, seeing that, by force of equation (4), the central ordinate of the
+hyperbola $SL\,(r)$ becomes equal to the semi-axis $SM\,(a)$; hence equation (5) is complete.
+But the supposition $z = 0$ prolongs to infinity the central ordinate of the hyperbola, and its
+arc, at the same time as it makes the inverse arcs of the lemniscate and of the ellipse equal
+respectively to the quadrants $ACQ$, $FID$; and here the same difficulty reappears that was set
+out at the end of Scholium I; but this difficulty will be overcome by the corollary that
+follows. Meanwhile let it be noted: first, that by drawing in the hyperbola the $OP$ parallel to
+the second axis, the arc $LMP$ is equal to the two arcs $MO$, $ML$. Secondly, that assigning to
+$t$ its value expressed in equation (1), this complex quantity
+$\dfrac{zt}{a} + \dfrac{1}{z}\sqrt{a^{4} - z^{4}}$ is equivalent to this other, simpler quantity
+$\dfrac{at}{z}$, as will be verified by the calculation.
+\origpage{296}
+\textbf{Corollary II} (fig.~24 and 25). --- Adding the two equations (3) and (6), and making use
+of the two remarks noted at the end of the preceding scholium, one discovers
+$\mathrm{arc.}\,CQA = \mathrm{arc.}\,DIF + \mathrm{arc.}\,LMP - \dfrac{at}{z}$; and finally, by
+multiplying this last equation by 4, one finds again that the entire perimeter of the lemniscate
+is equal to the entire perimeter of the circumscribed ellipse $ADFNA$, plus four times the arc
+$LMP$ of the equilateral hyperbola minus $\dfrac{4at}{z}$ --- which is a new and excellent
+property of these curves.
+
+\textbf{Theorem III.} --- Let the two equations (7) and (8) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ u = a\, \frac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}. \tag{7} \]
+
+\[ \int \frac{a^{2}\,dz}{\sqrt{a^{4} - z^{4}}} = \int -\frac{a^{2}\,du}{\sqrt{a^{4} - u^{4}}}. \tag{8} \]
+
+This theorem is demonstrated, like the other two that precede it, by differentiating and making
+the due substitutions drawn from equation (7).
+
+\textbf{Corollary I} (fig.~24). --- Let there be taken in the lemniscate the chord $CQ = z$, and
+the other chord $CE = u$; let there be attributed to $u$ its value expressed in equation (7);
+let the direct and inverse arcs of the curve be substituted in equation (8) in place of their
+expressions, and one will find $\mathrm{arc.}\,CQ = \mathrm{arc.}\,EA$.
+
+\textbf{Scholium III} (fig.~24). --- If $z = 0$ the direct arc $CQ$ is null, and by virtue of
+equation (7) the vanishing of $z$ makes $CE\,(u) = a$, so that the inverse arc $EA$ is null as
+well; which makes known that the equation noted at the end of the preceding corollary is
+complete. This notable property of the lemniscate was discovered by me, and set forth in a
+different manner in my method for rectifying the difference of the arcs in infinite kinds of
+non-rectifiable parabolas.
+
+\textbf{Corollary II} (fig.~24). --- Finding, as I have taught above to do, the inverse arc $EA$
+equal to the direct arc $CQ$, this same arc $CQ$ may be measured by means of Corollary I of
+Theorem II; and conversely, finding the direct arc $CQ$ equal to the inverse arc $EA$, this same
+arc $EA$ may be measured by means of the corollary of Theorem I.
+\origpage{297}
+\textbf{Corollary III.} --- \textbf{Problem.} --- To bisect the quadrant of the lemniscate
+(fig.~24).
+
+If the chord $CQ\,(z)$ of the lemniscate is equal to the other chord $CE\,(u)$ of it, and if at
+the same time $u$ has its value noted in equation (7), then
+$z = u = a\, \dfrac{\sqrt{a^{2} - z^{2}}}{\sqrt{a^{2} + z^{2}}}$, whence there results, the due
+operations being performed,
+\[ z = u = \sqrt{a^{2}\sqrt{2} - a^{2}} \]
+and therefore, attributing to $z$ this last value, the two points of the lemniscate $Q$ and $E$
+will coincide in $B$, in such a way that the direct arc $CB$ will be equal to the inverse arc
+$BA$, and the chord $CB = u = z$ will bisect the quadrant of the lemniscate. Which was to be
+found.
+
+\end{document}

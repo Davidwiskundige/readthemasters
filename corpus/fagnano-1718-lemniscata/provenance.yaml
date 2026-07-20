@@ -1,15 +1,36 @@
 transcription:
-  status: ai-draft
+  status: spot-checked
   model: claude-opus-4-8
   effort: high
   prompt_version: transcribe-v1
   submitted_via: pipeline
   produced: "2026-07-19"
+  reviewers:
+    - name: DvdL
+      level: spot-checked
+      date: "2026-07-19"
+      note: "All equations verified against the original scan — the mathematics agrees. Italian prose not yet fully proofread word-for-word."
   note: >-
     Complete memoir, printed pages 293–297 (= scan djvu pages 323–327). Transcribed from the
     Wikimedia Commons scan, with zoomed crops used to confirm the integrals, the bisection
-    result, and archaic spellings. Not yet human-checked. Reviewer notes: (a) eq. (2) is
+    result, and archaic spellings. Math verified against the original scan (see reviewers);
+    prose not yet fully proofread. Reviewer notes: (a) eq. (2) is
     reproduced faithfully with denominator sqrt(a^2 - az) exactly as printed — likely a source
     misprint (elsewhere sqrt(a^2 - z^2)); (b) Fagnano's "zz" for z^2 is kept where the print
     uses it; (c) cross-check against the 1718 first edition
     (archive.org/details/giornaledeletter1718roya) is recommended before promoting to proofread.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: pipeline
+    produced: "2026-07-19"
+    source: transcription
+    note: >-
+      English translation made from our own transcription (original.tex), not from any existing
+      translation. All mathematics, equation numbers (\tag), \origpage markers, and figures are
+      preserved; only the prose is translated. Period terms kept: "Schediasma", "arc.". Not yet
+      human-checked.

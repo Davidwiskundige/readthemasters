@@ -33,6 +33,26 @@ tags: [analysis, geometry]
 language: it
 type: paper
 
+significance: >-
+  Fagnano's study of the lemniscate — above all his algebraic formulas for doubling and bisecting
+  its arcs — is the seed of the theory of elliptic integrals.[1] When the Berlin Academy asked
+  Euler to referee Fagnano's collected works in 1751 it led him to the addition theorem for
+  elliptic integrals — a moment André Weil later called the birthday of the theory of elliptic
+  functions.[2]
+  Through Legendre, Abel, and Jacobi this grew into the theory of elliptic and Abelian functions,
+  and in Riemann's hands into the theory of Riemann surfaces — now foundational to complex
+  analysis, algebraic geometry, and far beyond.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — see §2 (the lemniscate and elliptic
+      integrals) onward.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+  - citation: >-
+      A. Weil, "Number Theory: An Approach through History from Hammurapi to Legendre",
+      Birkhäuser (1984) — on Euler, Fagnano, and the origins of elliptic function theory.
+
 source:
   scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=323"
   scan_id: "wikimedia:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu#page323"

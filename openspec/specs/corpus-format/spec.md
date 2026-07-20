@@ -23,9 +23,13 @@ optional `volume`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_ed
 `source` (`scan_url`, `scan_id`), `sources` (citations for `death_date`, `publication_date`,
 `edition`).
 
-Optional: `title_en`, `tags` (each ∈ vocab), `external_translations` (list of referenced
-translations elsewhere: `language`, `title`, `translator`, `year`, `license`, `venue`, `url`,
-`note`), `copyright_assessment` (written/verified by the gate).
+Optional: `title_en`, `tags` (each ∈ vocab), `significance` (a short editorial paragraph on the
+work's historical importance — our commentary, distinct from the transcription; does not affect
+the gate) with optional `significance_sources` (a list of `{citation, url?}` backing its claims;
+the significance text may carry inline `[n]` markers referencing them, rendered as clickable
+citation superscripts), `external_translations` (list of referenced translations elsewhere: `language`,
+`title`, `translator`, `year`, `license`, `venue`, `url`, `note`), `copyright_assessment`
+(written/verified by the gate).
 
 ### Canonical work identity
 
