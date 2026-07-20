@@ -1,0 +1,77 @@
+id: leibniz-1689-isochrona
+title: "De linea isochrona, in qua grave sine acceleratione descendit, et de controversia cum Dn. Abbate De Conti"
+title_en: "On the Isochronous Curve, on which a Heavy Body Descends without Acceleration, and on the Controversy with the Abbé De Conti"
+
+authors:
+  - name: "Gottfried Wilhelm Leibniz"
+    wikidata_id: Q9047
+    birth_year: 1646
+    death_year: 1716
+
+publication:
+  year: 1689
+  venue: acta-eruditorum
+  title_full: >-
+    "De linea isochrona…", Acta Eruditorum, Leipzig (April 1689). Transcribed here from
+    C. I. Gerhardt (ed.), Leibnizens mathematische Schriften, printed pp. 234–237.
+
+edition:
+  year: 1858
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from C. I. Gerhardt (ed.), Leibnizens mathematische Schriften (c. 1858, exact
+    volume/year to confirm at review), a faithful reprint of the public-domain 1689 original.
+    Only Leibniz's Latin text (pp. 234–237) is transcribed; Gerhardt's German editorial footnotes
+    and the appended "Beilage" (Huygens's French solution) are excluded as later editorial matter.
+
+discipline: mathematics
+tags: [geometry, mechanics]
+language: la
+type: paper
+
+significance: >-
+  Leibniz solves the isochrone problem — a curve of uniform, unaccelerated descent — with the
+  semicubical parabola, an early triumph of the new differential calculus, and frames the essay
+  as a reply in his vis viva controversy with the Cartesians. The paper closes with the
+  "paracentric isochrone", the problem that led the Bernoullis to the lemniscate in 1694 and
+  thence, through Fagnano and Euler, to the theory of elliptic functions.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — §2, on the paracentric isochrone, the
+      lemniscate, and the origins of elliptic-function theory.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+
+source:
+  scan_url: "https://archive.org/details/leibnizensmathe07leibgoog/page/n250/mode/1up"
+  scan_id: "archive.org:leibnizensmathe07leibgoog#leaves n250–n253 (printed pp. 234–237)"
+
+sources:
+  death_date: >-
+    Gottfried Wilhelm Leibniz, 1646–1716 (wikidata:Q9047).
+  publication_date: >-
+    First published in the Acta Eruditorum, Leipzig, 1689 (per the Gerhardt edition's own
+    footnote, "Act. Erudit. Lips. an. 1689"). The original Acta Eruditorum volume is itself
+    public domain and available for cross-checking.
+  edition: >-
+    C. I. Gerhardt (ed.), Leibnizens mathematische Schriften, pp. 234–237; scan on the Internet
+    Archive (leibnizensmathe07leibgoog).
+
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1716], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1689, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-20"

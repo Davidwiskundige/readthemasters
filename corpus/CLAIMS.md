@@ -9,3 +9,4 @@ by Wikidata QID).
 |---|---|---|---|---|
 | riemann-1868-hypothesen | DvdL | transcription + en translation | 2026-07-18 | done (in corpus) |
 | fagnano-1718-lemniscata | DvdL | transcription (Opere Matematiche II) | 2026-07-19 | transcribed (pp. 293–297, ai-draft); needs human proofread |
+| leibniz-1689-isochrona | DvdL | transcription (De linea isochrona, Gerhardt ed.) | 2026-07-20 | spot-checked (math verified); en translation in progress |

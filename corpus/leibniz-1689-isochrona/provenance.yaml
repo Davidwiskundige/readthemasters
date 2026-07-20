@@ -1,0 +1,21 @@
+transcription:
+  status: spot-checked
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: pipeline
+  produced: "2026-07-20"
+  reviewers:
+    - name: DvdL
+      level: spot-checked
+      date: "2026-07-20"
+      note: "Verified against the original scan — the mathematics (ratios and curve labels) checks out. Latin prose not yet fully proofread word-for-word."
+  note: >-
+    Leibniz's Latin text, printed pages 234–237 (= Internet Archive scan leaves n250–n253),
+    transcribed from the Gerhardt edition. Math verified against the original scan (see reviewers).
+    Excluded as editorial matter:
+    Gerhardt's German footnotes and the "Beilage" (Huygens's French solution). Reviewer notes:
+    (a) the title reads "Abbate De Conti" as printed — the original Acta abbreviation "D.C." is
+    usually identified as the abbé de Catelan, so confirm against the 1689 original; (b) the
+    figure (fig. 116) is on a plate not yet located/cropped; (c) exact Gerhardt volume/year to
+    confirm.
