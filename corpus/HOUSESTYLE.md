@@ -44,13 +44,17 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
-### R9 — Translator interpolations use square brackets, not parentheses (presentation)
-*2026-07-20.* In the Leibniz translation, a gloss on "potentia" ("later called vis viva") was
-first set in parentheses — but the author himself uses parentheses for his own asides throughout
-the text, so a parenthetical gloss reads as if it were his. Editorial/translator additions are set
-in **square brackets** instead: `potentia [later called vis viva]`. This is the standard
-convention in scholarly translation and keeps our voice visibly separate from the author's, without
-a footnote for something this short. Applied in `leibniz-1689-isochrona`.
+### R9 — Prefer a literal translation of a period technical term over an inline gloss; if a gloss
+### is used at all, bracket it (notation, with a presentation fallback)
+*2026-07-20, revised 2026-07-20.* Leibniz's "potentia" was first rendered with an inline gloss,
+"potentia (later called vis viva)". On reflection this was reversed: the translation renders
+period technical terms **literally** ("potentia", untranslated and unglossed) so the reader meets
+the author's own term directly; historical context (that it was later called vis viva, and why it
+matters) belongs in the editorial **significance** note, not inside the translation. This keeps
+the translation itself faithful to the author's wording rather than layering explanation into it.
+If a genuinely necessary inline gloss ever comes up, use **square brackets**, not parentheses —
+the author himself uses parentheses for his own asides throughout this text, so a parenthetical
+gloss would read as if it were his. Applied in `leibniz-1689-isochrona`.
 
 ### R8 — Figures are placed inline at first reference, not collected at the end (presentation)
 *2026-07-19.* The original prints figures on plates at the back of the volume — a letterpress/

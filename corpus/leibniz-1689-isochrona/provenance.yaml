@@ -32,5 +32,6 @@ translations:
     note: >-
       English translation made from our own transcription (original.tex), not from any existing
       translation. Curve labels, the fraction, and \origpage markers preserved; only the prose is
-      translated. Not yet human-checked. Leibniz's "potentia" is kept (glossed "later called vis
-      viva"); the Cartesian "quantity of motion" is kept literally.
+      translated. Not yet human-checked. Leibniz's "potentia" is kept as a literal, untranslated
+      term (unglossed — the significance note explains it); the Cartesian "quantity of motion" is
+      kept literally.
