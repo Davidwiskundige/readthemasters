@@ -40,7 +40,7 @@ citation superscripts), `external_translations` (list of referenced translations
 ## Requirement: provenance.yaml schema
 
 Keys `transcription` and `translations.<lang>`, each an artifact record: `status`
-(`ai-draft|spot-checked|proofread|validated`), `model` (required), `effort` (optional,
+(`ai-draft|skimmed|verified`), `model` (required), `effort` (optional,
 provider-agnostic or null), `prompt_version` (required), optional `submitted_via`, `produced`,
 `reviewers` (list of `{name, level, date}`), and for translations a `source`
 (`transcription` | `external-open` + `license`).

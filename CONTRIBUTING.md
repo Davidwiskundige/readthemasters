@@ -1,4 +1,4 @@
-# Contributing to ReadTheMastersAI
+# Contributing to ReadTheMasters
 
 Thank you for helping preserve the classics! This project runs on contributed compute: **you use
 your own AI account**, and the project pays only for a domain. There are four ways to help, from
@@ -54,9 +54,8 @@ python pipeline/validate.py
 ## Provenance & status
 
 Every artifact records `model`, `effort` (optional), `prompt_version`, and a `status`:
-`ai-draft` → `spot-checked` → `proofread` → `validated` (the last needs two reviewers). Record the
-model you actually used — any capable model is fine; the review ladder is the quality gate, not the
-brand.
+`ai-draft` → `skimmed` → `verified`. Record the model you actually used — any capable model is
+fine; the review ladder is the quality gate, not the brand.
 
 ## Licensing & Developer Certificate of Origin
 

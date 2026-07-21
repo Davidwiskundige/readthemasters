@@ -71,13 +71,13 @@ export function bibtexEntries(work, { base = "" } = {}) {
 
   // 2. Our transcription / edition (for reproducibility).
   out.push({
-    label: "This transcription (ReadTheMastersAI)",
+    label: "This transcription (ReadTheMasters)",
     kind: "transcription",
     key: `${key}-rtm`,
     text: entry("misc", `${key}-rtm`, {
       author: authors,
       title: `${work.title} --- LaTeX transcription`,
-      howpublished: `ReadTheMastersAI, \\url{${workUrl}}`,
+      howpublished: `ReadTheMasters, \\url{${workUrl}}`,
       note: `AI transcription (${work.transcription_provenance?.model || "AI"}); ` +
             `status: ${work.status}. Original: ${work.venue_label || ""} ${work.year || ""}`.trim(),
       year: producedYear(work.transcription_provenance),
@@ -87,14 +87,14 @@ export function bibtexEntries(work, { base = "" } = {}) {
   // 3. Our translations.
   for (const [lang, t] of Object.entries(work.translations || {})) {
     out.push({
-      label: `${t.label} translation (ReadTheMastersAI)`,
+      label: `${t.label} translation (ReadTheMasters)`,
       kind: "translation",
       lang,
       key: `${key}-${lang}`,
       text: entry("misc", `${key}-${lang}`, {
         author: authors,
         title: `${work.title_en || work.title} --- ${t.label} translation`,
-        howpublished: `ReadTheMastersAI, \\url{${workUrl}}`,
+        howpublished: `ReadTheMasters, \\url{${workUrl}}`,
         note: `${t.label} translation (AI, ${t.provenance?.model || "AI"}); status: ${t.provenance?.status}`,
         language: t.label,
         year: producedYear(t.provenance),

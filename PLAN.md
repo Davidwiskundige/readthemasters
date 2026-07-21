@@ -1,4 +1,4 @@
-# ReadTheMastersAI — Project Plan
+# ReadTheMasters — Project Plan
 
 A website that publishes **AI transcriptions (LaTeX)** and **AI translations (LaTeX)** of old
 mathematics and physics texts, with the original source always cited, and only for texts that
@@ -242,9 +242,8 @@ modeled on Wikisource's proofreading levels, so visitors always know how much to
 | Status | Meaning | Badge on site |
 |---|---|---|
 | `ai-draft` | Machine output; automated checks only (LaTeX compiles, AI verification pass ran) | grey — "AI draft, not yet human-checked" |
-| `spot-checked` | A human reviewed a sample of pages plus everything the verification pass flagged | bronze — "Spot-checked" |
-| `proofread` | Full human pass against the scan (transcription) / against the original text (translation) | silver — "Proofread" |
-| `validated` | Independently checked by a **second** reviewer | gold — "Validated" |
+| `skimmed` | A human gave it a superficial once-over — a sample of pages, or just the math, plus everything the verification pass flagged, but not a full word-for-word pass | bronze — "Skimmed" |
+| `verified` | Full, rigorous human pass against the scan (transcription) / against the original text (translation) | gold — "Verified" |
 
 Publishing policy: `ai-draft` texts **are** published (content velocity, and honesty beats
 hiding), but with a prominent badge and a banner inviting corrections. A site-wide config can
@@ -254,7 +253,7 @@ raise the minimum publishable status later if quality becomes a concern.
 
 ```yaml
 transcription:
-  status: spot-checked          # ai-draft | spot-checked | proofread | validated
+  status: skimmed               # ai-draft | skimmed | verified
   model: claude-opus-4-8        # model that produced the current text
   effort: xhigh                 # thinking/effort level, optional; low|medium|high|xhigh|max,
                                 #   "adaptive", "extended" (chat toggle), or null if unknown
@@ -262,7 +261,7 @@ transcription:
   batch_ids: [msgbatch_...]
   produced: 2026-07-20
   verification: {model: claude-sonnet-5, flagged_pages: [12, 31], date: 2026-07-21}
-  reviewers: [{name: DvdL, level: spot-checked, date: 2026-07-25}]
+  reviewers: [{name: DvdL, level: skimmed, date: 2026-07-25}]
 translations:
   en:
     status: ai-draft
@@ -279,9 +278,9 @@ metadata for reproducibility and quality analysis, **not** a gate: the status la
 trust, not the effort level.
 
 The site renders this as an attribution line per artifact, e.g.
-*"Transcribed by Claude Opus 4.8 (July 2026) · Spot-checked by DvdL"* — and re-runs with a newer
+*"Transcribed by Claude Opus 4.8 (July 2026) · Skimmed by DvdL"* — and re-runs with a newer
 model are ordinary git commits, so the full history stays auditable. Status is per-artifact, not
-per-work: a validated transcription can coexist with an ai-draft translation.
+per-work: a verified transcription can coexist with an ai-draft translation.
 
 ---
 
@@ -543,7 +542,7 @@ proposal when its time comes.
 10. **Glossary pages** — the per-era terminology glossaries from §4.2 published as browsable
     pages ("how we translate *Mannigfaltigkeit*"), doubling as translator documentation.
 11. **Translation back-check** — cheap QA pass: back-translate a sample with a small model and
-    flag divergences for the reviewer; feeds `spot-checked` promotion.
+    flag divergences for the reviewer; feeds `skimmed` promotion.
 12. **Curated collections / reading paths** — "The birth of non-Euclidean geometry", "Origins of
     statistical mechanics": ordered lists of works with one paragraph of editorial context each.
 
@@ -581,7 +580,7 @@ to thousands of works.
 | **Discipline** | multi-select | `discipline` (mathematics, physics; sub-tags: geometry, number theory, mechanics, thermodynamics, …) |
 | **Original language** | multi-select | `language` (de, fr, la, en, it, …) |
 | **Available translations** | multi-select | keys of `translations` (e.g. "has English") |
-| **Quality status** | multi-select | max `status` across artifacts (ai-draft → validated) — lets readers show only proofread texts |
+| **Quality status** | multi-select | max `status` across artifacts (ai-draft → verified) — lets readers show only verified texts |
 | **Content type** | multi-select | `type` (paper, book, chapter, letter, lecture) |
 
 Free-text search (Pagefind, §3) runs alongside the facets. Facet state lives in the URL query

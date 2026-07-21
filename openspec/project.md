@@ -1,4 +1,4 @@
-# Project conventions — ReadTheMastersAI
+# Project conventions — ReadTheMasters
 
 This file orients an AI assistant (and human contributors) working in this repo. See
 [PLAN.md](../PLAN.md) for the full design; this is the quick reference for *how we work*.

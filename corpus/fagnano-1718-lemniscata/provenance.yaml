@@ -1,5 +1,5 @@
 transcription:
-  status: spot-checked
+  status: skimmed
   model: claude-opus-4-8
   effort: high
   prompt_version: transcribe-v1
@@ -7,7 +7,7 @@ transcription:
   produced: "2026-07-19"
   reviewers:
     - name: DvdL
-      level: spot-checked
+      level: skimmed
       date: "2026-07-19"
       note: "All equations verified against the original scan — the mathematics agrees. Italian prose not yet fully proofread word-for-word."
   note: >-
@@ -18,7 +18,7 @@ transcription:
     reproduced faithfully with denominator sqrt(a^2 - az) exactly as printed — likely a source
     misprint (elsewhere sqrt(a^2 - z^2)); (b) Fagnano's "zz" for z^2 is kept where the print
     uses it; (c) cross-check against the 1718 first edition
-    (archive.org/details/giornaledeletter1718roya) is recommended before promoting to proofread.
+    (archive.org/details/giornaledeletter1718roya) is recommended before promoting to verified.
 
 translations:
   en:

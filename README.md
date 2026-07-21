@@ -1,4 +1,4 @@
-# ReadTheMastersAI
+# ReadTheMasters
 
 A website that publishes **AI transcriptions (LaTeX)** and **AI translations (LaTeX)** of old
 mathematics and physics texts — with the original source always cited, and **only** for texts that

@@ -44,6 +44,21 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R10 — An in-text figure reference with no locatable plate gets an inline `\ednote`, not a
+### silently dangling citation (notation, with a presentation fallback)
+*2026-07-20.* Leibniz's paper cites "(fig.~116)", but no plate for it survives in the scanned
+Gerhardt edition (checked to the end of the 450-leaf volume: no plates section). Rather than leave
+the reference dangling with nothing for the reader to find, both the transcription and the
+translation add `\ednote{...}` immediately after the citation, stating plainly that the plate
+could not be located in the available scans and is not reproduced. This is our own honest
+gap-flag, not a reconstruction of the figure — we do not attempt to redraw or infer it. This was
+also the first real use of `\ednote{}`, which until now had no rendering on the website; it now
+shows as a small muted marker (a footnote-style symbol) that reveals the note only on hover or
+click — the same popover mechanism used for significance citations, generalised as `.pop` /
+`.pop-marker` / `.pop-content` (see `site/src/lib/tex.js` and the work page's shared JS/CSS), so
+the note stays out of the way of the author's own text until the reader asks for it.
+Applied in `leibniz-1689-isochrona`.
+
 ### R9 — Prefer a literal translation of a period technical term over an inline gloss; if a gloss
 ### is used at all, bracket it (notation, with a presentation fallback)
 *2026-07-20, revised 2026-07-20.* Leibniz's "potentia" was first rendered with an inline gloss,
@@ -67,7 +82,7 @@ traceable. A separate "plates" appendix view is a possible future addition, not 
 *2026-07-19.* The original plates carry no caption, only a figure number ("Fig. 24"). So the
 **visible** `\rmfigure` caption is just that number (faithful); any editorial description of what
 the figure shows goes in the **alt text** (accessibility), not on the page. A richer visible
-caption is an editorial addition — allowed only as a clearly demarcated layer from `proofread`
+caption is an editorial addition — allowed only as a clearly demarcated layer from `skimmed`
 onward, never in an `ai-draft`. Applied in `fagnano-1718-lemniscata`.
 
 ### R6 — Figures are scan crops embedded via `\rmfigure`, placed at first reference (presentation)

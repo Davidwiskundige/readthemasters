@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Md.astro
 title: Contact
-description: How to reach the ReadTheMastersAI maintainers.
+description: How to reach the ReadTheMasters maintainers.
 ---
 
 # Contact

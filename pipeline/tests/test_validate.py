@@ -177,14 +177,6 @@ def test_unsourced_publication_date_errors():
     assert any("publication_date" in e for e in iss.errors)
 
 
-def test_validated_needs_two_reviewers():
-    prov = {"transcription": {"status": "validated", "model": "m", "prompt_version": "v",
-                              "reviewers": [{"name": "solo"}]}}
-    iss = validate.Issues()
-    validate.check_provenance(prov, "test-work", iss)
-    assert any("2 distinct reviewers" in e for e in iss.errors)
-
-
 def test_bad_effort_value_errors():
     prov = {"transcription": {"status": "ai-draft", "model": "m",
                               "prompt_version": "v", "effort": "turbo"}}

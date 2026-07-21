@@ -11,11 +11,27 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;");
 }
 
-// Inline text niceties shared by paragraphs and figure captions.
-function inlineText(html) {
+// Classic footnote-symbol cycle (*, †, ‡, §, ¶, ‖; doubled beyond that) for \ednote markers.
+const ED_SYMBOLS = ["*", "†", "‡", "§", "¶", "‖"];
+function nextEdSymbol(ctx) {
+  const i = ctx.ednoteCount++;
+  return ED_SYMBOLS[i % ED_SYMBOLS.length].repeat(Math.floor(i / ED_SYMBOLS.length) + 1);
+}
+
+// Inline text niceties shared by paragraphs and figure captions. `ctx` threads a per-document
+// ednote counter across calls (see texToHtml) so markers number in order of appearance.
+function inlineText(html, ctx = { ednoteCount: 0 }) {
   return html
     .replace(/\\uncertain\{([^}]*)\}/g, '<span class="uncertain">$1</span>')
     .replace(/\\illegible\b/g, '<span class="uncertain">[illegible]</span>')
+    // \ednote{...} — editorial remark, never part of the author's text (readmasters.sty renders
+    // it as a LaTeX \footnote for the PDF). Here it's a popover: hidden until hover/click, marked
+    // as ours by a muted footnote-style symbol rather than the author's own words (PLAN house style).
+    .replace(/\\ednote\{([^}]*)\}/g, (_, note) => {
+      const sym = nextEdSymbol(ctx);
+      return `<span class="pop ednote"><button type="button" class="pop-marker" aria-label="Editorial note">${sym}</button>` +
+             `<span class="pop-content" role="note">Editorial note: ${note}</span></span>`;
+    })
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
     .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
     .replace(/---/g, "—")
@@ -28,6 +44,7 @@ const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
 export function texToHtml(tex, opts = {}) {
   if (!tex) return "";
   const figureBase = opts.figureBase || "";
+  const ctx = { ednoteCount: 0 }; // shared across the whole document, not per-paragraph
   let body = tex;
 
   // Keep only what is between \begin{document} and \end{document} if present.
@@ -54,7 +71,7 @@ export function texToHtml(tex, opts = {}) {
     if (fig) {
       const file = fig[1].split("/").pop();
       const src = `${figureBase}${file}`;
-      const caption = inlineText(escapeHtml(fig[2]));
+      const caption = inlineText(escapeHtml(fig[2]), ctx);
       const alt = escapeHtml(fig[3]).replace(/~/g, " ").replace(/"/g, "&quot;");
       out.push(
         `<figure class="rmfig"><img src="${src}" alt="${alt}" loading="lazy" />` +
@@ -77,7 +94,7 @@ export function texToHtml(tex, opts = {}) {
       if (!para) { out.push(heading); continue; }
     }
 
-    const html = inlineText(escapeHtml(para))
+    const html = inlineText(escapeHtml(para), ctx)
       .replace(/\\origpage\{(\d+)\}/g, (_, n) => `<span class="origpage" id="p-${n}">page ${n}</span>`);
 
     out.push(`${heading}<p>${html}</p>`);

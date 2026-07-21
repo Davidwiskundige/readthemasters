@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ReadTheMastersAI corpus validator — the copyright gate.
+"""ReadTheMasters corpus validator — the copyright gate.
 
 Validates every work under corpus/ against the schema, the controlled vocabulary, the
 copyright rules (PLAN.md §2), sourced-facts requirements (§2.5), and status/provenance
@@ -28,7 +28,7 @@ PMA_TERM = 70          # life + 70 (most of the world)
 US_TERM = 95           # US: 95 years after publication
 PMA_STRICT_TERM = 100  # optional strict mode (e.g. Mexico)
 
-STATUS_LADDER = ["ai-draft", "spot-checked", "proofread", "validated"]
+STATUS_LADDER = ["ai-draft", "skimmed", "verified"]
 EFFORT_VALUES = {
     "low", "medium", "high", "xhigh", "max",   # API effort levels
     "adaptive", "extended", "standard",         # provider-agnostic / chat
@@ -213,11 +213,6 @@ def check_provenance(provenance: dict, work_id: str, issues: Issues) -> None:
         effort = rec.get("effort")
         if effort is not None and effort not in EFFORT_VALUES:
             issues.error(w, f"{name}: effort '{effort}' not in {sorted(EFFORT_VALUES)} (or null)")
-        if status == "validated":
-            reviewers = rec.get("reviewers") or []
-            distinct = {r.get("name") for r in reviewers}
-            if len(distinct) < 2:
-                issues.error(w, f"{name}: status 'validated' requires >= 2 distinct reviewers")
 
 
 def rule_verdicts(assessment: dict) -> dict:

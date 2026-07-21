@@ -33,8 +33,8 @@ function renderSignificance(text, sources) {
     if (!src) return m;
     const cite = esc(src.citation);
     const inner = src.url ? `<a href="${esc(src.url)}" rel="noopener">${cite}</a>` : cite;
-    return `<span class="cite"><button type="button" class="cite-marker" aria-label="Citation ${n}">${n}</button>` +
-           `<span class="cite-pop" role="note">${inner}</span></span>`;
+    return `<span class="pop cite"><button type="button" class="pop-marker" aria-label="Citation ${n}">${n}</button>` +
+           `<span class="pop-content" role="note">${inner}</span></span>`;
   });
 }
 
@@ -182,15 +182,16 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
       });
     });
 
-    // Significance citation popovers: hover shows them (CSS); click pins one open (touch-friendly).
-    // JS positions each popover so it always stays within the viewport.
-    const sigCites = () => document.querySelectorAll('.significance .cite');
-    function positionPop(cite) {
-      const pop = cite.querySelector('.cite-pop');
+    // Popover markers: hover shows them (CSS); click pins one open (touch-friendly). Shared by
+    // significance citation markers and in-text editorial notes (\ednote) — anything with a
+    // ".pop" wrapper. JS positions each popover so it always stays within the viewport.
+    const allPops = () => document.querySelectorAll('.pop');
+    function positionPop(wrap) {
+      const pop = wrap.querySelector('.pop-content');
       if (!pop) return;
       pop.style.position = 'fixed';
       const pw = pop.offsetWidth, ph = pop.offsetHeight, m = 8;
-      const r = (cite.querySelector('.cite-marker') || cite).getBoundingClientRect();
+      const r = (wrap.querySelector('.pop-marker') || wrap).getBoundingClientRect();
       let left = Math.min(Math.max(m, r.left), window.innerWidth - pw - m);
       left = Math.max(m, left);
       let top = r.bottom + 4;
@@ -198,27 +199,27 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
       pop.style.left = left + "px";
       pop.style.top = top + "px";
     }
-    const closeAllCites = () =>
-      document.querySelectorAll('.significance .cite.open').forEach((c) => c.classList.remove('open'));
-    sigCites().forEach((cite) => {
-      const marker = cite.querySelector('.cite-marker');
-      cite.addEventListener('mouseenter', () => positionPop(cite));
-      marker.addEventListener('focus', () => positionPop(cite));
+    const closeAllPops = () =>
+      document.querySelectorAll('.pop.open').forEach((c) => c.classList.remove('open'));
+    allPops().forEach((wrap) => {
+      const marker = wrap.querySelector('.pop-marker');
+      wrap.addEventListener('mouseenter', () => positionPop(wrap));
+      marker.addEventListener('focus', () => positionPop(wrap));
       marker.addEventListener('click', (e) => {
         e.stopPropagation();
-        const wasOpen = cite.classList.contains('open');
-        closeAllCites();
-        if (!wasOpen) { cite.classList.add('open'); positionPop(cite); }
+        const wasOpen = wrap.classList.contains('open');
+        closeAllPops();
+        if (!wasOpen) { wrap.classList.add('open'); positionPop(wrap); }
       });
     });
-    document.addEventListener('click', closeAllCites);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllCites(); });
-    const repositionVisibleCites = () => sigCites().forEach((cite) => {
-      const pop = cite.querySelector('.cite-pop');
-      if (pop && getComputedStyle(pop).display !== 'none') positionPop(cite);
+    document.addEventListener('click', closeAllPops);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllPops(); });
+    const repositionVisiblePops = () => allPops().forEach((wrap) => {
+      const pop = wrap.querySelector('.pop-content');
+      if (pop && getComputedStyle(pop).display !== 'none') positionPop(wrap);
     });
-    window.addEventListener('scroll', repositionVisibleCites, { passive: true });
-    window.addEventListener('resize', repositionVisibleCites);
+    window.addEventListener('scroll', repositionVisiblePops, { passive: true });
+    window.addEventListener('resize', repositionVisiblePops);
 
     // Copy text to clipboard, with a fallback for non-secure/no-gesture contexts.
     async function copyText(text) {

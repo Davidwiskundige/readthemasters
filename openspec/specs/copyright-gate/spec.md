@@ -34,9 +34,9 @@ from the published build.
 
 ## Requirement: Status & provenance consistency
 
-`status` ∈ the ladder; `validated` requires ≥ 2 distinct reviewers; `model` and `prompt_version`
-required on every artifact; `effort`, if present, is a recognized value. The site publishes
-artifacts at or above a configurable minimum status (default `ai-draft`).
+`status` ∈ the ladder; `model` and `prompt_version` required on every artifact; `effort`, if
+present, is a recognized value. The site publishes artifacts at or above a configurable minimum
+status (default `ai-draft`).
 
 ## Requirement: Cross-work checks
 

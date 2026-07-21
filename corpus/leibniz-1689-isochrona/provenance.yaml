@@ -1,5 +1,5 @@
 transcription:
-  status: spot-checked
+  status: skimmed
   model: claude-opus-4-8
   effort: high
   prompt_version: transcribe-v1
@@ -7,7 +7,7 @@ transcription:
   produced: "2026-07-20"
   reviewers:
     - name: DvdL
-      level: spot-checked
+      level: skimmed
       date: "2026-07-20"
       note: "Verified against the original scan — the mathematics (ratios and curve labels) checks out. Latin prose not yet fully proofread word-for-word."
   note: >-
@@ -17,8 +17,10 @@ transcription:
     Gerhardt's German footnotes and the "Beilage" (Huygens's French solution). Reviewer notes:
     (a) the title reads "Abbate De Conti" as printed — the original Acta abbreviation "D.C." is
     usually identified as the abbé de Catelan, so confirm against the 1689 original; (b) the
-    figure (fig. 116) is on a plate not yet located/cropped; (c) exact Gerhardt volume/year to
-    confirm.
+    plate for fig. 116 could not be located in the available scans (checked to the end of the
+    450-leaf Gerhardt volume: no plates section); flagged with \ednote in the text rather than
+    reproduced — if a copy turns up elsewhere it can still be added; (c) exact Gerhardt volume/year
+    to confirm.
 
 translations:
   en:

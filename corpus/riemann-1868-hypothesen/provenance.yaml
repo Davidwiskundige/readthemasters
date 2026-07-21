@@ -1,12 +1,12 @@
 transcription:
-  status: spot-checked
+  status: skimmed
   model: claude-opus-4-8
   effort: high
   prompt_version: transcribe-v1
   submitted_via: pipeline
   produced: "2026-07-18"
   reviewers:
-    - { name: "DvdL", level: spot-checked, date: "2026-07-18" }
+    - { name: "DvdL", level: skimmed, date: "2026-07-18" }
 
 translations:
   en:

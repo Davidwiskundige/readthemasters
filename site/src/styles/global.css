@@ -47,9 +47,12 @@ main { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
 .filters legend { font-weight: 700; color: var(--accent); padding: 0 .3rem; }
 .filters label { display: flex; gap: .4rem; align-items: center; cursor: pointer; padding: .12rem 0; }
 .filters .yearrow { display: flex; gap: .5rem; align-items: center; }
-.filters input[type="search"] { width: 100%; padding: .4rem .5rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); }
+.filters input[type="search"] { width: 100%; margin: 0 0 1rem; padding: .4rem .5rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); }
 
-.count { color: var(--muted); margin: 0 0 1rem; }
+.resultbar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 0 0 1rem; }
+.count { color: var(--muted); margin: 0; }
+.sort { display: flex; align-items: baseline; gap: .4rem; font-size: .85rem; color: var(--muted); }
+.sort select { font: inherit; font-size: .85rem; padding: .25rem .4rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); cursor: pointer; }
 ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .card { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); padding: .9rem 1.1rem; }
 .card h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
@@ -59,14 +62,12 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .badge { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .02em;
   padding: .12rem .5rem; border-radius: 999px; border: 1px solid var(--border); }
 .badge.ai-draft { background: #eceae6; color: #55524c; }
-.badge.spot-checked { background: #f3e7d6; color: #7a5a2c; }
-.badge.proofread { background: #e6e9ee; color: #46536b; }
-.badge.validated { background: #e7f0e5; color: #33613a; }
+.badge.skimmed { background: #f3e7d6; color: #7a5a2c; }
+.badge.verified { background: #e7f0e5; color: #33613a; }
 @media (prefers-color-scheme: dark) {
   .badge.ai-draft { background: #2c2a26; color: #b7b2a8; }
-  .badge.spot-checked { background: #3a2f20; color: #d8a662; }
-  .badge.proofread { background: #262b34; color: #9fb0cc; }
-  .badge.validated { background: #23301f; color: #8fc194; }
+  .badge.skimmed { background: #3a2f20; color: #d8a662; }
+  .badge.verified { background: #23301f; color: #8fc194; }
 }
 
 .pill { font-size: .72rem; padding: .1rem .5rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
@@ -102,16 +103,18 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .significance { border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 8px 8px 0; padding: .7rem 1rem; margin: 1.25rem 0; }
 .significance h2 { font-size: .95rem; margin: 0 0 .35rem; color: var(--accent); letter-spacing: .02em; }
 .significance p { margin: 0; font-size: .95rem; }
-/* Inline citation markers — the full citation is hidden until hover/click (a popover). */
-.significance .cite { position: relative; }
-.significance .cite-marker { font: inherit; font-size: .7em; vertical-align: super; line-height: 0;
+/* Inline popover markers — content stays hidden until hover/click (a popover). Shared by
+   significance citation markers and in-text editorial notes (\ednote). */
+.pop { position: relative; }
+.pop-marker { font: inherit; font-size: .7em; vertical-align: super; line-height: 0;
   color: var(--accent); font-weight: 700; background: none; border: none; padding: 0 1px; cursor: pointer; }
-.significance .cite-marker:hover { text-decoration: underline; }
-.significance .cite + .cite .cite-marker::before { content: ","; color: var(--muted); }
-.significance .cite-pop { display: none; position: absolute; left: 0; top: 1.5em; z-index: 20;
+.pop-marker:hover { text-decoration: underline; }
+.significance .cite + .cite .pop-marker::before { content: ","; color: var(--muted); }
+.ednote .pop-marker { color: var(--muted); }
+.pop-content { display: none; position: fixed; z-index: 20;
   width: max-content; max-width: min(24rem, 80vw); background: var(--surface); border: 1px solid var(--border);
   border-radius: 6px; padding: .5rem .7rem; font-size: .8rem; font-weight: 400; line-height: 1.4;
   color: var(--text); box-shadow: 0 4px 16px rgba(0,0,0,.18); white-space: normal; }
-.significance .cite:hover .cite-pop,
-.significance .cite:focus-within .cite-pop,
-.significance .cite.open .cite-pop { display: block; }
+.pop:hover .pop-content,
+.pop:focus-within .pop-content,
+.pop.open .pop-content { display: block; }
