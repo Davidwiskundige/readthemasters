@@ -19,7 +19,8 @@ Each work lives in `corpus/<id>/`, where `<id>` is the canonical work id.
 Required: `id` (equals directory name, unique across corpus), `title`, `authors` (≥1, each
 `name` + `wikidata_id` + `death_year` or `anonymous`), `publication` (`year`, `venue` ∈ vocab;
 optional `volume`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_edition`,
-`rights_cleared`, `rights_note`), `discipline` ∈ vocab, `language` ∈ vocab, `type` ∈ vocab,
+`rights_cleared`, `rights_note`), `discipline` (a vocab key or a list of them, for works that
+straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` ∈ vocab,
 `source` (`scan_url`, `scan_id`), `sources` (citations for `death_date`, `publication_date`,
 `edition`).
 

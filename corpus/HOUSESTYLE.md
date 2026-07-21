@@ -36,10 +36,21 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 - **Exponents** use braces: `x^{2}`. **Differentials** get a thin space: `\,dz`.
 - Text: `---` for an em-dash, `~` for a non-breaking space; `\section*{}` / `\subsection*{}` for
   headings actually present in the source.
+- **Translator/editorial interpolations** in a translation use **square brackets** `[...]`,
+  never parentheses — parentheses are reserved for the author's own asides, so bracketing keeps
+  our voice visibly distinct from theirs: `potentia [later called vis viva]`. (See ruling R9.)
 
 ## Rulings log
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
+
+### R9 — Translator interpolations use square brackets, not parentheses (presentation)
+*2026-07-20.* In the Leibniz translation, a gloss on "potentia" ("later called vis viva") was
+first set in parentheses — but the author himself uses parentheses for his own asides throughout
+the text, so a parenthetical gloss reads as if it were his. Editorial/translator additions are set
+in **square brackets** instead: `potentia [later called vis viva]`. This is the standard
+convention in scholarly translation and keeps our voice visibly separate from the author's, without
+a footnote for something this short. Applied in `leibniz-1689-isochrona`.
 
 ### R8 — Figures are placed inline at first reference, not collected at the end (presentation)
 *2026-07-19.* The original prints figures on plates at the back of the volume — a letterpress/

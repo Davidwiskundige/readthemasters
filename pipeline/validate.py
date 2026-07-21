@@ -161,8 +161,13 @@ def check_schema_and_vocab(work: dict, vocab: dict, work_id: str, issues: Issues
     if pub.get("venue") not in (vocab.get("venues") or {}):
         issues.error(w, f"publication.venue '{pub.get('venue')}' not in vocab.venues")
 
-    if work.get("discipline") not in (vocab.get("disciplines") or {}):
-        issues.error(w, f"discipline '{work.get('discipline')}' not in vocab.disciplines")
+    disc = work.get("discipline")
+    disc_list = disc if isinstance(disc, list) else [disc]
+    if not disc_list:
+        issues.error(w, "discipline is required")
+    for dd in disc_list:
+        if dd not in (vocab.get("disciplines") or {}):
+            issues.error(w, f"discipline '{dd}' not in vocab.disciplines")
     for tag in work.get("tags") or []:
         if tag not in (vocab.get("tags") or {}):
             issues.error(w, f"tag '{tag}' not in vocab.tags")

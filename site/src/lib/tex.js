@@ -19,6 +19,7 @@ function inlineText(html) {
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
     .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
     .replace(/---/g, "—")
+    .replace(/``/g, "“").replace(/''/g, "”")
     .replace(/~/g, " ");
 }
 

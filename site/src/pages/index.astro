@@ -6,9 +6,10 @@ const works = data.works ?? [];
 
 // Build facet option lists from the corpus.
 const uniq = (arr) => [...new Set(arr)].filter(Boolean);
-const disciplines = uniq(works.map((w) => w.discipline)).map((d) => ({
-  key: d, label: works.find((w) => w.discipline === d)?.discipline_label ?? d,
-}));
+const disciplines = uniq(works.flatMap((w) => w.disciplines)).map((d) => {
+  const src = works.find((w) => w.disciplines.includes(d));
+  return { key: d, label: src ? src.discipline_labels[src.disciplines.indexOf(d)] : d };
+});
 const tags = uniq(works.flatMap((w) => w.tags)).map((t) => {
   const src = works.find((w) => w.tags.includes(t));
   return { key: t, label: src ? src.tag_labels[src.tags.indexOf(t)] : t };
@@ -77,7 +78,7 @@ const maxYear = years.length ? Math.max(...years) : 0;
               data-title={(w.title ?? "").toLowerCase()}
               data-title-en={(w.title_en ?? "").toLowerCase()}
               data-authors={w.authors.map((a) => a.name).join(" ").toLowerCase()}
-              data-discipline={w.discipline}
+              data-disciplines={w.disciplines.join(",")}
               data-tags={w.tags.join(",")}
               data-language={w.language}
               data-translations={(w.translation_langs ?? []).join(",")}
@@ -128,7 +129,7 @@ const maxYear = years.length ? Math.max(...years) : 0;
         const matchText = !term ||
           d.title.includes(term) || d.titleEn.includes(term) || d.authors.includes(term);
         const ok = matchText
-          && (!disc.length || disc.includes(d.discipline))
+          && hasAny(d.disciplines, disc)
           && hasAny(d.tags, tags)
           && (!langs.length || langs.includes(d.language))
           && hasAny(d.translations, trans)

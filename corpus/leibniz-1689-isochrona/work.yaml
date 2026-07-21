@@ -25,7 +25,7 @@ edition:
     Only Leibniz's Latin text (pp. 234–237) is transcribed; Gerhardt's German editorial footnotes
     and the appended "Beilage" (Huygens's French solution) are excluded as later editorial matter.
 
-discipline: mathematics
+discipline: [mathematics, physics]
 tags: [geometry, mechanics]
 language: la
 type: paper
@@ -33,7 +33,8 @@ type: paper
 significance: >-
   Leibniz solves the isochrone problem — a curve of uniform, unaccelerated descent — with the
   semicubical parabola, an early triumph of the new differential calculus, and frames the essay
-  as a reply in his vis viva controversy with the Cartesians. The paper closes with the
+  as a reply in his vis viva controversy with the Cartesians — living force, which he here calls
+  potentia. The paper closes with the
   "paracentric isochrone", the problem that led the Bernoullis to the lemniscate in 1694 and
   thence, through Fagnano and Euler, to the theory of elliptic functions.[1]
 

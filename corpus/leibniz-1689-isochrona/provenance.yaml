@@ -19,3 +19,18 @@ transcription:
     usually identified as the abbé de Catelan, so confirm against the 1689 original; (b) the
     figure (fig. 116) is on a plate not yet located/cropped; (c) exact Gerhardt volume/year to
     confirm.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: pipeline
+    produced: "2026-07-20"
+    source: transcription
+    note: >-
+      English translation made from our own transcription (original.tex), not from any existing
+      translation. Curve labels, the fraction, and \origpage markers preserved; only the prose is
+      translated. Not yet human-checked. Leibniz's "potentia" is kept (glossed "later called vis
+      viva"); the Cartesian "quantity of motion" is kept literally.
