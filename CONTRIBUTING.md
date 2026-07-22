@@ -35,7 +35,7 @@ python pipeline/validate.py
 |---|---|---|
 | 0 Report errors | GitHub account | Click *Report an error* on any work page |
 | 1 Chat transcription | Any AI chat subscription | Use [`prompts/transcribe-chat.md`](prompts/transcribe-chat.md) in your app; submit via the issue form |
-| 2 Claude Code skill | Claude Pro/Max | Run `/transcribe <work> <pages>` (planned skill) |
+| 2 Claude Code skill | Claude Pro/Max | Run `/transcribe <work> <pages>` (see `.claude/skills/transcribe/`) |
 | 3 Full pipeline | Your own API key + Python | Run `pipeline/` scripts; open a PR |
 
 ### Adding a work by pull request (tiers 2–3)
