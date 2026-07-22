@@ -1,5 +1,7 @@
 # ReadTheMasters
 
+[![CI](https://github.com/Davidwiskundige/readthemasters/actions/workflows/ci.yml/badge.svg)](https://github.com/Davidwiskundige/readthemasters/actions/workflows/ci.yml)
+
 **Live at [readthemasters.pages.dev](https://readthemasters.pages.dev)**
 
 A website that publishes **AI transcriptions (LaTeX)** and **AI translations (LaTeX)** of old
