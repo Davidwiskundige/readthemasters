@@ -74,4 +74,4 @@ Chat submissions include an "I release this under CC0" checkbox instead.
 Be kind and constructive. Maintainers review all contributions; spam and vandalism are closed and
 repeat abuse is blocked.
 
-[catalog]: https://readthemasters.example/
+[catalog]: https://readthemasters.pages.dev/
