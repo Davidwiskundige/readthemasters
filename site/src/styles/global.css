@@ -35,8 +35,10 @@ header.site, footer.site {
   padding: 1rem 1.25rem;
 }
 footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
-header.site nav { display: flex; gap: 1rem 1.5rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-header.site .navlinks { display: flex; gap: 1.25rem; align-items: baseline; flex-wrap: wrap; }
+header.site nav { display: flex; gap: 1rem 2rem; align-items: center; flex-wrap: wrap; }
+header.site .navlinks { display: flex; gap: 1.5rem; align-items: baseline; flex-wrap: wrap; }
+header.site .navlinks a { text-decoration: none; }
+header.site .navlinks a:hover { text-decoration: underline; }
 
 /* Header brand: a compact stacked lockup — wordmark, rule-with-diamond, tagline — in the site
    serif. Small-caps gives the large-initial + small-caps look; the rule spans the wordmark width. */
