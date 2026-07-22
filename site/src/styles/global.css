@@ -36,7 +36,8 @@ header.site, footer.site {
 }
 footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
 header.site nav { display: flex; gap: 1.25rem; align-items: baseline; flex-wrap: wrap; }
-header.site .brand { font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+header.site .brand { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+header.site .brandmark { flex: none; color: var(--accent); }
 main { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
 
 .layout { display: grid; grid-template-columns: 16rem 1fr; gap: 2rem; }
