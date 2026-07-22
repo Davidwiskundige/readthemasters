@@ -29,7 +29,7 @@ def load_yaml(path: Path):
 
 
 # Wikidata rejects requests without a descriptive User-Agent (HTTP 403), per its policy.
-USER_AGENT = "ReadTheMasters/0.1 (public-domain digitization; https://github.com/OWNER/readthemasters)"
+USER_AGENT = "ReadTheMasters/0.1 (public-domain digitization; https://github.com/Davidwiskundige/readthemasters)"
 
 
 def wikidata_death_year(qid: str, timeout: float = 15.0) -> int | None:

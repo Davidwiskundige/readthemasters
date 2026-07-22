@@ -42,6 +42,6 @@ Your text starts as an **AI draft** and is credited to you.
 - **Credit & licensing.** Contributions are released under CC0 via a sign-off; you are credited in
   the work's provenance and on its page.
 
-[claims list]: https://github.com/OWNER/readthemasters/blob/main/corpus/CLAIMS.md
-[`prompts/transcribe-chat.md`]: https://github.com/OWNER/readthemasters/blob/main/prompts/transcribe-chat.md
-[HOUSESTYLE.md]: https://github.com/OWNER/readthemasters/blob/main/corpus/HOUSESTYLE.md
+[claims list]: https://github.com/Davidwiskundige/readthemasters/blob/main/corpus/CLAIMS.md
+[`prompts/transcribe-chat.md`]: https://github.com/Davidwiskundige/readthemasters/blob/main/prompts/transcribe-chat.md
+[HOUSESTYLE.md]: https://github.com/Davidwiskundige/readthemasters/blob/main/corpus/HOUSESTYLE.md

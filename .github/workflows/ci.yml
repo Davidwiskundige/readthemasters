@@ -58,3 +58,12 @@ jobs:
         with:
           name: site-dist
           path: site/dist
+      - name: Deploy to Cloudflare Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: readthemasters
+          directory: site/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
