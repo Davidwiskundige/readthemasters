@@ -43,7 +43,7 @@ Read these so your output matches the house style exactly:
 - `corpus/HOUSESTYLE.md` — the notation-vs-presentation principle and the rulings log (R1–R10).
 - `corpus/preamble/readmasters.sty` — the macros available (`\origpage`, `\uncertain`,
   `\illegible`, `\ednote`, `\rmfigure`).
-- An existing work as a shape reference, e.g. `corpus/riemann-1868-hypothesen/`.
+- An existing work as a shape reference, e.g. `corpus/fagnano-1718-lemniscata/`.
 
 ## Phase 1 — Locate the work and clear the gate
 

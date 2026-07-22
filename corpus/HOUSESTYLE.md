@@ -44,6 +44,31 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R11 — Significance notes get the same care as the transcription, plus a contributor pass
+### before they're settled (editorial content, not the notation/presentation split)
+*2026-07-22.* Drafting the `significance` paragraphs for `fagnano-1718-lemniscata` and
+`fagnano-1718-lemniscata-ii` took many rounds of correction: a claim about which sketch contains
+which result turned out to be backwards; a quote ("the birthday of the theory of elliptic
+functions") was first attributed to the wrong person (Weil recounts it — Jacobi said it);
+`[[wiki-link]]` syntax — the memory-file cross-reference convention — leaked into corpus prose and
+rendered as literal text on the site; and citation numbers went stale once after a cited source
+was cut from the text. Rules going forward:
+- Verify *what result is in which work* against the transcribed `original.tex`/scan itself, not
+  from general knowledge or by echoing the sibling work's blurb.
+- When attributing a claim or turn of phrase, check who actually said it versus who is merely
+  reporting/recounting it — don't collapse the two into one citation.
+- Never use `[[...]]` in corpus text — that syntax is for the assistant's own memory files only;
+  the site renders it as literal brackets. Cross-reference other works by name/id in plain prose.
+- `[n]` markers in `significance` are positional to `significance_sources`, in list order; adding
+  or removing a source means renumbering every marker in the prose to match.
+- For a multi-part work (a "Schediasma I/II" pair, etc.), draft or revise all parts' significance
+  together, re-reading each one after editing the other, so they stay complementary instead of
+  quietly drifting apart or repeating each other.
+- Treat the first draft as a draft: `significance` is editorial commentary the project is adding,
+  not transcribed text, so — unlike the source material — it doesn't get "faithful, don't touch"
+  protection. Expect a contributor (ideally one with domain knowledge) to read it over before
+  treating it as settled.
+
 ### R10 — An in-text figure reference with no locatable plate gets an inline `\ednote`, not a
 ### silently dangling citation (notation, with a presentation fallback)
 *2026-07-20.* Leibniz's paper cites "(fig.~116)", but no plate for it survives in the scanned

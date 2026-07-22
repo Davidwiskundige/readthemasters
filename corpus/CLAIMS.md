@@ -7,6 +7,5 @@ by Wikidata QID).
 
 | Work (id or title + year) | Claimed by | Task | Claimed on | Status |
 |---|---|---|---|---|
-| riemann-1868-hypothesen | DvdL | transcription + en translation | 2026-07-18 | done (in corpus) |
 | fagnano-1718-lemniscata | DvdL | transcription (Opere Matematiche II) | 2026-07-19 | transcribed (pp. 293–297, ai-draft); needs a full human check |
 | leibniz-1689-isochrona | DvdL | transcription (De linea isochrona, Gerhardt ed.) | 2026-07-20 | skimmed (math checked); en translation in progress |

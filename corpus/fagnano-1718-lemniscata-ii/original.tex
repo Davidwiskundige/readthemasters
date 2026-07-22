@@ -1,0 +1,388 @@
+% Faithful transcription — original Italian (18th c.). Transcribed from the 1911 Opere
+% Matematiche, vol. II (Wikimedia Commons djvu), the complete memoir "Metodo per misurare la
+% lemniscata, Schediasma II", printed pages 304–313 (= djvu pages 334–343). \origpage uses the
+% PRINTED page numbers. Content and archaic spelling follow the print; only markup is
+% standardized (PLAN.md §4.4). NOTE: the heading on p. 308 prints "Teorema IV" a second time for
+% what every later cross-reference in this same memoir calls "il teorema VI" (pp. 309, 310) —
+% almost certainly a printer's repeat of the earlier "Teorema IV" heading (p. 305) rather than
+% the intended "Teorema VI". Reproduced faithfully as printed, not renumbered. Likewise p. 305's
+% "Teorema IV" heading itself cites "equazioni (6), e (8)" where every other theorem in this
+% pattern cites the two equations it is about to state — here that would be (7) and (8); "(6)" is
+% kept as printed (probable misprint) since eq. (6) belongs to the preceding Teorema III. The
+% "Terzo" remark in Scolio I (p. 306) prints $\int dz/\sqrt{1+x^4}$ (mixing differential $dz$ with
+% the variable $x$ under the radical); given its consequence in the "Sesto" remark reads
+% $\int dx/\sqrt{1+x^4}$ throughout, "dz" is very likely a compositor's error for "dx" — kept as
+% printed. Fig. 32, printed on the same plate (Tav. III) as figs. 29, 30, 31, 33, is not cited by
+% number anywhere in this memoir's text and is therefore not reproduced here.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{304}
+\section*{XXXIV. Metodo per misurare la lemniscata}
+\subsection*{Schediasma II (*)}
+\emph{(*) Giornale de' letterati d'Italia, tomo XXX, pag.~87.}
+
+\textbf{Teorema I.} --- Sieno le due infrascritte equazioni (1), e (2), io dico, che posta la
+prima di esse, sussiste anche l'altra
+
+\[ x = \frac{\sqrt{1 \mp \sqrt{1-z^{4}}}}{z}. \tag{1} \]
+
+\[ \frac{\pm dz}{\sqrt{1-z^{4}}} = \frac{dx\sqrt{2}}{\sqrt{1+x^{4}}}. \tag{2} \]
+
+\textbf{Dimostrazione.} --- L'equazione (1) differenziata somministra un valore di $dx$,
+ch'essendo ridotto ad una semplice espressione fa conoscere
+
+\[ dx = \frac{\pm dz\sqrt{1 \mp \sqrt{1-z^{4}}}}{z^{2}\sqrt{1-z^{4}}}. \]
+
+Dalla medesima equazione (1) si deduce ancora la seguente
+
+\[ \frac{\sqrt{1+x^{4}}}{\sqrt{2}} = \frac{\sqrt{1 \mp \sqrt{1-z^{4}}}}{z^{2}}. \]
+
+E dividendo la penultima equazione per quest'ultima si giunge all'equazione (2).
+
+Il che dovea dimostrarsi.
+
+\textbf{Teorema II.} --- Sieno le due equazioni infrascritte (3), e (4); io dico, che posta la
+prima di essa sussiste anche l'altra
+
+\[ x = \frac{\sqrt{1\mp z}}{\sqrt{1\pm z}}. \tag{3} \]
+
+\[ \frac{\mp dz}{\sqrt{1-z^{4}}} = \frac{dx\sqrt{2}}{\sqrt{1+x^{4}}}. \tag{4} \]
+
+\origpage{305}
+\textbf{Dimostrazione.} --- Differenziando l'equazione (3), e operando nel debito modo, si à
+$dx = \dfrac{\pm dz}{\sqrt{1-z^{2}}} \times \dfrac{1}{1\pm z}$.
+
+Inoltre la stessa equazione (3) mostra $\dfrac{\sqrt{1+x^{4}}}{\sqrt{2}} = \dfrac{\sqrt{1+z^{2}}}{1\pm z}$.
+
+E dividendo la penultima equazione per quest'ultima si ottiene la equazione (4).
+
+Il che dovea dimostrarsi.
+
+\textbf{Teorema III.} --- Sieno le due equazioni infrascritte (5), e (6); io dico, che posta la
+prima di esse, sussiste anche l'altra
+
+\[ x = \frac{u\sqrt{2}}{\sqrt{1-u^{4}}}. \tag{5} \]
+
+\[ \frac{du}{\sqrt{1-u^{4}}} = \frac{1}{\sqrt{2}}\times\frac{dx}{\sqrt{1+x^{4}}}. \tag{6} \]
+
+\textbf{Dimostrazione.} --- Dall'equazione (5) differenziata, e maneggiata a dovere risulta
+$\dfrac{dx}{\sqrt{2}} = \dfrac{du}{\sqrt{1-u^{4}}} \times \dfrac{1+u^{4}}{1-u^{4}}$ e dalla
+suddetta equazione (5) si deduce $\sqrt{1+x^{4}} = \dfrac{1+u^{4}}{1-u^{4}}$.
+
+Dividendo poscia la penultima equazione per quest'ultima, si arriva all'equazione (6).
+
+Il che dovea dimostrarsi.
+
+\textbf{Teorema IV.} --- Sieno le due infrascritte equazioni (6), e (8); io dico, che posta la
+prima di esse, sussiste anche l'altra
+
+\[ x = \frac{\sqrt{1-t^{4}}}{t\sqrt{2}}. \tag{7} \]
+
+\[ \frac{-dt}{\sqrt{1-t^{4}}} = \frac{1}{\sqrt{2}}\times\frac{dx}{\sqrt{1+x^{4}}}. \tag{8} \]
+
+\textbf{Dimostrazione.} --- Differenziando l'equazione (7), e riducendo il valore di $dx$ ad una
+comoda espressione, ritrovasi $dx\sqrt{2} = \dfrac{-dt}{\sqrt{1-t^{4}}} \times \dfrac{1+t^{4}}{t^{2}}$.
+
+La stessa equazione (7) fa vedere $2\sqrt{1+x^{4}} = \dfrac{1+t^{4}}{t^{2}}$.
+
+\origpage{306}
+E la penultima equazione divisa per quest'ultima rende l'equazione (8).
+
+Il che dovea dimostrarsi.
+
+\textbf{Scolio I.} --- Per far uso di questi teoremi si noti:
+
+Primo, che $\displaystyle\int \frac{dz}{\sqrt{1-z^{4}}}$ rappresenta l'arco diretto $CS$ della
+lemniscata (fig.~29) sostenuto dalla corda $CS = z$, purchè il semiasse $CL$ di questa curva sia
+eguale all'unità.
+
+\rmfigure{figures/fig-29.png}{Fig.~29.}{Fig. 29: the lemniscate with chord $CS=z$ and its
+semi-axis $CL$, from the original plate (Tav. III, Opere Matematiche vol. II).}
+
+Secondo, che $\displaystyle\int \frac{-dz}{\sqrt{1-z^{4}}}$ esprime l'arco inverso $SL$ della
+medesima curva, che corrisponde alla suddetta corda $CS$ ($z$).
+
+Terzo, che $\displaystyle\int \frac{dz}{\sqrt{1+x^{4}}} = \frac{3}{2}\int dx\,\sqrt{1+x^{4}} -
+\frac{1}{2}\sqrt{1+x^{4}}$, come si prova col calcolo.
+
+Quarto, che $\displaystyle\int dx\,\sqrt{1+x^{4}}$ esprime l'arco $AQ$ (fig.~30) della parabola
+cubica primaria corrispondente all'abscissa $AF = x$, purchè prendendo $a$ per l'unità, il
+parametro di questa parabola sia $a\sqrt{3}$, e le ordinate sieno normali all'abscissa.
+
+\rmfigure{figures/fig-30.png}{Fig.~30.}{Fig. 30: the primary cubic parabola with abscissa
+$AF=x$, ordinate $FQ$, tangent portion $QV$, and origin $A$, from the original plate (Tav. III,
+Opere Matematiche vol. II).}
+
+Quinto, che $x\sqrt{1+x^{4}}$ denota la porzione $QV$ della tangente (fig.~30) compresa tra
+l'ordinata $FQ$, e la retta indefinita $AV$, che dalla origine $A$ della parabola scorre parallela
+alle ordinate.
+
+Sesto che per conseguenza si avrà
+
+\[ \int \frac{dx}{\sqrt{1+x^{4}}} = \frac{3}{2}\,\mathrm{arc.}\,AQ - \frac{1}{2}\,QV. \]
+
+\emph{Esempj per mostrare il modo di applicare alla geometria i precedenti teoremi.}
+
+\emph{Esempio I pel I teorema} (fig.~29, e 30). --- Nell'equazione (1) il segno arbitrario $\mp$
+significhi il segno negativo, s'integri l'equazione (2) mediante il precedente scolio, e si
+troverà
+
+\[ \mathrm{Arc.}\,CS = \frac{3}{\sqrt{2}}\,\mathrm{arc.}\,AQ - \frac{1}{\sqrt{2}}\,QV. \]
+
+Annullando $AF\,(x)$, si annullerà anche $CS\,(z)$, e però questa equazione è completa.
+
+\emph{Esempio II pel II teorema} (fig.~29, e 30). --- Nell'equazione (3) il segno $\mp$
+rappresenta il segno negativo, s'integri l'equazione (4), e si sco-
+\origpage{307}
+prirà
+
+\[ \mathrm{Arc.}\,SL = \frac{3}{\sqrt{2}}\,\mathrm{arc.}\,AQ - \frac{1}{\sqrt{2}}\,QV. \]
+
+La supposizione di $CS\,(z) = 1$, che annienta l'arco inverso $SL$, rende $AF\,(x) = 0$, e però
+quest'equazione è completa.
+
+\textbf{Scolio II.} --- Nel progresso di questo scritto io non proverò più, che l'equazioni sono
+complete, dovendo bastare ai lettori il metodo, con cui mi sono regolato in questi due esempj per
+accertarsi da loro medesimi della pienezza dell'equazioni seguenti; essi potranno ancora servirsi
+dei quattro antecedenti teoremi per trarne altre maniere di misurare la lemniscata mediante
+l'estensione della parabola cubica primaria, non ommettendo però, dov'è d'uopo, la sottrazione, o
+l'aggiunta della quantità costante propria a rendere complete l'equazioni.
+
+Potranno inoltre dedurre da questi teoremi delle verità affatto nuove, concernenti la
+comparazione degli archi della suddetta parabola, ec.
+
+Io mi contenterò di accennare, che siccome la misura della parabola cubica primaria dipende in
+più maniere dall'estensione della lemniscata in virtù dei quattro antecedenti teoremi, e la
+misura della lemniscata dipende dall'estensione dell'iperbola equilatera, e d'una specie di
+elisse \emph{unitamente}, conforme ò scoperto nel I schediasma, ne segue, che la misura della
+parabola cubica primaria dipende in più maniere dalla estensione delle due suddette sezioni
+coniche \emph{unitamente}. Quest'invenzione non potrà non piacere a chi avrà considerato ciò, che
+si legge negli Atti di Lipsia dell'anno 1695, pag. 64, e pag. 184 verso il fine.
+
+\textbf{Teorema V.} --- Sieno le due equazioni infrascritte (9), e (10); io dico, che posta la
+prima di esse sussiste anche l'altra
+
+\[ \frac{u\sqrt{2}}{\sqrt{1-u^{4}}} = \frac{1}{z}\sqrt{1-\sqrt{1-z^{4}}}. \tag{9} \]
+
+\[ \frac{dz}{\sqrt{1-z^{4}}} = \frac{2\,du}{\sqrt{1-u^{4}}}. \tag{10} \]
+
+\textbf{Dimostrazione.} --- Ponendo nell'equazione (1) del I teorema in vece di $\mp$ il segno
+negativo, e in cambio di $x$ il suo valore $\dfrac{u\sqrt{2}}{\sqrt{1-u^{4}}}$ notato
+nell'equazione (5) del III teorema, si à l'equazione (9), indi sur-
+\origpage{308}
+rogando nell'equazione (2) del I teorema in luogo di $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$ il suo
+valore $\dfrac{2\,du}{\sqrt{1-u^{4}}}$, che nasce dalla supposizione fatta di $x$ (come si vede,
+moltiplicando per 2 l'equazione (6) del III teorema) ne viene l'equazione (10).
+
+Il che dovea dimostrarsi.
+
+\textbf{Corollario I} (fig.~29). --- Chiamisi $z$ la corda $CS$ della lemniscata, ed $u$ l'altra
+corda $CI$, e integrando l'equazione (10), si troverà
+
+\[ \mathrm{Arc.}\,CS = 2\,\mathrm{arc.}\,CI. \]
+
+Laonde considerando la lettera $z$ come cognita nell'equazione (9), se ne trarrà il valore della
+corda $CI\,(u)$ che taglia per mezzo l'arco diretto $CS$.
+
+\textbf{Corollario II} (fig.~29). --- Dall'equazione (9) nasce quest'altra
+
+\[ z = \frac{2u\sqrt{1-u^{4}}}{1+u^{4}}. \tag{11} \]
+
+E questo valore di $z$ è tale, che chiamando $u$ la corda $CI$ considerata come cognita, e facendo
+l'altra corda $CS$ eguale al secondo membro dell'equazione (11) l'arco diretto $CS$ è doppio
+dell'altro arco diretto $CI$.
+
+\textbf{Teorema IV.} --- Sieno le due equazioni infrascritte (12), e (13); io dico, che posta la
+prima di esse, sussiste anche l'altra
+
+\[ \frac{\sqrt{1-t^{4}}}{t\sqrt{2}} = \frac{1}{z}\sqrt{1-\sqrt{1-z^{4}}}. \tag{12} \]
+
+\[ \frac{dz}{\sqrt{1-z^{4}}} = -\frac{2\,dt}{\sqrt{1-t^{4}}}. \tag{13} \]
+
+\textbf{Dimostrazione.} --- Ponendo nell'equazione (1) del I teorema in vece di $\mp$ il segno
+negativo, e in cambio di $x$ il suo valore $\dfrac{1}{t\sqrt{2}}\sqrt{1-t^{4}}$ notato
+nell'equazione (7) del IV teorema, si à l'equazione (12). Sosti-
+\origpage{309}
+tuendo poi nell'equazione (2) del I teorema in luogo di $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$ il suo
+valore $\dfrac{-2\,dt}{\sqrt{1-t^{4}}}$, che deriva dalla supposizione fatta di $x$ (come apparisce
+moltiplicando per 2 l'equazione (8) del IV teorema) s'ottiene l'equazione (13).
+
+Il che dovea dimostrarsi.
+
+\textbf{Corollario I} (fig.~29). --- Si nomini $z$ la corda $CS$ della lemniscata, e ($t$)
+l'altra corda $CH$, e ne risulterà arc. $CS = 2$ arc. $HL$.
+
+\textbf{Corollario II} (fig.~29). --- Ordinando l'equazione (12), e ponendo in essa $u$ in cambio
+di $z$, ed $r$ in vece di $t$, si giunge a quest'altra
+
+\[ u = \frac{2r\sqrt{1-r^{4}}}{1+r^{4}}. \tag{14} \]
+
+Di modo che nominando $r$ la corda $CO$, e assumendo l'altra corda $CI\,(u)$ eguale al secondo
+membro dell'equazione (14) l'arco diretto $CI$ sarà doppio dell'arco inverso $OL$.
+
+\textbf{Problema I.} --- Tagliare in tre parti uguali il quadrante della lemniscata.
+
+\textbf{Soluzione} (fig.~29, e 31). --- In virtù del teorema VI, e suo I corollario l'arco
+diretto $CS$ (fig.~29) sarà doppio dell'arco inverso $HL$, purchè chiamando $t$ la corda $CH$, e
+$z$ l'altra corda $CS$ si abbia l'equazione (12). Suppongasi ora, che i due punti $S$, e $H$
+coincidano in $T$, e questa supposizione renderà $CS\,(z) = CH\,(t)$, e l'arco diretto $CT$
+(fig.~31) sarà doppio dell'arco inverso $TL$, che diverrà la terza parte del quadrante.
+
+\rmfigure{figures/fig-31.png}{Fig.~31.}{Fig. 31: the lemniscate's quadrant with chord $CI$ and
+points $T$, $L$ used in the trisection and quintisection problems, from the original plate
+(Tav. III, Opere Matematiche vol. II).}
+
+Ma supponendo $t = z$ nell'equazione (12), e poscia ordinandola nel debito modo, ec., si ottiene
+
+\[ z = \sqrt[4]{-3+2\sqrt{3}}. \]
+
+Laonde attribuendo alla corda $CT$ (fig.~31) questo valore di $z$, e pigliando l'arco diretto $CI$
+eguale all'arco inverso $TL$ mediante il III teorema del I schediasma, si avrà lo scioglimento del
+problema.
+
+Il che dovea ritrovarsi.
+
+\textbf{Problema II.} --- Tagliare in cinque parti uguali il quadrante della lemniscata.
+\origpage{310}
+\textbf{Soluzione} (fig.~29, e 31). --- Chiamisi $u$ la corda $CI$ (fig.~29) della lemniscata, e
+$z$ l'altra corda $CS$, facciasi $z = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$, e l'arco $CS$ sarà doppio
+dell'arco $CI$ pel secondo corollario del V teorema. Si nomini poscia $r$ la corda $CO$ (fig.~29);
+suppongasi la corda $CI\,(u) = \dfrac{2r\sqrt{1-r^{4}}}{1+r^{4}}$, e l'arco diretto $CI$ sarà
+doppio dell'arco inverso $OL$ pel II corollario del VI teorema; dunque l'arco diretto $CS$ sarà
+quadruplo dell'arco inverso $OL$.
+
+Suppongasi ora $CS\,(z) = CO\,(r)$, i punti $S$, ed $O$ coincideranno in $T$, l'arco $TL$
+(fig.~32) sarà un quinto del quadrante, l'arco $CI = 2$ arc. $TL$ conterrà due quinti dello stesso
+quadrante, e l'arco $IT = $ arc. $CI$ ne conterrà gli altri due quinti.
+
+Prendasi poscia mediante il III teorema del I schediasma l'arco inverso $EL$ (fig.~32) eguale
+all'arco diretto $CI$, e l'arco diretto $CB$ eguale all'arco inverso $TL$, e i punti $B$, $I$,
+$E$, $T$ taglieranno il quadrante in cinque parti eguali.
+
+Resta solo a trovare il valore preciso della corda $CT$ (fig.~32) eguale nello stesso tempo a
+$z$, e a $r$, e questo si troverà sostituendo nell'equazione (14) in luogo di $r$ la lettera $z$,
+mentre si avrà
+
+\[ u = \frac{2z\sqrt{1-z^{4}}}{1+z^{4}}. \tag{15} \]
+
+E ponendo questo valore di $u$ nell'equazione (11) si giungerà a un'altra equazione, la quale non
+conterrà altr'incognita che la lettera $z$, e dovrà reputarsi un'equazione dell'ottavo grado,
+poichè se in essa si supporrà $z^{4} = b$, ne risulterà una nuova equazione appunto dell'ottavo
+grado; il calcolo sarà più lungo, che difficile, purchè non si trascurino quelle maniere di
+facilitarlo, che sono ben note ai periti analisti, e però stimo superfluo di stenderlo in questo
+scritto. Avvertirò solamente, che nell'equazione espressiva del valore di $z^{4}$ la medesima
+quantità di $z^{4}$ avrà due valori veri minori di $a^{4}$; il maggiore di questi due valori
+esprimerà il quadratoquadrato di $CT\,(z)$, e il minore di essi esprimerà il quadratoquadrato di
+$CI\,(u)$; imperciocchè se nell'equazione (15) si porrà invece di $z$ il suo valore in $u$ tratto
+dall'equazione (11), si troverà una equazione affatto simile a quella, ch'esprime il valore di
+$z^{4}$, ec.
+
+Il che dovea ritrovarsi.
+
+Il fu signor marchese de l'Hospital nel suo eccellente \emph{Trattato delle}
+\origpage{311}
+\emph{sezioni coniche}, lib. 9, prop. 9 insegna un modo di costruire l'equazioni dell'ottavo
+grado.
+
+\textbf{Teorema VII.} --- Sieno le due equazioni infrascritte (16), e (17); io dico, che posta la
+prima di esse sussiste anche l'altra
+
+\[ \frac{u\sqrt{2}}{\sqrt{1-u^{4}}} = \frac{\sqrt{1-z}}{\sqrt{1+z}}. \tag{16} \]
+
+\[ \frac{-dz}{\sqrt{1-z^{4}}} = \frac{2\,du}{\sqrt{1-u^{4}}}. \tag{17} \]
+
+Il che dovea dimostrarsi.
+
+\textbf{Dimostrazione.} --- Nell'equazione (3) del II teorema il segno $\mp$ rappresenti il segno
+negativo, e in vece di $x$ vi si ponga il suo valore $\dfrac{u\sqrt{2}}{\sqrt{1-u^{4}}}$ notato
+nell'equazione (5) del III teorema, e si avrà l'equazione (16). Si surroghi poi nell'equazione (4)
+del II teorema in luogo di $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$ il suo valore
+$\dfrac{2\,du}{\sqrt{1-u^{4}}}$, che proviene dalla supposizione fatta di $x$ (come mostra
+l'equazione (6) del III teorema moltiplicata per 2), e si avrà l'equazione (17).
+
+Il che dovea dimostrarsi.
+
+\textbf{Corollario} (fig.~29). --- Chiamando $z$ la corda $CS$ della lemniscata, ed $u$ l'altra
+corda $CI$, e poscia integrando l'equazione (17), si ottiene Arc. $SL = 2$ arc. $CI$.
+
+Purchè $u$, e $z$ abbiano il valore, che si deduce dall'equazione (16).
+
+\textbf{Problema III} (fig.~33). --- Sia diviso per mezzo in $M$ il quadrante della lemniscata; e
+sia dato l'arco diretto $CB$ minore della metà del quadrante: trovare l'arco intermedio $MI$
+eguale all'arco diretto dato $CB$.
+
+\rmfigure{figures/fig-33.png}{Fig.~33.}{Fig. 33: the lemniscate's quadrant with points $B$, $I$,
+$M$, $E$ used in the bisection-transfer construction, from the original plate (Tav. III, Opere
+Matematiche vol. II).}
+
+\textbf{Soluzione.} --- I. Prendasi, mediante il teorema VII, e suo corollario, l'arco inverso
+$EL$ doppio dell'arco diretto dato $CB$. II. Prendasi, mediante il teorema V, e suo I corollario,
+l'arco diretto $CI$ suddoplo dell'arco diretto $CE$. Egli è visibile, che la somma degli archi
+$CB + CI$
+\origpage{312}
+essendo eguale alla metà della somma degli archi $CE + EL$, sarà per conseguenza eguale alla metà
+del quadrante; dunque
+
+\[ \mathrm{arc.}\,CB + \mathrm{arc.}\,CI = \mathrm{arc.}\,CM, \]
+
+e togliendo dall'uno, e l'altro membro di questa equazione l'arco comune $CI$, resta arc.
+$CB = $ arc. $MI$.
+
+Il che dovea dimostrarsi.
+
+\textbf{Corollario} (fig.~33). --- Prendasi mediante il III teorema del I schediasma l'arco
+inverso $FL$ eguale all'arco diretto $CI$, e si avrà
+
+\[ \mathrm{arc.}\,Mf = \mathrm{arc.}\,MI = \mathrm{arc.}\,CB. \]
+
+\textbf{Teorema VIII.} --- Sieno le due equazioni infrascritte (18), e (19); io dico, che posta la
+prima di esse sussiste anche l'altra
+
+\[ \frac{\sqrt{1-t^{4}}}{t\sqrt{2}} = \frac{\sqrt{1-z}}{\sqrt{1+z}}. \tag{18} \]
+
+\[ \frac{-dz}{\sqrt{1-z^{4}}} = -\frac{2\,dt}{\sqrt{1-t^{4}}}. \tag{19} \]
+
+\textbf{Dimostrazione.} --- Nell'equazione (3) del II teorema il segno $\mp$ rappresenti il segno
+negativo, e in vece di $x$ vi si ponga il suo valore $\dfrac{\sqrt{1-t^{4}}}{t\sqrt{2}}$ espresso
+nell'equazione (7) del IV teorema, e si avrà l'equazione (18). Sostituiscasi poscia nell'equazione
+(4) del II teorema in cambio di $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$ il suo valore
+$-\dfrac{2\,dt}{\sqrt{1-t^{4}}}$, che risulta dalla supposizione fatta di $x$ (conforme dimostra
+l'equazione (8) del IV teorema moltiplicata per 2) e si giungerà all'equazione (19).
+
+\textbf{Corollario} (fig.~29). --- Nominando $z$ la corda $CS$ della lemniscata, e ($t$) l'altra
+corda $CH$, attribuendo a $z$, e a $t$ i loro debiti valori dedotti dall'equazione (18), e
+integrando l'equazione (19) si scuopre l'arco inverso $SL$ eguale al doppio dell'arco inverso $HL$.
+
+\textbf{Scolio III.} --- Dai teoremi V, VI, VII, e VIII, e loro corollarj potranno dedurre i
+lettori dei modi di tagliare per mezzo il quadrante della lemniscata affatto uniformi alla maniera
+di ciò fare da me scoperta
+\origpage{313}
+nel I schediasma, e questo servirà per prova della giustezza, e fecondità del mio metodo.
+
+\textbf{Problema IV.} --- Posto, che il quadrante della lemniscata sia tagliato in un dato numero
+di parti eguali, suddividere in due porzioni parimenti uguali ciascuna di dette parti.
+
+\textbf{Soluzione.} --- Per maggior chiarezza, e brevità si chiamino archi diretti impari quegli
+archi diretti della lemniscata, che contengono un numero impari delle parti eguali di essa. In
+virtù del I corollario del V teorema si prendano gli archi diretti suddupli di tutti gli archi
+impari; indi pel I corollario del III teorema del I schediasma si trovino gli archi inversi
+eguali a tutti questi archi diretti suddupli, e si otterrà l'intento.
+
+Il che dovea ritrovarsi.
+
+\textbf{Scolio IV.} --- Dall'VIII teorema potranno dedurre i lettori un'altra maniera simile di
+sciorre questo problema, che io per brevità tralascio.
+
+\textbf{Corollario.} --- Poichè nel I schediasma ò insegnato il modo di tagliare il quadrante
+della lemniscata in due parti eguali, e nel I, e II problema del presente scritto ò trovata la
+maniera di segare il medesimo quadrante in tre, e cinque parti eguali; ne segue in vigore dello
+scioglimento di questo problema, che il quadrante della lemniscata potrà dividersi
+algebraicamente in tante parti eguali, quanti numeri si contengono in queste tre formole, cioè:
+$2 \times 2^{m}$; $3 \times 2^{m}$; $5 \times 2^{m}$, nelle quali l'esponente $m$ significa
+qualunque numero intiero positivo.
+
+E questa è una nuova, e singolare proprietà della mia curva.
+
+\end{document}

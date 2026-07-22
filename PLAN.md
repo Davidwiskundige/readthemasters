@@ -128,7 +128,7 @@ free hosting, and git versioning of the texts falls out naturally.
 readthemasters/            (one git repo, GitHub)
 ├── openspec/              # OpenSpec: project.md, specs/, changes/, archive/
 ├── corpus/
-│   └── riemann-1868-hypothesen/
+│   └── fagnano-1718-lemniscata/
 │       ├── work.yaml          # metadata: author(s), dates, edition, source URL, copyright block
 │       ├── original.tex       # transcription (original language)
 │       ├── translations/

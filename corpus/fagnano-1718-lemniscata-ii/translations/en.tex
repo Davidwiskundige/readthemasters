@@ -1,0 +1,383 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% modern translation. All mathematics, equation numbers (\tag), \origpage markers, and figures
+% are preserved unchanged; only the prose is translated. "Schediasma" is rendered "Sketch"
+% (matching the fagnano-1718-lemniscata translation); "arc." (the author's abbreviation for
+% arco/arc) is kept. The three probable misprints noted in original.tex's header ("Teorema IV"
+% printed twice, for what should be "VI"; "equazioni (6), e (8)" where "(7), e (8)" is meant; and
+% "dz" for a likely "dx" in Scolio I's "Terzo" remark) are reproduced as printed, unresolved, per
+% the same transcription.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{304}
+\section*{XXXIV. Method for measuring the lemniscate}
+\subsection*{Sketch II (*)}
+\emph{(*) Giornale de' letterati d'Italia, vol.~XXX, p.~87.}
+
+\textbf{Theorem I.} --- Let the two equations (1) and (2) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ x = \frac{\sqrt{1 \mp \sqrt{1-z^{4}}}}{z}. \tag{1} \]
+
+\[ \frac{\pm dz}{\sqrt{1-z^{4}}} = \frac{dx\sqrt{2}}{\sqrt{1+x^{4}}}. \tag{2} \]
+
+\textbf{Proof.} --- Equation (1), differentiated, furnishes a value of $dx$ which, being reduced
+to a simple expression, gives
+
+\[ dx = \frac{\pm dz\sqrt{1 \mp \sqrt{1-z^{4}}}}{z^{2}\sqrt{1-z^{4}}}. \]
+
+From the same equation (1) one further deduces the following
+
+\[ \frac{\sqrt{1+x^{4}}}{\sqrt{2}} = \frac{\sqrt{1 \mp \sqrt{1-z^{4}}}}{z^{2}}. \]
+
+And dividing the second-to-last equation by this last one, one arrives at equation (2).
+
+Which was to be demonstrated.
+
+\textbf{Theorem II.} --- Let the two equations (3) and (4) written below be given; I say that,
+the first of it being posited, the other also holds
+
+\[ x = \frac{\sqrt{1\mp z}}{\sqrt{1\pm z}}. \tag{3} \]
+
+\[ \frac{\mp dz}{\sqrt{1-z^{4}}} = \frac{dx\sqrt{2}}{\sqrt{1+x^{4}}}. \tag{4} \]
+
+\origpage{305}
+\textbf{Proof.} --- Differentiating equation (3), and proceeding in the proper manner, one has
+$dx = \dfrac{\pm dz}{\sqrt{1-z^{2}}} \times \dfrac{1}{1\pm z}$.
+
+Moreover the same equation (3) shows $\dfrac{\sqrt{1+x^{4}}}{\sqrt{2}} = \dfrac{\sqrt{1+z^{2}}}{1\pm z}$.
+
+And dividing the second-to-last equation by this last one, one obtains equation (4).
+
+Which was to be demonstrated.
+
+\textbf{Theorem III.} --- Let the two equations (5) and (6) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ x = \frac{u\sqrt{2}}{\sqrt{1-u^{4}}}. \tag{5} \]
+
+\[ \frac{du}{\sqrt{1-u^{4}}} = \frac{1}{\sqrt{2}}\times\frac{dx}{\sqrt{1+x^{4}}}. \tag{6} \]
+
+\textbf{Proof.} --- From equation (5), differentiated and duly handled, there results
+$\dfrac{dx}{\sqrt{2}} = \dfrac{du}{\sqrt{1-u^{4}}} \times \dfrac{1+u^{4}}{1-u^{4}}$, and from the
+said equation (5) one deduces $\sqrt{1+x^{4}} = \dfrac{1+u^{4}}{1-u^{4}}$.
+
+Dividing thereafter the second-to-last equation by this last one, one arrives at equation (6).
+
+Which was to be demonstrated.
+
+\textbf{Theorem IV.} --- Let the two equations (6) and (8) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ x = \frac{\sqrt{1-t^{4}}}{t\sqrt{2}}. \tag{7} \]
+
+\[ \frac{-dt}{\sqrt{1-t^{4}}} = \frac{1}{\sqrt{2}}\times\frac{dx}{\sqrt{1+x^{4}}}. \tag{8} \]
+
+\textbf{Proof.} --- Differentiating equation (7), and reducing the value of $dx$ to a convenient
+expression, one finds $dx\sqrt{2} = \dfrac{-dt}{\sqrt{1-t^{4}}} \times \dfrac{1+t^{4}}{t^{2}}$.
+
+The same equation (7) shows $2\sqrt{1+x^{4}} = \dfrac{1+t^{4}}{t^{2}}$.
+
+\origpage{306}
+And the second-to-last equation, divided by this last one, yields equation (8).
+
+Which was to be demonstrated.
+
+\textbf{Scholium I.} --- To make use of these theorems let it be noted:
+
+First, that $\displaystyle\int \frac{dz}{\sqrt{1-z^{4}}}$ represents the direct arc $CS$ of the
+lemniscate (fig.~29) subtended by the chord $CS = z$, provided the semi-axis $CL$ of this curve
+is equal to unity.
+
+\rmfigure{figures/fig-29.png}{Fig.~29.}{Fig. 29: the lemniscate with chord $CS=z$ and its
+semi-axis $CL$, from the original plate (Tav. III, Opere Matematiche vol. II).}
+
+Second, that $\displaystyle\int \frac{-dz}{\sqrt{1-z^{4}}}$ expresses the inverse arc $SL$ of the
+same curve, which corresponds to the aforesaid chord $CS$ ($z$).
+
+Third, that $\displaystyle\int \frac{dz}{\sqrt{1+x^{4}}} = \frac{3}{2}\int dx\,\sqrt{1+x^{4}} -
+\frac{1}{2}\sqrt{1+x^{4}}$, as is proved by calculation.
+
+Fourth, that $\displaystyle\int dx\,\sqrt{1+x^{4}}$ expresses the arc $AQ$ (fig.~30) of the
+primary cubic parabola corresponding to the abscissa $AF = x$, provided that, taking $a$ as
+unity, the parameter of this parabola is $a\sqrt{3}$, and the ordinates are normal to the
+abscissa.
+
+\rmfigure{figures/fig-30.png}{Fig.~30.}{Fig. 30: the primary cubic parabola with abscissa
+$AF=x$, ordinate $FQ$, tangent portion $QV$, and origin $A$, from the original plate (Tav. III,
+Opere Matematiche vol. II).}
+
+Fifth, that $x\sqrt{1+x^{4}}$ denotes the portion $QV$ of the tangent (fig.~30) contained
+between the ordinate $FQ$ and the indefinite line $AV$, which from the origin $A$ of the
+parabola runs parallel to the ordinates.
+
+Sixth, that in consequence one will have
+
+\[ \int \frac{dx}{\sqrt{1+x^{4}}} = \frac{3}{2}\,\mathrm{arc.}\,AQ - \frac{1}{2}\,QV. \]
+
+\emph{Examples to show the way of applying the preceding theorems to geometry.}
+
+\emph{Example I, for Theorem I} (fig.~29 and 30). --- In equation (1) let the arbitrary sign
+$\mp$ signify the negative sign; let equation (2) be integrated by means of the preceding
+scholium, and one will find
+
+\[ \mathrm{Arc.}\,CS = \frac{3}{\sqrt{2}}\,\mathrm{arc.}\,AQ - \frac{1}{\sqrt{2}}\,QV. \]
+
+Annulling $AF\,(x)$ will also annul $CS\,(z)$, and so this equation is complete.
+
+\emph{Example II, for Theorem II} (fig.~29 and 30). --- In equation (3) let the sign $\mp$
+represent the negative sign; let equation (4) be integrated, and one will disc-
+\origpage{307}
+over
+
+\[ \mathrm{Arc.}\,SL = \frac{3}{\sqrt{2}}\,\mathrm{arc.}\,AQ - \frac{1}{\sqrt{2}}\,QV. \]
+
+The supposition $CS\,(z) = 1$, which annihilates the inverse arc $SL$, renders $AF\,(x) = 0$,
+and so this equation is complete.
+
+\textbf{Scholium II.} --- In the course of this paper I shall no longer prove that the equations
+are complete, it being enough for readers to have the method by which I have proceeded in these
+two examples, so that they may satisfy themselves of the completeness of the following
+equations; they will also be able to make use of the four preceding theorems to draw out other
+ways of measuring the lemniscate by means of the extent of the primary cubic parabola, not
+omitting, where it is needed, the subtraction or addition of the constant quantity proper to
+render the equations complete.
+
+They will moreover be able to deduce from these theorems truths altogether new, concerning the
+comparison of the arcs of the said parabola, etc.
+
+I shall content myself with observing that, since the measure of the primary cubic parabola
+depends in several ways on the extent of the lemniscate by virtue of the four preceding
+theorems, and the measure of the lemniscate depends on the extent of the equilateral hyperbola
+and of a kind of ellipse \emph{jointly}, as I discovered in Sketch I, it follows that the measure
+of the primary cubic parabola depends in several ways on the extent of the two aforesaid conic
+sections \emph{jointly}. This invention cannot fail to please whoever shall have considered what
+may be read in the Acta of Leipzig of the year 1695, p.~64, and p.~184 toward the end.
+
+\textbf{Theorem V.} --- Let the two equations (9) and (10) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ \frac{u\sqrt{2}}{\sqrt{1-u^{4}}} = \frac{1}{z}\sqrt{1-\sqrt{1-z^{4}}}. \tag{9} \]
+
+\[ \frac{dz}{\sqrt{1-z^{4}}} = \frac{2\,du}{\sqrt{1-u^{4}}}. \tag{10} \]
+
+\textbf{Proof.} --- Setting in equation (1) of Theorem I the negative sign in place of $\mp$, and
+in place of $x$ its value $\dfrac{u\sqrt{2}}{\sqrt{1-u^{4}}}$ noted in equation (5) of Theorem
+III, one has equation (9); then sur-
+\origpage{308}
+rogating in equation (2) of Theorem I, in place of $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$, its
+value $\dfrac{2\,du}{\sqrt{1-u^{4}}}$, which arises from the supposition made of $x$ (as is seen
+by multiplying equation (6) of Theorem III by 2), equation (10) follows.
+
+Which was to be demonstrated.
+
+\textbf{Corollary I} (fig.~29). --- Let $z$ be called the chord $CS$ of the lemniscate, and $u$
+the other chord $CI$, and integrating equation (10), one will find
+
+\[ \mathrm{Arc.}\,CS = 2\,\mathrm{arc.}\,CI. \]
+
+Whence, considering the letter $z$ as known in equation (9), one will draw from it the value of
+the chord $CI\,(u)$ that bisects the direct arc $CS$.
+
+\textbf{Corollary II} (fig.~29). --- From equation (9) arises this other
+
+\[ z = \frac{2u\sqrt{1-u^{4}}}{1+u^{4}}. \tag{11} \]
+
+And this value of $z$ is such that, calling $u$ the chord $CI$ taken as known, and making the
+other chord $CS$ equal to the second member of equation (11), the direct arc $CS$ is double the
+other direct arc $CI$.
+
+\textbf{Theorem IV.} --- Let the two equations (12) and (13) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ \frac{\sqrt{1-t^{4}}}{t\sqrt{2}} = \frac{1}{z}\sqrt{1-\sqrt{1-z^{4}}}. \tag{12} \]
+
+\[ \frac{dz}{\sqrt{1-z^{4}}} = -\frac{2\,dt}{\sqrt{1-t^{4}}}. \tag{13} \]
+
+\textbf{Proof.} --- Setting in equation (1) of Theorem I the negative sign in place of $\mp$, and
+in place of $x$ its value $\dfrac{1}{t\sqrt{2}}\sqrt{1-t^{4}}$ noted in equation (7) of Theorem
+IV, one has equation (12). Then substi-
+\origpage{309}
+tuting in equation (2) of Theorem I, in place of $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$, its value
+$\dfrac{-2\,dt}{\sqrt{1-t^{4}}}$, which derives from the supposition made of $x$ (as appears by
+multiplying equation (8) of Theorem IV by 2), one obtains equation (13).
+
+Which was to be demonstrated.
+
+\textbf{Corollary I} (fig.~29). --- Let $z$ be named the chord $CS$ of the lemniscate, and ($t$)
+the other chord $CH$, and there will result arc. $CS = 2$ arc. $HL$.
+
+\textbf{Corollary II} (fig.~29). --- Rearranging equation (12), and putting in it $u$ in place of
+$z$, and $r$ in place of $t$, one arrives at this other
+
+\[ u = \frac{2r\sqrt{1-r^{4}}}{1+r^{4}}. \tag{14} \]
+
+So that, naming $r$ the chord $CO$, and taking the other chord $CI\,(u)$ equal to the second
+member of equation (14), the direct arc $CI$ will be double the inverse arc $OL$.
+
+\textbf{Problem I.} --- To cut the quadrant of the lemniscate into three equal parts.
+
+\textbf{Solution} (fig.~29 and 31). --- By virtue of Theorem VI and its Corollary I, the direct
+arc $CS$ (fig.~29) will be double the inverse arc $HL$, provided that, calling $t$ the chord
+$CH$, and $z$ the other chord $CS$, one has equation (12). Suppose now that the two points $S$
+and $H$ coincide in $T$; this supposition will render $CS\,(z) = CH\,(t)$, and the direct arc
+$CT$ (fig.~31) will be double the inverse arc $TL$, which will become the third part of the
+quadrant.
+
+\rmfigure{figures/fig-31.png}{Fig.~31.}{Fig. 31: the lemniscate's quadrant with chord $CI$ and
+points $T$, $L$ used in the trisection and quintisection problems, from the original plate
+(Tav. III, Opere Matematiche vol. II).}
+
+But supposing $t = z$ in equation (12), and thereafter arranging it in the proper manner, etc.,
+one obtains
+
+\[ z = \sqrt[4]{-3+2\sqrt{3}}. \]
+
+Whence, attributing to the chord $CT$ (fig.~31) this value of $z$, and taking the direct arc $CI$
+equal to the inverse arc $TL$ by means of Theorem III of Sketch I, one will have the solution of
+the problem.
+
+Which was to be found.
+
+\textbf{Problem II.} --- To cut the quadrant of the lemniscate into five equal parts.
+\origpage{310}
+\textbf{Solution} (fig.~29 and 31). --- Let $u$ be called the chord $CI$ (fig.~29) of the
+lemniscate, and $z$ the other chord $CS$; let $z = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$, and the
+arc $CS$ will be double the arc $CI$ by the second corollary of Theorem V. Let $r$ then be named
+the chord $CO$ (fig.~29); suppose the chord $CI\,(u) = \dfrac{2r\sqrt{1-r^{4}}}{1+r^{4}}$, and
+the direct arc $CI$ will be double the inverse arc $OL$ by Corollary II of Theorem VI; therefore
+the direct arc $CS$ will be quadruple the inverse arc $OL$.
+
+Suppose now $CS\,(z) = CO\,(r)$; the points $S$ and $O$ will coincide in $T$, the arc $TL$
+(fig.~32) will be one fifth of the quadrant, the arc $CI = 2$ arc. $TL$ will contain two fifths
+of the same quadrant, and the arc $IT = $ arc. $CI$ will contain the other two fifths of it.
+
+Let there then be taken, by means of Theorem III of Sketch I, the inverse arc $EL$ (fig.~32)
+equal to the direct arc $CI$, and the direct arc $CB$ equal to the inverse arc $TL$, and the
+points $B$, $I$, $E$, $T$ will cut the quadrant into five equal parts.
+
+It remains only to find the precise value of the chord $CT$ (fig.~32), equal at the same time to
+$z$ and to $r$, and this will be found by substituting in equation (14), in place of $r$, the
+letter $z$, whence one will have
+
+\[ u = \frac{2z\sqrt{1-z^{4}}}{1+z^{4}}. \tag{15} \]
+
+And putting this value of $u$ in equation (11), one will arrive at another equation which will
+contain no unknown but the letter $z$, and which must be reckoned an equation of the eighth
+degree, since if in it one supposes $z^{4} = b$, there will result a new equation of exactly the
+eighth degree; the calculation will be longer than difficult, provided one does not neglect
+those ways of facilitating it which are well known to skilled analysts, and so I judge it
+superfluous to set it out in this paper. I shall only remark that, in the equation expressing the
+value of $z^{4}$, the same quantity $z^{4}$ will have two true values less than $a^{4}$; the
+greater of these two values will express the fourth power of $CT\,(z)$, and the lesser of them
+will express the fourth power of $CI\,(u)$; for if in equation (15) one puts, in place of $z$,
+its value in $u$ drawn from equation (11), one will find an equation altogether similar to that
+which expresses the value of $z^{4}$, etc.
+
+Which was to be found.
+
+The late Monsieur the Marquis de l'Hospital, in his excellent \emph{Treatise on Conic}
+\origpage{311}
+\emph{Sections}, book 9, prop.\ 9, teaches a way of constructing equations of the eighth degree.
+
+\textbf{Theorem VII.} --- Let the two equations (16) and (17) written below be given; I say that,
+the first of them being posited, the other also holds
+
+\[ \frac{u\sqrt{2}}{\sqrt{1-u^{4}}} = \frac{\sqrt{1-z}}{\sqrt{1+z}}. \tag{16} \]
+
+\[ \frac{-dz}{\sqrt{1-z^{4}}} = \frac{2\,du}{\sqrt{1-u^{4}}}. \tag{17} \]
+
+Which was to be demonstrated.
+
+\textbf{Proof.} --- In equation (3) of Theorem II let the sign $\mp$ represent the negative sign,
+and in place of $x$ let there be put its value $\dfrac{u\sqrt{2}}{\sqrt{1-u^{4}}}$ noted in
+equation (5) of Theorem III, and one will have equation (16). Let there then be surrogated in
+equation (4) of Theorem II, in place of $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$, its value
+$\dfrac{2\,du}{\sqrt{1-u^{4}}}$, which comes from the supposition made of $x$ (as equation (6) of
+Theorem III multiplied by 2 shows), and one will have equation (17).
+
+Which was to be demonstrated.
+
+\textbf{Corollary} (fig.~29). --- Calling $z$ the chord $CS$ of the lemniscate, and $u$ the other
+chord $CI$, and thereafter integrating equation (17), one obtains Arc. $SL = 2$ arc. $CI$.
+
+Provided that $u$ and $z$ have the value that is deduced from equation (16).
+
+\textbf{Problem III} (fig.~33). --- Let the quadrant of the lemniscate be bisected at $M$; and
+let the direct arc $CB$, less than half the quadrant, be given: to find the intermediate arc $MI$
+equal to the given direct arc $CB$.
+
+\rmfigure{figures/fig-33.png}{Fig.~33.}{Fig. 33: the lemniscate's quadrant with points $B$, $I$,
+$M$, $E$ used in the bisection-transfer construction, from the original plate (Tav. III,
+Opere Matematiche vol. II).}
+
+\textbf{Solution.} --- I. Let there be taken, by means of Theorem VII and its corollary, the
+inverse arc $EL$ double the given direct arc $CB$. II. Let there be taken, by means of Theorem V
+and its Corollary I, the direct arc $CI$ subduple of the direct arc $CE$. It is evident that the
+sum of the arcs $CB + CI$,
+\origpage{312}
+being equal to half the sum of the arcs $CE + EL$, will consequently be equal to half the
+quadrant; therefore
+
+\[ \mathrm{arc.}\,CB + \mathrm{arc.}\,CI = \mathrm{arc.}\,CM, \]
+
+and taking away from both members of this equation the common arc $CI$, there remains arc.
+$CB = $ arc. $MI$.
+
+Which was to be demonstrated.
+
+\textbf{Corollary} (fig.~33). --- Let there be taken, by means of Theorem III of Sketch I, the
+inverse arc $FL$ equal to the direct arc $CI$, and one will have
+
+\[ \mathrm{arc.}\,Mf = \mathrm{arc.}\,MI = \mathrm{arc.}\,CB. \]
+
+\textbf{Theorem VIII.} --- Let the two equations (18) and (19) written below be given; I say
+that, the first of them being posited, the other also holds
+
+\[ \frac{\sqrt{1-t^{4}}}{t\sqrt{2}} = \frac{\sqrt{1-z}}{\sqrt{1+z}}. \tag{18} \]
+
+\[ \frac{-dz}{\sqrt{1-z^{4}}} = -\frac{2\,dt}{\sqrt{1-t^{4}}}. \tag{19} \]
+
+\textbf{Proof.} --- In equation (3) of Theorem II let the sign $\mp$ represent the negative sign,
+and in place of $x$ let there be put its value $\dfrac{\sqrt{1-t^{4}}}{t\sqrt{2}}$ expressed in
+equation (7) of Theorem IV, and one will have equation (18). Let there then be substituted in
+equation (4) of Theorem II, in place of $\dfrac{dx\sqrt{2}}{\sqrt{1+x^{4}}}$, its value
+$-\dfrac{2\,dt}{\sqrt{1-t^{4}}}$, which results from the supposition made of $x$ (as equation (8)
+of Theorem IV multiplied by 2 shows), and one will arrive at equation (19).
+
+\textbf{Corollary} (fig.~29). --- Naming $z$ the chord $CS$ of the lemniscate, and ($t$) the
+other chord $CH$, attributing to $z$ and to $t$ their due values deduced from equation (18), and
+integrating equation (19), one discovers the inverse arc $SL$ equal to double the inverse arc
+$HL$.
+
+\textbf{Scholium III.} --- From Theorems V, VI, VII, and VIII, and their corollaries, readers
+will be able to deduce ways of bisecting the quadrant of the lemniscate entirely uniform with
+the manner of doing so discovered by me
+\origpage{313}
+in Sketch I, and this will serve as proof of the correctness and fruitfulness of my method.
+
+\textbf{Problem IV.} --- Given that the quadrant of the lemniscate is cut into a given number of
+equal parts, to subdivide each of the said parts into two equally equal portions.
+
+\textbf{Solution.} --- For greater clarity and brevity let those direct arcs of the lemniscate
+that contain an odd number of its equal parts be called odd direct arcs. By virtue of Corollary I
+of Theorem V let the direct arcs subduple of all the odd arcs be taken; then, by Corollary I of
+Theorem III of Sketch I, let the inverse arcs equal to all these subduple direct arcs be found,
+and the intent will be obtained.
+
+Which was to be found.
+
+\textbf{Scholium IV.} --- From Theorem VIII readers will be able to deduce another, similar way
+of resolving this problem, which I omit for brevity.
+
+\textbf{Corollary.} --- Since in Sketch I I have taught the way of cutting the quadrant of the
+lemniscate into two equal parts, and in Problems I and II of the present paper I have found the
+way of cutting the same quadrant into three and five equal parts, it follows, by virtue of the
+solution of this problem, that the quadrant of the lemniscate can be divided algebraically into
+as many equal parts as are contained in these three formulas, namely: $2 \times 2^{m}$;
+$3 \times 2^{m}$; $5 \times 2^{m}$, in which the exponent $m$ signifies any positive whole number.
+
+And this is a new and singular property of my curve.
+
+\end{document}

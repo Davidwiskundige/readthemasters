@@ -1,0 +1,61 @@
+transcription:
+  status: skimmed
+  model: claude-sonnet-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-07-22"
+  reviewers:
+    - name: DvdL
+      level: skimmed
+      date: "2026-07-22"
+      note: "Skimmed the math against the original scan — it agrees."
+  note: >-
+    Complete memoir, printed pages 304–313 (= scan djvu pages 334–343). Transcribed from the
+    Wikimedia Commons scan, with zoomed crops used to confirm every equation, theorem heading,
+    and cross-reference. Two printer's inconsistencies were confirmed against the scan (zoomed
+    to pixel level) and reproduced faithfully rather than silently corrected: (a) the theorem
+    heading on p. 308 reads "Teorema IV" a second time, where every later in-text cross-reference
+    in this same memoir (pp. 309, 310) calls it "il teorema VI" — almost certainly a repeat of
+    the earlier p. 305 heading rather than the intended "VI"; (b) the p. 305 "Teorema IV" heading
+    itself cites "equazioni (6), e (8)" where it should read "(7), e (8)" by the pattern of every
+    other theorem in the text (eq. (6) belongs to the preceding Teorema III, not this one). A
+    third likely misprint was left as printed without the same pixel-level re-verification: the
+    "Terzo" remark in Scolio I (p. 306) writes $\int dz/\sqrt{1+x^4}$, mixing the differential
+    $dz$ with variable $x$; its consequence in the "Sesto" remark uses $dx$ throughout, so "dz" is
+    probably a compositor's slip for "dx". All three are noted in the file header of
+    original.tex for a reviewer. Fig. 32, printed on the same plate (Tav. III) as figs. 29, 30,
+    31, 33, is not cited by number anywhere in this memoir's text and was therefore not
+    reproduced.
+  verification:
+    flagged_pages: [305, 306, 308]
+    date: "2026-07-22"
+
+figures:
+  status: skimmed
+  reviewers:
+    - name: DvdL
+      level: skimmed
+      date: "2026-07-22"
+      note: "Reviewed the crops; fig-30 was too tight (cut off the curve's far end and the line
+        to V) and was re-cropped wider. The rest looked right."
+  note: >-
+    Figs. 29, 30, 31, 33 cropped from the single shared plate Tav. III (scan djvu p. 499,
+    "Schediasmi XXI-LIII"). Fig. 32 on the same plate is not cited in this memoir's text and was
+    not cropped.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-sonnet-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    produced: "2026-07-22"
+    source: transcription
+    note: >-
+      English translation made from our own transcription (original.tex), not from any existing
+      translation. All mathematics, equation numbers (\tag), \origpage markers, and figures are
+      preserved; only the prose is translated. "Schediasma" rendered "Sketch" (matching
+      fagnano-1718-lemniscata); "arc." kept; the three probable misprints flagged in
+      original.tex's header are reproduced as printed, unresolved. Not yet human-checked.

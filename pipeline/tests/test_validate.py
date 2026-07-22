@@ -192,12 +192,12 @@ def test_real_corpus_passes_gate():
 
 
 def test_stale_assessment_detected(tmp_path):
-    # Copy the Riemann work, corrupt its stored assessment, expect an error.
+    # Copy a corpus work, corrupt its stored assessment, expect an error.
     import shutil
     src = REPO / "corpus"
     dst = tmp_path / "corpus"
     shutil.copytree(src, dst)
-    wp = dst / "riemann-1868-hypothesen" / "work.yaml"
+    wp = dst / "leibniz-1689-isochrona" / "work.yaml"
     work = validate.load_yaml(wp)
     work["copyright_assessment"]["public_domain"] = False
     work["copyright_assessment"]["evaluated"]["pma_70"]["verdict"] = "fail"

@@ -1,0 +1,94 @@
+id: fagnano-1718-lemniscata-ii
+title: "Metodo per misurare la lemniscata, Schediasma II"
+title_en: "Method for Measuring the Lemniscate, Second Sketch"
+
+authors:
+  - name: "Giulio Carlo de' Toschi di Fagnano"
+    wikidata_id: Q1528006
+    birth_year: 1682
+    death_year: 1766
+
+publication:
+  year: 1718
+  venue: giornale-letterati-italia
+  volume: "30"
+  pages: "87"
+  title_full: >-
+    "Metodo per misurare la lemniscata, Schediasma II", first published in the Giornale de'
+    letterati d'Italia, tomo XXX (1718), p. 87. Transcribed here from the complete reprint in
+    Opere Matematiche, vol. II (1911), printed pages 304–313 (= scan djvu pages 334–343), where
+    it is catalogued as memoir XXXIV, directly following Schediasma I (memoir XXXII).
+
+edition:
+  year: 1911
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from Fagnano's Opere Matematiche, vol. II (1911), eds. V. Volterra,
+    G. Loria & D. Gambioli — a faithful reprint of the public-domain original. Only
+    Fagnano's text is transcribed, not the editors' apparatus; and the 1911 edition is
+    itself public domain (published >95 years ago; all editors died by 1954).
+
+discipline: mathematics
+tags: [analysis, geometry]
+language: it
+type: paper
+
+significance: >-
+  This sketch gives the multiplication and further division of the lemniscate's arc: the
+  doubling of an arc, the division of the quadrant into three and into five equal parts, the
+  celebrated formula for bisecting a general arc, not just the quadrant, and, as a result, its
+  division into 2·2^m, 3·2^m and 5·2^m equal parts. When Fagnano's collected works reached the
+  Berlin Academy and Euler was asked to examine them in December 1751, these results set him on
+  the path to the addition theorem for elliptic integrals — the day Jacobi would later call the
+  birthday of the theory of elliptic functions.[2] The bisection formula for a general arc is the
+  direct ancestor of the addition theorem.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — see §2 (the lemniscate and elliptic
+      integrals) onward.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+  - citation: >-
+      A. Weil, "Number Theory: An Approach through History from Hammurapi to Legendre",
+      Birkhäuser (1984) — recounts Jacobi's remark that the day (23 Dec. 1751) the Berlin Academy
+      handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
+      functions.
+
+source:
+  scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=334"
+  scan_id: "wikimedia:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu#page334"
+
+sources:
+  death_date: >-
+    Giulio Carlo de' Toschi di Fagnano, 1682–1766 (wikidata:Q1528006; Encyclopedia.com;
+    MacTutor archive) — same fact as for Schediasma I (fagnano-1718-lemniscata).
+  publication_date: >-
+    First published 1718 in Giornale de' letterati d'Italia, tomo XXX, p. 87 — tomo and page
+    per the 1911 edition's own footnote (Opere Matematiche vol. II, p. 304 = scan djvu p. 334).
+    The year 1718 (same year as tomo XXIX, which carried Schediasma I) is corroborated by
+    secondary historical accounts of Fagnano's lemniscate memoirs, e.g. "Fagnano e gli archi di
+    lemniscata" (Univ. di Ferrara, dm.unife.it/geometria/divulg/Funzioniellittiche/Fagnano.htm),
+    which dates both schediasmi to 1718.
+  edition: >-
+    Fagnano, Opere Matematiche, vol. II (1911), eds. Volterra, Loria & Gambioli; scanned copy
+    on Wikimedia Commons (File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu, page 334).
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1766], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1718, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-22"

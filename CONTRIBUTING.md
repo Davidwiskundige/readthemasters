@@ -41,7 +41,7 @@ python pipeline/validate.py
 ### Adding a work by pull request (tiers 2–3)
 
 1. Create `corpus/<id>/` with `work.yaml`, `provenance.yaml`, `original.tex`, and any
-   `translations/<lang>.tex`. Copy an existing work (e.g. `corpus/riemann-1868-hypothesen/`) as a
+   `translations/<lang>.tex`. Copy an existing work (e.g. `corpus/fagnano-1718-lemniscata/`) as a
    template. `<id>` follows PLAN.md §3.2 (Wikidata QID → DOI → `author-year-shorttitle`).
 2. Use the shared house style: every `.tex` does `\usepackage{readmasters}`. Transcribe
    faithfully; normalize typography; keep the author's notation. Follow the math-typography

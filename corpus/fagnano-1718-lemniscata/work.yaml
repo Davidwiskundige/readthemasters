@@ -1,6 +1,6 @@
 id: fagnano-1718-lemniscata
-title: "Metodo per misurare la lemniscata"
-title_en: "Method for Measuring the Lemniscate"
+title: "Metodo per misurare la lemniscata, Schediasma I"
+title_en: "Method for Measuring the Lemniscate, First Sketch"
 
 authors:
   - name: "Giulio Carlo de' Toschi di Fagnano"
@@ -34,12 +34,15 @@ language: it
 type: paper
 
 significance: >-
-  Fagnano's study of the lemniscate — above all his algebraic formulas for doubling and bisecting
-  its arcs — is the seed of the theory of elliptic integrals.[1] When the Berlin Academy asked
-  Euler to referee Fagnano's collected works in 1751 it led him to the addition theorem for
-  elliptic integrals — a moment André Weil later called the birthday of the theory of elliptic
-  functions.[2]
-  Through Legendre, Abel, and Jacobi this grew into the theory of elliptic and Abelian functions,
+  The first of Fagnano's two 1718 sketches on measuring the lemniscate. Here he rectifies the
+  curve by comparing its arcs with those of an ellipse and an equilateral hyperbola taken
+  together, and derives his first division result: the algebraic bisection of the lemniscate's
+  quadrant. (The celebrated formula for bisecting a general arc — not just the quadrant — comes in
+  the second sketch, Schediasma II.) When Fagnano's collected works reached the Berlin Academy
+  and Euler was asked to examine them in December 1751, these results set him on the path to the
+  addition theorem for elliptic integrals — the day Jacobi would later call the birthday of the
+  theory of elliptic functions.[2]
+  Through Legendre, Abel, and Jacobi this blossomed into the general theory of elliptic and Abelian functions,
   and in Riemann's hands into the theory of Riemann surfaces — now foundational to complex
   analysis, algebraic geometry, and far beyond.[1]
 
@@ -51,7 +54,9 @@ significance_sources:
     url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
   - citation: >-
       A. Weil, "Number Theory: An Approach through History from Hammurapi to Legendre",
-      Birkhäuser (1984) — on Euler, Fagnano, and the origins of elliptic function theory.
+      Birkhäuser (1984) — recounts Jacobi's remark that the day (23 Dec. 1751) the Berlin Academy
+      handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
+      functions.
 
 source:
   scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=323"
