@@ -36,8 +36,23 @@ header.site, footer.site {
 }
 footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
 header.site nav { display: flex; gap: 1.25rem; align-items: baseline; flex-wrap: wrap; }
-header.site .brand { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
-header.site .brandmark { flex: none; color: var(--accent); }
+header.site .brand { font-variant: small-caps; letter-spacing: .12em; font-weight: 600;
+  font-size: 1.2rem; color: var(--text); text-decoration: none; }
+
+/* Full wordmark lockup (homepage masthead). Small-caps of the site serif gives the
+   large-initial + small-caps look; a centered rule with a diamond splits it from the tagline. */
+.masthead { text-align: center; margin: 1rem 0 2.5rem; }
+.masthead .wordmark { font-variant: small-caps; letter-spacing: .14em; font-weight: 600;
+  font-size: clamp(2rem, 7vw, 3.4rem); line-height: 1; color: var(--text); margin: 0; }
+.masthead .rule { display: flex; align-items: center; justify-content: center; gap: 1rem;
+  max-width: 30rem; margin: 1rem auto; }
+.masthead .rule::before, .masthead .rule::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.masthead .diamond { color: var(--accent); font-size: .7rem; line-height: 1; }
+.masthead .tagline { font-variant: small-caps; letter-spacing: .26em; font-size: .92rem;
+  font-weight: 600; color: var(--muted); margin: 0;
+  /* letter-spacing adds trailing space after the last glyph, pushing the centered line
+     optically right; a small negative indent re-centers it under the diamond. */
+  text-indent: -.26em; }
 main { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
 
 .layout { display: grid; grid-template-columns: 16rem 1fr; gap: 2rem; }
