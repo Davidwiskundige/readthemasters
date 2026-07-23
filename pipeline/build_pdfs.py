@@ -31,13 +31,15 @@ def have_tectonic() -> bool:
     return shutil.which("tectonic") is not None
 
 
-def compile_one(tex: Path, out_pdf: Path) -> bool:
+def compile_one(tex: Path, wd: Path, out_pdf: Path) -> bool:
     """Compile a single .tex to out_pdf. Returns True on success."""
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
-        # --keep-logs off; -Z search-path lets \usepackage{readmasters} resolve the shared preamble.
+        # --keep-logs off; -Z search-path lets \usepackage{readmasters} resolve the shared preamble,
+        # and lets translations/<lang>.tex resolve figures/ via relative paths rooted at the work dir.
         cmd = ["tectonic", "-X", "compile", str(tex), "--outdir", tmp,
                "-Z", "search-path=" + str(tex.parent),
+               "-Z", "search-path=" + str(wd),
                "-Z", "search-path=corpus/preamble"]
         proc = subprocess.run(cmd, capture_output=True, text=True)
         if proc.returncode != 0:
@@ -83,7 +85,7 @@ def build(corpus_dir: Path, out_root: Path, now_year: int, min_status: str,
                 shutil.copyfile(override, out_pdf)
                 print(f"copied override {override} -> {out_pdf}")
                 built += 1
-            elif compile_one(tex, out_pdf):
+            elif compile_one(tex, wd, out_pdf):
                 print(f"compiled {tex} -> {out_pdf}")
                 built += 1
     return built
