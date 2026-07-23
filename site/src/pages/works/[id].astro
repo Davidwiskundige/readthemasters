@@ -33,15 +33,17 @@ function renderSignificance(text, sources) {
     if (!src) return m;
     const cite = esc(src.citation);
     const inner = src.url ? `<a href="${esc(src.url)}" rel="noopener">${cite}</a>` : cite;
-    return `<span class="pop cite"><button type="button" class="pop-marker" aria-label="Citation ${n}">${n}</button>` +
+    return `<span class="pop cite" data-pagefind-ignore><button type="button" class="pop-marker" aria-label="Citation ${n}">${n}</button>` +
            `<span class="pop-content" role="note">${inner}</span></span>`;
   });
 }
 
 const figOpts = { figureBase: `/figures/${work.id}/` };
 const originalHtml = texToHtml(work.original_tex, figOpts);
+// Each translation prefixes its page anchors so `p-236` stays unique across the panels of one page.
 const translations = Object.entries(work.translations ?? {}).map(([lang, t]) => ({
-  lang, label: t.label, html: texToHtml(t.tex, figOpts), prov: t.provenance, pdf: t.pdf, tex_url: t.tex_url,
+  lang, label: t.label, html: texToHtml(t.tex, { ...figOpts, idPrefix: `${lang}-` }),
+  prov: t.provenance, pdf: t.pdf, tex_url: t.tex_url,
 }));
 const externalTranslations = work.external_translations ?? [];
 
@@ -67,14 +69,23 @@ const repo = "https://github.com/Davidwiskundige/readthemasters";
 const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${work.id}`)}&body=${encodeURIComponent(`Work: ${work.id}\nWhere (page/paragraph):\nProblem:\n`)}`;
 ---
 <Base title={work.title} description={work.title_en ?? work.title}>
+  {/* data-pagefind-body marks what the search index covers: the significance note and the text
+      panels below. Everything else (this heading block, downloads, notices, BibTeX store, site
+      chrome) sits outside every body region, so it is not indexed as text — the heading block
+      only contributes the metadata the search-result cards are built from. */}
   <div class="workhead">
-    <h1>{work.title}</h1>
+    <h1 data-pagefind-meta="title">{work.title}</h1>
     {work.title_en && <p class="sub"><em>{work.title_en}</em></p>}
     <p class="sub">
       {authors} · {work.year}
       {work.venue_label && <> · {work.venue_label}</>}
       · <span class={`badge ${work.status}`}>{work.status}</span>
     </p>
+    {/* Key-only form (value = element text), so an author list containing commas survives. */}
+    <span class="sr-only" data-pagefind-meta="author">{authors}</span>
+    <span class="sr-only" data-pagefind-meta="year">{String(work.year)}</span>
+    <span class="sr-only" data-pagefind-meta="status">{work.status}</span>
+    <span class="sr-only" data-pagefind-meta="language">{work.language_label}</span>
   </div>
 
   <p>
@@ -86,8 +97,8 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
   </p>
 
   {work.significance && (
-    <aside class="significance">
-      <h2>Significance</h2>
+    <aside class="significance" data-pagefind-body>
+      <h2 id="significance">Significance</h2>
       <p set:html={renderSignificance(work.significance, work.significance_sources)} />
     </aside>
   )}
@@ -131,12 +142,17 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     ))}
   </div>
 
-  <section class="text" data-panel="original">
+  {/* Each panel carries a heading with the id the tabs and search results link to: `#original`,
+      `#en`. The heading is for screen readers and for Pagefind sub-results — the visible label is
+      the tab itself. */}
+  <section class="text" data-panel="original" data-pagefind-body>
+    <h2 class="sr-only" id="original">Original ({work.language_label})</h2>
     <p class="attr">{attribution(tp)}</p>
     <div set:html={originalHtml} />
   </section>
   {translations.map((t) => (
-    <section class="text" data-panel={t.lang} hidden>
+    <section class="text" data-panel={t.lang} data-pagefind-body hidden>
+      <h2 class="sr-only" id={t.lang}>{t.label} translation</h2>
       <p class="attr">{attribution(t.prov)}</p>
       <div set:html={t.html} />
     </section>
@@ -173,14 +189,33 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
   <script>
     document.querySelectorAll('.tabs button').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
         const tab = btn.dataset.tab;
         document.querySelectorAll('.tabs button').forEach((b) =>
           b.setAttribute('aria-selected', String(b === btn)));
         document.querySelectorAll('[data-panel]').forEach((p) =>
           (p.hidden = p.dataset.panel !== tab));
+        // Only a real click rewrites the hash — a programmatic click from applyHash() below must
+        // not overwrite a deeper anchor like #en-p-236 with plain #en.
+        if (e.isTrusted) history.replaceState(null, '', '#' + tab);
       });
     });
+
+    // Deep links into a panel: `#en` (the translation) or `#en-p-236` (a page marker inside it).
+    // Search results and shared links land here, so open the owning panel before scrolling —
+    // a hidden panel cannot be scrolled to, and its equations cannot be measured.
+    function applyHash() {
+      const id = decodeURIComponent((location.hash || '').slice(1));
+      if (!id) return;
+      const el = document.getElementById(id);
+      const panel = el && el.closest('[data-panel]');
+      if (!panel) return;
+      const btn = document.querySelector(`.tabs button[data-tab="${panel.dataset.panel}"]`);
+      if (btn && btn.getAttribute('aria-selected') !== 'true') btn.click();
+      el.scrollIntoView({ block: 'start' });
+    }
+    applyHash();
+    addEventListener('hashchange', applyHash);
 
     // Popover markers: hover shows them (CSS); click pins one open (touch-friendly). Shared by
     // significance citation markers and in-text editorial notes (\ednote) — anything with a
@@ -300,8 +335,15 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
 
     fitDisplayMath(document);
     // KaTeX's fonts arrive from the CDN after that first pass, and the formulas grow when they
-    // land — so measure again once they are in.
-    if (document.fonts) document.fonts.ready.then(() => fitDisplayMath(document));
+    // land — so measure again once they are in. A deep link (e.g. a search result pointing at
+    // #p-295) is scrolled into place on load, but that same font reflow then pushes the target
+    // down; re-scroll to it once, so a formula-search hit lands on the right line.
+    if (document.fonts) document.fonts.ready.then(() => {
+      fitDisplayMath(document);
+      const id = decodeURIComponent((location.hash || '').slice(1));
+      const el = id && document.getElementById(id);
+      if (el && !el.closest('[data-panel][hidden]')) el.scrollIntoView({ block: 'start' });
+    });
     let fitTimer;
     addEventListener('resize', () => {
       clearTimeout(fitTimer);

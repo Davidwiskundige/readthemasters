@@ -29,7 +29,9 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     // as ours by a muted footnote-style symbol rather than the author's own words (PLAN house style).
     .replace(/\\ednote\{([^}]*)\}/g, (_, note) => {
       const sym = nextEdSymbol(ctx);
-      return `<span class="pop ednote"><button type="button" class="pop-marker" aria-label="Editorial note">${sym}</button>` +
+      // data-pagefind-ignore: the marker symbol and the note are ours, not the author's text —
+      // indexing them drops stray markers into search excerpts.
+      return `<span class="pop ednote" data-pagefind-ignore><button type="button" class="pop-marker" aria-label="Editorial note">${sym}</button>` +
              `<span class="pop-content" role="note">Editorial note: ${note}</span></span>`;
     })
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
@@ -41,10 +43,27 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
 
 const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
 
+// Math stays as LaTeX source in the HTML (KaTeX renders it in the browser), which means the
+// search index would otherwise be full of `frac`, `cdot`, `sqrt` and excerpts would show TeX.
+// Wrapping each span in data-pagefind-ignore keeps the markup out of the index; KaTeX still
+// finds the delimiters inside the wrapper. Display math gets a block-level wrapper so the
+// .katex-display measurement in the reader still sees the full column width.
+function wrapMath(html) {
+  return html
+    .replace(/\\\[([\s\S]*?)\\\]/g,
+      (_, m) => `<span class="mathblock" data-pagefind-ignore>\\[${m}\\]</span>`)
+    .replace(/(?<!\\)\$((?:[^$\\]|\\.)*?)(?<!\\)\$/g,
+      (_, m) => `<span class="math" data-pagefind-ignore>$${m}$</span>`);
+}
+
 export function texToHtml(tex, opts = {}) {
   if (!tex) return "";
   const figureBase = opts.figureBase || "";
+  // Page anchors must be unique across the panels of one work page (original + translations),
+  // so each panel prefixes them: `p-236` for the original, `en-p-236` for the English.
+  const idPrefix = opts.idPrefix || "";
   const ctx = { ednoteCount: 0 }; // shared across the whole document, not per-paragraph
+  let secCount = 0; // headings get ids so search sub-results and section links can address them
   let body = tex;
 
   // Keep only what is between \begin{document} and \end{document} if present.
@@ -71,7 +90,7 @@ export function texToHtml(tex, opts = {}) {
     if (fig) {
       const file = fig[1].split("/").pop();
       const src = `${figureBase}${file}`;
-      const caption = inlineText(escapeHtml(fig[2]), ctx);
+      const caption = wrapMath(inlineText(escapeHtml(fig[2]), ctx));
       const alt = escapeHtml(fig[3]).replace(/~/g, " ").replace(/"/g, "&quot;");
       out.push(
         `<figure class="rmfig"><img src="${src}" alt="${alt}" loading="lazy" />` +
@@ -85,17 +104,18 @@ export function texToHtml(tex, opts = {}) {
     const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
     let heading = "";
     if (sec) {
-      heading = `<h2>${escapeHtml(sec[1])}</h2>`;
+      heading = `<h2 id="${idPrefix}sec-${++secCount}">${escapeHtml(sec[1])}</h2>`;
       para = sec[2].trim();
       if (!para) { out.push(heading); continue; }
     } else if (sub) {
-      heading = `<h3>${escapeHtml(sub[1])}</h3>`;
+      heading = `<h3 id="${idPrefix}sec-${++secCount}">${escapeHtml(sub[1])}</h3>`;
       para = sub[2].trim();
       if (!para) { out.push(heading); continue; }
     }
 
-    const html = inlineText(escapeHtml(para), ctx)
-      .replace(/\\origpage\{(\d+)\}/g, (_, n) => `<span class="origpage" id="p-${n}">page ${n}</span>`);
+    const html = wrapMath(inlineText(escapeHtml(para), ctx))
+      .replace(/\\origpage\{(\d+)\}/g,
+        (_, n) => `<span class="origpage" id="${idPrefix}p-${n}">page ${n}</span>`);
 
     out.push(`${heading}<p>${html}</p>`);
   }

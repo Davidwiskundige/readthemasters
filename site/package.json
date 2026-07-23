@@ -6,12 +6,15 @@
   "scripts": {
     "data": "python ../pipeline/build_site_data.py --corpus ../corpus --out src/data/works.json",
     "dev": "npm run data && astro dev",
-    "build": "npm run data && astro build",
+    "build": "npm run data && astro build && pagefind --site dist",
     "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^4.16.0",
     "katex": "^0.16.11"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
   }
 }

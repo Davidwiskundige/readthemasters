@@ -24,6 +24,15 @@ transform (`site/src/lib/tex.js`: headings, `\origpage` page markers, emphasis, 
 math is rendered by KaTeX. An `ai-draft` work shows a "not yet human-checked" notice and a
 prefilled "report an error" link.
 
+Each text panel carries a heading with the id that tabs and search results link to (`#original`,
+`#en`); the heading is visually hidden because the visible label is the tab itself. The tabs read
+and write `location.hash`, so `/works/<id>/#en` opens the English translation directly and a link
+into a panel survives being shared. Anchors inside a panel are unique to it: section headings are
+`sec-<n>` / `<lang>-sec-<n>` and page markers `p-<n>` / `<lang>-p-<n>`.
+
+The reader regions are marked `data-pagefind-body` for the search index — see the `search`
+capability for what that covers and what it excludes.
+
 Display math never collides with its equation number. Each display equation is its own horizontal
 scroll area, a formula wider than the text column is left-aligned so scrolling starts at the
 beginning of the formula, and a `\tag{n}` that cannot fit beside its formula moves to a line of

@@ -1,0 +1,270 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Search" description="Full-text search across every transcription and translation in the corpus.">
+  <h1>Search</h1>
+
+  <div class="modeswitch" role="tablist" aria-label="Search mode">
+    <button role="tab" data-mode="text" aria-selected="true">Text</button>
+    <button role="tab" data-mode="math" aria-selected="false">Formulas</button>
+  </div>
+
+  <section data-modepanel="text">
+    <p class="attr sub">
+      Searches the full text of every transcription and translation. Mathematics is not searched
+      here — try the Formulas tab for that.
+      Looking for a work by title, author or period? <a href="/">Browse the catalog</a>.
+    </p>
+
+    <input id="q" type="search" class="searchbox" placeholder="e.g. lemniscate, isochrona, potentia"
+           aria-label="Search the texts" autocomplete="off" />
+
+    <p id="status" class="attr" role="status" aria-live="polite"></p>
+    <ul class="results" id="results"></ul>
+  </section>
+
+  <section data-modepanel="math" hidden>
+    <p class="attr sub">
+      Searches every formula in the corpus, written as LaTeX. Matching ignores cosmetic differences
+      (<code>x^2</code> = <code>x^&#123;2&#125;</code>, <code>\dfrac</code> = <code>\frac</code>,
+      spacing) but is otherwise literal — it finds notation, not mathematical meaning, so
+      <code>zz</code> and <code>z^2</code> are different. Use <code>?</code> as a wildcard for any
+      one sub-expression: <code>\sqrt&#123;?&#125;</code>, <code>a^?</code>.
+    </p>
+
+    <input id="mq" type="text" class="searchbox mono" spellcheck="false" autocapitalize="off"
+           placeholder="e.g. \sqrt&#123;a^4 - z^4&#125;   ·   ? = wildcard"
+           aria-label="Search formulas as LaTeX" autocomplete="off" />
+    <div id="mpreview" class="mpreview" aria-hidden="true"></div>
+
+    <p id="mstatus" class="attr" role="status" aria-live="polite"></p>
+    <ul class="results mresults" id="mresults"></ul>
+  </section>
+
+  <script>
+    const input = document.getElementById("q");
+    const statusEl = document.getElementById("status");
+    const resultsEl = document.getElementById("results");
+
+    // The index only exists in a built site (pagefind runs after `astro build`), so the import is
+    // dynamic and its failure is a normal state, not an error: `astro dev` serves no /pagefind/.
+    let pagefindPromise = null;
+    function loadPagefind() {
+      if (!pagefindPromise) {
+        const url = "/pagefind/pagefind.js";
+        pagefindPromise = import(/* @vite-ignore */ url).then(async (pf) => {
+          await pf.options({ excerptLength: 30 });
+          return pf;
+        });
+      }
+      return pagefindPromise;
+    }
+
+    const esc = (s) => String(s ?? "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    // Page markers (`p-236`, `en-p-236`) are anchors, not headings, so Pagefind lists them in
+    // `anchors` rather than in `sub_results`. Pair them up by word position: the printed page a
+    // hit sits on is the last page marker before it.
+    function pageIndex(anchors) {
+      return (anchors ?? [])
+        .map((a) => {
+          const m = /^(?:[a-z]{2}-)?p-(\d+)$/.exec(a.id || "");
+          return m ? { location: a.location, page: m[1], id: a.id } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.location - b.location);
+    }
+    function pageAt(pages, location) {
+      let hit = null;
+      for (const p of pages) {
+        if (p.location <= location) hit = p; else break;
+      }
+      return hit;
+    }
+
+    function render(data) {
+      const meta = data.meta ?? {};
+      const pages = pageIndex(data.anchors);
+      const subs = (data.sub_results ?? []).slice(0, 4).map((s) => {
+        const loc = (s.locations ?? [])[0];
+        const p = loc === undefined ? null : pageAt(pages, loc);
+        // Land the reader on the printed page when we know it; the panel opens either way,
+        // because every anchor lives inside a `[data-panel]` section.
+        const href = p ? `${data.url}#${p.id}` : s.url;
+        // Anchors in a translation panel are prefixed with the language (`en-sec-3`, `en-p-236`),
+        // so the hit's own anchor says which artifact it was found in.
+        const anchor = (p ? p.id : (s.url || "").split("#")[1]) || "";
+        const lang = /^([a-z]{2})-/.exec(anchor);
+        const artifact = lang ? `${lang[1].toUpperCase()} translation`
+          : anchor === "significance" ? null : "Original";
+        const where = [artifact, s.title, p ? `page ${p.page}` : null]
+          .filter(Boolean).join(" · ");
+        return `<li class="sub"><a href="${esc(href)}">${esc(where)}</a>` +
+               `<div class="excerpt">${s.excerpt}</div></li>`;
+      }).join("");
+
+      const bits = [meta.author, meta.year, meta.language].filter(Boolean).map(esc).join(" · ");
+      return `<li class="card">
+        <h3><a href="${esc(data.url)}">${esc(meta.title ?? data.url)}</a></h3>
+        <div class="meta"><span>${bits}</span>` +
+        (meta.status ? `<span class="badge ${esc(meta.status)}">${esc(meta.status)}</span>` : "") +
+        `</div>
+        ${subs ? `<ul class="subs">${subs}</ul>` : `<div class="excerpt">${data.excerpt}</div>`}
+      </li>`;
+    }
+
+    let seq = 0;
+    async function run(term) {
+      const mine = ++seq;
+      if (!term) {
+        resultsEl.innerHTML = "";
+        statusEl.textContent = "";
+        return;
+      }
+      statusEl.textContent = "Searching…";
+      let pf;
+      try {
+        pf = await loadPagefind();
+      } catch (_) {
+        statusEl.innerHTML = "The search index is built at deploy time, so it is missing here. " +
+          "Run <code>npm run build &amp;&amp; npm run preview</code> to search locally.";
+        return;
+      }
+      const search = await pf.search(term);
+      if (mine !== seq) return; // a newer keystroke already took over
+      const top = await Promise.all(search.results.slice(0, 20).map((r) => r.data()));
+      if (mine !== seq) return;
+      resultsEl.innerHTML = top.map(render).join("");
+      const n = search.results.length;
+      statusEl.textContent = n === 0
+        ? `Nothing found for “${term}”.`
+        : n === 1 ? `1 work matches “${term}”.` : `${n} works match “${term}”.`;
+    }
+
+    function syncUrl(term) {
+      const qs = term ? `?q=${encodeURIComponent(term)}` : "";
+      history.replaceState(null, "", qs || location.pathname);
+    }
+
+    let timer;
+    input.addEventListener("input", () => {
+      clearTimeout(timer);
+      const term = input.value.trim();
+      timer = setTimeout(() => { syncUrl(term); run(term); }, 180);
+    });
+
+    const initial = new URLSearchParams(location.search).get("q");
+    if (initial) {
+      input.value = initial;
+      run(initial.trim());
+    }
+  </script>
+
+  <script>
+    import renderMathInElement from "katex/contrib/auto-render";
+    import "katex/dist/katex.min.css";
+    import { parseQuery, matchFormula } from "../lib/mathnorm.js";
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const escAttr = (s) => esc(s).replace(/"/g, "&quot;");
+    const DELIMS = { delimiters: [{ left: "$", right: "$", display: false }], throwOnError: false };
+
+    // The formula index is a static file emitted at build time (see math-index.json.js); on the
+    // dev server it does not exist, which the UI reports rather than treating as an error.
+    let index = null, indexFailed = false;
+    async function ensureIndex() {
+      if (index || indexFailed) return index;
+      try {
+        const r = await fetch("/math-index.json");
+        if (!r.ok) throw new Error();
+        index = await r.json();
+      } catch (_) { indexFailed = true; }
+      return index;
+    }
+
+    function preview(q) {
+      const box = $("mpreview");
+      box.hidden = !q;
+      box.textContent = q ? `$${q}$` : "";
+      if (q) renderMathInElement(box, DELIMS);
+    }
+
+    let mseq = 0;
+    async function runMath(raw) {
+      const mine = ++mseq;
+      const q = (raw || "").trim();
+      preview(q);
+      const status = $("mstatus"), results = $("mresults");
+      if (!q) { results.innerHTML = ""; status.textContent = ""; return; }
+      const query = parseQuery(q);
+      if (!query.length) { results.innerHTML = ""; status.textContent = "Type a formula to search."; return; }
+      status.textContent = "Searching…";
+      const idx = await ensureIndex();
+      if (mine !== mseq) return;
+      if (!idx) {
+        status.innerHTML = "The formula index is built at deploy time, so it is missing here. " +
+          "Run <code>npm run build &amp;&amp; npm run preview</code> to search locally.";
+        return;
+      }
+      const hits = [];
+      for (const e of idx) {
+        const m = matchFormula(query, e.tokens);
+        if (m) hits.push({ e, score: m.score });
+      }
+      hits.sort((a, b) => b.score - a.score);
+      results.innerHTML = hits.slice(0, 60).map(({ e }) =>
+        `<li class="mres"><a class="mformula" href="${escAttr(e.url)}">$${esc(e.tex)}$</a>` +
+        `<div class="meta"><a href="${escAttr(e.url)}">${esc(e.title)}</a> · ${esc(e.where)}</div></li>`
+      ).join("");
+      renderMathInElement(results, DELIMS);
+      const n = hits.length;
+      status.textContent = n === 0 ? `No formula matches “${q}”.`
+        : n === 1 ? "1 formula matches." : `${n} formulas match.`;
+    }
+
+    let mtimer;
+    $("mq").addEventListener("input", () => {
+      clearTimeout(mtimer);
+      const raw = $("mq").value;
+      mtimer = setTimeout(() => { writeUrl(); runMath(raw); }, 200);
+    });
+
+    // Mode switch. Text search owns the plain `?q=` URL (default); a formula search is marked with
+    // `?mode=math&mq=…` so it is shareable and survives reload.
+    const btns = [...document.querySelectorAll(".modeswitch button")];
+    function currentMode() {
+      return btns.find((b) => b.getAttribute("aria-selected") === "true")?.dataset.mode || "text";
+    }
+    function writeUrl() {
+      const mode = currentMode();
+      const p = new URLSearchParams();
+      if (mode === "math") {
+        p.set("mode", "math");
+        const v = $("mq").value.trim(); if (v) p.set("mq", v);
+      } else {
+        const v = $("q").value.trim(); if (v) p.set("q", v);
+      }
+      const qs = p.toString();
+      history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+    }
+    function setMode(mode, focus = true) {
+      btns.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.mode === mode)));
+      document.querySelectorAll("[data-modepanel]").forEach((p) => (p.hidden = p.dataset.modepanel !== mode));
+      writeUrl();
+      if (focus) $(mode === "math" ? "mq" : "q").focus();
+    }
+    btns.forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("mode") === "math") {
+      setMode("math", false);
+      const mq = params.get("mq");
+      if (mq) { $("mq").value = mq; runMath(mq); }
+      $("mq").focus();
+    } else if (!params.get("q")) {
+      $("q").focus();
+    }
+  </script>
+</Base>

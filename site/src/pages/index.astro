@@ -31,6 +31,7 @@ const maxYear = years.length ? Math.max(...years) : 0;
   <div class="layout">
     <aside class="filters">
       <input id="q" type="search" placeholder="Search title, author…" aria-label="Search" />
+      <p class="attr xlink">Searching titles and authors. <a href="/search/">Search inside the texts →</a></p>
       <fieldset><legend>Discipline</legend>
         {disciplines.map((d) => (
           <label><input type="checkbox" data-facet="discipline" value={d.key} />{d.label}</label>

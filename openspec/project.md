@@ -37,11 +37,11 @@ truth for what the system IS) and the change moves to `openspec/changes/archive/
 **Adding a new text is NOT a spec change** — it is an ordinary pull request, gated by CI.
 
 **Shipped (in `specs/`, archived under `changes/archive/`):** `corpus-format`, `copyright-gate`,
-`site-catalog`, `transcription-pipeline` (Tier-2 Claude Code skill so far — see
-`.claude/skills/transcribe/`).
+`site-catalog`, `search`, `math-search`, `transcription-pipeline` (Tier-2 Claude Code skill so
+far — see `.claude/skills/transcribe/`).
 
 **Upcoming proposals (not yet built):** `transcription-pipeline` Tier-3 (Batch API scan → LaTeX),
-`translation-pipeline` (LaTeX → LaTeX + glossary), `search` (Pagefind full-text). Before extending
+`translation-pipeline` (LaTeX → LaTeX + glossary). Before extending
 a shipped capability, write a change under `changes/<name>/` with delta specs, implement, then fold
 the deltas into `specs/` and archive.
 
