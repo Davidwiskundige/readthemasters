@@ -17,6 +17,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox}  % adds the `max width`/`max height` keys to \includegraphics
 \RequirePackage[normalem]{ulem}   % \uwave for uncertain readings (PDF); site maps to a CSS style
 
 % ---------------------------------------------------------------------------
@@ -44,7 +45,7 @@
 \newcommand{\rmfigure}[3]{%
   \begin{figure}[htbp]
     \centering
-    \includegraphics[max width=\linewidth,width=\linewidth,keepaspectratio]{#1}%
+    \includegraphics[max width=\linewidth,keepaspectratio]{#1}%
     \caption{#2}%
   \end{figure}%
 }
