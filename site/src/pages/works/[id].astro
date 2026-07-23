@@ -276,5 +276,40 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
         ],
         throwOnError: false,
       }));
+
+    // Narrow screens: a formula wider than the column would run under the \tag{n} that KaTeX
+    // pins at the right edge. Measure each display equation and let the CSS (global.css)
+    // left-align the ones that overflow and drop the number below the ones that can't sit
+    // beside it — a centred formula needs the number's width clear on *both* sides.
+    function fitDisplayMath(root) {
+      root.querySelectorAll('.katex-display').forEach((eq) => {
+        const room = eq.clientWidth;
+        if (!room) return; // hidden panel — measured again when its tab is shown
+        const html = eq.querySelector('.katex-html');
+        if (!html) return;
+        const tag = html.querySelector(':scope > .tag');
+        eq.classList.remove('wide', 'tag-below');
+        const math = [...html.children]
+          .filter((c) => c !== tag)
+          .reduce((w, c) => w + c.getBoundingClientRect().width, 0);
+        if (math > room) eq.classList.add('wide');
+        const tagW = tag ? tag.getBoundingClientRect().width + 8 : 0;
+        if (tag && math + 2 * tagW > room) eq.classList.add('tag-below');
+      });
+    }
+
+    fitDisplayMath(document);
+    // KaTeX's fonts arrive from the CDN after that first pass, and the formulas grow when they
+    // land — so measure again once they are in.
+    if (document.fonts) document.fonts.ready.then(() => fitDisplayMath(document));
+    let fitTimer;
+    addEventListener('resize', () => {
+      clearTimeout(fitTimer);
+      fitTimer = setTimeout(() => fitDisplayMath(document), 150);
+    });
+    // A translation panel is display:none until its tab is picked, so its equations can only
+    // be measured once it is showing. This listener runs after the one that flips the panels.
+    document.querySelectorAll('.tabs button').forEach((btn) =>
+      btn.addEventListener('click', () => fitDisplayMath(document)));
   </script>
 </Base>
