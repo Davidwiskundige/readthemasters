@@ -24,11 +24,18 @@ transform (`site/src/lib/tex.js`: headings, `\origpage` page markers, emphasis, 
 math is rendered by KaTeX. An `ai-draft` work shows a "not yet human-checked" notice and a
 prefilled "report an error" link.
 
+Display math never collides with its equation number. Each display equation is its own horizontal
+scroll area, a formula wider than the text column is left-aligned so scrolling starts at the
+beginning of the formula, and a `\tag{n}` that cannot fit beside its formula moves to a line of
+its own, right-aligned beneath it. Which layout applies is decided by measuring the rendered
+formula, not by a viewport breakpoint, so a long formula stacks its number at any screen width.
+
 ## Requirement: Significance note
 
 When a work's `work.yaml` carries an optional `significance` field, the work page shows it as a
 clearly-labelled "Significance" callout, visually distinct from the transcription so it reads as
-editorial context (ours), not the author's text.
+editorial context (ours), not the author's text. Math in the note is rendered by KaTeX, as in the
+transcription.
 
 ## Requirement: Downloads
 
@@ -43,6 +50,10 @@ CI deploy, into `site/public/pdf/<id>/<name>.pdf` (served at `/pdf/<id>/…`). P
 committed and are regenerated per deploy. A work may ship a pre-made PDF override
 (`corpus/<id>/pdf/<name>.pdf`), which is copied instead of compiled. When no PDF exists, the page
 labels it "compiled on deploy" rather than showing a dead link.
+
+`\rmfigure` paths are written relative to the work root for both `original.tex` and
+`translations/<lang>.tex`, so the work directory itself is on Tectonic's search path alongside the
+`.tex` file's own directory and `corpus/preamble`.
 
 ## Requirement: Citations (BibTeX)
 
