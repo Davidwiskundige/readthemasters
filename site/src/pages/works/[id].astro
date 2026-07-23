@@ -267,7 +267,7 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
   </script>
   <script type="module">
     import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
-    document.querySelectorAll('.text').forEach((el) =>
+    document.querySelectorAll('.text, .significance').forEach((el) =>
       renderMathInElement(el, {
         delimiters: [
           { left: "$$", right: "$$", display: true },

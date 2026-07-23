@@ -38,7 +38,7 @@ significance: >-
   This sketch gives the multiplication and further division of the lemniscate's arc: the
   doubling of an arc, the division of the quadrant into three and into five equal parts, the
   celebrated formula for bisecting a general arc, not just the quadrant, and, as a result, its
-  division into 2·2^m, 3·2^m and 5·2^m equal parts. When Fagnano's collected works reached the
+  division into $2\cdot 2^m$, $3\cdot 2^m$ and $5\cdot 2^m$ equal parts. When Fagnano's collected works reached the
   Berlin Academy and Euler was asked to examine them in December 1751, these results set him on
   the path to the addition theorem for elliptic integrals — the day Jacobi would later call the
   birthday of the theory of elliptic functions.[2] The bisection formula for a general arc is the
