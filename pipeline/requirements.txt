@@ -1,3 +1,8 @@
 PyYAML>=6.0
 # pytest is only needed to run the test suite:
 #   pip install pytest
+#
+# anthropic is only needed to RUN the Tier-3 transcription pipeline (pipeline/transcribe.py) on
+# your own API key. It is imported lazily and is NOT used by the copyright gate (validate.py) or
+# CI, which stay AI-free and depend only on PyYAML:
+#   pip install anthropic   (and set ANTHROPIC_API_KEY)
