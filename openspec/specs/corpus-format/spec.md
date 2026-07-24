@@ -18,7 +18,7 @@ Each work lives in `corpus/<id>/`, where `<id>` is the canonical work id.
 
 Required: `id` (equals directory name, unique across corpus), `title`, `authors` (≥1, each
 `name` + `wikidata_id` + `death_year` or `anonymous`), `publication` (`year`, `venue` ∈ vocab;
-optional `volume`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_edition`,
+optional `volume`, `month`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_edition`,
 `rights_cleared`, `rights_note`), `discipline` (a vocab key or a list of them, for works that
 straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` ∈ vocab,
 `source` (`scan_url`, `scan_id`), `sources` (citations for `death_date`, `publication_date`,
@@ -36,6 +36,16 @@ citation superscripts), `external_translations` (list of referenced translations
 
 `id` prefers a stable external identifier: Wikidata QID → DOI → deterministic
 `author-year-shorttitle` slug. It is the directory name and the permanent URL.
+
+### Publication citation
+
+`volume`, `month` and `pages` are the structured issue locators; all are optional. The site
+composes them with the venue's display name into a single human-readable citation string
+(`venue_full`, built in `build_site_data.py` and shown on the work page and catalog card):
+`<venue>, vol. <volume>, p./pp. <pages>`. A journal issued monthly rather than by volume — e.g.
+the *Acta Eruditorum*, cited by month — records `month` instead of `volume`; month fills the
+same slot when no `volume` is given (`Acta Eruditorum, April`). `p.` is used for a single page,
+`pp.` for a range or list. The year is shown separately, so it is not repeated in `venue_full`.
 
 ## Requirement: provenance.yaml schema
 
