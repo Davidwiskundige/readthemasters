@@ -23,6 +23,9 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import texcompare  # noqa: E402  (stdlib-only — keeps the gate AI-free)
+
 # Copyright terms (years).
 PMA_TERM = 70          # life + 70 (most of the world)
 US_TERM = 95           # US: 95 years after publication
@@ -215,6 +218,21 @@ def check_provenance(provenance: dict, work_id: str, issues: Issues) -> None:
             issues.error(w, f"{name}: effort '{effort}' not in {sorted(EFFORT_VALUES)} (or null)")
 
 
+def check_translation_math(work_dir: Path, issues: Issues) -> None:
+    """Every translations/<lang>.tex must reproduce the original's math/markers verbatim (§4.2)."""
+    original = work_dir / "original.tex"
+    trans_dir = work_dir / "translations"
+    if not original.exists() or not trans_dir.is_dir():
+        return
+    orig_text = original.read_text(encoding="utf-8")
+    for tpath in sorted(trans_dir.glob("*.tex")):
+        report = texcompare.preservation_report(orig_text, tpath.read_text(encoding="utf-8"))
+        if not report["ok"]:
+            issues.error(f"{work_dir.name}/translations/{tpath.name}",
+                         "math/structure not preserved from original.tex:\n"
+                         + texcompare.format_report(report))
+
+
 def rule_verdicts(assessment: dict) -> dict:
     """Extract {rule: verdict, 'public_domain': bool} for comparison."""
     out = {"public_domain": assessment.get("public_domain")}
@@ -240,6 +258,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
 
     check_schema_and_vocab(work, vocab, work_id, issues)
     check_provenance(provenance, work_id, issues)
+    check_translation_math(work_dir, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
 
