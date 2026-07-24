@@ -37,12 +37,14 @@ truth for what the system IS) and the change moves to `openspec/changes/archive/
 **Adding a new text is NOT a spec change** — it is an ordinary pull request, gated by CI.
 
 **Shipped (in `specs/`, archived under `changes/archive/`):** `corpus-format`, `copyright-gate`,
-`site-catalog`, `search`, `math-search`, `transcription-pipeline` (Tier-2 Claude Code skill in
-`.claude/skills/transcribe/` **and** the Tier-3 Batch API script `pipeline/transcribe.py`).
+`site-catalog`, `search`, `math-search`, `transcription-pipeline` (Tier-2 skill
+`.claude/skills/transcribe/` + Tier-3 `pipeline/transcribe.py`), `translation-pipeline` (Tier-2
+skill `.claude/skills/translate/` + Tier-3 `pipeline/translate.py`, with the math-preservation check
+`pipeline/texcompare.py` wired into the gate).
 
-**Upcoming proposals (not yet built):** `translation-pipeline` (LaTeX → LaTeX + glossary). Before
-extending a shipped capability, write a change under `changes/<name>/` with delta specs, implement,
-then fold the deltas into `specs/` and archive.
+**Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
+for optional follow-ups. Before extending a shipped capability, write a change under `changes/<name>/`
+with delta specs, implement, then fold the deltas into `specs/` and archive.
 
 ## Conventions
 

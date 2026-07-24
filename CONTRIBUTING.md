@@ -34,9 +34,9 @@ python pipeline/validate.py
 | Tier | You need | What you do |
 |---|---|---|
 | 0 Report errors | GitHub account | Click *Report an error* on any work page |
-| 1 Chat transcription | Any AI chat subscription | Use [`prompts/transcribe-chat.md`](prompts/transcribe-chat.md) in your app; submit via the issue form |
-| 2 Claude Code skill | Claude Pro/Max | Run `/transcribe <work> <pages>` (see `.claude/skills/transcribe/`) |
-| 3 Full pipeline | Your own API key + Python | Run `python pipeline/transcribe.py <work> --pages <spec> --images <dir>` (Batch API); open a PR |
+| 1 Chat | Any AI chat subscription | Use [`prompts/transcribe-chat.md`](prompts/transcribe-chat.md) / [`translate-chat.md`](prompts/translate-chat.md) in your app; submit via the issue form |
+| 2 Claude Code skill | Claude Pro/Max | Run `/transcribe <work> <pages>` or `/translate <work> <lang>` (see `.claude/skills/`) |
+| 3 Full pipeline | Your own API key + Python | Run `pipeline/transcribe.py <work> --pages <spec> --images <dir>` or `pipeline/translate.py <work> --lang <code>` (Batch API); open a PR |
 
 ### Adding a work by pull request (tiers 2–3)
 
