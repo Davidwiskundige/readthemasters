@@ -292,7 +292,7 @@ to "conventions or original?" is "conventions for *how* we encode, fidelity for 
 | Layer | Policy |
 |---|---|
 | **Markup & structure** (macros, environments, file layout, encoding) | **House style, enforced.** Invisible to the reader; the translation pipeline, KaTeX/Tectonic rendering, faceting, and clean PR diffs all depend on it being uniform. |
-| **Notation & content** (author's words, symbols, formula structure) | **Faithful to the original — never silently modernized.** Where notation diverges confusingly from modern usage, explain it via the optional facing-notation annotation layer (backlog #13), don't overwrite it. |
+| **Notation & content** (author's words, symbols, formula structure) | **Faithful to the original — never silently modernized.** Where notation diverges confusingly from modern usage, explain it via the optional facing-notation annotation layer (backlog #12), don't overwrite it. |
 | **Typography & orthography** (Fraktur, long-s, ligatures, original line/hyphenation breaks) | **Normalized to readable modern rendering** — this is a transcription, not a facsimile. *Exception:* preserve page boundaries as `\origpage{n}` markers (metadata for the side-by-side reader and citation anchors), not as visual layout. |
 
 ### Shared preamble & apparatus
@@ -522,46 +522,48 @@ proposal when its time comes.
    both the original work and our transcription (with commit hash for reproducibility).
 3. **Author pages** — bio line, portrait (PD), death/birth dates with the copyright status
    derived from them, Wikidata link, list of works on the site.
-4. **RSS/Atom feed + "recently published/updated"** — cheap, and the natural way for an audience
-   to follow a growing corpus.
-5. **Revision history on each work page** — rendered from git log: "eq. 12 corrected (2026-08)",
+4. **Revision history on each work page** — rendered from git log: "eq. 12 corrected (2026-08)",
    status promotions, model re-runs. Builds trust; zero extra bookkeeping.
 
 ### Medium-term
 
-6. **Accessibility & SEO for math** — render KaTeX with MathML output (screen-reader friendly),
+5. **Accessibility & SEO for math** — render KaTeX with MathML output (screen-reader friendly),
    schema.org `CreativeWork`/`Person` metadata, OpenGraph cards, sitemap.
-7. **EPUB export** alongside the Tectonic PDFs — old texts are exactly what people read on
+6. **EPUB export** alongside the Tectonic PDFs — old texts are exactly what people read on
    e-readers; pandoc in the same CI job.
-8. **Bulk corpus download** — zip/JSONL export of the whole corpus (CC0). Makes the site a
+7. **Bulk corpus download** — zip/JSONL export of the whole corpus (CC0). Makes the site a
    *dataset* for historians and researchers, not just a website; likely the main driver of
    inbound links.
-9. **Glossary pages** — the per-era terminology glossaries from §4.2 published as browsable
+8. **Glossary pages** — the per-era terminology glossaries from §4.2 published as browsable
    pages ("how we translate *Mannigfaltigkeit*"), doubling as translator documentation.
-10. **Translation back-check** — cheap QA pass: back-translate a sample with a small model and
-    flag divergences for the reviewer; feeds `skimmed` promotion.
-11. **Curated collections / reading paths** — "The birth of non-Euclidean geometry", "Origins of
+9. **Translation back-check** — cheap QA pass: back-translate a sample with a small model and
+   flag divergences for the reviewer; feeds `skimmed` promotion.
+10. **Curated collections / reading paths** — "The birth of non-Euclidean geometry", "Origins of
     statistical mechanics": ordered lists of works with one paragraph of editorial context each.
 
 ### Later / aspirational
 
-12. **Cross-reference graph** — when work A cites work B and both are on the site, link them;
+11. **Cross-reference graph** — when work A cites work B and both are on the site, link them;
     eventually a browsable citation graph of the corpus.
-13. **Facing-notation notes** — optional annotations where archaic notation differs from modern
+12. **Facing-notation notes** — optional annotations where archaic notation differs from modern
     convention (kept strictly separate from the faithful transcription).
-14. **Community "adopt a text" workflow** — contributors claim a work, run the pipeline on their
+13. **Community "adopt a text" workflow** — contributors claim a work, run the pipeline on their
     own AI key/subscription (§7.4), review it, and get credited in provenance; contributor guide +
     CI make this safe. This is also the primary cost-reduction lever, so it deserves promotion
     into the core roadmap once the pipeline is stable.
-15. **Multiple translation languages** — the corpus format already supports `translations/<lang>.tex`;
+14. **Multiple translation languages** — the corpus format already supports `translations/<lang>.tex`;
     add when demand appears.
-16. **Statistics page** — works, pages, formulas transcribed, status distribution, model
+15. **Statistics page** — works, pages, formulas transcribed, status distribution, model
     breakdown; fun and good for progress posts.
-17. **Side-by-side reader** — scan page ↔ transcription ↔ translation in synced columns
+16. **Side-by-side reader** — scan page ↔ transcription ↔ translation in synced columns
     (Wikisource-style). Requires keeping a page/paragraph alignment map during transcription,
     which the pipeline has anyway. Would be the single biggest UX differentiator, but rehosting
     scan page images (or wiring up IIIF/library viewers) is a bigger lift than the near-term
     items — deferred until the corpus is large enough to justify it.
+17. **RSS/Atom feed + "recently published/updated"** — a build-time feed of new/updated works, the
+    natural way for an audience to follow a growing corpus. Cheap to build, but its value depends
+    on a steady publishing cadence and readers to serve — deferred until there's a corpus worth
+    subscribing to.
 
 ---
 
