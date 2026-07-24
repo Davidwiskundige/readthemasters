@@ -18,12 +18,35 @@ import json
 import shutil
 from pathlib import Path
 
+import re
+
 from build_catalog import max_status  # type: ignore
 from validate import STATUS_LADDER, evaluate_copyright, load_yaml  # type: ignore
 
 
 def read_text(path: Path) -> str | None:
     return path.read_text(encoding="utf-8") if path.exists() else None
+
+
+def venue_citation(venue_label: str | None, volume, pages, month=None) -> str | None:
+    """Human-readable venue citation: "Journal name, vol. 29, p. 258".
+
+    Volume, month and pages come straight from work.yaml's publication block and are optional.
+    A journal issued monthly rather than by volume (e.g. the Acta Eruditorum) is cited by its
+    month instead — "Acta Eruditorum, April" — so month fills the volume slot when no volume is
+    given. "pp." is used when the page field names a range or list, "p." for a single page.
+    """
+    if not venue_label:
+        return None
+    s = venue_label
+    if volume not in (None, ""):
+        s += f", vol. {volume}"
+    elif month not in (None, ""):
+        s += f", {month}"
+    if pages not in (None, ""):
+        pp = "pp." if re.search(r"[-–—,]", str(pages)) else "p."
+        s += f", {pp} {pages}"
+    return s
 
 
 def write_tex_copy(tex_root: Path | None, work_id: str, name: str, text: str | None) -> str | None:
@@ -112,7 +135,9 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "authors": work.get("authors") or [],
             "year": pub.get("year"),
             "venue": pub.get("venue"),
-            "venue_label": (vocab.get("venues") or {}).get(pub.get("venue")),
+            "venue_label": (venue_lbl := (vocab.get("venues") or {}).get(pub.get("venue"))),
+            "venue_full": venue_citation(venue_lbl, pub.get("volume"), pub.get("pages"),
+                                         pub.get("month")),
             "volume": pub.get("volume"),
             "pages": pub.get("pages"),
             "publication_full": pub.get("title_full"),

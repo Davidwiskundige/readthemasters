@@ -103,7 +103,7 @@ const maxYear = years.length ? Math.max(...years) : 0;
             <div class="meta">
               <span>{w.authors.map((a) => a.name).join(", ")}</span>
               <span>· {w.year}</span>
-              {w.venue_label && <span class="pill">{w.venue_label}</span>}
+              {w.venue_full && <span class="pill">{w.venue_full}</span>}
               <span class={`badge ${w.status}`}>{w.status}</span>
               {(w.translation_langs ?? []).map((l) => <span class="pill">→ {l.toUpperCase()}</span>)}
             </div>

@@ -10,6 +10,7 @@ authors:
 
 publication:
   year: 1689
+  month: April  # the Acta Eruditorum was issued monthly, cited by month rather than volume number
   venue: acta-eruditorum
   title_full: >-
     "De linea isochrona…", Acta Eruditorum, Leipzig (April 1689). Transcribed here from

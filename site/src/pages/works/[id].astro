@@ -78,7 +78,7 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     {work.title_en && <p class="sub"><em>{work.title_en}</em></p>}
     <p class="sub">
       {authors} · {work.year}
-      {work.venue_label && <> · {work.venue_label}</>}
+      {work.venue_full && <> · {work.venue_full}</>}
       · <span class={`badge ${work.status}`}>{work.status}</span>
     </p>
     {/* Key-only form (value = element text), so an author list containing commas survives. */}
