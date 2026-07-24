@@ -40,7 +40,8 @@ truth for what the system IS) and the change moves to `openspec/changes/archive/
 `site-catalog`, `search`, `math-search`, `transcription-pipeline` (Tier-2 skill
 `.claude/skills/transcribe/` + Tier-3 `pipeline/transcribe.py`), `translation-pipeline` (Tier-2
 skill `.claude/skills/translate/` + Tier-3 `pipeline/translate.py`, with the math-preservation check
-`pipeline/texcompare.py` wired into the gate).
+`pipeline/texcompare.py` wired into the gate), `author-pages` (per-author pages `/authors/<slug>/` +
+index: bio, portrait, dates, MacTutor/Wikidata links, and the author's works — PLAN.md §9 backlog #4).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups. Before extending a shipped capability, write a change under `changes/<name>/`

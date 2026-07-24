@@ -22,6 +22,8 @@ site/public/pdf/
 site/public/tex/
 # Figure crops copied into the site by build_site_data.py (source lives in corpus/<id>/figures/)
 site/public/figures/
+# Author portraits copied into the site by build_site_data.py (source lives in corpus/authors/<slug>/)
+site/public/authors/
 
 # Build artifacts
 *.pdf

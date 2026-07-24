@@ -101,7 +101,9 @@ const maxYear = years.length ? Math.max(...years) : 0;
             <h3><a href={w.url}>{w.title}</a></h3>
             {w.title_en && <div class="meta"><em>{w.title_en}</em></div>}
             <div class="meta">
-              <span>{w.authors.map((a) => a.name).join(", ")}</span>
+              <span>{w.authors.map((a, i) => (
+                <>{i > 0 && ", "}<a href={`/authors/${a.slug}/`}>{a.name}</a></>
+              ))}</span>
               <span>· {w.year}</span>
               {w.venue_full && <span class="pill">{w.venue_full}</span>}
               <span class={`badge ${w.status}`}>{w.status}</span>

@@ -17,7 +17,8 @@ Each work lives in `corpus/<id>/`, where `<id>` is the canonical work id.
 ## Requirement: work.yaml schema
 
 Required: `id` (equals directory name, unique across corpus), `title`, `authors` (≥1, each
-`name` + `wikidata_id` + `death_year` or `anonymous`), `publication` (`year`, `venue` ∈ vocab;
+`name` + `wikidata_id` + `death_year` or `anonymous`, plus optional `birth_year` and the optional
+author display fields below), `publication` (`year`, `venue` ∈ vocab;
 optional `volume`, `month`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_edition`,
 `rights_cleared`, `rights_note`), `discipline` (a vocab key or a list of them, for works that
 straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` ∈ vocab,
@@ -31,6 +32,19 @@ the significance text may carry inline `[n]` markers referencing them, rendered 
 citation superscripts), `external_translations` (list of referenced translations elsewhere: `language`,
 `title`, `translator`, `year`, `license`, `venue`, `url`, `note`), `copyright_assessment`
 (written/verified by the gate).
+
+Optional author display fields (used by the author pages — see site-catalog; backward compatible):
+`bio` (a short one-line biographical descriptor), `mactutor` (a MacTutor/St Andrews biography path
+id, e.g. `Leibniz`, or a full URL — the site always links this biography when present), and
+`portrait` (`{file, credit, alt, source}`). The
+portrait `file` is a small public-domain image **committed under `corpus/authors/<slug>/`** and
+**hosted by the site** — like the figure crops of §4.5, and unlike full scans, which are never
+rehosted (PLAN.md §3, §4.5). `alt` is the accessibility text; optional `credit` is a short artist
+attribution shown as a caption (e.g. "Portrait by Bernhard Christoph Francke (c. 1700)"); optional
+`source` is the image's provenance URL (e.g. its Wikimedia Commons file page) that the portrait
+links to when clicked. When the
+same author (same `wikidata_id`) appears in multiple works, `birth_year`/`death_year` must agree
+across them; `pipeline/validate.py` warns on a mismatch.
 
 ### Canonical work identity
 

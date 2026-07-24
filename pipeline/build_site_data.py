@@ -16,6 +16,7 @@ import argparse
 import datetime
 import json
 import shutil
+import unicodedata
 from pathlib import Path
 
 import re
@@ -88,9 +89,128 @@ def copy_figures(fig_root: Path | None, work_dir: Path, work_id: str) -> None:
             shutil.copyfile(img, dest / img.name)
 
 
+def resolve_portrait(corpus_dir: Path, author_root: Path | None, slug: str,
+                     portrait: dict | None) -> dict | None:
+    """Host an author's portrait: copy corpus/authors/<slug>/<file> into the site, return its URL.
+
+    Portraits are small public-domain images we host ourselves — like the figure crops of §4.5,
+    and unlike full scans (which we never rehost). The source image is committed under
+    `corpus/authors/<slug>/`; the copy under `site/public/authors/<slug>/` is built here, never
+    committed. Returns the portrait dict with a `url` added (None if the file is missing).
+    """
+    if not portrait or not portrait.get("file"):
+        return None
+    out = dict(portrait)
+    src = corpus_dir / "authors" / slug / portrait["file"]
+    if not src.exists():
+        out["url"] = None
+        return out
+    if author_root is not None:
+        dest = author_root / slug / portrait["file"]
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, dest)
+    out["url"] = f"/authors/{slug}/{portrait['file']}"
+    return out
+
+
+def slugify(text: str) -> str:
+    """ASCII, hyphen-separated slug of a name (diacritics folded): used for /authors/<slug>/."""
+    s = unicodedata.normalize("NFKD", text or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+    return s or "author"
+
+
+def mactutor_url(mactutor) -> str | None:
+    """Full MacTutor (St Andrews) biography URL from an author's `mactutor` field.
+
+    The field holds either the biography path id (e.g. `Leibniz`) or a full URL; a great
+    biography source the project always links when one exists.
+    """
+    if not mactutor:
+        return None
+    s = str(mactutor)
+    if s.startswith("http"):
+        return s
+    return f"https://mathshistory.st-andrews.ac.uk/Biographies/{s.strip('/')}/"
+
+
+def author_key(a: dict) -> str:
+    """Stable identity for grouping authors across works: Wikidata QID, else the name-slug.
+
+    Using the QID keeps namesakes with distinct QIDs on separate pages (PLAN.md §9a), while the
+    same author across works — with or without a QID — merges into one page.
+    """
+    return a.get("wikidata_id") or f"name:{slugify(a.get('name', ''))}"
+
+
+def build_authors(works: list[dict]) -> list[dict]:
+    """Aggregate authors across the published works into per-author records.
+
+    Groups author objects by `author_key`, assigns each group a unique readable slug, derives the
+    life+70 public-domain status from the death year, and lists the author's works. Also mutates the
+    author objects inside `works` to carry their `slug`, so catalog/work pages can link to the page.
+    """
+    groups: dict[str, dict] = {}
+    order: list[str] = []
+    for w in works:
+        for a in w.get("authors") or []:
+            key = author_key(a)
+            rec = groups.get(key)
+            if rec is None:
+                rec = groups[key] = {
+                    "key": key, "name": a.get("name"), "wikidata_id": a.get("wikidata_id"),
+                    "birth_year": a.get("birth_year"), "death_year": a.get("death_year"),
+                    "anonymous": bool(a.get("anonymous")), "bio": a.get("bio"),
+                    "portrait": a.get("portrait"), "mactutor": a.get("mactutor"), "_works": [],
+                }
+                order.append(key)
+            else:
+                # Fill any field a first-seen record left blank from a later work.
+                for f in ("name", "wikidata_id", "birth_year", "death_year", "bio",
+                          "portrait", "mactutor"):
+                    if not rec.get(f) and a.get(f):
+                        rec[f] = a.get(f)
+            rec["_works"].append(w)
+
+    # Assign unique slugs (namesakes without QIDs get -2, -3, … suffixes).
+    used: dict[str, str] = {}
+    for key in order:
+        rec = groups[key]
+        base = slugify(rec["name"] or key)
+        slug, n = base, 2
+        while slug in used and used[slug] != key:
+            slug, n = f"{base}-{n}", n + 1
+        used[slug] = key
+        rec["slug"] = slug
+
+    # Now that slugs exist, tag every author object inside the works with its slug.
+    for w in works:
+        for a in w.get("authors") or []:
+            a["slug"] = groups[author_key(a)]["slug"]
+
+    authors = []
+    for key in order:
+        rec = groups[key]
+        wks = sorted(rec["_works"], key=lambda w: (w.get("year") or 0, w.get("title") or ""))
+        authors.append({
+            "slug": rec["slug"], "name": rec["name"], "wikidata_id": rec["wikidata_id"],
+            "birth_year": rec["birth_year"], "death_year": rec["death_year"],
+            "anonymous": rec["anonymous"],
+            "bio": rec["bio"], "portrait": rec["portrait"],
+            "mactutor_url": mactutor_url(rec.get("mactutor")),
+            "url": f"/authors/{rec['slug']}/", "work_count": len(wks),
+            "works": [{"id": w["id"], "title": w["title"], "title_en": w.get("title_en"),
+                       "year": w.get("year"), "venue_full": w.get("venue_full"),
+                       "status": w.get("status"), "url": w["url"]} for w in wks],
+        })
+    authors.sort(key=lambda a: slugify(a["name"] or ""))
+    return authors
+
+
 def build(corpus_dir: Path, now_year: int, min_status: str,
           pdf_root: Path | None = None, tex_root: Path | None = None,
-          fig_root: Path | None = None) -> dict:
+          fig_root: Path | None = None, author_root: Path | None = None) -> dict:
     vocab = load_yaml(corpus_dir / "vocab.yaml") or {}
     min_rank = STATUS_LADDER.index(min_status)
     works = []
@@ -167,11 +287,18 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "url": f"/works/{work['id']}/",
         })
 
+    # Aggregate authors across the published works (also tags each work's authors with their slug).
+    authors = build_authors(works)
+    # Host each author's portrait (copy corpus/authors/<slug>/… into site/public/authors/…).
+    for a in authors:
+        a["portrait"] = resolve_portrait(corpus_dir, author_root, a["slug"], a.get("portrait"))
+
     return {
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "vocab": vocab,
         "count": len(works),
         "works": works,
+        "authors": authors,
     }
 
 
@@ -189,7 +316,9 @@ def main(argv: list[str] | None = None) -> int:
     pdf_root = site_public / "pdf" if site_public else None
     tex_root = site_public / "tex" if site_public else None
     fig_root = site_public / "figures" if site_public else None
-    data = build(Path(args.corpus), args.now_year, args.min_status, pdf_root, tex_root, fig_root)
+    author_root = site_public / "authors" if site_public else None
+    data = build(Path(args.corpus), args.now_year, args.min_status, pdf_root, tex_root,
+                 fig_root, author_root)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote {out}: {data['count']} work(s).")

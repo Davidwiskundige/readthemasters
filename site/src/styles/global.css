@@ -89,6 +89,19 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 
 .workhead h1 { margin: 0 0 .3rem; }
 .workhead .sub { color: var(--muted); margin: 0 0 1rem; }
+
+/* Author pages */
+.authorhead { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; }
+.authorhead figure.portrait { margin: 0; width: 120px; }
+.authorhead figure.portrait a { display: block; }
+.authorhead figure.portrait img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+.authorhead figure.portrait figcaption { font-size: .72rem; margin-top: .3rem; line-height: 1.3; }
+.authorhead h1 { margin: 0 0 .3rem; }
+.authorhead .sub { color: var(--muted); margin: 0 0 .25rem; }
+.authorhead .sub.dates { font-variant-numeric: tabular-nums; }
+.authorhead .links { margin: .3rem 0 0; font-size: .9rem; }
+.worksh { font-size: 1.05rem; margin: 1.5rem 0 .6rem; }
+ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .attr { font-size: .85rem; color: var(--muted); }
 .downloads { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; margin: 1rem 0; }
 .downloads h2 { font-size: .95rem; margin: .2rem 0 .5rem; }

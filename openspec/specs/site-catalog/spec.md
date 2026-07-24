@@ -75,6 +75,30 @@ Copy button, plus a "Download all as .bib". Citekeys are ASCII (diacritics trans
 Referenced `external_translations` are shown as an "Existing translations elsewhere" section
 linking out (translator, year, venue, license) — never hosted.
 
+## Requirement: Author pages
+
+The site publishes a page per author at `/authors/<slug>/` and an index at `/authors/` (linked from
+the nav as "Authors"). Established by the `author-pages` change (archived 2026-07-24).
+
+Authors are aggregated across works by a stable identity key: `wikidata_id` when present, otherwise
+a slug of the name — so the same author across works merges into one page, while namesakes with
+distinct QIDs stay separate (PLAN.md §9a). `pipeline/build_site_data.py` emits the aggregation into
+`works.json` as a top-level `authors` list and attaches each author's `slug` to every author object
+inside each work, so catalog cards and the work-page header link author names to their page.
+
+Each author page shows the name, an optional one-line `bio` and optional public-domain `portrait`
+(a small image we host ourselves, copied from `corpus/authors/<slug>/` into
+`site/public/authors/<slug>/` at build time — like figure crops; only full scans are never
+rehosted), and the birth/death years. The portrait links to its `source` URL (its Wikimedia Commons
+file page) when clicked, and shows the optional `credit` artist attribution as a caption. Public-domain status is *not* restated on the page —
+everything on the site has already passed the gate, so it is a given. A MacTutor (St Andrews)
+biography link is shown when the author's `mactutor` field is set (the only external link surfaced —
+`wikidata_id` is retained in the data for aggregation and the CI death-date check, but is not shown
+to visitors), followed by the author's works on the site (title → work page, year, venue, status
+badge), ordered by year. The index lists every author
+alphabetically with dates and work count. Only public-domain works that pass the gate feed the
+aggregation, so no author page surfaces an unpublished work.
+
 ## Requirement: Legal pages
 
 The site serves About, Copyright & takedown, Contribute, and Contact pages.

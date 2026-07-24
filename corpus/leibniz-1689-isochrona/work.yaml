@@ -7,6 +7,12 @@ authors:
     wikidata_id: Q9047
     birth_year: 1646
     death_year: 1716
+    mactutor: Leibniz  # https://mathshistory.st-andrews.ac.uk/Biographies/Leibniz/
+    portrait:
+      file: portrait.jpg
+      credit: "Portrait by Bernhard Christoph Francke (c. 1700)"
+      alt: "Painted portrait of Gottfried Wilhelm Leibniz"
+      source: "https://commons.wikimedia.org/wiki/File:Gottfried_Wilhelm_Leibniz,_Bernhard_Christoph_Francke.jpg"
 
 publication:
   year: 1689

@@ -7,6 +7,11 @@ authors:
     wikidata_id: Q1528006
     birth_year: 1682
     death_year: 1766
+    mactutor: Fagnano_Giulio  # https://mathshistory.st-andrews.ac.uk/Biographies/Fagnano_Giulio/
+    portrait:
+      file: portrait.jpg
+      alt: "Portrait of Giulio Carlo de' Toschi di Fagnano"
+      source: "https://commons.wikimedia.org/wiki/File:Giulio_Fagnani_portrait.jpg"
 
 publication:
   year: 1718

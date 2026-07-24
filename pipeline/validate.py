@@ -297,15 +297,32 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
     )
 
     seen_ids: dict[str, str] = {}
+    # Cross-work author consistency: one wikidata_id must carry the same birth/death years
+    # everywhere it appears, or the aggregated author page would show conflicting dates.
+    author_dates: dict[str, tuple[str, dict]] = {}
     for wd in work_dirs:
         validate_work(wd, vocab, now_year, strict_pma_100, issues, write=write)
         # Cross-work: unique ids.
         if (wd / "work.yaml").exists():
-            wid = (load_yaml(wd / "work.yaml") or {}).get("id")
+            work = load_yaml(wd / "work.yaml") or {}
+            wid = work.get("id")
             if wid in seen_ids:
                 issues.error(wd.name, f"duplicate id '{wid}' (also in {seen_ids[wid]})")
             elif wid:
                 seen_ids[wid] = wd.name
+
+            for a in work.get("authors") or []:
+                qid = a.get("wikidata_id")
+                if not qid:
+                    continue
+                dates = {"birth_year": a.get("birth_year"), "death_year": a.get("death_year")}
+                if qid in author_dates:
+                    first_dir, first_dates = author_dates[qid]
+                    if first_dates != dates:
+                        issues.warn(wd.name, f"author {qid} has {dates} but {first_dates} in "
+                                             f"{first_dir}; birth/death years should agree")
+                else:
+                    author_dates[qid] = (wd.name, dates)
 
     return issues
 

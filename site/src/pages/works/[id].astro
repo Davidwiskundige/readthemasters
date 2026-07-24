@@ -77,7 +77,9 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
     <h1 data-pagefind-meta="title">{work.title}</h1>
     {work.title_en && <p class="sub"><em>{work.title_en}</em></p>}
     <p class="sub">
-      {authors} · {work.year}
+      {work.authors.map((a, i) => (
+        <>{i > 0 && ", "}{a.slug ? <a href={`/authors/${a.slug}/`}>{a.name}</a> : a.name}</>
+      ))} · {work.year}
       {work.venue_full && <> · {work.venue_full}</>}
       · <span class={`badge ${work.status}`}>{work.status}</span>
     </p>
