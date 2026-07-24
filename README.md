@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Davidwiskundige/readthemasters/actions/workflows/ci.yml/badge.svg)](https://github.com/Davidwiskundige/readthemasters/actions/workflows/ci.yml)
 
-**Live at [readthemasters.pages.dev](https://readthemasters.pages.dev)**
+**Live at [readthemasters.org](https://readthemasters.org)**
 
 A website that publishes **AI transcriptions (LaTeX)** and **AI translations (LaTeX)** of old
 mathematics and physics texts — with the original source always cited, and **only** for texts that

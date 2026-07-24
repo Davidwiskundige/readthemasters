@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://readthemasters.pages.dev/sitemap-index.xml
+Sitemap: https://readthemasters.org/sitemap-index.xml

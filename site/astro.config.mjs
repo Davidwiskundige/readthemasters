@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// Static site. `site` is the Cloudflare Pages project URL until a custom domain is attached
-// (see .github/workflows/ci.yml deploy step) — update here once a real domain is in place.
+// Static site. `site` is the public canonical URL, used for the sitemap and canonical links.
+// The Cloudflare Pages project also stays reachable at readthemasters.pages.dev.
 export default defineConfig({
-  site: "https://readthemasters.pages.dev",
+  site: "https://readthemasters.org",
   build: { format: "directory" },
   integrations: [sitemap()],
 });
