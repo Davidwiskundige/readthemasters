@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import data from "../../data/works.json";
 import { texToHtml } from "../../lib/tex.js";
 import { bibtexEntries } from "../../lib/bibtex.js";
+import { workJsonLd } from "../../lib/jsonld.js";
 
 export function getStaticPaths() {
   return (data.works ?? []).map((w) => ({ params: { id: w.id }, props: { work: w } }));
@@ -71,7 +72,8 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
 // Revision history is the curated `changelog` block from provenance.yaml, newest first (PLAN.md §9 #4).
 const changelog = work.changelog ?? [];
 ---
-<Base title={work.title} description={work.title_en ?? work.title}>
+<Base title={work.title} description={work.title_en ?? work.title}
+      ogType="article" jsonLd={workJsonLd(work, Astro.site?.origin ?? "")}>
   {/* data-pagefind-body marks what the search index covers: the significance note and the text
       panels below. Everything else (this heading block, downloads, notices, BibTeX store, site
       chrome) sits outside every body region, so it is not indexed as text — the heading block

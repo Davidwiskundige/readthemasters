@@ -1,16 +1,30 @@
 ---
 import "../styles/global.css";
-const { title, description } = Astro.props;
+const { title, description, ogType = "website", jsonLd } = Astro.props;
 const siteTitle = "ReadTheMasters";
+const fullTitle = title ? `${title} · ${siteTitle}` : siteTitle;
+// Canonical URL from the configured `site` + this page's path. When `site` is unset (e.g. some
+// dev contexts) `Astro.site` is undefined; fall back to the bare path so nothing renders "undefined".
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} · ${siteTitle}` : siteTitle}</title>
+    <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
     <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    {/* Social preview (OpenGraph + Twitter). Values reuse the per-page title/description. */}
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title ?? siteTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {/* Machine-readable structured data (schema.org), supplied per page type. */}
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
     <header class="site">
