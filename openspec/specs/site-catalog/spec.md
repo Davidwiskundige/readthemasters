@@ -99,6 +99,28 @@ badge), ordered by year. The index lists every author
 alphabetically with dates and work count. Only public-domain works that pass the gate feed the
 aggregation, so no author page surfaces an unpublished work.
 
+## Requirement: Revision history
+
+Each work page shows a revision history of the work, derived at build time from git — no revision
+data is stored in `work.yaml`. Established by the `revision-history` change (archived 2026-07-25,
+PLAN.md §9 #4).
+
+`pipeline/build_site_data.py` emits a per-work `history` list into `works.json`, derived from
+`git log` scoped to the work's directory (`corpus/<id>/`) and ordered newest first. Each entry
+records the commit date, short hash, subject line, and the artifacts the commit touched, mapped from
+the changed paths to readable labels (`original.tex` → `original`, `translations/<lang>.tex` →
+`<lang> translation`, `work.yaml` → `metadata`, `provenance.yaml` → `provenance`, `figures/` →
+`figures`). The work page renders this as a single collapsed `<details>` "Revision history" section
+near the "Report an error" link, whole-work in scope (not split per panel); each row shows the date,
+the artifacts touched, and the subject, with the short hash linking to the commit on the source host
+(reusing the repository URL the page already builds for the report-error link).
+
+History is derived, so it degrades gracefully: when git history is unavailable at build time (not a
+git repository, a tarball build, or a clone with no reachable commits), `history` is empty and the
+section is omitted — the build never fails for lack of history. Rendering the full history requires
+the complete commit history at build, so the site build job checks out with `fetch-depth: 0` rather
+than the default shallow clone, which would otherwise truncate every work's history to one commit.
+
 ## Requirement: Legal pages
 
 The site serves About, Copyright & takedown, Contribute, and Contact pages.

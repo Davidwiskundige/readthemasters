@@ -182,6 +182,24 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
 
   <p style="margin-top:2rem"><a href={reportUrl} rel="noopener">Report an error in this text →</a></p>
 
+  {/* Revision history (PLAN.md backlog #4): whole-work, derived from git at build time, collapsed
+      so it never competes with the text. Omitted entirely when no history is available. */}
+  {work.history && work.history.length > 0 && (
+    <details class="revhistory">
+      <summary>Revision history ({work.history.length})</summary>
+      <ul>
+        {work.history.map((h) => (
+          <li>
+            <span class="attr">{h.date}</span>
+            {h.artifacts.length > 0 && <> · <span class="arts">{h.artifacts.join(", ")}</span></>}
+            {" — "}{h.subject}{" "}
+            <a href={`${repo}/commit/${h.hash}`} rel="noopener"><code>{h.hash.slice(0, 7)}</code></a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )}
+
   {/* Hidden BibTeX source for the inline "copy BibTeX" buttons and the .bib download. */}
   <div id="bib-store" hidden>
     {citations.map((c) => <pre id={`bib-${c.key}`}>{c.text}</pre>)}

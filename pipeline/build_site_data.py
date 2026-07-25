@@ -16,6 +16,7 @@ import argparse
 import datetime
 import json
 import shutil
+import subprocess
 import unicodedata
 from pathlib import Path
 
@@ -111,6 +112,74 @@ def resolve_portrait(corpus_dir: Path, author_root: Path | None, slug: str,
         shutil.copyfile(src, dest)
     out["url"] = f"/authors/{slug}/{portrait['file']}"
     return out
+
+
+# A work's revision history (PLAN.md §9 #4) is derived from git — never stored in work.yaml.
+# The log is scoped to corpus/<id>/, and each changed path is mapped to a reader-facing artifact
+# label. Anything under the work dir that isn't one of these (a README, say) maps to None and is
+# left out of the entry's artifact list.
+def classify_path(rel: str) -> str | None:
+    """Map a work-relative path (e.g. `translations/en.tex`) to a revision-history label."""
+    if rel == "original.tex":
+        return "original"
+    if rel == "work.yaml":
+        return "metadata"
+    if rel == "provenance.yaml":
+        return "provenance"
+    m = re.match(r"translations/([A-Za-z][A-Za-z-]*)\.tex$", rel)
+    if m:
+        return f"{m.group(1)} translation"
+    if rel.startswith("figures/"):
+        return "figures"
+    return None
+
+
+def work_relative(path: str, work_id: str) -> str:
+    """Strip a repo-relative git path down to its work-relative tail (`corpus/<id>/x` → `x`)."""
+    marker = f"{work_id}/"
+    i = path.find(marker)
+    return path[i + len(marker):] if i >= 0 else path
+
+
+def parse_history(output: str, work_id: str) -> list[dict]:
+    """Parse `git log --name-only` output (records prefixed with \\x1e, fields split by \\x1f).
+
+    Returns entries `{date, hash, subject, artifacts}` in git's order (newest first), where
+    `artifacts` are the work's touched files mapped to labels via `classify_path`, de-duplicated.
+    """
+    entries: list[dict] = []
+    for record in output.split("\x1e"):
+        if not record.startswith("COMMIT\x1f"):
+            continue
+        head, *files = record.strip("\n").split("\n")
+        _, h, date, subject = head.split("\x1f", 3)
+        artifacts: list[str] = []
+        for line in files:
+            line = line.strip()
+            if not line:
+                continue
+            label = classify_path(work_relative(line, work_id))
+            if label and label not in artifacts:
+                artifacts.append(label)
+        entries.append({"date": date, "hash": h, "subject": subject, "artifacts": artifacts})
+    return entries
+
+
+def work_history(corpus_dir: Path, work_id: str) -> list[dict]:
+    """Revision history for a work, from `git log` over corpus/<id>/ (newest first).
+
+    Degrades to [] when git history is unavailable — not a git repo, git missing, or no commits —
+    so the build never fails for lack of history (PLAN.md §9 #4).
+    """
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(corpus_dir), "log", "--date=short",
+             "--format=%x1eCOMMIT%x1f%H%x1f%ad%x1f%s", "--name-only", "--", work_id],
+            capture_output=True, text=True, encoding="utf-8", check=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return []
+    return parse_history(out, work_id)
 
 
 def slugify(text: str) -> str:
@@ -284,6 +353,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "translations": translations,
             "translation_langs": sorted(translations.keys()),
             "external_translations": work.get("external_translations") or [],
+            "history": work_history(corpus_dir, work["id"]),
             "url": f"/works/{work['id']}/",
         })
 

@@ -34,7 +34,11 @@ jobs:
       contents: read
       deployments: write
     steps:
+      # Full history so each work page can render its revision history from git log (PLAN.md §9 #4);
+      # the default shallow clone would truncate every work's history to a single commit.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

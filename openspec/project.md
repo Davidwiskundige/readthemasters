@@ -41,11 +41,14 @@ truth for what the system IS) and the change moves to `openspec/changes/archive/
 `.claude/skills/transcribe/` + Tier-3 `pipeline/transcribe.py`), `translation-pipeline` (Tier-2
 skill `.claude/skills/translate/` + Tier-3 `pipeline/translate.py`, with the math-preservation check
 `pipeline/texcompare.py` wired into the gate), `author-pages` (per-author pages `/authors/<slug>/` +
-index: bio, portrait, dates, MacTutor/Wikidata links, and the author's works — PLAN.md §9 backlog #4).
+index: bio, portrait, dates, MacTutor/Wikidata links, and the author's works — PLAN.md §9 backlog #3),
+`revision-history` (a collapsed, whole-work "Revision history" on each work page, derived at build
+time from `git log` over `corpus/<id>/`; build checkout uses `fetch-depth: 0` — PLAN.md §9 backlog #4).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
-for optional follow-ups. Before extending a shipped capability, write a change under `changes/<name>/`
-with delta specs, implement, then fold the deltas into `specs/` and archive.
+for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational
+tier). Before extending a shipped capability, write a change under `changes/<name>/` with delta specs,
+implement, then fold the deltas into `specs/` and archive.
 
 ## Conventions
 
