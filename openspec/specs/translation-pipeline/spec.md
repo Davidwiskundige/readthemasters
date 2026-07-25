@@ -52,6 +52,12 @@ The run records, under `translations.<lang>`, `status: ai-draft` with `model`, `
 `transcription:` block and other languages. A higher status on the ladder is set only by a human
 reviewer, with a `reviewers:` entry.
 
+The run also seeds a starter `changelog` entry in `provenance.yaml` —
+`{date: today, summary: "Translation (<lang>) added (AI draft)."}` — appended only when no entry
+with that summary already exists, preserving the transcription's entry and other languages' entries.
+Both the Tier-2 skill and the Tier-3 pipeline seed it (via `validate.add_changelog_entry`); the
+entry is a starting point the maintainer may edit.
+
 ## Requirement: Human review checkpoint, then a DCO-signed PR
 
 Both tiers present the translation, the uncertain passages, the preservation-check result, and the

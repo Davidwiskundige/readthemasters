@@ -116,6 +116,9 @@ Re-read the assembled `original.tex` against each scan page:
 Create/update `corpus/<work-id>/provenance.yaml` (see the template and existing works):
 
 ```yaml
+changelog:                    # seeds the work page's revision history
+  - date: "YYYY-MM-DD"        # today
+    summary: Transcription added (AI draft).
 transcription:
   status: ai-draft            # machine output; a human has not yet checked it
   model: claude-opus-4-8      # the model you are actually running as
@@ -128,6 +131,9 @@ transcription:
 
 Set `status: ai-draft` unless the contributor tells you they have reviewed it against the scan —
 only then may it be `skimmed`, recorded with a `reviewers:` entry naming them.
+
+Add the `changelog` starter entry only if one with that summary isn't already there (an existing
+work being re-transcribed keeps its history); preserve any entries already present.
 
 ## Phase 7 — Validate
 

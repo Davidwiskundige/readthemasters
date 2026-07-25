@@ -69,3 +69,32 @@ def test_validate_allows_absent_changelog():
     prov = {"transcription": {"status": "ai-draft", "model": "m", "prompt_version": "v"}}
     validate.check_provenance(prov, "w", issues)
     assert issues.ok, issues.errors
+
+
+# --- validate.add_changelog_entry (pipeline/skill seeding) ------------------------------------ #
+
+def test_add_changelog_entry_appends_and_orders_first():
+    prov = {"transcription": {"status": "ai-draft"}}
+    out = validate.add_changelog_entry(prov, "Transcription added (AI draft).", date="2026-07-19")
+    # changelog is the first key, with the seeded entry; other blocks are preserved.
+    assert list(out)[0] == "changelog"
+    assert out["changelog"] == [{"date": "2026-07-19", "summary": "Transcription added (AI draft)."}]
+    assert out["transcription"] == {"status": "ai-draft"}
+
+
+def test_add_changelog_entry_is_idempotent_by_summary():
+    prov = {"changelog": [{"date": "2026-07-19", "summary": "Transcription added (AI draft)."}]}
+    out = validate.add_changelog_entry(prov, "Transcription added (AI draft).", date="2026-07-25")
+    assert out["changelog"] == [{"date": "2026-07-19", "summary": "Transcription added (AI draft)."}]
+
+
+def test_add_changelog_entry_preserves_existing_and_appends_distinct():
+    prov = {"changelog": [{"date": "2026-07-19", "summary": "Transcription added (AI draft)."}]}
+    out = validate.add_changelog_entry(prov, "Translation (en) added (AI draft).", date="2026-07-20")
+    assert [e["summary"] for e in out["changelog"]] == [
+        "Transcription added (AI draft).", "Translation (en) added (AI draft)."]
+
+
+def test_add_changelog_entry_defaults_to_today():
+    out = validate.add_changelog_entry({}, "x")
+    assert out["changelog"][0]["date"] == datetime.date.today().isoformat()

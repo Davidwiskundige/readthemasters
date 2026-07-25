@@ -44,7 +44,9 @@ skill `.claude/skills/translate/` + Tier-3 `pipeline/translate.py`, with the mat
 index: bio, portrait, dates, MacTutor/Wikidata links, and the author's works — PLAN.md §9 backlog #3),
 `revision-history` (a collapsed, whole-work "Revision history" on each work page — after
 `provenance-changelog` it is sourced from an optional curated `changelog` block in `provenance.yaml`,
-newest first, rather than derived from git; the earlier git-log approach was superseded — PLAN.md §9 backlog #4).
+newest first, rather than derived from git; the earlier git-log approach was superseded; and
+`pipeline-changelog-seed` makes all four contributor paths seed a starter changelog entry
+(`validate.add_changelog_entry`) — PLAN.md §9 backlog #4).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational

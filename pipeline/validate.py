@@ -61,6 +61,22 @@ def load_yaml(path: Path):
         return yaml.safe_load(fh)
 
 
+def add_changelog_entry(provenance: dict, summary: str, date: str | None = None) -> dict:
+    """Seed a starter `{date, summary}` changelog entry, append-if-absent (by summary).
+
+    Used by the transcription/translation pipelines and skills so a new artifact records its own
+    first revision (PLAN.md §9 #4). Idempotent: re-running does not duplicate the entry, and any
+    existing entries are preserved. Keeps `changelog` as the first key for readability.
+    """
+    date = date or datetime.date.today().isoformat()
+    log = provenance.get("changelog")
+    if not isinstance(log, list):
+        log = []
+    if not any(isinstance(e, dict) and e.get("summary") == summary for e in log):
+        log = [*log, {"date": date, "summary": summary}]
+    return {"changelog": log, **{k: v for k, v in provenance.items() if k != "changelog"}}
+
+
 def _is_iso_date(value) -> bool:
     """True for an ISO calendar date — a `datetime.date` (YAML often parses one) or 'YYYY-MM-DD'."""
     if isinstance(value, datetime.date):

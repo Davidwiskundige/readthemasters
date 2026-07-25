@@ -256,6 +256,7 @@ def main(argv: list[str] | None = None) -> int:
     prov.setdefault("translations", {})
     prov["translations"][lang] = build_translation_provenance(
         args.model, args.effort, prompt_version, [batch_id])
+    prov = validate.add_changelog_entry(prov, f"Translation ({lang}) added (AI draft).")
     with prov_path.open("w", encoding="utf-8") as fh:
         yaml.safe_dump(prov, fh, allow_unicode=True, sort_keys=False)
     print(f"wrote {prov_path} (translations.{lang}: ai-draft, source: transcription).")

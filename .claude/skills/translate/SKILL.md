@@ -113,8 +113,18 @@ translations:
     produced: "YYYY-MM-DD"      # today
 ```
 
-Preserve the existing `transcription:` block and any other languages. Set `status: ai-draft` unless
-the contributor tells you they have reviewed it, in which case record a `reviewers:` entry.
+Also append a starter entry to the work's top-level `changelog` (the source of the revision
+history), unless one with that summary is already there:
+
+```yaml
+changelog:
+  - date: "YYYY-MM-DD"          # today
+    summary: Translation (<lang>) added (AI draft).
+```
+
+Preserve the existing `transcription:` block, any other languages, and any existing `changelog`
+entries. Set `status: ai-draft` unless the contributor tells you they have reviewed it, in which
+case record a `reviewers:` entry.
 
 ## Phase 7 — Validate
 

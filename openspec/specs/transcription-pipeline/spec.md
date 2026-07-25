@@ -42,6 +42,12 @@ the prompt actually followed), `submitted_via: skill`, and the `produced` date. 
 the ladder (`skimmed`, `verified`) is set only when a human has performed that level of review, with
 a `reviewers:` entry naming them.
 
+A transcription run also seeds a starter `changelog` entry in `provenance.yaml` —
+`{date: today, summary: "Transcription added (AI draft)."}` — appended only when no entry with that
+summary already exists, so re-running does not duplicate it and existing changelog entries are
+preserved. Both the Tier-2 skill and the Tier-3 pipeline seed it (via
+`validate.add_changelog_entry`); the entry is a starting point the maintainer may edit.
+
 ## Requirement: Human review checkpoint, then a DCO-signed PR
 
 The skill presents the transcription, the uncertain/flagged passages, and the gate result to the
