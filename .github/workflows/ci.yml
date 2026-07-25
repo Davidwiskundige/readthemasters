@@ -6,6 +6,31 @@ on:
   pull_request:
 
 jobs:
+  dco:
+    name: DCO sign-off
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Every commit carries a matching Signed-off-by
+        run: |
+          git fetch --quiet origin "$GITHUB_BASE_REF"
+          fail=0
+          for sha in $(git rev-list --no-merges "origin/$GITHUB_BASE_REF"..HEAD); do
+            author="$(git show -s --format='%an <%ae>' "$sha")"
+            signoffs="$(git show -s --format='%(trailers:key=Signed-off-by,valueonly)' "$sha")"
+            if ! printf '%s\n' "$signoffs" | grep -qixF "$author"; then
+              echo "::error::$sha is missing 'Signed-off-by: $author' (CC0 sign-off, see contribute page)"
+              fail=1
+            fi
+          done
+          if [ "$fail" -ne 0 ]; then
+            echo "DCO check failed. Sign off your commits: git commit -s (or: git rebase --signoff origin/$GITHUB_BASE_REF)."
+            exit 1
+          fi
+
   copyright-gate:
     name: Copyright gate + tests
     runs-on: ubuntu-latest
