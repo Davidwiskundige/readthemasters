@@ -69,6 +69,11 @@ provider-agnostic or null), `prompt_version` (required), optional `submitted_via
 `reviewers` (list of `{name, level, date}`), and for translations a `source`
 (`transcription` | `external-open` + `license`).
 
+An optional top-level `changelog` records how the work has changed over time — a human-authored
+list of `{date, summary}` entries (ISO `date`, short non-empty `summary`), the source of the work
+page's revision history. When present, `validate.py` checks it is a list and that every entry has an
+ISO date and a non-empty summary.
+
 ## Requirement: Controlled vocabulary
 
 `corpus/vocab.yaml` defines allowed values for `disciplines`, `tags`, `venues`, `types`,

@@ -1,3 +1,9 @@
+changelog:
+  - date: "2026-07-22"
+    summary: >-
+      Added: transcription (skimmed — math checked against the scan, three probable printer's
+      misprints flagged), figure crops, and an AI-draft English translation.
+
 transcription:
   status: skimmed
   model: claude-sonnet-5

@@ -1,3 +1,11 @@
+changelog:
+  - date: "2026-07-20"
+    summary: >-
+      English translation added (AI draft); transcription reviewed against the scan and promoted
+      to skimmed.
+  - date: "2026-07-19"
+    summary: Transcription added as an AI draft, with figure crops and house-style math.
+
 transcription:
   status: skimmed
   model: claude-opus-4-8

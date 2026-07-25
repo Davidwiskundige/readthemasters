@@ -61,6 +61,19 @@ def load_yaml(path: Path):
         return yaml.safe_load(fh)
 
 
+def _is_iso_date(value) -> bool:
+    """True for an ISO calendar date — a `datetime.date` (YAML often parses one) or 'YYYY-MM-DD'."""
+    if isinstance(value, datetime.date):
+        return True
+    if not isinstance(value, str):
+        return False
+    try:
+        datetime.date.fromisoformat(value)
+        return True
+    except ValueError:
+        return False
+
+
 # --------------------------------------------------------------------------- #
 # Copyright rules
 # --------------------------------------------------------------------------- #
@@ -216,6 +229,21 @@ def check_provenance(provenance: dict, work_id: str, issues: Issues) -> None:
         effort = rec.get("effort")
         if effort is not None and effort not in EFFORT_VALUES:
             issues.error(w, f"{name}: effort '{effort}' not in {sorted(EFFORT_VALUES)} (or null)")
+
+    # Optional changelog (source of the work page's revision history): a list of {date, summary}.
+    changelog = provenance.get("changelog")
+    if changelog is not None:
+        if not isinstance(changelog, list):
+            issues.error(w, "changelog must be a list of {date, summary} entries")
+        else:
+            for i, entry in enumerate(changelog):
+                if not isinstance(entry, dict):
+                    issues.error(w, f"changelog[{i}] must be a mapping with date and summary")
+                    continue
+                if not _is_iso_date(entry.get("date")):
+                    issues.error(w, f"changelog[{i}] date '{entry.get('date')}' is not ISO YYYY-MM-DD")
+                if not (isinstance(entry.get("summary"), str) and entry["summary"].strip()):
+                    issues.error(w, f"changelog[{i}] needs a non-empty summary")
 
 
 def check_translation_math(work_dir: Path, issues: Issues) -> None:

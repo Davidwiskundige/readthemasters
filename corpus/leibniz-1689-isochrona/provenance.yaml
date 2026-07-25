@@ -1,3 +1,11 @@
+changelog:
+  - date: "2026-07-21"
+    summary: >-
+      English translation added (AI draft); "potentia" kept as a literal untranslated term rather
+      than an inline gloss.
+  - date: "2026-07-20"
+    summary: Transcription added and spot-checked against the scan (skimmed).
+
 transcription:
   status: skimmed
   model: claude-opus-4-8
