@@ -113,6 +113,28 @@ Established by `revision-history` (archived 2026-07-25), then re-sourced from th
 per entry (date + summary). A work with no `changelog` shows no revision-history section, and the
 build never fails for its absence.
 
+## Requirement: SEO & structured metadata
+
+Every page advertises a canonical URL, social-preview metadata, and machine-readable structured
+data, all derived at build time from data already in `works.json` — no new corpus field. Established
+by `seo-metadata` (archived 2026-07-25, PLAN.md §9 #5). Screen-reader MathML (KaTeX's default
+`htmlAndMathml` output) and the sitemap (`@astrojs/sitemap` + `robots.txt`) were already in place, so
+this requirement covers only the page-metadata layer.
+
+The shared layout (`site/src/layouts/Base.astro`) emits, for every page: a `<link rel="canonical">`
+built from the configured `site` + the page path; OpenGraph tags (`og:site_name`, `og:type`,
+`og:title`, `og:description`, `og:url`) with `og:type` defaulting to `website` and overridable per
+page (`article` for a work, `profile` for an author); and a Twitter `summary` card. When a page
+supplies JSON-LD, the layout renders it in one `<script type="application/ld+json">`.
+
+`site/src/lib/jsonld.js` builds the structured data: a work page emits a `CreativeWork` subtype from
+its `type` (`paper` → `ScholarlyArticle`, `book` → `Book`, else `CreativeWork`) with title (English
+title as `alternativeName`), each author as a `Person` with `sameAs` (Wikidata + MacTutor),
+`datePublished`, `inLanguage`, `url`, `isBasedOn` (source scan when present), and a CC0 `license`; an
+author page emits a `Person` with `sameAs` and birth/death years; the home emits a `WebSite`. Fields
+whose source data is absent are omitted rather than emitted empty. This is metadata only — no
+reader-facing change.
+
 ## Requirement: Legal pages
 
 The site serves About, Copyright & takedown, Contribute, and Contact pages.

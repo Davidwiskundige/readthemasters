@@ -527,8 +527,10 @@ proposal when its time comes.
 
 ### Medium-term
 
-5. **Accessibility & SEO for math** — render KaTeX with MathML output (screen-reader friendly),
-   schema.org `CreativeWork`/`Person` metadata, OpenGraph cards, sitemap.
+5. **SEO & structured metadata** — *shipped* (`seo-metadata`, archived 2026-07-25): schema.org
+   `CreativeWork`/`Person`/`WebSite` JSON-LD, OpenGraph/Twitter cards, and canonical links across the
+   site. (Screen-reader MathML already shipped via KaTeX's default `htmlAndMathml` output, and the
+   sitemap via `@astrojs/sitemap` + `robots.txt`.) Optional follow-up: per-work `og:image` generation.
 6. **EPUB export** alongside the Tectonic PDFs — old texts are exactly what people read on
    e-readers; pandoc in the same CI job.
 7. **Bulk corpus download** — zip/JSONL export of the whole corpus (CC0). Makes the site a
@@ -564,6 +566,13 @@ proposal when its time comes.
     natural way for an audience to follow a growing corpus. Cheap to build, but its value depends
     on a steady publishing cadence and readers to serve — deferred until there's a corpus worth
     subscribing to.
+18. **Build-time math pre-rendering** — render KaTeX at build instead of client-side, so formulas
+    are in the static HTML. Removes the runtime CDN import, eliminates the flash of unrendered
+    `$…$` before hydration, renders math without JavaScript, and avoids the layout shift when
+    formulas replace their source. A robustness/quality change judged purely on those merits — *not*
+    an SEO lever (Googlebot renders the current client-side KaTeX, and the searchable content is the
+    prose, not the formulas). Requires replicating the shared macro preamble in the build step and
+    accepting heavier per-page markup; consider once the reader experience is otherwise settled.
 
 ---
 

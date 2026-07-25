@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import data from "../data/works.json";
+import { websiteJsonLd } from "../lib/jsonld.js";
 
 const works = data.works ?? [];
 
@@ -27,7 +28,8 @@ const years = works.map((w) => w.year).filter((y) => typeof y === "number");
 const minYear = years.length ? Math.min(...years) : 0;
 const maxYear = years.length ? Math.max(...years) : 0;
 ---
-<Base title="Catalog" description="AI transcriptions and translations of public-domain mathematics and physics texts.">
+<Base title="Catalog" description="AI transcriptions and translations of public-domain mathematics and physics texts."
+      jsonLd={websiteJsonLd(Astro.site?.origin ?? "")}>
   <div class="layout">
     <aside class="filters">
       <input id="q" type="search" placeholder="Search title, author…" aria-label="Search" />
