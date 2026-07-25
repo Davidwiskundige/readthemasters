@@ -66,3 +66,18 @@ def test_parse_history_empty_output():
 def test_work_history_empty_outside_git_repo(tmp_path):
     # A corpus dir that is not inside a git repo yields no history, and does not raise.
     assert bsd.work_history(tmp_path, "whatever") == []
+
+
+def test_is_content_revision_truth_table():
+    no_sweeps: set[str] = set()
+    # Text / provenance / figures / translation changes are content revisions.
+    assert bsd.is_content_revision(["original"], "a", no_sweeps) is True
+    assert bsd.is_content_revision(["provenance"], "a", no_sweeps) is True
+    assert bsd.is_content_revision(["figures"], "a", no_sweeps) is True
+    assert bsd.is_content_revision(["en translation"], "a", no_sweeps) is True
+    assert bsd.is_content_revision(["metadata", "original"], "a", no_sweeps) is True
+    # Metadata-only, or nothing classified, is housekeeping.
+    assert bsd.is_content_revision(["metadata"], "a", no_sweeps) is False
+    assert bsd.is_content_revision([], "a", no_sweeps) is False
+    # A corpus-wide sweep is never a content revision, even if it edited text.
+    assert bsd.is_content_revision(["original"], "sweep", {"sweep"}) is False

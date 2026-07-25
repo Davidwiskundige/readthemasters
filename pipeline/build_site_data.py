@@ -141,6 +141,23 @@ def work_relative(path: str, work_id: str) -> str:
     return path[i + len(marker):] if i >= 0 else path
 
 
+# A commit touching at least this many published works at once is treated as a corpus-wide sweep
+# (a rename/migration), not a revision of any single text, and demoted on every work's history.
+SWEEP_MIN_WORKS = 3
+
+
+def is_content_revision(artifacts: list[str], commit_hash: str, sweeps: set[str]) -> bool:
+    """True when a commit is a real revision of *this* text, not housekeeping (PLAN.md §9 #4).
+
+    Content = it changed the text (`original`/`<lang> translation`), `provenance` (status
+    promotions, model re-runs), or `figures` — not a metadata-only touch of `work.yaml`, and not a
+    corpus-wide sweep. Metadata-only and sweep commits stay in the data (flagged), just demoted.
+    """
+    if commit_hash in sweeps:
+        return False
+    return any(a != "metadata" for a in artifacts)
+
+
 def parse_history(output: str, work_id: str) -> list[dict]:
     """Parse `git log --name-only` output (records prefixed with \\x1e, fields split by \\x1f).
 
@@ -356,6 +373,18 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "history": work_history(corpus_dir, work["id"]),
             "url": f"/works/{work['id']}/",
         })
+
+    # Flag each revision as a content revision vs housekeeping (PLAN.md §9 #4 follow-up). A commit
+    # appearing in many works' histories is a corpus-wide sweep; tally across the published works
+    # (one git call already done per work) rather than re-walking the log.
+    sha_works: dict[str, int] = {}
+    for w in works:
+        for e in w["history"]:
+            sha_works[e["hash"]] = sha_works.get(e["hash"], 0) + 1
+    sweeps = {h for h, c in sha_works.items() if c >= SWEEP_MIN_WORKS}
+    for w in works:
+        for e in w["history"]:
+            e["content"] = is_content_revision(e["artifacts"], e["hash"], sweeps)
 
     # Aggregate authors across the published works (also tags each work's authors with their slug).
     authors = build_authors(works)

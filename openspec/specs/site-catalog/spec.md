@@ -102,18 +102,31 @@ aggregation, so no author page surfaces an unpublished work.
 ## Requirement: Revision history
 
 Each work page shows a revision history of the work, derived at build time from git — no revision
-data is stored in `work.yaml`. Established by the `revision-history` change (archived 2026-07-25,
-PLAN.md §9 #4).
+data is stored in `work.yaml`. The history distinguishes content revisions of the text from
+incidental housekeeping and leads with the former. Established by the `revision-history` change
+(archived 2026-07-25) and refined by `revision-history-filter` (archived 2026-07-25, PLAN.md §9 #4).
 
 `pipeline/build_site_data.py` emits a per-work `history` list into `works.json`, derived from
 `git log` scoped to the work's directory (`corpus/<id>/`) and ordered newest first. Each entry
-records the commit date, short hash, subject line, and the artifacts the commit touched, mapped from
+records the commit date, short hash, subject line, the artifacts the commit touched — mapped from
 the changed paths to readable labels (`original.tex` → `original`, `translations/<lang>.tex` →
 `<lang> translation`, `work.yaml` → `metadata`, `provenance.yaml` → `provenance`, `figures/` →
-`figures`). The work page renders this as a single collapsed `<details>` "Revision history" section
-near the "Report an error" link, whole-work in scope (not split per panel); each row shows the date,
-the artifacts touched, and the subject, with the short hash linking to the commit on the source host
-(reusing the repository URL the page already builds for the report-error link).
+`figures`) — and a `content` flag.
+
+A commit is a **content revision** when it changed the work's text (`original`/`<lang> translation`),
+its `provenance` (status promotions, model re-runs), or its `figures` — and is not a corpus-wide
+sweep. A commit that only touched `work.yaml` (metadata), or that touches at least `SWEEP_MIN_WORKS`
+published works at once (a migration), is housekeeping, not a content revision; the sweep tally is
+taken across the published corpus so a single repo-wide change is demoted on every work's page even
+when it edited text.
+
+The work page renders this as a single collapsed `<details>` "Revision history" section near the
+"Report an error" link, whole-work in scope (not split per panel). Content revisions are listed by
+default and the summary count is their number; housekeeping commits are not discarded but demoted
+behind a nested "show all changes" expander, so the history stays fully auditable. When a work has
+no content revisions, all commits are shown in the main list. Each row shows the date, the artifacts
+touched, and the subject, with the short hash linking to the commit on the source host (reusing the
+repository URL the page already builds for the report-error link).
 
 History is derived, so it degrades gracefully: when git history is unavailable at build time (not a
 git repository, a tarball build, or a clone with no reachable commits), `history` is empty and the

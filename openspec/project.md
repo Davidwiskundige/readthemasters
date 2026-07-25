@@ -43,7 +43,8 @@ skill `.claude/skills/translate/` + Tier-3 `pipeline/translate.py`, with the mat
 `pipeline/texcompare.py` wired into the gate), `author-pages` (per-author pages `/authors/<slug>/` +
 index: bio, portrait, dates, MacTutor/Wikidata links, and the author's works — PLAN.md §9 backlog #3),
 `revision-history` (a collapsed, whole-work "Revision history" on each work page, derived at build
-time from `git log` over `corpus/<id>/`; build checkout uses `fetch-depth: 0` — PLAN.md §9 backlog #4).
+time from `git log` over `corpus/<id>/`; build checkout uses `fetch-depth: 0`; `revision-history-filter`
+then split it into content revisions vs demoted metadata/sweep housekeeping — PLAN.md §9 backlog #4).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational

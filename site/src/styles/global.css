@@ -141,6 +141,9 @@ ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8r
 .revhistory li { margin: .25rem 0; }
 .revhistory .arts { color: var(--accent); }
 .revhistory code { font-size: .8em; }
+.revhistory-all { margin: .4rem 0 0; }
+.revhistory-all summary { font-size: .95em; color: var(--muted); }
+.revhistory-all ul { opacity: .8; }
 .rmfig { margin: 1.5rem auto; text-align: center; max-width: 30rem; }
 .rmfig img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; background: #fff; padding: .4rem; }
 .rmfig figcaption { font-size: .85rem; color: var(--muted); margin-top: .4rem; }

@@ -67,6 +67,14 @@ const downloads = [
 // Prefilled "report an error" issue link (PLAN.md backlog #1).
 const repo = "https://github.com/Davidwiskundige/readthemasters";
 const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${work.id}`)}&body=${encodeURIComponent(`Work: ${work.id}\nWhere (page/paragraph):\nProblem:\n`)}`;
+
+// Revision history splits into content revisions (shown by default) and housekeeping (metadata-only
+// or corpus-wide sweeps, behind a "show all changes" expander). If nothing qualifies as content,
+// fall back to showing every commit so the section is never mysteriously empty. (PLAN.md §9 #4.)
+const history = work.history ?? [];
+let contentRevs = history.filter((h) => h.content);
+let houseRevs = history.filter((h) => !h.content);
+if (contentRevs.length === 0) { contentRevs = houseRevs; houseRevs = []; }
 ---
 <Base title={work.title} description={work.title_en ?? work.title}>
   {/* data-pagefind-body marks what the search index covers: the significance note and the text
@@ -183,12 +191,13 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
   <p style="margin-top:2rem"><a href={reportUrl} rel="noopener">Report an error in this text →</a></p>
 
   {/* Revision history (PLAN.md backlog #4): whole-work, derived from git at build time, collapsed
-      so it never competes with the text. Omitted entirely when no history is available. */}
-  {work.history && work.history.length > 0 && (
+      so it never competes with the text. Content revisions lead; metadata-only/sweep housekeeping
+      is demoted behind a nested expander. Omitted entirely when no history is available. */}
+  {contentRevs.length > 0 && (
     <details class="revhistory">
-      <summary>Revision history ({work.history.length})</summary>
+      <summary>Revision history ({contentRevs.length})</summary>
       <ul>
-        {work.history.map((h) => (
+        {contentRevs.map((h) => (
           <li>
             <span class="attr">{h.date}</span>
             {h.artifacts.length > 0 && <> · <span class="arts">{h.artifacts.join(", ")}</span></>}
@@ -197,6 +206,21 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
           </li>
         ))}
       </ul>
+      {houseRevs.length > 0 && (
+        <details class="revhistory-all">
+          <summary>Show all changes ({houseRevs.length} housekeeping)</summary>
+          <ul>
+            {houseRevs.map((h) => (
+              <li>
+                <span class="attr">{h.date}</span>
+                {h.artifacts.length > 0 && <> · <span class="arts">{h.artifacts.join(", ")}</span></>}
+                {" — "}{h.subject}{" "}
+                <a href={`${repo}/commit/${h.hash}`} rel="noopener"><code>{h.hash.slice(0, 7)}</code></a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
     </details>
   )}
 
