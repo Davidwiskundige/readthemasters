@@ -94,6 +94,16 @@ Working from `original.tex`, following `prompts/translate-chat.md`:
 
   If it reports a MISMATCH, fix the translation so every listed token matches the original — a
   changed formula is a bug, not a stylistic choice.
+- Run the mechanical house-style linter on the new translation (and the original); it must be clean:
+
+  ```bash
+  python pipeline/houselint.py corpus/<work-id>/original.tex corpus/<work-id>/translations/<lang>.tex
+  ```
+
+  It enforces presentation rulings such as HOUSESTYLE R2 (inline integrals over a fraction use
+  `\displaystyle\int \frac{...}{...}`). If the original itself trips it, fix **both** files
+  identically so `texcompare` still passes. (`validate.py` runs this same check, so a violation
+  fails the gate regardless.)
 - Re-read the translation against `original.tex` section by section: the meaning should match and
   only the prose should differ. Note anything you flagged with `\uncertain{}` for the reviewer.
 

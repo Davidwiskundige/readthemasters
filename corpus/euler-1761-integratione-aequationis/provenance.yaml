@@ -1,0 +1,60 @@
+changelog:
+  - date: "2026-07-28"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-07-25"
+    summary: >-
+      Added the Tab. I figures (Fig. 1, Fig. 2) from the BHL/IA journal scan, editorial notes on
+      the p. 39 and p. 55 misprints, and the better journal-scan citation.
+  - date: "2026-07-25"
+    summary: Transcription added (AI draft), pp. 37–57 (§§1–36) from the 1761 Novi Commentarii scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-07-25"
+  verification:
+    flagged_pages: [39, 54, 55]
+    date: "2026-07-25"
+  note: >-
+    Full Latin text of E251, printed pages 37–57. The transcription text was read from the Euler
+    Archive full-text PDF of the 1761 first printing (Novi Commentarii … Petropolitanae, tomus VI);
+    each page was rendered upright at high resolution and every displayed/inline formula checked by
+    zooming into the scan (the AI's own verification pass, not a full human review). Per HOUSESTYLE
+    R12 the 1761 orthography is preserved faithfully (EVLERO, vt, vti, inuoluere, zz/xx for
+    squares); per R13 the Fraktur coefficients in §32 ($\mathfrak{A}..\mathfrak{E}$, distinct
+    variables from roman A..E) are kept with \mathfrak.
+    Review outcomes (DvdL, 2026-07-25):
+    (a) p.~39 — the RHS integral is printed with radicand $\sqrt{1+y^4}$ (a plus), a printer's error
+    for $1-y^4$; kept faithfully and now flagged in-text with an \ednote (R4).
+    (b) p.~54 — the 9th coefficient (constant term of §32's general form) prints as an italic x-like
+    glyph; confirmed to be varkappa ($\varkappa$), NOT the variable $x$.
+    (c) p.~55 — §34 sets "$\mathfrak{C}=0$" but glosses it "seu $\eta\eta=\delta\varkappa$", i.e.
+    $\mathfrak{E}=0$ (eq.~(8) only follows with $\mathfrak{E}=0$); a printer's error, kept as printed
+    and now flagged in-text with an \ednote (R4).
+    (d) Tab. I, Fig. 1 and Fig. 2 (the curve $AM$ and its arc-cutting construction) are now included
+    as crops from the original engraved plate (BHL item 113644 = IA novicommentariia06impe, leaf
+    n615); this replaces the earlier "plate not reproduced" note.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2); the in-copyright Langton
+                                # 1999 English version was NOT consulted
+    produced: "2026-07-28"
+    note: >-
+      Full English translation of E251, §§1–36. Translated only from our own original.tex, not from
+      any published translation. Every math expression, \tag{}, \origpage{N} marker, \rmfigure image
+      path, and both flagged-misprint \ednote{} notes are reproduced unchanged (pipeline/texcompare
+      passes); only the Latin prose is translated. The two printer's errors kept in the transcription
+      — the p.~39 radical $\sqrt{1+y^4}$ and §34's "$\mathfrak{C}=0$" (for $\mathfrak{E}=0$) — are
+      carried over verbatim with their editorial notes. Euler's abbreviation "arc.", his arcsine
+      notation "A sin.", and the Fraktur coefficients $\mathfrak{A}..\mathfrak{E}$ (R13) are kept. A
+      few short connective words set inside display math (\text{et}, \text{seu}) are left in the
+      original Latin because they live inside the preserved formulas.

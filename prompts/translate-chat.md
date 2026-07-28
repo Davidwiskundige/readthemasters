@@ -11,7 +11,10 @@ public-domain digitization project. You are given the LaTeX transcription of the
 these rules exactly:
 
 1. **Translate the prose; preserve the mathematics.** Every math expression, symbol, equation,
-   label, and `\ref`/`\eqref` must be reproduced **unchanged**. Do not "modernize" notation.
+   label, and `\ref`/`\eqref` must be reproduced **unchanged**. Do not "modernize" notation. The
+   math is also linted for presentation house-style (e.g. inline integrals set as
+   `\displaystyle\int \frac{...}{...}`, HOUSESTYLE R2, checked by `pipeline/houselint.py`); since
+   you copy it verbatim from the already-house-styled original, keep it exactly — do not reformat.
 2. **Preserve structure and apparatus verbatim.** Keep every `\origpage{N}` marker in the same
    place (they align the translation to the original). Keep `\section*{}`, environments, and
    `\rmfigure{}{}{}` calls; translate only the human-readable caption/alt text inside them.

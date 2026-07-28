@@ -39,6 +39,24 @@ beginning of the formula, and a `\tag{n}` that cannot fit beside its formula mov
 its own, right-aligned beneath it. Which layout applies is decided by measuring the rendered
 formula, not by a viewport breakpoint, so a long formula stacks its number at any screen width.
 
+## Requirement: LaTeX titles rendered as math
+
+When a work's `work.yaml` carries an optional `title_tex` (and/or `title_en_tex`), the site displays
+that LaTeX rendering — with inline `$…$` math set by KaTeX — wherever the title is shown to a reader:
+the work-page `<h1>` and English subtitle, the catalog cards, and the author-page work lists.
+Established by `math-titles` (archived 2026-07-25).
+
+The plain `title` / `title_en` remain canonical for everything that cannot show math: the browser
+`<title>`, OpenGraph/Twitter tags, JSON-LD, the Pagefind result-card `title` metadata, and the
+catalog's free-text filter/sort (which run off the plain `data-title` attributes). A work without
+`title_tex` is unaffected — its plain title is shown as before.
+
+`pipeline/build_site_data.py` passes `title_tex` / `title_en_tex` through to `works.json` (including
+the per-author work lists). Rendering is client-side, consistent with the rest of the site's math
+(build-time pre-rendering remains PLAN.md §9 backlog #18); each title page/list runs KaTeX
+auto-render over the `$…$` delimiter. Titles use `\frac`/`\dfrac` as the author chooses; the
+work-page `<h1>` scales its math down with CSS so a display fraction does not overwhelm the heading.
+
 ## Requirement: Significance note
 
 When a work's `work.yaml` carries an optional `significance` field, the work page shows it as a

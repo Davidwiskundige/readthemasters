@@ -1,0 +1,128 @@
+id: euler-1761-integratione-aequationis
+title: "De integratione aequationis differentialis m dx / √(1−x⁴) = n dy / √(1−y⁴)"
+title_en: "On the integration of the differential equation m dx / √(1−x⁴) = n dy / √(1−y⁴)"
+# Optional LaTeX rendering of the title(s) for on-page display (math set in math mode). The plain
+# `title`/`title_en` above stay canonical for the browser tab, search index, and structured data.
+title_tex: 'De integratione aequationis differentialis $\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$'
+title_en_tex: 'On the integration of the differential equation $\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$'
+
+authors:
+  - name: "Leonhard Euler"
+    wikidata_id: Q7604
+    birth_year: 1707
+    death_year: 1783
+    mactutor: Euler  # https://mathshistory.st-andrews.ac.uk/Biographies/Euler/
+    portrait:
+      file: portrait.jpg
+      alt: "Portrait of Leonhard Euler"
+      credit: "Emanuel Handmann, pastel, 1753 (Kunstmuseum Basel)"
+      source: "https://commons.wikimedia.org/wiki/File:Leonhard_Euler.jpg"
+
+publication:
+  year: 1761
+  venue: novi-commentarii-petropolitanae
+  volume: "6"
+  pages: "37–57"
+  title_full: >-
+    "De integratione aequationis differentialis m dx / √(1−x⁴) = n dy / √(1−y⁴)", Novi Commentarii
+    Academiae Scientiarum Imperialis Petropolitanae, tomus VI (for 1756/7), St Petersburg 1761,
+    pp. 37–57. Eneström index E251; reprinted in Opera Omnia, ser. I, vol. 20, pp. 58–79.
+
+edition:
+  year: 1761
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in the Novi Commentarii Academiae Scientiarum
+    Imperialis Petropolitanae, tomus VI (1761), pp. 37–57 — an original 18th-century edition with
+    no modern critical apparatus, commentary, or re-typesetting. Only Euler's own text is
+    transcribed.
+
+discipline: mathematics
+tags: [analysis]
+language: la
+type: paper
+
+significance: >-
+  Prompted by Fagnano's results on the lemniscate — which the Berlin Academy handed to Euler in
+  December 1751, the day Jacobi would later call the birthday of the theory of elliptic
+  functions[2] — this paper is where Euler turns Fagnano's isolated duplication and bisection
+  formulas into a general algebraic addition theorem for the lemniscatic integral. He proves
+  (§9, Theorema) that the complete integral of the differential equation
+  $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$ is not transcendental but an algebraic
+  relation between $x$ and $y$, and then extends the method to
+  $\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$ for rational $m$ and $n$, and to
+  still more general quartic radicands. This algebraic addition relation is the seed of the
+  addition theorems for elliptic integrals; through Legendre, Abel, and Jacobi it grew into the
+  theory of elliptic functions, and in Riemann's hands into the theory of Riemann surfaces — now
+  foundational to complex analysis and algebraic geometry.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — §2 onward, on Fagnano, Euler's addition
+      theorem, and the origins of elliptic-function theory.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+  - citation: >-
+      A. Weil, "Number Theory: An Approach through History from Hammurapi to Legendre",
+      Birkhäuser (1984) — recounts Jacobi's remark that the day (23 Dec. 1751) the Berlin Academy
+      handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
+      functions.
+
+source:
+  # The best public scan of the original 1761 journal edition — it includes the plate (Tab. I, the
+  # figures) and carries the same misprints. BHL item 113644 = Internet Archive
+  # novicommentariia06impe; the article begins at printed p. 37 (BHL page 87). The transcription
+  # text itself was read from the Euler Archive full-text PDF of the same edition (see
+  # sources.edition); the Tab. I figure crops are taken from this scan.
+  scan_url: "https://www.biodiversitylibrary.org/item/113644#page/87/mode/1up"
+  scan_id: "bhl:113644 = archive.org:novicommentariia06impe (Novi Commentarii VI, 1761, pp. 37–57)"
+
+# Translations that already exist elsewhere — we LINK, never host (PLAN.md §4.6). Both are modern
+# and still in copyright, so they may only be linked. Our own English translation (translated from
+# this transcription) can be added later as translations/en.tex.
+external_translations:
+  - language: en
+    title: "On the integration of the differential equation…"
+    translator: "Stacy G. Langton"
+    year: 1999
+    license: in-copyright
+    url: "https://scholarlycommons.pacific.edu/cgi/viewcontent.cgi?filename=0&article=1250&context=euler-works&type=additional"
+  - language: de
+    title: "Über die Integration der Differentialgleichung…"
+    translator: "(to confirm at review)"
+    license: in-copyright
+    url: "https://scholarlycommons.pacific.edu/cgi/viewcontent.cgi?filename=1&article=1250&context=euler-works&type=additional"
+
+sources:
+  death_date: >-
+    Leonhard Euler, 1707–1783 (wikidata:Q7604; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Euler/).
+  publication_date: >-
+    First published 1761 in the Novi Commentarii Academiae Scientiarum Imperialis Petropolitanae,
+    tomus VI (nominally for the years 1756/7), pp. 37–57 (Eneström index E251; Euler Archive,
+    https://scholarlycommons.pacific.edu/euler-works/251/).
+  edition: >-
+    Original first printing, Novi Commentarii … Petropolitanae, tomus VI (1761), pp. 37–57.
+    Transcription text read from the Euler Archive full-text PDF (article=1250); the complete
+    journal volume — a better scan that also contains the plate (Tab. I) and the same misprints —
+    is public domain on the Biodiversity Heritage Library (item 113644) and the Internet Archive
+    (novicommentariia06impe), from which the Tab. I figure crops (Fig. 1, Fig. 2) are taken.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1783], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1761, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-25"

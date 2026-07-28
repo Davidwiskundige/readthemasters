@@ -89,6 +89,10 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 
 .workhead h1 { margin: 0 0 .3rem; }
 .workhead .sub { color: var(--muted); margin: 0 0 1rem; }
+/* A display fraction (\dfrac) at full h1 size overwhelms the heading; scale the title math down
+   so it reads like the original's fraction without dominating. Catalog cards render at their
+   smaller h3 size already, so they need no scaling. */
+.workhead h1 .katex { font-size: .68em; }
 
 /* Author pages */
 .authorhead { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; }

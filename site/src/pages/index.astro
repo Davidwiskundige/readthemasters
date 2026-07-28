@@ -100,8 +100,12 @@ const maxYear = years.length ? Math.max(...years) : 0;
               data-type={w.type}
               data-status={w.status}
               data-year={w.year}>
-            <h3><a href={w.url}>{w.title}</a></h3>
-            {w.title_en && <div class="meta"><em>{w.title_en}</em></div>}
+            {/* Display title may carry inline LaTeX ($…$), rendered by the KaTeX pass below;
+                data-title above keeps the plain text for filtering and sorting. */}
+            <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
+            {(w.title_en_tex ?? w.title_en) && (
+              <div class="meta"><em>{w.title_en_tex ?? w.title_en}</em></div>
+            )}
             <div class="meta">
               <span>{w.authors.map((a, i) => (
                 <>{i > 0 && ", "}<a href={`/authors/${a.slug}/`}>{a.name}</a></>
@@ -203,5 +207,17 @@ const maxYear = years.length ? Math.max(...years) : 0;
     [ymin, ymax].forEach((el) => el.addEventListener("input", apply));
     boxes.forEach((b) => b.addEventListener("change", apply));
     sort.addEventListener("change", apply);
+  </script>
+
+  {/* Render math ($…$) in card titles — \dfrac shows a full display fraction like the original.
+      Filtering/sorting run off the plain data-title attributes above. */}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
+    const list = document.getElementById("works");
+    if (list) renderMathInElement(list, {
+      delimiters: [{ left: "$", right: "$", display: false }],
+      throwOnError: false,
+    });
   </script>
 </Base>
