@@ -44,6 +44,32 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R13 — Fraktur letters used as *mathematical variables* are preserved with `\mathfrak`, not
+### normalized to roman (notation/content, not typography)
+*2026-07-25.* Euler's E251 §32 introduces a second set of coefficients in **Fraktur**
+($\mathfrak{A},\mathfrak{B},\mathfrak{C},\mathfrak{D},\mathfrak{E}$) that are *distinct variables*
+from the roman $A,B,C,D,E$ used in the same passage. The general "normalize Fraktur/blackletter to
+normal letters" rule (transcribe-chat, for long-ſ and German prose set in Fraktur *type*) does
+**not** apply here: normalizing would conflate two different variables and destroy the
+mathematics. The test (does the change alter meaning?) says these are notation. **Rule: Fraktur
+that is a mere typeface for text is normalized to roman; Fraktur that names a distinct mathematical
+symbol is preserved with `\mathfrak{...}`** (KaTeX- and Tectonic-supported). Applied in
+`euler-1761-integratione-aequationis`.
+
+### R12 — Original-edition u/v/i/j orthography is kept faithfully; only glyph *shapes* are
+### normalized (notation/content, not presentation)
+*2026-07-25.* Transcribing Euler's E251 from the **original 1761 printing** (Novi Commentarii VI)
+raised whether the era's letter conventions — capital `V` for `U` (`EVLERO`, `AEQVATIONIS`), no
+`u`/`v` distinction (`inuentionum`, `vt`, `vti`, `inuoluere`), and `i`/`j` usage — should be
+modernized. **Decision: keep them exactly as printed.** These are the source edition's spelling,
+which R3 protects as content, not a glyph *shape* to be normalized. What we still normalize is only
+the shape of a letter that no longer exists (long-ſ → s), ligatures, and Fraktur/blackletter — not
+the choice of which letter (`u` vs `v`, `i` vs `j`) was set. The rule is therefore: **transcribe
+faithful to the orthography of the specific edition being transcribed.** This legitimately makes
+different works differ: `leibniz-1689-isochrona` reads in modern `u/v/j` because its *source* (the
+Gerhardt 1858 reprint) was already modernized — not because we modernized it — whereas Euler from
+the 1761 original keeps `vt`/`EVLERO`. Applied in `euler-1761-integratione-aequationis`.
+
 ### R11 — Significance notes get the same care as the transcription, plus a contributor pass
 ### before they're settled (editorial content, not the notation/presentation split)
 *2026-07-22.* Drafting the `significance` paragraphs for `fagnano-1718-lemniscata` and
@@ -125,8 +151,12 @@ author's number with `\tag` rather than auto-numbering. Applied in `fagnano-1718
 
 ### R2 — Inline integrals with a fraction integrand use `\displaystyle` (presentation)
 *2026-07-19.* A large `\dfrac` next to a small inline `\int` looks unbalanced and unlike the
-print, where the ∫ spans the fraction. Write `\displaystyle\int \frac{...}{...}`. Applied in
-`fagnano-1718-lemniscata`.
+print, where the ∫ spans the fraction. Write `\displaystyle\int \frac{...}{...}` (and `\frac`, not
+`\dfrac`, since it is redundant under `\displaystyle`). Applied in `fagnano-1718-lemniscata` and
+`euler-1761-integratione-aequationis` (both the transcription and the English translation).
+**Machine-enforced:** `pipeline/houselint.py` flags an inline integral over a fraction that lacks
+`\displaystyle` (or that uses `\dfrac`), and `validate.py` runs it in the gate — so a regression
+cannot merge.
 
 ### R1 — Multi-letter labels stay plain math letters (presentation)
 *2026-07-19.* `\pt{}` (→ `\mathit`) was tried to tighten the spacing of labels like `CQACFC`, then

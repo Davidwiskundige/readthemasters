@@ -31,7 +31,9 @@ public-domain digitization project. Follow these rules exactly:
    geometric labels as plain math letters (`$CQ$`, `$ADFNA$` — no wrapper macro); for an inline
    large operator with a fraction integrand use `\displaystyle\int \frac{...}{...}` (not
    `\int \dfrac{...}{...}`); use `x^{2}` and `\,dz`. Put equation numbers on the right with the
-   author's own number via `\tag{n}` inside the display: `\[ ... \tag{1} \]`.
+   author's own number via `\tag{n}` inside the display: `\[ ... \tag{1} \]`. These presentation
+   rules are machine-checked by `pipeline/houselint.py` (part of the gate), so a violation such as
+   an un-`\displaystyle`d inline integral blocks the PR.
 5. **Structure.** Use `\section*{...}` for headings actually present. Output a paragraph break
    (blank line) where the original has one.
 6. **Output only LaTeX** for the body — no commentary, no preamble, no `\documentclass` or

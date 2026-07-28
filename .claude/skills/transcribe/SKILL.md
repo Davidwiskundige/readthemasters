@@ -148,6 +148,11 @@ Fix any schema/vocab/gate errors. Vocabulary values (`discipline`, `tags`, `venu
 `language`) must already exist in `corpus/vocab.yaml`; if a genuinely new value is needed, add it in
 the same PR and say so.
 
+`validate.py` includes the mechanical house-style linter (`pipeline/houselint.py`), which enforces
+presentation rulings such as HOUSESTYLE R2 (inline integrals over a fraction must be
+`\displaystyle\int \frac{...}{...}`, not `\int \dfrac{...}{...}`). To check a page in isolation while
+transcribing, run `python pipeline/houselint.py corpus/<work-id>/original.tex`.
+
 ## Phase 8 — Review checkpoint, then open the PR
 
 1. **Show the contributor the result before pushing**: the rendered transcription (or a summary of

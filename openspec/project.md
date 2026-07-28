@@ -49,7 +49,9 @@ newest first, rather than derived from git; the earlier git-log approach was sup
 (`validate.add_changelog_entry`) — PLAN.md §9 backlog #4), `seo-metadata` (canonical links,
 OpenGraph/Twitter cards, and schema.org JSON-LD `CreativeWork`/`Person`/`WebSite` in the shared
 `<head>`, built from `works.json` by `site/src/lib/jsonld.js`; screen-reader MathML and the sitemap
-were already in place — PLAN.md §9 backlog #5).
+were already in place — PLAN.md §9 backlog #5), and `math-titles` (optional `title_tex` /
+`title_en_tex` render a work's title as KaTeX math on the work page, catalog cards, and author
+pages; the plain `title` stays canonical for the browser tab, search, and structured data).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational

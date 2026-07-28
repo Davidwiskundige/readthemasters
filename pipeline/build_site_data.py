@@ -213,6 +213,7 @@ def build_authors(works: list[dict]) -> list[dict]:
             "mactutor_url": mactutor_url(rec.get("mactutor")),
             "url": f"/authors/{rec['slug']}/", "work_count": len(wks),
             "works": [{"id": w["id"], "title": w["title"], "title_en": w.get("title_en"),
+                       "title_tex": w.get("title_tex"), "title_en_tex": w.get("title_en_tex"),
                        "year": w.get("year"), "venue_full": w.get("venue_full"),
                        "status": w.get("status"), "url": w["url"]} for w in wks],
         })
@@ -264,6 +265,10 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "id": work["id"],
             "title": work.get("title"),
             "title_en": work.get("title_en"),
+            # Optional LaTeX titles for on-page display (rendered as math); the plain titles above
+            # stay canonical for the tab, search index, and structured data.
+            "title_tex": work.get("title_tex"),
+            "title_en_tex": work.get("title_en_tex"),
             "authors": work.get("authors") or [],
             "year": pub.get("year"),
             "venue": pub.get("venue"),

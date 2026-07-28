@@ -25,6 +25,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import texcompare  # noqa: E402  (stdlib-only — keeps the gate AI-free)
+import houselint  # noqa: E402  (stdlib-only — mechanical HOUSESTYLE.md checks)
 
 # Copyright terms (years).
 PMA_TERM = 70          # life + 70 (most of the world)
@@ -277,6 +278,28 @@ def check_translation_math(work_dir: Path, issues: Issues) -> None:
                          + texcompare.format_report(report))
 
 
+def check_house_style(work_dir: Path, issues: Issues) -> None:
+    """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
+
+    Runs the stdlib-only linter over the transcription and every translation so a house-style
+    regression (currently R2 — inline integrals over a fraction must use `\\displaystyle\\int
+    \\frac{}{}`) cannot be merged. Judgement calls are never linted here; see houselint.py.
+    """
+    texs = []
+    original = work_dir / "original.tex"
+    if original.exists():
+        texs.append(original)
+    trans_dir = work_dir / "translations"
+    if trans_dir.is_dir():
+        texs.extend(sorted(trans_dir.glob("*.tex")))
+    for tpath in texs:
+        violations = houselint.lint(tpath.read_text(encoding="utf-8"))
+        if violations:
+            rel = tpath.relative_to(work_dir.parent).as_posix()
+            issues.error(rel, "house-style violations (corpus/HOUSESTYLE.md):\n"
+                         + houselint.format_violations(violations))
+
+
 def rule_verdicts(assessment: dict) -> dict:
     """Extract {rule: verdict, 'public_domain': bool} for comparison."""
     out = {"public_domain": assessment.get("public_domain")}
@@ -303,6 +326,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_schema_and_vocab(work, vocab, work_id, issues)
     check_provenance(provenance, work_id, issues)
     check_translation_math(work_dir, issues)
+    check_house_style(work_dir, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
 

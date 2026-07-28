@@ -25,7 +25,9 @@ straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` 
 `source` (`scan_url`, `scan_id`), `sources` (citations for `death_date`, `publication_date`,
 `edition`).
 
-Optional: `title_en`, `tags` (each ∈ vocab), `significance` (a short editorial paragraph on the
+Optional: `title_en`, `title_tex` / `title_en_tex` (LaTeX renderings of the title / English title
+for on-page display, carrying inline `$…$` math — the plain `title` / `title_en` stay canonical for
+the browser tab, search index, and structured data), `tags` (each ∈ vocab), `significance` (a short editorial paragraph on the
 work's historical importance — our commentary, distinct from the transcription; does not affect
 the gate) with optional `significance_sources` (a list of `{citation, url?}` backing its claims;
 the significance text may carry inline `[n]` markers referencing them, rendered as clickable
@@ -94,3 +96,10 @@ math letters (no `\pt`/`\mathit`); inline large operators with a fraction integr
 `\displaystyle` (not `\int \dfrac`); equation numbers go on the right via `\tag{n}` with the
 author's own numbers; author notation and printer's errors are kept faithfully (`zz` for z²,
 archaic spelling, `arc.`) and flagged for review, never silently corrected.
+
+Presentation conventions that are unambiguous from the source text are **mechanically enforced** by
+`pipeline/houselint.py`, which `pipeline/validate.py` runs as part of the gate — so a regression
+fails CI and cannot merge. It currently enforces ruling R2 (an inline integral over a fraction must
+be `\displaystyle\int \frac{...}{...}`, not `\int \dfrac{...}{...}`), over both the transcription and
+every translation; the linter is a rule registry so further machine-checkable rulings extend it.
+Judgement-based rulings (faithful vs. normalized notation, translation wording) are never linted.

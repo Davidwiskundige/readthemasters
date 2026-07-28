@@ -1,0 +1,536 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation (the Langton 1999 English version is in copyright and was NOT consulted). Every math
+% expression, symbol, \tag{}, \origpage{N} marker, \rmfigure image path, and \ednote is reproduced
+% unchanged; only the Latin prose is translated. The two flagged misprints (the p.~39 radical
+% $\sqrt{1+y^{4}}$ and the §34 condition $\mathfrak{C}=0$) are kept exactly as printed, with their
+% editorial \ednote{} notes carried over. Euler's own abbreviation "arc." and his Fraktur
+% coefficients ($\mathfrak{A}..\mathfrak{E}$, distinct variables from roman A..E, per HOUSESTYLE
+% R13) are preserved. "A sin." is Euler's notation for the arcsine.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{37}
+\section*{On the integration of the differential equation}
+
+\[ \frac{m\,dx}{\sqrt{1-x^{4}}} = \frac{n\,dy}{\sqrt{1-y^{4}}} \]
+
+\emph{By the author L. EULER.}
+
+\textbf{§.~1.} When first, on the occasion of the discoveries of the illustrious Count Fagnano, I
+had contemplated this equation, I did indeed elicit an algebraic relation between the variables $x$
+and $y$ of such a kind as would satisfy this equation; but that relation could not be taken for a
+complete integral equation, for the reason that it did not embrace an arbitrary constant quantity,
+of the kind that is always wont to be introduced into the calculation through integration. For
+hence, as is well enough known, incomplete and particular integrals are wont to be distinguished,
+of which the former exhaust the whole force of the differential equations, whereas the latter
+satisfy them only in such a way that yet other expressions can equally satisfy them. But the
+criterion of a complete integral equation consists in this, that it must involve a constant quantity
+which does not appear in the differential equation.
+
+\origpage{38}
+\textbf{§.~2.} That these things may be perceived more clearly, it will suffice to have considered
+the simplest differential equation $dx = dy$, which is certainly satisfied by this integral $x = y$;
+yet in effect this integral extends less widely than the differential $dx = dy$, since the same is
+equally satisfied by this integral $x = y + a$, which extends much more widely, taking for $a$ any
+constant quantity whatever; and this last integral is judged at length to exhaust the whole force of
+the differential equation $dx = dy$, whence too it is called the complete integral equation, because
+there is present in it the constant quantity $a$, which does not occur in the differential equation.
+But if in place of that indefinite constant $a$ determinate values be substituted, from the complete
+integral there are obtained particular integrals, which for this very reason extend less widely than
+the proposed differential equation.
+
+\textbf{§.~3.} But often the particular algebraic integral of a differential equation can be
+exhibited, while nevertheless the complete integral is transcendental; this indeed happens if the
+transcendental part has been multiplied by that arbitrary constant, which therefore, when that
+constant is set equal to nothing, vanishes from the calculation and leaves an algebraic particular
+integral. Thus this equation $dy = dx + (y-x)\,dx$ is manifestly satisfied by the value $y = x$; yet
+by this only a particular integral is contained, since the complete one is $y = x + ae^{x}$, $e$
+denoting the number whose logarithm is $=1$. Unless therefore the arbitrary constant $a$ be set
+vanishing, the integral will always be transcendental.
+
+\origpage{39}
+\textbf{§.~4.} Since therefore it can happen that a differential equation admits a particular
+algebraic integral, even though the complete integral be transcendental, so too there is no lack of
+grounds for doubting whether the complete integral of the proposed differential equation
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$ involves transcendental quantities,
+even though for it a particular algebraic integral has been able to be exhibited. For since the
+complete integral is:\ednote{In the printed source the second radical of this display is set with a plus, $\sqrt{1+y^{4}}$; an apparent misprint for $\sqrt{1-y^{4}}$ --- the sign is negative in the differential equation itself and everywhere else. Reproduced here exactly as printed.}
+\[ m\int \frac{dx}{\sqrt{1-x^{4}}} = n\int \frac{dy}{\sqrt{1+y^{4}}} + C \]
+but these integrals can in no way be assigned by calling in aid the quadrature either of the circle
+or of the hyperbola, it seems by no means probable that those formulas, so greatly transcendental in
+general — in such a way that the constant $C$ remains indeterminate — can be brought back to an
+algebraic relation between $x$ and $y$.
+
+\textbf{§.~5.} It is indeed known that the complete integral of this differential equation
+$\dfrac{m\,dx}{\sqrt{1-xx}} = \dfrac{n\,dy}{\sqrt{1-yy}}$ can always be exhibited algebraically,
+provided the proportion of the coefficients $m$ and $n$ be rational; but because the integral of
+each formula denotes an arc of a circle, so that the complete integral is
+$m\,\mathrm{A}\,\mathrm{sin.}\,x = n\,\mathrm{A}\,\mathrm{sin.}\,y + C$, while the relation of the
+sines that belong to arcs holding a rational proportion between themselves can be expressed
+algebraically, it is no wonder that in these cases too the complete integral equation can be
+exhibited algebraically. But since a comparison of this kind has no place in the transcendental
+formulas $\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}}$ and
+$\displaystyle\int \frac{dy}{\sqrt{1-y^{4}}}$, or at least is not
+\origpage{40}
+established, thence the reduction of the integral to algebraic quantities cannot be sought.
+
+\textbf{§.~6.} Nevertheless I have observed that, if a differential equation of this kind be proposed
+\[ \frac{m\,dx}{\sqrt{1-x^{4}}} = \frac{n\,dy}{\sqrt{1-y^{4}}} \]
+the complete integral too — that is, one which involves an arbitrary constant quantity — can always
+be expressed algebraically, provided the ratio $m:n$ be rational: which indeed seems to me the more
+worthy of note, in that I was led to this integral by no sure method, but rather elicited it by
+trying, or by divining. Whence there is no doubt that a direct method, leading to this same
+integral, would enlarge the bounds of analysis in no mean degree; and its investigation therefore
+seems to be commended to Analysts with all zeal.
+
+\textbf{§.~7.} But the complete integral of that differential equation, whatever be the rational
+ratio of the coefficients $m$ and $n$, I have been able to derive from the complete integration of
+this equation $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$: for, this being granted, I
+shall point out a sure method of concluding from it also the complete integral of this much more
+widely extending equation
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$. Which method could also be employed in
+general for finding the integrals of equations of this kind $mX\,dx = nY\,dy$, provided only the
+complete integral of this $X\,dx = Y\,dy$ has been dug out, and $Y$ denote such a function of $y$ as
+$X$ is of $x$.
+
+\origpage{41}
+\textbf{§.~8.} I shall begin, then, from this equation
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}} \]
+which at first glance is evidently satisfied by the equation $x = y$, which is therefore its
+particular integral. But then the same equation is also satisfied by that algebraic value
+$x = -\sqrt{\dfrac{1-yy}{1+yy}}$; for since
+$dx = +\dfrac{2y\,dy}{(1+yy)\sqrt{(1-yy)(1+yy)}}$ and $\sqrt{1-x^{4}} = \dfrac{2y}{1+yy}$, there will
+be $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$. Hence this value too, that is, the
+equation $xxyy + xx + yy - 1 = 0$, is a particular integral of the proposed differential equation.
+Whence the complete integral, which involves an arbitrary constant, must necessarily be so
+constituted that, on assigning to this constant a certain definite value, there results $x = y$; but
+if to the same constant another value be assigned, there results
+$x = -\sqrt{\dfrac{1-yy}{1+yy}}$, that is, $xxyy + xx + yy - 1 = 0$.
+
+\subsection*{Theorem.}
+\textbf{§.~9.} I assert, then, that of this differential equation
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}} \]
+the complete integral equation is:
+\[ xx + yy + ccxxyy = cc + 2xy\sqrt{1-c^{4}} \]
+
+\subsection*{Demonstration.}
+For, this equation being posited, its differential will be:
+\[ x\,dx + y\,dy + ccxy(x\,dy + y\,dx) = (x\,dy + y\,dx)\sqrt{1-c^{4}} \]
+\origpage{42}
+whence there arises
+\[ dx\bigl(x + ccxyy - y\sqrt{1-c^{4}}\bigr) + dy\bigl(y + ccxxy - x\sqrt{1-c^{4}}\bigr) = 0 \]
+But from the same equation, solved, there is gathered:
+\[ y = \frac{x\sqrt{1-c^{4}} + c\sqrt{1-x^{4}}}{1+ccxx} \quad\text{et}\quad
+   x = \frac{y\sqrt{1-c^{4}} - c\sqrt{1-y^{4}}}{1+ccyy} \]
+For if there the radical $\sqrt{1-x^{4}}$ is given the sign $+$, here the radical $\sqrt{1-y^{4}}$
+must be given the sign $-$, so that, on setting $x = 0$, the same value $y = c$ results on both
+sides. There will be, therefore,
+\[ x + ccxyy - y\sqrt{1-c^{4}} = -c\sqrt{1-y^{4}} \]
+\[ y + ccxxy - x\sqrt{1-c^{4}} = c\sqrt{1-x^{4}} \]
+and, these values being substituted in the differential equation, there results
+\[ -c\,dx\sqrt{1-y^{4}} + c\,dy\sqrt{1-x^{4}} = 0, \]
+that is
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}}. \]
+The integral of this differential equation is therefore:
+\[ xx + yy + ccxxyy = cc + 2xy\sqrt{1-c^{4}} \]
+and because it contains the constant $c$, depending on our choice, it will at the same time be the
+complete integral. Q.~E.~D.
+
+\textbf{§.~10.} If therefore this equation
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$ be had, the complete integral value of $x$
+is:
+\[ x = \frac{y\sqrt{1-c^{4}} + c\sqrt{1-y^{4}}}{1+ccyy} \]
+whence, if the arbitrary constant $c$ vanish, there results $x = y$; but if $c = 1$ be set, we have
+$x = \pm\dfrac{\sqrt{1-y^{4}}}{1+yy} = \sqrt{\dfrac{1-yy}{1+yy}}$, which are both those particular
+values already exhibited above.
+
+\origpage{43}
+Hence are elicited other particular values, simpler than the rest, but which fall away into
+imaginaries. Thus, on setting $c = \infty$, there results $x = \dfrac{\sqrt{-1}}{y}$; and on setting
+$cc = -1$, there results
+$x = \sqrt{\dfrac{yy+1}{yy-1}}$, which likewise satisfy the proposed equation.
+
+\textbf{§.~11.} But that the rationale of this integral may be perceived more clearly, let a curve
+$AM$ be conceived of such a character that, the abscissa $AP = u$ being set, the arc corresponding to
+it is $AM = \displaystyle\int \frac{du}{\sqrt{1-u^{4}}}$.
+\rmfigure{figures/fig-1.png}{Fig.~1.}{Fig. 1 (Tab. I): the curve AM with abscissa AP; the arc from A measures the elliptic integral treated in the paper. Cropped from the original engraved plate, Novi Commentarii vol. VI (1761).}
+Then, the same curve being described anew, let the abscissa
+$ap = x$ be taken; the arc will be $am = \displaystyle\int \frac{dx}{\sqrt{1-x^{4}}}$. Taking, then,
+\[ x = \frac{u\sqrt{1-c^{4}} + c\sqrt{1-u^{4}}}{1+ccuu} \]
+there will result $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{du}{\sqrt{1-u^{4}}}$; and therefore
+arc.~$am = $ arc.~$AM + $
+Const. But for the determination of this constant, on setting $u = 0$ — in which case the arc $AM$
+vanishes — there results $x = c$. Wherefore, if the abscissa $ab = c$ be taken, to which the arc $ad$
+corresponds, the arc $dm = $ the arc $AM$.
+
+\textbf{§.~12.} By the help, therefore, of this complete integration of the equation
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{du}{\sqrt{1-u^{4}}}$, in the proposed curve there can be cut off,
+equal to any arc $AM$ whatever which corresponds to the abscissa $AP = u$, an arc $dm$ that begins
+from a given point $d$. For, the abscissa $ab = c$ corresponding to the given point $d$ being set, if
+the abscissa $ap = x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$ be taken, the arc $dm$ will
+be equal to the arc $AM$.
+\rmfigure{figures/fig-2.png}{Fig.~2.}{Fig. 2 (Tab. I): a second copy of the curve, with the abscissae ap and a-pi (points a, pi, b, p, d, m) by which an arc dm or d-mu equal to a given arc AM is cut off from the fixed point d. Cropped from the original engraved plate, Novi Commentarii vol. VI (1761).}
+But in like manner, since $\sqrt{1-c^{4}}$ may be set negative, if the abscissa
+\[ a\pi = \frac{c\sqrt{1-u^{4}} - u\sqrt{1-c^{4}}}{1+ccuu} \]
+\origpage{44}
+be taken, the arc $d\mu$ will likewise be equal to the arc $AM$: and thus in this curve, from any
+given point $d$, arcs $dm$ and $d\mu$ that are equal to the arc $AM$ can be cut off on both sides.
+
+\textbf{§.~13.} Hence, then, it is clear that if the arc $ad$ be taken equal to the arc $AM$, that is
+$c = u$, the arc $am$ will be double the arc $AM$. Hence if $ap = x = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$
+be set, there will come out the arc $am = 2$~arc.~$AM$. In like manner, if the arc $ad = 2AM$ be
+taken, that is $c = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$, and
+$x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$ be set, there will be obtained the arc
+$am = 3$~arc.~$AM$. And if that value of $x$ be again substituted for $c$, so that $ad = 3AM$, and
+again $x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$ be set, there will be born an arc $am$
+quadruple the arc $AM$; and so on successively, any multiples whatever of the arc $AM$ will be able
+to be assigned geometrically.
+
+\textbf{§.~14.} Let the arc $ad = n \cdot AM$ and $ab = z$; so that
+$\displaystyle\int \frac{dz}{\sqrt{1-z^{4}}} = n\int \frac{du}{\sqrt{1-u^{4}}}$; and from these it is clear that,
+if $x = \dfrac{z\sqrt{1-u^{4}} + u\sqrt{1-z^{4}}}{1+uuzz}$ be taken, there will be
+$\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}} = (n+1)\int \frac{du}{\sqrt{1-u^{4}}}$; but if
+$x = \dfrac{z\sqrt{1-u^{4}} - u\sqrt{1-z^{4}}}{1+uuzz}$ be set, then it will come about that
+$\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}} = (n-1)\int \frac{du}{\sqrt{1-u^{4}}}$. If therefore this equation
+$\dfrac{dz}{\sqrt{1-z^{4}}} = \dfrac{n\,du}{\sqrt{1-u^{4}}}$ has been integrated, and the due value for
+$z$ dug out therefrom, this equation too
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{(n\pm1)\,du}{\sqrt{1-u^{4}}}$ will be able to be integrated, its
+integral being of course
+$x = \dfrac{z\sqrt{1-u^{4}} \pm u\sqrt{1-z^{4}}}{1+uuzz}$. And if for $z$ its complete value be
+assumed — that is, one involving an arbitrary constant — for $x$ too its complete value will come
+out.
+
+\origpage{45}
+\textbf{§.~15.} Hence, then, it is evident how the complete integral equation ought to be found that
+agrees with this differential equation
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{n\,du}{\sqrt{1-u^{4}}}$, as often as $n$ is a whole number. But in
+like manner $y$ can be assigned, so that
+$\dfrac{dy}{\sqrt{1-y^{4}}} = \dfrac{m\,du}{\sqrt{1-u^{4}}}$; whence if, by eliminating $u$, the
+equation between $x$ and $y$ be sought, it will be the integral of this equation
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$, whatever rational numbers be
+substituted for $m$ and $n$: and that this integral may come out complete, it suffices to have
+determined, for one only of the variables $x$ and $y$, the complete value through $u$, since hereby a
+new arbitrary constant is now introduced into the calculation.
+
+\textbf{§.~16.} The method that I have here used in the demonstration of the Theorem, although it is
+not drawn from the nature of the thing, but led indirectly to what was proposed, nevertheless
+extends much more widely: for in like manner it is gathered that the complete integral of this
+differential equation
+\[ \frac{dx}{\sqrt{1+mxx+nx^{4}}} = \frac{dy}{\sqrt{1+myy+ny^{4}}} \]
+is:
+\[ 0 = cc - xx - yy + nccxxyy + 2xy\sqrt{1+mcc+nc^{4}} \]
+Whence, by applying the same reasoning as before, the complete integral of this equation too
+\[ \frac{\mu\,dx}{\sqrt{1+mxx+nx^{4}}} = \frac{\nu\,dy}{\sqrt{1+myy+ny^{4}}} \]
+will be obtained, provided that by the letters $\mu$ and $\nu$ whole numbers be designated.
+
+\textbf{§.~17.} But the investigation of this integration proceeds thus: Let there first be feigned,
+at will, a relation between the variables $x$ and $y$ contained in this equation:
+\origpage{46}
+\[ \alpha xx + \alpha yy = 2\beta xy + \gamma xxyy + \delta \tag{1} \]
+which, differentiated, gives:
+\[ \alpha x\,dx + \alpha y\,dy = \beta x\,dy + \beta y\,dx + \gamma xyy\,dx + \gamma xxy\,dy \]
+whence there is made up
+\[ dx(\alpha x - \beta y - \gamma xyy) + dy(\alpha y - \beta x - \gamma xxy) = 0 \tag{2} \]
+Then from equation (1) let the values of each variable be elicited:
+\[ x = \frac{\beta y + \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}}}{\alpha - \gamma yy} \]
+\[ y = \frac{\beta x - \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}}}{\alpha - \gamma xx} \]
+And hence we obtain:
+\[ \alpha x - \beta y - \gamma xyy = \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}} \tag{3} \]
+\[ \alpha y - \beta x - \gamma xxy = -\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}} \tag{4} \]
+which values, substituted in equation (2), will afford
+\[ \frac{dx}{\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}}}
+   = \frac{dy}{\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}}} \tag{5} \]
+the integral of which equation is therefore equation (1).
+
+\textbf{§.~18.} That we may render those forms simpler, let us put $\alpha\delta = A$;
+$\beta\beta - \alpha\alpha - \gamma\delta = C$; $\alpha\gamma = E$; and there will be $\delta = \dfrac{A}{\alpha}$;
+$\gamma = \dfrac{E}{\alpha}$ and $\beta = \sqrt{C + \alpha\alpha + \dfrac{AE}{\alpha\alpha}}$. Wherefore of this
+differential equation
+\[ \frac{dx}{\sqrt{A + Cxx + Ex^{4}}} = \frac{dy}{\sqrt{A + Cyy + Ey^{4}}} \tag{6} \]
+the integral equation is this:
+\[ \alpha(xx + yy) = \frac{A}{\alpha} + \frac{E}{\alpha}xxyy + 2xy\sqrt{C + \alpha\alpha + \frac{AE}{\alpha\alpha}} \tag{7} \]
+which is at the same time the complete integral:
+
+\textbf{§.~19.} Or let us put $A = f\alpha\alpha$: $C = g\alpha\alpha$ and $E = b\alpha\alpha$, that we
+may have this differential equation
+\[ \frac{dx}{\sqrt{f + gxx + bx^{4}}} = \frac{dy}{\sqrt{f + gyy + by^{4}}} \]
+\origpage{47}
+of which therefore the complete integral equation will be:
+\[ xx + yy = f + bxxyy + 2xy\sqrt{1 + g + fb} \]
+which, although it does not seem to involve a new constant, is nevertheless complete, since in the
+differential only the ratio of the quantities $f$, $g$, and $b$ is regarded, so that in place of
+$f$, $g$, and $b$ one may write $fcc$,
+$gcc$ and $bcc$, whence the integral equation comes out manifestly complete:
+\[ xx + yy = fcc + bccxxyy + 2xy\sqrt{1 + gcc + fbc^{4}} \]
+or $f(xx + yy) = fee + beexxyy + 2xy\sqrt{f(f + gee + be^{4})}$, setting $cc = \dfrac{ee}{f}$.
+
+\textbf{§.~20.} But if, then, this differential equation be proposed
+\[ \frac{dx}{\sqrt{f + gxx + bx^{4}}} = \frac{dy}{\sqrt{f + gyy + by^{4}}} \]
+the value of $y$ will be able to be expressed through an algebraic function of $x$, so as to be:
+\[ y = \frac{x\sqrt{1 + gcc + fbc^{4}} \pm c\sqrt{f + gxx + bx^{4}}}{1 - bccxx} \]
+or $y = \dfrac{x\sqrt{f(f + gee + be^{4})} \pm e\sqrt{f(f + gxx + bx^{4})}}{f - beexx}$.
+
+But if, then, $g = 0$, so that this differential equation be had
+\[ \frac{dx}{\sqrt{f + bx^{4}}} = \frac{dy}{\sqrt{f + by^{4}}} \]
+the complete integral value of $y$ will be
+\[ y = \frac{x\sqrt{f(f + be^{4})} \pm e\sqrt{f(f + bx^{4})}}{f - beexx} \]
+whence, by determining the constant $e$ at pleasure, innumerable particular values for $y$ can be
+deduced.
+
+\origpage{48}
+\textbf{§.~21.} But by the benefit of the method that I used above, of this equation too
+\[ \frac{m\,dx}{\sqrt{f + gxx + bx^{4}}} = \frac{n\,dy}{\sqrt{f + gyy + by^{4}}} \]
+if only $m$ and $n$ be rational numbers, the complete integral — and that indeed algebraically —
+will be able to be exhibited.
+
+\textbf{§.~22.} Just as in the equation assumed above the variables $x$ and $y$ were made
+interchangeable with one another, so that both formulas turned out similar to each other, so, this
+limitation being omitted, we shall arrive at the comparison of unlike differential formulas. Let us
+put, then:
+\[ \alpha xx + \beta yy = 2\gamma xy + \delta xxyy + \varepsilon \tag{1} \]
+whence there arises
+\[ x = \frac{\gamma y + \sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}}}{\alpha - \delta yy} \]
+and $y = \dfrac{\gamma x - \sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}}}{\beta - \delta xx}$
+and hence
+\[ \alpha x - \gamma y - \delta xyy = \sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}} \tag{2} \]
+\[ \beta y - \gamma x - \delta xxy = -\sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}} \tag{3} \]
+but equation (1), differentiated, gives:
+\[ dx(\alpha x - \gamma y - \delta xyy) + dy(\beta y - \gamma x - \delta xxy) = 0 \]
+whence there is made up this differential equation:
+\[ \frac{dx}{\sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}}}
+   = \frac{dy}{\sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}}} \]
+the integral of which is therefore the assumed equation.
+
+\textbf{§.~23.} But this disparity is easily removed by putting, in place of $y$,
+$z\sqrt{\dfrac{\alpha}{\beta}}$,
+the reason for which could have been at once manifest from the assumed equation. But another way
+lies open for arriving at unlike formulas, of which it will suffice to have here handed down an
+example. Let the equation be assumed:
+$x^{4} + 2axxyy + 2bxx$
+\origpage{49}
+${}= c$, whose differential is $dx(x^{3} + axyy + bx) + axxy\,dy = 0$, that is
+\[ \frac{dx}{xy} = \frac{-a\,dy}{xx + ayy + b} \]
+Now from the assumed equation let first $xy$ be determined through $x$, and thus there will be
+$xy = \sqrt{\dfrac{c - 2bxx - x^{4}}{2a}}$; but then $xx + ayy + b$ through $y$, and, because
+$(xx + ayy + b)^{2} = c + (ayy + b)^{2}$, there will be
+\[ xx + ayy + b = \sqrt{c + (ayy + b)^{2}} \]
+Wherefore there will be had this differential equation
+\[ \frac{dx\sqrt{2a}}{\sqrt{c - 2bxx - x^{4}}} = \frac{a\,dy}{\sqrt{c + bb + 2abyy + aay^{4}}} \]
+the integral of which is therefore the assumed one, that is $y = \dfrac{\sqrt{c - 2bxx - x^{4}}}{x\sqrt{2a}}$.
+
+\textbf{§.~24.} Although this integral is not complete, yet from what precedes it will easily be
+rendered complete. For let there be put:
+\[ \frac{a\,dy}{\sqrt{c + bb + 2abyy + aay^{4}}} = \frac{a\,dz}{\sqrt{c + bb + 2abzz + aaz^{4}}} \]
+because $f = c + bb$; $g = 2ab$; $b = aa$, there will be
+\[ y = \frac{z\sqrt{(c+bb)(c + bb + 2abee + aae^{4})} \pm e\sqrt{(c+bb)(c + bb + 2abzz + aaz^{4})}}{c + bb - aaeezz} \]
+let this value, then, be set equal to $\dfrac{\sqrt{c - 2bxx - x^{4}}}{x\sqrt{2a}}$, and the equation
+between $x$ and $z$ resulting hence will be the complete integral of this differential equation
+\[ \frac{dx\sqrt{2a}}{\sqrt{c - 2bxx - x^{4}}} = \frac{a\,dz}{\sqrt{c + bb + 2abzz + aaz^{4}}} \]
+Nay more, from what has been adduced it is clear, if these two members be moreover multiplied by any
+rational numbers whatever, in what way the complete integral ought to be found.
+
+\origpage{50}
+\textbf{§.~25.} But, dismissing the disparity of the members, let us conceive the formation of equal
+members more generally; let there be put, then:
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \tag{1} \]
+whence, by differentiating, there is obtained:
+\[ dx(\beta + \gamma x + \delta y + 2\varepsilon xy + \varepsilon yy + \zeta xyy)
+   + dy(\beta + \gamma y + \delta x + 2\varepsilon xy + \varepsilon xx + \zeta xxy) = 0 \]
+and therefore
+\[ \frac{dy}{\beta + \gamma x + \delta y + 2\varepsilon xy + \varepsilon yy + \zeta xyy}
+   = \frac{-dx}{\beta + \gamma y + \delta x + 2\varepsilon xy + \varepsilon xx + \zeta xxy} \tag{2} \]
+But from the solution of the assumed equation there is elicited.
+\[ y = \frac{-\beta - \delta x - \varepsilon xx + \sqrt{\beta\beta - \alpha\gamma + 2(\beta\delta - \alpha\varepsilon - \beta\gamma)x + (\delta\delta - \gamma\gamma - \alpha\zeta - 2\beta\varepsilon)xx + 2(\delta\varepsilon - \beta\zeta - \gamma\varepsilon)x^{3} + (\varepsilon\varepsilon - \gamma\zeta)x^{4}}}{\gamma + 2\varepsilon x + \zeta xx} \]
+Let there be put, for brevity's sake,
+\[ \beta\beta - \alpha\gamma = A; \quad \beta\delta - \alpha\varepsilon - \beta\gamma = B; \quad
+   \delta\delta - \gamma\gamma - \alpha\zeta - 2\beta\varepsilon = C; \quad
+   \varepsilon\varepsilon - \gamma\zeta = E; \quad \delta\varepsilon - \beta\zeta - \gamma\varepsilon = D; \]
+and there will be
+\[ \beta + \delta x + \varepsilon xx + \gamma y + 2\varepsilon xy + \zeta xxy = \pm\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}} \]
+\[ \beta + \delta y + \varepsilon yy + \gamma x + 2\varepsilon xy + \zeta xyy = \mp\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}} \]
+
+\textbf{§.~26.} Hence, therefore, we conclude that of this differential equation:
+\[ \frac{dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+the integral equation, and that a complete one, is
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \]
+\origpage{51}
+with, of course, the above determination of these coefficients being applied. But first let $\beta$
+or $\varepsilon$ be defined from this equation
+\[ \frac{BB(\varepsilon\varepsilon - E) - DD(\beta\beta - A)}{A\varepsilon\varepsilon - E\beta\beta}
+   + \frac{2AD\varepsilon - 2BE\beta}{B\varepsilon - D\beta} = C \]
+and then there will be:
+\[ \gamma = \frac{A\varepsilon\varepsilon - E\beta\beta}{B\varepsilon - D\beta}; \quad
+   \alpha = \frac{\beta\beta - A}{\gamma}; \quad \zeta = \frac{\varepsilon\varepsilon - E}{\gamma} \quad\text{et} \]
+\[ \delta = \frac{B\beta(\varepsilon\varepsilon - E) - D\varepsilon(\beta\beta - A)}{A\varepsilon\varepsilon - E\beta\beta} + \gamma
+   \quad\text{seu}\quad \delta = \gamma + \frac{B + \alpha\varepsilon}{\beta} \]
+
+\textbf{§.~27.} Hence, then, it is evident that this differential equation too:
+\[ \frac{dx}{\sqrt{A + 2Dx^{3}}} = \frac{dy}{\sqrt{A + 2Dy^{3}}} \]
+can be integrated: for, because $B = 0$, $C = 0$ and $E = 0$, there will be
+\[ -\frac{DD(\beta\beta - A)}{A\varepsilon\varepsilon} - \frac{2A\varepsilon}{\beta} = 0 \quad\text{seu}\quad
+   \varepsilon = \sqrt[3]{\frac{DD}{2AA}\beta(A - \beta\beta)} \]
+but hence the values come out too complicated. The business will be dispatched more easily by
+resolving the values of the vanishing letters $B$, $C$ and $E$; for $E = 0$ gives: $\zeta = \dfrac{\varepsilon\varepsilon}{\gamma}$;
+then $B = 0$ gives: $\delta = \gamma + \dfrac{\alpha\varepsilon}{\beta}$; and $C = 0$ gives
+$\delta\delta - \gamma\gamma = \alpha\zeta + 2\beta\varepsilon = \dfrac{\alpha\varepsilon\varepsilon}{\gamma} + 2\beta\varepsilon
+= \dfrac{\alpha^{2}\varepsilon\varepsilon}{\beta\beta} + \dfrac{2\alpha\gamma\varepsilon}{\beta}$, whose factors are
+$\beta\beta = \alpha\gamma$ and $\alpha\varepsilon\varepsilon + 2\beta\gamma\varepsilon = 0$. But if
+$\beta\beta = \alpha\gamma$ were the case, $A = 0$ would follow; while if $\varepsilon = 0$ were the case, both $\zeta = 0$ and
+$D = 0$ would follow, contrary to the aim. It must therefore come about that $\alpha\varepsilon = -2\beta\gamma$; whence there will be
+$\alpha = -\dfrac{2\beta\gamma}{\varepsilon}$; $\delta = -\gamma$; and $\zeta = \dfrac{\varepsilon\varepsilon}{\gamma}$.
+Finally it must be that $\beta\beta + \dfrac{2\beta\gamma\gamma}{\varepsilon} = A$ and
+$-2\gamma\varepsilon - \dfrac{\beta\varepsilon\varepsilon}{\gamma} = D$. Thence there arises
+$\varepsilon = \dfrac{2\beta\gamma\gamma}{A - \beta\beta}$; and because
+$\dfrac{\gamma D}{\varepsilon} = -(2\gamma\gamma + \beta\varepsilon)$ and $2\gamma\gamma + \beta\varepsilon = \dfrac{A\varepsilon}{\beta}$,
+there will be $\dfrac{\gamma D}{\varepsilon} = -\dfrac{A\varepsilon}{\beta}$; and therefore $\varepsilon\varepsilon = -\dfrac{\beta\gamma D}{A}$. Therefore
+\[ \frac{4\beta\gamma^{3}}{(A - \beta\beta)^{2}} + \frac{D}{A} = 0. \]
+
+\origpage{52}
+\textbf{§.~28.} But since only the ratio of the letters $A$ and $D$ comes into the reckoning, the
+last equation serves for finding the absolute value of $A$, which however it is not needful to know.
+The letters $\gamma$ and $\beta$ will therefore remain indeterminate. Let there be put, then, $\gamma = -Ac$ and $\beta = Dc$; there will be
+$\varepsilon\varepsilon = DDcc$, that is $\varepsilon = Dc$, and hence $\delta = Ac$;
+$\zeta = -\dfrac{DDc}{A}$; and $\alpha = 2Ac$. Wherefore of this differential equation:
+\[ \frac{dx}{\sqrt{A + 2Dx^{3}}} = \frac{dy}{\sqrt{A + 2Dy^{3}}} \]
+the integral is.
+\[ 0 = 2A + 2D(x+y) - A(xx+yy) + 2Axy + 2Dxy(x+y) - \frac{DD}{A}xxyy \]
+But this integral is not complete; it will, however, be rendered such by putting $\gamma = -A$ and $\beta = Dcc$,
+whence there arises $\varepsilon\varepsilon = DDcc$ and $\varepsilon = Dc$; further there will be $\delta = A$;
+$\zeta = -\dfrac{DDcc}{A}$; $\alpha = 2Ac$; so that the complete integral is:
+\[ 0 = 2Ac + 2Dcc(x+y) - A(xx+yy) + 2Axy + 2Dcxy(x+y) - \frac{DDcc}{A}xxyy \]
+where $c$ is a constant depending on choice, whence there arises:
+\[ y = \frac{Dcc + Ax + Dcxx + \sqrt{c\bigl(2A + \frac{DD}{A}c^{3}\bigr)(A + 2Dx^{3})}}{A - 2Dcx + \frac{DDcc}{A}xx} \]
+
+\textbf{§.~29.} This case deserves to be noted, in which $A = 1$ and $D = \frac{1}{2}$, so that this
+differential equation be had
+\[ \frac{dx}{\sqrt{1 + x^{3}}} = \frac{dy}{\sqrt{1 + y^{3}}} \]
+where, to remove the fractions, let $2c$ be written in place of $c$, and the complete integral will
+be:
+\[ 0 = 4c + 4cc(x+y) - xx - yy + 2xy + 2cxy(x+y) - ccxxyy \]
+that is $y = \dfrac{2cc + x + cxx + 2\sqrt{c(1+c^{3})(1+x^{3})}}{1 - 2cx + ccxx}$
+
+\origpage{53}
+The particular integrals, therefore, will be
+
+I.~if $c = 0$; $y = x$;
+
+II.~if $c = \infty$; $y = \dfrac{2 \pm 2\sqrt{1+x^{3}}}{xx}$;
+
+III.~if $c = -1$; $y = \dfrac{2 + x - xx}{1 + 2x + xx} = \dfrac{2-x}{1+x}$.
+
+\textbf{§.~30.} From the same principle, if in §.~29. in place of the letters $A$, $B$, $C$, $D$, $E$,
+the same be multiplied by some quantity $p$, none the less the differential equation will be
+\[ \frac{dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+and there will be found
+\[ p = \frac{BB\varepsilon\varepsilon - DD\beta\beta}{BBE - ADD}
+   + 2\frac{(AD\varepsilon - BE\beta)(A\varepsilon\varepsilon - E\beta\beta)}{(B\varepsilon - D\beta)(BBE - ADD)}
+   - \frac{C(A\varepsilon\varepsilon - E\beta\beta)}{BBE - ADD} \]
+then there will be $\gamma = \dfrac{A\varepsilon\varepsilon - E\beta\beta}{B\varepsilon - D\beta}$;
+$\alpha = \dfrac{\beta\beta - Ap}{\gamma}$; $\zeta = \dfrac{\varepsilon\varepsilon - Ep}{\gamma}$ and
+$\delta = \gamma + \dfrac{\alpha\varepsilon + Bp}{\beta}$: so that the letters $\beta$ and $\varepsilon$ remain
+indeterminate, and there will therefore be made the complete integral equation:
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \]
+whence there arises:
+\[ y = \frac{-\beta - \delta x - \varepsilon xx + \sqrt{p(A + 2Bx + Cxx + 2Dx^{3} + Ex^{4})}}{\gamma + 2\varepsilon x + \zeta xx} \]
+
+\textbf{§.~31.} Finally it is to be noted that not only this differential equation, whose complete
+integral I have just exhibited, but also this much more widely extending one
+\[ \frac{m\,dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{n\,dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+can always be integrated algebraically, and indeed completely, provided the ratio of the
+coefficients $m$ and $n$ be rational: for this integration is set up in a manner similar to that
+which I used above for integrating the equation that had here been especially proposed to me. But
+the method, of which
+\origpage{54}
+I have here brought forward specimens, seems to me so constituted that, by cultivating its character
+more diligently, it can be rendered fit for signal uses, whence advantages by no means to be
+despised will redound to Analysis.
+
+\textbf{§.~32.} But here I observe that, by extending the formula assumed in §.~28 more widely,
+differentials of such a kind can be compared with one another as are unlike, and indeed the example
+of disparity adduced in §.~26. can be obtained in this way; so that all that has hitherto been handed
+down is contained in this general investigation. Let there be feigned, namely, this integral
+equation:
+\[ \alpha xxyy + 2\beta xxy + 2\gamma xyy + \delta xx + \varepsilon yy + 2\zeta xy + 2\eta x + 2\theta y + \varkappa = 0 \tag{1} \]
+from which there arises
+\[ y = \frac{-\beta xx - \zeta x - \theta + \sqrt{(\beta xx + \zeta x + \theta)^{2} - (\alpha xx + 2\gamma x + \varepsilon)(\delta xx + 2\eta x + \varkappa)}}{\alpha xx + 2\gamma x + \varepsilon} \tag{2} \]
+\[ x = \frac{-\gamma yy - \zeta y - \eta - \sqrt{(\gamma yy + \zeta y + \eta)^{2} - (\alpha yy + 2\beta y + \delta)(\varepsilon yy + 2\theta y + \varkappa)}}{\alpha yy + 2\beta y + \delta} \tag{3} \]
+Let there now be put, for brevity's sake:
+\[ \begin{aligned}
+App &= \beta\beta - \alpha\delta &\qquad \mathfrak{A}qq &= \gamma\gamma - \alpha\varepsilon \\
+2Bpp &= 2\beta\zeta - 2\alpha\eta - 2\gamma\delta &\qquad 2\mathfrak{B}qq &= 2\gamma\zeta - 2\alpha\theta - 2\beta\varepsilon \\
+Cpp &= \zeta\zeta + 2\beta\theta - \alpha\varkappa - \delta\varepsilon - 4\gamma\eta &\qquad \mathfrak{C}qq &= \zeta\zeta + 2\gamma\eta - \alpha\varkappa - \delta\varepsilon - 4\beta\theta \\
+2Dpp &= 2\zeta\theta - 2\gamma\varkappa - 2\varepsilon\eta &\qquad 2\mathfrak{D}qq &= 2\zeta\eta - 2\beta\varkappa - 2\delta\theta \\
+Epp &= \theta\theta - \varepsilon\varkappa &\qquad \mathfrak{E}qq &= \eta\eta - \delta\varkappa
+\end{aligned} \]
+and there will be:
+\[ p\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E} = \alpha xxy + 2\gamma xy + \varepsilon y + \beta xx + \zeta x + \theta \tag{4} \]
+\[ -q\sqrt{\mathfrak{A}y^{4} + 2\mathfrak{B}y^{3} + \mathfrak{C}yy + 2\mathfrak{D}y + \mathfrak{E}} = \alpha xyy + 2\beta xy + \delta x + \gamma yy + \zeta y + \eta \tag{5} \]
+
+\origpage{55}
+\textbf{§.~33.} But if the assumed integral equation be differentiated, there will result
+\[ dx(\alpha xyy + 2\beta xy + \gamma yy + \delta x + \zeta y + \eta)
+   + dy(\alpha xxy + \beta xx + 2\gamma xy + \varepsilon y + \zeta x + \theta) = 0 \tag{6} \]
+whence, if the values (4) and (5) found for those factors be substituted, there will arise this
+differential equation:
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}}
+   = \frac{p\,dy}{\sqrt{\mathfrak{A}y^{4} + 2\mathfrak{B}y^{3} + \mathfrak{C}yy + 2\mathfrak{D}y + \mathfrak{E}}} \tag{7} \]
+the integral of which is therefore the assumed equation (1). But since above there are 10 equations,
+while the number of the coefficients $\alpha$, $\beta$, $\gamma$, $\delta$, etc. is 9, of which one
+can be assumed at pleasure, eight letters will remain to be determined. Further, there come in
+addition two letters $p$ and $q$ to be defined, so that now there are ten unknown quantities present;
+from which the coefficients of each formula $A$, $B$, $C$, $D$, $E$ and $\mathfrak{A}$, $\mathfrak{B}$,
+$\mathfrak{C}$, $\mathfrak{D}$, $\mathfrak{E}$ seem able to be assumed at pleasure. But it is evident
+that, since the one set have already been assumed at will, the others do not depend entirely on our
+choice, for otherwise any formula whatever could be reduced to an algebraic one.
+
+\textbf{§.~34.} But hence other not inelegant transmutations of a given formula can be obtained, if
+in place of $y$ other values be substituted. For instance, if $\mathfrak{C} = 0$ be set,\ednote{The text sets $\mathfrak C = 0$, but the gloss $\eta\eta = \delta\varkappa$ is in fact the condition $\mathfrak E = 0$ (since $\mathfrak E qq = \eta\eta - \delta\varkappa$); equation (8) that follows holds only when $\mathfrak E = 0$. An apparent misprint for $\mathfrak E = 0$, reproduced here as printed.} that is
+$\eta\eta = \delta\varkappa$, and $y = zz$ be posited, the following differential equation will come
+out.
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}}
+   = \frac{2p\,dz}{\sqrt{\mathfrak{A}z^{6} + 2\mathfrak{B}z^{4} + \mathfrak{C}z^{2} + 2\mathfrak{D}}} \tag{8} \]
+the integral of which is therefore the assumed equation, if $y = zz$ be posited, and
+$\eta\eta = \delta\varkappa$ be set, and the remaining letters be duly
+\origpage{56}
+determined. The complete integral too will be found with no difficulty; for even if perchance the
+integral found does not involve a new constant, let there be put
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}} = \frac{q\,du}{\sqrt{Au^{4} + 2Bu^{3} + Cuu + 2Du + E}} \]
+and the complete integral of this equation may be assigned from what precedes; and hence the
+complete integral too of the equation composed of unlike formulas will be gathered.
+
+\textbf{§.~35.} Just as of this differential equation — to begin from the simplest:
+\[ \frac{dx}{\sqrt{f + gx}} = \frac{dy}{\sqrt{f + gy}} \]
+the complete integral is:
+\[ gg(xx + yy) - 2ggxy - 2ccg(x+y) + c^{4} - 4ccf = 0 \]
+Then, of this differential equation
+\[ \frac{dx}{\sqrt{f + gxx}} = \frac{dy}{\sqrt{f + gyy}} \]
+the complete integral is:
+\[ xx + yy - 2xy\sqrt{1 + fgcc} - ccff = 0 \]
+Thirdly, of this differential equation
+\[ \frac{dx}{\sqrt{f + gx^{3}}} = \frac{dy}{\sqrt{f + gy^{3}}} \]
+the complete integral is
+\[ f(xx + yy) + \frac{ggcc}{4f}xxyy - gcxy(x+y) - 2fxy - gcc(x+y) - 2fc = 0 \]
+Fourthly, further, of this differential equation
+\[ \frac{dx}{\sqrt{f + gx^{4}}} = \frac{dy}{\sqrt{f + gy^{4}}} \]
+the complete integral has been found
+\[ f(xx + yy) - fcc - gccxxyy - 2xy\sqrt{f(f + gc^{4})} = 0 \]
+
+\origpage{57}
+So too the complete integral of this equation
+\[ \frac{dx}{\sqrt{f + gx^{6}}} = \frac{dy}{\sqrt{f + gy^{6}}} \]
+will be able to be found:
+
+\textbf{§.~36.} Let there first be determined, in §.~33., the values, so that this equation may come
+out
+\[ \frac{dx}{\sqrt{fx + gx^{4}}} = \frac{dy}{\sqrt{fy + gy^{4}}} \]
+whose complete integral is found:
+\[ gg(xx + yy) - 4ggcxxyy - 4fgccxy(x+y) - 2ggxy - 2fgc(x+y) + ffcc = 0 \]
+Let there now be put $x = tt$ and $y = uu$, so that this differential equation may come out
+\[ \frac{dt}{\sqrt{f + gt^{6}}} = \frac{du}{\sqrt{f + gu^{6}}} \]
+the complete integral of which will therefore be
+\[ gg(t^{4} + u^{4}) - 4ggct^{4}u^{4} - 4fgccttuu(tt+uu) - 2ggttuu - 2fgc(tt+uu) + ffcc = 0 \]
+whence the case resulting from the hypothesis $c = \infty$ deserves to be noted, which gives
+$4gttuu(tt+uu) = f$.
+
+\end{document}

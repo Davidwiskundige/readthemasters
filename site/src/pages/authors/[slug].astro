@@ -47,8 +47,10 @@ const description = [author.name, life, author.bio].filter(Boolean).join(" · ")
     <ul class="works">
       {author.works.map((w) => (
         <li class="card">
-          <h3><a href={w.url}>{w.title}</a></h3>
-          {w.title_en && <div class="meta"><em>{w.title_en}</em></div>}
+          <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
+          {(w.title_en_tex ?? w.title_en) && (
+            <div class="meta"><em>{w.title_en_tex ?? w.title_en}</em></div>
+          )}
           <div class="meta">
             <span>{w.year}</span>
             {w.venue_full && <span class="pill">{w.venue_full}</span>}
@@ -60,4 +62,15 @@ const description = [author.name, life, author.bio].filter(Boolean).join(" · ")
   </section>
 
   <p style="margin-top:1.5rem"><a href="/authors/">← All authors</a></p>
+
+  {/* Render math ($…$) in work-card titles — \dfrac shows a full display fraction like the original.
+      The plain data still drives the tab title and structured data. */}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
+    document.querySelectorAll(".works").forEach((el) => renderMathInElement(el, {
+      delimiters: [{ left: "$", right: "$", display: false }],
+      throwOnError: false,
+    }));
+  </script>
 </Base>

@@ -1,0 +1,518 @@
+% Faithful transcription — original Latin. Transcribed from the original first printing in the
+% Novi Commentarii Academiae Scientiarum Imperialis Petropolitanae, tomus VI (St Petersburg,
+% 1761), printed pages 37–57: Euler's "De integratione aequationis differentialis
+% m dx/√(1−x⁴) = n dy/√(1−y⁴)" (Eneström index E251). Scan: Euler Archive full-text PDF
+% (scholarlycommons.pacific.edu/euler-works/251, article=1250).
+% \origpage uses the PRINTED page numbers. Per HOUSESTYLE R12, the 1761 orthography is kept
+% faithfully: capital V for U (EVLERO, AEQVATIONIS), no u/v distinction (vt, vti, inuoluere),
+% author notation (zz for z², xx for x²) — only long-ſ and ligatures are normalized.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{37}
+\section*{De integratione aequationis differentialis}
+
+\[ \frac{m\,dx}{\sqrt{1-x^{4}}} = \frac{n\,dy}{\sqrt{1-y^{4}}} \]
+
+\emph{Auctore L. EVLERO.}
+
+\textbf{§.~1.} Cum primum occasione inuentionum Ill.~Comitis Fagnani hanc aequationem essem
+contemplatus, eiusmodi quidem relationem algebraicam inter variabiles $x$ et $y$ elicui, quae huic
+aequationi satisfaceret; sed ea relatio non pro aequatione integrali completa haberi poterat,
+propterea quod non complecteretur quantitatem constantem arbitrariam, cuiusmodi semper in calculum
+per integrationem introduci solet. Hinc enim, vti satis notum est, integralia incompleta et
+particularia distingui solent, quorum illa totam vim aequationum differentialium exhauriunt, haec
+vero tantum ita satisfaciunt, vt aliae insuper expressiones aeque satisfacere queant. Criterium
+autem aequationis integralis completae in hoc consistit, quod ea quantitatem constantem inuoluere
+debeat, quae in aequatione differentiali non apparet.
+
+\origpage{38}
+\textbf{§.~2.} Quae quo clarius perspiciantur, sufficiet, aequationem differentialem
+simplicissimam $dx = dy$ considerasse, cui vtique satisfacit haec integralis $x = y$, in rem tamen
+haec integralis minus late patet, quam differentialis $dx = dy$, cum huic aeque satisfaciat haec
+integralis $x = y + a$ multo latius patens, sumendo pro $a$ quantitatem constantem quamcunque,
+atque haec demum integralis totam vim aequationis differentialis $dx = dy$ exhaurire censetur, ex
+quo etiam aequatio integralis completa appellatur; propterea quod in ea inest quantitas constans
+$a$, quae in aequatione differentiali non occurrit. Quodsi vero loco istius constantis indefinitae
+$a$ valores determinati substituantur, ex integrali completo obtinentur integralia particularia,
+quae ob hanc ipsam rationem minus late patent, quam aequatio differentialis proposita.
+
+\textbf{§.~3.} Saepe numero autem aequationis differentialis integrale particulare algebraicum
+exhiberi potest, cum tamen integrale completum sit transcendens; hoc scilicet euenit, si pars
+transcendens per constantem illam arbitrariam fuerit multiplicata, quae propterea, constante illa
+nihilo aequali posita, ex calculo euanescit, et integrale algebraicum particulare relinquit. Ita
+huic aequationi $dy = dx + (y-x)\,dx$ manifestum est, satisfacere valorem $y = x$; quo tamen tantum
+integrale particulare continetur, cum completum sit $y = x + ae^{x}$, denotante $e$ numerum, cuius
+logarithmus est $=1$. Nisi igitur constans arbitraria $a$ euanescens ponatur, integrale semper erit
+transcendens.
+
+\origpage{39}
+\textbf{§.~4.} Cum igitur euenire queat, vt aequatio differentialis integrale particulare
+algebraicum admittat, etiamsi integrale completum sit transcendens, ita etiam rationes dubitandi
+non desunt, quod integrale completum aequationis differentialis propositae
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$ quantitates transcendentes inuoluat,
+etiamsi pro ea integrale particulare algebraicum exhibere licuerit. Cum enim integrale completum
+sit:\ednote{In the printed source the second radical of this display is set with a plus, $\sqrt{1+y^{4}}$; an apparent misprint for $\sqrt{1-y^{4}}$ --- the sign is negative in the differential equation itself and everywhere else. Reproduced here exactly as printed.}
+\[ m\int \frac{dx}{\sqrt{1-x^{4}}} = n\int \frac{dy}{\sqrt{1+y^{4}}} + C \]
+haec autem integralia nullo modo, neque circuli, neque hyperbolae, quadraturam in subsidium
+vocando, assignari queant, minime probabile videtur, istas formulas tantopere transcendentes in
+genere, ita vt constans $C$ maneat indeterminata, ad relationem algebraicam inter $x$ et $y$
+reuocari posse.
+
+\textbf{§.~5.} Notum quidem est, integrale completum huius aequationis differentialis
+$\dfrac{m\,dx}{\sqrt{1-xx}} = \dfrac{n\,dy}{\sqrt{1-yy}}$ semper algebraice exhiberi posse, dummodo
+proportio coefficientium $m$ et $n$ fuerit rationalis; sed quia vtriusque formulae integrale arcum
+circuli indicat, ita vt integrale completum sit
+$m\,\mathrm{A}\,\mathrm{sin.}\,x = n\,\mathrm{A}\,\mathrm{sin.}\,y + C$, relatio autem sinuum, qui ad
+arcus proportionem rationalem inter se tenentes spectant, algebraice exprimi potest, mirum non est,
+aequationem integralem completam his casibus quoque algebraice exhiberi posse. Cum autem huiusmodi
+comparatio in formulis transcendentibus $\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}}$ et
+$\displaystyle\int \frac{dy}{\sqrt{1-y^{4}}}$ locum non habeat, seu saltem non
+\origpage{40}
+constet, inde reductio integralis ad quantitates algebraicas peti non poterit.
+
+\textbf{§.~6.} Nihilo tamen minus obseruaui, si proposita fuerit huiusmodi aequatio
+differentialis
+\[ \frac{m\,dx}{\sqrt{1-x^{4}}} = \frac{n\,dy}{\sqrt{1-y^{4}}} \]
+etiam integrale completum, quod scilicet quantitatem constantem arbitrariam inuoluat, semper
+algebraice exprimi posse, dummodo ratio $m:n$ fuerit rationalis: quod mihi quidem eo magis notatu
+dignum videtur, quod nulla certa methodo ad hoc integrale sum perductus, sed id potius tentando,
+vel diuinando, elicui. Vnde nullum est dubium, quin methodus directa, ad idem hoc integrale
+perducens, fines analyseos non mediocriter sit amplificatura; cuius propterea inuestigatio
+Analystis omni studio commendanda videtur.
+
+\textbf{§.~7.} Completum autem integrale aequationis istius differentialis, quaecunque fuerit
+ratio rationalis coëfficientium $m$ et $n$, deriuare mihi licuit ex integratione completa huius
+aequationis $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$: hac enim concessa methodum
+certam indicabo, ex ea quoque integrale completum huius aequationis multo latius patentis
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$ concludendi. Quae methodus etiam in
+genere ad huiusmodi aequationum $mX\,dx = nY\,dy$ integralia inuenienda adhiberi queat, si modo
+integrale completum huius $X\,dx = Y\,dy$ fuerit erutum, atque $Y$ talem significet functionem
+ipsius $y$, qualis $X$ est ipsius $x$.
+
+\origpage{41}
+\textbf{§.~8.} Exordiar igitur ab hac aequatione
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}} \]
+cui quidem primo intuitu satisfacere perspicuum est aequationem $x = y$, quae propterea eius est
+integrale particulare. Tum vero eidem aequationi quoque satisfacit iste valor algebraicus
+$x = -\sqrt{\dfrac{1-yy}{1+yy}}$, cum enim sit
+$dx = +\dfrac{2y\,dy}{(1+yy)\sqrt{(1-yy)(1+yy)}}$ et $\sqrt{1-x^{4}} = \dfrac{2y}{1+yy}$, erit
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$. Hinc iste etiam valor, seu aequatio
+$xxyy + xx + yy - 1 = 0$ est integralis particularis aequationis differentialis propositae. Vnde
+integrale completum, quod constantem arbitrariam inuoluat, ita comparatum sit necesse est, vt
+tribuendo huic constanti certum quendam valorem, prodeat $x = y$; sin autem eidem constanti alius
+quidem valor tribuatur, vt prodeat $x = -\sqrt{\dfrac{1-yy}{1+yy}}$ seu $xxyy + xx + yy - 1 = 0$.
+
+\subsection*{Theorema.}
+\textbf{§.~9.} Dico igitur huius aequationis differentialis
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}} \]
+aequationem integralem completam esse:
+\[ xx + yy + ccxxyy = cc + 2xy\sqrt{1-c^{4}} \]
+
+\subsection*{Demonstratio.}
+Posita enim hac aequatione, eius differentiale erit:
+\[ x\,dx + y\,dy + ccxy(x\,dy + y\,dx) = (x\,dy + y\,dx)\sqrt{1-c^{4}} \]
+\origpage{42}
+vnde fit
+\[ dx\bigl(x + ccxyy - y\sqrt{1-c^{4}}\bigr) + dy\bigl(y + ccxxy - x\sqrt{1-c^{4}}\bigr) = 0 \]
+Ex eadem vero aequatione resoluta colligitur:
+\[ y = \frac{x\sqrt{1-c^{4}} + c\sqrt{1-x^{4}}}{1+ccxx} \quad\text{et}\quad
+   x = \frac{y\sqrt{1-c^{4}} - c\sqrt{1-y^{4}}}{1+ccyy} \]
+Si enim ibi radicali $\sqrt{1-x^{4}}$ tribuitur signum $+$, hic radicali $\sqrt{1-y^{4}}$ signum $-$
+tribui debet, vt posito $x = 0$, vtrinque idem valor prodeat $y = c$. Erit ergo
+\[ x + ccxyy - y\sqrt{1-c^{4}} = -c\sqrt{1-y^{4}} \]
+\[ y + ccxxy - x\sqrt{1-c^{4}} = c\sqrt{1-x^{4}} \]
+quibus valoribus in aequatione differentiali substitutis, prodit
+\[ -c\,dx\sqrt{1-y^{4}} + c\,dy\sqrt{1-x^{4}} = 0, \]
+siue
+\[ \frac{dx}{\sqrt{1-x^{4}}} = \frac{dy}{\sqrt{1-y^{4}}}. \]
+Huius ergo aequationis differentialis integrale est:
+\[ xx + yy + ccxxyy = cc + 2xy\sqrt{1-c^{4}} \]
+et quia constantem $c$ ab arbitrio nostro pendentem continet, erit simul integrale completum.
+Q.~E.~D.
+
+\textbf{§.~10.} Si igitur habeatur haec aequatio
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{dy}{\sqrt{1-y^{4}}}$ valor integralis completus ipsius $x$ est:
+\[ x = \frac{y\sqrt{1-c^{4}} + c\sqrt{1-y^{4}}}{1+ccyy} \]
+vnde si constans arbitraria $c$ euanescat fit $x = y$; sin autem ponatur $c = 1$, habemus
+$x = \pm\dfrac{\sqrt{1-y^{4}}}{1+yy} = \sqrt{\dfrac{1-yy}{1+yy}}$ qui sunt ambo illi valores
+particulares iam supra exhibiti.
+
+\origpage{43}
+Hinc eruuntur alii valores particulares prae caeteris simpliciores, sed qui ad imaginaria
+deuoluuntur. Ita posito $c = \infty$ fit $x = \dfrac{\sqrt{-1}}{y}$; et posito $cc = -1$; fit
+$x = \sqrt{\dfrac{yy+1}{yy-1}}$ qui itidem aequationi propositae satisfaciunt.
+
+\textbf{§.~11.} Quo autem ratio huius integralis clarius perspiciatur, concipiatur curua $AM$
+cuius haec sit indoles, vt posita abscissa $AP = u$, sit arcus ei respondens
+$AM = \displaystyle\int \frac{du}{\sqrt{1-u^{4}}}$.
+\rmfigure{figures/fig-1.png}{Fig.~1.}{Fig. 1 (Tab. I): the curve AM with abscissa AP; the arc from A measures the elliptic integral treated in the paper. Cropped from the original engraved plate, Novi Commentarii vol. VI (1761).}
+Deinde eadem curua denuo descripta, capiatur abscissa
+$ap = x$, erit arcus $am = \displaystyle\int \frac{dx}{\sqrt{1-x^{4}}}$. Sumto igitur
+\[ x = \frac{u\sqrt{1-c^{4}} + c\sqrt{1-u^{4}}}{1+ccuu} \]
+fiet $\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{du}{\sqrt{1-u^{4}}}$; ideoque arc.~$am = $ arc.~$AM + $
+Const. Pro constantis autem huius determinatione, posito $u = 0$ quo casu arcus $AM$ euanescit, fit
+$x = c$. Quare si capiatur abscissa $ab = c$, cui arcus $ad$ respondeat, erit arcus $dm = $ arcui
+$AM$.
+
+\textbf{§.~12.} Ope huius ergo integrationis completa aequationis
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{du}{\sqrt{1-u^{4}}}$, in curua proposita arcui cuicunque $AM$,
+qui abscissae $AP = u$ respondet, arcus aequalis $dm$, qui a dato puncto $d$ incipiat, abscindi
+poterit. Posita enim abscissa dato puncto $d$ respondente $ab = c$; si capiatur abscissa
+$ap = x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$ erit arcus $dm$ arcui $AM$ aequalis.
+\rmfigure{figures/fig-2.png}{Fig.~2.}{Fig. 2 (Tab. I): a second copy of the curve, with the abscissae ap and a-pi (points a, pi, b, p, d, m) by which an arc dm or d-mu equal to a given arc AM is cut off from the fixed point d. Cropped from the original engraved plate, Novi Commentarii vol. VI (1761).}
+Simili autem modo cum $\sqrt{1-c^{4}}$ negatiuum statui liceat, si capiatur abscissa
+\[ a\pi = \frac{c\sqrt{1-u^{4}} - u\sqrt{1-c^{4}}}{1+ccuu} \]
+\origpage{44}
+erit itidem arcus $d\mu$ arcui $AM$ aequalis: sicque in hac curua a dato quouis puncto $d$ vtrinque
+abscindi potest arcus $dm$ et $d\mu$, qui arcui $AM$ sint aequales.
+
+\textbf{§.~13.} Hinc ergo patet, si arcus $ad$ aequalis capiatur arcui $AM$, seu $c = u$, fore
+arcum $am$ duplum arcus $AM$. Hinc si statuatur $ap = x = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$,
+prodibit arcus $am = 2$~arc.~$AM$. Simili modo si capiatur arcus $ad = 2AM$, seu
+$c = \dfrac{2u\sqrt{1-u^{4}}}{1+u^{4}}$, statuaturque
+$x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$ obtinebitur arcus $am = 3$~arc.~$AM$. Ac si
+iste valor ipsius $x$ denuo pro $c$ substituatur, vt fit $ad = 3AM$ iterumque statuatur
+$x = \dfrac{c\sqrt{1-u^{4}} + u\sqrt{1-c^{4}}}{1+ccuu}$, nascetur arcus $am$ quadruplus arcus $AM$;
+atque ita porro successiue quaecunque multipla arcus $AM$ geometrice assignari poterunt.
+
+\textbf{§.~14.} Sit arcus $ad = n \cdot AM$ et $ab = z$; ita vt sit
+$\displaystyle\int \frac{dz}{\sqrt{1-z^{4}}} = n\int \frac{du}{\sqrt{1-u^{4}}}$; atque ex his patet si capiatur
+$x = \dfrac{z\sqrt{1-u^{4}} + u\sqrt{1-z^{4}}}{1+uuzz}$ fore
+$\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}} = (n+1)\int \frac{du}{\sqrt{1-u^{4}}}$; sin autem ponatur
+$x = \dfrac{z\sqrt{1-u^{4}} - u\sqrt{1-z^{4}}}{1+uuzz}$, tum futurum esse
+$\displaystyle\int \frac{dx}{\sqrt{1-x^{4}}} = (n-1)\int \frac{du}{\sqrt{1-u^{4}}}$. Si igitur haec aequatio
+$\dfrac{dz}{\sqrt{1-z^{4}}} = \dfrac{n\,du}{\sqrt{1-u^{4}}}$ fuerit integrata, debitusque valor pro
+$z$ inde erutus, etiam integrari poterit haec aequatio
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{(n\pm1)\,du}{\sqrt{1-u^{4}}}$, quippe cuius integrale erit
+$x = \dfrac{z\sqrt{1-u^{4}} \pm u\sqrt{1-z^{4}}}{1+uuzz}$. Ac si pro $z$ assumtus fuerit eius valor
+completus, qui scilicet constantem arbitrariam inuoluat, etiam pro $x$ prodibit eius valor
+completus.
+
+\origpage{45}
+\textbf{§.~15.} Hinc igitur perspicuum est, quomodo aequatio integralis completa inueniri
+debeat, quae conueniat huic aequationi differentiali
+$\dfrac{dx}{\sqrt{1-x^{4}}} = \dfrac{n\,du}{\sqrt{1-u^{4}}}$; quoties $n$ fuerit numerus integer.
+Simili autem modo assignari poterit $y$, vt fit
+$\dfrac{dy}{\sqrt{1-y^{4}}} = \dfrac{m\,du}{\sqrt{1-u^{4}}}$, vnde si eliminando $u$, aequatio inter
+$x$ et $y$ quaeratur, ea erit integralis huius aequationis
+$\dfrac{m\,dx}{\sqrt{1-x^{4}}} = \dfrac{n\,dy}{\sqrt{1-y^{4}}}$, quicunque numeri rationales pro $m$
+et $n$ substituantur: atque vt hoc integrale prodeat completum, sufficit pro altera tantum
+variabilium $x$ et $y$ valorem completum per $u$ determinasse, cum hinc iam noua constans arbitraria
+in calculum introducatur.
+
+\textbf{§.~16.} Methodus, qua hic in Theorematis demonstratione sum vsus, etsi non ex rei
+natura est petita, sed indirecte ad id, quod propositum erat, perduxit, tamen multo latius patet:
+simili enim modo colligitur, huius aequationis differentialis
+\[ \frac{dx}{\sqrt{1+mxx+nx^{4}}} = \frac{dy}{\sqrt{1+myy+ny^{4}}} \]
+integrale completum esse:
+\[ 0 = cc - xx - yy + nccxxyy + 2xy\sqrt{1+mcc+nc^{4}} \]
+Vnde idem, quod ante, ratiocinium adhibendo, integrale quoque completum obtinebitur huius
+aequationis
+\[ \frac{\mu\,dx}{\sqrt{1+mxx+nx^{4}}} = \frac{\nu\,dy}{\sqrt{1+myy+ny^{4}}} \]
+siquidem litteris $\mu$ et $\nu$ numeri integri designentur.
+
+\textbf{§.~17.} Inuestigatio autem huius integrationis ita se habet: Fingatur primo pro
+arbitrio relatio inter variabiles $x$ et $y$ hac aequatione contenta:
+\origpage{46}
+\[ \alpha xx + \alpha yy = 2\beta xy + \gamma xxyy + \delta \tag{1} \]
+quae differentiata dat:
+\[ \alpha x\,dx + \alpha y\,dy = \beta x\,dy + \beta y\,dx + \gamma xyy\,dx + \gamma xxy\,dy \]
+vnde conficitur
+\[ dx(\alpha x - \beta y - \gamma xyy) + dy(\alpha y - \beta x - \gamma xxy) = 0 \tag{2} \]
+Deinde ex aequatione (1) eliciantur valores vtriusque variabilis:
+\[ x = \frac{\beta y + \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}}}{\alpha - \gamma yy} \]
+\[ y = \frac{\beta x - \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}}}{\alpha - \gamma xx} \]
+Atque hinc obtinemus:
+\[ \alpha x - \beta y - \gamma xyy = \sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}} \tag{3} \]
+\[ \alpha y - \beta x - \gamma xxy = -\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}} \tag{4} \]
+qui valores in aequatione (2) substituti praebebunt
+\[ \frac{dx}{\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)xx + \alpha\gamma x^{4}}}
+   = \frac{dy}{\sqrt{\alpha\delta + (\beta\beta - \alpha\alpha - \gamma\delta)yy + \alpha\gamma y^{4}}} \tag{5} \]
+cuius ergo aequationis integrale est aequatio (1).
+
+\textbf{§.~18.} Quo istas formas simpliciores reddamus, ponamus $\alpha\delta = A$;
+$\beta\beta - \alpha\alpha - \gamma\delta = C$; $\alpha\gamma = E$ eritque $\delta = \dfrac{A}{\alpha}$;
+$\gamma = \dfrac{E}{\alpha}$ et $\beta = \sqrt{C + \alpha\alpha + \dfrac{AE}{\alpha\alpha}}$. Quare huius
+aequationis differentialis
+\[ \frac{dx}{\sqrt{A + Cxx + Ex^{4}}} = \frac{dy}{\sqrt{A + Cyy + Ey^{4}}} \tag{6} \]
+aequatio integralis est haec:
+\[ \alpha(xx + yy) = \frac{A}{\alpha} + \frac{E}{\alpha}xxyy + 2xy\sqrt{C + \alpha\alpha + \frac{AE}{\alpha\alpha}} \tag{7} \]
+quae simul est integralis completa:
+
+\textbf{§.~19.} Vel ponamus $A = f\alpha\alpha$: $C = g\alpha\alpha$ et $E = b\alpha\alpha$, vt
+habeamus hanc aequationem differentialem
+\[ \frac{dx}{\sqrt{f + gxx + bx^{4}}} = \frac{dy}{\sqrt{f + gyy + by^{4}}} \]
+\origpage{47}
+cuius propterea aequatio integralis completa erit:
+\[ xx + yy = f + bxxyy + 2xy\sqrt{1 + g + fb} \]
+quae etsi nouam constantem inuoluere non videtur, tamen est completa, cum in differentiali tantum
+ratio quantitatum $f$, $g$, et $b$ spectatur, ita vt pro $f$, $g$, et $b$ scribere liceat $fcc$,
+$gcc$ et $bcc$, vnde aequatio integralis manifesto completa prodit:
+\[ xx + yy = fcc + bccxxyy + 2xy\sqrt{1 + gcc + fbc^{4}} \]
+vel $f(xx + yy) = fee + beexxyy + 2xy\sqrt{f(f + gee + be^{4})}$ posito $cc = \dfrac{ee}{f}$.
+
+\textbf{§.~20.} Quodsi ergo proposita sit haec aequatio differentialis
+\[ \frac{dx}{\sqrt{f + gxx + bx^{4}}} = \frac{dy}{\sqrt{f + gyy + by^{4}}} \]
+valor ipsius $y$ per functionem algebraicam ipsius $x$ exprimi poterit, ita vt sit:
+\[ y = \frac{x\sqrt{1 + gcc + fbc^{4}} \pm c\sqrt{f + gxx + bx^{4}}}{1 - bccxx} \]
+vel $y = \dfrac{x\sqrt{f(f + gee + be^{4})} \pm e\sqrt{f(f + gxx + bx^{4})}}{f - beexx}$.
+
+Quodsi ergo sit $g = 0$, vt habeatur haec aequatio differentialis
+\[ \frac{dx}{\sqrt{f + bx^{4}}} = \frac{dy}{\sqrt{f + by^{4}}} \]
+valor integralis completus ipsius $y$ erit
+\[ y = \frac{x\sqrt{f(f + be^{4})} \pm e\sqrt{f(f + bx^{4})}}{f - beexx} \]
+vnde constantem $e$ pro lubitu determinando, innumeri valores particulares pro $y$ deduci possunt.
+
+\origpage{48}
+\textbf{§.~21.} Methodi autem, qua supra vsus sum, beneficio etiam huius aequationis
+\[ \frac{m\,dx}{\sqrt{f + gxx + bx^{4}}} = \frac{n\,dy}{\sqrt{f + gyy + by^{4}}} \]
+si modo $m$ et $n$ sint numeri rationales, integrale completum, atque id quidem algebraice,
+exhiberi poterit.
+
+\textbf{§.~22.} Quemadmodum in aequatione supra assumta, variabiles $x$ et $y$ inter se
+permutabiles sunt constitutae, vt ambae formulae inter se similes euaderent, ita omissa hac
+limitatione ad formularum differentialium disparium comparationem perueniemus. Ponamus ergo:
+\[ \alpha xx + \beta yy = 2\gamma xy + \delta xxyy + \varepsilon \tag{1} \]
+vnde fit
+\[ x = \frac{\gamma y + \sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}}}{\alpha - \delta yy} \]
+et $y = \dfrac{\gamma x - \sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}}}{\beta - \delta xx}$
+hincque
+\[ \alpha x - \gamma y - \delta xyy = \sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}} \tag{2} \]
+\[ \beta y - \gamma x - \delta xxy = -\sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}} \tag{3} \]
+at aequatio (1) differentiata dat:
+\[ dx(\alpha x - \gamma y - \delta xyy) + dy(\beta y - \gamma x - \delta xxy) = 0 \]
+vnde conficitur haec aequatio differentialis:
+\[ \frac{dx}{\sqrt{\beta\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)xx + \alpha\delta x^{4}}}
+   = \frac{dy}{\sqrt{\alpha\varepsilon + (\gamma\gamma - \delta\varepsilon - \alpha\beta)yy + \beta\delta y^{4}}} \]
+cuius propterea integralis est aequatio assumta.
+
+\textbf{§.~23.} Verum haec disparitas facile tollitur, loco $y$ ponendo $z\sqrt{\dfrac{\alpha}{\beta}}$,
+cuius rei ratio statim ex aequatione assumta potuisset esse manifesta. Sed alia patet via ad
+formulas dispares perueniendi, cuius hic exemplum tradidisse sufficiat. Assumatur aequatio:
+$x^{4} + 2axxyy + 2bxx$
+\origpage{49}
+${}= c$, cuius differentiale est $dx(x^{3} + axyy + bx) + axxy\,dy = 0$, seu
+\[ \frac{dx}{xy} = \frac{-a\,dy}{xx + ayy + b} \]
+Iam ex aequatione assumta primo determinetur $xy$ per $x$ sicque fiet
+$xy = \sqrt{\dfrac{c - 2bxx - x^{4}}{2a}}$; tum vero $xx + ayy + b$ per $y$, at ob
+$(xx + ayy + b)^{2} = c + (ayy + b)^{2}$, erit
+\[ xx + ayy + b = \sqrt{c + (ayy + b)^{2}} \]
+Quocirca habebitur aequatio differentialis ista
+\[ \frac{dx\sqrt{2a}}{\sqrt{c - 2bxx - x^{4}}} = \frac{a\,dy}{\sqrt{c + bb + 2abyy + aay^{4}}} \]
+cuius propterea integralis est assumta seu $y = \dfrac{\sqrt{c - 2bxx - x^{4}}}{x\sqrt{2a}}$.
+
+\textbf{§.~24.} Etsi hoc integrale non est completum, tamen ex superioribus facile completum
+reddetur. Ponatur enim:
+\[ \frac{a\,dy}{\sqrt{c + bb + 2abyy + aay^{4}}} = \frac{a\,dz}{\sqrt{c + bb + 2abzz + aaz^{4}}} \]
+ob $f = c + bb$; $g = 2ab$; $b = aa$, erit
+\[ y = \frac{z\sqrt{(c+bb)(c + bb + 2abee + aae^{4})} \pm e\sqrt{(c+bb)(c + bb + 2abzz + aaz^{4})}}{c + bb - aaeezz} \]
+hic ergo valor aequalis statuatur ipsi $\dfrac{\sqrt{c - 2bxx - x^{4}}}{x\sqrt{2a}}$, et aequatio hinc
+inter $x$ et $z$ resultans integralis erit completa huius aequationi differentialis
+\[ \frac{dx\sqrt{2a}}{\sqrt{c - 2bxx - x^{4}}} = \frac{a\,dz}{\sqrt{c + bb + 2abzz + aaz^{4}}} \]
+Quin etiam ex allatis patet, si haec bina membra insuper per numeros rationales quoscunque
+multiplicentur, quemadmodum integrale completum inueniri oporteat.
+
+\origpage{50}
+\textbf{§.~25.} Verum missa membrorum disparitate formationem parium membrorum generalius
+concipiamus, ponatur ergo:
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \tag{1} \]
+vnde differentiando obtinetur:
+\[ dx(\beta + \gamma x + \delta y + 2\varepsilon xy + \varepsilon yy + \zeta xyy)
+   + dy(\beta + \gamma y + \delta x + 2\varepsilon xy + \varepsilon xx + \zeta xxy) = 0 \]
+ideoque
+\[ \frac{dy}{\beta + \gamma x + \delta y + 2\varepsilon xy + \varepsilon yy + \zeta xyy}
+   = \frac{-dx}{\beta + \gamma y + \delta x + 2\varepsilon xy + \varepsilon xx + \zeta xxy} \tag{2} \]
+Ex resolutione autem aequationis assumtae elicitur.
+\[ y = \frac{-\beta - \delta x - \varepsilon xx + \sqrt{\beta\beta - \alpha\gamma + 2(\beta\delta - \alpha\varepsilon - \beta\gamma)x + (\delta\delta - \gamma\gamma - \alpha\zeta - 2\beta\varepsilon)xx + 2(\delta\varepsilon - \beta\zeta - \gamma\varepsilon)x^{3} + (\varepsilon\varepsilon - \gamma\zeta)x^{4}}}{\gamma + 2\varepsilon x + \zeta xx} \]
+Ponatur breuitatis gratia
+\[ \beta\beta - \alpha\gamma = A; \quad \beta\delta - \alpha\varepsilon - \beta\gamma = B; \quad
+   \delta\delta - \gamma\gamma - \alpha\zeta - 2\beta\varepsilon = C; \quad
+   \varepsilon\varepsilon - \gamma\zeta = E; \quad \delta\varepsilon - \beta\zeta - \gamma\varepsilon = D; \]
+eritque
+\[ \beta + \delta x + \varepsilon xx + \gamma y + 2\varepsilon xy + \zeta xxy = \pm\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}} \]
+\[ \beta + \delta y + \varepsilon yy + \gamma x + 2\varepsilon xy + \zeta xyy = \mp\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}} \]
+
+\textbf{§.~26.} Hinc itaque concludimus huius aequationis differentialis:
+\[ \frac{dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+aequationem integralem eamque completam esse
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \]
+\origpage{51}
+adhibita scilicet superiori horum coëfficientium determinatione. Primum autem definiatur $\beta$
+vel $\varepsilon$ ex hac aequatione
+\[ \frac{BB(\varepsilon\varepsilon - E) - DD(\beta\beta - A)}{A\varepsilon\varepsilon - E\beta\beta}
+   + \frac{2AD\varepsilon - 2BE\beta}{B\varepsilon - D\beta} = C \]
+tum vero erit:
+\[ \gamma = \frac{A\varepsilon\varepsilon - E\beta\beta}{B\varepsilon - D\beta}; \quad
+   \alpha = \frac{\beta\beta - A}{\gamma}; \quad \zeta = \frac{\varepsilon\varepsilon - E}{\gamma} \quad\text{et} \]
+\[ \delta = \frac{B\beta(\varepsilon\varepsilon - E) - D\varepsilon(\beta\beta - A)}{A\varepsilon\varepsilon - E\beta\beta} + \gamma
+   \quad\text{seu}\quad \delta = \gamma + \frac{B + \alpha\varepsilon}{\beta} \]
+
+\textbf{§.~27.} Hinc ergo perspicuum est etiam hanc aequationem differentialem:
+\[ \frac{dx}{\sqrt{A + 2Dx^{3}}} = \frac{dy}{\sqrt{A + 2Dy^{3}}} \]
+integrari posse: nam ob $B = 0$, $C = 0$ et $E = 0$ erit
+\[ -\frac{DD(\beta\beta - A)}{A\varepsilon\varepsilon} - \frac{2A\varepsilon}{\beta} = 0 \quad\text{seu}\quad
+   \varepsilon = \sqrt[3]{\frac{DD}{2AA}\beta(A - \beta\beta)} \]
+at hinc valores nimis prodeunt complicati. Facilius negotium absoluetur, resoluendo valores
+litterarum euanescentium $B$, $C$ et $E$; nam $E = 0$ dat: $\zeta = \dfrac{\varepsilon\varepsilon}{\gamma}$;
+tum $B = 0$ dat: $\delta = \gamma + \dfrac{\alpha\varepsilon}{\beta}$; atque $C = 0$ dat
+$\delta\delta - \gamma\gamma = \alpha\zeta + 2\beta\varepsilon = \dfrac{\alpha\varepsilon\varepsilon}{\gamma} + 2\beta\varepsilon
+= \dfrac{\alpha^{2}\varepsilon\varepsilon}{\beta\beta} + \dfrac{2\alpha\gamma\varepsilon}{\beta}$ cuius factores sunt
+$\beta\beta = \alpha\gamma$ et $\alpha\varepsilon\varepsilon + 2\beta\gamma\varepsilon = 0$. At si esset
+$\beta\beta = \alpha\gamma$ foret $A = 0$, sin autem esset $\varepsilon = 0$ foret et $\zeta = 0$ et
+$D = 0$, contra scopum. Fieri ergo oportet $\alpha\varepsilon = -2\beta\gamma$; vnde fiet
+$\alpha = -\dfrac{2\beta\gamma}{\varepsilon}$; $\delta = -\gamma$; et $\zeta = \dfrac{\varepsilon\varepsilon}{\gamma}$.
+Denique fieri debet $\beta\beta + \dfrac{2\beta\gamma\gamma}{\varepsilon} = A$ et
+$-2\gamma\varepsilon - \dfrac{\beta\varepsilon\varepsilon}{\gamma} = D$. Inde fit
+$\varepsilon = \dfrac{2\beta\gamma\gamma}{A - \beta\beta}$; et ob
+$\dfrac{\gamma D}{\varepsilon} = -(2\gamma\gamma + \beta\varepsilon)$ et $2\gamma\gamma + \beta\varepsilon = \dfrac{A\varepsilon}{\beta}$,
+erit $\dfrac{\gamma D}{\varepsilon} = -\dfrac{A\varepsilon}{\beta}$; ideoque $\varepsilon\varepsilon = -\dfrac{\beta\gamma D}{A}$. Ergo
+\[ \frac{4\beta\gamma^{3}}{(A - \beta\beta)^{2}} + \frac{D}{A} = 0. \]
+
+\origpage{52}
+\textbf{§.~28.} Cum autem tantum ratio litterarum $A$ et $D$ in censum veniat, aequatio vltima
+valori absoluto ipsius $A$ inueniendo inseruit, quem autem nosse non est opus. Manebunt ergo
+litterae $\gamma$ et $\beta$ indeterminatae. Ponatur ergo $\gamma = -Ac$ et $\beta = Dc$, erit
+$\varepsilon\varepsilon = DDcc$, seu $\varepsilon = Dc$, hincque $\delta = Ac$;
+$\zeta = -\dfrac{DDc}{A}$; et $\alpha = 2Ac$. Quare huius aequationis differentialis:
+\[ \frac{dx}{\sqrt{A + 2Dx^{3}}} = \frac{dy}{\sqrt{A + 2Dy^{3}}} \]
+integrale est.
+\[ 0 = 2A + 2D(x+y) - A(xx+yy) + 2Axy + 2Dxy(x+y) - \frac{DD}{A}xxyy \]
+Hoc autem integrale non est completum, tale autem reddetur ponendo $\gamma = -A$ et $\beta = Dcc$,
+vnde fit $\varepsilon\varepsilon = DDcc$ et $\varepsilon = Dc$; porro erit $\delta = A$;
+$\zeta = -\dfrac{DDcc}{A}$; $\alpha = 2Ac$; ita vt integrale completum sit:
+\[ 0 = 2Ac + 2Dcc(x+y) - A(xx+yy) + 2Axy + 2Dcxy(x+y) - \frac{DDcc}{A}xxyy \]
+vbi $c$ est constans ab arbitrio pendens, vnde fit:
+\[ y = \frac{Dcc + Ax + Dcxx + \sqrt{c\bigl(2A + \frac{DD}{A}c^{3}\bigr)(A + 2Dx^{3})}}{A - 2Dcx + \frac{DDcc}{A}xx} \]
+
+\textbf{§.~29.} Hic casus notari meretur, quo $A = 1$ et $D = \frac{1}{2}$, vt habeatur haec
+aequatio differentialis
+\[ \frac{dx}{\sqrt{1 + x^{3}}} = \frac{dy}{\sqrt{1 + y^{3}}} \]
+vbi ad fractiones tollendas loco $c$ scribatur $2c$ eritque integrale completum:
+\[ 0 = 4c + 4cc(x+y) - xx - yy + 2xy + 2cxy(x+y) - ccxxyy \]
+seu $y = \dfrac{2cc + x + cxx + 2\sqrt{c(1+c^{3})(1+x^{3})}}{1 - 2cx + ccxx}$
+
+\origpage{53}
+Integralia ergo particularia erunt
+
+I.~si $c = 0$; $y = x$;
+
+II.~si $c = \infty$; $y = \dfrac{2 \pm 2\sqrt{1+x^{3}}}{xx}$;
+
+III.~si $c = -1$; $y = \dfrac{2 + x - xx}{1 + 2x + xx} = \dfrac{2-x}{1+x}$.
+
+\textbf{§.~30.} Ex eodem principio si in §.~29. loco litterarum $A$, $B$, $C$, $D$, $E$,
+eaedem per quantitatem quampiam $p$ multiplicentur, nihilo minus aequatio differentialis erit
+\[ \frac{dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+inuenieturque
+\[ p = \frac{BB\varepsilon\varepsilon - DD\beta\beta}{BBE - ADD}
+   + 2\frac{(AD\varepsilon - BE\beta)(A\varepsilon\varepsilon - E\beta\beta)}{(B\varepsilon - D\beta)(BBE - ADD)}
+   - \frac{C(A\varepsilon\varepsilon - E\beta\beta)}{BBE - ADD} \]
+tum erit $\gamma = \dfrac{A\varepsilon\varepsilon - E\beta\beta}{B\varepsilon - D\beta}$;
+$\alpha = \dfrac{\beta\beta - Ap}{\gamma}$; $\zeta = \dfrac{\varepsilon\varepsilon - Ep}{\gamma}$ atque
+$\delta = \gamma + \dfrac{\alpha\varepsilon + Bp}{\beta}$: ita vt litterae $\beta$ et $\varepsilon$ maneant
+indeterminatae, fietque propterea aequatio integralis completa:
+\[ 0 = \alpha + 2\beta(x+y) + \gamma(xx+yy) + 2\delta xy + 2\varepsilon xy(x+y) + \zeta xxyy \]
+vnde fit:
+\[ y = \frac{-\beta - \delta x - \varepsilon xx + \sqrt{p(A + 2Bx + Cxx + 2Dx^{3} + Ex^{4})}}{\gamma + 2\varepsilon x + \zeta xx} \]
+
+\textbf{§.~31.} Notandum denique est, non solum hanc aequationem differentialem, cuius
+integrale completum modo exhibui, sed etiam hanc multo latius patentem
+\[ \frac{m\,dx}{\sqrt{A + 2Bx + Cxx + 2Dx^{3} + Ex^{4}}} = \frac{n\,dy}{\sqrt{A + 2By + Cyy + 2Dy^{3} + Ey^{4}}} \]
+semper algebraice et quidem complete integrari posse, dummodo coëfficientium $m$ et $n$ ratio
+fuerit rationalis: haec enim integratio simili modo instituitur, quo supra vsus sum ad aequationem,
+quae mihi hic praecipue erat proposita, integrandam. Methodus autem, cuius
+\origpage{54}
+hic specimina attuli, ita mihi videtur comparata, vt indolem eius diligentius excolendo, ad
+insignes vsus apta reddi queat, vnde haud contemnenda commoda in Analysin sint redundatura.
+
+% [reading] The 9th coefficient (constant term) prints as an italic x-like glyph; read as
+% varkappa (\varkappa) — the Greek letter after theta in Euler's sequence, NOT the variable x.
+% Confirmed correct at review (DvdL, 2026-07-25).
+% [notation] The second set of coefficients is printed in Fraktur (distinct variables from roman
+% A..E); preserved with \mathfrak per HOUSESTYLE R13, not normalized to roman.
+\textbf{§.~32.} Hic autem obseruo, formulam §.~28 assumtam latius extendendo, eiusmodi
+differentialia inter se comparari posse, quae sint disparia, atque adeo exemplum disparitatis
+§.~26. allatum hoc modo obtineri posse; ita vt omnia, quae hactenus sunt tradita, in hac generali
+inuestigatione contineantur. Fingatur scilicet haec aequatio integralis:
+\[ \alpha xxyy + 2\beta xxy + 2\gamma xyy + \delta xx + \varepsilon yy + 2\zeta xy + 2\eta x + 2\theta y + \varkappa = 0 \tag{1} \]
+ex qua fit
+\[ y = \frac{-\beta xx - \zeta x - \theta + \sqrt{(\beta xx + \zeta x + \theta)^{2} - (\alpha xx + 2\gamma x + \varepsilon)(\delta xx + 2\eta x + \varkappa)}}{\alpha xx + 2\gamma x + \varepsilon} \tag{2} \]
+\[ x = \frac{-\gamma yy - \zeta y - \eta - \sqrt{(\gamma yy + \zeta y + \eta)^{2} - (\alpha yy + 2\beta y + \delta)(\varepsilon yy + 2\theta y + \varkappa)}}{\alpha yy + 2\beta y + \delta} \tag{3} \]
+Ponatur iam breuitatis gratia:
+\[ \begin{aligned}
+App &= \beta\beta - \alpha\delta &\qquad \mathfrak{A}qq &= \gamma\gamma - \alpha\varepsilon \\
+2Bpp &= 2\beta\zeta - 2\alpha\eta - 2\gamma\delta &\qquad 2\mathfrak{B}qq &= 2\gamma\zeta - 2\alpha\theta - 2\beta\varepsilon \\
+Cpp &= \zeta\zeta + 2\beta\theta - \alpha\varkappa - \delta\varepsilon - 4\gamma\eta &\qquad \mathfrak{C}qq &= \zeta\zeta + 2\gamma\eta - \alpha\varkappa - \delta\varepsilon - 4\beta\theta \\
+2Dpp &= 2\zeta\theta - 2\gamma\varkappa - 2\varepsilon\eta &\qquad 2\mathfrak{D}qq &= 2\zeta\eta - 2\beta\varkappa - 2\delta\theta \\
+Epp &= \theta\theta - \varepsilon\varkappa &\qquad \mathfrak{E}qq &= \eta\eta - \delta\varkappa
+\end{aligned} \]
+eritque:
+\[ p\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E} = \alpha xxy + 2\gamma xy + \varepsilon y + \beta xx + \zeta x + \theta \tag{4} \]
+\[ -q\sqrt{\mathfrak{A}y^{4} + 2\mathfrak{B}y^{3} + \mathfrak{C}yy + 2\mathfrak{D}y + \mathfrak{E}} = \alpha xyy + 2\beta xy + \delta x + \gamma yy + \zeta y + \eta \tag{5} \]
+
+\origpage{55}
+\textbf{§.~33.} At si aequatio integralis assumta differentietur, fiet
+\[ dx(\alpha xyy + 2\beta xy + \gamma yy + \delta x + \zeta y + \eta)
+   + dy(\alpha xxy + \beta xx + 2\gamma xy + \varepsilon y + \zeta x + \theta) = 0 \tag{6} \]
+vnde si istorum factorum valores (4) et (5) reperti substituantur, orietur ista aequatio
+differentialis:
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}}
+   = \frac{p\,dy}{\sqrt{\mathfrak{A}y^{4} + 2\mathfrak{B}y^{3} + \mathfrak{C}yy + 2\mathfrak{D}y + \mathfrak{E}}} \tag{7} \]
+cuius propterea integralis est aequatio assumta (1). Cum autem supra habeantur 10 aequationes,
+coëfficientium autem $\alpha$, $\beta$, $\gamma$, $\delta$, etc. numerus sit 9, quorum vnus pro
+lubitu assumi potest, octo remanebunt litterae determinandae. Porro autem insuper definiendae
+accedunt binae litterae $p$ et $q$, ita vt nunc decem quantitates adsint incognitae; ex quo
+coëfficientes vtriusque formulae $A$, $B$, $C$, $D$, $E$ et $\mathfrak{A}$, $\mathfrak{B}$,
+$\mathfrak{C}$, $\mathfrak{D}$, $\mathfrak{E}$ videntur pro lubitu assumi posse. Verum perspicuum
+est, cum alteri iam fuerint ad libitum assumti, alteros non omnino ab arbitrio nostro pendere,
+alias enim quaeuis formula ad algebraicam reduci posset.
+
+\textbf{§.~34.} Hinc autem aliae datae formulae transmutationes non inelegantes obtineri
+possunt, si loco $y$ alii valores substituantur. Veluti si ponatur $\mathfrak{C} = 0$,\ednote{The text sets $\mathfrak C = 0$, but the gloss $\eta\eta = \delta\varkappa$ is in fact the condition $\mathfrak E = 0$ (since $\mathfrak E qq = \eta\eta - \delta\varkappa$); equation (8) that follows holds only when $\mathfrak E = 0$. An apparent misprint for $\mathfrak E = 0$, reproduced here as printed.} seu
+$\eta\eta = \delta\varkappa$, statuaturque $y = zz$ sequens prodibit aequatio differentialis.
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}}
+   = \frac{2p\,dz}{\sqrt{\mathfrak{A}z^{6} + 2\mathfrak{B}z^{4} + \mathfrak{C}z^{2} + 2\mathfrak{D}}} \tag{8} \]
+cuius propterea integralis est aequatio assumta, si ponatur $y = zz$, statuaturque
+$\eta\eta = \delta\varkappa$, ac reliquae litterae rite
+\origpage{56}
+determinentur. Integrale etiam completum nulla difficultate reperietur, nam etiamsi fortasse
+integrale inuentum nouam non inuoluat constantem, ponatur
+\[ \frac{q\,dx}{\sqrt{Ax^{4} + 2Bx^{3} + Cxx + 2Dx + E}} = \frac{q\,du}{\sqrt{Au^{4} + 2Bu^{3} + Cuu + 2Du + E}} \]
+et huius aequationis integrale completum ex antecedentibus assignare licebit; atque hinc integrale
+quoque completum aequationis ex formulis disparibus constantis colligetur.
+
+\textbf{§.~35.} Quemadmodum huius aequationis differentialis, vt a simplicissimis incipiam:
+\[ \frac{dx}{\sqrt{f + gx}} = \frac{dy}{\sqrt{f + gy}} \]
+integrale completum est:
+\[ gg(xx + yy) - 2ggxy - 2ccg(x+y) + c^{4} - 4ccf = 0 \]
+Deinde vero huius aequationis differentialis
+\[ \frac{dx}{\sqrt{f + gxx}} = \frac{dy}{\sqrt{f + gyy}} \]
+integrale completum est:
+\[ xx + yy - 2xy\sqrt{1 + fgcc} - ccff = 0 \]
+Tertio vero huius aequationis differentialis
+\[ \frac{dx}{\sqrt{f + gx^{3}}} = \frac{dy}{\sqrt{f + gy^{3}}} \]
+integrale completum est
+\[ f(xx + yy) + \frac{ggcc}{4f}xxyy - gcxy(x+y) - 2fxy - gcc(x+y) - 2fc = 0 \]
+Quarto porro huius aequationis differentialis
+\[ \frac{dx}{\sqrt{f + gx^{4}}} = \frac{dy}{\sqrt{f + gy^{4}}} \]
+integrale completum repertum est
+\[ f(xx + yy) - fcc - gccxxyy - 2xy\sqrt{f(f + gc^{4})} = 0 \]
+
+\origpage{57}
+Ita etiam integrale completum huius aequationis
+\[ \frac{dx}{\sqrt{f + gx^{6}}} = \frac{dy}{\sqrt{f + gy^{6}}} \]
+reperiri poterit:
+
+\textbf{§.~36.} Determinentur primo in §.~33. valores, ita vt prodeat haec aequatio
+\[ \frac{dx}{\sqrt{fx + gx^{4}}} = \frac{dy}{\sqrt{fy + gy^{4}}} \]
+cuius integralis completa reperitur:
+\[ gg(xx + yy) - 4ggcxxyy - 4fgccxy(x+y) - 2ggxy - 2fgc(x+y) + ffcc = 0 \]
+Ponatur nunc $x = tt$ et $y = uu$, vt prodeat haec aequatio differentialis
+\[ \frac{dt}{\sqrt{f + gt^{6}}} = \frac{du}{\sqrt{f + gu^{6}}} \]
+cuius propterea integralis completa erit
+\[ gg(t^{4} + u^{4}) - 4ggct^{4}u^{4} - 4fgccttuu(tt+uu) - 2ggttuu - 2fgc(tt+uu) + ffcc = 0 \]
+vnde notari meretur casus ex hypothesi $c = \infty$ resultans, qui dat $4gttuu(tt+uu) = f$.
+
+\end{document}
