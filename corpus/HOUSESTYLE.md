@@ -48,6 +48,28 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R18 — Author markup must match what the site actually renders: the `significance` field is
+### plain text + KaTeX only, and the `.tex` transform has no `\oe` (use a literal `œ`) (presentation)
+*2026-07-30.* Two site-rendering limits surfaced while previewing
+`jacob-bernoulli-1694-constructio-lemniscata` (the first work to name the lemniscate, whose text
+carries the author's embedded French phrase "nœud"). Both are presentation-layer — they change only
+how the same text is set — and neither is caught by `validate.py`, `texcompare.py`, or
+`houselint.py`, so **preview a new work in the site before opening the PR** to catch leaked markup.
+
+- The `work.yaml` **`significance`** note is rendered by `renderSignificance()` in
+  `site/src/pages/works/[id].astro`, which only HTML-escapes the prose and expands `[n]` citation
+  markers; a later client-side KaTeX pass renders `$...$`. It does **not** run the `.tex` text
+  transform, so `\emph{}`, `~`, and `---` leak as literal characters. **Rule: write `significance`
+  as plain prose — a real em-dash `—`, a plain "No. LX", no `\emph`; only `$...$` math is processed.**
+- The transcription/translation `.tex` panels go through `inlineText()` in `site/src/lib/tex.js`,
+  which supports `\emph`/`\textit`, `\textbf`, `\uncertain`, `\illegible`, `\ednote`, `\&`, `\ `,
+  `~`, `---`, and `` `` ''`` — but **not** accent/ligature macros such as `\oe`. **Rule: render such
+  a letter as the literal Unicode character (`œ`, not `\oe{}`).** This is consistent with existing
+  corpus `.tex` bodies that already use literal UTF-8 (e.g. Fagnano's "ànno"): Tectonic/XeTeX
+  compiles the character for the PDF, and the site's `escapeHtml` passes it through unchanged.
+
+Applied in `jacob-bernoulli-1694-constructio-lemniscata`.
+
 ### R17 — LaTeX control spaces (`\ `) after abbreviations render as a normal space on the web
 ### (presentation)
 *2026-07-30.* Faithful transcriptions keep the source's abbreviation spacing by writing a LaTeX
