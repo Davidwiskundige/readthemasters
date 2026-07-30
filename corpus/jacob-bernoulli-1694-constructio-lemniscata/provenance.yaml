@@ -1,0 +1,66 @@
+changelog:
+  - date: "2026-07-30"
+    summary: Transcription added (AI draft), pp. 608–612 (No. LX) from the 1744 Opera scan.
+  - date: "2026-07-30"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-07-30"
+  verification:
+    flagged_pages: [609, 610]
+    date: "2026-07-30"
+  note: >-
+    Full Latin text of No. LX, printed pages 608–612 of the collected Opera (Geneva 1744, Tomus I) —
+    the September 1694 sequel ("Addenda nuperae solutioni Mensis Junii") to No. LIX. Each page was
+    read from the appended PDF scan at full resolution and every displayed and inline formula,
+    together with the lettered analytic footnotes (a)–(f), was checked against the scan (the AI's own
+    verification pass, not a full human review). Author notation is kept faithfully (HOUSESTYLE R3):
+    doubled letters for squares (aa, zz, xx, yy, uu), the ":" division/ratio sign, "&c." and the "&"
+    ampersand; typography (long-s, ligatures, small caps incl. the author name "Joh. Bernoulli", the
+    superscript-"o" of "No.") is normalized, and page catchwords and end-of-line hyphenation are
+    dropped. Point labels remain plain math letters (R1); the inline lemniscatic/elliptic integrals
+    all carry \displaystyle (R2/R16). Fig. 3 is reused from No. LIX (same plate Tab. XXIV), placed at
+    its first reference on p. 609 (R8).
+    Items flagged for the reviewer:
+    (a) p. 609: this paper first NAMES the lemniscate ("nodum fasciae, sive lemnisci, d'un nœud de
+    ruban Gallis"). The printed mark after "jacentis notae octonarii" is a reclining figure-eight
+    (the lemniscate's own shape); it is set as $\infty$, the closest available glyph, but denotes the
+    numeral 8 lying down, not the modern "infinity" concept.
+    (b) p. 610, note (b): a heavily-inked mark between "$a\sqrt{2}$" and "quae dicatur $y$" is read as
+    a comma, matching the parallel "$...\ = ...$, quae vocetur $x$" a few words later.
+    (c) The lettered footnotes (a)–(f) belong to this 1744 Opera edition; whether each is Bernoulli's
+    own annotation or the editor's (Gabriel Cramer) is not yet confirmed. They are placed inline as
+    complete units at the end of each page's main text (near the reference), a presentation choice for
+    web reading (HOUSESTYLE R15). The "&" ampersand is kept as printed and rendered by the site (R14).
+    (d) Fig. 3 (referenced on pp. 609 and 612) is on plate Tab. XXIV of the Opera (facing p. 618),
+    which is NOT part of the pp. 608–612 text scan; figures/fig-3.png is the same crop used in No. LIX
+    (jacob-bernoulli-1694-isochrona-elastica). The plate carries the three figures for No. LVIII/LIX/LX
+    together, so a sliver of the neighbouring Fig. 1 / Fig. 2 is unavoidably included at the edge; the
+    whole of Fig. 3 is captured.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # translated from our own original.tex (PLAN §2.2), not any published translation
+    produced: "2026-07-30"
+    note: >-
+      English translation of No. LX (pp. 608–612), made from original.tex. Every math expression,
+      \origpage marker and the \rmfigure image path are preserved unchanged (checked by
+      pipeline/texcompare.py); only prose is translated. Reviewer notes: (1) This is the paper that
+      first names the lemniscate; the author's own embedded French phrase "d'un nœud de ruban" is kept
+      untranslated (his own gloss), with "Gallis" rendered "as the French call it". (2) The reclining
+      figure-eight glyph is $\infty$ (closest available mark), copied verbatim from original.tex.
+      (3) The (e) footnote marker is merged into its preceding formula span ("$...\,{}^{(e)}$")
+      exactly as in the original, to avoid a literal "$$" that texcompare.py would mis-parse as
+      display math. (4) Period abbreviations are rendered in English (No. praec., Nota, pag., Num.);
+      the author's "&c." is given as "etc." and the Latin "&" (et) as "and"; journal citations
+      ("Act. Erud. 1724, Aug. pag. 356") and cross-references (No. CIII, No. LVIII) are kept as printed.

@@ -1,0 +1,173 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, \origpage marker and the \rmfigure image path are preserved
+% unchanged; only the prose is translated. Notes for the reviewer:
+%  * This is No. LX, the September 1694 sequel ("Addenda nuperae solutioni Mensis Junii") to No. LIX;
+%    it first names the lemniscate. The author's own embedded French phrase "d'un nœud de ruban" is
+%    kept untranslated (it is his own gloss), with "Gallis" rendered "as the French call it".
+%  * Period abbreviations in the prose are rendered in English (No. praec. = the preceding No.,
+%    Not./Nota = Note, pag./p. = page, Num. = No., Art. = Art.); the author's "&c." is given as
+%    "etc." and the Latin "&" (et) as "and". Journal citations ("Act. Erud. 1724, Aug. pag. 356")
+%    and the cross-references to No. CIII, No. LVIII are kept as printed.
+%  * The lettered notes (a)-(f) keep their inline placement at the foot of each page (HOUSESTYLE R15).
+%  * The math is copied verbatim from original.tex, including the author's ":" division sign and the
+%    doubled letters for squares; the (e) footnote marker is merged into its preceding formula span
+%    ("$...\,{}^{(e)}$") exactly as in the original, to avoid a literal "$$" (see original.tex header).
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{608}
+\section*{No.~LX. Jacob Bernoulli's Construction of the Curve}
+\subsection*{Of uniform Approach and Recession, by means of the rectification of a certain algebraic Curve: an Addendum to the recent solution of the Month of June}
+
+There are chiefly three modes of constructing mechanical, or transcendental, curves. The first, but
+little suited to practice, is done through the curvatures of curvilinear spaces. Better is that which
+is set up through the rectifications of algebraic curves; for curves can be rectified more accurately
+and expeditiously, by means of a thread or a little chain wrapped around them, than spaces can be
+squared. In the same rank I hold those constructions which are carried out without any rectification
+and quadrature, by the mere description of some mechanical curve whose points, though not all, yet
+infinitely many, and as close together as one pleases, can be found geometrically, such as the
+Logarithmic curve is wont to be, and any others there may be of that kind. But the best mode, wherever
+it can be had, is that which is carried out by means of some curve which Nature herself, without art,
+produces by a certain most swift and, as it were, instantaneous motion at the beck of the Geometer;
+whereas the preceding modes require curves whose delineation, whether by continuous motion or by the
+finding of several points, being set up by the Craftsman, commonly turns out either too slow or too
+much impeded. Thus those constructions of Problems
+
+\origpage{609}
+which suppose the quadrature of the Hyperbola or the description of the Logarithmic curve I judge,
+other things being equal, to be inferior to those which are carried out by means of the Catenary,
+that is, of the curve which a suspended chain assumes of its own accord sooner than you could set the
+first hand to describing the others.
+
+\emph{The Curve of uniform Approach and Recession}, for the sole recommendation of the Gentleman who
+proposed it, seems to deserve that we should take pains to furnish it with constructions according to
+all three modes. The construction of the first mode, by quadratures, which I passed over in the recent
+solution for the reason already stated, can be set up by taking, in \emph{Fig.}~3, the straight line
+$EN$ equal, not, as there, to $Au$ itself, but to $iu$ itself; and again the rectangle $AO$ equal to
+the curvilinear area $AEN$; for its side $AP$ will be adequate to the recent curve $AQ$; so that,
+taking $A\alpha$ as the third proportional to $AB$ and the now-found $AP$, the point $\alpha$ is had
+on the desired curve${}^{(a)}$. The construction of the third mode, which would be done by means of the
+Elastic line $AQ$, which alone I touched upon there, would without doubt be the best, if nature had
+anywhere made tensions simply proportional to the stretching forces: but since perhaps no Spring is
+found which observes this law of tension precisely; nor, if one were found, would that be certain;
+therefore it is not safe enough to trust to it either: and it is preferable to have recourse to the
+second mode of construction, and to seek an algebraic curve by whose rectification we may attain our
+aim. Such a one, as if by wish, presents itself: a curve of four dimensions which is expressed by this
+equation $xx + yy = a\sqrt{xx - yy}$, and which, set about the axis $BG\ [2a]$, refers in form to a
+reclining figure of the numeral eight $\infty$, or to a band folded into a knot, that is, into a
+lemniscus, \emph{d'un nœud de ruban} as the French call it. For of this curve both the one half is
+[equal to] the Elastic curve $AR\varphi$, and, above the node $A$, over the indeterminate interval
+$AE$ cut off, the smaller portion of the half [equals] the smaller $AQ$,
+
+\rmfigure{figures/fig-3.png}{Fig.~3.}{Fig. 3 (from plate Tab. XXIV, facing p. 618 of the Opera,
+Tomus I): the elastic curve $AR\varphi$, the lemniscate looped through the node $A$, the isochronal
+curve of uniform approach and recession, and the auxiliary circle, quadrants and construction lines.
+The same plate carries the figures for No. LVIII, LIX and LX together ("No. 58. 59. \& 60.").}
+
+\textbf{(a)}~Let $AE = u$, $Ag = uu : a$, $gl = \sqrt{aa - u^{4} : aa} = \frac{1}{a}\sqrt{a^{4}-u^{4}}$;
+and since $gl : Al = Ai : iu$, it will be $iu = a^{3} : \sqrt{a^{4}-u^{4}} = EN$. And therefore the
+mixtilinear area $AEN = \displaystyle\int(a^{3}\,du : \sqrt{a^{4}-u^{4}}) = AO$: consequently
+$AP = \displaystyle\int(aa\,du : \sqrt{a^{4}-u^{4}}) ={}$ [preceding No., Note~d] ${}= \sqrt{at}$ or
+$\sqrt{AB\cdot A\alpha}$. Therefore $A\alpha = AP^{2} : AB$, the third proportional to $AB$, $AP$.
+
+\origpage{610}
+the larger [equals] the larger Elastic portion $\varphi RQ$. Whence too the reason is established for
+employing it in the construction of the proposed Problem${}^{(b)}$.
+
+For the rest, just as infinitely many mechanical lines depend on the rectification of the circular or
+parabolic curve, or on the logarithmic description; so, besides the curve of approach and recession of
+infinitely many others, the construction of the Elastic curve itself too [as will appear below] is in
+part derived from the rectification of the said algebraic curve of four dimensions. And I would dare
+to assert that, in the matter of the construction of
+
+\textbf{(b)}~It was shown in the preceding No., Note~(d), that the construction of the required curve
+depends on the integration of the quantity $aa\,du : \sqrt{a^{4}-u^{4}}$. This, in order to be reduced
+to the rectification of an algebraic curve, is to be considered as an element of a curve, and its
+square to be divided, if it can be done, into two other squares whose roots are integrable; so that
+the integrals may express the coordinates of an algebraic curve. Now it conveniently happens that the
+square $a^{4}\,du^{2} : (a^{4} - u^{4})$ can be divided into two,
+$(a^{4} - 4aauu + 4u^{4})\,du^{2} : (2a^{4} - 2aauu)$, and $(a^{4} + 4aauu + 4u^{4})\,du^{2} : (2a^{4} + 2aauu)$,
+which joined together make $a^{4}\,du^{2} : (a^{4} - u^{4})$, and whose roots
+$(aa - 2uu)\,du : \sqrt{2a^{4} - 2aauu}$, and $(aa + 2uu)\,du : \sqrt{2a^{4} + 2aauu}$ can be integrated.
+For the integrals of these, that is, the coordinates of the Curve, are $u\sqrt{aa - uu} : a\sqrt{2}$,
+let it be called $y$, and $u\sqrt{aa + uu} : a\sqrt{2}$, let it be called $x$. Now, in order to have an
+equation between the coordinates, by means of these $u\sqrt{aa - uu} : a\sqrt{2} = y$ and
+$u\sqrt{aa + uu} : a\sqrt{2} = x$, let $u$ be eliminated: first by squaring them, $aauu - u^{4} = 2aayy$,
+and $aauu + u^{4} = 2aaxx$, and by adding, $2aauu = 2aayy + 2aaxx$, that is $uu = yy + xx$; whereby it
+is clear that $u$ denotes the subtense of the Curve issuing from the origin $A$. Then, substituting for
+$uu$ its value, in the equation $aauu + u^{4} = 2aaxx$, it is thus reduced to
+$aa(xx + yy) + (xx + yy)^{2} = 2aaxx$, or, transposing, $(xx + yy)^{2} = aaxx - aayy$, or, extracting
+the root, $xx + yy = a\sqrt{xx - yy}$, which is itself the equation of the Lemniscate; whose arc,
+therefore, which the straight line $AE = u$ subtends, is established to be equal to
+$\displaystyle a\int(aa\,du : \sqrt{a^{4}-u^{4}})$, which also expresses the arc $AQ$, or $\varphi RQ$,
+of the Elastic curve. Therefore the Lemniscate could be employed in place of the Elastic curve for the
+construction of the Isochrone, with this sole difference, that the straight line $AE$, which was the
+abscissa of the latter, must be the subtense of the former. See thoroughly No.~CIII, Art.~2. Moreover
+Joh.\ Bernoulli gave, \emph{Act.\ Erud.}~1724, \emph{Aug.\ pag.}~356, a most elegant rule for reducing
+any quadratures whatsoever to the rectifications of algebraic curves.
+
+\origpage{611}
+mechanical curves, this one immediately follows the preceding among the rest; so much so that a
+construction which succeeds by none of the earlier ones is to be attempted next either by the
+rectification of this curve, or of a hyperbolic or an elliptic line, or of two at once. The reason for
+this is that, after the differential formulas $aa\,dz : \sqrt{aa - zz}$, $zz\,dz : \sqrt{aa - zz}$,
+$aa\,dz : \sqrt{aa + zz}$, $zz\,dz : \sqrt{zz - aa}$, which are integrated by means of the quadrature of
+the circle and the hyperbola, the simplest by far seem to be these expressions,
+$zz\,dz : \sqrt{z^{4}-a^{4}}$, $aa\,dz : \sqrt{z^{4}-a^{4}}$, $aa\,dz : \sqrt{a^{4}-z^{4}}$,
+$zz\,dz : \sqrt{a^{4}-z^{4}}$, and the like; of which the first is integrated by means of a hyperbolic
+line, the second and third by the rectification of our lemniscate curve, the fourth by that of the
+same and of an elliptic curve. For indeed if the indeterminate $z$ be applied to an equilateral
+hyperbola [whose transverse axis is $2a$] from its centre, the arc intercepted between the vertex and
+the applied line will satisfy the first formula${}^{(c)}$. And if the same $z$ [or the third
+proportional to $z$ and $a$, where $z$ is greater than $a$] be subtended from the node of the
+lemniscate curve, the subtended arc will serve for the two middle ones${}^{(d)}$. And if, finally,
+from the centre of an ellipse [whose minor axis is $2a$, the major $2a\sqrt{2}$] the same $z$ be cut
+off on the minor axis and through the point of section a straight line be drawn parallel to the major,
+the elliptic portion intercepted between the parallels will designate it, the corresponding portion of
+the lemniscate curve being cut away,
+
+\textbf{(c)}~By the same analysis which we used in the preceding Note, let the square
+$z^{4}\,dz^{2} : (z^{4}-a^{4})$ be decomposed into two others
+$zz\,dz^{2} : (2zz - 2aa) + zz\,dz^{2} : (2zz + 2aa)$, whose roots $z\,dz : \sqrt{2zz - 2aa}$ and
+$z\,dz : \sqrt{2zz + 2aa}$ will be the elements of the coordinates $y$ and $x$, and whose integrals
+$\sqrt{\frac{1}{2}zz - \frac{1}{2}aa}$ and $\sqrt{\frac{1}{2}zz + \frac{1}{2}aa}$ [will be] the
+coordinates $y$, $x$. Therefore, squaring and doubling, $zz - aa = 2yy$, and $zz + aa = 2xx$, and
+adding, $2zz = 2xx + 2yy$, or $zz = xx + yy$; [whence it is clear that $z$ is the subtense of the
+curve;] or subtracting, $2aa = 2xx - 2yy$, or $yy = xx - aa$, which is the equation of an equilateral
+hyperbola. See again No.~CIII, Art.~2.
+
+\textbf{(d)}~It was shown in Note~(b) that the Arc of the Lemniscate, whose parameter is $a$, subtense
+$u$, is equal to $\displaystyle\int(aa\,du : \sqrt{a^{4}-u^{4}})$. Wherefore if $u = z$, the said arc
+will be $= \displaystyle\int(aa\,dz : \sqrt{a^{4}-z^{4}})$. But if $u = aa : z$, the said arc will be
+$= {-}\displaystyle\int(aa\,dz : \sqrt{z^{4}-a^{4}})$.
+
+\origpage{612}
+the integral of the fourth formula $zz\,dz : \sqrt{a^{4}-z^{4}}\,{}^{(e)}$: Whence, since the same
+line, in the cited \emph{Fig.}~3, $AE = z$ being given, denotes the element of the applied line $AP$
+or $EQ$ in the Elastic curve${}^{(f)}$, it is plain that this applied line equals the difference of two
+portions of the elliptic and the lemniscate curves; and therefore it is manifest how the Elastic curve
+can be produced by the rectification of both. And since the portion of the Lemniscate, as I noted
+above, is adequate to the Elastic portion $AQ$, it is clear also that the elliptic curve itself is
+adequate to the aggregate $AQ + AP$; which stands as a not inelegant property of these Curves.
+
+\textbf{(e)}~For $\displaystyle\int(zz\,dz : \sqrt{a^{4}-z^{4}}) = \int((aa + zz)\,dz : \sqrt{a^{4}-z^{4}}) - \int(aa\,dz : \sqrt{a^{4}-z^{4}})$.
+Now this last term $aa\,dz : \sqrt{a^{4}-z^{4}}$ is the arc of the lemniscate, whose subtense $= z$. And
+$\displaystyle\int((aa + zz)\,dz : \sqrt{a^{4}-z^{4}}) = \int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$ [is]
+equal to the arc of the ellipse. For it is known that, if $a$ and $c$ are the semi-axes of the ellipse,
+the abscissa $z$, the arc is $= \displaystyle\int(dz\sqrt{aa - zz + cczz : aa} : \sqrt{aa - zz})$. Let
+therefore $-zz + cczz : aa = zz$, that is $cc = 2aa$, or $c = a\sqrt{2}$, and it is plain that the arc
+of the ellipse, whose axes are $2a$ and $2c = 2a\sqrt{2}$, corresponding to the abscissa $z$ [their
+origin being placed at the centre], is $= \displaystyle\int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$.
+Therefore $\displaystyle\int(zz\,dz : \sqrt{a^{4}-z^{4}}) ={}$ the arc of the ellipse
+[$\displaystyle\int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$] minus the arc of the lemniscate
+[$\displaystyle\int(aa\,dz : \sqrt{a^{4}-z^{4}})$]. See again No.~CIII, Art.~2.
+
+For the rest, the quantity $z^{m}\,dz : \sqrt{a^{4} \pm z^{4}}$ can be integrated, absolutely, whenever
+$m$ is a number taken alternately from the series of odd numbers [positive or negative] $\pm 3$,
+$\pm 7$, $\pm 11$, $\pm 15$, \&c. But it will be integrated, granting the quadrature of the circle or
+the hyperbola, when $m = \pm 1$, or $\pm 5$, or $\pm 9$, \&c.
+
+\textbf{(f)}~No.~LVIII, p.~592, or Note~(a) p.~591.
+
+\end{document}

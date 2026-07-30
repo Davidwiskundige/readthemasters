@@ -8,6 +8,12 @@
       "port": 4321
     },
     {
+      "name": "site-alt",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "./site", "run", "dev", "--", "--port", "4399"],
+      "port": 4399
+    },
+    {
       "name": "site-preview",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "./site", "run", "preview", "--", "--port", "4322"],

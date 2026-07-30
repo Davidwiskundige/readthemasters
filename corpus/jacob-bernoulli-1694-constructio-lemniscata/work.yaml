@@ -1,0 +1,101 @@
+id: jacob-bernoulli-1694-constructio-lemniscata
+title: "Constructio curvae accessus & recessus aequabilis, ope rectificationis curvae cujusdam algebraicae: addenda nuperae solutioni mensis Junii"
+title_en: "Construction of the curve of uniform approach and recession, by means of the rectification of a certain algebraic curve: an addendum to the recent solution of the month of June"
+
+authors:
+  - name: "Jacob Bernoulli"
+    wikidata_id: Q122392
+    birth_year: 1655
+    death_year: 1705
+    mactutor: Bernoulli_Jacob  # https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/
+    portrait:
+      file: portrait.jpg
+      alt: "Painted portrait of Jacob Bernoulli"
+      credit: "Portrait by Niklaus Bernoulli (1662–1716)"
+      source: "https://commons.wikimedia.org/wiki/File:Jakob_Bernoulli.jpg"
+
+publication:
+  year: 1694
+  month: September  # the Acta Eruditorum was issued monthly, cited by month rather than volume number
+  venue: acta-eruditorum
+  pages: "336"  # first page in the Acta; the addendum runs from p. 336
+  title_full: >-
+    "Constructio curvae accessus & recessus aequabilis, ope rectificationis curvae cujusdam
+    algebraicae: addenda nuperae solutioni mensis Junii", Acta Eruditorum, Leipzig (September 1694),
+    p. 336 ff. — the sequel to the June 1694 "Solutio problematis Leibnitiani". Transcribed here from
+    the collected Opera, Tomus I, Geneva 1744, No. LX, pp. 608–612.
+
+edition:
+  year: 1744
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the collected edition Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert,
+    1744), Tomus I, No. LX, pp. 608–612 — an 18th-century edition with no modern critical apparatus,
+    commentary, or re-typesetting. Only Bernoulli's own Latin text and the lettered footnotes printed
+    with it are transcribed. The lettered footnotes (a)–(f) belong to this Opera edition; whether each
+    is Bernoulli's own annotation or the editor's (Gabriel Cramer, 1704–1752) is flagged for a
+    reviewer — both are long out of copyright.
+
+discipline: [mathematics, physics]
+tags: [geometry, analysis, mechanics]
+language: la
+type: paper
+
+significance: >-
+  In this September 1694 sequel (No. LX) to his June solution of Leibniz's paracentric isochrone
+  (No. LIX), Jacob Bernoulli gives a second construction of the curve of uniform approach and
+  recession, this time reducing it to the rectification of an algebraic curve of the fourth degree,
+  $xx + yy = a\sqrt{xx - yy}$. He describes its figure-eight shape — a reclining figure of eight,
+  "a knot of a ribbon" — and names it, for the first time, the lemniscate
+  ("nodum fasciae, sive lemnisci"). He shows that its arc is measured by the very same integral
+  $\displaystyle\int \frac{a^{2}\,du}{\sqrt{a^{4}-u^{4}}}$ that gives the arc of the elastic curve of the June
+  paper, so that either curve serves for the construction, and he classifies which differential
+  formulas reduce to the quadrature of the circle or hyperbola and which to the rectification of the
+  lemniscate or the ellipse. Integrals of this lemniscatic type are the ones Fagnano (1718) and then
+  Euler (1751/1761) turned into the addition theorems at the origin of the theory of elliptic
+  functions, and through Abel, Jacobi and Riemann into the modern theory of elliptic and Abelian
+  functions.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — §2, on the paracentric isochrone, the
+      elastica and lemniscate, and the origins of elliptic-function theory.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+
+source:
+  scan_url: "https://preserver.beic.it/delivery/DeliveryManagerServlet?dps_pid=IE1838110"
+  scan_id: "beic:IE1838110 (Jacobi Bernoulli Opera, Tomus I, Geneva 1744, pp. 608–612)"
+
+sources:
+  death_date: >-
+    Jacob Bernoulli, 1655–1705 (wikidata:Q122392; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/).
+  publication_date: >-
+    First published in the Acta Eruditorum, Leipzig, September 1694, p. 336 (cited in the Opera's own
+    margin note, "Acta Erud. Lips. 1694. Sept. p. 336"), as the sequel to the June 1694 solution
+    (Acta Erud. June 1694, p. 276). The original Acta Eruditorum volume is itself public domain and
+    available for cross-checking.
+  edition: >-
+    Collected edition, Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert, 1744), Tomus I,
+    No. LX, pp. 608–612; scan on the Biblioteca Europea di Informazione e Cultura (BEIC),
+    dps_pid IE1838110.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1705], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1694, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-30"
