@@ -21,7 +21,16 @@ function nextEdSymbol(ctx) {
 // Inline text niceties shared by paragraphs and figure captions. `ctx` threads a per-document
 // ednote counter across calls (see texToHtml) so markers number in order of appearance.
 function inlineText(html, ctx = { ednoteCount: 0 }) {
-  return html
+  // Protect math spans ($...$, \[...\], \(...\)) from the text-level substitutions below: an
+  // author's \&, ~, or --- inside a formula is valid TeX and must reach KaTeX untouched (KaTeX
+  // renders \& as a literal &). The stashes are restored verbatim at the end.
+  const math = [];
+  const stash = (m) => { math.push(m); return `${math.length - 1}`; };
+  html = html
+    .replace(/\\\[[\s\S]*?\\\]/g, stash)
+    .replace(/\\\([\s\S]*?\\\)/g, stash)
+    .replace(/(?<!\\)\$(?:[^$\\]|\\.)*?(?<!\\)\$/g, stash);
+  html = html
     .replace(/\\uncertain\{([^}]*)\}/g, '<span class="uncertain">$1</span>')
     .replace(/\\illegible\b/g, '<span class="uncertain">[illegible]</span>')
     // \ednote{...} — editorial remark, never part of the author's text (readmasters.sty renders
@@ -36,9 +45,19 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     })
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
     .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
+    // \& is the LaTeX-escaped ampersand (needed so the .tex compiles under a real engine). In text
+    // it is just an "&"; escapeHtml has already turned the "&" into the entity, so drop the slash.
+    .replace(/\\&/g, "&")
+    // LaTeX control space "\ " (backslash-space): authors write it after an abbreviation dot
+    // (`v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`) so a real engine sets an inter-word — not
+    // inter-sentence — space. On the web that is just one normal space; drop the backslash. Runs
+    // after \emph/\textbf so a control space inside those braces resolves too. Math is already
+    // stashed, so a "\ " inside $...$ is untouched and still reaches KaTeX.
+    .replace(/\\ /g, " ")
     .replace(/---/g, "—")
     .replace(/``/g, "“").replace(/''/g, "”")
     .replace(/~/g, " ");
+  return html.replace(/(\d+)/g, (_, i) => math[+i]);
 }
 
 const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
@@ -104,11 +123,11 @@ export function texToHtml(tex, opts = {}) {
     const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
     let heading = "";
     if (sec) {
-      heading = `<h2 id="${idPrefix}sec-${++secCount}">${escapeHtml(sec[1])}</h2>`;
+      heading = `<h2 id="${idPrefix}sec-${++secCount}">${inlineText(escapeHtml(sec[1]), ctx)}</h2>`;
       para = sec[2].trim();
       if (!para) { out.push(heading); continue; }
     } else if (sub) {
-      heading = `<h3 id="${idPrefix}sec-${++secCount}">${escapeHtml(sub[1])}</h3>`;
+      heading = `<h3 id="${idPrefix}sec-${++secCount}">${inlineText(escapeHtml(sub[1]), ctx)}</h3>`;
       para = sub[2].trim();
       if (!para) { out.push(heading); continue; }
     }
