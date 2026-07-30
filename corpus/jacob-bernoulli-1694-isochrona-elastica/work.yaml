@@ -1,0 +1,97 @@
+id: jacob-bernoulli-1694-isochrona-elastica
+title: "Solutio problematis Leibnitiani, de curva accessus & recessus aequabilis a puncto dato, mediante rectificatione curvae elasticae"
+title_en: "Solution of Leibniz's problem, on the curve of uniform approach to and recession from a given point, by means of the rectification of the elastic curve"
+
+authors:
+  - name: "Jacob Bernoulli"
+    wikidata_id: Q122392
+    birth_year: 1655
+    death_year: 1705
+    mactutor: Bernoulli_Jacob  # https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/
+    portrait:
+      file: portrait.jpg
+      alt: "Painted portrait of Jacob Bernoulli"
+      credit: "Portrait by Niklaus Bernoulli (1662–1716)"
+      source: "https://commons.wikimedia.org/wiki/File:Jakob_Bernoulli.jpg"
+
+publication:
+  year: 1694
+  month: June  # the Acta Eruditorum was issued monthly, cited by month rather than volume number
+  venue: acta-eruditorum
+  pages: "276"  # first page in the Acta; the paper runs from p. 276
+  title_full: >-
+    "Solutio problematis Leibnitiani, de curva accessus & recessus aequabilis a puncto dato,
+    mediante rectificatione curvae elasticae", Acta Eruditorum, Leipzig (June 1694), p. 276 ff.
+    Transcribed here from the collected Opera, Tomus I, Geneva 1744, No. LIX, pp. 601–607.
+
+edition:
+  year: 1744
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the collected edition Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert,
+    1744), Tomus I, No. LIX, pp. 601–607 — an 18th-century edition with no modern critical
+    apparatus, commentary, or re-typesetting. Only Bernoulli's own Latin text and the lettered
+    footnotes printed with it are transcribed. The lettered footnotes (a)–(m) belong to this
+    Opera edition; whether each is Bernoulli's own annotation or the editor's (Gabriel Cramer,
+    1704–1752) is flagged for a reviewer — both are long out of copyright.
+
+discipline: [mathematics, physics]
+tags: [geometry, analysis, mechanics]
+language: la
+type: paper
+
+significance: >-
+  Leibniz had closed his 1689 isochrone paper by posing a harder problem: to find the paracentric
+  isochrone, a curve of descent along which a heavy body approaches (or recedes from) a fixed point
+  at a uniform rate. Here Jacob Bernoulli gives the first complete solution and construction —
+  something, he notes, neither Leibniz nor anyone else had managed — reducing the problem first to a
+  first-order differential equation and then, in its most celebrated step, to the rectification of
+  the elastic curve (the elastica), whose arc length he expresses by an integral of the form
+  $\displaystyle\int \frac{a^{2}\,du}{\sqrt{a^{4}-u^{4}}}$. In a sequel three months later he reduced the same
+  construction to the rectification of a new algebraic curve he named the lemniscate. Integrals of
+  this lemniscatic type are the ones Fagnano (1718) and then Euler (1751/1761) turned into the
+  addition theorems at the origin of the theory of elliptic functions, and through Abel, Jacobi and
+  Riemann into the modern theory of elliptic and Abelian functions.[1]
+
+significance_sources:
+  - citation: >-
+      D. van der Lugt, "The History of the Riemann–Roch and Hirzebruch–Riemann–Roch Theorem",
+      MSc thesis, Radboud University Nijmegen (2025) — §2, on the paracentric isochrone, the
+      elastica and lemniscate, and the origins of elliptic-function theory.
+    url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
+
+source:
+  scan_url: "https://preserver.beic.it/delivery/DeliveryManagerServlet?dps_pid=IE1838110"
+  scan_id: "beic:IE1838110 (Jacobi Bernoulli Opera, Tomus I, Geneva 1744, pp. 601–607)"
+
+sources:
+  death_date: >-
+    Jacob Bernoulli, 1655–1705 (wikidata:Q122392; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/).
+  publication_date: >-
+    First published in the Acta Eruditorum, Leipzig, June 1694, p. 276 (cited in the Opera's own
+    margin note, "Acta Erud. Lips. 1694, Jun. p. 276"). The original Acta Eruditorum volume is
+    itself public domain and available for cross-checking.
+  edition: >-
+    Collected edition, Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert, 1744), Tomus I,
+    No. LIX, pp. 601–607; scan on the Biblioteca Europea di Informazione e Cultura (BEIC),
+    dps_pid IE1838110.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1705], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1694, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-07-28"

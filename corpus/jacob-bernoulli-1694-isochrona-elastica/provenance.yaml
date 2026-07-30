@@ -1,0 +1,40 @@
+changelog:
+  - date: "2026-07-29"
+    summary: Transcription added (AI draft), pp. 601–607 (No. LIX) from the 1744 Opera scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-07-29"
+  verification:
+    flagged_pages: [601, 602, 606]
+    date: "2026-07-29"
+  note: >-
+    Full Latin text of No. LIX, printed pages 601–607 of the collected Opera (Geneva 1744, Tomus I).
+    Each page was rendered upright at 300 dpi and every displayed and inline formula, together with
+    the two-column analytic footnotes (a)–(m), was checked by zooming into the scan (the AI's own
+    verification pass, not a full human review). Author notation is kept faithfully (HOUSESTYLE R3):
+    doubled letters for squares (aa, zz, xx, yy, tt, uu), the ":" division/ratio sign, "&c." and the
+    "&" ampersand; typography (long-s, ligatures, small caps, the superscript-"o" of "No.") is
+    normalized. Points labelled with Greek letters are set in math mode (R1).
+    Items flagged for the reviewer:
+    (a) The central differential equation is printed in THREE variant forms, all kept as printed
+    (a faithful discrepancy, R4): p.~601 $(x\,dx+y\,dy)\sqrt{y}=(x\,dy-y\,dx)\sqrt{a}$; note (b)
+    $(x\,dx+y\,dy)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$; observation 8, p.~606,
+    $(x\,dy+y\,dx)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$ — the last left-hand side reads as a misprint for
+    $(x\,dx+y\,dy)$.
+    (b) p.~606, note (i): one proportion (the "componendo" step) is partly illegible in the scan;
+    the reconstructed token "Ai\ [a] :" is wrapped in \uncertain{} for the reviewer.
+    (c) The lettered footnotes (a)–(m) belong to this 1744 Opera edition; whether each is
+    Bernoulli's own annotation or the editor's (Gabriel Cramer) is not yet confirmed. They are
+    placed inline as complete units at the end of each page's main text (near the reference), a
+    presentation choice for web reading analogous to R8 for figures — recorded as HOUSESTYLE R15.
+    The "&" ampersand is kept as printed and rendered by the site per HOUSESTYLE R14.
+    (d) Fig. 3 (referenced on p.~603) is on plate Tab. XXIV of the Opera (facing p.~618), which is
+    NOT part of the pp. 601–607 text scan; figures/fig-3.png is cropped from a separate scan of that
+    plate. The plate carries the three figures for No. LVIII/LIX/LX together ("No. 58. 59. & 60."),
+    so a sliver of the neighbouring Fig. 1 / Fig. 2 is unavoidably included at the bottom edge; the
+    whole of Fig. 3 is captured.
