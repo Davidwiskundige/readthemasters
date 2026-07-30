@@ -38,7 +38,8 @@ arguments may be omitted; ask for whatever is missing. `<lang>` is a language co
 
 Read these so your output matches the house style and translation rules exactly:
 
-- `prompts/translate-chat.md` — the canonical translation rules and current `prompt_version`.
+- `prompts/translate-chat.md` (at the repository root, like every path in this skill) — the
+  canonical translation rules and current `prompt_version`.
 - `corpus/HOUSESTYLE.md` — the notation-vs-presentation principle and the rulings log.
 - `corpus/preamble/readmasters.sty` — the macros (`\origpage`, `\uncertain`, `\ednote`, `\rmfigure`).
 - An existing translation as a shape reference, e.g. `corpus/leibniz-1689-isochrona/translations/en.tex`.

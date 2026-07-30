@@ -39,7 +39,8 @@ Both arguments may be omitted; ask for whatever is missing.
 
 Read these so your output matches the house style exactly:
 
-- `prompts/transcribe-chat.md` — the canonical transcription rules and current `prompt_version`.
+- `prompts/transcribe-chat.md` (at the repository root, like every path in this skill) — the
+  canonical transcription rules and current `prompt_version`.
 - `corpus/HOUSESTYLE.md` — the notation-vs-presentation principle and the rulings log (R1–R10).
 - `corpus/preamble/readmasters.sty` — the macros available (`\origpage`, `\uncertain`,
   `\illegible`, `\ednote`, `\rmfigure`).
