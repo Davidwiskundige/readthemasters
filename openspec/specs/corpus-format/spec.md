@@ -92,14 +92,19 @@ The house style distinguishes faithful **notation** (which symbols/formula, the 
 kept exactly) from house-style **presentation** (how the same math is set — made consistent).
 Math-typography conventions and the **rulings log** of boundary decisions live in
 `corpus/HOUSESTYLE.md`. Current conventions include: multi-letter geometric labels stay plain
-math letters (no `\pt`/`\mathit`); inline large operators with a fraction integrand use
-`\displaystyle` (not `\int \dfrac`); equation numbers go on the right via `\tag{n}` with the
-author's own numbers; author notation and printer's errors are kept faithfully (`zz` for z²,
-archaic spelling, `arc.`) and flagged for review, never silently corrected.
+math letters (no `\pt`/`\mathit`); any inline large operator (∫, ∑, ∏) uses `\displaystyle`
+whatever its operand looks like — including the author's own `:`/`/` division sign, which stays
+faithful; equation numbers go on the right via `\tag{n}` with the author's own numbers; author
+notation and printer's errors are kept faithfully (`zz` for z², archaic spelling, `arc.`) and
+flagged for review, never silently corrected.
 
 Presentation conventions that are unambiguous from the source text are **mechanically enforced** by
 `pipeline/houselint.py`, which `pipeline/validate.py` runs as part of the gate — so a regression
-fails CI and cannot merge. It currently enforces ruling R2 (an inline integral over a fraction must
-be `\displaystyle\int \frac{...}{...}`, not `\int \dfrac{...}{...}`), over both the transcription and
-every translation; the linter is a rule registry so further machine-checkable rulings extend it.
-Judgement-based rulings (faithful vs. normalized notation, translation wording) are never linted.
+fails CI and cannot merge. It enforces rulings R2/R16 (an inline large operator `\int`/`\sum`/`\prod`
+must carry `\displaystyle`, and use `\frac` not `\dfrac` under it) over the transcription, every
+translation, **and the `significance` note in `work.yaml`** (which renders inline math through KaTeX
+like the `.tex` panels). The linter is a rule registry so further machine-checkable rulings extend
+it. Judgement-based rulings (faithful vs. normalized notation, translation wording) are never linted.
+Separately, the reader's LaTeX→HTML transform (`site/src/lib/tex.js`) resolves text niceties —
+em-dashes, `~`, `\&`, and LaTeX control spaces `\ ` (ruling R17) — and is covered by
+`site/src/lib/tex.test.mjs` (`npm test`, run in CI).

@@ -278,12 +278,14 @@ def check_translation_math(work_dir: Path, issues: Issues) -> None:
                          + texcompare.format_report(report))
 
 
-def check_house_style(work_dir: Path, issues: Issues) -> None:
+def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
 
-    Runs the stdlib-only linter over the transcription and every translation so a house-style
-    regression (currently R2 — inline integrals over a fraction must use `\\displaystyle\\int
-    \\frac{}{}`) cannot be merged. Judgement calls are never linted here; see houselint.py.
+    Runs the stdlib-only linter over the transcription, every translation, and the `significance`
+    note in work.yaml so a house-style regression (currently R2/R16 — an inline large operator must
+    use `\\displaystyle`) cannot be merged. The `significance` field carries inline math that the
+    site renders through KaTeX just like the `.tex` panels, so it needs the same gate. Judgement
+    calls are never linted here; see houselint.py.
     """
     texs = []
     original = work_dir / "original.tex"
@@ -298,6 +300,13 @@ def check_house_style(work_dir: Path, issues: Issues) -> None:
             rel = tpath.relative_to(work_dir.parent).as_posix()
             issues.error(rel, "house-style violations (corpus/HOUSESTYLE.md):\n"
                          + houselint.format_violations(violations))
+
+    significance = work.get("significance")
+    if isinstance(significance, str):
+        violations = houselint.lint(significance)
+        if violations:
+            issues.error(f"{work_dir.name}/work.yaml", "house-style violations in significance "
+                         "(corpus/HOUSESTYLE.md):\n" + houselint.format_violations(violations))
 
 
 def rule_verdicts(assessment: dict) -> dict:
@@ -326,7 +335,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_schema_and_vocab(work, vocab, work_id, issues)
     check_provenance(provenance, work_id, issues)
     check_translation_math(work_dir, issues)
-    check_house_style(work_dir, issues)
+    check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
 

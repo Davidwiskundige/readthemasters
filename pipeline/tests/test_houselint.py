@@ -38,12 +38,31 @@ def test_display_math_is_never_flagged():
     assert houselint.lint(r"\[ m\int \frac{dx}{\sqrt{1-x^{4}}} = n\int \dfrac{dy}{y} \]") == []
 
 
-def test_inline_int_without_fraction_is_out_of_scope():
-    assert houselint.lint(r"$\int dx\,\sqrt{1+x^{4}}$") == []
+def test_flags_inline_int_without_fraction():
+    # R16: an inline integral is flagged even when its operand is not a \frac — a small ∫ next to a
+    # radicand reads just as badly. \displaystyle fixes it.
+    vios = houselint.lint(r"$\int dx\,\sqrt{1+x^{4}}$")
+    assert len(vios) == 1 and "displaystyle" in vios[0]["problem"]
+    assert houselint.lint(r"$\displaystyle\int dx\,\sqrt{1+x^{4}}$") == []
 
 
-def test_inline_dfrac_without_integral_is_allowed():
+def test_flags_inline_int_with_colon_or_slash_division():
+    # Bernoulli sets integrals with his own ":" / "/" division sign, no \frac at all.
+    assert houselint.lint(r"$2\sqrt{t} = \int(a\,dz : \sqrt{aaz - z^{3}})$")[0]["rule"] == "R2"
+    assert houselint.lint(r"$\int a^{2}\,du/\sqrt{a^{4}-u^{4}}$")[0]["rule"] == "R2"
+    # …and \displaystyle clears both, leaving the faithful division sign untouched.
+    assert houselint.lint(r"$\displaystyle 2\sqrt{t} = \int(a\,dz : \sqrt{aaz - z^{3}})$") == []
+
+
+def test_inline_dfrac_without_operator_is_allowed():
+    # Standalone inline \dfrac (no large operator) is an accepted form and stays unflagged.
     assert houselint.lint(r"$y = \dfrac{1-yy}{1+yy}$") == []
+    assert houselint.lint(r"$\frac{4}{9}$") == []
+
+
+def test_flags_inline_sum_without_displaystyle():
+    assert houselint.lint(r"$s = \sum a_n$")[0]["rule"] == "R2"
+    assert houselint.lint(r"$s = \displaystyle\sum a_n$") == []
 
 
 def test_comments_are_ignored():
@@ -71,3 +90,20 @@ def test_corpus_is_house_style_clean():
         assert not vios, f"{tex} has house-style violations:\n{houselint.format_violations(vios)}"
         checked += 1
     assert checked > 0, "expected at least one corpus .tex to lint"
+
+
+def test_corpus_significance_is_house_style_clean():
+    # The significance note carries inline math rendered by KaTeX like the .tex panels, so it is
+    # linted too (see validate.check_house_style). Guards the fix in the Bernoulli work.
+    import yaml  # available in the pipeline env (validate.py uses it)
+
+    corpus = REPO / "corpus"
+    checked = 0
+    for wy in sorted(corpus.glob("*/work.yaml")):
+        sig = (yaml.safe_load(wy.read_text(encoding="utf-8")) or {}).get("significance")
+        if not isinstance(sig, str):
+            continue
+        vios = houselint.lint(sig)
+        assert not vios, f"{wy} significance has violations:\n{houselint.format_violations(vios)}"
+        checked += 1
+    assert checked > 0, "expected at least one work.yaml with a significance note"

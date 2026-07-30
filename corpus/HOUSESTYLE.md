@@ -25,17 +25,21 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 - **Multi-letter geometric labels** (points, segments, arcs, curves — e.g. `CQ`, `ADFNA`, `DIF`)
   are written as **plain math-mode letters**: `$CQ$`, `$ADFNA$`. Do **not** wrap them in
   `\pt`/`\mathit`/`\textit`. (See ruling R1.)
-- **Inline large operators** (∫, ∑, ∏) whose operand is a fraction use `\displaystyle` so the
-  operator and the fraction are balanced: `$\displaystyle\int \frac{a^{2}\,dz}{\sqrt{a^{4}-z^{4}}}$`.
-  Use `\frac`, not `\dfrac` (redundant under `\displaystyle`). (See ruling R2.)
+- **Inline large operators** (∫, ∑, ∏) use `\displaystyle` so the operator matches the height of
+  its operand instead of shrinking to a small inline glyph:
+  `$\displaystyle\int \frac{a^{2}\,dz}{\sqrt{a^{4}-z^{4}}}$`. This holds **however the operand is
+  written** — including the author's own `:`/`/` division sign, which stays faithful and is *not*
+  rewritten to `\frac`. Under the operator use `\frac`, not `\dfrac` (redundant there). A standalone
+  inline `\dfrac` with no operator is fine. (See rulings R2, R16.)
 - **Standalone formulas** go in display math `\[ ... \]` (already display style — no `\displaystyle`
   needed there).
 - **Equation numbers** go on the **right**, via `\tag{n}` inside the display: `\[ ... \tag{1} \]`.
   Use the author's own numbers with `\tag` (not LaTeX auto-numbering), so the numbering matches the
   source and its in-text references. (See ruling R5.)
 - **Exponents** use braces: `x^{2}`. **Differentials** get a thin space: `\,dz`.
-- Text: `---` for an em-dash, `~` for a non-breaking space; `\section*{}` / `\subsection*{}` for
-  headings actually present in the source.
+- Text: `---` for an em-dash, `~` for a non-breaking space, and a LaTeX control space `\ ` after an
+  abbreviation dot (`v.\ g.`, `Apr.\ pag.`) — all resolve to normal spaces on the web; `\section*{}`
+  / `\subsection*{}` for headings actually present in the source. (See ruling R17.)
 - **Translator/editorial interpolations** in a translation use **square brackets** `[...]`,
   never parentheses — parentheses are reserved for the author's own asides, so bracketing keeps
   our voice visibly distinct from theirs: `potentia [later called vis viva]`. (See ruling R9.)
@@ -43,6 +47,53 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 ## Rulings log
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
+
+### R17 — LaTeX control spaces (`\ `) after abbreviations render as a normal space on the web
+### (presentation)
+*2026-07-30.* Faithful transcriptions keep the source's abbreviation spacing by writing a LaTeX
+control space after the dot — `v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`, `Num.\ sequentem`,
+`Tr.\ ` — so a real TeX engine sets an inter-word (not inter-sentence) space and the `.tex` stays
+correct for the PDF. The reader's LaTeX→HTML transform (`site/src/lib/tex.js`) previously left the
+`\ ` untouched, so a literal backslash leaked into the running text. It now maps a **text** `\ ` to
+a single space (math spans are masked first, so a `\ ` inside `$...$` still reaches KaTeX). Covered
+by `site/src/lib/tex.test.mjs` (`npm test`, run in CI) so the transform can't regress. Surfaced and
+fixed in `jacob-bernoulli-1694-isochrona-elastica`.
+
+### R16 — *Every* inline large operator uses `\displaystyle`, and the check now covers the
+### `significance` note too (presentation, extends R2)
+*2026-07-30.* R2 balanced an inline `\int` only against a `\frac` integrand, but Jacob Bernoulli
+sets his integrals with the author's own `:`/`/` division sign (`$\int(a\,dz : \sqrt{...})$`), and
+one such integral sat in the work's `significance` note — both rendered as a tiny inline ∫ that R2's
+fraction-gated rule never caught. The rule is therefore widened: **any inline large operator
+(`\int`, `\sum`, `\prod`) must carry `\displaystyle`**, whatever its operand looks like, and the
+author's division sign is left faithful (not rewritten to `\frac`). **Machine-enforced:**
+`pipeline/houselint.py` now flags any inline large operator lacking `\displaystyle`, and
+`validate.py` runs the linter over the `significance` field of `work.yaml` as well as every `.tex`.
+A standalone inline `\dfrac` with no operator is still fine — Leibniz's `$\frac{4}{9}$` and Euler's
+`$\dfrac{m\,dx}{\sqrt{1-x^4}}$` are unaffected. Applied in
+`jacob-bernoulli-1694-isochrona-elastica`.
+
+### R15 — The Opera edition's lettered footnotes are placed inline as complete units at the end
+### of each page (presentation)
+*2026-07-29.* Jacob Bernoulli's *Solutio Problematis Leibnitiani*
+(`jacob-bernoulli-1694-isochrona-elastica`) carries long two-column analytic footnotes (a)–(m) at
+the foot of each printed page. On the web there is no foot-of-page, so each note is placed inline as
+a **complete unit at the end of its page's main text**, led by a bold letter (`\textbf{(b)}`), while
+the in-text reference stays a superscript `${}^{(b)}$`. A note that physically runs onto the next
+printed page in the source is given whole at the page where it begins. This mirrors R8 (relocating
+apparatus for web reading while `\origpage` preserves provenance). Whether the notes are the
+author's own or the 1744 editor's (Gabriel Cramer) is a separate content question, flagged per work.
+
+### R14 — The et-ligature "&" is kept, not expanded, and rendered by the site (notation, with
+### presentation support)
+*2026-07-29.* Early-modern printing sets "and" as the ampersand "&" (an *et*-ligature), and "&c."
+for "et cetera". These are kept exactly as printed (faithful — R3), written in the `.tex` as the
+LaTeX-escaped `\&` so the file still compiles under a real engine. The reader's LaTeX→HTML transform
+(`site/src/lib/tex.js`) was extended to render a **text** `\&` as `&`, and to run
+`\section*`/`\subsection*` headings through the same text pipeline (so `~` and `\&` also resolve in
+headings); a `\&` **inside math** is left untouched, since KaTeX already renders it (the transform
+masks math spans before applying text substitutions). First applied in
+`jacob-bernoulli-1694-isochrona-elastica`, the first corpus work with a text ampersand.
 
 ### R13 — Fraktur letters used as *mathematical variables* are preserved with `\mathfrak`, not
 ### normalized to roman (notation/content, not typography)

@@ -10,9 +10,13 @@ Scope note: this only enforces rules that are unambiguous from the source text. 
 (faithful vs. modernized notation, translation wording) are never linted here.
 
 Rules currently enforced:
-  * R2 — an *inline* integral whose integrand is a fraction must be set with `\\displaystyle`, and
-    use `\\frac` (not the redundant `\\dfrac`): `$\\displaystyle\\int \\frac{...}{...}$`. Display math
-    (`\\[ ... \\]`, environments) is already display style and is never flagged.
+  * R2 (extended by R16) — any *inline* large operator (`\\int`, `\\sum`, `\\prod`) must be set with
+    `\\displaystyle`, so the operator matches the height of its operand instead of shrinking to a
+    small inline glyph. This holds however the operand is written — a `\\frac`, or the author's own
+    `:`/`/` division sign (`$\\displaystyle\\int(a\\,dz : \\sqrt{...})$`). Under such an operator use
+    `\\frac`, not the redundant `\\dfrac`. A standalone inline `\\dfrac` with no operator is fine and
+    is never flagged. Display math (`\\[ ... \\]`, environments) is already display style and is
+    never flagged.
 
 Pure text processing, stdlib only — so it runs in the free CI gate as well as in the pipelines.
 """
@@ -57,19 +61,23 @@ def inline_spans(latex: str):
 
 
 # --- rules ------------------------------------------------------------------ #
-def _r2_problems(span: str) -> list[str]:
-    r"""R2: inline ``\int`` over a fraction → ``\displaystyle`` + ``\frac``.
+# Inline large operators that render as a tiny glyph in text style and so must be set display style.
+_BIG_OPS = (r"\int", r"\sum", r"\prod")
 
-    Only inline integrals whose integrand is a fraction are in scope (that is exactly what R2
-    addresses, and the form that renders badly). A lone ``$\int dx\,\sqrt{...}$`` is left alone.
+
+def _r2_problems(span: str) -> list[str]:
+    r"""R2 + R16: an inline large operator (``\int``/``\sum``/``\prod``) → ``\displaystyle``.
+
+    Any inline span containing a large operator is in scope, regardless of how its operand is
+    written — a ``\frac`` or the author's own ``:``/``/`` division sign both render the operator too
+    small when left in text style. (A span with *no* large operator — e.g. a lone ``$y=\dfrac{..}{..}$``
+    — is left alone; standalone ``\dfrac`` is an accepted inline form.)
     """
-    if r"\int" not in span:
+    if not any(op in span for op in _BIG_OPS):
         return []
-    if r"\frac" not in span and r"\dfrac" not in span:
-        return []  # no fraction integrand — outside R2's scope
     problems: list[str] = []
     if r"\displaystyle" not in span:
-        problems.append(r"wrap the inline integral in \displaystyle")
+        problems.append(r"wrap the inline large operator (\int/\sum/\prod) in \displaystyle")
     if r"\dfrac" in span:
         problems.append(r"use \frac, not \dfrac, under \displaystyle")
     return problems
@@ -78,7 +86,7 @@ def _r2_problems(span: str) -> list[str]:
 # Registry: (rule id, human name, predicate span -> list[str] of problems). Add future
 # machine-checkable rulings here beside R2.
 _RULES = [
-    ("R2", "inline integral over a fraction uses \\displaystyle\\int \\frac{}{}", _r2_problems),
+    ("R2", "inline large operator uses \\displaystyle (\\int/\\sum/\\prod)", _r2_problems),
 ]
 
 
