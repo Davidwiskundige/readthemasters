@@ -3,6 +3,8 @@ changelog:
     summary: Transcription added (AI draft), pp. 601–607 (No. LIX) from the 1744 Opera scan.
   - date: "2026-07-30"
     summary: Translation (en) added (AI draft).
+  - date: "2026-07-30"
+    summary: 'Note (i) reading "Ai [a] :" confirmed by reviewer; \uncertain{} removed in both files.'
 
 transcription:
   status: ai-draft
@@ -28,8 +30,9 @@ transcription:
     $(x\,dx+y\,dy)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$; observation 8, p.~606,
     $(x\,dy+y\,dx)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$ — the last left-hand side reads as a misprint for
     $(x\,dx+y\,dy)$.
-    (b) p.~606, note (i): one proportion (the "componendo" step) is partly illegible in the scan;
-    the reconstructed token "Ai\ [a] :" is wrapped in \uncertain{} for the reviewer.
+    (b) p.~606, note (i): one proportion (the "componendo" step) was partly illegible in the scan;
+    the reconstructed token "Ai\ [a] :" has since been confirmed correct by a reviewer, so the
+    \uncertain{} wrapper was removed (identically in original.tex and the translation, 2026-07-30).
     (c) The lettered footnotes (a)–(m) belong to this 1744 Opera edition; whether each is
     Bernoulli's own annotation or the editor's (Gabriel Cramer) is not yet confirmed. They are
     placed inline as complete units at the end of each page's main text (near the reference), a
@@ -57,8 +60,8 @@ translations:
       ratio annotations sit inside \text{...} (e.g. "ex nat. Circuli.", "per constr. & princ. Calc.
       inf. parvor."); because the preservation check treats the whole block as one invariant token,
       those Latin abbreviations are kept verbatim inside it and cannot be translated. (2) The
-      uncertain reading \uncertain{Ai\ [a] :} in note (i) sits inside a math span and is preserved
-      as-is. (3) The three variant forms of the central differential equation (p.~601, note (b),
+      formerly uncertain reading "Ai\ [a] :" in note (i) has been confirmed correct by a reviewer
+      and its \uncertain{} wrapper removed (identically in original.tex). (3) The three variant forms of the central differential equation (p.~601, note (b),
       obs.~8) are preserved as printed. (4) Markup-only fix applied identically to original.tex and
       the translation: at the five sites where a "$...$" span directly abutted a "${}^{(x)}$"
       footnote marker (f, i, k, l, m), the two were merged as "$...\,{}^{(x)}$" (one span, thin
