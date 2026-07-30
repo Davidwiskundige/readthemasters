@@ -1,6 +1,8 @@
 changelog:
   - date: "2026-07-29"
     summary: Transcription added (AI draft), pp. 601–607 (No. LIX) from the 1744 Opera scan.
+  - date: "2026-07-30"
+    summary: Translation (en) added (AI draft).
 
 transcription:
   status: ai-draft
@@ -38,3 +40,27 @@ transcription:
     plate. The plate carries the three figures for No. LVIII/LIX/LX together ("No. 58. 59. & 60."),
     so a sliver of the neighbouring Fig. 1 / Fig. 2 is unavoidably included at the bottom edge; the
     whole of Fig. 3 is captured.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # translated from our own original.tex (PLAN §2.2), not any published translation
+    produced: "2026-07-30"
+    note: >-
+      English translation of No. LIX (pp. 601–607), made from original.tex. Every math expression,
+      \origpage marker and the \rmfigure image path are preserved unchanged; only prose is
+      translated. Reviewer notes: (1) The five-ratio table on p.~604 is one display-math block whose
+      ratio annotations sit inside \text{...} (e.g. "ex nat. Circuli.", "per constr. & princ. Calc.
+      inf. parvor."); because the preservation check treats the whole block as one invariant token,
+      those Latin abbreviations are kept verbatim inside it and cannot be translated. (2) The
+      uncertain reading \uncertain{Ai\ [a] :} in note (i) sits inside a math span and is preserved
+      as-is. (3) The three variant forms of the central differential equation (p.~601, note (b),
+      obs.~8) are preserved as printed. (4) Markup-only fix applied identically to original.tex and
+      the translation: at the five sites where a "$...$" span directly abutted a "${}^{(x)}$"
+      footnote marker (f, i, k, l, m), the two were merged as "$...\,{}^{(x)}$" (one span, thin
+      space) to remove a literal "$$" that texcompare.py mis-parsed as display math; neither the
+      mathematics nor the web rendering changes.
