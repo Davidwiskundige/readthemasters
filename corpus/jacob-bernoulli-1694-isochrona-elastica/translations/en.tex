@@ -1,0 +1,273 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, \origpage marker and the \rmfigure image path are preserved
+% unchanged; only the prose is translated. Notes for the reviewer:
+%  * The five-ratio table on p. 604 is a single display-math block whose ratio annotations are set
+%    inside \text{...} (e.g. "ex nat. Circuli.", "per constr. & princ. Calc. inf. parvor."). Because
+%    the math-preservation check (pipeline/texcompare.py) treats the whole display block as one
+%    invariant token, those Latin abbreviations are kept VERBATIM inside the block — they cannot be
+%    translated without registering as an altered formula. Their sense: "from the nature of the
+%    Circle", "by construction & the principles of the calculus of infinitely small quantities",
+%    "from the nature of the curve AQ, as gathered from Cor. 2 of Constr. III preceding".
+%  * The uncertain reading in note (i), $\uncertain{Ai\ [a] :}$, sits inside a math span and is
+%    likewise preserved as-is.
+%  * The central differential equation appears in three variant forms in the source (p. 601,
+%    note (b), obs. 8), all preserved as printed — a faithful discrepancy, not translated away.
+%  * Period abbreviations in the prose are rendered in English (scil. = namely, v. g. = for example,
+%    per constr. = by construction, No. praec. = the preceding No.); the author's "&c." is given as
+%    "etc.". The lettered notes (a)-(m) keep their inline placement at the foot of each page (R15).
+%  * Markup-only fix applied identically to original.tex and this file: at the five sites where a
+%    "$...$" span directly abutted a "${}^{(x)}$" footnote marker (f, i, k, l, m), the two spans were
+%    merged as "$...\,{}^{(x)}$" — one span with a thin space. This changes neither the mathematics
+%    nor the web rendering (the site treats each "$...$" as inline; only "\[...\]" is display), but
+%    it removes a literal "$$" that pipeline/texcompare.py would otherwise mis-parse as display math.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{601}
+\section*{No.~LIX. Jacob Bernoulli's Solution of Leibniz's Problem}
+\subsection*{On the Curve of uniform Approach to and Recession from a given point, by means of the rectification of the Elastic Curve}
+
+The felicity of the preceding discovery may be commended by the solution of that most elegant
+\emph{Leibnizian} Problem, of finding the \emph{line} along which a descending heavy body recedes
+uniformly, in equal times, from a given point, or approaches it${}^{(a)}$: which so pleased its most
+praised Author that he not only several times challenged Friends and Adversaries alike, in the
+\emph{Acta}, to attempt it [See the \emph{Yr.}~1689, \emph{Apr.\ p.}~198, and 1690, \emph{May p.}~229,
+and \emph{Jul.\ p.}~360,] but himself also toiled strenuously at it, as witnessed by several
+properties of the Curve which he had had inserted in the \emph{French Journal}, as I have from the
+report of my \emph{Brother}, who nevertheless could not name them to me. My \emph{Brother} himself,
+too, was much occupied with the same thing while he was staying at \emph{Paris}, but with all his
+inverse Method of Tangents he accomplished nothing else than to reduce the Problem to this
+differential equation, $(x\,dx + y\,dy)\sqrt{y} = (x\,dy - y\,dx)\sqrt{a}$, to which, however,
+
+\textbf{(a)}~Leibniz called this the Paracentric Isochrone.
+
+\origpage{602}
+one arrives even with no labour${}^{(b)}$. But its full solution, or construction, neither he nor
+anyone else was able to give. Recently, while I was preparing the preceding essay for
+\emph{Leipzig}, and had already committed to paper part of the discovery together with the figures
+themselves, I undertook the scrutiny of this Line, on the occasion of the new Theorems which I gave
+there for the radii of the osculating circles in Spirals [whose investigation, however, was itself
+made only incidentally; for the chief points of the discovery were only coming to birth under my
+pen,] and soon, after a few attempts, I attained the wished-for end${}^{(c)}$, whereupon this most
+singular thing befell me, that, the analysis being
+
+\textbf{(b)}~Let $A\theta\omega\alpha$ be the required curve, and let $A\gamma = x$, $\gamma\alpha = y$,
+and therefore $A\alpha = \sqrt{x^{2}+y^{2}}$, and its differential
+$\alpha\beta = (x\,dx + y\,dy) : \sqrt{x^{2}+y^{2}}$, which is the momentary recession of the body
+from the point $A$, while, namely, it describes the little space
+$\delta\alpha = \sqrt{dx^{2}+dy^{2}}$, just as, in traversing $A\omega$ the little beginning of the
+curve, it recedes from $A$ by the length $A\omega$ itself. Let those recessions $\alpha\beta$,
+$A\omega$ be equal, and therefore, by the condition of the curve, the times in which $A\omega$,
+$\delta\alpha$ are traversed are equal; consequently these little spaces $A\omega$, or
+$\alpha\beta\ [(x\,dx + y\,dy) : \sqrt{x^{2}+y^{2}}]$, and $\alpha\delta\ [\sqrt{dx^{2}+dy^{2}}]$ are
+proportional to the velocities of the body at $A$ and $\alpha$. But these velocities, by the law of
+descent of heavy bodies, are as the roots of the heights from which the heavy body descended, that
+is, as the roots of the heights $iA\ [a]$, from which the heavy body descended at $A$, and
+$iA + \alpha\gamma$, $[a+y]$ from which the heavy body descended at $\alpha$; we have therefore this
+equation $(a+y)(x\,dx + y\,dy)^{2} : (xx+yy) = a(dx^{2}+dy^{2})$, or
+$ax^{2}\,dx^{2} + 2ayx\,dy\,dx + ayy\,dy^{2} + yxx\,dx^{2} + 2yyx\,dy\,dx + y^{3}\,dy^{2} =
+axx\,dx^{2} + axx\,dy^{2} + ayy\,dx^{2} + ayy\,dy^{2}$, which, the equal terms being removed from
+both sides, the term $2ayx\,dy\,dx$ being transposed, and the square root being extracted, is
+reduced to this $(x\,dx + y\,dy)\sqrt{y} = (y\,dx - x\,dy)\sqrt{a}$; which, however, on account of
+the mixing together of the indeterminates, can scarcely be constructed.
+
+\textbf{(c)}~Let therefore more convenient indeterminates be chosen, by which, once found, the points
+of the curve may nevertheless be determined. Let, for example, $A\alpha = t$, $\varepsilon\zeta = z$,
+and it will be $\alpha\gamma = tz : a$, because $A\varepsilon : A\alpha = \varepsilon\zeta : \alpha\gamma$,
+and also $\alpha\beta = dt$, and $\beta\delta = t\,dz : \sqrt{aa-zz}$, since
+$A\zeta\ [\sqrt{aa-zz}] : A\varepsilon\ [a] = \varepsilon\varkappa\ [dz] :
+\varepsilon\lambda\ [a\,dz : \sqrt{aa-zz}]$, and
+$A\varepsilon\ [a] : \varepsilon\lambda\ [a\,dz : \sqrt{aa-zz}] = A\delta$ or
+$A\alpha\ [t] : \beta\delta\ [t\,dz : \sqrt{aa-zz}]$. Therefore, since in the note above it was shown
+that $\alpha\beta : \alpha\delta = \sqrt{iA} : \sqrt{iA + \alpha\gamma}$, or
+$\alpha\beta^{2} : \alpha\delta^{2} = iA : iA + \alpha\gamma$, or, by inversion,
+$\alpha\beta^{2} : \beta\delta^{2} = iA : \alpha\gamma$, it will be
+$dt^{2} : \dfrac{tt\,dz^{2}}{aa-zz} = a : \dfrac{tz}{a}$, which is reduced to
+$dt : \sqrt{t} = a\,dz : \sqrt{aaz - z^{3}}$, where now the indeterminates are separated, and,
+integrating further, $\displaystyle 2\sqrt{t} = \int(a\,dz : \sqrt{aaz - z^{3}})$, whence it is clear
+that the matter has been reduced to the quadrature of a curve whose abscissa is $z$, ordinate
+$a^{2}\sqrt{a} : \sqrt{aaz - z^{3}}$.
+
+\origpage{603}
+fully worked out, I noticed that the Elastic curve, which had given only some chance occasion to
+this attempt, was that very one by whose rectification the other could be constructed${}^{(d)}$. For
+although the same might be accomplished by means of the quadrature of some algebraic space, I
+nevertheless judge the other mode of construction to be preferred, both because in general curves are
+more easily rectified in practice than spaces are squared, and especially because nature herself
+[provided she observes a suitable law of tension] seems to have prescribed that one.
+
+\textbf{Construction.} The Elastic curve of the third construction [\emph{Fig.}~3.] having therefore been described, and the
+rest being placed as before, let there be applied, in each quadrant of the circle $BL$, $LG$, the
+straight line $\varepsilon\zeta$ equal to $Ag$ itself, that is, to the third proportional to $AB$
+and $AE$ [here it appears drawn only in the right quadrant, so that confusion of the lines may be
+avoided] and from the drawn $A\varepsilon$ [produced, if there be need] let there be cut off
+$A\alpha$ equal to the third proportional to the straight line $AB$ and the portion of the curve
+$AQ$ in the left, or $\varphi RQ$ in the right quadrant; and the point $\alpha$ will be on a certain
+curve $A\chi\omega\eta$, so contrived that a heavy body carried along it [if it has first fallen from
+the height $iA$] approaches the point $A$ uniformly in equal times, or recedes from it. The
+demonstration of this construction [so that I may relieve the most Celebrated Author of the Problem,
+most busied with other matters, of the labour of examining it] I here append.
+
+\rmfigure{figures/fig-3.png}{Fig.~3.}{Fig. 3 (from plate Tab. XXIV, facing p. 618 of the Opera,
+Tomus I): the elastic curve, the isochronal curve $A\chi\omega\eta$ and the auxiliary circle,
+quadrants and construction lines used in the demonstration.}
+
+\textbf{(d)}~But if, for the sake of a further reduction, one puts $z = uu : a$, it will be
+$a\,dz : \sqrt{aaz - z^{3}} = 2au\,du : a\sqrt{au^{2} - u^{6} : a^{3}} =
+2aa\,du : \sqrt{a^{4}-u^{4}}\sqrt{a}$. Therefore
+$\displaystyle 2\sqrt{t} = \frac{2}{\sqrt{a}}\int(aa\,du : \sqrt{a^{4}-u^{4}})$, or
+$\displaystyle \sqrt{at} = \int(aa\,du : \sqrt{a^{4}-u^{4}})$. Now [preceding No., Note~q.]
+$\displaystyle\int(aa\,du : \sqrt{a^{4}-u^{4}}) ={}$ the arc $AQ$ or $\varphi RQ$ of the elastic
+curve, provided of course $AE = u$ is made. Therefore $\sqrt{at}\ [\sqrt{a\cdot A\alpha}] = AQ$ or
+$\varphi RQ$, and $A\alpha = AQ^{2} : a$ or $\varphi RQ^{2} : a$, the third proportional to $AB$,
+$AQ$ or $\varphi RQ$, when $\varepsilon\zeta\ [z = uu : a]$ is taken as the third proportional to
+$AB$, $AE$. Whence the Author's construction follows. See the following No., Note (a).
+
+\origpage{604}
+\textbf{Demonstration.} Let a circle $\beta\delta$ be understood as described with centre $A$, cutting off from the applied
+line $A\alpha$ the Element $\alpha\beta$, and from the curve the Element $\alpha\delta$, at whose
+vertex let the isochronous little portion $A\omega$ be conceived. Now the ratio of $\beta\delta$ to
+$\alpha\beta$ is compounded of the following five ratios:
+
+\[
+\begin{aligned}
+\beta\delta : \text{Elem. periph. } G\varepsilon\ [\varepsilon\lambda] &= A\alpha : A\varepsilon \\
+\text{Elem. per. } G\varepsilon\ [\varepsilon\lambda] : \text{Elem. } \varepsilon\zeta\ [\varepsilon\varkappa]
+   &= A\varepsilon : A\zeta, \qquad \text{ex nat. Circuli.} \\
+\text{Elem. } \varepsilon\zeta\ [\varepsilon\varkappa] : \text{Elem. } AE
+   &= 2AE : AB, \qquad \text{per constr. \& princ. Calc. inf. parvor.} \\
+\text{Elem. } AE : \text{Elem. } AQ\ [\varphi RQ]
+   &= A\zeta : AB, \qquad \text{ex nat. curvae } AQ\ \text{ut collig. ex Cor. 2. Constr. III. praeced.} \\
+\text{Elem. } AQ\ [\varphi RQ] : \alpha\beta
+   &= AB : 2AQ\ [2\varphi RQ], \qquad \text{per constr. \& princ. Calc. inf. parvor.}
+\end{aligned}
+\]
+
+whence, the division being made by the common antecedents and consequents of the ratios,
+$\beta\delta : \alpha\beta = A\alpha : AB + AE : AQ\ [\varphi RQ,]$ and
+$\beta\delta^{2} : \alpha\beta^{2} = A\alpha^{2} : AB^{2} + AE^{2} : AQ^{2}$ or $\varphi RQ^{2}$
+[$\varepsilon\zeta : A\alpha$, by constr.]
+$= A\alpha^{2} \times \varepsilon\zeta : AB^{2} \times A\alpha =
+A\alpha \times \varepsilon\zeta : AB^{2} ={}$ [on account of the similarity of the Triangles
+$A\alpha\gamma$, $A\varepsilon\zeta$] $A\varepsilon \times \alpha\gamma : AB^{2} = \alpha\gamma : AB\ [Ai]$,
+and, by composition, $\alpha\delta^{2} : \alpha\beta^{2} = \alpha\gamma + Ai : Ai$; and accordingly
+$\alpha\delta : \alpha\beta = \sqrt{\alpha\gamma + Ai} : \sqrt{Ai} ={}$ the velocity acquired at
+$\alpha$ : the velocity acquired at $A ={}$ [from the nature of the descent of heavy bodies]
+$= \alpha\delta : A\omega$ [by hypothesis, since they are supposed to be traversed in equal little
+times]. Therefore $\alpha\beta = A\omega$. Therefore a heavy body carried along this Curve recedes
+uniformly, in equal times, from the point $A$. Q.~E.~D.
+
+The things chiefly to be observed here are the following:
+
+\textbf{1.}~If the heavy body be supposed to fall from higher or lower than from $i$, say from
+$\tau$, there is no need of a new Elastic curve: this one alone suffices for describing all the
+isochronous Curves. For they are all similar to one another, and are determined merely by making, as
+$Ai$ to $A\tau$, so $A\alpha$ to another $A\alpha$ to be cut off from the same $A\varepsilon$. And
+the curve of our Figure is itself constructed for a heavy body falling as though from $\tau$, not
+from $i$.
+
+\textbf{2.}~But there are also infinitely many others which a heavy body, having slipped down from
+the same height
+
+\origpage{605}
+$\tau A$, can traverse so as to approach or recede uniformly from some point; but that point
+continually different from $A$; nor, except by a single curve from the same height, with respect to
+the same point, can uniform approach or recession be brought about.${}^{(e)}$
+
+\textbf{3.}~Our Isochronous Curve takes its beginning at the very point $A$, with respect to which
+the motion is uniform, and is terminated at the point $\eta$ of the same height as it; at each
+extremity it touches the horizontal straight line $A\eta\,{}^{(f)}$. Whence it is established to have
+a contrary flexure. But if on the other side there be set up a Curve $A\lambda\theta\psi$ similar and
+equal to this, and the heavy body be released from $\eta$ with the velocity which it can acquire by
+falling from a height equal to $\tau A$ itself, then, first by descending to $\omega$, then by
+re-ascending, it will approach $A$ uniformly, and thence, going on continually through the other
+$A\lambda\theta\psi$, it will be drawn away from the same point $A$ by the same law.
+
+\textbf{4.}~The tangent of the curve at intermediate places, such as $\alpha$, is found if, having
+drawn $A\mu$ perpendicular to $A\alpha$, one makes, as $\sqrt{A\tau}$ to $\sqrt{\alpha\gamma}$, so
+$A\alpha$ to $A\mu$; for $\alpha\mu$ being drawn will touch the curve: which is easily inferred even
+from the use which the curve ought to serve${}^{(g)}$.
+
+\textbf{5.}~The straight line $A\eta$ is quadruple the straight line $A\theta$.${}^{(h)}$
+
+\textbf{6.}~If on the Elastic curve a point $Q$ be taken such that the third proportional to the
+subtangent $Pp$ and the straight line $AB$ equals the curve $AQ$, there will be found
+
+\textbf{(e)}~Indeed there are infinitely many, as Leibniz observed in No.~LXIV, and Huygens in
+No.~LXV, and the Author acknowledged in No.~LXVI. Namely, in the integration of the equation
+$dt : \sqrt{t} = a\,dz : \sqrt{aaz - z^{3}}$, [Note (c)] the addition of the constant was omitted.
+But the complete integral $\displaystyle 2\sqrt{t} + \sqrt{b} = \int(a\,dz : \sqrt{aaz - z^{3}})$
+pertains to infinitely many different curves, according as one quantity $b$ or another is assumed.
+See No.~LXVI.
+
+\textbf{(f)}~See the following Note.
+
+\textbf{(g)}~For $A\alpha : A\mu = \alpha\beta : \beta\delta ={}$ [See Note c] $\sqrt{iA}$ or here
+$\sqrt{\tau A} : \sqrt{\alpha\gamma}$. Therefore if $\alpha\gamma = o$, which takes place where
+$A\alpha$ falls on $AG$, then $A\mu$ too will be infinitely less than $A\alpha$ itself, and so the
+curve touches the straight line $A\alpha$, that is $AG$. Of this kind are the points $A$ and $\eta$,
+which Our [Author] called the beginning and end of the curve, although it is in truth unterminated,
+and has infinitely many flexures and windings. See again No.~LXVI.
+
+\textbf{(h)}~For $A\eta = AR\varphi^{2} : AB$ [by constr.], but $A\theta$ $= AQR^{2} : AB$. Therefore
+since $AR\varphi = 2AQR$ it will be $A\eta = 4A\theta$.
+
+\origpage{606}
+by its means the point $\chi$ of the portion $A\chi\theta$ which of all is the most distant from the
+perpendicular $A\theta\,{}^{(i)}$.
+
+\textbf{7.}~But if the point $Q$ be placed such that the tangent $Qp$ equals the curve $\varphi RQ$,
+by its means there will be had, on the other curve, the point $\omega$, the lowest of all, and the
+most remote from the horizontal $A\eta\,{}^{(k)}$.
+
+\textbf{8.}~Finally, this too is to be noted, that from the construction of the proposed Problem it
+is now easy to gather what suppositions are to be made in order to reduce the equation
+$(x\,dy + y\,dx)\sqrt{y} = (y\,dx - x\,dy)\sqrt{a}$. For if in place of $x$ and $y\,{}^{(l)}$ there be
+assumed two other indeterminates $t$ and $z\,{}^{(m)}$, by putting $ay = tz$, and
+$ax = t\sqrt{aa - zz}$; there will come forth an equation in which the indeterminates $t$ and $z$,
+with their differentials, can be separated from one another; which suffices for then expediting the
+construction, at least by quadratures. For two things in this calculus seem still chiefly to be
+wanting, which, if they could always be done, everything would be found out; one, that differentials
+of the second or other kinds be reduced to differentials of the first;
+
+\textbf{(i)}~The tangent at the point $\chi$, which is the most remote from the Axis $AL$, is
+parallel to the straight line $\alpha\gamma$, and gives the Triangle $A\alpha\mu$ similar to the
+Triangle $A\alpha\gamma$. Therefore $\alpha\gamma^{2} : A\gamma^{2} = A\alpha^{2} : A\mu^{2} ={}$
+[Note~g] $Ai : \alpha\gamma$, or, by composition, $\alpha\gamma^{2}\ [ttzz : aa] : A\alpha^{2}\ [tt] = \uncertain{Ai\ [a] :}
+Ai + \alpha\gamma\ [a + tz : a]$; whence is elicited $t\ [AQ^{2} : a] = (a^{4} - aazz) : z^{3}$ [since
+$z = uu : a$] $= (a^{4} - u^{4})\,a^{3} : u^{6} = a^{3} : Pp^{2}$. For [preceding No., Note (c)]
+$Pp = u^{3} : \sqrt{a^{4}-u^{4}}$ and therefore $Pp^{2} = u^{6} : (a^{4}-u^{4})$. Therefore since at
+the point $\chi$, $AQ^{2} : a = a^{3} : Pp^{2}$, or $AQ^{2} = a^{4} : Pp^{2}$, it is also
+$AQ = aa : Pp$, that is, $AQ$ the third proportional to the tangent $Pp$ and the straight line $AB$.
+
+\textbf{(k)}~But the tangent at the point $\omega$, which is most distant from the Axis $AG$, is
+parallel to it and makes the Triangle $A\alpha\mu$ similar to the Triangle $A\alpha\gamma$. Therefore
+$A\gamma^{2} : \alpha\gamma^{2} = A\alpha^{2} : A\mu^{2} = Ai : \alpha\gamma$, or, by composition,
+$A\alpha^{2}\ [tt] : \alpha\gamma^{2}\ [ttzz : aa] = Ai + \alpha\gamma\ [a + tz : a] :
+\alpha\gamma\ [tz : a]$; whence is deduced $t = [\varphi RQ^{2} : a] = aaz : (aa - zz) =
+a^{3}uu : (a^{4} - u^{4})$ [namely, by writing $uu : a$ for $z$] $= Qp^{2} : a$. For
+[preceding No., Note (c)] $Qp = aau : \sqrt{a^{4}-u^{4}}$. Therefore at the point $\omega$,
+$\varphi RQ^{2} : a = Qp^{2} : a$, or the arc $\varphi RQ ={}$ the tangent $Qp$.
+
+\textbf{(l)}~$A\gamma$ and $\gamma\alpha$.
+
+\textbf{(m)}~$A\alpha$, and $\varepsilon\zeta$.
+
+\origpage{607}
+the other, that in differential equations of the first kind the indeterminates, if they be mixed
+together, be mutually separated from one another, so that each with its own differential may
+constitute a particular part of the equation; that is, that the inverse method of tangents be found.
+For each I have given certain rules [and I could give more without end], similar to those which my
+\emph{Brother} deposited at \emph{Paris} with the \emph{Marquis} de l'Hospital, in which he had at
+first supposed a method to reside. But I at once perceived that they contained nothing but certain
+particular artifices, which I would not dare to call a method; inasmuch as I judge that no such thing
+can be given, any more than a universal method can be given for constructing algebraic equations of
+any degrees whatsoever indiscriminately. For that one [of which mention was once made in the
+\emph{Acta}], by which I posit indefinitely $o = a + bx + cy + exy +{}$~etc.\ and then seek by its
+means the tangent of the line, seems scarcely to succeed otherwise than in speculation. That this
+may lend credence to what has been said, let it be this: that the present Problem, although as it
+appears not very difficult, could be solved by no one by the aid of any rule or method hitherto
+discovered.
+
+\end{document}
