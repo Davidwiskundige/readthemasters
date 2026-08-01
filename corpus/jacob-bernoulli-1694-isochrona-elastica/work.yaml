@@ -21,20 +21,20 @@ publication:
   pages: "276"  # first page in the Acta; the paper runs from p. 276
   title_full: >-
     "Solutio problematis Leibnitiani, de curva accessus & recessus aequabilis a puncto dato,
-    mediante rectificatione curvae elasticae", Acta Eruditorum, Leipzig (June 1694), p. 276 ff.
-    Transcribed here from the collected Opera, Tomus I, Geneva 1744, No. LIX, pp. 601–607.
+    mediante rectificatione curvae elasticae", Acta Eruditorum, Leipzig (June 1694), pp. 276–280 —
+    the closing section of Bernoulli's June 1694 elastica article, introduced by the running heading
+    "Jac. B. Solutio problematis Leibnitiani …" (not a separately numbered paper in the Acta).
 
 edition:
-  year: 1744
-  is_transcribed_edition: true
+  year: 1694
+  is_transcribed_edition: false
   rights_cleared: true
   rights_note: >-
-    Transcribed from the collected edition Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert,
-    1744), Tomus I, No. LIX, pp. 601–607 — an 18th-century edition with no modern critical
-    apparatus, commentary, or re-typesetting. Only Bernoulli's own Latin text and the lettered
-    footnotes printed with it are transcribed. The lettered footnotes (a)–(m) belong to this
-    Opera edition; whether each is Bernoulli's own annotation or the editor's (Gabriel Cramer,
-    1704–1752) is flagged for a reviewer — both are long out of copyright.
+    Transcribed directly from the original publication in the Acta Eruditorum (Leipzig, June 1694,
+    pp. 276–280) — itself public domain. Only Bernoulli's own Latin text is transcribed. (The work
+    was first drafted from the 1744 collected Opera, No. LIX, pp. 601–607, and has since been
+    re-collated against, and conformed to, the Acta original; the lettered footnotes (a)–(m) printed
+    in the Opera were Gabriel Cramer's editorial apparatus, absent from the Acta, and are not kept.)
 
 discipline: [mathematics, physics]
 tags: [geometry, analysis, mechanics]
@@ -62,8 +62,8 @@ significance_sources:
     url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
 
 source:
-  scan_url: "https://preserver.beic.it/delivery/DeliveryManagerServlet?dps_pid=IE1838110"
-  scan_id: "beic:IE1838110 (Jacobi Bernoulli Opera, Tomus I, Geneva 1744, pp. 601–607)"
+  scan_url: "https://archive.org/details/s1id13206610/page/276/mode/1up"
+  scan_id: "archive.org:s1id13206610 (Acta Eruditorum 1694, June, pp. 276–280)"
 
 sources:
   death_date: >-
@@ -74,9 +74,10 @@ sources:
     margin note, "Acta Erud. Lips. 1694, Jun. p. 276"). The original Acta Eruditorum volume is
     itself public domain and available for cross-checking.
   edition: >-
-    Collected edition, Jacobi Bernoulli … Opera (Geneva: Cramer & Philibert, 1744), Tomus I,
-    No. LIX, pp. 601–607; scan on the Biblioteca Europea di Informazione e Cultura (BEIC),
-    dps_pid IE1838110.
+    Transcribed from the original publication, Acta Eruditorum, Leipzig (June 1694), pp. 276–280;
+    scan on the Internet Archive (id s1id13206610, leaves 0290–0294). Cross-checked against, and
+    conformed away from, the 1744 collected Opera (Cramer & Philibert, Geneva), Tomus I, No. LIX,
+    pp. 601–607, from which the work was first drafted.
 
 # Recomputed and verified by pipeline/validate.py; must match the recomputation.
 copyright_assessment:
