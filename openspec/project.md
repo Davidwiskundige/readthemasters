@@ -51,7 +51,11 @@ OpenGraph/Twitter cards, and schema.org JSON-LD `CreativeWork`/`Person`/`WebSite
 `<head>`, built from `works.json` by `site/src/lib/jsonld.js`; screen-reader MathML and the sitemap
 were already in place — PLAN.md §9 backlog #5), and `math-titles` (optional `title_tex` /
 `title_en_tex` render a work's title as KaTeX math on the work page, catalog cards, and author
-pages; the plain `title` stays canonical for the browser tab, search, and structured data).
+pages; the plain `title` stays canonical for the browser tab, search, and structured data), and
+`about-epigraph` (the About page opens with a sourced Abel epigraph; the `.pop` source-popover
+apparatus — significance citations, editorial notes, the epigraph — is now a shared behavior in
+`site/src/scripts/pop.js` loaded globally from `Base.astro`, triggered by the whole wrapper on
+hover/focus/click).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational

@@ -47,6 +47,9 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     <main>
       <slot />
     </main>
+    <script>
+      import "../scripts/pop.js";
+    </script>
     <footer class="site">
       <p>
         Transcriptions, translations and metadata are dedicated to the public domain (CC0).
