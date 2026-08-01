@@ -244,44 +244,8 @@ const changelog = work.changelog ?? [];
     applyHash();
     addEventListener('hashchange', applyHash);
 
-    // Popover markers: hover shows them (CSS); click pins one open (touch-friendly). Shared by
-    // significance citation markers and in-text editorial notes (\ednote) — anything with a
-    // ".pop" wrapper. JS positions each popover so it always stays within the viewport.
-    const allPops = () => document.querySelectorAll('.pop');
-    function positionPop(wrap) {
-      const pop = wrap.querySelector('.pop-content');
-      if (!pop) return;
-      pop.style.position = 'fixed';
-      const pw = pop.offsetWidth, ph = pop.offsetHeight, m = 8;
-      const r = (wrap.querySelector('.pop-marker') || wrap).getBoundingClientRect();
-      let left = Math.min(Math.max(m, r.left), window.innerWidth - pw - m);
-      left = Math.max(m, left);
-      let top = r.bottom + 4;
-      if (top + ph > window.innerHeight - m) top = Math.max(m, r.top - ph - 4);
-      pop.style.left = left + "px";
-      pop.style.top = top + "px";
-    }
-    const closeAllPops = () =>
-      document.querySelectorAll('.pop.open').forEach((c) => c.classList.remove('open'));
-    allPops().forEach((wrap) => {
-      const marker = wrap.querySelector('.pop-marker');
-      wrap.addEventListener('mouseenter', () => positionPop(wrap));
-      marker.addEventListener('focus', () => positionPop(wrap));
-      marker.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const wasOpen = wrap.classList.contains('open');
-        closeAllPops();
-        if (!wasOpen) { wrap.classList.add('open'); positionPop(wrap); }
-      });
-    });
-    document.addEventListener('click', closeAllPops);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllPops(); });
-    const repositionVisiblePops = () => allPops().forEach((wrap) => {
-      const pop = wrap.querySelector('.pop-content');
-      if (pop && getComputedStyle(pop).display !== 'none') positionPop(wrap);
-    });
-    window.addEventListener('scroll', repositionVisiblePops, { passive: true });
-    window.addEventListener('resize', repositionVisiblePops);
+    // Popover markers (.pop) — significance citations and editorial notes — are wired globally
+    // by scripts/pop.js (loaded from Base.astro).
 
     // Copy text to clipboard, with a fallback for non-secure/no-gesture contexts.
     async function copyText(text) {

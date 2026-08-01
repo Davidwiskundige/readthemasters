@@ -153,6 +153,25 @@ author page emits a `Person` with `sameAs` and birth/death years; the home emits
 whose source data is absent are omitted rather than emitted empty. This is metadata only — no
 reader-facing change.
 
+## Requirement: Source popovers (shared apparatus)
+
+The site provides a single popover behavior, shared across all pages, for revealing editorial source
+material without cluttering the running text. Any element marked `.pop` containing a `.pop-content`
+child reveals that content on pointer hover, on keyboard focus, and on a click/tap that pins it open
+(so it is usable on touch); pressing Escape or clicking outside closes it, and JavaScript keeps the
+revealed card within the viewport. The trigger is the whole `.pop` wrapper, and a click that lands
+inside an open `.pop-content` (e.g. a citation link) acts normally rather than toggling the card
+shut.
+
+The behavior is defined once in `site/src/scripts/pop.js` and loaded from `Base.astro`, so every
+page — including Markdown pages — has it without per-page script. Its uses are the significance
+citation markers, in-text editorial notes (`\ednote`), and the About-page epigraph. The `search`
+capability excludes `.pop` apparatus from the index. Established by `about-epigraph` (archived
+2026-08-01).
+
 ## Requirement: Legal pages
 
-The site serves About, Copyright & takedown, Contribute, and Contact pages.
+The site serves About, Copyright & takedown, Contribute, and Contact pages. The About page opens
+with an epigraph — Abel's "study the masters, not the pupils" attributed to `Niels Henrik Abel` —
+whose full source (manuscript, page, archive) and French original are revealed in a source popover
+(see "Source popovers (shared apparatus)").
