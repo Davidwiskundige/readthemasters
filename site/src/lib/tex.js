@@ -52,8 +52,10 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     // (`v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`) so a real engine sets an inter-word — not
     // inter-sentence — space. On the web that is just one normal space; drop the backslash. Runs
     // after \emph/\textbf so a control space inside those braces resolves too. Math is already
-    // stashed, so a "\ " inside $...$ is untouched and still reaches KaTeX.
-    .replace(/\\ /g, " ")
+    // stashed, so a "\ " inside $...$ is untouched and still reaches KaTeX. The whitespace class
+    // also catches a control space that a source line-wrap split as "\" + newline (LaTeX treats an
+    // end-of-line after "\" as a control space too), so the backslash never leaks into the text.
+    .replace(/\\[ \n]/g, " ")
     .replace(/---/g, "—")
     .replace(/``/g, "“").replace(/''/g, "”")
     .replace(/~/g, " ");
