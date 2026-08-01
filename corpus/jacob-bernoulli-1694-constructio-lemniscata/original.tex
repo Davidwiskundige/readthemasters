@@ -1,174 +1,107 @@
-% Faithful transcription --- original Latin. Transcribed from the collected edition
-% "Jacobi Bernoulli ... Opera" (Geneva: Cramer & Philibert, 1744), Tomus I, No. LX, printed
-% pages 608--612: Jacob Bernoulli's "Constructio Curvae Accessus & Recessus aequabilis, Ope
-% Rectificationis Curvae cujusdam algebraicae: Addenda nuperae solutioni Mensis Junii" --- the
-% September 1694 sequel (first published in the Acta Eruditorum, Leipzig, Sept. 1694, p. 336) to
-% No. LIX (the "Solutio Problematis Leibnitiani ... mediante rectificatione Curvae Elasticae").
-% Scan: Biblioteca Europea di Informazione e Cultura (BEIC), dps_pid IE1838110.
-% \origpage uses the PRINTED page numbers.
+% Faithful transcription --- original Latin, transcribed from the ORIGINAL publication in the
+% Acta Eruditorum, Leipzig, September 1694, pp. 336--338: Jacob Bernoulli's "Constructio Curvae
+% Accessus & Recessus aequabilis, ope rectificationis Curvae cujusdam Algebraicae, addenda nuperae
+% solutioni Mensis Junii" --- the September sequel to the June "Solutio Problematis Leibnitiani".
+% Scan: Internet Archive, Acta Eruditorum 1694 (id s1id13206610), leaves 0436--0438 (the September
+% p. 336, distinct from the July p. 336; the paper starts partway down p. 336, after a medical
+% review, and ends on p. 338 where "C. H. Z. Constructio Universalis ..." begins). \origpage uses
+% the PRINTED Acta page numbers.
+%
+% NOTE ON SOURCE: first drafted from the 1744 collected Opera (No. LX, pp. 608--612), now re-collated
+% against and conformed to the 1694 Acta. Consequences:
+%  * The "No. LX" number and Opera pages 608--612 were the collected edition's; dropped. In the Acta
+%    this is a running heading, "Jac. B. Constructio Curvae Accessus & Recessus aequabilis ...".
+%  * The lettered footnotes (a)--(f) were Cramer's 1744 apparatus, absent from the Acta (removed).
+%  * The Opera's closing paragraph "Caeterum quantitas $z^{m}\,dz : \sqrt{a^{4}\pm z^{4}}$ ..." is
+%    NOT in the Acta (the paper ends at "proprietas exsistit.") and is not kept --- an Opera addition.
+%  * The figure is Fig. 3 on plate "Tab. VI" of the September Acta (the Opera reset it as Tab. XXIV).
 %
 % Transcription notes for the reviewer:
-%  * The lettered footnotes (a)--(f) of the Opera edition are placed inline as complete units at the
-%    end of each page's main text (each led by a bold letter, e.g. \textbf{(b)}), close to where they
-%    are referenced (the reference is a superscript ${}^{(x)}$ in the running text). Whether the
-%    lettered notes are Bernoulli's own or the 1744 editor's (Gabriel Cramer) is left for a reviewer
-%    to confirm (HOUSESTYLE R15).
-%  * Author notation is kept faithfully (HOUSESTYLE R3): doubled letters for squares
-%    (aa, zz, xx, yy, uu), the ":" sign for division/ratio, "&c." for et cetera, the "&" ampersand,
-%    archaic spelling (caeterum, exsistit, Isochronae). Typography is normalized: long-s, ligatures,
-%    small caps (incl. the author name "Joh. Bernoulli") and the superscript-"o" of "No." are set as
-%    plain letters; end-of-line hyphenation and page catchwords are dropped.
-%  * This paper first NAMES the lemniscate: p. 609, "seu complicatae in nodum fasciae, sive lemnisci,
-%    d'un nœud de ruban Gallis". The printed glyph after "jacentis notae octonarii" is a reclining
-%    figure-eight (the lemniscate shape); it is set here as $\infty$, the closest available mark ---
-%    flagged for the reviewer, as it denotes the shape of the numeral 8 lying down, not the modern
-%    "infinity" concept.
-%  * Faithful discrepancy kept as printed (R4): in the running head the paper sits under "ISOCHRONAE
-%    PARACENTRICAE"; the differential equation of No. LIX is referred to (obs. 8 of the preceding No.)
-%    but not re-set here. Note (b), p. 610: a heavily-inked mark between "$a\sqrt{2}$" and "quae
-%    dicatur $y$" is read as a comma (parallel to the "$x$" definition just after); noted for review.
+%  * Author notation is kept faithfully (HOUSESTYLE R3): doubled letters for squares (aa, zz, xx,
+%    yy, uu), the ":" ratio/division sign, "&c." and the "&" ampersand, archaic spelling; typography
+%    (long-s, ligatures, small caps incl. "Joh. Bernoulli", the superscript-"o" of "No.") is
+%    normalized; the author's asides/value-substitutions use round parentheses. The printed "rectangle"
+%    glyph for "rectangulum" and the numeral "4" in "Curva 4 dimensionum" are set as printed (the
+%    second mention, p. 338, is spelled "quatuor").
+%  * This paper first NAMES the lemniscate (p. 337): "seu complicatae in nodum fasciae, sive lemnisci,
+%    d'un nœud de ruban Gallis". The printed mark after "jacentis notae octonarii" is a reclining
+%    figure-eight (the lemniscate's own shape), set here as $\infty$ (closest available glyph) ---
+%    it denotes the numeral 8 lying down, not the modern "infinity" concept.
 \documentclass{article}
 \usepackage{readmasters}
 \begin{document}
 
-\origpage{608}
-\section*{No.~LX. Jacobi Bernoulli Constructio Curvae}
-\subsection*{Accessus \& Recessus aequabilis, Ope Rectificationis Curvae cujusdam algebraicae: Addenda nuperae solutioni Mensis Junii}
+\origpage{336}
+\section*{Jac.\ B. Constructio Curvae Accessus \& Recessus aequabilis}
+\subsection*{ope rectificationis Curvae cujusdam Algebraicae, addenda nuperae solutioni Mensis Junii}
 
-Triplex praecipue modus habetur construendi curvas mechanicas, sive transcendentes. Primus, sed ad
-praxin parum idoneus, fit per curvaturas spatiorum curvilineorum. Melior est, qui instituitur per
-rectificationes curvarum algebraicarum; accuratius enim \& expeditius rectificari possunt curvae, ope
-fili vel catenulae ipsis circumplicatae, quam quadrari spatia. Eodem loco habeo illas
+Triplex praecipue modus habetur construendi Curvas Mechanicas sive Transcendentes. Primus, sed ad
+praxin parum idoneus, fit per quadraturas spatiorum curvilineorum. Melior est, qui instituitur per
+rectificationes Curvarum Algebraicarum; accuratius enim \& expeditius in praxi rectificari possunt
+curvae, ope fili vel catenulae ipsis circumplicatae, quam quadrari spatia. Eodem loco habeo illas
 constructiones, quae peraguntur absque ulla rectificatione \& quadratura, per solam descriptionem
-curvae alicujus mechanicae, cujus puncta, licet non omnia, infinita tamen, \& quantumvis proxima,
-geometrice inveniri possunt, qualis esse solet Logarithmica, \& si quae sint ejus generis aliae.
-Optimus vero modus, sicubi haberi possit, ille est, qui peragitur ope alicujus curvae, quam Natura
-ipsa, absque arte, motu quodam celerrimo \& quasi instantaneo ad nutum Geometrae producit; cum
-praecedentes modi requirant curvas, quarum delineatio, sive per motum continuum, sive per plurium
-punctorum inventionem, ab Artifice instituatur, communiter vel lenta vel impedita nimis exsistit. Ita
-constructiones illas Problematum,
+Curvae alicujus Mechanicae, cujus puncta, licet non omnia, infinita tamen \& quantumvis proxima
+geometrice inveniri possunt, qualis solet esse Logarithmica, \& si quae sunt ejus generis aliae.
+Optimus vero modus, sicubi haberi possit, ille est, qui peragitur ope alicujus Curvae, quam natura
+ipsa absque arte motu quodam celerrimo \& quasi instantaneo ad nutum Geometrae producit; cum
+praecedentes modi requirant curvas, quarum delinea-
 
-\origpage{609}
-quae Hyperbolae quadraturam vel Logarithmicae descriptionem supponunt, caeteris paribus,
-posthabendas censeo iis, quae ope Catenariae peraguntur, seu curvae, quam suspensa catena sponte sua
-citius induerit, quam reliquis ipse describendis primam manum admoveris.
+\origpage{337}
+tio sive per motum continuum sive per plurium punctorum inventionem ab Artifice instituatur,
+communiter vel lenta vel impedita nimis exsistit: ita constructiones illas Problematum, quae
+Hyperbolae quadraturam vel Logarithmicae descriptionem supponunt, caeteris paribus posthabendas
+censeo iis, quae ope Catenariae peraguntur, ceu curvae, quam suspensa catena sponte sua citius
+induerit, quam reliquis ipse describendis primam manum admoveris.
 
-\emph{Curva Accessus \& Recessus aequabilis}, ob solam proponentis Viri commendationem, mereri videtur
+\emph{Curva Accessus \& Recessus aequabilis} ob solam proponentis Viri commendationem mereri videtur,
 ut de constructionibus secundum omnes tres modos illi adornandis simus solliciti. Constructio primi
-modi per quadraturas, quam in nupera solutione insuper habui, ob jam dictam rationem, institui
-potest, sumendo in \emph{Fig.}~3. rectam $EN$, non, ut ibi, ipsi $Au$, sed ipsi $iu$ aequalem;
-iterumque curvilineo $AEN$ aequale rectangulum $AO$; hujus enim latus $AP$ nuperae curvae $AQ$
-adaequabitur; sic ut sumpta ad $AB$ \& nunc inventam $AP$ tertia proportionali $A\alpha$, habeatur
-punctum $\alpha$ in optata curva${}^{(a)}$. Tertii modi constructio, quae fieret mediante linea
-Elastica $AQ$, quam solam ibi tetigi, sine dubio fieret optima, si natura alicubi tensiones viribus
-tendentibus simpliciter proportionales effecisset: at quia nullus forte invenitur Elater, qui hanc
+modi per quadraturas, quam in nupera solutione insuper habui ob jam dictam rationem, institui potest,
+sumendo in \emph{Fig.}~3.\ \emph{Tab.}~VI, rectam $EN$ non, ut ibi, ipsi $Au$ sed $iu$ aequalem,
+iterumque curvilineo $AEN$ faciendo aequale rectangulum $AO$; hujus enim latus $AP$ nuperae curvae
+$AQ$ adaequabitur, sic ut sumpta ad $AB$ \& nunc inventam $AP$ tertia proportionali $A\alpha$,
+habeatur punctum $\alpha$ in optata Curva. Tertii modi Constructio, quae fieret mediante Linea
+Elastica $AQ$, quam solam ibi tetigi, sine dubio foret optima, si natura alicubi tensiones viribus
+tendentibus simpliciter proportionales effecisset: at quia forte nullus invenitur Elater, qui hanc
 tensionis legem praecise observet; nec si reperiatur, illud certo constet; idcirco nec isti fidere
-satis tutum: praestatque recurrere ad secundum construendi modum, \& quaerere curvam algebraicam,
-cujus rectificatione scopum assequamur. Talem ex voto sese sistit curva quatuor dimensionum quae hac
-aequatione exprimitur $xx + yy = a\sqrt{xx - yy}$, quaeque circum axem $BG\ [2a]$ constituta formam
+satis tutum; praestatque recurrere ad secundum construendi modum, \& quaerere Curvam Algebraicam,
+cujus rectificatione scopum assequamur. Talem ex voto sese sistit Curva 4 dimensionum quae hac
+aequatione exprimitur $xx + yy = a\sqrt{xx - yy}$, quaeque circum axem $BG\ (2a)$ constituta formam
 refert jacentis notae octonarii $\infty$, seu complicatae in nodum fasciae, sive lemnisci,
-\emph{d'un nœud de ruban} Gallis. Hujus enim, tum altera medietas, curvae Elasticae $AR\varphi$,
-tum super nodo $A$ intervallo indeterminatae $AE$ abscissa medietatis portio minor, minori $AQ$,
+\emph{d'un nœud de ruban} Gallis. Hujus enim tum altera medietas Curvae Elasticae $AR\varphi$, tum
+super nodo $A$ intervallo indeterminatae $AE$ abscissa medietatis portio minor minori $AQ$, major
+majori Elasticae portioni $\varphi RQ$ aequatur. Unde quoque ratio constat, illam ad propositi
+Problematis constructionem adhibendi.
 
-\rmfigure{figures/fig-3.png}{Fig.~3.}{Fig. 3 (from plate Tab. XXIV, facing p. 618 of the Opera,
-Tomus I): the elastic curve $AR\varphi$, the lemniscate looped through the node $A$, the isochronal
-curve of uniform approach and recession, and the auxiliary circle, quadrants and construction lines.
-The same plate carries the figures for No. LVIII, LIX and LX together ("No. 58. 59. \& 60.").}
+\rmfigure{figures/fig-3.png}{Fig.~3.}{Fig. 3 (Tab. VI): the elastic curve $AR\varphi$, the lemniscate
+looped through the node $A$, the isochronal curve of uniform approach and recession, and the
+auxiliary circle, quadrants and construction lines.}
 
-\textbf{(a)}~Sit $AE = u$, $Ag = uu : a$, $gl = \sqrt{aa - u^{4} : aa} = \frac{1}{a}\sqrt{a^{4}-u^{4}}$;
-\& cum sit $gl : Al = Ai : iu$, erit $iu = a^{3} : \sqrt{a^{4}-u^{4}} = EN$. Atque ideo mixtilineum
-$AEN = \displaystyle\int(a^{3}\,du : \sqrt{a^{4}-u^{4}}) = AO$: consequenter
-$AP = \displaystyle\int(aa\,du : \sqrt{a^{4}-u^{4}}) ={}$ [No.~praec. Not.~d] ${}= \sqrt{at}$ seu
-$\sqrt{AB\cdot A\alpha}$. Igitur $A\alpha = AP^{2} : AB$, tertia proportionalis ad $AB$, $AP$.
+Caeterum sicut infinitae Lineae Mechanicae a Curvae circularis aut parabolicae rectificatione seu
+Logarithmicae descriptione dependent; ita quoque praeter Curvam Accessus \& Recessus infinitarum
+aliarum, \& partim etiam ipsius Elasticae constructio (ut infra appare-
 
-\origpage{610}
-major majori Elasticae portioni $\varphi RQ$ aequatur. Unde quoque ratio constat, illam ad propositi
-Problematis constructionem adhibendi${}^{(b)}$.
-
-Caeterum, sicut infinitae lineae mechanicae a curvae circularis aut parabolicae rectificatione, seu
-logarithmicae descriptione dependent; ita praeter curvam accessus \& recessus infinitarum aliarum, \&
-partim etiam ipsius Elasticae constructio [ut infra apparebit] a rectificatione memoratae algebraicae
-quatuor dimensionum derivatur. Et ausim asseverare in materia constructionis mechanicarum,
-
-\textbf{(b)}~Ostensum est No.~praec. Not.~(d) constructionem curvae quaesitae pendere ab integratione
-quantitatis $aa\,du : \sqrt{a^{4}-u^{4}}$. Haec, ut reducatur ad rectificationem curvae algebraicae,
-consideranda est quasi elementum curvae, ejusque quadratum dividendum, si potest fieri, in duo alia
-quadrata quae radices sint integrabiles; ut integralia exprimant coordinatas curvae algebraicae.
-Commode autem accidit quadratum $a^{4}\,du^{2} : (a^{4} - u^{4})$ dividi posse in duo
-$(a^{4} - 4aauu + 4u^{4})\,du^{2} : (2a^{4} - 2aauu)$, \& $(a^{4} + 4aauu + 4u^{4})\,du^{2} : (2a^{4} + 2aauu)$
-quae simul juncta efficiunt $a^{4}\,du^{2} : (a^{4} - u^{4})$, quorumque radices
-$(aa - 2uu)\,du : \sqrt{2a^{4} - 2aauu}$, \& $(aa + 2uu)\,du : \sqrt{2a^{4} + 2aauu}$ possunt integrari.
-Sunt enim harum integralia, seu coordinatae Curvae, $u\sqrt{aa - uu} : a\sqrt{2}$, quae dicatur $y$, \&
-$u\sqrt{aa + uu} : a\sqrt{2}$, quae vocetur $x$. Nunc, ut habeatur aequatio inter coordinatas; ope
-istarum $u\sqrt{aa - uu} : a\sqrt{2} = y$ \& $u\sqrt{aa + uu} : a\sqrt{2} = x$, eliminetur $u$, primum
-eas quadrando, $aauu - u^{4} = 2aayy$, \& $aauu + u^{4} = 2aaxx$, atque addendo,
-$2aauu = 2aayy + 2aaxx$ sive $uu = yy + xx$; quo patet $u$ designare subtensam Curvae ab origine $A$
-exeuntem: Deinde pro $uu$ substituendo valorem ejus, in aequatione $aauu + u^{4} = 2aaxx$, ea sic
-reducitur ad $aa(xx + yy) + (xx + yy)^{2} = 2aaxx$, vel transponendo $(xx + yy)^{2} = aaxx - aayy$, aut
-radicem extrahendo $xx + yy = a\sqrt{xx - yy}$, quae ipsa est Lemniscatae aequatio; cujus itaque
-constat arcum, quem subtendit recta $AE = u$, aequalem esse $\displaystyle a\int(aa\,du : \sqrt{a^{4}-u^{4}})$,
-quae etiam exprimit arcum $AQ$, vel $\varphi RQ$ Elasticae. Igitur Lemniscata potuit pro Elastica
-adhiberi ad constructionem Isochronae, hoc solum discrimine quod recta $AE$, quae istius erat
-abscissa, illius esse debeat subtendens. Vide omnino Num.~CIII. Art.~2. Caeterum dedit Joh.\ Bernoulli
-\emph{Act.\ Erud.}~1724, \emph{Aug.\ pag.}~356, elegantissimam regulam pro reducendis quadraturis
-quibuscunque ad rectificationes curvarum algebraicarum.
-
-\origpage{611}
-mechanicarum, hanc inter caeteras immediate sequi praecedentes; adeo ut constructio, quae per nullam
-priorum succedit, proxime vel per hujus curvae, aut per lineae hyperbolicae aut ellipticae, aut
-duarum simul rectificationem tentanda sit. Cujus rei ratio est, quod post differentialium formulas,
-$aa\,dz : \sqrt{aa - zz}$, $zz\,dz : \sqrt{aa - zz}$, $aa\,dz : \sqrt{aa + zz}$, $zz\,dz : \sqrt{zz - aa}$,
-quae ope quadraturae circuli \& hyperbolae integrantur, simplicissimae fere videantur hae
-expressiones, $zz\,dz : \sqrt{z^{4}-a^{4}}$, $aa\,dz : \sqrt{z^{4}-a^{4}}$, $aa\,dz : \sqrt{a^{4}-z^{4}}$,
-$zz\,dz : \sqrt{a^{4}-z^{4}}$, \& similes; quarum prima, mediante lineae hyperbolicae, secunda \& tertia
-curvae nostrae lemniscatae, quarta ejusdem \& ellipticae rectificatione integrantur. Etenim si
-indeterminata $z$ applicetur ad hyperbolam aequilateram [cujus axis transversus est $2a$] ex ipsius
-centro, satisfaciet arcus vertici \& applicatae interceptus pro prima formula${}^{(c)}$. Et si eadem
-$z$ [aut tertia proportionalis ad $z$ \& $a$, ubi $z$ major quam $a$] ex nodo subtendatur curvae
-lemniscatae, inserviet subtensus arcus pro duabus mediis${}^{(d)}$. Et si denique ex centro ellipsis
-[cujus axis minor est $2a$, major $2a\sqrt{2}$] ipsa $z$ abscindatur in minore \& per sectionis
-terminum recta agatur majori parallela, designabit intercepta parallelis portio elliptica, truncata
-respondente portione curvae lemniscatae,
-
-\textbf{(c)}~Per eandem analysin, qua usi sumus Nota praec. decomponatur quadratum
-$z^{4}\,dz^{2} : (z^{4}-a^{4})$, in alia duo $zz\,dz^{2} : (2zz - 2aa) + zz\,dz^{2} : (2zz + 2aa)$, quorum
-radices $z\,dz : \sqrt{2zz - 2aa}$ \& $z\,dz : \sqrt{2zz + 2aa}$ erunt coordinatarum $y$ \& $x$ elementa,
-ipsarumque integralia $\sqrt{\frac{1}{2}zz - \frac{1}{2}aa}$ \& $\sqrt{\frac{1}{2}zz + \frac{1}{2}aa}$
-coordinatae $y$, $x$. Igitur quadrando ac duplicando $zz - aa = 2yy$, \& $zz + aa = 2xx$, atque addendo
-$2zz = 2xx + 2yy$, vel $zz = xx + yy$; [unde patet $z$ esse curvae subtendentem;] vel subtrahendo
-$2aa = 2xx - 2yy$, vel $yy = xx - aa$, quae est aequatio ad hyperbolam aequilateram. Vide rursus
-Num.~CIII. Art.~2.
-
-\textbf{(d)}~Ostensum est Nota~(b), Arcum Lemniscatae, cujus parameter $a$, subtensa $u$, aequalem esse
-$\displaystyle\int(aa\,du : \sqrt{a^{4}-u^{4}})$. Quare si $u = z$, erit dictus arcus
-$= \displaystyle\int(aa\,dz : \sqrt{a^{4}-z^{4}})$. Si vero $u = aa : z$, erit dictus arcus
-$= {-}\displaystyle\int(aa\,dz : \sqrt{z^{4}-a^{4}})$.
-
-\origpage{612}
-integrale quartae formulae $zz\,dz : \sqrt{a^{4}-z^{4}}\,{}^{(e)}$: Unde cum eadem, in citata
-\emph{Fig.}~3, existente $AE = z$, elementum denotet applicatae $AP$ vel $EQ$ in Elastica${}^{(f)}$,
-patet hanc applicatam aequari differentiae duarum portionum curvae ellipticae \& lemniscatae; ideoque
-manifestum, quomodo Elastica per rectificationem utriusque confici possit. Et quoniam Lemniscatae
-portio, ut supra monui, Elasticae portioni $AQ$ adaequatur, liquet etiam, ellipticam ipsam adaequari
+\origpage{338}
+bit) a rectificatione memoratae Algebraicae quatuor dimensionum derivatur. Et ausim asseverare, in
+materia constructionis mechanicarum hanc inter caeteras immediate sequi praecedentes; adeo ut
+constructio, quae per nullam priorum succedit, proxime vel per hujus Curvae, aut per Lineae
+Hyperbolicae aut Ellipticae, aut duarum simul rectificationem tentanda sit. Cujus rei ratio est,
+quod post differentialium formulas: $aa\,dz : \sqrt{aa - zz}$, $zz\,dz : \sqrt{aa - zz}$,
+$aa\,dz : \sqrt{zz - aa}$, $zz\,dz : \sqrt{zz - aa}$, quae ope quadraturae Circuli \& Hyperbolae
+integrantur, simplicissimae fere videantur hae expressiones: $zz\,dz : \sqrt{z^{4}-a^{4}}$,
+$aa\,dz : \sqrt{z^{4}-a^{4}}$, $aa\,dz : \sqrt{a^{4}-z^{4}}$, $zz\,dz : \sqrt{a^{4}-z^{4}}$, \&
+similes; quarum prima mediante Lineae Hyperbolicae, secunda \& tertia Curvae nostrae lemniscatae,
+quarta ejusdem \& Ellipticae rectificatione integratur. Etenim si indeterminata $z$ applicetur ad
+Hyperbolam aequilateram (cujus axis transversus est $2a$) ex ipsius centro, satisfaciet arcus
+vertici \& applicatae interceptus pro prima formula. Et si eadem $z$ (aut tertia proportionalis ad
+$z$ \& $a$, ubi $z$ major quam $a$) ex nodo subtendatur Curvae lemniscatae, inserviet subtensus
+arcus pro duabus mediis. Et si denique ex centro Ellipsis (cujus axis minor est $2a$, major
+$2a\sqrt{2}$) ipsa $z$ abscindatur in minore, \& per sectionis terminum recta agatur majori
+parallela, designabitur intercepta parallelis portio Ellipticae, truncata respondente portione
+Curvae lemniscatae, integrale quartae formulae $zz\,dz : \sqrt{a^{4}-z^{4}}$. Unde cum eadem in
+\emph{cit.\ fig.} existente $AE = z$, Elementum denotet applicatae $AP$ vel $EQ$ in Elastica, patet
+hanc applicatam aequari differentiae duarum portionum Curvae Ellipticae \& Lemniscatae, ideoque
+manifestum, quomodo Elastica per rectificationem utriusque construi possit. Et quoniam Lemniscatae
+portio, ut supra monui, Elasticae portioni $AQ$ adaequatur, liquet etiam, Ellipticam ipsam adaequari
 aggregato $AQ + AP$; quae non inelegans harum Curvarum proprietas exsistit.
-
-\textbf{(e)}~Est enim $\displaystyle\int(zz\,dz : \sqrt{a^{4}-z^{4}}) = \int((aa + zz)\,dz : \sqrt{a^{4}-z^{4}}) - \int(aa\,dz : \sqrt{a^{4}-z^{4}})$.
-Hic autem ultimus terminus $aa\,dz : \sqrt{a^{4}-z^{4}}$ est arcus lemniscatae, cujus subtensa $= z$. Et
-$\displaystyle\int((aa + zz)\,dz : \sqrt{a^{4}-z^{4}}) = \int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$ aequalis
-arcui ellipsis. Notum enim est, si $a$ \& $c$ sint ellipsis semi-axes, abscissa $z$, arcum esse
-$= \displaystyle\int(dz\sqrt{aa - zz + cczz : aa} : \sqrt{aa - zz})$. Fiat igitur $-zz + cczz : aa = zz$,
-aut $cc = 2aa$, vel $c = a\sqrt{2}$, \& patet arcum ellipsis, cujus axes sunt $2a$ \& $2c = 2a\sqrt{2}$,
-respondentem abscissae $z$ [posita origine earum in centro] esse
-$= \displaystyle\int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$. Igitur
-$\displaystyle\int(zz\,dz : \sqrt{a^{4}-z^{4}}) ={}$ arcui ellipsis
-[$\displaystyle\int(dz\sqrt{aa + zz} : \sqrt{aa - zz})$] minus arcu lemniscatae
-[$\displaystyle\int(aa\,dz : \sqrt{a^{4}-z^{4}})$]. Vide iterum Num.~CIII. Art.~2.
-
-Caeterum quantitas $z^{m}\,dz : \sqrt{a^{4} \pm z^{4}}$ integrari potest, absolute, quotiescunque $m$
-est numerus ex serie imparium [affirmativorum aut negativorum] alternatim excerptus $\pm 3$, $\pm 7$,
-$\pm 11$, $\pm 15$, \&c. Integrabitur autem, concessa circuli vel hyperbolae quadratura, ubi
-$m = \pm 1$, vel $\pm 5$, vel $\pm 9$, \&c.
-
-\textbf{(f)}~No.~LVIII, pag.~592, vel Nota~(a) pag.~591.
 
 \end{document}

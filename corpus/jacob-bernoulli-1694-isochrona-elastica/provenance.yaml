@@ -5,6 +5,30 @@ changelog:
     summary: Translation (en) added (AI draft).
   - date: "2026-07-30"
     summary: 'Note (i) reading "Ai [a] :" confirmed by reviewer; \uncertain{} removed in both files.'
+  - date: "2026-07-31"
+    summary: >-
+      Removed the 1744 Opera's editorial footnotes (a)–(m) and their in-text reference marks from
+      original.tex and en.tex, to keep the text faithful to Bernoulli's original 1694 Acta
+      Eruditorum publication.
+  - date: "2026-07-31"
+    summary: >-
+      Normalized the author's parenthetical insertions and value-substitutions to round parentheses
+      ( ) throughout (they had been set with square brackets), and set the two section labels as the
+      original's italic abbreviations (\emph{Constr.}, \emph{Dem.}) rather than expanded bold words —
+      matching the original's typography.
+  - date: "2026-07-31"
+    summary: >-
+      Re-transcribed from the ORIGINAL 1694 Acta Eruditorum (June, pp. 276–280, Internet Archive
+      s1id13206610) after a full page-by-page collation showed the earlier Opera-based text differed
+      pervasively. Adopted the Acta framing (running heading "Jac. B. Solutio problematis
+      Leibnitiani …"; \origpage now 276–280, not Opera 601–607) and folded in every divergence:
+      corrected "Ge"→"Be" and dropped Cramer's "(el)"/"(ek)" cross-refs in the five ratios; restored
+      the proportion sign "::"; fixed observation 8's differential equation to the Acta's single
+      consistent form $(x\,dx+y\,dy)\sqrt{y}=(x\,dy-y\,dx)\sqrt{a}$ (the Opera variant was a misprint);
+      restored dropped words (quoque, vero, -que in "quibusque"), "effecit" (not efficit),
+      "altiorumve" (not aliorumve), "arculus" (not circulus), and the reading "absoluta analysi"
+      (the earlier "absoluta soluta" was a mangled hyphenation); and conformed the Acta's fuller
+      abbreviations/capitalisation throughout. Applied identically to original.tex and en.tex.
 
 transcription:
   status: ai-draft
@@ -14,35 +38,37 @@ transcription:
   submitted_via: skill
   produced: "2026-07-29"
   verification:
-    flagged_pages: [601, 602, 606]
-    date: "2026-07-29"
+    flagged_pages: [278, 279]
+    date: "2026-07-31"
   note: >-
-    Full Latin text of No. LIX, printed pages 601–607 of the collected Opera (Geneva 1744, Tomus I).
-    Each page was rendered upright at 300 dpi and every displayed and inline formula, together with
-    the two-column analytic footnotes (a)–(m), was checked by zooming into the scan (the AI's own
+    Full Latin text of the "Solutio Problematis Leibnitiani", transcribed from the ORIGINAL 1694
+    Acta Eruditorum (Leipzig, June 1694, pp. 276–280; Internet Archive s1id13206610, leaves
+    0290–0294). In the Acta this is the closing section of Bernoulli's June elastica article — not a
+    separate numbered paper — introduced by the running heading "Jac. B. Solutio Problematis
+    Leibnitiani de Curva Accessus & Recessus …"; the "No. LIX" number and pages 601–607 belonged to
+    the 1744 collected Opera, from which this work was first drafted before being re-collated against
+    the Acta. Every displayed and inline formula was checked by zooming into the scan (the AI's own
     verification pass, not a full human review). Author notation is kept faithfully (HOUSESTYLE R3):
-    doubled letters for squares (aa, zz, xx, yy, tt, uu), the ":" division/ratio sign, "&c." and the
-    "&" ampersand; typography (long-s, ligatures, small caps, the superscript-"o" of "No.") is
-    normalized. Points labelled with Greek letters are set in math mode (R1).
+    doubled letters for squares (aa, zz, xx, yy, tt, uu), the ":" ratio/division sign, the classical
+    proportion sign "::", "&c." and the "&" ampersand; typography (long-s, ligatures, small caps,
+    the superscript-"o" of "No.") is normalized, and round parentheses are used for the author's
+    asides/value-substitutions. Points labelled with Greek letters are set in math mode (R1).
     Items flagged for the reviewer:
-    (a) The central differential equation is printed in THREE variant forms, all kept as printed
-    (a faithful discrepancy, R4): p.~601 $(x\,dx+y\,dy)\sqrt{y}=(x\,dy-y\,dx)\sqrt{a}$; note (b)
-    $(x\,dx+y\,dy)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$; observation 8, p.~606,
-    $(x\,dy+y\,dx)\sqrt{y}=(y\,dx-x\,dy)\sqrt{a}$ — the last left-hand side reads as a misprint for
-    $(x\,dx+y\,dy)$.
-    (b) p.~606, note (i): one proportion (the "componendo" step) was partly illegible in the scan;
-    the reconstructed token "Ai\ [a] :" has since been confirmed correct by a reviewer, so the
-    \uncertain{} wrapper was removed (identically in original.tex and the translation, 2026-07-30).
-    (c) The lettered footnotes (a)–(m) belong to this 1744 Opera edition; whether each is
-    Bernoulli's own annotation or the editor's (Gabriel Cramer) is not yet confirmed. They are
-    placed inline as complete units at the end of each page's main text (near the reference), a
-    presentation choice for web reading analogous to R8 for figures — recorded as HOUSESTYLE R15.
-    The "&" ampersand is kept as printed and rendered by the site per HOUSESTYLE R14.
-    (d) Fig. 3 (referenced on p.~603) is on plate Tab. XXIV of the Opera (facing p.~618), which is
-    NOT part of the pp. 601–607 text scan; figures/fig-3.png is cropped from a separate scan of that
-    plate. The plate carries the three figures for No. LVIII/LIX/LX together ("No. 58. 59. & 60."),
-    so a sliver of the neighbouring Fig. 1 / Fig. 2 is unavoidably included at the bottom edge; the
-    whole of Fig. 3 is captured.
+    (a) In the Acta the central differential equation is CONSISTENT: $(x\,dx+y\,dy)\sqrt{y}=(x\,dy-
+    y\,dx)\sqrt{a}$ both at its first statement (p. 277) and in observation 8 (p. 279). The variant
+    form printed in the Opera's observation 8 was an Opera misprint and is not kept.
+    (b) The five compounded ratios (p. 278) are set as the Acta prints them: "Elem. periph. Be" (the
+    earlier "Ge" was wrong), NO "(el)"/"(ek)" substitutions (those were Cramer's cross-references to
+    his deleted note c), and the proportion sign "::". The lettered footnotes (a)–(m) of the Opera
+    (Cramer's apparatus, e.g. cross-refs to "No. LXIV/LXV/LXVI") are absent from the Acta and not
+    present.
+    (c) Reviewer flags on individual glyphs: the little isochronal arc (p. 278) is set "A\omega";
+    the Acta glyph is a curly varpi-like form, read as omega (the defined point) — confirm. Obs. 7
+    (p. 279) prints "horizantali" (an a-spelling; obs. 3 has "horizontalem"): kept as printed (R4).
+    (d) Fig. 3 is on a folding plate, not on the pp. 276–280 text pages; figures/fig-3.png is the
+    crop reused from No. LX (jacob-bernoulli-1694-constructio-lemniscata), whose geometry is the same
+    (that crop was taken from the Opera plate Tab. XXIV — a figure-image source note, not a text
+    difference).
 
 translations:
   en:
@@ -54,16 +80,14 @@ translations:
     source: transcription       # translated from our own original.tex (PLAN §2.2), not any published translation
     produced: "2026-07-30"
     note: >-
-      English translation of No. LIX (pp. 601–607), made from original.tex. Every math expression,
-      \origpage marker and the \rmfigure image path are preserved unchanged; only prose is
-      translated. Reviewer notes: (1) The five-ratio table on p.~604 is one display-math block whose
-      ratio annotations sit inside \text{...} (e.g. "ex nat. Circuli.", "per constr. & princ. Calc.
-      inf. parvor."); because the preservation check treats the whole block as one invariant token,
-      those Latin abbreviations are kept verbatim inside it and cannot be translated. (2) The
-      formerly uncertain reading "Ai\ [a] :" in note (i) has been confirmed correct by a reviewer
-      and its \uncertain{} wrapper removed (identically in original.tex). (3) The three variant forms of the central differential equation (p.~601, note (b),
-      obs.~8) are preserved as printed. (4) Markup-only fix applied identically to original.tex and
-      the translation: at the five sites where a "$...$" span directly abutted a "${}^{(x)}$"
-      footnote marker (f, i, k, l, m), the two were merged as "$...\,{}^{(x)}$" (one span, thin
-      space) to remove a literal "$$" that texcompare.py mis-parsed as display math; neither the
-      mathematics nor the web rendering changes.
+      English translation of the "Solutio Problematis Leibnitiani" (Acta June 1694, pp. 276–280),
+      made from original.tex and conformed to the Acta original with it. Every math expression,
+      \origpage marker (276–280) and the \rmfigure image path match original.tex; only prose is
+      translated. Reviewer notes: (1) The five compounded ratios (p.~278) are one display-math block
+      whose Latin annotations ("ex natura Circuli.", "per constr. & princ. calcul. in fin.
+      parvorum.", etc.) are kept verbatim, since texcompare treats the whole block as one invariant
+      token; it now reads "Elem. periph. Be" with the proportion sign "::", matching the Acta.
+      (2) The 1744 Opera's editorial footnotes (a)–(m) are absent from the Acta and not present here;
+      Bernoulli's numbered observations 1–8 are kept. (3) The central differential equation is the
+      Acta's single consistent form $(x\,dx+y\,dy)\sqrt{y}=(x\,dy-y\,dx)\sqrt{a}$ at both its first
+      statement and in observation 8 (the Opera's obs.-8 variant was a misprint).
