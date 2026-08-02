@@ -46,7 +46,7 @@ type: paper
 significance: >-
   In this September 1694 sequel to his June solution of Leibniz's paracentric isochrone,
   Jacob Bernoulli gives a second construction of the curve of uniform approach and
-  recession, this time reducing it to the rectification of an algebraic curve of the fourth degree,
+  recession, this time reducing it to the rectification of an algebraic curve,
   $xx + yy = a\sqrt{xx - yy}$. He describes its figure-eight shape — a reclining figure of eight,
   "a knot of a ribbon" — and names it, for the first time, the lemniscate
   ("nodum fasciae, sive lemnisci"). He shows that its arc is measured by the very same integral
