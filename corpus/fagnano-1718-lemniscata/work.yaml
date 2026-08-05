@@ -63,6 +63,13 @@ significance_sources:
       handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
       functions.
 
+relations:
+  - to: jacob-bernoulli-1694-constructio-lemniscata
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Fagnano measures and divides the very lemniscate that Bernoulli first defined and named.
+
 source:
   scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=323"
   scan_id: "wikimedia:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu#page323"

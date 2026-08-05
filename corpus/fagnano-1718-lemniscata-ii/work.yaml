@@ -61,6 +61,14 @@ significance_sources:
       handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
       functions.
 
+relations:
+  - to: fagnano-1718-lemniscata
+    kind: builds-on
+    recommended: primary
+    note: >-
+      The second sketch, carrying the first from bisection of the quadrant to the general
+      multiplication and division of the arc.
+
 source:
   scan_url: "https://commons.wikimedia.org/w/index.php?title=File:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu&page=334"
   scan_id: "wikimedia:Fagnano_-_Opere_Matematiche_Volume_Secondo,_1911.djvu#page334"

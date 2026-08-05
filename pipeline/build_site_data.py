@@ -221,6 +221,67 @@ def build_authors(works: list[dict]) -> list[dict]:
     return authors
 
 
+def _work_ref(w: dict) -> dict:
+    """Compact reference to a work, for a related-reading link/card."""
+    return {"id": w["id"], "title": w.get("title"), "title_tex": w.get("title_tex"),
+            "by": _surname((w.get("authors") or [{}])[0].get("name")),
+            "year": w.get("year"), "url": w["url"]}
+
+
+def attach_relations(works: list[dict]) -> None:
+    """Resolve each work's backward `relations` and compute the inverse links, in place.
+
+    Adds to every work: `relations_out` (its authored edges, enriched with the target work),
+    `relations_in` (the inverse — works that cite/build on it), `recommended_prev` (the single
+    edge it flagged, or None) and `recommended_next` (works that flagged it, `primary` first then
+    by year). Edges to a work that isn't in the published set (filtered by copyright/min-status)
+    are dropped. Finally the raw `relations` key is removed — `relations_out` supersedes it.
+    """
+    by_id = {w["id"]: w for w in works}
+    for w in works:
+        w["relations_out"] = []
+        w["relations_in"] = []
+
+    for w in works:
+        for edge in w.get("relations") or []:
+            target = by_id.get(edge.get("to"))
+            if target is None:
+                continue  # target not published (below min-status / not public domain)
+            rec = edge.get("recommended")
+            rec = rec if rec in (True, "primary") else None
+            out = {**_work_ref(target), "kind": edge.get("kind"), "recommended": rec,
+                   "note": edge.get("note"), "sources": edge.get("sources") or []}
+            w["relations_out"].append(out)
+            inv = {**_work_ref(w), "kind": edge.get("kind"), "recommended": rec,
+                   "note": edge.get("note"), "sources": edge.get("sources") or []}
+            target["relations_in"].append(inv)
+
+    for w in works:
+        w["recommended_prev"] = next((r for r in w["relations_out"] if r["recommended"]), None)
+        nexts = [r for r in w["relations_in"] if r["recommended"]]
+        nexts.sort(key=lambda r: (0 if r["recommended"] == "primary" else 1, r.get("year") or 0))
+        w["recommended_next"] = nexts
+        del w["relations"]
+
+
+def _surname(name: str | None) -> str:
+    """Last whitespace-separated token of an author name — a compact node label ('Bernoulli')."""
+    return (name or "").split()[-1] if (name or "").strip() else ""
+
+
+def build_graph(works: list[dict]) -> dict:
+    """A compact whole-corpus dependency graph (for the timeline view): nodes + directed edges."""
+    nodes = [{"id": w["id"], "title": w.get("title"), "title_tex": w.get("title_tex"),
+              "by": _surname((w.get("authors") or [{}])[0].get("name")),
+              "year": w.get("year"), "discipline": (w.get("disciplines") or [None])[0],
+              "url": w["url"]}
+             for w in sorted(works, key=lambda w: (w.get("year") or 0, w.get("title") or ""))]
+    edges = [{"from": w["id"], "to": r["id"], "kind": r["kind"],
+              "recommended": bool(r["recommended"])}
+             for w in works for r in w.get("relations_out") or []]
+    return {"nodes": nodes, "edges": edges}
+
+
 def build(corpus_dir: Path, now_year: int, min_status: str,
           pdf_root: Path | None = None, tex_root: Path | None = None,
           fig_root: Path | None = None, author_root: Path | None = None) -> dict:
@@ -280,6 +341,8 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "publication_full": pub.get("title_full"),
             "significance": work.get("significance"),
             "significance_sources": work.get("significance_sources") or [],
+            # Raw backward edges from work.yaml; resolved + inverted by attach_relations() below.
+            "relations": work.get("relations") or [],
             "disciplines": (disc_list := work["discipline"] if isinstance(work.get("discipline"), list)
                             else [work.get("discipline")] if work.get("discipline") else []),
             "discipline_labels": [(vocab.get("disciplines") or {}).get(x, x) for x in disc_list],
@@ -305,6 +368,10 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "url": f"/works/{work['id']}/",
         })
 
+    # Resolve the dependency graph: per-work related-reading links + the whole-corpus graph.
+    attach_relations(works)
+    graph = build_graph(works)
+
     # Aggregate authors across the published works (also tags each work's authors with their slug).
     authors = build_authors(works)
     # Host each author's portrait (copy corpus/authors/<slug>/… into site/public/authors/…).
@@ -317,6 +384,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
         "count": len(works),
         "works": works,
         "authors": authors,
+        "graph": graph,
     }
 
 

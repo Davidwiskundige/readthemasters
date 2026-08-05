@@ -7,6 +7,7 @@
   --accent: #7a4b2b;
   --accent-weak: #f0e7dd;
   --link: #6d3f1f;
+  --cite: #356b63; /* muted teal/verdigris — the cites lines on the timeline (distinct from --accent) */
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -19,6 +20,7 @@
     --accent: #d69a6a;
     --accent-weak: #2b2621;
     --link: #e0a877;
+    --cite: #8ebfb3; /* lighter teal for dark-mode legibility */
   }
 }
 
@@ -149,6 +151,52 @@ ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8r
 .significance { border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 8px 8px 0; padding: .7rem 1rem; margin: 1.25rem 0; }
 .significance h2 { font-size: .95rem; margin: 0 0 .35rem; color: var(--accent); letter-spacing: .02em; }
 .significance p { margin: 0; font-size: .95rem; }
+/* Dependency timeline (dependency-timeline). HTML node cards positioned over an SVG edge layer;
+   a client script dims everything outside a focused work's k-hop neighbourhood. */
+.lede { color: var(--muted); max-width: 46rem; }
+.tl-controls { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; margin: 1rem 0 .6rem; font-size: .9rem; }
+.tl-controls label { display: flex; flex-direction: column; gap: .2rem; color: var(--muted); }
+.tl-controls select, .tl-controls input { font: inherit; padding: .25rem .4rem; border: 1px solid var(--border);
+  border-radius: 6px; background: var(--surface); color: var(--text); }
+.tl-controls input[type="number"] { width: 4rem; }
+.tl-controls .chip { align-self: flex-end; }
+.tl-legend { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+.tl-legend .swatch { display: inline-block; width: 26px; height: 0; vertical-align: middle; margin-right: .35rem;
+  border-top: 2px solid var(--accent); }
+.tl-legend .swatch.cites { border-top-style: dashed; border-top-color: var(--cite); }
+.tl-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.tl-canvas { position: relative; }
+.tl-edges { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.tl-century-line { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 4; }
+.tl-century { fill: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .04em;
+  font-variant-numeric: tabular-nums; }
+.tl-edge { fill: none; stroke: var(--accent); stroke-width: 1.5; transition: opacity .15s; }
+.tl-edge.cites { stroke: var(--cite); stroke-dasharray: 4 3; }
+/* Compact citation-tag nodes (a .pop wrapper: the tag triggers a popover with the full work).
+   Focus dimming is applied as inline opacity by graph distance (see timeline.astro). */
+/* `.tl-canvas` prefix beats `.pop { position: relative }` so the tags stay absolutely placed. */
+.tl-canvas .tl-node { position: absolute; display: flex; align-items: center; justify-content: center; transition: opacity .15s; }
+.tl-node .tl-abbr { font: 700 .78rem/1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  vertical-align: baseline; letter-spacing: .02em; color: var(--accent); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 999px; width: 100%; height: 100%; padding: 0;
+  cursor: pointer; transition: border-color .15s, box-shadow .15s, opacity .15s; }
+.tl-node .tl-abbr:hover { border-color: var(--accent); }
+.tl-node.focus .tl-abbr { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.tl-card .tl-card-title { display: block; font-weight: 700; text-decoration: none; }
+.tl-card .tl-card-title:hover { text-decoration: underline; }
+.tl-card .tl-card-meta { display: block; color: var(--muted); font-size: .75rem; margin-top: .15rem; }
+.tl-card .tl-card-meta a { color: var(--link); }
+
+/* Related reading — the recommended spine on a single line (work-relations): previous read on the
+   left, next read on the right. The full dependency graph lives on /timeline/. */
+.relnav { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem 1.5rem;
+  flex-wrap: wrap; margin: 1.1rem 0; padding: .5rem .9rem; border: 1px solid var(--border);
+  border-radius: 8px; font-size: .9rem; }
+.relnav .relnav-side { flex: 1 1 0; min-width: 0; }
+.relnav .relnav-right { text-align: right; }
+.relnav .relnav-dir { color: var(--accent); font-weight: 700; }
+.worktl { margin: .5rem 0 0; }
+
 /* Inline popover markers — content stays hidden until hover/click (a popover). Shared by
    significance citation markers and in-text editorial notes (\ednote). */
 .pop { position: relative; }

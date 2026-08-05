@@ -32,6 +32,13 @@ types:
   lecture: Lecture
   manuscript: Manuscript
 
+# Kinds of dependency edge in a work's `relations:` list (each edge points backward in time to an
+# earlier corpus work). `cites` is objective — the transcribed text references that work; `builds-on`
+# is a curated conceptual dependency (editorial, like `significance`).
+relation_kinds:
+  cites: Cites
+  builds-on: Builds on
+
 # ISO 639-1 codes -> display name
 languages:
   de: German

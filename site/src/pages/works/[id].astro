@@ -71,6 +71,16 @@ const reportUrl = `${repo}/issues/new?title=${encodeURIComponent(`Error in ${wor
 
 // Revision history is the curated `changelog` block from provenance.yaml, newest first (PLAN.md §9 #4).
 const changelog = work.changelog ?? [];
+
+// Related reading (dependency graph, work-relations): a one-line spine — the recommended previous
+// read on the left, the recommended next on the right (surname + first few words of the title).
+// The fuller graph, with cites/built-on-by, lives on /timeline/.
+const recPrev = work.recommended_prev ?? null;
+const recNext = (work.recommended_next ?? [])[0] ?? null;
+const firstWords = (t, n = 5) => {
+  const words = String(t ?? "").trim().split(/\s+/);
+  return words.length > n ? words.slice(0, n).join(" ") + "…" : words.join(" ");
+};
 ---
 <Base title={work.title} description={work.title_en ?? work.title}
       ogType="article" jsonLd={workJsonLd(work, Astro.site?.origin ?? "")}>
@@ -114,6 +124,32 @@ const changelog = work.changelog ?? [];
       <p set:html={renderSignificance(work.significance, work.significance_sources)} />
     </aside>
   )}
+
+  {/* Related reading — the recommended spine on one line: previous read left, next read right.
+      The full dependency graph (cites, built-on-by, …) is on /timeline/. */}
+  {(recPrev || recNext) && (
+    <nav class="relnav" aria-label="Related reading">
+      <span class="relnav-side">
+        {recPrev && (
+          <>
+            <span class="relnav-dir">Read first:</span>{" "}
+            <a href={recPrev.url} title={recPrev.title}>{recPrev.by}, {firstWords(recPrev.title)}</a>
+          </>
+        )}
+      </span>
+      <span class="relnav-side relnav-right">
+        {recNext && (
+          <>
+            <span class="relnav-dir">Next:</span>{" "}
+            <a href={recNext.url} title={recNext.title}>{recNext.by}, {firstWords(recNext.title)}</a>
+          </>
+        )}
+      </span>
+    </nav>
+  )}
+
+  {/* Jump to this work's place in the whole dependency graph, pre-focused. */}
+  <p class="attr worktl"><a href={`/timeline/?focus=${work.id}`}>See this work in the timeline →</a></p>
 
   <section class="downloads">
     <h2>Downloads</h2>

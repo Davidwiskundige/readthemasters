@@ -32,8 +32,8 @@ work's historical importance — our commentary, distinct from the transcription
 the gate) with optional `significance_sources` (a list of `{citation, url?}` backing its claims;
 the significance text may carry inline `[n]` markers referencing them, rendered as clickable
 citation superscripts), `external_translations` (list of referenced translations elsewhere: `language`,
-`title`, `translator`, `year`, `license`, `venue`, `url`, `note`), `copyright_assessment`
-(written/verified by the gate).
+`title`, `translator`, `year`, `license`, `venue`, `url`, `note`), `relations` (dependency edges
+to earlier works — see below), `copyright_assessment` (written/verified by the gate).
 
 Optional author display fields (used by the author pages — see site-catalog; backward compatible):
 `bio` (a short one-line biographical descriptor), `mactutor` (a MacTutor/St Andrews biography path
@@ -47,6 +47,26 @@ attribution shown as a caption (e.g. "Portrait by Bernhard Christoph Francke (c.
 links to when clicked. When the
 same author (same `wikidata_id`) appears in multiple works, `birth_year`/`death_year` must agree
 across them; `pipeline/validate.py` warns on a mismatch.
+
+### Dependency relations
+
+The optional `relations` list records directed dependency edges from **this** work to **earlier**
+corpus works, so the corpus forms a dependency graph (surfaced as per-work "Related reading" and
+the timeline — see site-catalog). Each edge is a mapping:
+
+- `to` (required) — the id of another corpus work; must exist and be same-year-or-earlier.
+- `kind` (required) — a `relation_kinds` vocab key: `cites` (the transcribed text references that
+  work) or `builds-on` (a curated conceptual dependency, editorial like `significance`).
+- `recommended` (optional) — `true` or `primary`; at most one edge per work carries it, marking the
+  reader's **recommended previous read**. `primary` additionally makes the target list this work
+  first among its "recommended next" reads (ties fall back to chronological order).
+- `note` (optional) — a short editorial gloss on the edge (plain text + inline KaTeX).
+- `sources` (optional) — `{citation, url?}` references, shown via the shared `.pop` popover.
+
+Edges are authored backward in time so adding a new work never requires editing an older one; the
+build computes the inverse ("cited by" / "recommended next"). The gate validates, across the whole
+corpus, that every `to` resolves, `to ≠ self`, `year(to) ≤ year(self)`, `kind` ∈ vocab,
+`recommended` ∈ {true, primary} with at most one per work, and that the graph is acyclic (a DAG).
 
 ### Canonical work identity
 
@@ -79,7 +99,8 @@ ISO date and a non-empty summary.
 ## Requirement: Controlled vocabulary
 
 `corpus/vocab.yaml` defines allowed values for `disciplines`, `tags`, `venues`, `types`,
-`languages`. Any metadata value outside it is rejected (prevents facet drift).
+`languages`, and `relation_kinds` (`cites`, `builds-on`). Any metadata value outside it is
+rejected (prevents facet drift).
 
 ## Requirement: LaTeX house style
 

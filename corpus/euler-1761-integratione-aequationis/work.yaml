@@ -69,6 +69,14 @@ significance_sources:
       handed Fagnano's works to Euler may be regarded as the birthday of the theory of elliptic
       functions.
 
+relations:
+  - to: fagnano-1718-lemniscata-ii
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Fagnano's general bisection formula is the direct ancestor of Euler's algebraic addition
+      theorem for the lemniscatic integral.
+
 source:
   # The best public scan of the original 1761 journal edition — it includes the plate (Tab. I, the
   # figures) and carries the same misprints. BHL item 113644 = Internet Archive

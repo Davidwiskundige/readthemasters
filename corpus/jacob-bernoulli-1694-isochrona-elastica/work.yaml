@@ -61,6 +61,14 @@ significance_sources:
       elastica and lemniscate, and the origins of elliptic-function theory.
     url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
 
+relations:
+  - to: leibniz-1689-isochrona
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Gives the first complete solution to the paracentric isochrone that Leibniz posed at the
+      close of his 1689 paper.
+
 source:
   scan_url: "https://archive.org/details/s1id13206610/page/276/mode/1up"
   scan_id: "archive.org:s1id13206610 (Acta Eruditorum 1694, June, pp. 276–280)"
