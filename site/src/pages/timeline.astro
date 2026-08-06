@@ -1,0 +1,250 @@
+---
+import Base from "../layouts/Base.astro";
+import data from "../data/works.json";
+
+const graph = data.graph ?? { nodes: [], edges: [] };
+const nodes = graph.nodes ?? [];
+const edges = (graph.edges ?? []).filter((e) => e.from && e.to);
+const worksById = Object.fromEntries((data.works ?? []).map((w) => [w.id, w]));
+const nodeById = Object.fromEntries(nodes.map((n) => [n.id, n]));
+
+// ---- Reading order (x) ------------------------------------------------------
+// Only order matters, not the exact year: each work gets its own column, placed by a topological
+// sort of the dependency graph (Kahn's algorithm, earliest year then id to break ties among ready
+// nodes). Because the edges encode which work came first, same-year works split correctly — June
+// before September, sketch I before sketch II — and a pure lineage becomes a straight line.
+const prereqs = {};   // id -> ids it depends on (its out-edges' targets, i.e. earlier works)
+const dependents = {}; // id -> ids that depend on it
+for (const n of nodes) { prereqs[n.id] = new Set(); dependents[n.id] = new Set(); }
+for (const e of edges) {
+  if (nodeById[e.from] && nodeById[e.to]) { prereqs[e.from].add(e.to); dependents[e.to].add(e.from); }
+}
+const remaining = Object.fromEntries(nodes.map((n) => [n.id, prereqs[n.id].size]));
+const cmp = (a, b) => (nodeById[a].year - nodeById[b].year) || a.localeCompare(b);
+const order = [];
+let ready = nodes.filter((n) => remaining[n.id] === 0).map((n) => n.id);
+while (ready.length) {
+  ready.sort(cmp);
+  const id = ready.shift();
+  order.push(id);
+  for (const d of dependents[id]) if (--remaining[d] === 0) ready.push(d);
+}
+for (const n of nodes) if (!order.includes(n.id)) order.push(n.id); // defensive (gate ensures a DAG)
+const orderIdx = Object.fromEntries(order.map((id, i) => [id, i]));
+
+// ---- Vertical position (y): Sugiyama barycenter-median ----------------------
+// Each node's lane relaxes to the median of its neighbours' lanes, so a work depending on two
+// others settles between them. A pure chain stays on one lane (a straight line).
+const lane = Object.fromEntries(order.map((id) => [id, 0]));
+const neighbours = (id) => [...prereqs[id], ...dependents[id]];
+for (let sweep = 0; sweep < 12; sweep++) {
+  for (const id of (sweep % 2 ? [...order].reverse() : order)) {
+    const ns = neighbours(id);
+    if (!ns.length) continue;
+    const v = ns.map((m) => lane[m]).sort((a, b) => a - b);
+    lane[id] = v.length % 2 ? v[(v.length - 1) / 2] : (v[v.length / 2 - 1] + v[v.length / 2]) / 2;
+  }
+}
+const laneVals = Object.values(lane);
+const minLane = Math.min(0, ...laneVals), maxLane = Math.max(0, ...laneVals);
+
+// ---- Geometry ---------------------------------------------------------------
+const NODE_W = 52, NODE_H = 26, COL_W = 96, SIDE = 44, BOT_PAD = 24, LANE_H = 48;
+// Column-skipping edges bow into the band above the nodes, so reserve room for the century label + bow.
+const skipSpans = edges.map((e) => orderIdx[e.from] - orderIdx[e.to]).filter((s) => s > 1);
+const maxBow = skipSpans.length ? Math.max(...skipSpans.map((s) => 10 + s * 6)) : 0;
+const TOP_PAD = 30 + maxBow;
+const colX = (id) => SIDE + orderIdx[id] * COL_W;
+const yPix = (id) => TOP_PAD + (lane[id] - minLane) * LANE_H;
+const CANVAS_W = Math.max(300, SIDE * 2 + Math.max(0, order.length - 1) * COL_W + NODE_W);
+const CANVAS_H = TOP_PAD + (maxLane - minLane) * LANE_H + NODE_H + BOT_PAD;
+
+// Edges: plain lines earlier → later; column-skippers curve so they clear the nodes between.
+const edgeGeom = edges.map((e) => {
+  if (orderIdx[e.to] == null || orderIdx[e.from] == null) return null;
+  const ax = colX(e.to) + NODE_W, ay = yPix(e.to) + NODE_H / 2;   // earlier, right edge
+  const bx = colX(e.from), by = yPix(e.from) + NODE_H / 2;         // later, left edge
+  const span = orderIdx[e.from] - orderIdx[e.to];
+  let d;
+  if (Math.abs(ay - by) < 0.5) {
+    if (span <= 1) d = `M ${ax} ${ay} L ${bx} ${by}`;
+    else { const bow = 10 + span * 6, mx = (ax + bx) / 2; d = `M ${ax} ${ay} Q ${mx} ${ay - bow} ${bx} ${by}`; }
+  } else {
+    const dx = Math.max(20, (bx - ax) / 2);
+    d = `M ${ax} ${ay} C ${ax + dx} ${ay} ${bx - dx} ${by} ${bx} ${by}`;
+  }
+  return { from: e.from, to: e.to, kind: e.kind, d };
+}).filter(Boolean);
+
+// ---- Century bands (the axis) ----------------------------------------------
+// No per-year ticks — only the century (first two digits). With the last two digits carried by each
+// node's citation tag (e.g. Eu61), century + tag still gives the exact year.
+const centuryOf = (id) => String(nodeById[id].year).slice(0, 2);
+const bands = [];
+for (const id of order) {
+  const c = centuryOf(id), last = bands[bands.length - 1];
+  if (last && last.c === c) last.ids.push(id); else bands.push({ c, ids: [id] });
+}
+
+// ---- Node labels: citation tags (surname initials + 2-digit year) ----------
+const abbrBase = (n) => (n.by || "?").slice(0, 2) + String(n.year).slice(-2);
+const counts = {};
+for (const id of order) counts[abbrBase(nodeById[id])] = (counts[abbrBase(nodeById[id])] || 0) + 1;
+const seen = {}, abbr = {};
+for (const id of order) {  // suffix a/b… in reading order, so 'a' is the earlier work
+  const base = abbrBase(nodeById[id]);
+  abbr[id] = counts[base] > 1 ? base + String.fromCharCode(97 + (seen[base] = (seen[base] ?? 0), seen[base]++)) : base;
+}
+
+const shortTitle = (t) => (t && t.length > 46 ? t.slice(0, 46).trimEnd() + "…" : t ?? "");
+---
+<Base title="Timeline" description="A dependency map of the works in reading order: who builds on whom.">
+  <h1>Timeline</h1>
+  <p class="lede">
+    The works in reading order, left to right, with the threads that connect them. Each node is a
+    citation-style tag — surname + year (e.g. <strong>Eu61</strong>); the axis marks the century, so
+    tag + axis give the exact year. Hover or tap a node for the full work. A solid line means one
+    work <strong>builds on</strong> an earlier one, a dashed line that it <strong>cites</strong> it.
+    Focus a work and set the steps back / forward to fade everything else away.
+  </p>
+
+  <div class="tl-controls">
+    <label>Focus
+      <select id="tl-focus">
+        <option value="">All works</option>
+        {order.map((id) => <option value={id}>{abbr[id]} — {shortTitle(nodeById[id].title)}</option>)}
+      </select>
+    </label>
+    <label>Steps back <input id="tl-back" type="number" min="0" max="9" value="9" /></label>
+    <label>Steps forward <input id="tl-fwd" type="number" min="0" max="9" value="9" /></label>
+    <button id="tl-reset" type="button" class="chip">Reset</button>
+  </div>
+  <p class="tl-legend">
+    <span><span class="swatch"></span>builds on</span>
+    <span><span class="swatch cites"></span>cites</span>
+    <span class="attr">Earlier works sit to the left.</span>
+  </p>
+
+  <div class="tl-scroll">
+    <div class="tl-canvas" style={`width:${CANVAS_W}px;height:${CANVAS_H}px`}>
+      <svg class="tl-edges" width={CANVAS_W} height={CANVAS_H}
+           viewBox={`0 0 ${CANVAS_W} ${CANVAS_H}`} aria-hidden="true">
+        {bands.map((band) => {
+          // A thin dashed rule at the century boundary — in the gap before the century's first
+          // work — labelled with the century (e.g. 1600). Node tags carry the last two digits.
+          const bx = colX(band.ids[0]) - (COL_W - NODE_W) / 2;
+          return (
+            <g>
+              <line class="tl-century-line" x1={bx} y1={22} x2={bx} y2={CANVAS_H - 6} />
+              <text class="tl-century" x={bx} y={15} text-anchor="middle">{band.c}00</text>
+            </g>
+          );
+        })}
+        {edgeGeom.map((e) => (
+          <path class={`tl-edge ${e.kind}`} data-from={e.from} data-to={e.to} d={e.d} />
+        ))}
+      </svg>
+      {order.map((id) => {
+        const n = nodeById[id];
+        const w = worksById[id] ?? {};
+        return (
+          <span class="pop tl-node" data-id={id}
+                style={`left:${colX(id)}px;top:${yPix(id)}px;width:${NODE_W}px;height:${NODE_H}px`}>
+            <button type="button" class="pop-marker tl-abbr" aria-label={n.title}>{abbr[id]}</button>
+            <span class="pop-content tl-card" role="note">
+              <a class="tl-card-title" href={n.url}>{n.title}</a>
+              <span class="tl-card-meta">
+                {(w.authors ?? []).map((a, i) => (
+                  <>{i > 0 && ", "}{a.slug ? <a href={`/authors/${a.slug}/`}>{a.name}</a> : a.name}</>
+                ))}
+                {(w.authors ?? []).length > 0 && " · "}{n.year}{w.venue_full ? " · " + w.venue_full : ""}
+              </span>
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  </div>
+
+  <script type="application/json" id="tl-graph" is:inline set:html={JSON.stringify({ edges })} />
+  <script is:inline>
+    (function () {
+      const el = document.getElementById("tl-graph");
+      if (!el) return;
+      const { edges } = JSON.parse(el.textContent);
+      // back = toward earlier works (dependencies); fwd = toward later works (dependents).
+      const back = {}, fwd = {};
+      for (const e of edges) { (back[e.from] ??= []).push(e.to); (fwd[e.to] ??= []).push(e.from); }
+      const focus = document.getElementById("tl-focus");
+      const backInp = document.getElementById("tl-back");
+      const fwdInp = document.getElementById("tl-fwd");
+      const reset = document.getElementById("tl-reset");
+      const nodeEls = [...document.querySelectorAll(".tl-node")];
+      const edgeEls = [...document.querySelectorAll(".tl-edge")];
+
+      // Graph distance from `start` following `adj`, up to `maxDepth`.
+      function dists(start, adj, maxDepth) {
+        const d = { [start]: 0 };
+        let frontier = [start];
+        for (let step = 1; step <= maxDepth && frontier.length; step++) {
+          const next = [];
+          for (const id of frontier) for (const nb of adj[id] || []) {
+            if (!(nb in d)) { d[nb] = step; next.push(nb); }
+          }
+          frontier = next;
+        }
+        return d;
+      }
+      // Fade in equal steps scaled to the chosen depth: a node d hops away on a side with N steps
+      // sits at fraction d/N toward the faint end; the nearer of the two sides wins. Anything
+      // outside the chosen range fades away. Only the tag fades — the popover stays fully legible.
+      const MIN = 0.18, GONE = 0.05;
+      function frac(id, db, dfw, B, F) {
+        const c = [];
+        if (id in db) c.push(B > 0 ? db[id] / B : (db[id] === 0 ? 0 : 1));
+        if (id in dfw) c.push(F > 0 ? dfw[id] / F : (dfw[id] === 0 ? 0 : 1));
+        return c.length ? Math.min(...c) : null;
+      }
+      function apply() {
+        const f = focus.value;
+        if (!f) {
+          nodeEls.forEach((n) => { n.querySelector(".tl-abbr").style.opacity = ""; n.classList.remove("focus"); });
+          edgeEls.forEach((e) => { e.style.opacity = ""; });
+          return;
+        }
+        const B = Math.max(0, parseInt(backInp.value, 10) || 0);
+        const F = Math.max(0, parseInt(fwdInp.value, 10) || 0);
+        const db = dists(f, back, B), dfw = dists(f, fwd, F);
+        nodeEls.forEach((n) => {
+          const id = n.dataset.id, fr = id === f ? 0 : frac(id, db, dfw, B, F);
+          n.querySelector(".tl-abbr").style.opacity = fr == null ? String(GONE) : String(1 - fr * (1 - MIN));
+          n.classList.toggle("focus", id === f);
+        });
+        edgeEls.forEach((e) => {
+          const a = e.dataset.from === f ? 0 : frac(e.dataset.from, db, dfw, B, F);
+          const b = e.dataset.to === f ? 0 : frac(e.dataset.to, db, dfw, B, F);
+          e.style.opacity = (a == null || b == null) ? String(0.04) : String(1 - Math.max(a, b) * (1 - MIN));
+        });
+      }
+      focus.addEventListener("change", apply);
+      backInp.addEventListener("input", apply);
+      fwdInp.addEventListener("input", apply);
+      reset.addEventListener("click", () => { focus.value = ""; backInp.value = "9"; fwdInp.value = "9"; apply(); });
+
+      // Clicking a node focuses that work too (its popover still opens, via pop.js).
+      nodeEls.forEach((n) => n.querySelector(".tl-abbr").addEventListener("click", () => {
+        focus.value = n.dataset.id;
+        apply();
+      }));
+
+      // Deep link: /timeline/?focus=<id> arrives focused on that work and scrolled into view.
+      const wanted = new URLSearchParams(location.search).get("focus");
+      if (wanted && [...focus.options].some((o) => o.value === wanted)) {
+        focus.value = wanted;
+        apply();
+        const el = document.querySelector('.tl-node[data-id="' + wanted + '"]');
+        if (el) el.scrollIntoView({ inline: "center", block: "nearest" });
+      }
+    })();
+  </script>
+</Base>

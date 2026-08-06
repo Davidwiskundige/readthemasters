@@ -309,6 +309,79 @@ def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
                          "(corpus/HOUSESTYLE.md):\n" + houselint.format_violations(violations))
 
 
+def check_relations(works_by_id: dict[str, dict], vocab: dict, issues: Issues) -> None:
+    """Validate the corpus-wide dependency graph declared in each work's `relations:` list.
+
+    Edges are authored on the newer work pointing backward to an earlier one, so the whole thing
+    must form a DAG. Runs at corpus level because dangling-target, chronology, and cycle checks all
+    need every work's id and year. Per-work-local checks (kind vocab, one-recommended, self-loop)
+    are folded in here too, keyed by "<id>/work.yaml" like the other messages.
+    """
+    kinds = vocab.get("relation_kinds") or {}
+    years = {wid: (w.get("publication") or {}).get("year") for wid, w in works_by_id.items()}
+    adjacency: dict[str, list[str]] = {}
+
+    for wid, work in works_by_id.items():
+        w = f"{wid}/work.yaml"
+        rels = work.get("relations")
+        adjacency[wid] = []
+        if rels is None:
+            continue
+        if not isinstance(rels, list):
+            issues.error(w, "relations must be a list of edges")
+            continue
+        recommended_count = 0
+        for i, edge in enumerate(rels):
+            if not isinstance(edge, dict):
+                issues.error(w, f"relations[{i}] must be a mapping with at least 'to' and 'kind'")
+                continue
+            to = edge.get("to")
+            kind = edge.get("kind")
+            if not to:
+                issues.error(w, f"relations[{i}] missing 'to'")
+            elif to == wid:
+                issues.error(w, f"relations[{i}] points to itself ('{to}')")
+            elif to not in works_by_id:
+                issues.error(w, f"relations[{i}] 'to: {to}' is not an existing corpus work")
+            else:
+                adjacency[wid].append(to)
+                y_from, y_to = years.get(wid), years.get(to)
+                if isinstance(y_from, int) and isinstance(y_to, int) and y_to > y_from:
+                    issues.error(w, f"relations[{i}] 'to: {to}' ({y_to}) is newer than this work "
+                                    f"({y_from}); edges must point backward in time")
+            if kind not in kinds:
+                issues.error(w, f"relations[{i}] kind '{kind}' not in vocab.relation_kinds")
+            rec = edge.get("recommended")
+            if rec not in (None, False, True, "primary"):
+                issues.error(w, f"relations[{i}] recommended must be true or 'primary', got {rec!r}")
+            if rec in (True, "primary"):
+                recommended_count += 1
+        if recommended_count > 1:
+            issues.error(w, f"has {recommended_count} recommended relations; at most one is allowed")
+
+    # Cycle detection over the (backward) edges — DFS colouring; report the first cycle found.
+    WHITE, GREY, BLACK = 0, 1, 2
+    colour = {wid: WHITE for wid in adjacency}
+
+    def visit(node: str, stack: list[str]) -> bool:
+        colour[node] = GREY
+        stack.append(node)
+        for nxt in adjacency.get(node, []):
+            if colour.get(nxt) == GREY:
+                cyc = stack[stack.index(nxt):] + [nxt]
+                issues.error("corpus", "relations form a cycle: " + " -> ".join(cyc))
+                return True
+            if colour.get(nxt) == WHITE and visit(nxt, stack):
+                return True
+        stack.pop()
+        colour[node] = BLACK
+        return False
+
+    for wid in adjacency:
+        if colour[wid] == WHITE and visit(wid, []):
+            break
+
+
 def rule_verdicts(assessment: dict) -> dict:
     """Extract {rule: verdict, 'public_domain': bool} for comparison."""
     out = {"public_domain": assessment.get("public_domain")}
@@ -377,11 +450,14 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
     # Cross-work author consistency: one wikidata_id must carry the same birth/death years
     # everywhere it appears, or the aggregated author page would show conflicting dates.
     author_dates: dict[str, tuple[str, dict]] = {}
+    # Keyed by directory name — the dependency graph is validated across the whole corpus below.
+    works_by_id: dict[str, dict] = {}
     for wd in work_dirs:
         validate_work(wd, vocab, now_year, strict_pma_100, issues, write=write)
         # Cross-work: unique ids.
         if (wd / "work.yaml").exists():
             work = load_yaml(wd / "work.yaml") or {}
+            works_by_id[wd.name] = work
             wid = work.get("id")
             if wid in seen_ids:
                 issues.error(wd.name, f"duplicate id '{wid}' (also in {seen_ids[wid]})")
@@ -401,6 +477,7 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
                 else:
                     author_dates[qid] = (wd.name, dates)
 
+    check_relations(works_by_id, vocab, issues)
     return issues
 
 

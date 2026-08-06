@@ -64,6 +64,58 @@ clearly-labelled "Significance" callout, visually distinct from the transcriptio
 editorial context (ours), not the author's text. Math in the note is rendered by KaTeX, as in the
 transcription.
 
+## Requirement: Related reading (dependency graph)
+
+From each work's `relations` (corpus-format), `build_site_data.py` emits per work: `relations_out`
+(its authored backward edges, each enriched with the target's `{id, title, title_tex, by, year,
+url}` — `by` is the first author's surname — plus `kind`, `recommended`, `note`, `sources`),
+`relations_in` (the computed inverse), `recommended_prev` (the single flagged edge or null), and
+`recommended_next` (works that flagged this one, ordered `primary` first then by year). Edges to a
+work not in the published set are dropped. The top-level JSON also gains a compact `graph` —
+`nodes` (`{id, title, title_tex, by, year, discipline, url}`) and `edges` (`{from, to, kind,
+recommended}`).
+
+When a work has a recommended previous or next read, the work page shows a single-line
+**"Related reading"** nav near Significance: the recommended previous read on the left
+(labelled `Read first:` — surname + first few words of the title) and the recommended next on the
+right (labelled `Next:` — surname + first few words), each linking to that work. It is deliberately terse — the
+full graph (cites, built-on-by, …) is explored on the timeline. A work with neither shows nothing.
+Every work page also carries a "See this work in the timeline →" link to `/timeline/?focus=<id>`,
+opening the graph pre-focused on that work.
+
+## Requirement: Timeline page
+
+A page at `/timeline/` (linked from the nav) visualises the whole-corpus `graph` as a
+reading-order dependency map. Layout is computed at build time. **x** = one column per work in
+**reading order** — a topological sort of the dependency graph (Kahn's algorithm, earliest year
+then id to break ties), so same-year works split into their true order (June before September,
+sketch I before II) and a pure lineage becomes a straight line. **y** = a lane from the **Sugiyama
+barycenter-median** step (each node relaxes to the median of its neighbours' lanes, so a work
+depending on two others settles between them; a chain stays on one lane). The **axis** is a thin
+dashed rule at each century boundary — placed in the gap before that century's first work and
+labelled with the century (e.g. `1600`); the exact year is read off each node's tag (century +
+tag = year). Each node is a compact citation tag — first two letters of the surname + last two
+digits of the year (e.g. `Eu61`, disambiguated `a`/`b`/… in reading order on collision); hover or
+click it for a `.pop` popover with the full work — a linked title (to the work page) and linked
+author(s) (to the author pages), plus year and venue, mirroring the catalog card's click targets —
+reusing the shared popover apparatus. Edges are plain SVG lines (no arrowheads — order is clear
+left → right), `builds-on` solid and `cites` dashed; an edge that skips a column curves to clear the
+node between. A work selector plus "steps back / forward" controls **fade** the rest in equal steps
+scaled to the chosen depth — a node `d` hops away on a side with `N` steps sits `d/N` of the way to
+faint, and anything outside the range fades away; only the tag fades (the popover stays fully
+legible), and "All" shows the whole corpus at full strength. Clicking a node focuses that work (as
+well as opening its popover), and the page accepts a `?focus=<id>` deep link — arriving focused on
+that work and scrolled to it — which each work page uses to link into the graph. The page works without JavaScript: each
+node is a focus/hover-revealed popover (CSS `:focus-within`/`:hover`) carrying the work's linked
+title and author(s), so every work (and its author) is reachable by keyboard and screen reader;
+focus-dimming is a JS enhancement only. The diagram scrolls within its own horizontal-scroll container. Zero
+runtime dependencies (SVG + a small inline script).
+
+The hand-rolled barycenter layout is deliberate at the current corpus size. **Future option:** if
+the graph ever grows tangled, a dedicated layered-layout engine — `dagre` (as used by mermaid) or
+`elkjs` — could replace the build-time layout step; it would add a dependency, so it is worth doing
+only when hand-rolling stops being enough.
+
 ## Requirement: Downloads
 
 Each work page offers, in one consolidated list: the source `.tex` for the original and each
@@ -114,7 +166,9 @@ biography link is shown when the author's `mactutor` field is set (the only exte
 `wikidata_id` is retained in the data for aggregation and the CI death-date check, but is not shown
 to visitors), followed by the author's works on the site (title → work page, year, venue, status
 badge), ordered by year. The index lists every author
-alphabetically with dates and work count. Only public-domain works that pass the gate feed the
+alphabetically with dates and work count, above a search box that filters the list client-side by
+name/bio as you type (mirroring the catalog's search) with a live count and an empty-state message.
+Only public-domain works that pass the gate feed the
 aggregation, so no author page surfaces an unpublished work.
 
 ## Requirement: Revision history

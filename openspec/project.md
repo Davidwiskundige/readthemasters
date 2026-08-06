@@ -55,7 +55,14 @@ pages; the plain `title` stays canonical for the browser tab, search, and struct
 `about-epigraph` (the About page opens with a sourced Abel epigraph; the `.pop` source-popover
 apparatus — significance citations, editorial notes, the epigraph — is now a shared behavior in
 `site/src/scripts/pop.js` loaded globally from `Base.astro`, triggered by the whole wrapper on
-hover/focus/click).
+hover/focus/click), and `work-relations` + `dependency-timeline` (a dependency graph over the
+corpus: each `work.yaml` may declare a backward `relations` list — edges `{to, kind: cites |
+builds-on, recommended?, note?, sources?}` — validated by the gate as an acyclic graph and
+aggregated by `build_site_data.py` into per-work `relations_out/in`, `recommended_prev/next`, and a
+top-level `graph`; surfaced as a one-line "Related reading" nav on each work page — previous read
+left, next read right — and a hand-rolled SVG `/timeline/` page of compact citation-tag nodes
+(e.g. `Eu61`, full details in a popover) laid out in reading order (topological sort) with a
+century axis, and focus + steps-back/forward controls that fade the rest by graph distance).
 
 **Upcoming proposals (not yet built):** none of the core roadmap remains — see PLAN.md §9 backlog
 for optional follow-ups (the side-by-side reader and RSS feed were deferred to §9's Later/aspirational

@@ -185,6 +185,78 @@ def test_bad_effort_value_errors():
     assert any("effort" in e for e in iss.errors)
 
 
+# --- Relations / dependency graph tests -------------------------------------- #
+VOCAB = {"relation_kinds": {"cites": "Cites", "builds-on": "Builds on"}}
+
+
+def rel_work(wid, year, relations=None):
+    w = {"id": wid, "publication": {"year": year}}
+    if relations is not None:
+        w["relations"] = relations
+    return w
+
+
+def rel_errors(works, vocab=VOCAB):
+    iss = validate.Issues()
+    validate.check_relations({w["id"]: w for w in works}, vocab, iss)
+    return iss.errors
+
+
+def test_valid_backward_graph_passes():
+    works = [
+        rel_work("a", 1689),
+        rel_work("b", 1694, [{"to": "a", "kind": "builds-on", "recommended": True}]),
+        rel_work("c", 1718, [{"to": "b", "kind": "builds-on", "recommended": "primary"},
+                             {"to": "a", "kind": "cites"}]),
+    ]
+    assert rel_errors(works) == []
+
+
+def test_dangling_target_errors():
+    works = [rel_work("b", 1694, [{"to": "nope", "kind": "cites"}])]
+    assert any("not an existing corpus work" in e for e in rel_errors(works))
+
+
+def test_self_edge_errors():
+    works = [rel_work("b", 1694, [{"to": "b", "kind": "cites"}])]
+    assert any("points to itself" in e for e in rel_errors(works))
+
+
+def test_forward_in_time_edge_errors():
+    works = [rel_work("a", 1689, [{"to": "b", "kind": "builds-on"}]), rel_work("b", 1694)]
+    assert any("newer than this work" in e for e in rel_errors(works))
+
+
+def test_same_year_edge_allowed():
+    works = [rel_work("a", 1718), rel_work("b", 1718, [{"to": "a", "kind": "builds-on"}])]
+    assert rel_errors(works) == []
+
+
+def test_bad_kind_errors():
+    works = [rel_work("a", 1689), rel_work("b", 1694, [{"to": "a", "kind": "inspired-by"}])]
+    assert any("relation_kinds" in e for e in rel_errors(works))
+
+
+def test_two_recommended_errors():
+    works = [rel_work("a", 1689), rel_work("b", 1690),
+             rel_work("c", 1694, [{"to": "a", "kind": "builds-on", "recommended": True},
+                                  {"to": "b", "kind": "builds-on", "recommended": "primary"}])]
+    assert any("at most one" in e for e in rel_errors(works))
+
+
+def test_bad_recommended_value_errors():
+    works = [rel_work("a", 1689),
+             rel_work("b", 1694, [{"to": "a", "kind": "builds-on", "recommended": "yes"}])]
+    assert any("recommended must be" in e for e in rel_errors(works))
+
+
+def test_cycle_detected():
+    # Same-year 2-cycle: a->b and b->a both satisfy year(to) <= year(self) but form a cycle.
+    works = [rel_work("a", 1700, [{"to": "b", "kind": "cites"}]),
+             rel_work("b", 1700, [{"to": "a", "kind": "cites"}])]
+    assert any("cycle" in e for e in rel_errors(works))
+
+
 # --- Integration: the real corpus passes ------------------------------------- #
 def test_real_corpus_passes_gate():
     issues = validate.validate_corpus(REPO / "corpus", now_year=NOW)

@@ -65,6 +65,18 @@ significance_sources:
       elastica and lemniscate, and the origins of elliptic-function theory.
     url: "https://www.math.ru.nl/~landsman/david-vdlugt-2025.pdf"
 
+relations:
+  - to: jacob-bernoulli-1694-isochrona-elastica
+    kind: builds-on
+    recommended: primary
+    note: >-
+      The September sequel to Bernoulli's June solution; it reduces the same construction to a new
+      algebraic curve he here names the lemniscate.
+  - to: leibniz-1689-isochrona
+    kind: cites
+    note: >-
+      Refers back to Leibniz's original isochrone problem.
+
 source:
   scan_url: "https://archive.org/details/s1id13206610/page/336/mode/1up"
   scan_id: "archive.org:s1id13206610 (Acta Eruditorum 1694, September, pp. 336–338; leaves 0436–0438)"
