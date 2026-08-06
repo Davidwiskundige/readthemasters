@@ -1,8 +1,9 @@
 # Transcription prompt (chat) — prompt_version: transcribe-v1
 
 Copy everything in the box below into your AI chat app, then attach a few scan pages (as images or
-PDF). Work in batches of a few pages so quality stays high. Paste the LaTeX output back into the
-project's **"Chat transcription" issue form**.
+PDF). Work in batches of a few pages so quality stays high. The prompt produces **two things** — the
+LaTeX transcription and the work's `work.yaml` metadata file — and the **"Chat transcription" issue
+form** has a field for each, so the submission is complete and ready to commit.
 
 > Keep this prompt in sync with the pipeline. The `prompt_version` you used goes into the
 > submission so provenance is accurate.
@@ -36,7 +37,53 @@ public-domain digitization project. Follow these rules exactly:
    an un-`\displaystyle`d inline integral blocks the PR.
 5. **Structure.** Use `\section*{...}` for headings actually present. Output a paragraph break
    (blank line) where the original has one.
-6. **Output only LaTeX** for the body — no commentary, no preamble, no `\documentclass` or
-   `\begin{document}`. Start at the first page you were given.
+6. **Output the LaTeX body first** — no commentary, no preamble, no `\documentclass` or
+   `\begin{document}`. Start at the first page you were given. If several pages are attached,
+   transcribe them in order, each preceded by its `\origpage{N}`.
 
-If several pages are attached, transcribe them in order, each preceded by its `\origpage{N}`.
+7. **Then output the work's `work.yaml`** as a second, separate code block (produce it **once** for
+   the whole work, not per batch). Fill every field you can from the title page and the scan. Leave
+   `copyright_assessment` **out entirely** — it is computed automatically by the project's validator
+   and must never be hand-written. Use this skeleton:
+
+   ```yaml
+   id: author-year-shorttitle          # lowercase slug; must equal the corpus directory name
+   title: "Title exactly as printed"
+   title_en: "English title"           # optional
+   authors:
+     - name: "Full Name"
+       wikidata_id: Qxxxxx             # if known — enables a death-date cross-check
+       death_year: 0000                # required (or use `anonymous: true` instead)
+   publication:
+     year: 0000                        # first-publication year (drives the US 95-year rule)
+     venue: journal-key                # a key from corpus/vocab.yaml; if unsure, put TODO-<journal> and give the full name in title_full
+     volume: ""                        # optional
+     pages: ""                         # optional, e.g. "293–297"
+     title_full: >-
+       Full citation of the first publication.
+   edition:
+     year: 0000
+     is_transcribed_edition: true
+     rights_cleared: true              # true only for an original/early edition with no modern apparatus
+     rights_note: >-
+       Which physical edition this scan is, and that no modern critical apparatus, commentary, or
+       re-typesetting is included in what you transcribed.
+   discipline: mathematics             # a vocab key, or a list e.g. [mathematics, physics]
+   tags: [analysis]                    # each a vocab key
+   language: la                        # ISO 639-1
+   type: paper                         # paper|book|chapter|letter|lecture|manuscript
+   source:
+     scan_url: "https://…"
+     scan_id: "library:identifier"
+   sources:                            # copyright-critical facts MUST be sourced, or the gate fails
+     death_date: "wikidata:Qxxxxx / reference"
+     publication_date: "catalogue record / DOI / library id"
+     edition: "identifier of the edition transcribed"
+   # significance: >-                  # optional editorial context (ours, not the author's) — may be left out
+   ```
+
+   The vocab fields (`discipline`, `tags`, `venue`, `type`, `language`) must match keys in
+   `corpus/vocab.yaml`; when you can't be sure a value exists, keep it simple and flag it — the
+   copyright gate confirms every value and a maintainer can adjust a single key. Never invent a
+   `copyright_assessment`, and never guess a public-domain verdict: give the sourced facts and let
+   the validator compute it.
