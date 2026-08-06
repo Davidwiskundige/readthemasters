@@ -1,0 +1,67 @@
+name: "Chat translation submission"
+description: "Submit a LaTeX translation you produced in your own AI chat app (Tier 1)."
+title: "[translation] <work> — <language>"
+labels: ["contribution", "translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Use the pinned prompt in `prompts/translate-chat.md`, and
+        translate from **our transcription** (`original.tex`), not from an existing published
+        translation. A maintainer will assemble this into the corpus format and credit you.
+  - type: input
+    id: work
+    attributes:
+      label: Work (catalog page URL or work-id)
+      description: "Which work in the catalog you translated — it must already have a transcription."
+      placeholder: "https://readthemasters.org/works/fagnano-1718-lemniscata  /  fagnano-1718-lemniscata"
+    validations: { required: true }
+  - type: input
+    id: language
+    attributes:
+      label: Target language
+      placeholder: "English"
+    validations: { required: true }
+  - type: dropdown
+    id: source
+    attributes:
+      label: What did you translate from?
+      options:
+        - "This project's transcription (original.tex)"
+        - "An external open / public-domain translation (note its license below)"
+    validations: { required: true }
+  - type: dropdown
+    id: model
+    attributes:
+      label: AI model / app used
+      options:
+        - Claude (Anthropic)
+        - ChatGPT (OpenAI)
+        - Gemini (Google)
+        - Other (note in the text box)
+    validations: { required: true }
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Thinking level (if you know it)
+      options:
+        - "unknown / standard"
+        - "extended thinking on"
+        - "reasoning model"
+    validations: { required: false }
+  - type: textarea
+    id: latex
+    attributes:
+      label: LaTeX output
+      description: "Paste the translation (or attach a .tex file). Preserve every formula, \\tag, and \\origpage marker exactly as in the original."
+      render: latex
+    validations: { required: true }
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licensing
+      options:
+        - label: "I release this contribution into the public domain under CC0 1.0."
+          required: true
+        - label: "I translated from the project's transcription or an early/public-domain edition — not from a modern, in-copyright annotated translation."
+          required: true
