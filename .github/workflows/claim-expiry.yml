@@ -1,0 +1,82 @@
+name: Claim expiry
+
+# Keeps the live claim list (open issues labelled `claim`) fresh:
+#   • No linked pull request within 24h of opening  -> the claim expires.
+#   • A pull request was linked                      -> the claim lives until every linked PR
+#                                                       is closed (merged or not), then expires.
+# A PR that closes the claim issue via "Closes #N" is handled by GitHub itself; this job covers
+# the 24h reaping and PRs that closed without auto-closing the claim.
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily at 03:00 UTC
+  workflow_dispatch: {} # allow a manual run from the Actions tab
+
+permissions:
+  issues: write
+  pull-requests: read
+  contents: read
+
+jobs:
+  reap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const DAY_MS = 24 * 60 * 60 * 1000;
+            const now = Date.now();
+
+            const claims = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: "open", labels: "claim", per_page: 100,
+            });
+
+            for (const issue of claims) {
+              if (issue.pull_request) continue; // a PR that happens to carry the label, not a claim
+
+              // Find pull requests cross-referenced from this claim's timeline.
+              const timeline = await github.paginate(github.rest.issues.listEventsForTimeline, {
+                owner, repo, issue_number: issue.number, per_page: 100,
+              });
+              const prNumbers = new Set();
+              for (const ev of timeline) {
+                const src = ev.source && ev.source.issue;
+                if (ev.event === "cross-referenced" && src && src.pull_request) {
+                  prNumbers.add(src.number);
+                }
+              }
+
+              if (prNumbers.size === 0) {
+                // Rule 1: no PR yet -> expire 24h after the claim was opened.
+                const ageMs = now - new Date(issue.created_at).getTime();
+                if (ageMs > DAY_MS) {
+                  await github.rest.issues.createComment({
+                    owner, repo, issue_number: issue.number,
+                    body: "⏳ Claim expired: no pull request was linked within 24 hours, so this work is open again. Still on it? Reopen this issue or file a fresh claim.",
+                  });
+                  await github.rest.issues.update({
+                    owner, repo, issue_number: issue.number,
+                    state: "closed", state_reason: "not_planned",
+                  });
+                }
+                continue;
+              }
+
+              // Rule 2: a PR exists -> keep the claim while any linked PR is still open.
+              let anyOpen = false;
+              for (const n of prNumbers) {
+                const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: n });
+                if (pr.state === "open") { anyOpen = true; break; }
+              }
+              if (!anyOpen) {
+                await github.rest.issues.createComment({
+                  owner, repo, issue_number: issue.number,
+                  body: "✅ Claim released: its linked pull request(s) are now closed. If the work merged, thank you — if not, it's open again.",
+                });
+                await github.rest.issues.update({
+                  owner, repo, issue_number: issue.number,
+                  state: "closed", state_reason: "completed",
+                });
+              }
+            }

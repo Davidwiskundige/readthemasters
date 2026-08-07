@@ -648,7 +648,8 @@ any AI chat subscription (Claude app, ChatGPT, Gemini) is enough.
 ### Claiming and coordination
 
 A simple `corpus/CLAIMS.md` (or GitHub issue labels) tracks who is working on what, preventing
-duplicate effort. Claims expire after e.g. 60 days of inactivity. "Good first texts" (short,
+duplicate effort. Claims expire after e.g. 24 hours of inactivity — a bring-your-own-AI
+transcription is quick, so claims should turn over fast. "Good first texts" (short,
 clean antiqua print, papers not books) get a label to funnel newcomers to winnable tasks.
 
 ---

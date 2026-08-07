@@ -1,0 +1,62 @@
+name: "Review a work (promote its status)"
+description: "You read a text against the scan and want to raise its status to skimmed or verified."
+title: "[review] <work> — <artifact> → <level>"
+labels: ["contribution", "review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reviewing! Read the text side by side with the linked original scan, then tell
+        us what you checked. A maintainer records you in the work's `provenance.yaml` and advances
+        its status. Even a partial check is worth submitting — say what you did and didn't cover.
+        (If you found a specific mistake, the **"Report an error"** link on the work is the faster
+        way to flag just that passage.)
+  - type: input
+    id: work
+    attributes:
+      label: Work (catalog page URL or work-id)
+      placeholder: "https://readthemasters.org/works/fagnano-1718-lemniscata  /  fagnano-1718-lemniscata"
+    validations: { required: true }
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Which artifact did you review?
+      options:
+        - "Transcription (original text)"
+        - "Translation (name the language below)"
+    validations: { required: true }
+  - type: input
+    id: language
+    attributes:
+      label: Language (translations only)
+      placeholder: "English"
+    validations: { required: false }
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level you reached
+      description: "skimmed = a quick pass; verified = a full, rigorous check against the source."
+      options:
+        - "skimmed"
+        - "verified"
+    validations: { required: true }
+  - type: textarea
+    id: note
+    attributes:
+      label: What you checked
+      description: "What you compared against the scan, what holds up, and anything you did NOT cover or are unsure about."
+      placeholder: "Checked every equation and \\tag against the scan djvu pages 323–327; math agrees. Did not proofread the Italian prose word-for-word."
+    validations: { required: true }
+  - type: input
+    id: credit
+    attributes:
+      label: Name / handle for credit (optional)
+      description: "How you'd like to be recorded in the reviewers list. Leave blank to use your GitHub handle."
+    validations: { required: false }
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: "I read the text against the linked original scan (not another edition or translation)."
+          required: true

@@ -6,8 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for contributing! Use the pinned prompt in `prompts/transcribe-chat.md`.
-        A maintainer will assemble this into the corpus format and credit you.
+        Thanks for contributing! Use the pinned prompt in `prompts/transcribe-chat.md`. It produces
+        two things — the **LaTeX transcription** and the work's **`work.yaml`** — and there's a
+        field for each below, so this submission is complete and ready to commit. You are credited.
   - type: input
     id: work
     attributes:
@@ -46,9 +47,16 @@ body:
         - "reasoning model"
     validations: { required: false }
   - type: textarea
+    id: workyaml
+    attributes:
+      label: work.yaml (metadata)
+      description: "Paste the second code block the prompt produced. Do NOT include a copyright_assessment — the validator computes it."
+      render: yaml
+    validations: { required: true }
+  - type: textarea
     id: latex
     attributes:
-      label: LaTeX output
+      label: LaTeX transcription
       description: "Paste the transcription (or attach a .tex file). Use the house-style macros."
       render: latex
     validations: { required: true }
@@ -56,15 +64,16 @@ body:
     id: pubdate
     attributes:
       label: First-publication date + source
-      description: "Needed for the copyright gate — cite a catalog/bibliography/DOI."
+      description: "Skip if already in your work.yaml above. Otherwise cite a catalog/bibliography/DOI."
       placeholder: "1868 — Göttinger Abhandlungen vol. 13 (digizeitschriften:252457811_0013)"
-    validations: { required: true }
+    validations: { required: false }
   - type: input
     id: death
     attributes:
       label: Author death year(s) + source
+      description: "Skip if already in your work.yaml above."
       placeholder: "1866 — wikidata:Q42299"
-    validations: { required: true }
+    validations: { required: false }
   - type: checkboxes
     id: license
     attributes:

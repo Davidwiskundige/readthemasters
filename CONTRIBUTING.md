@@ -8,8 +8,10 @@ no-code to full pipeline.
 
 1. **Check it isn't already here.** Search the [catalog] and `corpus/` by author + year (or
    Wikidata QID). Duplicates are closed.
-2. **Claim it.** Add a row to [`corpus/CLAIMS.md`](corpus/CLAIMS.md) (PR or the `claim` issue
-   label) so nobody duplicates your effort. Claims lapse after 60 days of inactivity.
+2. **Claim it.** Open a [**Claim a work**](https://github.com/Davidwiskundige/readthemasters/issues/new?template=claim.yml)
+   issue (see [`corpus/CLAIMS.md`](corpus/CLAIMS.md)) so nobody duplicates your effort. A claim
+   with no linked pull request expires after 24 hours; once a PR is linked it lives until that PR
+   is merged or closed.
 3. **Confirm it's public domain.** The work must pass the copyright gate — see below.
 
 ## The copyright gate (non-negotiable)

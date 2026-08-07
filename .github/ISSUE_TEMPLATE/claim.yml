@@ -1,0 +1,52 @@
+name: "Claim a work"
+description: "Reserve a work you're about to transcribe or translate, so nobody doubles the effort."
+title: "[claim] <work>"
+labels: ["claim"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Claiming is lightweight and short-lived, because the work goes fast with your own AI:
+
+        - If you **don't open a pull request within 24 hours**, this claim expires automatically and
+          the work is open again.
+        - Once a **pull request is linked** (mention this issue in the PR, e.g. `Claims #123`), the
+          claim lives as long as that PR is open — it's released when the PR is merged or closed.
+
+        First check the work isn't already in the catalog (search by author + year, or Wikidata QID).
+  - type: input
+    id: work
+    attributes:
+      label: Work (id or title + year)
+      placeholder: "fagnano-1718-lemniscata  /  Fagnano, Metodo per misurare la lemniscata, 1718"
+    validations: { required: true }
+  - type: input
+    id: scan
+    attributes:
+      label: Scan source (URL or stable identifier)
+      placeholder: "https://…  /  digizeitschriften:252457811_0013"
+    validations: { required: true }
+  - type: dropdown
+    id: task
+    attributes:
+      label: What are you claiming?
+      options:
+        - "Transcription"
+        - "Translation (name the language below)"
+        - "Both"
+    validations: { required: true }
+  - type: input
+    id: language
+    attributes:
+      label: Language (translations only)
+      placeholder: "English"
+    validations: { required: false }
+  - type: dropdown
+    id: route
+    attributes:
+      label: How do you plan to submit?
+      options:
+        - "Pull request (skill, pipeline, or by hand)"
+        - "Chat issue form (a maintainer assembles it)"
+        - "Not sure yet"
+    validations: { required: false }

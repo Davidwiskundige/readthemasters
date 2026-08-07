@@ -4,6 +4,11 @@ Copy the box below into your AI chat app, then paste the project's **transcripti
 `original.tex` content) for the section you are translating. Translate only from our transcription,
 never from an existing published translation. Submit via the **"Chat translation" issue form**.
 
+Unlike a transcription, a translation needs **no `work.yaml`** — the work already exists in the
+catalog and cleared the copyright gate. Your one deliverable is the translated LaTeX body, which is
+committed as `corpus/<work-id>/translations/<lang>.tex`. Preserve every formula, `\tag`, and
+`\origpage` marker exactly, so it aligns line-for-line with the original.
+
 ---
 
 You are translating a historic mathematics/physics text into {TARGET LANGUAGE, e.g. English} for a
