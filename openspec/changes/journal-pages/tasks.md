@@ -32,5 +32,5 @@
 
 ## Ship
 
-- [ ] Fold deltas into `openspec/specs/site-catalog` + `corpus-format`; update `project.md`;
-      archive the change.
+- [ ] Fold deltas into `openspec/specs/site-catalog` + `corpus-format`; update
+      `openspec/config.yaml` context if needed; archive the change.
