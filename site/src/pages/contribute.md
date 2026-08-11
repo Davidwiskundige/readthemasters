@@ -13,7 +13,7 @@ here. Whichever you do, you bring your own AI; the project pays for no compute, 
 ## Report an error
 
 Every text has a **"Report an error"** link. Click it to open a pre-filled issue naming the work
-and passage. This is the fastest way to improve quality — no account needed but GitHub.
+and passage.
 
 ## Add a work: transcribe or translate
 
