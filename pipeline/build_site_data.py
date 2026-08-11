@@ -22,7 +22,7 @@ from pathlib import Path
 import re
 
 from build_catalog import max_status  # type: ignore
-from validate import STATUS_LADDER, evaluate_copyright, load_yaml  # type: ignore
+from validate import STATUS_LADDER, evaluate_copyright, load_yaml, venue_label  # type: ignore
 
 
 def read_text(path: Path) -> str | None:
@@ -221,6 +221,53 @@ def build_authors(works: list[dict]) -> list[dict]:
     return authors
 
 
+def venue_meta(entry) -> dict:
+    """Normalize a vocab venues entry (bare string or object) into a journal metadata dict."""
+    if isinstance(entry, dict):
+        return {"name": entry.get("name"), "aka": entry.get("aka"),
+                "kind": entry.get("kind") or "periodical",
+                "founded": entry.get("founded"), "ceased": entry.get("ceased"),
+                "publisher": entry.get("publisher"), "place": entry.get("place"),
+                "note": entry.get("note"), "archives": entry.get("archives") or []}
+    return {"name": entry, "aka": None, "kind": "periodical", "founded": None, "ceased": None,
+            "publisher": None, "place": None, "note": None, "archives": []}
+
+
+def build_journals(works: list[dict], vocab: dict) -> list[dict]:
+    """Aggregate the venue vocabulary into per-journal records for /journals/.
+
+    One record per `periodical` venue (the `book`/`manuscript` sentinels are excluded), carrying
+    the venue's metadata and the published works that appeared in it, ordered by year. A curated
+    periodical with no works yet still gets a record (an empty works list), so the section can
+    present journals the corpus intends to draw from.
+    """
+    by_venue: dict[str, list[dict]] = {}
+    for w in works:
+        if w.get("venue"):
+            by_venue.setdefault(w["venue"], []).append(w)
+
+    journals = []
+    for key, entry in (vocab.get("venues") or {}).items():
+        meta = venue_meta(entry)
+        if meta["kind"] != "periodical":
+            continue  # book / manuscript sentinels are not journals
+        wks = sorted(by_venue.get(key, []),
+                     key=lambda w: (w.get("year") or 0, w.get("title") or ""))
+        journals.append({
+            "slug": key,
+            **meta,
+            "url": f"/journals/{key}/",
+            "work_count": len(wks),
+            "works": [{"id": w["id"], "title": w.get("title"), "title_tex": w.get("title_tex"),
+                       "by": _surname((w.get("authors") or [{}])[0].get("name")),
+                       "year": w.get("year"), "venue_full": w.get("venue_full"),
+                       "status": w.get("status"), "url": w["url"],
+                       "scan_url": (w.get("source") or {}).get("scan_url")} for w in wks],
+        })
+    journals.sort(key=lambda j: (j.get("name") or "").lower())
+    return journals
+
+
 def _work_ref(w: dict) -> dict:
     """Compact reference to a work, for a related-reading link/card."""
     return {"id": w["id"], "title": w.get("title"), "title_tex": w.get("title_tex"),
@@ -333,7 +380,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "authors": work.get("authors") or [],
             "year": pub.get("year"),
             "venue": pub.get("venue"),
-            "venue_label": (venue_lbl := (vocab.get("venues") or {}).get(pub.get("venue"))),
+            "venue_label": (venue_lbl := venue_label(vocab, pub.get("venue"))),
             "venue_full": venue_citation(venue_lbl, pub.get("volume"), pub.get("pages"),
                                          pub.get("month")),
             "volume": pub.get("volume"),
@@ -378,12 +425,16 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
     for a in authors:
         a["portrait"] = resolve_portrait(corpus_dir, author_root, a["slug"], a.get("portrait"))
 
+    # Aggregate the venue vocabulary into per-journal records (for /journals/).
+    journals = build_journals(works, vocab)
+
     return {
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "vocab": vocab,
         "count": len(works),
         "works": works,
         "authors": authors,
+        "journals": journals,
         "graph": graph,
     }
 

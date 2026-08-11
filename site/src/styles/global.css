@@ -108,6 +108,14 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .authorhead .links { margin: .3rem 0 0; font-size: .9rem; }
 .worksh { font-size: 1.05rem; margin: 1.5rem 0 .6rem; }
 ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+/* Journal (venue) pages. Head mirrors .authorhead; "Find the originals" is a plain link list. */
+.journalhead { margin-bottom: 1rem; }
+.journalhead h1 { margin: 0 0 .3rem; }
+.journalhead .sub { color: var(--muted); margin: 0 0 .25rem; }
+.journalhead .sub.dates { font-variant-numeric: tabular-nums; }
+.journalhead .note { margin: .5rem 0 0; max-width: 60ch; }
+ul.archives { margin: .3rem 0 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
+.card .meta a.scanlink { color: var(--accent); text-decoration: none; }
 .attr { font-size: .85rem; color: var(--muted); }
 .downloads { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; margin: 1rem 0; }
 .downloads h2 { font-size: .95rem; margin: .2rem 0 .5rem; }

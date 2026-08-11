@@ -49,16 +49,139 @@ languages:
   ru: Russian
 
 # Publication venues. Normalize aggressively — one canonical key per venue.
+#
+# An entry may be a bare string (the full title) OR an object with journal metadata used by the
+# /journals/ pages: name (required), aka, kind (periodical|book|manuscript, default periodical),
+# founded/ceased, publisher, place, note, and archives (repositories hosting the digitized full
+# run, each {label, url}). The `book`/`manuscript` sentinels set kind so /journals/ excludes them.
 venues:
-  crelle: "Journal für die reine und angewandte Mathematik (Crelle's Journal)"
-  annalen-der-physik: "Annalen der Physik"
-  goettingen-abhandlungen: "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen"
-  phil-trans: "Philosophical Transactions of the Royal Society"
-  comptes-rendus: "Comptes rendus de l'Académie des sciences"
-  acta-mathematica: "Acta Mathematica"
-  mathematische-annalen: "Mathematische Annalen"
-  giornale-letterati-italia: "Giornale de' letterati d'Italia"
-  acta-eruditorum: "Acta Eruditorum"
-  novi-commentarii-petropolitanae: "Novi Commentarii Academiae Scientiarum Imperialis Petropolitanae"
-  book: "(published as a book / monograph)"
-  manuscript: "(unpublished manuscript)"
+  crelle:
+    name: "Journal für die reine und angewandte Mathematik (Crelle's Journal)"
+    aka: "Crelle's Journal"
+    founded: 1826
+    publisher: "August Leopold Crelle (founder)"
+    place: "Berlin"
+    note: >-
+      Founded by August Leopold Crelle in 1826, the oldest mathematics journal still in print and
+      an early home of Abel, Jacobi, Dirichlet and Steiner.
+    archives:
+      - label: "GDZ (Göttingen) — digitized volumes"
+        url: "https://gdz.sub.uni-goettingen.de/"
+      - label: "Wikisource — volume-by-volume index"
+        url: "https://de.wikisource.org/wiki/Journal_für_die_reine_und_angewandte_Mathematik"
+  annalen-der-physik:
+    name: "Annalen der Physik"
+    founded: 1799
+    place: "Leipzig / Berlin"
+    note: >-
+      A leading German physics journal since 1799; its 1905 volume carried Einstein's annus
+      mirabilis papers.
+    archives:
+      - label: "Wiley Online Library — historical archive"
+        url: "https://onlinelibrary.wiley.com/journal/15213889"
+      - label: "Internet Archive — digitized volumes"
+        url: "https://archive.org/search?query=Annalen+der+Physik"
+  goettingen-abhandlungen:
+    name: "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen"
+    place: "Göttingen"
+    publisher: "Königliche Gesellschaft der Wissenschaften zu Göttingen"
+    note: >-
+      Proceedings of the Göttingen Academy of Sciences (founded 1751), the venue for major works
+      by Gauss, Riemann and others.
+    archives:
+      - label: "GDZ (Göttingen) — digitized volumes"
+        url: "https://gdz.sub.uni-goettingen.de/"
+  phil-trans:
+    name: "Philosophical Transactions of the Royal Society"
+    aka: "Phil. Trans."
+    founded: 1665
+    place: "London"
+    publisher: "Royal Society"
+    note: >-
+      The first scientific journal in English, published continuously since 1665.
+    archives:
+      - label: "Royal Society — Philosophical Transactions (1665–1886)"
+        url: "https://royalsocietypublishing.org/journal/rstl"
+      - label: "Internet Archive — digitized volumes"
+        url: "https://archive.org/search?query=Philosophical+Transactions+of+the+Royal+Society"
+  comptes-rendus:
+    name: "Comptes rendus de l'Académie des sciences"
+    aka: "Comptes rendus"
+    founded: 1835
+    place: "Paris"
+    publisher: "Académie des sciences"
+    note: >-
+      The weekly proceedings of the French Academy of Sciences, a rapid-publication venue since
+      1835.
+    archives:
+      - label: "Gallica (BnF) — full run"
+        url: "https://gallica.bnf.fr/ark:/12148/cb343481087/date"
+  acta-mathematica:
+    name: "Acta Mathematica"
+    founded: 1882
+    place: "Stockholm"
+    publisher: "Gösta Mittag-Leffler (founder)"
+    note: >-
+      Founded by Gösta Mittag-Leffler in 1882; its early volumes published Poincaré, Cantor and
+      Hadamard.
+    archives:
+      - label: "Project Euclid — open archive"
+        url: "https://projecteuclid.org/journals/acta-mathematica"
+  mathematische-annalen:
+    name: "Mathematische Annalen"
+    founded: 1868
+    note: >-
+      Founded in 1868 by Clebsch and Neumann; under Klein and Hilbert one of the foremost
+      mathematics journals.
+    archives:
+      - label: "GDZ (Göttingen) — digitized volumes"
+        url: "https://gdz.sub.uni-goettingen.de/"
+      - label: "DigiZeitschriften"
+        url: "https://www.digizeitschriften.de/"
+  giornale-letterati-italia:
+    name: "Giornale de' letterati d'Italia"
+    founded: 1710
+    ceased: 1740
+    place: "Venice"
+    publisher: "Apostolo Zeno, Scipione Maffei, Antonio Vallisneri (founders)"
+    note: >-
+      A Venetian learned journal (1710–1740) that carried Fagnano's lemniscate work.
+    archives:
+      - label: "Internet Archive — volume 1 (1710)"
+        url: "https://archive.org/details/giornaledeletter01zeno"
+      - label: "Internet Archive — digitized volumes"
+        url: "https://archive.org/search?query=Giornale+de%27+letterati+d%27Italia"
+  acta-eruditorum:
+    name: "Acta Eruditorum"
+    founded: 1682
+    ceased: 1782
+    place: "Leipzig"
+    publisher: "Otto Mencke (founder)"
+    note: >-
+      The first scientific journal of the German lands (1682–1782), a principal venue for Leibniz
+      and the Bernoullis.
+    archives:
+      - label: "Internet Archive — 1682–1776 run"
+        url: "https://archive.org/details/bub_gb_d_VaAAAAQAAJ"
+      - label: "Internet Archive — digitized volumes"
+        url: "https://archive.org/search?query=Acta+Eruditorum"
+  novi-commentarii-petropolitanae:
+    name: "Novi Commentarii Academiae Scientiarum Imperialis Petropolitanae"
+    aka: "Novi Commentarii Petropolitanae"
+    founded: 1750
+    ceased: 1776
+    place: "Saint Petersburg"
+    publisher: "Imperial Academy of Sciences, St Petersburg"
+    note: >-
+      The St Petersburg Academy's proceedings (1750–1776), in which Euler published prolifically.
+    archives:
+      - label: "Euler Archive"
+        url: "https://scholarlycommons.pacific.edu/euler-works/"
+      - label: "Biodiversity Heritage Library"
+        url: "https://www.biodiversitylibrary.org/search?searchTerm=Novi+Commentarii+Academiae+Scientiarum+Imperialis+Petropolitanae"
+  book:
+    name: "(published as a book / monograph)"
+    kind: book
+  manuscript:
+    name: "(unpublished manuscript)"
+    kind: manuscript
