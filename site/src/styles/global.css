@@ -116,6 +116,36 @@ ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8r
 .journalhead .note { margin: .5rem 0 0; max-width: 60ch; }
 ul.archives { margin: .3rem 0 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
 .card .meta a.scanlink { color: var(--accent); text-decoration: none; }
+
+/* Compact journal surfaces (compact-journal-pages). Title-led rows, no card boxes — scoped to
+   .journallist / .jworks so the shared .card and ul.authorlist used elsewhere stay untouched. */
+ul.journallist { list-style: none; margin: .5rem 0 0; padding: 0; }
+.journallist .jrow { display: flex; align-items: baseline; gap: .6rem;
+  padding: .35rem 0; border-bottom: 1px solid var(--border); }
+.journallist .jrow > a { text-decoration: none; font-size: 1.05rem; }
+.journallist .jrow > a:hover { text-decoration: underline; }
+/* Volume/issue dropdowns (eudml-style): each section collapses to its label + count and expands to
+   its works. Native <details>, so keyboard- and no-JS-friendly. */
+.jvols { display: grid; gap: .4rem; margin-top: .3rem; }
+.jvol { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.jvol > summary { cursor: pointer; list-style: none; padding: .55rem .9rem;
+  display: flex; align-items: baseline; gap: .6rem; }
+.jvol > summary::-webkit-details-marker { display: none; }
+.jvol > summary::before { content: "\25B8"; color: var(--accent); }
+.jvol[open] > summary::before { content: "\25BE"; }
+.jvol .jvol-label { font-weight: 700; font-variant-numeric: tabular-nums; }
+.jvol .jvol-count { color: var(--muted); font-size: .8rem; }
+ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+.jvol > ul.jwork-list { padding: .1rem .9rem .6rem; border-top: 1px solid var(--border); }
+.jwork { display: flex; flex-direction: column; gap: .1rem;
+  padding: .35rem 0; border-bottom: 1px solid var(--border); }
+.jvol .jwork:last-child { border-bottom: none; padding-bottom: 0; }
+.jwork-title { text-decoration: none; font-size: 1.02rem; }
+.jwork-title:hover { text-decoration: underline; }
+.jwork-trans { color: var(--muted); font-style: italic; font-size: .92rem; }
+.jwork-meta { color: var(--muted); font-size: .82rem; display: flex; gap: .6rem;
+  flex-wrap: wrap; align-items: baseline; }
+.jwork-meta a.scanlink { color: var(--accent); text-decoration: none; }
 .attr { font-size: .85rem; color: var(--muted); }
 .downloads { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; margin: 1rem 0; }
 .downloads h2 { font-size: .95rem; margin: .2rem 0 .5rem; }

@@ -3,9 +3,6 @@ import Base from "../../layouts/Base.astro";
 import data from "../../data/works.json";
 
 const journals = data.journals ?? [];
-// Era line: "1682 – 1782", "1826 – ", or a single year. Null when neither is known.
-const era = (j) => (j.founded || j.ceased)
-  ? `${j.founded ?? "?"} – ${j.ceased ?? "present"}` : null;
 const plural = journals.length === 1 ? "" : "s";
 ---
 <Base title="Journals" description="The journals and academy proceedings the works on ReadTheMasters were first published in — with where to find the originals.">
@@ -14,15 +11,11 @@ const plural = journals.length === 1 ? "" : "s";
     where you can read the original run yourself.</p>
   <input id="jq" class="searchbox" type="search" placeholder="Search journals…" aria-label="Search journals" />
   <p class="attr count"><span id="jcount">{journals.length}</span> of {journals.length} journal{plural}.</p>
-  <ul class="authorlist" id="journallist">
+  <ul class="journallist" id="journallist">
     {journals.map((j) => (
-      <li class="card" data-search={`${j.name} ${j.aka ?? ""} ${j.note ?? ""}`.toLowerCase()}>
-        <h3><a href={j.url}>{j.name}</a></h3>
-        <div class="meta">
-          {era(j) && <span>{era(j)}</span>}
-          {j.place && <span>· {j.place}</span>}
-          <span class="pill">{j.work_count} work{j.work_count === 1 ? "" : "s"}</span>
-        </div>
+      <li class="jrow" data-search={`${j.name} ${j.aka ?? ""} ${j.note ?? ""}`.toLowerCase()}>
+        <a href={j.url}>{j.name}</a>
+        {j.work_count > 0 && <span class="pill">{j.work_count} work{j.work_count === 1 ? "" : "s"}</span>}
       </li>
     ))}
   </ul>
@@ -30,7 +23,7 @@ const plural = journals.length === 1 ? "" : "s";
 
   <script>
     const q = document.getElementById("jq");
-    const cards = [...document.querySelectorAll("#journallist .card")];
+    const cards = [...document.querySelectorAll("#journallist .jrow")];
     const countEl = document.getElementById("jcount");
     const emptyEl = document.getElementById("jempty");
     function apply() {
