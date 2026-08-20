@@ -22,8 +22,8 @@ The two are the same story with one word changed. Here it is in three steps.
 **1. Pick what to work on, and claim it.**
 
 - **Transcribing** — pick an unclaimed public-domain work (check the [claims list] and search the
-  catalog first). It must pass the copyright gate: both the life+70 and the US 95-year rules, with
-  sourced dates.
+  catalog first — or browse the [journals](/journals/) for original runs worth reviving). It must
+  pass the copyright gate: both the life+70 and the US 95-year rules, with sourced dates.
 - **Translating** — pick a work already in the catalog and a target language. There's no new
   copyright check to clear — the original already passed the gate — as long as you translate from
   our transcription, not from a modern, in-copyright translation.

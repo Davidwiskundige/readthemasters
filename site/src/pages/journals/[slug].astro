@@ -13,6 +13,31 @@ const era = (journal.founded || journal.ceased)
   ? `${journal.founded ?? "?"} – ${journal.ceased ?? "present"}` : null;
 const subline = [era, journal.place, journal.publisher].filter(Boolean).join(" · ");
 const description = [journal.name, journal.aka, era].filter(Boolean).join(" · ");
+
+// Works grouped into collapsible sections, eudml-style. A section is a volume when the work records
+// one ("Volume 29 (1826)"), otherwise a dated issue ("April (1689)") — a journal issued monthly
+// rather than by volume (the Acta Eruditorum) is grouped and labelled by month. Sections sort
+// chronologically; each collapses to its label and expands to the works, with their translated title.
+const MONTHS = ["january", "february", "march", "april", "may", "june",
+  "july", "august", "september", "october", "november", "december"];
+const monthIndex = (m) => { const i = MONTHS.indexOf(String(m ?? "").toLowerCase()); return i < 0 ? 99 : i; };
+
+const sectionsByKey = new Map();
+for (const w of journal.works) {
+  const hasVol = w.volume !== null && w.volume !== undefined && w.volume !== "";
+  const key = hasVol ? `v:${w.volume}` : `i:${w.year ?? "?"}-${(w.month ?? "").toLowerCase()}`;
+  if (!sectionsByKey.has(key)) {
+    const label = hasVol ? `Volume ${w.volume} (${w.year})`
+      : w.month ? `${w.month} (${w.year})` : `${w.year ?? "Undated"}`;
+    sectionsByKey.set(key, {
+      label, works: [],
+      sortY: w.year ?? 0, sortV: hasVol ? (Number(w.volume) || 0) : 0, sortM: hasVol ? 0 : monthIndex(w.month),
+    });
+  }
+  sectionsByKey.get(key).works.push(w);
+}
+const sections = [...sectionsByKey.values()].sort(
+  (a, b) => a.sortY - b.sortY || a.sortV - b.sortV || a.sortM - b.sortM);
 ---
 <Base title={journal.name} description={description}>
   <div class="journalhead">
@@ -37,22 +62,34 @@ const description = [journal.name, journal.aka, era].filter(Boolean).join(" · "
   <section>
     <h2 class="worksh">Works on this site ({journal.work_count})</h2>
     {journal.works.length > 0 ? (
-      <ul class="works">
-        {journal.works.map((w) => (
-          <li class="card">
-            <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
-            <div class="meta">
-              {w.by && <span>{w.by}</span>}
-              <span>{w.year}</span>
-              {w.venue_full && <span class="pill">{w.venue_full}</span>}
-              <span class={`badge ${w.status}`}>{w.status}</span>
-              {w.scan_url && <a class="scanlink" href={w.scan_url} rel="noopener">original scan ↗</a>}
-            </div>
-          </li>
+      <div class="jvols">
+        {sections.map((s) => (
+          <details class="jvol" open>
+            <summary>
+              <span class="jvol-label">{s.label}</span>
+              <span class="jvol-count">{s.works.length} work{s.works.length === 1 ? "" : "s"}</span>
+            </summary>
+            <ul class="jwork-list">
+              {s.works.map((w) => (
+                <li class="jwork">
+                  <a class="jwork-title" href={w.url}>{w.title_tex ?? w.title}</a>
+                  {(w.title_en_tex ?? w.title_en) && (
+                    <span class="jwork-trans">{w.title_en_tex ?? w.title_en}</span>
+                  )}
+                  <span class="jwork-meta">
+                    {w.by && <span>{w.by}</span>}
+                    {w.venue_full && <span>{w.venue_full}</span>}
+                    <span class={`badge ${w.status}`}>{w.status}</span>
+                    {w.scan_url && <a class="scanlink" href={w.scan_url} rel="noopener">original scan ↗</a>}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </details>
         ))}
-      </ul>
+      </div>
     ) : (
-      <p class="attr">No works from this journal are on the site yet.</p>
+      <p class="attr">No works from this journal are on the site yet — <a href="/contribute/">help revive it</a>{journal.archives.length > 0 ? " by transcribing from one of its original runs above." : "."}</p>
     )}
   </section>
 
@@ -62,7 +99,7 @@ const description = [journal.name, journal.aka, era].filter(Boolean).join(" · "
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
   <script type="module">
     import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
-    document.querySelectorAll(".works").forEach((el) => renderMathInElement(el, {
+    document.querySelectorAll(".jvols").forEach((el) => renderMathInElement(el, {
       delimiters: [{ left: "$", right: "$", display: false }],
       throwOnError: false,
     }));
