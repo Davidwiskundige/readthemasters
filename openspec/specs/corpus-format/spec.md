@@ -1,11 +1,14 @@
-# Capability: corpus-format
+# corpus-format
+
+## Purpose
 
 Current source of truth for how a work is stored. Established by the `corpus-format` change
 (archived 2026-07-18) and extended by `site-catalog`.
 
-## Requirement: Work directory layout
+## Requirements
+### Requirement: Work directory layout
 
-Each work lives in `corpus/<id>/`, where `<id>` is the canonical work id.
+Each work SHALL live in `corpus/<id>/`, where `<id>` is the canonical work id.
 
 - `work.yaml` (required) — metadata + copyright assessment.
 - `provenance.yaml` (required) — per-artifact status/model/effort/reviewers.
@@ -14,11 +17,16 @@ Each work lives in `corpus/<id>/`, where `<id>` is the canonical work id.
 - `figures/` (optional) — figure crops taken from the public-domain scan.
 - `pdf/<name>.pdf` (optional) — pre-made PDF override (see site-catalog PDF build).
 
-## Requirement: work.yaml schema
+#### Scenario: Work stored under its canonical id
 
-Required: `id` (equals directory name, unique across corpus), `title`, `authors` (≥1, each
-`name` + `wikidata_id` + `death_year` or `anonymous`, plus optional `birth_year` and the optional
-author display fields below), `publication` (`year`, `venue` ∈ vocab;
+- **WHEN** a work with canonical id `<id>` is added
+- **THEN** it lives in `corpus/<id>/` with `work.yaml` and `provenance.yaml` present (and `original.tex` once transcribed)
+
+### Requirement: work.yaml schema
+
+`work.yaml` MUST provide the required fields: `id` (equals directory name, unique across corpus),
+`title`, `authors` (≥1, each `name` + `wikidata_id` + `death_year` or `anonymous`, plus optional
+`birth_year` and the optional author display fields below), `publication` (`year`, `venue` ∈ vocab;
 optional `volume`, `month`, `pages`, `title_full`), `edition` (`year`, `is_transcribed_edition`,
 `rights_cleared`, `rights_note`), `discipline` (a vocab key or a list of them, for works that
 straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` ∈ vocab,
@@ -27,32 +35,30 @@ straddle fields such as `[mathematics, physics]`), `language` ∈ vocab, `type` 
 
 Optional: `title_en`, `title_tex` / `title_en_tex` (LaTeX renderings of the title / English title
 for on-page display, carrying inline `$…$` math — the plain `title` / `title_en` stay canonical for
-the browser tab, search index, and structured data), `tags` (each ∈ vocab), `significance` (a short editorial paragraph on the
-work's historical importance — our commentary, distinct from the transcription; does not affect
-the gate) with optional `significance_sources` (a list of `{citation, url?}` backing its claims;
-the significance text may carry inline `[n]` markers referencing them, rendered as clickable
-citation superscripts), `external_translations` (list of referenced translations elsewhere: `language`,
-`title`, `translator`, `year`, `license`, `venue`, `url`, `note`), `relations` (dependency edges
-to earlier works — see below), `copyright_assessment` (written/verified by the gate).
+the browser tab, search index, and structured data), `tags` (each ∈ vocab), `significance` (a short
+editorial paragraph on the work's historical importance — our commentary, distinct from the
+transcription; does not affect the gate) with optional `significance_sources` (a list of
+`{citation, url?}` backing its claims; the significance text may carry inline `[n]` markers
+referencing them, rendered as clickable citation superscripts), `external_translations` (list of
+referenced translations elsewhere: `language`, `title`, `translator`, `year`, `license`, `venue`,
+`url`, `note`), `relations` (dependency edges to earlier works — see below), `copyright_assessment`
+(written/verified by the gate).
 
 Optional author display fields (used by the author pages — see site-catalog; backward compatible):
 `bio` (a short one-line biographical descriptor), `mactutor` (a MacTutor/St Andrews biography path
 id, e.g. `Leibniz`, or a full URL — the site always links this biography when present), and
-`portrait` (`{file, credit, alt, source}`). The
-portrait `file` is a small public-domain image **committed under `corpus/authors/<slug>/`** and
-**hosted by the site** — like the figure crops of §4.5, and unlike full scans, which are never
-rehosted (PLAN.md §3, §4.5). `alt` is the accessibility text; optional `credit` is a short artist
-attribution shown as a caption (e.g. "Portrait by Bernhard Christoph Francke (c. 1700)"); optional
-`source` is the image's provenance URL (e.g. its Wikimedia Commons file page) that the portrait
-links to when clicked. When the
-same author (same `wikidata_id`) appears in multiple works, `birth_year`/`death_year` must agree
-across them; `pipeline/validate.py` warns on a mismatch.
+`portrait` (`{file, credit, alt, source}`). The portrait `file` is a small public-domain image
+**committed under `corpus/authors/<slug>/`** and **hosted by the site** — like the figure crops of
+§4.5, and unlike full scans, which are never rehosted (PLAN.md §3, §4.5). `alt` is the accessibility
+text; optional `credit` is a short artist attribution shown as a caption (e.g. "Portrait by Bernhard
+Christoph Francke (c. 1700)"); optional `source` is the image's provenance URL (e.g. its Wikimedia
+Commons file page) that the portrait links to when clicked. When the same author (same
+`wikidata_id`) appears in multiple works, `birth_year`/`death_year` must agree across them;
+`pipeline/validate.py` warns on a mismatch.
 
-### Dependency relations
-
-The optional `relations` list records directed dependency edges from **this** work to **earlier**
-corpus works, so the corpus forms a dependency graph (surfaced as per-work "Related reading" and
-the timeline — see site-catalog). Each edge is a mapping:
+**Dependency relations.** The optional `relations` list records directed dependency edges from
+**this** work to **earlier** corpus works, so the corpus forms a dependency graph (surfaced as
+per-work "Related reading" and the timeline — see site-catalog). Each edge is a mapping:
 
 - `to` (required) — the id of another corpus work; must exist and be same-year-or-earlier.
 - `kind` (required) — a `relation_kinds` vocab key: `cites` (the transcribed text references that
@@ -68,25 +74,36 @@ build computes the inverse ("cited by" / "recommended next"). The gate validates
 corpus, that every `to` resolves, `to ≠ self`, `year(to) ≤ year(self)`, `kind` ∈ vocab,
 `recommended` ∈ {true, primary} with at most one per work, and that the graph is acyclic (a DAG).
 
-### Canonical work identity
+**Canonical work identity.** `id` prefers a stable external identifier: Wikidata QID → DOI →
+deterministic `author-year-shorttitle` slug. It is the directory name and the permanent URL.
 
-`id` prefers a stable external identifier: Wikidata QID → DOI → deterministic
-`author-year-shorttitle` slug. It is the directory name and the permanent URL.
-
-### Publication citation
-
-`volume`, `month` and `pages` are the structured issue locators; all are optional. The site
-composes them with the venue's display name into a single human-readable citation string
-(`venue_full`, built in `build_site_data.py` and shown on the work page and catalog card):
+**Publication citation.** `volume`, `month` and `pages` are the structured issue locators; all are
+optional. The site composes them with the venue's display name into a single human-readable citation
+string (`venue_full`, built in `build_site_data.py` and shown on the work page and catalog card):
 `<venue>, vol. <volume>, p./pp. <pages>`. A journal issued monthly rather than by volume — e.g.
 the *Acta Eruditorum*, cited by month — records `month` instead of `volume`; month fills the
 same slot when no `volume` is given (`Acta Eruditorum, April`). `p.` is used for a single page,
 `pp.` for a range or list. The year is shown separately, so it is not repeated in `venue_full`.
 
-## Requirement: provenance.yaml schema
+#### Scenario: Missing required field fails the gate
 
-Keys `transcription` and `translations.<lang>`, each an artifact record: `status`
-(`ai-draft|skimmed|verified`), `model` (required), `effort` (optional,
+- **WHEN** a `work.yaml` omits a required field such as `publication.venue` or `sources.publication_date`
+- **THEN** `pipeline/validate.py` fails the work
+
+#### Scenario: Relation edge must point backward to an existing work
+
+- **WHEN** a `relations` edge has `to` resolving to a work with `year(to) ≤ year(self)`, `to ≠ self`, and a `kind` in vocab, keeping the graph acyclic
+- **THEN** the edge validates; otherwise the gate fails
+
+#### Scenario: At most one recommended edge per work
+
+- **WHEN** more than one `relations` edge on a work is marked `recommended`
+- **THEN** the gate fails
+
+### Requirement: provenance.yaml schema
+
+`provenance.yaml` MUST use the keys `transcription` and `translations.<lang>`, each an artifact
+record: `status` (`ai-draft|skimmed|verified`), `model` (required), `effort` (optional,
 provider-agnostic or null), `prompt_version` (required), optional `submitted_via`, `produced`,
 `reviewers` (list of `{name, level, date}`), and for translations a `source`
 (`transcription` | `external-open` + `license`).
@@ -96,15 +113,30 @@ list of `{date, summary}` entries (ISO `date`, short non-empty `summary`), the s
 page's revision history. When present, `validate.py` checks it is a list and that every entry has an
 ISO date and a non-empty summary.
 
-## Requirement: Controlled vocabulary
+#### Scenario: Artifact record requires model and prompt_version
 
-`corpus/vocab.yaml` defines allowed values for `disciplines`, `tags`, `venues`, `types`,
-`languages`, and `relation_kinds` (`cites`, `builds-on`). Any metadata value outside it is
+- **WHEN** an artifact record omits `model` or `prompt_version`
+- **THEN** the gate fails
+
+#### Scenario: Changelog entries are validated when present
+
+- **WHEN** a `changelog` is present
+- **THEN** it must be a list whose every entry has an ISO `date` and a non-empty `summary`, or the gate fails
+
+### Requirement: Controlled vocabulary
+
+`corpus/vocab.yaml` SHALL define the allowed values for `disciplines`, `tags`, `venues`, `types`,
+`languages`, and `relation_kinds` (`cites`, `builds-on`). Any metadata value outside it MUST be
 rejected (prevents facet drift).
 
-## Requirement: LaTeX house style
+#### Scenario: Out-of-vocab value is rejected
 
-Every `.tex` uses `corpus/preamble/readmasters.sty`. Content and notation stay faithful to the
+- **WHEN** a work uses a `discipline`, `tag`, `venue`, `type`, `language`, or `relation kind` not defined in `corpus/vocab.yaml`
+- **THEN** the gate rejects it
+
+### Requirement: LaTeX house style
+
+Every `.tex` SHALL use `corpus/preamble/readmasters.sty`. Content and notation stay faithful to the
 original; typography is normalized; markup is standardized. Apparatus macros: `\origpage{n}`,
 `\uncertain{}`, `\illegible`, `\ednote{}`, `\rmfigure{file}{caption}{alt}` (figures are crops from
 the scan, not redrawn).
@@ -129,3 +161,40 @@ it. Judgement-based rulings (faithful vs. normalized notation, translation wordi
 Separately, the reader's LaTeX→HTML transform (`site/src/lib/tex.js`) resolves text niceties —
 em-dashes, `~`, `\&`, and LaTeX control spaces `\ ` (ruling R17) — and is covered by
 `site/src/lib/tex.test.mjs` (`npm test`, run in CI).
+
+#### Scenario: Machine-checkable ruling regression fails CI
+
+- **WHEN** a `.tex` (or the `significance` note) violates a mechanically-enforced ruling such as R2/R16
+- **THEN** `pipeline/houselint.py` (run by the gate) fails the build
+
+#### Scenario: Judgement-based rulings are not linted
+
+- **WHEN** a decision is judgement-based (faithful vs. normalized notation, translation wording)
+- **THEN** the linter does not flag it
+
+### Requirement: Venue metadata
+
+The `venues:` vocabulary in `corpus/vocab.yaml` SHALL accept each entry as either a bare string (the
+full venue title, as today) or an object. When an entry is an object, `name` (the full title) MUST
+be present and these fields are OPTIONAL: `aka` (short or common name), `kind` (`periodical` | `book` | `manuscript`, default
+`periodical`), `founded`/`ceased` (years), `publisher`/`place`, `note` (a one-paragraph
+description), and `archives` — an ordered list of `{label, url}` links to the repositories that host
+the digitized full run. Every `archives[].url` MUST be an absolute `http(s)` URL, and the `book` and
+`manuscript` sentinel venues MUST set `kind` accordingly so the site can exclude them from the
+Journals section. The venue **label** consumed elsewhere (catalog, citations, `venue_full`) SHALL
+resolve to `name` for objects and to the string itself for bare strings, so existing consumers are
+unaffected. Venue metadata describes a public-domain periodical and its digitizations and MUST NOT
+affect the copyright gate's verdicts.
+
+#### Scenario: Bare-string venue stays valid
+- **WHEN** a `work.yaml` sets `publication.venue` to a key whose `venues` entry is a bare string
+- **THEN** the gate accepts it and the venue label resolves to that string, exactly as before
+
+#### Scenario: Object venue with metadata is accepted
+- **WHEN** a `venues` entry is an object with `name` present, `kind` in {periodical, book, manuscript}, and every `archives[].url` an absolute http(s) URL
+- **THEN** validation passes and the venue label resolves to `name`
+
+#### Scenario: Malformed venue object is rejected
+- **WHEN** a `venues` object omits `name`, sets `kind` outside the allowed set, or gives an `archives` entry whose `url` is not an absolute http(s) URL
+- **THEN** `pipeline/validate.py` reports an error and the build fails
+

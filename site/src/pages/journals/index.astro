@@ -1,0 +1,49 @@
+---
+import Base from "../../layouts/Base.astro";
+import data from "../../data/works.json";
+
+const journals = data.journals ?? [];
+// Era line: "1682 – 1782", "1826 – ", or a single year. Null when neither is known.
+const era = (j) => (j.founded || j.ceased)
+  ? `${j.founded ?? "?"} – ${j.ceased ?? "present"}` : null;
+const plural = journals.length === 1 ? "" : "s";
+---
+<Base title="Journals" description="The journals and academy proceedings the works on ReadTheMasters were first published in — with where to find the originals.">
+  <h1>Journals</h1>
+  <p class="attr">The periodicals and academy proceedings our works first appeared in. Each links to
+    where you can read the original run yourself.</p>
+  <input id="jq" class="searchbox" type="search" placeholder="Search journals…" aria-label="Search journals" />
+  <p class="attr count"><span id="jcount">{journals.length}</span> of {journals.length} journal{plural}.</p>
+  <ul class="authorlist" id="journallist">
+    {journals.map((j) => (
+      <li class="card" data-search={`${j.name} ${j.aka ?? ""} ${j.note ?? ""}`.toLowerCase()}>
+        <h3><a href={j.url}>{j.name}</a></h3>
+        <div class="meta">
+          {era(j) && <span>{era(j)}</span>}
+          {j.place && <span>· {j.place}</span>}
+          <span class="pill">{j.work_count} work{j.work_count === 1 ? "" : "s"}</span>
+        </div>
+      </li>
+    ))}
+  </ul>
+  <p id="jempty" class="attr" hidden>No journals match your search.</p>
+
+  <script>
+    const q = document.getElementById("jq");
+    const cards = [...document.querySelectorAll("#journallist .card")];
+    const countEl = document.getElementById("jcount");
+    const emptyEl = document.getElementById("jempty");
+    function apply() {
+      const term = (q.value || "").trim().toLowerCase();
+      let shown = 0;
+      for (const c of cards) {
+        const ok = !term || c.dataset.search.includes(term);
+        c.hidden = !ok;
+        if (ok) shown++;
+      }
+      countEl.textContent = String(shown);
+      emptyEl.hidden = shown > 0;
+    }
+    q.addEventListener("input", apply);
+  </script>
+</Base>

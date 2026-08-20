@@ -1,0 +1,70 @@
+---
+import Base from "../../layouts/Base.astro";
+import data from "../../data/works.json";
+
+export function getStaticPaths() {
+  return (data.journals ?? []).map((j) => ({ params: { slug: j.slug }, props: { journal: j } }));
+}
+
+const { journal } = Astro.props;
+
+// Era line: "1682 – 1782", "1826 – present", or a single year. Null when neither is known.
+const era = (journal.founded || journal.ceased)
+  ? `${journal.founded ?? "?"} – ${journal.ceased ?? "present"}` : null;
+const subline = [era, journal.place, journal.publisher].filter(Boolean).join(" · ");
+const description = [journal.name, journal.aka, era].filter(Boolean).join(" · ");
+---
+<Base title={journal.name} description={description}>
+  <div class="journalhead">
+    <h1>{journal.name}</h1>
+    {journal.aka && <p class="sub">Also known as {journal.aka}</p>}
+    {subline && <p class="sub dates">{subline}</p>}
+    {journal.note && <p class="note">{journal.note}</p>}
+  </div>
+
+  {journal.archives.length > 0 && (
+    <section>
+      <h2 class="worksh">Find the originals</h2>
+      <p class="attr">Read the original run at these digital libraries:</p>
+      <ul class="archives">
+        {journal.archives.map((a) => (
+          <li><a href={a.url} rel="noopener">{a.label}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section>
+    <h2 class="worksh">Works on this site ({journal.work_count})</h2>
+    {journal.works.length > 0 ? (
+      <ul class="works">
+        {journal.works.map((w) => (
+          <li class="card">
+            <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
+            <div class="meta">
+              {w.by && <span>{w.by}</span>}
+              <span>{w.year}</span>
+              {w.venue_full && <span class="pill">{w.venue_full}</span>}
+              <span class={`badge ${w.status}`}>{w.status}</span>
+              {w.scan_url && <a class="scanlink" href={w.scan_url} rel="noopener">original scan ↗</a>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="attr">No works from this journal are on the site yet.</p>
+    )}
+  </section>
+
+  <p style="margin-top:1.5rem"><a href="/journals/">← All journals</a></p>
+
+  {/* Render math ($…$) in work-card titles, consistent with the author and catalog pages. */}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
+    document.querySelectorAll(".works").forEach((el) => renderMathInElement(el, {
+      delimiters: [{ left: "$", right: "$", display: false }],
+      throwOnError: false,
+    }));
+  </script>
+</Base>

@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 
-from validate import STATUS_LADDER, evaluate_copyright, load_yaml  # type: ignore
+from validate import STATUS_LADDER, evaluate_copyright, load_yaml, venue_label  # type: ignore
 
 
 def max_status(provenance: dict) -> str:
@@ -67,7 +67,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str) -> dict:
             ],
             "year": pub.get("year"),
             "venue": pub.get("venue"),
-            "venue_label": (vocab.get("venues") or {}).get(pub.get("venue")),
+            "venue_label": venue_label(vocab, pub.get("venue")),
             "discipline": work.get("discipline"),
             "discipline_label": (vocab.get("disciplines") or {}).get(work.get("discipline")),
             "tags": work.get("tags") or [],

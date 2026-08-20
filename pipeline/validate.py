@@ -169,6 +169,48 @@ def evaluate_copyright(work: dict, provenance: dict, now_year: int,
 
 
 # --------------------------------------------------------------------------- #
+# Venue vocabulary (a venues entry may be a bare string or a metadata object)
+# --------------------------------------------------------------------------- #
+VENUE_KINDS = {"periodical", "book", "manuscript"}
+
+
+def venue_label(vocab: dict, key) -> str | None:
+    """Display label for a venue key: an object entry's `name`, else the bare string.
+
+    A `corpus/vocab.yaml` venues entry may be either a bare string (the full title) or an object
+    carrying journal metadata (name/aka/kind/founded/…/archives). Everything that reads a venue
+    label — the catalog, citations, `venue_full`, the journal pages — resolves it through here, so
+    both forms work identically.
+    """
+    entry = (vocab.get("venues") or {}).get(key)
+    if isinstance(entry, dict):
+        return entry.get("name")
+    return entry
+
+
+def check_venue_vocab(vocab: dict, issues: Issues) -> None:
+    """Validate the structure of any object-form venues entries (corpus-format spec).
+
+    Bare-string entries are always valid. An object entry MUST carry `name`, its `kind` (if set)
+    MUST be one of periodical/book/manuscript, and every `archives[].url` MUST be an absolute
+    http(s) URL. Called once per corpus run, not per work.
+    """
+    for key, entry in (vocab.get("venues") or {}).items():
+        if not isinstance(entry, dict):
+            continue  # bare string — the full title, valid as-is
+        where = f"vocab.yaml venues.{key}"
+        if not entry.get("name"):
+            issues.error(where, "object venue entry must have a 'name'")
+        kind = entry.get("kind")
+        if kind is not None and kind not in VENUE_KINDS:
+            issues.error(where, f"kind '{kind}' not in {sorted(VENUE_KINDS)}")
+        for i, arc in enumerate(entry.get("archives") or []):
+            url = (arc or {}).get("url") if isinstance(arc, dict) else None
+            if not (isinstance(url, str) and url.startswith(("http://", "https://"))):
+                issues.error(where, f"archives[{i}].url must be an absolute http(s) URL")
+
+
+# --------------------------------------------------------------------------- #
 # Schema + vocabulary + provenance checks
 # --------------------------------------------------------------------------- #
 def check_schema_and_vocab(work: dict, vocab: dict, work_id: str, issues: Issues) -> None:
@@ -440,6 +482,7 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
         issues.error("corpus", "vocab.yaml missing")
         return issues
     vocab = load_yaml(vocab_path) or {}
+    check_venue_vocab(vocab, issues)
 
     work_dirs = sorted(
         d for d in corpus_dir.iterdir()
