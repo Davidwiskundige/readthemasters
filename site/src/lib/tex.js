@@ -48,6 +48,10 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     // \& is the LaTeX-escaped ampersand (needed so the .tex compiles under a real engine). In text
     // it is just an "&"; escapeHtml has already turned the "&" into the entity, so drop the slash.
     .replace(/\\&/g, "&")
+    // \S is LaTeX's section-sign macro (§); German works use it in headings and "(\S.~II.)"
+    // cross-references. The negative lookahead keeps it from eating a longer control word — there is
+    // no text macro named \S… , and any \Sigma etc. lives inside the already-stashed math spans.
+    .replace(/\\S(?![a-zA-Z])/g, "§")
     // LaTeX control space "\ " (backslash-space): authors write it after an abbreviation dot
     // (`v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`) so a real engine sets an inter-word — not
     // inter-sentence — space. On the web that is just one normal space; drop the backslash. Runs

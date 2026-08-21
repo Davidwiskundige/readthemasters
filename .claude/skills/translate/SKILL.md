@@ -29,8 +29,12 @@ arguments may be omitted; ask for whatever is missing. `<lang>` is a language co
    records `source: transcription`, and the gate enforces it.
 3. **Preserve the mathematics and structure verbatim.** Every math expression, `\tag{}`, label,
    `\ref`/`\eqref`, `\origpage{N}` marker, and `\rmfigure{path}{}{}` first argument must appear
-   **unchanged**. Translate only prose and the human-readable caption/alt text. This is
-   machine-checkable — `pipeline/texcompare.py` (and the CI gate) will reject an altered formula.
+   **unchanged**. Translate only prose and the human-readable caption/alt text — **plus prose set
+   inside a formula via `\text{...}`** (a connective like `\text{ und }`→`\text{ and }`, or an
+   ordinal `\mu^{\text{ten}}`→`\mu^{\text{th}}`), which counts as prose (HOUSESTYLE R21). This is
+   machine-checkable — `pipeline/texcompare.py` (and the CI gate) will reject an altered formula,
+   but it ignores the *content* of `\text{...}` (not `\operatorname`) while still requiring each
+   insert and all surrounding math to be preserved.
 4. **Honest provenance.** Machine output ships as `ai-draft`. Do not set a higher status than the
    review that actually happened (PLAN.md §4.3: `ai-draft` → `skimmed` → `verified`).
 
@@ -70,9 +74,11 @@ Working from `original.tex`, following `prompts/translate-chat.md`:
 - Translate the prose into the target language in faithful, readable scholarly style; prefer
   period-appropriate terminology.
 - Reproduce every math expression, symbol, equation number, label, and `\ref`/`\eqref`
-  **unchanged**. Keep each `\origpage{N}` marker in place — they align the translation to the
-  original. Keep `\section*{}`, environments, and `\rmfigure{}{}{}`; translate only the
-  caption/alt text inside a figure, never the image path.
+  **unchanged** — except that prose inside a `\text{...}` insert *is* translated (a connective like
+  `\text{ und }`→`\text{ and }`, or an ordinal `\mu^{\text{ten}}`→`\mu^{\text{th}}`; HOUSESTYLE R21).
+  Keep each `\origpage{N}` marker in place — they align the translation to the original. Keep
+  `\section*{}`, environments, and `\rmfigure{}{}{}`; translate only the caption/alt text inside a
+  figure, never the image path.
 - For the author's own period technical term, prefer a literal untranslated rendering over an
   inline gloss; if a gloss is truly needed use **square brackets**, never parentheses. Put
   historical context in the work's significance note, not inside the translation.

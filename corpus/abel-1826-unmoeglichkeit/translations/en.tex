@@ -1,0 +1,462 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker, and \ednote is
+% reproduced unchanged; only the prose is translated — including short prose set INSIDE display
+% math via a text insert: the German connectives and the ordinal suffix are put into English
+% ("und"→"and", "oder"→"or", "multiplicirt,"→"multiplied,", "ten"→"th", so "mu^{ten}" reads
+% "mu-th"). The math-preservation check ignores the CONTENT of such a text insert while still
+% checking its presence and the surrounding math (HOUSESTYLE R21). The three flagged printer's-error
+% \ednote notes are carried over verbatim. Period terms
+% are rendered in period English: ganze Function = integral function, ungebrochen = integral,
+% Verwandlung = transformation, Versetzung = transposition, Ordnung = order, Grad = degree, Zeiger
+% = indices. The function symbol ϱ (\varrho) and the letters v, s, etc. are preserved as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{65}
+\section*{Proof of the impossibility of solving algebraic equations of degrees higher than the fourth in general.}
+
+\emph{(By Mr.~N.~H. Abel.)}
+
+It is well known that one can solve algebraic equations up to the fourth degree in general, but equations of higher degrees only in particular cases, and, if I am not mistaken, the question:
+
+Is it \emph{possible} to solve equations of higher than the fourth degree in general?
+
+has not yet been answered satisfactorily. The present essay has this question for its subject.
+
+To solve an equation algebraically means nothing other than to express its roots through an algebraic function of the coefficients. One must therefore first consider the general \emph{form} of algebraic functions, and then investigate whether it is possible to satisfy the given equation in this way, namely that one sets the expression of an algebraic function in place of the unknown quantity.
+
+\subsection*{§.~I. On the general form of algebraic functions.}
+
+If $x', x'', x''' \ldots$ are a finite set of arbitrary quantities, one says: $\varrho$ is an algebraic function of these quantities if it can be expressed through $x', x'', x''' $ etc. by means of the following operations. \emph{First} through \emph{addition}, \emph{secondly} through \emph{multiplication}, both of quantities that depend on $x', x'', x''' \ldots$ and of quantities that do not depend on them; \emph{thirdly} through \emph{division}; fourthly through the \emph{extraction of roots} with exponents that are prime numbers. We do not name \emph{subtraction}, \emph{raising to a power}, and the \emph{extraction of roots} with composite exponents separately, because they are evidently already contained in the four operations named above.
+
+If the function $\varrho$ can be composed through the first three of the four operations above, it is \emph{algebraically rational} or merely rational; and
+
+\origpage{66}
+if only the first two operations are needed, it is called \emph{algebraically-rational} and \emph{integral}, or also simply an \emph{integral} function.
+
+Let $f(x', x'', x''' \ldots)$ be an arbitrary function that can be expressed through the sum of a finite number of terms of the form
+\[ A\,x'^{m_1} x''^{m_2} \ldots \]
+where $A$ is a quantity independent of $x', x''$ etc., and $m_1, m_2$ etc. denote whole positive numbers; then it is clear that the first two of the operations above are particular cases of the operation denoted by $f(x', x'' \ldots)$. One can therefore regard \emph{integral} functions, according to their definition, as arising from a finite number of repetitions of these operations. If one now denotes by $\varrho', \varrho'', \varrho''' $ etc. several functions of the quantities $x', x'', x''' \ldots$ of the same form as $f(x', x'' \ldots)$, then $f(\varrho', \varrho'', \varrho''' \ldots)$ is likewise evidently a function of the very same form as $f(x', x'' \ldots)$. Now $f(\varrho', \varrho'' \ldots)$ is the general expression of the functions that arise through a twofold repetition of the operation $f(x', x'' \ldots)$. One therefore always finds the same result when one repeats the operation arbitrarily often. From this it follows that every integral function of several quantities $x', x'' \ldots$ can be expressed through the sum of several terms of the form $A x'^{m_1} x''^{m_2} \ldots$.
+
+We will now consider the rational functions.
+
+If $f(x', x'' \ldots)$ and $\varphi(x', x'' \ldots)$ are two integral functions, then it is clear that the quotient
+\[ \frac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)} \]
+is a particular case of the results of the first three operations, which give rational functions. One can therefore regard a rational function as the result of the repetition of this operation. If one denotes by $\varrho', \varrho'', \varrho''' $ etc. several functions of the form $\dfrac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)}$, then it is easy to see that $\dfrac{f(\varrho', \varrho'' \ldots)}{\varphi(\varrho', \varrho'' \ldots)}$ can again be brought into the same form. It follows therefore, as above with the integral functions, that every rational function of several quantities $x', x'' \ldots$ can always be brought into the form
+\[ \frac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)} \]
+where numerator and denominator are integral functions.
+
+\origpage{67}
+We will further seek the \emph{general} form of algebraic functions.
+
+Let one denote by $f(x', x'' \ldots)$ an arbitrary rational function; then it is clear that every algebraic function can be composed by means of the operation denoted by $f(x', x'' \ldots)$, combined with the operation $\sqrt[m]{r}$, where $m$ is a prime number. If therefore $p', p'' \ldots$ are rational functions of $x', x'' \ldots$, then
+\[ p_1 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots) \]
+will be the general form of algebraic functions of $x', x'' \ldots$, in which the operation expressed by $\sqrt[m]{r}$ now refers only to rational functions. We will call the functions of the form $p_1$ algebraic functions \emph{of the first order}. If one denotes by $p_1', p_1'' $ etc. several quantities of the form $p_1$, then
+\[ p_2 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots \sqrt[n_1']{p_1'}, \sqrt[n_1'']{p_1''} \ldots) \]
+will be the general form of algebraic functions of $x', x'' \ldots$, in which the operation $\sqrt[m]{r}$ refers only to rational and to algebraic functions \emph{of the first order}. We will call the functions of the form $p_2$ algebraic functions \emph{of the second order}. In the same way the expression
+\[ p_3 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots \sqrt[n_1']{p_1'}, \sqrt[n_1'']{p_1''} \ldots \sqrt[n_2']{p_2'}, \sqrt[n_2'']{p_2''} \ldots), \]
+in which $p_2', p_2''$ are functions of the second order, will be the general form of algebraic functions of $x', x'' \ldots$, in which the operation $\sqrt[m]{r}$ refers only to rational and to algebraic functions of the first and second order.
+
+If one continues in this way, one obtains algebraic functions of the \emph{third}, \emph{fourth} $\ldots \mu^{\text{th}}$ order, and it is clear that the expression of the functions of the $\mu^{\text{th}}$ order will be the \emph{general} expression of algebraic functions.
+
+If one therefore denotes by $\mu$ the ordinal number of an arbitrary algebraic function, and by $\varrho$ the function itself, then
+\[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots), \]
+where $p', p'' \ldots$ are functions of order $\mu - 1$; $r', r'' \ldots$ functions of order $\mu - 1$, or of lower orders, and $n', n'' \ldots$ are prime numbers. $f$ denotes, as always, a rational function of the quantities standing between the brackets.
+
+\origpage{68}
+One can evidently assume that it is impossible to express one of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ through a rational function of the others and of the quantities $r', r'' \ldots$; for were it possible, then $\varrho$ would have the simpler form
+\[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots) \]
+in which the number of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ would be at least one unit smaller than above. If one now reduces this expression of $\varrho$ still further in the same way, where feasible, then one would necessarily have to arrive at last either at an irreducible expression, or at an expression of the form
+\[ \varrho = f(r', r'', r''' \ldots) \]
+But this function would be merely of the $\mu - 1^{\text{th}}$ order, whereas $\varrho$ should be of the $\mu^{\text{th}}$ order; which is a contradiction.
+
+If in the expression of $\varrho$ the number of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ is equal to $m$, then we will call the function $\varrho$ of the $\mu^{\text{th}}$ \emph{order} and of the $m^{\text{th}}$ \emph{degree}. In this way a function of the $\mu^{\text{th}}$ order and of the $0^{\text{th}}$ degree is the same as a function of the $\mu - 1^{\text{th}}$ order, and a function of the $0^{\text{th}}$ order is the same as a \emph{rational} function.
+
+From this it follows that one can set
+\[ \varrho = f(r', r'' \ldots \sqrt[n]{p}) \]
+where $p$ is a function of the $\mu - 1^{\text{th}}$ order, but $r', r'' \ldots$ are functions of the $\mu^{\text{th}}$ order and at most of the $m - 1^{\text{th}}$ degree, and of such a kind that it is impossible to express $\sqrt[n]{p}$ through a rational function of these quantities.
+
+Since a rational function of several quantities, as we saw earlier, can always be brought into the form
+\[ \frac{s}{t} \]
+where $s$ and $t$ are integral functions of the same variable quantities, $\varrho$ can therefore always be expressed through
+\[ \varrho = \frac{\varphi(r', r'' \ldots \sqrt[n]{p})}{\tau(r', r'' \ldots \sqrt[n]{p})} \]
+where $\varphi$ and $\tau$ denote two integral functions of the quantities $r', r'' \ldots$ and $\sqrt[n]{p}$. By virtue of what we found above, however, an integral function of several quantities $s, r', r'' \ldots$ can always be expressed through\ednote{The following display closes with a parenthesis that has no matching opening parenthesis in the print --- an apparent typographical slip, reproduced here as printed.}
+\[ t_0 + t_1 s^{1} + t_2 s^{2} \ldots t_m s^{m}) \]
+
+\origpage{69}
+when $t_0, t_1 \ldots t_m$ denote integral functions of $r', r'', r''' \ldots$ without $s$. One can therefore set
+\[ \varrho = \frac{t_0 + t_1 p^{\frac{1}{n}} + t_2 p^{\frac{2}{n}} \ldots t_m p^{\frac{m}{n}}}{\varrho_0 + \varrho_1 p^{\frac{1}{n}} + \varrho_2 p^{\frac{2}{n}} \ldots \varrho_{m'} p^{\frac{m'}{n}}} = \frac{T}{V} \]
+where $t_0, t_1 \ldots t_m$ and $\varrho_0, \varrho_1 \ldots \varrho_{m'}$ are integral functions of $r', r'', r''' $ etc.
+
+Now let $V_1, V_2 \ldots V_{n-1}$ be the $n - 1$ values of $V$ that one finds when one sets $\alpha \cdot p^{\frac{1}{n}}, \alpha^{2} p^{\frac{1}{n}}, \alpha^{3} p^{\frac{1}{n}} \ldots \alpha^{n-1} p^{\frac{1}{n}}$ in place of $p^{\frac{1}{n}}$: $\alpha$ denotes one of the roots of the equation $\alpha^{n} - 1 = 0$ that is not 1. Then one obtains, when one multiplies the fraction $\frac{T}{V}$ above and below by
+\[ V_1 V_2 \ldots V_{n-1} \text{ multiplied,} \]
+\[ \varrho = \frac{T \cdot V_1 \cdot V_2 \ldots V_{n-1}}{V \cdot V_1 \cdot V_2 \ldots V_{n-1}}. \]
+But the product $V \cdot V_1 \ldots V_{n-1}$ can, as is well known, be expressed through an integral function of $p$ and of the quantities $r', r'' \ldots$, and the product $T \cdot V_1 \cdot V_2 \ldots V_{n-1}$ is, as one sees, an integral function of $\sqrt[n]{p}$ and $r', r'' \ldots$ If one therefore sets this product equal to
+\[ s_0 + s_1 p^{\frac{1}{n}} + s_2 p^{\frac{2}{n}} \ldots s_k p^{\frac{k}{n}}, \]
+then one finds
+\[ \varrho = \frac{s_0 + s_1 p^{\frac{1}{n}} + s_2 p^{\frac{2}{n}} \ldots s_k p^{\frac{k}{n}}}{M}, \]
+or, when one writes $q_0, q_1, q_2 \ldots$ in place of $\dfrac{s_0}{m}, \dfrac{s_1}{m}, \dfrac{s_2}{m}$ etc.,
+\[ \varrho = q_0 + q_1 p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_k p^{\frac{k}{n}}, \]
+where $q_0, q_1 \ldots q_k$ are rational functions of the quantities $p, r', r'' $ etc. Whatever the whole number $\mu$ may also be, one can set
+\[ \mu = an + \alpha, \]
+where $a$ and $\alpha$ are two whole numbers and $\alpha < n$. From this it follows that
+\[ p^{\frac{\mu}{n}} = p^{\frac{an + \alpha}{n}} = p^{a} \cdot p^{\frac{\alpha}{n}}. \]
+If one therefore sets this expression in place of $p^{\frac{\mu}{n}}$ in the expression of $\varrho$, one obtains
+\[ \varrho = q_0 + q_1 p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}}, \]
+where $q_0, q_1, q_2$ etc. are, as before, rational functions of $p, r', r'' \ldots$ and
+
+\origpage{70}
+consequently functions of the $\mu^{\text{th}}$ order and at most of the $m - 1^{\text{th}}$ degree, and of such a kind that $p^{\frac{1}{n}}$ cannot be expressed through rational functions of these quantities.
+
+In the above expression of $\varrho$ one can always set
+\[ q_1 = 1 \]
+For if $q_1$ is not zero, then one obtains, when one sets $p_1 = p \cdot q_1^{n}$, $p = \dfrac{p_1}{q_1^{n}}$, and $p^{\frac{1}{n}} = \dfrac{p_1^{\frac{1}{n}}}{q_1}$, and hence
+\[ \varrho = q_0 + p_1^{\frac{1}{n}} + \frac{q_2}{q_1^{2}} p_1^{\frac{2}{n}} \ldots + \frac{q_{n-1}}{q_1^{n-1}} p_1^{\frac{n-1}{n}}, \]
+which expression is of the same shape as the previous one, only that $q_1 = 1$. If $q_1 = 0$, then let $q_\mu$ be one of the quantities $q_1, q_2 \ldots q_{n-1}$ that is not zero, and $q_\mu^{n} p^{\mu} = p_1$. This gives $q_\mu^{\alpha} \cdot p^{\frac{\alpha\mu}{n}} = p_1^{\frac{\alpha}{n}}$. If one therefore takes two whole numbers $\alpha$ and $\beta$ that satisfy the equation $\alpha\mu - \beta n = \mu'$, where $\mu'$ is a whole number, then one obtains
+\[ q_\mu^{\alpha} p^{\frac{\beta n + \mu'}{n}} = p_1^{\frac{\alpha}{n}} \text{ and } p^{\frac{\mu'}{n}} = q_\mu^{-\alpha} \cdot p^{-\beta} \cdot p_1^{\frac{\alpha}{n}}. \]
+According to this, and because $q_\mu p^{\frac{\mu}{n}} = p_1^{\frac{1}{n}}$, $\varrho$ takes the form
+\[ \varrho = q_0 + p_1^{\frac{1}{n}} + q_2 p_1^{\frac{2}{n}} \ldots q_{n-1} p_1^{\frac{n-1}{n}} \]
+
+From all of this the following results:
+
+If $\varrho$ is an algebraic function of order $\mu$ and of degree $m$, then one can always set:
+\[ \varrho = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} + q_3 p^{\frac{3}{n}} \ldots q_{n-1} p^{\frac{n-1}{n}}; \]
+$n$ is a prime number, $q_0, q_2 \ldots q_{n-1}$ are algebraic functions of order $\mu$ and at most of degree $m - 1$, and $p$ is an algebraic function of order $\mu - 1$ and of such a kind that $p^{\frac{1}{n}}$ cannot be expressed through a rational function of $q_0, q_2 \ldots q_{n-1}$.
+
+\subsection*{§.~II. Properties of the algebraic functions that satisfy a given equation.}
+
+Let
+\[ c_0 + c_1 y + c_2 y^{2} \ldots + c_{r-1} y^{r-1} + y^{r} = 0 \tag{1} \]
+
+\origpage{71}
+be an arbitrary equation of degree $r$, where $c_0, c_1 \ldots$ are rational functions of $x', x'' \ldots$. $x', x'' \ldots$ are arbitrary independent quantities. Assume that it can be satisfied when one sets in place of $y$ some \emph{algebraic function} of $x', x'', \ldots$. Let this function be
+\[ y = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}} \tag{2} \]
+If one substitutes this expression of $y$ into the given equation, then one obtains, according to the above, an expression of the form
+\[ r_0 + r_1 p^{\frac{1}{n}} + r_2 p^{\frac{2}{n}} \ldots + r_{n-1} p^{\frac{n-1}{n}} = 0 \tag{3} \]
+where $r_0, r_1, r_2 \ldots r_{n-1}$ are rational functions of the quantities $p, q_0, q_1 \ldots q_{n-1}$.
+
+Now I assert that equation (3) cannot take place unless, individually,
+\[ r_0 = 0, \; r_1 = 0 \ldots r_{n-1} = 0 \]
+Were this not so, then, when one denotes $p^{\frac{1}{n}}$ by $z$ for example, the two equations
+\[ z^{n} - p = 0 \text{ and} \]
+\[ r_0 + r_1 z + r_2 z^{2} \ldots + r_{n-1} z^{n-1} = 0 \]
+would have to have one or several \emph{common roots}. Let $k$ be the number of these roots; then one can, as is well known, find an equation that has these $k$ roots and whose coefficients are rational functions of the quantities $p, r_0, r_1 \ldots r_{n-1}$.
+
+Let the equation be
+\[ s_0 + s_1 z + s_2 z^{2} \ldots + s_{k-1} z^{k-1} + z^{k} = 0 \]
+and let
+\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} \]
+be a factor of its first term, where $t_0, t_1$ etc. are rational functions of $p, r_0, r_1 \ldots r_{n-1}$; then likewise\ednote{In the following display the third term is printed $t_2 z$ without an exponent; by the line just above it should read $t_2 z^{2}$. An apparent misprint, reproduced here as printed.}
+\[ t_0 + t_1 z + t_2 z \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0, \]
+and it is clear that one may assume it impossible to find an equation of lower degree of the same form. This equation now has its $\mu$ roots in common with the equation $z^{n} - p$. But now the roots of the equation $z^{n} - p$ are all of the form $\alpha z$, where $\alpha$ is some root of unity. If one therefore considers that $\mu$ cannot be smaller than 2, because it is supposed to be impossible to express $z$ through a rational function of the quantities $p, r_0, r_1 \ldots r_{n-1}$, then it follows that two equations of the form
+
+\origpage{72}
+\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0 \text{ and} \]
+\[ t_0 + \alpha t_1 z + \alpha^{2} t_2 z^{2} \ldots + \alpha^{\mu-1} t_{\mu-1} z^{\mu-1} + \alpha^{\mu} z^{\mu} = 0 \]
+must take place. From these equations it follows, when one eliminates $z^{\mu}$,
+\[ t_0(1 - \alpha^{\mu}) + t_1(\alpha - \alpha^{\mu})z \ldots + t_{\mu-1}(\alpha^{\mu-1} - \alpha^{\mu})z^{\mu-1} = 0. \]
+But since the equation $z^{\mu} + t_{\mu-1} z^{\mu-1} \ldots = 0$ is irreducible, it must, because it is of the $\mu - 1^{\text{th}}$ degree, give, individually,
+\[ \alpha^{\mu} - 1 = 0, \; \alpha - \alpha^{\mu} = 0 \ldots \alpha^{\mu-1} - \alpha^{\mu} = 0 \]
+which cannot be.
+
+It must therefore be that
+\[ r_0 = 0, \; r_1 = 0 \ldots r_{n-1} = 0 \]
+
+If, however, these equations do take place, then it is clear that the given equation must be satisfied by all the values of $y$ that one finds when one assigns to the quantity $p^{\frac{1}{n}}$ all the values $\alpha p^{\frac{1}{n}}, \alpha^{2} p^{\frac{1}{n}}, \ldots \alpha^{n-1} p^{\frac{1}{n}}$.
+
+One sees easily that all these values of $y$ must be different from one another; for otherwise one would obtain an equation of the same shape as (3), and such an equation would, as we saw, lead to contradictions.
+
+If one therefore denotes by $y_1, y_2 \ldots y_n$ $n$ different roots of equation (1), then one finds
+\[ y_1 = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}} \]
+\[ y_2 = q_0 + \alpha p^{\frac{1}{n}} + \alpha^{2} q_2 p^{\frac{2}{n}} \ldots + \alpha^{n-1} q_{n-1} p^{\frac{n-1}{n}} \]
+\[ \ldots \]
+\[ y_n = q_0 + \alpha^{n-1} p^{\frac{1}{n}} + \alpha^{n-2} q_2 p^{\frac{2}{n}} \ldots + \alpha q_{n-1} p^{\frac{n-1}{n}}. \]
+From these $n$ equations it easily follows that
+\[ q_0 = \frac{1}{n}(y_1 + y_2 \ldots + y_n) \]
+\[ p^{\frac{1}{n}} = \frac{1}{n}(y_1 + \alpha^{n-1} y_2 + \alpha^{n-2} y_3 \ldots + \alpha y_n) \]
+\[ q_2 p^{\frac{2}{n}} = \frac{1}{n}(y_1 + \alpha^{n-2} y_2 + \alpha^{n-4} y_3 \ldots + \alpha^{2} y_n) \]
+\[ \ldots \]
+\[ q_{n-1} p^{\frac{n-1}{n}} = \frac{1}{n}(y_1 + \alpha y_2 + \alpha^{2} y_3 \ldots + \alpha^{n-1} y_n). \]
+
+\origpage{73}
+One sees from this that all the quantities $p^{\frac{1}{n}}, q_0, q_2 \ldots q_{n-1}$ can be expressed through rational functions of the given equation.
+
+In fact,
+\[ q_\mu = n^{\mu-1} \cdot \frac{y_1 + \alpha^{-\mu} y_2 + \alpha^{-2\mu} y_3 \ldots + \alpha^{-(n-1)\mu} y_n}{(y_1 + \alpha^{-1} y_2 + \alpha^{-2} y_3 \ldots + \alpha^{-(n-1)} y_n)^{\mu}} \]
+Now take a general equation of degree $m$, e.\ g.
+\[ 0 = a_0 + a_1 x + a_2 x^{2} \ldots + a_{m-1} x^{m-1} + x^{m} \]
+and suppose it to be algebraically solvable. Let
+\[ x = s_0 + \varrho^{\frac{1}{n}} + s_2 \varrho^{\frac{2}{n}} \ldots + s_{n-1} \varrho^{\frac{n-1}{n}}, \]
+then, according to the above, the quantities $\varrho, s_0, s_2$ etc. can be expressed through rational functions of $x_1, x_2 \ldots x_m$, when one denotes by $x_1, x_2 \ldots x_m$ the roots of the given equation.
+
+Now let us examine some one of the quantities $\varrho, s_0, s_2$ etc., for example $\varrho$. Let one denote by $\varrho, \varrho_2, \ldots \varrho_n$ the different values of $\varrho$ that one finds when one interchanges the roots $x_1, x_2 \ldots x_m$ among one another in every possible way; then one can set up an equation of degree $n'$ whose coefficients are rational functions of $a_0, a_1, \ldots a_{n-1}$ and whose roots are the quantities $\varrho_1, \varrho_2 \ldots \varrho_{n'}$, which are rational functions of the quantities $x_1, x_2 \ldots x_m$. If one therefore sets
+\[ \varrho = t_0 + u^{\frac{1}{\nu}} + t_2 u^{\frac{2}{\nu}} \ldots + t_{\nu-1} u^{\frac{\nu-1}{\nu}} \]
+then all the quantities $u^{\frac{1}{\nu}}, t_0, t_2 \ldots t_{\nu-1}$ are rational functions of $\varrho_1, \varrho_2, \ldots \varrho_{n'}$, and hence also of $x_1, x_2 \ldots x_m$. If one proceeds in the same way with the quantities $u, t_0, t_2$ etc., then the following results:
+
+If an equation is algebraically solvable, then one can always give the root such a form that all algebraic functions of which it is composed can be expressed through rational functions of the roots of the given equation.
+
+\subsection*{§.~III. On the number of the different values that a function of several quantities can have when the quantities on which it depends are interchanged among one another.}
+
+Let $v$ be a rational function of several mutually independent quantities $x_1, x_2 \ldots x_n$. The number of the different values of which this func-
+
+\origpage{74}
+tion is capable through interchange of the quantities on which it depends cannot be greater than the product $1 \cdot 2 \cdot 3 \ldots n$. Let this product be equal to $\mu$. Now let
+\[ v\binom{\alpha\,\beta\,\gamma\,\delta\,\ldots}{a\,b\,c\,d\,\ldots} \]
+be the value that an arbitrary function $v$ takes when one sets in it $x_a, x_b, x_c, x_d$ etc. in place of $x_\alpha, x_\beta, x_\gamma, x_\delta$ etc.; then it is clear that, if one denotes by $A_1, A_2 \ldots A_\mu$ the different forms of which $1, 2, 3, 4 \ldots n$ are capable through interchange of the indices $1, 2, 3 \ldots n$, the different values of $v$ can be expressed through
+\[ v\binom{A_1}{A_1}, \; v\binom{A_1}{A_2}, \; v\binom{A_1}{A_3} \ldots v\binom{A_1}{A_\mu} \]
+Suppose that the number of the different values that $v$ has is smaller than $\mu$; then several values of $v$ must be \emph{equal to one another}. Let then
+\[ v\binom{A_1}{A_1} = v\binom{A_1}{A_2} \ldots = v\binom{A_1}{A_m}. \]
+If one subjects these quantities to the transformation denoted by $\binom{A_1}{A_{m+1}}$, then one obtains the new series of equal values:
+\[ v\binom{A_1}{A_{m+1}} = v\binom{A_1}{A_{m+2}} \ldots = v\binom{A_1}{A_{2m}}, \]
+which quantities are different from the previous ones, but equal to them in number. If one transforms these quantities anew, as is expressed by $\binom{A_1}{A_{2m+1}}$, then one obtains a new system of equal quantities, which are all different from the previous ones. If one continues in this way, until the possible transformations are exhausted, then the $\mu$ values of $v$ will be decomposed into a certain number of systems, each of $m$ equal values. It follows therefore that, if the number of the different values of $v$ is equal to $\varrho$, which number comes out equal to the number of the systems, then
+\[ \varrho m = 2 \cdot 3 \cdot 4 \ldots n \]
+must hold, that is:
+
+The number of the different values that a function of $n$ quantities can obtain through the possible interchanges of these quantities is necessarily a submultiple of the product $1 \cdot 2 \cdot 3 \ldots n$; as is well known.
+
+\origpage{75}
+Let now $\binom{A_1}{A_m}$ be an arbitrary transformation. Let it be carried out with $v$ several times, so that a series of values arises
+\[ v, v_1, v_2 \ldots v_{p-1}, v_p, \]
+and it is clear that $v$ must necessarily recur. If $v$ returns after $p$ transformations, then one calls $\binom{A_1}{A_m}$ a \emph{recurring transformation of the} $p^{\text{th}}$ order. One then has the periodic series
+\[ v, v_1, v_2 \ldots v_{p-1}, v, v_1, v_2 \ldots, \]
+or, if one denotes by $v\binom{A_1}{A_m}^{r}$ the value of $v$ that arises after the transformation denoted by $\binom{A_1}{A_m}$ has been repeated $r$ times, the series
+\[ v\binom{A_1}{A_m}^{0}, \; v\binom{A_1}{A_m}^{1}, \; v\binom{A_1}{A_m}^{2} \ldots v\binom{A_1}{A_m}^{p-1}, \; v\binom{A_1}{A_m}^{0} \ldots \]
+From this it follows that
+\[ v\binom{A_1}{A_m}^{\alpha p + r} = v\binom{A_1}{A_m}^{r} \]
+\[ v\binom{A_1}{A_m}^{\alpha p} = v\binom{A_1}{A_m}^{0} = v. \]
+Now suppose that $p$ is the greatest prime number contained in $n$, and that the number of the different values of $v$ is smaller than $p$; then, among $p$ arbitrary values of $v$, two must necessarily be equal to one another.
+
+Two therefore of the $p$ values
+\[ v\binom{A_1}{A_m}^{0}, \; v\binom{A_1}{A_m}^{1}, \; v\binom{A_1}{A_m}^{2} \ldots v\binom{A_1}{A_m}^{p-1} \]
+must be equal. Let, for example,
+\[ v\binom{A_1}{A_m}^{r} = v\binom{A_1}{A_m}^{r'}, \]
+then it follows that
+\[ v\binom{A_1}{A_m}^{r + p - r} = v\binom{A_1}{A_m}^{r' + p - r} \]
+This gives, because $v\binom{A_1}{A_m}^{p} = v$, when one sets $r$ in place of $r' + p - r$,
+\[ v = v\binom{A_1}{A_m}^{r}; \]
+
+\origpage{76}
+where $r$ is evidently not a multiple of $p$. The value of $v$ is therefore no longer transformed by the substitution $\binom{A_1}{A_m}^{r}$, and consequently also not by the repetition of it. It is therefore
+\[ v = v\binom{A_1}{A_m}^{r\alpha}, \]
+where $\alpha$ denotes a whole number.
+
+Now if $p$ is a prime number, then one can evidently always find a whole number $\beta$ of such a kind that
+\[ r\alpha = p\beta + 1. \]
+Therefore
+\[ v = v\binom{A_1}{A_m}^{p\beta + 1}, \]
+or, because $v = v\binom{A_1}{A_m}^{p\beta}$,
+\[ v = v\binom{A_1}{A_m}. \]
+The value of $v$ is therefore not changed by the \emph{recurring} transformation $\binom{A_1}{A_m}$ of degree $p$.
+
+Now it is clear that
+\[ \binom{\alpha\,\beta\,\gamma\,\delta\,\ldots\,\zeta\,\eta}{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha} \text{ and } \binom{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha}{\gamma\,\alpha\,\beta\,\delta\,\ldots\,\zeta\,\eta} \]
+are two \emph{recurring} transformations of degree $p$, when the number of the indices $\alpha, \beta, \gamma \ldots \eta$ is equal to $p$. The value of $v$ is therefore also not changed by the combination of these two transformations. But the two transformations are evidently equivalent to the single one
+\[ \binom{\alpha\,\beta\,\gamma}{\gamma\,\alpha\,\beta} \]
+and this single one to the two carried out one after the other
+\[ \binom{\alpha\,\beta}{\beta\,\alpha} \text{ and } \binom{\beta\,\gamma}{\gamma\,\beta}. \]
+The value of $v$ is therefore not changed by these two transformations combined with one another. It is therefore
+\[ v = v\binom{\alpha\,\beta}{\beta\,\alpha}\binom{\beta\,\gamma}{\gamma\,\beta} \]
+and likewise
+\[ v = v\binom{\beta\,\gamma}{\gamma\,\beta}\binom{\gamma\,\delta}{\delta\,\gamma}, \]
+
+\origpage{77}
+from which
+\[ v = v\binom{\alpha\,\beta}{\beta\,\alpha}\binom{\gamma\,\delta}{\delta\,\gamma} \]
+follows.
+
+One sees from this that the function $v$ is not changed by two successive transformations of the form $\binom{\alpha\,\beta}{\beta\,\alpha}$, when $\alpha$ and $\beta$ are two arbitrary indices. If one therefore calls such a transformation a \emph{transposition} (transposition), then it follows that an arbitrary value of $v$ is not changed by an even number of transpositions, and that consequently all values of $v$ that give an odd number of transpositions are equal. But every arbitrary interchange of the elements of a function can be brought about by a certain number of transpositions: the function $v$ can therefore have no more than two different values. This gives the following theorem:
+
+The number of the different values of a function of $n$ quantities can either not be diminished at all below the greatest prime number found among the factors of $n$, or only down to 2 or 1.
+
+It is therefore impossible to find a function of five quantities that would have 3 or 4 different values.
+
+The proof of this theorem is taken from a memoir by \emph{Cauchy} that is found in the 17th cahier of the \emph{Journal de l'école polytechnique}, page\ 1 etc.
+
+Let now $v$ and $v'$ be two functions that each have two different values; then it is clear, according to the preceding, that if one denotes those double values by $v_1, v_2$ and $v_1', v_2'$, the two expressions
+\[ v_1 + v_2 \text{ and } v_1 v_1' + v_2 v_2' \]
+are \emph{symmetric} functions. Let
+\[ v_1 + v_2 = t \text{ and } v_1 v_1' + v_2 v_2' = t_1, \]
+then one finds
+\[ v_1 = \frac{t \cdot v_2' - t_1}{v_2' - v_1'}. \]
+Now suppose that the number of the quantities $x_1, x_2 \ldots x_m$ is five; then the product
+\[ \varrho = (x_1 - x_2)(x_1 - x_3)(x_1 - x_4)(x_1 - x_5)(x_2 - x_3)(x_2 - x_4)(x_2 - x_5)(x_3 - x_4)(x_3 - x_5)(x_4 - x_5) \]
+is evidently a function that has two different values; the second
+
+\origpage{78}
+value is the same function with the opposite sign. If one therefore sets $v_1' = \varrho$, then $v_2' = -\varrho$. The expression of $v_1$ is therefore
+\[ v_1 = \frac{t_1 + \varrho t_2}{2\varrho}, \text{ or} \]
+\[ v_1 = \tfrac{1}{2} t_2 + \frac{t_1}{2\varrho^{2}} \varrho, \]
+where $\tfrac{1}{2} t_2$ is a symmetric function. $\varrho$ has two values that differ only in sign, so that $\dfrac{t_1}{2\varrho^{2}}$ is likewise a symmetric function. If one therefore sets $\tfrac{1}{2} t_2 = p$ and $\dfrac{t_1}{2\varrho^{2}} = q$, then it follows
+
+that every function of five quantities which has two different values can be expressed through $p + q \cdot \varrho$, where $p$ and $q$ are two symmetric functions and
+\[ \varrho = (x_1 - x_2)(x_1 - x_3) \ldots (x_4 - x_5) \]
+
+For our purpose we still need the general form of the functions of five quantities that have five different values. One can find them as follows.
+
+Let $v$ be a rational function of the quantities $x_1, x_2, x_3, x_4, x_5$ which has the property of being invariant when one interchanges any four of the five quantities, e.\ g. $x_2, x_3, x_4, x_5$, among one another. Under this condition $v$ is evidently symmetric in $x_2, x_3, x_4, x_5$. One can therefore express $v$ through a rational function of $x_1$ and symmetric functions of $x_2, x_3, x_4, x_5$. But every symmetric function of these quantities can be expressed through a rational function of the coefficients of an equation of the fourth degree whose roots are $x_2, x_3, x_4, x_5$. If one therefore sets
+\[ (x - x_2)(x - x_3)(x - x_4)(x - x_5) = x^{4} - px^{3} + qx^{2} - rx + s, \]
+then the function $v$ can be expressed through a rational function of $x_1, p, q, r, s$. But if one sets
+\[ (x - x_1)(x - x_2)(x - x_3)(x - x_4)(x - x_5) = x^{5} - ax^{4} + bx^{3} - cx^{2} + dx - e, \]
+then one obtains
+\[ (x - x_1)(x^{4} - px^{3} + qx^{2} - rx + s) = x^{5} - ax^{4} + bx^{3} - cx^{2} + dx - e \]
+\[ = x^{5} - (p + x_1)x^{4} + (q + px_1)x^{3} - (r + qx_1)x^{2} + (s + rx_1)x - sx_1, \]
+from which
+\[ p = a - x_1 \]
+\[ q = b - ax_1 + x_1^{2} \]
+
+\origpage{79}
+\[ r = c - bx_1 + ax_1^{2} - x_1^{3} \]
+\[ s = d - cx_1 + bx_1^{2} - ax_1^{3} + x_1^{4} \]
+follows. It is therefore possible to express $v$ through a rational function of $x_1, a, b, c, d$ and $e$.
+
+From this it follows that one can bring $v$ into the following form:
+\[ v = \frac{t}{\varphi(x_1)} \]
+where $t$ and $\varphi(x_1)$ are two integral functions of $x_1, a, b, c, d$ and $e$. If one multiplies this fraction above and below by $\varphi(x_2), \varphi(x_3), \varphi(x_4), \varphi(x_5)$, then one finds
+\[ v = \frac{t \cdot \varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)}{\varphi(x_1) \cdot \varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)}. \]
+Now $\varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)$ is, as one sees, an integral and symmetric function of $x_2, x_3, x_4, x_5$. One can therefore express this product through an integral function of $p, q, r, s$, and hence also through an integral function of $x_1, a, b, c, d$. The numerator of the above fraction is therefore an integral function of the same quantity; the denominator is a symmetric function of $x_1, x_2, x_3, x_4, x_5$ and can therefore be expressed through a rational function of $a, b, c, d, e$. From this it follows that one can set
+\[ v = r_0 + r_1 x_1 + r_2 x_1^{2} \ldots + r_m x_1^{m} \]
+If one multiplies the equation
+\[ x_1^{5} = ax_1^{4} - bx_1^{3} + cx_1^{2} - dx_1 + e \]
+by $x_1, x_1^{2} \ldots x_1^{m-5}$, then it is clear that one obtains $m - 4$ equations from which $x_1^{5}, x_1^{6} \ldots x_1^{m}$ can be found in turn, and indeed through quantities of the form
+\[ \alpha + \beta x_1 + \gamma x_1^{2} + \delta x_1^{3} - \varepsilon x_1^{4}, \]
+in which $\alpha, \beta, \gamma, \delta, \varepsilon$ are rational functions of $a, b, c, d, e$.
+
+One can therefore bring $v$ into the form
+\[ v = r_0 + r_1 x_1 + r_2 x_1^{2} + r_3 x_1^{3} + r_4 x_1^{4} \tag{a} \]
+where $r_0, r_1, r_2$ etc. are rational functions of $a, b, c, d, e$, that is, symmetric functions of $x_1, x_2, x_3, x_4, x_5$.
+
+This is the general form of the functions that do not change when one interchanges the quantities $x_2, x_3, x_4, x_5$. They have either five different values, or they are symmetric.
+
+Let now $v$ be some rational function of $x_1, x_2, x_3, x_4, x_5$ which has the five values $v_1, v_2, v_3, v_4, v_5$. Take the function $x_1^{m} v$:
+
+\origpage{80}
+If one interchanges in it the four quantities $x_2, x_3, x_4, x_5$ in every possible way, then $x_1^{m} v$ will each time take one of the values
+\[ x_1^{m} v_1, \; x_1^{m} v_2, \; x_1^{m} v_3, \; x_1^{m} v_4, \; x_1^{m} v_5 \]
+
+Now I assert that the number of the values of $x_1^{m} v$ arising through this interchange is \emph{smaller than five}. For if one assumes all five values, then through the interchange of $x_1$ with $x_2, x_3, x_4, x_5$ there arise from these values \emph{twenty} others, which are necessarily different among themselves and from the previous ones. The function would thus have altogether 25 different values, which is not possible; for 25 is not a divisor of the product $1 \cdot 2 \cdot 3 \cdot 4 \cdot 5$. If one therefore denotes by $\mu$ the number of the values that $v$ takes when one interchanges the quantities $x_2, x_3, x_4, x_5$ among one another, then $\mu$ must have one of the four values $1, 2, 3, 4$.
+
+1. Let $\mu = 1$; then $v$ is, by virtue of the above, of the form $(a)$.
+
+2. Let $\mu = 4$; then $v_1 + v_2 + v_3 + v_4$ is a function of the form $(a)$. But
+\[ v_5 = (v_1 + v_2 + v_3 + v_4 + v_5) - (v_1 + v_2 + v_3 + v_4) \]
+$=$ a \emph{symmetric} function, less $(v_1 + v_2 + v_3 + v_4)$; hence $v_5$ is of the form $(a)$.
+
+3. Let $\mu = 2$; then $v_1 + v_2$ is a function of the form $(a)$. Let then
+\[ v_1 + v_2 = r_0 + r_1 x_1 + r_2 x_1^{2} + r_3 x_1^{3} + r_4 x_1^{4} = \varphi(x_1) \]
+If one interchanges $x_1$ in turn with $x_2, x_3, x_4, x_5$, then one obtains
+\[ v_1 + v_2 = \varphi(x_1) \]
+\[ v_2 + v_3 = \varphi(x_2) \]
+\[ \ldots \]
+\[ v_{m-1} + v_m = \varphi(x_{m-1}) \]
+\[ v_m + v_1 = \varphi(x_m), \]
+where $m$ is one of the numbers $2, 3, 4, 5$. For $m = 2$, $\varphi(x_1) = \varphi(x_2)$, which is not possible, because the number of the values of $\varphi(x_1)$ is supposed to be \emph{five}. For $m = 3$,
+\[ v_1 + v_2 = \varphi(x_1), \; v_2 + v_3 = \varphi(x_2), \; v_3 + v_1 = \varphi(x_3), \]
+which
+\[ 2 v_1 = \varphi(x_1) - \varphi(x_2) + \varphi(x_3) \]
+
+\origpage{81}
+gives. But the second member of this equation has more than five values, namely 30. In the same way it can be shown that $m$ cannot be equal to 4 either. $\mu$ can therefore not be equal to two.
+
+4. Let $\mu = 3$. Then $v_1 + v_2 + v_3$, and consequently also $v_4 + v_5 = (v_1 + v_2 + v_3 + v_4 + v_5) - (v_1 + v_2 + v_3)$, has five values. But we saw that this assumption does not take place. Therefore $\mu = 3$ cannot be the case either.
+
+Taking all together, then, one finds the following theorem:
+
+Every rational function of five quantities which has five different values is necessarily of the form
+\[ r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4}, \]
+where $r_0, r_1, r_2$ etc. are symmetric functions, and $x$ is one of the five quantities.
+
+From
+\[ r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} = v \]
+one easily finds, when one makes use of the given equation, the value of $x$ expressed as follows
+\[ x = s_0 + s_1 v + s_2 v^{2} + s_3 v^{3} + s_4 v^{4} \]
+where $s_0, s_1, s_2$ etc. are, just like $r_0, r_1, r_2$, etc., symmetric functions.
+
+Let $v$ be some rational function which has $m$ different values $v_1, v_2, v_3 \ldots v_m$. If one sets
+\[ (v - v_1)(v - v_2)(v - v_3) \ldots (v - v_m) = q_0 + q_1 v + q_2 v^{2} \ldots + q_{m-1} v^{m-1} + v^{m} = 0, \]
+then, as is well known, $q_0, q_1, q_2 \ldots$ are symmetric functions, and the $m$ roots of the equation are $v_1, v_2 \ldots v_m$. Now I assert that it is impossible to express the value of $v$ as a root of an equation of the same form but of a lower degree. For let
+\[ t_0 + t_1 v + t_2 v^{2} \ldots + t_{\mu-1} v^{\mu-1} + v^{\mu} = 0 \]
+be such an equation, where $t_0, t_1$ etc. are symmetric functions, and let $v_1$ be a value of $v$ that satisfies the equation; then
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_1) \cdot P_1. \]
+If one now interchanges the elements of the function among one another, then one finds the following series of equations:
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_2) \cdot P_2, \]
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_3) \cdot P_3, \]
+\[ \ldots \]
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_m) \cdot P_m. \]
+From this it follows that $v - v_1, v - v_2, v - v_3 \ldots v - v_m$ are all factors
+
+\origpage{82}
+of $v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots$, and that consequently $\mu$ must necessarily be equal to $m$. One therefore obtains the following theorem:
+
+If a rational function of several quantities has $m$ different values, then one can always find an equation of degree $m$ whose coefficients are symmetric functions and which has those values for roots; but it is not possible to set up an equation of the same form of lower degree which has one or several of those values for roots.
+
+\subsection*{§.~IV. Proof of the impossibility of the general solution of equations of the fifth degree.}
+
+By virtue of the propositions found above taken together, one may assert:
+
+that it is impossible to solve equations of the fifth degree in general.
+
+For, according to (§.~II.), all algebraic functions of which an algebraic expression of the roots may be composed can be expressed through rational functions of the roots of the equation.
+
+Since it is now impossible to express the root of an equation in general through a rational function of the coefficients, it must be that
+\[ R^{\frac{1}{m}} = v \ldots \]
+where $m$ is a prime number and $R$ a rational function of the coefficients of the given equation, that is, a symmetric function of the roots; $v$ is a rational function of the roots. From this it follows:
+\[ v^{m} - R = 0 \]
+and since, according to (§.~II.), it is impossible to lower the degree of this equation, the function $v$ will, by virtue of the last theorem in the preceding paragraph, have $m$ different values. Since $m$ must now be a divisor of $1 \cdot 2 \cdot 3 \cdot 4 \cdot 5$, $m$ can be equal to 2, 3, or 5. But now, according to (§.~III.), there exists no function of five quantities that has 3 values: it must therefore be that $m = 5$ or $m = 2$. Let $m = 5$; then one obtains, by virtue of the preceding paragraph,
+\[ \sqrt[5]{R} = r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} \]
+and from this
+\[ x = s_0 + s_1 R^{\frac{1}{5}} + s_2 R^{\frac{2}{5}} + s_3 R^{\frac{3}{5}} + s_4 R^{\frac{4}{5}}. \]
+According to (§.~II.) it follows from this that
+\[ s_1 R^{\frac{1}{5}} = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{2} x_4 + \alpha x_5, \]
+
+\origpage{83}
+where $\alpha^{5} = 1$. This equation is impossible, because the second member has 120 values, and yet is the root of an equation of the fifth degree $z^{5} - s_1^{5} R = 0$.
+
+It must therefore be that $m = 2$.
+
+Then, according to (§.~II.),
+\[ \sqrt{R} = p + qs, \]
+where $p$ and $q$ are symmetric functions, and
+\[ s = (x_1 - x_2) \ldots (x_4 - x_5) \]
+If one interchanges $x_1$ with $x_2$, then
+\[ -\sqrt{R} = p - qs, \]
+from which $p = 0$ and $\sqrt{R} = qs$ follow. One sees from this that all algebraic functions of the first degree found in the expression of the roots must be of the form $\alpha + \beta \cdot \sqrt{s^{2}} = \alpha + \beta s$, where $\alpha$ and $\beta$ are symmetric functions. Since it is now impossible to express the roots through a function of the form $\alpha + \beta \sqrt{R}$, an equation of the form
+\[ \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} = v \]
+must take place, where $\alpha$ and $\beta$ are not equal to zero, $m$ is a prime number, $\alpha$ and $\beta$ are symmetric functions, and $v$ is a rational function of the roots. This gives
+\[ \sqrt[m]{(\alpha + \beta s)} = v_1 \text{ and } \sqrt[m]{(\alpha - \beta s)} = v_2, \]
+where $v_1$ and $v_2$ are rational functions. If one multiplies $v_2$ by $v_1$, then one obtains
+\[ v_2 v_1 = \sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}. \]
+Now $\alpha^{2} - \beta^{2} s^{2}$ is a symmetric function. If therefore $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ were not a symmetric function, then, according to the above, it would have to be that $m = 2$. But then $v = \sqrt{(\alpha + \beta \sqrt{s^{2}})}$, and $v$ consequently has four different values; which is not possible. It must therefore be that $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ is a symmetric function. Let such a function be $\gamma$; then
+\[ v_2 v_1 = \gamma \text{ and } v_2 = \frac{\gamma}{v_1}. \]
+Now take the expression
+\[ v_1 + v_2 = \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} + \frac{\gamma}{\sqrt[m]{(\alpha + \beta \sqrt{s^{2}})}} = p \]
+\[ = \sqrt[m]{R} + \frac{\gamma}{\sqrt[m]{R}} = R^{\frac{1}{m}} + \frac{\gamma}{R} R^{\frac{m-1}{m}}. \]
+
+\origpage{84}
+Let one denote the values that $p$ can take when one sets $\alpha R^{\frac{1}{m}}, \alpha^{2} R^{\frac{1}{m}}, \alpha^{3} R^{\frac{1}{m}} \ldots \alpha^{m-1} R^{\frac{1}{m}}$ in place of $R^{\frac{1}{m}}$, where
+\[ \alpha^{m-1} + \alpha^{m-2} \ldots + \alpha + 1 = 0 \]
+by $p_1, p_2 \ldots p_m$, and form the product
+\[ (p - p_1)(p - p_2) \ldots (p - p_m) = p^{m} - Ap^{m-1} + A_1 p^{m-2} \ldots = 0, \]
+then it is easy to see that $A, A_1$ etc. will be rational functions of the coefficients of the given equation, hence symmetric functions of the roots. But this equation is evidently irreducible. Therefore $p$ must, by virtue of the last theorem in the preceding paragraph, regarded as a function of the roots, have $m$ different values. Consequently $m = 5$. But then $p$ is of the form $(a)$ in the preceding paragraph. Thus
+\[ \sqrt[5]{R} + \frac{\gamma}{\sqrt[5]{R}} = r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} = p, \]
+and consequently
+\[ x = s_0 + s_1 p + s_2 p^{2} + s_3 p^{3} + s_4 p^{4}, \]
+that is, when one sets $R^{\frac{1}{5}} + \dfrac{\gamma}{R} R^{\frac{4}{5}}$ in place of $p$,
+\[ x = t_0 + t_1 R^{\frac{1}{5}} + t_2 R^{\frac{2}{5}} + t_3 R^{\frac{3}{5}} + t_4 R^{\frac{4}{5}} \]
+where $t_0, t_1, t_2$ etc. are rational functions of $R$ and of the coefficients of the given equation. From this it follows, by virtue of (§.~II.), that
+\[ t_1 R^{\frac{1}{5}} = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{2} x_4 + \alpha x_5 = p, \]
+where
+\[ \alpha^{4} + \alpha^{3} + \alpha^{2} + \alpha + 1 = 0 \]
+Now from $p = t_1 R^{\frac{1}{5}}$ it follows that $p^{5} = t_1^{5} R$, and because $t_1^{5} R$ is of the form $u + u_1 \sqrt{s^{2}}$, $p^{5} = u + u_1 \sqrt{s^{2}}$, which
+\[ (p^{5} - u)^{2} = u_1^{2} s^{2} \]
+gives. This equation gives, as one sees, $p$ through an equation of the $10^{\text{th}}$ degree whose coefficients are all symmetric functions, which, however, by virtue of the last theorem in the preceding paragraph, is not possible; for since\ednote{In this last occurrence the coefficient of $x_4$ is printed $\alpha^{4}$; the identical resolvent above and on p.~82 has $\alpha^{2} x_4$. An apparent misprint for $\alpha^{2} x_4$, reproduced here as printed.}
+\[ p = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{4} x_4 + \alpha x_5 \]
+$p$ would have 120 different values; which is a contradiction.
+
+We conclude from all of this:
+
+that it is impossible to solve equations of the fifth degree algebraically in general.
+
+From this it follows immediately further that it is likewise impossible to solve equations of higher than the fifth degree in general. Hence the equations that can be solved algebraically in general are only those of the first four degrees.
+
+\end{document}

@@ -35,8 +35,23 @@ def _strip(latex: str) -> str:
     return "\n".join(_COMMENT_RE.sub("", line) for line in latex.splitlines())
 
 
+# Text-mode inserts inside a formula (\text{...} and friends) hold PROSE, not mathematics — e.g.
+# Abel's "$z^{n} - p = 0 \text{ und}$" or the ordinal suffix in "$\mu^{\text{ten}}$". A translation is
+# expected to translate that prose (\text{ und } -> \text{ and }, \text{ten} -> \text{th}), so its
+# CONTENT is neutralized before comparison. The insert itself is kept (as \text{}) so its presence
+# and position are still compared — a translator may translate the words but not drop or add an
+# insert, or move the surrounding math. \operatorname{...} is deliberately NOT included: it names a
+# mathematical operator, not translatable prose.
+_TEXT_INSERT_RE = re.compile(
+    r"\\(text|textrm|textnormal|textup|textit|textbf|textsf|texttt|mbox|hbox)\{[^{}]*\}"
+)
+
+
 def _norm(span: str) -> str:
-    """Collapse internal whitespace so trivial spacing differences don't trip the check."""
+    """Neutralize translatable \\text{...} prose, then collapse whitespace, so that translating the
+    words inside a display is not flagged as an altered formula (only the insert's content is
+    ignored; trivial spacing differences don't trip the check either)."""
+    span = _TEXT_INSERT_RE.sub(lambda m: "\\" + m.group(1) + "{}", span)
     return " ".join(span.split())
 
 

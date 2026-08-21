@@ -1,0 +1,481 @@
+% Faithful transcription — original German. Transcribed from the original first printing in
+% Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 1 (Berlin, 1826),
+% printed pages 65–84: N. H. Abel, "Beweis der Unmöglichkeit algebraische Gleichungen von höheren
+% Graden als dem vierten allgemein aufzulösen." Scan: Göttinger Digitalisierungszentrum (GDZ),
+% PPN243919689_0001 (PDF pages 70–89).
+%
+% \origpage uses the PRINTED page numbers. The prose is set in ANTIQUA (roman type), not Fraktur;
+% only period features are normalized — long-ſ rendered as s, the eszett ligature ſs rendered as ß,
+% ligatures expanded, end-of-line hyphenation dropped — while spelling and notation are kept
+% faithful to the 1826 edition (Ueber, nemliche/nämliche, grade/ungrade, Coefficienten, Function,
+% etc. — see HOUSESTYLE R12, R19). Letterspaced emphasis (Sperrung) is rendered \emph (R20).
+% Multiplication dots are set with \cdot. There is no Fraktur in the text or the math, so no
+% \mathfrak is used.
+%
+% Function symbol: the algebraic function is denoted ϱ (\varrho) in §I–II; in §III–IV the general
+% permuted function is v while ϱ denotes the *number* of distinct values, and ϱ is reused again for
+% the two-valued "discriminant" product ∏(x_i−x_j) throughout §III (p.77 AND p.78 — both ϱ), while
+% §IV writes that same product with a Latin s. All kept faithful.
+%
+% Apparent printer's errors kept faithfully (HOUSESTYLE R4) and flagged in-text with \ednote
+% popovers (R10) for the reader:
+%   * p.71: "t_0 + t_1 z + t_2 z … + z^μ = 0" — the t_2 term lacks its exponent (should be t_2 z^2).
+%   * p.68: "t_0 + t_1 s^1 + t_2 s^2 … t_m s^m)" — a trailing ")" with no opening parenthesis.
+%   * p.84: final "p = x_1 + α^4 x_2 + α^3 x_3 + α^4 x_4 + α x_5" — the α^4 on x_4 is a misprint for
+%     α^2 x_4 (cf. the identical Lagrange resolvent on pp.82 and 84, both α^2 x_4).
+% Minor original inconsistencies kept as printed: the denominator polynomial V has ϱ_i coefficients
+% (p.69); the display denominator M vs the inline s_i/m (p.69); ϱ_n vs ϱ_{n'} (p.73).
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{65}
+\section*{Beweis der Unmöglichkeit algebraische Gleichungen von höheren Graden als dem vierten allgemein aufzulösen.}
+
+\emph{(Von Herrn N.~H. Abel.)}
+
+Bekanntlich kann man algebraische Gleichungen bis zum vierten Grade allgemein auflösen, Gleichungen von höhern Graden aber nur in einzelnen Fällen, und irre ich nicht, so ist die Frage:
+
+Ist es \emph{möglich}, Gleichungen von höhern als dem vierten Grade allgemein aufzulösen?
+
+noch nicht befriedigend beantwortet worden. Der gegenwärtige Aufsatz hat diese Frage zum Gegenstande.
+
+Eine Gleichung algebraisch auflösen heißt nichts anders, als ihre Wurzeln durch eine algebraische Function der Coefficienten ausdrücken. Man muß also erst die allgemeine \emph{Form} algebraischer Functionen betrachten und alsdann untersuchen, ob es möglich sei, der gegebenen Gleichung auf die Weise genug zu thun, daß man den Ausdruck einer algebraischen Function statt der unbekannten Größe setzt.
+
+\subsection*{§.~I. Ueber die allgemeine Form algebraischer Functionen.}
+
+Wenn $x', x'', x''' \ldots$ eine endliche Menge beliebiger Größen sind, so sagt man: $\varrho$ sei eine algebraische Function dieser Größen, wenn es sich durch $x', x'', x''' $ etc. vermittelst folgender Operationen ausdrücken läßt. \emph{Erstlich} durch die \emph{Addition}, \emph{zweitens} durch die \emph{Multiplication}, sowohl von Größen, die von $x', x'', x''' \ldots$ abhängen, als von Größen, die nicht davon abhängen; \emph{drittens} durch die \emph{Division}; viertens durch \emph{Ausziehen von Wurzeln} mit Exponenten, die Primzahlen sind. Wir nennen die \emph{Subtraction}, \emph{Potenziirung} und \emph{Ausziehung von Wurzeln} mit zusammengesetzten Exponenten nicht besonders, weil sie offenbar in den vier vorhin genannten Operationen mit enthalten sind.
+
+Läßt sich die Function $\varrho$ durch die drei ersten der vier obigen Operationen zusammensetzen, so ist sie \emph{algebraisch rational} oder blos rational; und
+
+\origpage{66}
+sind nur die beiden ersten Operationen nöthig, so heißt sie \emph{algebraisch-rational} und \emph{ungebrochen}, oder auch blos \emph{ganze} Function.
+
+Es sei $f(x', x'', x''' \ldots)$ eine beliebige Function, welche durch die Summe einer endlichen Zahl von Gliedern von der Form
+\[ A\,x'^{m_1} x''^{m_2} \ldots \]
+ausgedrückt werden kann, wo $A$ eine von $x', x''$ etc. unabhängige Größe ist, und $m_1, m_2$ etc. ganze positive Zahlen bedeuten; so ist klar, daß die zwei ersten obigen Operationen besondere Fälle der durch $f(x', x'' \ldots)$ bezeichneten Operation sind. Man kann also \emph{ganze} Functionen, ihrer Definition zufolge, als aus einer endlichen Zahl von Wiederholungen dieser Operationen entstehend betrachten. Bezeichnet man nun durch $\varrho', \varrho'', \varrho''' $ etc. mehrere Functionen der Größen $x', x'', x''' \ldots$ von der nämlichen Form wie $f(x', x'' \ldots)$, so ist auch offenbar $f(\varrho', \varrho'', \varrho''' \ldots)$ eine Function von eben der Form wie $f(x', x'' \ldots)$. Nun ist $f(\varrho', \varrho'' \ldots)$ der allgemeine Ausdruck der Functionen, welche durch zweimalige Wiederholung der Operation $f(x', x'' \ldots)$ entstehen. Man findet also auch immer das nämliche Resultat, wenn man die Operation beliebig oft wiederholt. Daraus folgt, daß jede ganze Function mehrer Größen $x', x'' \ldots$ durch die Summe mehrer Glieder von der Form $A x'^{m_1} x''^{m_2} \ldots$ ausgedrückt werden kann.
+
+Wir wollen nunmehr die rationalen Functionen betrachten.
+
+Wenn $f(x', x'' \ldots)$ und $\varphi(x', x'' \ldots)$ zwei ganze Functionen sind, so ist klar, daß der Quotient
+\[ \frac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)} \]
+ein besonderer Fall der Resultate der drei ersten Operationen ist, welche rationale Functionen geben. Man kann also eine rationale Function als das Resultat der Wiederholung dieser Operation betrachten. Bezeichnet man durch $\varrho', \varrho'', \varrho''' $ etc. mehrere Functionen von der Form $\dfrac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)}$, so ist leicht zu sehen, daß $\dfrac{f(\varrho', \varrho'' \ldots)}{\varphi(\varrho', \varrho'' \ldots)}$ wiederum auf die nämliche Form gebracht werden kann. Es folgt also, wie oben bei den ungebrochenen Functionen, daß jede rationale Function von mehreren Größen $x', x'' \ldots$ immer auf die Form
+\[ \frac{f(x', x'' \ldots)}{\varphi(x', x'' \ldots)} \]
+gebracht werden kann, wo Zähler und Nenner ganze Functionen sind.
+
+\origpage{67}
+Wir wollen ferner die \emph{allgemeine} Form algebraischer Functionen suchen.
+
+Man bezeichne durch $f(x', x'' \ldots)$ eine beliebige rationale Function, so ist klar, daß jede algebraische Function vermittelst der durch $f(x', x'' \ldots)$ bezeichneten Operation, verbunden mit der Operation $\sqrt[m]{r}$, wo $m$ eine Primzahl ist, zusammengesetzt werden kann. Sind also $p', p'' \ldots$ rationale Functionen von $x', x'' \ldots$, so wird
+\[ p_1 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots) \]
+die allgemeine Form algebraischer Functionen von $x', x'' \ldots$ sein, in welchen sich die durch $\sqrt[m]{r}$ ausgedrückte Operation nunmehr nur auf rationale Functionen bezieht. Wir wollen die Functionen von der Form $p_1$ algebraische Functionen \emph{von der ersten Ordnung} nennen. Bezeichnet man durch $p_1', p_1'' $ etc. mehrere Größen von der Form $p_1$, so wird
+\[ p_2 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots \sqrt[n_1']{p_1'}, \sqrt[n_1'']{p_1''} \ldots) \]
+die allgemeine Form algebraischer Functionen von $x', x'' \ldots$ sein, in welchen die Operation $\sqrt[m]{r}$ sich nur auf rationale und auf algebraische Functionen \emph{von der ersten Ordnung} bezieht. Wir wollen die Functionen von der Form $p_2$ algebraische Functionen \emph{von der zweiten Ordnung} nennen. Auf dieselbe Weise wird der Ausdruck
+\[ p_3 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots \sqrt[n_1']{p_1'}, \sqrt[n_1'']{p_1''} \ldots \sqrt[n_2']{p_2'}, \sqrt[n_2'']{p_2''} \ldots), \]
+in welchem $p_2', p_2''$ Functionen der zweiten Ordnung sind, die allgemeine Form algebraischer Functionen von $x', x'' \ldots$ sein, in welchen die Operation $\sqrt[m]{r}$ sich nur auf rationale und auf algebraische Functionen der ersten und zweiten Ordnung bezieht.
+
+Fährt man auf diese Weise fort, so bekommt man algebraische Functionen von der \emph{dritten}, \emph{vierten} $\ldots \mu^{\text{ten}}$ Ordnung, und es ist klar, daß der Ausdruck der Functionen von der $\mu^{\text{ten}}$ Ordnung der \emph{allgemeine} Ausdruck algebraischer Functionen sein wird.
+
+Bezeichnet man also durch $\mu$ die Ordnungszahl einer beliebigen algebraischen Function und durch $\varrho$ die Function selbst, so ist
+\[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots), \]
+wo $p', p'' \ldots$ Functionen von der Ordnung $\mu - 1$; $r', r'' \ldots$ Functionen von der Ordnung $\mu - 1$, oder niedrigen Ordnungen, und $n', n'' \ldots$ Primzahlen sind. $f$ bezeichnet, wie immer, eine rationale Function der Größen, welche zwischen den Klammern stehen.
+
+\origpage{68}
+Man kann offenbar annehmen, daß es unmöglich ist, eine der Größen $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ durch eine rationale Function der übrigen und der Größen $r', r'' \ldots$ auszudrücken; denn wäre es möglich, so würde $\varrho$ die einfachere Gestalt
+\[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots) \]
+haben, wo die Zahl der Größen $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ wenigstens um eine Einheit geringer wäre wie oben. Reducirte man nun, wenn es angeht, diesen Ausdruck von $\varrho$ eben so noch weiter, so müßte man zuletzt nothwendig entweder auf einen irreductibeln Ausdruck, oder auf einen Ausdruck von der Form
+\[ \varrho = f(r', r'', r''' \ldots) \]
+kommen. Diese Function wäre aber blos von der $\mu - 1^{\text{ten}}$ Ordnung, während $\varrho$ von der $\mu^{\text{ten}}$ Ordnung sein sollte; welches sich widerspricht.
+
+Ist in dem Ausdruck von $\varrho$ die Zahl der Größen $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ gleich $m$, so wollen wir die Function $\varrho$ von der $\mu^{\text{ten}}$ \emph{Ordnung} und vom $m^{\text{ten}}$ \emph{Grade} nennen. Auf diese Weise ist eine Function von der $\mu^{\text{ten}}$ Ordnung und vom $0^{\text{ten}}$ Grade das nemliche, wie eine Function von der $\mu - 1^{\text{ten}}$ Ordnung, und eine Function von der $0^{\text{ten}}$ Ordnung ist das nämliche wie eine \emph{rationale} Function.
+
+Daraus folgt, daß man setzen kann
+\[ \varrho = f(r', r'' \ldots \sqrt[n]{p}) \]
+wo $p$ eine Function von der $\mu - 1^{\text{ten}}$ Ordnung ist, $r', r'' \ldots$ aber Functionen von der $\mu^{\text{ten}}$ Ordnung und höchstens vom $m - 1^{\text{ten}}$ Grade und von der Art sind, daß es unmöglich ist, $\sqrt[n]{p}$ durch eine rationale Function dieser Größen auszudrücken.
+
+Da eine rationale Function mehrer Größen, wie wir vorhin sahen, immer auf die Form
+\[ \frac{s}{t} \]
+gebracht werden kann, wo $s$ und $t$ ganze Functionen der nemlichen veränderlichen Größen sind, so kann $\varrho$ immer durch
+\[ \varrho = \frac{\varphi(r', r'' \ldots \sqrt[n]{p})}{\tau(r', r'' \ldots \sqrt[n]{p})} \]
+ausgedrückt werden, wo $\varphi$ und $\tau$ zwei ganze Functionen der Größen $r', r'' \ldots$ und $\sqrt[n]{p}$ bezeichnen. Vermöge dessen, was wir oben fanden, kann aber eine ganze Function mehrer Größen $s, r', r'' \ldots$ immer durch\ednote{The following display closes with a parenthesis that has no matching opening parenthesis in the print --- an apparent typographical slip, reproduced here as printed.}
+\[ t_0 + t_1 s^{1} + t_2 s^{2} \ldots t_m s^{m}) \]
+
+\origpage{69}
+ausgedrückt werden, wenn $t_0, t_1 \ldots t_m$ ganze Functionen von $r', r'', r''' \ldots$ ohne $s$ bedeuten. Man kann also
+\[ \varrho = \frac{t_0 + t_1 p^{\frac{1}{n}} + t_2 p^{\frac{2}{n}} \ldots t_m p^{\frac{m}{n}}}{\varrho_0 + \varrho_1 p^{\frac{1}{n}} + \varrho_2 p^{\frac{2}{n}} \ldots \varrho_{m'} p^{\frac{m'}{n}}} = \frac{T}{V} \]
+setzen, wo $t_0, t_1 \ldots t_m$ und $\varrho_0, \varrho_1 \ldots \varrho_{m'}$ ganze Functionen von $r', r'', r''' $ etc. sind.
+
+Nun mögen $V_1, V_2 \ldots V_{n-1}$ die $n - 1$ Werthe von $V$ sein, welche man findet, wenn man $\alpha \cdot p^{\frac{1}{n}}, \alpha^{2} p^{\frac{1}{n}}, \alpha^{3} p^{\frac{1}{n}} \ldots \alpha^{n-1} p^{\frac{1}{n}}$ statt $p^{\frac{1}{n}}$ setzt: $\alpha$ bedeutet eine der Wurzeln der Gleichung $\alpha^{n} - 1 = 0$, die nicht 1 ist. Alsdann erhält man, wenn man den Bruch $\frac{T}{V}$ oben und unten mit
+\[ V_1 V_2 \ldots V_{n-1} \text{ multiplicirt,} \]
+\[ \varrho = \frac{T \cdot V_1 \cdot V_2 \ldots V_{n-1}}{V \cdot V_1 \cdot V_2 \ldots V_{n-1}}. \]
+Das Product $V \cdot V_1 \ldots V_{n-1}$ kann aber, wie bekannt, durch eine ganze Function von $p$ und von den Größen $r', r'' \ldots$ ausgedrückt werden, und das Product $T \cdot V_1 \cdot V_2 \ldots V_{n-1}$ ist, wie man sieht, eine ganze Function von $\sqrt[n]{p}$ und $r', r'' \ldots$ Setzt man also dieses Product gleich
+\[ s_0 + s_1 p^{\frac{1}{n}} + s_2 p^{\frac{2}{n}} \ldots s_k p^{\frac{k}{n}}, \]
+so findet man
+\[ \varrho = \frac{s_0 + s_1 p^{\frac{1}{n}} + s_2 p^{\frac{2}{n}} \ldots s_k p^{\frac{k}{n}}}{M}, \]
+oder, wenn man $q_0, q_1, q_2 \ldots$ statt $\dfrac{s_0}{m}, \dfrac{s_1}{m}, \dfrac{s_2}{m}$ etc. schreibt,
+\[ \varrho = q_0 + q_1 p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_k p^{\frac{k}{n}}, \]
+wo $q_0, q_1 \ldots q_k$ rationale Functionen der Größen $p, r', r'' $ etc. sind. Welche nun auch die ganze Zahl $\mu$ sein mag, so kann man setzen
+\[ \mu = an + \alpha, \]
+wo $a$ und $\alpha$ zwei ganze Zahlen sind und $\alpha < n$ ist. Daraus folgt, daß
+\[ p^{\frac{\mu}{n}} = p^{\frac{an + \alpha}{n}} = p^{a} \cdot p^{\frac{\alpha}{n}}. \]
+Setzt man daher in den Ausdruck von $\varrho$, statt $p^{\frac{\mu}{n}}$ diesen Ausdruck, so erhält man
+\[ \varrho = q_0 + q_1 p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}}, \]
+wo $q_0, q_1, q_2$ etc., wie vorhin, rationale Functionen von $p, r', r'' \ldots$ und
+
+\origpage{70}
+folglich Functionen von der $\mu^{\text{ten}}$ Ordnung und höchstens vom $m - 1^{\text{ten}}$ Grade und von der Art sind, daß sich $p^{\frac{1}{n}}$ nicht durch rationale Functionen dieser Größen ausdrücken läßt.
+
+In dem obigen Ausdruck von $\varrho$ kann man immer
+\[ q_1 = 1 \]
+setzen. Denn wenn $q_1$ nicht Null ist, so erhält man, wenn man $p_1 = p \cdot q_1^{n}$ setzt, $p = \dfrac{p_1}{q_1^{n}}$, und $p^{\frac{1}{n}} = \dfrac{p_1^{\frac{1}{n}}}{q_1}$, also
+\[ \varrho = q_0 + p_1^{\frac{1}{n}} + \frac{q_2}{q_1^{2}} p_1^{\frac{2}{n}} \ldots + \frac{q_{n-1}}{q_1^{n-1}} p_1^{\frac{n-1}{n}}, \]
+welcher Ausdruck von der nemlichen Gestalt ist, wie der vorige, nur daß $q_1 = 1$. Ist $q_1 = 0$, so sei $q_\mu$ eine von den Größen $q_1, q_2 \ldots q_{n-1}$, welche nicht Null ist und $q_\mu^{n} p^{\mu} = p_1$. Dieses giebt $q_\mu^{\alpha} \cdot p^{\frac{\alpha\mu}{n}} = p_1^{\frac{\alpha}{n}}$. Nimmt man daher zwei ganze Zahlen $\alpha$ und $\beta$, welche der Gleichung $\alpha\mu - \beta n = \mu'$ genugthun, wo $\mu'$ eine ganze Zahl ist, so erhält man
+\[ q_\mu^{\alpha} p^{\frac{\beta n + \mu'}{n}} = p_1^{\frac{\alpha}{n}} \text{ und } p^{\frac{\mu'}{n}} = q_\mu^{-\alpha} \cdot p^{-\beta} \cdot p_1^{\frac{\alpha}{n}}. \]
+Diesem zufolge und weil $q_\mu p^{\frac{\mu}{n}} = p_1^{\frac{1}{n}}$ ist, wird $\varrho$ die Form
+\[ \varrho = q_0 + p_1^{\frac{1}{n}} + q_2 p_1^{\frac{2}{n}} \ldots q_{n-1} p_1^{\frac{n-1}{n}} \]
+haben.
+
+Aus allem diesen folgt Nachstehendes:
+
+Wenn $\varrho$ eine algebraische Function von der Ordnung $\mu$ und vom Grade $m$ ist, so kann man immer setzen:
+\[ \varrho = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} + q_3 p^{\frac{3}{n}} \ldots q_{n-1} p^{\frac{n-1}{n}}; \]
+$n$ ist eine Primzahl, $q_0, q_2 \ldots q_{n-1}$ sind algebraische Functionen von der Ordnung $\mu$ und höchstens vom Grade $m - 1$ und $p$ ist eine algebraische Function von der Ordnung $\mu - 1$ und von der Art, daß sich $p^{\frac{1}{n}}$ nicht durch eine rationale Function von $q_0, q_2 \ldots q_{n-1}$ ausdrücken läßt.
+
+\subsection*{§.~II. Eigenschaften der algebraischen Functionen, welche einer gegebenen Gleichung genugthun.}
+
+Es sei
+\[ c_0 + c_1 y + c_2 y^{2} \ldots + c_{r-1} y^{r-1} + y^{r} = 0 \tag{1} \]
+
+\origpage{71}
+eine beliebige Gleichung vom Grade $r$, wo $c_0, c_1 \ldots$ rationale Functionen von $x', x'' \ldots$ sind. $x', x'' \ldots$ sind beliebige unabhängige Größen. Man nehme an, es lasse sich derselben genugthun, wenn man statt $y$ irgend eine \emph{algebraische Function} von $x', x'', \ldots$ setzt. Diese Function sei
+\[ y = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}} \tag{2} \]
+Substituirt man diesen Ausdruck von $y$ in die gegebene Gleichung, so erhält man, dem Obigen zufolge, einen Ausdruck von der Form
+\[ r_0 + r_1 p^{\frac{1}{n}} + r_2 p^{\frac{2}{n}} \ldots + r_{n-1} p^{\frac{n-1}{n}} = 0 \tag{3} \]
+wo $r_0, r_1, r_2 \ldots r_{n-1}$ rationale Functionen der Größen $p, q_0, q_1 \ldots q_{n-1}$ sind.
+
+Nun behaupte ich, daß die Gleichung (3) nicht Statt finden kann, wenn nicht einzeln
+\[ r_0 = 0, \; r_1 = 0 \ldots r_{n-1} = 0 \]
+ist. Denn es sei nicht so, so müßten, wenn man z.\ B. $p^{\frac{1}{n}}$ durch $z$ bezeichnet, die beiden Gleichungen
+\[ z^{n} - p = 0 \text{ und} \]
+\[ r_0 + r_1 z + r_2 z^{2} \ldots + r_{n-1} z^{n-1} = 0 \]
+eine oder mehrere \emph{gemeinschaftliche Wurzeln} haben. Es sei $k$ die Zahl dieser Wurzeln, so läßt sich, wie bekannt, eine Gleichung finden, welche diese $k$ Wurzeln hat und deren Coefficienten rationale Functionen der Größen $p, r_0, r_1 \ldots r_{n-1}$ sind.
+
+Die Gleichung sei
+\[ s_0 + s_1 z + s_2 z^{2} \ldots + s_{k-1} z^{k-1} + z^{k} = 0 \]
+und
+\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} \]
+ein Factor ihres ersten Gliedes, wo $t_0, t_1$ etc. rationale Functionen von $p, r_0, r_1 \ldots r_{n-1}$ sind, so ist auch\ednote{In the following display the third term is printed $t_2 z$ without an exponent; by the line just above it should read $t_2 z^{2}$. An apparent misprint, reproduced here as printed.}
+\[ t_0 + t_1 z + t_2 z \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0, \]
+und es ist klar, daß man es als unmöglich annehmen kann, eine Gleichung von niedrigerem Grade von der nemlichen Form zu finden. Diese Gleichung hat nun ihre $\mu$ Wurzeln mit der Gleichung $z^{n} - p$ gemein. Nun aber sind die Wurzeln der Gleichung $z^{n} - p$ alle von der Form $\alpha z$, wo $\alpha$ irgend eine Wurzel der Einheit ist. Erwägt man also, daß $\mu$ nicht kleiner sein kann als 2, weil es unmöglich sein soll, $z$ durch eine rationale Function der Größen $p, r_0, r_1 \ldots r_{n-1}$ auszudrücken, so folgt, daß zwei Gleichungen von der Form
+
+\origpage{72}
+\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0 \text{ und} \]
+\[ t_0 + \alpha t_1 z + \alpha^{2} t_2 z^{2} \ldots + \alpha^{\mu-1} t_{\mu-1} z^{\mu-1} + \alpha^{\mu} z^{\mu} = 0 \]
+Statt finden müssen. Aus diesen Gleichungen folgt, wenn man $z^{\mu}$ eliminirt,
+\[ t_0(1 - \alpha^{\mu}) + t_1(\alpha - \alpha^{\mu})z \ldots + t_{\mu-1}(\alpha^{\mu-1} - \alpha^{\mu})z^{\mu-1} = 0. \]
+Da nun aber die Gleichung $z^{\mu} + t_{\mu-1} z^{\mu-1} \ldots = 0$ irreductibel ist, so muß sie, weil sie vom $\mu - 1^{\text{ten}}$ Grade ist, einzeln
+\[ \alpha^{\mu} - 1 = 0, \; \alpha - \alpha^{\mu} = 0 \ldots \alpha^{\mu-1} - \alpha^{\mu} = 0 \]
+geben; was nicht sein kann.
+
+Es muß also
+\[ r_0 = 0, \; r_1 = 0 \ldots r_{n-1} = 0 \]
+sein.
+
+Finden nun aber diese Gleichungen Statt, so ist klar, daß der gegebenen Gleichung durch alle die Werthe von $y$ genug gethan werden muß, welche man findet, wenn man der Größe $p^{\frac{1}{n}}$ alle die Werthe $\alpha p^{\frac{1}{n}}, \alpha^{2} p^{\frac{1}{n}}, \ldots \alpha^{n-1} p^{\frac{1}{n}}$ beilegt.
+
+Man sieht leicht, daß alle diese Werthe von $y$ von einander verschieden sein müssen; denn sonst würde man eine Gleichung von derselben Gestalt wie (3) erhalten, und eine solche Gleichung würde, wie wir sahen, auf Widersprüche führen.
+
+Bezeichnet man also durch $y_1, y_2 \ldots y_n$ $n$ verschiedene Wurzeln der Gleichung (1), so findet man
+\[ y_1 = q_0 + p^{\frac{1}{n}} + q_2 p^{\frac{2}{n}} \ldots + q_{n-1} p^{\frac{n-1}{n}} \]
+\[ y_2 = q_0 + \alpha p^{\frac{1}{n}} + \alpha^{2} q_2 p^{\frac{2}{n}} \ldots + \alpha^{n-1} q_{n-1} p^{\frac{n-1}{n}} \]
+\[ \ldots \]
+\[ y_n = q_0 + \alpha^{n-1} p^{\frac{1}{n}} + \alpha^{n-2} q_2 p^{\frac{2}{n}} \ldots + \alpha q_{n-1} p^{\frac{n-1}{n}}. \]
+Aus diesen $n$ Gleichungen folgt leicht
+\[ q_0 = \frac{1}{n}(y_1 + y_2 \ldots + y_n) \]
+\[ p^{\frac{1}{n}} = \frac{1}{n}(y_1 + \alpha^{n-1} y_2 + \alpha^{n-2} y_3 \ldots + \alpha y_n) \]
+\[ q_2 p^{\frac{2}{n}} = \frac{1}{n}(y_1 + \alpha^{n-2} y_2 + \alpha^{n-4} y_3 \ldots + \alpha^{2} y_n) \]
+\[ \ldots \]
+\[ q_{n-1} p^{\frac{n-1}{n}} = \frac{1}{n}(y_1 + \alpha y_2 + \alpha^{2} y_3 \ldots + \alpha^{n-1} y_n). \]
+
+\origpage{73}
+Man sieht daraus, daß alle die Größen $p^{\frac{1}{n}}, q_0, q_2 \ldots q_{n-1}$ durch rationale Functionen der gegebenen Gleichung ausgedrückt werden können.
+
+In der That ist
+\[ q_\mu = n^{\mu-1} \cdot \frac{y_1 + \alpha^{-\mu} y_2 + \alpha^{-2\mu} y_3 \ldots + \alpha^{-(n-1)\mu} y_n}{(y_1 + \alpha^{-1} y_2 + \alpha^{-2} y_3 \ldots + \alpha^{-(n-1)} y_n)^{\mu}} \]
+Man nehme nun eine allgemeine Gleichung vom Grade $m$ an, z.\ B.
+\[ 0 = a_0 + a_1 x + a_2 x^{2} \ldots + a_{m-1} x^{m-1} + x^{m} \]
+und setze, sie sei algebraisch auflösbar. Es sei
+\[ x = s_0 + \varrho^{\frac{1}{n}} + s_2 \varrho^{\frac{2}{n}} \ldots + s_{n-1} \varrho^{\frac{n-1}{n}}, \]
+so lassen sich dem Obigen zu Folge die Größen $\varrho, s_0, s_2$ etc. durch rationale Functionen von $x_1, x_2 \ldots x_m$ ausdrücken, wenn man durch $x_1, x_2 \ldots x_m$ die Wurzeln der gegebenen Gleichung bezeichnet.
+
+Nun untersuche man irgend eine der Größen $\varrho, s_0, s_2$ etc., zum Beispiel $\varrho$. Man bezeichne durch $\varrho, \varrho_2, \ldots \varrho_n$, die verschiedenen Werthe von $\varrho$, welche man findet, wenn man die Wurzeln $x_1, x_2 \ldots x_m$ auf alle mögliche Weise untereinander verwechselt; so läßt sich eine Gleichung vom Grade $n'$ aufstellen, deren Coefficienten rationale Functionen von $a_0, a_1, \ldots a_{n-1}$ und deren Wurzeln die Größen $\varrho_1, \varrho_2 \ldots \varrho_{n'}$ sind, welche rationale Functionen der Größen $x_1, x_2 \ldots x_m$ sind. Setzt man also
+\[ \varrho = t_0 + u^{\frac{1}{\nu}} + t_2 u^{\frac{2}{\nu}} \ldots + t_{\nu-1} u^{\frac{\nu-1}{\nu}} \]
+so sind alle die Größen $u^{\frac{1}{\nu}}, t_0, t_2 \ldots t_{\nu-1}$ rationale Functionen von $\varrho_1, \varrho_2, \ldots \varrho_{n'}$, also auch von $x_1, x_2 \ldots x_m$. Verfährt man eben so mit den Größen $u, t_0, t_2$ etc., so folgt Nachstehendes:
+
+Wenn eine Gleichung algebraisch auflösbar ist, so kann man der Wurzel allezeit eine solche Form geben, daß sich alle algebraische Functionen, aus welchen sie zusammengesetzt ist, durch rationale Functionen der Wurzeln der gegebenen Gleichung ausdrücken lassen.
+
+\subsection*{§.~III. Ueber die Zahl der verschiedenen Werthe, welche eine Function mehrerer Größen haben kann, wenn man die Größen, von welchen sie abhängt, unter einander vertauscht.}
+
+Es sei $v$ eine rationale Function mehrerer von einander unabhängiger Größen $x_1, x_2 \ldots x_n$. Die Zahl der verschiedenen Werthe, deren diese Func-
+
+\origpage{74}
+tion durch Vertauschung der Größen, von welchen sie abhängt, fähig ist, kann nicht größer sein als das Product $1 \cdot 2 \cdot 3 \ldots n$. Dieses Product sei gleich $\mu$. Nun sei
+\[ v\binom{\alpha\,\beta\,\gamma\,\delta\,\ldots}{a\,b\,c\,d\,\ldots} \]
+der Werth, welchen eine beliebige Function $v$ bekommt, wenn man darin $x_a, x_b, x_c, x_d$ etc. statt $x_\alpha, x_\beta, x_\gamma, x_\delta$ etc. setzt, so ist klar, daß wenn man durch $A_1, A_2 \ldots A_\mu$ die verschiedenen Formen bezeichnet, deren $1, 2, 3, 4 \ldots n$ durch Verwechselung der Zeiger $1, 2, 3 \ldots n$ fähig ist, die verschiedenen Werthe von $v$ durch
+\[ v\binom{A_1}{A_1}, \; v\binom{A_1}{A_2}, \; v\binom{A_1}{A_3} \ldots v\binom{A_1}{A_\mu} \]
+ausgedrückt werden können. Man setze, die Zahl der verschiedenen Werthe welche $v$ hat sei kleiner als $\mu$, so müssen mehrere Werthe von $v$ \emph{einander gleich} sein. Es sei also
+\[ v\binom{A_1}{A_1} = v\binom{A_1}{A_2} \ldots = v\binom{A_1}{A_m}. \]
+Unterwirft man diese Größen der durch $\binom{A_1}{A_{m+1}}$ bezeichneten Verwandlung, so bekommt man die neue Reihe gleicher Werthe:
+\[ v\binom{A_1}{A_{m+1}} = v\binom{A_1}{A_{m+2}} \ldots = v\binom{A_1}{A_{2m}}, \]
+welche Größen von den vorigen verschieden, aber an Zahl ihnen gleich sind. Verwandelt man diese Größen von Neuem, wie es durch $\binom{A_1}{A_{2m+1}}$ ausgedrückt wird, so erhält man ein neues System von gleichen Größen, die sämmtlich von den vorigen verschieden sind. Fährt man auf diese Weise fort, bis die möglichen Verwandlungen erschöpft sind, so werden die $\mu$ Werthe von $v$ in eine gewisse Zahl von Systemen, jedes von $m$ gleichen Werthen, zerlegt sein. Es folgt also, daß wenn die Zahl der verschiedenen Werthe von $v$ gleich $\varrho$ ist, welche Zahl der Zahl der Systeme gleich kommt, daß dann
+\[ \varrho m = 2 \cdot 3 \cdot 4 \ldots n \]
+sein muß, das heißt:
+
+Die Zahl der verschiedenen Werthe, welche eine Function von $n$ Größen durch die möglichen Vertauschungen dieser Größen erhalten kann, ist nothwendig ein Submultiplum des Products $1 \cdot 2 \cdot 3 \ldots n$; wie bekannt.
+
+\origpage{75}
+Es sei nunmehr $\binom{A_1}{A_m}$ eine beliebige Verwandlung. Dieselbe werde mit $v$ mehreremal vorgenommen, so entsteht eine Reihe von Werthen
+\[ v, v_1, v_2 \ldots v_{p-1}, v_p, \]
+und es ist klar, daß $v$ nothwendig wiederholt vorkommen muß. Kehrt $v$ nach $p$ Verwandlungen wieder, so nennt man $\binom{A_1}{A_m}$ \emph{wiederkehrende Verwandlung von der} $p^{\text{ten}}$ Ordnung. Man hat alsdann die periodische Reihe
+\[ v, v_1, v_2 \ldots v_{p-1}, v, v_1, v_2 \ldots, \]
+oder wenn man durch $v\binom{A_1}{A_m}^{r}$ den Werth von $v$ bezeichnet, welcher entsteht, nachdem die durch $\binom{A_1}{A_m}$ bezeichnete Verwandlung $r$ mal wiederholt worden, die Reihe
+\[ v\binom{A_1}{A_m}^{0}, \; v\binom{A_1}{A_m}^{1}, \; v\binom{A_1}{A_m}^{2} \ldots v\binom{A_1}{A_m}^{p-1}, \; v\binom{A_1}{A_m}^{0} \ldots \]
+Hieraus folgt, daß
+\[ v\binom{A_1}{A_m}^{\alpha p + r} = v\binom{A_1}{A_m}^{r} \]
+\[ v\binom{A_1}{A_m}^{\alpha p} = v\binom{A_1}{A_m}^{0} = v. \]
+Nun setze man, $p$ sei die größte in $n$ enthaltene Primzahl, und die Zahl der verschiedenen Werthe von $v$ sei kleiner als $p$, so müssen unter $p$ beliebigen Werthen von $v$ nothwendig zwei einander gleich sein.
+
+Es müssen also zwei von den $p$ Werthen
+\[ v\binom{A_1}{A_m}^{0}, \; v\binom{A_1}{A_m}^{1}, \; v\binom{A_1}{A_m}^{2} \ldots v\binom{A_1}{A_m}^{p-1} \]
+gleich sein. Es sei z.\ B.
+\[ v\binom{A_1}{A_m}^{r} = v\binom{A_1}{A_m}^{r'}, \]
+so folgt daraus
+\[ v\binom{A_1}{A_m}^{r + p - r} = v\binom{A_1}{A_m}^{r' + p - r} \]
+Dieses giebt, weil $v\binom{A_1}{A_m}^{p} = v$, wenn man $r$ statt $r' + p - r$ setzt,
+\[ v = v\binom{A_1}{A_m}^{r}; \]
+
+\origpage{76}
+wo $r$ offenbar kein Vielfaches von $p$ ist. Der Werth von $v$ wird also durch die Substitution $\binom{A_1}{A_m}^{r}$ nicht mehr verwandelt, folglich auch nicht durch die Wiederholung derselben. Es ist also
+\[ v = v\binom{A_1}{A_m}^{r\alpha}, \]
+wo $\alpha$ eine ganze Zahl bedeutet.
+
+Wenn nun $p$ eine Primzahl ist, so läßt sich offenbar immer eine ganze Zahl $\beta$ finden, von der Art, daß
+\[ r\alpha = p\beta + 1. \]
+Also ist
+\[ v = v\binom{A_1}{A_m}^{p\beta + 1}, \]
+oder weil $v = v\binom{A_1}{A_m}^{p\beta}$ war,
+\[ v = v\binom{A_1}{A_m}. \]
+Der Werth von $v$ wird also durch die \emph{wiederkehrende} Verwandlung $\binom{A_1}{A_m}$ vom Grade $p$ nicht verändert.
+
+Nun ist klar, daß
+\[ \binom{\alpha\,\beta\,\gamma\,\delta\,\ldots\,\zeta\,\eta}{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha} \text{ und } \binom{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha}{\gamma\,\alpha\,\beta\,\delta\,\ldots\,\zeta\,\eta} \]
+zwei \emph{wiederkehrende} Verwandlungen vom Grade $p$ sind, wenn die Zahl der Zeiger $\alpha, \beta, \gamma \ldots \eta$ gleich $p$ ist. Der Werth von $v$ wird also auch durch die Verbindung dieser beiden Verwandlungen nicht verändert. Die beiden Verwandlungen sind aber offenbar gleich bedeutend mit der einen
+\[ \binom{\alpha\,\beta\,\gamma}{\gamma\,\alpha\,\beta} \]
+und diese eine mit den beiden nach einander vorgenommenen
+\[ \binom{\alpha\,\beta}{\beta\,\alpha} \text{ und } \binom{\beta\,\gamma}{\gamma\,\beta}. \]
+Der Werth von $v$ wird also durch diese beiden mit einander verbundenen Verwandlungen nicht verändert. Also ist
+\[ v = v\binom{\alpha\,\beta}{\beta\,\alpha}\binom{\beta\,\gamma}{\gamma\,\beta} \]
+und eben so
+\[ v = v\binom{\beta\,\gamma}{\gamma\,\beta}\binom{\gamma\,\delta}{\delta\,\gamma}, \]
+
+\origpage{77}
+woraus
+\[ v = v\binom{\alpha\,\beta}{\beta\,\alpha}\binom{\gamma\,\delta}{\delta\,\gamma} \]
+folgt.
+
+Man sieht hieraus, daß die Function $v$ durch zwei aufeinander folgende Verwandlungen von der Form $\binom{\alpha\,\beta}{\beta\,\alpha}$, wenn $\alpha$ und $\beta$ zwei beliebige Zeiger sind, nicht verändert wird. Nennt man daher eine solche Verwandlung, \emph{Versetzung} (Transposition), so folgt, daß ein beliebiger Werth von $v$ durch eine grade Zahl von Versetzungen nicht verändert wird, und daß folglich alle Werthe von $v$, welche eine ungrade Zahl von Versetzungen geben, gleich sind. Jede beliebige Vertauschung der Elemente einer Function kann aber durch eine gewisse Zahl von Versetzungen geschehen: Die Function $v$ kann also nicht mehr als zwei verschiedene Werthe haben. Dieses giebt folgenden Lehrsatz:
+
+Die Zahl der verschiedenen Werthe einer Function von $n$ Größen kann entweder gar nicht bis unter die größte Primzahl, die sich unter den Factoren von $n$ befindet, vermindert werden, oder nur bis auf 2 oder 1.
+
+Es ist also unmöglich, eine Function von fünf Größen zu finden, welche 3 oder 4 verschiedene Werthe hätte.
+
+Der Beweis dieses Lehrsatzes ist aus einem Mémoire von \emph{Cauchy} genommen, welches sich in dem 17ten Hefte des \emph{Journal de l'école polytechnique} pag.\ 1 etc. befindet.
+
+Es mögen nun $v$ und $v'$ zwei Functionen sein, welche jede zwei verschiedene Werthe haben, so ist dem Vorigen zufolge klar, daß wenn man durch $v_1, v_2$ und $v_1', v_2'$ jene doppelten Werthe bezeichnet, daß alsdann die beiden Ausdrücke
+\[ v_1 + v_2 \text{ und } v_1 v_1' + v_2 v_2' \]
+\emph{symmetrische} Functionen sind. Es sei
+\[ v_1 + v_2 = t \text{ und } v_1 v_1' + v_2 v_2' = t_1, \]
+so findet man
+\[ v_1 = \frac{t \cdot v_2' - t_1}{v_2' - v_1'}. \]
+Man setze nunmehr die Zahl der Größen $x_1, x_2 \ldots x_m$ sei fünf, so ist das Product
+\[ \varrho = (x_1 - x_2)(x_1 - x_3)(x_1 - x_4)(x_1 - x_5)(x_2 - x_3)(x_2 - x_4)(x_2 - x_5)(x_3 - x_4)(x_3 - x_5)(x_4 - x_5) \]
+offenbar eine Function, welche zwei verschiedene Werthe hat; der zweite
+
+\origpage{78}
+Werth ist die nemliche Function mit entgegengesetztem Zeichen. Setzt man also $v_1' = \varrho$, so ist $v_2' = -\varrho$. Der Ausdruck von $v_1$ ist also
+\[ v_1 = \frac{t_1 + \varrho t_2}{2\varrho}, \text{ oder} \]
+\[ v_1 = \tfrac{1}{2} t_2 + \frac{t_1}{2\varrho^{2}} \varrho, \]
+wo $\tfrac{1}{2} t_2$ eine symmetrische Function ist. $\varrho$ hat zwei Werthe, die nur dem Zeichen nach verschieden sind, so daß also $\dfrac{t_1}{2\varrho^{2}}$ ebenfalls eine symmetrische Function ist. Setzt man also $\tfrac{1}{2} t_2 = p$ und $\dfrac{t_1}{2\varrho^{2}} = q$, so folgt
+
+daß jede Function von fünf Größen, welche zwei verschiedene Werthe hat, durch $p + q \cdot \varrho$ ausgedrückt werden kann, wo $p$ und $q$ zwei symmetrische Functionen sind und
+\[ \varrho = (x_1 - x_2)(x_1 - x_3) \ldots (x_4 - x_5) \]
+ist.
+
+Für unsern Zweck ist noch die allgemeine Form der Functionen von fünf Größen nöthig, welche fünf verschiedene Werthe haben. Man kann dieselben, wie folgt, finden.
+
+Es sei $v$ eine rationale Function der Größen $x_1, x_2, x_3, x_4, x_5$, welche die Eigenschaft hat, unveränderlich zu sein, wenn man beliebige vier von den fünf Größen z.\ B. $x_2, x_3, x_4, x_5$ untereinander vertauscht. Unter dieser Bedingung ist $v$ offenbar nach $x_2, x_3, x_4, x_5$ symmetrisch. Man kann also $v$ durch eine rationale Function von $x_1$ und symmetrische Functionen von $x_2, x_3, x_4, x_5$ ausdrücken. Jede symmetrische Function dieser Größe kann aber durch eine rationale Function der Coefficienten einer Gleichung vom vierten Grade ausgedrückt werden, deren Wurzeln $x_2, x_3, x_4, x_5$ sind. Setzt man also
+\[ (x - x_2)(x - x_3)(x - x_4)(x - x_5) = x^{4} - px^{3} + qx^{2} - rx + s, \]
+so kann die Function $v$ durch eine rationale Function von $x_1, p, q, r, s$ ausgedrückt werden. Setzt man aber
+\[ (x - x_1)(x - x_2)(x - x_3)(x - x_4)(x - x_5) = x^{5} - ax^{4} + bx^{3} - cx^{2} + dx - e, \]
+so erhält man
+\[ (x - x_1)(x^{4} - px^{3} + qx^{2} - rx + s) = x^{5} - ax^{4} + bx^{3} - cx^{2} + dx - e \]
+\[ = x^{5} - (p + x_1)x^{4} + (q + px_1)x^{3} - (r + qx_1)x^{2} + (s + rx_1)x - sx_1, \]
+woraus
+\[ p = a - x_1 \]
+\[ q = b - ax_1 + x_1^{2} \]
+
+\origpage{79}
+\[ r = c - bx_1 + ax_1^{2} - x_1^{3} \]
+\[ s = d - cx_1 + bx_1^{2} - ax_1^{3} + x_1^{4} \]
+folgt. Es läßt sich also $v$ durch eine rationale Function von $x_1, a, b, c, d$ und $e$ ausdrücken.
+
+Daraus folgt, daß man $v$ auf folgende Gestalt bringen kann:
+\[ v = \frac{t}{\varphi(x_1)} \]
+wo $t$ und $\varphi(x_1)$ zwei ganze Functionen von $x_1, a, b, c, d$ und $e$ sind. Multiplicirt man diesen Bruch oben und unten mit $\varphi(x_2), \varphi(x_3), \varphi(x_4), \varphi(x_5)$, so findet man
+\[ v = \frac{t \cdot \varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)}{\varphi(x_1) \cdot \varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)}. \]
+Nun ist $\varphi(x_2) \cdot \varphi(x_3) \cdot \varphi(x_4) \cdot \varphi(x_5)$, wie man sieht, eine ganze und symmetrische Function von $x_2, x_3, x_4, x_5$. Man kann also dieses Product durch eine ganze Function von $p, q, r, s$ ausdrücken, also auch durch eine ganze Function von $x_1, a, b, c, d$. Der Zähler des obigen Bruchs ist also eine ganze Function der nemlichen Größe; der Nenner ist eine symmetrische Function von $x_1, x_2, x_3, x_4, x_5$ und kann also durch eine rationale Function von $a, b, c, d, e$ ausgedrückt werden. Daraus folgt, daß man
+\[ v = r_0 + r_1 x_1 + r_2 x_1^{2} \ldots + r_m x_1^{m} \]
+setzen kann. Multiplicirt man die Gleichung
+\[ x_1^{5} = ax_1^{4} - bx_1^{3} + cx_1^{2} - dx_1 + e \]
+mit $x_1, x_1^{2} \ldots x_1^{m-5}$, so ist klar, daß man $m - 4$ Gleichungen erhält, aus welchen sich der Reihe nach $x_1^{5}, x_1^{6} \ldots x_1^{m}$ finden lassen, und zwar durch Größen von der Form
+\[ \alpha + \beta x_1 + \gamma x_1^{2} + \delta x_1^{3} - \varepsilon x_1^{4}, \]
+in welchen $\alpha, \beta, \gamma, \delta, \varepsilon$ rationale Functionen von $a, b, c, d, e$ sind.
+
+Man kann also $v$ auf die Form
+\[ v = r_0 + r_1 x_1 + r_2 x_1^{2} + r_3 x_1^{3} + r_4 x_1^{4} \tag{a} \]
+bringen, wo $r_0, r_1, r_2$ etc. rationale Functionen von $a, b, c, d, e$ sind, das heißt symmetrische Functionen von $x_1, x_2, x_3, x_4, x_5$.
+
+Dieses ist die allgemeine Form der Functionen, welche sich nicht verändern, wenn man die Größen $x_2, x_3, x_4, x_5$ vertauscht. Sie haben entweder fünf verschiedene Werthe, oder sie sind symmetrisch.
+
+Es sei nunmehr $v$ irgend eine rationale Function von $x_1, x_2, x_3, x_4, x_5$, welche die fünf Werthe $v_1, v_2, v_3, v_4, v_5$ hat. Man nehme die Function $x_1^{m} v$:
+
+\origpage{80}
+Verwechselt man in derselben die vier Größen $x_2, x_3, x_4, x_5$ auf alle mögliche Art, so wird $x_1^{m} v$ jedesmal einen der Werthe
+\[ x_1^{m} v_1, \; x_1^{m} v_2, \; x_1^{m} v_3, \; x_1^{m} v_4, \; x_1^{m} v_5 \]
+bekommen.
+
+Nun behaupte ich, daß die Zahl der durch diese Vertauschung entstehenden Werthe von $x_1^{m} v$ \emph{kleiner als fünf ist}. Denn nimmt man alle fünf Werthe an, so entstehen durch die Vertauschung von $x_1$ mit $x_2, x_3, x_4, x_5$ aus diesen Werthen \emph{zwanzig} andere, die nothwendig unter sich und von den vorigen verschieden sind. Die Function würde also überhaupt 25 verschiedene Werthe haben, welches nicht möglich ist; denn 25 ist kein Divisor des Products $1 \cdot 2 \cdot 3 \cdot 4 \cdot 5$. Bezeichnet man also durch $\mu$ die Zahl der Werthe, welche $v$ bekommt, wenn man die Größen $x_2, x_3, x_4, x_5$ unter einander vertauscht, so muß $\mu$ einen der vier Werthe $1, 2, 3, 4$ haben.
+
+1. Es sei $\mu = 1$, so ist $v$, vermöge des Obigen, von der Form $(a)$.
+
+2. Es sei $\mu = 4$, so ist $v_1 + v_2 + v_3 + v_4$ eine Function von der Form $(a)$. Es ist aber
+\[ v_5 = (v_1 + v_2 + v_3 + v_4 + v_5) - (v_1 + v_2 + v_3 + v_4) \]
+$=$ einer \emph{symmetrischen} Function, weniger $(v_1 + v_2 + v_3 + v_4)$; also ist $v_5$ von der Form $(a)$.
+
+3. Es sei $\mu = 2$, so ist $v_1 + v_2$ eine Function von der Form $(a)$. Es sei also
+\[ v_1 + v_2 = r_0 + r_1 x_1 + r_2 x_1^{2} + r_3 x_1^{3} + r_4 x_1^{4} = \varphi(x_1) \]
+Vertauscht man der Reihe nach $x_1$ mit $x_2, x_3, x_4, x_5$, so erhält man
+\[ v_1 + v_2 = \varphi(x_1) \]
+\[ v_2 + v_3 = \varphi(x_2) \]
+\[ \ldots \]
+\[ v_{m-1} + v_m = \varphi(x_{m-1}) \]
+\[ v_m + v_1 = \varphi(x_m), \]
+wo $m$ eine der Zahlen $2, 3, 4, 5$ ist. Für $m = 2$ ist $\varphi(x_1) = \varphi(x_2)$, welches nicht möglich ist, weil die Zahl der Werthe von $\varphi(x_1)$ \emph{fünf} sein soll. Für $m = 3$ ist
+\[ v_1 + v_2 = \varphi(x_1), \; v_2 + v_3 = \varphi(x_2), \; v_3 + v_1 = \varphi(x_3), \]
+welches
+\[ 2 v_1 = \varphi(x_1) - \varphi(x_2) + \varphi(x_3) \]
+giebt. Das zweite Glied dieser Gleichung hat aber mehr als fünf Werthe, nemlich 30. Auf dieselbe Weise läßt sich zeigen, daß auch $m$ nicht gleich 4 sein kann. $\mu$ kann also nicht gleich zwei sein.
+
+\origpage{81}
+4. Es sei $\mu = 3$. Alsdann hat $v_1 + v_2 + v_3$, folglich auch $v_4 + v_5 = (v_1 + v_2 + v_3 + v_4 + v_5) - (v_1 + v_2 + v_3)$, fünf Werthe. Wir sahen aber, daß diese Voraussetzung nicht Statt findet. Also kann auch nicht $\mu = 3$ sein.
+
+Zusammengenommen also findet man folgenden Lehrsatz:
+
+Jede rationale Function von fünf Größen, welche fünf verschiedene Werthe hat, ist nothwendig von der Form
+\[ r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4}, \]
+wo $r_0, r_1, r_2$ etc. symmetrische Functionen sind, und $x$ eine von den fünf Größen ist.
+
+Aus
+\[ r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} = v \]
+findet man leicht, wenn man von der gegebenen Gleichung Gebrauch macht, den Werth von $x$, wie folgt, ausgedrückt
+\[ x = s_0 + s_1 v + s_2 v^{2} + s_3 v^{3} + s_4 v^{4} \]
+wo $s_0, s_1, s_2$ etc. eben wie $r_0, r_1, r_2$, etc., symmetrische Functionen sind.
+
+Es sei $v$ irgend eine rationale Function, welche $m$ verschiedene Werthe $v_1, v_2, v_3 \ldots v_m$ hat. Setzt man
+\[ (v - v_1)(v - v_2)(v - v_3) \ldots (v - v_m) = q_0 + q_1 v + q_2 v^{2} \ldots + q_{m-1} v^{m-1} + v^{m} = 0, \]
+so sind bekanntlich $q_0, q_1, q_2 \ldots$ symmetrische Functionen, und die $m$ Wurzeln der Gleichung sind $v_1, v_2 \ldots v_m$. Nun behaupte ich, daß es unmöglich ist, den Werth von $v$ als Wurzel einer Gleichung von derselben Form, aber von einem niedrigeren Grade auszudrücken. Denn es sei
+\[ t_0 + t_1 v + t_2 v^{2} \ldots + t_{\mu-1} v^{\mu-1} + v^{\mu} = 0 \]
+eine solche Gleichung, wo $t_0, t_1$ etc. symmetrische Functionen sind, und $v_1$ sei ein Werth von $v$, der der Gleichung genug thut, so ist
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_1) \cdot P_1. \]
+Verwechselt man nun unter einander die Elemente der Function, so findet man folgende Reihe von Gleichungen:
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_2) \cdot P_2, \]
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_3) \cdot P_3, \]
+\[ \ldots \]
+\[ v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots = (v - v_m) \cdot P_m. \]
+Daraus folgt, daß $v - v_1, v - v_2, v - v_3 \ldots v - v_m$ sämmtlich Factoren
+
+\origpage{82}
+von $v^{\mu} + t_{\mu-1} v^{\mu-1} \ldots$ sind, und daß folglich $\mu$ nothwendig gleich $m$ sein muß. Man erhält daher folgenden Lehrsatz:
+
+Wenn eine rationale Function mehrerer Größen $m$ verschiedene Werthe hat, so läßt sich allezeit eine Gleichung vom Grade $m$ finden, deren Coefficienten symmetrische Functionen sind, und welche jene Werthe zu Wurzeln haben; aber es ist nicht möglich eine Gleichung von der nämlichen Form von niedrigerem Grade aufzustellen, welche einen oder mehrere jener Werthe zu Wurzeln hat.
+
+\subsection*{§.~IV. Beweis der Unmöglichkeit der allgemeinen Auflösung der Gleichungen vom fünften Grade.}
+
+Vermöge der oben gefundenen Sätze zusammengenommen läßt sich behaupten:
+
+daß es unmöglich ist, Gleichungen vom fünften Grade allgemein aufzulösen.
+
+Nach (§.~II.) nämlich können alle algebraische Functionen, aus welchen ein algebraischer Ausdruck der Wurzeln zusammengesetzt sein mag, durch rationale Functionen der Wurzeln der Gleichung ausgedrückt werden.
+
+Da es nun unmöglich ist, die Wurzel einer Gleichung allgemein durch eine rationale Function der Coefficienten auszudrücken, so muß
+\[ R^{\frac{1}{m}} = v \ldots \]
+sein, wo $m$ eine Primzahl und $R$ eine rationale Function der Coefficienten der gegebenen Gleichung, das heißt, eine symmetrische Function der Wurzeln ist; $v$ ist eine rationale Function der Wurzeln. Daraus folgt:
+\[ v^{m} - R = 0 \]
+und da es zufolge (§.~II.) unmöglich ist, den Grad dieser Gleichung zu erniedrigen, so wird die Function $v$, zufolge des letzten Lehrsatzes im vorigen Paragraph, $m$ verschiedene Werthe haben. Da nun $m$ ein Divisor von $1 \cdot 2 \cdot 3 \cdot 4 \cdot 5$ sein muß, so kann $m$ gleich 2, 3 oder 5 sein. Nun existirt aber zufolge (§.~III.) keine Function von fünf Größen, welche 3 Werthe hat: es muß also $m = 5$ oder $m = 2$ sein. Es sei $m = 5$; so erhält man, zufolge des vorigen Paragraphs,
+\[ \sqrt[5]{R} = r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} \]
+und hieraus
+\[ x = s_0 + s_1 R^{\frac{1}{5}} + s_2 R^{\frac{2}{5}} + s_3 R^{\frac{3}{5}} + s_4 R^{\frac{4}{5}}. \]
+Nach (§.~II.) folgt daraus
+\[ s_1 R^{\frac{1}{5}} = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{2} x_4 + \alpha x_5, \]
+
+\origpage{83}
+wo $\alpha^{5} = 1$. Diese Gleichung ist unmöglich, weil das zweite Glied 120 Werthe hat, und gleichwohl die Wurzel einer Gleichung vom fünften Grade $z^{5} - s_1^{5} R = 0$ ist.
+
+Es muß also $m = 2$ sein.
+
+Alsdann ist nach (§.~II.)
+\[ \sqrt{R} = p + qs, \]
+wo $p$ und $q$ symmetrische Functionen sind, und
+\[ s = (x_1 - x_2) \ldots (x_4 - x_5) \]
+ist. Also ist, wenn man $x_1$ mit $x_2$ vertauscht,
+\[ -\sqrt{R} = p - qs, \]
+woraus $p = 0$ und $\sqrt{R} = qs$ folgt. Man sieht daraus, daß alle algebraische Functionen vom ersten Grade, welche sich in dem Ausdruck der Wurzeln befinden, von der Form $\alpha + \beta \cdot \sqrt{s^{2}} = \alpha + \beta s$ sein müssen, wo $\alpha$ und $\beta$ symmetrische Functionen sind. Da es nun unmöglich ist, die Wurzeln durch eine Function von der Form $\alpha + \beta \sqrt{R}$ auszudrücken, so muß eine Gleichung von der Form
+\[ \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} = v \]
+Statt finden, wo $\alpha$ und $\beta$ nicht gleich Null sind, $m$ eine Primzahl ist, $\alpha$ und $\beta$ symmetrische Functionen sind, und $v$ eine rationale Function der Wurzeln ist. Dieses giebt
+\[ \sqrt[m]{(\alpha + \beta s)} = v_1 \text{ und } \sqrt[m]{(\alpha - \beta s)} = v_2, \]
+wo $v_1$ und $v_2$ rationale Functionen sind. Multiplicirt man $v_2$ mit $v_1$, so erhält man
+\[ v_2 v_1 = \sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}. \]
+Nun ist $\alpha^{2} - \beta^{2} s^{2}$ eine symmetrische Function. Wenn also $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ nicht eine symmetrische Function wäre, so müßte, dem Obigen zufolge, $m = 2$ sein. Alsdann aber ist $v = \sqrt{(\alpha + \beta \sqrt{s^{2}})}$, und $v$ hat folglich vier verschiedene Werthe; welches nicht möglich ist. Es muß also $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ eine symmetrische Function sein. Eine solche Function sei $\gamma$, so ist
+\[ v_2 v_1 = \gamma \text{ und } v_2 = \frac{\gamma}{v_1}. \]
+Nun nehme man den Ausdruck
+\[ v_1 + v_2 = \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} + \frac{\gamma}{\sqrt[m]{(\alpha + \beta \sqrt{s^{2}})}} = p \]
+\[ = \sqrt[m]{R} + \frac{\gamma}{\sqrt[m]{R}} = R^{\frac{1}{m}} + \frac{\gamma}{R} R^{\frac{m-1}{m}}. \]
+
+\origpage{84}
+Man bezeichne die Werthe, welche $p$ bekommen kann, wenn man $\alpha R^{\frac{1}{m}}, \alpha^{2} R^{\frac{1}{m}}, \alpha^{3} R^{\frac{1}{m}} \ldots \alpha^{m-1} R^{\frac{1}{m}}$ statt $R^{\frac{1}{m}}$ setzt, wo
+\[ \alpha^{m-1} + \alpha^{m-2} \ldots + \alpha + 1 = 0 \]
+ist, durch $p_1, p_2 \ldots p_m$, und mache das Product
+\[ (p - p_1)(p - p_2) \ldots (p - p_m) = p^{m} - Ap^{m-1} + A_1 p^{m-2} \ldots = 0, \]
+so ist leicht zu sehen, daß $A, A_1$ etc. rationale Functionen der Coefficienten der gegebenen Gleichung, also symmetrische Functionen der Wurzeln sein werden. Diese Gleichung ist aber offenbar irreductibel. Also muß $p$, zufolge des letzten Lehrsatzes im vorigen Paragraph, als Function der Wurzeln betrachtet, $m$ verschiedene Werthe haben. Folglich ist $m = 5$. Alsdann aber ist $p$ von der Form $(a)$ im vorigen Paragraph. Also wird
+\[ \sqrt[5]{R} + \frac{\gamma}{\sqrt[5]{R}} = r_0 + r_1 x + r_2 x^{2} + r_3 x^{3} + r_4 x^{4} = p, \]
+folglich
+\[ x = s_0 + s_1 p + s_2 p^{2} + s_3 p^{3} + s_4 p^{4}, \]
+das heißt, es wird, wenn man $R^{\frac{1}{5}} + \dfrac{\gamma}{R} R^{\frac{4}{5}}$ statt $p$ setzt,
+\[ x = t_0 + t_1 R^{\frac{1}{5}} + t_2 R^{\frac{2}{5}} + t_3 R^{\frac{3}{5}} + t_4 R^{\frac{4}{5}} \]
+sein, wo $t_0, t_1, t_2$ etc. rationale Functionen von $R$ und von den Coefficienten der gegebenen Gleichung sind. Daraus folgt, vermöge (§.~II.)
+\[ t_1 R^{\frac{1}{5}} = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{2} x_4 + \alpha x_5 = p, \]
+wo
+\[ \alpha^{4} + \alpha^{3} + \alpha^{2} + \alpha + 1 = 0 \]
+ist. Aus $p = t_1 R^{\frac{1}{5}}$ folgt aber $p^{5} = t_1^{5} R$, und weil $t_1^{5} R$ von der Form $u + u_1 \sqrt{s^{2}}$ ist, $p^{5} = u + u_1 \sqrt{s^{2}}$, welches
+\[ (p^{5} - u)^{2} = u_1^{2} s^{2} \]
+giebt. Diese Gleichung giebt, wie man sieht, $p$ durch eine Gleichung vom $10^{\text{ten}}$ Grade, deren Coefficienten sämmtlich symmetrische Functionen sind, welches aber, zufolge des letzten Lehrsatzes im vorigen Paragraph, nicht möglich ist; denn da\ednote{In this last occurrence the coefficient of $x_4$ is printed $\alpha^{4}$; the identical resolvent above and on p.~82 has $\alpha^{2} x_4$. An apparent misprint for $\alpha^{2} x_4$, reproduced here as printed.}
+\[ p = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{4} x_4 + \alpha x_5 \]
+ist, so würde $p$, 120 verschiedene Werthe haben; welches ein Widerspruch ist.
+
+Wir schließen aus diesem Allen:
+
+daß es unmöglich ist, Gleichungen vom fünften Grade allgemein algebraisch aufzulösen.
+
+Daraus folgt unmittelbar weiter, daß es ebenfalls unmöglich ist, Gleichungen von höheren als dem fünften Grade allgemein aufzulösen. Mithin sind die Gleichungen, welche sich algebraisch allgemein auflösen lassen, nur die von den vier ersten Graden.
+
+\end{document}

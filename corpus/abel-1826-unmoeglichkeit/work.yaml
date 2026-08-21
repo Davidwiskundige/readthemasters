@@ -1,0 +1,94 @@
+id: abel-1826-unmoeglichkeit
+title: "Beweis der Unmöglichkeit algebraische Gleichungen von höheren Graden als dem vierten allgemein aufzulösen."
+title_en: "Proof of the impossibility of solving algebraic equations of degrees higher than the fourth in general."
+
+authors:
+  - name: "Niels Henrik Abel"
+    wikidata_id: Q13538
+    birth_year: 1802
+    death_year: 1829
+    mactutor: Abel  # https://mathshistory.st-andrews.ac.uk/Biographies/Abel/
+    portrait:
+      file: portrait.jpg
+      alt: "Portrait of Niels Henrik Abel"
+      credit: "Engraving after the portrait by Johan Gørbitz (1782–1853), the standard likeness of Abel. Public domain (PD-Art)."
+      source: "https://commons.wikimedia.org/wiki/File:Niels_Henrik_Abel.jpg"
+
+publication:
+  year: 1826
+  venue: crelle
+  volume: "1"
+  pages: "65–84"
+  title_full: >-
+    "Beweis der Unmöglichkeit algebraische Gleichungen von höheren Graden als dem vierten
+    allgemein aufzulösen", Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 1 (1826), pp. 65–84.
+
+edition:
+  year: 1826
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Journal für die reine und angewandte
+    Mathematik (Crelle's Journal), Band 1 (Berlin, 1826), pp. 65–84 — an original edition with no
+    modern critical apparatus, commentary, or re-typesetting. Only Abel's own text is transcribed.
+
+discipline: mathematics
+tags: [algebra]
+language: de
+type: paper
+
+significance: >-
+  This is the paper in which Abel established what is now called the Abel–Ruffini theorem: the
+  general algebraic equation of the fifth degree, and of every higher degree, cannot be solved by
+  radicals.[1] Paolo Ruffini had argued the same conclusion from 1799 on, but his lengthy proofs
+  went largely unaccepted; Abel — at first unaware of Ruffini's work — gave the argument that
+  persuaded the mathematical community.[1] Abel had first printed a terse six-page French version at
+  his own expense in Christiania in 1824; this fuller German account, in the opening volume of
+  Crelle's Journal, is the one that circulated, and the permutation-theoretic ideas it opened were
+  carried much further by Galois.[2]
+
+significance_sources:
+  - citation: >-
+      Peter Pesic, "Abel's Proof: An Essay on the Sources and Meaning of Mathematical
+      Unsolvability", MIT Press (2003) — a book-length study of this paper, its background in
+      Ruffini and Cauchy, and its aftermath.
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Niels Henrik Abel", MacTutor History of Mathematics
+      Archive, University of St Andrews — for Abel's 1824 Christiania pamphlet and the publication
+      history of the 1826 Crelle paper.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Abel/"
+
+source:
+  scan_url: "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0001"
+  scan_id: "gdz:PPN243919689_0001 (Crelle's Journal, Band 1, 1826, pp. 65–84; PDF pp. 70–89)"
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Niels Henrik Abel, 1802–1829 (wikidata:Q13538; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Abel/).
+  publication_date: >-
+    First published 1826 in Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 1, pp. 65–84 (EuDML http://eudml.org/doc/183015; GDZ PPN243919689_0001).
+  edition: >-
+    Original first printing, Journal für die reine und angewandte Mathematik, Band 1 (1826),
+    pp. 65–84. Digitized by the Göttinger Digitalisierungszentrum (GDZ), PPN243919689_0001.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1829], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1826, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-08-21"

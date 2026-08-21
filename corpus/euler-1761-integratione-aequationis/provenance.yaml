@@ -55,6 +55,8 @@ translations:
       passes); only the Latin prose is translated. The two printer's errors kept in the transcription
       — the p.~39 radical $\sqrt{1+y^4}$ and §34's "$\mathfrak{C}=0$" (for $\mathfrak{E}=0$) — are
       carried over verbatim with their editorial notes. Euler's abbreviation "arc.", his arcsine
-      notation "A sin.", and the Fraktur coefficients $\mathfrak{A}..\mathfrak{E}$ (R13) are kept. A
-      few short connective words set inside display math (\text{et}, \text{seu}) are left in the
-      original Latin because they live inside the preserved formulas.
+      notation "A sin.", and the Fraktur coefficients $\mathfrak{A}..\mathfrak{E}$ (R13) are kept.
+      The short Latin connectives set inside display math are translated (HOUSESTYLE R21):
+      \text{et} → \text{and} and \text{seu} → \text{or}; texcompare ignores the content of a
+      \text{...} insert while still checking each insert and the surrounding math. (This updates an
+      earlier note that left them in Latin.)

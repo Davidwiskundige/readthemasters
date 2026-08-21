@@ -48,6 +48,72 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R21 — Prose inside a `\text{...}` insert in a formula is translated like any other prose; the
+### math-preservation check ignores its content (translation policy; presentation)
+*2026-08-21.* A translation must reproduce every formula verbatim, but a formula sometimes carries
+**prose** inside a text insert: Abel joins two displayed equations with `\text{ und }`, glosses one
+with `\text{ oder}`, and writes ordinals as `\mu^{\text{ten}}` ("μ-ten" = "μ-th"); Euler uses
+`\text{et}` / `\text{seu}`. That prose is language, not mathematics, so it is **translated** —
+`\text{ und }`→`\text{ and }`, `\text{ oder}`→`\text{ or}`, `\text{seu}`→`\text{or}`,
+`\mu^{\text{ten}}`→`\mu^{\text{th}}` — rather than left in the source language. (This reverses an
+earlier ad-hoc choice, first taken in the Euler translation, to leave such words untranslated
+"because they live inside the preserved formula".)
+- **Machine-enforced boundary.** `pipeline/texcompare.py` now neutralizes the *content* of a text
+  insert (`\text`, `\textrm`, `\textnormal`, `\textup`, `\textit`, `\textbf`, `\textsf`, `\texttt`,
+  `\mbox`, `\hbox`) before comparing, so translating the words is allowed — but it keeps the insert
+  itself (as `\text{}`) so the check still requires each insert to be **present, un-added, and not
+  repositioned**, and all surrounding math to be identical. `\operatorname{...}` is deliberately
+  **excluded** (it names a mathematical operator, e.g. `\operatorname{arc}`, not translatable
+  prose). Covered by `pipeline/tests/test_texcompare.py`.
+- The rule lives in `prompts/translate-chat.md` (rule 1) and the translate skill; it does not change
+  the transcription — the original keeps the author's own words (`\text{ und }`, `\text{ten}`).
+Applied retroactively to the `en` translations of `abel-1826-unmoeglichkeit` and
+`euler-1761-integratione-aequationis`.
+
+### R20 — German letterspaced emphasis (Sperrung) is rendered `\emph`; letterspaced section
+### titles stay headings (presentation)
+*2026-08-21.* Abel's 1826 paper stresses words by **letterspacing** (Sperrung, "g a n z e") — the
+Fraktur-era equivalent of italics — throughout: `algebraisch rational`, `Versetzung`, `ganze
+Function`, `kleiner als fünf ist`, `von der ersten Ordnung`, etc. Emphasis is presentation (it does
+not change the author's words or their meaning), so it follows house style: **inline Sperrung is
+rendered `\emph`** (italic on the web via `tex.js` → `<em>`, R14/R18), matching how the Latin/Italian
+corpus works already set emphasis. Two boundary calls:
+- **Section/paragraph titles are also letterspaced in the print, but stay headings** (`\subsection*`)
+  and are *not* additionally `\emph`'d — the heading markup already carries their prominence, so the
+  two uses of the same device are deliberately *not* treated identically.
+- **Author names set in Sperrung** (e.g. `Cauchy`) are `\emph`'d too, consistent with the device.
+Because identifying every letterspaced word is a per-instance reading of the scan (the same word is
+spaced in one place and not another, and short words are subtle), the Sperrung→`\emph` mapping is a
+**best-effort pass, flagged in provenance for human verification**. Applied in
+`abel-1826-unmoeglichkeit`.
+
+### R19 — German long-ſ is rendered `s` and the eszett ligature `ſs` is rendered `ß`; the site now
+### maps `\S` → `§` (presentation; a German-language application of R12)
+*2026-08-21.* `abel-1826-unmoeglichkeit` (Abel's 1826 impossibility proof, Crelle Band 1) is the
+corpus's first German-language work. **Note on the typeface:** contrary to a first assumption, this
+paper is set in **Antiqua (roman type), not Fraktur** — the letterforms are upright roman; only the
+long-ſ, the `ſs` eszett ligature, and letterspaced emphasis (Sperrung, see R20) are period features.
+So no Fraktur→roman conversion was needed here, and there is **no Fraktur in the math** either
+(variables are ordinary italic), so **`\mathfrak` is not used** (contrast R13/Euler, where Fraktur
+letters were *distinct* math variables). The two normalizations that *did* apply, per the transcribe
+rule and R12 (normalize glyph *shape*, keep orthography faithful):
+- `ſ` → `s`; ligatures expanded; umlauts as `ä ö ü`.
+- The terminal-s **eszett** is written `ſs` (long-s + round-s): `daſs`, `muſs`, `Gröſse`, `heiſst`,
+  `läſst` → rendered **`ß`** (`daß`, `muß`, `Größe`, `heißt`, `läßt`), not `ss`, because `ſs` is the
+  glyph *shape* of `ß`. A genuine double-s is set `ſſ` and stays `ss` (`müssen`, `gewisse`).
+For a *future* German work actually set in Fraktur, the same rule extends: normalize blackletter to
+roman for prose, but keep Fraktur that names a distinct math variable with `\mathfrak` (R13).
+What is *not* changed (R12, content): edition spelling — `Ueber` (not `Über`), `nemliche`/`nämliche`,
+`grade`/`ungrade`, `Coefficienten`, `Function`, `Primzahl`, `irreductibel`. `ß ä ö ü` are written as
+literal UTF-8 (R18: `escapeHtml` passes them through, Tectonic/XeTeX compiles them); no `\ss`/`\"a`.
+**Site support for `\S`:** the section sign was needed for the `§`-numbered headings and `(§. II.)`
+cross-references. `tex.js` `inlineText` now maps a text-mode **`\S` → `§`** (scoped so it cannot eat
+a longer control word; math `\Sigma` is stashed and untouched), covered by `tex.test.mjs`. This work
+uses a **literal `§`** in both the `.tex` body and the `significance` field (the `significance`
+renderer does not run `inlineText`, so `\S` would leak there — R18) — one convention across the work;
+`\S` is now equally valid in a `.tex` body for future contributors. Applied throughout
+`abel-1826-unmoeglichkeit`.
+
 ### R18 — Author markup must match what the site actually renders: the `significance` field is
 ### plain text + KaTeX only, and the `.tex` transform has no `\oe` (use a literal `œ`) (presentation)
 *2026-07-30.* Two site-rendering limits surfaced while previewing

@@ -65,6 +65,28 @@ def test_format_report_nonempty_on_mismatch():
     assert "not preserved" in out and "A" in out and "B" in out
 
 
+# --- translatable \text{...} prose inside a formula ------------------------- #
+def test_text_insert_content_is_translatable():
+    # A connective and an ordinal suffix inside display math may be translated without tripping.
+    orig = r"\[ z^{n} - p = 0 \text{ und} \] the $\mu^{\text{ten}}$ order"
+    trans = r"\[ z^{n} - p = 0 \text{ and} \] the $\mu^{\text{th}}$ order"
+    assert texcompare.preservation_report(orig, trans)["ok"] is True
+
+
+def test_text_insert_presence_still_checked():
+    # Dropping the \text insert entirely (so the real math around it shifts) is still a mismatch.
+    orig = r"\[ a = b \text{ und } c = d \]"
+    trans = r"\[ a = b c = d \]"
+    assert texcompare.preservation_report(orig, trans)["ok"] is False
+
+
+def test_math_around_text_insert_still_checked():
+    # Altering the actual math next to a \text insert is still caught.
+    orig = r"\[ a = b \text{ und } c = d \]"
+    trans = r"\[ a = b \text{ and } c = e \]"
+    assert texcompare.preservation_report(orig, trans)["ok"] is False
+
+
 # --- the real corpus must pass ---------------------------------------------- #
 def test_corpus_translations_preserve_math():
     corpus = REPO / "corpus"

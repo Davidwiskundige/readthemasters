@@ -35,3 +35,16 @@ test("em-dash, curly quotes and \\& still work alongside the control-space rule"
   const html = render("Leibnitius---quem ``Auctor'' \\& Amicus vocat.");
   assert.match(html, /Leibnitius—quem “Auctor” &amp; Amicus/);
 });
+
+test("\\S renders as the section sign §, in a heading and a cross-reference", () => {
+  const html = render("\\subsection*{\\S.~I. Ueber die Form.}\n\nNach (\\S.~II.) folgt das.");
+  assert.match(html, /<h3[^>]*>§\. I\. Ueber die Form\.<\/h3>/); // ~ -> space, \S -> §
+  assert.match(html, /Nach \(§\. II\.\) folgt/);
+  assert.ok(!html.includes("\\S"), "the \\S backslash must not leak into the text");
+});
+
+test("\\S does not eat a following control word or math \\Sigma", () => {
+  const html = render("value $\\Sigma x$ and \\S 4 following.");
+  assert.match(html, /\$\\Sigma x\$/); // math \Sigma untouched (stashed)
+  assert.match(html, /§ 4 following/); // text \S -> §
+});

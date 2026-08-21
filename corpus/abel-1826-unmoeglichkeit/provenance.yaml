@@ -1,0 +1,74 @@
+changelog:
+  - date: "2026-08-21"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-21"
+    summary: Transcription added (AI draft), pp. 65–84 (§§I–IV) from the 1826 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-4-8
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-21"
+  verification:
+    flagged_pages: [68, 71, 73, 77, 78, 84]
+    date: "2026-08-21"
+  note: >-
+    Full German text of Abel's impossibility proof, printed pages 65–84 (§§I–IV), from the original
+    first printing in Crelle's Journal, Band 1 (1826). Read from the GDZ scan PPN243919689_0001
+    (PDF pp. 70–89); each page was rendered upright at high resolution and every displayed and
+    inline formula checked by zooming into the scan (the AI's own verification pass, not a full
+    human review). The paper is set in Antiqua (roman type), NOT Fraktur; only period features are
+    normalized — long-ſ → s, the eszett ligature ſs → ß, ligatures expanded — while the 1826
+    orthography and notation are kept faithful (Ueber, nemliche/nämliche, grade/ungrade,
+    Coefficienten, Function; see HOUSESTYLE R12 and R19). There is no Fraktur in the text or the
+    math, so no \mathfrak is used.
+    Notation: the algebraic function is denoted ϱ (\varrho) in §§I–II; in §§III–IV the general
+    permuted function is v while ϱ denotes the *number* of distinct values, and ϱ is reused for the
+    two-valued discriminant product ∏(x_i−x_j) throughout §III — printed ϱ on BOTH p.77 and p.78
+    (the p.78 glyph, re-checked at the contributor's prompting, has the same closed bowl as p.77) —
+    while §IV writes that same product with a Latin s. All kept faithful.
+    Flagged apparent printer's errors, kept as printed (HOUSESTYLE R4) and marked in-text with
+    \ednote popovers (R10) for the reader; a reviewer should confirm each against the scan:
+    (a) p.71 — "t_0 + t_1 z + t_2 z … + z^μ = 0": the t_2 term lacks its exponent (should be t_2 z^2).
+    (b) p.68 — "t_0 + t_1 s^1 + t_2 s^2 … t_m s^m)": a trailing ")" with no matching opening paren.
+    (c) p.84 — the final "p = x_1 + α^4 x_2 + α^3 x_3 + α^4 x_4 + α x_5": the α^4 on x_4 is a misprint
+    for α^2 x_4 (cf. the identical Lagrange resolvent on pp.82 and 84, both α^2 x_4).
+    Minor original inconsistencies kept as printed: the denominator polynomial V has ϱ_i
+    coefficients while T has t_i (p.69); the display denominator M vs the inline s_i/m (p.69);
+    the value list "ϱ, ϱ_2 … ϱ_n" vs the degree-n′ statement "ϱ_1 … ϱ_{n′}" (p.73).
+    No figures appear in this work.
+    The algebraic-function symbol was re-examined at the contributor's prompting (ϱ vs ν) and kept
+    as ϱ (\varrho): it carries a closed bowl and a left-curling descender that ν lacks, ν already
+    serves as the second-level root index in the same p.73 formula, and the p.77 discriminant (the
+    same glyph) is unmistakably ϱ.
+    Emphasis (HOUSESTYLE R20): the original stresses words by letterspacing (Sperrung); this pass
+    renders inline Sperrung as \emph (40 spans on pp.65–68, 71, 74–77, 80) while the letterspaced
+    section titles stay \subsection* headings. This Sperrung→\emph mapping is a BEST-EFFORT reading
+    of the scan and should be verified by a human reviewer — short spaced words are subtle and the
+    same word is letterspaced in some places but not others.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-4-8
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-21"
+    note: >-
+      Full English translation of Abel's impossibility proof, made only from our own original.tex,
+      not from any published translation. Every math expression, \tag{}, \origpage{N} marker, and
+      the three misprint \ednote{} notes are reproduced unchanged (pipeline/texcompare passes); only
+      the German prose is translated, and each \emph emphasis (Sperrung, R20) is carried across to
+      the English word. Prose set INSIDE display math via \text{...} is also translated (HOUSESTYLE
+      R21): the connectives \text{ und }/\text{ oder} → \text{ and }/\text{ or}, the verb
+      \text{ multiplicirt,} → \text{ multiplied,}, and the ordinal suffix \text{ten} → \text{th} (so
+      "$\mu^{\text{ten}}$" reads "μ-th"); texcompare ignores the content of these inserts while still
+      checking each insert and the surrounding math.
+      Period terms are rendered in period English: ganze Function = integral function, Verwandlung =
+      transformation, Versetzung = transposition, Ordnung = order, Grad = degree, Zeiger = indices.
+      The function symbol ϱ (§I–III) and the discriminant's letters (ϱ in §III, s in §IV) are kept as
+      printed. The p.77 term "Versetzung (Transposition)" keeps the author's own parenthetical gloss.
