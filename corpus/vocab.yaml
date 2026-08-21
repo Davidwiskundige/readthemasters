@@ -65,9 +65,11 @@ venues:
       Founded by August Leopold Crelle in 1826, the oldest mathematics journal still in print and
       an early home of Abel, Jacobi, Dirichlet and Steiner.
     archives:
-      - label: "GDZ (Göttingen) — digitized volumes"
-        url: "https://gdz.sub.uni-goettingen.de/"
-      - label: "Wikisource — volume-by-volume index"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10147"
+      - label: "GDZ (Göttingen)"
+        url: "https://gdz.sub.uni-goettingen.de/volumes/id/PPN243919689"
+      - label: "Wikisource"
         url: "https://de.wikisource.org/wiki/Journal_für_die_reine_und_angewandte_Mathematik"
   annalen-der-physik:
     name: "Annalen der Physik"
@@ -77,9 +79,9 @@ venues:
       A leading German physics journal since 1799; its 1905 volume carried Einstein's annus
       mirabilis papers.
     archives:
-      - label: "Wiley Online Library — historical archive"
+      - label: "Wiley Online Library"
         url: "https://onlinelibrary.wiley.com/journal/15213889"
-      - label: "Internet Archive — digitized volumes"
+      - label: "Internet Archive"
         url: "https://archive.org/search?query=Annalen+der+Physik"
   goettingen-abhandlungen:
     name: "Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen"
@@ -89,8 +91,10 @@ venues:
       Proceedings of the Göttingen Academy of Sciences (founded 1751), the venue for major works
       by Gauss, Riemann and others.
     archives:
-      - label: "GDZ (Göttingen) — digitized volumes"
-        url: "https://gdz.sub.uni-goettingen.de/"
+      - label: "GDZ (Göttingen)"
+        url: "https://gdz.sub.uni-goettingen.de/id/PPN250442582"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10140"
   phil-trans:
     name: "Philosophical Transactions of the Royal Society"
     aka: "Phil. Trans."
@@ -102,7 +106,7 @@ venues:
     archives:
       - label: "Royal Society — Philosophical Transactions (1665–1886)"
         url: "https://royalsocietypublishing.org/journal/rstl"
-      - label: "Internet Archive — digitized volumes"
+      - label: "Internet Archive"
         url: "https://archive.org/search?query=Philosophical+Transactions+of+the+Royal+Society"
   comptes-rendus:
     name: "Comptes rendus de l'Académie des sciences"
@@ -114,8 +118,10 @@ venues:
       The weekly proceedings of the French Academy of Sciences, a rapid-publication venue since
       1835.
     archives:
-      - label: "Gallica (BnF) — full run"
+      - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb343481087/date"
+      - label: "Biodiversity Heritage Library"
+        url: "https://www.biodiversitylibrary.org/bibliography/4466"
   acta-mathematica:
     name: "Acta Mathematica"
     founded: 1882
@@ -125,8 +131,8 @@ venues:
       Founded by Gösta Mittag-Leffler in 1882; its early volumes published Poincaré, Cantor and
       Hadamard.
     archives:
-      - label: "Project Euclid — open archive"
-        url: "https://projecteuclid.org/journals/acta-mathematica"
+      - label: "Project Euclid"
+        url: "https://projecteuclid.org/journals/acta-mathematica/issues"
   mathematische-annalen:
     name: "Mathematische Annalen"
     founded: 1868
@@ -134,10 +140,10 @@ venues:
       Founded in 1868 by Clebsch and Neumann; under Klein and Hilbert one of the foremost
       mathematics journals.
     archives:
-      - label: "GDZ (Göttingen) — digitized volumes"
-        url: "https://gdz.sub.uni-goettingen.de/"
-      - label: "DigiZeitschriften"
-        url: "https://www.digizeitschriften.de/"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10142"
+      - label: "GDZ (Göttingen)"
+        url: "https://gdz.sub.uni-goettingen.de/volumes/id/PPN235181684"
   giornale-letterati-italia:
     name: "Giornale de' letterati d'Italia"
     founded: 1710
@@ -147,10 +153,8 @@ venues:
     note: >-
       A Venetian learned journal (1710–1740) that carried Fagnano's lemniscate work.
     archives:
-      - label: "Internet Archive — volume 1 (1710)"
-        url: "https://archive.org/details/giornaledeletter01zeno"
-      - label: "Internet Archive — digitized volumes"
-        url: "https://archive.org/search?query=Giornale+de%27+letterati+d%27Italia"
+      - label: "Internet Archive"
+        url: "https://archive.org/search?query=%22Giornale+de%27+letterati+d%27Italia%22"
   acta-eruditorum:
     name: "Acta Eruditorum"
     founded: 1682
@@ -161,9 +165,7 @@ venues:
       The first scientific journal of the German lands (1682–1782), a principal venue for Leibniz
       and the Bernoullis.
     archives:
-      - label: "Internet Archive — 1682–1776 run"
-        url: "https://archive.org/details/bub_gb_d_VaAAAAQAAJ"
-      - label: "Internet Archive — digitized volumes"
+      - label: "Internet Archive"
         url: "https://archive.org/search?query=Acta+Eruditorum"
   novi-commentarii-petropolitanae:
     name: "Novi Commentarii Academiae Scientiarum Imperialis Petropolitanae"
@@ -175,10 +177,8 @@ venues:
     note: >-
       The St Petersburg Academy's proceedings (1750–1776), in which Euler published prolifically.
     archives:
-      - label: "Euler Archive"
-        url: "https://scholarlycommons.pacific.edu/euler-works/"
       - label: "Biodiversity Heritage Library"
-        url: "https://www.biodiversitylibrary.org/search?searchTerm=Novi+Commentarii+Academiae+Scientiarum+Imperialis+Petropolitanae"
+        url: "https://www.biodiversitylibrary.org/bibliography/9527"
   book:
     name: "(published as a book / monograph)"
     kind: book
