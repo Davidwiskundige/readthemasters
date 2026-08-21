@@ -163,8 +163,9 @@ const shortTitle = (t) => (t && t.length > 46 ? t.slice(0, 46).trimEnd() + "…"
     The works in reading order, left to right, with the threads that connect them. Each node is a
     citation-style tag — surname + year (e.g. <strong>Eu61</strong>); the axis marks the century, so
     tag + axis give the exact year. Hover or tap a node for the full work. A solid line means one
-    work <strong>builds on</strong> an earlier one, a dashed line that it <strong>cites</strong> it.
-    Focus a work and set the steps back / forward to fade everything else away.
+    work <strong>builds on</strong> an earlier one — a subjective measure — a dashed line that it
+    <strong>cites</strong> it. Focus a work and set the steps back / forward to fade everything else
+    away.
   </p>
 
   <script type="application/json" id="tl-graph" is:inline set:html={JSON.stringify({ edges })} />

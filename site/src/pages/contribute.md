@@ -8,7 +8,7 @@ description: How to contribute transcriptions and translations using your own AI
 
 You can help in three ways: point out an error, add a work to the corpus — by **transcribing** it
 from its scan or **translating** one we've already transcribed — or **review** a text that's already
-here. Whichever you do, you bring your own AI; the project pays for no compute, and you are credited.
+here.
 
 ## Report an error
 
