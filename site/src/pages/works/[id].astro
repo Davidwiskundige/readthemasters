@@ -81,6 +81,30 @@ const firstWords = (t, n = 5) => {
   const words = String(t ?? "").trim().split(/\s+/);
   return words.length > n ? words.slice(0, n).join(" ") + "…" : words.join(" ");
 };
+
+// Renders the one-line "Related reading" nav from recPrev/recNext. Called once near the top
+// (below Significance) and again after the text, so a reader who just finished sees it without
+// scrolling back up — both instances share this one render path so they can't drift apart.
+// The bottom instance omits "Read first:" — telling a reader what they should have read *before*
+// the text they just finished isn't actionable, so only "Next:" carries over there.
+function relatedNavHtml(bottom) {
+  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const side = (rec, dir) => rec
+    ? `<span class="relnav-dir">${esc(dir)}</span> <a href="${esc(rec.url)}" title="${esc(rec.title)}">${esc(rec.by)}, ${esc(firstWords(rec.title))}</a>`
+    : "";
+  if (bottom) {
+    if (!recNext) return "";
+    return `<nav class="relnav relnav-bottom" aria-label="Related reading">` +
+      `<span class="relnav-side"></span>` +
+      `<span class="relnav-side relnav-right">${side(recNext, "Next:")}</span>` +
+      `</nav>`;
+  }
+  if (!recPrev && !recNext) return "";
+  return `<nav class="relnav" aria-label="Related reading">` +
+    `<span class="relnav-side">${side(recPrev, "Read first:")}</span>` +
+    `<span class="relnav-side relnav-right">${side(recNext, "Next:")}</span>` +
+    `</nav>`;
+}
 ---
 <Base title={work.title} description={work.title_en ?? work.title}
       ogType="article" jsonLd={workJsonLd(work, Astro.site?.origin ?? "")}>
@@ -129,26 +153,7 @@ const firstWords = (t, n = 5) => {
 
   {/* Related reading — the recommended spine on one line: previous read left, next read right.
       The full dependency graph (cites, built-on-by, …) is on /timeline/. */}
-  {(recPrev || recNext) && (
-    <nav class="relnav" aria-label="Related reading">
-      <span class="relnav-side">
-        {recPrev && (
-          <>
-            <span class="relnav-dir">Read first:</span>{" "}
-            <a href={recPrev.url} title={recPrev.title}>{recPrev.by}, {firstWords(recPrev.title)}</a>
-          </>
-        )}
-      </span>
-      <span class="relnav-side relnav-right">
-        {recNext && (
-          <>
-            <span class="relnav-dir">Next:</span>{" "}
-            <a href={recNext.url} title={recNext.title}>{recNext.by}, {firstWords(recNext.title)}</a>
-          </>
-        )}
-      </span>
-    </nav>
-  )}
+  <Fragment set:html={relatedNavHtml(false)} />
 
   {/* Jump to this work's place in the whole dependency graph, pre-focused. */}
   <p class="attr worktl"><a href={`/timeline/?focus=${work.id}`}>See this work in the timeline →</a></p>
@@ -207,6 +212,10 @@ const firstWords = (t, n = 5) => {
       <div set:html={t.html} />
     </section>
   ))}
+
+  {/* Same "Related reading" nav as near the top, repeated here so a reader who just finished the
+      text sees what to read next without scrolling back up. */}
+  <Fragment set:html={relatedNavHtml(true)} />
 
   {externalTranslations.length > 0 && (
     <section style="margin-top:2rem">
