@@ -233,6 +233,7 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .relnav .relnav-side { flex: 1 1 0; min-width: 0; }
 .relnav .relnav-right { text-align: right; }
 .relnav .relnav-dir { color: var(--accent); font-weight: 700; }
+.relnav-bottom { margin-top: 2.2rem; }
 .worktl { margin: .5rem 0 0; }
 
 /* Inline popover markers — content stays hidden until hover/click (a popover). Shared by
