@@ -1,10 +1,11 @@
 % English translation, made from our own transcription (original.tex), not from any existing
 % translation. Every math expression, symbol, \tag{}, \origpage{N} marker, and \ednote is
-% reproduced with its contents unchanged; only the German prose is translated. Following the Euler
-% precedent, short German connective words set INSIDE display math (\text{ und }, \text{ oder},
-% \text{ multiplicirt,}) and the ordinal suffix \text{ten} (μ^ten = "μ-th") are left in the original
-% German, because they live inside the preserved formulas (pipeline/texcompare compares the whole
-% formula). The three flagged printer's-error \ednote notes are carried over verbatim. Period terms
+% reproduced unchanged; only the prose is translated — including short prose set INSIDE display
+% math via a text insert: the German connectives and the ordinal suffix are put into English
+% ("und"→"and", "oder"→"or", "multiplicirt,"→"multiplied,", "ten"→"th", so "mu^{ten}" reads
+% "mu-th"). The math-preservation check ignores the CONTENT of such a text insert while still
+% checking its presence and the surrounding math (HOUSESTYLE R21). The three flagged printer's-error
+% \ednote notes are carried over verbatim. Period terms
 % are rendered in period English: ganze Function = integral function, ungebrochen = integral,
 % Verwandlung = transformation, Versetzung = transposition, Ordnung = order, Grad = degree, Zeiger
 % = indices. The function symbol ϱ (\varrho) and the letters v, s, etc. are preserved as printed.
@@ -57,7 +58,7 @@ will be the general form of algebraic functions of $x', x'' \ldots$, in which th
 \[ p_3 = f(x', x'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots \sqrt[n_1']{p_1'}, \sqrt[n_1'']{p_1''} \ldots \sqrt[n_2']{p_2'}, \sqrt[n_2'']{p_2''} \ldots), \]
 in which $p_2', p_2''$ are functions of the second order, will be the general form of algebraic functions of $x', x'' \ldots$, in which the operation $\sqrt[m]{r}$ refers only to rational and to algebraic functions of the first and second order.
 
-If one continues in this way, one obtains algebraic functions of the \emph{third}, \emph{fourth} $\ldots \mu^{\text{ten}}$ order, and it is clear that the expression of the functions of the $\mu^{\text{ten}}$ order will be the \emph{general} expression of algebraic functions.
+If one continues in this way, one obtains algebraic functions of the \emph{third}, \emph{fourth} $\ldots \mu^{\text{th}}$ order, and it is clear that the expression of the functions of the $\mu^{\text{th}}$ order will be the \emph{general} expression of algebraic functions.
 
 If one therefore denotes by $\mu$ the ordinal number of an arbitrary algebraic function, and by $\varrho$ the function itself, then
 \[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots), \]
@@ -68,13 +69,13 @@ One can evidently assume that it is impossible to express one of the quantities 
 \[ \varrho = f(r', r'' \ldots \sqrt[n']{p'}, \sqrt[n'']{p''} \ldots) \]
 in which the number of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ would be at least one unit smaller than above. If one now reduces this expression of $\varrho$ still further in the same way, where feasible, then one would necessarily have to arrive at last either at an irreducible expression, or at an expression of the form
 \[ \varrho = f(r', r'', r''' \ldots) \]
-But this function would be merely of the $\mu - 1^{\text{ten}}$ order, whereas $\varrho$ should be of the $\mu^{\text{ten}}$ order; which is a contradiction.
+But this function would be merely of the $\mu - 1^{\text{th}}$ order, whereas $\varrho$ should be of the $\mu^{\text{th}}$ order; which is a contradiction.
 
-If in the expression of $\varrho$ the number of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ is equal to $m$, then we will call the function $\varrho$ of the $\mu^{\text{ten}}$ \emph{order} and of the $m^{\text{ten}}$ \emph{degree}. In this way a function of the $\mu^{\text{ten}}$ order and of the $0^{\text{ten}}$ degree is the same as a function of the $\mu - 1^{\text{ten}}$ order, and a function of the $0^{\text{ten}}$ order is the same as a \emph{rational} function.
+If in the expression of $\varrho$ the number of the quantities $\sqrt[n']{p'}, \sqrt[n'']{p''} \ldots$ is equal to $m$, then we will call the function $\varrho$ of the $\mu^{\text{th}}$ \emph{order} and of the $m^{\text{th}}$ \emph{degree}. In this way a function of the $\mu^{\text{th}}$ order and of the $0^{\text{th}}$ degree is the same as a function of the $\mu - 1^{\text{th}}$ order, and a function of the $0^{\text{th}}$ order is the same as a \emph{rational} function.
 
 From this it follows that one can set
 \[ \varrho = f(r', r'' \ldots \sqrt[n]{p}) \]
-where $p$ is a function of the $\mu - 1^{\text{ten}}$ order, but $r', r'' \ldots$ are functions of the $\mu^{\text{ten}}$ order and at most of the $m - 1^{\text{ten}}$ degree, and of such a kind that it is impossible to express $\sqrt[n]{p}$ through a rational function of these quantities.
+where $p$ is a function of the $\mu - 1^{\text{th}}$ order, but $r', r'' \ldots$ are functions of the $\mu^{\text{th}}$ order and at most of the $m - 1^{\text{th}}$ degree, and of such a kind that it is impossible to express $\sqrt[n]{p}$ through a rational function of these quantities.
 
 Since a rational function of several quantities, as we saw earlier, can always be brought into the form
 \[ \frac{s}{t} \]
@@ -89,7 +90,7 @@ when $t_0, t_1 \ldots t_m$ denote integral functions of $r', r'', r''' \ldots$ w
 where $t_0, t_1 \ldots t_m$ and $\varrho_0, \varrho_1 \ldots \varrho_{m'}$ are integral functions of $r', r'', r''' $ etc.
 
 Now let $V_1, V_2 \ldots V_{n-1}$ be the $n - 1$ values of $V$ that one finds when one sets $\alpha \cdot p^{\frac{1}{n}}, \alpha^{2} p^{\frac{1}{n}}, \alpha^{3} p^{\frac{1}{n}} \ldots \alpha^{n-1} p^{\frac{1}{n}}$ in place of $p^{\frac{1}{n}}$: $\alpha$ denotes one of the roots of the equation $\alpha^{n} - 1 = 0$ that is not 1. Then one obtains, when one multiplies the fraction $\frac{T}{V}$ above and below by
-\[ V_1 V_2 \ldots V_{n-1} \text{ multiplicirt,} \]
+\[ V_1 V_2 \ldots V_{n-1} \text{ multiplied,} \]
 \[ \varrho = \frac{T \cdot V_1 \cdot V_2 \ldots V_{n-1}}{V \cdot V_1 \cdot V_2 \ldots V_{n-1}}. \]
 But the product $V \cdot V_1 \ldots V_{n-1}$ can, as is well known, be expressed through an integral function of $p$ and of the quantities $r', r'' \ldots$, and the product $T \cdot V_1 \cdot V_2 \ldots V_{n-1}$ is, as one sees, an integral function of $\sqrt[n]{p}$ and $r', r'' \ldots$ If one therefore sets this product equal to
 \[ s_0 + s_1 p^{\frac{1}{n}} + s_2 p^{\frac{2}{n}} \ldots s_k p^{\frac{k}{n}}, \]
@@ -106,14 +107,14 @@ If one therefore sets this expression in place of $p^{\frac{\mu}{n}}$ in the exp
 where $q_0, q_1, q_2$ etc. are, as before, rational functions of $p, r', r'' \ldots$ and
 
 \origpage{70}
-consequently functions of the $\mu^{\text{ten}}$ order and at most of the $m - 1^{\text{ten}}$ degree, and of such a kind that $p^{\frac{1}{n}}$ cannot be expressed through rational functions of these quantities.
+consequently functions of the $\mu^{\text{th}}$ order and at most of the $m - 1^{\text{th}}$ degree, and of such a kind that $p^{\frac{1}{n}}$ cannot be expressed through rational functions of these quantities.
 
 In the above expression of $\varrho$ one can always set
 \[ q_1 = 1 \]
 For if $q_1$ is not zero, then one obtains, when one sets $p_1 = p \cdot q_1^{n}$, $p = \dfrac{p_1}{q_1^{n}}$, and $p^{\frac{1}{n}} = \dfrac{p_1^{\frac{1}{n}}}{q_1}$, and hence
 \[ \varrho = q_0 + p_1^{\frac{1}{n}} + \frac{q_2}{q_1^{2}} p_1^{\frac{2}{n}} \ldots + \frac{q_{n-1}}{q_1^{n-1}} p_1^{\frac{n-1}{n}}, \]
 which expression is of the same shape as the previous one, only that $q_1 = 1$. If $q_1 = 0$, then let $q_\mu$ be one of the quantities $q_1, q_2 \ldots q_{n-1}$ that is not zero, and $q_\mu^{n} p^{\mu} = p_1$. This gives $q_\mu^{\alpha} \cdot p^{\frac{\alpha\mu}{n}} = p_1^{\frac{\alpha}{n}}$. If one therefore takes two whole numbers $\alpha$ and $\beta$ that satisfy the equation $\alpha\mu - \beta n = \mu'$, where $\mu'$ is a whole number, then one obtains
-\[ q_\mu^{\alpha} p^{\frac{\beta n + \mu'}{n}} = p_1^{\frac{\alpha}{n}} \text{ und } p^{\frac{\mu'}{n}} = q_\mu^{-\alpha} \cdot p^{-\beta} \cdot p_1^{\frac{\alpha}{n}}. \]
+\[ q_\mu^{\alpha} p^{\frac{\beta n + \mu'}{n}} = p_1^{\frac{\alpha}{n}} \text{ and } p^{\frac{\mu'}{n}} = q_\mu^{-\alpha} \cdot p^{-\beta} \cdot p_1^{\frac{\alpha}{n}}. \]
 According to this, and because $q_\mu p^{\frac{\mu}{n}} = p_1^{\frac{1}{n}}$, $\varrho$ takes the form
 \[ \varrho = q_0 + p_1^{\frac{1}{n}} + q_2 p_1^{\frac{2}{n}} \ldots q_{n-1} p_1^{\frac{n-1}{n}} \]
 
@@ -138,7 +139,7 @@ where $r_0, r_1, r_2 \ldots r_{n-1}$ are rational functions of the quantities $p
 Now I assert that equation (3) cannot take place unless, individually,
 \[ r_0 = 0, \; r_1 = 0 \ldots r_{n-1} = 0 \]
 Were this not so, then, when one denotes $p^{\frac{1}{n}}$ by $z$ for example, the two equations
-\[ z^{n} - p = 0 \text{ und} \]
+\[ z^{n} - p = 0 \text{ and} \]
 \[ r_0 + r_1 z + r_2 z^{2} \ldots + r_{n-1} z^{n-1} = 0 \]
 would have to have one or several \emph{common roots}. Let $k$ be the number of these roots; then one can, as is well known, find an equation that has these $k$ roots and whose coefficients are rational functions of the quantities $p, r_0, r_1 \ldots r_{n-1}$.
 
@@ -151,11 +152,11 @@ be a factor of its first term, where $t_0, t_1$ etc. are rational functions of $
 and it is clear that one may assume it impossible to find an equation of lower degree of the same form. This equation now has its $\mu$ roots in common with the equation $z^{n} - p$. But now the roots of the equation $z^{n} - p$ are all of the form $\alpha z$, where $\alpha$ is some root of unity. If one therefore considers that $\mu$ cannot be smaller than 2, because it is supposed to be impossible to express $z$ through a rational function of the quantities $p, r_0, r_1 \ldots r_{n-1}$, then it follows that two equations of the form
 
 \origpage{72}
-\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0 \text{ und} \]
+\[ t_0 + t_1 z + t_2 z^{2} \ldots + t_{\mu-1} z^{\mu-1} + z^{\mu} = 0 \text{ and} \]
 \[ t_0 + \alpha t_1 z + \alpha^{2} t_2 z^{2} \ldots + \alpha^{\mu-1} t_{\mu-1} z^{\mu-1} + \alpha^{\mu} z^{\mu} = 0 \]
 must take place. From these equations it follows, when one eliminates $z^{\mu}$,
 \[ t_0(1 - \alpha^{\mu}) + t_1(\alpha - \alpha^{\mu})z \ldots + t_{\mu-1}(\alpha^{\mu-1} - \alpha^{\mu})z^{\mu-1} = 0. \]
-But since the equation $z^{\mu} + t_{\mu-1} z^{\mu-1} \ldots = 0$ is irreducible, it must, because it is of the $\mu - 1^{\text{ten}}$ degree, give, individually,
+But since the equation $z^{\mu} + t_{\mu-1} z^{\mu-1} \ldots = 0$ is irreducible, it must, because it is of the $\mu - 1^{\text{th}}$ degree, give, individually,
 \[ \alpha^{\mu} - 1 = 0, \; \alpha - \alpha^{\mu} = 0 \ldots \alpha^{\mu-1} - \alpha^{\mu} = 0 \]
 which cannot be.
 
@@ -217,7 +218,7 @@ The number of the different values that a function of $n$ quantities can obtain 
 \origpage{75}
 Let now $\binom{A_1}{A_m}$ be an arbitrary transformation. Let it be carried out with $v$ several times, so that a series of values arises
 \[ v, v_1, v_2 \ldots v_{p-1}, v_p, \]
-and it is clear that $v$ must necessarily recur. If $v$ returns after $p$ transformations, then one calls $\binom{A_1}{A_m}$ a \emph{recurring transformation of the} $p^{\text{ten}}$ order. One then has the periodic series
+and it is clear that $v$ must necessarily recur. If $v$ returns after $p$ transformations, then one calls $\binom{A_1}{A_m}$ a \emph{recurring transformation of the} $p^{\text{th}}$ order. One then has the periodic series
 \[ v, v_1, v_2 \ldots v_{p-1}, v, v_1, v_2 \ldots, \]
 or, if one denotes by $v\binom{A_1}{A_m}^{r}$ the value of $v$ that arises after the transformation denoted by $\binom{A_1}{A_m}$ has been repeated $r$ times, the series
 \[ v\binom{A_1}{A_m}^{0}, \; v\binom{A_1}{A_m}^{1}, \; v\binom{A_1}{A_m}^{2} \ldots v\binom{A_1}{A_m}^{p-1}, \; v\binom{A_1}{A_m}^{0} \ldots \]
@@ -249,11 +250,11 @@ or, because $v = v\binom{A_1}{A_m}^{p\beta}$,
 The value of $v$ is therefore not changed by the \emph{recurring} transformation $\binom{A_1}{A_m}$ of degree $p$.
 
 Now it is clear that
-\[ \binom{\alpha\,\beta\,\gamma\,\delta\,\ldots\,\zeta\,\eta}{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha} \text{ und } \binom{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha}{\gamma\,\alpha\,\beta\,\delta\,\ldots\,\zeta\,\eta} \]
+\[ \binom{\alpha\,\beta\,\gamma\,\delta\,\ldots\,\zeta\,\eta}{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha} \text{ and } \binom{\beta\,\gamma\,\delta\,\varepsilon\,\ldots\,\eta\,\alpha}{\gamma\,\alpha\,\beta\,\delta\,\ldots\,\zeta\,\eta} \]
 are two \emph{recurring} transformations of degree $p$, when the number of the indices $\alpha, \beta, \gamma \ldots \eta$ is equal to $p$. The value of $v$ is therefore also not changed by the combination of these two transformations. But the two transformations are evidently equivalent to the single one
 \[ \binom{\alpha\,\beta\,\gamma}{\gamma\,\alpha\,\beta} \]
 and this single one to the two carried out one after the other
-\[ \binom{\alpha\,\beta}{\beta\,\alpha} \text{ und } \binom{\beta\,\gamma}{\gamma\,\beta}. \]
+\[ \binom{\alpha\,\beta}{\beta\,\alpha} \text{ and } \binom{\beta\,\gamma}{\gamma\,\beta}. \]
 The value of $v$ is therefore not changed by these two transformations combined with one another. It is therefore
 \[ v = v\binom{\alpha\,\beta}{\beta\,\alpha}\binom{\beta\,\gamma}{\gamma\,\beta} \]
 and likewise
@@ -273,9 +274,9 @@ It is therefore impossible to find a function of five quantities that would have
 The proof of this theorem is taken from a memoir by \emph{Cauchy} that is found in the 17th cahier of the \emph{Journal de l'école polytechnique}, page\ 1 etc.
 
 Let now $v$ and $v'$ be two functions that each have two different values; then it is clear, according to the preceding, that if one denotes those double values by $v_1, v_2$ and $v_1', v_2'$, the two expressions
-\[ v_1 + v_2 \text{ und } v_1 v_1' + v_2 v_2' \]
+\[ v_1 + v_2 \text{ and } v_1 v_1' + v_2 v_2' \]
 are \emph{symmetric} functions. Let
-\[ v_1 + v_2 = t \text{ und } v_1 v_1' + v_2 v_2' = t_1, \]
+\[ v_1 + v_2 = t \text{ and } v_1 v_1' + v_2 v_2' = t_1, \]
 then one finds
 \[ v_1 = \frac{t \cdot v_2' - t_1}{v_2' - v_1'}. \]
 Now suppose that the number of the quantities $x_1, x_2 \ldots x_m$ is five; then the product
@@ -284,7 +285,7 @@ is evidently a function that has two different values; the second
 
 \origpage{78}
 value is the same function with the opposite sign. If one therefore sets $v_1' = \varrho$, then $v_2' = -\varrho$. The expression of $v_1$ is therefore
-\[ v_1 = \frac{t_1 + \varrho t_2}{2\varrho}, \text{ oder} \]
+\[ v_1 = \frac{t_1 + \varrho t_2}{2\varrho}, \text{ or} \]
 \[ v_1 = \tfrac{1}{2} t_2 + \frac{t_1}{2\varrho^{2}} \varrho, \]
 where $\tfrac{1}{2} t_2$ is a symmetric function. $\varrho$ has two values that differ only in sign, so that $\dfrac{t_1}{2\varrho^{2}}$ is likewise a symmetric function. If one therefore sets $\tfrac{1}{2} t_2 = p$ and $\dfrac{t_1}{2\varrho^{2}} = q$, then it follows
 
@@ -422,11 +423,11 @@ If one interchanges $x_1$ with $x_2$, then
 from which $p = 0$ and $\sqrt{R} = qs$ follow. One sees from this that all algebraic functions of the first degree found in the expression of the roots must be of the form $\alpha + \beta \cdot \sqrt{s^{2}} = \alpha + \beta s$, where $\alpha$ and $\beta$ are symmetric functions. Since it is now impossible to express the roots through a function of the form $\alpha + \beta \sqrt{R}$, an equation of the form
 \[ \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} = v \]
 must take place, where $\alpha$ and $\beta$ are not equal to zero, $m$ is a prime number, $\alpha$ and $\beta$ are symmetric functions, and $v$ is a rational function of the roots. This gives
-\[ \sqrt[m]{(\alpha + \beta s)} = v_1 \text{ und } \sqrt[m]{(\alpha - \beta s)} = v_2, \]
+\[ \sqrt[m]{(\alpha + \beta s)} = v_1 \text{ and } \sqrt[m]{(\alpha - \beta s)} = v_2, \]
 where $v_1$ and $v_2$ are rational functions. If one multiplies $v_2$ by $v_1$, then one obtains
 \[ v_2 v_1 = \sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}. \]
 Now $\alpha^{2} - \beta^{2} s^{2}$ is a symmetric function. If therefore $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ were not a symmetric function, then, according to the above, it would have to be that $m = 2$. But then $v = \sqrt{(\alpha + \beta \sqrt{s^{2}})}$, and $v$ consequently has four different values; which is not possible. It must therefore be that $\sqrt[m]{(\alpha^{2} - \beta^{2} s^{2})}$ is a symmetric function. Let such a function be $\gamma$; then
-\[ v_2 v_1 = \gamma \text{ und } v_2 = \frac{\gamma}{v_1}. \]
+\[ v_2 v_1 = \gamma \text{ and } v_2 = \frac{\gamma}{v_1}. \]
 Now take the expression
 \[ v_1 + v_2 = \sqrt[m]{(\alpha + \beta \sqrt{s^{2}})} + \frac{\gamma}{\sqrt[m]{(\alpha + \beta \sqrt{s^{2}})}} = p \]
 \[ = \sqrt[m]{R} + \frac{\gamma}{\sqrt[m]{R}} = R^{\frac{1}{m}} + \frac{\gamma}{R} R^{\frac{m-1}{m}}. \]
@@ -448,7 +449,7 @@ where
 \[ \alpha^{4} + \alpha^{3} + \alpha^{2} + \alpha + 1 = 0 \]
 Now from $p = t_1 R^{\frac{1}{5}}$ it follows that $p^{5} = t_1^{5} R$, and because $t_1^{5} R$ is of the form $u + u_1 \sqrt{s^{2}}$, $p^{5} = u + u_1 \sqrt{s^{2}}$, which
 \[ (p^{5} - u)^{2} = u_1^{2} s^{2} \]
-gives. This equation gives, as one sees, $p$ through an equation of the $10^{\text{ten}}$ degree whose coefficients are all symmetric functions, which, however, by virtue of the last theorem in the preceding paragraph, is not possible; for since\ednote{In this last occurrence the coefficient of $x_4$ is printed $\alpha^{4}$; the identical resolvent above and on p.~82 has $\alpha^{2} x_4$. An apparent misprint for $\alpha^{2} x_4$, reproduced here as printed.}
+gives. This equation gives, as one sees, $p$ through an equation of the $10^{\text{th}}$ degree whose coefficients are all symmetric functions, which, however, by virtue of the last theorem in the preceding paragraph, is not possible; for since\ednote{In this last occurrence the coefficient of $x_4$ is printed $\alpha^{4}$; the identical resolvent above and on p.~82 has $\alpha^{2} x_4$. An apparent misprint for $\alpha^{2} x_4$, reproduced here as printed.}
 \[ p = x_1 + \alpha^{4} x_2 + \alpha^{3} x_3 + \alpha^{4} x_4 + \alpha x_5 \]
 $p$ would have 120 different values; which is a contradiction.
 

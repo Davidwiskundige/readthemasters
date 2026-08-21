@@ -48,6 +48,28 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R21 — Prose inside a `\text{...}` insert in a formula is translated like any other prose; the
+### math-preservation check ignores its content (translation policy; presentation)
+*2026-08-21.* A translation must reproduce every formula verbatim, but a formula sometimes carries
+**prose** inside a text insert: Abel joins two displayed equations with `\text{ und }`, glosses one
+with `\text{ oder}`, and writes ordinals as `\mu^{\text{ten}}` ("μ-ten" = "μ-th"); Euler uses
+`\text{et}` / `\text{seu}`. That prose is language, not mathematics, so it is **translated** —
+`\text{ und }`→`\text{ and }`, `\text{ oder}`→`\text{ or}`, `\text{seu}`→`\text{or}`,
+`\mu^{\text{ten}}`→`\mu^{\text{th}}` — rather than left in the source language. (This reverses an
+earlier ad-hoc choice, first taken in the Euler translation, to leave such words untranslated
+"because they live inside the preserved formula".)
+- **Machine-enforced boundary.** `pipeline/texcompare.py` now neutralizes the *content* of a text
+  insert (`\text`, `\textrm`, `\textnormal`, `\textup`, `\textit`, `\textbf`, `\textsf`, `\texttt`,
+  `\mbox`, `\hbox`) before comparing, so translating the words is allowed — but it keeps the insert
+  itself (as `\text{}`) so the check still requires each insert to be **present, un-added, and not
+  repositioned**, and all surrounding math to be identical. `\operatorname{...}` is deliberately
+  **excluded** (it names a mathematical operator, e.g. `\operatorname{arc}`, not translatable
+  prose). Covered by `pipeline/tests/test_texcompare.py`.
+- The rule lives in `prompts/translate-chat.md` (rule 1) and the translate skill; it does not change
+  the transcription — the original keeps the author's own words (`\text{ und }`, `\text{ten}`).
+Applied retroactively to the `en` translations of `abel-1826-unmoeglichkeit` and
+`euler-1761-integratione-aequationis`.
+
 ### R20 — German letterspaced emphasis (Sperrung) is rendered `\emph`; letterspaced section
 ### titles stay headings (presentation)
 *2026-08-21.* Abel's 1826 paper stresses words by **letterspacing** (Sperrung, "g a n z e") — the

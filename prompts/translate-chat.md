@@ -20,6 +20,13 @@ these rules exactly:
    math is also linted for presentation house-style (e.g. inline integrals set as
    `\displaystyle\int \frac{...}{...}`, HOUSESTYLE R2, checked by `pipeline/houselint.py`); since
    you copy it verbatim from the already-house-styled original, keep it exactly — do not reformat.
+   **One exception — prose set inside a formula via `\text{...}` is translated like any other
+   prose** (HOUSESTYLE R21): a connective such as `\text{ und }`→`\text{ and }`, `\text{ oder}`→
+   `\text{ or}`, Latin `\text{seu}`→`\text{or}`, or an ordinal suffix `\mu^{\text{ten}}`→
+   `\mu^{\text{th}}`. `pipeline/texcompare.py` ignores the *content* of `\text{...}` (and
+   `\textrm`/`\mbox`/… — but **not** `\operatorname`, which names an operator), while still checking
+   that each insert is present and that the surrounding math is unchanged. So: translate the words
+   inside `\text{...}`, but never drop, add, or reposition the insert or the math around it.
 2. **Preserve structure and apparatus verbatim.** Keep every `\origpage{N}` marker in the same
    place (they align the translation to the original). Keep `\section*{}`, environments, and
    `\rmfigure{}{}{}` calls; translate only the human-readable caption/alt text inside them.

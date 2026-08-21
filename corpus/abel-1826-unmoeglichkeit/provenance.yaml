@@ -63,9 +63,11 @@ translations:
       not from any published translation. Every math expression, \tag{}, \origpage{N} marker, and
       the three misprint \ednote{} notes are reproduced unchanged (pipeline/texcompare passes); only
       the German prose is translated, and each \emph emphasis (Sperrung, R20) is carried across to
-      the English word. Following the Euler precedent, short German connective words that sit INSIDE
-      display math (\text{ und }, \text{ oder}, \text{ multiplicirt,}) and the ordinal suffix
-      \text{ten} (μ^ten = "μ-th") are left in German because they live inside the preserved formulas.
+      the English word. Prose set INSIDE display math via \text{...} is also translated (HOUSESTYLE
+      R21): the connectives \text{ und }/\text{ oder} → \text{ and }/\text{ or}, the verb
+      \text{ multiplicirt,} → \text{ multiplied,}, and the ordinal suffix \text{ten} → \text{th} (so
+      "$\mu^{\text{ten}}$" reads "μ-th"); texcompare ignores the content of these inserts while still
+      checking each insert and the surrounding math.
       Period terms are rendered in period English: ganze Function = integral function, Verwandlung =
       transformation, Versetzung = transposition, Ordnung = order, Grad = degree, Zeiger = indices.
       The function symbol ϱ (§I–III) and the discriminant's letters (ϱ in §III, s in §IV) are kept as
