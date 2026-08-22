@@ -48,6 +48,47 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R23 — The 1841 original's function-application notation — parenthesized `θ(y)` versus bare
+### `θy` for the *same* symbol — is itself inconsistent, and is followed exactly per occurrence,
+### not normalized to one form (notation)
+*2026-08-22.* Abel's Paris memoir, transcribed from the 1841 original (Mémoires présentés par
+divers savants, not the 1881 Oeuvres complètes re-setting — see R22), does not apply a single
+convention for writing "apply this function to this argument." Some functions are parenthesized
+from their first appearance and stay that way — `θ(y)`, `χ(y)`, `φ(x)`, two-argument `f(x,y)`
+always. Others are bare from their first appearance and stay that way — `Fx`, `F_0x`, `F'x`,
+`θ_1x`. But several — `θy` itself chief among them — genuinely switch mid-passage: a restated
+formula keeps the parens of its first statement, while the very next line of new derivation drops
+them, within the same paragraph, by the same compositor. This was checked and confirmed to be a
+real feature of the print (not a scan artifact) by comparing multiple occurrences on the same
+page. Rather than silently imposing one form throughout (which is what the 1881 Oeuvres complètes
+re-setting did, uniformly dropping the parentheses — see R22), this transcription reproduces
+whichever form is printed at each specific occurrence, since the notation is what the author's
+edition actually shows and "which of two equivalent notations" is content here, not typesetting to
+be regularized. Applied throughout `abel-1841-fonctions-transcendantes`.
+
+### R22 — A quoted theorem statement printed with a repeated opening quotation mark at the start
+### of every typeset line collapses to a single opening/closing pair; use the edition's own
+### quotation glyph, as literal Unicode (presentation)
+*2026-08-21, revised 2026-08-22.* Abel's Paris memoir (`abel-1841-fonctions-transcendantes`) prints
+two verbatim theorem statements with the 19th-century convention of repeating the opening
+quotation mark at the start of *every* printed line of the quotation, closing only once at the
+very end. That repetition exists solely to mark, line by line, that the quotation continues — a
+page-layout artifact of the print's line breaks, which the transcription already drops when it
+reflows text into paragraphs (transcribe-chat rule 2). Collapsing it to a single opening/closing
+pair preserves the quoted content exactly, following the same "drop the line-break artifact" logic
+already applied to hyphenation.
+
+The glyph itself is notation, not presentation, and is edition-specific (R12): the memoir's true
+first printing, Mémoires présentés par divers savants, t. VII (Paris, 1841) — consulted on Gallica,
+ark:/12148/bpt6k33126 — sets the quotation in French guillemets «...» (repeated « at each line);
+the later Oeuvres complètes re-setting (Sylow & Lie, 1881) re-typeset the same quotation in
+German/Scandinavian-style low quotes „...", also repeated per line. Since this work transcribes
+the 1841 original, it uses «...», written as literal Unicode characters (not a macro): consistent
+with R18's rule for `œ` — `tex.js`'s `escapeHtml` passes `«`/`»` through unchanged, and XeTeX
+compiles them directly. (An earlier draft of this ruling, before the source edition was switched
+from the 1881 reprint to the 1841 original, used `` ... '' for the low-quote glyph; superseded.)
+Applied in `abel-1841-fonctions-transcendantes`.
+
 ### R21 — Prose inside a `\text{...}` insert in a formula is translated like any other prose; the
 ### math-preservation check ignores its content (translation policy; presentation)
 *2026-08-21.* A translation must reproduce every formula verbatim, but a formula sometimes carries
