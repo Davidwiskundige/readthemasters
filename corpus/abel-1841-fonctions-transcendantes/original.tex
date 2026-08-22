@@ -1,0 +1,1894 @@
+% Faithful transcription — original French. Transcribed from the original first printing:
+% N. H. Abel, "Mémoire sur une propriété générale d'une classe très-étendue de fonctions
+% transcendantes," Mémoires présentés par divers savants à l'Académie royale des sciences de
+% l'Institut de France (Sciences mathématiques et physiques), tome VII (Paris, 1841), pp. 176–264.
+% Presented to the Académie des sciences, Paris, 30 October 1826. Scan: Gallica (BnF),
+% ark:/12148/bpt6k33126 (printed pp. 176–264 = Gallica vues f221–f309).
+%
+% \origpage uses the PRINTED page numbers. Original spelling/orthography kept faithful (e.g.
+% "developpé", "irrationnalités" — no modernization). A word hyphenated exactly at a page break in
+% the print is kept hyphenated across the \origpage marker (matching fagnano-1718-lemniscata-ii);
+% line-internal hyphenation is dropped as usual.
+%
+% Function-application notation is the author's/compositor's own and is followed exactly, symbol
+% by symbol, as printed — it is NOT uniform: theta, chi, and phi are set with parentheses —
+% theta(y), chi(y), phi_2(x) — from their very first occurrence, and every two-argument function
+% f(x,y) is parenthesized (as it must be); but F, F_0, F', r, R, v, ... are set as bare juxtaposition
+% — Fx, F_0x, F'x, Rx — throughout, never parenthesized. This distinction is reproduced faithfully.
+%
+% The 19th-century convention of repeating the opening quotation mark at the start of every
+% printed line of a multi-line quotation (marking that it continues) is collapsed to a single
+% opening/closing pair when the transcription reflows the print's line breaks into paragraphs; see
+% HOUSESTYLE R22. This edition sets the quoted theorem statements in French guillemets «...»,
+% written as literal Unicode (not a macro), consistent with R18's treatment of œ.
+%
+% Section markers are the author's own bracketed numerals — [1], [2], [3], ... — with no title
+% text; rendered \subsection*{[1]} etc.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{176}
+\section*{Mémoire sur une propriété générale d'une classe très-étendue de fonctions transcendantes.}
+
+\emph{Par M. N. H. Abel, Norwégien.}
+
+Présenté à l'Académie le 30 Octobre 1826.
+
+Les fonctions transcendantes considérées jusqu'à présent par les géomètres sont en très-petit nombre. Presque toute la théorie des fonctions transcendantes se réduit à celle des fonctions logarithmiques, exponentielles et circulaires, fonctions qui, dans le fond, ne forment qu'une seule espèce. Ce n'est que dans les derniers temps qu'on a aussi commencé à considérer quelques autres fonctions. Parmi celles-ci, les transcendantes elliptiques, dont M. Legendre a developpé tant de propriétés remarquables et élégantes, tiennent le premier rang. L'auteur a considéré, dans le mémoire qu'il a l'honneur de présenter à l'Académie, une classe très-étendue de fonctions, savoir: toutes celles dont les dérivées peuvent être exprimées au moyen d'équations algébriques, dont tous les coefficients sont des fonctions rationnelles d'une même
+\origpage{177}
+variable, et il a trouvé pour ces fonctions des propriétés analogues à celles des fonctions logarithmiques et elliptiques.
+
+Une fonction dont la dérivée est rationnelle a, comme on le sait, la propriété qu'on peut exprimer la somme d'un nombre quelconque de semblables fonctions par une fonction algébrique et logarithmique, quelles que soient d'ailleurs les variables de ces fonctions. De même une fonction elliptique quelconque, c'est-à-dire une fonction dont la dérivée ne contient d'autres irrationnalités qu'un radical du second degré, sous lequel la variable ne passe pas le quatrième degré, aura encore la propriété qu'on peut exprimer une somme quelconque de semblables fonctions par une fonction algébrique et logarithmique, pourvu qu'on établisse entre les variables de ces fonctions une certaine relation algébrique. Cette analogie entre les propriétés de ces fonctions a conduit l'auteur à chercher s'il ne serait pas possible de trouver des propriétés analogues de fonctions plus générales, et il est parvenu au théorème suivant:
+
+«Si l'on a plusieurs fonctions dont les dérivées peuvent être racines d'une \emph{même équation algébrique}, dont tous les coefficients sont des fonctions \emph{rationnelles} d'une même variable, on peut toujours exprimer la somme d'un nombre quelconque de semblables fonctions par une fonction \emph{algébrique} et \emph{logarithmique}, pourvu qu'on établisse entre les variables des fonctions en question un certain nombre de relations \emph{algébriques}.»
+
+Le nombre de ces relations ne dépend nullement du nombre des fonctions, mais seulement de la nature des fonctions particulières qu'on considère. Ainsi, par exemple, pour une fonction elliptique ce nombre est 1; pour une fonction dont la dérivée ne contient d'autres irrationnalités qu'un radical du second degré, sous lequel la variable ne passe pas le cinquième ou sixième degré, le nombre des relations nécessaires est 2, et ainsi de suite.
+
+Le même théorème subsiste encore lorsqu'on suppose les fonc-
+\origpage{178}
+tions multipliées par des nombres rationnels quelconques positifs ou négatifs.
+
+On en déduit encore le théorème suivant:
+
+«On peut toujours exprimer la somme d'un nombre \emph{donné} de fonctions, qui sont multipliées chacune par un nombre rationnel, et dont les variables sont arbitraires, par une somme semblable en nombre \emph{déterminé} de fonctions, dont les variables sont des fonctions \emph{algébriques} des variables des fonctions données.»
+
+A la fin du mémoire on donne l'application de la théorie à une classe particulière de fonctions, savoir, à celles qui sont exprimées comme intégrales de formules différentielles, qui ne contiennent d'autres irrationnalités qu'un radical quelconque.
+
+\subsection*{[1]}
+
+Soit
+\[ 0 = p_0 + p_1 y + p_2 y^{2} + \cdots + p_{n-1} y^{n-1} + y^{n} = \chi(y) \tag{1} \]
+une équation algébrique quelconque, dont tous les coefficients sont des fonctions rationnelles et entières d'une même quantité variable $x$. Cette équation, supposée irréductible, donne pour la fonction $y$ un nombre $n$ de formes différentes; nous les désignerons par $y', y'' \ldots y^{(n)}$, en conservant la lettre $y$ pour indiquer l'une quelconque d'entre elles.
+
+Soit de même
+\[ \theta(y) = q_0 + q_1 y + q_2 y^{2} + \cdots + q_{n-1} y^{n-1} \tag{2} \]
+une fonction rationnelle entière de $y$ et $x$, en sorte que les coefficients $q_0, q_1, q_2 \ldots q_{n-1}$, soient des fonctions entières de $x$. Un certain nombre des coefficients des diverses puissances de $x$ dans ces fonctions seront supposés indéterminés; nous les désignerons par $a, a', a''$, etc.
+\origpage{179}
+Cela posé, si l'on met dans la fonction $\theta(y)$, au lieu de $y$, successivement $y', y'' \ldots y^{(n)}$, et si l'on désigne par $r$ le produit de toutes les fonctions ainsi formées, c'est-à-dire si l'on fait
+\[ r = \theta(y') \cdot \theta(y'') \ldots \theta(y^{(n)}), \tag{3} \]
+la quantité $r$ sera, comme on sait par la théorie des équations algébriques, une fonction rationnelle et entière de $x$ et des quantités $a, a', a''$, etc.
+
+Supposons que l'on ait
+\[ r = F_{0} x \cdot F x, \tag{4} \]
+$F_0 x$ et $F x$ étant deux fonctions entières de $x$, dont la première, $F_0 x$, est indépendante des quantités $a, a', a''$, etc.; et soit
+\[ F x = 0. \tag{5} \]
+Cette équation, dont les coefficients sont des fonctions rationnelles des quantités $a, a', a''$, etc., donnera $x$ en fonction de ces quantités, et on aura, pour cette fonction, autant de formes que l'équation $F x = 0$ a de racines. Désignons ces racines par $x_1, x_2 \ldots x_\mu$, et par $x$, l'une quelconque d'entre elles.
+
+L'équation $F x = 0$, que nous venons de former, entraîne nécessairement la suivante $r = 0$, et celle-ci en amène une autre de la forme
+\[ \theta(y) = 0. \tag{6} \]
+En mettant dans cette dernière, au lieu de $x$, successivement $x_1, x_2 \ldots x_\mu$, et désignant les valeurs correspondantes de $y$ par $y_1, y_2 \ldots y_\mu$, on aura les $\mu$ équations suivantes:
+\[ \theta(y_1) = 0, \quad \theta(y_2) = 0 \ldots \theta(y_\mu) = 0. \tag{7} \]
+\origpage{180}
+\subsection*{[2]}
+
+Cela posé, je dis que si l'on désigne par $f(x, y)$ une fonction quelconque rationnelle de $x$ et $y$, et si l'on fait
+\[ dv = f(x_1, y_1)\,dx_1 + f(x_2, y_2)\,dx_2 + \cdots + f(x_\mu, y_\mu)\,dx_\mu, \tag{8} \]
+la différentielle $dv$ sera une fonction \emph{rationnelle} des quantités $a, a', a''$, etc.
+
+En effet, en combinant les équations $\theta(y) = 0$ et $\chi(y) = 0$, on en peut tirer la valeur de $y$, exprimée en fonction rationnelle de $x$ et des quantités $a$, etc.; en désignant cette fonction par $\rho$, on aura donc
+\[ y = \rho \quad \text{et} \quad f(x, y) = f(x, \rho). \tag{9} \]
+Mais en différentiant l'équation $F x = 0$, on aura
+\[ F' x \cdot dx + \delta F x = 0, \]
+en désignant, pour abréger, par $F' x$ la dérivée de $F x$ par rapport à $x$ seul, et par $\delta F x$ la différentielle de la même fonction par rapport aux quantités $a, a', a''$, etc. De là on tire
+\[ dx = -\frac{\delta F x}{F' x}; \tag{10} \]
+et par conséquent
+\[ f(x, y)\,dx = -\frac{f(x, \rho)}{F' x}\,\delta F x = \varphi_2(x), \tag{11} \]
+où il est clair que $\varphi_2(x)$ est une fonction rationnelle de $x, a, a', a''$, etc. Au moyen de cette expression de la différentielle $f(x, y)\,dx$, la valeur de $dv$ deviendra
+\[ dv = \varphi_2(x_1) + \varphi_2(x_2) + \cdots + \varphi_2(x_\mu). \]
+Or, le second membre de cette équation est une fonction
+\origpage{181}
+rationnelle des quantités $a, a', a'' \ldots x_1, x_2 \ldots x_\mu$, et en outre symétrique par rapport à $x_1, x_2 \ldots x_\mu$; donc $dv$ peut s'exprimer par une fonction \emph{rationnelle} de $a, a', a'' \ldots$ et des coefficients de l'équation $F x = 0$; mais ces coefficients sont eux-mêmes des fonctions \emph{rationnelles} de $a, a'$, etc.; donc $dv$ le sera de même, comme on vient de le dire.
+
+Si maintenant $dv$ est une fonction différentielle rationnelle des quantités $a, a', a'' \ldots$ son intégrale ou la quantité $v$ sera une fonction algébrique et logarithmique de $a, a', a'' \ldots$. L'équation (8) donnera donc, en intégrant entre certaines limites des quantités $a, a', a'' \ldots$
+\[ \int f(x_1, y_1)\,dx_1 + \int f(x_2, y_2)\,dx_2 + \cdots + \int f(x_\mu, y_\mu)\,dx_\mu = v, \tag{12} \]
+ou bien en faisant
+\[ \int f(x_1, y_1)\,dx_1 = \psi_1(x_1); \quad \int f(x_2, y_2)\,dx_2 = \psi_2(x_2); \ldots \int f(x_\mu, y_\mu)\,dx_\mu = \psi_\mu(x_\mu), \tag{13} \]
+\[ \psi_1(x_1) + \psi_2(x_2) + \psi_3(x_3) + \cdots + \psi_\mu(x_\mu) = v. \tag{14} \]
+
+Voilà la propriété générale des fonctions $\psi_1(x_1), \psi_2(x_2)$, etc., que nous avons énoncée au commencement de ce mémoire.
+
+\subsection*{[3]}
+
+Les formes des fonctions $\psi_1(x_1), \psi_2(x_2)$, etc., dépendent, en vertu des équations (13), de celles des fonctions $y_1, y_2 \ldots y_\mu$. Ces dernières ne peuvent être choisies arbitrairement parmi celles qui satisfont à l'équation $\chi(y) = 0$; elles doivent en outre satisfaire aux équations (7); mais comme on a plusieurs variables indépendantes, $a, a', a'' \ldots$ il est clair qu'on peut établir entre les formes des fonctions $y_1, y_2 \ldots y_\mu$, un nombre de relations égal à celui de ces variables. On peut donc choisir arbitrairement les formes d'un certain nombre de fonctions $y_1, y_2 \ldots y_\mu$; mais alors celles
+\origpage{182}
+des autres fonctions dépendront, en vertu des équations (7), de celles-ci et de la grandeur des quantités $a, a' \ldots$. Il se peut donc que la quantité constante d'intégration contenue dans la fonction $v$ change de valeur pour des valeurs différentes des quantités $a, a', a'' \ldots$; mais par la nature de cette quantité, elle doit rester la même pour des valeurs de $a, a', a'' \ldots$ contenues entre certaines limites.
+
+Les fonctions $x_1, x_2, \ldots x_\mu$, sont déterminées par l'équation $F x = 0$; cette équation dépend de la forme de la fonction $\theta(y)$; mais comme on peut varier celle-ci d'une infinité de manières, il s'ensuit que l'équation (14) est susceptible d'une infinité de formes différentes pour la même espèce de fonctions. Les fonctions $x_1, x_2, \ldots x_\mu$, ont encore cela de très-remarquable que les mêmes valeurs répondent à une infinité de fonctions différentes. En effet la forme de la fonction $f(x, y)$, de laquelle ces quantités sont entièrement indépendantes, est assujettie à la seule condition d'être une fonction rationnelle de $x$ et $y$.
+
+\subsection*{[4]}
+
+Nous avons montré dans ce qui précède comment on peut toujours former la différentielle rationnelle $dv$; mais comme la méthode indiquée sera en général très-longue, et pour des fonctions un peu composées, presque impraticable, je vais en donner une autre, par laquelle on obtiendra immédiatement l'expression de la fonction $v$ dans tous les cas possibles.
+
+On a par l'équation (3)
+\[ r = \theta(y') \cdot \theta(y'') \ldots \theta(y^{(n)}), \]
+donc, en différentiant par rapport aux quantités $a, a', a''$, etc., on obtiendra
+\[ \delta r = \frac{r}{\theta y'}\,\delta\theta y' + \frac{r}{\theta y''}\,\delta\theta y'' + \cdots + \frac{r}{\theta y^{(n)}}\,\delta\theta y^{(n)}; \]
+or, on a $\theta y = 0$, donc le second membre de l'équation précédente se réduira à $\dfrac{r}{\theta y}\,\delta\theta y$, et l'on aura par conséquent
+\origpage{183}
+\[ \delta r = \frac{r}{\theta y}\,\delta\theta y. \]
+
+Maintenant on a
+\[ r = F_0 x \cdot F x \]
+où $F_0 x$ est indépendante de $a, a', a''$, etc.; donc, en différentiant, on obtiendra
+\[ \delta r = F_0 x \cdot \delta F x \]
+et, par conséquent, en substituant et divisant par $F_0 x$, on trouvera
+\[ \delta F x = \frac{r \cdot \delta\theta y}{F_0 x \cdot \theta y}. \]
+Par là, la valeur de
+\[ dx = -\frac{\delta F x}{F' x} \]
+deviendra
+\[ dx = -\frac{1}{F_0 x \cdot F' x} \cdot \frac{r}{\theta y}\,\delta\theta y, \]
+et en multipliant par $f(x, y)$
+\[ f(x, y)\,dx = -\frac{1}{F_0 x \cdot F' x} \cdot f(x, y) \cdot \frac{r}{\theta y}\,\delta\theta y. \]
+
+En remarquant maintenant que $\dfrac{r}{\theta y^{(k)}}$ s'évanouit, car autrement on aurait $y^{(k)} = y$, il est clair que l'expression de $f(x, y)\,dx$ peut s'écrire comme il suit:
+\[ f(x, y)\,dx = -\frac{1}{F_0 x \cdot F' x} \times \left\{ f(x, y')\,\frac{r}{\theta y'}\,\delta\theta y' + f(x, y'')\,\frac{r}{\theta y''}\,\delta\theta y'' + \cdots + f(x, y^{(n)})\,\frac{r}{\theta y^{(n)}}\,\delta\theta y^{(n)} \right\}. \]
+\origpage{184}
+Pour abréger, nous désignerons dans la suite par $\Sigma F_1(y)$ toute fonction de la forme
+\[ F_1(y') + F_1(y'') + F_1(y''') + \cdots + F_1(y^{(n)}); \]
+et par là la valeur précédente de $f(x, y)\,dx$ deviendra
+\[ f(x, y)\,dx = -\frac{1}{F_0 x \cdot F' x} \cdot \Sigma \cdot f(x, y)\,\frac{r}{\theta y}\,\delta\theta y. \tag{15} \]
+
+Cela posé, soit $\chi'(y)$ la dérivée de $\chi(y)$ prise par rapport à $y$ seul, le produit $f(x, y) \cdot \chi'(y)$ sera une fonction rationnelle de $x$ et $y$. On peut donc faire
+\[ f(x, y) \cdot \chi' y = \frac{P_1(y)}{P(y)}, \]
+où $P$ et $P_1$ sont deux fonctions entières de $x$ et $y$. Mais si l'on désigne par $T$ le produit $P(y') \cdot P(y'') \ldots P(y^{(n)})$, on aura\ednote{Printed $\dfrac{P_1(y)}{P(y)} = \dfrac{1}{F} \cdot P_1(y) \cdot \dfrac{T}{P(y)}$ — an apparent misprint for $T$ (just defined in the preceding sentence as the product $P(y') \cdot P(y'') \ldots P(y^{(n)})$); the identity is only trivially true (multiply and divide by $T$) if the first factor reads $\frac{1}{T}$, and the corresponding passage in Abel's Oeuvres complètes (1881) reads $\frac{1}{T}$ throughout. Reproduced here as printed.}
+\[ \frac{P_1(y)}{P(y)} = \frac{1}{F} \cdot P_1(y) \cdot \frac{T}{P(y)}, \]
+or $\dfrac{F}{P(y)}$ peut toujours s'exprimer par une fonction entière de $x$ et $y$ et $T$ par une fonction entière de $x$, donc on aura
+\[ \frac{P_1(y)}{P(y)} = \frac{T_1}{T}, \]
+où $T_1$ est une fonction entière de $x$ et $y$; mais toute fonction entière de $x$ et $y$ peut se mettre sous la forme
+\[ t_0 + t_1 \cdot y + t_2 \cdot y^{2} + \cdots + t_{n-1} \cdot y^{n-1} = f_1(x, y), \tag{16} \]
+où $t_0, t_1, \ldots t_{n-1}$, sont des fonctions entières de $x$ seul. On peut donc supposer
+\origpage{185}
+\[ f(x, y)\,\chi' y = \frac{f_1(x, y)}{f_2(x)}, \]
+$f_2(x)$ étant une fonction entière de $x$ sans $y$.
+
+De là on tire
+\[ f(x, y) = \frac{f_1(x, y)}{f_2(x) \cdot \chi'(y)}. \tag{17} \]
+
+En substituant maintenant cette valeur de $f(x, y)$ dans l'expression de $f(x, y)\,dx$ trouvée plus haut, il viendra
+\[ \frac{f_1(x, y)}{f_2(x) \cdot \chi' y}\,dx = -\frac{1}{F_0 x \cdot F' x \cdot f_2 x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y. \tag{18} \]
+
+Dans le second membre de cette équation la quantité $f_1(x, y) \cdot \dfrac{r}{\theta y}$ est une fonction entière par rapport à $x$ et $y$; on peut donc supposer
+\[ f_1(x, y) \cdot \frac{r}{\theta y} \cdot \delta\theta y = R'(y) + R(x)\,y^{n-1}, \]
+où $R'(y)$ est une fonction entière de $x$ et $y$, dans laquelle les puissances de $y$ ne montent qu'au $(n-2)^{\text{e}}$ degré; $R(x)$ étant une fonction entière de $x$ sans $y$. On aura donc
+\[ \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y = \Sigma\,\frac{R'(y)}{\chi' y} + R(x) \cdot \Sigma\,\frac{y^{n-1}}{\chi' y}. \]
+Or, on a
+\[ \chi'(y') = (y'-y'')(y'-y''') \ldots (y'-y^{(n)}), \]
+\[ \chi'(y'') = (y''-y')(y''-y''') \ldots (y''-y^{(n)}), \quad \text{etc.;} \]
+donc, d'après des formules connues,
+\[ \Sigma\,\frac{R'(y)}{\chi'(y)} = 0; \quad \Sigma\,\frac{y^{n-1}}{\chi' y} = 1. \]
+
+Par conséquent
+\[ \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y = R(x). \tag{19} \]
+
+La fonction $\Sigma\,\dfrac{f_1(x, y)}{\chi' y}\,\dfrac{r}{\theta y}\,\delta\theta y$ peut donc s'exprimer par une fonction \emph{entière} de $x$ seul sans $y$. Les quantités $a, a', a''$, etc., d'ailleurs y entrent rationnellement.
+\origpage{186}
+Par là l'équation (18) donnera
+\[ \frac{f_1(x, y)}{f_2(x)\,\chi' y}\,dx = -\frac{R(x)}{f_2(x) \cdot F_0 x \cdot F' x}. \tag{20} \]
+
+En mettant dans cette équation au lieu de $x$ successivement $x_1, x_2, \ldots x_\mu$, on obtiendra $\mu$ équations qui, ajoutées ensemble, donneront la suivante
+\[ dv = \frac{f_1(x_1, y_1)\,dx_1}{f_2 x_1 \cdot \chi' y_1} + \frac{f_1(x_2, y_2)\,dx_2}{f_2 x_2 \cdot \chi' y_2} + \cdots + \frac{f_1(x_\mu, y_\mu)\,dx_\mu}{f_2 x_\mu \cdot \chi' y_\mu} = \]
+\[ -\frac{R(x_1)}{f_2 x_1 \cdot F_0 x_1 \cdot F' x_1} - \frac{R(x_2)}{f_2 x_2 \cdot F_0 x_2 \cdot F' x_2} - \cdots - \frac{R(x_\mu)}{f_2 x_\mu \cdot F_0 x_\mu \cdot F' x_\mu}. \tag{21} \]
+
+Si donc on désigne par $\Sigma F_1(x)$ une somme de la forme
+\[ F_1(x_1) + F_1(x_2) + F_1(x_3) + \cdots + F_1(x_\mu), \]
+l'expression de $dv$ pourra s'écrire comme il suit:
+\[ dv = -\Sigma\,\frac{R(x)}{f_2 x \cdot F_0 x \cdot F' x}; \tag{22} \]
+
+Cela posé, soient
+\origpage{187}
+\[ \begin{cases} F_0 x = (x-\beta_1)^{\mu_1}(x-\beta_2)^{\mu_2} \ldots (x-\beta_\alpha)^{\mu_\alpha} \\ f_2 x = (x-\beta_1)^{m_1}(x-\beta_2)^{m_2} \ldots (x-\beta_\alpha)^{m_\alpha}\,A \\ R(x) = (x-\beta_1)^{k_1}(x-\beta_2)^{k_2} \ldots (x-\beta_\alpha)^{k_\alpha} \cdot R_1(x). \end{cases} \tag{23} \]
+
+$\beta_1, \beta_2, \ldots \beta_\alpha$, étant des quantités indépendantes de $a, a', a''$, etc.; $\mu_1, \mu_2, \ldots m_1, m_2, \ldots k_1, k_2$, etc., étant des nombres entiers, zéro y compris; et $R_1(x)$ étant une fonction entière de $x$.
+
+En substituant ces valeurs de $F_0 x, f_2 x, R(x)$ dans l'expression de $dv$, elle deviendra
+\[ dv = -\Sigma\,\frac{R_1(x)}{A \cdot F' x \cdot (x-\beta_1)^{\mu_1+m_1-k_1}(x-\beta_2)^{\mu_2+m_2-k_2} \ldots (x-\beta_\alpha)^{\mu_\alpha+m_\alpha-k_\alpha}} \]
+ou bien en faisant, pour abréger,
+\[ \mu_1 + m_1 - k_1 = \nu_1; \quad \mu_2 + m_2 - k_2 = \nu_2; \quad \ldots \mu_\alpha + m_\alpha - k_\alpha = \nu_\alpha \tag{24} \]
+\[ A \cdot (x-\beta_1)^{\nu_1}(x-\beta_2)^{\nu_2} \ldots (x-\beta_\alpha)^{\nu_\alpha} = \theta_1 x \tag{25} \]
+\[ dv = -\Sigma\,\frac{R_1(x)}{\theta_1 x \cdot F' x}. \tag{26} \]
+
+Maintenant on peut toujours supposer
+\[ \frac{R_1(x)}{\theta_1 x} = R_2(x) + \frac{R_3(x)}{\theta_1 x}, \]
+où $R_2(x)$ et $R_3(x)$ sont deux fonctions entières de $x$, le degré de la dernière étant plus petit que celui de la fonction $\theta_1 x$, en substituant, il viendra donc
+\[ dv = -\Sigma\,\frac{R_2(x)}{F' x} - \Sigma\,\frac{R_3(x)}{\theta_1 x \cdot F' x}. \tag{27} \]
+\origpage{188}
+La fonction $-\Sigma\,\dfrac{R_2(x)}{F' x}$ peut se trouver de la manière suivante.
+
+Puisque $x_1, x_2, \ldots x_\mu$, sont les racines de l'équation $F x = 0$, on aura, en désignant par $\alpha$ une quantité indéterminée quelconque
+\[ \frac{1}{F\alpha} = \frac{1}{\alpha - x_1} \cdot \frac{1}{F' x_1} + \frac{1}{\alpha - x_2} \cdot \frac{1}{F' x_2} + \cdots + \frac{1}{\alpha - x_\mu} \cdot \frac{1}{F' x_\mu}, \]
+c'est-à-dire,
+\[ \frac{1}{F\alpha} = +\Sigma\,\frac{1}{\alpha - x}\,\frac{1}{F' x}, \tag{28} \]
+d'où l'on tire, en développant $\dfrac{1}{\alpha - x}$ suivant les puissances descendantes de $\alpha$,
+\[ \frac{1}{F\alpha} = \frac{1}{\alpha} \cdot \Sigma \cdot \frac{1}{F' x} + \frac{1}{\alpha^{2}} \cdot \Sigma \cdot \frac{x}{F' x} + \cdots + \frac{1}{\alpha^{m+1}}\,\Sigma\,\frac{x^{m}}{F' x} + \cdots \]
+d'où il suit que $\Sigma\,\dfrac{x^{m}}{F' x}$ est égal au coefficient de $\dfrac{1}{\alpha^{m+1}}$ dans le développement de la fonction $\dfrac{1}{F\alpha}$, ou, ce qui revient au même, à celui de $\dfrac{1}{\alpha}$ dans le développement de $\dfrac{\alpha^{m}}{F\alpha}$. En désignant donc par $\Pi \cdot F_1(x)$ le coefficient de $\dfrac{1}{x}$ dans le développement d'une fonction quelconque $F_1 x$, suivant les puissances descendantes de $x$, on aura
+\[ \Sigma\,\frac{x^{m}}{F' x} = \Pi\,\frac{x^{m}}{F x}. \]
+
+De là il suit que
+\[ \Sigma\,\frac{F_1(x)}{F' x} = \Pi\,\frac{F_1(x)}{F x}, \]
+\origpage{189}
+en désignant par $F_1 x$ une fonction quelconque entière de $x$. On aura donc, en mettant $R_2(x)$,
+\[ \Sigma\,\frac{R_2(x)}{F' x} = \Pi\,\frac{R_2(x)}{F x}; \tag{29} \]
+mais ayant
+\[ \frac{R_1(x)}{\theta_1 x \cdot F' x} = \frac{R_3(x)}{\theta_1 x \cdot F' x} + \frac{R_2(x)}{F' x}; \]
+on aura aussi
+\[ \Pi\,\frac{R_1(x)}{\theta_1 x \cdot F x} = \Pi\,\frac{R_3(x)}{\theta_1 x \cdot F x} + \Pi\,\frac{R_2(x)}{F x}. \]
+
+Or, le degré de $R_3(x)$ étant moindre que celui de $\theta_1 x$, il est clair qu'on aura
+\[ \Pi\,\frac{R_3(x)}{\theta_1 x \cdot F x} = 0, \]
+donc
+\[ \Sigma\,\frac{R_2(x)}{F' x} = \Pi\,\frac{R_1(x)}{\theta_1 x \cdot F x}. \]
+
+Le second terme du second membre de l'équation (27), savoir la quantité $\Sigma\,\dfrac{R_3(x)}{\theta_1 x \cdot F' x}$, se trouve comme il suit:
+
+Soit
+\[ \frac{R_3(x)}{\theta_1 x} = \frac{A_1^{(1)}}{x-\beta_1} + \frac{A_1^{(2)}}{(x-\beta_1)^{2}} + \cdots + \frac{A_1^{(\nu_1)}}{(x-\beta_1)^{\nu_1}} + \frac{A_2^{(1)}}{x-\beta_2} + \frac{A_2^{(2)}}{(x-\beta_2)^{2}} + \cdots + \frac{A_2^{(\nu_2)}}{(x-\beta_2)^{\nu_2}} + \text{etc.;} \]
+ou bien, pour abréger,
+\origpage{190}
+\[ \frac{R_3(x)}{\theta_1 x} = \Sigma' \left\{ \frac{A_1}{x-\beta} + \frac{A_2}{(x-\beta)^{2}} + \cdots + \frac{A_\nu}{(x-\beta)^{\nu}} \right\}, \]
+on aura
+\[ A_1 = \frac{d^{\nu-1} p}{\Gamma\nu \cdot d\beta^{\nu-1}}, \quad A_2 = \frac{d^{\nu-2} p}{\Gamma(\nu-1)\,d\beta^{\nu-2}}, \ldots A_\nu = p, \]
+ou
+\[ p = \frac{(x-\beta)^{\nu} \cdot R_3(x)}{\theta_1 x} \]
+pour $x = \beta$; c'est-à-dire
+\[ p = \frac{\Gamma(\nu+1) \cdot R_3(\beta)}{\theta_1^{(\nu)}\beta}; \]
+en désignant par $\theta_1^{(\nu)} x$ la $\nu^{\text{e}}$ dérivée de la fonction $\theta_1 x$ par rapport à $x$, et par $\Gamma(\nu+1)$ le produit $1 \cdot 2 \cdot 3 \ldots (\nu-1) \cdot \nu$.
+
+En substituant ces valeurs des quantités $A_1, A_2, \ldots A_\nu$, il viendra
+\[ \frac{R_3(x)}{\theta_1 x} = \Sigma' \left\{ \frac{d^{\nu-1} p}{(x-\beta) \cdot d\beta^{\nu-1}} + (\nu-1)\,\frac{d^{\nu-2} p}{(x-\beta)^{2} \cdot d\beta^{\nu-2}} + (\nu-1)(\nu-2) \cdot \frac{d^{\nu-3} p}{(x-\beta)^{3} \cdot d\beta^{\nu-3}} + \text{etc.} \right\} \frac{1}{\Gamma\nu}. \]
+
+Maintenant on a, en désignant $\dfrac{1}{x-\beta}$ par $q$,
+\[ \frac{1}{(x-\beta)^{2}} = \frac{dq}{d\beta}, \quad \frac{1}{(x-\beta)^{3}} = \frac{1}{2} \cdot \frac{d^{2} q}{d\beta^{2}}, \ldots \]
+\[ \frac{1}{(x-\beta)^{\nu}} = \frac{1}{\Gamma(\nu)} \cdot \frac{d^{\nu-1} q}{d\beta^{\nu-1}}; \]
+\origpage{191}
+donc l'expression de $\dfrac{R_3(x)}{\theta_1 x}$ peut s'écrire comme il suit:
+\[ \frac{R_3(x)}{\theta_1(x)} = \Sigma' \frac{1}{\Gamma(\nu)} \left\{ \frac{d^{\nu-1} p}{d\beta^{\nu-1}} \cdot q + \frac{\nu-1}{1} \cdot \frac{d^{\nu-2} p}{d\beta^{\nu-2}} \cdot \frac{dq}{d\beta} + \frac{(\nu-1)(\nu-2)}{1 \cdot 2} \cdot \frac{d^{\nu-3} p}{d\beta^{\nu-3}} \cdot \frac{d^{2} q}{d\beta^{2}} + \cdots + p \cdot \frac{d^{\nu-1} q}{d\beta^{\nu-1}} \right\}. \]
+
+Or la quantité entre les accolades est égale à $\dfrac{d^{\nu-1}(pq)}{d\beta^{\nu-1}}$, donc
+\[ \frac{R_3(x)}{\theta_1 x} = \Sigma' \frac{1}{\Gamma(\nu)} \frac{d^{\nu-1}(pq)}{d\beta^{\nu-1}}, \]
+d'où l'on tirera, en substituant les valeurs de $p$ et $q$, et remarquant que $\Gamma(\nu+1) = \nu \cdot \Gamma(\nu)$,
+\[ \frac{R_3(x)}{\theta_1 x} = \Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_3(\beta)}{\theta_1^{(\nu)}\beta \cdot (x-\beta)} \right\}. \]
+
+En substituant cette expression au lieu de $\dfrac{R_3(x)}{\theta_1 x}$ dans la fonction $\Sigma\,\dfrac{R_3(x)}{\theta_1 x \cdot F' x}$, il viendra
+\[ \Sigma\,\frac{R_3(x)}{\theta_1 x \cdot F' x} = \Sigma\,\frac{1}{F' x}\,\Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_3(\beta)}{\theta_1^{(\nu)}\beta \cdot (x-\beta)} \right\}; \tag{30} \]
+ou bien
+\[ \Sigma\,\frac{R_3(x)}{\theta_1 x F' x} = \Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_3(\beta)}{\theta_1^{(\nu)}\beta} \cdot \Sigma\,\frac{1}{(x-\beta) \cdot F' x} \right\}. \tag{31} \]
+
+Or, comme nous avons vu plus haut (28),
+\[ \Sigma\,\frac{1}{(x-\beta) \cdot F' x} = -\frac{1}{F\beta}, \]
+\origpage{192}
+donc
+\[ \Sigma\,\frac{R_3(x)}{\theta_1 x \cdot F' x} = -\Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_3(\beta)}{\theta_1^{(\nu)}\beta \cdot F\beta} \right\}; \]
+mais l'équation
+\[ \frac{R_1(x)}{\theta_1 x} = R_2(x) + \frac{R_3(x)}{\theta_1 x} \]
+donne, si l'on multiplie les deux membres par $\theta_1 x - \beta$, et qu'on fasse ensuite $x = \beta$,
+\[ \frac{R_1(\beta)}{\theta_1^{(\nu)}\beta} = \frac{R_3(\beta)}{\theta_1^{(\nu)}\beta}, \]
+donc, en substituant,
+\[ \Sigma\,\frac{R_3(x)}{\theta_1 x \cdot F' x} = -\Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_1(\beta)}{\theta_1^{(\nu)}\beta \cdot F\beta} \right\}. \tag{32} \]
+
+Ayant ainsi trouvé les valeurs de $\Sigma\,\dfrac{R_2(x)}{F' x}$ et $\Sigma\,\dfrac{R_3(x)}{\theta_1 x \cdot F' x}$, l'équation (27) donnera, pour la différentielle $dv$, l'expression suivante,
+\[ dv = -\Pi\,\frac{R_1(x)}{\theta_1 x \cdot F x} + \Sigma' \nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \left\{ \frac{R_1(\beta)}{\theta_1^{(\nu)}\beta \cdot F\beta} \right\}, \tag{33} \]
+ou bien
+\[ dv = -\Pi\,\frac{R_1(x)}{\theta_1 x \cdot F x} + \Sigma' \nu\,\frac{d^{\nu-1}}{dx^{\nu-1}} \left\{ \frac{R_1(x)}{\theta_1^{(\nu)} x \cdot F x} \right\} \tag{34} \]
+\[ (x = \beta_1, \beta_2, \ldots \beta_\alpha). \]
+
+Maintenant on a (19)
+\[ R(x) = \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y = F_0 x \cdot F x \cdot \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{\delta\theta y}{\theta y} \]
+\origpage{193}
+et (23)
+\[ R_1(x) = R(x) \cdot (x-\beta_1)^{-k_1}(x-\beta_2)^{-k_2} \ldots (x-\beta_\alpha)^{-k_\alpha}; \]
+donc en faisant, pour abréger,
+\[ F_0 x \cdot (x-\beta_1)^{-k_1}(x-\beta_2)^{-k_2} \ldots (x-\beta_\alpha)^{-k_\alpha} \]
+\[ = (x-\beta_1)^{\mu_1-k_1}(x-\beta_2)^{\mu_2-k_2} \ldots (x-\beta_\alpha)^{\mu_\alpha-k_\alpha} = F_2 x, \tag{35} \]
+\[ R_1(x) = F_2 x \cdot F x \cdot \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{\delta\theta y}{\theta y}, \]
+et en substituant cette valeur de $R_1(x)$ dans l'expression précédente de $dv$, on obtiendra:
+\[ dv = -\Pi\,\frac{F_2 x}{\theta_1 x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{\delta\theta y}{\theta y} + \Sigma' \nu\,\frac{d^{\nu-1}}{dx^{\nu-1}} \left\{ \frac{F_2 x}{\theta_1^{(\nu)} x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{\delta\theta y}{\theta y} \right\}. \tag{36} \]
+
+Sous cette forme la valeur de $dv$ est immédiatement intégrable, car $F_2 x, \theta_1 x, f_1(x, y)$ et $\chi' y$, sont toutes indépendantes des quantités $a, a', a'' \ldots$ auxquelles la différentiation se rapporte. On aura donc, en intégrant, pour $v$, l'expression suivante:
+\[ v = C - \Pi \cdot \frac{F_2 x}{\theta_1 x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y + \Sigma' \nu\,\frac{d^{\nu-1}}{dx^{\nu-1}} \left\{ \frac{F_2 x}{\theta_1^{(\nu)} x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y \right\} \tag{37} \]
+\[ (x = \beta_1, \beta_2, \ldots \beta_\alpha); \]
+ou bien en faisant, pour abréger,
+\[ \Sigma\,\frac{f_1(x, y)}{f_2 x \cdot \chi' y}\log\theta y = \varphi(x), \tag{38} \]
+\[ \frac{F_2 x}{\theta_1^{(\nu)} x}\,\Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y = \varphi_1(x), \]
+\origpage{194}
+et remarquant que d'après (23), (24), (25) et (35),
+\[ F_2 x = \frac{\theta_1 x}{f_2 x}, \]
+\[ v = C - \Pi \cdot \varphi(x) + \Sigma' \nu\,\frac{d^{\nu-1}}{dx^{\nu-1}} \{\varphi_1 x\}, \tag{39} \]
+
+voilà l'expression de la fonction $v$ dans tous les cas possibles. Elle contient, comme on le voit, en général, des fonctions logarithmiques; mais dans des cas particuliers elle peut aussi devenir seulement algébrique et même constante.
+
+En substituant cette valeur au lieu de $v$ dans la formule (14), il viendra
+\[ \psi_1(x_1) + \psi_2(x_2) + \cdots + \psi_\mu(x_\mu) = C - \Pi\varphi(x) + \Sigma' \nu\,\frac{d^{\nu-1}\varphi_1(x)}{dx^{\nu-1}}, \tag{40} \]
+ou bien pour abréger:
+\[ \Sigma\psi(x) = C - \Pi\varphi x + \Sigma\nu\,\frac{d^{\nu-1}\varphi_1(x)}{dx^{\nu-1}} \tag{41} \]
+lorsqu'on fait
+\[ \psi_1(x_1) + \psi_2(x_2) + \cdots + \psi_\mu(x_\mu) = \Sigma\psi(x) \quad \text{et} \quad \Sigma' = \Sigma. \tag{42} \]
+
+\subsection*{[5]}
+
+Nous avons supposé dans ce qui précède que la fonction $r$ aurait pour facteur la fonction
+\[ F_0 x = (x-\beta_1)^{\mu_1}(x-\beta_2)^{\mu_2} \ldots (x-\beta_\alpha)^{\mu_\alpha}. \]
+Sinon tous les exposants $\mu_1, \mu_2, \ldots \mu_\alpha$, sont égaux à zéro, il en résultera nécessairement certaines relations entre les coefficients des fonctions $q_0, q_1, q_2, \ldots q_{n-1}$, relations qui toujours peuvent s'exprimer par des équations linéaires entre ces coefficients; car
+\origpage{195}
+si $r = 0$ pour $x = \beta$, il faut aussi qu'on ait une équation de la forme $\theta y = 0$ pour la même valeur de $x$; mais cette équation est linéaire. En général donc la fonction $r$ n'aura pas de facteur comme $F_0 x$, c'est-à-dire indépendant des quantités $a, a', a'' \ldots$. Ce cas mérite d'être remarqué:
+
+Ayant (19)
+\[ R(x) = \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y, \]
+on aura en général, si $F_0 x = 1$, $k_1 = k_2 = k_3 = \cdots = k_\alpha = 0$ (on peut faire la même supposition dans tous les cas), on aura donc en vertu de (35) et (25)
+\[ F_2 x = 1, \quad \theta_1 x = F_2 x f_2 x = f_2 x, \]
+la valeur (38) de $\varphi_1 x$ deviendra donc (en remarquant que $\nu_1 = m_1$, $\nu_2 = m_2$, etc., et désignant $\nu$ par $m$)
+\[ \varphi_1 x = \frac{1}{f_2^{(m)} x} \cdot \Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y, \]
+et par conséquent la formule (41) (en désignant par $B$ la valeur de $y$ pour $x = \beta$)
+\[ \Sigma\int \frac{f_1(x, y)\,dx}{f_2 x \cdot \chi' y} = C - \Pi\Sigma\,\frac{f_1(x, y)}{f_2 x \cdot \chi' y}\log\theta y + \Sigma m\,\frac{d^{m-1}}{d\beta^{m-1}} \left\{ \frac{1}{f_2^{(m)}\beta}\,\Sigma\,\frac{f_1(\beta, B)}{\chi' B}\log\theta B \right\}. \tag{43} \]
+
+Pour le cas particulier où $f_2 x = (x-\beta)^m$, on aura $f_2^{(m)}\beta = 1 \cdot 2 \ldots m$, donc en substituant
+\[ \Sigma\int \frac{f_1(x, y)\,dx}{(x-\beta)^m \cdot \chi' y} = C - \Pi\Sigma\,\frac{f_1(x, y)}{(x-\beta)^m \chi' y}\log\theta y + \frac{1}{1 \cdot 2 \ldots (m-1)}\,\frac{d^{m-1}}{d\beta^{m-1}} \left\{ \Sigma\,\frac{f_1(\beta, B)}{\chi' B}\log\theta B \right\}. \tag{44} \]
+\origpage{196}
+Si $m = 1$, il vient
+\[ \Sigma\int \frac{f_1(x, y)\,dx}{(x-\beta)\chi' y} = C - \Sigma\Pi\,\frac{f_1(x, y)}{(x-\beta)\chi' y}\log\theta y + \Sigma\,\frac{f_1(\beta, B)}{\chi' B}\log\theta B, \tag{45} \]
+et si $m = 0$
+\[ \Sigma\int \frac{f_1(x, y)\,dx}{\chi' y} = C - \Sigma\Pi\,\frac{f_1(x, y)}{\chi' y}\log\theta y. \tag{46} \]
+
+Dans la formule (43), le second membre est en général une fonction des quantités $a, a', a''$, etc. Si on le suppose égal à une constante, il en résultera donc en général certaines relations entre ces quantités; mais il y a aussi certains cas pour lesquels le second membre se réduit à une constante, quelles que soient d'ailleurs les valeurs des quantités $a, a', a''$, etc. Cherchons ces cas:
+
+D'abord il est évident que la fonction $f_2 x$ doit être constante, car dans le cas contraire le second membre contiendrait nécessairement les quantités $a, a', a'', \ldots$ vu les valeurs arbitraires de ces quantités.
+
+En faisant donc $f_2 x = 1$, il viendra
+\[ \Sigma\int \frac{f_1(x, y)}{\chi' y}\,dx = C - \Sigma\Pi\,\frac{f_1(x, y)}{\chi' y}\log\theta y. \]
+
+Or, en observant que ces quantités $a, a', a'', \ldots$ sont toutes arbitraires, il est clair que la fonction $\Sigma\,\dfrac{f_1(x, y)}{\chi' y}\log\theta y$ développée suivant les puissances descendantes de $x$, on aura la formule suivante:
+\[ R \cdot \log x = \begin{cases} A_0 x^{\mu_0} + A_1 x^{\mu_0-1} + \cdots \\ + A_{\mu_0} + \dfrac{A_{\mu_0+1}}{x} + \dfrac{A_{\mu_0+2}}{x^{2}} + \cdots \end{cases} \]
+\origpage{197}
+$R$ étant une fonction de $x$ indépendante de $a, a', a''$, etc., $\mu_0$ un nombre entier, et $A_0, A_1, \ldots A_{\mu_0}, A_{\mu_0+1}$, etc., des fonctions de $a, a', a''$, etc.; donc pour que la fonction dont il s'agit soit constante, il faut que $\mu_0$ soit moindre que $-1$; et par conséquent la plus grande valeur de ce nombre est $-2$.
+
+Cela posé, en désignant par le symbole $hR$ le plus haut exposant de $x$ dans le développement d'une fonction quelconque $R$ de cette quantité, suivant les puissances descendantes, il est clair que $\mu_0$ sera égal au nombre entier le plus grand contenu dans les nombres:
+\[ h\,\frac{f_1(x, y')}{\chi' y'}, \quad h\,\frac{f_1(x, y'')}{\chi' y''}, \quad \ldots h\,\frac{f_1(x, y^{(n)})}{\chi' y^{(n)}}, \]
+il faut donc que tous ces nombres soient inférieurs à l'unité prise négativement.
+
+Or, si $\dfrac{R}{R_1}$ est une fonction de $x$, on aura, comme il est aisé de le voir,
+\[ h\,\frac{R}{R_1} = hR - hR_1, \]
+par conséquent
+\[ hf_1(x, y') < h\chi' y' - 1, \quad hf_1(x, y'') < h\chi' y'' - 1, \quad \ldots hf_1(x, y^{(n)}) < h\chi' y^{(n)} - 1. \tag{47} \]
+
+De ces inégalités on déduira facilement dans chaque cas particulier la forme la plus générale de la fonction $f_1(x, y)$.
+
+Comme on a
+\[ \chi' y' = (y'-y'')(y'-y''') \ldots (y'-y^{(n)}) \]
+\[ \chi'(y'') = (y''-y')(y''-y''') \ldots (y''-y^{(n)}), \quad \text{etc.,} \]
+il s'ensuit que
+\[ \begin{cases} h\chi' y' = h(y'-y'') + h(y'-y''') + \cdots + h(y'-y^{(n)}) \\ h\chi'(y'') = h(y''-y') + h(y''-y''') + \cdots + h(y''-y^{(n)}), \quad \text{etc.} \end{cases} \tag{48} \]
+
+Supposons, ce qui est permis, que l'on ait
+\origpage{198}
+\[ hy' \geqq hy'', \quad hy'' \geqq hy''', \quad hy''' \geqq hy^{\text{iv}}, \ldots hy^{(n-1)} \geqq hy^{(n)}, \tag{49} \]
+de sorte que les quantités $hy', hy'', hy''', \ldots$ suivent l'ordre de leurs grandeurs en commençant par la plus grande. Alors on aura, en général, excepté quelques cas particuliers que je me dispense de considérer:
+\[ \begin{cases}
+h(y'-y'') = hy'; \quad h(y'-y''') = hy'; \quad h(y'-y^{\text{iv}}) = hy' \\
+\quad \ldots h(y'-y^{(n)}) = hy', \\
+h(y''-y') = hy', \quad h(y''-y''') = hy'', \quad h(y''-y^{\text{iv}}) = hy'' \\
+\quad \ldots h(y''-y^{(n)}) = hy'', \\
+h(y'''-y') = hy', \quad h(y'''-y'') = hy'', \quad h(y'''-y^{\text{iv}}) = hy''' \\
+\quad \ldots h(y'''-y^{(n)}) = hy''', \\
+\text{etc., etc.}
+\end{cases} \tag{50} \]
+
+Si ces équations ont lieu, on se convaincra sans peine, en supposant
+\[ f_1(x, y) = t_0 + t_1 y + t_2 y^{2} + \cdots + t_{n-1} y^{n-1}, \tag{51} \]
+que les inégalités (47) entraînent nécessairement les suivantes:
+\[ h(t_m y'^{m}) < h\chi' y' - 1; \quad h(t_m y''^{m}) < h\chi' y'' - 1, \quad h(t_m y'''^{m}) < h\chi' y''' - 1, \ldots \tag{52} \]
+$m$ étant un quelconque des nombres $0, 1, 2, \ldots n-1$.
+
+D'où l'on tire, en remarquant que
+\[ h(t_m y^{m}) = ht_m + h(y^{m}) = ht_m + m \cdot hy, \]
+les inégalités
+\[ ht_m < h\chi' y' - m \cdot hy' - 1, \quad ht_m < h\chi' y'' - m \cdot hy'' - 1, \ldots ht_m < h\chi' y^{(n)} - m \cdot hy^{(n)} - 1. \]
+\origpage{199}
+Or, au moyen des équations (48) et (50), on aura
+\[ h\chi' y' - m \cdot hy' - 1 = (n-m-1)\,hy' - 1, \]
+\[ h\chi' y'' - m \cdot hy'' - 1 = (n-m-2)\,hy'' + hy' - 1, \]
+\[ h\chi' y''' - m \cdot hy''' - 1 = (n-m-3)\,hy''' + hy' + hy'' - 1, \]
+\[ \text{etc.,} \]
+\[ h\chi' y^{(n-m-1)} - m \cdot hy^{(n-m-1)} - 1 = hy^{(n-m-1)} + hy' + hy'' + \cdots + hy^{(n-m-2)} - 1, \]
+\[ h\chi' y^{(n-m)} - m \cdot hy^{(n-m)} - 1 = hy' + hy'' + \cdots + hy^{(n-m-1)} - 1, \]
+\[ h\chi' y^{(n-m+1)} - m \cdot hy^{(n-m+1)} - 1 = -hy^{(n-m+1)} + hy' + hy'' + \cdots + hy^{(n-m)} - 1, \]
+\[ \text{etc.,} \]
+\[ h\chi' y^{(n)} - m \cdot hy^{(n)} - 1 = -m \cdot hy^{(n)} + hy' + hy'' + \cdots + hy^{(n-1)} - 1. \]
+
+En remarquant donc que les quantités $hy', hy'', \ldots$ suivent l'ordre de leurs grandeurs, il est clair que le plus petit des nombres
+\[ h\chi' y' - m \cdot hy' - 1, \quad h\chi' y'' - m \cdot hy'' - 1, \text{ etc.,} \quad h\chi' y^{(n)} - m \cdot hy^{(n)} - 1 \]
+est égal à
+\[ hy' + hy'' + hy''' + \cdots + hy^{(n-m-1)} - 1. \]
+
+Donc la plus grande valeur de $ht_m$ est égale au nombre entier immédiatement inférieur à cette quantité, et on aura
+\[ ht_m = hy' + hy'' + \cdots + hy^{(n-m-1)} - 2 + \varepsilon_{n-m-1}, \tag{53} \]
+où $\varepsilon_{n-m-1}$ est le nombre positif moindre que l'unité qui rend possible cette équation.
+
+Cela posé, soit $hy' = \dfrac{m'}{\mu'}$, $m'$ et $\mu'$ étant deux nombres en-
+\origpage{200}
+tiers et la fraction $\dfrac{m'}{\mu'}$ réduite à sa plus simple expression, alors il faudra que l'on ait
+\[ hy' = hy'' = hy''' = \cdots = hy^{(m)} = \frac{m'}{\mu'}. \]
+
+Car si une équation de la forme $\chi y = 0$ est satisfaite par une fonction de la forme
+\[ y = A x^{\frac{m}{\mu'}} + \text{etc.,} \]
+cette même équation est aussi satisfaite par les $\mu'$ valeurs de $y$ qu'on obtiendra en mettant au lieu de $x^{\frac{1}{\mu'}}$: $\alpha_1 x^{\frac{1}{\mu'}}, \alpha_2 x^{\frac{1}{\mu'}}, \ldots \alpha_{\mu'-1} x^{\frac{1}{\mu'}}$, $1, \alpha_1, \alpha_2, \ldots \alpha_{\mu'-1}$, étant les $\mu'$ racines de l'équation $a^{\mu'} - 1 = 0$.
+
+Parmi les quantités $hy', hy'', \ldots hy^{(n)}$, il y en a donc $\mu'$ qui sont égales entre elles. De même le nombre total des exposants qui sont égaux à une fraction réduite doit être un multiple du dénominateur.
+
+On peut donc supposer
+\[ \begin{cases}
+hy' = hy'' = \cdots = hy^{(k')} = \dfrac{m'}{\mu'}, \\
+hy^{(k'+1)} = hy^{(k'+2)} = \cdots = hy^{(k'')} = \dfrac{m''}{\mu''}, \\
+hy^{(k''+1)} = hy^{(k''+2)} = \cdots = hy^{(k''')} = \dfrac{m'''}{\mu'''}, \\
+\text{etc.,} \\
+hy^{(k^{(\varepsilon-1)}+1)} = hy^{(k^{(\varepsilon-1)}+2)} = \cdots = hy^{(n)} = \dfrac{m^{(\varepsilon)}}{\mu^{(\varepsilon)}},
+\end{cases} \tag{54} \]
+\origpage{201}
+où
+\[ \begin{cases} k' = n'\mu'; \quad k'' = n'\mu' + n''\mu''; \quad k''' = n'\mu' + n''\mu'' + n'''\mu'''; \quad \text{etc.} \\ n = n'\mu' + n''\mu'' + n'''\mu''' + \cdots + n^{(\varepsilon)}\mu^{(\varepsilon)}, \end{cases} \tag{55} \]
+les fractions $\dfrac{m'}{\mu'}; \dfrac{m''}{\mu''}; \ldots \dfrac{m^{(\varepsilon)}}{\mu^{(\varepsilon)}}$ sont réduites à leur plus simple expression; et $n', n'', n''', \ldots n^{(\varepsilon)}$, sont des nombres entiers.
+
+Supposons maintenant dans l'expression de $ht_m$, que $m = n - k^{(\alpha)} - \beta - 1$, $\beta$ étant un nombre moindre que $k^{(\alpha+1)} - k^{(\alpha)}$, c'est-à-dire moindre que $n^{(\alpha+1)}\mu^{(\alpha+1)}$, il viendra alors
+\[ ht_{n-k^{(\alpha)}-\beta-1} = \begin{cases}
+hy' + hy'' + \cdots + hy^{(k')} \\
+\quad + hy^{(k'+1)} + hy^{(k'+2)} + \cdots + hy^{(k'')} \\
+\quad + \text{etc.} \\
+\quad + hy^{(k^{(\alpha-1)}+1)} + hy^{(k^{(\alpha-1)}+2)} + \cdots + hy^{(k^{(\alpha)})} \\
+\quad + hy^{(k^{(\alpha)}+1)} + hy^{(k^{(\alpha)}+2)} + \cdots + hy^{(k^{(\alpha)}+\beta)} \\
+\quad + \varepsilon_{k^{(\alpha)}+\beta} - 2;
+\end{cases} \]
+
+or, les équations (54) et (55) donnent
+\[ hy' + hy'' + \cdots + hy^{(k')} = k' \cdot \frac{m'}{\mu'} = n'm' \]
+\[ hy^{(k'+1)} + hy^{(k'+2)} + \cdots + hy^{(k'')} = (k''-k') \cdot \frac{m''}{\mu''} = n''m'' \]
+etc.,
+\[ hy^{(k^{(\alpha)}+1)} + \cdots + hy^{(k^{(\alpha)}+\beta)} = \beta \cdot \frac{m^{(\alpha+1)}}{\mu^{(\alpha+1)}} \]
+\origpage{202}
+donc, en substituant
+\[ ht_{n-k^{(\alpha)}-\beta-1} = \begin{cases} n'm' + n''m'' + n'''m''' + \cdots + n^{(\alpha)}m^{(\alpha)} \\ \quad + \beta \cdot \dfrac{m^{(\alpha+1)}}{\mu^{(\alpha+1)}} + \varepsilon_{k^{(\alpha)}+\beta} - 2. \end{cases} \tag{56} \]
+
+Quant à la valeur de $\varepsilon_{k^{(\alpha)}+\beta}$, il est clair qu'en faisant
+\[ \mu^{(\alpha+1)} \cdot \varepsilon_{k^{(\alpha)}+\beta} = A_\beta^{(\alpha+1)}; \]
+cette quantité $A_\beta^{(\alpha+1)}$ sera le plus petit nombre entier positif, qui rend le nombre $\beta \cdot m^{(\alpha+1)} + A_\beta^{(\alpha+1)}$ divisible par $\mu^{(\alpha+1)}$; on aura donc
+\[ ht_{n-k^{(\alpha)}-\beta-1} = \begin{cases} -2 + n'm' + n''m'' + n'''m''' + \cdots + n^{(\alpha)}m^{(\alpha)} \\ \quad + \dfrac{\beta \cdot m^{(\alpha+1)} + A_\beta^{(\alpha+1)}}{\mu^{(\alpha+1)}}. \end{cases} \tag{57} \]
+
+En faisant dans cette équation $\alpha = 0$, il viendra
+\[ ht_{n-\beta-1} = -2 + \frac{\beta \cdot m' + A'_\beta}{\mu'}; \]
+si donc $\dfrac{\beta \cdot m' + A'_\beta}{\mu'} < 2$; $ht_{n-\beta-1}$ est négatif, et par conséquent il faut faire $t_{n-\beta-1} = 0$; car, pour toute fonction entière $t$, $ht$ est nécessairement positif, zéro y compris. Or, en faisant $\beta = 0$, on a toujours $\dfrac{\beta m' + A'_\beta}{\mu'} < 2$; donc $t_{n-1}$ est toujours égal à zéro, c'est-à-dire la fonction $f_1(x, y)$ doit être de la forme
+\[ f_1(x, y) = t_0 + t_1 \cdot y + t_2 \cdot y^{2} + \cdots + t_{n-\beta'-1} \cdot y^{n-\beta'-1}, \tag{58} \]
+\origpage{203}
+où $\beta'$ étant plus grand que zéro, est déterminé par l'équation
+\[ \frac{\beta' \cdot m' + A'_{\beta'}}{\mu'} = 2, \]
+d'où il suit que $\beta'$ est égal au plus grand nombre entier contenu dans la fraction $\dfrac{\mu'}{m'} + 1$.
+
+Une fonction telle que $f_1(x, y)$ existe donc toujours à moins que $\beta'$ ne surpasse $n-1$. Pour que cela puisse avoir lieu, il faut que
+\[ \frac{\mu'}{m'} + 1 = n + \varepsilon. \]
+où $\varepsilon$ est une quantité positive, zéro y compris; de là il suit
+\[ \frac{m'}{\mu'} = \frac{1}{n-1+\varepsilon}. \]
+
+Or, la plus grande valeur de $\mu'$ est $n$, donc cette équation donne
+\[ \frac{m'}{\mu'} = \frac{1}{n-1} \quad \text{ou} \quad \frac{m'}{\mu'} = \frac{1}{n}. \]
+
+Or, je dis que dans ces deux cas l'intégrale $\displaystyle\int f(x, y)\,dx$ peut s'exprimer au moyen de fonctions algébriques et logarithmiques. En effet, pour que $\dfrac{m'}{\mu'}$, qui est le plus grand des exposants $hy', hy'', \ldots hy^{(n)}$, ait une des deux valeurs $\dfrac{1}{n-1}, \dfrac{1}{n}$, il faut que l'équation $\chi y = 0$, qui donne la fonction $y$, ne contienne la variable $x$ que sous une forme linéaire. On aura donc
+\[ \chi y = P + x \cdot Q, \]
+où $P$ et $Q$ sont des fonctions entières de $y$; de là il suit
+\[ x = -\frac{P}{Q}, \quad dx = \frac{P\,dQ - Q\,dP}{Q^{2}}, \]
+\origpage{204}
+et
+\[ f(x, y) \cdot dx = f\left(-\frac{P}{Q}, y\right) \cdot \frac{P\,dQ - Q\,dP}{Q^{2}} = R \cdot dy, \]
+où il est clair que $R$ est une fonction rationnelle de $y$; par conséquent l'intégrale $\displaystyle\int R\,dy$, et par suite $\displaystyle\int f(x, y)\,dx$, peut être exprimée au moyen de fonctions logarithmiques et algébriques.
+
+Excepté ce cas donc, la fonction $f_1(x, y)$ existe toujours; en la substituant dans l'équation (46), elle deviendra
+\[ \Sigma\int \frac{(t_0 + t_1 y + \cdots + t_{n-\beta'-1} y^{(n-\beta'-1)})\,dx}{\chi' y} = C. \tag{59} \]
+
+Un cas particulier de cette équation est le suivant:
+\[ \Sigma\int \frac{x^{k} \cdot y^{m} \cdot dx}{\chi' y} = C. \tag{60} \]
+où $k$ et $m$ sont deux nombres entiers et positifs, tels que
+\[ m < n - \frac{\mu'}{m'} - 1; \tag{61} \]
+\[ k < -1 + n'm' + n''m'' + \cdots + n^{(\alpha)}m^{(\alpha)} + \frac{\beta \cdot m^{(\alpha+1)}}{\mu^{(\alpha+1)}}; \]
+\[ m = n - k^{(\alpha)} - \beta - 1; \quad \beta < m^{(\alpha+1)} n^{(\alpha+1)}; \]
+et il est clair que cette formule peut remplacer la formule (43) dans toute sa généralité.
+
+Puisque le degré de la fonction entière $t_m$ est égal à $ht_m$, cette même fonction contiendra un nombre de constantes arbitraires égal à $ht_m + 1$. La fonction $f_1(x, y)$ en contiendra donc un nombre exprimé par
+\[ ht_0 + ht_1 + \cdots + ht_{n-\beta'-1} + n - \beta', \]
+ou bien, comme il est aisé de le voir,
+\[ ht_0 + ht_1 + \cdots + ht_{n-\beta'-1} + \cdots + ht_{n-2} + n - 1. \]
+\origpage{205}
+En désignant ce nombre par $\gamma$, on trouvera aisément, en vertu de l'équation qui donne la valeur générale de $ht_m$,
+\[ \gamma = \frac{A_0'}{\mu'} + \frac{m'+A_1'}{\mu'} + \frac{2m'+A_2'}{\mu'} + \cdots + \frac{(n'\mu'-1)m'+A'_{n'\mu'-1}}{\mu'} + \frac{A_0''}{\mu''} + \frac{m''+A_1''}{\mu''} + \frac{2m''+A_2''}{\mu''} + \cdots + \frac{(n''\mu''-1)m''+A''_{n''\mu''-1}}{\mu''} + n'm'n''\mu'' + \frac{A_0'''}{\mu'''} + \frac{m'''+A_1'''}{\mu'''} + \frac{2m'''+A_2'''}{\mu'''} + \cdots + \frac{(n'''\mu'''-1)m'''+A'''_{n'''\mu'''-1}}{\mu'''} + (n'm'+n''m'')n'''\mu''' + \text{etc.} - n + 1; \]
+
+or, en remarquant que $m'$ et $\mu'$ sont premiers entre eux, on sait par la théorie des nombres que la suite $A'_0, A'_1, A'_2, A'_3, \ldots A'_{n'\mu'-1}$, contiendra $n'$ fois la suite des nombres naturels $0, 1, 2, 3, \ldots \mu'-1$, donc
+\[ A'_0 + A'_1 + A'_2 + \cdots + A'_{n'\mu'-1} = n'(0+1+2+\cdots+\mu'-1) = n' \cdot \frac{\mu'(\mu'-1)}{2}; \]
+de même
+\[ A''_0 + A''_1 + A''_2 + \cdots + A''_{n''\mu''-1} = n''(0+1+2+\cdots+\mu''-1) = n'' \cdot \frac{\mu''(\mu''-1)}{2}, \]
+etc.
+
+En substituant ces valeurs et réduisant, la valeur de $\gamma$ deviendra
+\[ \gamma = -n+1+\tfrac{1}{2}m'n'(n'\mu'-1)+\tfrac{1}{2}n'(\mu'-1)+\tfrac{1}{2}m''n''(n''\mu''-1)+\tfrac{1}{2}n''(\mu''-1)+\text{etc.,} \]
+\[ \cdots + \tfrac{1}{2}n^{(\varepsilon)}m^{(\varepsilon)}(n^{(\varepsilon)}\mu^{(\varepsilon)}-1)+\tfrac{1}{2}n^{(\varepsilon)}(\mu^{(\varepsilon)}-1)+\cdots \]
+\[ + n'm'n''\mu''+(n'm'+n''m'')n'''\mu'''+(n'm'+n''m''+n'''m''')n^{\text{iv}}\mu^{\text{iv}} \]
+\[ + \text{etc.} \ldots + (n'm'+n''m''+\cdots+n^{(\varepsilon-1)}m^{(\varepsilon-1)})n^{(\varepsilon)}\mu^{(\varepsilon)}; \]
+\origpage{206}
+ou bien en remarquant que
+\[ n = n'\mu' + n''\mu'' + \cdots + n^{(\varepsilon)}\mu^{(\varepsilon)}, \tag{62} \]
+\[ \gamma = n'\mu'\left(\frac{m'n'-1}{2}\right) + n''\mu''\left(m'n' + \frac{m''n''-1}{2}\right) + n'''\mu'''\left(m'n' + m''n'' + \frac{m'''n'''-1}{2}\right) \]
+\[ + \cdots + n^{(\varepsilon)}\mu^{(\varepsilon)}\left(m'n' + m''n'' + \cdots + m^{(\varepsilon-1)}n^{(\varepsilon-1)} + \frac{m^{(\varepsilon)}n^{(\varepsilon)}-1}{2}\right) \]
+\[ - \frac{n'(m'+1)}{2} - \frac{n''(m''+1)}{2} - \frac{n'''(m'''+1)}{2} - \cdots - \frac{n^{(\varepsilon)}(m^{(\varepsilon)}+1)}{2} + 1. \]
+
+Comme cas particuliers on doit remarquer les deux suivants:
+
+1. Lorsque
+\[ hy' = hy'' = \cdots = hy^{(n)} = \frac{m'}{\mu'}. \]
+
+Dans ce cas $\varepsilon = 1$, et par conséquent
+\[ \gamma = n'\mu' \cdot \frac{n'm'-1}{2} - n' \cdot \frac{m'+1}{2} + 1. \tag{63} \]
+
+Si en outre $\mu' = n$, on aura $n' = 1$, et
+\[ \gamma = (n-1) \cdot \frac{m'-1}{2}. \tag{64} \]
+
+2. Lorsque toutes les quantités $hy', hy'', \ldots hy^{(n)}$, sont des nombres entiers. Alors on aura
+\[ \mu' = \mu'' = \mu''' = \cdots = \mu^{(\varepsilon)} = 1; \]
+et si l'on fait de plus
+\[ n' = n'' = \cdots = n^{(\varepsilon)} = 1, \]
+on aura $\varepsilon = n$, et par conséquent en substituant,
+\[ \gamma = (n-1)m' + (n-2)m'' + (n-3)m''' + \cdots + 2m^{(n-2)} + m^{(n-1)} - n + 1; \]
+\origpage{207}
+c'est-à-dire en remarquant que $m' = hy'$, $m'' = hy''$, etc.
+\[ \gamma = (n-1)hy' + (n-2)hy'' + (n-3)hy''' + \cdots + 2hy^{(n-2)} + hy^{(n-1)} - n + 1. \tag{66} \]
+
+Dans le cas où tous les nombres $hy', hy'', \ldots hy^{(n-1)}$, sont égaux entre eux, la valeur de $\gamma$ deviendra
+\[ \gamma = \frac{n(n-1)}{2} \cdot hy' - n + 1 = (n-1) \cdot \left( \frac{n \cdot hy'}{2} - 1 \right). \tag{67} \]
+
+La formule (59) a généralement lieu pour des valeurs quelconques des quantités $a, a', a'', \ldots$ toutes les fois que la fonction $r$ n'a pas un facteur de la forme $F_0 x$; mais dans ce cas elle a encore lieu, sinon $F_0 x$ et $\dfrac{\chi y}{f_1(x,y)}$ s'évanouissent pour une même valeur de $x$. Alors la formule dont il s'agit cesse d'avoir lieu, et on aura au lieu d'elle la formule (40), qui deviendra, en faisant $f_2 x = 1$,
+\[ \Sigma\int \frac{f_1(x, y) \cdot dx}{\chi' y} = C - \Pi\Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{\theta_1\beta}{\theta_1^{(\nu)}\beta} \cdot \Sigma\,\frac{f_1(\beta, B)}{\chi' B}\log\theta B \right\} \tag{68} \]
+
+c'est-à-dire, en remarquant que
+\[ \Pi\Sigma\,\frac{f_1(x, y)}{\chi' y}\log\theta y = 0, \]
+\[ \Sigma\int \frac{f_1(x, y)\,dx}{\chi' y} = C + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{\theta_1\beta}{\theta_1^{(\nu)}\beta} \cdot \Sigma\,\frac{f_1(\beta, B)}{\chi' B}\log\theta B \right\} \tag{69} \]
+
+Maintenant on a (19)
+\[ R(x) = \Sigma\,\frac{f_1(x, y)}{\chi' y}\,\frac{r}{\theta y}\,\delta\theta y; \]
+\origpage{208}
+d'où il suit que si $\dfrac{f_1(x,y)}{\chi' y}$ conserve une valeur finie pour $x = \beta_1$, la fonction entière $R(x)$ aura $(x-\beta_1)^{\mu_1}$ pour facteur, donc
+\[ k_1 = \mu_1 \quad \text{et} \quad \nu_1 = \mu_1 - k_1 = 0. \]
+
+Par là on voit que, dans le second membre de l'équation précédente, tous les termes relatifs à des valeurs de $\beta$, qui ne rendent point infinie la valeur de $\dfrac{f_1(\beta,B)}{\chi' B}$, s'évanouiront; par conséquent ledit nombre se réduit à une constante, si $F_0 x$ n'a pas de facteur commun avec $\dfrac{\chi' y}{f_1(x,y)}$.
+
+\subsection*{[6]}
+
+Reprenons maintenant la formule générale (14), et considérons les fonctions $x_1, x_2, x_3, \ldots x_\mu$. Ces quantités sont données par l'équation $F x = 0$, en fonctions des quantités indépendantes $a, a', a''$, etc.; soient
+\[ x_1 = f_1(a, a', a'', \ldots); \quad x_2 = f_2(a, a', a'', \ldots); \ldots \]
+\[ x_\mu = f_\mu(a, a', a'', \ldots). \]
+
+Si maintenant on désigne par $\alpha$ le nombre des quantités $a, a', a'', \ldots$ on peut en général tirer de ces équations les valeurs de $a, a', a'', \ldots$ en fonctions d'un nombre $\alpha$ des quantités $x_1, x_2 \ldots x_\mu$; par exemple, en fonctions de $x_1, x_2, \ldots x_\alpha$. En substituant les valeurs de $a, a', a'', \ldots$ ainsi déterminées, dans les expressions de $x_{\alpha+1}, x_{\alpha+2}, \ldots x_\mu$, ces dernières quantités deviendront des fonctions de $x_1, x_2, \ldots, x_\alpha$; et alors celles-ci seront indéterminées. La formule (14) deviendra donc
+\[ v = \begin{cases} \psi_1(x_1) + \psi_2(x_2) + \cdots + \psi_\alpha(x_\alpha) + \psi_{\alpha+1}(x_{\alpha+1}) \\ \quad + \psi_{\alpha+2}(x_{\alpha+2}) + \cdots + \psi_\mu(x_\mu), \end{cases} \tag{70} \]
+où $x_1, x_2, \ldots x_\alpha$, sont des quantités quelconques, $x_{\alpha+1},
+\origpage{209}
+x_{\alpha+2}, \ldots x_\mu$, des fonctions algébriques de $x_1, x_2, \ldots x_\alpha$, et $v$ une fonction algébrique et logarithmique des mêmes quantités.
+
+Les quantités $a, a', a'', \ldots$ et $x_{\alpha+1}, x_{\alpha+2}, \ldots x_\mu$, se trouvent de la manière suivante. Les équations (7) donnent les suivantes:
+\[ \theta y_1 = 0, \quad \theta y_2 = 0, \ldots \theta y_\alpha = 0, \tag{71} \]
+qui toutes sont linéaires par rapport aux quantités $a, a', a'', \ldots$ Elles donneront donc ces quantités en fonctions rationnelles de $x_1, y_1; x_2, y_2; x_3, y_3; \ldots x_\alpha, y_\alpha$. Maintenant si l'on substitue ces fonctions au lieu de $a, a', a'', \ldots$ dans l'équation $F x = 0$, la fonction $F x$ deviendra divisible par le produit $(x-x_1)(x-x_2) \ldots (x-x_\alpha)$; car on a
+\[ F x = B \cdot (x-x_1)(x-x_2) \ldots (x-x_\alpha)(x-x_{\alpha+1}) \ldots (x-x_\mu). \]
+
+En désignant donc le quotient $\dfrac{F x}{(x-x_1)(x-x_2) \ldots (x-x_\alpha)}$ par $F' x$, l'équation
+\[ F' x = 0 \tag{72} \]
+sera du degré $\mu-\alpha$, et aura pour racines les quantités $x_{\alpha+1}, \ldots x_\mu$. Quant aux coefficients, dans cette équation, il est aisé de voir qu'ils seront des fonctions rationnelles des quantités
+\[ x_1, y_1; \quad x_2, y_2; \quad \ldots x_\alpha, y_\alpha. \]
+
+De cette manière donc les $\mu-\alpha$ quantités $x_{\alpha+1}, \ldots x_\mu$, sont déterminées en fonctions de $x_1, x_2, \ldots x_\alpha$ par une même équation du $(\mu-\alpha)^{\text{e}}$ degré.
+
+Les équations (71) sont en général en nombre suffisant pour déterminer les $\alpha$ quantités $a, a', a'', \ldots$ mais il y a un cas où plusieurs d'entre elles deviendront identiques. C'est ce qui arrive lorsqu'on a à la fois
+\[ x_1 = x_2 = \cdots = x_k; \quad y_1 = y_2 = \cdots = y_k; \]
+\origpage{210}
+car alors
+\[ \theta y_1 = \theta y_2 = \cdots = \theta y_k. \]
+
+Or, dans ce cas on aura, d'après les principes du calcul différentiel, au lieu des $k$ équations identiques,
+\[ \theta y_1 = 0, \quad \theta y_2 = 0, \quad \ldots, \quad \theta y_k = 0, \]
+les suivantes
+\[ \theta y_1 = 0, \quad \frac{d\theta y_1}{dx_1} = 0, \quad \frac{d^{2}\theta y_1}{dx_1^{2}} = 0, \quad \ldots \frac{d^{k}\theta y_1}{dx_1^{k}} = 0, \tag{73} \]
+qui, jointes aux équations
+\[ \theta y_{k+1} = 0, \quad \ldots \theta y_\alpha = 0, \]
+détermineront les valeurs de $a, a', \ldots a^{(\alpha-1)}$.
+
+La formule (70) montre qu'on peut exprimer une somme quelconque de la forme
+\[ \psi_1(x_1) + \psi_2(x_2) + \cdots + \psi_\alpha(x_\alpha), \]
+par une fonction connue $v$ et une somme semblable d'autres fonctions; en effet elle donnera
+\[ \psi_1(x_1) + \psi_2(x_2) + \cdots + \psi_\alpha(x_\alpha) = \]
+\[ v - \left\{ \psi_{\alpha+1}(x_{\alpha+1}) + \psi_{\alpha+2}(x_{\alpha+2}) + \cdots + \psi_\mu(x_\mu) \right\}. \tag{74} \]
+
+\subsection*{[7]}
+
+Dans cette formule le nombre des fonctions $\psi_{\alpha+1}(x_{\alpha+1})$, $\psi_{\alpha+2}(x_{\alpha+2}), \ldots \psi_\mu(x_\mu)$, est très-remarquable. Plus il est petit, plus la formule est simple. Nous allons, dans ce qui suit, chercher la moindre valeur dont ce nombre, qui est exprimé par $\mu-\alpha$, est susceptible.
+\origpage{211}
+Si la fonction $F_0 x$ se réduit à l'unité, tous les coefficients dans les fonctions $q_0, q_1, q_2, \ldots q_{n-1}$ seront arbitraires; dans ce cas donc on aura (en remarquant que, d'après la forme des équations (71), un des coefficients dans les fonctions $q_0, q_1, \ldots$ peut être pris à volonté sans nuire à la généralité),
+\[ \alpha = hq_0 + hq_1 + hq_2 + \cdots + hq_{n-1} + n - 1. \]
+
+Si $F_0 x$ n'est pas égal à l'unité, il faut en général un nombre $hF_0 x$ de conditions différentes pour que l'équation
+\[ F_0 x \cdot F x = r \]
+soit satisfaite; mais la forme particulière de la fonction $y$ pourrait rendre moindre ce nombre de conditions nécessaires. Supposons donc qu'il soit égal à
+\[ hF_0 x - A, \tag{75} \]
+le nombre des quantités indéterminées $a, a', a'', \ldots$ deviendra
+\[ \alpha = hq_0 + hq_1 + hq_2 + \cdots + hq_{n-1} + n - 1 - hF_0 x + A; \tag{76} \]
+maintenant on a
+\[ hr = hF_0 x + hF x = hF_0 x + \mu, \]
+donc
+\[ \mu = hr - hF_0 x, \tag{77} \]
+et par conséquent
+\[ \mu - \alpha = hr - (hq_0 + hq_1 + hq_2 + \cdots + hq_{n-1}) - n + 1 - A. \tag{78} \]
+
+Mais comme on a (3)
+\[ r = \theta y' \cdot \theta y'' \ldots \theta y^{(n)}, \]
+il est clair que
+\[ hr = h\theta y' + h\theta y'' + \cdots + h\theta y^{(n)} \tag{79} \]
+\origpage{212}
+donc
+\[ \mu - \alpha = h\theta y' + h\theta y'' + \cdots + h\theta y^{(n)} \]
+\[ - (hq_0 + hq_1 + \cdots + hq_{n-1}) - n + 1 - A. \tag{80} \]
+
+Ayant maintenant (2)
+\[ \theta y = q_0 + q_1 y + q_2 y^{2} + \cdots + q_{n-1} y^{n-1}; \]
+on aura nécessairement, pour toutes les valeurs de $m$,
+\[ h\theta y > h(q_m y^{m}), \]
+où le signe $>$ n'exclut pas l'égalité.
+Donc en faisant
+\[ y = y', y'', y''', \ldots y^{(n)}, \]
+et remarquant que
+\[ h(q_m y^{m}) = hq_m + m \cdot hy, \]
+on aura aussi
+\[ h\theta y' > hq_m + m \cdot hy'; \quad h\theta y'' > hq_m + m \cdot hy'', \ldots h\theta y^{(n)} > hq_m + m \cdot hy^{(n)}. \tag{81} \]
+
+Cela posé, désignons par $n', m', \mu', k'; n'', m'', \mu'', k''$; etc.\ldots les mêmes choses que plus haut dans le numéro [5], et supposons que $h(q_{\rho_1} y'^{\rho_1})$ soit la plus grande des $n'\mu'$ quantités,
+\[ h(q_{n-1} y'^{n-1}); \quad h(q_{n-2} y'^{n-2}); \quad \ldots h(q_{n-1-k'} y'^{n-1-k'}); \]
+en sorte que
+\[ hq_{\rho_1} + \rho_1 hy' > hq_{n-\beta-1} + (n-\beta-1)hy'. \tag{82} \]
+
+En désignant, pour abréger, $hq_m$ par $f(m)$, et mettant $\dfrac{m'}{\mu'}$ au lieu de $hy'$, il est clair que cette formule donne
+\[ f(\rho_1) - f(n-\beta-1) = (n-\beta-1-\rho_1) \cdot \frac{m'}{\mu'} + \varepsilon'_\beta + A'_\beta \]
+\[ (\text{depuis } \beta = 0, \text{ jusqu'à } \beta = k'-1), \]
+\origpage{213}
+où $A'_\beta$ est un nombre positif moindre que l'unité et $\varepsilon'_\beta$ un nombre entier positif, zéro y compris.
+
+Soient de même
+\[ \begin{cases}
+f(\rho_2) - f(n-\beta-1) = (n-\beta-1-\rho_2)\,\dfrac{m''}{\mu''} + \varepsilon''_\beta + A''_\beta \\
+\qquad (\text{depuis } \beta = k', \text{ jusqu'à } \beta = k''-1), \\
+f(\rho_3) - f(n-\beta-1) = (n-\beta-1-\rho_3)\,\dfrac{m'''}{\mu'''} + \varepsilon'''_\beta + A'''_\beta \\
+\qquad (\text{depuis } \beta = k'', \text{ jusqu'à } \beta = k'''-1), \\
+\text{etc.,} \\
+f(\rho_m) - f(n-\beta-1) = (n-\beta-1-\rho_m)\,\dfrac{m^{(m)}}{\mu^{(m)}} + \varepsilon^{(m)}_\beta + A^{(m)}_\beta \\
+\qquad (\text{depuis } \beta = k^{(m-1)}, \text{ jusqu'à } \beta = k^{(m)}-1), \\
+\text{etc.,} \\
+f(\rho_\varepsilon) - f(n-\beta-1) = (n-\beta-1-\rho_\varepsilon)\,\dfrac{m^{(\varepsilon)}}{\mu^{(\varepsilon)}} + \varepsilon^{(\varepsilon)}_\beta + A^{(\varepsilon)}_\beta \\
+\qquad (\text{depuis } \beta = k^{(\varepsilon-1)}, \text{ jusqu'à } \beta = n-1).
+\end{cases} \tag{84} \]
+
+$A'_\beta, A''_\beta, \ldots A^{(\varepsilon)}_\beta$, étant des nombres positifs et moindres que l'unité, et $\varepsilon'_\beta, \varepsilon''_\beta$, etc., des nombres entiers positifs, en y comprenant zéro.
+
+Considérons l'une quelconque de ces équations; par exemple, en donnant à $\beta$ les $k^{(m)}-k^{(m-1)}$ valeurs,
+\[ \beta = k^{(m-1)}, k^{(m-1)}+1, k^{(m-1)}+2, \ldots k^{(m)}-1, \]
+on obtiendra un nombre $k^{(m)} - k^{(m-1)}$ d'équations semblables; et en les ajoutant il viendra
+\origpage{214}
+\[ (k^{(m)}-k^{(m-1)})\left(f(\rho_m)+\rho_m \cdot \frac{m^{(m)}}{\mu^{(m)}}\right) = \tfrac{1}{2}(2n-k^{(m)}-k^{(m-1)}-1)(k^{(m)}-k^{(m-1)}) \cdot \frac{m^{(m)}}{\mu^{(m)}} \]
+\[ + A_0^{(m)} + A_1^{(m)} + \cdots + A_{k^{(m)}-k^{(m-1)}-1}^{(m)} \]
+\[ + \varepsilon_0^{(m)} + \varepsilon_1^{(m)} + \cdots + \varepsilon_{k^{(m)}-k^{(m-1)}-1}^{(m)} \]
+\[ + f(n-1-k^{(m-1)}) + f(n-2-k^{(m-1)}) + \cdots + f(n-k^{(m)}). \]
+
+Or,
+\[ k^{(m)} - k^{(m-1)} = n^{(m)}\mu^{(m)}, \]
+donc en substituant,
+\[ n^{(m)}\mu^{(m)}\left(f(\rho_m)+\rho_m \frac{m^{(m)}}{\mu^{(m)}}\right) = \tfrac{1}{2}(2n-k^{(m)}-k^{(m-1)}-1) \cdot n^{(m)}m^{(m)} \]
+\[ + A_0^{(m)}+A_1^{(m)}+\cdots+A_{n^{(m)}\mu^{(m)}-1}^{(m)} \]
+\[ + \varepsilon_0^{(m)}+\varepsilon_1^{(m)}+\cdots+\varepsilon_{n^{(m)}\mu^{(m)}-1}^{(m)} \]
+\[ + f(n-1-k^{(m-1)}) + \cdots + f(n-k^{(m)}). \]
+
+Or, en remarquant que $A_\beta^{(m)}$ est le nombre moindre que l'unité qui, ajouté à $(n-\beta-1-\rho_m)\dfrac{m^{(m)}}{\mu^{(m)}}$, rend cette quantité égale à un nombre entier, on voit sans peine que la suite
+\[ A_0^{(m)} + A_1^{(m)} + \cdots + A_{n^{(m)}\mu^{(m)}-1}^{(m)}, \]
+qui est composée de $n^{(m)}\mu^{(m)}$ termes, contiendra $n^{(m)}$ fois la suite des nombres
+\[ \frac{0}{\mu^{(m)}}, \quad \frac{1}{\mu^{(m)}}, \quad \frac{2}{\mu^{(m)}}, \quad \ldots \frac{\mu^{(m)}-1}{\mu^{(m)}}, \]
+donc
+\[ A_0^{(m)}+A_1^{(m)}+\cdots+A_{n^{(m)}\mu^{(m)}-1}^{(m)} = \frac{n^{(m)}(0+1+\cdots+\mu^{(m)}-1)}{\mu^{(m)}} \]
+\[ = \frac{n^{(m)}\mu^{(m)}(\mu^{(m)}-1)}{2 \cdot \mu^{(m)}} = \tfrac{1}{2}n^{(m)}(\mu^{(m)}-1). \tag{85} \]
+\origpage{215}
+En substituant cette valeur, et faisant pour abréger,
+\[ \varepsilon_0^{(m)}+\varepsilon_1^{(m)}+\cdots+\varepsilon_{n^{(m)}\mu^{(m)}-1}^{(m)} = C_m, \]
+il viendra
+\[ n^{(m)}\mu^{(m)}\left(f(\rho_m)+\rho_m\frac{m^{(m)}}{\mu^{(m)}}\right) = \tfrac{1}{2}(2n-k^{(m)}-k^{(m-1)}-1)n^{(m)}m^{(m)} \]
+\[ + \tfrac{1}{2}n^{(m)}(\mu^{(m)}-1) + C_m \]
+\[ + f(n-k^{(m-1)}-1)+\cdots+f(n-k^{(m)}). \tag{86} \]
+
+Maintenant on a, en désignant $h\theta y^{(m)}$ par $\varphi(m)$,
+\[ \varphi(k^{(m-1)}+1) = \varphi(k^{(m-1)}+2) = \varphi(k^{(m-1)}+3) = \cdots = \varphi(k^{(m)}); \tag{87} \]
+en remarquant que $hy^{(m)}$ conserve la même valeur pour toutes les valeurs de $m$, de $k^{(m-1)}+1$ à $k^{(m)}$. Les inégalités (81) donneront donc
+\[ \varphi(k^{(m-1)}+1)+\varphi(k^{(m-1)}+2)+\varphi(k^{(m-1)}+3)+\cdots+\varphi(k^{(m)}) \]
+\[ > \left(f(\rho_m)+\rho_m \cdot \frac{m^{(m)}}{\mu^{(m)}}\right) \cdot (k^{(m)}-k^{(m-1)}) \]
+\[ > n^{(m)}\mu^{(m)}\left(f(\rho_m)+\rho_m \cdot \frac{m^{(m)}}{\mu^{(m)}}\right), \]
+
+donc on aura en vertu de l'équation précédente,
+\[ \varphi(k^{(m-1)}+1)+\varphi(k^{(m-1)}+2)+\varphi(k^{(m-1)}+3)+\cdots+\varphi(k^{(m)}) \]
+\[ > \begin{cases} \tfrac{1}{2}n^{(m)}m^{(m)}(2n-k^{(m)}-k^{(m-1)}-1) + \tfrac{1}{2}n^{(m)}(\mu^{(m)}-1) + C_m \\ \quad + f(n-k^{(m-1)}-1)+f(n-k^{(m-1)}-2)+\cdots+f(n-k^{(m)}). \end{cases} \]
+
+En faisant dans cette formule successivement $m = 1, 2, 3, \ldots$ et puis ajoutant les équations qu'on obtiendra, il viendra
+\origpage{216}
+\[ \varphi(1) + \varphi(2) + \varphi(3) + \cdots + \varphi(n) \]
+\[ > \begin{cases}
+f(n-1)+f(n-2)+f(n-3)+\cdots+f(1)+f(0) \\
+\quad + \tfrac{1}{2}n'm'(2n-k'-1) + \tfrac{1}{2}n'(\mu'-1) + C_1 \\
+\quad + \tfrac{1}{2}n''m''(2n-k''-k'-1) + \tfrac{1}{2}n''(\mu''-1) + C_2 \\
+\quad + \tfrac{1}{2}n'''m'''(2n-k'''-k''-1) + \tfrac{1}{2}n'''(\mu'''-1) + C_3 \\
+\quad + \cdots \\
+\quad + \tfrac{1}{2}n^{(\varepsilon)}m^{(\varepsilon)}(2n-k^{(\varepsilon)}-k^{(\varepsilon-1)}-1) + \tfrac{1}{2}n^{(\varepsilon)}(\mu^{(\varepsilon)}-1) + C_\varepsilon.
+\end{cases} \]
+
+En substituant les valeurs des quantités $k', k'', k''', \ldots$ savoir,
+\[ k' = n'\mu'; \quad k'' = n'\mu' + n''\mu''; \quad k''' = n'\mu' + n''\mu'' + n'''\mu''', \quad \text{etc.,} \]
+et pour $n$ sa valeur (55)
+\[ n = n'\mu' + n''\mu'' + \cdots + n^{(\varepsilon)}\mu^{(\varepsilon)}, \]
+on obtiendra
+\[ h\theta y' + h\theta y'' + h\theta y''' + \cdots + h\theta y^{(n)} - (hq_0+hq_1+hq_2+\cdots+hq_{n-1}) \]
+\[ > \gamma' + C_1 + C_2 + C_3 + \cdots + C_\varepsilon, \]
+où l'on a fait pour abréger
+\origpage{217}
+\[ \gamma' = n'm'\left(\frac{n'\mu'-1}{2}+n''\mu''+n'''\mu'''+\cdots+n^{(\varepsilon)}\mu^{(\varepsilon)}\right)+n' \cdot \frac{\mu'-1}{2} \]
+\[ + n''m''\left(\frac{n''\mu''-1}{2}+n'''\mu'''+n^{\text{iv}}\mu^{\text{iv}}+\cdots+n^{(\varepsilon)}\mu^{(\varepsilon)}\right)+n'' \cdot \frac{\mu''-1}{2} \]
+\[ + \cdots \]
+\[ + n^{(\varepsilon-1)}m^{(\varepsilon-1)}\left(\frac{n^{(\varepsilon-1)}\mu^{(\varepsilon-1)}-1}{2}+n^{(\varepsilon)}\mu^{(\varepsilon)}\right)+n^{(\varepsilon-1)} \cdot \left(\frac{\mu^{(\varepsilon-1)}-1}{2}\right) \]
+\[ + n^{(\varepsilon)}m^{(\varepsilon)}\,\frac{n^{(\varepsilon)}\mu^{(\varepsilon)}-1}{2}+n^{(\varepsilon)}\,\frac{\mu^{(\varepsilon)}-1}{2}. \tag{88} \]
+
+De cette formule combinée avec l'équation (80) on déduira
+\[ \mu - \alpha > \gamma' - n + 1 - A + C_1 + C_2 + \cdots + C_\varepsilon. \tag{89} \]
+
+Or, je remarque que le nombre $\gamma' - n + 1$ est précisément égal à celui que nous avons désigné précédemment par $\gamma$, équation (62), donc
+\[ \mu - \alpha > \gamma - A + C_1 + C_2 + \cdots + C_\varepsilon. \tag{90} \]
+
+Cette formule nous montre que $\mu-\alpha$ ne peut être moindre que $\gamma-A$; or, je dis qu'il peut être précisément égal à ce nombre.
+
+En effet c'est ce qui arrive lorsqu'on a
+\[ \varphi(k^{(m)}) = f(\rho_m) + \rho_m\,\frac{m^{(m)}}{\mu^{(m)}}, \tag{91} \]
+et
+\[ C_1 + C_2 + C_3 + \cdots + C_\varepsilon = 0; \]
+or on peut démontrer de la manière suivante que ces équations pourront avoir lieu.
+
+En se rappelant la valeur de $C_m$, il est clair que l'équation (91) entraîne la suivante:
+\[ \varepsilon_\beta^{(m)} = 0 \quad (\text{depuis } \beta = k^{(m-1)}, \text{ jusqu'à } \beta = k^{(m)}-1); \]
+donc en vertu des équations (83) et (84)
+\[ f(n-\beta-1) = f(\rho_m) - (n-\beta-1-\rho_m)\,\frac{m^{(m)}}{\mu^{(m)}} - A_\beta^{(m)}, \]
+\[ (\text{depuis } \beta = k^{(m-1)}, \text{ jusqu'à } \beta = k^{(m)}-1). \tag{92} \]
+
+Il s'agit maintenant de trouver la valeur de $f(\rho_m)$.
+Or l'équation (91) donne
+\[ f(\rho_m) + \rho_m\,\frac{m^{(m)}}{\mu^{(m)}} > f(\rho_\alpha) + \rho_\alpha\,\frac{m^{(m)}}{\mu^{(m)}} \tag{93} \]
+pour toutes les valeurs de $m$ et de $\alpha$.
+\origpage{218}
+De là on tire, en désignant pour abréger,
+\[ \frac{m^{(\alpha)}}{\mu^{(\alpha)}} \text{ par } \sigma_\alpha, \tag{94} \]
+\[ f(\rho_m) - f(\rho_\alpha) > (\rho_\alpha - \rho_m)\sigma_m. \tag{95} \]
+
+En faisant $m = \alpha-1$, et ensuite changeant $\alpha$ en $m$, de même que $\alpha$ en $m-1$, on obtiendra les deux formules
+\[ \begin{cases} f(\rho_m) - f(\rho_{m-1}) < (\rho_{m-1}-\rho_m) \cdot \sigma_{m-1}, \\ f(\rho_m) - f(\rho_{m-1}) > (\rho_{m-1}-\rho_m) \cdot \sigma_m. \end{cases} \tag{96} \]
+
+Par là on voit que la différence entre la plus grande et la plus petite valeur de $f(\rho_m)-f(\rho_{m-1})$ ne peut surpasser $(\rho_{m-1}-\rho_m)(\sigma_{m-1}-\sigma_m)$. Par conséquent on doit avoir
+\[ f(\rho_m)-f(\rho_{m-1}) = (\rho_{m-1}-\rho_m)\sigma_m+\theta_{m-1}(\rho_{m-1}-\rho_m)(\sigma_{m-1}-\sigma_m), \]
+où $\theta_{m-1}$ est une quantité positive qui ne peut surpasser l'unité.
+
+Cette équation peut s'écrire comme il suit:
+\[ f(\rho_m)-f(\rho_{m-1}) = (\rho_{m-1}-\rho_m)\left(\theta_{m-1}\sigma_{m-1}+(1-\theta_{m-1})\sigma_m\right). \tag{97} \]
+
+De là on tire sans peine
+\[ f(\rho_m) = \begin{cases}
+f(\rho_1)+(\rho_1-\rho_2)\left(\theta_1\sigma_1+(1-\theta_1)\sigma_2\right) \\
+\quad + (\rho_2-\rho_3)\left(\theta_2\sigma_2+(1-\theta_2)\sigma_3\right)+\text{etc.} \\
+\quad \ldots + (\rho_{m-1}-\rho_m)\left(\theta_{m-1}\sigma_{m-1}+(1-\theta_{m-1})\sigma_m\right).
+\end{cases} \tag{98} \]
+
+Si $f(\rho_m)$ a cette valeur, il n'est pas difficile de voir que la condition
+\[ f(\rho_m) - f(\rho_\alpha) > (\rho_\alpha-\rho_m)\sigma_m \]
+\origpage{219}
+est satisfaite pour toute valeur de $\alpha$ et $m$, quelle que soit la valeur de $f(\rho_1)$ et celles des quantités $\theta_1, \theta_2, \ldots \theta_{m-1}$, pourvu qu'elles ne surpassent pas l'unité.
+
+Connaissant ainsi la valeur de $f(\rho_m)$, on aura celle de $f(n-\beta-1)$ par l'équation (92).
+
+Après avoir de cette manière déterminé les valeurs de toutes les quantités $f(0), f(1), f(2), \ldots f(n-1)$, voyons à présent si elles satisfont en effet à l'équation (91)
+\[ \varphi(k^{(m)}) = f(\rho_m) + \rho_m\,\frac{m^{(m)}}{\mu^{(m)}} = f(\rho_m) + \rho_m \sigma_m. \]
+
+Pour que cette équation ait lieu, il est nécessaire et il suffit que l'équation
+\[ f(\rho_m) + \rho_m\sigma_m > f(\alpha) + \alpha\sigma_m \tag{99} \]
+soit satisfaite pour toutes les valeurs de $\alpha$ et $m$. Il faut donc que
+\[ P_m^{(\delta)} = f(\rho_m) - f(\alpha_\delta) + (\rho_m-\alpha_\delta)\sigma_m > 0 \tag{100} \]
+soit $\alpha_\delta = n-\beta-1$, où $\beta$ a une valeur quelconque comprise entre $k^{(\delta-1)}$ et $k^{(\delta)}-1$ inclusivement; l'équation (92) donnera
+\[ f(\alpha_\delta) = f(\rho_\delta) - (\alpha_\delta-\rho_\delta)\sigma_\delta - A_\beta^{(\delta)}; \]
+et par conséquent
+\[ P_m^{(\delta)} = f(\rho_m)-f(\rho_\delta)+(\rho_m-\alpha_\delta)\sigma_m+(\alpha_\delta-\rho_\delta)\sigma_\delta+A_\beta^{(\delta)}. \tag{101} \]
+
+En mettant $m+1$ au lieu de $m$, il viendra
+\[ P_{m+1}^{(\delta)} - P_m^{(\delta)} = f(\rho_{m+1})-f(\rho_m)+\rho_{m+1}\sigma_{m+1}-\rho_m\sigma_m+\alpha_\delta(\sigma_m-\sigma_{m+1}). \]
+\origpage{220}
+On a par l'équation (97)
+\[ f(\rho_{m+1}) - f(\rho_m) = (\rho_m-\rho_{m+1})\left(\theta_m\sigma_m+(1-\theta_m)\sigma_{m+1}\right); \]
+donc en substituant et réduisant
+\[ P_{m+1}^{(\delta)} - P_m^{(\delta)} = \left\{\alpha_\delta - \left(\rho_m(1-\theta_m)+\rho_{m+1}\theta_m\right)\right\} \cdot (\sigma_m-\sigma_{m+1}); \tag{102} \]
+
+or, en remarquant que $\alpha_\delta$ est compris entre $n-1-k^{(\delta-1)}$ et $n-k^{(\delta)}$, que $\rho_m(1-\theta_m)+\rho_{m+1}\theta_m$ l'est entre $\rho_m$ et $\rho_{m+1}$, c'est-à-dire entre $n-1-k^{(m)}$ et $n-1-k^{(m+1)}$, il est clair que le second membre de cette équation sera toujours positif si $m \geqq \delta+1$, et toujours négatif si $m \leqq \delta-1$.
+
+De là il suit: $1^\circ$ que $P_{m+1+\delta} > 0$ si $P_{\delta+1} > 0$; $2^\circ$ que $P_{\delta-1-m} > 0$ si $P_{\delta-1} > 0$. Donc pour que $P_m^{(\delta)}$ soit positif pour toutes les valeurs de $m$, il suffit qu'il le soit pour $m = \delta+1, \delta, \delta-1$.
+
+Or, en faisant dans l'équation (102) $m = \delta$, $m = \delta-1$, il viendra
+\[ P_{\delta+1}^{(\delta)} - P_\delta^{(\delta)} = \left\{\alpha_\delta - \left(\rho_\delta(1-\theta_\delta)+\rho_{\delta+1}\theta_\delta\right)\right\} \cdot (\sigma_\delta-\sigma_{\delta+1}), \]
+\[ P_\delta^{(\delta)} - P_{\delta-1}^{(\delta)} = \left\{\alpha_\delta - \left(\rho_{\delta-1}(1-\theta_{\delta-1})+\rho_\delta\theta_{\delta-1}\right)\right\}(\sigma_{\delta-1}-\sigma_\delta). \]
+
+Mais l'équation (101) donne pour $m = \delta$,
+\[ P_\delta^{(\delta)} = A_\beta^{(\delta)}, \]
+donc $P_\delta^{(\delta)}$ est toujours positif, et en substituant cette valeur, les deux équations précédentes donneront, en mettant $\delta+1$ au lieu de $\delta$ dans la dernière,
+\[ P_{\delta+1}^{(\delta)} = \left\{\alpha_\delta - \rho_\delta + \theta_\delta(\rho_\delta-\rho_{\delta+1})\right\} \cdot (\sigma_\delta-\sigma_{\delta+1}) + A_\beta^{(\delta)}, \]
+\[ P_\delta^{(\delta+1)} = \left\{\rho_\delta - \alpha_{\delta+1} - \theta_\delta(\rho_\delta-\rho_{\delta+1})\right\} \cdot (\sigma_\delta-\sigma_{\delta+1}) + A_\beta^{(\delta+1)}. \]
+\origpage{221}
+De ces équations on tire (en remarquant qu'on doit avoir pour $P_{\delta+1}^{(\delta)}$ et $P_\delta^{(\delta+1)}$ des valeurs positives),
+\[ \begin{cases}
+\theta_\delta > \dfrac{\rho_\delta-\alpha_\delta}{\rho_\delta-\rho_{\delta+1}} - \dfrac{A_\beta^{(\delta)}}{(\rho_\delta-\rho_{\delta+1})(\sigma_\delta-\sigma_{\delta+1})} = B_\delta, \\
+\theta_\delta < \dfrac{\rho_\delta-\alpha_{\delta+1}}{\rho_\delta-\rho_{\delta+1}} + \dfrac{A_\beta^{(\delta+1)}}{(\rho_\delta-\rho_{\delta+1})(\sigma_\delta-\sigma_{\delta+1})} = C_\delta,
+\end{cases} \tag{103} \]
+
+Maintenant $\theta_\delta$ est compris entre 0 et 1; par conséquent il faut que $B_\delta$ ne surpasse pas l'unité, et que $C_\delta$ soit positif. Or c'est ce qui a toujours lieu. En effet on trouve
+\[ 1 - B_\delta = \frac{\alpha_\delta - \rho_{\delta+1}}{\rho_\delta-\rho_{\delta+1}} + \frac{A_\beta^{(\delta)}}{(\rho_\delta-\rho_{\delta+1})(\sigma_\delta-\sigma_{\delta+1})}; \]
+
+donc $1-B_\delta$ est toujours positif en remarquant que $\alpha_\delta > \rho_{\delta+1}$: par conséquent $B_\delta$ ne peut surpasser l'unité. De même $\rho_\delta > \alpha_{\delta+1}$; donc $C_\delta$ est toujours positif.
+
+La condition
+\[ P_m^{(\delta)} > 0 \]
+est donc satisfaite pour toute valeur de $\delta$ et $m$; d'où résulte l'équation
+\[ \varphi(k^{(\delta)}) = f(\rho_\delta) + \rho_\delta\,\frac{m^{(\delta)}}{\mu^{(\delta)}}. \]
+
+On aura donc, comme on vient de le dire,
+\[ \mu - \alpha = \gamma - A, \tag{104} \]
+qui est la moindre valeur que peut avoir $\mu-\alpha$.
+
+Si l'on suppose que tous les coefficients dans les fonctions $q_0$,
+\origpage{222}
+$q_1, \ldots q_{n-1}$, soient des quantités indéterminées, alors $F_0 x = 1$, et par suite $A = 0$; donc dans ce cas
+\[ \mu - \alpha = \gamma. \tag{105} \]
+
+C'est ce qui a lieu généralement, car c'est seulement pour des fonctions d'une forme particulière que le nombre $A$ a une valeur plus grande que zéro.
+
+Dans ce qui précède nous avons supposé que tous les coefficients dans $q_0, q_1, \ldots q_{n-1}$, étaient indéterminés, excepté ceux qui sont déterminés par la condition que $r$ ait pour diviseur la fonction $F_0 x$. Dans ce cas on a toujours, comme nous l'avons supposé plus haut (87),
+\[ \varphi(k^{(m-1)}+1) = \varphi(k^{(m-1)}+2) = \cdots = \varphi(k^{(m)}) \]
+\[ = f(\rho_m) + \rho_m \cdot \sigma_m, \]
+et par suite
+\[ hr = \begin{cases} n'\mu'\left(f(\rho_1)+\rho_1\sigma_1\right) + n''\mu''\left(f(\rho_2)+\rho_2\sigma_2\right) + \cdots \\ \quad + n^{(\varepsilon)}\mu^{(\varepsilon)}\left(f(\rho_\varepsilon)+\rho_\varepsilon\sigma_\varepsilon\right). \end{cases} \tag{106} \]
+
+C'est la valeur de $hr$ en général. Supposons maintenant que les quantités $a, a', a'', \ldots$ ne soient pas toutes indéterminées, mais qu'un certain nombre d'elles soient déterminées par la condition que la valeur de $hr$ soit de $A'$ unités moindre que la valeur précédente. En général, un nombre $A'$ des quantités $a, a', a'', \ldots$ sera déterminé par cette condition, et alors $\mu-\alpha$ ne change pas de valeur; mais il est possible que, pour les fonctions d'une forme particulière, la condition dont il s'agit n'entraîne qu'un nombre moindre d'équations différentes entre $a, a', a'', \ldots$. Soit donc ce nombre $A'-B$, la valeur de $\mu-\alpha$ deviendra
+\[ (\mu-A') - (\alpha-(A'-B)) - A, \]
+\origpage{223}
+c'est-à-dire
+\[ \mu - \alpha = \gamma - A - B. \tag{107} \]
+
+\subsection*{[8]}
+
+Pour donner un exemple de l'application de la théorie précédente, supposons que $n = 13$, en sorte que $y$ soit déterminé par l'équation
+\[ 0 = \begin{cases} p_0 + p_1 y + p_2 y^{2} + p_3 y^{3} + p_4 y^{4} + p_5 y^{5} + p_6 y^{6} \\ \quad + p_7 y^{7} + p_8 y^{8} + p_9 y^{9} + p_{10} y^{10} + p_{11} y^{11} + p_{12} y^{12} \\ \quad + y^{13}, \end{cases} \]
+et
+\[ \theta y = q_0 + q_1 y + q_2 y^{2} + \cdots + q_{12} y^{12}. \]
+
+Supposons que les degrés des fonctions entières
+\[ p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9, p_{10}, p_{11}, p_{12}, \]
+soient respectivement
+\[ 2, 3, 2, 3, 4, 5, 3, 4, 2, 3, 4, 1, 1. \]
+
+D'abord, il faut chercher les valeurs de $hy', hy'', \ldots hy^{(13)}$. Or, pour cela, il suffit de faire dans l'équation proposée,
+\[ y = A \cdot x^{m}, \]
+et ensuite déterminer $A$ et $m$ de manière que l'équation soit satisfaite pour $x = \alpha$.
+
+On obtiendra l'équation
+\[ 0 = \begin{cases} A^{13} \cdot x^{13m} + B_{12} \cdot A^{12} \cdot x^{12m+1} + B_{11} \cdot A^{11} \cdot x^{11m+1} + B_{10} \cdot A^{10} \cdot x^{10m+4} \\ \quad + \cdots + B_2 A^{2} x^{2m+2} + B_1 A x^{m+5} + B_0 x^{2}. \end{cases} \]
+
+Pour y satisfaire il faut qu'un certain nombre des exposants
+\origpage{224}
+soient égaux et en même temps plus grands que les autres, et que la somme des termes correspondants soit égale à zéro.
+
+Or on trouve qu'en faisant
+
+$1^\circ$ $13m = 10m+4$ d'où $m = \dfrac{4}{3}$, les deux exposants $13m$, $10m+4$, seront les plus grands;
+
+$2^\circ$ $10m+4 = 5m+5$ d'où $m = \dfrac{1}{5}$, $10m+4$, $5m+5$;
+
+$3^\circ$ $5m+5 = m+3$ d'où $m = -\dfrac{1}{2}$, $5m+5$, $m+3$,
+
+$4^\circ$ $m+3 = 2$ d'où $m = -1$, $m+3$, 2.
+
+On a donc
+\[ y = A x^{\frac{4}{3}}, \ldots A^{13} + B_{10}A^{10} = 0, \]
+donc $A = -\sqrt[3]{B_{10}}$ et $hy' = hy'' = hy''' = \dfrac{m'}{\mu'} = \dfrac{4}{3}$, $n' = 1$;
+\[ y = A x^{\frac{1}{5}}, \ldots B_{10}A^{10} + B_5 A^{5} = 0, \]
+donc $A = -\sqrt[5]{\dfrac{B_5}{B_{10}}}$ et $hy^{\text{iv}} = hy^{\text{v}} = hy^{\text{vi}} = hy^{\text{vii}} = hy^{\text{viii}} = \dfrac{m''}{\mu''} = \dfrac{1}{5}$, $n'' = 1$;
+\[ y = A x^{-\frac{1}{2}}, \ldots B_5 A^{5} + B_1 A = 0, \]
+donc $A = \sqrt[4]{-\dfrac{B_1}{B_5}}$ et $hy^{\text{ix}} = hy^{\text{x}} = hy^{\text{xi}} = hy^{\text{xii}} = \dfrac{m'''}{\mu'''} = \dfrac{-1}{2}$,
+\[ n''' = 2; \]
+\[ y = A x^{-1}, \ldots B_1 A + B_0 = 0, \]
+donc $A = -\dfrac{B_0}{B_1}$ et $hy^{\text{xiii}} = \dfrac{m^{\text{iv}}}{\mu^{\text{iv}}} = -1$, $n^{\text{iv}} = 1$.
+
+Ayant ainsi trouvé les valeurs des nombres $m', \mu', n', m'', \mu'', n'', m''', \mu''', n''', m^{\text{iv}}, \mu^{\text{iv}}, n^{\text{iv}}$, on aura
+\[ k' = n'\mu' = 3, \quad k'' = n'\mu'+n''\mu'' = 8, \quad k''' = n'\mu'+n''\mu''+n'''\mu''' = 12, \]
+\[ k^{\text{iv}} = n'\mu'+n''\mu''+n'''\mu'''+n^{\text{iv}}\mu^{\text{iv}} = 13 = n. \]
+\origpage{225}
+Maintenant, le nombre $\rho_1$ doit être compris entre $n-1$ et $n-k'$, $\rho_2$ entre $n-k'-1$ et $n-k''$, etc.; donc on trouvera pour ces quantités, les valeurs suivantes:
+\[ \rho_1 = 12, 11, 10, \quad \rho_2 = 9, 8, 7, 6, 5, \quad \rho_3 = 4, 3, 2, 1, \quad \rho_4 = 0. \]
+
+Connaissant $\rho_1, \rho_2, \rho_3, \rho_4$, on aura $A'_\beta, A''_\beta, A'''_\beta, A^{\text{iv}}_\beta$, par l'équation (92); ensuite $\theta_1, \theta_2, \theta_3, \theta_4$, par les équations (103); $f(\rho_2), f(\rho_3), f(\rho_4)$, par l'équation (98); et enfin $f(0), f(1), f(2), \ldots f(12)$, par l'équation (92).
+
+La valeur de $\gamma$, qui est toujours la même, deviendra par l'équation (88) et la relation $\gamma = \gamma'-n+1$,
+\[ \gamma = \begin{cases}
+1 \cdot 4 \cdot \left(\dfrac{3-1}{2}+5+4+1\right) + 1 \cdot \dfrac{3-1}{2}, \\
+\quad + 1 \cdot 1 \cdot \left(\dfrac{5-1}{2}+4+1\right) + 1 \cdot \dfrac{5-1}{2}, \\
+\quad + 2 \cdot (-1) \cdot \left(\dfrac{4-1}{2}+1\right) + 2 \cdot \dfrac{2-1}{2}, \\
+\quad + 1 \cdot (-1) \cdot \left(\dfrac{1-1}{2}\right) + 1 \cdot \dfrac{1-1}{2} - 13 + 1,
+\end{cases} \]
+c'est-à-dire en réduisant
+\[ \gamma = 38. \]
+
+Pour pouvoir déterminer numériquement les valeurs de $\alpha$ et de $\mu$, supposons, par exemple,
+\[ \rho_1 = 11, \quad \rho_2 = 6, \quad \rho_3 = 4, \quad \rho_4 = 0. \]
+
+Alors l'équation (92) donnera les suivantes:
+\origpage{226}
+\[ f(12) = f(11) - \tfrac{4}{5} - A'_0, \quad \text{donc } A'_0 = \tfrac{3}{5}, \quad f(12) = f(11) - 2 \]
+\[ f(10) = f(11) + \tfrac{4}{5} - A'_2, \quad \text{donc } A'_2 = \tfrac{1}{5}, \quad f(10) = f(11) + 1 \]
+\[ f(9) = f(6) - \tfrac{3}{5} - A''_3, \quad \text{donc } A''_3 = \tfrac{3}{5}, \quad f(9) = f(6) - 1 \]
+\[ f(8) = f(6) - \tfrac{2}{5} - A''_4, \quad \text{donc } A''_4 = \tfrac{5}{5}, \quad f(8) = f(6) - 1 \]
+\[ f(7) = f(6) - \tfrac{1}{5} - A''_5, \quad \text{donc } A''_5 = \tfrac{4}{5}, \quad f(7) = f(6) - 1 \]
+\[ f(5) = f(6) + \tfrac{1}{5} - A''_7, \quad \text{donc } A''_7 = \tfrac{1}{5}, \quad f(5) = f(6) \]
+\[ f(3) = f(4) - \tfrac{1}{2} - A'''_9, \quad \text{donc } A'''_9 = \tfrac{1}{2}, \quad f(3) = f(4) - 1 \]
+\[ f(2) = f(4) - 1 - A'''_{10}, \quad \text{donc } A'''_{10} = 0, \quad f(2) = f(4) - 1 \]
+\[ f(1) = f(4) - \tfrac{3}{2} - A'''_{11}, \quad \text{donc } A'''_{11} = \tfrac{1}{2}, \quad f(1) = f(4) - 2. \]
+
+Pour trouver maintenant $f(0), f(4), f(6), f(11)$, il faut chercher les limites de $\theta_1, \theta_2, \theta_3, \theta_4$.
+
+Or les équations (103), qui déterminent ces limites, donnent
+\[ \theta_1 > \frac{11-\alpha_1}{5} - \frac{3A'_\beta}{17}, \quad \text{d'où } \theta_1 > -\tfrac{1}{5} - \tfrac{2}{17}; \quad 0; \quad \tfrac{1}{5} - \tfrac{1}{17}, \]
+\[ \theta_1 < \frac{11-\alpha_2}{5} - \frac{3A'_\beta}{17}, \quad \text{d'où } \theta_1 < \tfrac{2}{5} - \tfrac{6}{5 \cdot 17}; \quad \tfrac{3}{5} - \tfrac{9}{5 \cdot 17}; \]
+\[ \tfrac{4}{5} - \tfrac{12}{5 \cdot 17}; \quad 1; \quad \tfrac{6}{5} - \tfrac{3}{5 \cdot 17}. \]
+
+Il suit de là que
+\[ \theta_1 > \frac{12}{85}, \quad \theta_1 < \frac{28}{85}. \]
+
+On trouve de la même manière
+\[ \theta_2 > \frac{1}{2}, \quad \theta_2 < 1, \quad \theta_3 > 0, \quad \theta_3 < 1. \]
+
+Maintenant l'équation (97) donne
+\[ f(\rho_m) - f(\rho_{m-1}) > (\rho_{m-1}-\rho_m)\left(\theta''_{m-1}\sigma_{m-1}+(1-\theta''_{m-1})\sigma_m\right) \]
+\[ f(\rho_m) - f(\rho_{m-1}) < (\rho_{m-1}-\rho_m)\left(\theta'_{m-1}\sigma_{m-1}+(1-\theta'_{m-1})\sigma_m\right) \]
+où $\theta''_{m-1}$ est la plus petite et $\theta'_{m-1}$ la plus grande valeur de $\theta_{m-1}$; donc on trouvera, en faisant,
+\[ m = 2, 3, 4, \]
+\origpage{227}
+\[ f(6) - f(11) > 5 \cdot \left(\tfrac{12}{85} \cdot \tfrac{4}{3} + \left(1-\tfrac{12}{85}\right) \cdot \tfrac{1}{5}\right); \quad \left(= 1 + \tfrac{68}{85}\right) \]
+\[ f(6) - f(11) < 5 \cdot \left(\tfrac{28}{85} \cdot \tfrac{4}{5} + \left(1-\tfrac{28}{85}\right) \cdot \tfrac{1}{5}\right); \quad \left(= 2 + \tfrac{211}{255}\right) \]
+\[ f(4) - f(6) > 2 \cdot \left(\tfrac{1}{2} \cdot \tfrac{1}{5} - \left(1-\tfrac{1}{2}\right) \cdot \tfrac{1}{2}\right); \quad \left(= -\tfrac{5}{10}\right) \]
+\[ f(4) - f(6) < 2 \cdot \left(1 \cdot \tfrac{1}{5} - (1-1) \cdot \tfrac{1}{2}\right); \quad \left(= \tfrac{2}{5}\right) \]
+\[ f(0) - f(4) > 4 \cdot \left(0 \cdot \left(-\tfrac{1}{2}\right) + (1-0) \cdot (-1)\right); \quad (= -4) \]
+\[ f(0) - f(4) < 4 \cdot \left(1 \cdot \left(-\tfrac{1}{2}\right) + (1-1) \cdot (-1)\right); \quad (= -2); \]
+
+donc on aura pour $f(6)-f(11)$, $f(4)-f(6)$, $f(0)-f(4)$, les valeurs suivantes:
+\[ f(6)-f(11) = 2, \quad f(4)-f(6) = 0, \quad f(0)-f(4) = -4, -3, -2; \]
+d'où
+\[ f(6) = f(11)+2, \quad f(4) = f(11)+2, \quad f(0) = f(11)-2, \]
+\[ f(11)-1, \quad f(11) \]
+\[ f(12) = f(11)-2, \quad f(10) = f(11)+1, \quad f(9) = f(11)+1, \]
+\[ f(8) = f(11)+1 \]
+\[ f(7) = f(11)+1, \quad f(5) = f(11)+2, \quad f(3) = f(11)+1, \]
+\[ f(2) = f(11)+1 \]
+\[ f(1) = f(11). \]
+
+En exprimant donc toutes ces quantités par $f(12)$, on voit que les fonctions $q_{12}, q_{11}, q_{10}, \ldots q_0$, sont respectivement des degrés suivants
+\[ \begin{array}{ccccccccc} (12) & (11) & (10) & (9) & (8) & (7) & (6) & (5) & (4) \\ \theta, & \theta+2, & \theta+3, & \theta+3, & \theta+3, & \theta+3, & \theta+4, & \theta+4, & \theta+4, \end{array} \]
+\[ \begin{array}{cccc} (3) & (2) & (1) & (0) \\ \theta+3, & \theta+3, & \theta+2, & (\theta+2, \theta+1, \theta), \end{array} \]
+où $\theta$ est le degré de la fonction $q_{12}$. La fonction $q_0$ peut être de trois degrés différents $\theta, \theta+1, \theta+2$.
+\origpage{228}
+De là suit que
+\[ \alpha = f(0)+f(1)+\cdots+f(12)+12 = 13\theta+48, \quad 13\theta+47, \quad 13\theta+46, \]
+et
+\[ \mu = n'\mu'\left(f(\rho_1)+\rho_1\,\frac{m'}{\mu'}\right) + n''\mu''\left(f(\rho_2)+\rho_2\,\frac{m''}{\mu''}\right) \]
+\[ + n'''\mu'''\left(f(\rho_3)+\rho_3\,\frac{m'''}{\mu'''}\right) + n^{\text{iv}}\mu^{\text{iv}}\left(f(\rho_4)+\rho_4\,\frac{m^{\text{iv}}}{\mu^{\text{iv}}}\right) \]
+\[ = 3\left(f(11)+11 \cdot \tfrac{4}{3}\right) + 5 \cdot \left(f(6)+6 \cdot \tfrac{1}{5}\right) + 4\left(f(4)-4 \cdot \tfrac{1}{2}\right) + 1 \cdot \left(f(0)-0\right); \]
+c'est-à-dire,
+\[ \mu = 13\theta+86, \quad 13\theta+85, \quad 13\theta+84. \]
+
+La valeur de $\mu-\alpha$ deviendra donc
+\[ \mu-\alpha = 38, \]
+comme nous avons trouvé plus haut pour la valeur de $\gamma$.
+
+\subsection*{[9]}
+
+Par les équations (92) et (98) établies précédemment, on aura les valeurs de toutes les quantités $f(0), f(1), f(2) \ldots f(n-1)$, exprimées de la manière suivante:
+\[ f(m) = f(\rho_1) + M_m, \tag{108} \]
+où $M_m$ est indépendant de $f(\rho_1)$. Cette dernière quantité est entièrement arbitraire. Le nombre des coefficients dans $q_0, q_1, q_2 \ldots q_{n-1}$, sera donc égal à
+\[ nf(\rho_1) + M_0+M_1+M_2+\cdots M_{n-1}; \tag{109} \]
+mais $\alpha$ ou le nombre des quantités indéterminées $a, a', a'', \ldots$,
+\origpage{229}
+est égal au nombre des coefficients déjà mentionnés diminué d'un certain nombre. On aura donc
+\[ \alpha = nf(\rho_1) + M, \tag{110} \]
+où $M$ est indépendant de $f(\rho_1)$.
+
+De là il suit qu'on peut prendre $\alpha$ aussi grand qu'on voudra, le nombre $\mu-\alpha$ restant toujours le même.
+
+L'équation (74) nous met donc en état d'exprimer une somme d'un nombre quelconque de fonctions données, de la forme $\psi(x)$, par une somme d'un nombre déterminé de fonctions. Le dernier nombre peut toujours être supposé égal à $\gamma$, qui, en général, sera sa plus petite valeur.
+
+De la formule (74) on peut en déduire une autre qui est plus générale encore, et dont elle est un cas particulier.
+
+En effet, soient
+\[ \psi_1(x_1)+\psi_2(x_2)+\cdots+\psi_\alpha(x_\alpha) = v - \left[\psi_{\alpha+1}(x_{\alpha+1})+\psi_{\alpha+2}(x_{\alpha+2})+\cdots+\psi_\mu(x_\mu)\right], \tag{111} \]
+\[ \psi'_1(x'_1) + \psi'_2(x'_2) + \cdots + \psi'_{\alpha'}(x'_{\alpha'}) = \]
+\[ v' - \left[\psi'_{\alpha'+1}(x'_{\alpha'+1})+\psi'_{\alpha'+2}(x'_{\alpha'+2})+\cdots+\psi'_{\mu'}(x'_{\mu'})\right], \]
+où $\psi'_1, \psi'_2, \ldots$ sont des fonctions semblables à $\psi_1, \psi_2, \ldots$
+
+Supposons, ce qui est permis, que
+\[ x'_{\alpha'} = x_\mu, \quad x'_{\alpha'-1} = x_{\mu-1}, \quad x'_{\alpha'-2} = x_{\mu-2}, \ldots x'_{\alpha'-\mu+\alpha+1} = x_{\alpha+1}, \]
+et
+\[ \psi'_{\alpha'}(x'_{\alpha'}) = \psi_\mu(x_\mu), \quad \psi'_{\alpha'-1}(x'_{\alpha'-1}) = \psi_{\mu-1}(x_{\mu-1}); \ldots \]
+\[ \psi'_{\alpha'-\mu+\alpha+1}(x'_{\alpha'-\mu+\alpha+1}) = \psi_{\alpha+1}(x_{\alpha+1}); \]
+
+les équations précédentes donneront
+\origpage{230}
+\[ \gamma = \begin{cases}
+\psi_1(x_1)+\psi_2(x_2)+\cdots+\psi_\alpha(x_\alpha) \\
+-\psi'_1(x'_1)-\psi'_2(x'_2)-\cdots-\psi'_{\alpha'-\mu+\alpha}(x'_{\alpha'-\mu+\alpha})
+\end{cases} = \]
+\[ v-v'+\psi'_{\alpha'+1}(x'_{\alpha'+1})+\cdots+\psi'_{\mu'}(x'_{\mu'}); \]
+
+donc en mettant $V$ au lieu de $v-v'$, $\alpha'$ au lieu de $\alpha'-\mu+\alpha$,
+\[ \psi''_1, \psi''_2, \ldots \psi''_k \text{ au lieu de } \psi'_{\alpha'+1}, \psi'_{\alpha'+2}, \ldots \psi'_{\mu'}, \]
+\[ x''_1, x''_2, \ldots x''_k \text{ au lieu de } x'_{\alpha'+1}, x'_{\alpha'+2}, \ldots x'_{\mu'}, \]
+et enfin $k$ au lieu de $\mu'-\alpha'$, il viendra
+\[ \psi_1(x_1)+\psi_2(x_2)+\cdots+\psi_\alpha(x_\alpha)-\psi'_1(x'_1)-\psi'_2(x'_2)-\cdots-\psi'_{\alpha'}(x'_{\alpha'}) \]
+\[ = V + \psi''_1(x''_1) + \psi''_2(x''_2) + \psi''_3(x''_3) + \cdots + \psi''_k(x''_k). \tag{112} \]
+
+Le nombre $k$, qui est égal à $\mu'-\alpha'$, est indépendant de $\alpha$ et $\alpha'$, qui sont des nombres quelconques.
+
+Si l'on suppose
+\[ x'_1 = c_1, \quad x'_2 = c_2, \quad \ldots x'_k = c_k, \tag{113} \]
+$c_1, c_2, \ldots c_k$, étant des constantes, alors la formule (112) deviendra
+\[ \psi_1(x_1)+\psi_2(x_2)+\cdots+\psi_\alpha(x_\alpha)-\psi'_1(x'_1)-\psi'_2(x'_2)-\cdots\psi'_{\alpha'}(x'_{\alpha'}) = C+V; \tag{114} \]
+où un nombre $k$ des quantités $x_1, x_2, \ldots x_\alpha, \ldots x'_1, x'_2, \ldots x'_{\alpha'}$, sont fonctions des autres, en vertu des équations (113). Il est clair qu'on peut prendre $c_1, c_2, \ldots c_k$, de manière que $C$ deviendra égal à zéro.
+
+Supposons maintenant qu'on ait dans la formule précédente
+\origpage{231}
+\[ \begin{cases}
+x_1 = x_2 = x_3 = \cdots = x_{\varepsilon_1} = z_1 \\
+x_{\varepsilon_1+1} = x_{\varepsilon_1+2} = x_{\varepsilon_1+3} = \cdots = x_{\varepsilon_1+\varepsilon_2} = z_1, \\
+x_{\varepsilon_1+\varepsilon_2+1} = x_{\varepsilon_1+\varepsilon_2+2} = \cdots = x_{\varepsilon_1+\varepsilon_2+\varepsilon_3} = z_2, \\
+\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \\
+x_{\alpha-\varepsilon_m+1} = x_{\alpha-\varepsilon_m+2} = \cdots = x_\alpha = z_m, \\
+\psi_1 = \psi_2 = \cdots = \psi_{\varepsilon_1} = \pi_1 \\
+\psi_{\varepsilon_1+1} = \psi_{\varepsilon_1+2} = \cdots = \psi_{\varepsilon_1+\varepsilon_2} = \pi_2 \\
+\psi_{\varepsilon_1+\varepsilon_2+1} = \psi_{\varepsilon_1+\varepsilon_2+2} = \cdots = \psi_{\varepsilon_1+\varepsilon_2+\varepsilon_3} = \pi_3, \\
+\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \\
+\psi_{\alpha-\varepsilon_m} = \psi_{\alpha-\varepsilon_m} = \cdots = \psi_\alpha = \pi_m;
+\end{cases} \tag{115} \]
+
+en sorte que
+\[ \alpha = \varepsilon_1+\varepsilon_2+\cdots+\varepsilon_m. \]
+
+Supposons les mêmes choses relativement aux quantités $x'_1, x'_2, \ldots \psi'_1, \psi'_2, \ldots \alpha'$, en accentuant les lettres $\varepsilon_1, \varepsilon_2, \ldots \varepsilon_m, z_1, z_2, \ldots z_m$, $\pi_1, \pi_2, \ldots \pi_m$, et $m$. Alors la formule (114) deviendra:
+\[ V = \begin{cases} \varepsilon_1\pi_1(z_1)+\varepsilon_2\pi_2(z_2)+\varepsilon_3\pi_3(z_3)+\cdots+\varepsilon_m\pi_m(z_m)-\varepsilon'_1\pi'_1(z'_1) \\ -\varepsilon'_2\pi'_2(z'_2)\cdots-\varepsilon'_{m'}\pi'_{m'}(z'_{m'}) \end{cases} \tag{116} \]
+où un nombre $k$ des fonctions $\pi_1(z_1), \pi_2(z_2), \ldots \pi'_1(z'_1), \ldots$ dépendent des formes et des valeurs des autres.
+
+En divisant les deux membres de cette équation par un nombre quelconque $A$ et désignant les nombres rationnels
+\[ \frac{\varepsilon_1}{A}, \frac{\varepsilon_2}{A}, \ldots \frac{\varepsilon_m}{A}, -\frac{\varepsilon'_1}{A}, -\frac{\varepsilon'_2}{A}, \ldots -\frac{\varepsilon'_{m'}}{A}, \]
+par $h_1, h_2, h_3, \ldots h_\alpha$, et mettant $\psi$ au lieu de $\pi$, $x$ au lieu $z$, et $v$ au lieu de $\dfrac{V}{A}$, il viendra:
+\[ h_1\psi_1(x_1)+h_2\psi_2(x_2)+\cdots+h_\alpha\psi_\alpha(x_\alpha) = v, \tag{117} \]
+\origpage{232}
+où il est clair que $h_1, h_2, \ldots h_\alpha$, peuvent être des nombres rationnels quelconques, positifs ou négatifs.
+
+En remarquant que $k$ des quantités $x_1, x_2, \ldots x_\alpha$ sont déterminées en fonctions des autres, on peut écrire cette formule comme il suit:
+\[ h_1\psi_1(x_1)+h_2\psi_2(x_2)+\cdots+h_m\psi_m(x_m) \]
+\[ = v+k_1\psi'_1(x'_1)+k_2\psi'_2(x'_2)+\cdots+k_k\psi'_k(x'_k), \tag{118} \]
+\[ h_1, h_2, \ldots h_m, \quad k_1, k_2, \ldots k_k, \]
+étant des nombres \emph{rationnels} quelconques;
+\[ x_1, x_2, \ldots x_m, \]
+étant des quantités indéterminées en nombre arbitraire;
+\[ x'_1, x'_2, \ldots x'_k, \]
+étant des fonctions de ces quantités, qui peuvent se trouver algébriquement, et $k$ étant un nombre indépendant de $m$.
+
+Si l'on prend, par exemple,
+\[ k_1 = k_2 = \cdots = k_k = 1, \]
+on aura la formule
+\[ h_1\psi_1(x_1)+h_2\psi_2(x_2)+\cdots+h_m\psi_m(x_m) \]
+\[ = v+\psi'_1(x'_1)+\psi'_2(x'_2)+\cdots+\psi'_k(x'_k). \tag{119} \]
+
+\subsection*{[10]}
+
+Après avoir ainsi, dans ce qui précède, considéré les fonctions en général, je vais maintenant appliquer la théorie à une classe de fonctions qui méritent une attention particulière. Ce sont les fonctions de la forme
+\[ \int f(x, y)\,dx, \tag{120} \]
+où $y$ est donné par l'équation
+\[ \chi(y) = y^{n} + p_0 = 0; \tag{121} \]
+$p_0$ étant une fonction entière de $x$.
+\origpage{233}
+Quelle que soit la fonction entière $p_0$, on peut toujours supposer
+\[ -p_0 = \gamma_1^{\mu_1}\gamma_2^{\mu_2}\gamma_3^{\mu_3} \ldots \gamma_\varepsilon^{\mu_\varepsilon}, \tag{122} \]
+où $\mu_1, \mu_2, \ldots \mu_\varepsilon$, sont des nombres entiers et positifs, et $\gamma_1, \gamma_2, \ldots \gamma_\varepsilon$, des fonctions entières qui n'ont point de facteurs égaux.
+
+En substituant cette expression de $-p_0$ dans l'équation (121), on en tirera la valeur de $y$, savoir:
+\[ y = \gamma_1^{\frac{\mu_1}{n}}\gamma_2^{\frac{\mu_2}{n}}\gamma_3^{\frac{\mu_3}{n}} \ldots \gamma_\varepsilon^{\frac{\mu_\varepsilon}{n}}, \tag{123} \]
+
+Si l'on désigne cette valeur de $y$ par $R$, et par $1, \omega, \omega^{2}, \ldots \omega^{n-1}$, les $n$ racines de l'équation $\omega^{n}-1=0$, les $n$ valeurs de $y$ seront
+\[ R, \omega R, \omega^{2}R, \omega^{3}R, \ldots \omega^{n-1}R, \tag{124} \]
+on aura, par conséquent,
+\[ \gamma = \theta(y')\theta(y'') \ldots \theta(y^{(n)}) \]
+\[ = (q_0+q_1 R+q_2 R^{2}+\cdots q_{n-1}R^{n-1}) \times \]
+\[ \times (q_0+\omega q_1 R+\omega^{2}q_2 R^{2}+\cdots+\omega^{n-1}q_{n-1}R^{n-1}) \times \]
+\[ \times (q_0+\omega^{2}q_1 R+\omega^{4}q_2 R^{2}+\cdots+\omega^{2n-2}q_{n-1}R^{n-1}) \times \]
+\[ \times (q_0+\omega^{3}q_1 R+\omega^{6}q_2 R^{2}+\cdots+\omega^{3n-3}q_{n-1}R^{n-1}) \times \]
+\[ \times \cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \times \]
+\[ \times (q_0+\omega^{n-1}q_1 R+\omega^{2n-2}q_2 R^{2}+\cdots+\omega^{(n-1)^2}q_{n-1}R^{n-1}); \tag{125} \]
+
+attendu que:
+\[ \theta y' = q_0+q_1 R+q_2 R^{2}+\cdots+q_{n-1}R^{n-1}, \]
+\[ \theta y'' = q_0+\omega q_1 R+\omega^{2}q_2 R^{2}+\cdots+\omega^{n-1}q_{n-1}R^{n-1}, \]
+\[ \theta y''' = q_0+\omega^{2}q_1 R+\omega^{4}q_2 R^{2}+\cdots+\omega^{2n-2}q_{n-1}R^{n-1}, \]
+\[ \text{etc., etc.} \tag{126} \]
+\origpage{234}
+Cela posé, soit
+\[ f(x, y) = \frac{f_1(x, y)}{f_2 x \cdot \chi' y}, \tag{127} \]
+et supposons
+\[ f_1(x, y) = n f_3 x \cdot y^{n-m-1}, \]
+où $f_2 x$ et $f_3 x$ sont deux fonctions entières de $x$; alors on aura, en vertu de l'équation $\chi(y) = y^{n}+p_0$, qui donne $\chi' y = n y^{n-1}$,
+\[ f(x, y) = \frac{f_3 x}{f_2 x \cdot y^{m}}; \tag{128} \]
+d'où
+\[ \psi(x) = \int \frac{f_3 x \cdot dx}{y^{m} f_2 x}. \tag{129} \]
+
+L'une quelconque des valeurs de $y$ est de la forme $\omega^{e} \cdot R$, donc
+\[ \psi(x) = \omega^{-em} \cdot \int \frac{f_3 x \cdot dx}{R^{m} f_2 x}. \tag{130} \]
+
+En indiquant donc par $\psi(x)$ la fonction $\displaystyle\int \frac{f_3 x \cdot dx}{R^{m} f_2 x}$, toutes les fonctions $\psi_1(x), \psi_2(x) \ldots \psi_\mu(x)$, seront de la forme $\omega^{-em} \cdot \psi(x)$.
+
+Soient donc
+\[ \psi_1(x) = \omega^{-e_1 m} \cdot \psi(x), \quad \psi_2(x) = \omega^{-e_2 m} \cdot \psi(x), \ldots \psi_\mu(x) = \omega^{-e_\mu m} \cdot \psi(x), \tag{131} \]
+où
+\[ \psi(x) = \int \frac{f_3 x \cdot dx}{R^{m} f_2 x}. \]
+
+Maintenant les équations (38) donnent pour $\varphi(x)$ et $\varphi_1(x)$ les expressions suivantes:
+\[ \varphi(x) = \Sigma\,\frac{f_3 x}{f_2 x \cdot y^{m}}\log\theta y, \quad \varphi_1(x) = \frac{f_2 x}{\theta_1^{(\nu)} x} \cdot \Sigma\,\frac{f_3 x}{y^{m}}\log\theta y, \]
+\origpage{235}
+c'est-à-dire
+\[ \varphi x = \frac{f_3 x}{f_2 x} \cdot \Sigma\,\frac{\log\theta y}{y^{m}}, \quad \varphi_1 x = \frac{f_2 x \cdot f_3 x}{\theta_1^{(\nu)} x} \cdot \Sigma\,\frac{\log\theta y}{y^{m}}, \]
+où il est clair que
+\[ \Sigma\,\frac{\log\theta y}{y^{m}} = \frac{\log\theta R}{R^{m}} + \omega^{-m} \cdot \frac{\log\theta(\omega R)}{R^{m}} + \cdots + \omega^{-(n-1)m} \cdot \frac{\log\theta(\omega^{n-1}R)}{R^{m}}, \]
+ou bien
+\[ \Sigma\,\frac{\log\theta y}{y^{m}} = \frac{1}{R^{m}} \cdot \left\{ \begin{array}{l} \log\theta(R)+\omega^{-m}\log\theta(\omega R)+\omega^{-2m}\log\theta(\omega^{2}R)+ \\ \cdots+\omega^{-(n-1)m}\log\theta(\omega^{n-1}R) \end{array} \right\}. \]
+
+En faisant donc, pour abréger,
+\[ \varphi_2(x) = \frac{f_3 x}{R^{m}} \cdot \left\{ \begin{array}{l} \log\theta(R)+\omega^{-m} \cdot \log\theta(\omega R)+\omega^{-2m} \cdot \log\theta(\omega^{2}R)+ \\ \cdots+\omega^{-(n-1)m}\log\theta(\omega^{n-1}R) \end{array} \right\}, \tag{132} \]
+on aura
+\[ \varphi(x) = \frac{\varphi_2 x}{f_2 x}, \quad \varphi_1(x) = \frac{f_2 x}{\theta_1^{(\nu)} x}\,\varphi_2 x. \tag{133} \]
+
+La formule (41) deviendra donc
+\[ \omega^{-e_1 m}\psi(x_1) + \omega^{-e_2 m}\psi(x_2) + \cdots + \omega^{-e_\mu m}\psi(x_\mu) \]
+\[ = C - \Pi\,\frac{\varphi_2 x}{f_2 x} + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{F_2\beta \cdot \varphi_2\beta}{\theta_1^{(\nu)}\beta} \right\}. \tag{134} \]
+
+Les équations
+\[ \theta(y_1) = 0, \quad \theta(y_2) = 0, \ldots \theta(y_\mu) = 0, \]
+qui ont lieu entre les quantités $a, a', a'', \ldots x_1, x_2, \ldots x_\mu, y_1, y_2, \ldots y_\mu$,
+\origpage{236}
+peuvent, dans les cas que nous considérons, s'écrire comme il suit:
+\[ \theta(x_1, \omega^{e_1}R_1) = 0, \quad \theta(x_2, \omega^{e_2}R_2) = 0, \quad \theta(x_3, \omega^{e_3}R_3) = 0, \]
+\[ \ldots \theta(x_\mu, \omega^{e_\mu}R_\mu) = 0, \]
+où
+\[ \theta(x, y) = q_0 + q_1 y + q_2 y^{2} + \cdots + q_{n-1} y^{n-1}, \]
+et $R_1, R_2, R_3, \ldots R_\mu$, désignent les valeurs de $R$ pour $x = x_1, x_2, x_3, \ldots x_\mu$.
+
+Cela posé, supposons d'abord que tous les coefficients dans $q_0, q_1, \ldots q_{n-1}$, soient des quantités indéterminées, en sorte que le nombre des quantités $a, a', a'', \ldots$ serait
+\[ \alpha = hq_0+hq_1+hq_2+\cdots+hq_{n-1}+n-1, \tag{135} \]
+et cherchons la plus petite valeur de $\mu-\alpha$.
+
+Comme toutes les fonctions $y', y'', y''', \ldots y^{(n)}$, sont du même degré, on aura
+\[ hy' = hy'' = hy''' = \cdots = hy^{(n)} = \frac{m'}{\mu'}, \]
+par conséquent,
+\[ \varepsilon = 1, \quad n = n'\mu' = k'. \]
+
+L'équation (92) donne donc:
+\[ f(m) = f(\rho_1) + (\rho_1-m) \cdot \frac{m'}{\mu'} - A'_m, \tag{136} \]
+où $m$ est un nombre entier quelconque depuis zéro jusqu'à $n-1$, et $A'_m$ une quantité positive moindre que l'unité.
+
+On a de même par (106)
+\[ \mu = hr = n'\mu'\left(f(\rho_1)+\rho_1\,\frac{m'}{\mu'}\right), \]
+donc
+\[ \mu = nf(\rho_1) + n'm'\rho_1 \tag{137} \]
+\origpage{237}
+et par l'équation (62) la valeur de $\gamma$ qui sera celle de $\mu-\alpha$, savoir:
+\[ \mu-\alpha = \gamma = n'\mu' \cdot \frac{n'm'-1}{2} - n' \cdot \frac{m'+1}{2} + 1, \tag{138} \]
+ou bien en remarquant que $n = n'\mu'$, $n'm' = nhR$.
+\[ \mu-\alpha = \gamma = \frac{n-1}{2}nhR - \frac{n+n'}{2} + 1. \tag{139} \]
+
+Cela est la moindre valeur de $\mu-\alpha$ lorsque toutes les quantités $a, a', a'', \ldots$ sont indéterminées; mais dans le cas qui nous occupe, on peut rendre ce nombre beaucoup plus petit en déterminant convenablement quelques-unes des quantités $a, a', a'' \ldots$
+
+Désignons, pour abréger, par $EA$ le plus grand nombre entier contenu dans un nombre quelconque $A$, et par $\varepsilon A$ le reste, on aura:
+\[ A = EA + \varepsilon A, \tag{140} \]
+où il est clair que $\varepsilon A$ est positif et plus petit que l'unité.
+
+Cela posé, soient
+\[ \theta_m = E\,\frac{\mu_m}{n} + E\,\frac{2\mu_m}{n} + E\,\frac{3\mu_m}{n} + \cdots + E\,\frac{(n-1)\mu_m}{n} \tag{141} \]
+et
+\[ \delta_{m,\pi} = \theta_m - E\left(\frac{\pi\mu_m}{n} - \frac{\alpha_m}{n}\right) \tag{142} \]
+où $m$ est un quelconque des nombres $1, 2, 3, \ldots \varepsilon$; $\pi$ un des nombres $0, 1, 2, \ldots n-1$ et $\alpha_1, \alpha_2, \ldots \alpha_\varepsilon$ des nombres entiers positifs.
+
+Supposons:
+\[ q_\pi = v_\pi\,\gamma_1^{\delta_{1,\pi}}\,\gamma_2^{\delta_{2,\pi}} \ldots \gamma_\varepsilon^{\delta_{\varepsilon,\pi}}, \tag{143} \]
+$v_\pi$ étant une fonction entière de $x$.
+\origpage{238}
+De là on tire
+\[ q_\pi \cdot R^{\pi} = v_\pi\,\gamma_1^{\frac{\pi\mu_1}{n}+\delta_{1,\pi}}\,\gamma_2^{\frac{\pi\mu_2}{n}+\delta_{2,\pi}} \ldots \gamma_\varepsilon^{\frac{\pi\mu_\varepsilon}{n}+\delta_{\varepsilon,\pi}}; \]
+or,
+\[ \frac{\pi\mu_m}{n} + \delta_{m,\pi} = \frac{\pi\mu_m}{n} + \theta_m - E\left(\frac{\pi\mu_m}{n} - \frac{\alpha_m}{n}\right); \]
+mais en vertu de l'équation (140),
+\[ E\left(\frac{\pi\mu_m}{n} - \frac{\alpha_m}{n}\right) = \frac{\pi\mu_m}{n} - \frac{\alpha_m}{n} - \varepsilon\left(\frac{\pi\mu_m-\alpha_m}{n}\right), \]
+donc en substituant:
+\[ \frac{\pi\mu_m}{n} + \delta_{m,\pi} = \theta_m + \frac{\alpha_m}{n} + \varepsilon\,\frac{\pi\mu_m-\alpha_m}{n}; \tag{144} \]
+en faisant donc, pour abréger,
+\[ \varepsilon \cdot \frac{\pi\mu_m-\alpha_m}{n} = k_{m,\pi}, \tag{145} \]
+on aura
+\[ q_\pi R^{\pi} = v_\pi\,\gamma_1^{\theta_1+\frac{\alpha_1}{n}}\,\gamma_2^{\theta_2+\frac{\alpha_2}{n}} \ldots \gamma_\varepsilon^{\theta_\varepsilon+\frac{\alpha_\varepsilon}{n}} \times \gamma_1^{k_{1,\pi}}\,\gamma_2^{k_{2,\pi}} \ldots \gamma_\varepsilon^{k_{\varepsilon,\pi}}, \tag{146} \]
+ou bien en faisant
+\[ \gamma_1^{k_{1,\pi}}\,\gamma_2^{k_{2,\pi}}\,\gamma_3^{k_{3,\pi}} \ldots \gamma_\varepsilon^{k_{\varepsilon,\pi}} = R^{(\pi)}, \tag{147} \]
+\[ q_\pi R^{\pi} = v_\pi\,\gamma_1^{\theta_1+\frac{\alpha_1}{n}}\,\gamma_2^{\theta_2+\frac{\alpha_2}{n}} \ldots \gamma_\varepsilon^{\theta_\varepsilon+\frac{\alpha_\varepsilon}{n}} \cdot R^{(\pi)}. \tag{148} \]
+
+Par là il est évident qu'on aura
+\[ q_0+q_1 R+q_2 R^{2}+\cdots+q_\pi R^{\pi}+\cdots+q_{n-1}R^{n-1} \]
+\[ = \left\{v_0 R^{(0)}+v_1 R^{(1)}+v_2 R^{(2)}+\cdots+v_\pi R^{(\pi)}+\cdots+v_{n-1}R^{(n-1)}\right\} \]
+\[ \times \gamma_1^{\theta_1+\frac{\alpha_1}{n}}\,\gamma_2^{\theta_2+\frac{\alpha_2}{n}} \ldots \gamma_\varepsilon^{\theta_\varepsilon+\frac{\alpha_\varepsilon}{n}}; \tag{149} \]
+\origpage{239}
+et en général (126)
+\[ \theta y^{(e)} = q_0 + \omega^{e}q_1 R + \omega^{2e}q_2 R^{2} + \cdots + \omega^{(n-1)e}q_{n-1}R^{n-1}, \]
+\[ = \left\{v_0 R^{(0)}+\omega^{e}v_1 R^{(1)}+\omega^{2e}v_2 R^{(2)}+\cdots+\omega^{(n-1)e}v_{n-1}R^{(n-1)}\right\} \]
+\[ \times \gamma_1^{\theta_1+\frac{\alpha_1}{n}}\,\gamma_2^{\theta_2+\frac{\alpha_2}{n}} \ldots \gamma_\varepsilon^{\theta_\varepsilon+\frac{\alpha_\varepsilon}{n}}; \tag{150} \]
+
+Soit, pour abréger,
+\[ v_0 R^{(0)}+\omega^{e}v_1 R^{(1)}+\omega^{2e}v_2 R^{(2)}+\cdots+\omega^{(n-1)e}v_{n-1}R^{(n-1)} = \theta'(x, e) \tag{151} \]
+il est clair que
+\[ r = \theta y' \cdot \theta y'' \ldots \theta y^{(n)} = \]
+\[ = \theta'(x, 0) \cdot \theta'(x, 1) \cdot \theta'(x, 2) \ldots \theta'(x, n-1) \cdot \gamma_1^{n\theta_1+\alpha_1} \cdot \gamma_2^{n\theta_2+\alpha_2} \ldots \gamma_\varepsilon^{n\theta_\varepsilon+\alpha_\varepsilon}; \tag{152} \]
+
+donc en supposant que tous les coefficients dans $v_0, v_1, \ldots v_{n-1}$, soient des quantités indéterminées, on aura:
+\[ F_0 x = \gamma_1^{n\theta_1+\alpha_1} \cdot \gamma_2^{n\theta_2+\alpha_2} \ldots \gamma_\varepsilon^{n\theta_\varepsilon+\alpha_\varepsilon}, \tag{153} \]
+\[ F x = \theta'(x, 0) \cdot \theta'(x, 1) \cdot \theta'(x, 2) \ldots \theta'(x, n-1). \]
+
+Maintenant l'équation (19) donne, en substituant les valeurs de $f_1(x, y) = n f_3 x \cdot y^{n-m-1}$ et de $\chi' y = n y^{n-1}$,
+\[ R(x) = \Sigma\,\frac{f_3 x}{y^{m}} \cdot \frac{r \cdot \delta\theta y}{\theta y}; \]
+
+or, par l'équation (150),
+\[ \frac{\delta\theta y^{(e)}}{\theta y^{(e)}} = \frac{\delta\theta'(x, e)}{\theta'(x, e)} \]
+
+donc, en substituant et mettant au lieu de $r$ sa valeur
+\[ r = F_0 x \cdot F x, \]
+\origpage{240}
+\[ R(x) = F_0 x \cdot \Sigma\,\frac{f_3 x}{y^{m}}\,\frac{F x \cdot \delta\theta'(x,e)}{\theta'(x,e)}, \tag{154} \]
+où
+\[ y = y^{(e)}; \]
+or, on a par (123)
+\[ y^{m} = \gamma_1^{\frac{m\mu_1}{n}} \cdot \gamma_2^{\frac{m\mu_2}{n}} \ldots \gamma_\varepsilon^{\frac{m\mu_\varepsilon}{n}}, \]
+donc
+\[ y^{m} = \gamma_1^{E\frac{m\mu_1}{n}} \cdot \gamma_2^{E\frac{m\mu_2}{n}} \ldots \gamma_\varepsilon^{E\frac{m\mu_\varepsilon}{n}} \times \gamma_1^{\varepsilon\frac{m\mu_1}{n}} \cdot \gamma_2^{\varepsilon\frac{m\mu_2}{n}} \ldots \gamma_\varepsilon^{\varepsilon\frac{m\mu_\varepsilon}{n}} \tag{155} \]
+
+en faisant donc pour abréger
+\[ s^{m} = \gamma_1^{\varepsilon\frac{m\mu_1}{n}} \cdot \gamma_2^{\varepsilon\frac{m\mu_2}{n}} \ldots \gamma_\varepsilon^{\varepsilon\frac{m\mu_\varepsilon}{n}} \tag{156} \]
+
+et posant ensuite:
+\[ f_3 x = f x \cdot \gamma_1^{E\frac{m\mu_1}{n}} \cdot \gamma_2^{E\frac{m\mu_2}{n}} \ldots \gamma_\varepsilon^{E\frac{m\mu_\varepsilon}{n}} \tag{157} \]
+
+on aura
+\[ \frac{f_3 x}{y^{m}} = \frac{f x}{s^{m}}; \]
+
+donc
+\[ \frac{f_3 x}{y^{(e)m}} = \omega^{-em} \cdot \frac{f x}{s^{m}} \]
+
+et par conséquent la valeur de $R(x)$ deviendra
+\[ R(x) = \frac{f x \cdot F_0 x}{s^{m}} \cdot \Sigma\omega^{-em}\,\frac{F x}{\theta'(x,e)}\,\delta\theta'(x,e) = \tag{158} \]
+\[ \frac{F_0 x \cdot f x}{s^{m}} \left\{ \begin{array}{l} \dfrac{F x}{\theta'(x,0)}\delta\theta'(x,0)+\omega^{-m} \cdot \dfrac{F x}{\theta'(x,1)}\delta\theta'(x,1)+\omega^{-2m} \cdot \dfrac{F x}{\theta'(x,2)}\delta\theta'(x,2)+\cdots \\ \cdots+\omega^{-(n-1)m} \cdot \dfrac{F x}{\theta'(x,n-1)}\delta\theta'(x,n-1) \end{array} \right\}. \]
+\origpage{241}
+Maintenant il est clair que
+\[ \frac{F x}{\theta'(x,0)}\,\delta\theta'(x,0), \]
+qui est égal à (153)
+\[ \theta'(x,1) \cdot \theta'(x,2) \ldots \theta'(x,n-1) \cdot \delta\theta'(x,0) \]
+et par conséquent une fonction entière de $x$, et de $R^{(0)}, R^{(1)}, \ldots R^{(n-1)}$, peut être mise sous la forme
+\[ M_0 + M_1 s_1 + M_2 s_2 + \cdots + M_m s_m + \cdots + M_{n-1}s_{n-1} \]
+où $M_0, M_1, \ldots M_{n-1}$ sont des fonctions entières de $x$.
+
+De là il suit que la fonction $R(x)$, qui doit être entière, sera égale à
+\[ n F_0 x \cdot f x \cdot M_m. \]
+
+La fonction $F_0 x$ est donc un facteur de $R(x)$, et par conséquent
+\[ R(x) = F_0(x) \cdot R_1(x). \tag{159} \]
+
+Par là il est clair, en vertu des équations (23), (25) et (35), qu'on aura
+\[ F_2 x = 1, \quad \theta_1 x = f_2 x. \tag{160} \]
+
+Cela posé, la valeur (132) de $\varphi_2(x)$ deviendra, en mettant $\dfrac{f x}{s_m}$ au lieu de $\dfrac{f_3 x}{R^{m}}$, substituant les valeurs de $\theta(R), \theta(\omega R)$, etc., données par l'équation (150), en remarquant que
+\[ 1+\omega^{-m}+\omega^{-2m}+\cdots+\omega^{-(n-1)m} = 0. \]
+\[ \varphi_2(x) = \frac{f x}{s_m} \cdot \left\{ \begin{array}{l} \log\theta'(x,0)+\omega^{-m}\log\theta'(x,1)+\omega^{-2m}\log\theta'(x,2)+\cdots \\ \cdots+\omega^{-(n-1)m}\log\theta'(x,n-1) \end{array} \right\} \tag{161} \]
+\origpage{242}
+et les valeurs (133) de $\varphi(x)$ et $\varphi_1(x)$,
+\[ \varphi(x) = \frac{\varphi_2(x)}{f_2 x}, \quad \varphi_1(x) = \frac{\varphi_2(x)}{f_2^{(\nu)}x} \]
+et par suite la formule (134)
+\[ \omega^{-e_1 m}\psi(x_1)+\omega^{-e_2 m}\psi(x_2)+\cdots+\omega^{-e_\mu m}\psi(x_\mu) = \]
+\[ C - \Pi\,\frac{\varphi_2(x)}{f_2 x} + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{\varphi_2(\beta)}{f_2^{(\nu)}\beta} \right\} \tag{162} \]
+
+on a
+\[ f_2 x = (x-\beta_1)^{\nu_1}(x-\beta_2)^{\nu_2} \ldots (x-\beta_k)^{\nu_k}. \]
+
+Il nous reste à trouver la valeur de $\mu$ et le nombre des quantités indéterminées; or, on a par l'équation (153)
+\[ hF_0 x = (n\theta_1+\alpha_1)h\gamma_1+(n\theta_2+\alpha_2)h\gamma_2+\cdots+(n\theta_\varepsilon+\alpha_\varepsilon)h\gamma_\varepsilon; \tag{163} \]
+mais
+\[ hr = nf(\rho_1) + n'm'\rho_1; \]
+donc
+\[ \mu = nf(\rho_1)+n'm'\rho_1-\left\{(n\theta_1+\alpha_1)h\gamma_1+(n\theta_2+\alpha_2)h\gamma_2+\cdots+(n\theta_\varepsilon+\alpha_\varepsilon)h\gamma_\varepsilon\right\}; \]
+
+or
+\[ n'm' = n \cdot hR = n\left(\frac{\mu_1}{n}h\gamma_1+\frac{\mu_2}{n}h\gamma_2+\cdots+\frac{\mu_\varepsilon}{n}h\gamma_\varepsilon\right) \]
+\[ = \mu_1 h\gamma_1+\mu_2 h\gamma_2+\cdots+\mu_\varepsilon h\gamma_\varepsilon, \]
+
+donc en substituant
+\[ \mu = \begin{cases} nf(\rho_1)+(\mu_1\rho_1-n\theta_1-\alpha_1)h\gamma_1 \\ +(\mu_2\rho_1-n\theta_2-\alpha_2)h\gamma_2+\cdots+(\mu_\varepsilon\rho_1-n\theta_\varepsilon-\alpha_\varepsilon)h\gamma_\varepsilon \end{cases} \tag{164} \]
+
+Maintenant l'équation (143) donne
+\[ hq_\pi = f(\pi) = \delta_{1,\pi}h\gamma_1+\delta_{2,\pi}h\gamma_2+\cdots+\delta_{\varepsilon,\pi}h\gamma_\varepsilon+hv_\pi, \tag{165} \]
+\origpage{243}
+donc en écrivant $\rho$ au lieu de $\rho_1$
+\[ \mu = nhv_\rho+\left\{n\delta_{1,\rho}-n\theta_1+\rho\mu_1-\alpha_1\right\}h\gamma_1+\left\{n\delta_{2,\pi}-n\theta_2+\rho\mu_2-\alpha_2\right\}h\gamma_2+\cdots \]
+
+mais en vertu de (144) on aura
+\[ n\delta_{m,\rho} - n\theta_m + \rho\mu_m - \alpha_m = n\varepsilon\,\frac{\rho\mu_m-\alpha_m}{n}, \]
+
+donc
+\[ \mu = nhv_\rho+n\varepsilon\,\frac{\rho\mu_1-\alpha_1}{n} \cdot h\gamma_1+n\varepsilon\,\frac{\rho\mu_2-\alpha_2}{n} \cdot h\gamma_2+\cdots+n\varepsilon\,\frac{\rho\mu_\varepsilon-\alpha_\varepsilon}{n} \cdot h\gamma_\varepsilon. \tag{166} \]
+
+Cherchons maintenant la valeur de $\alpha$ ou le nombre des indéterminées.
+
+On a
+\[ \alpha = hv_0+hv_1+hv_2+\cdots+hv_{n-1}+n-1, \]
+
+donc en vertu de (165)
+\[ \alpha = \begin{cases}
+hq_0+hq_1+hq_2+\cdots+hq_{n-1}+n-1 \\
+-\left\{\delta_{1,0}+\delta_{1,1}+\delta_{1,2}+\cdots+\delta_{1,n-1}\right\} \cdot h\gamma_1 \\
+-\left\{\delta_{2,0}+\delta_{2,1}+\delta_{2,2}+\cdots+\delta_{2,n-1}\right\} \cdot h\gamma_2 \\
+\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \\
+-\left\{\delta_{\varepsilon,0}+\delta_{\varepsilon,1}+\delta_{\varepsilon,2}+\cdots+\delta_{\varepsilon,n-1}\right\} \cdot h\gamma_\varepsilon.
+\end{cases} \tag{167} \]
+
+On a d'après (136) et (85)
+\[ hq_0+hq_1+\cdots+hq_{n-1} = \]
+\[ nhq_\rho+\left\{\rho+(\rho-1)+\cdots+(\rho-n+1)\right\}\frac{m'}{\mu'}-\left\{A'_0+A'_1+\cdots+A'_{n-1}\right\} = \]
+\[ n\left\{hv_\rho+\delta_{1,\rho}h\gamma_1+\delta_{2,\rho}h\gamma_2+\cdots+\delta_{\varepsilon,\rho}h\gamma_\varepsilon\right\} + \left\{n\rho-\frac{n(n-1)}{2}\right\}\frac{m'}{\mu'} - \frac{n'(\mu'-1)}{2}, \]
+\origpage{244}
+et d'après (142)
+\[ \delta_{m,0}+\delta_{m,1}+\cdots+\delta_{m,n-1} = n\theta_m - \]
+\[ \left\{ E\,\frac{-\alpha_m}{n} + E\,\frac{\mu_m-\alpha_m}{n} + E\,\frac{2\mu_m-\alpha_m}{n} + \cdots + E\,\frac{(n-1)\mu_m-\alpha_m}{n} \right\}. \tag{169} \]
+
+En désignant le second membre par
+\[ n\theta_m - P_m \]
+on aura
+\[ P_m = \begin{cases}
+\dfrac{-\alpha_m}{n} + \dfrac{\mu_m-\alpha_m}{n} + \dfrac{2\mu_m-\alpha_m}{n} + \cdots + \dfrac{(n-1)\mu_m-\alpha_m}{n} \\[1mm]
+-\left\{ \varepsilon\,\dfrac{-\alpha_m}{n} + \varepsilon\,\dfrac{\mu_m-\alpha_m}{n} + \cdots + \varepsilon\,\dfrac{(n-1)\mu_m-\alpha_m}{n} \right\}
+\end{cases} \]
+
+or, la suite
+\[ \varepsilon\,\frac{-\alpha_m}{n} + \varepsilon\,\frac{\mu_m-\alpha_m}{n} + \cdots + \varepsilon\,\frac{(n-1)\mu_m-\alpha_m}{n} \]
+contiendra $k_m$ fois la suivante
+\[ \frac{0}{n_m} + \frac{1}{n_m} + \frac{2}{n_m} + \cdots + \frac{n_m-1}{n_m} \]
+si l'on suppose
+\[ \frac{\mu_m}{n} = \frac{\mu'_m}{n_m} \quad \text{et } n = k_m n_m \]
+et
+\[ \alpha_m = \varepsilon_m \cdot k_m, \tag{170} \]
+$\varepsilon_m$ étant un nombre entier.
+
+La somme dont il s'agit sera donc
+\[ k_m\,\frac{n_m-1}{2} \]
+\origpage{245}
+et par conséquent
+\[ P_m = -\alpha_m + \frac{n-1}{2}\mu_m - \frac{n_m-1}{2} \cdot k_m, \]
+en faisant $\alpha_m = 0$, on aura d'après (141)
+\[ \theta_m = \frac{n-1}{2}\mu_m - \frac{n_m-1}{2}k_m; \]
+de là il suit:
+\[ \delta_{m,0}+\delta_{m,1}+\cdots+\delta_{m,n-2} = +\alpha_m+(n-1)\theta_m; \]
+
+la valeur de $\alpha$ deviendra donc
+\[ \alpha = \begin{cases}
+nhv_\rho + \left\{n\delta_{1,\rho}-\alpha_1-(n-1)\theta_1\right\}h\gamma_1 \\
++ \left\{n\delta_{2,\rho}-\alpha_2-(n-1)\theta_2\right\}h\gamma_2 \cdots \\
++ n-1-\dfrac{n'(\mu'-1)}{2} + \left\{n\rho-\dfrac{n(n-1)}{2}\right\} \cdot \dfrac{m'}{\mu'}
+\end{cases} \]
+
+or
+\[ n\delta_{m,\rho} - \alpha_m - n\theta_m = n\varepsilon \cdot \frac{\rho\mu_m-\alpha_m}{n} - \rho\mu_m, \quad n'\mu' = n \]
+et
+\[ \frac{m'}{\mu'} = hR = \frac{1}{n}\left(\mu_1 h\gamma_1+\mu_2 h\gamma_2+\cdots+\mu_\varepsilon h\gamma_\varepsilon\right) \]
+
+donc en substituant
+\[ \alpha = \begin{cases}
+nhv_\rho + \left\{n\varepsilon\,\dfrac{\rho\mu_1-\alpha_1}{n}+\theta_1-\dfrac{n-1}{2} \cdot \mu_1\right\}h\gamma_1 \\
++ \left\{n\varepsilon\,\dfrac{\rho\mu_2-\alpha_2}{n}+\theta_2-\dfrac{n-1}{2}\mu_2\right\}h\gamma_2+\text{etc.}\ldots \\
+\ldots + \left\{n\varepsilon\,\dfrac{\rho\mu_\varepsilon-\alpha_\varepsilon}{n}+\theta_\varepsilon-\dfrac{n-1}{2}\mu_\varepsilon\right\}h\gamma_\varepsilon-1+\dfrac{n+n'}{2},
+\end{cases} \]
+
+mais nous avons vu que
+\[ \theta_m = \frac{n-1}{2}\mu_m - \frac{n_m-1}{2}k_m = \frac{n-1}{2}\mu_m - \frac{n-k_m}{2} \]
+\origpage{246}
+donc
+\[ \alpha = \begin{cases}
+nhv_\rho + \left\{n\varepsilon\,\dfrac{\rho\mu_1-\alpha_1}{n} - \dfrac{n-k_1}{2}\right\}h\gamma_1 \\
++ \left\{n\varepsilon\,\dfrac{\rho\mu_2-\alpha_2}{n} - \dfrac{n-k_2}{2}\right\}h\gamma_2+\cdots \\
+\cdots+\left\{n\varepsilon\,\dfrac{\rho\mu_\varepsilon-\alpha_\varepsilon}{n}-\dfrac{n-k_\varepsilon}{2}\right\}h\gamma_\varepsilon-1+\dfrac{n+n'}{2}. \tag{171}
+\end{cases} \]
+
+Ayant ainsi trouvé les valeurs de $\mu$ et $\alpha$ on aura celle de $\mu-\alpha$, savoir:
+\[ \mu-\alpha = \left(\frac{n-k_1}{2}\right)h\gamma_1 + \left(\frac{n-k_2}{2}\right)h\gamma_2 + \left(\frac{n-k_3}{2}\right)h\gamma_3+\cdots \]
+\[ \cdots+\left(\frac{n-k_\varepsilon}{2}\right)h\gamma_\varepsilon+1-\frac{n'+n}{2} = \theta, \tag{172} \]
+
+$\mu-\alpha$ est donc comme on voit indépendant de $\rho$ et $\alpha_1, \alpha_2, \alpha_3, \ldots \alpha_\varepsilon$.
+
+En vertu des équations (145) et (147), il est clair qu'on aura aussi
+\[ \mu = nhv_\rho + nhR^{(\rho)} \tag{173} \]
+\[ \alpha = nhv_\rho + nhR^{(\rho)} - \theta. \tag{174} \]
+
+Les quantités $hv_0, hv_1, \ldots hv_{n-1}$, peuvent s'exprimer en $hv_\rho$ au moyen des équations (136) et (165).
+
+On a
+\[ f(m) = \delta_{1,m}h\gamma_1+\delta_{2,m}h\gamma_2+\cdots+\delta_{\varepsilon,m}h\gamma_\varepsilon+hv_m \]
+\[ f(\rho) = \delta_{1,\rho}h\gamma_1+\delta_{2,\rho}h\gamma_2+\cdots+\delta_{\varepsilon,\rho}h\gamma_\varepsilon+hv_\rho \]
+
+et
+\[ f(m) = f(\rho) + (\rho-m) \cdot \frac{m'}{\mu'} - A'_m; \]
+
+donc en éliminant $f(m)$ et $f(\rho)$,
+\origpage{247}
+\[ hv_m = \begin{cases}
+hv_\rho + (\rho-m)\,\dfrac{m'}{\mu'} + (\delta_{1,\rho}-\delta_{1,m}) \cdot h\gamma_1 + (\delta_{2,\rho}-\delta_{2,m}) \cdot h\gamma_2 + \cdots \\
+\cdots + (\delta_{\varepsilon,\rho}-\delta_{\varepsilon,m}) \cdot h\gamma_\varepsilon - A'_m.
+\end{cases} \]
+
+Or,
+\[ \frac{m'}{\mu'} = \frac{1}{n} \cdot (\mu_1 h\gamma_1+\mu_2 h\gamma_2+\cdots+\mu_\varepsilon h\gamma_\varepsilon), \]
+
+et par (142)
+\[ \delta_{k,\rho} - \delta_{k,m} = \theta_k - E\left(\frac{\rho\mu_k}{n}-\frac{\alpha_k}{n}\right) - \left\{\theta_k - E\,\frac{m\mu_k}{n}-\frac{\alpha_k}{n}\right\} \]
+\[ = (m-\rho) \cdot \frac{\mu_k}{n} + \varepsilon \cdot \frac{\rho\mu_k-\alpha_k}{n} - \varepsilon \cdot \frac{m\mu_k-\alpha_k}{n} \]
+\[ = (m-\rho) \cdot \frac{\mu_k}{n} + k_{k,\rho} - k_{k,m}; \]
+
+donc en substituant et réduisant
+\[ hv_m = \begin{cases}
+hv_\rho + (k_{1,\rho}-k_{1,m})h\gamma_1 + (k_{2,\rho}-k_{2,m})h\gamma_2 + \cdots \\
++ (k_{\varepsilon,\rho}-k_{\varepsilon,m})h\gamma_\varepsilon - A'_m;
+\end{cases} \]
+
+c'est-à-dire en remarquant que $A'_m$ est positif et plus petit que l'unité,
+\[ hv_m = hv_\rho + E \begin{Bmatrix} (k_{1,\rho}-k_{1,m})h\gamma_1+(k_{2,\rho}-k_{2,m})h\gamma_2+\cdots \\ +(k_{\varepsilon,\rho}-k_{\varepsilon,m})h\gamma_\varepsilon \end{Bmatrix}. \tag{175} \]
+
+D'après l'équation (147), qui donne la valeur de $R^{(\pi)}$, on peut aussi écrire
+\[ hv_m = hv_\rho + Eh\,\frac{R^{(\rho)}}{R^{(m)}}. \tag{176} \]
+
+Cela posé, soient
+\origpage{248}
+\[ \begin{cases} x_{\alpha+1} = z_1, \quad x_{\alpha+2} = z_2, \quad x_{\alpha+3} = z_3, \ldots x_{\mu-1} = z_{\theta-1}, \quad x_\mu = z_\theta, \\ e_{\alpha+1} = \varepsilon_1, \quad e_{\alpha+2} = \varepsilon_2, \quad e_{\alpha+3} = \varepsilon_3, \ldots e_{\mu-1} = \varepsilon_{\theta-1}, \quad e_\mu = \varepsilon_\theta, \end{cases} \tag{177} \]
+
+et pour abréger
+\[ \omega^{-e_\mu} = \omega_\mu, \quad \omega^{-\varepsilon_\mu} = \pi_\mu. \tag{178} \]
+
+La formule (134) deviendra, en mettant $s_m(x)$ au lieu de $s_m$, et $\dfrac{f x \cdot \varphi x}{s_m(x)}$ au lieu de $\varphi_2 x$,
+\[ \omega_1^{m} \cdot \psi(x_1)+\omega_2^{m}\psi(x_2)+\cdots+\omega_\alpha^{m}\psi(x_\alpha)+\pi_1^{m}\psi(z_1)+\pi_2^{m}\psi(z_2)+\cdots+\pi_\theta^{m}\psi(z_\theta) \]
+\[ = C - \Pi\,\frac{f x \cdot \varphi x}{s_m(x) \cdot f_2 x} + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta \cdot \varphi\beta}{s_m(\beta) \cdot f_2^{(\nu)}\beta} \right\}. \tag{179} \]
+
+Dans cette formule on a
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x \cdot s_m(x)}, \tag{180} \]
+
+où $f x$ est une fonction entière quelconque, et
+\[ f_2 x = A(x-\beta_1)^{\nu_1}(x-\beta_2)^{\nu_2} \ldots \]
+
+Les quantités $x_1, x_2, \ldots x_\alpha$, sont des variables indépendantes: $\omega_1, \omega_2, \ldots \omega_\alpha$, des racines quelconques de l'équation
+\[ \omega^{n} - 1 = 0. \]
+
+Les fonctions $z_1, z_2, \ldots z_\theta$, sont les $\theta$ racines de l'équation
+\[ \frac{\theta'(z,0) \cdot \theta'(z,1) \cdot \theta'(z,2) \ldots \theta'(z,n-1)}{(z-x_1)(z-x_2)(z-x_3) \ldots (z-x_\alpha)} = 0. \tag{181} \]
+\origpage{249}
+Les quantités $a, a', a', \ldots$ sont déterminées par les $\alpha$ équations
+\[ \theta'(x_1,e_1) = 0, \quad \theta'(x_2,e_2) = 0, \quad \theta'(x_3,e_3) = 0, \ldots \theta'(x_\alpha,e_\alpha) = 0; \tag{182} \]
+et les nombres $\varepsilon_1, \varepsilon_2, \ldots \varepsilon_\theta$, par les $\theta$ équations
+\[ \theta'(z_1,\varepsilon_1) = 0, \quad \theta'(z_2,\varepsilon_2) = 0, \quad \theta'(z_3,\varepsilon_3) = 0, \ldots \theta'(z_\theta,\varepsilon_\theta) = 0. \tag{183} \]
+
+La fonction $\theta'(x,e)$ est donnée par l'équation
+\[ \theta'(x,e) = v_0 \cdot R^{(0)}+\omega^{e}v_1 R^{(1)}+\omega^{2e}v_2 R^{(2)}+\cdots+\omega^{(n-1)e}v_{n-1}R^{(n-1)}, \tag{184} \]
+
+et la fonction $\varphi x$ par
+\[ \varphi(x) = \log\theta'(x,0)+\omega^{-m}\log\theta'(x,1)+\omega^{-2m}\log\theta'(x,2)+\cdots \]
+\[ +\omega^{-(n-1)m}\log\theta'(x,n-1). \tag{185} \]
+
+Si les fonctions $v_0, v_1, \ldots v_{n-1}$, sont déterminées d'après l'équation (175), les quantités $\theta, \mu$ et $\alpha$ auront les valeurs que leur donnent les équations (172), (173), (174), et dans le même cas la valeur de $\mu-\alpha$ ou le nombre des fonctions dépendantes est le plus petit possible. Mais si les fonctions $v_0, v_1, \ldots v_{n-1}$, ont des formes quelconques, alors on a toujours
+\[ \theta = \mu-\alpha, \quad \mu = h \cdot \left\{\theta'(x,0) \cdot \theta'(x,1) \cdot \theta'(x,2) \ldots \theta'(x,n-1)\right\} \tag{186} \]
+$\alpha$ ou le nombre des indéterminées $a, a', a'', \ldots$ est arbitraire, mais sa valeur ne peut pas surpasser le nombre
+\[ hv_0+hv_1+hv_2+\cdots+hv_{n-1}+n-1, \]
+ou celui des coefficients dans $v_0, v_1, \ldots v_{n-1}$ moins un.
+
+Comme cas particuliers on doit remarquer les suivants:
+\origpage{250}
+$1^\circ$ Lorsque $f_2 x = (x-\beta)^{\nu}$.
+
+Alors la formule (179) deviendra, en faisant pour abréger,
+\[ \omega_1^{m}\psi(x_1)+\omega_2^{m}\psi(x_2)+\cdots+\omega_\alpha^{m}\psi(x_\alpha) = \Sigma\omega^{m}\psi(x), \]
+\[ \pi_1^{m}\psi(z_1)+\pi_2^{m}\psi(z_2)+\cdots+\pi_\theta^{m}\psi(z_\theta) = \Sigma\pi^{m}\psi(z), \]
+\[ \Sigma\omega^{m}\psi(x)+\Sigma\pi^{m}\psi(z) = C-\Pi\,\frac{f x \cdot \varphi x}{s_m(x) \cdot (x-\beta)^{\nu}} + \frac{1}{\Gamma(\nu)}\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta \cdot \varphi\beta}{s_m(\beta)} \right\}, \]
+et
+\[ \psi(x) = \int \frac{f x \cdot dx}{(x-\beta)^{\nu} s_m(x)}; \]
+
+$2^\circ$ Lorsque $f_2 x = x-\beta$,
+\[ \Sigma\omega^{m}\psi(x)+\Sigma\pi^{m}\psi(z) = C-\Pi\,\frac{f x \cdot \varphi x}{s_m(x) \cdot (x-\beta)} + \frac{f\beta \cdot \varphi\beta}{s_m(\beta)}, \tag{188} \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{(x-\beta) \cdot s_m(x)}; \]
+
+$3^\circ$ Lorsque $f_2 x = 1$.
+
+Alors on aura la formule
+\[ \Sigma\omega^{m}\psi(x)+\Sigma\pi^{m}\psi(z) = C-\Pi\,\frac{f x \cdot \varphi x}{s_m(x)}. \tag{189} \]
+
+Si le degré de la fonction $\dfrac{f x \cdot \varphi x}{s_m(x)}$ est moindre que $-1$, alors $\Pi\,\dfrac{f x \cdot \varphi x}{s_m(x)}$ s'évanouira, et on aura
+\[ \Sigma\omega^{m}\psi(x)+\Sigma\pi^{m}\psi(z) = C. \tag{190} \]
+
+D'après la valeur de $\varphi(x)$, il est clair que le degré de la fonction $\dfrac{f x \cdot \varphi x}{s_m(x)}$ ou le nombre $h\,\dfrac{f x \cdot \varphi x}{s_m(x)}$ est toujours un nombre entier; or, $\varphi x$ est du degré zéro en général, et ne peut pas être d'un degré
+\origpage{251}
+plus élevé, donc $h\,\dfrac{f x \cdot \varphi x}{s_m(x)}$ ne peut pas surpasser le plus grand nombre entier contenu dans $h\,\dfrac{f x}{s_m(x)}$, c'est-à-dire, d'après la notation adoptée, on aura en général
+\[ h\,\frac{f x \cdot \varphi x}{s_m(x)} \leqq Eh\,\frac{f x}{s_m(x)} \leqq E\{hfx\}+E\{-hs_m(x)\} \leqq hfx+E\{-hs_m(x)\}. \]
+
+Si donc
+\[ hfx \leqq -E(-hs_m(x))-2, \tag{191} \]
+le nombre $h\,\dfrac{f x \cdot \varphi x}{s_m(x)}$ sera toujours moindre que $-$l'unité, et par conséquent la formule (190) aura lieu.
+
+La détermination de la fonction $\varphi(x)$, qui dépend de celle des quantités $a, a', a''$, etc., est en général assez longue; mais il y a un cas dans lequel on peut déterminer cette fonction d'une manière assez simple; c'est celui où l'on suppose
+\[ \theta'(x,0) = v_t R^{(t)} + R^{(t_1)} \tag{192} \]
+
+En effet, en faisant
+\[ v_t = \theta(x), \quad \frac{R^{(t_1)}}{R^{(t)}} = \theta_1(x), \tag{193} \]
+
+les équations
+\[ \theta'(x_1,e_1) = 0, \quad \theta'(x_2,e_2) = 0, \ldots \theta'(x_\alpha,e_\alpha) = 0 \]
+peuvent s'écrire comme il suit,
+\[ \theta(x_1) = \omega_1^{t_1-t}\theta_1(x_1), \quad \theta(x_2) = \omega_2^{t_1-t}\theta_1(x_2), \ldots \theta(x_\alpha) = \omega_\alpha^{t_1-t}\theta_1(x_\alpha). \tag{194} \]
+
+En supposant maintenant que tous les coefficients dans $\theta(x)$ soient des quantités indéterminées, la fonction $\theta(x)$ sera du degré
+\origpage{252}
+$\alpha-1$; il s'agit donc de trouver une fonction entière de $x$ du degré $\alpha-1$, qui, pour les $\alpha$ valeurs particulières de $x$: $x_1, x_2, \ldots x_\alpha$, auront les $\alpha$ valeurs correspondantes
+\[ \omega_1^{t_1-t}\theta_1(x_1), \quad \omega_2^{t_1-t}\theta_1(x_2), \ldots \omega_\alpha^{t_1-t}\theta_1(x_\alpha). \]
+
+Or, comme on sait, la fonction $\theta(x)$ aura alors la valeur suivante;
+\[ \theta(x) = \frac{(x-x_2)(x-x_3)\ldots(x-x_\alpha)}{(x_1-x_2)(x_1-x_3)\ldots(x_1-x_\alpha)} \cdot \omega_1^{t_1-t}\theta_1(x_1) \]
+\[ + \frac{(x-x_1)(x-x_3)\ldots(x-x_\alpha)}{(x_2-x_1)(x_3-x_5)\ldots(x_2-x_\alpha)} \cdot \omega_2^{t_1-t} \cdot \theta_1(x_2) + \cdots \tag{195} \]
+\[ + \frac{(x-x_1)(x-x_2)\ldots(x-x_{\alpha-1})}{(x_\alpha-x_1)(x_\alpha-x_2)\ldots(x_\alpha-x_{\alpha-1})} \cdot \omega_\alpha^{t_1-t} \cdot \theta_1(x_\alpha). \]
+
+En désignant cette fonction par $\theta'(x)$, la fonction la plus générale qui peut satisfaire aux équations (194) sera
+\[ \theta(x) = \theta'(x)+(x-x_1)(x-x_2)\ldots(x-x_\alpha) \cdot \theta''(x); \tag{196} \]
+$\theta''(x)$ étant une fonction entière quelconque.
+
+Ayant ainsi déterminé $\theta(x)$, on aura $\theta(x,m)$, d'après l'équation
+\[ \theta(x,m) = \omega^{tm} \cdot \theta(x) \cdot R^{(t)}+\omega^{mt_1}R^{(t_1)}, \tag{197} \]
+
+et la fonction $\varphi(x)$ par l'équation (185).
+
+Dans ce qui précède nous avons exposé ce qui concerne les fonctions $\displaystyle\int \frac{f x \cdot dx}{f_2 \cdot s_m}$ en général, quelle que soit la forme de la fonction $s_m$.
+
+Considérons maintenant quelques cas particuliers:
+
+A, soit d'abord $n = 1$.
+
+Dans ce cas, le nombre des fonctions $s_0, s_1, s_2, \ldots s_{m-1}$ se
+\origpage{253}
+réduit à l'unité, c'est-à-dire on aura la seule fonction $s_0$, qui, d'après l'équation (156), se réduit à l'unité.
+
+On aura donc
+\[ s_0 = 1, \quad \psi(x) = \int \frac{f x \cdot dx}{f_2 x}. \]
+
+L'équation (147) donne $R^{(0)} = 1$, et l'équation (184)
+\[ \theta'(x,0) = v_0 \cdot R^{(0)} = v_0(x); \]
+
+on aura ensuite la fonction $\varphi(x)$ par (185), savoir:
+\[ \varphi(x) = \log v_0(x). \]
+
+Les équations (182) qui détermineront
+\[ x_1, x_2, \ldots x_\alpha, \]
+seront
+\[ v_0(x_1) = 0, \quad v_0(x_2) = 0, \ldots v_0(x_\alpha) = 0, \tag{198} \]
+et celle qui donne $z_1, z_2, \ldots z_\theta$,
+\[ \frac{v_0(z)}{(z-x_1)(z-x_2) \ldots (z-x_\alpha)} = 0. \tag{199} \]
+
+Cela posé, la formule générale (179) deviendra, en remarquant que $m = 0$,
+\[ \psi(x_1)+\psi(x_2)+\cdots+\psi(x_\alpha)+\psi(z_1)+\psi(z_2)+\cdots+\psi(z_\theta) \]
+\[ = C - \Pi\,\frac{f x}{f_2 x}\log v_0(x) + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta}\log v_0(\beta) \right\}. \tag{200} \]
+
+Les équations (198) et (199) donnent
+\[ v_0(x) = a(x-x_1)(x-x_2)(x-x_3) \ldots (x-x_\alpha) \cdot (x-z_1)(x-z_2) \ldots (x-z_\theta). \]
+\origpage{254}
+D'après l'équation (172) il est clair qu'on peut faire $\theta = 0$. Alors on aura, en faisant en même temps $\nu = 1$,
+\[ \Sigma\psi(x) = \begin{cases}
+C-\Pi\,\dfrac{f x}{f_2 x}\left\{\log a+\log(x-x_1)+\log(x-x_2)+\cdots+\log(x-x_\alpha)\right\} \\
++ \Sigma\nu\,\dfrac{f\beta}{f_2\beta}\left\{\log a+\log(\beta-x_1)+\log(\beta-x_2)+\cdots+\log(\beta-x_\alpha)\right\}.
+\end{cases} \]
+
+En faisant $\alpha = 1$, il viendra
+\[ \int \frac{f x \cdot dx}{f_2 x} = C - \Pi\,\frac{f x}{f_2 x}\log(x-x_1) + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta}\log(\beta-x_1) \right\}, \tag{201} \]
+
+formule qu'il est aisé de vérifier. Elle donne, comme on voit, l'intégrale de toute différentielle rationnelle.
+
+B, soit en second lieu $n = 2$, $R = \gamma_1^{\frac{1}{2}} \cdot \gamma_2^{\frac{1}{2}}$, $\alpha_1 = 1$, $\alpha_2 = 0$.
+
+Dans ce cas on aura
+\[ s_0 = 1, \quad s_1 = (\gamma_1\gamma_2)^{\frac{1}{2}}, \quad R^{(0)} = \gamma_1^{\frac{1}{2}}, \quad R^{(1)} = \gamma_2^{\frac{1}{2}}, \]
+\[ \theta'(x,0) = v_0\gamma_1^{\frac{1}{2}}+v_1\gamma_2^{\frac{1}{2}}, \quad \theta'(x,1) = v_0\gamma_1^{\frac{1}{2}}-v_1\gamma_2^{\frac{1}{2}}, \quad \omega = -1. \]
+
+La fonction $\varphi(x)$ sera, en faisant $m = 1$,
+\[ \varphi(x) = \log\theta(x,0)-\log\theta(x,1) = \log\left(\frac{\theta(x,0)}{\theta(x,1)}\right), \]
+donc
+\[ \varphi x = \log\left(\frac{v_0\gamma_1^{\frac{1}{2}}+v_1\gamma_2^{\frac{1}{2}}}{v_0\gamma_1^{\frac{1}{2}}-v_1\gamma_2^{\frac{1}{2}}}\right) \]
+
+Cela posé, en mettant $v_0(x)$ et $v_1(x)$ au lieu de $v_0$ et $v_1$, et faisant
+\[ \gamma_1 = \varphi_0 x, \quad \gamma_2 = \varphi_1 x, \]
+la formule (179) deviendra, en faisant $m = 1$,
+\origpage{255}
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) \]
+\[ = C - \Pi\,\frac{f x}{f_2 x\sqrt{\varphi_0 x \cdot \varphi_1 x}}\log\left(\frac{v_0(x) \cdot \sqrt{\varphi_0 x}+v_1(x) \cdot \sqrt{\varphi_1 x}}{v_0(x) \cdot \sqrt{\varphi_0 x}-v_1(x) \cdot \sqrt{\varphi_1 x}}\right) \]
+\[ + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \cdot \frac{f\beta}{f_2^{(\nu)}\beta\sqrt{\varphi_0\beta \cdot \varphi_1\beta}}\log\left(\frac{v_0(\beta) \cdot \sqrt{\varphi_0\beta}+v_1(\beta) \cdot \sqrt{\varphi_1\beta}}{v_0(\beta) \cdot \sqrt{\varphi_0\beta}-v_1(\beta) \cdot \sqrt{\varphi_1\beta}}\right), \tag{202} \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x \cdot \sqrt{\varphi_0 x \cdot \varphi_1 x}}. \]
+
+Les fonctions $v_0(x)$ et $v_1(x)$ sont déterminées par les équations:
+\[ v_0(x_1)\sqrt{\varphi_0 x_1}+\omega_1 v_1(x_1)\sqrt{\varphi_1 x_1} = 0, \]
+\[ v_0(x_2)\sqrt{\varphi_0 x_2}+\omega_2 v_1(x_2)\sqrt{\varphi_1 x_2} = 0, \quad \text{etc.} \]
+
+et $z_1, z_2, \ldots z_\theta$, par l'équation (181), qui deviendra
+\[ \frac{\{v_0(z)\}^{2} \cdot \varphi_0 z-\{v_1(z)\}^{2} \cdot \varphi_1 z}{(z-x_1)(z-x_2)\ldots(z-x_\alpha)} = 0. \tag{203} \]
+
+Les quantités $\omega_1, \omega_2, \ldots \omega_\alpha$, sont toutes égales à $+1$ ou à $-1$, et $\pi_1, \pi_2, \ldots \pi_\theta$, qui sont aussi de la même forme, sont déterminées par
+\[ \pi_1 = \frac{v_0(z_1) \cdot \sqrt{\varphi_0 z_1}}{v_1(z_1) \cdot \sqrt{\varphi_1 z_1}}, \quad \pi_2 = \frac{v_0(z_2) \cdot \sqrt{\varphi_0 z_2}}{v_1(z_2) \cdot \sqrt{\varphi_1 z_2}}, \quad \text{etc.} \]
+
+La plus petite valeur de $\theta$ se trouve par l'équation (172), en remarquant que
+\[ k_1 = 1, \quad k_2 = 1, \]
+on aura
+\[ \theta = \tfrac{1}{2} \cdot h\gamma_1 + \tfrac{1}{2} \cdot h\gamma_2 - \frac{n'}{2} = \tfrac{1}{2}(h\gamma_1+h\gamma_2-n'), \]
+où $n'$ est le plus grand commun diviseur de 2 et $h\gamma_1+h\gamma_2$, si donc
+\[ h \cdot (\varphi_0 x \cdot \varphi_1 x) = 2m-1, \]
+\origpage{256}
+ou
+\[ h \cdot (\varphi_0 x \cdot \varphi_1 x) = 2m, \]
+on aura pour $\theta$ la même valeur, savoir:
+\[ \theta = m-1; \]
+
+quant aux valeurs de $v_0$ et $v_1$, on aura l'équation (176), savoir:
+si
+\[ \rho = 1, \quad hv_0 = hv_1 + Eh\,\frac{R^{(1)}}{R^{(0)}} = hv_1 + E\tfrac{1}{2}(h\varphi_1 x-h\varphi_0 x); \]
+
+donc dans le cas où
+\[ h(\varphi_0 x \cdot \varphi_1 x) = 2m-1, \]
+\[ hv_0 = hv_1 + \tfrac{1}{2}(h\varphi_1 x-h\varphi_0 x) - \tfrac{1}{2} \]
+et dans le cas où
+\[ h(\varphi_0 x \cdot \varphi_1 x) = 2m, \]
+\[ hv_0 = hv_1 + \tfrac{1}{2}(h\varphi_1 x-h\varphi_0 x). \]
+
+Pour les valeurs de $\mu$ et $\alpha$ on aura, d'après les équations (173) et (174),
+\[ \mu = 2hv_1 + h\varphi_1 x \]
+\[ \alpha = 2hv_1 + h\varphi_1 x - m + 1, \]
+
+si $m = 1$, on a $\theta = 0$, donc alors:
+\[ \Sigma\omega\psi(x) = v. \]
+
+Dans ce cas:
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x \cdot \sqrt{R}} \]
+
+où $R$ est du premier ou du second degré.
+
+Cette intégrale peut donc s'exprimer par des fonctions algébriques et logarithmiques, comme on le voit, en faisant
+\[ \varphi_0 x = \varepsilon_0 x + \delta_0, \quad \varphi_1 x = \varepsilon_1 x + \delta_1, \quad f_2 x = (x-\beta)^{\nu}, \]
+\[ f x = 1, \quad v_1(x) = 1, \quad v_0(x) = a, \]
+\origpage{257}
+on aura
+\[ a = \frac{\omega_1\sqrt{\varphi_1 x_1}}{\sqrt{\varphi_0 x_1}} = v_0(x), \]
+
+donc en substituant et faisant $\omega_1 = 1$,
+\[ \int \frac{f x_1 \cdot dx_1}{(x_1-\beta)^{\nu} \cdot \sqrt{(\varepsilon_0 x_1+\delta_0)(\varepsilon_1 x_1+\delta_1)}} = C - \tag{204} \]
+\[ \Pi\,\frac{f x}{(x-\beta)^{\nu} \cdot \sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 x+\delta_1)}}\log\left(\frac{\sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 x_1+\delta_1)}+\sqrt{(\varepsilon_0 x_1+\delta_0)(\varepsilon_1 x+\delta_1)}}{\sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 x_1+\delta_1)}-\sqrt{(\varepsilon_0 x_1+\delta_0)(\varepsilon_1 x+\delta_1)}}\right) \]
+\[ + \frac{1}{\Gamma(\nu)}\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{\sqrt{(\varepsilon_0\beta+\delta_0)(\varepsilon_1\beta+\delta_1)}} \right\} \log\left(\frac{\sqrt{(\varepsilon_0\beta+\delta_0)(\varepsilon_1 x_1+\delta_1)}+\sqrt{(\varepsilon_1\beta+\delta_1)(\varepsilon_0 x_1+\delta_0)}}{\sqrt{(\varepsilon_0\beta+\delta_0)(\varepsilon_1 x_1+\delta_1)}-\sqrt{(\varepsilon_1\beta+\delta_1)(\varepsilon_0 x_1+\delta_0)}}\right) \]
+
+soit, par exemple, $\nu = 0$, $f x_1 = 1$, on aura, en mettant $z$ au lieu de $x_1$:
+\[ \int \frac{dz}{\sqrt{(\varepsilon_0 z+\delta_0)(\varepsilon_1 z+\delta_1)}} = C - \]
+\[ \Pi\,\frac{1}{\sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 x+\delta_1)}}\log\left(\frac{\sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 z+\delta_1)}+\sqrt{(\varepsilon_1 x+\delta_1)(\varepsilon_0 z+\delta_0)}}{\sqrt{(\varepsilon_0 x+\delta_0)(\varepsilon_1 z+\delta_1)}-\sqrt{(\varepsilon_1 x+\delta_1)(\varepsilon_0 z+\delta_0)}}\right) \]
+\[ = C - \Pi \cdot \left\{ \frac{1}{x} \cdot \frac{1}{\sqrt{\varepsilon_0\varepsilon_1}}+\cdots \right\}\log\left(\frac{\sqrt{\varepsilon_0} \cdot \sqrt{\varepsilon_1 z+\delta_1}+\sqrt{\varepsilon_1} \cdot \sqrt{\varepsilon_0 z+\delta_0}}{\sqrt{\varepsilon_0} \cdot \sqrt{\varepsilon_1 z+\delta_1}-\sqrt{\varepsilon_1} \cdot \sqrt{\varepsilon_0 z+\delta_0}}+\cdots\right) \]
+donc
+\[ \int \frac{dz}{\sqrt{(\varepsilon_0 z+\delta_0)(\varepsilon_1 z+\delta_1)}} = C - \frac{1}{\sqrt{\varepsilon_0\varepsilon_1}}\log\left(\frac{\sqrt{\varepsilon_0} \cdot \sqrt{\varepsilon_1 z+\delta_1}+\sqrt{\varepsilon_1} \cdot \sqrt{\varepsilon_0 z+\delta_0}}{\sqrt{\varepsilon_0} \cdot \sqrt{\varepsilon_1 z+\delta_1}-\sqrt{\varepsilon_1} \cdot \sqrt{\varepsilon_0 z+\delta_0}}\right) \]
+
+Si $m = 2$, on aura $\theta = 1$.
+\[ h(\varphi_0 x \cdot \varphi_1 x) = 3 \text{ ou } 4. \]
+
+Dans ce cas on aura donc
+\[ \Sigma\omega\psi(x) = v - \pi_1 \cdot \psi(z_1) = \omega_1\psi(x_1)+\omega_2\psi(x_2)+\cdots+\omega_\alpha\psi(x_\alpha), \tag{205} \]
+
+et la fonction $\psi x$ sera une fonction elliptique.
+\origpage{258}
+On aura immédiatement la valeur de $z_1$ par l'équation (203).
+
+En effet, en faisant
+\[ (v_0 z)^{2}\varphi_0 z-(v_1 z)^{2}\varphi_1(z) = A+\cdots+B \cdot z^{\alpha+1}, \]
+on aura
+\[ x_1 \cdot x_2 \ldots x_\alpha \cdot z_1 = \frac{A}{B}(-1)^{\alpha+1}, \]
+donc
+\[ z_1 = \frac{A}{B} \cdot \frac{(-1)^{\alpha+1}}{x_1 x_2 \ldots x_\alpha} \]
+
+il est clair que $\dfrac{A}{B}$ est une fonction rationnelle de $x_1, x_2, \ldots x_\alpha$,
+\[ \sqrt{\varphi_0 x_1}, \sqrt{\varphi_0 x_2}, \ldots \sqrt{\varphi_0 x_\alpha}, \sqrt{\varphi_1 x_1}, \sqrt{\varphi_1 x_2}, \ldots \sqrt{\varphi_1 x_\alpha}. \]
+
+Soit, par exemple,
+\[ \varphi_0 x = 1, \quad \varphi_1 x = \alpha_0+\alpha_1 x+\alpha_2 x^{2}+\alpha_3 x^{3}, \quad v_1 x = 1, \quad v_0 x = \alpha_0+\alpha_1 x \]
+
+on trouvera les équations:
+\[ v_0(x_1) = -\omega_1\sqrt{\varphi_1 x_1}, \quad v_0 x_2 = -\omega_2\sqrt{\varphi_1 x_2}, \]
+\[ v_0(x) = -\omega_1 \cdot \frac{x-x_2}{x_1-x_2}\sqrt{\varphi_1 x_1} - \omega_2\,\frac{x-x_1}{x_2-x_1}\sqrt{\varphi_1 x_2}, \]
+\[ \alpha_0 = \omega_1\,\frac{x_2}{x_1-x_2}\sqrt{\varphi_1 x_1}+\omega_2\,\frac{x_1}{x_2-x_1}\sqrt{\varphi_1 x_2} = \frac{\omega_1 x_2\sqrt{\varphi_1 x_1}-\omega_2 x_1\sqrt{\varphi_1 x_2}}{x_1-x_2} \]
+\[ \alpha_1 = -\omega_1\,\frac{1}{x_1-x_2}\sqrt{\varphi_1 x_1}-\omega_2\,\frac{1}{x_2-x_1}\sqrt{\varphi_1 x_2} = \frac{\omega_2\sqrt{\varphi_1 x_2}-\omega_1\sqrt{\varphi_1 x_1}}{x_1-x_2} \]
+
+on trouve de même:
+\[ A = \alpha_0^{2}-\alpha_0, \quad B = -\alpha_3, \]
+donc
+\[ z_1 = \frac{1}{x_1 x_2} \cdot \frac{(\alpha_0^{2}-\alpha_0)}{\alpha_3} \]
+\[ = \frac{1}{\alpha_3 x_1 x_2}\left(\frac{x_2^{2}\varphi_1 x_1+x_1^{2}\varphi x_2-2\omega_1\omega_2\sqrt{\varphi_1 x_1 \cdot \varphi_1 x_2} \cdot x_1 x_2}{(x_1-x_2)^{2}}-\alpha_0\right) \]
+\origpage{259}
+si l'on fait
+\[ \omega_1 = 1, \quad \omega_2 = \pm 1, \]
+
+l'équation (205) deviendra donc
+\[ \psi(x_1) \pm \psi(x_2) = \pm\psi(z) + C - \]
+\[ \Pi\,\frac{f x}{f_2 x \cdot \sqrt{\varphi x}} \cdot \log(F x)\,\Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta\sqrt{\varphi\beta}}\log(F\beta) \right\}, \tag{206} \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x \cdot \sqrt{a_0+a_1 x+a_2 x^{2}+a_3 x^{3}}}, \quad \varphi x = \alpha_0+\alpha_1 x+\alpha_2 x^{2}+\alpha_3 x^{3}, \]
+\[ z = \frac{\left(x_2\sqrt{\varphi x_1} \pm x_1\sqrt{\varphi x_2}\right)^{2}-\alpha_0(x_1-x_2)^{2}}{\alpha_3 \cdot x_1 \cdot x_2(x_1-x_2)} \]
+\[ F x = \dfrac{\dfrac{x-x_2}{x_1-x_2}\sqrt{\varphi x_1} \mp \dfrac{x-x_1}{x_2-x_1}\sqrt{\varphi x_2} + \sqrt{\varphi x}}{-\dfrac{x-x_2}{x_1-x_2}\sqrt{\varphi x_1} \mp \dfrac{x-x_1}{x_2-x_1}\sqrt{\varphi x_2} - \sqrt{\varphi x}}, \]
+ou bien
+\[ F x = \dfrac{\dfrac{\sqrt{\varphi x_1}}{(x_1-x)(x_1-x_2)} \pm \dfrac{\sqrt{\varphi x_2}}{(x_2-x)(x_2-x_1)} + \dfrac{\sqrt{\varphi x}}{(x-x_1)(x-x_2)}}{\dfrac{\sqrt{\varphi x_1}}{(x_1-x)(x_1-x_2)} \pm \dfrac{\sqrt{\varphi x_2}}{(x_2-x)(x_2-x_1)} - \dfrac{\sqrt{\varphi x}}{(x-x_1)(x-x_2)}}. \]
+
+Pour $f_2 x = x-\beta$, $f x = 1$, on a
+\[ \psi(x_1) \pm \psi(x_2) = \pm\psi(z)+C+\frac{1}{\sqrt{\varphi B}}\log(F\beta), \quad \text{où} \quad \psi(x) = \int \frac{dx}{(x-\beta)\sqrt{\varphi x}} \]
+
+et pour $f_2 x = 1$, $f x = 1$,
+\[ \psi(x_1) \pm \psi(x_2) = \pm\psi(z)+C, \quad \text{où} \quad \psi(x) = \int \frac{dx}{\sqrt{\varphi x}} \]
+\origpage{260}
+Soit encore $m = 3$, on aura $\theta = 2$, et $h(\varphi_0 x \cdot \varphi_1 x) = 5$ ou $6$.
+
+Dans ce cas donc on a
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x\sqrt{R}}, \]
+
+où $R$ est un polynome du cinquième ou sixième degré, et
+\[ \omega_1\psi(x_1)+\omega_2\psi(x_2)+\cdots+\omega_\alpha\psi(x_\alpha) = v-\pi_1\psi(z_1)-\pi_2\psi(z_2). \]
+
+Ces fonctions $z_1, z_2$, sont les deux racines d'une équation du second degré, dont les coefficients sont des fonctions rationnelles de $x_1, x_2, x_3$, et $\sqrt{R_1}, \sqrt{R_2}, \sqrt{R_3}$, en désignant par $R_1, R_2, R_3$, les valeurs de $R$ correspondant à $x_1, x_2, x_3$.
+
+Comme cas particuliers je citerai seulement les suivants:
+
+$1^\circ$ Lorsque $f x = A_0+A_1 x$, $f_2 x = 1$. Alors on aura
+\[ \psi(x) = \int \frac{(A_0+A_1 x) \cdot dx}{\sqrt{a_0+a_1 x+\cdots+a_5 x^{5}+a_0 x^{6}}} \]
+
+et
+\[ \pm\psi(x_1) \pm \psi(x_2) \pm \psi(x_3) \pm \cdots \pm \psi(x_\alpha) = \pm\psi(z_1) \pm \psi(z_2)+C. \]
+
+$2^\circ$ Lorsque $\varphi_0 x = 1$, $\varphi_1 x = \alpha_0+\alpha_1 x+\alpha_2 x^{2}+\alpha_3 x^{3}+\alpha_4 x^{4}+\alpha_5 x^{5} = \varphi x$,
+
+$v_0 x = \alpha_0+\alpha_1 x+\alpha_2 x^{2}$, $v_1 x = 1$.
+
+Alors on trouvera facilement
+\[ v_0 x = \frac{(x-x_2)(x-x_3)}{(x_1-x_2)(x_1-x_3)}\sqrt{\varphi x_1}+\frac{(x-x_1)(x-x_3)}{(x_2-x_1)(x_2-x_3)}\sqrt{\varphi x_3}+\frac{(x-x_1)(x-x_2)}{(x_3-x_1)(x_3-x_2)}\sqrt{\varphi x_5}, \]
+
+et
+\[ \pm\psi(x_1) \pm \psi(x_2) \pm \psi(x_3) = \pm\psi(z_1) \pm \psi(z_2)+C- \]
+\[ \Pi\,\frac{f x}{f_2 x\sqrt{\varphi x}}\log\frac{F_0 x}{F_1 x} + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta\sqrt{\varphi\beta}}\log\frac{F_0\beta}{F_1\beta} \right\}, \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x \cdot \sqrt{\varphi x}} \]
+\origpage{261}
+et
+\[ \frac{F_0 x}{F_1 x} = \dfrac{\dfrac{\pm\sqrt{\varphi x_1}}{(x_1-x)(x_1-x_2)(x_1-x_3)} + \dfrac{\pm\sqrt{\varphi x_2}}{(x_2-x)(x_2-x_1)(x_2-x_3)} + \dfrac{\pm\sqrt{\varphi x_3}}{(x_3-x)(x_3-x_1)(x_3-x_2)} + \dfrac{\sqrt{\varphi x}}{(x-x_1)(x-x_2)(x-x_3)}}{\dfrac{\pm\sqrt{\varphi x_1}}{(x_1-x)(x_1-x_2)(x_1-x_3)} + \dfrac{\pm\sqrt{\varphi x_2}}{(x_1-x)(x_2-x_1)(x_2-x_3)} + \dfrac{\pm\sqrt{\varphi x_3}}{(x_3-x)(x_3-x_1)(x_3-x_3)} - \dfrac{\sqrt{\varphi x}}{(x-x_1)(x-x_2)(x-x_3)}} \]
+
+$z_1$ et $z_2$ sont les racines de l'équation
+\[ \frac{(v_0 z)^{2}-\varphi z}{(z-x_1)(z-x_2)(z-x_3)} = 0. \]
+
+En faisant dans la formule générale (202) $v_1 = 1$, on aura
+\[ v_0 x = \begin{cases}
+-\omega_1 \cdot \dfrac{(x-x_3)\ldots(x-x_\alpha)}{(x_1-x_2),\ldots(x_1-x_\alpha)}\sqrt{\dfrac{\varphi_1 x_1}{\varphi_0 x_1}} - \omega_2 \cdot \dfrac{(x-x_1)(x-x_3)\ldots(x-x_\alpha)}{(x_2-x_1)(x_2-x_3)\ldots(x_2-x_\alpha)}\sqrt{\dfrac{\varphi_1 x_2}{\varphi_0 x_2}} - \cdots \\
+\cdots - \omega_\alpha \dfrac{(x-x_1)\ldots(x-x_{\alpha-1})}{(x_\alpha-x_1)\ldots(x_\alpha-x_{\alpha-1})}\sqrt{\dfrac{\varphi_1 x_\alpha}{\varphi_0 x_\alpha}},
+\end{cases} \]
+
+et d'après cela
+\[ \Sigma\omega\psi x + \Sigma\pi\psi(z) = \begin{cases}
+C - \Pi\,\dfrac{f x}{f_2 x \cdot \sqrt{\varphi_0 x \cdot \varphi_1 x}}\log\left(\dfrac{F_0 x}{F_1 x}\right) \\
++ \Sigma\nu \cdot \dfrac{\nu-1}{d\beta^{\nu-1}} \left\{ \dfrac{f\beta}{f_2^{(\nu)}\beta \cdot \sqrt{\varphi_0\beta \cdot \varphi_1\beta}}\log\dfrac{F_0\beta}{F_1\beta} \right\},
+\end{cases} \]
+où
+\[ F_0 x = \begin{cases}
+\dfrac{\omega_1\sqrt{\dfrac{\varphi_1 x_1}{\varphi_0 x_1}}}{(x_1-x)(x_1-x_2)\ldots(x_1-x_\alpha)} + \dfrac{\omega_2\sqrt{\dfrac{\varphi_1 x_2}{\varphi_0 x_2}}}{(x_2-x)(x_2-x_1)\ldots(x_2-x_\alpha)} + \cdots \\
++ \dfrac{\omega_\alpha\sqrt{\dfrac{\varphi_1 x_\alpha}{\varphi_0 x_\alpha}}}{(x_\alpha-x)(x_\alpha-x_1)\ldots(x_\alpha-x_{\alpha-1})} + \dfrac{\sqrt{\dfrac{\varphi_1 x}{\varphi_0 x}}}{(x-x_1)(x-x_2)\ldots(x-x_\alpha)},
+\end{cases} \]
+\origpage{262}
+\[ F_1 x = \begin{cases}
+\dfrac{\omega_1\sqrt{\dfrac{\varphi_1 x_1}{\varphi_0 x_1}}}{(x_1-x)(x_1-x_2)\ldots(x_1-x_\alpha)} + \dfrac{\omega_2\sqrt{\dfrac{\varphi_1 x_2}{\varphi_0 x_2}}}{(x_2-x)(x_2-x_1)\ldots(x_2-x_\alpha)} + \cdots \\
++ \dfrac{\omega_\alpha\sqrt{\dfrac{\varphi_1 x_\alpha}{\varphi_0 x_\alpha}}}{(x_\alpha-x)(x_\alpha-x_1)\ldots(x_\alpha-x_{\alpha-1})} - \dfrac{\sqrt{\dfrac{\varphi_1 x}{\varphi_0 x}}}{(x-x_1)(x-x_2)\ldots(x-x_\alpha)};
+\end{cases} \]
+
+$z_1, z_2, \ldots z_\theta$, sont les racines de l'équation
+\[ \frac{(v_0)^{2} \cdot \varphi_0 z-\varphi_1 z}{(z-x_1)(z-x_2)\ldots(z-x_\alpha)} = 0. \]
+
+En faisant dans la même formule générale $f_2 x = 1$, on aura
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) = C-\Pi\,\frac{f x}{\sqrt{\varphi_0 x\varphi_1 x}}\log\left\{\frac{v_0 x \cdot \sqrt{\varphi_0 x}+v_1 x \cdot \sqrt{\varphi_1 x}}{v_0 x \cdot \sqrt{\varphi_0 x}-v_1 x \cdot \sqrt{\varphi_1 x}}\right\}, \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{\sqrt{\varphi_0 x \cdot \varphi_1 x}}. \]
+
+Si $f x$ est du $(m-2)^{\text{e}}$ degré on aura
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) = C; \]
+
+Si l'on fait $f_2 x = x-\beta$, $f x = 1$, on aura
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) = C+\frac{1}{\sqrt{\varphi_0\beta \cdot \varphi_1\beta}}\log\left(\frac{v_0\beta \cdot \sqrt{\varphi_0\beta}+v_1\beta \cdot \sqrt{\varphi_1\beta}}{v_0\beta \cdot \sqrt{\varphi_0\beta}-v_1\beta \cdot \sqrt{\varphi_1\beta}}\right), \]
+où
+\[ \psi x = \int \frac{dx}{(x-\beta) \cdot \sqrt{\varphi_0 x \cdot \varphi_1 x}}. \]
+
+C. Soit en troisième lieu $n = 3$, $R = \gamma_1^{\frac{1}{3}}\gamma_2^{\frac{2}{3}}$, $\alpha_1 = 0$, $\alpha_2 = 0$.
+\origpage{263}
+Alors on aura
+\[ s_0 = 1, \quad s_1 = \gamma_1^{\frac{1}{3}}\gamma_2^{\frac{2}{3}}, \quad s_2 = \gamma_1^{\frac{2}{3}}\gamma_2^{\frac{1}{3}}, \quad R^{(0)} = s_0, \quad R^{(1)} = s_1, \quad R^{(2)} = s_2, \]
+\[ \theta'(x,0) = v_0+v_1\gamma_1^{\frac{1}{3}}\gamma_2^{\frac{2}{3}}+v_2\gamma_1^{\frac{2}{3}}\gamma_2^{\frac{1}{3}}, \]
+\[ \theta'(x,1) = v_0+\omega v_1\gamma_1^{\frac{1}{3}}\gamma_2^{\frac{2}{3}}+\omega^{2}v_2\gamma_1^{\frac{2}{3}}\gamma_2^{\frac{1}{3}}, \]
+\[ \theta'(x,2) = v_0+\omega^{2}v_1\gamma_1^{\frac{1}{3}}\gamma_2^{\frac{2}{3}}+\omega v_2\gamma_1^{\frac{2}{3}}\gamma_2^{\frac{1}{3}} \]
+\[ \varphi(x) = \log\theta'(x,0)+\omega^{m}\log\theta'(x,1)+\omega^{2m}\log\theta'(x,2) \]
+\[ \theta'(x,0) \cdot \theta'(x,1) \cdot \theta'(x,2) = v_0^{3}+v_1^{3}\gamma_1\gamma_2^{2}+v_2^{3}\gamma_1^{2}\gamma_2-3v_0 v_1 v_2\gamma_1\gamma_2. \]
+
+En faisant donc $m = 1$, $\gamma_1 = \varphi_0 x$, $\gamma_2 = \varphi_1 x$, $v_0 = v_0(x)$, $v_1 = v_1(x)$, $v_2 = v_2(x)$, la formule (179) deviendra
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) = \]
+\[ C-\Pi\,\frac{f x}{f_2 x \cdot (\varphi_0 x)^{\frac{1}{3}}(\varphi_1 x)^{\frac{2}{3}}}\left\{\log(F_0 x)+\omega\log(F_1 x)+\omega^{2}\log(F_2 x)\right\} \]
+\[ + \Sigma\nu \cdot \frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta(\varphi_0\beta)^{\frac{1}{3}}(\varphi_1\beta)^{\frac{2}{3}}}\left\{\log(F_0\beta)+\omega\log(F_1\beta)+\omega^{2}\log(F_2\beta)\right\} \right\}, \]
+où
+\[ \psi(x) = \int \frac{f x \cdot dx}{f_2 x(\varphi_0 x)^{\frac{1}{3}}(\varphi_1 x)^{\frac{2}{3}}}, \]
+\[ F_0 x = v_0(x)+v_1(x)(\varphi_0 x)^{\frac{1}{3}}(\varphi_1 x)^{\frac{2}{3}}+v_2(x)(\varphi_0 x)^{\frac{2}{3}}(\varphi_1 x)^{\frac{1}{3}} \]
+\[ F_1 x = v_0(x)+\omega v_1(x)(\varphi_0 x)^{\frac{1}{3}}(\varphi_1 x)^{\frac{2}{3}}+\omega^{2}v_2(x)(\varphi_0 x)^{\frac{2}{3}}(\varphi_1 x)^{\frac{1}{3}} \]
+\[ F_3 x = v_0(x)+\omega^{2}v_1(x)(\varphi_0 x)^{\frac{1}{3}}(\varphi_1 x)^{\frac{2}{3}}+\omega v_2(x)(\varphi_0 x)^{\frac{2}{3}}(\varphi_1 x)^{\frac{1}{3}}. \]\ednote{Printed $F_3 x$, following $F_0 x$ and $F_1 x$ — an apparent misprint for $F_2 x$, the third member of the triple $F_0, F_1, F_2$ used throughout this passage (matching the $\omega^2, \omega$ coefficient pattern already set by $F_2$ elsewhere on this page). Reproduced here as printed.}
+
+Pour les mêmes valeurs de $x_1, x_2, x_3, \ldots z_1, z_2, \ldots F_0 x, F_1 x, F_2 x$, on aura aussi
+\[ \Sigma\omega\psi(x)+\Sigma\pi\psi(z) = \]
+\[ C-\Pi\,\frac{f x}{f_2 x(\varphi_0 x)^{\frac{2}{3}}(\varphi_1 x)^{\frac{1}{3}}}\left\{\log(F_0 x)+\omega^{2}\log(F_1 x)+\omega\log(F_2 x)\right\} \]
+\[ + \Sigma\nu\,\frac{d^{\nu-1}}{d\beta^{\nu-1}} \left\{ \frac{f\beta}{f_2^{(\nu)}\beta \cdot (\varphi_0\beta)^{\frac{2}{3}}(\varphi_1\beta)^{\frac{1}{3}}} \right\} \left\{\log(F_0\beta)+\omega^{2}\log(F_1\beta)+\omega\log(F_2\beta)\right\} \]
+\origpage{264}
+Les fonctions $z_1, z_2, \ldots z_\theta$, sont les racines de l'équation
+\[ \frac{\{v_0(z)\}^{3}+\{v_1(z)\}^{3}\varphi_0 z(\varphi_1 z)^{2}+\{v_2(z)\}^{3}(\varphi_0 z)^{2}(\varphi_1 z)-3v_0(z)v_1(z)v_2(z)\varphi_0 z\varphi_1 z}{(z-x_1)(z-x_2)(z-x_3)\ldots(z-x_{\alpha-1})(z-x_\alpha)} = 0. \]
+
+D'après l'équation (122), la plus petite valeur sera
+\[ \theta = h\gamma_1+h\gamma_2+1-\frac{3+n'}{2}; \]
+
+en remarquant que $k_1=1$, $k_2=1$, $n'$ est le plus grand commun diviseur de 3 et $h\gamma_1+2h\gamma_2$.
+
+Soit d'abord $h\gamma_1+2h\gamma_2 = 3m$, on aura $n'=3$ et $\theta = h(\varphi_0 x \cdot \varphi_1 x)-2$.
+
+Si $h\gamma_1+2h\gamma_2 = 3m-1$ ou $3m-2$, on aura $n'=1$, et par suite $\theta = h(\varphi_0 x \cdot \varphi_1 x)-1$.
+
+Ainsi, par exemple on aura pour
+\[ h(\varphi_0 x \cdot \varphi_1 x) = 1, 2, 3, 4, 5, 6 \ldots \]
+\[ \theta = 0, 1, 2, 3, 4, 5 \ldots \text{ lorsque } h\varphi_0 x+2h\varphi_1 x = 3m \pm 1 \]
+et $\theta = \phantom{0, }0, 1, 2, 3, 4 \ldots$ lorsque $h\varphi_0 x+2h\varphi_1 x = 3m$.
+
+L'Académie m'ayant fait l'honneur de me charger de surveiller l'impression de ce Mémoire, je me suis appliqué à corriger, autant que possible, les fautes d'impression. Cependant, n'ayant pas le manuscrit sous les yeux au moment où je livrais les épreuves, je ne saurais me flatter d'avoir toujours réussi. Il m'a même semblé que dans certains endroits (notamment dans les conséquences et les développements numériques tirés de l'inégalité 103), il y avait quelques inexactitudes de calcul: mais je ne me suis pas cru autorisé à rien changer dans ce beau travail. J'ai donc obtenu de l'Académie la permission d'insérer ici cette note, que je ne saurais terminer sans exprimer encore une fois mon admiration pour l'illustre géomètre de Christiania, dont la science déplorera toujours la fin prématurée.
+
+\emph{G. Libri.}
+
+\end{document}

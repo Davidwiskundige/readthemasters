@@ -1,0 +1,116 @@
+changelog:
+  - date: "2026-08-22"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-22"
+    summary: >-
+      Transcription re-sourced from the 1841 original printing (Mémoires présentés par divers
+      savants, Gallica) in place of the 1881 Oeuvres complètes reprint; pp. 176–264 (§§1–10, plus
+      the printer's closing note).
+  - date: "2026-08-22"
+    summary: Transcription added (AI draft), pp. 145–211 (§§1–10) from the 1881 Oeuvres complètes scan.
+
+transcription:
+  status: ai-draft
+  model: claude-sonnet-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-22"
+  verification:
+    flagged_pages: [184, 263, 264]
+    date: "2026-08-22"
+  note: >-
+    Full French text of Abel's Paris memoir, printed pages 176–264 (§§1–10), from the true first
+    printing: Mémoires présentés par divers savants à l'Académie royale des sciences de l'Institut
+    de France (Sciences mathématiques et physiques), tome VII (Paris, 1841). Read from the Gallica
+    (BnF) scan, ark:/12148/bpt6k33126, images f221–f309, at high resolution.
+
+    Source switched mid-session from the 1881 Oeuvres complètes (Sylow & Lie) re-setting to this
+    1841 original at the contributor's request, after a preview comparison of pp. 145–147 (1881)
+    against pp. 176–178 (1841) turned up real, consistent typographic differences between the two
+    editions — none of them content differences — documented in HOUSESTYLE R22 and R23: the 1881
+    edition drops the 1841 byline/citation and adds the Oeuvres' own "XII." numbering; it re-sets
+    the quoted theorem statements from French guillemets «...» (1841) into German/Scandinavian-style
+    low quotes „..." (1881); and it silently regularizes the 1841 original's own inconsistent
+    function-application notation (parenthesized `θ(y)` vs bare `θy` for the same symbol,
+    switching within a single paragraph) into bare notation throughout. This transcription follows
+    the 1841 original and, per R23, reproduces its parenthesization exactly as printed at each
+    occurrence — it does not normalize to one form, because the print itself does not use one form.
+
+    Multiplication: the author's own multiplication dot is rendered \cdot throughout (never a plain
+    "."), matching the convention already used for abel-1826-unmoeglichkeit.
+
+    Reused/overloaded notation kept faithful (not modernized): ϱ/ρ serves at different points as
+    (a) the algebraic function y expressed rationally in x (§2), and (b) an index name ρ_1, ρ_2, …
+    ρ_m (§§7–9). γ is reused as (a) the number of "dependent" functions μ−α (§7, matching the 1881
+    edition's usage), and, from §10 onward, as (b) the irreducible factors γ_1, γ_2, … γ_ε of the
+    polynomial −p_0 (eq. 122) — a genuinely different, later, meaning of the same letter, which the
+    memoir itself does not distinguish notationally; both are transcribed as printed. The letter α
+    is likewise reused as an exponent-count subscript and later as a free indeterminate (§4). F is
+    reused across the memoir for at least three unrelated local meanings (the eq. 4 factor pair
+    F_0x·Fx; the quotient Fx/(x−x_1)…(x−x_α) introduced in §6 eq. 72; and a further distinct use in
+    §9 eq. 163 unrelated to either). None of this is a transcription error — see the note above on
+    R23 for the parenthesization side of the same phenomenon.
+
+    Apparent printer's errors kept faithfully, not silently corrected (HOUSESTYLE R4), each flagged
+    in-text with \ednote:
+      * p.184 (eq. within the run leading to eqs. 16–17): printed $\frac{P_1(y)}{P(y)} =
+        \frac{1}{F}\cdot P_1(y)\cdot\frac{T}{P(y)}$ — an apparent misprint for $\frac{1}{T}$ ($T$
+        having just been defined as $P(y')\cdot P(y'')\ldots P(y^{(n)})$); the identity is only
+        trivially true with $T$, and the corresponding passage in the 1881 Oeuvres complètes reads
+        $\frac{1}{T}$ throughout.
+      * p.263 (the $F_0,F_1,F_2$ triple near eq. 179 for the cube-root case): the third function is
+        printed $F_3 x$, breaking the $F_0,F_1,F_2$ pattern used throughout the passage.
+    (Note: the 1881 Oeuvres complètes re-setting has its own, different misprint at the equivalent
+    of eq. 147 — a repeated base $r_1^{k_{1,\pi}} r_1^{k_{2,\pi}}$ where the indexing implies a
+    second factor $r_2$ — but the 1841 original checked here prints that line correctly
+    ($\gamma_1^{k_{1,\pi}}\gamma_2^{k_{2,\pi}}\gamma_3^{k_{3,\pi}}\ldots$, verified against the
+    scan); no \ednote was needed at eq. 147 in this transcription.)
+
+    Notable find: the memoir's final printed page (264) carries a short unsigned-by-Abel postscript,
+    signed "G. Libri," in which Guglielmo Libri — who supervised the proofs in Abel's absence (Abel
+    having died twelve years earlier) — states he corrected printer's errors where he could but,
+    lacking Abel's manuscript to check against, suspects some numerical/computational inaccuracies
+    remain, particularly in the consequences drawn from inequality (103); he asked the Académie for
+    permission to note this rather than silently alter Abel's work. This corroborates the printer's
+    error pattern found independently above, and is transcribed as part of the printed text (not
+    editorial commentary of ours) at the end of original.tex. The identity of this Libri is the same
+    Guglielmo Libri in whose papers Abel's own manuscript copy later surfaced in 1952 (see the
+    work's significance note) — the editor who prepared this printing is also the eventual custodian
+    of the vanished original.
+
+    This was transcribed at a steady continuous pace rather than re-verified page-by-page against
+    the scan afterward — treat as ai-draft accordingly. Pages 164–199 (analogue: the dense
+    combinatorial γ/α derivation) and 254–264 (the closing worked examples, heavy with stacked
+    ±/∓ signs in nested radicals) are the highest-risk stretches for a human check.
+
+    No figures appear in this work. Section headings are the author's own bracketed numerals — [1],
+    [2], [3], … [10] — with no title text, rendered \subsection*{[1]} etc. The 1841 edition's own
+    running-header title ("Propriétés générales de fonctions transcendantes" / "De fonctions
+    transcendantes") is not transcribed, matching the general convention of not reproducing running
+    headers.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-sonnet-5
+    effort: medium
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-08-22"
+    note: >-
+      Full English translation of original.tex, translated from our own transcription (not from any
+      prior published translation). All math, \tag{}, \origpage{N} markers, and \ednote placements
+      are unchanged from the original; verified byte-for-byte with pipeline/texcompare.py (math
+      spans, origpage markers, and refs all preserved). Per HOUSESTYLE R21, prose set inside a
+      \text{...} insert within a formula was translated (e.g. "et"→"and", "donc"→"hence",
+      "d'où"→"whence", "au lieu de"→"in place of", the ordinal "$(n-2)^{\text{e}}$"→
+      "$(n-2)^{\text{th}}$"); the math and the insert's presence/position were left untouched. The
+      French guillemets «...» around the two quoted theorem statements in the opening (HOUSESTYLE
+      R22) and the original's inconsistent function-application parenthesization (HOUSESTYLE R23)
+      are both typographic/notational, not prose, and are therefore preserved unchanged rather than
+      translated. The two \ednote{} printer's-error notes (p.184, p.263) were already written in
+      English as our own editorial commentary and are carried over verbatim. The closing postscript
+      signed "G. Libri." — genuine printed prose, not an editorial note — is translated in full. No
+      translator's-note \ednote was needed; no passage required an \uncertain{} marking.

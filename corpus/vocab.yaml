@@ -179,6 +179,19 @@ venues:
     archives:
       - label: "Biodiversity Heritage Library"
         url: "https://www.biodiversitylibrary.org/bibliography/9527"
+  memoires-divers-savants:
+    name: >-
+      Mémoires présentés par divers savants à l'Académie royale des sciences de l'Institut de
+      France (Sciences mathématiques et physiques)
+    aka: "Mémoires des savants étrangers"
+    place: "Paris"
+    publisher: "Académie royale des sciences de l'Institut de France"
+    note: >-
+      A slow-appearing series for memoirs by non-members reported on by the Academy; Abel's Paris
+      memoir waited from its 1826 submission to 1841 publication here.
+    archives:
+      - label: "Gallica (BnF)"
+        url: "https://gallica.bnf.fr/ark:/12148/cb328135052/date"
   book:
     name: "(published as a book / monograph)"
     kind: book

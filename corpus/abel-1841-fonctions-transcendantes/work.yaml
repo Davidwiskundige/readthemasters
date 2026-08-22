@@ -1,0 +1,111 @@
+id: abel-1841-fonctions-transcendantes
+title: Mémoire sur une propriété générale d'une classe très-étendue de fonctions transcendantes.
+title_en: Memoir on a general property of a very extensive class of transcendental
+  functions.
+authors:
+- name: Niels Henrik Abel
+  wikidata_id: Q13538
+  birth_year: 1802
+  death_year: 1829
+  mactutor: Abel
+  portrait:
+    file: portrait.jpg
+    alt: Portrait of Niels Henrik Abel
+    credit: Engraving after the portrait by Johan Gørbitz (1782–1853), the standard
+      likeness of Abel. Public domain (PD-Art).
+    source: https://commons.wikimedia.org/wiki/File:Niels_Henrik_Abel.jpg
+publication:
+  year: 1841
+  venue: memoires-divers-savants
+  volume: '7'
+  pages: 176–264
+  title_full: '"Mémoire sur une propriété générale d''une classe très-étendue de fonctions
+    transcendantes", presented to the Académie des sciences, Paris, 30 October 1826;
+    first printed in Mémoires présentés par divers savants à l''Académie royale des
+    sciences de l''Institut de France (Sciences mathématiques et physiques), tome
+    VII (Paris, 1841), pp. 176–264.'
+edition:
+  year: 1841
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original first printing in Mémoires présentés
+    par divers savants à l'Académie royale des sciences de l'Institut de France (Sciences
+    mathématiques et physiques), tome VII (Paris, 1841), pp. 176–264 — an original
+    edition with no modern critical apparatus, commentary, or re-typesetting. Only
+    Abel's own text is transcribed.
+discipline: mathematics
+tags:
+- analysis
+language: fr
+type: paper
+significance: 'This is Abel''s celebrated Paris memoir, source of what is now called
+  Abel''s theorem: a sum of any number of integrals of a given algebraic function
+  can be expressed, up to an algebraic and logarithmic remainder, through a fixed
+  number of similar integrals, however many terms are summed — a vast generalization
+  of the addition theorems for elliptic integrals that Legendre had developed, which
+  Abel names as his point of departure in the opening lines.[1] Abel presented the
+  manuscript to the Académie des sciences on 30 October 1826, with Cauchy and Legendre
+  appointed as referees, and remained in Paris for months awaiting their report, in
+  increasing poverty.[2] Cauchy mislaid the manuscript, and no report followed. In
+  March 1829, weeks before Abel''s death, Jacobi wrote to Legendre asking what had
+  become of "this discovery, perhaps the most important that mathematics has made
+  in the century in which we are living"; Cauchy and Legendre finally reported on
+  29 June 1829.[3] The manuscript itself was located only after a formal request from
+  the Norwegian government to the French authorities, and the memoir was finally printed
+  in 1841, twelve years after Abel''s death.[2][3] Abel''s own manuscript later vanished
+  again from the Academy''s papers and was not rediscovered until 1952, found among
+  the papers of Guglielmo Libri in Florence.[2][4]'
+significance_sources:
+- citation: 'A. Del Centina, "Abel''s manuscripts in the Libri collection: their history
+    and their fate", in "Il manoscritto parigino di Abel preservato nella Biblioteca
+    Moreniana di Firenze", Leo S. Olschki (2002) — the definitive account of the memoir''s
+    submission, loss, and the 1952 rediscovery of Abel''s own manuscript copy in Florence.'
+  url: https://abelprize.no/sites/default/files/2021-05/A.%20Del%20Centina%20Abel's%20manuscripts%20in%20the%20Libri%20collection-%20their%20history%20and%20their%20fate;%20in%20Il%20manoscritto%20parigino%20di%20Abel%20preservato%20nella%20.pdf
+- citation: J. J. O'Connor and E. F. Robertson, "Niels Henrik Abel", MacTutor History
+    of Mathematics Archive, University of St Andrews — for the Paris sojourn, the
+    lost manuscript, and the 1841/1952 publication and rediscovery dates.
+  url: https://mathshistory.st-andrews.ac.uk/Biographies/Abel/
+- citation: Jacobi's letter to Legendre, 14 March 1829, quoted in secondary accounts
+    of the Academy's 1829 report on Abel's memoir (Cauchy and Legendre reported 29
+    June 1829, after Jacobi's inquiry).
+- citation: '"The manuscript of Abel''s parisian memoir found in (almost) unexpected
+    place", Università di Ferrara — on the 1952 discovery of Abel''s manuscript copy
+    in the Biblioteca Moreniana, Florence.'
+  url: http://dm.unife.it/geometria/storia/Abel_en.html
+source:
+  scan_url: https://gallica.bnf.fr/ark:/12148/bpt6k33126/f221.item
+  scan_id: gallica:ark:/12148/bpt6k33126 (Mémoires présentés par divers savants, t.
+    VII, 1841; printed pp. 176–264 = Gallica vues f221–f309)
+sources:
+  death_date: Niels Henrik Abel, 1802–1829 (wikidata:Q13538; MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Abel/).
+  publication_date: First published 1841 in Mémoires présentés par divers savants
+    à l'Académie royale des sciences de l'Institut de France, tome VII, pp. 176–264
+    (submitted 30 October 1826; see significance note for the publication history).
+    Confirmed by the title page and citation printed at the head of the memoir itself
+    in the transcribed original ("PRÉSENTÉ À L'ACADÉMIE LE 30 OCTOBRE 1826.").
+  edition: Mémoires présentés par divers savants à l'Académie royale des sciences
+    de l'Institut de France (Sciences mathématiques et physiques), tome VII (Paris,
+    1841), pp. 176–264. Scanned copy on Gallica (BnF), ark:/12148/bpt6k33126.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1829
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1841
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-08-22'
