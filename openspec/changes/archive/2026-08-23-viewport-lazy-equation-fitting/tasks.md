@@ -137,13 +137,21 @@
       → not needed. The approach proved stable once `content-visibility` was dropped; the fallback
       stays documented in design.md for a future attempt at the remaining costs.
 - [x] 6.3 Update PLAN.md §9 backlog #19 item 4 with the measured before/after.
-- [ ] 6.4 Open the PR with the numbers, the settling check, and the deep-link results, DCO
+- [x] 6.4 Open the PR with the numbers, the settling check, and the deep-link results, DCO
       `Signed-off-by` per §11.1.
+      → https://github.com/Davidwiskundige/readthemasters/pull/29 (merged)
 
 ## 7. Close out the change
 
 - [x] 7.1 Run `openspec validate viewport-lazy-equation-fitting --strict`.
-- [ ] 7.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
+- [x] 7.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
       archive the change (`/opsx:archive`). Note this delta also carries the lazy-typesetting rules
       from `lazy-render-hidden-panel-math`; if that change is archived first, re-check the two
       restatements agree before syncing.
+      → the warning earned its place. `lazy-render-hidden-panel-math` was archived first, and a
+      wholesale replacement would have **lost two sentences** its restatement carried but this
+      delta's had dropped ("a work whose translation the reader never opens therefore never pays to
+      typeset it…", and "so the reader still lands on the linked page marker"). Synced by applying
+      only the genuine differences: main's typesetting paragraph kept as the superset, the indexing
+      paragraph updated to "typeset **or measured**", and the two new paragraphs plus three new
+      scenarios added.

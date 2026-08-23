@@ -55,7 +55,7 @@ once that panel has been typeset, so the reader still lands on the linked page m
 
 The reader regions are marked `data-pagefind-body` for the search index — see the `search`
 capability for what that covers and what it excludes. Indexing is unaffected by when math is
-typeset: both the text and formula indexes are built from the HTML at build time.
+typeset or measured: both the text and formula indexes are built from the HTML at build time.
 
 Display math never collides with its equation number. Each display equation is its own horizontal
 scroll area, a formula wider than the text column is left-aligned so scrolling starts at the
@@ -71,6 +71,21 @@ writing to it forces the browser to recompute the whole document's layout, so a 
 read/write interleave costs two full reflows per equation; on the corpus's longest works that is
 thousands of reflows and seconds of blocked main thread. The decision arithmetic — which widths
 imply which classes — SHALL live in a pure function that is unit-tested independently of the DOM.
+
+Measuring SHALL be driven by proximity to the viewport rather than performed for every equation up
+front. A panel shown for the first time has never been laid out, so measuring all of its equations
+at once forces that whole first layout synchronously — seconds of blocked main thread on the
+corpus's longest works, independent of typesetting, which is why fitting the panel eagerly is not
+acceptable however cheap each individual measurement is. An equation whose width cannot yet be read
+SHALL be treated as pending and measured once it can be, never silently left unfitted: dropping it
+is indistinguishable in code from the hidden-panel case and loses the equation. Every equation that
+the reader reaches SHALL end up with the same classes an eager pass would have given it.
+
+Skipping off-screen layout with `content-visibility` is **not** part of this: measured on the
+corpus's longest work it made the first reveal *slower* (4,042 ms with it, 2,919 ms without), while
+leaving the cost of switching between already-laid-out panels unchanged. It also required detecting
+a second, easily-confused "not measurable yet" state, since a layout-skipped element reports a sane
+box width while its children measure zero.
 
 Neither the typesetting nor the measuring of a revealed panel may depend on the order in which the
 page's scripts are registered: both are bundled into one file and the bundler may emit them in
@@ -95,6 +110,21 @@ either order, so both SHALL be driven by the panel's observed change in visibili
 
 - **WHEN** a search result opens `/works/<id>/#en-p-236`, revealing a panel whose math has not been typeset yet
 - **THEN** the panel is typeset and the page is scrolled to `en-p-236` afterwards, so the linked page marker is in view rather than displaced by the formulas that grew above it
+
+#### Scenario: Revealing a panel does not block on its whole length
+
+- **WHEN** a reader opens the translation tab of a work with many hundreds of display equations
+- **THEN** the equations on screen are fitted without the page first laying out and measuring every equation in the panel
+
+#### Scenario: Scrolling fits equations as they arrive
+
+- **WHEN** the reader scrolls to a part of a panel whose equations have not been measured yet
+- **THEN** those equations are fitted as they approach the viewport, receiving the same classes an eager pass would have given them
+
+#### Scenario: An equation that cannot yet be measured is not lost
+
+- **WHEN** an equation's available width cannot be read, because it sits in a panel that is not showing or is otherwise not laid out
+- **THEN** it is left pending and fitted once it is laid out, rather than treated as already handled
 
 #### Scenario: Wide equation keeps its number legible
 
