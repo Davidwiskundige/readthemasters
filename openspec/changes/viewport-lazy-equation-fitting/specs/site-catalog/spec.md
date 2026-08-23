@@ -42,14 +42,19 @@ thousands of reflows and seconds of blocked main thread. The decision arithmetic
 imply which classes — SHALL live in a pure function that is unit-tested independently of the DOM.
 
 Measuring SHALL be driven by proximity to the viewport rather than performed for every equation up
-front, and equations far from the viewport MAY have their layout skipped by the browser entirely. A
-panel shown for the first time has never been laid out, so measuring all of its equations at once
-forces that whole first layout synchronously — seconds of blocked main thread on the corpus's
-longest works, independent of typesetting, which is why fitting the panel eagerly is not acceptable
-however cheap each individual measurement is. An equation whose width cannot yet be read SHALL be
-treated as pending and measured once it can be, never silently left unfitted: skipping it is
-indistinguishable in code from the hidden-panel case and loses the equation. Every equation that the
-reader reaches SHALL end up with the same classes an eager pass would have given it.
+front. A panel shown for the first time has never been laid out, so measuring all of its equations
+at once forces that whole first layout synchronously — seconds of blocked main thread on the
+corpus's longest works, independent of typesetting, which is why fitting the panel eagerly is not
+acceptable however cheap each individual measurement is. An equation whose width cannot yet be read
+SHALL be treated as pending and measured once it can be, never silently left unfitted: dropping it
+is indistinguishable in code from the hidden-panel case and loses the equation. Every equation that
+the reader reaches SHALL end up with the same classes an eager pass would have given it.
+
+Skipping off-screen layout with `content-visibility` is **not** part of this: measured on the
+corpus's longest work it made the first reveal *slower* (4,042 ms with it, 2,919 ms without), while
+leaving the cost of switching between already-laid-out panels unchanged. It also required detecting
+a second, easily-confused "not measurable yet" state, since a layout-skipped element reports a sane
+box width while its children measure zero.
 
 Neither the typesetting nor the measuring of a revealed panel may depend on the order in which the
 page's scripts are registered: both are bundled into one file and the bundler may emit them in
@@ -87,7 +92,7 @@ either order, so both SHALL be driven by the panel's observed change in visibili
 
 #### Scenario: An equation that cannot yet be measured is not lost
 
-- **WHEN** an equation's available width reads as zero because its layout has been skipped
+- **WHEN** an equation's available width cannot be read, because it sits in a panel that is not showing or is otherwise not laid out
 - **THEN** it is left pending and fitted once it is laid out, rather than treated as already handled
 
 #### Scenario: Wide equation keeps its number legible

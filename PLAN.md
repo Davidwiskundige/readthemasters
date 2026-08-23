@@ -619,26 +619,33 @@ proposal when its time comes.
        costs 12,857 ms — the cost persists with no typesetting left to do.
 
        Implemented in `viewport-lazy-equation-fitting`: fit only equations near the viewport
-       (IntersectionObserver), and let the browser skip the rest (`content-visibility: auto` +
-       `contain-intrinsic-size`). Reveal went from a measured 10,416–16,079 ms to ~4 s, which is the
-       typesetting residual that only #18 can remove. Correctness verified end to end in a real
-       browser: 665/665 equations, 0 mismatches, 0 pending.
+       (IntersectionObserver), nothing else. First reveal went from a measured **10,416–16,079 ms to
+       2,919 ms**, the remainder being typesetting that only #18 can remove. Correctness verified end
+       to end in a real browser (Firefox): 665/665 equations, 0 mismatches, 0 pending.
 
-       Three things learned there, worth not relearning:
-       - The two halves only work **together**. `content-visibility` alone yields 0 `wide` / 0
-         `tag-below`, because a skipped element still reports a sane box width while its children
-         measure zero — so a measure-everything pass silently drops every equation.
-       - `IntersectionObserver` fires a viewport ahead, but the browser only makes an element
-         renderable much closer in, so the observer's callback often runs while the element is still
-         unmeasurable — and never fires again, because its intersection state never changes. The
-         `contentvisibilityautostatechange` event is the correct trigger.
+       **`content-visibility: auto` was tried and removed on the evidence.** It is the textbook
+       answer here and it made things worse: first reveal 4,042 ms with it against 2,919 ms without,
+       and an A/B toggling it at runtime showed no effect whatever on switching between
+       already-laid-out panels (2,098/1,850 ms with, 2,005/2,066 ms without). It also dragged in a
+       second, easily-confused "not measurable yet" state — a layout-skipped element reports a sane
+       box width while its children measure zero — plus `contentvisibilityautostatechange` handling,
+       because IntersectionObserver fires a viewport ahead of where the browser makes an element
+       renderable, so the observer would defer an equation as pending and then never fire for it
+       again. Dropping it deleted that whole subsystem and the deep-link, print and find-in-page
+       risks with it.
+
+       **Switching between panels costs ~2 s on a work this long, and always did** — that is the
+       browser laying out a 665-equation panel when it becomes visible, unrelated to any of the
+       above (it is identical with and without `content-visibility`, and the JavaScript for a switch
+       is ~55 ms). Removing it would mean not using `display:none` for panels at all.
+
+       Two method notes worth not relearning:
        - **A lazy pass cannot be verified with a total taken after jumping to the bottom of the
          page** — that only fits the last screenful. Walk the document, then compare each equation
-         against its own measurement. Two "it's broken" readings were this mistake.
-
-       Verification of this class of change needs a **real browser**: in the agent's headless pane
-       the document is permanently hidden, where IntersectionObserver, requestIdleCallback,
-       requestAnimationFrame and scroll events all never fire — only setTimeout does.
+         against its own measurement. Two "it's broken" readings were this mistake, not real bugs.
+       - Verification of this class of change needs a **real browser**: in the agent's headless pane
+         the document is permanently hidden, where IntersectionObserver, requestIdleCallback,
+         requestAnimationFrame and scroll events all never fire — only setTimeout does.
 
     Lesson worth keeping: the work-page scripts are bundled into one file, so **correctness must not
     depend on the order two `<script>` blocks are emitted in.** Fix 1 tripped exactly that — bundling

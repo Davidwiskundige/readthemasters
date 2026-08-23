@@ -383,23 +383,14 @@ function relatedNavHtml(bottom) {
     // (`eqWatch` below), and global.css lets the browser skip layout for equations far away.
     let fitted = new WeakSet();
 
-    // An equation whose layout has been skipped must be left *pending*, never treated as handled:
+    // An equation that cannot be measured yet must be left *pending*, never treated as handled:
     // dropping it is indistinguishable in code from the hidden-panel case, and silently loses it.
-    // Two distinct signals mean "not measurable yet":
-    //   - clientWidth 0        — inside a hidden panel, or otherwise not laid out
-    //   - skipped by content-visibility — the box has a width but its contents are not laid out,
-    //     so the children measure 0. This is the one that bit an early probe of this change: the
-    //     box looks fine, every formula measures zero, and the whole panel comes out unfitted.
-    const isSkipped = (eq) => typeof eq.checkVisibility === 'function' &&
-      !eq.checkVisibility({ contentVisibilityAuto: true });
-
     function fitEquations(list) {
       // A: read the available width while the previous run's classes are still applied — the same
       // moment this was sampled before batching, so no decision can shift.
       const eqs = [];
       for (const eq of list) {
         if (fitted.has(eq)) continue;
-        if (isSkipped(eq)) continue;      // pending — eqWatch brings it back when it is realised
         const room = eq.clientWidth;
         if (!room) continue;              // pending — hidden panel, measured when its tab is shown
         const html = eq.querySelector('.katex-html');
@@ -439,40 +430,15 @@ function relatedNavHtml(bottom) {
       const hits = entries.filter((e) => e.isIntersecting).map((e) => e.target);
       if (!hits.length) return;
       fitEquations(hits);
-      for (const eq of hits) settleIfFitted(eq);
+      // Stop watching an equation once its verdict is in, so `tag-below` making it taller cannot
+      // feed back into another fit.
+      for (const eq of hits) if (fitted.has(eq)) eqWatch.unobserve(eq);
     }, { rootMargin: '100% 0px' });
-
-    // The observer and content-visibility do not use the same margin, and that difference is not a
-    // detail: the observer fires a whole viewport ahead, while the browser only makes an element
-    // renderable much closer in. So the observer's callback routinely runs while the equation is
-    // still skipped and unmeasurable — it is deferred as pending, and the observer never fires for
-    // it again, because its intersection state never changes. Every equation then stays pending for
-    // good. This event is the platform's answer: it fires at the moment the browser decides to
-    // render the element, which is exactly when it can be measured.
-    function onRenderable(ev) {
-      if (ev.skipped) return;
-      fitEquations([ev.currentTarget]);
-      settleIfFitted(ev.currentTarget);
-    }
-
-    // Stop listening to an equation once its verdict is in, so `tag-below` making it taller cannot
-    // feed back into another fit.
-    function settleIfFitted(eq) {
-      if (!fitted.has(eq)) return;
-      eqWatch.unobserve(eq);
-      eq.removeEventListener('contentvisibilityautostatechange', onRenderable);
-    }
 
     // Equations only exist once their panel has been typeset, so this runs after renderMath().
     function observeEquations(root) {
       for (const eq of root.querySelectorAll('.katex-display')) {
-        if (fitted.has(eq)) continue;
-        eqWatch.observe(eq);
-        // Where the event is unsupported, content-visibility is not skipping anything either, so
-        // the observer alone is enough.
-        if ('oncontentvisibilityautostatechange' in eq) {
-          eq.addEventListener('contentvisibilityautostatechange', onRenderable);
-        }
+        if (!fitted.has(eq)) eqWatch.observe(eq);
       }
     }
 

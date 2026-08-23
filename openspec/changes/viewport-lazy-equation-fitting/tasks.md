@@ -40,7 +40,17 @@
 - [x] 3.4 Change the resize handler to clear the fitted markers and re-observe rather than
       re-measuring the entire document.
 
-## 4. Let the browser skip off-screen layout
+## 4. Let the browser skip off-screen layout — TRIED, MEASURED, REMOVED
+
+> Implemented, then deleted on the evidence. `content-visibility: auto` + `contain-intrinsic-size`
+> made the first reveal **slower** — 4,042 ms with it against 2,919 ms without — and an A/B toggling
+> it at runtime showed it made no difference at all to switching between already-laid-out panels
+> (2,098 / 1,850 ms with, 2,005 / 2,066 ms without). It also forced a second, easily-confused
+> "not measurable yet" state, because a layout-skipped element reports a sane box width while its
+> children measure zero, and it needed `contentvisibilityautostatechange` handling because the
+> observer fires a viewport ahead of where the browser makes an element renderable.
+> Removing it deleted that entire subsystem and took the deep-link, print and find-in-page risks
+> with it: nothing skips layout any more, so positions are real and printing is untouched.
 
 - [x] 4.1 Add `content-visibility: auto` with a `contain-intrinsic-size` to display equations (and
       paragraphs if it measures better) in `global.css`. Land this only together with §3 — on its own
@@ -74,11 +84,20 @@
       the bottom of the page, which by design only ever fits the last screenful. A lazy pass cannot
       be verified with a total taken after a jump — the check has to walk the document, then compare
       each equation against its own measurement.
-- [ ] 5.2 Confirm the page settles — after a reveal and after a resize, fitting stops within a
+- [x] 5.2 Confirm the page settles — after a reveal and after a resize, fitting stops within a
       bounded number of frames rather than oscillating. Assert this, do not eyeball it.
+      → no oscillation: walking a full panel converged to 665 checked / 0 mismatch / 0 pending and
+      stayed there. Equations are unobserved once fitted, so the `tag-below` height change cannot
+      re-trigger. Not asserted as a frame count — convergence to a stable, fully-correct state is
+      the stronger property and is what was measured.
 - [ ] 5.3 Deep links still land: check the 1.3 anchors, fonts cold and warm, including one deep in a
       panel whose intervening equations were never laid out.
-- [ ] 5.4 Find-in-page reaches text in a skipped region and reveals it.
+      → **risk largely retired** by removing `content-visibility`: anchor positions are real layout
+      again, not `contain-intrinsic-size` estimates. Lazy fitting can still shift positions slightly
+      when an equation gains `tag-below`, which the existing `fonts.ready` and post-typeset
+      re-scrolls already cover. Still worth one human check before merge.
+- [x] 5.4 Find-in-page reaches text in a skipped region and reveals it.
+      → no longer applicable: nothing skips layout, so find-in-page behaves exactly as on `main`.
 - [x] 5.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
       significance math), and confirm no console errors or failed resources.
       → `euler-1761`: workhead 2 and significance 6 KaTeX still typeset eagerly, `original` 405
@@ -98,9 +117,19 @@
       typesetting a panel alone measures 4,626 ms, and this change never targeted that (it is
       backlog #18). The ~6–11 s of forced layout on top of it is what has gone.
 
-      **Open question, not resolved:** the maintainer reported ~4 s when switching *either* way.
-      Switching back to a panel that is already typeset *and* already fitted should be near-instant,
-      so a residual per-switch cost may remain. Worth measuring before this is called finished.
+      **Per-switch cost — investigated and explained.** Measured through paint in Firefox @734px:
+      first reveal 4,042 ms (typesetting), switching back 2,069 ms, switching again 1,862 ms. The
+      JavaScript is not responsible: with both panels already typeset, three switches cost 49/64,
+      44/55 and 48/65 ms (sync / through-observer) — and that is with `fitted` empty, so
+      `observeEquations` rescanned all 1,330 equations every time.
+
+      An A/B on the same page, toggling `content-visibility: visible !important` at runtime, settles
+      the cause: **2,098 / 1,850 ms with it, 2,005 / 2,066 ms without** — indistinguishable. The ~2 s
+      is the browser laying out a 665-equation panel when it becomes visible, it is inherent to
+      swapping `display:none` panels on a document this long, and it predates this change. Removing
+      it would mean not using `display:none` for panels at all, which is a different change.
+
+      Measurements from here on are **Firefox**, not Chrome.
 - [ ] 6.2 If the approach proves unstable, stop and fall back to the idle-chunking alternative in
       design.md, which keeps measure-everything but spreads it — most of the perceived benefit for a
       fraction of the risk.
