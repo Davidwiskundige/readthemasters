@@ -43,15 +43,29 @@ and write `location.hash`, so `/works/<id>/#en` opens the English translation di
 into a panel survives being shared. Anchors inside a panel are unique to it: section headings are
 `sec-<n>` / `<lang>-sec-<n>` and page markers `p-<n>` / `<lang>-p-<n>`.
 
-Math SHALL be typeset only in panels the reader can actually see. On load the page typesets the
-always-visible regions and whichever panels are currently showing; a hidden panel keeps its raw
-LaTeX until it is revealed, and is typeset on first reveal — by a tab click or by the programmatic
-reveal a deep link performs — before that panel's equations are measured. Each panel is typeset at
-most once, so switching tabs repeatedly costs nothing after the first reveal. A work whose
-translation the reader never opens therefore never pays to typeset it, which on a long bilingual
-work is half the formulas on the page. Because typesetting a panel changes the height of everything
-below each formula, a deep link into a panel typeset this way SHALL be scrolled to its anchor again
-once that panel has been typeset, so the reader still lands on the linked page marker.
+Math SHALL be typeset as the reader reaches it, never for a whole panel at once. On load the page
+typesets only the always-visible regions — the heading and the significance note — and thereafter
+each formula is typeset as it approaches the viewport, so the work done at load is proportional to a
+screenful rather than to the length of the text. A hidden panel is then simply a region none of whose
+formulas is ever near the viewport: it costs nothing until its tab is opened, and opening it typesets
+that panel's visible screenful rather than all of it. Each formula is typeset at most once, so
+scrolling back over text, or leaving a panel and returning to it, costs nothing.
+
+This is what makes a long work usable. On the corpus's longest work only **13 of a panel's 1,581
+formulas** lie within three viewports of the top; typesetting the panel eagerly is ~734 ms of blocked
+main thread at load on a desktop and several times that on a mid-range phone — long enough for the
+browser to offer to stop the page — while typesetting what the reader can see is ~39 ms, matching a
+short paper. Cost SHALL NOT scale with the length of the work.
+
+Because typesetting a formula changes the height of the text around it, a deep link into a region
+typeset this way SHALL be scrolled to its anchor again once the formulas around that anchor have been
+typeset, so the reader still lands on the linked page marker.
+
+Two consequences are accepted rather than fixed, and are recorded so they are not re-derived. Jumping
+directly to a distant part of a long work settles briefly as the formulas there typeset and grow,
+because there is no runway in which to typeset ahead; reserving space for display equations does not
+solve it, since most of a panel's formulas are inline and each gains a little height as it renders.
+And the browser's find-in-page matches raw LaTeX in regions not yet typeset.
 
 The reader regions are marked `data-pagefind-body` for the search index — see the `search`
 capability for what that covers and what it excludes. Indexing is unaffected by when math is
@@ -79,7 +93,8 @@ corpus's longest works, independent of typesetting, which is why fitting the pan
 acceptable however cheap each individual measurement is. An equation whose width cannot yet be read
 SHALL be treated as pending and measured once it can be, never silently left unfitted: dropping it
 is indistinguishable in code from the hidden-panel case and loses the equation. Every equation that
-the reader reaches SHALL end up with the same classes an eager pass would have given it.
+the reader reaches SHALL end up with the same classes an eager pass would have given it, including
+equations typeset late, which SHALL be fitted once they exist.
 
 Skipping off-screen layout with `content-visibility` is **not** part of this: measured on the
 corpus's longest work it made the first reveal *slower* (4,042 ms with it, 2,919 ms without), while
@@ -96,20 +111,35 @@ either order, so both SHALL be driven by the panel's observed change in visibili
 - **WHEN** a visitor opens `/works/<id>/#en`
 - **THEN** the English translation panel is shown directly, its hash preserved for sharing
 
-#### Scenario: Hidden panel is not typeset until opened
+#### Scenario: Only what the reader can see is typeset at load
+
+- **WHEN** a work with many hundreds of formulas finishes loading
+- **THEN** only the always-visible regions and the formulas near the viewport are typeset, and the rest of the page still holds its raw LaTeX
+
+#### Scenario: Scrolling typesets formulas as they arrive
+
+- **WHEN** the reader scrolls into a part of the text whose formulas have not been typeset
+- **THEN** those formulas are typeset as they approach the viewport, and are then fitted like any other equation
+
+#### Scenario: A hidden panel costs nothing until opened
 
 - **WHEN** a bilingual work's page finishes loading with only the original panel showing
-- **THEN** only the original panel's math is typeset, and the translation panel's math is typeset when its tab is first opened
+- **THEN** none of the translation panel's math is typeset, and opening its tab typesets that panel's visible screenful rather than the whole panel
 
-#### Scenario: Reopening a panel does not typeset it again
+#### Scenario: Returning to text already read does not typeset it again
 
-- **WHEN** the reader switches away from a panel and back to it
-- **THEN** that panel is not typeset a second time
+- **WHEN** the reader scrolls back over text, or leaves a panel and returns to it
+- **THEN** no formula is typeset a second time
 
-#### Scenario: Deep link into a lazily typeset panel lands on its anchor
+#### Scenario: Deep link into a not-yet-typeset region lands on its anchor
 
-- **WHEN** a search result opens `/works/<id>/#en-p-236`, revealing a panel whose math has not been typeset yet
-- **THEN** the panel is typeset and the page is scrolled to `en-p-236` afterwards, so the linked page marker is in view rather than displaced by the formulas that grew above it
+- **WHEN** a search result opens `/works/<id>/#en-p-236`, pointing into a region whose math has not been typeset yet
+- **THEN** the formulas around that anchor are typeset and the page is scrolled to `en-p-236` afterwards, so the marker is in view rather than displaced by the formulas that grew around it
+
+#### Scenario: Jumping to a distant part settles rather than blocking
+
+- **WHEN** the reader jumps straight to the end of a long work, where nothing could be typeset ahead
+- **THEN** the formulas there typeset and the page settles briefly, rather than blocking the browser
 
 #### Scenario: Revealing a panel does not block on its whole length
 
@@ -118,7 +148,7 @@ either order, so both SHALL be driven by the panel's observed change in visibili
 
 #### Scenario: Scrolling fits equations as they arrive
 
-- **WHEN** the reader scrolls to a part of a panel whose equations have not been measured yet
+- **WHEN** the reader scrolls to a part of a panel whose equations have not been measured yet, whether they were typeset just now or earlier and left unfitted by a resize
 - **THEN** those equations are fitted as they approach the viewport, receiving the same classes an eager pass would have given them
 
 #### Scenario: An equation that cannot yet be measured is not lost
