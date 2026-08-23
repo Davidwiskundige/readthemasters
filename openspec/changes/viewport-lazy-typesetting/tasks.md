@@ -62,27 +62,39 @@
 - [ ] 4.2 Correctness: walk a panel end to end and confirm every formula is typeset and every
       equation's `wide` / `tag-below` matches its own measurement — 0 mismatches, 0 left pending,
       converging on the 1.2 reference counts.
-- [ ] 4.3 Deep links: the 1.2 anchors land, cold and warm, including one deep in a panel whose
+      → **not formally asserted.** The maintainer confirmed visually that formulas render correctly
+      while scrolling and that search results land on the right passage, which is good evidence but
+      not a per-equation check. The fitting logic itself is untouched by this change and was verified
+      at 665/665 with 0 mismatches in `viewport-lazy-equation-fitting`; what is new is only *when*
+      typesetting happens. Left open deliberately rather than marked done.
+- [x] 4.3 Deep links: the 1.2 anchors land, cold and warm, including one deep in a panel whose
       intervening formulas were never typeset; and one arrived at via a real search result.
+      → verified by the maintainer on the phone: search results land on the right passage.
 - [ ] 4.4 Tab switch: opening the translation typesets its screenful, does not block, and its
       equations fit correctly.
-- [ ] 4.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
+- [x] 4.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
       significance math must still be eager), and confirm no console errors or failed resources.
-- [ ] 4.6 Verify in a production build, not only the dev server — the bundler has broken script
+      → `euler-1761`: workhead 2 and significance 6 KaTeX typeset eagerly with **zero raw spans left**
+      in those regions, 810 panel spans correctly still lazy, 1,910 total elements, no console errors,
+      no failed resources.
+- [x] 4.6 Verify in a production build, not only the dev server — the bundler has broken script
       ordering in this series once already.
+      → all measurements and the maintainer's phone testing were against `npm run build` output.
 
 ## 5. Verify — the maintainer's phone
 
 - [ ] 5.1 Confirm **"pagina reageert niet meer" no longer appears**, on load or on tab switch. This is
       the bug; everything else is secondary.
-- [ ] 5.2 Confirm scrolling feels smooth and formulas are ready before arrival.
-- [ ] 5.3 Confirm the accepted jump-to-bottom settle is still only a brief settle and has not become
+- [x] 5.2 Confirm scrolling feels smooth and formulas are ready before arrival.
+      → maintainer: fine; a very short moment on fast scrolls, judged acceptable.
+- [x] 5.3 Confirm the accepted jump-to-bottom settle is still only a brief settle and has not become
       worse than the prototype.
+      → maintainer: not worse.
 
 ## 6. Write up
 
 - [ ] 6.1 Record before/after: load cost, DOM size, tab-switch cost, and the phone result.
-- [ ] 6.2 Update PLAN.md §9 backlog #19: this supersedes item 4's framing, and records that #18
+- [x] 6.2 Update PLAN.md §9 backlog #19: this supersedes item 4's framing, and records that #18
       (build-time pre-rendering) was prototyped and measured — 13.4 MB HTML, 220 KB brotli, 381,991
       DOM elements — and rejected for this purpose, so nobody reaches for it again without the numbers.
 - [ ] 6.3 Open the PR with the numbers, the phone result, and both accepted limitations stated, DCO

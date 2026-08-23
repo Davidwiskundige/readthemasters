@@ -606,11 +606,40 @@ proposal when its time comes.
     | DCL gap @1280px | 2,997 ms | 2,086 ms |
     | first reveal of the translation | 10,416 ms | 10,821 ms (unchanged) |
 
+    **Fix 3 shipped** (`viewport-lazy-typesetting`): the real bug all along. On a Samsung A16 the
+    page raised the browser's **unresponsive-script dialog** — on load, before any tab was touched,
+    and again on opening the translation — because `renderMathInElement` typeset a panel's 1,581
+    formulas in one synchronous task. Fixes 1 and 2 had reduced *fitting* and moved typesetting off
+    the load path for hidden panels, but the amount of typesetting still scaled with the length of
+    the work.
+
+    The measurement that reframed it: **only 13 of a panel's 1,581 formulas lie within three
+    viewports of the top.** Each formula is now typeset as it approaches the viewport, so cost is
+    proportional to a screenful and a work ten times longer loads no slower:
+
+    | | before | after | short work (leibniz-1689) |
+    |---|---|---|---|
+    | script work at load | 1,858 ms | **100 ms** | 41 ms |
+    | DOM elements | 194,630 | **4,584** | 1,563 |
+    | download (brotli) | 47 KB | 47 KB | — |
+
+    This **supersedes fix 2's panel-level rule** rather than sitting beside it: a hidden panel is
+    simply a region none of whose formulas is ever near the viewport.
+
+    Two consequences accepted, so nobody re-derives them: jumping straight to a distant part of a
+    long work settles briefly (no runway to typeset ahead — reserving space for display equations
+    does *not* help, since most formulas are inline and each gains a little height); and find-in-page
+    matches raw LaTeX in regions not yet typeset. Neither touches the search indexes, built from HTML
+    at build time.
+
     Remaining:
-    3. Build-time KaTeX rendering (backlog #18) — removes typesetting from the client entirely, but
-       note it does **not** touch item 4's cost. Real trade-offs (heavier per-page HTML, build cost
-       that scales with corpus size, a malformed formula fails the whole build instead of degrading
-       one page, loses instant-fix-via-CDN-bump).
+    3. Build-time KaTeX rendering (backlog #18) — **prototyped, measured and rejected** for this
+       purpose. It fixes the same bug, but spends the resource the struggling device has least:
+       **13.4 MB of HTML** (220 KB brotli against 47 KB) and **381,991 DOM elements** against 4,584.
+       It also leaves cost proportional to document length, where viewport-lazy typesetting does not.
+       Worth revisiting only for its *other* merits — math without JavaScript, no CDN dependency —
+       never as a performance fix. Its remaining trade-offs stand: build cost that scales with corpus
+       size, a malformed formula failing the whole build, loss of instant-fix-via-CDN-bump.
     4. **Viewport-lazy fitting — the fix for the ~10 s first tab reveal.** A separate root cause from
        everything above: a `display:none` panel is never laid out, so the browser defers layout for
        all 665 display equations until the panel is shown, and `fitDisplayMath` forces that entire
