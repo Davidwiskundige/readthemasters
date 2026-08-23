@@ -103,11 +103,12 @@
       leave items 3–4 open with whatever cost remains.
       → item 4 rewritten as the fix for the ~10 s first tab reveal, with the root cause and the
       evidence; noted that #18 does not address it.
-- [ ] 5.4 Open the PR with the before/after numbers and the deep-link verification in the
+- [x] 5.4 Open the PR with the before/after numbers and the deep-link verification in the
       description, DCO `Signed-off-by` per §11.1.
+      → https://github.com/Davidwiskundige/readthemasters/pull/27 (merged)
 
 ## 6. Close out the change
 
 - [x] 6.1 Run `openspec validate lazy-render-hidden-panel-math --strict`.
-- [ ] 6.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
+- [x] 6.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
       archive the change (`/opsx:archive`).

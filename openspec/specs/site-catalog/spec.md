@@ -43,8 +43,19 @@ and write `location.hash`, so `/works/<id>/#en` opens the English translation di
 into a panel survives being shared. Anchors inside a panel are unique to it: section headings are
 `sec-<n>` / `<lang>-sec-<n>` and page markers `p-<n>` / `<lang>-p-<n>`.
 
+Math SHALL be typeset only in panels the reader can actually see. On load the page typesets the
+always-visible regions and whichever panels are currently showing; a hidden panel keeps its raw
+LaTeX until it is revealed, and is typeset on first reveal — by a tab click or by the programmatic
+reveal a deep link performs — before that panel's equations are measured. Each panel is typeset at
+most once, so switching tabs repeatedly costs nothing after the first reveal. A work whose
+translation the reader never opens therefore never pays to typeset it, which on a long bilingual
+work is half the formulas on the page. Because typesetting a panel changes the height of everything
+below each formula, a deep link into a panel typeset this way SHALL be scrolled to its anchor again
+once that panel has been typeset, so the reader still lands on the linked page marker.
+
 The reader regions are marked `data-pagefind-body` for the search index — see the `search`
-capability for what that covers and what it excludes.
+capability for what that covers and what it excludes. Indexing is unaffected by when math is
+typeset: both the text and formula indexes are built from the HTML at build time.
 
 Display math never collides with its equation number. Each display equation is its own horizontal
 scroll area, a formula wider than the text column is left-aligned so scrolling starts at the
@@ -61,10 +72,29 @@ read/write interleave costs two full reflows per equation; on the corpus's longe
 thousands of reflows and seconds of blocked main thread. The decision arithmetic — which widths
 imply which classes — SHALL live in a pure function that is unit-tested independently of the DOM.
 
+Neither the typesetting nor the measuring of a revealed panel may depend on the order in which the
+page's scripts are registered: both are bundled into one file and the bundler may emit them in
+either order, so both SHALL be driven by the panel's observed change in visibility.
+
 #### Scenario: Deep link opens the right panel
 
 - **WHEN** a visitor opens `/works/<id>/#en`
 - **THEN** the English translation panel is shown directly, its hash preserved for sharing
+
+#### Scenario: Hidden panel is not typeset until opened
+
+- **WHEN** a bilingual work's page finishes loading with only the original panel showing
+- **THEN** only the original panel's math is typeset, and the translation panel's math is typeset when its tab is first opened
+
+#### Scenario: Reopening a panel does not typeset it again
+
+- **WHEN** the reader switches away from a panel and back to it
+- **THEN** that panel is not typeset a second time
+
+#### Scenario: Deep link into a lazily typeset panel lands on its anchor
+
+- **WHEN** a search result opens `/works/<id>/#en-p-236`, revealing a panel whose math has not been typeset yet
+- **THEN** the panel is typeset and the page is scrolled to `en-p-236` afterwards, so the linked page marker is in view rather than displaced by the formulas that grew above it
 
 #### Scenario: Wide equation keeps its number legible
 
