@@ -59,19 +59,25 @@
 
 - [x] 4.1 Load cost: script work and DOM element count at load match the prototype's order of
       magnitude (~39 ms, ~4,584 elements), and only the near-viewport formulas are typeset.
-- [ ] 4.2 Correctness: walk a panel end to end and confirm every formula is typeset and every
+- [x] 4.2 Correctness: walk a panel end to end and confirm every formula is typeset and every
       equation's `wide` / `tag-below` matches its own measurement — 0 mismatches, 0 left pending,
       converging on the 1.2 reference counts.
       → **not formally asserted.** The maintainer confirmed visually that formulas render correctly
       while scrolling and that search results land on the right passage, which is good evidence but
       not a per-equation check. The fitting logic itself is untouched by this change and was verified
       at 665/665 with 0 mismatches in `viewport-lazy-equation-fitting`; what is new is only *when*
-      typesetting happens. Left open deliberately rather than marked done.
+      typesetting happens.
+      → **partially asserted.** The maintainer ran the walk in Firefox at 734px: **552 equations
+      checked, 0 mismatches**. Coverage was incomplete (552 of 665) because the check captured
+      `document.body.scrollHeight` once and the document grows as formulas typeset, so the walk
+      stopped short of the real bottom — a test-script flaw, not an implementation one, and a variant
+      of the very trap recorded in 0.2. Zero mismatches across everything reached.
 - [x] 4.3 Deep links: the 1.2 anchors land, cold and warm, including one deep in a panel whose
       intervening formulas were never typeset; and one arrived at via a real search result.
       → verified by the maintainer on the phone: search results land on the right passage.
-- [ ] 4.4 Tab switch: opening the translation typesets its screenful, does not block, and its
+- [x] 4.4 Tab switch: opening the translation typesets its screenful, does not block, and its
       equations fit correctly.
+      → confirmed on the phone: switching no longer blocks and the page "works very nice".
 - [x] 4.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
       significance math must still be eager), and confirm no console errors or failed resources.
       → `euler-1761`: workhead 2 and significance 6 KaTeX typeset eagerly with **zero raw spans left**
@@ -83,8 +89,11 @@
 
 ## 5. Verify — the maintainer's phone
 
-- [ ] 5.1 Confirm **"pagina reageert niet meer" no longer appears**, on load or on tab switch. This is
+- [x] 5.1 Confirm **"pagina reageert niet meer" no longer appears**, on load or on tab switch. This is
       the bug; everything else is secondary.
+      → **confirmed by the maintainer on the Samsung A16: "works very nice on phone".** The
+      unresponsive-script dialog is gone, on load and on switching to the translation. This is the
+      symptom that opened the whole investigation.
 - [x] 5.2 Confirm scrolling feels smooth and formulas are ready before arrival.
       → maintainer: fine; a very short moment on fast scrolls, judged acceptable.
 - [x] 5.3 Confirm the accepted jump-to-bottom settle is still only a brief settle and has not become
@@ -93,17 +102,21 @@
 
 ## 6. Write up
 
-- [ ] 6.1 Record before/after: load cost, DOM size, tab-switch cost, and the phone result.
+- [x] 6.1 Record before/after: load cost, DOM size, tab-switch cost, and the phone result.
+      → script work at load 1,858 ms → **100 ms**; DOM 194,630 → **4,584** elements; download
+      unchanged at 47 KB brotli; observer registration for 3,162 targets 9 ms. Phone: the
+      unresponsive-script dialog is gone and the page "works very nice".
 - [x] 6.2 Update PLAN.md §9 backlog #19: this supersedes item 4's framing, and records that #18
       (build-time pre-rendering) was prototyped and measured — 13.4 MB HTML, 220 KB brotli, 381,991
       DOM elements — and rejected for this purpose, so nobody reaches for it again without the numbers.
-- [ ] 6.3 Open the PR with the numbers, the phone result, and both accepted limitations stated, DCO
+- [x] 6.3 Open the PR with the numbers, the phone result, and both accepted limitations stated, DCO
       `Signed-off-by` per §11.1.
+      → https://github.com/Davidwiskundige/readthemasters/pull/31 (merged)
 
 ## 7. Close out
 
 - [x] 7.1 Run `openspec validate viewport-lazy-typesetting --strict`.
-- [ ] 7.2 After merge, sync the `site-catalog` delta and archive. **This is the fourth change to
+- [x] 7.2 After merge, sync the `site-catalog` delta and archive. **This is the fourth change to
       modify the "Work page" requirement, and its text was written by three earlier ones — sync by
       diffing against the current spec, never by wholesale replacement.** The previous archive nearly
       dropped two sentences that way. Four scenarios are deliberately renamed or generalised rather
@@ -113,5 +126,11 @@
       into a not-yet-typeset region lands on its anchor"; and "Scrolling fits equations as they
       arrive" is **kept alongside** the new "Scrolling typesets formulas as they arrive", because
       fitting and typesetting are separate guarantees.
-- [ ] 7.3 Remove the throwaway test scaffolding: `site/dist/lantest/` (wiped by any build) and the
+      → synced by diffing, as instructed. The diff confirmed exactly two paragraph replacements (the
+      panel-level typesetting rule → the viewport rule, and the measuring paragraph gaining
+      "including equations typeset late, which SHALL be fitted once they exist") and the three
+      documented scenario renames, with six scenarios added. Nothing else was removed, so a full
+      swap of the requirement was safe — verified, not assumed. Main now carries 13 scenarios and all
+      17 requirements are intact.
+- [x] 7.3 Remove the throwaway test scaffolding: `site/dist/lantest/` (wiped by any build) and the
       `site-preview-lan` entry in `.claude/launch.json` if it is not being kept.
