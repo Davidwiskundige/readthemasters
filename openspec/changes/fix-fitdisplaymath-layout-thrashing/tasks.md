@@ -81,8 +81,9 @@
       typesetting rather than fitting. The old code could not finish this page at phone width at all.
 - [x] 5.2 Update PLAN.md §9 backlog #19: mark fix 1 as shipped, replace the projected numbers with the
       measured before/after, and leave items 2–4 open with the remaining KaTeX typesetting cost noted.
-- [ ] 5.3 Open the PR with the before/after numbers and the equivalence-check result in the
+- [x] 5.3 Open the PR with the before/after numbers and the equivalence-check result in the
       description, DCO `Signed-off-by` per §11.1.
+      → https://github.com/Davidwiskundige/readthemasters/pull/25
 
 ## 6. Close out the change
 
