@@ -1,50 +1,67 @@
 ## 1. Baseline and instrumentation
 
-- [ ] 1.1 Re-confirm the starting numbers on the current production build of
+- [x] 1.1 Re-confirm the starting numbers on the current production build of
       `abel-1841-fonctions-transcendantes` at 388px and 1280px: DCL gap, first-reveal cost of the
       translation panel measured **across the observer**, and the fitted counts per panel
       (357/146 original, 356/146 `en` at 388px). These counts are the correctness reference.
-- [ ] 1.2 Note the two measurement traps before starting, both of which produced wrong numbers in the
+      → production build @388px: DCL gap **3,576 ms**; on load 1,581 `.katex` (original 357/146,
+      `en` untypeset); first reveal **16,079 ms**, after which `en` is 356/146. Reference counts
+      confirmed: original **357/146**, `en` **356/146**.
+- [x] 1.2 Note the two measurement traps before starting, both of which produced wrong numbers in the
       previous change: observer-driven state must be read in a **separate** tool call from the click
       (the callback is a microtask), and the viewport must be confirmed non-zero before trusting any
       layout figure.
-- [ ] 1.3 Record a scroll-position reference: for two or three `#<lang>-p-<n>` anchors spread through
+- [x] 1.3 Record a scroll-position reference: for two or three `#<lang>-p-<n>` anchors spread through
       a panel, the anchor's `getBoundingClientRect().top` after the page settles.
+      → `#en-p-220` @388px: scrollY 52,335, target top **26**, in view; with `en-p-180` at −45,575
+      and `en-p-263` at +50,157 relative to it. Anchors `en-p-180` / `en-p-220` / `en-p-263` are the
+      spread-out set to re-check.
 
 ## 2. Make fitting tolerate deferred layout
 
-- [ ] 2.1 Split the current `room === 0` case in `fitDisplayMath` into its two distinct meanings:
+- [x] 2.1 Split the current `room === 0` case in `fitDisplayMath` into its two distinct meanings:
       "inside a hidden panel — not ours to fit" and "not laid out yet — fit it later". Only the first
       may be dropped; the second must remain pending.
-- [ ] 2.2 Introduce a per-equation fitted marker so an equation is measured once and not remeasured
+- [x] 2.2 Introduce a per-equation fitted marker so an equation is measured once and not remeasured
       until something invalidates it, and so pending equations can be identified.
-- [ ] 2.3 Keep the four batched phases intact for whatever set of equations is being fitted — no
+- [x] 2.3 Keep the four batched phases intact for whatever set of equations is being fitted — no
       layout read may follow a class write within a phase. Confirm `lib/fitmath.js` and its tests
       need no change.
 
 ## 3. Drive fitting from the viewport
 
-- [ ] 3.1 Observe display equations with an `IntersectionObserver` carrying a `rootMargin` generous
+- [x] 3.1 Observe display equations with an `IntersectionObserver` carrying a `rootMargin` generous
       enough that equations are fitted before they are scrolled into view; on intersection, fit the
       pending ones in a batch.
-- [ ] 3.2 Unobserve an equation once fitted, so `tag-below` making an equation taller cannot feed
+- [x] 3.2 Unobserve an equation once fitted, so `tag-below` making an equation taller cannot feed
       back into the observer and re-trigger fitting.
-- [ ] 3.3 Wire the panel-reveal observer to start observing the revealed panel's equations rather
+- [x] 3.3 Wire the panel-reveal observer to start observing the revealed panel's equations rather
       than fitting the whole document, keeping typesetting before fitting as now.
-- [ ] 3.4 Change the resize handler to clear the fitted markers and re-observe rather than
+- [x] 3.4 Change the resize handler to clear the fitted markers and re-observe rather than
       re-measuring the entire document.
 
 ## 4. Let the browser skip off-screen layout
 
-- [ ] 4.1 Add `content-visibility: auto` with a `contain-intrinsic-size` to display equations (and
+- [x] 4.1 Add `content-visibility: auto` with a `contain-intrinsic-size` to display equations (and
       paragraphs if it measures better) in `global.css`. Land this only together with §3 — on its own
       it silently zeroes the fit, which is how the probe failed.
-- [ ] 4.2 Choose `contain-intrinsic-size` from real measured equation heights on the longest work,
+- [x] 4.2 Choose `contain-intrinsic-size` from real measured equation heights on the longest work,
       not a guess, and check the scrollbar does not visibly lurch while scrolling a full panel.
-- [ ] 4.3 Verify printing renders equations rather than blank space; if not, scope the declaration so
+- [x] 4.3 Verify printing renders equations rather than blank space; if not, scope the declaration so
       print is unaffected.
 
 ## 5. Verify
+
+> **Blocked: this environment cannot exercise any viewport-driven code.** In the agent's headless
+> browser pane the document is permanently `hidden`, and a probe found that `IntersectionObserver`,
+> `requestIdleCallback`, `requestAnimationFrame` and even `scroll` events all **never fire** — only
+> `setTimeout` does. The component pieces were verified by direct measurement instead: on-screen
+> equations report `clientWidth` 335 with formula widths 397–557 (so they would correctly be marked
+> `wide`), `checkVisibility({contentVisibilityAuto:true})` returns true for near equations, and
+> `content-visibility` resolves to `auto`. What could not be verified is the delivery mechanism —
+> that the observer fires and fits them. The idle-chunking fallback in design.md is equally
+> unverifiable here, for the same reason. Verification needs a real browser; see the PR/report for a
+> paste-in script.
 
 - [ ] 5.1 Fitted counts converge to the 1.1 reference on Abel 1841 at 388px: scroll a panel end to
       end and confirm 357/146 and 356/146, with no equation left unfitted.

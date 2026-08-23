@@ -174,7 +174,19 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
    in works/[id].astro then flags the ones that can't share a line with their number
    (.tag-below) and the ones wider than the column (.wide, left-aligned so the scroll starts
    at the beginning of the formula rather than with its left half already cut off). */
-.katex-display { overflow-x: auto; overflow-y: hidden; padding: .25rem 0; }
+/* Equations far from the viewport are not laid out at all. A long work carries hundreds of them,
+   and laying every one out in a single block is what made revealing a translation panel cost about
+   ten seconds — the panel comes from display:none, so none of it has ever been laid out. The
+   measuring pass in works/[id].astro fits each equation as the reader approaches it; this is the
+   half that lets the browser skip the rest. The two only work together: on its own, this rule makes
+   every formula measure zero and the whole panel comes out unfitted.
+   `auto` means the browser remembers an equation's real height once it has been rendered, so the
+   seed below is only ever used before first sight — 51px is the median measured height on the
+   corpus's longest work (p75 60px, p95 129px). */
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: .25rem 0;
+  content-visibility: auto; contain-intrinsic-size: auto 51px; }
+/* Printing has no viewport to be near: every equation must be realised or it prints as blank space. */
+@media print { .katex-display { content-visibility: visible; } }
 .katex-display.wide > .katex { text-align: left; }
 .katex-display.tag-below > .katex > .katex-html > .tag {
   position: static; display: block; text-align: right; margin-top: .3rem; }
