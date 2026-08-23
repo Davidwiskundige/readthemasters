@@ -88,5 +88,5 @@
 ## 6. Close out the change
 
 - [x] 6.1 Run `openspec validate fix-fitdisplaymath-layout-thrashing --strict`.
-- [ ] 6.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
+- [x] 6.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
       archive the change (`/opsx:archive`).
