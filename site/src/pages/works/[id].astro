@@ -343,15 +343,24 @@ function relatedNavHtml(bottom) {
   <script>
     import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
     import { decideFit } from "../../lib/fitmath.js";
-    document.querySelectorAll('.text, .significance, .workhead').forEach((el) =>
-      renderMathInElement(el, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "\\[", right: "\\]", display: true },
-          { left: "$", right: "$", display: false },
-        ],
-        throwOnError: false,
-      }));
+    const KATEX_OPTIONS = {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      throwOnError: false,
+    };
+    // Typeset a region at most once. Tracked per element, so switching tabs back and forth after
+    // the first reveal costs nothing. Returns whether this call did the work.
+    const typeset = new WeakSet();
+    function renderMath(el) {
+      if (typeset.has(el)) return false;
+      typeset.add(el);
+      renderMathInElement(el, KATEX_OPTIONS);
+      return true;
+    }
+
 
     // Narrow screens: a formula wider than the column would run under the \tag{n} that KaTeX
     // pins at the right edge. Measure each display equation and let the CSS (global.css)
@@ -395,31 +404,73 @@ function relatedNavHtml(bottom) {
       }
     }
 
+    // Typesetting is by far the most expensive thing on a long work — ~3 s per panel on
+    // abel-1841-fonctions-transcendantes — and a bilingual work carries the same formulas twice
+    // while only ever showing one panel. So only what is on screen is typeset now; a hidden panel
+    // keeps its raw LaTeX until it is revealed (see the observer at the end of this script).
+    //
+    // Read from the DOM rather than assumed, so it does not matter which panel the markup happens
+    // to open with. Deliberately synchronous: deferring this to a microtask to catch the panel a
+    // deep link is about to open sounds better but is not, because whether the microtask lands
+    // before or after the other script's applyHash() depends on whether the two scripts share a
+    // task — one bundled file in production, two module fetches in dev. That difference left the
+    // deep-link anchor thousands of pixels off in dev. A deep link therefore still typesets the
+    // panel it opens *and* the one it opened over; that is no worse than before this change, and
+    // correctness beats reclaiming the second panel on that one path.
+    document.querySelectorAll('.significance, .workhead').forEach(renderMath);
+    document.querySelectorAll('.text').forEach((el) => {
+      if (!el.hasAttribute('hidden')) renderMath(el);
+    });
     fitDisplayMath(document);
+
     // KaTeX's fonts arrive from the CDN after that first pass, and the formulas grow when they
     // land — so measure again once they are in. A deep link (e.g. a search result pointing at
     // #p-295) is scrolled into place on load, but that same font reflow then pushes the target
     // down; re-scroll to it once, so a formula-search hit lands on the right line.
-    if (document.fonts) document.fonts.ready.then(() => {
-      fitDisplayMath(document);
+    // `deepOnly` skips the case where the hash is just a panel's own id: a tab click rewrites the
+    // hash to `#en`, and that is a record of which tab is open, not a request to jump anywhere.
+    function scrollToHash(deepOnly) {
       const id = decodeURIComponent((location.hash || '').slice(1));
       const el = id && document.getElementById(id);
-      if (el && !el.closest('[data-panel][hidden]')) el.scrollIntoView({ block: 'start' });
+      if (!el || el.closest('[data-panel][hidden]')) return;
+      if (deepOnly) {
+        const panel = el.closest('[data-panel]');
+        if (panel && panel.dataset.panel === id) return;
+      }
+      el.scrollIntoView({ block: 'start' });
+    }
+
+    if (document.fonts) document.fonts.ready.then(() => {
+      fitDisplayMath(document);
+      scrollToHash(false);
     });
     let fitTimer;
     addEventListener('resize', () => {
       clearTimeout(fitTimer);
       fitTimer = setTimeout(() => fitDisplayMath(document), 150);
     });
-    // A translation panel is display:none until its tab is picked, so its equations can only be
+    // A translation panel is display:none until its tab is picked, so it can only be typeset and
     // measured once it is showing. Watch the panels' `hidden` attribute rather than the tab click:
     // both scripts on this page are bundled into one file, and the bundler is free to order them
-    // either way — with this one first, a click-time re-measure runs while the incoming panel is
-    // still hidden, skips every one of its equations (clientWidth 0) and leaves the panel unfitted.
+    // either way — with this one first, a click-time pass runs while the incoming panel is still
+    // hidden, skips every one of its equations (clientWidth 0) and leaves the panel unfitted.
     // Reacting to the flip itself cannot race it, and covers the programmatic flip a deep link
     // performs too. Only the panels' own attributes are observed, so the classes the pass writes on
     // the equations inside them never retrigger this.
-    const panelWatch = new MutationObserver(() => fitDisplayMath(document));
+    const panelWatch = new MutationObserver((records) => {
+      // Fires in both directions; a panel being hidden needs nothing done to it.
+      let didTypeset = false;
+      for (const r of records) {
+        if (!r.target.hasAttribute('hidden') && renderMath(r.target)) didTypeset = true;
+      }
+      fitDisplayMath(document); // must follow typesetting — it measures rendered KaTeX
+      // Typesetting changes the height of every line below each formula, so a deep link that was
+      // scrolled into place against the untyped panel is now pointing somewhere else. `applyHash()`
+      // scrolls synchronously as it reveals the panel, before this observer's microtask runs, so
+      // that scroll always lands early on a lazily typeset panel — put the reader back on the
+      // anchor. Only after real work: a reveal of an already-typeset panel moves nothing.
+      if (didTypeset) scrollToHash(true);
+    });
     document.querySelectorAll('[data-panel]').forEach((p) =>
       panelWatch.observe(p, { attributes: true, attributeFilter: ['hidden'] }));
   </script>
