@@ -611,18 +611,41 @@ proposal when its time comes.
        note it does **not** touch item 4's cost. Real trade-offs (heavier per-page HTML, build cost
        that scales with corpus size, a malformed formula fails the whole build instead of degrading
        one page, loses instant-fix-via-CDN-bump).
-    4. **Viewport-lazy fitting — the fix for the ~10 s first tab reveal**, which is a separate root
-       cause from everything above and is present on `main` today. A `display:none` panel is never
-       laid out, so the browser defers layout for all 665 display equations until the panel is shown;
-       `fitDisplayMath` then forces that entire first layout synchronously by reading `clientWidth`
-       on every one. Evidence: typesetting the panel in place while hidden costs 4,626 ms, while
-       flip + fit with the panel *already* typeset costs 12,857 ms — the cost persists with no
-       typesetting left to do. Fix: measure only equations near the viewport (IntersectionObserver)
-       so the browser lays out incrementally, paired with `content-visibility: auto` +
-       `contain-intrinsic-size` to skip off-screen layout. Those two only work **together**:
-       `content-visibility` alone breaks the current pass outright (fit yields 0 `wide` / 0
-       `tag-below`, because layout-skipped elements report no usable geometry). Complicates
-       deep-links (`#p-n` anchors) and browser Ctrl+F over not-yet-laid-out content.
+    4. **Viewport-lazy fitting — the fix for the ~10 s first tab reveal.** A separate root cause from
+       everything above: a `display:none` panel is never laid out, so the browser defers layout for
+       all 665 display equations until the panel is shown, and `fitDisplayMath` forces that entire
+       first layout synchronously by reading `clientWidth` on every one. Evidence: typesetting the
+       panel in place while hidden costs 4,626 ms, while flip + fit with the panel *already* typeset
+       costs 12,857 ms — the cost persists with no typesetting left to do.
+
+       Implemented in `viewport-lazy-equation-fitting`: fit only equations near the viewport
+       (IntersectionObserver), nothing else. First reveal went from a measured **10,416–16,079 ms to
+       2,919 ms**, the remainder being typesetting that only #18 can remove. Correctness verified end
+       to end in a real browser (Firefox): 665/665 equations, 0 mismatches, 0 pending.
+
+       **`content-visibility: auto` was tried and removed on the evidence.** It is the textbook
+       answer here and it made things worse: first reveal 4,042 ms with it against 2,919 ms without,
+       and an A/B toggling it at runtime showed no effect whatever on switching between
+       already-laid-out panels (2,098/1,850 ms with, 2,005/2,066 ms without). It also dragged in a
+       second, easily-confused "not measurable yet" state — a layout-skipped element reports a sane
+       box width while its children measure zero — plus `contentvisibilityautostatechange` handling,
+       because IntersectionObserver fires a viewport ahead of where the browser makes an element
+       renderable, so the observer would defer an equation as pending and then never fire for it
+       again. Dropping it deleted that whole subsystem and the deep-link, print and find-in-page
+       risks with it.
+
+       **Switching between panels costs ~2 s on a work this long, and always did** — that is the
+       browser laying out a 665-equation panel when it becomes visible, unrelated to any of the
+       above (it is identical with and without `content-visibility`, and the JavaScript for a switch
+       is ~55 ms). Removing it would mean not using `display:none` for panels at all.
+
+       Two method notes worth not relearning:
+       - **A lazy pass cannot be verified with a total taken after jumping to the bottom of the
+         page** — that only fits the last screenful. Walk the document, then compare each equation
+         against its own measurement. Two "it's broken" readings were this mistake, not real bugs.
+       - Verification of this class of change needs a **real browser**: in the agent's headless pane
+         the document is permanently hidden, where IntersectionObserver, requestIdleCallback,
+         requestAnimationFrame and scroll events all never fire — only setTimeout does.
 
     Lesson worth keeping: the work-page scripts are bundled into one file, so **correctness must not
     depend on the order two `<script>` blocks are emitted in.** Fix 1 tripped exactly that — bundling

@@ -374,34 +374,81 @@ function relatedNavHtml(bottom) {
     // width and over two minutes at phone width, all of it blocking the main thread. Batching the
     // reads and writes into whole-collection phases costs two reflows for the entire pass.
     // Keep it that way — no layout read may follow a classList write within a phase.
-    function fitDisplayMath(root) {
+    //
+    // Only equations near the viewport are measured. Measuring a whole panel at once forces the
+    // browser to lay all of it out in one synchronous block, and a panel revealed from display:none
+    // has never been laid out at all — that, not typesetting, is what made opening a translation
+    // tab cost ~10 s: with the panel *already* typeset, flip + fit still measured 12.9 s, while
+    // typesetting it in place while hidden cost 4.6 s. So fitting follows the reader instead
+    // (`eqWatch` below), and global.css lets the browser skip layout for equations far away.
+    let fitted = new WeakSet();
+
+    // An equation that cannot be measured yet must be left *pending*, never treated as handled:
+    // dropping it is indistinguishable in code from the hidden-panel case, and silently loses it.
+    function fitEquations(list) {
       // A: read the available width while the previous run's classes are still applied — the same
       // moment this was sampled before batching, so no decision can shift.
       const eqs = [];
-      for (const eq of root.querySelectorAll('.katex-display')) {
+      for (const eq of list) {
+        if (fitted.has(eq)) continue;
         const room = eq.clientWidth;
-        if (!room) continue; // hidden panel — measured again when its tab is shown
+        if (!room) continue;              // pending — hidden panel, measured when its tab is shown
         const html = eq.querySelector('.katex-html');
-        if (!html) continue;
+        if (!html) { fitted.add(eq); continue; } // nothing to measure; never ask again
         eqs.push({ eq, html, tag: html.querySelector(':scope > .tag'), room });
       }
+      if (!eqs.length) return;
       // B: clear the previous run's classes, so C measures the formulas unstyled.
       for (const e of eqs) e.eq.classList.remove('wide', 'tag-below');
       // C: measure every formula and its number.
       for (const e of eqs) {
-        let math = 0;
+        let math = 0, kids = 0;
         for (const child of e.html.children) {
-          if (child !== e.tag) math += child.getBoundingClientRect().width;
+          if (child === e.tag) continue;
+          kids++;
+          math += child.getBoundingClientRect().width;
         }
         e.math = math;
+        e.kids = kids;
         e.tagWidth = e.tag ? e.tag.getBoundingClientRect().width : null;
       }
-      // D: apply the verdicts.
+      // D: apply the verdicts. A formula with children that all measure zero was not laid out after
+      // all — leave it pending rather than recording a verdict taken from nothing.
       for (const e of eqs) {
+        if (e.kids && e.math === 0) continue;
         const { wide, tagBelow } = decideFit(e.room, e.math, e.tagWidth);
         if (wide) e.eq.classList.add('wide');
         if (tagBelow) e.eq.classList.add('tag-below');
+        fitted.add(e.eq);
       }
+    }
+
+    // Fit a screenful ahead of the reader, so equations are already right when they scroll in.
+    // Once an equation is fitted it is unobserved: `tag-below` makes it taller, which changes what
+    // intersects the viewport, and left observed that feeds back into another fit.
+    const eqWatch = new IntersectionObserver((entries) => {
+      const hits = entries.filter((e) => e.isIntersecting).map((e) => e.target);
+      if (!hits.length) return;
+      fitEquations(hits);
+      // Stop watching an equation once its verdict is in, so `tag-below` making it taller cannot
+      // feed back into another fit.
+      for (const eq of hits) if (fitted.has(eq)) eqWatch.unobserve(eq);
+    }, { rootMargin: '100% 0px' });
+
+    // Equations only exist once their panel has been typeset, so this runs after renderMath().
+    function observeEquations(root) {
+      for (const eq of root.querySelectorAll('.katex-display')) {
+        if (!fitted.has(eq)) eqWatch.observe(eq);
+      }
+    }
+
+    // Widths changed under us (viewport resize, or KaTeX's fonts landing and growing every
+    // formula), so every verdict is stale. Drop them and let the reader's position decide what is
+    // re-measured now and what waits until it is scrolled to.
+    function invalidateFits() {
+      fitted = new WeakSet();
+      eqWatch.disconnect();
+      observeEquations(document);
     }
 
     // Typesetting is by far the most expensive thing on a long work — ~3 s per panel on
@@ -421,7 +468,7 @@ function relatedNavHtml(bottom) {
     document.querySelectorAll('.text').forEach((el) => {
       if (!el.hasAttribute('hidden')) renderMath(el);
     });
-    fitDisplayMath(document);
+    observeEquations(document);
 
     // KaTeX's fonts arrive from the CDN after that first pass, and the formulas grow when they
     // land — so measure again once they are in. A deep link (e.g. a search result pointing at
@@ -441,13 +488,13 @@ function relatedNavHtml(bottom) {
     }
 
     if (document.fonts) document.fonts.ready.then(() => {
-      fitDisplayMath(document);
+      invalidateFits();
       scrollToHash(false);
     });
     let fitTimer;
     addEventListener('resize', () => {
       clearTimeout(fitTimer);
-      fitTimer = setTimeout(() => fitDisplayMath(document), 150);
+      fitTimer = setTimeout(invalidateFits, 150);
     });
     // A translation panel is display:none until its tab is picked, so it can only be typeset and
     // measured once it is showing. Watch the panels' `hidden` attribute rather than the tab click:
@@ -463,7 +510,7 @@ function relatedNavHtml(bottom) {
       for (const r of records) {
         if (!r.target.hasAttribute('hidden') && renderMath(r.target)) didTypeset = true;
       }
-      fitDisplayMath(document); // must follow typesetting — it measures rendered KaTeX
+      observeEquations(document); // must follow typesetting — equations do not exist before it
       // Typesetting changes the height of every line below each formula, so a deep link that was
       // scrolled into place against the untyped panel is now pointing somewhere else. `applyHash()`
       // scrolls synchronously as it reveals the panel, before this observer's microtask runs, so
