@@ -90,12 +90,13 @@
       stayed there. Equations are unobserved once fitted, so the `tag-below` height change cannot
       re-trigger. Not asserted as a frame count — convergence to a stable, fully-correct state is
       the stronger property and is what was measured.
-- [ ] 5.3 Deep links still land: check the 1.3 anchors, fonts cold and warm, including one deep in a
+- [x] 5.3 Deep links still land: check the 1.3 anchors, fonts cold and warm, including one deep in a
       panel whose intervening equations were never laid out.
-      → **risk largely retired** by removing `content-visibility`: anchor positions are real layout
-      again, not `contain-intrinsic-size` estimates. Lazy fitting can still shift positions slightly
-      when an equation gains `tag-below`, which the existing `fonts.ready` and post-typeset
-      re-scrolls already cover. Still worth one human check before merge.
+      → **verified by the maintainer in Firefox**, cold and warm: `#en-p-220` opens the English panel
+      and lands on page marker 220, and a real search result clicked through into the translation
+      lands on the right passage. Scrolling a translation shows formulas fitted correctly as they
+      arrive. Risk was already reduced by dropping `content-visibility` — anchor positions are real
+      layout again rather than `contain-intrinsic-size` estimates.
 - [x] 5.4 Find-in-page reaches text in a skipped region and reveals it.
       → no longer applicable: nothing skips layout, so find-in-page behaves exactly as on `main`.
 - [x] 5.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
@@ -130,9 +131,11 @@
       it would mean not using `display:none` for panels at all, which is a different change.
 
       Measurements from here on are **Firefox**, not Chrome.
-- [ ] 6.2 If the approach proves unstable, stop and fall back to the idle-chunking alternative in
+- [x] 6.2 If the approach proves unstable, stop and fall back to the idle-chunking alternative in
       design.md, which keeps measure-everything but spreads it — most of the perceived benefit for a
       fraction of the risk.
+      → not needed. The approach proved stable once `content-visibility` was dropped; the fallback
+      stays documented in design.md for a future attempt at the remaining costs.
 - [x] 6.3 Update PLAN.md §9 backlog #19 item 4 with the measured before/after.
 - [ ] 6.4 Open the PR with the numbers, the settling check, and the deep-link results, DCO
       `Signed-off-by` per §11.1.
