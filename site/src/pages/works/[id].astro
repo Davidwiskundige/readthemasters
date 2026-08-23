@@ -338,8 +338,11 @@ function relatedNavHtml(bottom) {
       URL.revokeObjectURL(a.href);
     });
   </script>
-  <script type="module">
+  {/* Bundled by Astro (no `type="module"`, which would leave it inline) so the fitmath import
+      below resolves against this file rather than the page URL — same as search.astro. */}
+  <script>
     import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs";
+    import { decideFit } from "../../lib/fitmath.js";
     document.querySelectorAll('.text, .significance, .workhead').forEach((el) =>
       renderMathInElement(el, {
         delimiters: [
@@ -353,22 +356,43 @@ function relatedNavHtml(bottom) {
     // Narrow screens: a formula wider than the column would run under the \tag{n} that KaTeX
     // pins at the right edge. Measure each display equation and let the CSS (global.css)
     // left-align the ones that overflow and drop the number below the ones that can't sit
-    // beside it — a centred formula needs the number's width clear on *both* sides.
+    // beside it — a centred formula needs the number's width clear on *both* sides. The rule
+    // itself lives in lib/fitmath.js, where it is unit-tested; this function only feeds it.
+    //
+    // The four loops are deliberate. Reading layout straight after writing to it forces the
+    // browser to recompute the whole document synchronously, so measuring and classing each
+    // equation in one pass cost two full reflows *per formula*: ~0.3 s on a long work at desktop
+    // width and over two minutes at phone width, all of it blocking the main thread. Batching the
+    // reads and writes into whole-collection phases costs two reflows for the entire pass.
+    // Keep it that way — no layout read may follow a classList write within a phase.
     function fitDisplayMath(root) {
-      root.querySelectorAll('.katex-display').forEach((eq) => {
+      // A: read the available width while the previous run's classes are still applied — the same
+      // moment this was sampled before batching, so no decision can shift.
+      const eqs = [];
+      for (const eq of root.querySelectorAll('.katex-display')) {
         const room = eq.clientWidth;
-        if (!room) return; // hidden panel — measured again when its tab is shown
+        if (!room) continue; // hidden panel — measured again when its tab is shown
         const html = eq.querySelector('.katex-html');
-        if (!html) return;
-        const tag = html.querySelector(':scope > .tag');
-        eq.classList.remove('wide', 'tag-below');
-        const math = [...html.children]
-          .filter((c) => c !== tag)
-          .reduce((w, c) => w + c.getBoundingClientRect().width, 0);
-        if (math > room) eq.classList.add('wide');
-        const tagW = tag ? tag.getBoundingClientRect().width + 8 : 0;
-        if (tag && math + 2 * tagW > room) eq.classList.add('tag-below');
-      });
+        if (!html) continue;
+        eqs.push({ eq, html, tag: html.querySelector(':scope > .tag'), room });
+      }
+      // B: clear the previous run's classes, so C measures the formulas unstyled.
+      for (const e of eqs) e.eq.classList.remove('wide', 'tag-below');
+      // C: measure every formula and its number.
+      for (const e of eqs) {
+        let math = 0;
+        for (const child of e.html.children) {
+          if (child !== e.tag) math += child.getBoundingClientRect().width;
+        }
+        e.math = math;
+        e.tagWidth = e.tag ? e.tag.getBoundingClientRect().width : null;
+      }
+      // D: apply the verdicts.
+      for (const e of eqs) {
+        const { wide, tagBelow } = decideFit(e.room, e.math, e.tagWidth);
+        if (wide) e.eq.classList.add('wide');
+        if (tagBelow) e.eq.classList.add('tag-below');
+      }
     }
 
     fitDisplayMath(document);
@@ -387,9 +411,16 @@ function relatedNavHtml(bottom) {
       clearTimeout(fitTimer);
       fitTimer = setTimeout(() => fitDisplayMath(document), 150);
     });
-    // A translation panel is display:none until its tab is picked, so its equations can only
-    // be measured once it is showing. This listener runs after the one that flips the panels.
-    document.querySelectorAll('.tabs button').forEach((btn) =>
-      btn.addEventListener('click', () => fitDisplayMath(document)));
+    // A translation panel is display:none until its tab is picked, so its equations can only be
+    // measured once it is showing. Watch the panels' `hidden` attribute rather than the tab click:
+    // both scripts on this page are bundled into one file, and the bundler is free to order them
+    // either way — with this one first, a click-time re-measure runs while the incoming panel is
+    // still hidden, skips every one of its equations (clientWidth 0) and leaves the panel unfitted.
+    // Reacting to the flip itself cannot race it, and covers the programmatic flip a deep link
+    // performs too. Only the panels' own attributes are observed, so the classes the pass writes on
+    // the equations inside them never retrigger this.
+    const panelWatch = new MutationObserver(() => fitDisplayMath(document));
+    document.querySelectorAll('[data-panel]').forEach((p) =>
+      panelWatch.observe(p, { attributes: true, attributeFilter: ['hidden'] }));
   </script>
 </Base>
