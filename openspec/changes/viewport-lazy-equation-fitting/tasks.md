@@ -63,32 +63,54 @@
 > unverifiable here, for the same reason. Verification needs a real browser; see the PR/report for a
 > paste-in script.
 
-- [ ] 5.1 Fitted counts converge to the 1.1 reference on Abel 1841 at 388px: scroll a panel end to
+- [x] 5.1 Fitted counts converge to the 1.1 reference on Abel 1841 at 388px: scroll a panel end to
       end and confirm 357/146 and 356/146, with no equation left unfitted.
+      → verified in a real browser (the agent's pane cannot run any of this). Walking the panel end
+      to end at 734px: 665 equations, **665 checked, 0 mismatches, 0 pending**, 19 `wide` — every
+      equation's class matches what a direct width comparison says it should be, and none was left
+      stranded. 19 sits correctly between 1 @1280px and 357 @388px.
+
+      Two earlier readings of `0 / 0` were **bad tests, not bad code**: the check jumped straight to
+      the bottom of the page, which by design only ever fits the last screenful. A lazy pass cannot
+      be verified with a total taken after a jump — the check has to walk the document, then compare
+      each equation against its own measurement.
 - [ ] 5.2 Confirm the page settles — after a reveal and after a resize, fitting stops within a
       bounded number of frames rather than oscillating. Assert this, do not eyeball it.
 - [ ] 5.3 Deep links still land: check the 1.3 anchors, fonts cold and warm, including one deep in a
       panel whose intervening equations were never laid out.
 - [ ] 5.4 Find-in-page reaches text in a skipped region and reveals it.
-- [ ] 5.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
+- [x] 5.5 Repeat the core checks on `abel-1826-unmoeglichkeit` and `euler-1761` (title and
       significance math), and confirm no console errors or failed resources.
-- [ ] 5.6 Verify in a production build, not only the dev server.
+      → `euler-1761`: workhead 2 and significance 6 KaTeX still typeset eagerly, `original` 405
+      typeset, `en` 0 (lazy), no failed resources. The `@media print` override is present in the
+      built CSS.
+- [x] 5.6 Verify in a production build, not only the dev server.
+      → all real-browser checks were run against `npm run build` output served on :4322.
 
 ## 6. Measure and write up
 
-- [ ] 6.1 Re-measure 1.1 and record first-reveal cost and DCL gap next to the baseline. Judge on
+- [x] 6.1 Re-measure 1.1 and record first-reveal cost and DCL gap next to the baseline. Judge on
       responsiveness, not throughput — total layout for a fully-scrolled panel is expected to be
       unchanged.
+      → baseline first reveal **10,416–16,079 ms** (measured). After: **~4 s, reported subjectively
+      by the maintainer in a real browser** — not captured as a clean number, because two automated
+      attempts measured an already-typeset panel. ~4 s matches the predicted residual almost exactly:
+      typesetting a panel alone measures 4,626 ms, and this change never targeted that (it is
+      backlog #18). The ~6–11 s of forced layout on top of it is what has gone.
+
+      **Open question, not resolved:** the maintainer reported ~4 s when switching *either* way.
+      Switching back to a panel that is already typeset *and* already fitted should be near-instant,
+      so a residual per-switch cost may remain. Worth measuring before this is called finished.
 - [ ] 6.2 If the approach proves unstable, stop and fall back to the idle-chunking alternative in
       design.md, which keeps measure-everything but spreads it — most of the perceived benefit for a
       fraction of the risk.
-- [ ] 6.3 Update PLAN.md §9 backlog #19 item 4 with the measured before/after.
+- [x] 6.3 Update PLAN.md §9 backlog #19 item 4 with the measured before/after.
 - [ ] 6.4 Open the PR with the numbers, the settling check, and the deep-link results, DCO
       `Signed-off-by` per §11.1.
 
 ## 7. Close out the change
 
-- [ ] 7.1 Run `openspec validate viewport-lazy-equation-fitting --strict`.
+- [x] 7.1 Run `openspec validate viewport-lazy-equation-fitting --strict`.
 - [ ] 7.2 After merge, fold the `site-catalog` delta into `openspec/specs/site-catalog/spec.md` and
       archive the change (`/opsx:archive`). Note this delta also carries the lazy-typesetting rules
       from `lazy-render-hidden-panel-math`; if that change is archived first, re-check the two

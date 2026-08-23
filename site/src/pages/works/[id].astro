@@ -439,13 +439,40 @@ function relatedNavHtml(bottom) {
       const hits = entries.filter((e) => e.isIntersecting).map((e) => e.target);
       if (!hits.length) return;
       fitEquations(hits);
-      for (const eq of hits) if (fitted.has(eq)) eqWatch.unobserve(eq);
+      for (const eq of hits) settleIfFitted(eq);
     }, { rootMargin: '100% 0px' });
+
+    // The observer and content-visibility do not use the same margin, and that difference is not a
+    // detail: the observer fires a whole viewport ahead, while the browser only makes an element
+    // renderable much closer in. So the observer's callback routinely runs while the equation is
+    // still skipped and unmeasurable — it is deferred as pending, and the observer never fires for
+    // it again, because its intersection state never changes. Every equation then stays pending for
+    // good. This event is the platform's answer: it fires at the moment the browser decides to
+    // render the element, which is exactly when it can be measured.
+    function onRenderable(ev) {
+      if (ev.skipped) return;
+      fitEquations([ev.currentTarget]);
+      settleIfFitted(ev.currentTarget);
+    }
+
+    // Stop listening to an equation once its verdict is in, so `tag-below` making it taller cannot
+    // feed back into another fit.
+    function settleIfFitted(eq) {
+      if (!fitted.has(eq)) return;
+      eqWatch.unobserve(eq);
+      eq.removeEventListener('contentvisibilityautostatechange', onRenderable);
+    }
 
     // Equations only exist once their panel has been typeset, so this runs after renderMath().
     function observeEquations(root) {
       for (const eq of root.querySelectorAll('.katex-display')) {
-        if (!fitted.has(eq)) eqWatch.observe(eq);
+        if (fitted.has(eq)) continue;
+        eqWatch.observe(eq);
+        // Where the event is unsupported, content-visibility is not skipping anything either, so
+        // the observer alone is enough.
+        if ('oncontentvisibilityautostatechange' in eq) {
+          eq.addEventListener('contentvisibilityautostatechange', onRenderable);
+        }
       }
     }
 
