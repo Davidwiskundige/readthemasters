@@ -573,6 +573,44 @@ proposal when its time comes.
     an SEO lever (Googlebot renders the current client-side KaTeX, and the searchable content is the
     prose, not the formulas). Requires replicating the shared macro preamble in the build step and
     accepting heavier per-page markup; consider once the reader experience is otherwise settled.
+    One lever among several for backlog #19's page-load fix — not necessarily the first one to pull.
+19. **Client-side math render perf on long works** — measured on `abel-1841-fonctions-transcendantes`
+    (3,162 KaTeX formulas / 1,330 display equations across both language panels, 2026-08-23). Two
+    costs block the page, both pure main-thread compute: KaTeX's own `renderMathInElement`, and the
+    `fitDisplayMath` width-measuring pass that decides equation-tag wrap layout. Network was ruled
+    out — KaTeX's CSS/JS/fonts finish downloading from the CDN in ~1.2s.
+
+    **Fix 1 shipped** (`fix-fitdisplaymath-layout-thrashing`): `fitDisplayMath` interleaved DOM reads
+    with writes per equation, forcing a synchronous full-document reflow on every read — two per
+    formula. Batching them into four whole-collection phases (read widths → clear classes → measure →
+    apply) costs two reflows for the entire pass. Measured on the same DOM, same load:
+
+    | viewport | before | after |
+    |---|---|---|
+    | 1280px | 312 ms | 35 ms (~9x) |
+    | 388px (phone) | **153,708 ms** | 35 ms (~4,400x) |
+    | 388px, both panels measured | **463,647 ms** | — |
+
+    The phone-width numbers were the real discovery: the pass did not merely feel slow there, it
+    blocked the main thread for minutes, so a long work was effectively unusable on a phone. Verified
+    byte-identical class assignments (0 mismatches across all 1,330 equations, both viewports).
+
+    Remaining, cheapest/safest first:
+    2. Skip `renderMathInElement` on the hidden (inactive-tab) translation panel at load; render it
+       lazily on first tab reveal (or via `requestIdleCallback`) — roughly halves KaTeX's cost on
+       bilingual works. `fitDisplayMath` already skips zero-width elements; the render call doesn't.
+       With fix 1 in, KaTeX typesetting is now the whole remaining cost (~5s DCL gap at phone width).
+    3. If still not fast enough after 2: build-time KaTeX rendering (backlog #18) — bigger lift,
+       real trade-offs (heavier per-page HTML, build cost that scales with corpus size, a malformed
+       formula fails the whole build instead of degrading one page, loses instant-fix-via-CDN-bump).
+    4. Only if works grow much longer than this one: viewport-lazy (IntersectionObserver) rendering —
+       most invasive; complicates deep-links (`#p-n` anchors from search results) and breaks
+       browser Ctrl+F over not-yet-rendered off-screen content.
+
+    Lesson worth keeping: the work-page scripts are bundled into one file, so **correctness must not
+    depend on the order two `<script>` blocks are emitted in.** Fix 1 tripped exactly that — bundling
+    inverted the tab-flip and re-measure listeners, and the re-measure started running before the
+    panel it was meant to measure became visible.
 
 ---
 
