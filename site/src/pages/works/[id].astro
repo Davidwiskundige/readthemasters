@@ -451,24 +451,58 @@ function relatedNavHtml(bottom) {
       observeEquations(document);
     }
 
-    // Typesetting is by far the most expensive thing on a long work — ~3 s per panel on
-    // abel-1841-fonctions-transcendantes — and a bilingual work carries the same formulas twice
-    // while only ever showing one panel. So only what is on screen is typeset now; a hidden panel
-    // keeps its raw LaTeX until it is revealed (see the observer at the end of this script).
+    // Typesetting is by far the most expensive thing on a long work, and it is the one cost that
+    // used to scale with the length of the text: KaTeX builds ~62 DOM elements per formula, and a
+    // panel of abel-1841-fonctions-transcendantes holds 1,581 of them. Doing that for a whole panel
+    // is ~0.7–1.9 s of blocked main thread on a desktop and several times that on a mid-range phone,
+    // which is long enough for the browser to offer to stop the page.
     //
-    // Read from the DOM rather than assumed, so it does not matter which panel the markup happens
-    // to open with. Deliberately synchronous: deferring this to a microtask to catch the panel a
-    // deep link is about to open sounds better but is not, because whether the microtask lands
-    // before or after the other script's applyHash() depends on whether the two scripts share a
-    // task — one bundled file in production, two module fetches in dev. That difference left the
-    // deep-link anchor thousands of pixels off in dev. A deep link therefore still typesets the
-    // panel it opens *and* the one it opened over; that is no worse than before this change, and
-    // correctness beats reclaiming the second panel on that one path.
+    // So each formula is typeset as it approaches the viewport instead. Only 13 of that panel's
+    // 1,581 formulas lie within three viewports of the top — the page opens with metadata and prose
+    // — so the work at load is proportional to a screenful, and a work ten times longer loads no
+    // slower. A hidden panel needs no special case: none of its formulas is ever near the viewport.
+    const mathWatch = new IntersectionObserver((entries) => {
+      const done = [];
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        mathWatch.unobserve(e.target);      // typeset once; scrolling back over text costs nothing
+        if (renderMath(e.target)) done.push(e.target);
+      }
+      if (!done.length) return;
+      observeEquations(document);           // fit whatever equations that just created
+      // Typesetting changes the height of the text around it, so an anchor the page had already
+      // scrolled to has moved. Only re-scroll when the target is inside what we just typeset —
+      // tying the correction to the thing that moved it, rather than to a moment in the page's life.
+      if (done.some((el) => hashTargetInside(el))) scrollToHash(true);
+    }, { rootMargin: '150% 0px' });
+
+    function hashTargetInside(el) {
+      const id = decodeURIComponent((location.hash || '').slice(1));
+      const target = id && document.getElementById(id);
+      return !!target && el.closest('[data-panel]') === target.closest('[data-panel]');
+    }
+
+    // Math spans only exist in the served HTML; a panel's are observed once it can be seen.
+    function observeMath(root) {
+      for (const span of root.querySelectorAll('span.math, span.mathblock')) {
+        if (!typeset.has(span)) mathWatch.observe(span);
+      }
+    }
+
+    // The heading and the significance note are always visible and tiny (2 and 6 formulas on
+    // euler-1761), so they stay eager — deferring them would only risk the title rendering late.
     document.querySelectorAll('.significance, .workhead').forEach(renderMath);
-    document.querySelectorAll('.text').forEach((el) => {
-      if (!el.hasAttribute('hidden')) renderMath(el);
-    });
+    observeMath(document);
     observeEquations(document);
+
+    // Arriving at a deep link after load (a search result opened in the same tab, or the back
+    // button) has to typeset around the new target too, not just the one the page loaded with.
+    addEventListener('hashchange', () => {
+      const id = decodeURIComponent((location.hash || '').slice(1));
+      const target = id && document.getElementById(id);
+      const panel = target && target.closest('[data-panel]');
+      if (panel && !panel.hasAttribute('hidden')) observeMath(panel);
+    });
 
     // KaTeX's fonts arrive from the CDN after that first pass, and the formulas grow when they
     // land — so measure again once they are in. A deep link (e.g. a search result pointing at
@@ -505,18 +539,14 @@ function relatedNavHtml(bottom) {
     // performs too. Only the panels' own attributes are observed, so the classes the pass writes on
     // the equations inside them never retrigger this.
     const panelWatch = new MutationObserver((records) => {
-      // Fires in both directions; a panel being hidden needs nothing done to it.
-      let didTypeset = false;
+      // Fires in both directions; a panel being hidden needs nothing done to it. A revealed panel's
+      // math spans could not be observed while it was display:none — nothing in it was ever near the
+      // viewport — so start watching them now. Its visible screenful is typeset from there, not the
+      // whole panel, and mathWatch handles the re-scroll if a deep link points into it.
       for (const r of records) {
-        if (!r.target.hasAttribute('hidden') && renderMath(r.target)) didTypeset = true;
+        if (!r.target.hasAttribute('hidden')) observeMath(r.target);
       }
-      observeEquations(document); // must follow typesetting — equations do not exist before it
-      // Typesetting changes the height of every line below each formula, so a deep link that was
-      // scrolled into place against the untyped panel is now pointing somewhere else. `applyHash()`
-      // scrolls synchronously as it reveals the panel, before this observer's microtask runs, so
-      // that scroll always lands early on a lazily typeset panel — put the reader back on the
-      // anchor. Only after real work: a reveal of an already-typeset panel moves nothing.
-      if (didTypeset) scrollToHash(true);
+      observeEquations(document);
     });
     document.querySelectorAll('[data-panel]').forEach((p) =>
       panelWatch.observe(p, { attributes: true, attributeFilter: ['hidden'] }));
