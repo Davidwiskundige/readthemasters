@@ -595,17 +595,34 @@ proposal when its time comes.
     blocked the main thread for minutes, so a long work was effectively unusable on a phone. Verified
     byte-identical class assignments (0 mismatches across all 1,330 equations, both viewports).
 
-    Remaining, cheapest/safest first:
-    2. Skip `renderMathInElement` on the hidden (inactive-tab) translation panel at load; render it
-       lazily on first tab reveal (or via `requestIdleCallback`) — roughly halves KaTeX's cost on
-       bilingual works. `fitDisplayMath` already skips zero-width elements; the render call doesn't.
-       With fix 1 in, KaTeX typesetting is now the whole remaining cost (~5s DCL gap at phone width).
-    3. If still not fast enough after 2: build-time KaTeX rendering (backlog #18) — bigger lift,
-       real trade-offs (heavier per-page HTML, build cost that scales with corpus size, a malformed
-       formula fails the whole build instead of degrading one page, loses instant-fix-via-CDN-bump).
-    4. Only if works grow much longer than this one: viewport-lazy (IntersectionObserver) rendering —
-       most invasive; complicates deep-links (`#p-n` anchors from search results) and breaks
-       browser Ctrl+F over not-yet-rendered off-screen content.
+    **Fix 2 shipped** (`lazy-render-hidden-panel-math`): a bilingual work typeset both panels on load
+    while showing one. Now only visible panels are typeset, the hidden one on first reveal, each at
+    most once. Measured on the production build:
+
+    | | before | after |
+    |---|---|---|
+    | `.katex` typeset on load | 3,162 | 1,581 |
+    | DCL gap @388px | 3,837 ms | 2,165 ms |
+    | DCL gap @1280px | 2,997 ms | 2,086 ms |
+    | first reveal of the translation | 10,416 ms | 10,821 ms (unchanged) |
+
+    Remaining:
+    3. Build-time KaTeX rendering (backlog #18) — removes typesetting from the client entirely, but
+       note it does **not** touch item 4's cost. Real trade-offs (heavier per-page HTML, build cost
+       that scales with corpus size, a malformed formula fails the whole build instead of degrading
+       one page, loses instant-fix-via-CDN-bump).
+    4. **Viewport-lazy fitting — the fix for the ~10 s first tab reveal**, which is a separate root
+       cause from everything above and is present on `main` today. A `display:none` panel is never
+       laid out, so the browser defers layout for all 665 display equations until the panel is shown;
+       `fitDisplayMath` then forces that entire first layout synchronously by reading `clientWidth`
+       on every one. Evidence: typesetting the panel in place while hidden costs 4,626 ms, while
+       flip + fit with the panel *already* typeset costs 12,857 ms — the cost persists with no
+       typesetting left to do. Fix: measure only equations near the viewport (IntersectionObserver)
+       so the browser lays out incrementally, paired with `content-visibility: auto` +
+       `contain-intrinsic-size` to skip off-screen layout. Those two only work **together**:
+       `content-visibility` alone breaks the current pass outright (fit yields 0 `wide` / 0
+       `tag-below`, because layout-skipped elements report no usable geometry). Complicates
+       deep-links (`#p-n` anchors) and browser Ctrl+F over not-yet-laid-out content.
 
     Lesson worth keeping: the work-page scripts are bundled into one file, so **correctness must not
     depend on the order two `<script>` blocks are emitted in.** Fix 1 tripped exactly that — bundling
