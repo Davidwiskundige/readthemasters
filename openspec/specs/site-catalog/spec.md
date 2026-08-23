@@ -52,6 +52,15 @@ beginning of the formula, and a `\tag{n}` that cannot fit beside its formula mov
 its own, right-aligned beneath it. Which layout applies is decided by measuring the rendered
 formula, not by a viewport breakpoint, so a long formula stacks its number at any screen width.
 
+That measuring pass MUST batch its DOM reads and writes into whole-collection phases — sample every
+equation's available width, then clear the layout classes, then measure every formula and tag, then
+apply the resulting classes — so that the number of forced synchronous layouts it triggers is a
+small constant rather than growing with the number of equations. Reading layout immediately after
+writing to it forces the browser to recompute the whole document's layout, so a per-equation
+read/write interleave costs two full reflows per equation; on the corpus's longest works that is
+thousands of reflows and seconds of blocked main thread. The decision arithmetic — which widths
+imply which classes — SHALL live in a pure function that is unit-tested independently of the DOM.
+
 #### Scenario: Deep link opens the right panel
 
 - **WHEN** a visitor opens `/works/<id>/#en`
@@ -61,6 +70,11 @@ formula, not by a viewport breakpoint, so a long formula stacks its number at an
 
 - **WHEN** a display equation is wider than the text column and its `\tag{n}` cannot fit beside it
 - **THEN** the equation scrolls in its own area and the tag moves to its own right-aligned line beneath, decided by measuring the rendered formula
+
+#### Scenario: Fitting cost does not scale with equation count
+
+- **WHEN** the fitting pass runs over a work with many hundreds of display equations
+- **THEN** it triggers a constant number of forced layout recalculations for the whole pass rather than one or more per equation, and assigns every equation the same classes an unbatched pass would
 
 #### Scenario: ai-draft work is marked
 
