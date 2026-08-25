@@ -1,0 +1,284 @@
+% Faithful transcription — original Latin. Transcribed from the original first printing:
+% C. G. J. Jacobi, "Considerationes generales de transcendentibus Abelianis" (No. 32), Journal für
+% die reine und angewandte Mathematik (Crelle's Journal), Neunter Band, 4. Heft (Berlin: G. Reimer,
+% 1832), pp. 394–403. Scan: EuDML doc 146814 (= the GDZ digitization of the same printing,
+% PPN243919689_0009); read from the contributor's PDF of that scan, which carries the volume title
+% page plus the ten printed pages 394–403.
+%
+% \origpage uses the PRINTED page numbers. Running heads ("32. C. G. J. Jacobi, considerationes
+% generales de transcendentibus Abelianis.") and signature marks ("50 *", "51", "Crelle's Journal
+% d. M. Bd. IX. Hft. 4.") are apparatus, not text, and are not transcribed. Jacobi's own footnote
+% on p. 397 IS his text: it is kept, set as its own paragraph at the end of the page-397 block
+% (HOUSESTYLE R15), with the print's "*)" marker left in the running text where it stands.
+%
+% NOTATION — the author's own, followed symbol by symbol:
+%   * The elliptic modulus is ϰ (\varkappa), clearly distinct in the print from the italic x it
+%     stands beside ("1 − ϰ² x x"); x² is written xx throughout, faithfully (HOUSESTYLE R3).
+%   * Π does DOUBLE duty in this print and both uses are kept: Π(x) is the transcendent, while the
+%     period of the trigonometric sine on p. 395 is written 2Π — a capital Π for π. The same page
+%     sets a lowercase π in the limits π/2 of K and K', so the two glyphs really are distinct type.
+%   * The radical is a radical SIGN followed by its radicand, sometimes parenthesized, √(1−xx), and
+%     sometimes bare, √X, with no vinculum; both are written \sqrt{...} here, since parentheses and
+%     vinculum play the identical delimiting role (presentation, as in abel-1828-remarques).
+%   * "sin am(u)" is Jacobi's own notation from the Fundamenta nova; set \sin\operatorname{am}(u).
+%   * The Latin ordinal suffix set as a superscript — 2m^ti, (2m−1)^ti, (m−1)^ti — is kept:
+%     2m^{\text{ti}} etc.
+%   * Lower limits of integration are printed as a small "o" (zero). A few of them print with a
+%     stray tail or extra ink (the first display on p. 394, K' on p. 396); every integral in the
+%     paper has lower limit 0, so these are read as damaged zeros, not as another letter.
+%
+% EMPHASIS: this print uses TWO devices — italic for Jacobi's own stress (terms he is defining,
+% whole theorem statements, "theorematis Abeliani", "periodo duplici et reali et imaginaria") and
+% letterspacing (Sperrung) for personal names (E u l e r u s, L a n d e n, L e g e n d r e,
+% A b e l, F o u r r i e r, L a g r a n g e). Both are rendered \emph (HOUSESTYLE R20), which is
+% the only emphasis the site renders; the distinction between the two devices is therefore lost on
+% the web and is recorded here instead. Where a letterspaced name falls INSIDE an italic passage,
+% the passage is set as one \emph run (the print's upright "Cl." inside it is not separately
+% marked).
+%
+% QUOTATIONS: the five theorem statements are quoted with the 19th-century convention of repeating
+% the opening low quote „ at the start of every printed line, closing once at the end. That
+% repetition is a line-break artifact of the print and is collapsed to a single opening/closing
+% pair (HOUSESTYLE R22); the edition's own German glyphs — low „ (U+201E) opening, raised “
+% (U+201C) closing — are written as literal Unicode, not as macros (R18).
+%
+% PRESENTATION: the print's rows of spaced dots standing for omitted terms are set \ldots within a
+% formula and \cdots\cdots as a continuation row inside a system. The one display that the print
+% carries across a page turn (the system of §7, pp. 400–401) is split into two displays around
+% \origpage{401}, since a page marker cannot sit inside a display.
+%
+% APPARENT PRINTER'S ERRORS: reproduced exactly as printed (HOUSESTYLE R4) and marked in-text with
+% an \ednote popover (R10) giving the reading the sense requires. A reviewer should confirm each
+% against the scan:
+%   * p. 394 "pernocsi poterat" — for "pernosci".
+%   * p. 395 "u = sin(x)" — the equation whose root is meant is x = sin(u), as printed two lines
+%     above.
+%   * p. 397 (footnote) "valde obtandum esset" — for "optandum"; "Illustri Acedemiae" — for
+%     "Academiae"; "F o u r r i e r" — Fourier's name with a doubled r.
+%   * p. 398 "ab ipsis A, A_1'," — a small stray mark between the subscript and the comma; read as
+%     a damaged comma, since the coefficient is plain A_1 everywhere else.
+%   * p. 401 "λ'(u', u'_1, …)" — the first function of the last list carries a prime that the
+%     parallel lists (λ, λ_1, …, λ_{m−2}) do not.
+%   * p. 402 (first Theorema) both displays print √X where the sense requires √Y and √Z: the first
+%     line reads dx/√X + dy/√X + dz/√Z, the second x dx/√X + y dy/√X + z dz/√X. The corresponding
+%     four-variable theorem on pp. 402–403 is set correctly (√W, √X, √Y, √Z).
+% NOT flagged as an error: "dua habent integralia completa algebraica" (p. 402) and "dua integralia
+% completa algebraica" (p. 403) — "dua" for "duo" occurs twice, so it is kept as this edition's
+% form rather than treated as a one-off slip (HOUSESTYLE R12).
+% Read as damaged type, not as text: the raised mark after "in" in "in series" on p. 395 (the word
+% spacing shows it is an ink drop, not an apostrophe — contributor's reading), and the small "o"
+% lower limits that print with a stray tail (see the note on integration limits above).
+%
+% No figures appear in this work.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{394}
+\section*{32. Considerationes generales de transcendentibus Abelianis.}
+
+(Auct.\ Dr.\ \emph{C.~G.~J. Jacobi}, prof.\ math.\ Regiom.)
+
+\subsection*{1.}
+
+Denotante $X$ functionem variabilis $x$ rationalem integram quarti ordinis, demonstravit olim \emph{Eulerus}, transcendentes huiusmodi:
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Pi(x) \]
+gaudere proprietate singulari, ut posito
+\[ \Pi(x) + \Pi(y) = \Pi(a), \]
+ipsa $a$ e $x$ et $y$ algebraice inveniatur. Quo theoremate, advocata transformatione transcendentis $\Pi(x)$, a Cl.\ \emph{Landen} detecta, superstruxit Cl.\ \emph{Legendre} amplam theoriam, quam hodie nomine \emph{theoriae functionum ellipticarum} usurpamus. Neque tamen harum transcendentium indoles atque natura plane pernocsi\ednote{So printed; the sense requires ``pernosci''.} poterat, considerando hanc solam transcendentem $\Pi(x)$ sive etiam generaliorem hanc
+\[ \int_0^{x} \frac{f(x)\,dx}{\sqrt{X}}, \]
+in qua $f(x)$ functio ipsius $x$ rationalis est, sed considerari debuit functio, cuius ipsa $\Pi(x)$ inversa est, sive \emph{considerari debuit intervallum $x$ ut functio integralis $\Pi(x)$.}
+
+Etenim si analogiam functionum trigonometricarum respicimus, in quas casu speciali functiones ellipticae abeunt, etiam hic videmus, posito
+\[ u = \int_0^{x} \frac{dx}{\sqrt{1-xx}}, \]
+considerari ab Analystis intervallum $x$ tanquam functionem integralis $u$, cui nomen \emph{sinus} tribuunt. Quam functionem scimus proprietatibus gravissimis gaudere, quae eius usum et applicationem per totam analysin frequentissimam reddunt. Quippe quae, ut de aliis taceam, pro quolibet valore argumenti $u$ valorem unicum ac determinatum habet; evolvi potest in seriem secundum dignitates ipsius $u$ progredientem, quae pro omnibus argumenti valoribus et realibus et imaginariis convergit; discerpi potest in factores lineares, qui determinantur valoribus ipsius $u$, pro quibus functio evanescit; denique \emph{gaudet illa proprietatibus omnibus functionis ipsius}
+\origpage{395}
+\emph{$u$ rationalis integrae.} E contra functionem $u$ considerant analystae tantum ut inversam functionis $x = \sin(u)$, dicentes eam esse, cuius \emph{sinus} $= x$ aut scribentes $u = $ \emph{arcus sinus} $x$; neque ea functio ullo modo evolvi potest in seriem semper convergentem, neque determinata est, sed numerum valorum infinitum habet, quippe cuius eadem est natura atque \emph{radicis aequationis algebraicae ordinis infiniti,} $u = \sin(x)$\ednote{So printed; the equation of which $u$ is a root is the one given two lines above, $x = \sin(u)$.}. Unde nec nomen nec signum peculiare ei tribuere, idoneum putabatur.
+
+Eodem plane modo comparatum est de transcendentibus ellipticis sive de transcendentibus $\Pi(x) = u$, quoties $X$ ascendit ordinem quartum. Etiam hoc casu functio $\Pi(x)$ nullo modo evolvi potest in seriem semper convergentem, neque valorem determinatum habet, sed numerum adeo valorum dupliciter infinitum. Contra vero, quod a nobis in \emph{Fundamentis novis theoriae functionum ellipticarum} factum est, ubi exhibita transcendente $\Pi(x)$ sub forma simpliciore, ad quam Cl.\ \emph{Legendre} eam revocavit:
+\[ u = \Pi(x) = \int_0^{x} \frac{dx}{\sqrt{1-xx}\,\sqrt{1-\varkappa^{2}xx}} = \int_0^{\varphi} \frac{d\varphi}{\sqrt{1-\varkappa^{2}\sin^{2}\varphi}}, \]
+consideramus \emph{amplitudinem} $\varphi$ tamquam functionem integralis $u$: functio $x$ quam hunc in modum exhibemus:
+\[ x = \sin\operatorname{am}(u), \]
+\emph{gaudet proprietatibus omnibus functionis rationalis fractae.} Quippe spectari potest functio illa tamquam fractio cuius et denominator et numerator sunt functiones rationales integrae ordinis infiniti, quas et ipsas ut transcendentes novas valde memorabiles in analysin introduxi. Evolvi possunt functiones illae in series rapidissime convergentes pro quolibet argumenti $u$ valore sive reali sive imaginario; discerpi possunt in factores lineares, qui facile determinantur valoribus ipsius $u$, pro quibus functio $x = \sin\operatorname{am}(u)$ aut evanescit aut in infinitum abit. Ipsa tandem functio $x = \sin\operatorname{am}(u)$, ut de aliis taceam, gaudet proprietate, qua ante omnes transcendentes hactenus notas excellit, \emph{periodo duplici et reali et imaginaria.} Quemadmodum enim functio trigonometrica $\sin(u)$ periodo reali gaudet, ut cuius valores crescente $u$, inde a $u = 2\Pi$ eodem ordine redeunt, sive cuius valores mutato $u$ in $u + 2\Pi$ immutati manent; quemadmodum functio exponentialis $e^{u}$ periodum imaginariam habet, ut quae mutato $u$ in $u + 2\Pi\sqrt{-1}$ et ipsa valorem non mutat: ita, ex observatione a nobismet ipsis et Cl.\ \emph{Abel} facta, functio elliptica $\sin\operatorname{am}(u)$ valorem non mutat, mutato $u$ et in $u + 4K$, et in $u + 2K'\sqrt{-1}$, designantibus $K$, $K'$ inte-
+\origpage{396}
+gralia definita,
+\[ K = \int_0^{\frac{\pi}{2}} \frac{d\varphi}{\sqrt{1-\varkappa^{2}\sin^{2}\varphi}}, \qquad K' = \int_0^{\frac{\pi}{2}} \frac{d\varphi}{\sqrt{\cos^{2}\varphi + \varkappa^{2}\sin^{2}\varphi}}. \]
+
+Quibus de causis nos et Cl.\ \emph{Abel} arbitrati sumus, artem analyticam magna incrementa capturam esse, introducta hac nova functione $x = \sin\operatorname{am}(u)$, cuius ipsa transcendens $u = \Pi(x)$ est inversa sive una aliqua e radicibus aequationis algebraicae $x = \sin\operatorname{am}(u)$, quarum numerus dupliciter infinitus.
+
+\subsection*{2.}
+
+Theorema Eulerianum, de quo diximus, a Cl.\ \emph{Abel} mirum in modum amplificatum est, videlicet ad casus omnes extensum, quibus functio $X$, quae in integralibus ellipticis tantum ad ordinem quartum ascendebat, functio est quaelibet integra rationalis. Ut a casu simplicissimo post eum, de quo supra egimus, ordiamur, designante $X$ functionem ipsius $x$ integram rationalem ordinis quinti aut sexti, sit
+\[ \int_0^{x} \frac{(A + A_1 x)\,dx}{\sqrt{X}} = \Pi(x) \]
+proposita aequatione:
+\[ \Pi(x) + \Pi(y) + \Pi(z) = \Pi(a) + \Pi(b), \]
+demonstravit Cl.\ \emph{Abel}, ipsas $a$, $b$ e quantitatibus $x$, $y$, $z$ \emph{algebraice} determinari posse.
+
+Generaliter autem, \emph{designante $f(x) = X$ functionem ipsius $x$ integram rationalem ordinis cuiuslibet $2m^{\text{ti}}$ sive $(2m-1)^{\text{ti}}$, posito}
+\[ \int_0^{x} \frac{(A + A_1 x + A_2 x^{2} + \ldots + A_{m-2}x^{m-2})\,dx}{\sqrt{X}} = \Pi(x) \]
+\emph{demonstratum est a Cl. Abel, dato numero $m$ valorum variabilis $x$:}
+\[ x, \; x_1, \; x_2, \; \ldots, \; x_{m-1}, \]
+\emph{ex illis algebraice determinari posse $m-1$ quantitates}
+\[ a, \; a_1, \; a_2, \; \ldots, \; a_{m-2} \]
+\emph{tales, ut satisfaciant aequationi transcendentali:}
+\[ \begin{aligned} \Pi(x) + \Pi(x_1) &+ \Pi(x_2) + \ldots + \Pi(x_{m-1}) \\ &= \Pi(a) + \Pi(a_1) + \ldots + \Pi(a_{m-2}). \end{aligned} \]
+\emph{Et invenit Cl. Abel ipsas $a$, $a_1$, $\ldots$, $a_{m-2}$ ut radices aequationis algebraicae ordinis $(m-1)^{\text{ti}}$, cuius coefficientes singuli per $x$, $x_1$, $\ldots$, $x_{m-1}$ atque $\sqrt{X}$, $\sqrt{X_1}$, $\ldots$, $\sqrt{X_{m-1}}$ rationaliter exhibentur, siquidem $X_1 = f(x_1)$, $X_2 = f(x_2)$, etc.}
+
+\origpage{397}
+De quo theoremate facile etiam sequitur, dato numero quolibet valorum ipsius $x$, summam transcendentium $\Pi(x)$, quae ad valores illos datos pertinent, semper exprimi posse per numerum $m-1$ transcendentium $\Pi(x)$, quae pertinent ad valores ipsius $x$ e datis algebraice determinabiles.
+
+Theoremati antecedenti ut monumento pulcherrimo ingenii admirabilis morte praematuri abrepti \emph{theorematis Abeliani} nomen imponere placet. Ipsas etiam transcendentes $\Pi(x)$ casibus, quibus $X$ ultra ordinem quartum ascendit, \emph{transcendentes Abelianas} vocare lubet, ut quas ante illum nemo consideraverat. Quas Cl.\ \emph{Legendre} etiam idoneo nomine \emph{hyperellipticas} appellat (fonctions ultra-elliptiques) *).
+
+\subsection*{3.}
+
+Casu quo $u = \Pi(x)$ est integrale ellipticum sive $X$ tantum ad ordinem quartum ascendit, docet theorema Eulerianum, siquidem vice versa $x = \lambda(u)$, functionem $\lambda(u + u')$, cuius argumentum est binomen $u + u'$, exhiberi algebraice per functiones $\lambda(u)$, $\lambda(u')$, quae ad singula nomina $u$, $u'$ pertinent, sicuti de functionibus trigonometricis in elementis proponitur. Jam rogo et, \emph{quaenam sint casu generaliori functiones illae, quarum inversae sunt transcendentes Abelianae, et quomodo de hisce exhibitum audiat theorema Abelianum.}
+
+Theorema Eulerianum exhibet \emph{algebraice} integrale completum aequationis differentialis primi ordinis inter duas variabiles, quae in aequatione differentiali separatae sunt, huiusmodi:
+\[ \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{Y}} = 0 \]
+in qua, designante $f(x)$ functionem integram rationalem ordinis quarti, $X = f(x)$, $Y = f(y)$. Jam rogo, \emph{quaenam sint aequationes differentiales, quarum integralia completa algebraice exhibeat theorema Abelianum.}
+
+*)~Cl.\ \emph{Abel} commentationem \emph{de proprietatibus singularibus integralium functionum algebraicarum} iam a.\ 1826 Academiae Parisiensi exhibuit, quam Illustris Academia commentationibus \emph{eruditorum alienorum} inserendam decrevit. Quarum tamen publicatio cum in dies proferatur, valde obtandum\ednote{So printed; for ``optandum''.} esset, ut Illustri Acedemiae\ednote{So printed; for ``Academiae''.} inter ipsas eius commentationes eam exhibere placeat, vel si forte usus vetat, ut parti certe historicae commentationum inseratur. Quamquam pietatis quodammodo foret, honorem et insuetum tribuere memoriae juvenis eximii, cui ipsos honores Academicos praeclusit fatum irrevocabile. Quod, dum Parisiis agebam, a Cl.\ \emph{Fourrier}\ednote{So printed, with a doubled r: Joseph Fourier, then perpetual secretary of the Académie des sciences, who died in May 1830 — the ``mortuo viro excellentissimo'' of the next clause.} precibus meis concessum, utinam, mortuo viro excellentissimo, illustris eius successor ratum facere velit.
+
+\origpage{398}
+\subsection*{4.}
+
+Ordiamur rursus a casu simplicissimo transcendentium Abelianarum, eum dico, quo functio $X$ tantum ad ordinem quintum aut sextum ascendit. Sit
+\[ \begin{aligned} \int_0^{x} \frac{dx}{\sqrt{X}} &= \Phi(x) \\ \int_0^{x} \frac{x\,dx}{\sqrt{X}} &= \Phi_1(x), \end{aligned} \]
+ac ponatur:
+\[ \begin{aligned} \Phi(x) + \Phi(y) &= u \\ \Phi_1(x) + \Phi_1(y) &= v, \end{aligned} \]
+considero $x$, $y$ ut functiones ipsarum $u$, $v$, ac pono:
+\[ \begin{aligned} x &= \lambda(u,v) \\ y &= \lambda_1(u,v). \end{aligned} \]
+Quas functiones
+\[ \lambda(u,v), \qquad \lambda_1(u,v), \]
+quae ab argumentis duobus $u$, $v$ pendent, in analysin introducamus necesse est, si analogiam functionum trigonometricarum et ellipticarum etiam in functionibus Abelianis servare placet.
+
+\subsection*{5.}
+
+Posito, ut supra,
+\[ \Pi(x) = \int_0^{x} \frac{(A + A_1 x)\,dx}{\sqrt{X}}, \]
+sive
+\[ \Pi(x) = A\,\Phi(x) + A_1\,\Phi_1(x), \]
+docet theorema Abelianum, aequationis
+\[ \Pi(x) + \Pi(y) + \Pi(z) = \Pi(a) + \Pi(b) \]
+solutionem dari algebraicam, sive $a$, $b$ per quantitates $x$, $y$, $z$ \emph{algebraice} determinari posse. At observo, problema determinandi ipsas $a$, $b$ e datis quantitatibus $x$, $y$, $z$ indeterminatum esse, ideoque theorema Abelianum ita propositum nihil aliud docere, nisi e solutionibus innumeris aequationis propositae:
+\[ \Pi(a) + \Pi(b) = \Pi(x) + \Pi(y) + \Pi(z) \]
+unam extare algebraicam. Jam vero observo, relationes illas algebraicas, a Cl.\ \emph{Abel} exhibitas, quarum ope $a$, $b$ e quantitatibus $x$, $y$, $z$ determinantur, nullo modo pendere ab ipsis $A$, $A_1$\ednote{A small stray mark stands between the subscript and the comma here, so that the print reads ``$A_1'$,''; every other occurrence of this coefficient in the paper is plain $A_1$, so the mark is read as a damaged comma rather than a prime.}, quae afficiunt numeratorem fractionis, cuius integrale est transcendens $\Pi(x)$. Unde eaedem aequationes binae algebraicae inter $x$, $y$, $z$, $a$, $b$ propositae utrique simul satisfaciunt aequationi transcendentali:
+\origpage{399}
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(z) \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(z). \end{aligned} \]
+Quibus aequationibus duabus simul propositis, iam $a$, $b$ e quantitatibus $x$, $y$, $z$ omnino determinatae sunt. Itaque theorema Abelianum, si eius vim ac naturam recte perspicere velis, in modum sequentem proponi debet.
+
+\subsection*{Theorema.}
+
+„\emph{Designante $X$ functionem ipsius $x$ integram rationalem ordinis quinti aut sexti, sit}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \qquad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x), \]
+\emph{propositis duabus simul aequationibus,}
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(z) \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(z), \end{aligned} \]
+\emph{quantitates $a$, $b$ e datis quantitatibus $x$, $y$, $z$ algebraice determinantur.}“
+
+\subsection*{6.}
+
+Theorema antecedens facile ad eum casum extenditur, quo summa quatuor sive cuiuslibet numeri transcendentium per summam binarum exprimatur, quarum argumenta ab illarum argumentis algebraice pendent. Consideremus casum, quo summa quatuor transcendentium per summam binarum exhibenda est, theorema Abelianum, ad eum casum applicatum, rursus docet, propositis duabus simul aequationibus,
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(x') + \Phi(y') \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(x') + \Phi_1(y'), \end{aligned} \]
+quantitates $a$, $b$ e datis quantitatibus $x$, $y$, $x'$, $y'$ algebraice determinari.
+
+Ponamus iam:
+\[ \Phi(x) + \Phi(y) = u, \qquad \Phi(x') + \Phi(y') = u', \]
+porro
+\[ \Phi_1(x) + \Phi_1(y) = v, \qquad \Phi_1(x') + \Phi_1(y') = v', \]
+unde e duabus aequationibus propositis sequitur:
+\[ \Phi(a) + \Phi(b) = u + u', \qquad \Phi_1(a) + \Phi_1(b) = v + v'. \]
+E notatione autem supra explicata ex his aequationibus habemus vicissim:
+\[ \begin{aligned} x &= \lambda(u,v), & y &= \lambda_1(u,v), \\ x' &= \lambda(u',v'), & y' &= \lambda_1(u',v'), \\ a &= \lambda(u+u', v+v'), & b &= \lambda_1(u+u', v+v'). \end{aligned} \]
+Quibus statutis, de functionibus novis $\lambda(u,v)$, $\lambda_1(u,v)$ iam proponimus hoc theorema, in quod theorema Abelianum abit:
+
+\origpage{400}
+\subsection*{Theorema.}
+
+„\emph{Designante $X$ functionem integram rationalem ordinis quinti aut sexti, ponatur}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \qquad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x); \]
+\emph{sint porro}
+\[ x = \lambda(u,v), \qquad y = \lambda_1(u,v) \]
+\emph{functiones tales argumentorum $u$, $v$, ut simul sit:}
+\[ \Phi(x) + \Phi(y) = u, \qquad \Phi_1(x) + \Phi_1(y) = v, \]
+\emph{gaudebunt functiones illae}
+\[ \lambda(u,v), \qquad \lambda_1(u,v) \]
+\emph{proprietate ei simili, quae de functionibus trigonometricis et ellipticis in elementis proponitur, ut functiones illae argumentorum binominum}
+\[ u + u', \qquad v + v' \]
+\emph{algebraice exhibeantur per functiones, quae ad singula nomina}
+\[ u, \; v; \qquad u', \; v' \]
+\emph{pertinent; sive ut functiones}
+\[ \lambda(u + u', v + v'), \qquad \lambda_1(u + u', v + v') \]
+\emph{algebraice exhibeantur per functiones}
+\[ \begin{aligned} \lambda(u,v), \qquad \lambda(u',v') \\ \lambda_1(u,v), \qquad \lambda_1(u',v'). \end{aligned} \]“
+
+\subsection*{7.}
+
+Theorema autem generale iam ita audit.
+
+\subsection*{Theorema generale.}
+
+„\emph{Designante $X$ functionem ipsius $x$ rationalem integram ordinis $(2m-1)^{\text{ti}}$ aut $2m^{\text{ti}}$, sit}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \quad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x), \quad \int_0^{x} \frac{x^{2}\,dx}{\sqrt{X}} = \Phi_2(x), \; \ldots \]
+\[ \ldots \int_0^{x} \frac{x^{m-2}\,dx}{\sqrt{X}} = \Phi_{m-2}(x); \]
+\emph{quibus positis, statuantur $m-1$ functiones}
+\[ x, \; x_1, \; x_2, \; \ldots, \; x_{m-2}, \]
+\emph{quae singulae a quantitatibus $m-1$ sequentibus}
+\[ u, \; u_1, \; u_2, \; \ldots, \; u_{m-2} \]
+\emph{ita pendent, ut simul habeantur aequationes:}
+\[ \begin{aligned} u &= \Phi(x) + \Phi(x_1) + \Phi(x_2) + \ldots + \Phi(x_{m-2}) \\ u_1 &= \Phi_1(x) + \Phi_1(x_1) + \Phi_1(x_2) + \ldots + \Phi_1(x_{m-2}) \end{aligned} \]
+\origpage{401}
+\[ \begin{aligned} u_2 &= \Phi_2(x) + \Phi_2(x_1) + \Phi_2(x_2) + \ldots + \Phi_2(x_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ u_{m-2} &= \Phi_{m-2}(x) + \Phi_{m-2}(x_1) + \Phi_{m-2}(x_2) + \ldots + \Phi_{m-2}(x_{m-2}), \end{aligned} \]
+\emph{sintque functiones illae:}
+\[ \begin{aligned} x &= \lambda(u, u_1, u_2, \ldots, u_{m-2}) \\ x_1 &= \lambda_1(u, u_1, u_2, \ldots, u_{m-2}) \\ x_2 &= \lambda_2(u, u_1, u_2, \ldots, u_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ x_{m-2} &= \lambda_{m-2}(u, u_1, u_2, \ldots, u_{m-2}); \end{aligned} \]
+\emph{gaudent functiones illae proprietate eadem, quae de functionibus trigonometricis et ellipticis valet, ut illae pro argumentis binominibus}
+\[ u + u', \; u_1 + u'_1, \; u_2 + u'_2, \; \ldots, \; u_{m-2} + u'_{m-2}, \]
+\emph{exprimantur algebraice per functiones easdem, quarum argumenta sunt singula nomina}
+\[ u, \; u_1, \; u_2, \; \ldots, \; u_{m-2} \]
+\emph{atque}
+\[ u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}; \]
+\emph{sive ut functiones}
+\[ \begin{aligned} &\lambda(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}), \\ &\lambda_1(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}), \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}) \end{aligned} \]
+\emph{exprimantur algebraice per functiones}
+\[ \begin{aligned} &\lambda(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \\ &\lambda_1(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \end{aligned} \]
+\emph{atque}
+\[ \begin{aligned} &\lambda'(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}) \\ &\lambda_1(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}). \end{aligned} \]“\ednote{The first function of this last list is printed with a prime, $\lambda'$, which the parallel lists ($\lambda$, $\lambda_1$, $\ldots$, $\lambda_{m-2}$) do not carry.}
+
+Observo, functiones quaesitas e datis inveniri ope aequationis algebraicae ordinis $(m-1)^{\text{ti}}$, quae generaliter assignari potest per theorema Abelianum.
+
+\subsection*{8.}
+
+Theorema Eulerianum exhibet integrale completum algebraicum aequationis differentialis primi ordinis inter duas variabiles, in qua varia-
+\origpage{402}
+biles separatae sunt. Theorema Abelianum exhibet $m-1$ integralia completa algebraica (id est, quae $m-1$ constantes arbitrarias involvunt), $m-1$ aequationum differentialium linearium primi ordinis inter $m$ variabiles, in quibus singulis variabiles illae separatae sunt. Ordiamur rursus a casu simplicissimo transcendentium Abelianorum, quo $X$ ad quintum aut sextum ordinem ascendit.
+
+Eo casu aequationes duas transcendentales:
+\[ \begin{aligned} \Phi(x) + \Phi(y) + \Phi(z) &= \Phi(a) + \Phi(b) \\ \Phi_1(x) + \Phi_1(y) + \Phi_1(z) &= \Phi_1(a) + \Phi_1(b), \end{aligned} \]
+scimus per theorema Abelianum, locum tenere duarum aequationum algebraicarum inter quantitates quinque $x$, $y$, $z$, $a$, $b$. Consideremus ipsas $a$, $b$ ut constantes; differentiatis aequationibus propositis, omnino abire videmus ipsas $a$, $b$, quae igitur in aequationibus transcendentalibus sive in aequationibus algebraicis, quae earum locum tenent, sunt constantes arbitrariae. Hinc fluit theorema sequens:
+
+\subsection*{Theorema.}
+
+„\emph{Sit $f(x)$ functio rationalis integra ipsius $x$ ordinis quinti aut sexti, sit porro}
+\[ f(x) = X, \qquad f(y) = Y, \qquad f(z) = Z, \]
+\emph{aequationes duae differentiales lineares primi ordinis inter tres variabiles, in quibus singulis variabiles $x$, $y$, $z$, separatae sunt,}
+\[ \begin{aligned} \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{X}} + \frac{dz}{\sqrt{Z}} &= 0 \\ \frac{x\,dx}{\sqrt{X}} + \frac{y\,dy}{\sqrt{X}} + \frac{z\,dz}{\sqrt{X}} &= 0, \end{aligned} \]\ednote{Both lines are printed with $\sqrt{X}$ where the sense requires $\sqrt{Y}$ and $\sqrt{Z}$: the first reads $dy/\sqrt{X}$ for $dy/\sqrt{Y}$, the second $y\,dy/\sqrt{X}$ and $z\,dz/\sqrt{X}$ for $y\,dy/\sqrt{Y}$ and $z\,dz/\sqrt{Z}$. The corresponding four-variable system below is set correctly.}
+\emph{dua habent integralia completa algebraica.}“
+
+De transcendentibus Abelianis ordinis proxime insequentis simili modo theorema hoc habetur.
+
+\subsection*{Theorema.}
+
+„\emph{Sit $f(x)$ functio rationalis integra ipsius $x$ ordinis septimi aut octavi, sit porro}
+\[ f(w) = W, \quad f(x) = X, \quad f(y) = Y, \quad f(z) = Z, \]
+\emph{aequationes tres differentiales lineares primi ordinis, inter variabiles quatuor, in quibus singulis variabiles $w$, $x$, $y$, $z$, separatae sunt,}
+\[ \begin{aligned} \frac{dw}{\sqrt{W}} + \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{Y}} + \frac{dz}{\sqrt{Z}} &= 0, \\ \frac{w\,dw}{\sqrt{W}} + \frac{x\,dx}{\sqrt{X}} + \frac{y\,dy}{\sqrt{Y}} + \frac{z\,dz}{\sqrt{Z}} &= 0, \end{aligned} \]
+\origpage{403}
+\[ \frac{w^{2}\,dw}{\sqrt{W}} + \frac{x^{2}\,dx}{\sqrt{X}} + \frac{y^{2}\,dy}{\sqrt{Y}} + \frac{z^{2}\,dz}{\sqrt{Z}} = 0, \]
+\emph{tria habent integralia completa algebraica.}“
+
+Quae theoremata facile ad numerum quemlibet variabilium et aequationum differentialium extenduntur. Ipsa integralia completa algebraica generaliter suggerit theorema Abelianum.
+
+Novimus, olim Ill.\ \emph{Lagrange} in commentationibus Academiae Taurinensis, ab ipsa aequatione differentiali inter duas variabiles profectum, per methodos directas integrationis ad ipsum eius integrale completum algebraicum ascendisse, atque ita methodo nova ac singulari demonstravisse theorema Eulerianum, quod ei tantam ipsius Euleri excitavit admirationem. Ita etiam operae pretium fore credimus, duarum illarum aequationum differentialium inter tres variabiles dua integralia completa algebraica, sive generalius $m-1$ aequationum illarum differentialium inter $m$ variabiles $m-1$ integralia completa algebraica per methodos directas integrationis investigare, atque ita nova nec minus singulari demonstratione theorema Abelianum adornare.
+
+Regiom.\ 12.\ Julii 1832.
+
+\end{document}

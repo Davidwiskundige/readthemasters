@@ -1,0 +1,116 @@
+id: jacobi-1832-considerationes
+title: "Considerationes generales de transcendentibus Abelianis."
+title_en: "General considerations on Abelian transcendents."
+
+authors:
+  - name: "Carl Gustav Jacob Jacobi"
+    wikidata_id: Q76564
+    birth_year: 1804
+    death_year: 1851
+    mactutor: Jacobi  # https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/
+
+publication:
+  year: 1832
+  venue: crelle
+  volume: "9"
+  pages: "394–403"
+  title_full: >-
+    "Considerationes generales de transcendentibus Abelianis" (No. 32), Journal für die reine und
+    angewandte Mathematik (Crelle's Journal), Neunter Band, 4. Heft (Berlin: G. Reimer, 1832),
+    pp. 394–403. Dated at the end: Regiom. 12. Julii 1832 (Königsberg, 12 July 1832).
+
+edition:
+  year: 1832
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Journal für die reine und angewandte
+    Mathematik (Crelle's Journal), Neunter Band (Berlin, 1832), pp. 394–403 — an original edition
+    with no modern critical apparatus, commentary, or re-typesetting. Only Jacobi's own text
+    (including his own footnote on p. 397) is transcribed; running heads and signature marks are
+    not.
+
+discipline: mathematics
+tags: [analysis]
+language: la
+type: paper
+
+relations:
+  - to: abel-1828-remarques
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Abel's own published announcement of the addition theorem that Jacobi here names the
+      "theorema Abelianum". Jacobi restates it, observes that in the stated form it leaves the
+      resulting quantities indeterminate, and recasts it as a pair of simultaneous equations.
+  - to: euler-1761-integratione-aequationis
+    kind: builds-on
+    note: >-
+      The "theorema Eulerianum" from which Jacobi's first section starts: Euler's algebraic
+      addition theorem for elliptic integrals, of which Abel's theorem is the generalization.
+
+significance: >-
+  This ten-page note is where the inversion problem for hyperelliptic integrals — later called the
+  Jacobi inversion problem — was first posed. Jacobi's proposal is to invert not one integral but a
+  system: for $X$ of the fifth or sixth order he takes the two integrals $\Phi(x)$ and $\Phi_1(x)$,
+  sets $\Phi(x)+\Phi(y)=u$ and $\Phi_1(x)+\Phi_1(y)=v$, and asks for the two functions
+  $\lambda(u,v)$, $\lambda_1(u,v)$ of two arguments that this system defines. Abel's theorem then
+  becomes an addition theorem for those functions. This is the problem
+  whose solution by Göpel and Rosenhain in the 1840s, and in general by Riemann and Weierstrass,
+  created the theory of abelian functions.[1][2] Two of the subject's standard terms are coined in
+  these pages: Jacobi proposes to attach to the theorem the name theorema Abelianum — the Abelian
+  theorem — as a most beautiful monument to an admirable genius carried off by an untimely death,
+  and to call the
+  transcendents themselves transcendentes Abelianae, noting that Legendre had also fittingly named
+  them hyperelliptic.[2] In the footnote on p. 397 Jacobi presses the Paris Academy publicly to
+  print Abel's 1826 memoir, still unpublished six years on and three years after Abel's death; it
+  appeared in 1841.[1]
+
+significance_sources:
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Carl Gustav Jacob Jacobi", MacTutor History of
+      Mathematics Archive, University of St Andrews.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/"
+  - citation: >-
+      Alexander Brill and Max Noether, "Die Entwicklung der Theorie der algebraischen Functionen
+      in älterer und neuerer Zeit", Jahresbericht der Deutschen Mathematiker-Vereinigung 3
+      (1894) — for Jacobi's Umkehrproblem, its solution by Göpel and Rosenhain, and the naming of
+      the Abelian transcendents.
+    url: "https://eudml.org/doc/144593"
+
+source:
+  scan_url: "https://eudml.org/doc/146814"
+  scan_id: >-
+    eudml:146814 (Crelle's Journal, Band 9, 1832, pp. 394–403; the same original printing is
+    digitized by GDZ Göttingen as PPN243919689_0009). Read from a PDF of that scan supplied by the
+    contributor, comprising the volume title page and the ten printed pages 394–403.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Carl Gustav Jacob Jacobi, 1804–1851 (wikidata:Q76564; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/).
+  publication_date: >-
+    First published 1832 in Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 9, pp. 394–403 (EuDML http://eudml.org/doc/146814).
+  edition: >-
+    Original first printing, Journal für die reine und angewandte Mathematik, Neunter Band,
+    4. Heft (Berlin: G. Reimer, 1832), pp. 394–403; volume title page reproduced in the scan.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1851], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1832, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-08-25"

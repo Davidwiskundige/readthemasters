@@ -1,0 +1,247 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \origpage{N} marker and \ednote is reproduced
+% unchanged; only the prose is translated. This work has no \tag{} equation numbers, no figures,
+% and no prose set inside math via \text{...} except the Latin ordinal suffix "ti" in
+% $2m^{\text{ti}}$ / $(2m-1)^{\text{ti}}$ / $(m-1)^{\text{ti}}$, which is left as printed and read
+% in English as "of order 2m", "of order 2m-1", "of order m-1" — the surrounding prose carries the
+% ordinal, so the insert needs no separate rendering (HOUSESTYLE R21).
+%
+% The eight \ednote notes flagging this printing's misprints are OUR notes, already in English, and
+% are carried over verbatim and in the same positions so both files bear the same apparatus — even
+% where the misprint itself is Latin orthography that cannot survive translation ("pernocsi" for
+% "pernosci" on p. 394; "obtandum" for "optandum" and "Acedemiae" for "Academiae" in the footnote
+% on p. 397). The misprints that ARE mathematical (the p. 395 equation, the p. 398 stray mark, the
+% p. 401 prime, and the two √X displays on p. 402) are preserved here formula for formula.
+% One further Latin-only feature that cannot cross over: the edition's "dua" for "duo" (pp. 402,
+% 403), which simply reads "two" in English.
+%
+% Emphasis follows the original: the italic passages (Jacobi's own stress, and the five quoted
+% theorem statements entire) and the letterspaced personal names both carry across as \emph, as in
+% the transcription (HOUSESTYLE R20, R24). The quoted theorem statements keep the original
+% edition's German quotation glyphs „…“, per HOUSESTYLE R22 and the precedent of
+% abel-1841-fonctions-transcendantes: the marks are the edition's punctuation, not language.
+%
+% Period terminology, applied consistently:
+%   transcendens = transcendent (a transcendental quantity/function; Jacobi's own coinages
+%     "theorema Abelianum" and "transcendentes Abelianae" are rendered "the Abelian theorem" and
+%     "Abelian transcendents", the ancestors of today's "Abel's theorem" and "abelian functions")
+%   functio integra rationalis = rational integral function (i.e. a polynomial)
+%   dignitates = powers;  discerpi in factores = resolved into factors;  evanescit = vanishes
+%   binomen / singula nomina = binomial / the single terms (of that binomial)
+%   integrale completum = complete integral;  amplitudo = amplitude
+%   "in elementis proponitur" = "is set forth in the elements" (i.e. in elementary treatises)
+% The honorifics are kept in the author's own abbreviated form — "Cl." (Clarissimus) and "Ill."
+% (Illustris) — with a translator's note at the first occurrence, rather than expanded eight times
+% in the running text. "Regiom." (Regiomonti) is rendered Königsberg.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{394}
+\section*{32. General considerations on Abelian transcendents.}
+
+(By Dr.\ \emph{C.~G.~J. Jacobi}, prof.\ of math.\ at Königsberg.)
+
+\subsection*{1.}
+
+Denoting by $X$ a rational integral function of the variable $x$ of the fourth order, \emph{Euler} long ago demonstrated that transcendents of this kind:
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Pi(x) \]
+enjoy a singular property: namely that, on setting
+\[ \Pi(x) + \Pi(y) = \Pi(a), \]
+$a$ itself is found algebraically from $x$ and $y$. Upon this theorem, calling in the transformation of the transcendent $\Pi(x)$ discovered by Cl.\ \emph{Landen}\ednote{translator's note: ``Cl.'' is the honorific Clarissimus, ``most distinguished'', which Jacobi prefixes to the name of a living colleague throughout; ``Ill.'' on the last page is Illustris. Both are kept here in his own abbreviated form.}, Cl.\ \emph{Legendre} built up an ample theory, which today we designate by the name of the \emph{theory of elliptic functions}. Yet the character and nature of these transcendents could not be thoroughly known\ednote{So printed; the sense requires ``pernosci''.} by considering this transcendent $\Pi(x)$ alone, or even this more general one
+\[ \int_0^{x} \frac{f(x)\,dx}{\sqrt{X}}, \]
+in which $f(x)$ is a rational function of $x$; rather, that function had to be considered of which $\Pi(x)$ itself is the inverse, or \emph{the interval $x$ had to be considered as a function of the integral $\Pi(x)$.}
+
+For indeed, if we look to the analogy of the trigonometric functions, into which the elliptic functions pass in a special case, here too we see that, on setting
+\[ u = \int_0^{x} \frac{dx}{\sqrt{1-xx}}, \]
+the interval $x$ is considered by Analysts as a function of the integral $u$, to which they give the name \emph{sine}. This function we know to enjoy the weightiest properties, which make its use and application most frequent throughout the whole of analysis. For, to say nothing of the rest, it has for every value of the argument $u$ a single and determinate value; it can be developed into a series proceeding by the powers of $u$, which converges for all values of the argument, both real and imaginary; it can be resolved into linear factors, which are determined by those values of $u$ for which the function vanishes; and finally \emph{it enjoys all the properties of a rational integral function}
+\origpage{395}
+\emph{of $u$.} Conversely, Analysts consider the function $u$ only as the inverse of the function $x = \sin(u)$, saying that it is the one whose \emph{sine} $= x$, or writing $u = $ \emph{arc sine} $x$; nor can that function in any way be developed into an always convergent series, nor is it determinate, but it has an infinite number of values, seeing that its nature is the same as that of \emph{a root of an algebraic equation of infinite order,} $u = \sin(x)$\ednote{So printed; the equation of which $u$ is a root is the one given two lines above, $x = \sin(u)$.}. Whence it was thought fitting to assign to it neither a name nor a symbol of its own.
+
+Exactly the same holds of the elliptic transcendents, that is, of the transcendents $\Pi(x) = u$, whenever $X$ rises to the fourth order. In this case too the function $\Pi(x)$ can in no way be developed into an always convergent series, nor has it a determinate value, but a number of values that is even doubly infinite. On the contrary, however, by what was done by us in the \emph{Fundamenta nova theoriae functionum ellipticarum}, where, the transcendent $\Pi(x)$ being exhibited under the simpler form to which Cl.\ \emph{Legendre} reduced it:
+\[ u = \Pi(x) = \int_0^{x} \frac{dx}{\sqrt{1-xx}\,\sqrt{1-\varkappa^{2}xx}} = \int_0^{\varphi} \frac{d\varphi}{\sqrt{1-\varkappa^{2}\sin^{2}\varphi}}, \]
+we consider the \emph{amplitude} $\varphi$ as a function of the integral $u$: the function $x$, which we exhibit in this manner:
+\[ x = \sin\operatorname{am}(u), \]
+\emph{enjoys all the properties of a rational fractional function.} For that function can be regarded as a fraction of which both the denominator and the numerator are rational integral functions of infinite order, which I have myself introduced into analysis as new and highly memorable transcendents. Those functions can be developed into series most rapidly convergent for every value of the argument $u$, whether real or imaginary; they can be resolved into linear factors, which are easily determined by those values of $u$ for which the function $x = \sin\operatorname{am}(u)$ either vanishes or goes off to infinity. Finally the function $x = \sin\operatorname{am}(u)$ itself, to say nothing of the rest, enjoys a property by which it excels all transcendents hitherto known, \emph{a double period, both real and imaginary.} For just as the trigonometric function $\sin(u)$ enjoys a real period, in that its values, as $u$ increases, return in the same order from $u = 2\Pi$ onward, or in that its values remain unaltered when $u$ is changed into $u + 2\Pi$; and just as the exponential function $e^{u}$ has an imaginary period, in that it too does not change its value when $u$ is changed into $u + 2\Pi\sqrt{-1}$: so, by the observation made by ourselves and by Cl.\ \emph{Abel}, the elliptic function $\sin\operatorname{am}(u)$ does not change its value when $u$ is changed both into $u + 4K$ and into $u + 2K'\sqrt{-1}$, $K$, $K'$ denoting the definite
+\origpage{396}
+integrals
+\[ K = \int_0^{\frac{\pi}{2}} \frac{d\varphi}{\sqrt{1-\varkappa^{2}\sin^{2}\varphi}}, \qquad K' = \int_0^{\frac{\pi}{2}} \frac{d\varphi}{\sqrt{\cos^{2}\varphi + \varkappa^{2}\sin^{2}\varphi}}. \]
+
+For which reasons both we and Cl.\ \emph{Abel} have judged that the analytic art would gain great increase by the introduction of this new function $x = \sin\operatorname{am}(u)$, of which the transcendent $u = \Pi(x)$ itself is the inverse, or is some one of the roots of the algebraic equation $x = \sin\operatorname{am}(u)$, whose number is doubly infinite.
+
+\subsection*{2.}
+
+The Eulerian theorem of which we have spoken has been amplified in a wonderful manner by Cl.\ \emph{Abel}, extended, namely, to all those cases in which the function $X$, which in elliptic integrals rose only to the fourth order, is any integral rational function whatever. That we may begin, after him, from the simplest case, of which we treated above, let $X$ denote a rational integral function of $x$ of the fifth or sixth order, and let
+\[ \int_0^{x} \frac{(A + A_1 x)\,dx}{\sqrt{X}} = \Pi(x) \]
+the equation being proposed:
+\[ \Pi(x) + \Pi(y) + \Pi(z) = \Pi(a) + \Pi(b), \]
+Cl.\ \emph{Abel} demonstrated that $a$, $b$ can be determined \emph{algebraically} from the quantities $x$, $y$, $z$.
+
+Generally, however, \emph{$f(x) = X$ denoting a rational integral function of $x$ of any order $2m^{\text{ti}}$ or $(2m-1)^{\text{ti}}$, on setting}
+\[ \int_0^{x} \frac{(A + A_1 x + A_2 x^{2} + \ldots + A_{m-2}x^{m-2})\,dx}{\sqrt{X}} = \Pi(x) \]
+\emph{it was demonstrated by Cl. Abel that, given a number $m$ of values of the variable $x$:}
+\[ x, \; x_1, \; x_2, \; \ldots, \; x_{m-1}, \]
+\emph{there can be determined algebraically from them $m-1$ quantities}
+\[ a, \; a_1, \; a_2, \; \ldots, \; a_{m-2} \]
+\emph{such as to satisfy the transcendental equation:}
+\[ \begin{aligned} \Pi(x) + \Pi(x_1) &+ \Pi(x_2) + \ldots + \Pi(x_{m-1}) \\ &= \Pi(a) + \Pi(a_1) + \ldots + \Pi(a_{m-2}). \end{aligned} \]
+\emph{And Cl. Abel found $a$, $a_1$, $\ldots$, $a_{m-2}$ as the roots of an algebraic equation of order $(m-1)^{\text{ti}}$, whose several coefficients are exhibited rationally by $x$, $x_1$, $\ldots$, $x_{m-1}$ and by $\sqrt{X}$, $\sqrt{X_1}$, $\ldots$, $\sqrt{X_{m-1}}$, seeing that $X_1 = f(x_1)$, $X_2 = f(x_2)$, etc.}
+
+\origpage{397}
+From which theorem it also easily follows that, given any number whatever of values of $x$, the sum of the transcendents $\Pi(x)$ belonging to those given values can always be expressed by a number $m-1$ of transcendents $\Pi(x)$ belonging to values of $x$ algebraically determinable from the given ones.
+
+To the preceding theorem it pleases us to give the name of \emph{the Abelian theorem}, as to a most beautiful monument of an admirable genius carried off by an untimely death. The transcendents $\Pi(x)$ themselves, too, in the cases where $X$ rises beyond the fourth order, it pleases us to call \emph{Abelian transcendents}, inasmuch as before him no one had considered them. These Cl.\ \emph{Legendre} also calls by the fitting name \emph{hyperelliptic} (fonctions ultra-elliptiques) *).
+
+\subsection*{3.}
+
+In the case where $u = \Pi(x)$ is an elliptic integral, that is, where $X$ rises only to the fourth order, the Eulerian theorem teaches that, if conversely $x = \lambda(u)$, the function $\lambda(u + u')$, whose argument is the binomial $u + u'$, is exhibited algebraically by the functions $\lambda(u)$, $\lambda(u')$ belonging to the single terms $u$, $u'$, just as is set forth for the trigonometric functions in the elements. Now I ask further, \emph{what those functions may be in the more general case whose inverses are the Abelian transcendents, and how the Abelian theorem, stated of these, may run.}
+
+The Eulerian theorem exhibits \emph{algebraically} the complete integral of a differential equation of the first order between two variables which in the differential equation are separated, of this kind:
+\[ \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{Y}} = 0 \]
+in which, $f(x)$ denoting a rational integral function of the fourth order, $X = f(x)$, $Y = f(y)$. Now I ask, \emph{what those differential equations may be whose complete integrals the Abelian theorem exhibits algebraically.}
+
+*)~Cl.\ \emph{Abel} presented to the Paris Academy, as long ago as the year 1826, a memoir \emph{on the singular properties of integrals of algebraic functions}, which the Illustrious Academy decreed should be inserted among the memoirs of \emph{foreign scholars}. But since the publication of these is put off from day to day, it were greatly to be wished\ednote{So printed; for ``optandum''.} that it might please the Illustrious Academy\ednote{So printed; for ``Academiae''.} to bring it out among its own memoirs, or, if usage perhaps forbids that, that it be inserted at least in the historical part of the memoirs. Though it would be in some measure an act of piety to render an honour, and an unaccustomed one, to the memory of an outstanding young man, from whom an irrevocable fate shut off those Academic honours themselves. This, while I was staying in Paris, was granted to my entreaties by Cl.\ \emph{Fourrier}\ednote{So printed, with a doubled r: Joseph Fourier, then perpetual secretary of the Académie des sciences, who died in May 1830 — the ``mortuo viro excellentissimo'' of the next clause.}; would that his illustrious successor, now that that most excellent man is dead, may be willing to make it good.
+
+\origpage{398}
+\subsection*{4.}
+
+Let us begin again from the simplest case of the Abelian transcendents, that one, I mean, in which the function $X$ rises only to the fifth or sixth order. Let
+\[ \begin{aligned} \int_0^{x} \frac{dx}{\sqrt{X}} &= \Phi(x) \\ \int_0^{x} \frac{x\,dx}{\sqrt{X}} &= \Phi_1(x), \end{aligned} \]
+and let there be put:
+\[ \begin{aligned} \Phi(x) + \Phi(y) &= u \\ \Phi_1(x) + \Phi_1(y) &= v, \end{aligned} \]
+I consider $x$, $y$ as functions of $u$, $v$, and I put:
+\[ \begin{aligned} x &= \lambda(u,v) \\ y &= \lambda_1(u,v). \end{aligned} \]
+These functions
+\[ \lambda(u,v), \qquad \lambda_1(u,v), \]
+which depend on two arguments $u$, $v$, we must needs introduce into analysis, if it is our pleasure to preserve the analogy of the trigonometric and elliptic functions in the Abelian functions as well.
+
+\subsection*{5.}
+
+On setting, as above,
+\[ \Pi(x) = \int_0^{x} \frac{(A + A_1 x)\,dx}{\sqrt{X}}, \]
+that is,
+\[ \Pi(x) = A\,\Phi(x) + A_1\,\Phi_1(x), \]
+the Abelian theorem teaches that of the equation
+\[ \Pi(x) + \Pi(y) + \Pi(z) = \Pi(a) + \Pi(b) \]
+an algebraic solution is given, that is, that $a$, $b$ can be determined \emph{algebraically} by the quantities $x$, $y$, $z$. But I observe that the problem of determining $a$, $b$ from the given quantities $x$, $y$, $z$ is indeterminate, and therefore that the Abelian theorem, so stated, teaches nothing else than that among the innumerable solutions of the proposed equation:
+\[ \Pi(a) + \Pi(b) = \Pi(x) + \Pi(y) + \Pi(z) \]
+one algebraic solution exists. But now I observe that those algebraic relations exhibited by Cl.\ \emph{Abel}, by whose aid $a$, $b$ are determined from the quantities $x$, $y$, $z$, in no way depend on $A$, $A_1$ themselves\ednote{A small stray mark stands between the subscript and the comma here, so that the print reads ``$A_1'$,''; every other occurrence of this coefficient in the paper is plain $A_1$, so the mark is read as a damaged comma rather than a prime.}, which affect the numerator of the fraction whose integral is the transcendent $\Pi(x)$. Whence the same pair of algebraic equations between $x$, $y$, $z$, $a$, $b$, once proposed, satisfy both at once the transcendental equation:
+\origpage{399}
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(z) \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(z). \end{aligned} \]
+These two equations being proposed together, $a$, $b$ are now completely determined by the quantities $x$, $y$, $z$. And so the Abelian theorem, if you would rightly discern its force and nature, must be stated in the following manner.
+
+\subsection*{Theorem.}
+
+„\emph{$X$ denoting a rational integral function of $x$ of the fifth or sixth order, let}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \qquad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x), \]
+\emph{then, the two equations being proposed together,}
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(z) \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(z), \end{aligned} \]
+\emph{the quantities $a$, $b$ are determined algebraically from the given quantities $x$, $y$, $z$.}“
+
+\subsection*{6.}
+
+The preceding theorem is easily extended to the case in which the sum of four, or of any number, of transcendents is expressed by the sum of two, whose arguments depend algebraically on the arguments of the former. Let us consider the case in which the sum of four transcendents is to be exhibited by the sum of two: the Abelian theorem, applied to that case, teaches again that, the two equations being proposed together,
+\[ \begin{aligned} \Phi(a) + \Phi(b) &= \Phi(x) + \Phi(y) + \Phi(x') + \Phi(y') \\ \Phi_1(a) + \Phi_1(b) &= \Phi_1(x) + \Phi_1(y) + \Phi_1(x') + \Phi_1(y'), \end{aligned} \]
+the quantities $a$, $b$ are determined algebraically from the given quantities $x$, $y$, $x'$, $y'$.
+
+Let us now put:
+\[ \Phi(x) + \Phi(y) = u, \qquad \Phi(x') + \Phi(y') = u', \]
+further
+\[ \Phi_1(x) + \Phi_1(y) = v, \qquad \Phi_1(x') + \Phi_1(y') = v', \]
+whence from the two proposed equations it follows that:
+\[ \Phi(a) + \Phi(b) = u + u', \qquad \Phi_1(a) + \Phi_1(b) = v + v'. \]
+But from the notation explained above we have from these equations, conversely:
+\[ \begin{aligned} x &= \lambda(u,v), & y &= \lambda_1(u,v), \\ x' &= \lambda(u',v'), & y' &= \lambda_1(u',v'), \\ a &= \lambda(u+u', v+v'), & b &= \lambda_1(u+u', v+v'). \end{aligned} \]
+These things being settled, we now propound of the new functions $\lambda(u,v)$, $\lambda_1(u,v)$ this theorem, into which the Abelian theorem passes:
+
+\origpage{400}
+\subsection*{Theorem.}
+
+„\emph{$X$ denoting a rational integral function of the fifth or sixth order, let there be put}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \qquad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x); \]
+\emph{let there be further}
+\[ x = \lambda(u,v), \qquad y = \lambda_1(u,v) \]
+\emph{such functions of the arguments $u$, $v$ that at the same time:}
+\[ \Phi(x) + \Phi(y) = u, \qquad \Phi_1(x) + \Phi_1(y) = v, \]
+\emph{those functions}
+\[ \lambda(u,v), \qquad \lambda_1(u,v) \]
+\emph{will enjoy a property like that which is set forth of the trigonometric and elliptic functions in the elements, namely that those functions of the binomial arguments}
+\[ u + u', \qquad v + v' \]
+\emph{are exhibited algebraically by the functions which belong to the single terms}
+\[ u, \; v; \qquad u', \; v' \]
+\emph{respectively; that is, that the functions}
+\[ \lambda(u + u', v + v'), \qquad \lambda_1(u + u', v + v') \]
+\emph{are exhibited algebraically by the functions}
+\[ \begin{aligned} \lambda(u,v), \qquad \lambda(u',v') \\ \lambda_1(u,v), \qquad \lambda_1(u',v'). \end{aligned} \]“
+
+\subsection*{7.}
+
+The general theorem now runs thus.
+
+\subsection*{General theorem.}
+
+„\emph{$X$ denoting a rational integral function of $x$ of order $(2m-1)^{\text{ti}}$ or $2m^{\text{ti}}$, let}
+\[ \int_0^{x} \frac{dx}{\sqrt{X}} = \Phi(x), \quad \int_0^{x} \frac{x\,dx}{\sqrt{X}} = \Phi_1(x), \quad \int_0^{x} \frac{x^{2}\,dx}{\sqrt{X}} = \Phi_2(x), \; \ldots \]
+\[ \ldots \int_0^{x} \frac{x^{m-2}\,dx}{\sqrt{X}} = \Phi_{m-2}(x); \]
+\emph{these being set down, let there be established $m-1$ functions}
+\[ x, \; x_1, \; x_2, \; \ldots, \; x_{m-2}, \]
+\emph{which severally depend on the $m-1$ following quantities}
+\[ u, \; u_1, \; u_2, \; \ldots, \; u_{m-2} \]
+\emph{in such wise that at the same time these equations hold:}
+\[ \begin{aligned} u &= \Phi(x) + \Phi(x_1) + \Phi(x_2) + \ldots + \Phi(x_{m-2}) \\ u_1 &= \Phi_1(x) + \Phi_1(x_1) + \Phi_1(x_2) + \ldots + \Phi_1(x_{m-2}) \end{aligned} \]
+\origpage{401}
+\[ \begin{aligned} u_2 &= \Phi_2(x) + \Phi_2(x_1) + \Phi_2(x_2) + \ldots + \Phi_2(x_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ u_{m-2} &= \Phi_{m-2}(x) + \Phi_{m-2}(x_1) + \Phi_{m-2}(x_2) + \ldots + \Phi_{m-2}(x_{m-2}), \end{aligned} \]
+\emph{and let those functions be:}
+\[ \begin{aligned} x &= \lambda(u, u_1, u_2, \ldots, u_{m-2}) \\ x_1 &= \lambda_1(u, u_1, u_2, \ldots, u_{m-2}) \\ x_2 &= \lambda_2(u, u_1, u_2, \ldots, u_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ x_{m-2} &= \lambda_{m-2}(u, u_1, u_2, \ldots, u_{m-2}); \end{aligned} \]
+\emph{those functions enjoy the same property which holds of the trigonometric and elliptic functions, namely that for the binomial arguments}
+\[ u + u', \; u_1 + u'_1, \; u_2 + u'_2, \; \ldots, \; u_{m-2} + u'_{m-2}, \]
+\emph{they are expressed algebraically by the same functions whose arguments are the single terms}
+\[ u, \; u_1, \; u_2, \; \ldots, \; u_{m-2} \]
+\emph{and}
+\[ u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}; \]
+\emph{that is, that the functions}
+\[ \begin{aligned} &\lambda(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}), \\ &\lambda_1(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}), \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u + u', \; u_1 + u'_1, \; \ldots, \; u_{m-2} + u'_{m-2}) \end{aligned} \]
+\emph{are expressed algebraically by the functions}
+\[ \begin{aligned} &\lambda(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \\ &\lambda_1(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u, \; u_1, \; u_2, \; \ldots, \; u_{m-2}) \end{aligned} \]
+\emph{and}
+\[ \begin{aligned} &\lambda'(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}) \\ &\lambda_1(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}) \\ &\;\; \cdots\cdots\cdots\cdots\cdots\cdots \\ &\lambda_{m-2}(u', \; u'_1, \; u'_2, \; \ldots, \; u'_{m-2}). \end{aligned} \]“\ednote{The first function of this last list is printed with a prime, $\lambda'$, which the parallel lists ($\lambda$, $\lambda_1$, $\ldots$, $\lambda_{m-2}$) do not carry.}
+
+I observe that the functions sought are found from the given ones by the aid of an algebraic equation of order $(m-1)^{\text{ti}}$, which can be assigned generally by the Abelian theorem.
+
+\subsection*{8.}
+
+The Eulerian theorem exhibits the complete algebraic integral of a differential equation of the first order between two variables, in which those
+\origpage{402}
+variables are separated. The Abelian theorem exhibits $m-1$ complete algebraic integrals (that is, ones which involve $m-1$ arbitrary constants) of $m-1$ linear differential equations of the first order between $m$ variables, in each of which those variables are separated. Let us begin again from the simplest case of the Abelian transcendents, in which $X$ rises to the fifth or sixth order.
+
+In that case the two transcendental equations:
+\[ \begin{aligned} \Phi(x) + \Phi(y) + \Phi(z) &= \Phi(a) + \Phi(b) \\ \Phi_1(x) + \Phi_1(y) + \Phi_1(z) &= \Phi_1(a) + \Phi_1(b), \end{aligned} \]
+we know, by the Abelian theorem, to hold the place of two algebraic equations between the five quantities $x$, $y$, $z$, $a$, $b$. Let us consider $a$, $b$ as constants; on differentiating the proposed equations, we see that $a$, $b$ drop out altogether, and they are therefore, in the transcendental equations, or in the algebraic equations which hold their place, arbitrary constants. Hence flows the following theorem:
+
+\subsection*{Theorem.}
+
+„\emph{Let $f(x)$ be a rational integral function of $x$ of the fifth or sixth order, let further}
+\[ f(x) = X, \qquad f(y) = Y, \qquad f(z) = Z, \]
+\emph{then the two linear differential equations of the first order between three variables, in each of which the variables $x$, $y$, $z$, are separated,}
+\[ \begin{aligned} \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{X}} + \frac{dz}{\sqrt{Z}} &= 0 \\ \frac{x\,dx}{\sqrt{X}} + \frac{y\,dy}{\sqrt{X}} + \frac{z\,dz}{\sqrt{X}} &= 0, \end{aligned} \]\ednote{Both lines are printed with $\sqrt{X}$ where the sense requires $\sqrt{Y}$ and $\sqrt{Z}$: the first reads $dy/\sqrt{X}$ for $dy/\sqrt{Y}$, the second $y\,dy/\sqrt{X}$ and $z\,dz/\sqrt{X}$ for $y\,dy/\sqrt{Y}$ and $z\,dz/\sqrt{Z}$. The corresponding four-variable system below is set correctly.}
+\emph{have two complete algebraic integrals.}“
+
+Of the Abelian transcendents of the next following order this theorem is had in like manner.
+
+\subsection*{Theorem.}
+
+„\emph{Let $f(x)$ be a rational integral function of $x$ of the seventh or eighth order, let further}
+\[ f(w) = W, \quad f(x) = X, \quad f(y) = Y, \quad f(z) = Z, \]
+\emph{then the three linear differential equations of the first order, between four variables, in each of which the variables $w$, $x$, $y$, $z$, are separated,}
+\[ \begin{aligned} \frac{dw}{\sqrt{W}} + \frac{dx}{\sqrt{X}} + \frac{dy}{\sqrt{Y}} + \frac{dz}{\sqrt{Z}} &= 0, \\ \frac{w\,dw}{\sqrt{W}} + \frac{x\,dx}{\sqrt{X}} + \frac{y\,dy}{\sqrt{Y}} + \frac{z\,dz}{\sqrt{Z}} &= 0, \end{aligned} \]
+\origpage{403}
+\[ \frac{w^{2}\,dw}{\sqrt{W}} + \frac{x^{2}\,dx}{\sqrt{X}} + \frac{y^{2}\,dy}{\sqrt{Y}} + \frac{z^{2}\,dz}{\sqrt{Z}} = 0, \]
+\emph{have three complete algebraic integrals.}“
+
+Which theorems are easily extended to any number whatever of variables and of differential equations. The complete algebraic integrals themselves are suggested generally by the Abelian theorem.
+
+We know that Ill.\ \emph{Lagrange}, formerly, in the memoirs of the Turin Academy, setting out from the differential equation between two variables itself, rose by direct methods of integration to its complete algebraic integral, and thus demonstrated by a new and singular method the Eulerian theorem, which won him so great an admiration from Euler himself. So too we believe it will be worth the labour to investigate, by direct methods of integration, the two complete algebraic integrals of those two differential equations between three variables, or more generally the $m-1$ complete algebraic integrals of those $m-1$ differential equations between $m$ variables, and thus to adorn the Abelian theorem with a new and no less singular demonstration.
+
+Königsberg, 12 July 1832.
+
+\end{document}
