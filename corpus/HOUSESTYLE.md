@@ -48,6 +48,24 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R24 — When a print uses TWO emphasis devices (italic and letterspacing), both collapse to
+### `\emph`, and the distinction is recorded in the file header instead (presentation)
+*2026-08-25.* R20 mapped German letterspacing (Sperrung) to `\emph` for a print — Abel's 1826 paper
+— where Sperrung was the *only* emphasis device in use. Jacobi's 1832 Crelle note
+(`jacobi-1832-considerationes`) is the first corpus work whose print uses **both**: italic for the
+author's own stress (terms he is defining, whole quoted theorem statements, *theorematis Abeliani*,
+*periodo duplici et reali et imaginaria*) and letterspacing for **personal names**
+(E u l e r u s, L a n d e n, L e g e n d r e, A b e l, F o u r r i e r, L a g r a n g e). The site's
+LaTeX→HTML transform renders exactly one emphasis, `\emph` → `<em>`, so the two devices cannot be
+kept apart on the page. **Rule: render both with `\emph`, and state in the transcription's header
+comment which passages carried which device**, so the information is preserved in the corpus even
+though the rendering flattens it. Rejected alternatives: dropping the name-marking entirely (loses
+a device the print actually uses), and pressing `\textbf` into service for one of them (bold is
+far heavier than letterspacing and would misrepresent the page). One consequence, also applied
+here: where a letterspaced name falls **inside** an italic passage ("demonstratum est a Cl. Abel,
+dato numero…", with "Cl. Abel" upright-letterspaced inside the italic run), the passage is set as a
+single `\emph` run rather than being split — both halves would render identically anyway.
+
 ### R23 — The 1841 original's function-application notation — parenthesized `θ(y)` versus bare
 ### `θy` for the *same* symbol — is itself inconsistent, and is followed exactly per occurrence,
 ### not normalized to one form (notation)
@@ -174,8 +192,17 @@ how the same text is set — and neither is caught by `validate.py`, `texcompare
   a letter as the literal Unicode character (`œ`, not `\oe{}`).** This is consistent with existing
   corpus `.tex` bodies that already use literal UTF-8 (e.g. Fagnano's "ànno"): Tectonic/XeTeX
   compiles the character for the PDF, and the site's `escapeHtml` passes it through unchanged.
+- *Added 2026-08-25.* `\ednote{...}` and `\uncertain{...}` are matched in `tex.js` with `[^}]*`, so
+  the argument **may not contain a text-mode brace group**: an `\emph{...}` inside a note ends it at
+  the first `}`, and the tail of the note leaks into the author's running text — silently, since
+  `validate.py`, `texcompare.py` and `houselint.py` all pass. Math is safe (`$...$` spans are
+  stashed before that regex runs, so `$\sqrt{X}$` inside a note is fine, and is used throughout
+  `abel-1828-remarques`). **Rule: inside a note, use `$...$` freely but no text-mode macro with an
+  argument — write the emphasis as plain words or `` `` ''`` quotes.** Found in a translator's note
+  in `jacobi-1832-considerationes` when the leaked tail showed up on the rendered page.
 
-Applied in `jacob-bernoulli-1694-constructio-lemniscata`.
+Applied in `jacob-bernoulli-1694-constructio-lemniscata`, extended in
+`jacobi-1832-considerationes`.
 
 ### R17 — LaTeX control spaces (`\ `) after abbreviations render as a normal space on the web
 ### (presentation)
