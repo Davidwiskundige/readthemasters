@@ -38,6 +38,23 @@ tags:
 - analysis
 language: fr
 type: paper
+
+# NOTE ON DIRECTION: the true citation runs the other way — Abel's 1828 note cites THIS memoir, in
+# a footnote on its opening page, as the work he had presented in Paris at the end of 1826. That
+# edge cannot be authored on the 1828 note, because `relations` must point backward by publication
+# year and this memoir did not appear until 1841, twelve years after Abel's death. The edge is
+# therefore recorded here, in the direction the schema allows; the `note` below states the actual
+# relationship, and the reading order it produces (note first, then memoir) is the right one either
+# way. See the transcription's provenance for the fuller account.
+relations:
+  - to: abel-1828-remarques
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Abel's own published announcement of this memoir. Written after it and printed thirteen years
+      before it, the 1828 note states the theorem and works out the case of a single square root in
+      eleven pages; this memoir is the full theory it promises.
+
 significance: 'This is Abel''s celebrated Paris memoir, source of what is now called
   Abel''s theorem: a sum of any number of integrals of a given algebraic function
   can be expressed, up to an algebraic and logarithmic remainder, through a fixed

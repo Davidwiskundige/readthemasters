@@ -1,0 +1,316 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker and \ednote is reproduced
+% unchanged; only the prose is translated — including the short prose set INSIDE math via a text
+% insert, which is translated like any other prose (HOUSESTYLE R21): the connective
+% "\text{et}"→"\text{and}", the ordinal suffix "6^{\text{me}}"→"6^{\text{th}}", and the clause
+% closing (31.), "à une constante."→"to a constant." (kept italic, as the print letterspaces it).
+% The math-preservation check ignores the CONTENT of such an insert while still checking that the
+% insert is present and the surrounding math unchanged.
+%
+% The nineteen \ednote notes flagging this printing's misprints are OUR notes, already in English,
+% and are carried over verbatim so both files bear the same apparatus.
+%
+% Emphasis follows the original: the letterspaced (Sperrung) passages — the statements of Théorèmes
+% I–VIII, "intégrales de différentielles algébriques quelconques" (p. 313) and the single word
+% "entière" (p. 315) — carry across to the corresponding English words.
+%
+% Period terminology, rendered in period English and applied consistently:
+%   fonction entière = integral function (i.e. a polynomial; the sense Abel's "ganze Function" has
+%     in abel-1826-unmoeglichkeit, and the same rendering is used there)
+%   développement = development;  premier/second membre = first/second member
+%   quantité = quantity;  coëfficient = coefficient;  indéterminées = indeterminates
+%   géometres = geometers;  cahiers = numbers [of the journal];  chasser = eliminate
+%   "Cela posé" = "This being premised";  "il viendra" = "there will result"
+% Theorem names keep the author's own French form (Théorème I–VIII) where he numbers them in the
+% statement, but his in-text cross-references ("le 2. Théorème", "les théorèmes III. et V.") read
+% as ordinary English prose.
+%
+% Abel's own footnote on p. 313 is his text and is translated; the print's "*)" marker and the
+% note's position at the foot of the page-313 block are kept.
+%
+% Some of the original's misprints cannot survive translation because they are French orthography
+% rather than mathematics — "sé" for "se" and "encors" for "encore" (p. 318), "en aura" for "on
+% aura" (p. 321), "Céla" (p. 315), "Précedemment" (p. 320). These are recorded in the transcription
+% and its provenance; the mathematical misprints are all preserved here, formula for formula.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{313}
+\section*{30. Remarks on some general properties of a certain sort of transcendental functions.}
+
+(By Mr. \emph{N. H. Abel} of Christiania.)
+
+\subsection*{1.}
+
+If $\psi x$ denotes the most general elliptic function, that is to say if
+\[ \psi x = \int \frac{r \cdot \partial x}{\sqrt{R}}, \]
+where $r$ is any rational function whatever of $x$, and $R$ an integral function of the same variable which does not exceed the fourth degree, this function has, as is known, the very remarkable property that the sum of any number whatever of such functions may be expressed by a single function of the same form, on adding to it a certain algebraic and logarithmic expression.
+
+It seems that in the theory of transcendental functions the geometers have confined themselves to functions of this form. Nevertheless there exists, for a very extensive class of other functions, a property analogous to that of the elliptic functions.
+
+I mean to speak of the functions which may be regarded as \emph{integrals of any algebraic differentials whatever}. If one cannot express the sum of any number whatever of given functions by a single function of the same species, as in the case of the elliptic functions, at least one will be able in all cases to express a like sum by the sum of a determinate number of other functions of the same nature as the first, on adding to it a certain algebraic and logarithmic expression*). We shall demonstrate this property in one of the following numbers of this journal. For the moment I shall consider a particular case, which embraces at the same time the elliptic functions, namely the functions contained in the formula
+\[ \psi x = \int \frac{r \cdot \partial x}{\sqrt{R}}, \tag{1} \]
+
+*) I presented a memoir on these functions to the Royal Academy of Sciences of Paris towards the end of the year 1826. \emph{Author's note.}
+
+\origpage{314}
+$R$ being any rational and integral function whatever, and $r$ a rational function.
+
+\subsection*{2.}
+
+We shall first establish the following theorem:
+
+\emph{Théorème I. Let $\varphi x$ be an integral function of $x$, decomposed in any manner whatever into two integral factors $\varphi_1 x$ and $\varphi_2 x$, so that $\varphi x = \varphi_1 x \cdot \varphi_2 x$. Let $fx$ be another integral function whatever, and}
+\[ \psi x = \int \frac{fx \, \partial x}{(x-\alpha)\sqrt{\varphi x}}, \tag{2} \]
+\emph{where $\alpha$ is any constant quantity whatever. Let us denote by $a_0$, $a_1$, $a_2$, $\ldots$; $c_0$, $c_1$, $c_2$, $\ldots$ any quantities whatever of which at least one is variable. This being premised, if one puts}
+\[ (a_0+a_1x+a_2x^{2}+\ldots+a_nx^{n})^{2} \cdot \varphi_1 x-(c_0+c_1x+c_2x^{2}+\ldots+c_mx^{m})^{2} \cdot \varphi_2 x \tag{3} \]
+\[ = A \cdot (x-x_1)(x-x_2)(x-x_3)\ldots(x-x_\mu), \]
+\emph{where $A$ does not depend on $x$, I say that one will have}
+\[ \varepsilon_1\psi x_1 + \varepsilon_2\psi x_2 + \varepsilon_3\psi x_3 + \ldots + \varepsilon_\mu\psi x_\mu \tag{4} \]
+\[ = \frac{f\alpha}{\sqrt{\varphi\alpha}} \cdot \log\left\{\frac{(a_0+a_1\alpha+\ldots+a_n\alpha^{n})\sqrt{\varphi_1\alpha}+(c_0+c_1\alpha+\ldots+c_m\alpha^{m})\sqrt{\varphi_2\alpha}}{(a_0+a_1\alpha+\ldots+a_n\alpha^{n})\sqrt{\varphi_1\alpha}-(c_0+c_1\alpha+\ldots+c_m\alpha^{m})\sqrt{\varphi_2\alpha}}\right\}+r+C, \]
+\emph{where $C$ is a constant quantity and $r$ the coefficient of $\frac{1}{x}$ in the development of the function}
+\[ \frac{fx}{(x-\alpha)\sqrt{\varphi x}} \cdot \log\left\{\frac{(a_0+a_1x+\ldots+a_nx^{n})\sqrt{\varphi_1 x}+(c_0+c_1x+\ldots+c_mx^{m})\sqrt{\varphi_2 x}}{(a_0+a_1x+\ldots+a_nx^{n})\sqrt{\varphi_1 x}-(c_0+c_1x+\ldots+c_mx^{m})\sqrt{\varphi_2 x}}\right\}, \]
+\emph{according to the descending powers of $x$. The quantities $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_\mu$ are equal to $+1$ or to $-1$, and their values depend on those of the quantities $x_1$, $x_2$ $\ldots$ $x_\mu$.}
+
+Let us denote the first member of equation (3.) by $Fx$, and put for brevity:
+\[ \theta x = a_0 + a_1x + a_2x^{2} + \ldots + a_nx^{n}, \tag{5} \]
+\[ \theta_1 x = c_0 + c_1x + c_2x^{2} + \ldots + c_mx^{m}, \]
+we shall have
+\[ Fx = (\theta x)^{2} \cdot \varphi_1 x - (\theta_1 x)^{2} \cdot \varphi_2 x. \tag{6} \]
+This being premised, let $x$ be any one whatever of the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$; one will have the equation
+\[ Fx = 0. \tag{7} \]
+Hence, by differentiating, one draws
+\[ F'x \cdot \partial x + \delta Fx = 0, \tag{8} \]
+\origpage{315}
+denoting by $F'x$ the derivative of $Fx$ with respect to $x$, and by $\delta Fx$ the differential of the same function with respect to the quantities $a_0$, $a_1$, $a_2$, $\ldots$; $c_0$, $c_1$, $c_2$, $\ldots$ Now, observing that $\varphi_1 x$ and $\varphi_2 x$ are independent of these last variables, the equation will give:
+\[ \delta Fx = 2\theta x \cdot \varphi_1 x \cdot \delta\theta x - 2\theta_1 x \cdot \varphi_2 x \cdot \delta\theta_1 x, \tag{9} \]
+hence in virtue of (8.)
+\[ F'x \cdot \partial x = 2\theta_1 x \cdot \varphi_2 x \cdot \delta\theta_1 x - 2\theta x \cdot \varphi_1 x \cdot \delta\theta x. \tag{10} \]
+Now, having $Fx = 0 = (\theta x)^{2} \cdot \varphi_1 x - (\theta_1 x)^{2} \cdot \varphi_2 x$, one draws from it:
+\[ \theta x \cdot \sqrt{\varphi_1 x} = \varepsilon\theta_1 x \cdot \sqrt{\varphi_2 x}, \tag{11} \]
+where $\varepsilon = \pm 1$. Hence comes
+\[ \theta x \cdot \varphi_1 x = \varepsilon\theta_1 x \cdot \sqrt{\varphi_1 x \cdot \varphi_2 x} = \varepsilon\theta_1 x \cdot \sqrt{\varphi x}, \]
+\[ \theta_1 x \cdot \varphi_2 x = \varepsilon\theta x \cdot \sqrt{\varphi_2 x \cdot \varphi_1 x} = \varepsilon\theta x \cdot \sqrt{\varphi x}, \]
+hence the expression for $F'x \cdot \partial x$ may be put under the form
+\[ F'x \cdot \partial x = 2\varepsilon \cdot \{\theta x \cdot \delta\theta_1 x - \theta_1 x \cdot \delta\theta x\} \cdot \sqrt{\varphi x}. \tag{12} \]
+This gives, on multiplying by $\varepsilon \cdot \dfrac{fx}{\sqrt{\varphi x}} \cdot \dfrac{1}{F'x} \cdot \dfrac{1}{x-\alpha}$:
+\[ \varepsilon \cdot \frac{fx \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}} = \frac{fx \cdot (2\theta x \cdot \delta\theta_1 x - 2\theta_1 x \cdot \delta\theta x)}{(x-\alpha)F'x}. \tag{13} \]
+Putting for brevity
+\[ \lambda(x) = 2fx(\theta x \cdot \delta\theta_1 x - \theta_1 x \cdot \delta\theta x), \tag{14'} \]
+there will result:\ednote{The numerator of the following display is printed “$fy \cdot \partial x$”; the left member of (13.), from which this follows, has $fx$, so “$fy$” is a misprint for $fx$.}
+\[ \varepsilon \cdot \frac{fy \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}} = \frac{\lambda x}{(x-\alpha) \cdot F'x}, \tag{14} \]
+where $\lambda x$ will be an \emph{integral} function with respect to $x$.
+
+Let us denote by $\Sigma\Gamma x$ the quantity
+\[ \Gamma x_1 + \Gamma x_2 + \Gamma x_3 + \ldots + \Gamma x_\mu, \]
+and let us observe that equation (14.) still subsists on putting any one whatever of the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$ in place of $x$; this equation will give
+\[ \Sigma\varepsilon \cdot \frac{fx \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}} = \Sigma\frac{\lambda x}{(x-\alpha)F'x} = \delta v. \tag{15} \]
+This being premised, one will be able to eliminate without difficulty the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$ from the second member.
+
+In fact, whatever the integral function $\lambda x$ may be, one may suppose
+\[ \lambda x = (x-\alpha) \cdot \lambda_1 x + \lambda\alpha, \]
+where $\lambda_1 x$ is an integral function of $x$, namely $\dfrac{\lambda x - \lambda\alpha}{x-\alpha}$. Substituting this value in (15.), there will result
+\[ \delta v = \Sigma\frac{\lambda_1 x}{F'x} + \lambda\alpha \cdot \Sigma\frac{1}{(x-\alpha)F'x}. \tag{16'} \]
+\origpage{316}
+Now, by a known formula, one will have
+\[ \Sigma\frac{1}{(x-\alpha)F'x} = -\frac{1}{F\alpha}, \tag{17} \]
+having regard that
+\[ F\alpha = A(\alpha-x_1)(\alpha-x_2)\ldots(\alpha-x_\mu), \]
+hence
+\[ \delta v = -\frac{\lambda\alpha}{F\alpha} + \Sigma\frac{\lambda_1 x}{F'x}. \tag{18} \]
+It remains to find $\Sigma\dfrac{\lambda_1 x}{F'x}$. Now this may be done by means of formula (17.). In fact, on developing $\dfrac{1}{\alpha-x}$ according to the descending powers of $\alpha$, there will result\ednote{In the following display the numerator of the second term is printed “1”; the expansion requires $x$, as the general term $x^{k}$ shows. A later reader has pencilled an “x” above it in the copy scanned here; that annotation is not part of the print and is not transcribed.}
+\[ \frac{1}{F\alpha} = \frac{1}{\alpha} \cdot \Sigma\frac{1}{F'x} + \frac{1}{\alpha^{2}} \cdot \Sigma\frac{1}{F'x} + \ldots + \frac{1}{\alpha^{k+1}} \cdot \Sigma\frac{x^{k}}{F'x} + \ldots \tag{19} \]
+whence one sees that $\Sigma\dfrac{x^{k}}{F'x}$ is equal to the coefficient of $\dfrac{1}{\alpha^{k+1}}$ in the development of $\dfrac{1}{F\alpha}$, or else to that of $\dfrac{1}{\alpha}$ in the development of $\dfrac{\alpha^{k}}{F\alpha}$. Hence one easily sees that $\Sigma\dfrac{\lambda_1 x}{F'x}$, where $\lambda_1 x$ is any integral function whatever of $x$, will be equal to the coefficient of $\dfrac{1}{x}$ in the development of the function $\dfrac{\lambda_1 x}{Fx}$ according to the ascending powers of $\dfrac{1}{x}$. If for brevity one denotes by $\Pi r$ this coefficient contained in any function $r$ whatever developable in this manner, one will have:
+\[ \Sigma\frac{\lambda_1 x}{F'x} = \Pi\frac{\lambda_1 x}{Fx}. \tag{20} \]
+Now formula (16.), on dividing by $Fx \cdot (x-\alpha)$, gives
+\[ \Pi.\frac{\lambda x}{(x-\alpha)Fx} = \Pi\frac{\lambda_1 x}{Fx}, \tag{21} \]
+observing that $\Pi\dfrac{\lambda\alpha}{(x-\alpha)Fx}$ is always equal to zero. Hence expression (16.) for $\delta v$ will become
+\[ \delta v = -\frac{\lambda\alpha}{F\alpha} + \Pi\frac{\lambda x}{(x-\alpha)Fx}. \tag{22} \]
+Now one has (14'.)
+\[ \lambda x = 2fx \cdot \{\theta x \cdot \delta\theta_1 x - \theta_1 x \cdot \delta\theta x\}, \]
+hence, putting $\lambda$ in place of $x$,\ednote{The letter substituted for $x$ is printed “$\lambda$”; the substitution actually made is $x = \alpha$, as the resulting formula $\lambda\alpha = 2f\alpha\{\ldots\}$ shows, so “$\lambda$” is a misprint for $\alpha$.}
+\[ \lambda\alpha = 2f\alpha\{\theta\alpha \cdot \delta\theta_1\alpha - \theta_1\alpha \cdot \delta\theta\alpha\}. \]
+In virtue of this expression, and substituting for $Fx$ its value $(\theta\alpha)^{2} \cdot \varphi_1\alpha - (\theta_1\alpha)^{2} \cdot \varphi_2\alpha$, one will obtain\ednote{Two misprints in the following display. Its left member is printed “$\partial v$” but is the $\delta v$ of (22.). In the last denominator “$(\theta_1\alpha)^{2}$” should be $(\theta_1 x)^{2}$: the whole term is a function of $x$, and (6.) gives $Fx = (\theta x)^{2}\varphi_1 x - (\theta_1 x)^{2}\varphi_2 x$.}
+\origpage{317}
+\[ \partial v = -\frac{2f\alpha \cdot (\theta\alpha \cdot \delta\theta_1\alpha - \theta_1\alpha \cdot \delta\theta\alpha)}{(\theta\alpha)^{2} \cdot \varphi_1\alpha - (\theta_1\alpha)^{2} \cdot \varphi_2\alpha} + \Pi\frac{2fx}{x-\alpha} \cdot \frac{\theta x \cdot \delta\theta_1 x - \theta_1 x \cdot \delta\theta x}{(\theta x)^{2} \cdot \varphi_1 x - (\theta_1\alpha)^{2} \cdot \varphi_2 x}. \]
+One will easily find the integral of this expression; for, observing that $f\alpha$, $\varphi_1\alpha$, $\varphi_2\alpha$, $fx$, $x-\alpha$, $\varphi_1 x$, $\varphi_2 x$ are constant quantities, one will have, in virtue of the formula
+\[ \int \frac{p\partial q - q\partial p}{p^{2}m - q^{2}n} = \frac{1}{2\sqrt{m \cdot n}}\log.\left\{\frac{p\sqrt{m}+q\sqrt{n}}{p\sqrt{m}-q\sqrt{n}}\right\}: \]
+\[ v = C - \frac{f\alpha}{\sqrt{\varphi\alpha}} \cdot \log\left\{\frac{\theta\alpha \cdot \sqrt{\varphi_1\alpha}+\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}{\theta\alpha \cdot \sqrt{\varphi_1\alpha}-\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}\right\} \tag{23} \]
+\[ + \Pi\frac{fx}{(x-\alpha)\sqrt{\varphi x}} \cdot \log\left\{\frac{\theta x \cdot \sqrt{\varphi_1 x}+\theta_1 x \cdot \sqrt{\varphi_2 x}}{\theta x \cdot \sqrt{\varphi_1 x}-\theta_1 x \cdot \sqrt{\varphi_2 x}}\right\}. \]
+Now equation (15.) gives
+\[ \Sigma\varepsilon\int \frac{fx \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}} = v, \]
+hence, putting
+\[ \psi(x) = \int \frac{fx \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}} \tag{24} \]
+and denoting by $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_\mu$ quantities of the form $\pm 1$, one will have the formula\ednote{In the following display the radicand of the last denominator is printed transposed, “$\sqrt{(x\varphi)}$”; every other occurrence, including (23.) and (28.), has $\sqrt{(\varphi x)}$.}
+\[ \varepsilon_1\psi x_1 + \varepsilon_2\psi x_2 + \varepsilon_3\psi x_3 + \ldots + \varepsilon_\mu\psi x_\mu = \tag{25} \]
+\[ C - \frac{f\alpha}{\sqrt{\varphi\alpha}}\log\left\{\frac{\theta\alpha \cdot \sqrt{\varphi_1\alpha}+\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}{\theta\alpha \cdot \sqrt{\varphi_1\alpha}-\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}\right\} \]
+\[ + \Pi\frac{fx}{(x-\alpha)\sqrt{x\varphi}}\log\left\{\frac{\theta x \cdot \sqrt{\varphi_1 x}+\theta_1 x \cdot \sqrt{\varphi_2 x}}{\theta x \cdot \sqrt{\varphi_1 x}-\theta_1 x \cdot \sqrt{\varphi_2 x}}\right\}, \]
+which accords perfectly with formula (4.).
+
+The values of $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_\mu$ are not arbitrary; they depend on the magnitude of $x_1$, $x_2$, $\ldots$ $x_\mu$, and this last is determined by the equation
+\[ \theta x \cdot \sqrt{\varphi_1 x} = \varepsilon\theta_1 x\sqrt{\varphi_2 x}, \]
+equivalent to the equations
+\[ \theta x_1 \cdot \sqrt{\varphi_1 x_1} = \varepsilon_1 \cdot \theta_1 x_1 \cdot \sqrt{\varphi_2 x_1}; \quad \theta x_2 \cdot \sqrt{\varphi_1 x_2} = \varepsilon_2\theta_1 x_2\sqrt{\varphi_2 x_2}; \ldots \tag{26} \]
+\[ \theta x_\mu \cdot \sqrt{\varphi_1 x_\mu} = \varepsilon_\mu\theta_1 x_\mu\sqrt{\varphi_2 x_\mu}. \]
+Moreover the quantities $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_\mu$ will keep the same values for all the values of $x_1$, $x_2$, $\ldots$ $x_\mu$ comprised within certain limits. It will be the same with the constant $C$.
+
+\subsection*{3.}
+
+The preceding demonstration supposes all the quantities $x_1$, $x^{2}$, $\ldots\ldots$ $x_\mu$ different from one another,\ednote{The second entry in this list is printed as a superscript, “$x^{2}$”; the list is $x_1$, $x_2$, $\ldots$ $x_\mu$ everywhere else, so this is a misprint for the subscript $x_2$.} for in the contrary case $F'x$ would be equal to zero for a certain number of values of $x$, and then the second
+\origpage{318}
+member of formula (14.) would present itself under the form $\frac{0}{0}$. Nevertheless it is evident that formula (25.) will still subsist even in the case where several of the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$ are equal to one another.
+
+On putting $x_2 = x_1$, one will have (26.)
+\[ \theta x_1 \cdot \sqrt{\varphi_1 x_1} = \varepsilon_1\theta_1 x_1\sqrt{\varphi_2 x_1} = \varepsilon_2\theta_1 x_1\sqrt{\varphi_2 x_1}, \]
+and this gives, supposing that $\theta_1 x\varphi_2 x$ and $\theta x \cdot \varphi_1 x$ have no common divisor:
+\[ \varepsilon_2 = \varepsilon_1. \]
+In virtue of this remark one will have the following theorem:
+
+\emph{Théorème II. If one puts}
+\[ (\theta x)^{2} \cdot \varphi_1 x-(\theta_1 x)^{2} \cdot \varphi_2 x = A \cdot (x-x_1)^{m_1}(x-x_2)^{m_2}\ldots(x-x_\mu)^{m_\mu}, \tag{27} \]
+\emph{where the integral functions $\theta x \cdot \varphi_1 x$ and $\theta_1 x \cdot \varphi_2 x$ have no common divisor, one will have:}\ednote{The last term of the following display is printed “$\psi(x_\mu$”, with an opening parenthesis that is never closed; (25.) and (29.) both write this term $\psi x_\mu$.}
+\[ \varepsilon_1 m_1\psi x_1 + \varepsilon_2 m_2\psi x_2 + \varepsilon_3 m_3\psi x_3 + \ldots + \varepsilon_\mu m_\mu\psi(x_\mu = \tag{28} \]
+\[ C - \frac{f\alpha}{\sqrt{\varphi\alpha}}\log\left\{\frac{\theta\alpha \cdot \sqrt{\varphi_1\alpha}+\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}{\theta\alpha \cdot \sqrt{\varphi_1\alpha}-\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}\right\} \]
+\[ + \Pi\frac{fx}{(x-\alpha)\sqrt{\varphi x}}\log\left\{\frac{\theta x \cdot \sqrt{\varphi_1 x}+\theta_1 x \cdot \sqrt{\varphi_2 x}}{\theta x \cdot \sqrt{\varphi_1 x}-\theta_1 x \cdot \sqrt{\varphi_2 x}}\right\}. \]
+
+\subsection*{4.}
+
+If one supposes $fx$ divisible by $x-\alpha$, one will have $f\alpha = 0$; hence, putting $fx \cdot (x-\alpha)$ in place of $fx$, there will result:
+
+\emph{Théorème III. The things being supposed the same as in the 2nd Theorem, if one puts}
+\[ \psi x = \int \frac{fx \cdot \partial x}{\sqrt{\varphi x}}, \]
+\emph{where $fx$ is any integral function whatever, one will have}
+\[ \varepsilon_1 m_1\psi x_1 + \varepsilon_2 m_2\psi x_2 \ldots + \varepsilon_\mu m_\mu\psi x_\mu \tag{29} \]
+\[ = C + \Pi\frac{fx}{\sqrt{\varphi x}}\log.\left\{\frac{\theta x \cdot \sqrt{\varphi_1 x}+\theta_1 x\sqrt{\varphi_2 x}}{\theta x \cdot \sqrt{\varphi_1 x}-\theta_1 x\sqrt{\varphi_2 x}}\right\}. \]
+
+\subsection*{5.}
+
+If in the formula above one supposes the degree of the integral function $f(x)$ less than half that of $\varphi x$, it is clear that the part of the second member affected by the sign $\Pi$ will vanish. Hence one will have this theorem:
+
+\emph{Théorème IV. If the degree of the integral function $(fx)^{2}$ is less than that of $\varphi x$, and one puts}
+\origpage{319}
+\[ \psi x = \int \frac{fx \cdot \partial x}{(x-\alpha)\sqrt{\varphi x}}: \]
+\emph{one will have}
+\[ \varepsilon_1 m_1\psi x_1 + \varepsilon_2 m_2\psi x_2 + \ldots + \varepsilon_\mu m_\mu\psi x_\mu \tag{30} \]
+\[ = C - \frac{f\alpha}{\sqrt{\varphi\alpha}} \cdot \log\left\{\frac{\theta\alpha \cdot \sqrt{\varphi_1\alpha}+\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}{\theta\alpha \cdot \sqrt{\varphi_1\alpha}-\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}\right\}. \]
+
+\subsection*{6.}
+
+On putting $f\alpha = 1$ in the preceding theorem and differentiating $k-1$ times in succession, one will have the following theorem
+
+\emph{Théorème V. If one puts}
+\[ \psi x = \int \frac{\partial x}{(x-\alpha)^{k}\sqrt{\varphi x}}, \]
+\emph{one will have}
+\[ \varepsilon_1 m_1\psi x_1 + \varepsilon_2 m_2\psi x_2 + \ldots + \varepsilon_\mu m_\mu\psi x_\mu \]
+\[ = C - \frac{1}{1.2\ldots(k-1)} \cdot \frac{\partial^{k-1}}{\partial\alpha^{k-1}} \cdot \frac{1}{\sqrt{\varphi\alpha}} \cdot \log\left\{\frac{\theta\alpha \cdot \sqrt{\varphi_1\alpha}+\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}{\theta\alpha \cdot \sqrt{\varphi_1\alpha}-\theta_1\alpha \cdot \sqrt{\varphi_2\alpha}}\right\}. \]
+
+\subsection*{7.}
+
+If in Theorem III. one supposes the degree of $(fx)^{2}$ less than that of $\varphi x$, the second member reduces to a constant. This easily gives the theorem which follows:
+
+\emph{Théorème VI. If one denotes by $\psi x$ the function}
+\[ \int \frac{(\delta_0+\delta_1 x+\delta_2 x^{2}+\ldots+\delta_{\nu'} \cdot x^{\nu'})\partial x}{\sqrt{\beta_0+\beta_1 x+\beta_2 x^{2}+\ldots+\beta_\nu x^{\nu}}}, \]
+\emph{where $\nu' = \dfrac{\nu-1}{2}-1$, if $\nu$ is odd, and $\nu' = \dfrac{\nu}{2}-2$ if $\nu$ is even, one will always have:}
+\[ \varepsilon_1 m_1\psi(x_1) + \varepsilon_2 m_2\psi(x_2) + \ldots + \varepsilon_\mu m_\mu\psi(x_\mu) = \text{\textit{to a constant.}} \tag{31} \]
+One sees that $\nu'$ has the same value for $\nu = 2m-1$ and for $\nu = 2m$, namely $\nu'' = m-2$.\ednote{Printed with two prime marks, “$\nu''$”; the quantity defined just above and used throughout is $\nu'$.}
+
+\subsection*{8.}
+
+Let now
+\[ \psi x = \int \frac{r\partial x}{\sqrt{\varphi x}}, \]
+where $r$ is any rational function whatever of $x$. Whatever the form of $r$ may be, one will always be able to put\ednote{In the following display the last numerator is printed “$f_\omega x_\omega$”; the sentence immediately following lists these numerators as $fx$, $f_1 x$, $f_2 x$, $\ldots$ $f_\omega x$, so the subscript on $x$ is a misprint.}
+\[ r = fx + \frac{f_1 x}{(x-\alpha_1)^{k_1}} + \frac{f_2 x}{(x-\alpha_2)^{k_2}} + \ldots + \frac{f_\omega x_\omega}{(x-\alpha_\omega)^{k_\omega}}, \tag{32} \]
+where $fx$, $f_1 x$, $f_2 x$, $\ldots$ $f_\omega x$ are integral functions. This being premised, it is clear that in virtue of Theorems III. and V. one will have the following:
+\origpage{320}
+\emph{Théorème VII. Whatever the rational function $r$ may be, expressed by formula (32.), on putting}
+\[ \psi x = \int \frac{r\partial x}{\sqrt{\varphi x}} \quad\text{and}\quad \frac{\theta x \cdot \sqrt{\varphi_1 x}+\theta_1 x \cdot \sqrt{\varphi_2 x}}{\theta x \cdot \sqrt{\varphi_1 x}-\theta_1 x \cdot \sqrt{\varphi_2 x}} = \chi x: \tag{33} \]
+\emph{one will always have:}\ednote{In the second term of the following display the derivative is printed “$\partial\alpha_1^{k_2-1}$”; it must be taken with respect to $\alpha_2$, as the first and third terms ($\alpha_1$ with $k_1$, $\alpha_\omega$ with $k_\omega$) show.}
+\[ \varepsilon_1 m_1\psi x_1 + \varepsilon_2 m_2\psi x_2 + \ldots + \varepsilon_\mu m_\mu\psi x_\mu = C + \Pi\frac{r}{\sqrt{\varphi x}}\log\chi(x) \tag{34} \]
+\[ - \frac{1}{\Gamma k_1} \cdot \frac{\partial^{k_1-1}}{\partial\alpha_1^{k_1-1}} \cdot \frac{f_1\alpha_1}{\sqrt{\varphi\alpha_1}}\log\chi\alpha_1 - \frac{1}{\Gamma k_2} \cdot \frac{\partial^{k_2-1}}{\partial\alpha_1^{k_2-1}} \cdot \frac{f_2\alpha_2}{\sqrt{\varphi\alpha_2}} \cdot \log\chi\alpha_2 - \ldots \]
+\[ - \frac{1}{\Gamma k_\omega} \cdot \frac{\partial^{k_\omega-1}}{\partial\alpha_\omega^{k_\omega-1}} \cdot \frac{f_\omega\alpha_\omega}{\sqrt{\varphi\alpha_\omega}}\log\chi\alpha_\omega, \]
+representing by $\Gamma(k)$ the product $1.2.3\ldots(k-1)$.
+
+\subsection*{9.}
+
+Previously we have considered the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$ as functions of $a_0$, $a_1$, $a_2$, $\ldots$ $c_0$, $c_1$, $c_2$, $\ldots$ Let us now suppose that a certain number of the quantities $x_1$, $x_2$, $\ldots$ $x_\mu$ are given and regarded as independent variables; and let $x_1$, $x_2$, $\ldots$ $x_{\mu'}$ be these quantities. Then one must determine $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$ in such a manner that the first member of equation (3.) shall be divisible by
+\[ (x-x_1)(x-x_2)\ldots(x-x_\mu). \]
+This will be done by means of equations (26.). The first $\mu'$ equations\ednote{The system that follows carries no number in the print, though the text refers to it three times as “(35.)”. In the copy scanned here a later hand has pencilled “35.” and a brace beside it; that annotation is not part of the print and is not transcribed.}
+\[ \theta x_1 \cdot \sqrt{\varphi_1 x_1} = \varepsilon_1 \cdot \theta_1 x_1 \cdot \sqrt{\varphi_2 x_1}, \]
+\[ \theta x_2 \cdot \sqrt{\varphi_1 x_2} = \varepsilon_2 \cdot \theta_1 x_2 \cdot \sqrt{\varphi_2 x_2}, \]
+\[ \ldots\ldots\ldots\ldots\ldots\ldots \]
+\[ \theta x_{\mu'} \cdot \sqrt{\varphi_1 x_{\mu'}} = \varepsilon_{\mu'} \cdot \theta_1 x_{\mu'} \cdot \sqrt{\varphi_2 x_{\mu'}} \]
+will give a number $\mu'$ of the quantities $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$ expressed as rational functions of the others and of $x_1$, $x_2$, $\ldots$ $x_{\mu'}$; $\sqrt{\varphi x_1}$, $\sqrt{\varphi x_2}$, $\ldots$ $\sqrt{\varphi x_{\mu'}}$.
+
+The number of the indeterminates $a_0$, $a_1$, $\ldots$ $a_n$, $c_0$, $c_1$, $\ldots$ $c_m$ is equal to $m+n+1$; hence, as it is easy to see from the form of equations (35.), one may put $\mu' = m+n+1$. This being premised, on substituting the values of $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$ in the functions $\theta x$, $\theta_1 x$, $\ldots$, the integral function $(\theta x)^{2} \cdot \varphi_1 x - (\theta_1 x)^{2} \cdot \varphi_2 x$ will become divisible by
+\[ (x-x_1)(x-x_2)\ldots(x-x_\mu). \]
+Denoting the quotient by $R$, one will have
+\[ R = A(x-x_{\mu'+1})(x-x_{\mu'+2})\ldots(x-x_\mu). \tag{36} \]
+Hence the $\mu-\mu'$ quantities $x_{\mu'+1}$, $x_{\mu'+2}$, $\ldots$ $x_\mu$ will be the roots of an
+\origpage{321}
+equation $R = 0$ of degree $\mu-\mu'$, all whose coefficients are expressed rationally by the quantities $x_1$, $x_2$, $x_3$, $\ldots$ $x_{\mu'}$; $\sqrt{\varphi x_1}$, $\sqrt{\varphi x_2}$, $\ldots\ldots$ $\sqrt{\varphi x_{\mu'}}$.
+
+Let us put\ednote{The third line below is printed “$x_{\mu_1+2} = x'_1$”; it should read $x'_2$, as the pattern and the sums (37.) and (39.) require.}
+\[ \varepsilon_1 = \varepsilon_2 = \varepsilon_3 = \ldots = \varepsilon_{\mu_1} = 1, \]
+\[ \varepsilon_{\mu_1+1} = \varepsilon_{\mu_1+2} = \ldots = \varepsilon_{\mu'} = -1, \]
+\[ x_{\mu_1+1} = x'_1, \quad x_{\mu_1+2} = x'_1, \ldots x_{\mu'} = x'_{\mu_2}, \]
+\[ x_{\mu'+1} = y_1, \quad x_{\mu'+2} = y_2, \ldots x_\mu = y_{\nu'}, \]
+one will have, denoting by $\psi(x)$ the function $\displaystyle\int \frac{r\partial x}{\sqrt{\varphi x}}$,\ednote{The first term of the following display is printed “$\psi x_2$”, duplicating the second; it should be $\psi x_1$.}
+\[ \psi x_2 + \psi x_2 + \ldots + \psi x_{\mu_1} - \psi x'_1 - \psi x'_2 - \ldots - \psi x'_{\mu_2} \tag{37} \]
+\[ = v - \psi y_1 - \psi y_2 - \psi y_3 - \ldots - \psi y_{\nu'}, \]
+where $v$ is an algebraic and logarithmic expression. The quantities $x_1$, $x_2$, $\ldots$ $x_{\mu_1}$; $x'_1$, $x'_2$, $\ldots$ $x'_{\mu_2}$ are any variable quantities whatever, and $y_1$, $y_2$, $\ldots$ $y_{\nu'}$ will be determinable by means of an equation of degree $\nu'$.
+
+Now we shall see that one may always render $\nu'$ independent of the number $\mu_1+\mu_2$ of the given functions. In fact, let us seek the least value of $\nu'$.
+
+Supposing all the quantities $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$ indeterminate, it is clear that $\mu$ will be equal to one of the two numbers $2n+\nu_1$ and $2m+\nu_2$, where $\nu_1$ and $\nu_2$ represent the degrees of the functions $\varphi_1 x$, $\varphi_2 x$. Let, for example,
+\[ \mu = 2n+\nu_1, \]
+one must have at the same time:
+\[ \mu \geqq 2m+\nu_2, \]
+whence, by adding, one draws
+\[ \mu \geqq m+n+\frac{\nu_1+\nu_2}{2}, \]
+or
+\[ \nu' = \mu-\mu' = \mu-m-n-1, \]
+hence
+\[ \nu' \geqq \frac{\nu_1+\nu_2}{2}-1, \]
+or else, denoting the degree of $\varphi x$ by $\nu$,
+\[ \nu' \geqq \frac{\nu}{2}-1. \tag{38} \]
+Hence one sees that the least value of $\nu'$ is $\dfrac{\nu-1}{2}$ or $\dfrac{\nu}{2}-1$, according as $\nu$ is odd or even.
+
+Hence this value is independent of the number $\mu_1+\mu_2$ of the given functions; it is precisely the same as the total number of the
+\origpage{322}
+coefficients $\delta_0$, $\delta_1$, $\delta_2$, $\ldots$ in the $6^{\text{th}}$ theorem. One will now have this theorem:
+
+\emph{Théorème VIII. Let $\psi x = \displaystyle\int \frac{r\partial x}{\sqrt{\varphi x}}$, where $r$ is any rational function whatever of $x$, and $\varphi x$ an integral function of degree $2\nu-1$ or $2\nu$, and let $x_1$, $x_2$, $\ldots$ $x_\mu$, $x'_1$, $x'_2$, $\ldots$ $x'_{\mu_2}$ be given variables. This being premised, whatever the number $\mu_1+\mu_2$ of the variables may be, one will always be able to find, by means of an algebraic equation, $\nu-1$ quantities $y_1$, $y_2$, $\ldots$ $y_{\nu-1}$, such that:}\ednote{Two misprints in the following display: the term $-\psi x'_1$ is printed twice (the second should be $-\psi x'_2$, and the following $-\psi x'_2$ then continues the sequence), and the last $\psi$ carries a prime, “$\psi' x'_{\mu_2}$”, which no other occurrence has.}
+\[ \psi x_1 + \psi x_2 + \ldots + \psi x_{\mu_1} - \psi x'_1 - \psi x'_1 - \psi x'_2 - \ldots - \psi' x'_{\mu_2} \tag{39} \]
+\[ = v + \varepsilon_1 \cdot \psi y_1 + \varepsilon_2\psi y_2 + \ldots + \varepsilon_{\nu-1}\psi y_{\nu-1}, \]
+\emph{$v$ being algebraic and logarithmic, and $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_{\nu-1}$ equal to $+1$ or to $-1$.}
+
+One may add that the functions $y_1$, $y_2$, $\ldots$ $y_{\nu-1}$ remain the same, whatever the form of the rational function $r$ may be, and that the function $v$ does not change its value on adding to $r$ any integral function whatever of degree $\nu-2$.
+
+\subsection*{10.}
+
+Equations (35.), which determine the quantities $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$, will become, in virtue of formula (39.),\ednote{Three misprints in the system that follows: in the first row “$\theta'_1$” carries a prime the other rows do not; in the second row the radicand “$\sqrt{\varphi_1 x'_1}$” should be $\sqrt{\varphi_1 x'_2}$; in the last row “$\sqrt{\varphi_1 x_{\mu_2}}$” lacks the prime on $x$.}
+\[ \theta x_1 \cdot \sqrt{\varphi_1 x_1} = \theta_1 x_1 \cdot \sqrt{\varphi_2 x_1}; \quad \theta x'_1 \cdot \sqrt{\varphi_1 x'_1} = -\theta'_1 x'_1 \cdot \sqrt{\varphi_2 x'_1}, \tag{40} \]
+\[ \theta x_2 \cdot \sqrt{\varphi_1 x_2} = \theta_1 x_2 \cdot \sqrt{\varphi_2 x_2}; \quad \theta x'_2 \cdot \sqrt{\varphi_1 x'_1} = -\theta_1 x'_2 \cdot \sqrt{\varphi_2 x'_2}, \]
+\[ \ldots\ldots\ldots\ldots\ldots\ldots \]
+\[ \theta x_{\mu_1} \cdot \sqrt{\varphi_1 x_{\mu_1}} = \theta_1 x_{\mu_1} \cdot \sqrt{\varphi_2 x_{\mu_1}}; \quad \theta x'_{\mu_2} \cdot \sqrt{\varphi_1 x_{\mu_2}} = -\theta_1 x'_{\mu_2} \cdot \sqrt{\varphi_2 x'_{\mu_2}} \]
+To determine $\varepsilon_1$, $\varepsilon_2$, $\ldots$ $\varepsilon_{\nu-1}$, one will have the equations:\ednote{The second equation below is printed with “$\theta_1 y_1$”; the first and last rows show that the right member must be $\varepsilon_2\theta_1 y_2 \cdot \sqrt{\varphi_2 y_2}$.}
+\[ \theta y_1 \cdot \sqrt{\varphi_1 y_1} = \varepsilon_1\theta_1 y_1 \cdot \sqrt{\varphi_2 y_1}, \tag{41} \]
+\[ \theta y_2 \cdot \sqrt{\varphi_1 y_2} = \varepsilon_2\theta_1 y_1 \cdot \sqrt{\varphi_2 y_2}, \]
+\[ \ldots\ldots\ldots\ldots\ldots\ldots \]
+\[ \theta y_{\nu-1} \cdot \sqrt{\varphi_1 y_{\nu-1}} = \varepsilon_{\nu-1}\theta_1 y_{\nu-1} \cdot \sqrt{\varphi_2 y_{\nu-1}}. \]
+The functions $y_1$, $y_2$, $\ldots$ $y_{\nu-1}$ are the roots of the equation\ednote{In the following display the first factor of the denominator is printed with a chi, “$(y-\chi_1)$”; it should be $(y-x_1)$.}
+\[ \frac{(\theta y)^{2} \cdot \varphi_1 y-(\theta_1 y)^{2} \cdot \varphi_2 y}{(y-\chi_1)(y-x_2)\ldots(y-x_{\mu_1})(y-x'_1)(y-x'_2)\ldots(y-x'_{\mu_2})} = 0. \tag{42} \]
+The degree of the function $\theta y$ is $n = \dfrac{\mu_1+\mu_2+\nu-1-\nu_1}{2}$ and that of $\theta_1 y$ is $m = n+\nu_1-\nu$.
+\origpage{323}
+\subsection*{11.}
+
+Formula (39.) holds if several of the quantities $x_1$, $x_2$, $\ldots$ $x'_1$, $x'_2$, $\ldots$ are equal to one another; but in that case equations (40.) no longer suffice to determine the quantities $a_0$, $a_1$, $\ldots$ $c_0$, $c_1$, $\ldots$; for if, for example, $x_1 = x_2 = \ldots = x_k$, the first $k$ of equations (40.) will become identical. To have the equations necessary in this case, let, for brevity,
+\[ \theta x \cdot \sqrt{\varphi_1 x} - \theta_1 x \cdot \sqrt{\varphi_2 x} = \lambda x. \]
+The expression $\dfrac{\lambda x}{(x-x_1)^{k_1}}$ must have a finite value on putting $x = x_1$. Hence one draws, according to the principles of the differential calculus, the $k$ equations\ednote{The following display is numbered “42.” in the print, repeating the number already given on p. 322; the sequence requires 43.}
+\[ \lambda x_1 = 0; \quad \lambda'x_1 = 0; \quad \lambda''x_1 = 0; \quad \ldots \quad \lambda^{(k-1)}x_1 = 0, \tag{42} \]
+and it is these that must be substituted in place of the equations\ednote{The first of the equations below is printed “$\lambda x = 0$” without a subscript; the list runs over $x_1$, $x_2$, $\ldots$ $x_k$, so it should read $\lambda x_1 = 0$.}
+\[ \lambda x = 0, \quad \lambda x_2 = 0, \quad \ldots \quad \lambda x_k = 0, \]
+in the case where $x_1 = x_2 = \ldots x_k$.
+
+\end{document}
