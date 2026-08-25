@@ -81,6 +81,66 @@ def test_format_violations_nonempty_on_hit():
     assert "foo.tex" in out and "R2" in out
 
 
+# --- R18: apparatus notes take no braces in their argument ------------------ #
+# The site's transform (site/src/lib/tex.js) matches \ednote{}/\uncertain{} with [^}]*, so a nested
+# brace ends the note at the first "}" and its tail leaks into the author's running text — while the
+# .tex stays valid LaTeX, which is why nothing else in the gate catches it.
+def test_flags_emph_inside_ednote():
+    vios = houselint.lint(r"printed \ednote{So printed; for \emph{optandum}.} here")
+    assert len(vios) == 1
+    assert vios[0]["rule"] == "R18"
+    assert r"\ednote" in vios[0]["problem"]
+
+
+def test_flags_markup_inside_uncertain():
+    vios = houselint.lint(r"reading \uncertain{a \textbf{b} c} here")
+    assert len(vios) == 1 and vios[0]["rule"] == "R18"
+    assert r"\uncertain" in vios[0]["problem"]
+
+
+def test_flags_escaped_brace_inside_note():
+    # \} is a literal brace to TeX, so the note still compiles — but the site's [^}]* stops there.
+    vios = houselint.lint(r"text \ednote{a \} b} more")
+    assert len(vios) == 1 and vios[0]["rule"] == "R18"
+
+
+def test_flags_unterminated_note():
+    vios = houselint.lint(r"text \ednote{never closed")
+    assert len(vios) == 1 and vios[0]["rule"] == "R18"
+    assert "never closed" in vios[0]["problem"]
+
+
+def test_math_inside_note_is_allowed():
+    # Math is stashed before the site's own regex runs, so it renders correctly and stays legal.
+    # abel-1828-remarques relies on this in nineteen ednotes.
+    assert houselint.lint(r"text \ednote{printed $\sqrt{X}$ here} more") == []
+    assert houselint.lint(r"\ednote{The first is $\lambda'$, which $\lambda_{m-2}$ lacks.}") == []
+
+
+def test_plain_prose_note_is_allowed():
+    assert houselint.lint(r"text \ednote{So printed; for ``optandum''.} more") == []
+    assert houselint.lint(r"text \uncertain{a doubtful reading} more") == []
+
+
+def test_escaped_dollar_in_note_is_allowed():
+    # The escaped \$ must not open a math span and swallow the rest of the note.
+    assert houselint.lint(r"text \ednote{costs \$5 in total} more") == []
+
+
+def test_note_violation_reports_line_and_excerpt():
+    latex = "line one\nline two\nhere \\ednote{bad \\emph{markup} inside} end\n"
+    vios = houselint.lint(latex)
+    assert vios and vios[0]["line"] == 3
+    assert "markup" in vios[0]["excerpt"]
+    out = houselint.format_violations(vios, path="foo.tex")
+    assert "foo.tex:3" in out and "R18" in out
+    assert "$" not in out  # a text excerpt is not wrapped as a math span
+
+
+def test_note_rule_ignores_commented_out_examples():
+    assert houselint.lint("real text\n% \\ednote{a \\emph{b} c}\n") == []
+
+
 # --- the real corpus must stay clean ---------------------------------------- #
 def test_corpus_is_house_style_clean():
     corpus = REPO / "corpus"
