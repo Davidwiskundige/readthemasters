@@ -40,4 +40,4 @@
 - [x] 5.1 Annotate HOUSESTYLE R18's third bullet as **Machine-enforced**, matching how R2/R16 are
       annotated (see the design's open question)
 - [x] 5.2 Fold the delta spec into `openspec/specs/corpus-format/spec.md` and archive the change
-- [ ] 5.3 Open a PR with a DCO sign-off; include the before/after of the failing case from 4.3
+- [x] 5.3 Open a PR with a DCO sign-off; include the before/after of the failing case from 4.3
