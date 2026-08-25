@@ -1,0 +1,145 @@
+changelog:
+  - date: "2026-08-25"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-24"
+    summary: Transcription added (AI draft), pp. 313–323 (§§1–11) from the 1828 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-24"
+  verification:
+    flagged_pages: [315, 316, 317, 318, 319, 320, 321, 322, 323]
+    date: "2026-08-24"
+  note: >-
+    Full French text of Abel's announcement note, printed pages 313–323 (§§1–11), from the original
+    first printing in Crelle's Journal, Band 3, 4. Heft (1828), No. 30. Read from the GDZ scan
+    PPN243919689_0003 (PDF pp. 326–336); every page was rendered at 300 dpi and every displayed and
+    inline formula re-checked by cropping and re-rendering the region at 1200–1800 dpi (the AI's own
+    verification pass, not a full human review). The paper is set in Antiqua (roman type); there is
+    no Fraktur in the text or the math.
+    Running heads and signature marks are apparatus, not text, and are not transcribed. Abel's own
+    footnote on p. 313 IS his text: it is kept, set as its own paragraph at the foot of the page-313
+    block where the print puts it, with the print's "*)" marker left in the running text. The
+    corpus has no macro for an author's footnote (\ednote is reserved for OUR notes and the site
+    renders only that), which is why the note is set as a paragraph rather than a \footnote.
+    Notation kept faithful: the differential is Abel's rounded ∂ (\partial) and the variation with
+    respect to a_0, a_1, … c_0, c_1, … is δ (\delta) — genuinely distinct symbols in the print (eq.
+    8: F'x.∂x + δFx = 0). Σ and Π are set as plain text-height capitals used as functionals (Π r is
+    Abel's coefficient-of-1/x operator, defined on p. 316), so they are \Sigma and \Pi, never
+    \sum/\prod — the same choice already made in abel-1841-fonctions-transcendantes. The print's ≧
+    is \geqq. Abel's multiplication "." is \cdot; where a "." follows "log" it is the abbreviation
+    point and is kept (\log. on pp. 317 and 318), while "log" without one is kept bare.
+    Archaic/erratic orthography kept as printed: géometres, suivans, désignans, tems, encors,
+    presenté, Céla, coëfficiens, rationelle (one n), theorème (no accent), indeterminées, 6^me.
+    ONE markup normalization (presentation, not notation — HOUSESTYLE R2/R16): the print sets
+    radicals as a radical sign followed by a PARENTHESIZED radicand, √(φ_1 x), and elsewhere bare,
+    √φx, with no vinculum; both are written \sqrt{...} here, since the parentheses and the vinculum
+    play the identical delimiting role. This follows abel-1841-fonctions-transcendantes. No radicand
+    is altered — where the print transposes one (p. 317, √(xφ)) the transposition is preserved and
+    flagged.
+    Emphasis (HOUSESTYLE R20): the print stresses by letterspacing (Sperrung), and uses the device
+    sparingly and consistently. All eleven pages were swept for it at 700 dpi; it occurs in exactly
+    three places, and all three are rendered \emph:
+      * the statements of Théorèmes I–VIII, letterspaced entire — including the connectives running
+        between their displays ("on aura", p. 319 twice; "aura toujours:", p. 319) and the closing
+        "à une constante." inside (31.), prose set within the display (written
+        \text{\textit{...}}, so KaTeX and LaTeX both carry the italic).
+      * "intégrales de différentielles algébriques quelconques" (p. 313).
+      * the single word "entière" in "une fonction entière par rapport à x" (p. 315, after (14.)).
+        It is letterspaced there alone; the same word is set normally at every other occurrence
+        (pp. 315, 316, 319, 320, 322), so it is emphasized in that one place only. This is the kind
+        of one-word Sperrung R20 warns is easy to miss, and it is worth a reviewer's second look.
+    Ordinary display-introducing phrases are NOT letterspaced anywhere in this article, and are not
+    emphasized: "Soit maintenant" (p. 319), "il viendra:" (pp. 315, 318), "nous aurons" (p. 314),
+    "l'équation" and "équivalente aux équations" (p. 317), "Maintenant on a (14'.)" (p. 316),
+    "Désignant le quotient par R, on aura" (p. 320), "soit pour abréger" (p. 323). The two "on aura"
+    lines on p. 319 ARE letterspaced, but only because they fall inside the Théorème IV and
+    Théorème V statements, and they are emphasized as part of those.
+    PRINTER'S ERRORS. This printing is unusually corrupt — Abel was in Norway and saw no proofs.
+    All are reproduced exactly as printed (HOUSESTYLE R4) and marked in-text with \ednote popovers
+    (R10) giving the reading the mathematics requires; a reviewer should confirm each against the
+    scan:
+    (a) p.315 eq.14 — "fy.∂x" for fx.∂x (cf. the left member of (13.)).
+    (b) p.316 eq.19 — the second term's numerator is printed "1"; the expansion requires x.
+    (c) p.316 — "en mettant λ au lieu de x"; the substitution made is x = α.
+    (d) p.317 first display — "∂v" for the δv of (22.); and "(θ_1α)²" for (θ_1x)² in the last
+        denominator.
+    (e) p.317 eq.25 — "√(xφ)" for √(φx), transposed.
+    (f) p.317 §3 — "x²" (superscript) for the subscript x_2.
+    (g) p.318 eq.28 — "ψ(x_μ" with an opening parenthesis that is never closed.
+    (h) p.319 — "ν''" (two primes) for ν'.
+    (i) p.319 eq.32 — "f_ω x_ω" for f_ω x (cf. the list in the following sentence).
+    (j) p.320 eq.34 — "∂α_1^{k_2−1}" for ∂α_2^{k_2−1} in the second term.
+    (k) p.320 — the system the text calls "(35.)" three times carries NO number and no brace in the
+        print; both are pencilled in by a later hand in this copy (see the annotations note below).
+    (l) p.321 — "x_{μ_1+2} = x'_1" for x'_2.
+    (m) p.321 eq.37 — "ψx_2 + ψx_2" for ψx_1 + ψx_2.
+    (n) p.322 eq.39 — "−ψx'_1" printed twice, and a prime on the last psi, "ψ'x'_{μ_2}".
+    (o) p.322 eq.40 — a prime on "θ'_1" in row 1; "√(φ_1x'_1)" for √(φ_1x'_2) in row 2; a missing
+        prime in "√(φ_1x_{μ_2})" in row 3.
+    (p) p.322 eq.41 — "θ_1y_1" for θ_1y_2 in the second equation.
+    (q) p.322 eq.42 — "(y − χ_1)" with a chi, for (y − x_1).
+    (r) p.323 — the last display is numbered "42.", repeating the number already used on p. 322;
+        and "λx = 0" for λx_1 = 0 in the list below it.
+    Kept as printed WITHOUT an in-text note, being self-evident slips a reader resolves at sight —
+    listed here so a reviewer can confirm them:
+      * p.321 "en aura" for "on aura" (the glyph is unambiguously an e, matching the e of
+        "en désignant" on the same line).
+      * p.316 eq.21 — the print shows a dot AND a small raised tick after Π ("Π.'"), which no other
+        occurrence of Π has; transcribed as Abel's multiplication dot (Π.) with the tick read as
+        ink/broken type.
+      * p.316 — the text refers twice to "la formule (16.)" and "l'expression (16.)", but the only
+        printed tag in that range is 16′; there is no equation numbered plain 16.
+      * p.317 first display — the numerator "2fa.(θα…" sets what looks like a roman a rather than
+        the α used everywhere else in the same line; transcribed as α, the reading the formula
+        requires, since the glyph is worn rather than a distinct letterform.
+      * p.315 — in "√(φ_1x.φ_2x)" the subscript 2 is barely inked in the scan; read as 2 from the
+        parallel line immediately below, which prints √(φ_2x.φ_1x) clearly.
+    READER'S ANNOTATIONS. The copy digitized as PPN243919689_0003 carries pencil marks by a later
+    reader: an "x" written above the misprinted numerator in eq. 19 (p. 316), and the number "35."
+    with a hand-drawn brace beside the unnumbered system on p. 320. These are NOT part of the print
+    and are NOT transcribed; each is recorded in the corresponding \ednote instead.
+    No figures appear in this work.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-25"
+    note: >-
+      Full English translation of Abel's announcement note, made only from our own original.tex, not
+      from any published translation. Every math expression, \tag{}, \origpage{N} marker and the
+      nineteen misprint \ednote notes are reproduced unchanged (pipeline/texcompare passes); only the
+      French prose is translated, and each \emph emphasis carries across to the English word.
+      Prose set INSIDE math via a \text{...} insert is also translated (HOUSESTYLE R21): the
+      connective \text{et} → \text{and} in (33.); the ordinal 6^{\text{me}} → 6^{\text{th}} on
+      p. 322; and the clause closing (31.), \text{\textit{à une constante.}} →
+      \text{\textit{to a constant.}}, kept italic because the print letterspaces it as part of the
+      Théorème VI statement. texcompare ignores the content of these inserts while still checking
+      each insert and the surrounding math.
+      Period terms are rendered in period English and applied consistently: fonction entière =
+      integral function (the sense "ganze Function" carries in abel-1826-unmoeglichkeit, where the
+      same rendering is used), développement = development, premier/second membre = first/second
+      member, indéterminées = indeterminates, géometres = geometers, cahiers = numbers [of the
+      journal], chasser = eliminate, "Cela posé" = "This being premised", "il viendra" = "there will
+      result". Abel's theorem headings keep his own French form (Théorème I–VIII), while his in-text
+      cross-references ("le 2. Théorème", "les théorèmes III. et V.") read as ordinary English.
+      Abel's own footnote on p. 313 is his text and is translated, keeping the print's "*)" marker
+      and the note's position at the foot of the page-313 block.
+      Not carried across, because they are French orthography rather than mathematics: the print's
+      "sé" for "se" and "encors" for "encore" (p. 318), "en aura" for "on aura" (p. 321), "Céla"
+      (p. 315), "Précedemment" (p. 320). All are preserved in the transcription and listed in the
+      transcription note above; every MATHEMATICAL misprint is preserved here formula for formula,
+      with its \ednote.
+      One place where the page break cannot align word-for-word: the print breaks "mem-/bre" across
+      pp. 317/318. The English "member" cannot be split at the same point, so \origpage{318} is
+      placed at the equivalent position in the sentence, before "member", without inventing a
+      hyphenation.

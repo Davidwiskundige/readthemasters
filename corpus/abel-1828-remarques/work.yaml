@@ -1,0 +1,121 @@
+id: abel-1828-remarques
+title: "Remarques sur quelques propriétés générales d'une certaine sorte de fonctions transcendantes."
+title_en: "Remarks on some general properties of a certain sort of transcendental functions."
+
+authors:
+  - name: "Niels Henrik Abel"
+    wikidata_id: Q13538
+    birth_year: 1802
+    death_year: 1829
+    mactutor: Abel  # https://mathshistory.st-andrews.ac.uk/Biographies/Abel/
+    portrait:
+      file: portrait.jpg
+      alt: "Portrait of Niels Henrik Abel"
+      credit: "Engraving after the portrait by Johan Gørbitz (1782–1853), the standard likeness of Abel. Public domain (PD-Art)."
+      source: "https://commons.wikimedia.org/wiki/File:Niels_Henrik_Abel.jpg"
+
+publication:
+  year: 1828
+  venue: crelle
+  volume: "3"
+  pages: "313–323"
+  title_full: >-
+    "Remarques sur quelques propriétés générales d'une certaine sorte de fonctions
+    transcendantes" (No. 30), Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Dritter Band, 4. Heft (Berlin: G. Reimer, 1828), pp. 313–323.
+
+edition:
+  year: 1828
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Journal für die reine und angewandte
+    Mathematik (Crelle's Journal), Dritter Band (Berlin: G. Reimer, 1828), pp. 313–323 — an
+    original edition with no modern critical apparatus, commentary, or re-typesetting. Only
+    Abel's own text and his own footnote are transcribed.
+
+discipline: mathematics
+tags: [analysis]
+language: fr
+type: paper
+
+significance: >-
+  This eleven-page note is where Abel first put his general addition theorem into print. He had
+  presented the full memoir to the Académie des sciences in Paris at the end of 1826, and says so
+  in a footnote on its opening page; that memoir was not printed until 1841, twelve years after his
+  death, so for a generation this article in Crelle's Journal was the only published statement of
+  the result.[1] Abel promises the general proof "in one of the following numbers of this journal"
+  and never gives it — he died in April 1829 — so what survives here is the one case he works out
+  in full: integrals whose only irrationality is a square root,
+  $\displaystyle\int \frac{r \partial x}{\sqrt{\varphi x}}$, with $\varphi x$ a polynomial of degree
+  $2\nu-1$ or $2\nu$.[2] The heart of the article is
+  the observation Abel reaches in §9 and states as Théorème VIII: however many such integrals are
+  added together, their sum reduces to $\nu-1$ integrals of the same kind plus an algebraic and
+  logarithmic term, and that count does not depend on how many integrals one began with. It is an
+  invariant of $\varphi x$ alone. For the curve $y^2 = \varphi x$ that number is what Riemann and
+  then Clebsch would later call the genus.[3]
+
+significance_sources:
+  - citation: >-
+      Abel's own footnote to p. 313 of this article: "J'ai presenté un mémoire sur ces fonctions à
+      l'académie royale des sciences de Paris vers la fin de l'année 1826." The memoir he points to
+      is the Paris memoir, printed only in 1841; its publication history is set out in this corpus
+      under abel-1841-fonctions-transcendantes.
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Niels Henrik Abel", MacTutor History of Mathematics
+      Archive, University of St Andrews — for Abel's death in April 1829 and the fate of the Paris
+      memoir. Abel's unfulfilled promise of a proof, and the degree conditions on the function
+      transcribed here, are read directly from the text of this article (§1 and Théorème VIII).
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Abel/"
+  - citation: >-
+      S. L. Kleiman, "What is Abel's Theorem Anyway?", in O. A. Laudal and R. Piene (eds.), "The
+      Legacy of Niels Henrik Abel: The Abel Bicentennial, Oslo, 2002", Springer (2004) — traces the
+      several distinct theorems that have been called Abel's theorem, gives the hyperelliptic case
+      Abel works out here its due attention, and follows the number of irreducible integrals through
+      to Clebsch's genus.
+    url: "https://link.springer.com/chapter/10.1007/978-3-642-18908-1_11"
+
+relations:
+  - to: euler-1761-integratione-aequationis
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Abel opens from the addition property of elliptic integrals — the property Euler first
+      proved algebraically — and asks what survives of it for integrals of arbitrary algebraic
+      differentials.
+
+source:
+  scan_url: "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0003"
+  scan_id: "gdz:PPN243919689_0003 (Crelle's Journal, Band 3, 1828, pp. 313–323; PDF pp. 326–336)"
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Niels Henrik Abel, 1802–1829 (wikidata:Q13538; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Abel/).
+  publication_date: >-
+    First published 1828 in Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 3, 4. Heft, pp. 313–323 (No. 30). Volume title page: "Dritter Band ... Berlin, bei
+    G. Reimer, 1828"; GDZ PPN243919689_0003.
+  edition: >-
+    Original first printing, Journal für die reine und angewandte Mathematik, Dritter Band
+    (1828), pp. 313–323. Digitized by the Göttinger Digitalisierungszentrum (GDZ),
+    PPN243919689_0003.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1829], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1828, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-08-24"
