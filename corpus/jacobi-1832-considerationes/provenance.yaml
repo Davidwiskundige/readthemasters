@@ -1,0 +1,87 @@
+changelog:
+  - date: "2026-08-25"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-25"
+    summary: Transcription added (AI draft), pp. 394–403 from the 1832 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-25"
+  verification:
+    flagged_pages: [394, 395, 397, 398, 401, 402]
+    date: "2026-08-25"
+  note: >-
+    Complete Latin text of Jacobi's note, printed pages 394–403 (§§1–8), from the original first
+    printing in Crelle's Journal, Neunter Band, 4. Heft (1832). Read from the contributor's PDF of
+    the EuDML/GDZ scan of that printing (volume title page + the ten article pages); each page was
+    rendered at 400 dpi and every display and inline formula checked by zooming into the scan (the
+    AI's own verification pass, not a full human review). Running heads and signature marks are
+    apparatus and are not transcribed; Jacobi's own footnote on p. 397 is, set at the end of the
+    page-397 block (HOUSESTYLE R15).
+    Notation kept faithful: the elliptic modulus is ϰ (\varkappa), distinct from the italic x
+    beside it; x² is written xx; Π serves BOTH as the transcendent Π(x) and, on p. 395, as the
+    constant π in the period 2Π of the trigonometric sine (the same page sets a lowercase π in the
+    limits π/2 of K and K', so the two really are different type); "sin am(u)" is Jacobi's own
+    notation from the Fundamenta nova. The print's radical sign with a parenthesized or bare
+    radicand is written \sqrt{...} in both cases (presentation, as in abel-1828-remarques).
+    Emphasis (HOUSESTYLE R20, and see the new R24): this print uses TWO devices — italic for
+    Jacobi's own stress and letterspacing (Sperrung) for personal names — and both are rendered
+    \emph, since \emph is the only emphasis the site renders. The mapping is a best-effort reading
+    of the scan and should be checked by a human reviewer; the italic passages are unambiguous, the
+    letterspaced names less so where they fall inside an italic run.
+    Apparent printer's errors, kept as printed (HOUSESTYLE R4) and marked in-text with \ednote
+    popovers (R10); a reviewer should confirm each against the scan:
+    (a) p. 394 — "pernocsi poterat" for "pernosci".
+    (b) p. 395 — "u = sin(x)": the equation of which u is a root is x = sin(u), printed two lines
+        above.
+    (c) p. 397 (footnote) — "valde obtandum esset" for "optandum"; "Illustri Acedemiae" for
+        "Academiae"; "F o u r r i e r" for Fourier.
+    (d) p. 398 — "ab ipsis A, A_1',": a small stray mark between subscript and comma, read as a
+        damaged comma (the coefficient is plain A_1 everywhere else).
+    (e) p. 401 — "λ'(u', u'_1, …)": a prime on the first function of the last list that the
+        parallel lists do not carry.
+    (f) p. 402 (first Theorema) — both displays print √X where the sense requires √Y and √Z; the
+        corresponding four-variable system on pp. 402–403 is set correctly.
+    Kept as this edition's form rather than flagged: "dua" for "duo" (pp. 402 and 403, twice).
+    Read as damaged type rather than as text, on the contributor's reading of the scan: the raised
+    mark after "in" in "in series" (p. 395), an ink drop rather than an apostrophe — the word
+    spacing shows it is not set as a character; and the small "o" lower limits of integration that
+    print with a stray tail (first display on p. 394, K' on p. 396) — every integral in the paper
+    has lower limit 0.
+    No figures appear in this work.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-25"
+    note: >-
+      Full English translation of Jacobi's note, made only from our own original.tex, not from any
+      published translation. Every formula, \origpage{N} marker and \ednote is reproduced unchanged
+      (pipeline/texcompare passes); only the prose is translated. The work carries no 	ag{}
+      numbers and no figures; the sole text insert inside math is the Latin ordinal suffix "ti" in
+      $2m^{	ext{ti}}$ / $(2m-1)^{	ext{ti}}$ / $(m-1)^{	ext{ti}}$, left as printed because the
+      English prose around it already carries the ordinal ("of order 2m", HOUSESTYLE R21).
+      Jacobi's own coinages are rendered so their descent is visible: theorema Abelianum = "the
+      Abelian theorem", transcendentes Abelianae = "Abelian transcendents". Other period
+      terminology: functio integra rationalis = rational integral function; dignitates = powers;
+      binomen / singula nomina = binomial / the single terms; integrale completum = complete
+      integral; "in elementis proponitur" = "is set forth in the elements".
+      The honorifics "Cl." (Clarissimus) and "Ill." (Illustris) are kept in the author's own
+      abbreviated form, with ONE added translator's \ednote at the first occurrence explaining
+      them — the only note in the translation that is not carried over from the transcription.
+      Three of the transcription's misprint notes concern Latin orthography that cannot survive
+      translation ("pernocsi", "obtandum", "Acedemiae"); they are kept in place anyway so both
+      files bear the same apparatus. Likewise the edition's "dua" for "duo" (pp. 402, 403) simply
+      reads "two" in English and is recorded only in the transcription.
+      The five quoted theorem statements keep the edition's German quotation glyphs „…“
+      (HOUSESTYLE R22), following abel-1841-fonctions-transcendantes: the marks are the edition's
+      punctuation, not language.
