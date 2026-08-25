@@ -194,12 +194,16 @@ how the same text is set — and neither is caught by `validate.py`, `texcompare
   compiles the character for the PDF, and the site's `escapeHtml` passes it through unchanged.
 - *Added 2026-08-25.* `\ednote{...}` and `\uncertain{...}` are matched in `tex.js` with `[^}]*`, so
   the argument **may not contain a text-mode brace group**: an `\emph{...}` inside a note ends it at
-  the first `}`, and the tail of the note leaks into the author's running text — silently, since
-  `validate.py`, `texcompare.py` and `houselint.py` all pass. Math is safe (`$...$` spans are
-  stashed before that regex runs, so `$\sqrt{X}$` inside a note is fine, and is used throughout
-  `abel-1828-remarques`). **Rule: inside a note, use `$...$` freely but no text-mode macro with an
-  argument — write the emphasis as plain words or `` `` ''`` quotes.** Found in a translator's note
-  in `jacobi-1832-considerationes` when the leaked tail showed up on the rendered page.
+  the first `}`, and the tail of the note leaks into the author's running text — silently, since the
+  file is still valid LaTeX. Math is safe (`$...$` spans are stashed before that regex runs, so
+  `$\sqrt{X}$` inside a note is fine, and is used throughout `abel-1828-remarques`). **Rule: inside
+  a note, use `$...$` freely but no text-mode macro with an argument — write the emphasis as plain
+  words or `` `` ''`` quotes.** Found in a translator's note in `jacobi-1832-considerationes` when
+  the leaked tail showed up on the rendered page — at the time, `validate.py`, `texcompare.py` and
+  `houselint.py` all passed it. **Machine-enforced:** `pipeline/houselint.py` now flags any brace in
+  an `\ednote`/`\uncertain` argument (an escaped `\}` included — the site's `[^}]*` stops there too)
+  and reports an unterminated note, so this class of corruption fails CI instead of reaching a
+  reader.
 
 Applied in `jacob-bernoulli-1694-constructio-lemniscata`, extended in
 `jacobi-1832-considerationes`.

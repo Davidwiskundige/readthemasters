@@ -17,6 +17,16 @@ Rules currently enforced:
     `\\frac`, not the redundant `\\dfrac`. A standalone inline `\\dfrac` with no operator is fine and
     is never flagged. Display math (`\\[ ... \\]`, environments) is already display style and is
     never flagged.
+  * R18 — an apparatus note (`\\ednote{...}`, `\\uncertain{...}`) must contain no brace character in
+    its argument. The site's reader transform matches both macros with `[^}]*`, so a nested
+    `\\emph{...}` (or even an escaped `\\}`) ends the note at the *first* closing brace and its tail
+    leaks into the author's running text — silently, since the file is still valid LaTeX. Inline
+    math inside a note is fine and stays legal: the transform stashes `$...$` spans before that
+    match runs, so this rule masks math the same way before looking for braces.
+
+Each rule declares a *scope*: ``inline-math`` rules are predicates over one ``$...$`` span (R2),
+while ``document`` rules see the whole comment-stripped file (R18) — a text-mode ruling cannot be
+expressed as a statement about a math span.
 
 Pure text processing, stdlib only — so it runs in the free CI gate as well as in the pipelines.
 """
@@ -60,6 +70,20 @@ def inline_spans(latex: str):
         yield line, m.group(1)
 
 
+def text_mode_body(latex: str) -> str:
+    """Return the document with comments, display math and inline math blanked out.
+
+    What is left is the text-mode LaTeX — the part a text-mode rule reasons about. Math is removed
+    because the site's transform stashes `$...$` spans before applying its own text-level regexes,
+    so anything inside math cannot break them. Every removal preserves the region's newlines, so
+    line numbers computed against the result still match the source file.
+    """
+    text = _strip_comments(latex)
+    for pat in _DISPLAY_PATTERNS:
+        text = pat.sub(_blank_preserving_lines, text)
+    return _INLINE_RE.sub(_blank_preserving_lines, text)
+
+
 # --- rules ------------------------------------------------------------------ #
 # Inline large operators that render as a tiny glyph in text style and so must be set display style.
 _BIG_OPS = (r"\int", r"\sum", r"\prod")
@@ -83,26 +107,107 @@ def _r2_problems(span: str) -> list[str]:
     return problems
 
 
-# Registry: (rule id, human name, predicate span -> list[str] of problems). Add future
-# machine-checkable rulings here beside R2.
+# Apparatus notes whose argument the site matches with `[^}]*` (site/src/lib/tex.js).
+_NOTE_MACROS = ("ednote", "uncertain")
+_NOTE_OPEN_RE = re.compile(r"\\(" + "|".join(_NOTE_MACROS) + r")\{")
+_EXCERPT_CHARS = 60
+
+
+def _excerpt(body: str) -> str:
+    """One-line, length-capped view of a note's argument, for the error message."""
+    flat = " ".join(body.split())
+    return flat if len(flat) <= _EXCERPT_CHARS else flat[:_EXCERPT_CHARS - 1] + "…"
+
+
+def _note_argument(text: str, start: int) -> tuple[str, bool]:
+    r"""Read the LaTeX-balanced argument beginning at ``start`` (just past the opening brace).
+
+    Returns ``(body, closed)``. An escaped brace (``\{``/``\}``) is a literal character, so it does
+    not move the nesting depth — that is how a real TeX engine reads it, and it is exactly why such
+    a note still compiles while the site truncates it.
+    """
+    depth, i = 1, start
+    while i < len(text) and depth:
+        ch = text[i]
+        if ch == "\\":          # escape: consume the next character whatever it is
+            i += 2
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i], True
+        i += 1
+    return text[start:], False
+
+
+def _r18_violations(text: str) -> list[dict]:
+    r"""R18: a note's argument must carry no brace, so the site's ``[^}]*`` match sees all of it.
+
+    Runs over :func:`text_mode_body`, so math inside a note (``\ednote{printed $\sqrt{X}$ here}``)
+    is already blanked and never counts — matching the transform, which stashes math first.
+    """
+    problems: list[dict] = []
+    for m in _NOTE_OPEN_RE.finditer(text):
+        macro, line = m.group(1), text.count("\n", 0, m.start()) + 1
+        body, closed = _note_argument(text, m.end())
+        if not closed:
+            problems.append({
+                "line": line,
+                "problem": rf"\{macro}{{...}} is never closed",
+                "excerpt": _excerpt(body),
+            })
+        elif "{" in body or "}" in body:
+            problems.append({
+                "line": line,
+                "problem": rf"\{macro}{{...}} takes no braces in its argument — the site reads the "
+                           r"note as far as the first '}' and spills the rest into the running "
+                           r"text; write plain words or ``...'' quotes (inline math is fine)",
+                "excerpt": _excerpt(body),
+            })
+    return problems
+
+
+# Registry: (rule id, human name, scope, predicate). `inline-math` predicates take one `$...$` span
+# and return a list of problem strings; `document` predicates take the text-mode body (see
+# text_mode_body) and return {line, problem, excerpt} records. Add future machine-checkable rulings
+# here beside R2 and R18.
 _RULES = [
-    ("R2", "inline large operator uses \\displaystyle (\\int/\\sum/\\prod)", _r2_problems),
+    ("R2", "inline large operator uses \\displaystyle (\\int/\\sum/\\prod)",
+     "inline-math", _r2_problems),
+    ("R18", "apparatus note takes no braces in its argument (\\ednote/\\uncertain)",
+     "document", _r18_violations),
 ]
 
 
 def lint(latex: str) -> list[dict]:
-    """Return a list of house-style violations, each ``{line, rule, problem, span}``."""
+    """Return a list of house-style violations, each ``{line, rule, problem, ...}``.
+
+    An `inline-math` rule contributes a `span` (rendered back as `$…$`); a `document` rule
+    contributes an `excerpt` of the offending text. Results are ordered by line so a file's
+    violations read top to bottom whatever order the rules ran in.
+    """
     violations: list[dict] = []
-    for line, span in inline_spans(latex):
-        for rule_id, _name, predicate in _RULES:
-            problems = predicate(span)
-            if problems:
-                violations.append({
-                    "line": line,
-                    "rule": rule_id,
-                    "problem": "; ".join(problems),
-                    "span": " ".join(span.split()),
-                })
+    spans = list(inline_spans(latex))
+    body = None
+    for rule_id, _name, scope, predicate in _RULES:
+        if scope == "inline-math":
+            for line, span in spans:
+                problems = predicate(span)
+                if problems:
+                    violations.append({
+                        "line": line,
+                        "rule": rule_id,
+                        "problem": "; ".join(problems),
+                        "span": " ".join(span.split()),
+                    })
+        else:
+            if body is None:
+                body = text_mode_body(latex)
+            for found in predicate(body):
+                violations.append({**found, "rule": rule_id})
+    violations.sort(key=lambda v: (v["line"], v["rule"]))
     return violations
 
 
@@ -111,7 +216,8 @@ def format_violations(violations: list[dict], path: str = "") -> str:
     lines: list[str] = []
     for v in violations:
         loc = f"{path}:{v['line']}" if path else f"line {v['line']}"
-        lines.append(f"  {loc}: HOUSESTYLE {v['rule']}: {v['problem']} — ${v['span']}$")
+        detail = f"${v['span']}$" if "span" in v else v.get("excerpt", "")
+        lines.append(f"  {loc}: HOUSESTYLE {v['rule']}: {v['problem']} — {detail}")
     return "\n".join(lines)
 
 
