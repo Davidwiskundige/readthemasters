@@ -1,0 +1,123 @@
+id: riemann-1857-abelsche-functionen
+title: "Theorie der Abel'schen Functionen."
+title_en: "Theory of Abelian functions."
+
+authors:
+  - name: "Bernhard Riemann"
+    wikidata_id: Q42299
+    birth_year: 1826
+    death_year: 1866
+    mactutor: Riemann  # https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/
+
+publication:
+  year: 1857
+  venue: crelle
+  volume: "54"
+  pages: "115–155"
+  title_full: >-
+    "Theorie der Abel'schen Functionen" (No. 14), Journal für die reine und angewandte Mathematik
+    (Crelle's Journal), Vierundfünfzigster Band, 2. Heft (Berlin: G. Reimer, 1857), pp. 115–155.
+
+edition:
+  year: 1857
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Journal für die reine und angewandte
+    Mathematik (Crelle's Journal), Band 54 (Berlin, 1857), pp. 115–155 — an original edition with
+    no modern critical apparatus, commentary, or re-typesetting. Only Riemann's own text
+    (including his own footnotes) is transcribed; running heads and signature marks are not.
+
+discipline: mathematics
+tags: [analysis, geometry, topology]
+language: de
+type: paper
+
+relations:
+  - to: jacobi-1832-considerationes
+    kind: cites
+    recommended: primary
+    note: >-
+      Riemann cites this note by name in §.~14 ("nach Jacobi, dieses Journal Bd. 9 Nr. 32 §. 8")
+      for the use of Abel's addition theorem to integrate a system of differential equations. It
+      is also where the inversion problem for hyperelliptic integrals was posed; Riemann's second
+      division solves that problem in general, for any p, by theta series of p variables.
+  - to: abel-1841-fonctions-transcendantes
+    kind: builds-on
+    note: >-
+      Abel's Paris memoir, the full statement of the addition theorem that Riemann's title calls
+      the Abelian functions and that he applies in §§.~14–16 to a system of everywhere finite
+      integrals of equally branched algebraic functions.
+
+significance: >-
+  This is the paper in which the theory of algebraic functions on what are now called Riemann
+  surfaces was created, and in which the Jacobi inversion problem was solved in general. It is the
+  last of four pieces Riemann published together in Crelle volume 54; the three that precede it
+  (pp. 101–114, cited here as "S. 103" and "S. 111 dieses Bandes") supply the surface and the
+  Dirichlet principle he had first set out in his 1851 dissertation, and this fourth applies them
+  to Abelian functions. Riemann works with a surface of connectivity $2p+1$, and the number $p$
+  running through the whole paper is the invariant Clebsch would later name the genus.[1] The
+  first division determines the functions on such a surface from their branching and their
+  discontinuities rather than from any formula, sorts their integrals into the three kinds, and
+  derives $p = (n-1)(m-1) - r$ for a curve $F(s,z) = 0$ of degrees $n$ and $m$ with $r$ double
+  points. It also finds that a function with $m$ poles carries $m-p+1$ arbitrary constants — the
+  inequality that Riemann's student Gustav Roch sharpened in 1865 into the Riemann–Roch
+  theorem.[2] The same division introduces the notion of a class of algebraic equations, those
+  carried into one another by rational substitutions, and shows that a class depends on $3p-3$
+  continuously varying quantities which Riemann calls its Moduln — the count that is still the
+  dimension of the moduli space of curves of genus $p$.[2] The second division builds the $p$-fold
+  theta series and expresses Jacobi's inversion functions of $p$ variables by it, showing that a
+  special class of theta series, carrying just $3p-3$ free constants, already suffices; that the
+  theta function vanishes at exactly $p$ points of the cut surface; and that algebraic functions
+  can be written as quotients of products of theta functions. Riemann is careful to credit
+  Weierstrass, whose parallel work on hyperelliptic integrals he discusses in the introduction and
+  cites again on p. 152.
+
+significance_sources:
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Bernhard Riemann", MacTutor History of Mathematics
+      Archive, University of St Andrews.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/"
+  - citation: >-
+      Alexander Brill and Max Noether, "Die Entwicklung der Theorie der algebraischen Functionen
+      in älterer und neuerer Zeit", Jahresbericht der Deutschen Mathematiker-Vereinigung 3
+      (1894) — for Riemann's 1857 memoir, the moduli count, and Roch's 1865 completion of the
+      Riemann–Roch theorem.
+    url: "https://eudml.org/doc/144593"
+
+source:
+  scan_url: "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0054"
+  scan_id: >-
+    gdz:PPN243919689_0054 (Crelle's Journal, Band 54, 1857, pp. 115–155; PDF pp. 120–160). The
+    same original printing is catalogued by EuDML as http://eudml.org/doc/147699.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Bernhard Riemann, 1826–1866 (wikidata:Q42299; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/).
+  publication_date: >-
+    First published 1857 in Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 54, pp. 115–155 (EuDML http://eudml.org/doc/147699; GDZ PPN243919689_0054).
+  edition: >-
+    Original first printing, Journal für die reine und angewandte Mathematik, Vierundfünfzigster
+    Band (Berlin: G. Reimer, 1857), pp. 115–155. Digitized by the Göttinger
+    Digitalisierungszentrum (GDZ), PPN243919689_0054.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1866], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1857, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-08-25"
