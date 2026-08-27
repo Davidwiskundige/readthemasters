@@ -71,6 +71,14 @@ transcription:
     \section* and both the numbered §§ and the three italic descriptive titles inside §§. 4–5 are
     \subsection*.
 
+    Those three descriptive titles are the corpus's first headings to NAME A SYMBOL
+    ("Allenthalben endliche Functionen $\omega$. …"). Previewing this work showed them rendering
+    as literal $\omega$ while the surrounding formulas typeset correctly: heading HTML was built
+    without the wrapMath call that paragraphs and captions get, and the reader only typesets the
+    span.math wrappers wrapMath creates. site/src/lib/tex.js now runs headings through wrapMath
+    as well, covered by two new cases in site/src/lib/tex.test.mjs and recorded as HOUSESTYLE R25.
+    Verified in the browser after the change: 0 headings left with raw math, 0 KaTeX errors.
+
     Mechanical checks run against this file, beyond validate.py and houselint.py: all 1771 math
     spans were rendered through the site's own KaTeX build (0 failures), and the file was pushed
     through site/src/lib/tex.js with the math stripped, to confirm no TeX markup leaks into the

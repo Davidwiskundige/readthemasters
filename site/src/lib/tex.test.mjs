@@ -48,3 +48,18 @@ test("\\S does not eat a following control word or math \\Sigma", () => {
   assert.match(html, /\$\\Sigma x\$/); // math \Sigma untouched (stashed)
   assert.match(html, /§ 4 following/); // text \S -> §
 });
+
+test("math in a heading is wrapped so the lazy typesetter reaches it", () => {
+  // The reader only observes span.math / span.mathblock (the work page's mathWatch), so a heading
+  // whose math is not wrapped is never typeset and shows the raw $...$ to the reader. Riemann's
+  // 1857 descriptive titles are the first corpus headings to name a symbol.
+  const html = render("\\subsection*{Functionen $\\omega$ der Fläche $T$. (Zweiter Gattung.)}");
+  assert.match(html, /<h3[^>]*>.*<span class="math"[^>]*>\$\\omega\$<\/span>/);
+  assert.match(html, /<span class="math"[^>]*>\$T\$<\/span>.*<\/h3>/);
+});
+
+test("a heading with no math is unchanged by the wrapping", () => {
+  const html = render("\\section*{Erste Abtheilung.}");
+  assert.match(html, /<h2[^>]*>Erste Abtheilung\.<\/h2>/);
+  assert.ok(!html.includes('class="math"'), "nothing to wrap, so no wrapper is added");
+});

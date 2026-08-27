@@ -128,12 +128,17 @@ export function texToHtml(tex, opts = {}) {
     const sec = para.match(/^\\section\*?\{([^}]*)\}\s*([\s\S]*)$/);
     const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
     let heading = "";
+    // Headings go through wrapMath too, like figure captions: the reader typesets lazily and only
+    // ever observes the `span.math` / `span.mathblock` wrappers this adds (see the work page's
+    // mathWatch), so an unwrapped `$\omega$` in a heading would sit on the page as literal TeX.
+    // Riemann's descriptive titles ("Allenthalben endliche Functionen $\omega$. …") are the first
+    // corpus headings to name a symbol.
     if (sec) {
-      heading = `<h2 id="${idPrefix}sec-${++secCount}">${inlineText(escapeHtml(sec[1]), ctx)}</h2>`;
+      heading = `<h2 id="${idPrefix}sec-${++secCount}">${wrapMath(inlineText(escapeHtml(sec[1]), ctx))}</h2>`;
       para = sec[2].trim();
       if (!para) { out.push(heading); continue; }
     } else if (sub) {
-      heading = `<h3 id="${idPrefix}sec-${++secCount}">${inlineText(escapeHtml(sub[1]), ctx)}</h3>`;
+      heading = `<h3 id="${idPrefix}sec-${++secCount}">${wrapMath(inlineText(escapeHtml(sub[1]), ctx))}</h3>`;
       para = sub[2].trim();
       if (!para) { out.push(heading); continue; }
     }
