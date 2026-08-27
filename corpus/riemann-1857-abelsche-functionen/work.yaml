@@ -53,8 +53,8 @@ significance: >-
   This is the paper in which the theory of algebraic functions on what are now called Riemann
   surfaces was created, and in which the Jacobi inversion problem was solved in general. It is the
   last of four pieces Riemann published together in Crelle volume 54; the three that precede it[1]
-  supply the surface and the
-  Dirichlet principle he had first set out in his 1851 dissertation, and this fourth applies them
+  develop the Riemann surface and the Dirichlet principle, recasting what he had first set out in
+  his 1851 dissertation, and this fourth applies them
   to Abelian functions. Riemann works with a surface of connectivity $2p+1$, and the number $p$
   running through the whole paper is the invariant Clebsch would later name the genus.[2] The
   first division determines the functions on such a surface from their branching and their
