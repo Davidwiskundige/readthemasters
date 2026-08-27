@@ -52,20 +52,20 @@ relations:
 significance: >-
   This is the paper in which the theory of algebraic functions on what are now called Riemann
   surfaces was created, and in which the Jacobi inversion problem was solved in general. It is the
-  last of four pieces Riemann published together in Crelle volume 54; the three that precede it
-  (pp. 101–114, cited here as "S. 103" and "S. 111 dieses Bandes") supply the surface and the
+  last of four pieces Riemann published together in Crelle volume 54; the three that precede it[1]
+  supply the surface and the
   Dirichlet principle he had first set out in his 1851 dissertation, and this fourth applies them
   to Abelian functions. Riemann works with a surface of connectivity $2p+1$, and the number $p$
-  running through the whole paper is the invariant Clebsch would later name the genus.[1] The
+  running through the whole paper is the invariant Clebsch would later name the genus.[2] The
   first division determines the functions on such a surface from their branching and their
   discontinuities rather than from any formula, sorts their integrals into the three kinds, and
   derives $p = (n-1)(m-1) - r$ for a curve $F(s,z) = 0$ of degrees $n$ and $m$ with $r$ double
   points. It also finds that a function with $m$ poles carries $m-p+1$ arbitrary constants — the
   inequality that Riemann's student Gustav Roch sharpened in 1865 into the Riemann–Roch
-  theorem.[2] The same division introduces the notion of a class of algebraic equations, those
+  theorem.[3] The same division introduces the notion of a class of algebraic equations, those
   carried into one another by rational substitutions, and shows that a class depends on $3p-3$
   continuously varying quantities which Riemann calls its Moduln — the count that is still the
-  dimension of the moduli space of curves of genus $p$.[2] The second division builds the $p$-fold
+  dimension of the moduli space of curves of genus $p$.[3] The second division builds the $p$-fold
   theta series and expresses Jacobi's inversion functions of $p$ variables by it, showing that a
   special class of theta series, carrying just $3p-3$ free constants, already suffices; that the
   theta function vanishes at exactly $p$ points of the cut surface; and that algebraic functions
@@ -74,6 +74,16 @@ significance: >-
   cites again on p. 152.
 
 significance_sources:
+  - citation: >-
+      The three papers, all Riemann's own, that precede this one in Crelle's Journal Band 54:
+      "Allgemeine Voraussetzungen und Hülfsmittel für die Untersuchung von Functionen unbeschränkt
+      veränderlicher Größen" (No. 11, pp. 101–104), "Lehrsätze aus der analysis situs für die
+      Theorie der Integrale von zweigliedrigen vollständigen Differentialien" (No. 12,
+      pp. 105–110), and "Bestimmung einer Function einer veränderlichen complexen Größe durch
+      Grenz- und Unstetigkeitsbedingungen" (No. 13, pp. 111–114). This memoir is No. 14 of the
+      same volume and refers back to the first and the third of them as "S. 103" and "S. 111
+      dieses Bandes" (both on its p. 117).
+    url: "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0054"
   - citation: >-
       J. J. O'Connor and E. F. Robertson, "Bernhard Riemann", MacTutor History of Mathematics
       Archive, University of St Andrews.
