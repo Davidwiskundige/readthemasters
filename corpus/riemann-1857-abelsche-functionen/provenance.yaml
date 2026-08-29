@@ -1,0 +1,164 @@
+changelog:
+  - date: "2026-08-29"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-27"
+    summary: Transcription added (AI draft), pp. 115–155 from the 1857 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-27"
+  verification:
+    flagged_pages: [120, 122, 123, 125, 130, 131, 135, 137, 145, 147, 152, 153]
+    date: "2026-08-27"
+  note: >-
+    Full German text of Riemann's "Theorie der Abel'schen Functionen", printed pages 115–155
+    (Erste Abtheilung §§. 1–16, Zweite Abtheilung §§. 17–27), from the original first printing in
+    Crelle's Journal, Band 54 (1857). Read from the GDZ scan PPN243919689_0054 (PDF pp. 120–160);
+    each page was rendered at 300 dpi and every displayed and inline formula checked by zooming
+    into the scan (the AI's own verification pass, not a full human review). The paper is set in
+    Antiqua (roman type), NOT Fraktur; only period features are normalized — long-ſ → s, the
+    eszett ligature ſs → ß, ligatures expanded, line-break hyphenation dropped — while the 1857
+    orthography and notation are kept faithful (Function, Coefficienten, willkührlich,
+    zusammenhangend, Derivirte, in's Entgegengesetzte; HOUSESTYLE R12 and R19). There is no
+    Fraktur in the text or the math, so no \mathfrak is used. No figures appear in this work.
+
+    Notation, all recorded in the file header and followed symbol by symbol: ω̄ (\bar{\omega}) for
+    the third-kind integrals, distinct from plain ω; polynomial degrees printed ABOVE their
+    argument and set with \overset, F(\overset{n}{s}, \overset{m}{z}); the vinculum as the print's
+    grouping device, $\overline{2p+1}$fach and a_1\overline{n-1}s^{n-2}; upright roman
+    \mathrm{w} on pp. 127–129 for the NUMBER of simple branch points, a different symbol from the
+    italic w of the everywhere-finite integrals; ∂ used as a differential in several integrals
+    alongside d; the print's own relation signs ≧ ≦ ≷ ≡; "zz" for z² on p. 128; superscript
+    ordinals m^ten. The surfaces T, T′, T″, T*, T₁, T′₁ and S were each checked at high
+    magnification — p. 144 reads T″, not T‴. Equation numbers, printed at the left as "(1.)",
+    are set at the right with \tag, keeping the author's own label (R5).
+
+    Apparent printer's errors are kept as printed (R4). Four that would mislead a reader of the
+    MATHEMATICS also carry an in-text \ednote popover (R10); a reviewer should confirm each
+    against the scan:
+    (a) p. 120 — "die 2p Größen α und β": the 2p real quantities just introduced are γ_1…γ_p,
+    δ_1…δ_p (from α = γ + δi), so this looks like a misprint for "γ und δ".
+    (b) p. 125 — "um a_μ s_1 mit s_μ vertauscht": the list that immediately follows requires
+    s_{μ+1}; re-checked at high magnification, the print has no "+1".
+    (c) p. 145 — "in der ϑ-Reihe (1.) §. 16": the series (1.) stands in §. 17.
+    (d) p. 153 — "ϑ(u_1 − Σα_1^{(n)}, …)": the superscript is an upright roman (n) where every
+    other occurrence has (ν).
+    Plain compositor's slips in the prose are kept as printed but deliberately given NO popover,
+    so the author's text is not peppered with markers; each was confirmed by zooming into the
+    scan: p. 122 "Orduung" (Ordnung), p. 123 "dassalbe" (dasselbe), p. 123 "Puukten" (Punkten),
+    p. 130 "Prodncts" (Products), p. 131 "nnendliches" (unendliches), p. 135 "Begrenznngstheile"
+    (Begrenzungstheile — spelt correctly twice on the same page), p. 152 "Göfsen" (Größen). All
+    but the last are the same turned-letter (u/n) slip. Also kept as printed: the size list on
+    p. 147 lacks the comma after its first term, and the print writes both "lineäre" and
+    "lineare" on p. 129.
+
+    ONE UNCERTAIN READING, the reason p. 137 is flagged: the left-hand symbol of the display
+    "r = (n_1−1)(m_1−1) − p" is damaged in the scan (partly inked). It is read as r, the letter
+    the same count carries in the table immediately below and in §. 6, but a reviewer should
+    confirm it against another copy.
+
+    Emphasis (HOUSESTYLE R20, R24): the print's one body emphasis device is italic — stressed
+    words, terms being defined, whole stated results, and personal names (Abel, Dirichlet, Cauchy,
+    Fourier, Jacobi, Lagrange, Weierstraß) — all rendered \emph, 60 spans in total. The
+    letterspaced "n i c h t" inside the italic theorem on p. 150 is not split out; that passage is
+    a single \emph run, per R24. Headings carry no \emph: the print's bold/italic heading faces
+    are already carried by the heading markup (R20), and the site matches a heading argument with
+    [^}]*, so a nested brace group there would corrupt the page (the R18 limit, applied to
+    headings — worth adding to houselint, which today checks only \ednote and \uncertain).
+    The print has three heading levels but the site renders only two, so the two Abtheilungen are
+    \section* and both the numbered §§ and the three italic descriptive titles inside §§. 4–5 are
+    \subsection*.
+
+    Those three descriptive titles are the corpus's first headings to NAME A SYMBOL
+    ("Allenthalben endliche Functionen $\omega$. …"). Previewing this work showed them rendering
+    as literal $\omega$ while the surrounding formulas typeset correctly: heading HTML was built
+    without the wrapMath call that paragraphs and captions get, and the reader only typesets the
+    span.math wrappers wrapMath creates. site/src/lib/tex.js now runs headings through wrapMath
+    as well, covered by two new cases in site/src/lib/tex.test.mjs and recorded as HOUSESTYLE R25.
+    Verified in the browser after the change: 0 headings left with raw math, 0 KaTeX errors.
+
+    Mechanical checks run against this file, beyond validate.py and houselint.py: all 1771 math
+    spans were rendered through the site's own KaTeX build (0 failures), and the file was pushed
+    through site/src/lib/tex.js with the math stripped, to confirm no TeX markup leaks into the
+    rendered prose (0 leaks; this caught 30 text-mode \ldots that the transform does not handle
+    and that are now written $\ldots$). \origpage markers run 115–155 with no gaps, and all 27
+    numbered sections are present in order.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-29"
+    note: >-
+      Full English translation of all 41 pages, made only from our own original.tex, never from an
+      existing published translation. Every math span, \tag{}, \origpage{N} marker and \ednote is
+      reproduced unchanged — texcompare reports 1771 math spans, 41 page markers and 3 tags
+      preserved, and the rendered structure matches the original exactly (33 headings, 4 ednote
+      popovers, 60 \emph spans). Only the prose differs.
+
+      Prose set INSIDE math via a text insert is translated (HOUSESTYLE R21): "und"→"and",
+      "für"→"for", "oder auch, da"→"or also, since", the ordinal "ten"→"th", and "w. z. b. w."
+      (was zu beweisen war) → "q. e. d."; "const." is identical in both languages and is left as
+      it stands. texcompare ignores the content of such an insert while still checking that each
+      is present, unmoved, and that the surrounding math is identical.
+
+      Terminology follows corpus/riemann-1857-abelsche-functionen/glossary.yaml, written for this
+      translation and saved alongside the work so the Tier-3 path (pipeline/translate.py
+      --glossary) reproduces the same renderings. Period English is preferred over the modern
+      equivalent: ganze Function = "integral function", Periodicitätsmodul = "modulus of
+      periodicity", Querschnitt = "crosscut", Stellenzeiger = "indices", Abtheilung = "Division".
+
+      THREE JUDGEMENT CALLS A REVIEWER SHOULD CHECK, all cases where the print uses two different
+      German words that modern usage would merge, and where this translation keeps them apart
+      rather than destroying a distinction the author draws:
+      (a) einwerthig → "single-valued" versus einändrig → "unbranched". Settled with the
+      contributor, a native Dutch speaker, by testing the morphology against Dutch. -ändrig is the
+      syncopated -änderig, so the stem is ander/ändern (Dutch ander/veranderen), not Werth: the
+      literal calque gives eenwaardig for einwerthig and eenduidig for eindeutig, both real Dutch
+      words, but nothing for einändrig — marking it as Riemann's own coinage. It is NOT einädrig
+      from Ader (which would have given Dutch eenaderig, cf. German einadrig "single-core"); the
+      scan was re-checked at high magnification and clearly reads ein-ä-N-d-r-ig. Distribution
+      agrees: einwerthig is the workhorse (15 uses, 10 pages) while einändrig occurs 5 times and
+      only on pp. 124 and 126, within one stretch of the §. 6 branch-point argument. The sense is
+      settled by p. 126, where two branch points cancel and "both branches become einändrig" —
+      each continues into ITSELF instead of swapping, i.e. stops branching. So the two words name
+      different properties (one continuation versus one value per place), and an earlier draft
+      rendering einändrig as "one-valued" was wrong in shape, since it carried no sense of
+      branching at all. "unbranched branches" on p. 124 is clumsy but exact and is kept for
+      consistency. Riemann's third word, eindeutig (p. 146, twice), is rendered "uniquely
+      determined".
+      (b) irreductibel → "irreducible" (of an equation) versus unzerfällbar → "indecomposable"
+      (of a function). Riemann glosses unzerfällbar himself on p. 123 as "not representable as a
+      product of integral functions", which supports the split.
+      (c) Aufsatz → "paper" versus Abhandlung → "memoir".
+
+      The author's own parenthetical gloss is kept, following the corpus precedent for Jacobi's
+      "Versetzung (Transposition)": p. 138 "allgemein oder vollständig (complete) integriren"
+      becomes "integrated generally or completely (complete)". This reads oddly in English exactly
+      because Riemann is glossing his German word with the technical term; the gloss is his text,
+      so it is not silently dropped.
+
+      The four \ednote notes on apparent printer's errors (pp. 120, 125, 145, 153) are carried
+      across and translated; each flags an error in the mathematics or in a cross-reference, so it
+      survives translation. The compositor's slips in the GERMAN prose (Orduung, dassalbe,
+      Puukten, Prodncts, nnendliches, Begrenznngstheile, Göfsen) have nothing to be faithful to in
+      English and are rendered by the correct word; they remain recorded in the transcription.
+
+      Where a German sentence puts its verb after a displayed formula ("… in der Form [display]
+      enthalten.", "… bleibt dort [display] endlich."), English cannot keep that order, so the
+      verb moves ahead of the display; the display and its surrounding \origpage markers stay
+      exactly where they are. Riemann's journal cross-references are rendered for an English
+      reader ("d. J." → "this Journal", "S. 103 dieses Bandes" → "p. 103 of this volume", Bd. →
+      vol., Nr. → no.), with the numbers untouched.
+
+      No passage was left \uncertain: the German is technical but not ambiguous, and the places
+      where a real choice had to be made are the three listed above rather than doubts about the
+      reading.

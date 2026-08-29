@@ -1,0 +1,627 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker and \ednote is
+% reproduced unchanged; only the prose is translated — including the short prose set INSIDE math
+% via a text insert, which is translated like any other prose (HOUSESTYLE R21): "und"→"and",
+% "für"→"for", "oder auch, da"→"or also, since", the ordinal "ten"→"th" (so "$m^{ten}$" reads
+% "m-th"), and "w. z. b. w." (was zu beweisen war) → "q. e. d."; "const." is the same in both
+% languages and stands unchanged. pipeline/texcompare.py ignores the CONTENT of such an insert
+% while still checking that each insert is present, unmoved, and that all surrounding math is
+% identical.
+%
+% The four \ednote notes flagging apparent printer's errors (pp. 120, 125, 145, 153) are carried
+% across and translated; the errors themselves are in the mathematics or in a cross-reference, so
+% they survive translation unchanged. The compositor's slips in the GERMAN prose (Orduung,
+% dassalbe, Puukten, Prodncts, nnendliches, Begrenznngstheile, Göfsen — see original.tex) have
+% nothing to be faithful to in English and are simply rendered by the correct word; they remain
+% recorded in the transcription and in provenance.yaml.
+%
+% TERMINOLOGY. Applied consistently from corpus/riemann-1857-abelsche-functionen/glossary.yaml.
+% Period English is preferred over the modern equivalent: ganze Function = "integral function"
+% (not "polynomial"), Periodicitätsmodul = "modulus of periodicity" (not "period"), Querschnitt =
+% "crosscut", Zerschneidung = "dissection", Verzweigungspunkt = "branch point", Größengebiet =
+% "domain of quantities", Stellenzeiger = "indices", Abtheilung = "Division".
+%
+% Where the print uses TWO different German words, this translation uses two different English
+% ones, even where modern usage would merge them, so that a distinction the author draws is not
+% destroyed:
+%   * einwerthig = "single-valued" versus einändrig = "unbranched". These name DIFFERENT
+%     properties, not two shades of one, and the evidence is threefold. (i) Morphology: -ändrig is
+%     the syncopated -änderig, so the stem is ander/ändern (Dutch ander/veranderen), not Werth;
+%     a literal Dutch calque gives eenwaardig for einwerthig but no existing word for einändrig,
+%     which marks the latter as Riemann's own coinage. It is NOT einädrig (from Ader, cf.
+%     einadrig "single-core"): the scan clearly shows ein-ä-N-d-r-ig at high magnification.
+%     (ii) Distribution: einwerthig is the workhorse, 15 uses across 10 pages; einändrig occurs
+%     5 times and only on pp. 124 and 126, one local stretch of the §. 6 branch-point argument.
+%     (iii) Sense, decisively on p. 126: when two branch points cancel, "$s_1$ passes over into
+%     $s_1$ and $s_2$ into $s_2$, and both branches become einändrig" — each branch now continues
+%     into ITSELF rather than swapping, i.e. it stops branching. So einändrig is about admitting
+%     only one continuation, einwerthig about taking one value at each place.
+%     "unbranched branches" on p. 124 is clumsy but exact, and is kept for consistency.
+%   * eindeutig (p. 146, twice) is a third distinct word again, rendered "uniquely determined".
+%   * irreductibel = "irreducible" (of an equation) versus unzerfällbar = "indecomposable" (of a
+%     function, glossed by Riemann himself as "not representable as a product").
+%   * Aufsatz = "paper" versus Abhandlung = "memoir".
+%
+% The author's own parenthetical gloss is kept, per the corpus precedent for Jacobi's
+% "Versetzung (Transposition)": p. 138 "allgemein oder vollständig (complete) integriren" becomes
+% "integrated generally or completely (complete)", which reads oddly in English precisely because
+% Riemann is glossing his German term with the technical term — the gloss is his text, not ours.
+%
+% Riemann's cross-references to his own journal are rendered for an English reader: "d. J." /
+% "dieses Journal" = "this Journal", "S. 103 dieses Bandes" = "p. 103 of this volume", "Bd." =
+% "vol.", "Nr." = "no.", "Form." = "form."; the numbers themselves are untouched.
+%
+% German sentences that place the verb after a displayed formula ("… in der Form [display]
+% enthalten.", "… bleibt dort [display] endlich.") cannot keep that order in English, so the verb
+% moves ahead of the display. The display itself, and the \origpage markers around it, stay
+% exactly where they are.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{115}
+\section*{Theory of Abelian functions.}
+
+(By Mr.~\emph{B.~Riemann}.)
+
+In the following memoir I have treated the \emph{Abel}ian functions by a method whose principles were established in my inaugural dissertation~*) and were presented, in a somewhat altered form, in the three preceding papers. To make the survey easier, I preface it with a short summary of the contents.
+
+The first Division contains the theory of a system of equally branched algebraic functions and of their integrals, so far as the consideration of $\vartheta$-series is not decisive for it, and treats in §.~1–5 of the determination of these functions by their mode of branching and their discontinuities, in §.~6–10 of their rational expressions in two variable quantities linked by an algebraic equation, and in §.~11–13 of the transformation of these expressions by rational substitutions. The concept, offering itself in this investigation, of a \emph{class} of algebraic equations which can be transformed into one another by rational substitutions may well be important for other investigations too, and the transformation of such an equation into equations of lowest degree of its class (§.~13) may be of use on other occasions as well. Finally, in §.~14–16, this Division treats, in preparation for the following one, the application of \emph{Abel}'s addition theorem to an arbitrary system of everywhere finite integrals of equally branched algebraic functions, for the integration of a system of differential equations.
+
+In the second Division, for an arbitrary system of always finite integrals of equally branched, algebraic, $\overline{2p+1}$-fold connected functions, the \emph{Jacobi}an inversion functions of $p$ variable quantities are expressed by $p$-fold infinite $\vartheta$-series, i.~e. by series of the form
+
+*) Foundations for a general theory of functions of a variable complex quantity. Göttingen 1851.
+
+\origpage{116}
+\[ \vartheta(v_{1}, v_{2}, \ldots, v_{p}) = \left(\sum_{-\infty}^{\infty}\right)^{p} e^{\left(\sum_{1}^{p}\right)^{2} a_{\mu,\mu'} m_{\mu} m_{\mu'} + 2 \sum_{1}^{p} v_{\mu} m_{\mu}}, \]
+in which the summations in the exponent refer to $\mu$ and $\mu'$, and the outer summations to $m_{1}, m_{2}, \ldots, m_{p}$. It turns out that for the general solution of this problem a --- if $p > 3$, special --- kind of $\vartheta$-series suffices, in which among the $\frac{p(p+1)}{2}$ quantities $a$ there hold $\frac{(p-2)(p-3)}{1 \cdot 2}$ relations, so that only $3p-3$ remain arbitrary. This part of the memoir at the same time constitutes a theory of this special kind of $\vartheta$-functions; the general $\vartheta$-functions remain excluded here, but can be treated by a quite similar method.
+
+The \emph{Jacobi}an inversion problem settled here has already been solved for the hyperelliptic integrals in several ways by the persevering labours of \emph{Weierstraß}, crowned with such fine success, of which a survey has been communicated in the 47th volume of this Journal (p.~289). Up to now, however, the actual execution has been published only of that part of these labours which is sketched in §§.~1 and 2 and in the first half of §.~3 of the memoir cited, the half concerning the elliptic functions (vol.~52 p.~285 of this Journal); how far an agreement holds between the later parts of these labours and those presented here by me, not merely in results but also in the methods leading to them, only the promised detailed presentation of them will for the most part be able to show.
+
+The present memoir, with the exception of the last two §§.~26 and 27, whose subject could at that time only be briefly indicated, forms an extract from a part of the lectures I gave at Göttingen from Michaelmas 1855 to Michaelmas 1856. As regards the discovery of the individual results, I was led to what is communicated in §.~1–5, 9 and 12, and to the preparatory theorems needed for it --- which were later carried further for the purposes of the lectures, as has been done in this memoir --- in the autumn of 1851 and at the beginning of 1852, by investigations on the conformal representation of multiply connected surfaces, but was then drawn away from this investigation by another subject. Only about Easter 1855 was it taken up again and carried on, in the Easter and Michaelmas vacations of that year, up to and including §.~21; the rest was added by Michaelmas 1856. Individual supplementary additions have come in at various places during the working out.
+
+\origpage{117}
+\section*{First Division.}
+
+\subsection*{1.}
+
+If $s$ is the root of an irreducible equation of the $n$th degree whose coefficients are integral functions of the $m$th degree in $z$, then to every value of $z$ there correspond $n$ values of $s$, which vary continuously with $z$ everywhere that they do not become infinite. If therefore (following p.~103 of this volume) one represents the mode of branching of this function by an unbounded surface $T$ spread out in the $z$-plane, then this surface is $n$-fold in every part of the plane, and $s$ is then a single-valued function of position in this surface. An unbounded surface can be regarded either as a surface with an infinitely distant boundary or as a closed one, and the latter shall be done in the case of the surface $T$, so that to the value $z = \infty$ there corresponds \emph{one} point in each of the $n$ sheets of the surface, unless a branching happens to occur for $z = \infty$.
+
+Every rational function of $s$ and $z$ is obviously likewise a single-valued function of position in the surface $T$, and so possesses the same mode of branching as the function $s$; and it will emerge below that the converse holds as well.
+
+By integrating such a function one obtains a function whose various continuations for the same part of the surface $T$ differ only by constants, since its derivative always takes on the same value again at the same point of this surface.
+
+Such a system of equally branched algebraic functions and of integrals of these functions forms in the first place the subject of our consideration; but instead of starting from these expressions of these functions, we shall define them, with the application of the \emph{Dirichlet} principle (p.~111 of this volume), by their discontinuities.
+
+\subsection*{2.}
+
+To simplify what follows, let a function be called \emph{infinitely small of the first order at a point of the surface $T$} if its logarithm increases by $2\pi i$ upon a positive circuit around a piece of surface surrounding this point, in which it remains finite and different from zero. Accordingly, for a point about which the surface $T$ winds $\mu$ times, if $z$ has a finite value $a$ there, it is $(z-a)^{\frac{1}{\mu}}$, and hence $(dz)^{\frac{1}{\mu}}$, that is infinitely small of the first order; but if
+
+\origpage{118}
+$z = \infty$, it is $\left(\frac{1}{z}\right)^{\frac{1}{\mu}}$ that is infinitely small of the first order. The case in which a function becomes infinitely small or infinitely large of the $\nu$th order at a point of the surface $T$ can be regarded as though the function became infinitely small or infinitely large of the first order at $\nu$ points there coinciding (or infinitely near), as shall sometimes be done in what follows.
+
+The manner in which those functions to be considered here become discontinuous can then be expressed as follows. If one of them becomes infinite at a point of the surface $T$, then, if $r$ denotes an arbitrary function which becomes infinitely small of the first order at this point, it can always be transformed into one continuous there by subtracting a finite expression of the form
+\[ A \log r + B r^{-1} + C r^{-2} + \cdots \]
+as follows from the known theorems --- to be proved after \emph{Cauchy} or by the \emph{Fourier} series --- on the expansion of a function in power series.
+
+\subsection*{3.}
+
+Let there now be given a connected surface $T$, spread out everywhere $n$-fold in the $z$-plane, unbounded and, according to the above, to be regarded as closed, and let it be dissected into a simply connected surface $T'$. Since the boundary of a simply connected surface consists of \emph{one} piece, whereas a closed surface acquires an even number of boundary pieces through an odd number of cuts, and an odd number through an even one, an even number of cuts is required for this dissection. Let the number of these crosscuts be $= 2p$. To simplify what follows, let the dissection be carried out so that every later cut runs from a point of an earlier one to the adjoining point on the other side of it: if then a quantity varies continuously along the whole boundary of $T'$ and undergoes equal changes on both sides throughout the system of cuts, then the difference of the two values which it takes at the same point of the net of cuts is equal to the same constant in all parts of \emph{one} crosscut.
+
+Let one now put $z = x + yi$ and assume in $T$ a function $\alpha + \beta i$ of $x$, $y$ as follows:
+
+In the neighbourhood of the points $\varepsilon_{1}, \varepsilon_{2}, \ldots$ let it be determined equal to given functions of $x + yi$ becoming infinite at these points, and
+
+\origpage{119}
+namely, about $\varepsilon_{\nu}$, denoting by $r_{\nu}$ an arbitrary function of $z$ which becomes infinitely small of the first order at $\varepsilon_{\nu}$, equal to a finite expression of the form
+\[ A_{\nu} \log r_{\nu} + B_{\nu} r_{\nu}^{-1} + C_{\nu} r_{\nu}^{-2} + \cdots = \varphi_{\nu}(r_{\nu}), \]
+in which $A_{\nu}$, $B_{\nu}$, $C_{\nu} \ldots$ are arbitrary constants. Let one further draw, from all the points $\varepsilon$ for which the quantity $A$ is different from zero, mutually non-intersecting lines through the interior of $T'$ to an arbitrary point, and from $\varepsilon_{\nu}$ the line $l_{\nu}$. Let one finally assume the function in the whole remaining surface $T$ so that, apart from the lines $l$ and the crosscuts, it is everywhere continuous; that on the positive (left) side of the line $l_{\nu}$ it is greater by $-2\pi i A_{\nu}$, and on the positive side of the $\nu$th crosscut greater by the given constant $h_{\nu}$, than on the other; and that the integral $\displaystyle\int \left(\left(\frac{\partial\alpha}{\partial x} - \frac{\partial\beta}{\partial y}\right)^{2} + \left(\frac{\partial\alpha}{\partial y} + \frac{\partial\beta}{\partial x}\right)^{2}\right) dT$, extended through the surface $T$, receives a finite value. This is, as is easily seen, always possible if the sum of all the quantities $A$ is equal to zero, but also only under this condition, because only then can the function take on its previous value again after a circuit around the system of the lines $l$.
+
+The constants $h^{(1)}, h^{(2)}, \ldots, h^{(2p)}$, by which such a function is greater on the positive side of the crosscuts than on the other, shall be called the \emph{moduli of periodicity} of this function.
+
+By the \emph{Dirichlet} principle the function $\alpha + \beta i$ can now be transformed into a function $\omega$ of $x + yi$ by subtracting a similar function of $x$, $y$, everywhere continuous in $T'$, with purely imaginary moduli of periodicity; and this latter is completely determined up to an additive constant. The function $\omega$ then agrees with $\alpha + \beta i$ in the discontinuities in the interior of $T'$ and in the real parts of the moduli of periodicity. For $\omega$, therefore, the functions $\varphi_{\nu}$ and the real parts of its moduli of periodicity may be given arbitrarily. By these conditions it is completely determined up to an additive constant, and consequently so is the imaginary part of its moduli of periodicity.
+
+It will be shown that this function $\omega$ contains within itself, as special cases, all the functions designated in §.~1.
+
+\origpage{120}
+\subsection*{4.}
+
+\subsection*{Everywhere finite functions $\omega$. (Integrals of the first kind.)}
+
+We now wish to consider the simplest of them, and first those which always remain finite and hence are everywhere continuous in the interior of $T'$. If $w_{1}, w_{2}, \ldots, w_{p}$ are such functions, then
+\[ w = \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + \text{const.}, \]
+in which $\alpha_{1}$, $\alpha_{2}$, $\ldots$, $\alpha_{p}$ are arbitrary constants, is also such a function. Let the moduli of periodicity of the functions $w_{1}, w_{2}, \ldots, w_{p}$ for the $\nu$th crosscut be $k_{1}^{(\nu)}, k_{2}^{(\nu)}, \ldots, k_{p}^{(\nu)}$. The modulus of periodicity of $w$ for this crosscut is then $\alpha_{1} k_{1}^{(\nu)} + \alpha_{2} k_{2}^{(\nu)} + \cdots + \alpha_{p} k_{p}^{(\nu)} = k^{(\nu)}$; and if one puts the quantities $\alpha$ into the form $\gamma + \delta i$, then the real parts of the $2p$ quantities $k^{(1)}, k^{(2)}, \ldots, k^{(2p)}$ are linear functions of the quantities $\gamma_{1}, \gamma_{2}, \ldots, \gamma_{p}, \delta_{1}, \delta_{2}, \ldots, \delta_{p}$. If now no linear equation with constant coefficients holds among the quantities $w_{1}, w_{2}, \ldots, w_{p}$, then the determinant of these linear expressions cannot vanish; for otherwise the ratios of the quantities $\alpha$ could be determined so that the moduli of periodicity of the real part of $w$ all became 0, and consequently the real part of $w$, and hence $w$ itself, would by the \emph{Dirichlet} principle have to be a constant. The $2p$ quantities $\alpha$ and $\beta$\ednote{Printed so. The $2p$ real quantities just introduced are $\gamma_1 \ldots \gamma_p$, $\delta_1 \ldots \delta_p$ (from $\alpha = \gamma + \delta i$), so "$\alpha$ and $\beta$" appears to be a misprint for "$\gamma$ and $\delta$". Kept as printed.} can therefore then be determined so that the real parts of the moduli of periodicity receive given values; and consequently $w$ can represent every always finite function $\omega$, provided $w_{1}, w_{2}, \ldots, w_{p}$ satisfy no linear equation with constant coefficients. But these functions can always be chosen in accordance with this condition; for as long as $\mu < p$, linear equations of condition hold among the moduli of periodicity of the real part of $\alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{\mu} w_{\mu} + \text{const.}$; hence $w_{\mu+1}$ is not contained in this form if one determines the moduli of periodicity of the real part of this function --- which by the above is always possible --- so that they do not satisfy these equations of condition.
+
+\subsection*{Functions $\omega$ which become infinite of the first order at one point of the surface $T$. (Integrals of the second kind.)}
+
+Let $\omega$ be infinite only at one point $\varepsilon$ of the surface $T$, and for this point let all the coefficients in $\varphi$ except $B$ be equal to 0. Such a function is then determined, up to an additive constant, by the quantity $B$ and the real parts of its moduli of periodicity. If $t^{0}(\varepsilon)$ denotes any such
+
+\origpage{121}
+function, then in the expression
+\[ t(\varepsilon) = \beta t^{0}(\varepsilon) + \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + \text{const.} \]
+the constants $\beta$, $\alpha_{1}$, $\alpha_{2}$, $\ldots$, $\alpha_{p}$ can always be determined so that for it the quantity $B$ and the real parts of the moduli of periodicity receive arbitrarily given values. This expression therefore represents every such function.
+
+\subsection*{Functions $\omega$ which become logarithmically infinite at two points of the surface $T$. (Integrals of the third kind.)}
+
+If we consider, thirdly, the case in which the function $\omega$ becomes infinite only logarithmically, then, since the sum of the quantities $A$ must be equal to 0, this must happen for at least two points of the surface $T$, $\varepsilon_{1}$ and $\varepsilon_{2}$, and $A_{2} = -A_{1}$ must hold. If, among the functions for which this is the case and for which the two latter quantities are $= 1$, any one is $\bar{\omega}^{0}(\varepsilon_{1}, \varepsilon_{2})$, then, by inferences similar to those above, all the rest are contained in the form
+\[ \bar{\omega}(\varepsilon_{1}, \varepsilon_{2}) = \bar{\omega}^{0}(\varepsilon_{1}, \varepsilon_{2}) + \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + \text{const.} \]
+
+For the following remarks we assume, for simplicity, that the points $\varepsilon$ are not branch points and do not lie at infinity. One can then put $r_{\nu} = z - z_{\nu}$, denoting by $z_{\nu}$ the value of $z$ at $\varepsilon_{\nu}$. If one then differentiates $\bar{\omega}(\varepsilon_{1}, \varepsilon_{2})$ with respect to $z_{1}$ in such a way that the real parts of the moduli of periodicity (or also $p$ of the moduli of periodicity) and the value of $\bar{\omega}(\varepsilon_{1}, \varepsilon_{2})$ at an arbitrary point of the surface $T'$ remain constant, then one obtains a function $t(\varepsilon_{1})$ which becomes discontinuous at $\varepsilon_{1}$ like $\dfrac{1}{z - z_{1}}$. Conversely, if $t(\varepsilon_{1})$ is such a function, then $\displaystyle\int_{z_{2}}^{z_{3}} t(\varepsilon_{1}) \partial z_{1}$, taken along an arbitrary line leading in $T$ from $\varepsilon_{2}$ to $\varepsilon_{3}$, is equal to a function $\bar{\omega}(\varepsilon_{2}, \varepsilon_{3})$. In a similar way one obtains, by $n$ successive differentiations of such a $t(\varepsilon_{1})$ with respect to $z_{1}$, functions $\omega$ which become discontinuous at the point $\varepsilon_{1}$ like $n!(z - z_{1})^{-n-1}$ and otherwise remain finite.
+
+For the excluded positions of the points $\varepsilon$ these theorems require a slight modification.
+
+Obviously a linear expression formed with constant coefficients out of functions $w$, out of functions $\bar{\omega}$ and their derivatives with respect to the values at which they are discontinuous, can now be determined so that in the interior of $T'$ it receives arbitrarily given discontinuities of the form of those of $\omega$, and so that the real
+
+\origpage{122}
+parts of its moduli of periodicity take on arbitrarily given values. By such an expression, therefore, every given function $\omega$ can be represented.
+
+\subsection*{5.}
+
+The general expression of a function $\omega$ which becomes infinitely large of the first order at $m$ points of the surface $T$, $\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{m}$, is by the above
+\[ s = \beta_{1} t_{1} + \beta_{2} t_{2} + \cdots + \beta_{m} t_{m} + \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + \text{const.}, \]
+in which $t_{\nu}$ is an arbitrary function $t(\varepsilon_{\nu})$ and the quantities $\alpha$ and $\beta$ are constants. If a number $\varrho$ of the $m$ points $\varepsilon$ coincide in the same point $\eta$ of the surface $T$, then the $\varrho$ functions $t$ belonging to these points are to be replaced by one function $t(\eta)$ and its first $\varrho - 1$ derivatives with respect to the value at which it is discontinuous (§.~2).
+
+The $2p$ moduli of periodicity of this function $s$ are linear homogeneous functions of the $p+m$ quantities $\alpha$ and $\beta$. If $m \geqq p+1$, then $2p$ of the quantities $\alpha$ and $\beta$ can be determined as linear homogeneous functions of the rest so that the moduli of periodicity all become 0. The function then still contains $m-p+1$ arbitrary constants, of which it is a linear homogeneous function, and can be regarded as a linear expression of $m-p$ functions, each of which becomes infinite of the first order for only $p+1$ values.
+
+If $m = p+1$, then the ratios of the $2p+1$ quantities $\alpha$ and $\beta$ are completely determined for every position of the $p+1$ points $\varepsilon$. For particular positions of these points, however, some of the quantities $\beta$ may become equal to 0. Let the number of these quantities be $= m-\mu$, so that the function becomes infinite of the first order at only $\mu$ points. These $\mu$ points must then have such a position that, of the $2p$ equations of condition among the $p+\mu$ remaining quantities $\beta$ and $\alpha$, $p+1-\mu$ are an identical consequence of the rest, and hence only $2\mu-p-1$ of them can be chosen arbitrarily. Besides this, the function still contains 2 arbitrary constants.
+
+Let $s$ now be determined so that $\mu$ becomes as small as possible. If $s$ becomes infinite of the first order $\mu$ times, then this is also the case with every rational function of the first degree in $s$; one may therefore, for the solution of this problem, choose one of the $\mu$ points arbitrarily. The position of the rest must then be determined so that $p+1-\mu$ of the equations of condition among the quantities $\alpha$ and $\beta$ are an identical consequence of the rest,
+
+\origpage{123}
+and hence, if the branch values of the surface $T$ satisfy no particular equations of condition, $p+1-\mu \leqq \mu-1$, or $\mu \geqq \frac{1}{2}p+1$, must hold.
+
+The number of arbitrary constants contained in a function $s$ which becomes infinite of the first order at only $m$ points of the surface $T$ and otherwise remains continuous is in all cases $= 2m-p+1$.
+
+\emph{Such a function is the root of an equation of the $n^{\text{th}}$ degree whose coefficients are integral functions of the $m^{\text{th}}$ degree in $z$.}
+
+If $s_{1}, s_{2}, \ldots, s_{n}$ are the $n$ values of the function $s$ for the same $z$, and if $\sigma$ denotes an arbitrary quantity, then $(\sigma-s_{1})(\sigma-s_{2}) \ldots (\sigma-s_{n})$ is a single-valued function of $z$ which becomes infinite only at a point of the $z$-plane coinciding with a point $\varepsilon$, and infinite of an order as high as the number of points $\varepsilon$ falling upon it. In fact, for each point $\varepsilon$ falling upon it which is not a branch point, only \emph{one} factor of this product becomes infinite of an order higher by 1, but for a point $\varepsilon$ about which the surface $T$ winds $\mu$ times, $\mu$ factors become infinite of an order higher by $\dfrac{1}{\mu}$. If one now denotes the values of $z$ at \emph{those} points $\varepsilon$ where $z$ is not infinite by $\zeta_{1}, \zeta_{2}, \ldots, \zeta_{\nu}$, and $(z-\zeta_{1})(z-\zeta_{2}) \ldots (z-\zeta_{\nu})$ by $a_{0}$, then $a_{0}(\sigma-s_{1}) \ldots (\sigma-s_{n})$ is a single-valued function of $z$ which is finite for all finite values of $z$ and becomes infinite of the $m^{\text{th}}$ order for $z = \infty$, hence an integral function of the $m^{\text{th}}$ degree in $z$. It is at the same time an integral function of the $n^{\text{th}}$ degree in $\sigma$ which vanishes for $\sigma = s$. If one denotes it by $F$, and, as we shall do in what follows, denotes \emph{an integral function $F$ of the $n^{\text{th}}$ degree in $\sigma$ and of the $m^{\text{th}}$ degree in $z$} by $F(\overset{n}{\sigma}, \overset{m}{z})$, then $s$ is the root of the equation $F(\overset{n}{s}, \overset{m}{z}) = 0$.
+
+This function $F$ is a power of an indecomposable function --- i.~e. of one not representable as a product of integral functions of $\sigma$ and $z$. For every integral rational factor of $F(\sigma, z)$, since it must vanish for some of the roots $s_{1}, s_{2}, \ldots, s_{n}$, forms for $\sigma = s$ a function of $z$ which vanishes in a part of the surface $T$ and consequently, since this surface is connected, must be 0 in the whole surface. But two indecomposable factors of $F(\sigma, z)$ could vanish simultaneously only for a finite number of pairs of values, if the one could not be obtained from the other by multiplication with a constant. Consequently $F$ must be a power of an indecomposable function.
+
+\origpage{124}
+If the exponent $\nu$ of this power is $> 1$, then the mode of branching of the function $s$ is not represented by the surface $T$, but by a surface $\tau$ spread out everywhere $\dfrac{n}{\nu}$-fold in the $z$-plane, in which the surface $T$ is spread out everywhere $\nu$-fold. In that case $s$ can indeed be regarded as a function branched like $T$, but not conversely $T$ as branched like $s$.
+
+Such a function, discontinuous only at isolated points of $T$, as $s$ is, is also $\dfrac{\partial\omega}{\partial z}$. For this function takes the same value on both sides of the crosscuts and of the lines $l$, since the difference of the two values of $\omega$ in these lines is constant along them; it can become infinite only where $\omega$ becomes infinite, and at the branch points of the surface, and is otherwise everywhere continuous, since the derivative of a function remaining unbranched and finite likewise remains unbranched and finite.
+
+All the functions $\omega$ are therefore algebraic functions of $z$ branched like $T$, or integrals of such functions. This system of functions is determined once the surface $T$ is given, and depends only on the position of its branch points.
+
+\subsection*{6.}
+
+Let the irreducible equation $F(\overset{n}{s}, \overset{m}{z}) = 0$ now be given, and let the kind of branching of the function $s$, or of the surface $T$ representing it, be determined. If for a value $\beta$ of $z$ there are $\mu$ branches of the function hanging together, so that one of these branches continues into itself only after $\mu$ circuits of $z$ about $\beta$, then these $\mu$ branches of the function can (as may easily be proved after \emph{Cauchy}, or by the \emph{Fourier} series) be represented by a series proceeding in ascending rational powers of $z-\beta$ with exponents having the least common denominator $\mu$, and conversely.
+
+A point of the surface $T$ at which only two branches of a function hang together, so that about this point the first continues into the second and the latter into the former, shall be called a \emph{simple branch point}.
+
+A point of the surface about which it winds $(\mu+1)$ times can then be regarded as $\mu$ coincident (or infinitely near) simple branch points.
+
+To show this, let $s_{1}, s_{2}, \ldots, s_{\mu}$ be unbranched branches of the function $s$ in a piece of the $z$-plane surrounding this point, and in the
+
+\origpage{125}
+boundary of the same, following one another under positive description, let $a_{1}, a_{2}, \ldots, a_{\mu}$ be simple branch points. By a positive circuit about $a_{1}$ let $s_{1}$ be interchanged with $s_{2}$, about $a_{2}$ $s_{1}$ with $s_{3}$, $\ldots$, about $a_{\mu}$ $s_{1}$ with $s_{\mu}$\ednote{Printed $s_\mu$; the sequence that follows requires $s_{\mu+1}$. Kept as printed.}. Then after a positive circuit about a region containing all these points (and no other branch point)
+\[ s_{1}, \; s_{2}, \; \ldots, \; s_{\mu}, \; s_{\mu+1} \]
+pass over into
+\[ s_{2}, \; s_{3}, \; \ldots, \; s_{\mu+1}, \; s_{1}, \]
+and there arises therefore, when they coincide, a $(\mu+1)$-fold winding point.
+
+The properties of the functions $\omega$ depend essentially on how many times connected the surface $T$ is. To decide this, we shall first determine the number of simple branch points of the function $s$.
+
+At a branch point the branches of the function hanging together there take the same value, and hence two or more roots of the equation
+\[ F(s) = a_{0} s^{n} + a_{1} s^{n-1} + \cdots + a_{n} = 0 \]
+become equal to one another. This can happen only if
+\[ F'(s) = a_{0} n s^{n-1} + a_{1} \overline{n-1} s^{n-2} + \cdots + a_{n-1} \]
+or the single-valued function of $z$, $F'(s_{1}) F'(s_{2}) \ldots F'(s_{n})$, vanishes. This function becomes infinite for finite values of $z$ only when $s = \infty$, hence when $a_{0} = 0$, and in order to remain finite must be multiplied by $a_{0}^{n-2}$. It then becomes a single-valued function of $z$, finite for a finite $z$, which for $z = \infty$ becomes infinite of the $2m(n-1)$th order, hence an integral function of the $2m(n-1)$th degree. The values of $z$ for which $F'(s)$ and $F(s)$ vanish simultaneously are therefore the roots of the equation of the $2m(n-1)$th degree
+\[ Q(z) = a_{0}^{n-2} \prod_{i} F'(s_{i}) = 0 \quad \text{or also, since } F'(s_{i}) = a_{0} \prod_{i'}(s_{i} - s_{i'}), \; (i \gtrless i') \]
+\[ = a_{0}^{2(n-1)} \prod_{i,\, i'} (s_{i} - s_{i'}) = 0, \; (i \gtrless i'), \]
+which can be formed by eliminating $s$ from $F'(s) = 0$ and $F(s) = 0$.
+
+If $F(s, z) = 0$ for $s = \alpha$, $z = \beta$, then
+
+\origpage{126}
+\[
+\begin{aligned}
+F(s, z) ={}& \frac{\partial F}{\partial s}(s-\alpha) + \frac{\partial F}{\partial z}(z-\beta) \\
+&+ \tfrac{1}{2}\left\{\frac{\partial^{2}F}{\partial s^{2}}(s-\alpha)^{2} + 2\frac{\partial^{2}F}{\partial s \partial z}(s-\alpha)(z-\beta) + \frac{\partial^{2}F}{\partial z^{2}}(z-\beta)^{2}\right\} \\
+&+ \cdots\cdots,
+\end{aligned}
+\]
+\[ F'(s) = \frac{\partial^{2}F}{\partial s^{2}}(s-\alpha) + \frac{\partial^{2}F}{\partial s \partial z}(z-\beta) + \cdots \]
+If therefore for $(s = \alpha, z = \beta)$ $\dfrac{\partial F}{\partial s} = 0$, and $\dfrac{\partial F}{\partial z}$, $\dfrac{\partial^{2}F}{\partial s^{2}}$ do not then vanish, then $s-\alpha$ becomes infinitely small like $(z-\beta)^{\frac{1}{2}}$, and hence a simple branch point occurs. At the same time two factors in the product $\displaystyle\prod_{i} F'(s_{i})$ become infinitely small like $(z-\beta)^{\frac{1}{2}}$, and $Q(z)$ thereby receives the factor $(z-\beta)$. In the case where $\dfrac{\partial F}{\partial z}$ and $\dfrac{\partial^{2}F}{\partial s^{2}}$ never vanish when $F = 0$ and $\dfrac{\partial F}{\partial s} = 0$ hold simultaneously, there corresponds accordingly to every linear factor of $Q(z)$ \emph{one} simple branch point, and the number of these points is therefore $= 2m(n-1)$.
+
+The position of the branch points depends on the coefficients of the powers of $z$ in the functions $a$, and varies continuously with them.
+
+If these coefficients take such values that two simple branch points belonging to the same pair of branches coincide, then these cancel one another, and two roots of $F(s)$ become equal without a branching taking place. If now each of them continues $s_{1}$ into $s_{2}$ and $s_{2}$ into $s_{1}$, then by a circuit about a piece of the $z$-plane containing both, $s_{1}$ passes over into $s_{1}$ and $s_{2}$ into $s_{2}$, and both branches become unbranched when they coincide. Their derivative $\dfrac{\partial s}{\partial z}$ therefore also remains unbranched and finite, and consequently $\dfrac{\partial F}{\partial z} = -\dfrac{\partial s}{\partial z} \dfrac{\partial F}{\partial s} = 0$.
+
+If $F = \dfrac{\partial F}{\partial s} = \dfrac{\partial F}{\partial z} = 0$ for $s = \alpha$, $z = \beta$, then from the three following terms of the expansion of $F(s, z)$ there result two values for $\dfrac{s-\alpha}{z-\beta} = \dfrac{\partial s}{\partial z}$, $(s = \alpha, z = \beta)$. If these values are unequal and finite, then the two branches of the function $s$ to which they belong cannot hang together there and cannot branch. Then $\dfrac{\partial F}{\partial s}$ becomes infinitely small like $z-\beta$ for both, and $Q(z)$ thereby receives the factor $(z-\beta)^{2}$; hence only two simple branch points coincide.
+
+\origpage{127}
+In order to decide, in every case where several roots of the equation $F(s) = 0$ become equal to $\alpha$ for $z = \beta$, how many simple branch points coincide for $(s = \alpha, z = \beta)$, and how many of these cancel one another, one must expand these roots (after the procedure of \emph{Lagrange}) in ascending powers of $z-\beta$ far enough for these expansions all to become different from one another; whereby the branchings that actually still take place are obtained. And one must then investigate of what order $F'(s)$ becomes infinitely small for each of these roots, in order to determine the number of the linear factors of $Q(z)$ belonging to them, or of the simple branch points that have coincided for $(s = \alpha, z = \beta)$.
+
+If the number $\varrho$ denotes how often the surface $T$ winds about the point $(s, z)$, then at the point $(z)$ $F'(s)$ becomes infinitely small of the first order as many times as simple branch points coincide there, $dz^{1-\frac{1}{\varrho}}$ as many times as such actually occur, and consequently $F'(s)\, dz^{\frac{1}{\varrho}-1}$ as many times as of them cancel one another.
+
+If the number of the simple branchings that actually occur is $\mathrm{w}$, and the number of those that cancel one another is $2r$, then
+\[ \mathrm{w} + 2r = 2(n-1)m. \]
+If one assumes that the branch points coincide only in pairs and cancelling one another, then for $r$ pairs of values $(s = \gamma_{\varrho}, z = \delta_{\varrho})$ we have $F = \dfrac{\partial F}{\partial s} = \dfrac{\partial F}{\partial z} = 0$ and $\dfrac{\partial^{2}F}{\partial z^{2}} \dfrac{\partial^{2}F}{\partial s^{2}} - \left(\dfrac{\partial^{2}F}{\partial s \partial z}\right)^{2}$ not zero, and for $\mathrm{w}$ pairs of values of $s$ and $z$ we have $F = 0$, $\dfrac{\partial F}{\partial s} = 0$, $\dfrac{\partial F}{\partial z}$ not zero and $\dfrac{\partial^{2}F}{\partial s^{2}}$ not zero.
+
+We restrict ourselves for the most part to the treatment of this case, since the results can easily be extended to the rest as limiting cases of it; and we may do this here all the more, since we have based the theory of these functions on a foundation independent of the form of expression and subject to no exceptional cases.
+
+\subsection*{7.}
+
+Now for a simply connected surface spread out over a finite part of the $z$-plane there holds, between the number of its simple branch points and the number of revolutions which the direction of its boundary line makes, the relation that the latter is
+
+\origpage{128}
+greater by one unit than the former; and from this there follows, for a multiply connected surface, a relation between these numbers and the number of the crosscuts which turn it into a simply connected one. We can derive this relation, which is at bottom independent of metric relations and belongs to \emph{analysis situs}, here for the surface $T$ as follows.
+
+By the \emph{Dirichlet} principle the function $\log\zeta$ of $z$ can be determined in the simply connected surface $T'$ so that $\zeta$ becomes infinitely small of the first order at an arbitrary point in the interior of it, and $\log\zeta$ is, along an arbitrary non-self-intersecting line leading from there to the boundary, greater by $-2\pi i$ on the positive side than on the negative, but is otherwise everywhere continuous and is purely imaginary along the boundary of $T'$. The function $\zeta$ then takes every value whose modulus is $< 1$ once; the totality of its values is consequently represented by a surface spread out simply over a circle in the $\zeta$-plane. To every point of $T'$ there corresponds a point of the circle, and conversely. Hence for an arbitrary point of the surface, where $z = z'$, $\zeta = \zeta'$, the function $\zeta - \zeta'$ becomes infinitely small of the first order, and consequently there remains finite there, if the surface $T'$ winds $(\mu+1)$ times about it, for finite $z'$
+\[ \frac{z-z'}{(\zeta-\zeta')^{\mu+1}} = \frac{\partial z}{\partial\zeta(\zeta-\zeta')^{\mu}}, \]
+but for infinite $z'$
+\[ \frac{z^{-1}}{(\zeta-\zeta')^{\mu+1}} = -\frac{\partial z}{zz \partial\zeta(\zeta-\zeta')^{\mu}} \]
+The integral $\displaystyle\int \partial \log \frac{\partial z}{\partial\zeta}$, taken positively around the whole circle, is equal to the sum of the integrals around the points where $\dfrac{\partial z}{\partial\zeta}$ becomes infinite or zero, and hence $= 2\pi i(\mathrm{w} - 2n)$. If $s$ denotes a piece of the boundary of $T'$ from one and the same fixed point to a variable point of the boundary, and $\sigma$ the corresponding piece on the circumference of the circle, then
+\[ \log\frac{\partial z}{\partial\zeta} = \log\frac{\partial z}{\partial s} + \log\frac{\partial s}{\partial\sigma} - \log\frac{\partial\zeta}{\partial\sigma}, \]
+and, extended through the whole boundary,
+\[ \int \partial \log\frac{\partial z}{\partial s} = (2p-1)2\pi i, \quad \int \partial \log\frac{\partial s}{\partial\sigma} = 0, \quad -\int \partial \log\frac{\partial\zeta}{\partial\sigma} = -2\pi i, \]
+
+\origpage{129}
+hence
+\[ \int \partial \log\frac{\partial z}{\partial\zeta} = (2p-2)2\pi i. \]
+There follows accordingly $\mathrm{w} - 2n = 2(p-1)$. Since now $\mathrm{w} = 2((n-1)m-r)$, we have $p = (n-1)(m-1) - r$.
+
+\subsection*{8.}
+
+The general expression of the functions $s'$ of $z$ branched like $T$, which become infinite of the first order at $m'$ arbitrarily given points of $T$ and otherwise remain continuous, contains by the above $m'-p+1$ arbitrary constants and is a linear function of them (§.~5). If therefore, as shall now be shown, rational expressions in $s$ and $z$ can be formed which become infinite of the first order for $m'$ arbitrarily given pairs of values of $s$ and $z$ satisfying the equation $F = 0$, and which are linear functions of $m'-p+1$ arbitrary constants, then every function $s'$ can be represented by these expressions.
+
+In order that the quotient of two integral functions $\chi(s, z)$ and $\psi(s, z)$ may take arbitrary finite values for $s = \infty$ and $z = \infty$, both must be of equal degree; let the expression by which $s'$ is to be represented therefore be of the form $\dfrac{\psi(\overset{\nu}{s}, \overset{\mu}{z})}{\chi(\overset{\nu}{s}, \overset{\mu}{z})}$, and let moreover $\nu \geqq n-1$, $\mu \geqq m-1$. If two branches of the function $s$ become equal to one another without hanging together, so that $z = \gamma$ and $s = \delta$ holds for two different points of the surface $T$, then $s'$ will, generally speaking, take different values at these two points; if therefore $\psi - s'\chi$ is to be $= 0$ everywhere, then $\psi(\gamma, \delta) - s'\chi(\gamma, \delta) = 0$ must hold for two different values of $s'$, and consequently $\chi(\gamma, \delta) = 0$ and $\psi(\gamma, \delta) = 0$. The functions $\chi$ and $\psi$ must therefore vanish for the $r$ pairs of values $s = \gamma_{\varrho}$, $z = \delta_{\varrho}$ (p.~127)~*).
+
+The function $\chi$ vanishes for a value of $z$ for which the single-valued function of $z$, finite for a finite $z$,
+\[ K(z) = a_{0}^{\nu} \chi(s_{1}) \chi(s_{2}) \ldots \chi(s_{n}) = 0 \]
+vanishes; this function becomes infinite for an infinite $z$ of the order
+
+*) Only the case is taken into account here, as has been said, in which the branch points of the function $s$ coincide only in pairs and cancelling one another. In general, at a point of $T$ where, according to the view taken in §.~6, cancelling branch points coincide, $\chi$ and $\psi$ must, if $T$ winds $\varrho$ times about this point, become infinitely small like $F'(s)\, dz^{\frac{1}{\varrho}-1}$, in order that the first terms in the expansion of the function to be represented in integral powers of $(\Delta z)^{\frac{1}{\varrho}}$ may take arbitrary values.
+
+\origpage{130}
+$m\nu + n\mu$, and is therefore an integral function of the $(m\nu + n\mu)$th degree. Since for the pairs of values $(\gamma, \delta)$ two factors of the product $\displaystyle\prod_{i} \chi(s_{i})$ become infinitely small of the first order, and hence $K(z)$ infinitely small of the second order, $\chi$ becomes in addition infinitely small of the first order for
+\[ i = m\nu + n\mu - 2r \]
+pairs of values of $s$ and $z$, or points of $T$.
+
+If $\nu > n-1$, $\mu > m-1$, then the value of the function $\chi$ remains unchanged if one puts
+\[ \chi(\overset{\nu}{s}, \overset{\mu}{z}) + \varrho(\overset{\nu-n}{s}, \overset{\mu-m}{z}) F(\overset{n}{s}, \overset{m}{z}), \]
+in which $\varrho$ is arbitrary, in place of $\chi(\overset{\nu}{s}, \overset{\mu}{z})$; hence $(\nu-n+1)(\mu-m+1)$ of the coefficients of this expression may be assumed arbitrarily. If now, of the $(\mu+1)(\nu+1) - (\nu-n+1)(\mu-m+1)$ still remaining, $r$ are determined as linear functions of the rest so that $\chi$ vanishes for the $r$ pairs of values $(\gamma, \delta)$, then the function $\chi$ still contains
+\[
+\begin{aligned}
+\varepsilon &= (\mu+1)(\nu+1) - (\nu-n+1)(\mu-m+1) - r \\
+&= n\mu + m\nu - (n-1)(m-1) - r + 1
+\end{aligned}
+\]
+arbitrary constants. We have therefore $i - \varepsilon = (n-1)(m-1) - r - 1 = p-1$.
+
+If one assumes $\mu$ and $\nu$ so that $\varepsilon > m'$, then one can determine $\chi$ so that it becomes infinitely small of the first order for $m'$ arbitrarily given pairs of values, and then, if $m' > p$, arrange $\psi$ so that $\dfrac{\psi}{\chi}$ remains finite for all the remaining values. In fact $\psi$ is likewise a linear homogeneous function of $\varepsilon$ arbitrary constants, and hence, if $\varepsilon - i + m' > 1$, $i - m'$ of them can be determined as linear functions of the rest so that $\psi$ vanishes as well for the $i - m'$ pairs of values of $s$ and $z$ for which $\chi$ still becomes infinitely small of the first order. The function $\psi$ accordingly contains $\varepsilon - i + m' = m' - p + 1$ arbitrary constants, and $\dfrac{\psi}{\chi}$ can therefore represent every function $s'$.
+
+\subsection*{9.}
+
+Since the functions $\dfrac{\partial\omega}{\partial z}$ are algebraic functions of $z$ branched like $s$ (§.~5), they can, by the theorem just proved, be expressed rationally in $s$ and $z$, and all the functions $\omega$ as integrals of rational functions of $s$ and $z$.
+
+\origpage{131}
+If $w$ is an everywhere finite function $\omega$, then $\dfrac{\partial w}{\partial z}$ becomes infinite of the first order at every simple branch point of the surface $T$, since $dw$ and $(dz)^{\frac{1}{2}}$ are there infinitely small of the first order; but it otherwise remains everywhere continuous and becomes, for $z = \infty$, infinitely small of the second order. Conversely, the integral of a function which behaves in this way remains everywhere finite.
+
+In order to express this function $\dfrac{\partial w}{\partial z}$ as the quotient of two integral functions of $s$ and $z$, one must (according to §.~8) take for the denominator a function which vanishes at the branch points and for the $r$ pairs of values $(\gamma, \delta)$. This condition is most simply satisfied by a function which becomes 0 only for these values. Such a one is
+\[ \frac{\partial F}{\partial s} = a_{0} n s^{n-1} + a_{1} \overline{n-1} s^{n-2} + \cdots + a_{n-1}. \]
+This becomes, for an infinite $s$, infinite of the $n-2$th order (since $a_{0}$ then becomes infinitely small of the first order), and for an infinite $z$ infinite of the $m$th order. In order that $\dfrac{\partial w}{\partial z}$ be finite apart from the branch points and, for an infinite $z$, infinitely small of the second order, the numerator must therefore be an integral function $\varphi(\overset{n-2}{s}, \overset{m-2}{z})$ which vanishes for the $r$ pairs of values $(\gamma, \delta)$ (p.~127). Accordingly
+\[ w = \int \frac{\varphi(\overset{n-2}{s}, \overset{m-2}{z}) \partial z}{\dfrac{\partial F}{\partial s}} = -\int \frac{\varphi(\overset{n-2}{s}, \overset{m-2}{z}) \partial s}{\dfrac{\partial F}{\partial z}}, \]
+in which $\varphi = 0$ for $s = \gamma_{\varrho}$, $z = \delta_{\varrho}$, $\varrho = 1, 2, \ldots, r$.
+
+The function $\varphi$ contains $(n-1)(m-1)$ constant coefficients, and if $r$ of them are determined as linear functions of the rest so that $\varphi = 0$ for the $r$ pairs of values $s = \gamma$, $z = \delta$, then $(m-1)(n-1)-r$, or $p$, still remain arbitrary, and $\varphi$ receives the form
+\[ \alpha_{1}\varphi_{1} + \alpha_{2}\varphi_{2} + \cdots + \alpha_{p}\varphi_{p}, \]
+in which $\varphi_{1}, \varphi_{2}, \ldots, \varphi_{p}$ are particular functions $\varphi$, of which none is a linear function of the rest, and $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{p}$ are arbitrary constants. As the general expression of $w$ there results, as above by another route,
+\[ \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + \text{const.} \]
+The functions $\omega$ which do not remain everywhere finite, and hence the integrals of the second and third kind, can be expressed rationally in $s$ and $z$ by the same
+
+\origpage{132}
+principles, upon which, however, we shall not dwell here, since the general rules of the preceding §. require no further elucidation, and since occasion for considering particular forms of these integrals is first given by the theory of the $\vartheta$-functions.
+
+\subsection*{10.}
+
+Besides for the $r$ pairs of values $(\gamma, \delta)$, the function $\varphi$ becomes infinitely small of the first order for a further $m(n-2) + n(m-2) - 2r$, or $2(p-1)$, pairs of values of $s$ and $z$ satisfying the equation $F = 0$. If now
+\[ \varphi^{(1)} = \alpha_{1}^{(1)}\varphi_{1} + \alpha_{2}^{(1)}\varphi_{2} + \cdots + \alpha_{p}^{(1)}\varphi_{p} \]
+and
+\[ \varphi^{(2)} = \alpha_{1}^{(2)}\varphi_{1} + \alpha_{2}^{(2)}\varphi_{2} + \cdots + \alpha_{p}^{(2)}\varphi_{p} \]
+are two arbitrary functions $\varphi$, then in the expression $\dfrac{\varphi^{(2)}}{\varphi^{(1)}}$ one can determine the denominator so that it becomes equal to zero for $p-1$ arbitrarily given pairs of values of $s$ and $z$ satisfying the equation $F = 0$, and then the numerator so that it likewise vanishes for $p-2$ of the remaining pairs of values for which $\varphi^{(1)}$ still becomes equal to 0. It is then still a linear function of two arbitrary constants, and consequently a general expression of a function which becomes infinite of the first order at only $p$ points of the surface $T$. A function which becomes infinite at fewer than $p$ points forms a special case of this function; hence all functions which become infinite of the first order at fewer than $p+1$ points of the surface $T$ can be represented in the form $\dfrac{\varphi^{(2)}}{\varphi^{(1)}}$, or in the form $\dfrac{dw^{(2)}}{dw^{(1)}}$, where $w^{(1)}$ and $w^{(2)}$ are two everywhere finite integrals of rational functions of $s$ and $z$.
+
+\subsection*{11.}
+
+A function $z_{1}$ of $z$, branched like $T$, which becomes infinite of the first order at $n_{1}$ points of this surface, is by the foregoing (p.~123) the root of an equation of the form $G(\overset{n}{z_{1}}, \overset{n_{1}}{z}) = 0$, and therefore takes every value at $n_{1}$ points of the surface $T$. If therefore one thinks of every point of $T$ as represented by a point of a plane geometrically representing the value of $z_{1}$ at this point, then the totality of these points forms a surface $T'_{1}$, spread out everywhere $n_{1}$-fold in the $z_{1}$-plane, which maps the surface $T'$ --- similarly, as is well known, in the smallest parts. To every point in the one surface there then corresponds \emph{one} point in the
+
+\origpage{133}
+other. The functions $\omega$, or the integrals of functions of $z$ branched like $T$, therefore pass over, when one introduces $z_{1}$ in place of $z$ as independent variable, into functions which have everywhere in the surface $T_{1}$ \emph{one} determinate value and the same discontinuities as the functions $\omega$ have at the corresponding points of $T$, and which are consequently integrals of functions of $z_{1}$ branched like $T_{1}$.
+
+If $s_{1}$ denotes any other function of $z$ branched like $T'$, which becomes infinite of the first order at $m_{1}$ points of $T$ and hence also of $T_{1}$, then there holds (§.~5) between $s_{1}$ and $z_{1}$ an equation of the form
+\[ F_{1}(\overset{n_{1}}{s_{1}}, \overset{m_{1}}{z_{1}}) = 0 \]
+in which $F_{1}$ is a power of an indecomposable integral function of $s_{1}$ and $z_{1}$; and if this power is the first, then all functions of $z_{1}$ branched like $T'_{1}$, and consequently all rational functions of $s$ and $z$, can be expressed rationally in $s_{1}$ and $z_{1}$ (§.~8).
+
+The equation $F(\overset{n}{s}, \overset{m}{z}) = 0$ can therefore be transformed by a rational substitution into $F_{1}(\overset{n_{1}}{s_{1}}, \overset{m_{1}}{z_{1}})$, and the latter into the former.
+
+The domains of quantities $(s, z)$ and $(s_{1}, z_{1})$ are connected to the same degree, since to every point of the one there corresponds \emph{one} point of the other. If therefore $r_{1}$ denotes the number of the cases in which $s_{1}$ and $z_{1}$ both take the same value for two different points of the domain of quantities $(s_{1}, z_{1})$, and consequently $F_{1}$, $\dfrac{\partial F_{1}}{\partial s_{1}}$ and $\dfrac{\partial F_{1}}{\partial z_{1}}$ are simultaneously equal to 0 while $\dfrac{\partial^{2}F_{1}}{\partial s_{1}^{2}} \dfrac{\partial^{2}F_{1}}{\partial z_{1}^{2}} - \left(\dfrac{\partial^{2}F_{1}}{\partial s_{1} \partial z_{1}}\right)^{2}$ is not zero, then $(n_{1}-1)(m_{1}-1) - r_{1} = p = (n-1)(m-1) - r$ must hold.
+
+\subsection*{12.}
+
+Let one now regard as belonging to One \emph{class} \emph{all irreducible algebraic equations between two variable quantities which can be transformed into one another by rational substitutions}, so that $F(s, z) = 0$ and $F_{1}(s_{1}, z_{1}) = 0$ belong to the same class if such rational functions of $s_{1}$ and $z_{1}$ can be put for $s$ and $z$ that $F(s, z) = 0$ passes over into $F_{1}(s_{1}, z_{1}) = 0$, and at the same time $s_{1}$ and $z_{1}$ are rational functions of $s$ and $z$.
+
+The rational functions of $s$ and $z$ form, considered as functions of any one of them $\zeta$, a system of equally branched algebraic functions. In this way every equation obviously leads to a class of systems of equally branched algebraic functions which can be transformed into one another by
+
+\origpage{134}
+introducing a function of the system as independent variable, and indeed all equations of One class lead to the same class of systems of algebraic functions; and conversely (§.~11) every class of such systems leads to One class of equations.
+
+If the domain of quantities $(s, z)$ is $\overline{2p+1}$-fold connected and the function $\zeta$ is infinite of the first order at $\mu$ points of it, then the number of the branch values of the equally branched functions of $\zeta$ formed by the remaining rational functions of $s$ and $z$ is $2(\mu+p-1)$, and the number of the arbitrary constants in the function $\zeta$ is $2\mu-p+1$ (§.~5). These can be determined so that $2\mu-p+1$ branch values take given values, provided these branch values are mutually independent functions of them; and indeed only in a finite number of ways, since the equations of condition are algebraic. In every class of systems of equally branched $\overline{2p+1}$-fold connected functions there is therefore a finite number of systems of $\mu$-valued functions in which $2\mu-p+1$ branch values take given values. If, on the other hand, the $2(\mu+p-1)$ branch points of a $\overline{2p+1}$-fold connected surface covering the $\zeta$-plane everywhere $\mu$-fold are arbitrarily given, then there is always (§§.~3–5) a system of algebraic functions of $\zeta$ branched like this surface. The $3p-3$ remaining branch values in those systems of equally branched $\mu$-valued functions can therefore take arbitrary values; and hence a class of systems of equally branched $\overline{2p+1}$-fold connected functions, and the class of algebraic equations belonging to it, depend on $3p-3$ continuously varying quantities, which shall be called the moduli of this class.
+
+This determination of the number of the moduli of a class of $\overline{2p+1}$-fold connected algebraic functions holds, however, only under the assumption that there are $2\mu-p+1$ branch values which are mutually independent functions of the arbitrary constants in the function $\zeta$. This assumption is met only if $p > 1$, and only then is the number of the moduli $= 3p-3$, whereas for $p = 1$ it is $= 1$. The direct investigation of them becomes difficult, however, through the manner in which the arbitrary constants are contained in $\zeta$. Let one therefore introduce, in a system of equally branched $\overline{2p+1}$-fold connected functions, in order to determine the number of the
+
+\origpage{135}
+moduli, not one of these functions as independent variable, but an everywhere finite integral of such a function.
+
+The values which the function $w$ of $z$ takes within the surface $T'$ are geometrically represented by a surface covering a finite part of the $w$-plane once or several times and mapping the surface $T'$ (similarly in the smallest parts), which shall be denoted by $S$. Since $w$ is greater by the constant $k^{(\nu)}$ on the positive side of the $\nu^{\text{th}}$ crosscut than on the negative, the boundary of $S$ consists of pairs of parallel curves which map the same part of the system of cuts bounding $T'$, and the difference in position of the corresponding points in the parallel boundary parts of $S$ which map the $\nu^{\text{th}}$ crosscut is expressed by the complex quantity $k^{(\nu)}$. The number of the simple branch points of the surface $S$ is $2p-2$, since $dw$ becomes infinitely small of the second order at $2p-2$ points of the surface $T$. The rational functions of $s$ and $z$ are then functions of $w$ which have at every point of $S$ One determinate value, varying continuously where they do not become infinite, and which take the same value at corresponding points of parallel boundary parts. They form therefore a system of equally branched and $2p$-fold periodic functions of $w$. It can now be shown (in a way similar to that of §§.~3–5) that, the $2p-2$ branch points and the $2p$ differences in position of parallel boundary parts of the surface $S$ being assumed as arbitrarily given, there always exists a system of functions branched like this surface, which take the same value at corresponding points of parallel boundary parts and are therefore $2p$-fold periodic, and which, considered as functions of one of them, form a system of equally branched $\overline{2p+1}$-fold connected algebraic functions, and consequently lead to a class of $\overline{2p+1}$-fold connected algebraic functions. In fact it follows by the \emph{Dirichlet} principle that in the surface $S$ a function of $w$ is determined, up to an additive constant, by the conditions of assuming in the interior of $S$ arbitrarily given discontinuities of the form of those of $\omega$ in $T'$, and of receiving at corresponding points of parallel boundary parts values differing by constants whose real part is given. From this one infers, similarly as in §.~5, the possibility of functions which become discontinuous only at isolated points of $S$ and take the same value at corresponding points of parallel boundary parts. If such a
+
+\origpage{136}
+function $z$ is infinite of the first order at $n$ points of $S$ and otherwise not discontinuous, then it takes every complex value at $n$ points of $S$; for if $a$ is an arbitrary constant, then $\displaystyle\int \partial \log(z-a)$, extended around $S$, is $= 0$, since the integration through parallel boundary parts cancels itself, and hence $z-a$ becomes infinitely small in $S$ just as often as infinite of the first order. The values which $z$ takes are consequently represented by a surface spread out everywhere $n$-fold over the $z$-plane, and the remaining functions of $w$, branched and periodic in the same way, therefore form a system of $\overline{2p+1}$-fold connected algebraic functions of $z$ branched like this surface, q.~e.~d.
+
+For an arbitrarily given class of $\overline{2p+1}$-fold connected algebraic functions one can now, in the
+\[ w = \alpha_{1} w_{1} + \alpha_{2} w_{2} + \cdots + \alpha_{p} w_{p} + c \]
+to be introduced as independent variable, determine the quantities $\alpha$ so that $p$ of the $2p$ moduli of periodicity take given values, and, if $p > 1$, determine $c$ so that one of the $2p-2$ branch values of the periodic functions of $w$ receives a given value. Thereby $w$ is completely determined, and hence so are the $3p-3$ remaining quantities on which the mode of branching and the periodicity of those functions of $w$ depend; and since to any values whatever of these $3p-3$ quantities there corresponds a class of $\overline{2p+1}$-fold connected algebraic functions, such a class depends on $3p-3$ independent variable quantities.
+
+If $p = 1$, then no branch point is present, and in
+\[ w = \alpha_{1} w_{1} + c \]
+the quantity $\alpha_{1}$ can be determined so that \emph{one} modulus of periodicity receives a given value, and thereby the other modulus of periodicity is determined. The number of the moduli of a class is therefore $= 1$ in this case.
+
+\subsection*{13.}
+
+According to the above principles of transformation (developed in §.~11), in order to transform an arbitrarily given equation $F(s, z) = 0$ by a rational substitution into an equation $F_{1}(\overset{n_{1}}{s_{1}}, \overset{m_{1}}{z_{1}}) = 0$ of the same class and of the lowest possible degree, one must first determine for $z_{1}$ a rational expression in $s$ and $z$, $r(s, z)$, so that $n_{1}$ becomes as small as possible, and
+
+\origpage{137}
+then $s_{1}$ equal to another rational expression $r'(s, z)$ so that $m_{1}$ becomes as small as possible and at the same time the values of $s_{1}$ belonging to an arbitrary value of $z_{1}$ do not fall apart into groups of mutually equal ones, so that $F_{1}(\overset{n_{1}}{s_{1}}, \overset{m_{1}}{z_{1}})$ cannot be a higher power of an indecomposable function.
+
+If the domain of quantities $(s, z)$ is $\overline{2p+1}$-fold connected, then the smallest value which $n_{1}$ can take is, generally speaking, $\geqq \dfrac{p}{2} + 1$ (§.~5), and the number of the cases in which $s_{1}$ and $z_{1}$ both take the same value for two different points of the domain of quantities is
+\[ r = (n_{1}-1)(m_{1}-1) - p. \]
+In a class of algebraic equations between two variable quantities the equations of lowest degree have accordingly, if their moduli satisfy no particular equations of condition, the following form:
+\[
+\begin{array}{llll}
+\text{for} & p = 1, & F(\overset{2}{s}, \overset{2}{z}) = 0, & r = 0 \\
+ & p = 2, & F(\overset{2}{s}, \overset{3}{z}) = 0, & r = 0 \\
+p > 2 & p = 2\mu-3, & F(\overset{\mu}{s}, \overset{\mu}{z}) = 0, & r = (\mu-2)^{2} \\
+ & p = 2\mu-2, & F(\overset{\mu}{s}, \overset{\mu}{z}) = 0, & r = (\mu-1)(\mu-3).
+\end{array}
+\]
+Of the coefficients of the powers of $s$ and $z$ in the integral functions $F$, $r$ must be determined as linear homogeneous functions of the rest so that $\dfrac{\partial F}{\partial s}$ and $\dfrac{\partial F}{\partial z}$ vanish simultaneously for $r$ pairs of values satisfying the equation $F = 0$. The rational functions of $s$ and $z$, considered as functions of one of them, then represent all systems of $\overline{2p+1}$-fold connected algebraic functions.
+
+\subsection*{14.}
+
+I now make use, after \emph{Jacobi} (this Journal vol.~9 no.~32 §.~8), of \emph{Abel}'s addition theorem for the integration of a system of differential equations; I shall restrict myself in this to what is needed later in this memoir.
+
+If in an everywhere finite integral $w$ of a rational function of $s$ and $z$ one introduces as independent variable a rational function of $s$ and $z$, $\zeta$, which for $m$ pairs of values of $s$ and $z$ becomes
+
+\origpage{138}
+infinite of the first order, then $\dfrac{\partial w}{\partial z}$ is a single-valued function of $\zeta$. If one denotes the $m$ values of $w$ for the same $\zeta$ by $w^{(1)}, w^{(2)}, \ldots, w^{(m)}$, then
+\[ \frac{\partial w^{(1)}}{\partial\zeta} + \frac{\partial w^{(2)}}{\partial\zeta} + \cdots + \frac{\partial w^{(m)}}{\partial\zeta} \]
+is a single-valued function of $\zeta$ whose integral remains everywhere finite, and consequently $\displaystyle\int \partial (w^{(1)} + w^{(2)} + \cdots + w^{(m)})$ is also everywhere single-valued and finite, hence constant. In a similar way one finds, if $\omega^{(1)}, \omega^{(2)}, \ldots, \omega^{(m)}$ denote the values corresponding to the same $\zeta$ of an arbitrary integral $\omega$ of a rational function of $s$ and $z$, that $\displaystyle\int \partial (\omega^{(1)} + \omega^{(2)} + \cdots + \omega^{(m)})$ is determined, up to an additive constant, from the discontinuities of $\omega$, and indeed as a sum of a rational function and of logarithms of rational functions of $\zeta$ provided with constant coefficients.
+
+By means of this theorem the following $p$ simultaneous differential equations between the $p+1$ pairs of values of $s$ and $z$ satisfying the equation $F(s, z) = 0$, $(s_{1}, z_{1})$, $(s_{2}, z_{2})$, $\ldots$, $(s_{p+1}, z_{p+1})$,
+\[ \frac{\varphi_{\pi}(s_{1}, z_{1}) \partial z_{1}}{\dfrac{\partial F(s_{1}, z_{1})}{\partial s_{1}}} + \frac{\varphi_{\pi}(s_{2}, z_{2}) \partial z_{2}}{\dfrac{\partial F(s_{2}, z_{2})}{\partial s_{2}}} + \cdots + \frac{\varphi_{\pi}(s_{p+1}, z_{p+1}) \partial z_{p+1}}{\dfrac{\partial F(s_{p+1}, z_{p+1})}{\partial s_{p+1}}} = 0 \]
+for $\pi = 1, 2, \ldots, p$, can be integrated generally or completely (complete), as shall now be shown.
+
+By these differential equations $p$ of the pairs of quantities $(s_{\mu}, z_{\mu})$ are completely determined as functions of the one still remaining, once for an arbitrary value of the latter the values of the rest are given. If therefore one determines these $p+1$ pairs of quantities as functions of \emph{one} variable quantity $\zeta$ so that for the same value 0 of this quantity they take \emph{arbitrarily} given initial values $(s_{1}^{0}, z_{1}^{0})$, $(s_{2}^{0}, z_{2}^{0})$, $\ldots$, $(s_{p+1}^{0}, z_{p+1}^{0})$ and satisfy the differential equations, then one has thereby integrated the differential equations generally. Now the quantity $\dfrac{1}{\zeta}$ can, as a single-valued and consequently rational function of $(s, z)$, always be determined so that it becomes infinite only for all or some of the $p+1$ pairs of values $(s_{\mu}^{0}, z_{\mu}^{0})$, and for these only infinite of the first order, since in the expression
+\[ \sum_{\mu=1}^{\mu=p+1} \beta_{\mu} t(s_{\mu}^{0}, z_{\mu}^{0}) + \sum_{\mu=1}^{\mu=p} \alpha_{\mu} w_{\mu} + \text{const.} \]
+the ratios of the quantities $\alpha$ and $\beta$ can always be determined so that the
+
+\origpage{139}
+moduli of periodicity all become 0. If no $\beta = 0$, the differential equations to be solved are then satisfied by the $p+1$ branches of the $\overline{p+1}$-valued equally branched functions $s$ and $z$ of $\zeta$, $(s_{1}, z_{1})$, $(s_{2}, z_{2})$, $\ldots$, $(s_{p+1}, z_{p+1})$, which for $\zeta = 0$ take the values $(s_{1}^{0}, z_{1}^{0})$, $(s_{2}^{0}, z_{2}^{0})$, $\ldots$, $(s_{p+1}^{0}, z_{p+1}^{0})$. If, however, some of the quantities $\beta$, say the last $p+1-m$, become equal to 0, then the differential equations to be solved are satisfied by the $m$ branches of the $m$-valued functions $s$ and $z$ of $\zeta$, $(s_{1}, z_{1})$, $(s_{2}, z_{2})$, $\ldots$, $(s_{m}, z_{m})$, which for $\zeta = 0$ become equal to $(s_{1}^{0}, z_{1}^{0})$, $(s_{2}^{0}, z_{2}^{0})$, $\ldots$, $(s_{m}^{0}, z_{m}^{0})$, and by constant values of the quantities $s_{m+1}, z_{m+1}$; $\ldots$; $s_{p+1}, z_{p+1}$, that is, values equal to their initial values $s_{m+1}^{0}, \ldots, z_{p+1}^{0}$. In the latter case, of the $p$ linear homogeneous equations $\displaystyle\sum_{\mu=1}^{\mu=m} \frac{\varphi_{\pi}(s_{\mu}, z_{\mu}) \partial z_{\mu}}{\frac{\partial F(s_{\mu}, z_{\mu})}{\partial s_{\mu}}} = 0$ for $\pi = 1, 2, \ldots, p$ among the quantities $\dfrac{\partial z_{\mu}}{\dfrac{\partial F(s_{\mu}, z_{\mu})}{\partial s_{\mu}}}$, $p+1-m$ are a consequence of the rest; from this there result $p+1-m$ equations of condition which, in order that this case may occur, must be fulfilled among the functions $(s_{1}, z_{1})$, $\ldots$, $(s_{m}, z_{m})$, and hence also among their initial values $(s_{1}^{0}, z_{1}^{0})$, $\ldots$, $(s_{m}^{0}, z_{m}^{0})$; and of these, therefore, as found above (§.~5), only $2m-p-1$ can be given arbitrarily.
+
+\subsection*{15.}
+
+Let now $\displaystyle\int \frac{\varphi_{\pi}(s, z) \partial z}{\frac{\partial F(s, z)}{\partial s}} + \text{const.}$, integrated through the interior of $T'$, be equal to $w_{\pi}$, and the modulus of periodicity of $w_{\pi}$ for the $\nu$th crosscut equal to $k_{\pi}^{(\nu)}$, so that the functions $w_{1}, w_{2}, \ldots, w_{p}$ of the pair of quantities $(s, z)$ change simultaneously by $k_{1}^{(\nu)}, k_{2}^{(\nu)}, \ldots, k_{p}^{(\nu)}$ upon the passage of the point $(s, z)$ from the negative to the positive side of the $\nu$th crosscut. For brevity, a system of $p$ quantities $(b_{1}, b_{2}, \ldots, b_{p})$ may be called \emph{congruent to another $(a_{1}, a_{2}, \ldots, a_{p})$ with respect to $2p$ systems of corresponding moduli} if it can be obtained from the latter by simultaneous changes of all the quantities by corresponding moduli. If the modulus of the $\pi$th quantity in the $\nu$th system is $= k_{\pi}^{(\nu)}$, then accordingly
+\[ (b_{1}, b_{2}, \ldots, b_{p}) \equiv (a_{1}, a_{2}, \ldots, a_{p}), \]
+means that $b_{\pi} = a_{\pi} + \displaystyle\sum_{\nu=1}^{\nu=2p} m_{\nu} k_{\pi}^{(\nu)}$ for $\pi = 1, 2, \ldots, p$, and $m_{1}, m_{2}, \ldots, m_{2p}$ are whole numbers.
+
+\origpage{140}
+Since $p$ arbitrary quantities $a_{1}, a_{2}, \ldots, a_{p}$ can always, and in only one way, be put into the form $a_{\pi} = \displaystyle\sum_{\nu=1}^{\nu=2p} \xi_{\nu} k_{\pi}^{(\nu)}$ so that the $2p$ quantities $\xi$ are real, and since by changing these quantities $\xi$ by whole numbers all congruent systems and only these are obtained, one obtains from every series of congruent systems one and only one if in these expressions one lets each quantity $\xi$ run continuously through all values from an arbitrary value to one greater by 1, one of the two limiting values included.
+
+This being settled, there follows from the above differential equations, or from the $p$ equations $\displaystyle\sum_{\mu=1}^{\mu=p+1} dw_{\pi}^{(\mu)} = 0$ for $\pi = 1, 2, \ldots, p$, by integration
+\[ \left(\sum w_{1}^{(\mu)}, \; \sum w_{2}^{(\mu)}, \; \ldots, \; \sum w_{p}^{(\mu)}\right) \equiv (c_{1}, c_{2}, \ldots, c_{p}), \]
+in which $c_{1}, c_{2}, \ldots, c_{p}$ are constant quantities depending on the values $(s^{0}, z^{0})$.
+
+\subsection*{16.}
+
+If one expresses $\zeta$ as the quotient of two integral functions of $s$ and $z$, $\dfrac{\chi}{\psi}$, then the pairs of quantities $(s_{1}, z_{1})$, $\ldots$, $(s_{m}, z_{m})$ are the common roots of the equations $F = 0$ and $\dfrac{\chi}{\psi} = \zeta$. Since the integral function
+\[ \chi - \zeta\psi = f(s, z) \]
+likewise vanishes, whatever $\zeta$ may be, for all pairs of values for which $\chi$ and $\psi$ vanish simultaneously, the pairs of quantities $(s_{1}, z_{1})$, $\ldots$, $(s_{m}, z_{m})$ can also be defined as common roots of the equation $F = 0$ and of an equation $f(s, z) = 0$ whose coefficients vary so that all the remaining common roots stay constant. If $m < p+1$, $\zeta$ can be represented in the form $\dfrac{\varphi^{(1)}}{\varphi^{(2)}}$ (§.~10), and $f$ in the form
+\[ \varphi^{(1)} - \zeta\varphi^{(2)} = \varphi^{(3)}. \]
+The most general values of the pairs of functions $(s_{1}, z_{1})$, $\ldots$, $(s_{p}, z_{p})$ satisfying the $p$ equations
+\[ \sum_{\mu=1}^{\mu=p} dw_{\pi}^{(\mu)} = 0 \quad \text{for } \pi = 1, 2, \ldots, p \]
+are therefore formed by $p$ common roots of the equations $F = 0$ and $\varphi = 0$ which vary so that the remaining common roots stay constant. From this there easily follows the theorem, needed later, that the problem of determining $p-1$ of the $2p-2$ pairs of quantities $(s_{1}, z_{1})$, $\ldots$, $(s_{2p-2}, z_{2p-2})$ as functions of the $p-1$ others so that the $p$ equations $\displaystyle\sum_{\mu=1}^{\mu=2p-2} dw_{\pi}^{(\mu)} = 0$ for $\pi = 1, 2, \ldots, p$
+
+\origpage{141}
+be fulfilled is solved quite generally when one takes for these $2p-2$ pairs of quantities the common roots of the equations $F = 0$ and $\varphi = 0$ other than the $r$ roots $s = \gamma_{\varrho}$, $z = \delta_{\varrho}$ (§.~6), that is, the $2p-2$ pairs of values for which $dw$ becomes infinitely small of the second order; and that this problem therefore admits only \emph{one} solution. Such pairs of quantities shall be called \emph{linked by the equation $\varphi = 0$}. In consequence of the equations $\displaystyle\sum_{1}^{2p-2} dw_{\pi}^{(\mu)} = 0$, $\left(\displaystyle\sum_{1}^{2p-2} w_{1}^{(\mu)}, \; \sum_{1}^{2p-2} w_{2}^{(\mu)}, \; \ldots, \; \sum_{1}^{2p-2} w_{p}^{(\mu)}\right)$, the sums being extended over such pairs of quantities, becomes congruent to a constant system of quantities $(c_{1}, c_{2}, \ldots, c_{p})$, in which $c_{\pi}$ depends only on the additive constant in the function $w_{\pi}$, or on the initial value of the integral expressing it.
+
+\section*{Second Division.}
+
+\subsection*{17.}
+
+For the further investigations on integrals of algebraic, $\overline{2p+1}$-fold connected functions, the consideration of a $p$-fold infinite $\vartheta$-series is of great use, i.~e. of a $p$-fold infinite series in which the logarithm of the general term is an integral function of the second degree in the indices. In this function let, for a term whose indices are $m_{1}, m_{2}, \ldots, m_{p}$, the coefficient of the square $m_{\mu}^{2}$ be equal to $a_{\mu,\mu}$, that of the double product $m_{\mu} m_{\mu'}$ equal to $a_{\mu,\mu'} = a_{\mu',\mu}$, that of the double quantity $m_{\mu}$ equal to $v_{\mu}$, and the constant term $= 0$. Let the sum of the series, extended over all whole positive or negative values of the quantities $m$, be regarded as a function of the $p$ quantities $v$ and denoted by $\vartheta(v_{1}, v_{2}, \ldots, v_{p})$, so that
+\[ \vartheta(v_{1}, v_{2}, \ldots, v_{p}) = \left(\sum_{-\infty}^{\infty}\right)^{p} e^{\left(\sum_{1}^{p}\right)^{2} a_{\mu,\mu'} m_{\mu} m_{\mu'} + 2 \sum_{1}^{p} v_{\mu} m_{\mu}}, \tag{1.} \]
+in which the summations in the exponent refer to $\mu$ and $\mu'$, and the outer summations to $m_{1}, m_{2}, \ldots, m_{p}$. In order that this series converge, the real part of $\left(\displaystyle\sum_{1}^{p}\right)^{2} a_{\mu,\mu'} m_{\mu} m_{\mu'}$ must be essentially negative, or, represented as a sum of positive or negative squares of real linear mutually independent functions of the quantities $m$, must be composed of $p$ negative squares.
+
+The function $\vartheta$ has the property that there are systems of simultaneous changes of the $p$ quantities $v$ by which $\log\vartheta$ is altered only by a linear
+
+\origpage{142}
+function of the quantities $v$, and indeed $2p$ mutually independent systems (i.~e. of which none is a consequence of the rest). For, omitting under the function sign $\vartheta$ the quantities $v$ which remain unchanged, one has for $\mu = 1, 2, \ldots, p$
+\[ \vartheta = \vartheta(v_{\mu} + \pi i) \quad \text{and} \tag{2.} \]
+\[ \vartheta = e^{2v_{\mu} + a_{\mu,\mu}} \vartheta(v_{1} + a_{1,\mu}, \; v_{2} + a_{2,\mu}, \; \ldots, \; v_{p} + a_{p,\mu}), \tag{3.} \]
+as follows at once when one changes in the series for $\vartheta$ the index $m_{\mu}$ into $m_{\mu}+1$, whereby the series, while its value remains unchanged, passes over into the expression on the right.
+
+The function $\vartheta$ is determined, up to a constant factor, by these relations and by the property of remaining everywhere finite. For in consequence of the latter property and of the relations (2.) it is a single-valued function of $e^{2v_{1}}, e^{2v_{2}}, \ldots, e^{2v_{p}}$, finite for finite $v$, and consequently expansible in a $p$-fold infinite series of the form
+\[ \left(\sum_{-\infty}^{\infty}\right)^{p} A_{m_{1}, m_{2}, \ldots, m_{p}} e^{2 \sum_{1}^{p} v_{\mu} m_{\mu}} \]
+with the constant coefficients $A$. But from the relations (3.) there follows
+\[ A_{m_{1}, \ldots, m_{\nu}+1, \ldots, m_{p}} = A_{m_{1}, \ldots, m_{\nu}, \ldots, m_{p}} e^{2 \sum_{1}^{p} a_{\mu,\nu} m_{\mu} + a_{\nu,\nu}} \]
+and consequently
+\[ A_{m_{1}, \ldots, m_{p}} = \text{const.} e^{\left(\sum_{1}^{p}\right)^{2} a_{\mu,\mu'} m_{\mu} m_{\mu'}}, \quad \text{q.~e.~d.} \]
+One may therefore use these properties of the function for its definition. The systems of simultaneous changes of the quantities $v$ by which $\log\vartheta$ is altered only by a linear function of them shall be called \emph{systems of corresponding moduli of periodicity of the independent variables} in this $\vartheta$-function.
+
+\subsection*{18.}
+
+I now substitute for the $p$ quantities $v_{1}, v_{2}, \ldots, v_{p}$ $p$ always finite integrals $u_{1}, u_{2}, \ldots, u_{p}$ of rational functions of a variable quantity $z$ and of a $\overline{2p+1}$-fold connected algebraic function $s$ of this quantity, and for the corresponding moduli of periodicity of the quantities $v$ corresponding (i.~e. occurring at the same crosscut) moduli of
+
+\origpage{143}
+periodicity of these integrals, so that $\log\vartheta$ passes over into a function of \emph{one} variable $z$, which, when $s$ and $z$ take on their previous values again after an arbitrary continuous change of $z$, is altered by linear functions of the quantities $u$.
+
+It shall first be shown that such a substitution is possible for every $\overline{2p+1}$-fold connected function $s$. For this purpose the dissection of the surface $T$ must be effected by $2p$ cuts $a_{1}, a_{2}, \ldots, a_{p}, b_{1}, b_{2}, \ldots, b_{p}$ returning into themselves, in such a way that the following conditions are fulfilled. If one chooses $u_{1}, u_{2}, \ldots, u_{p}$ so that the modulus of periodicity of $u_{\mu}$ at the cut $a_{\mu}$ is equal to $\pi i$ and at the remaining cuts $a$ is equal to 0, and if one denotes the modulus of periodicity of $u_{\mu}$ at the cut $b_{\nu}$ by $a_{\mu,\nu}$, then $a_{\mu,\nu} = a_{\nu,\mu}$ must hold, and the real part of $\displaystyle\sum_{\mu,\mu'} a_{\mu,\mu'} m_{\mu} m_{\mu'}$ must be negative for all real (whole) values of the $p$ quantities $m$.
+
+\subsection*{19.}
+
+Let the decomposition of the surface $T$ be carried out, not as hitherto by crosscuts returning into themselves only, but as follows. Let one first make a cut $a_{1}$ returning into itself which does not break the surface into pieces, and then lead a crosscut $b_{1}$ from the positive side of $a_{1}$ to the negative back to the starting point, whereupon the boundary will consist of \emph{one} piece. A third crosscut not breaking the surface into pieces can accordingly (if the surface is not yet simply connected) be led from an arbitrary point of this boundary to an arbitrary boundary point, and hence also to an earlier point of this crosscut. Let one do the latter, so that this crosscut consists of a line $a_{2}$ returning into itself and of a part $c_{1}$ preceding this line, which connects the earlier system of cuts with it. Let the following crosscut $b_{2}$ be drawn from the positive side of $a_{2}$ to the negative back to the starting point, whereupon the boundary again consists of \emph{one} piece. The further dissection can therefore, if necessary, again be effected by two cuts $a_{3}$ and $b_{3}$ beginning and ending at the same point, and a line $c_{2}$ connecting the system of the lines $a_{2}$ and $b_{2}$ with them. If this procedure is continued until the surface is simply connected, one obtains a net of cuts consisting of $p$ pairs of lines $a_{1}$ and $b_{1}$, $a_{2}$ and $b_{2}$, $\ldots$, $a_{p}$ and $b_{p}$, each pair beginning and ending at one and the same point, and of $p-1$ lines $c_{1}, c_{2}, \ldots, c_{p-1}$,
+
+\origpage{144}
+which connect each pair with the following one. Let $c_{\nu}$ run from a point of $b_{\nu}$ to a point of $a_{\nu+1}$. The net of cuts is regarded as having arisen in such a way that the $\overline{2\nu-1}$th crosscut consists of $c_{\nu-1}$ and of the line $a_{\nu}$ drawn back from the end point of $c_{\nu-1}$ to that point, and the $2\nu$th is formed by the line $b_{\nu}$ drawn from the \emph{positive} to the \emph{negative} side of $a_{\nu}$. Under this dissection the boundary of the surface consists, after an even number of cuts, of \emph{one} piece, and after an odd number, of two pieces.
+
+An everywhere finite integral $w$ of a rational function of $s$ and $z$ then takes the same value on both sides of a line $c$. For the whole boundary that arose earlier consists, as remarked, of \emph{one} piece, and in integrating along it from the one side of the line $c$ to the other, $\displaystyle\int \partial w$ is extended twice, in opposite directions, through every cut element that arose earlier. Such a function is therefore everywhere continuous in $T$ apart from the lines $a$ and $b$. Let the surface $T$ dissected by these lines be denoted by $T''$.
+
+\subsection*{20.}
+
+Let now $w_{1}, w_{2}, \ldots, w_{p}$ be mutually independent functions of this kind, and let the modulus of periodicity of $w_{\mu}$ at the crosscut $a_{\nu}$ be equal to $A_{\mu}^{(\nu)}$ and at the crosscut $b_{\nu}$ equal to $B_{\mu}^{(\nu)}$. The integral $\displaystyle\int w_{\mu} dw_{\mu'}$, extended positively around the surface $T''$, is then $= 0$, since the function under the integral sign is everywhere finite. In this integration each of the lines $a$ and $b$ is traversed twice, once in the positive and once in the negative direction, and during that integration in which it serves as the boundary of the region lying on the positive side, the value on the positive side, or $w_{\mu}^{+}$, must be taken for $w_{\mu}$, while during the other the value on the negative side, or $w_{\mu}^{-}$, must be taken. This integral is therefore equal to the sum of all the integrals $\displaystyle\int (w_{\mu}^{+} - w_{\mu}^{-}) dw_{\mu'}$ through the lines $a$ and $b$. The lines $b$ lead from the positive to the negative side of the lines $a$, and consequently the lines $a$ from the negative to the positive side of the lines $b$. The integral through the line $a_{\nu}$ is therefore $= \displaystyle\int A_{\mu}^{(\nu)} dw_{\mu'} = A_{\mu}^{(\nu)} \int dw_{\mu'} = A_{\mu}^{(\nu)} B_{\mu'}^{(\nu)}$, and the integral through the line $b_{\nu} = \displaystyle\int B_{\mu}^{(\nu)} dw_{\mu'} = -B_{\mu}^{(\nu)} A_{\mu'}^{(\nu)}$. The integral $\displaystyle\int w_{\mu} dw_{\mu'}$, extended positively around the surface $T''$, is therefore $= \displaystyle\sum_{\nu} \left(A_{\mu}^{(\nu)} B_{\mu'}^{(\nu)} - B_{\mu}^{(\nu)} A_{\mu'}^{(\nu)}\right)$, and this sum
+
+\origpage{145}
+is consequently $= 0$. This equation holds for any two of the functions $w_{1}, w_{2}, \ldots, w_{p}$ and therefore yields $\dfrac{p(p-1)}{1 \cdot 2}$ relations among their moduli of periodicity.
+
+If one takes for the functions $w$ the functions $u$, or chooses them so that $A_{\mu}^{(\nu)}$ is equal to 0 for a $\nu$ different from $\mu$ and $A_{\nu}^{(\nu)} = \pi i$, then these relations pass over into $B_{\mu'}^{\mu} \pi i - B_{\mu}^{\mu'} \pi i = 0$, or into $a_{\mu,\mu'} = a_{\mu',\mu}$.
+
+\subsection*{21.}
+
+It remains to be shown that the quantities $a$ possess the second property found necessary above.
+
+Let one put $w = \mu + \nu i$, and the modulus of periodicity of this function at the cut $a_{\nu}$ equal to $A^{(\nu)} = \alpha_{\nu} + \gamma_{\nu} i$, and at the cut $b_{\nu}$ equal to $B^{(\nu)} = \beta_{\nu} + \delta_{\nu} i$. The integral $\displaystyle\int \left(\left(\frac{\partial\mu}{\partial x}\right)^{2} + \left(\frac{\partial\mu}{\partial y}\right)^{2}\right) dT$, or $\displaystyle\int \left(\frac{\partial\mu}{\partial x}\frac{\partial\nu}{\partial y} - \frac{\partial\mu}{\partial y}\frac{\partial\nu}{\partial x}\right) dT$~*), taken through the surface $T''$, is then equal to the boundary integral $\displaystyle\int \mu\, d\nu$ extended positively around $T''$, hence equal to the sum of the integrals $\displaystyle\int (\mu^{+} - \mu^{-})\, d\nu$ through the lines $a$ and $b$. The integral through the line $a_{\nu}$ is $= \alpha_{\nu} \displaystyle\int d\nu = \alpha_{\nu}\delta_{\nu}$, the integral through the line $b_{\nu}$ equal to $\beta_{\nu} \displaystyle\int d\nu = -\beta_{\nu}\gamma_{\nu}$, and consequently
+\[ \int \left(\left(\frac{\partial\mu}{\partial x}\right)^{2} + \left(\frac{\partial\mu}{\partial y}\right)^{2}\right) dT = \sum_{\nu=1}^{\nu=p} (\alpha_{\nu}\delta_{\nu} - \beta_{\nu}\gamma_{\nu}). \]
+This sum is therefore always positive.
+
+From this there follows the property of the quantities $a$ that was to be proved, if one puts for $w$ $u_{1}m_{1} + u_{2}m_{2} + \cdots + u_{p}m_{p}$. For then $A_{\nu} = m_{\nu}\pi i$, $B_{\nu} = \displaystyle\sum_{\mu} a_{\mu,\nu} m_{\mu}$, consequently $\alpha_{\nu}$ is always $= 0$ and $\displaystyle\int \left(\left(\frac{\partial\mu}{\partial x}\right)^{2} + \left(\frac{\partial\mu}{\partial y}\right)^{2}\right) dT = -\sum \beta_{\nu}\gamma_{\nu} = -\pi \sum m_{\nu}\beta_{\nu}$, or equal to the real part of $-\pi \displaystyle\sum_{\mu,\nu} a_{\mu,\nu} m_{\mu} m_{\nu}$, which is therefore positive for all real values of the quantities $m$.
+
+\subsection*{22.}
+
+If one now puts, in the $\vartheta$-series (1.) §.~16\ednote{Printed §.~16; the series (1.) stands in §.~17. Kept as printed.}, for $a_{\mu,\mu'}$ the modulus of periodicity of the function $u_{\mu}$ at the cut $b_{\mu'}$, and, denoting arbitrary constants by $e_{1}, e_{2}, \ldots, e_{p}$, $u_{\mu} - e_{\mu}$ for $v_{\mu}$, then one obtains a function of $z$ uniquely determined at every point
+
+*) This integral expresses the area of the surface which represents, on the $w$-plane, the totality of the values that $w$ takes within $T''$.
+
+\origpage{146}
+of $T$,
+\[ \vartheta(u_{1}-e_{1}, \; u_{2}-e_{2}, \; \ldots, \; u_{p}-e_{p}), \]
+which apart from the lines $b$ is continuous and finite, and which on the positive side of the line $b_{\nu}$ is $\left(e^{-2(u_{\nu}-e_{\nu})}\right)$ times as large as on the negative, if one assigns to the functions $u$ in the lines $b$ themselves the mean of the values on both sides. At how many points of $T'$, or pairs of values of $s$ and $z$, this function becomes infinitely small of the first order can be found by considering the boundary integral $\displaystyle\int d\log\vartheta$ extended positively around $T'$; for this integral is equal to the number of these points multiplied by $2\pi i$. On the other hand this integral is equal to the sum of the integrals $\displaystyle\int (d\log\vartheta^{+} - d\log\vartheta^{-})$ through all the cut lines $a$, $b$ and $c$. The integrals through the lines $a$ and $c$ are $= 0$, but the integral through $b_{\nu}$ is equal to $-2\displaystyle\int du_{\nu} = 2\pi i$, and the sum of all therefore $= p\,2\pi i$. The function $\vartheta$ therefore becomes infinitely small of the first order at $p$ points of the surface $T'$, which may be denoted by $\eta_{1}, \eta_{2}, \ldots, \eta_{p}$.
+
+By a positive circuit of the point $(s, z)$ about one of these points, $\log\vartheta$ increases by $2\pi i$; by a positive circuit about the pair of cuts $a_{\nu}$ and $b_{\nu}$, by $-2\pi i$. In order therefore to determine the function $\log\vartheta$ uniquely everywhere, let one lead from each point $\eta$ a cut through the interior to one of the pairs of lines, from $\eta_{\nu}$ the cut $l_{\nu}$ to $a_{\nu}$ and $b_{\nu}$, and indeed to their common beginning and end point, and let one assume the function everywhere continuous in the surface $T^{*}$ thereby arising. It is then greater on the positive side of the lines $l$ by $-2\pi i$, on the positive side of the line $a_{\nu}$ by $g_{\nu} 2\pi i$, and on the positive side of the line $b_{\nu}$ by $-2(u_{\nu}-e_{\nu}) - h_{\nu} 2\pi i$, than on the negative, where $g_{\nu}$ and $h_{\nu}$ denote whole numbers.
+
+The position of the points $\eta$ and the values of the numbers $g$ and $h$ depend on the quantities $e$, and this dependence can be determined more closely in the following way. The integral $\displaystyle\int \log\vartheta\, du_{\mu}$, extended positively around $T^{*}$, is $= 0$, since the function $\log\vartheta$ remains continuous in $T^{*}$. But this integral is also equal to the sum of the integrals $\displaystyle\int (\log\vartheta^{+} - \log\vartheta^{-}) du_{\mu}$ through all the cut lines $l$, $a$, $b$ and $c$, and is found, if one denotes the value of $u_{\mu}$ at the point $\eta_{\nu}$ by $\alpha_{\mu}^{(\nu)}$, to be $= 2\pi i \left(\displaystyle\sum_{\nu} \alpha_{\mu}^{(\nu)} + h_{\mu}\pi i + \sum_{\nu} g_{\nu} a_{\nu,\mu} - e_{\mu} + k_{\mu}\right)$,
+
+\origpage{147}
+in which $k_{\mu}$ is independent of the quantities $e$, $g$, $h$ and of the position of the points $\eta$. This expression is therefore $= 0$.
+
+The quantity $k_{\mu}$ depends on the choice of the function $u_{\mu}$, which by the condition of assuming at the cut $a_{\mu}$ the modulus of periodicity $\pi i$, and at the remaining cuts $a$ the modulus of periodicity 0, is determined only up to an additive constant. If one takes for $u_{\mu}$ a function greater by the constant $c_{\mu}$, and at the same time $e_{\mu}$ greater by $c_{\mu}$, then the function $\vartheta$, and consequently the points $\eta$ and the quantities $g$, $h$, remain unchanged, but the value of $u_{\mu}$ at the point $\eta_{\nu}$ becomes $\alpha_{\mu}^{(\nu)} + c_{\mu}$. Hence $k_{\mu}$ passes over into $k_{\mu} - (p-1)c_{\mu}$ and vanishes if $c_{\mu} = \dfrac{k_{\mu}}{p-1}$ is taken.
+
+One can consequently, as shall be done in what follows, determine the additive constants in the functions $u$, or the initial values in the integrals expressing them, so that by the substitution of $u_{\mu} - \displaystyle\sum \alpha_{\mu}^{(\nu)}$ for $v_{\mu}$ in $\log\vartheta(v_{1}, \ldots, v_{p})$ one obtains a function which becomes logarithmically infinite at the points $\eta$ and which, continued continuously through $T^{*}$, becomes greater on the positive side of the lines $l$ by $-2\pi i$, of the lines $a$ by 0, and of the line $b_{\nu}$ by $-2\left(u_{\nu} - \displaystyle\sum_{1}^{p} \alpha_{\nu}^{(\mu)}\right)$, than on the negative. For the determination of these initial values easier means will present themselves later than the above integral expression for $k_{\mu}$.
+
+\subsection*{23.}
+
+If one puts $(u_{1}, u_{2}, \ldots, u_{p}) \equiv (\alpha_{1}^{(p)}, \alpha_{2}^{(p)}, \ldots, \alpha_{p}^{(p)})$ with respect to the $2p$ systems of moduli of the functions $u$ (§.~15), and hence
+\[ (v_{1}, v_{2}, \ldots, v_{p}) \equiv \left(-\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \; -\sum_{1}^{p-1} \alpha_{2}^{(\nu)}, \; \ldots, \; -\sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right), \]
+then $\vartheta = 0$. If conversely $\vartheta = 0$ for $v_{\mu} = r_{\mu}$, then $(r_{1}, r_{2}, \ldots, r_{p})$ is congruent to a system of quantities of the form $\left(-\displaystyle\sum_{1}^{p-1} \alpha_{1}^{(\nu)} \; -\sum_{1}^{p-1} \alpha_{2}^{(\nu)}, \; \ldots, \; -\sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right)$. For if one puts $v_{\mu} = u_{\mu} - \alpha_{\mu}^{(p)} + r_{\mu}$, choosing $\eta_{p}$ arbitrarily, then the function $\vartheta$ becomes infinitely small of the first order, besides at $\eta_{p}$, at $p-1$ further points, and if one denotes these by $\eta_{1}, \eta_{2}, \ldots, \eta_{p-1}$, then $\left(-\displaystyle\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \; -\sum_{1}^{p-1} \alpha_{2}^{(\nu)}, \; \ldots, \; -\sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right) \equiv (r_{1}, r_{2}, \ldots, r_{p})$.
+
+The function $\vartheta$ remains unchanged if one changes all the quantities $v$ into their opposites; for if one changes in the series for $\vartheta(v_{1}, v_{2}, \ldots, v_{p})$ all the indices $m$ into their opposites, whereby the
+
+\origpage{148}
+value of the series remains unchanged, since $-m_{\nu}$ runs through the same values as $m_{\nu}$, then $\vartheta(v_{1}, v_{2}, \ldots, v_{p})$ passes over into $\vartheta(-v_{1}, -v_{2}, \ldots, -v_{p})$.
+
+If one now assumes the points $\eta_{1}, \eta_{2}, \ldots, \eta_{p-1}$ arbitrarily, then $\vartheta\left(-\displaystyle\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \ldots, -\sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right) = 0$, and consequently, since the function $\vartheta$ is even as just remarked, also $\vartheta\left(\displaystyle\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \ldots, \sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right) = 0$. The $p-1$ points $\eta_{p}, \eta_{p+1}, \ldots, \eta_{2p-2}$ can therefore be determined so that
+\[ \left(\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \ldots, \sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right) \equiv \left(-\sum_{p}^{2p-2} \alpha_{1}^{(\nu)}, \ldots, -\sum_{p}^{2p-2} \alpha_{p}^{(\nu)}\right) \]
+and consequently
+\[ \left(\sum_{1}^{2p-2} \alpha_{1}^{(\nu)}, \ldots, \sum_{1}^{2p-2} \alpha_{p}^{(\nu)}\right) \equiv (0, 0, \ldots, 0) \]
+holds. The position of the last $p-1$ points then depends on the position of the first $p-1$ in such a way that under an arbitrary continuous change of the latter $\displaystyle\sum_{1}^{2p-2} d\alpha_{\pi}^{(\nu)} = 0$ for $\pi = 1, 2, \ldots, p$; and consequently (§.~16) the points $\eta$ are such $2p-2$ points as those for which a $dw$ becomes infinitely small of the second order; or, if one denotes the value of the pair of quantities $(s, z)$ at the point $\eta_{\nu}$ by $(\sigma_{\nu}, \zeta_{\nu})$, then $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{2p-2}, \zeta_{2p-2})$ are pairs of values linked by the equation $\varphi = 0$ (§.~16).
+
+\emph{With the initial values of the integrals $u$ chosen here, we therefore have}
+\[ \left(\sum_{1}^{2p-2} u_{1}^{(\nu)}, \ldots, \sum_{1}^{2p-2} u_{p}^{(\nu)}\right) \equiv (0, 0, \ldots, 0) \]
+\emph{when the summations are extended over all the common roots of the equation $F = 0$ and of the equation $c_{1}\varphi_{1} + c_{2}\varphi_{2} + \cdots + c_{p}\varphi_{p} = 0$ other than the pairs of quantities $(\gamma_{\varrho}, \delta_{\varrho})$ (§.~6.), the constant quantities $c$ being arbitrary.}
+
+If $\varepsilon_{1}, \varepsilon_{2}, \ldots, \varepsilon_{m}$ are $m$ points at which a rational function $\xi$ of $s$ and $z$, which becomes infinite of the first order $m$ times, takes the same value, and if $u_{\pi}^{(\mu)}, s_{\mu}, z_{\mu}$ are the values of $u_{\pi}, s, z$ at the point $\varepsilon_{\mu}$, then (§.~15) $\left(\displaystyle\sum_{1}^{m} u_{1}^{(\mu)}, \sum_{1}^{m} u_{2}^{(\mu)}, \ldots, \sum_{1}^{m} u_{p}^{(\mu)}\right)$ is congruent to a constant system of quantities $(b_{1}, b_{2}, \ldots, b_{p})$, i.~e. one independent of the value of the quantity $\xi$; and the position of the remaining points can then be determined, for any arbitrary position of one point $\varepsilon$, so that $\left(\displaystyle\sum_{1}^{m} u_{1}^{(\mu)}, \ldots, \sum_{1}^{m} u_{p}^{(\mu)}\right) \equiv (b_{1}, \ldots, b_{p})$. One can therefore, if $m = p$,
+
+\origpage{149}
+bring $(u_{1}-b_{1}, \ldots, u_{p}-b_{p})$, and, if $m < p$, $\left(u_{1} - \displaystyle\sum_{1}^{p-m} \alpha_{1}^{(\nu)} - b_{1}, \ldots, u_{p} - \sum_{1}^{p-m} \alpha_{p}^{(\nu)} - b_{p}\right)$, into the form $\left(-\displaystyle\sum_{1}^{p-1} \alpha_{1}^{(\nu)}, \ldots, -\sum_{1}^{p-1} \alpha_{p}^{(\nu)}\right)$ for any arbitrary position of the point $(s, z)$ and of the $p-m$ points $\eta$, by letting one of the points $\varepsilon$ coincide with $(s, z)$; and consequently
+\[ \vartheta\left(u_{1} - \sum_{1}^{p-m} \alpha_{1}^{(\nu)} - b_{1}, \ldots, u_{p} - \sum_{1}^{p-m} \alpha_{p}^{(\nu)} - b_{p}\right) \]
+is equal to 0 for any values whatever of the pair of quantities $(s, z)$ and of the $p-m$ pairs of quantities $(\sigma_{\nu}, \zeta_{\nu})$.
+
+\subsection*{24.}
+
+From the investigation of §.~22 there follows as a corollary that an arbitrarily given system of quantities $(e_{1}, \ldots, e_{p})$ is always congruent to one and only one system of quantities of the form $\left(\displaystyle\sum_{1}^{p} \alpha_{1}^{(\nu)}, \ldots, \sum_{1}^{p} \alpha_{p}^{(\nu)}\right)$, provided the function $\vartheta(u_{1}-e_{1}, \ldots, u_{p}-e_{p})$ does not vanish identically; for the points $\eta$ must then be the $p$ points at which this function becomes 0. If, however, $\vartheta(u_{1}^{(p)}-e_{1}, \ldots, u_{p}^{(p)}-e_{p})$ vanishes for every value of $(s_{p}, z_{p})$, then one may put $(u_{1}^{(p)}-e_{1}, \ldots, u_{p}^{(p)}-e_{p}) \equiv \left(-\displaystyle\sum_{1}^{p-1} u_{1}^{(\nu)}, \ldots, -\sum_{1}^{p-1} u_{p}^{(\nu)}\right)$ (§.~23), and hence for every value of the pair of quantities $(s_{p}, z_{p})$ the pairs of quantities $(s_{1}, z_{1})$, $\ldots$, $(s_{p-1}, z_{p-1})$ can be determined so that
+\[ \left(\sum_{1}^{p} u_{1}^{(\nu)}, \ldots, \sum_{1}^{p} u_{p}^{(\nu)}\right) \equiv (e_{1}, \ldots, e_{p}) \]
+and consequently, under a continuous change of $(s_{p}, z_{p})$, $\displaystyle\sum_{1}^{p} du_{\pi}^{(\nu)} = 0$ for $\pi = 1, 2, \ldots, p$. The $p$ pairs of quantities $(s_{\nu}, z_{\nu})$ are therefore $p$ roots, different from the pairs of quantities $(\gamma_{\varrho}, \delta_{\varrho})$, of an equation $\varphi = 0$ whose coefficients vary so that the remaining $p-2$ roots stay constant. If one denotes the values of $u_{\pi}$ for these $p-2$ pairs of values of $s$ and $z$ by $u_{\pi}^{(p+1)}, u_{\pi}^{(p+2)}, \ldots, u_{\pi}^{2p-2}$, then $\left(\displaystyle\sum_{1}^{2p-2} u_{1}^{(\nu)}, \ldots, \sum_{1}^{2p-2} u_{p}^{(\nu)}\right) \equiv (0, 0, \ldots, 0)$, and consequently $(e_{1}, \ldots, e_{p}) \equiv \left(-\displaystyle\sum_{p+1}^{2p-2} u_{1}^{(\nu)}, \ldots, -\sum_{p+1}^{2p-2} u_{p}^{(\nu)}\right)$. Conversely, if this congruence holds, then
+\[ \vartheta(u_{1}^{(p)}-e_{1}, \ldots, u_{p}^{(p)}-e_{p}) = \vartheta\left(\sum_{p}^{2p-2} u_{1}^{(\nu)}, \ldots, \sum_{p}^{2p-2} u_{p}^{(\nu)}\right) = 0. \]
+
+\origpage{150}
+\emph{An arbitrarily given system of quantities $(e_{1}, \ldots, e_{p})$ is therefore congruent to only one system of quantities of the form $\left(\displaystyle\sum_{1}^{p} \alpha_{1}^{(\nu)}, \ldots, \sum_{1}^{p} \alpha_{p}^{(\nu)}\right)$ if it is not congruent to a system of quantities of the form $\left(-\displaystyle\sum_{1}^{p-2} \alpha_{1}^{(\nu)}, \ldots, -\sum_{1}^{p-2} \alpha_{p}^{(\nu)}\right)$, and to infinitely many if this is the case.}
+
+Since $\vartheta\left(u_{1} - \displaystyle\sum_{1}^{p} \alpha_{1}^{(\mu)}, \ldots, u_{p} - \sum_{1}^{p} \alpha_{p}^{(\mu)}\right) = \vartheta\left(\displaystyle\sum_{1}^{p} \alpha_{1}^{(\mu)} - u_{1}, \ldots, \sum_{1}^{p} \alpha_{p}^{(\mu)} - u_{p}\right)$, $\vartheta$ is a quite similar function of each of the $p$ pairs of quantities $(\sigma_{\mu}, \zeta_{\mu})$ as it is of $(s, z)$. This function of $(\sigma_{\mu}, \zeta_{\mu})$ becomes $= 0$ for the pair of values $(s, z)$ and for the $p-1$ points linked by the equation $\varphi = 0$ to the remaining $p-1$ pairs of quantities $(\sigma, \zeta)$. For if one denotes the value of $u_{\pi}$ at these points by $\beta_{\pi}^{(1)}, \beta_{\pi}^{(2)}, \ldots, \beta_{\pi}^{p-1}$, then
+\[ \left(\sum_{1}^{p} \alpha_{1}^{(\mu)}, \ldots, \sum_{1}^{p} \alpha_{p}^{(\mu)}\right) \equiv \left(\alpha_{1}^{(\mu)} - \sum_{1}^{p-1} \beta_{1}^{(\nu)}, \ldots, \alpha_{p}^{(\mu)} - \sum_{1}^{p-1} \beta_{p}^{(\nu)}\right) \]
+and consequently $\vartheta = 0$ when $\eta_{\mu}$ coincides with one of these points or with the point $(s, z)$.
+
+\subsection*{25.}
+
+From the properties of the function $\vartheta$ developed so far there results the expression of $\log\vartheta$ by integrals of algebraic functions of $(s, z)$, $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{p}, \zeta_{p})$.
+
+The quantity $\log\vartheta\left(u_{1}^{(2)} - \displaystyle\sum_{1}^{p} \alpha_{1}^{(\mu)}, \ldots\right) - \log\vartheta\left(u_{1}^{(1)} - \displaystyle\sum_{1}^{p} \alpha_{1}^{(\mu)}, \ldots\right)$ is, considered as a function of $(\sigma_{\mu}, \zeta_{\mu})$, a function of the position of the point $\eta_{\mu}$ which becomes discontinuous at the point $\varepsilon_{1}$ like $-\log(\zeta_{\mu}-z_{1})$ and at the point $\varepsilon_{2}$ like $\log(\zeta_{\mu}-z_{2})$, and which is greater on the positive side of a line to be drawn from $\varepsilon_{1}$ to $\varepsilon_{2}$ by $2\pi i$, and on the positive side of the line $b_{\nu}$ by $2(u_{\nu}^{(1)} - u_{\nu}^{(2)})$, than on the negative, but remains everywhere continuous apart from the lines $b$ and the line joining $\varepsilon_{1}$ and $\varepsilon_{2}$. If now $\pi^{(\mu)}(\varepsilon_{1}, \varepsilon_{2})$ denotes any function of $(\sigma_{\mu}, \zeta_{\mu})$ which is discontinuous in the same way apart from the lines $b$, and which on the one side of such a line is likewise greater by a constant than on the other, then it differs (§.~3) from the former only by a quantity independent of $(\sigma_{\mu}, \zeta_{\mu})$, and consequently it differs from $\displaystyle\sum_{1}^{p} \pi^{(\mu)}(\varepsilon_{1}, \varepsilon_{2})$ only by a quantity independent of all the quantities $(\sigma, \zeta)$, and hence depending only on $(s_{1}, z_{1})$ and $(s_{2}, z_{2})$. $\pi^{(\mu)}(\varepsilon_{1}, \varepsilon_{2})$ expresses the value, for $(s, z) = (\sigma_{\mu}, \zeta_{\mu})$, of a function $\pi(\varepsilon_{1}, \varepsilon_{2})$ of §.~4 whose moduli of periodicity at the cuts $a$ are equal to 0. If one changes this function
+
+\origpage{151}
+by the constant $c$, then $\displaystyle\sum_{1}^{p} \pi^{(\mu)}(\varepsilon_{1}, \varepsilon_{2})$ changes by $pc$; one can therefore, as shall be done in what follows, determine the additive constant in the function $\pi(\varepsilon_{1}, \varepsilon_{2})$, or the initial value in the integral of the third kind representing it, so that $\log\vartheta^{(2)} - \log\vartheta^{(1)} = \displaystyle\sum_{1}^{p} \pi^{(\mu)}(\varepsilon_{1}, \varepsilon_{2})$. Since $\vartheta$ depends on each of the pairs of quantities $(\sigma, \zeta)$ in a similar way as on $(s, z)$, the change of $\log\vartheta$, when any one of the pairs of quantities $(s, z)$, $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{p}, \zeta_{p})$ undergoes a finite change while the rest remain constant, can be expressed by a sum of functions $\pi$. Obviously one can therefore, by changing the individual pairs of quantities $(s, z)$, $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{p}, \zeta_{p})$ one after another, express $\log\vartheta$ by a sum of functions $\pi$ together with $\log\vartheta(0, 0, \ldots, 0)$, or with the value of $\log\vartheta$ for any other system of values. The determination of $\log\vartheta(0, 0, \ldots, 0)$ as a function of the $3p-3$ moduli of the system of rational functions of $s$ and $z$ (§.~12) requires considerations similar to those applied by \emph{Jacobi} in his works on elliptic functions for the determination of $\Theta(0)$. One can arrive at it by expressing, with the help of the equations
+\[ 4\frac{\partial\vartheta}{\partial a_{\mu,\mu}} = \frac{\partial^{2}\vartheta}{\partial v_{\mu}^{2}} \quad \text{and} \quad 2\frac{\partial\vartheta}{\partial a_{\mu,\mu'}} = \frac{\partial^{2}\vartheta}{\partial v_{\mu} \partial v_{\mu'}}, \]
+when $\mu$ is different from $\mu'$, the differential quotients of $\log\vartheta$ with respect to the quantities $a$ in
+\[ d\log\vartheta = \sum \frac{\partial \log\vartheta}{\partial a_{\mu,\mu'}} da_{\mu,\mu'} \]
+by integrals of algebraic functions. For the carrying out of this computation, however, a more detailed theory of the functions which satisfy a linear differential equation with algebraic coefficients seems necessary, which I intend to furnish shortly according to the principles applied here.
+
+If $(s_{2}, z_{2})$ differs infinitely little from $(s_{1}, z_{1})$, then $\pi(\varepsilon_{1}, \varepsilon_{2})$ passes over into $\partial z_{1} t(\varepsilon_{1})$, in which $t(\varepsilon_{1})$ is an integral of the second kind of a rational function of $s$ and $z$, which becomes discontinuous at $\varepsilon_{1}$ like $\dfrac{1}{z-z_{1}}$ and has at the cuts $a$ the modulus of periodicity 0; and it follows that the modulus of periodicity of such an integral at the cut $b_{\nu}$ is equal to $2\dfrac{\partial u_{\nu}^{(1)}}{\partial z_{1}}$, and that the constant of integration can be determined so that the sum of the
+
+\origpage{152}
+values of $t(\varepsilon_{1})$ for the $p$ pairs of values $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{p}, \zeta_{p})$ becomes equal to $\dfrac{\partial \log\vartheta^{(1)}}{\partial z_{1}}$. Then $\dfrac{\partial \log\vartheta^{(1)}}{\partial \zeta_{\mu}}$ is equal to the sum of the values of $t(\eta_{\mu})$ for the $p-1$ pairs of values linked by the equation $\varphi = 0$ to the $p-1$ pairs of quantities $(\sigma, \zeta)$ different from $(\sigma_{\mu}, \zeta_{\mu})$, and for the pair of values $(s, z)$; and one obtains for
+\[ \frac{\partial \log\vartheta^{(1)}}{\partial z_{1}} \partial z_{1} + \sum_{1}^{p} \frac{\partial \log\vartheta^{(1)}}{\partial \zeta_{\mu}} d\zeta_{\mu} = d\log\vartheta^{(1)}, \]
+an expression which \emph{Weierstraß} has given for the case in which $s$ is only a two-valued function of $z$ (this Journal vol.~47 p.~300 form.~35).
+
+The properties of $\pi(\varepsilon_{1}, \varepsilon_{2})$ and $t(\varepsilon_{1})$ as functions of $(s_{1}, z_{1})$ and $(s_{2}, z_{2})$ follow from the equations
+\[ \pi(\varepsilon_{1}, \varepsilon_{2}) = \frac{1}{p}\left(\log\vartheta(u_{1}^{(2)} - p u_{1}, \ldots) - \log\vartheta(u_{1}^{(1)} - p u_{1}, \ldots)\right) \]
+and
+\[ t(\varepsilon_{1}) = \frac{1}{p} \frac{\partial \log\vartheta(u_{1}^{(1)} - p u_{1}, \ldots)}{\partial z_{1}}, \]
+which are contained as special cases in the above expressions for $\log\vartheta^{(2)} - \log\vartheta^{(1)}$ and $\dfrac{\partial \log\vartheta^{(1)}}{\partial z_{1}}$.
+
+\subsection*{26.}
+
+We shall now treat the problem of representing algebraic functions of $z$ as quotients of two products of equally many functions $\vartheta(u_{1}-e_{1}, \ldots)$ and powers of the quantities $e^{u}$.
+
+Such an expression acquires constant factors at the passages of $(s, z)$ across the crosscuts, and these must be roots of unity if it is to depend algebraically on $z$ and hence, under continuous continuation, to take only a finite number of values for the same $z$. If all these factors are $\mu$th roots of unity, then the $\mu$th power of the expression is a single-valued and consequently rational function of $s$ and $z$.
+
+Conversely it can easily be shown that every algebraic function $r$ of $z$ which, continued continuously within the whole surface $T'$, everywhere takes only \emph{one} determinate value and acquires a constant factor upon the crossing of a crosscut, can be expressed in manifold ways as the quotient of two products of $\vartheta$-functions and powers of the quantities $e^{u}$. Let one denote a value of $u_{\mu}$ for $r = \infty$ by $\beta_{\mu}$ and for $r = 0$ by $\gamma_{\mu}$, and take $\log r$, drawing from every point where $r$ becomes infinite of
+
+\origpage{153}
+the first order a line through the interior of $T'$ to one point where $r$ becomes infinitely small of the first order, and assuming it everywhere continuous in $T'$ apart from these lines. If then $\log r$ is greater on the positive side of the line $a_{\nu}$ by $g_{\nu} 2\pi i$, and on the positive side of the line $b_{\nu}$ by $-h_{\nu} 2\pi i$, than on the negative, then by considering the boundary integral $\displaystyle\int \log r\, du_{\mu}$ there results
+\[ \sum \gamma_{\mu} - \sum \beta_{\mu} = g_{\mu}\pi i + \sum_{\nu} h_{\nu} a_{\mu,\nu} \]
+for $\mu = 1, 2, \ldots, p$, in which $g_{\nu}$ and $h_{\nu}$ must, by what was remarked above, be rational numbers, and the sums on the left-hand side of the equation are to be extended over all the points where $r$ becomes infinitely small or infinitely large of the first order, a point where $r$ becomes infinitely small or infinitely large of a higher order being regarded as consisting of several such points (§.~2). If these points are given except for $p$ of them, then these $p$ can always, and generally speaking in only one way, be determined so that the $2p$ factors $e^{g_{\nu} 2\pi i}$, $e^{-h_{\nu} 2\pi i}$ take given values (§§.~15, 24).
+
+If one now, in the expression
+\[ \frac{P}{Q} e^{-2 \sum h_{\nu} u_{\nu}}, \]
+in which $P$ and $Q$ are products of equally many functions $\vartheta\left(u_{1} - \displaystyle\sum \alpha_{1}^{(n)}, \ldots\right)$\ednote{The superscript is printed as a roman $(n)$; elsewhere Riemann writes $(\nu)$. Kept as printed.} with the same $(s, z)$ and different $(\sigma, \zeta)$, substitutes the pairs of values of $s$ and $z$ for which $r$ becomes infinite for pairs of quantities $(\sigma, \zeta)$ in the $\vartheta$-functions of the denominator, and the pairs of values for which $r$ vanishes for pairs of quantities $(\sigma, \zeta)$ in the $\vartheta$-functions of the numerator, and assumes the remaining pairs of quantities $(\sigma, \zeta)$ to be the same in the denominator and in the numerator, then the logarithm of this expression agrees with $\log r$ as regards the discontinuities in the interior of $T'$, and upon the crossing of the lines $a$ and $b$ it changes, like $\log r$, only by purely imaginary quantities constant along these lines; it therefore differs from $\log r$, by the \emph{Dirichlet} principle, only by a constant, and the expression itself differs from $r$ only by a constant factor. In this substitution none of the $\vartheta$-functions may of course vanish identically, for every value of $z$. This would happen (§.~23) if all the pairs of values for which a single-valued function of $(s, z)$ vanishes were substituted for pairs of quantities $(\sigma, \zeta)$ in one and the same $\vartheta$-function.
+
+\origpage{154}
+\subsection*{27.}
+
+As the quotient of \emph{two} $\vartheta$-functions, multiplied by powers of the quantities $e^{u}$, a single-valued or rational function of $(s, z)$ can accordingly not be represented. But all functions $r$ which take several values for the same pair of values of $s$ and $z$, and which become infinite of the first order for only $p$ or fewer pairs of values, are representable in this form, and they comprise all algebraic functions of $z$ representable in this form. One obtains, apart from a constant factor, each of them, and each only once, if in
+\[ \frac{\vartheta\left(v_{1} - g_{1}\pi i - \displaystyle\sum_{\nu} h_{\nu} a_{1,\nu}, \ldots\right)}{\vartheta(v_{1}, \ldots, v_{p})} e^{-2 \sum_{\nu} v_{\nu} h_{\nu}} \]
+one puts for $h_{\nu}$ and $g_{\nu}$ rational proper fractions, and $u_{\nu} - \displaystyle\sum_{1}^{p} \alpha_{\nu}^{(\mu)}$ for $v_{\nu}$.
+
+This quantity is at the same time an algebraic function of each of the quantities $\zeta$, and the principles developed (in the preceding §.) fully suffice to express it algebraically by the quantities $z$, $\zeta_{1}$, $\ldots$, $\zeta_{p}$.
+
+In fact: as a function of $(s, z)$ it takes, when continued continuously through the whole surface $T'$, everywhere \emph{one} determinate value; it becomes infinite of the first order for the pairs of values $(\sigma_{1}, \zeta_{1})$, $\ldots$, $(\sigma_{p}, \zeta_{p})$; and at the cut $a_{\nu}$, upon the passage from the positive to the negative side, it acquires the factor $e^{g_{\nu} 2\pi i}$, and at the cut $b_{\nu}$ the factor $e^{-h_{\nu} 2\pi i}$; and every other function of $(s, z)$ fulfilling the same conditions differs from it only by a factor independent of $(s, z)$. As a function of $(\sigma_{\mu}, \zeta_{\mu})$ it takes, when continued continuously through the whole surface $T'$, everywhere \emph{one} determinate value; it becomes infinite of the first order for the pair of values $(s, z)$ and for the $p-1$ pairs of values $(\sigma_{1}^{(\mu)}, \zeta_{1}^{(\mu)})$, $\ldots$, $(\sigma_{p-1}^{(\mu)}, \zeta_{p-1}^{(\mu)})$ linked by the equation $\varphi = 0$ to the remaining $p-1$ pairs of quantities $(\sigma, \zeta)$; and at the cut $a_{\nu}$ it acquires the factor $e^{-g_{\nu} 2\pi i}$, at the cut $b_{\nu}$ the factor $e^{h_{\nu} 2\pi i}$; and every other function of $(\sigma_{\mu}, \zeta_{\mu})$ fulfilling the same conditions differs from it only by a factor independent of $(\sigma_{\mu}, \zeta_{\mu})$. If therefore one determines an algebraic function of $z$, $\zeta_{1}$, $\ldots$, $\zeta_{p}$
+\[ f((s, z); \; (\sigma_{1}, \zeta_{1}), \; \ldots, \; (\sigma_{p}, \zeta_{p})) \]
+so that as a function of each of these quantities it possesses the same properties, then it differs from the former only by a factor independent of all the
+
+\origpage{155}
+quantities $z$, $\zeta_{1}$, $\ldots$, $\zeta_{p}$, and hence becomes $= Af$, if $A$ denotes this factor. To determine this factor, let one express in $f$ the pairs of quantities $(\sigma, \zeta)$ different from $(\sigma_{\mu}, \zeta_{\mu})$ by $(\sigma_{1}^{(\mu)}, \zeta_{1}^{(\mu)})$, $\ldots$, $(\sigma_{p-1}^{(\mu)}, \zeta_{p-1}^{(\mu)})$, whereby it passes over into
+\[ g((\sigma_{\mu}, \zeta_{\mu}); \; (s, z), \; (\sigma_{1}^{(\mu)}, \zeta_{1}^{(\mu)}), \; \ldots, \; (\sigma_{p-1}^{(\mu)}, \zeta_{p-1}^{(\mu)})) \]
+obviously one then obtains the inverse value of the function to be represented, and hence an expression which must be $= \dfrac{1}{Af}$, if in $Ag$ one substitutes for $(\sigma_{\mu}, \zeta_{\mu})$ the pair of quantities $(s, z)$, and for the pairs of quantities $(s, z)$, $(\sigma_{1}^{(\mu)}, \zeta_{1}^{(\mu)})$, $\ldots$, $(\sigma_{p-1}^{(\mu)}, \zeta_{p-1}^{(\mu)})$ those pairs of values of $(s, z)$ for which the function to be represented becomes zero, and hence $f = 0$. From this there results $A^{2}$, and hence $A$ up to the sign, which can be found by direct consideration of the $\vartheta$-series in the expression to be represented.
+
+Göttingen, 1857.
+
+\end{document}

@@ -1,0 +1,101 @@
+# Term renderings for riemann-1857-abelsche-functionen, applied consistently across the whole
+# translation. Format: `terms: {German as printed: English}` — the shape pipeline/translate.py
+# reads with --glossary, so the Tier-3 path reproduces the same renderings as this Tier-2 pass.
+#
+# Two principles behind the choices below:
+#   * Where the print uses TWO different German words, the translation uses two different English
+#     words, even when modern usage would merge them (einwerthig/einändrig, irreductibel/
+#     unzerfällbar, Aufsatz/Abhandlung). Collapsing them would destroy a distinction the author
+#     actually draws.
+#   * Period-appropriate terminology over modern equivalents (ganze Function = "integral function",
+#     not "polynomial"; Periodicitätsmodul = "modulus of periodicity", not "period").
+
+terms:
+  # --- the surface and its dissection ---
+  Fläche: surface
+  Blatt: sheet
+  Ebene: plane
+  ausgebreitet: spread out
+  zusammenhangend: connected
+  einfach zusammenhangend: simply connected
+  fach zusammenhangend: -fold connected      # as in "$\overline{2p+1}$fach zusammenhangend"
+  Querschnitt: crosscut
+  Schnitt: cut
+  Schnittnetz: net of cuts
+  Zerschneidung: dissection
+  zerschneiden: to dissect
+  Begrenzung: boundary
+  Umlauf: circuit
+  Uebergang: passage
+  Ueberschreiten: crossing
+  Inhalt: area                               # p. 145 footnote, "den Inhalt der Fläche"
+
+  # --- branching ---
+  Verzweigungspunkt: branch point
+  einfacher Verzweigungspunkt: simple branch point
+  Verzweigungswerth: branch value
+  Verzweigungsart: mode of branching
+  gleichverzweigt: equally branched
+  verzweigt: branched
+  Windungspunkt: winding point
+  winden: to wind
+  Zweig: branch
+  Fortsetzung: continuation
+  fortsetzen: to continue
+
+  # --- functions and their values ---
+  Function: function
+  ganze Function: integral function           # period term, as in abel-1826-unmoeglichkeit
+  rationale Function: rational function
+  einwerthig: single-valued                   # one VALUE at each place of T (15 uses, 10 pages)
+  einändrig: unbranched                       # one CONTINUATION, no alternative: 5 uses, all on
+                                              # pp. 124 and 126. The two words name different
+                                              # properties, not shades of one — see the
+                                              # translation's .tex header for the evidence
+  eindeutig: uniquely determined              # 2 uses, both p. 146; a third distinct word
+  werthig: -valued                            # as in "$\mu$werthig"
+  Derivirte: derivative
+  Unstetigkeit: discontinuity
+  stetig: continuous
+  allenthalben: everywhere
+  unendlich klein von der ersten Ordnung: infinitely small of the first order
+  Ordnung: order
+  Grad: degree
+  Wurzel: root
+  Coefficient: coefficient
+  irreductibel: irreducible                   # of an equation
+  unzerfällbar: indecomposable                # of a function; the print keeps the two apart
+
+  # --- quantities ---
+  Größe: quantity
+  veränderliche Größe: variable quantity
+  unabhängig veränderliche Größe: independent variable
+  Größenpaar: pair of quantities
+  Größengebiet: domain of quantities
+  Werthenpaar: pair of values
+  Anfangswerth: initial value
+  willkührlich: arbitrary
+  verknüpft: linked                           # "durch die Gleichung φ = 0 verknüpfte Werthenpaare"
+
+  # --- integrals, periods, theta ---
+  Integrale erster Gattung: integrals of the first kind
+  Integrale zweiter Gattung: integrals of the second kind
+  Integrale dritter Gattung: integrals of the third kind
+  Periodicitätsmodul: modulus of periodicity
+  zusammengehörige Periodicitätsmoduln: corresponding moduli of periodicity
+  Umkehrungsfunctionen: inversion functions
+  Reihe: series
+  Potenzreihe: power series
+  Stellenzeiger: indices                      # of a term of the p-fold theta series
+  Bedingungsgleichung: equation of condition
+  Substitution: substitution
+  Klasse: class
+  Moduln: moduli
+
+  # --- text apparatus ---
+  Abtheilung: Division
+  Abhandlung: memoir
+  Aufsatz: paper                              # kept distinct from Abhandlung
+  Lehrsatz: theorem
+  vollständig: complete                       # Riemann glosses this himself: "vollständig (complete)"
+  w. z. b. w.: q.e.d.                         # was zu beweisen war

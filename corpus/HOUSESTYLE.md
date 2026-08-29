@@ -48,6 +48,35 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R25 — A heading may contain math but never a text-mode brace group; the site now typesets
+### heading math (presentation)
+*2026-08-27.* Riemann's 1857 memoir (`riemann-1857-abelsche-functionen`) is the first corpus work
+whose **headings name a symbol** — the descriptive titles inside §§. 4–5, "Allenthalben endliche
+Functionen $\omega$. (Integrale erster Gattung.)" and two more. Previewing it (the R18 rule) showed
+those headings rendering as literal `$\omega$` on the page while every formula around them typeset
+correctly. Cause: `texToHtml` built heading HTML with `inlineText` alone, without the `wrapMath`
+call that paragraphs and figure captions get, and the reader typesets **lazily**, observing only
+the `span.math` / `span.mathblock` wrappers `wrapMath` creates (`mathWatch` in
+`site/src/pages/works/[id].astro`). Unwrapped math is therefore never reached. **Fix: headings run
+through `wrapMath` too**, exactly like figure captions — one call per heading branch in
+`site/src/lib/tex.js`. A heading with no math is unaffected (nothing to wrap). Covered by
+`site/src/lib/tex.test.mjs` (`npm test`, run in CI). This follows the precedent of R14, R17 and
+R19, where the site was extended so a new work's markup renders, rather than the work being bent
+around the site.
+
+The complementary half of this ruling is a **limit that stands**: a heading's argument is matched
+with `[^}]*` (both in the block-promotion pass and in the heading match), so it **may not contain a
+text-mode brace group** — `\section*{Theorie der \emph{Abel}'schen Functionen.}` ends the heading at
+`\emph{Abel}` and leaks `'schen Functionen.}` into the following paragraph, silently, since the file
+is still valid LaTeX. This is the same failure R18 records for `\ednote`/`\uncertain`. Math is safe
+because `$...$` spans are stashed before those regexes run, which is why `$\omega$` in a heading is
+fine and `\emph{...}` is not. In practice a heading needs no `\emph` anyway: R20 already rules that
+a heading's own face carries its prominence and is not additionally emphasised, so the Riemann title
+is written `\section*{Theorie der Abel'schen Functionen.}` even though the print italicises the name.
+`pipeline/houselint.py` today flags this class of nested brace only inside `\ednote`/`\uncertain`;
+**extending it to headings is still open** and would have caught the title above in CI instead of by
+eye.
+
 ### R24 — When a print uses TWO emphasis devices (italic and letterspacing), both collapse to
 ### `\emph`, and the distinction is recorded in the file header instead (presentation)
 *2026-08-25.* R20 mapped German letterspacing (Sperrung) to `\emph` for a print — Abel's 1826 paper
