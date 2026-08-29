@@ -1,0 +1,117 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker and \emph span is
+% reproduced unchanged; only the prose is translated — including the prose set INSIDE math via a
+% text insert, which is translated like any other prose (HOUSESTYLE R21): the display on p. 374
+% reads "für" in the original and "for" here. The two occurrences of "const." are identical in
+% both languages and stand unchanged. pipeline/texcompare.py ignores the CONTENT of such an
+% insert while still checking that each is present, unmoved, and that all surrounding math is
+% identical — so the "für"→"for" change is invisible to it and was verified by hand.
+%
+% TERMINOLOGY. Applied from corpus/roch-1865-anzahl-constanten/glossary.yaml, which deliberately
+% mirrors the Riemann 1857 glossary for every shared term — Roch works entirely inside Riemann's
+% apparatus, so a reader moving from the memoir to this note meets the same English words:
+% Fläche = "surface", Querschnitt = "crosscut", Periodicitätsmodul = "modulus of periodicity",
+% Integrale zweiter Gattung = "integrals of the second kind", ganze Function = "integral
+% function", Abhandlung = "memoir", Grösse = "quantity".
+%
+% Two words Roch uses for the SAME quintic are kept apart, because he does: "Curve fünfter
+% Ordnung" (p. 375) is rendered "curve of the fifth order" and "Curve fünften Grades" (same page)
+% "curve of the fifth degree". Likewise "specielle Integrale" = "particular integrals" stays
+% distinct from the general expression he contrasts them with.
+%
+% ONE UNCERTAIN RENDERING, flagged in the text with \uncertain: p. 376, "die ganzen Integrale
+% zweiter Gattung". "ganz" here most likely contrasts with the "speciellen Integrale" of p. 372
+% — the whole integrals as against the particular ones — and is rendered "whole"; but it can also
+% carry the period sense that gives "ganze Function" = "integral function" (the reading the
+% glossary uses for the OTHER occurrence, "jede ganze Function zweiten Grades" on p. 375). A
+% reviewer should settle which Roch means. The two occurrences are deliberately NOT rendered by
+% the same English word, since on p. 375 "ganze Function" is unambiguously the period term.
+%
+% GERMAN COMPOSITOR'S SLIPS ARE NOT CARRIED ACROSS. The three printer's errors recorded in
+% original.tex have nothing to be faithful to in English and are rendered by the correct word:
+% p. 374 "eine eine Folge" (the article set twice) reads simply "a consequence"; p. 375 "d. h"
+% (missing abbreviation point) reads "i.~e."; p. 375 "wilkürliche" (one l) reads "arbitrary".
+% They remain recorded in the transcription and in provenance.yaml.
+%
+% WORD ORDER AT A PAGE BREAK. German puts the participle before its noun and the verb late, so two
+% of Roch's sentences cannot keep their order in English. At the 373/374 turn the original breaks
+% inside "die ... einfach zusammenhängend gemachte | Fläche T) erstreckt, ist gleich"; the English
+% completes the parenthesis on p. 373 and opens p. 374 with "is equal to". At the 375/376 turn
+% "wenn es q ... Functionen [display] giebt" becomes "when there are q functions ... [display]
+% which vanish". The \origpage markers themselves stay exactly where they are, so the alignment
+% is unchanged.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{372}
+\section*{On the number of arbitrary constants in algebraic functions.}
+
+(By Mr.~\emph{G.~Roch} in Halle.)
+
+If $s$ is an algebraic function of $z$ defined by the equation $F(s, z) = 0$, then, according to \emph{Riemann} (see his memoir on \emph{Abel}ian functions, vol.~54. of this Journal), every algebraic function $s'$ of $z$ branched like $s$ can be expressed rationally through $s$ and $z$. If the function $s'$ becomes infinite of the first order at $m$ points of the surface $T$, which gives the mode of branching, then by §.~5. of the memoir mentioned it contains $m-p+1$ arbitrary constants. Already the condition, investigated loc.~cit., for the existence of functions that become infinite at fewer than $p+1$ points shows that the number of constants actually present can be a greater one. But this can also take place when $m$ is greater than $p$. If, for example, $s'$ is the quotient of two functions $\varphi$, then $s'$ becomes infinite at the $2p-2$ points at which the denominator is equal to zero (see §.~10. of the memoir cited), and contains as many arbitrary constants as the function forming the numerator, namely $p$, while the number $m-p+1$ is in the present case equal to $p-1$. If on the other hand $\varphi_{1}$, $\varphi_{2}$, $\psi_{1}$, $\psi_{2}$ are such functions $\varphi$ as become infinitely small of the second order at $p-1$ points, whose square roots \emph{Riemann} calls Abelian functions, then there is a certain number of expressions $\sqrt{\dfrac{\varphi_{1}\psi_{1}}{\varphi_{2}\psi_{2}}}$ which are rational functions of $s$ and $z$; these contain in fact $p-1$ constants in linear fashion, a theorem which originates with \emph{Riemann} and for which a proof is contained in the following exact determination of the number of constants.
+
+The most general expression for an integral of the second kind which becomes infinite of the first order at $m$ points $\varepsilon$ is
+\[ v = \beta_{1} t_{1} + \cdots + \beta_{m} t_{m} + \alpha_{1} w_{1} + \cdots + \alpha_{p} w_{p} + \text{const.} \]
+(Cf. §.~5. of \emph{Riemann}'s memoir.) Here by $t_{1} \ldots t_{m}$ are to be understood particular integrals of the second kind which become infinite respectively at the points $\varepsilon_{1} \ldots \varepsilon_{m}$ like $\dfrac{1}{\sigma_{1}} \cdots \dfrac{1}{\sigma_{m}}$, when $\sigma_{k}$ denotes a quantity
+
+\origpage{373}
+that is called infinitely small of the first order at $\varepsilon_{k}$. In order that $v$ pass over into an algebraic function $s'$, all the moduli of periodicity of $v$ must vanish. From this there result $2p$ linear equations of condition between the $m+p$ constants $\beta$ and $\alpha$, so that $m-p+1$ arbitrary constants remain. Only if these $2p$ equations are dependent on one another does $s'$ contain more than $m-p+1$ constants.
+
+In order to investigate this dependence, we take for the integrals $w_{1} \ldots w_{p}$ that remain finite the particular ones
+\[ u_{1} = \int \frac{\varphi_{1}(s, z)\,dz}{\dfrac{\partial F}{\partial s}}, \quad \ldots \quad u_{p} = \int \frac{\varphi_{p}(s, z)\,dz}{\dfrac{\partial F}{\partial s}}, \]
+which \emph{Riemann} introduces as arguments of the $\vartheta$-function. The integral $u_{\mu}$ has at the crosscut $(a_{\mu})$ the modulus of periodicity $\pi i$, at the remaining $p-1$ crosscuts $(a)$ the moduli of periodicity zero, and at the crosscut $(b_{\nu})$ the modulus of periodicity $a_{\mu, \nu}$. In the neighbourhood of the points $\varepsilon$ the expansion holds
+\[ u_{\mu} = u_{\mu}(\varepsilon_{k}) + a_{\mu}^{(k)} \sigma_{k} + b_{\mu}^{(k)} \sigma_{k}^{2} + \cdots. \tag{a.} \]
+In general, i.~e. when $\varepsilon_{1} \ldots \varepsilon_{m}$ neither lie at infinity nor are branch points,
+\[ a_{\mu}^{(k)} = \frac{\varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}. \]
+
+We may think of the integrals of the second kind $t_{1} \ldots t_{m}$ as so chosen that their moduli of periodicity vanish at the $p$ crosscuts $(a)$. For suppose $t_{k}$ had at the crosscuts $(a_{1})$, $\ldots$ $(a_{p})$ the moduli of periodicity $\tau_{k,1}$, $\ldots$ $\tau_{k,p}$; then one has only to introduce $t_{k} = t'_{k} + \dfrac{1}{\pi i}(\tau_{k,1} u_{1} + \cdots + \tau_{k,p} u_{p})$ in order that $t'_{k}$ possess the stated property. Then the conditions for the moduli of periodicity of the expression
+\[ s' = \beta_{1} t_{1} + \cdots + \beta_{m} t_{m} + \alpha_{1} u_{1} + \cdots + \alpha_{p} u_{p} + \text{const.} \]
+to vanish at the crosscuts $(a)$ reduce to the equations
+\[ \alpha_{1} \pi i = 0, \quad \alpha_{2} \pi i = 0, \quad \ldots \quad \alpha_{p} \pi i = 0. \]
+The constants $\beta$ that remain over are subject only to the $p$ equations of condition for the vanishing of the moduli of periodicity at the crosscuts $(b)$, which are to be developed in what follows.
+
+The whole integral $\displaystyle\int u_{\mu}\,dv$, extended through the boundary of the surface $T'$ (that is, the surface $T$ made simply connected by the crosscuts $(a)$ and $(b)$),
+
+\origpage{374}
+is equal to $\displaystyle\int (\underset{+}{u_{\mu}} - \underset{-}{u_{\mu}})\,dv$, where by $\underset{+}{u_{\mu}}$ and $\underset{-}{u_{\mu}}$ are understood the values of $u_{\mu}$ on the positive and on the negative sides of the crosscuts, and the latter integral is extended positively only through the positive sides of all the crosscuts. This gives as the value of the integral, analogously as in §.~20. of \emph{Riemann}'s memoir:
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu}, \]
+where $A$ and $B$ denote the moduli of periodicity of $v$ at the crosscuts $(a)$ and $(b)$. --- On the other hand the integral $\displaystyle\int u_{\mu}\,dv$ is equal to the sum of the integrals extended around the points $\varepsilon$, where, if one of the points is an $(n-1)$fold branch point, the curve around which one integrates about this point must make $n$ complete circuits in order to be closed. In this way one arrives at the equation
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu} = -2\pi i \sum_{k=1\ldots m} \beta_{k} a_{\mu}^{(k)}, \tag{1.} \]
+which, since $\mu$ can take the values $1, 2, \ldots p$, represents $p$ equations and contains the dependence of the moduli of periodicity $A$ and $B$ on the position of the points $\varepsilon$.
+
+In what follows let it be assumed, for the sake of simplicity, that all the points $\varepsilon$ lie in the finite region and are not branch points. Then equation (1.) passes over into
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu} = -2\pi i \sum_{k=1\ldots m} \frac{\beta_{k} \varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}. \tag{2.} \]
+By means of this formula the $p$ equations mentioned above, $B_{1} = 0$, $B_{2} = 0$, $\ldots B_{p} = 0$, transform, since the moduli of periodicity $A$ are in the present case equal to zero, into
+\[ \sum_{k=1\ldots m} \frac{\beta_{k} \varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}} = 0 \quad \text{for} \quad \mu = 1, 2 \ldots p. \]
+
+Of these $p$ equations one becomes a consequence of the rest always and only when $p$ coefficients $c_{1}, \ldots c_{p}$ in $\varphi = c_{1} \varphi_{1}(s, z) + \cdots + c_{p} \varphi_{p}(s, z)$ can be so determined that $\dfrac{\varphi(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}$ is equal to zero for each of the $m$ values of $k$, or when the $m$ points $\varepsilon$ are such that at them, besides the $r$ coincident and mutually cancelling branch points, a function $\varphi$ can vanish.
+
+\origpage{375}
+Likewise two or more of the $p$ equations can follow from the rest, and one can state the general result in the following way:
+
+\emph{If a function $s'$ becomes infinitely great of the first order at $m$ points, and if at these $m$ points $q$ functions $\dfrac{\varphi(s, z)}{\dfrac{\partial F}{\partial s}}$ can vanish, between which no linear equation with constant coefficients subsists, then $s'$ contains the number $m-p+1+q$ of arbitrary constants.}
+
+Let, for example, $F(s, z) = 0$ be the equation of a curve of the fifth order. Then in general, i.~e. when the curve possesses no double point, $p = 6$; the integrals remaining finite are:
+\[ \int \frac{as^{2} + bsz + cz^{2} + ds + ez + f}{\dfrac{\partial F}{\partial s}}\ dz, \]
+thus every integral function of the second degree is a function $\varphi$. The function
+\[ s' = \frac{as + bz + c}{a_{1}s + b_{1}z + c_{1}} \]
+becomes infinite at the 5 points at which the straight line $a_{1}s + b_{1}z + c_{1} = 0$ cuts the given curve. At these 5 points 3 mutually linearly independent functions $\varphi$ vanish, namely: $a_{1}s + b_{1}z + c_{1}$, $(a_{1}s + b_{1}z + c_{1})s$ and $(a_{1}s + b_{1}z + c_{1})z$. Hence $s'$ contains the number $5 - 6 + 1 + 3 = 3$ of arbitrary constants, in fact the $a$, $b$, $c$.
+
+If the given curve of the fifth degree has a double point, then $p = 5$. Then, if $g = 0$, $h = 0$ denote two straight lines passing through the double point, only $(a_{1}s + b_{1}z + c_{1})g$ and $(a_{1}s + b_{1}z + c_{1})h$ are functions $\varphi$ that are zero at the 5 points at which $s'$ is infinite, and $s'$ again contains $5 - 5 + 1 + 2 = 3$ constants.
+
+If the points $\varepsilon$ lie partly at infinity, then one must ask after the number of functions $\varphi$ that are of lower than the highest possible degree and vanish at those points $\varepsilon$ which lie in the finite region.
+
+For a quite general position of the points $\varepsilon$ the rule about the number of constants can only be framed thus: if $c_{1} \ldots c_{p}$ are constants to be determined, and if the integrals remaining finite are represented by the series $(a)$, then an algebraic function which is infinite of the first order at $m$ points contains $m-p+1+q$ arbitrary constants, when there are $q$ functions not linearly dependent on one another
+
+\origpage{376}
+\[ c_{1} a_{1} + \cdots + c_{p} a_{p}, \qquad a_{\nu} = \frac{du_{\nu}(s, z)}{d\sigma} \]
+which vanish at the points $\varepsilon$.
+
+For the determination of the functions that become infinite of higher order at individual points, one may either let points $\varepsilon$ in the foregoing fall together, or carry out the considerations independently by using the coefficients of higher powers of $\sigma$ in the series $(a)$.
+
+The equations (1.) contain results for the \uncertain{whole} integrals of the second kind which had already been given earlier by \emph{Weierstrass} for hyperelliptic integrals.
+
+Halle, 1864.
+
+\end{document}

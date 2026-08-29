@@ -1,0 +1,81 @@
+# Term renderings for roch-1865-anzahl-constanten, applied consistently across the translation.
+# Format: `terms: {German as printed: English}` — the shape pipeline/translate.py reads with
+# --glossary, so the Tier-3 path reproduces the same renderings as this Tier-2 pass.
+#
+# Roch works entirely inside Riemann's apparatus and reuses his vocabulary, so this glossary
+# deliberately MIRRORS corpus/riemann-1857-abelsche-functionen/glossary.yaml for every shared
+# term: a reader moving from the 1857 memoir to this note should meet the same English words.
+# Only the entries Roch adds, or spells differently, carry a comment.
+
+terms:
+  # --- the surface and its dissection (all as in the Riemann glossary) ---
+  Fläche: surface
+  Querschnitt: crosscut
+  Begrenzung: boundary
+  einfach zusammenhängend: simply connected   # Roch spells it zusammenhängend, Riemann zusammenhangend
+  Umlauf: circuit
+  erstreckt: extended                          # "durch die Begrenzung ... erstreckt"
+
+  # --- branching ---
+  Verzweigungspunkt: branch point
+  Verzweigungsart: mode of branching
+  verzweigt: branched
+  gleichverzweigt: equally branched
+
+  # --- functions ---
+  Function: function
+  algebraische Function: algebraic function
+  rationale Function: rational function
+  ganze Function: integral function            # period term, as in the Riemann glossary
+  Zähler: numerator
+  Nenner: denominator
+  Quadratwurzel: square root
+  Ausdruck: expression
+  Ordnung: order                               # "Curve fünfter Ordnung", "unendlich erster Ordnung"
+  Grad: degree                                 # "Curve fünften Grades" — Roch uses BOTH words for
+                                               # the same quintic, so the two are kept apart
+  unendlich erster Ordnung: infinite of the first order
+  unendlich klein erster Ordnung: infinitely small of the first order
+  unendlich gross: infinitely great
+  verschwinden: to vanish
+
+  # --- integrals and periods ---
+  Integrale zweiter Gattung: integrals of the second kind
+  specielle Integrale: particular integrals    # Roch's contrast with the general expression
+  endlich bleibende Integrale: integrals remaining finite
+  Periodicitätsmodul: modulus of periodicity
+  Entwickelung: expansion
+  Reihe: series
+  Betrag: value                                # "als Betrag des Integrales"
+
+  # --- constants and conditions ---
+  Constante: constant
+  willkürlich: arbitrary                       # Roch spells it willkürlich, Riemann willkührlich
+  Coefficient: coefficient
+  Bedingungsgleichung: equation of condition
+  abhängig: dependent
+  linear unabhängig: linearly independent
+  Lage: position
+  Grösse: quantity                             # Roch prints Grösse, Riemann Größe
+
+  # --- plane-curve vocabulary Roch adds ---
+  Curve: curve
+  Doppelpunkt: double point
+  Gerade: straight line
+  schneiden: to cut
+
+  # --- text apparatus ---
+  Abhandlung: memoir                           # as in the Riemann glossary
+  Satz: theorem
+  a. a. O.: loc. cit.                          # am angeführten Orte
+  d. h.: i. e.                                 # matches the Riemann translation
+  z. B.: for example                           # spelled out; reads better than "e. g." here
+  Vergl.: Cf.
+  in der That: in fact
+  beziehlich: respectively
+  Andrerseits: on the other hand
+  Statt finden: to take place
+  selbstständig: independently
+  theilweise: partly
+  im Endlichen: in the finite region
+  im Unendlichen: at infinity

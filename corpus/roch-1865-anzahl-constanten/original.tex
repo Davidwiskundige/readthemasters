@@ -1,0 +1,142 @@
+% Faithful transcription — original German. Transcribed from the original first printing in
+% Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 64 (Berlin: G. Reimer,
+% 1865), printed pages 372–376: G. Roch, "Ueber die Anzahl der willkürlichen Constanten in
+% algebraischen Functionen".
+% Scan: EuDML http://eudml.org/doc/147954, served by the Göttinger Digitalisierungszentrum (GDZ)
+% as GDZPPN002152622 (volume PPN243919689_0064).
+%
+% \origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: the running heads
+% ("Roch, Anzahl der Constanten in algebraischen Functionen."), the signature line at the foot of
+% p. 373 ("Journal für Mathematik Bd. LXIV. Heft 4." / "49"), the rule under the byline, and the
+% printer's rule that closes the paper. The paper has no footnotes and no figures.
+%
+% PAGE BREAKS INSIDE A WORD. Two of the four page turns fall at a word boundary; two split a word
+% by end-of-line hyphenation ("be-|deutet" at 372/373, "ver-|schwinden" at 374/375). Since
+% hyphenation is dropped, the split word is written whole and kept on the page where it BEGINS,
+% and \origpage marks the first complete word of the next page.
+%
+% TYPEFACE AND ORTHOGRAPHY. The prose is set in Antiqua (roman), not Fraktur. There is no long-s
+% and no eszett ligature anywhere in this print: it sets "ss" throughout, and that is what is
+% transcribed — dass, muss, lässt, ausser, grösser, Grösse (checked at high magnification, each is
+% two round s). So, unlike the German works transcribed from earlier prints, this file contains no
+% ß — HOUSESTYLE R19 has nothing to convert here. The 1865 spelling is kept faithful (R12):
+% Function, Constanten, Coefficienten, definirte, citirte, integrirt, repraesentirt, reduciren,
+% giebt, Hülfe, beziehlich, Andrerseits, selbstständig, Entwickelung, theilweise, Werthe.
+% Literal UTF-8 is used for ä ö ü (R18).
+%
+% EMPHASIS (HOUSESTYLE R20/R24). The print's one emphasis device is italic, used for personal
+% names (Riemann, Weierstrass) and for the paper's one stated result — the whole italic sentence
+% on p. 375 that is the Riemann-Roch theorem. Both are rendered \emph. Two boundary readings, each
+% checked by zooming into the scan:
+%   * p. 372 line 2 sets "\emph{Abel}sche" — only the NAME is italic, the suffix upright — but
+%     eleven lines later "Abelsche Functionen" is set wholly UPRIGHT. Both are reproduced as
+%     printed rather than regularized.
+%   * "\emph{Riemann}schen" likewise italicizes only the name.
+% The italic theorem on p. 375 carries math inside the \emph run; that is safe, because the site
+% stashes $...$ spans before matching \emph with [^}]*. No text-mode brace group may go inside it
+% — the R18 limit, which applies to \emph for the same reason.
+%
+% NOTATION — the author's own, followed symbol by symbol:
+%   * The two sides of a crosscut are marked by a sign printed BELOW the symbol on p. 374 — a u
+%     with a "+" set under it, and one with a "−" — and are set with \underset:
+%     \underset{+}{u_{\mu}}. They occur both in the displayed integral and in the prose that
+%     explains it.
+%   * A sum's range is printed under the sign as an unpunctuated run, "ν=1…p" and "k=1…m", and is
+%     kept in that form: \sum_{\nu=1\ldots p}, \sum_{k=1\ldots m}.
+%   * The print sets inline fractions at FULL height (period practice), so inline fractions here
+%     are \dfrac; a fraction that is the operand of a large operator uses \frac under
+%     \displaystyle, per HOUSESTYLE R2/R16. The recurring denominator ∂F/∂s is itself printed at
+%     full height inside the larger fraction, so it stays \dfrac there.
+%   * Equation numbers are printed at the LEFT as "(a.)", "(1.)", "(2.)"; house style sets them at
+%     the right with \tag, keeping the author's own label including its period (R5).
+%   * The lettered display (a.) is a series, referred to later as "die Reihen (a)"; the letter is
+%     the author's own tag, not an editorial addition.
+%
+% APPARENT PRINTER'S ERRORS, reproduced faithfully (HOUSESTYLE R4). None of them misleads a reader
+% of the MATHEMATICS, so none is given an \ednote popover (R10); each was confirmed by zooming
+% into the scan and is listed here and in provenance.yaml for the reviewer:
+%   p. 374 "eine eine Folge der übrigen" — the article is set twice (dittography).
+%   p. 375 "d. h wenn" — the second abbreviation point is missing (p. 373 has "d. h." in full).
+%   p. 375 "wilkürliche Constanten" — one l, against "willkürliche(n)" five times elsewhere.
+% Also kept as printed: "mu = 1, 2 ... p" and "c_1, ... c_p" lack the comma before the ellipsis
+% that the same lists carry elsewhere in the paper.
+%
+% ONE BROKEN SORT, not an error and not flagged in the text: in the display
+% "alpha_1 pi i = 0, alpha_2 pi i = 0, ... alpha_p pi i = 0" on p. 373, the pi of the THIRD term
+% has lost its left leg in the impression and prints as something closer to a tau. It is read as
+% pi, matching the two terms beside it and the pi i that runs through the rest of the paper.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{372}
+\section*{Ueber die Anzahl der willkürlichen Constanten in algebraischen Functionen.}
+
+(Von Herrn \emph{G.~Roch} in Halle.)
+
+Ist $s$ eine durch die Gleichung $F(s, z) = 0$ definirte algebraische Function von $z$, so kann nach \emph{Riemann} (s. dessen Abhandlung über \emph{Abel}sche Functionen, Band 54. dieses Journals) jede wie $s$ verzweigte algebraische Function $s'$ von $z$ rational durch $s$ und $z$ ausgedrückt werden. Wird die Function $s'$ in $m$ Punkten der Fläche $T$, welche die Verzweigungsart angiebt, unendlich erster Ordnung, so enthält dieselbe nach §.~5. der erwähnten Abhandlung $m-p+1$ willkürliche Constanten. Schon die a.~a.~O. untersuchte Bedingung der Existenz von Functionen, die in weniger als $p+1$ Punkten unendlich werden, zeigt, dass die Anzahl der wirklich vorhandenen Constanten eine grössere sein kann. Dies kann aber auch Statt finden, wenn $m$ grösser als $p$ ist. Ist z.~B. $s'$ der Quotient zweier Functionen $\varphi$, so wird $s'$ in den $2p-2$ Punkten unendlich, in denen der Nenner gleich Null ist (s. §.~10. der citirten Abhandlung), und enthält so viele willkürliche Constanten, als die den Zähler bildende Function, nämlich $p$, während die Zahl $m-p+1$ im vorliegenden Falle gleich $p-1$ ist. Sind dagegen $\varphi_{1}$, $\varphi_{2}$, $\psi_{1}$, $\psi_{2}$ solche Functionen $\varphi$, welche in $p-1$ Punkten unendlich klein zweiter Ordnung werden, deren Quadratwurzeln \emph{Riemann} Abelsche Functionen nennt, so giebt es eine gewisse Anzahl von Ausdrücken $\sqrt{\dfrac{\varphi_{1}\psi_{1}}{\varphi_{2}\psi_{2}}}$, welche rationale Functionen von $s$ und $z$ sind; diese enthalten in der That $p-1$ Constanten in linearer Weise, ein Satz, der von \emph{Riemann} herrührt und für welchen ein Beweis in der folgenden genauen Bestimmung der Constanten-Anzahl mit enthalten ist.
+
+Der allgemeinste Ausdruck eines Integrals zweiter Gattung, welches in $m$ Punkten $\varepsilon$ unendlich erster Ordnung wird, ist
+\[ v = \beta_{1} t_{1} + \cdots + \beta_{m} t_{m} + \alpha_{1} w_{1} + \cdots + \alpha_{p} w_{p} + \text{const.} \]
+(Vergl. §.~5. der \emph{Riemann}schen Abhandlung.) Hierbei sind unter $t_{1} \ldots t_{m}$ specielle Integrale zweiter Gattung zu verstehen, welche beziehlich in den Punkten $\varepsilon_{1} \ldots \varepsilon_{m}$ unendlich werden wie $\dfrac{1}{\sigma_{1}} \cdots \dfrac{1}{\sigma_{m}}$, wenn $\sigma_{k}$ eine Grösse bedeutet,
+
+\origpage{373}
+die in $\varepsilon_{k}$ unendlich klein erster Ordnung genannt wird. Damit $v$ in eine algebraische Function $s'$ übergehe, müssen sämmtliche Periodicitätsmoduln von $v$ verschwinden. Hieraus ergeben sich $2p$ lineare Bedingungsgleichungen zwischen den $m+p$ Constanten $\beta$ und $\alpha$, so dass $m-p+1$ willkürliche Constanten bleiben. Nur, wenn diese $2p$ Gleichungen von einander abhängig sind, enthält $s'$ mehr als $m-p+1$ Constanten.
+
+Um diese Abhängigkeit zu untersuchen, nehmen wir für die endlich bleibenden Integrale $w_{1} \ldots w_{p}$ die speciellen
+\[ u_{1} = \int \frac{\varphi_{1}(s, z)\,dz}{\dfrac{\partial F}{\partial s}}, \quad \ldots \quad u_{p} = \int \frac{\varphi_{p}(s, z)\,dz}{\dfrac{\partial F}{\partial s}}, \]
+welche \emph{Riemann} als Argumente der $\vartheta$-Function einführt. Das Integral $u_{\mu}$ hat an dem Querschnitte $(a_{\mu})$ den Periodicitätsmodul $\pi i$, an den übrigen $p-1$ Querschnitten $(a)$ die Periodicitätsmoduln Null, und an dem Querschnitt $(b_{\nu})$ den Periodicitätsmodul $a_{\mu, \nu}$. In der Nähe der Punkte $\varepsilon$ gilt die Entwickelung
+\[ u_{\mu} = u_{\mu}(\varepsilon_{k}) + a_{\mu}^{(k)} \sigma_{k} + b_{\mu}^{(k)} \sigma_{k}^{2} + \cdots. \tag{a.} \]
+Im Allgemeinen, d.~h. wenn $\varepsilon_{1} \ldots \varepsilon_{m}$ weder im Unendlichen liegen noch Verzweigungspunkte sind, ist
+\[ a_{\mu}^{(k)} = \frac{\varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}. \]
+
+Die Integrale zweiter Gattung $t_{1} \ldots t_{m}$ können wir uns so gewählt denken, dass ihre Periodicitätsmoduln an den $p$ Querschnitten $(a)$ verschwinden. Denn gesetzt, $t_{k}$ hätte an den Querschnitten $(a_{1})$, $\ldots$ $(a_{p})$ die Periodicitätsmoduln $\tau_{k,1}$, $\ldots$ $\tau_{k,p}$, so hat man nur $t_{k} = t'_{k} + \dfrac{1}{\pi i}(\tau_{k,1} u_{1} + \cdots + \tau_{k,p} u_{p})$ einzuführen, damit $t'_{k}$ die angegebene Eigenschaft besitze. Dann reduciren sich die Bedingungen dafür, dass die Periodicitätsmoduln des Ausdruckes
+\[ s' = \beta_{1} t_{1} + \cdots + \beta_{m} t_{m} + \alpha_{1} u_{1} + \cdots + \alpha_{p} u_{p} + \text{const.} \]
+an den Querschnitten $(a)$ verschwinden, auf die Gleichungen
+\[ \alpha_{1} \pi i = 0, \quad \alpha_{2} \pi i = 0, \quad \ldots \quad \alpha_{p} \pi i = 0. \]
+Die übrig bleibenden Constanten $\beta$ sind nur noch den $p$ Bedingungsgleichungen für das Verschwinden der Periodicitätsmoduln an den Querschnitten $(b)$ unterworfen, welche im Folgenden entwickelt werden sollen.
+
+Das ganze Integral $\displaystyle\int u_{\mu}\,dv$ durch die Begrenzung der Fläche $T'$ (d.~i. die durch die Querschnitte $(a)$ und $(b)$ einfach zusammenhängend gemachte
+
+\origpage{374}
+Fläche $T$) erstreckt, ist gleich $\displaystyle\int (\underset{+}{u_{\mu}} - \underset{-}{u_{\mu}})\,dv$, unter $\underset{+}{u_{\mu}}$ und $\underset{-}{u_{\mu}}$ die Werthe von $u_{\mu}$ auf den positiven und auf den negativen Seiten der Querschnitte verstanden und letzteres Integral positiv nur durch die positiven Seiten aller Querschnitte erstreckt. Dies ergiebt als Betrag des Integrales, analog wie in §.~20. der \emph{Riemann}schen Abhandlung:
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu}, \]
+wo $A$ und $B$ die Periodicitätsmoduln von $v$ an den Querschnitten $(a)$ und $(b)$ bezeichnen. --- Andrerseits ist das Integral $\displaystyle\int u_{\mu}\,dv$ gleich der Summe der um die Punkte $\varepsilon$ herum erstreckten Integrale, wobei, wenn einer der Punkte ein $(n-1)$facher Verzweigungspunkt ist, die Curve, über welche um diesen Punkt herum integrirt wird, $n$ ganze Umläufe machen muss, um geschlossen zu sein. Auf diese Weise gelangt man zu der Gleichung
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu} = -2\pi i \sum_{k=1\ldots m} \beta_{k} a_{\mu}^{(k)}, \tag{1.} \]
+welche, da $\mu$ die Werthe $1, 2, \ldots p$ annehmen kann, $p$ Gleichungen repraesentirt und die Abhängigkeit der Periodicitätsmoduln $A$ und $B$ von der Lage der Punkte $\varepsilon$ enthält.
+
+Im Folgenden sei der Einfachheit wegen vorausgesetzt, dass alle Punkte $\varepsilon$ im Endlichen liegen und nicht Verzweigungspunkte sind. Dann geht die Gleichung (1.) über in
+\[ \pi i B_{\mu} - \sum_{\nu=1\ldots p} A_{\nu} a_{\mu, \nu} = -2\pi i \sum_{k=1\ldots m} \frac{\beta_{k} \varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}. \tag{2.} \]
+Mit Hülfe dieser Formel verwandeln sich die oben erwähnten $p$ Gleichungen $B_{1} = 0$, $B_{2} = 0$, $\ldots B_{p} = 0$, da die Periodicitätsmoduln $A$ im vorliegenden Falle gleich Null sind, in
+\[ \sum_{k=1\ldots m} \frac{\beta_{k} \varphi_{\mu}(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}} = 0 \quad \text{für} \quad \mu = 1, 2 \ldots p. \]
+
+Von diesen $p$ Gleichungen wird immer und auch nur dann eine eine Folge der übrigen, wenn sich $p$ Coefficienten $c_{1}, \ldots c_{p}$ in $\varphi = c_{1} \varphi_{1}(s, z) + \cdots + c_{p} \varphi_{p}(s, z)$ so bestimmen lassen, dass $\dfrac{\varphi(s_{k}, z_{k})}{\dfrac{\partial F(s_{k}, z_{k})}{\partial s_{k}}}$ gleich Null ist für jeden der $m$ Werthe von $k$, oder wenn die $m$ Punkte $\varepsilon$ solche sind, in denen ausser den $r$ zusammengefallenen sich aufhebenden Verzweigungspunkten eine Function $\varphi$ verschwinden kann.
+
+\origpage{375}
+Ebenso können zwei oder mehrere von den $p$ Gleichungen aus den übrigen folgen und man kann das allgemeine Resultat in folgender Weise aussprechen:
+
+\emph{Wird eine Function $s'$ in $m$ Punkten unendlich gross erster Ordnung und können in diesen $m$ Punkten $q$ Functionen $\dfrac{\varphi(s, z)}{\dfrac{\partial F}{\partial s}}$ verschwinden, zwischen denen keine lineare Gleichung mit constanten Coefficienten besteht, so enthält $s'$ die Zahl $m-p+1+q$ willkürlicher Constanten.}
+
+Sei z.~B. $F(s, z) = 0$ die Gleichung einer Curve fünfter Ordnung. Dann ist im Allgemeinen, d.~h wenn die Curve keinen Doppelpunkt besitzt, $p = 6$; die endlich bleibenden Integrale sind:
+\[ \int \frac{as^{2} + bsz + cz^{2} + ds + ez + f}{\dfrac{\partial F}{\partial s}}\ dz, \]
+also jede ganze Function zweiten Grades ist eine Function $\varphi$. Die Function
+\[ s' = \frac{as + bz + c}{a_{1}s + b_{1}z + c_{1}} \]
+wird in den 5 Punkten unendlich, in denen die Gerade $a_{1}s + b_{1}z + c_{1} = 0$ die gegebene Curve schneidet. In diesen 5 Punkten verschwinden 3 von einander linear unabhängige Functionen $\varphi$, nämlich: $a_{1}s + b_{1}z + c_{1}$, $(a_{1}s + b_{1}z + c_{1})s$ und $(a_{1}s + b_{1}z + c_{1})z$. Daher enthält $s'$ die Anzahl $5 - 6 + 1 + 3 = 3$ willkürlicher Constanten, in der That die $a$, $b$, $c$.
+
+Hat die gegebene Curve fünften Grades einen Doppelpunkt, so ist $p = 5$. Dann sind, wenn $g = 0$, $h = 0$ zwei durch den Doppelpunkt gehende Gerade bedeuten, nur $(a_{1}s + b_{1}z + c_{1})g$ und $(a_{1}s + b_{1}z + c_{1})h$ Functionen $\varphi$, die in den 5 Punkten Null sind, in denen $s'$ unendlich ist und $s'$ enthält wiederum $5 - 5 + 1 + 2 = 3$ Constanten.
+
+Liegen die Punkte $\varepsilon$ theilweise im Unendlichen, so muss man nach der Anzahl von Functionen $\varphi$ fragen, die von niedrigerem als dem höchst möglichen Grade sind und in den Punkten $\varepsilon$ verschwinden, die im Endlichen liegen.
+
+Bei ganz allgemeiner Lage der Punkte $\varepsilon$ lässt sich die Regel über die Anzahl der Constanten nur so fassen: Sind $c_{1} \ldots c_{p}$ zu bestimmende Constanten und sind die endlich bleibenden Integrale durch die Reihen $(a)$ dargestellt, so enthält eine algebraische Function, die in $m$ Punkten unendlich erster Ordnung ist, $m-p+1+q$ wilkürliche Constanten, wenn es $q$ nicht linear von einander abhängige Functionen
+
+\origpage{376}
+\[ c_{1} a_{1} + \cdots + c_{p} a_{p}, \qquad a_{\nu} = \frac{du_{\nu}(s, z)}{d\sigma} \]
+giebt, welche in den Punkten $\varepsilon$ verschwinden.
+
+Für die Bestimmung der Functionen, die in einzelnen Punkten unendlich von höherer Ordnung werden, kann man entweder in dem Vorigen Punkte $\varepsilon$ auf einander fallen lassen oder die Betrachtungen selbstständig anstellen durch Benutzung der Coefficienten höherer Potenzen von $\sigma$ in den Reihen $(a)$.
+
+Die Gleichungen (1.) enthalten Resultate für die ganzen Integrale zweiter Gattung, welche von \emph{Weierstrass} für hyperelliptische Integrale schon früher gegeben worden sind.
+
+Halle, 1864.
+
+\end{document}
