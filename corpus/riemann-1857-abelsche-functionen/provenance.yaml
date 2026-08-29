@@ -1,4 +1,6 @@
 changelog:
+  - date: "2026-08-29"
+    summary: Translation (en) added (AI draft).
   - date: "2026-08-27"
     summary: Transcription added (AI draft), pp. 115–155 from the 1857 Crelle's Journal scan.
 
@@ -85,3 +87,78 @@ transcription:
     rendered prose (0 leaks; this caught 30 text-mode \ldots that the transform does not handle
     and that are now written $\ldots$). \origpage markers run 115–155 with no gaps, and all 27
     numbered sections are present in order.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-29"
+    note: >-
+      Full English translation of all 41 pages, made only from our own original.tex, never from an
+      existing published translation. Every math span, \tag{}, \origpage{N} marker and \ednote is
+      reproduced unchanged — texcompare reports 1771 math spans, 41 page markers and 3 tags
+      preserved, and the rendered structure matches the original exactly (33 headings, 4 ednote
+      popovers, 60 \emph spans). Only the prose differs.
+
+      Prose set INSIDE math via a text insert is translated (HOUSESTYLE R21): "und"→"and",
+      "für"→"for", "oder auch, da"→"or also, since", the ordinal "ten"→"th", and "w. z. b. w."
+      (was zu beweisen war) → "q. e. d."; "const." is identical in both languages and is left as
+      it stands. texcompare ignores the content of such an insert while still checking that each
+      is present, unmoved, and that the surrounding math is identical.
+
+      Terminology follows corpus/riemann-1857-abelsche-functionen/glossary.yaml, written for this
+      translation and saved alongside the work so the Tier-3 path (pipeline/translate.py
+      --glossary) reproduces the same renderings. Period English is preferred over the modern
+      equivalent: ganze Function = "integral function", Periodicitätsmodul = "modulus of
+      periodicity", Querschnitt = "crosscut", Stellenzeiger = "indices", Abtheilung = "Division".
+
+      THREE JUDGEMENT CALLS A REVIEWER SHOULD CHECK, all cases where the print uses two different
+      German words that modern usage would merge, and where this translation keeps them apart
+      rather than destroying a distinction the author draws:
+      (a) einwerthig → "single-valued" versus einändrig → "unbranched". Settled with the
+      contributor, a native Dutch speaker, by testing the morphology against Dutch. -ändrig is the
+      syncopated -änderig, so the stem is ander/ändern (Dutch ander/veranderen), not Werth: the
+      literal calque gives eenwaardig for einwerthig and eenduidig for eindeutig, both real Dutch
+      words, but nothing for einändrig — marking it as Riemann's own coinage. It is NOT einädrig
+      from Ader (which would have given Dutch eenaderig, cf. German einadrig "single-core"); the
+      scan was re-checked at high magnification and clearly reads ein-ä-N-d-r-ig. Distribution
+      agrees: einwerthig is the workhorse (15 uses, 10 pages) while einändrig occurs 5 times and
+      only on pp. 124 and 126, within one stretch of the §. 6 branch-point argument. The sense is
+      settled by p. 126, where two branch points cancel and "both branches become einändrig" —
+      each continues into ITSELF instead of swapping, i.e. stops branching. So the two words name
+      different properties (one continuation versus one value per place), and an earlier draft
+      rendering einändrig as "one-valued" was wrong in shape, since it carried no sense of
+      branching at all. "unbranched branches" on p. 124 is clumsy but exact and is kept for
+      consistency. Riemann's third word, eindeutig (p. 146, twice), is rendered "uniquely
+      determined".
+      (b) irreductibel → "irreducible" (of an equation) versus unzerfällbar → "indecomposable"
+      (of a function). Riemann glosses unzerfällbar himself on p. 123 as "not representable as a
+      product of integral functions", which supports the split.
+      (c) Aufsatz → "paper" versus Abhandlung → "memoir".
+
+      The author's own parenthetical gloss is kept, following the corpus precedent for Jacobi's
+      "Versetzung (Transposition)": p. 138 "allgemein oder vollständig (complete) integriren"
+      becomes "integrated generally or completely (complete)". This reads oddly in English exactly
+      because Riemann is glossing his German word with the technical term; the gloss is his text,
+      so it is not silently dropped.
+
+      The four \ednote notes on apparent printer's errors (pp. 120, 125, 145, 153) are carried
+      across and translated; each flags an error in the mathematics or in a cross-reference, so it
+      survives translation. The compositor's slips in the GERMAN prose (Orduung, dassalbe,
+      Puukten, Prodncts, nnendliches, Begrenznngstheile, Göfsen) have nothing to be faithful to in
+      English and are rendered by the correct word; they remain recorded in the transcription.
+
+      Where a German sentence puts its verb after a displayed formula ("… in der Form [display]
+      enthalten.", "… bleibt dort [display] endlich."), English cannot keep that order, so the
+      verb moves ahead of the display; the display and its surrounding \origpage markers stay
+      exactly where they are. Riemann's journal cross-references are rendered for an English
+      reader ("d. J." → "this Journal", "S. 103 dieses Bandes" → "p. 103 of this volume", Bd. →
+      vol., Nr. → no.), with the numbers untouched.
+
+      No passage was left \uncertain: the German is technical but not ambiguous, and the places
+      where a real choice had to be made are the three listed above rather than doubts about the
+      reading.
