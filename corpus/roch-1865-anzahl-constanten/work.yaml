@@ -1,0 +1,130 @@
+id: roch-1865-anzahl-constanten
+title: "Ueber die Anzahl der willkürlichen Constanten in algebraischen Functionen."
+title_en: "On the number of arbitrary constants in algebraic functions."
+
+authors:
+  - name: "Gustav Roch"
+    wikidata_id: Q27627
+    birth_year: 1839
+    death_year: 1866
+    mactutor: Roch  # https://mathshistory.st-andrews.ac.uk/Biographies/Roch/
+
+publication:
+  year: 1865
+  venue: crelle
+  volume: "64"
+  pages: "372–376"
+  title_full: >-
+    "Ueber die Anzahl der willkürlichen Constanten in algebraischen Functionen", Journal für die
+    reine und angewandte Mathematik (Crelle's Journal), Vierundsechzigster Band, 4. Heft (Berlin:
+    G. Reimer, 1865), pp. 372–376. Signed at the end "Halle, 1864".
+
+edition:
+  year: 1865
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Journal für die reine und angewandte
+    Mathematik (Crelle's Journal), Band 64 (Berlin, 1865), pp. 372–376 — an original edition with
+    no modern critical apparatus, commentary, or re-typesetting. Only Roch's own text is
+    transcribed; the running heads and the signature line are not.
+
+discipline: mathematics
+tags: [analysis, geometry]
+language: de
+type: paper
+
+relations:
+  - to: riemann-1857-abelsche-functionen
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Roch's five pages are a direct continuation of Riemann's memoir, which he cites by name in
+      his first sentence ("s. dessen Abhandlung über Abelsche Functionen, Band 54. dieses
+      Journals") and then four more times by section — §. 5 for the count m−p+1, §. 10 for the
+      quotient of two φ, and §. 20 for the boundary integral he reuses. His whole argument is set
+      in Riemann's own apparatus: the surface T, the crosscuts (a) and (b), the moduli of
+      periodicity, and the integrals of the second kind.
+
+significance: >-
+  This five-page note supplies the missing half of what is now the Riemann–Roch theorem. In §. 5
+  of his 1857 memoir on Abelian functions Riemann had shown that a function with $m$ poles of the
+  first order on a surface of genus $p$ contains $m-p+1$ arbitrary constants, and had noted that
+  the true number can be larger without determining by how much.[1] Roch, Riemann's student at
+  Halle, determines the excess exactly: writing the general integral of the second kind that
+  becomes infinite at the $m$ points, he turns the vanishing of its moduli of periodicity into $p$
+  linear equations, and shows that these are dependent precisely when the everywhere-finite
+  integrands $\varphi$ vanish at the $m$ points. The result, stated in italics on p. 375, is that
+  the function contains $m-p+1+q$ arbitrary constants, where $q$ counts the linearly independent
+  $\varphi$ that do vanish there.
+
+  In modern notation this is $\ell(D) - \ell(K-D) = \deg D - p + 1$ for the divisor
+  $D = \varepsilon_1 + \cdots + \varepsilon_m$ of the poles, where $\ell(D)$ is the number of
+  linearly independent functions whose poles are bounded by $D$, the constants among them
+  included. That is the same number Roch counts, because his $s'$ is by construction a linear
+  expression in its arbitrary constants — it is the displayed sum
+  $\beta_1 t_1 + \cdots + \beta_m t_m + \alpha_1 u_1 + \cdots + \alpha_p u_p + \text{const.}$ of
+  p. 373 — so counting those constants and counting a basis come to the same thing. Then
+  $\deg D = m$ and
+  $q = \ell(K-D)$. Here $K$ is the canonical divisor — the word is ours, not Roch's; for him it is
+  simply the points, counted with multiplicity, where $\varphi_1\,dz/(\partial F/\partial s)$
+  vanishes, for any one of his $\varphi_1$. The factor $\varphi_1$ is precisely what clears the
+  poles of $dz/(\partial F/\partial s)$ and makes the integrand of an everywhere-finite integral
+  holomorphic. Every other $\varphi$ then gives a
+  function $\varphi/\varphi_1$ whose poles are bounded by $K$, and $q$ counts the linearly
+  independent ones among these that in addition vanish at the $m$ points — which is what
+  $\ell(K-D)$ means.
+
+  Roch checks the count on a quintic curve with and without a double point, and closes by noting
+  that his equations (1.) recover results Weierstrass had already obtained for hyperelliptic
+  integrals. He was 25 when he wrote it, and died the following year, aged 26, of what his
+  contemporaries called consumption — pulmonary tuberculosis.[2]
+
+significance_sources:
+  - citation: >-
+      Riemann's own statement of the count, in this corpus: "Theorie der Abel'schen Functionen",
+      §. 5, printed p. 122 — "Die Function enthält dann noch m−p+1 willkührliche Constanten",
+      with the remark two paragraphs later that for special positions of the points fewer
+      conditions are independent.
+    url: "/works/riemann-1857-abelsche-functionen/#p-122"
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Gustav Roch", MacTutor History of Mathematics Archive,
+      University of St Andrews.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Roch/"
+
+source:
+  scan_url: "http://eudml.org/doc/147954"
+  scan_id: >-
+    eudml:147954 (Crelle's Journal, Band 64, 1865, pp. 372–376). The same original printing is
+    served by the Göttinger Digitalisierungszentrum (GDZ) as GDZPPN002152622, in volume
+    PPN243919689_0064.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Gustav Roch, 9 December 1839 – 21 November 1866 (wikidata:Q27627; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Roch/).
+  publication_date: >-
+    First published 1865 in Journal für die reine und angewandte Mathematik (Crelle's Journal),
+    Band 64, pp. 372–376 (EuDML http://eudml.org/doc/147954; GDZ GDZPPN002152622).
+  edition: >-
+    Original first printing, Journal für die reine und angewandte Mathematik,
+    Vierundsechzigster Band, 4. Heft (Berlin: G. Reimer, 1865), pp. 372–376.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1866], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1865, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-08-29"

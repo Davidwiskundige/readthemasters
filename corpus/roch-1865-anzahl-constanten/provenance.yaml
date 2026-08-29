@@ -1,0 +1,138 @@
+changelog:
+  - date: "2026-08-29"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-08-29"
+    summary: Transcription added (AI draft), pp. 372–376 from the 1865 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-29"
+  verification:
+    flagged_pages: [373, 374, 375]
+    date: "2026-08-29"
+  note: >-
+    Full German text of Roch's "Ueber die Anzahl der willkürlichen Constanten in algebraischen
+    Functionen", printed pages 372–376, from the original first printing in Crelle's Journal,
+    Band 64, 4. Heft (1865). Read from the contributor's PDF of the EuDML/GDZ scan
+    (http://eudml.org/doc/147954, GDZPPN002152622), rendered at 400 dpi; every displayed and
+    inline formula was checked by zooming into the scan (the AI's own verification pass, not a
+    full human review). The paper is short and has no footnotes, no numbered sections and no
+    figures: a title, a byline, and eleven paragraphs carrying eleven displays.
+
+    Notation, all recorded in the file header and followed symbol by symbol: the crosscut-side
+    markers printed BELOW the symbol on p. 374 (u with "+" under it, u with "−" under it), set
+    with \underset, in the displayed integral and in the prose either side of it; sum ranges
+    printed under the sign as an unpunctuated run, \sum_{\nu=1\ldots p} and \sum_{k=1\ldots m};
+    the recurring full-height denominator ∂F/∂s, kept \dfrac inside the larger fraction to match
+    the print; equation labels printed at the LEFT as "(a.)", "(1.)", "(2.)" and set at the right
+    with \tag, the author's own label including its period (R5).
+
+    Apparent printer's errors are kept as printed (R4). None of the three misleads a reader of
+    the MATHEMATICS, so — unlike the four in the Riemann memoir — none is given an in-text
+    \ednote popover (R10); each was confirmed by zooming into the scan and a reviewer should
+    check them:
+    (a) p. 374 — "wird immer und auch nur dann eine eine Folge der übrigen": the article is set
+    twice (dittography).
+    (b) p. 375 — "d. h wenn die Curve keinen Doppelpunkt besitzt": the second abbreviation point
+    is missing; p. 373 has "d. h." in full.
+    (c) p. 375 — "wilkürliche Constanten" with one l, against "willkürliche(n)" five times
+    elsewhere including the title.
+    Also kept as printed: the ranges "mu = 1, 2 ... p" (p. 374) and "c_1 ... c_p" (p. 375) lack
+    the comma before the ellipsis that the same lists carry elsewhere in the paper.
+
+    ONE BROKEN SORT, deliberately NOT flagged in the text and the reason p. 373 is listed above:
+    in the display "alpha_1 pi i = 0, alpha_2 pi i = 0, ... alpha_p pi i = 0", the pi of the THIRD
+    term has lost its left leg in the impression and prints as something closer to a tau. It is
+    read as pi — the two terms beside it are unambiguous, and pi i runs through the rest of the
+    paper — but it is an inking defect a reviewer with a second copy could confirm.
+
+    NO ESZETT. This print has no long-s and no eszett ligature: it sets "ss" throughout (dass,
+    muss, lässt, ausser, grösser, Grösse), each checked at high magnification as two round s. So
+    HOUSESTYLE R19's ligature rule has nothing to convert here and the file contains no ß — a
+    real difference from the earlier German works in the corpus, not a transcription choice.
+
+    EMPHASIS (R20, R24): the print's one device is italic — the personal names Riemann and
+    Weierstrass, and the whole stated result on p. 375, the sentence that is the Riemann–Roch
+    theorem. Two readings were checked by zooming: p. 372 line 2 sets "Abel" italic with "sche"
+    upright, while eleven lines later "Abelsche Functionen" is set wholly upright; both are
+    reproduced as printed rather than regularized. "Riemannschen" likewise italicizes only the
+    name. The italic theorem carries math inside its \emph run, which is safe because the site
+    stashes $...$ spans before matching \emph with [^}]* — but it admits no text-mode brace group,
+    the R18 limit applied to \emph.
+
+    Two of the four page turns split a word by end-of-line hyphenation ("be-|deutet" at 372/373,
+    "ver-|schwinden" at 374/375). Since hyphenation is dropped, the split word is written whole
+    and kept on the page where it BEGINS, and \origpage marks the first complete word of the next
+    page.
+
+    Mechanical checks run against this file, beyond validate.py and houselint.py: all math spans
+    were rendered through the site's own KaTeX build (0 failures), and the file was pushed through
+    site/src/lib/tex.js with the math stripped, to confirm no TeX markup leaks into the rendered
+    prose. \origpage markers run 372–376 with no gaps.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-08-29"
+    note: >-
+      Full English translation of all five pages, made only from our own original.tex, never from
+      an existing published translation. Every math span, \tag{}, \origpage{N} marker and \emph
+      span is reproduced unchanged — texcompare reports math, page markers and refs preserved,
+      and the rendered structure matches the original exactly. Only the prose differs.
+
+      Prose set INSIDE math via a text insert is translated (HOUSESTYLE R21): the display on
+      p. 374 reads "für" in the original and "for" here. "const." is identical in both languages
+      and stands unchanged. texcompare ignores the content of such an insert while still checking
+      that each is present and unmoved, so this one change is invisible to it and was verified by
+      hand against a listing of every insert in both files.
+
+      Terminology follows corpus/roch-1865-anzahl-constanten/glossary.yaml, written for this
+      translation and saved alongside the work so the Tier-3 path (pipeline/translate.py
+      --glossary) reproduces the same renderings. It deliberately MIRRORS the Riemann 1857
+      glossary for every shared term, since Roch works entirely inside Riemann's apparatus and a
+      reader moving from the memoir to this note should meet the same English words: Fläche =
+      "surface", Querschnitt = "crosscut", Periodicitätsmodul = "modulus of periodicity",
+      Integrale zweiter Gattung = "integrals of the second kind", ganze Function = "integral
+      function", Abhandlung = "memoir", Grösse = "quantity". Roch's own spellings differ from
+      Riemann's in two places (willkürlich vs willkührlich, Grösse vs Größe) and the glossary
+      notes both.
+
+      ONE UNCERTAIN RENDERING, marked \uncertain in the text, on p. 376:
+      "die ganzen Integrale zweiter Gattung". "ganz" here most likely contrasts with the
+      "speciellen Integrale" of p. 372 — the whole integrals as against the particular ones — and
+      is rendered "whole". But it could instead carry the period sense that gives "ganze Function"
+      = "integral function", which is the reading the glossary applies to the OTHER occurrence,
+      "jede ganze Function zweiten Grades" on p. 375. The two occurrences are deliberately NOT
+      rendered by the same English word, because on p. 375 the period term is unambiguous and on
+      p. 376 it is not. A reviewer should settle which Roch means.
+
+      TWO WORDS FOR ONE CURVE, kept apart because Roch keeps them apart: on p. 375 he writes both
+      "Curve fünfter Ordnung" and, of the same quintic, "Curve fünften Grades". These are rendered
+      "curve of the fifth order" and "curve of the fifth degree" rather than collapsed to one
+      English phrase.
+
+      The three German compositor's slips recorded in the transcription have nothing to be
+      faithful to in English and are rendered by the correct word: p. 374 "eine eine Folge" (the
+      article set twice) reads "a consequence"; p. 375 "d. h" (missing abbreviation point) reads
+      "i. e."; p. 375 "wilkürliche" (one l) reads "arbitrary". They remain recorded in
+      original.tex and above.
+
+      Where a German sentence puts its participle before the noun or its verb late, English cannot
+      keep the order, and two sentences straddle a page turn: at 373/374 the original breaks
+      inside "die ... einfach zusammenhängend gemachte | Fläche T) erstreckt, ist gleich", so the
+      English closes the parenthesis on p. 373 and opens p. 374 with "is equal to"; at 375/376
+      "wenn es q ... Functionen [display] giebt" becomes "when there are q functions ... [display]
+      which vanish". The \origpage markers themselves stay exactly where they are.
+
+      Roch's cross-references are rendered for an English reader: "Band 54. dieses Journals" →
+      "vol. 54. of this Journal", "a. a. O." → "loc. cit.", "Vergl." → "Cf.", "d. h." → "i. e.",
+      with all section numbers and the §. form untouched.
