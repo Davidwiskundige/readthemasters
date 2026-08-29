@@ -237,7 +237,8 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .worktl { margin: .5rem 0 0; }
 
 /* Inline popover markers — content stays hidden until hover/click (a popover). Shared by
-   significance citation markers and in-text editorial notes (\ednote). */
+   significance citation markers, significance asides ([note n]), and in-text editorial
+   notes (\ednote). */
 .pop { position: relative; }
 .pop-marker { font: inherit; font-size: .7em; vertical-align: super; line-height: 0;
   color: var(--accent); font-weight: 700; background: none; border: none; padding: 0 1px; cursor: pointer; }
@@ -251,6 +252,16 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .pop:hover .pop-content,
 .pop:focus-within .pop-content,
 .pop.open .pop-content { display: block; }
+
+/* Significance asides ([note n]): the trigger is a labelled chip, not a superscript number —
+   the label says what the aside is about, so a reader can decide whether to open it. Its card is
+   wider and scrolls, because an aside is a paragraph rather than a citation line. */
+.signote .pop-marker { font-size: .8em; font-weight: 700; vertical-align: baseline; line-height: 1.7;
+  padding: .05rem .55rem; margin: 0 .1em; border: 1px solid var(--border); border-radius: 999px;
+  background: var(--surface); white-space: nowrap; }
+.signote .pop-marker::after { content: " ›"; font-weight: 400; opacity: .7; }
+.signote .pop-marker:hover { text-decoration: none; border-color: var(--accent); background: var(--accent-weak); }
+.signote .pop-content { max-width: min(32rem, 88vw); max-height: 60vh; overflow-y: auto; font-size: .85rem; }
 
 /* Available to screen readers and to the search indexer, invisible on the page: panel headings
    (the visible label is the tab) and the metadata the result cards are built from. */

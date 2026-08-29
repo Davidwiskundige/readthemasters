@@ -80,6 +80,8 @@ public-domain digitization project. Follow these rules exactly:
      publication_date: "catalogue record / DOI / library id"
      edition: "identifier of the edition transcribed"
    # significance: >-                  # optional editorial context (ours, not the author's) — may be left out
+   # significance_notes:               # optional asides, each {label, text}, addressed from the
+   #                                   # significance prose as [note 1] and shown in a popover (HOUSESTYLE R26)
    ```
 
    The vocab fields (`discipline`, `tags`, `venue`, `type`, `language`) must match keys in

@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import data from "../../data/works.json";
 import { texToHtml } from "../../lib/tex.js";
+import { renderSignificance } from "../../lib/significance.js";
 import { bibtexEntries } from "../../lib/bibtex.js";
 import { workJsonLd } from "../../lib/jsonld.js";
 
@@ -23,20 +24,6 @@ function attribution(prov) {
   if (prov.produced) s += ` (${prov.produced})`;
   if (who) s += ` · reviewed by ${who}`;
   return s;
-}
-
-// Significance prose with inline [n] citation markers. Each renders as a small superscript
-// marker whose full citation is hidden until you hover or click it (a popover).
-function renderSignificance(text, sources) {
-  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  return esc(text).replace(/\[(\d+)\]/g, (m, n) => {
-    const src = sources?.[Number(n) - 1];
-    if (!src) return m;
-    const cite = esc(src.citation);
-    const inner = src.url ? `<a href="${esc(src.url)}" rel="noopener">${cite}</a>` : cite;
-    return `<span class="pop cite" data-pagefind-ignore><button type="button" class="pop-marker" aria-label="Citation ${n}">${n}</button>` +
-           `<span class="pop-content" role="note">${inner}</span></span>`;
-  });
 }
 
 const figOpts = { figureBase: `/figures/${work.id}/` };
@@ -147,7 +134,7 @@ function relatedNavHtml(bottom) {
   {work.significance && (
     <aside class="significance" data-pagefind-body>
       <h2 id="significance">Significance</h2>
-      <p set:html={renderSignificance(work.significance, work.significance_sources)} />
+      <p set:html={renderSignificance(work.significance, work.significance_sources, work.significance_notes)} />
     </aside>
   )}
 
