@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import re
 import sys
 from pathlib import Path
 
@@ -320,11 +321,77 @@ def check_translation_math(work_dir: Path, issues: Issues) -> None:
                          + texcompare.format_report(report))
 
 
+NOTE_MARKER = re.compile(r"\[note (\d+)\]")
+CITE_MARKER = re.compile(r"\[(\d+)\]")
+
+
+def check_significance(work: dict, work_id: str, issues: Issues) -> None:
+    """The editorial `significance` note and the two marker lists it addresses.
+
+    The site renders the field as plain prose in which `[n]` addresses `significance_sources[n-1]`
+    (a citation popover) and `[note n]` addresses `significance_notes[n-1]` (a labelled aside
+    popover, for an excursus that would otherwise swamp the paragraph). A marker with nothing
+    behind it renders as the literal `[3]` on the page and an entry nothing points at never renders
+    at all — both are silent, so they are checked here rather than found by eye.
+    """
+    w = f"{work_id}/work.yaml"
+    text = work.get("significance")
+    if text is not None and not isinstance(text, str):
+        issues.error(w, "significance must be a string")
+        return
+
+    def entries(field: str) -> list:
+        value = work.get(field) or []
+        if not isinstance(value, list):
+            issues.error(w, f"{field} must be a list")
+            return []
+        return value
+
+    sources = entries("significance_sources")
+    notes = entries("significance_notes")
+
+    for i, src in enumerate(sources):
+        if not (isinstance(src, dict) and isinstance(src.get("citation"), str) and src["citation"].strip()):
+            issues.error(w, f"significance_sources[{i}] needs a non-empty citation")
+    for i, note in enumerate(notes):
+        if not isinstance(note, dict):
+            issues.error(w, f"significance_notes[{i}] must be a mapping with label and text")
+            continue
+        label = note.get("label")
+        if not (isinstance(label, str) and label.strip()):
+            issues.error(w, f"significance_notes[{i}] needs a non-empty label "
+                            "(it is the visible text of the inline marker)")
+        elif len(label) > 40:
+            issues.warn(w, f"significance_notes[{i}] label is {len(label)} characters; it renders "
+                           "as an inline chip inside the running prose — keep it short")
+        if not (isinstance(note.get("text"), str) and note["text"].strip()):
+            issues.error(w, f"significance_notes[{i}] needs a non-empty text")
+
+    if (sources or notes) and not text:
+        issues.error(w, "significance_sources/significance_notes with no significance to mark up")
+    if not text:
+        return
+
+    used_notes = {int(n) for n in NOTE_MARKER.findall(text)}
+    # Note markers are stripped first so the "1" inside "[note 1]" is not read as a citation.
+    used_sources = {int(n) for n in CITE_MARKER.findall(NOTE_MARKER.sub("", text))}
+    for kind, used, have in (("note", used_notes, notes), ("citation", used_sources, sources)):
+        marker = f"[note {{n}}]" if kind == "note" else "[{n}]"
+        field = "significance_notes" if kind == "note" else "significance_sources"
+        for n in sorted(used):
+            if not 1 <= n <= len(have):
+                issues.error(w, f"significance {kind} marker {marker.format(n=n)} has no "
+                                f"{field}[{n - 1}] (the marker would print as literal text)")
+        for i in range(len(have)):
+            if i + 1 not in used:
+                issues.warn(w, f"{field}[{i}] is never referenced from the significance text "
+                               f"(add a {marker.format(n=i + 1)} marker, or drop the entry)")
+
 def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
 
-    Runs the stdlib-only linter over the transcription, every translation, and the `significance`
-    note in work.yaml so a house-style regression (currently R2/R16 — an inline large operator must
+    Runs the stdlib-only linter over the transcription, every translation, the `significance`
+    note in work.yaml and each of its `significance_notes` asides so a house-style regression (currently R2/R16 — an inline large operator must
     use `\\displaystyle`) cannot be merged. The `significance` field carries inline math that the
     site renders through KaTeX just like the `.tex` panels, so it needs the same gate. Judgement
     calls are never linted here; see houselint.py.
@@ -348,6 +415,16 @@ def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
         violations = houselint.lint(significance)
         if violations:
             issues.error(f"{work_dir.name}/work.yaml", "house-style violations in significance "
+                         "(corpus/HOUSESTYLE.md):\n" + houselint.format_violations(violations))
+    # Significance asides carry the same inline math, rendered by the same KaTeX pass.
+    for i, note in enumerate(work.get("significance_notes") or []):
+        text = note.get("text") if isinstance(note, dict) else None
+        if not isinstance(text, str):
+            continue
+        violations = houselint.lint(text)
+        if violations:
+            issues.error(f"{work_dir.name}/work.yaml",
+                         f"house-style violations in significance_notes[{i}] "
                          "(corpus/HOUSESTYLE.md):\n" + houselint.format_violations(violations))
 
 
@@ -450,6 +527,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_schema_and_vocab(work, vocab, work_id, issues)
     check_provenance(provenance, work_id, issues)
     check_translation_math(work_dir, issues)
+    check_significance(work, work_id, issues)
     check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)

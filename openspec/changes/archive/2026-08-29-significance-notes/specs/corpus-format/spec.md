@@ -1,25 +1,4 @@
-# corpus-format
-
-## Purpose
-
-Current source of truth for how a work is stored. Established by the `corpus-format` change
-(archived 2026-07-18) and extended by `site-catalog`.
-## Requirements
-### Requirement: Work directory layout
-
-Each work SHALL live in `corpus/<id>/`, where `<id>` is the canonical work id.
-
-- `work.yaml` (required) — metadata + copyright assessment.
-- `provenance.yaml` (required) — per-artifact status/model/effort/reviewers.
-- `original.tex` (required once transcribed) — faithful transcription, original language.
-- `translations/<lang>.tex` — one file per hosted translation language.
-- `figures/` (optional) — figure crops taken from the public-domain scan.
-- `pdf/<name>.pdf` (optional) — pre-made PDF override (see site-catalog PDF build).
-
-#### Scenario: Work stored under its canonical id
-
-- **WHEN** a work with canonical id `<id>` is added
-- **THEN** it lives in `corpus/<id>/` with `work.yaml` and `provenance.yaml` present (and `original.tex` once transcribed)
+## MODIFIED Requirements
 
 ### Requirement: work.yaml schema
 
@@ -124,40 +103,6 @@ same slot when no `volume` is given (`Acta Eruditorum, April`). `p.` is used for
 - **WHEN** a `significance_notes` entry omits `label` or `text`, or is not a mapping
 - **THEN** the gate fails; an over-long label, or an entry no marker references, warns
 
-### Requirement: provenance.yaml schema
-
-`provenance.yaml` MUST use the keys `transcription` and `translations.<lang>`, each an artifact
-record: `status` (`ai-draft|skimmed|verified`), `model` (required), `effort` (optional,
-provider-agnostic or null), `prompt_version` (required), optional `submitted_via`, `produced`,
-`reviewers` (list of `{name, level, date}`), and for translations a `source`
-(`transcription` | `external-open` + `license`).
-
-An optional top-level `changelog` records how the work has changed over time — a human-authored
-list of `{date, summary}` entries (ISO `date`, short non-empty `summary`), the source of the work
-page's revision history. When present, `validate.py` checks it is a list and that every entry has an
-ISO date and a non-empty summary.
-
-#### Scenario: Artifact record requires model and prompt_version
-
-- **WHEN** an artifact record omits `model` or `prompt_version`
-- **THEN** the gate fails
-
-#### Scenario: Changelog entries are validated when present
-
-- **WHEN** a `changelog` is present
-- **THEN** it must be a list whose every entry has an ISO `date` and a non-empty `summary`, or the gate fails
-
-### Requirement: Controlled vocabulary
-
-`corpus/vocab.yaml` SHALL define the allowed values for `disciplines`, `tags`, `venues`, `types`,
-`languages`, and `relation_kinds` (`cites`, `builds-on`). Any metadata value outside it MUST be
-rejected (prevents facet drift).
-
-#### Scenario: Out-of-vocab value is rejected
-
-- **WHEN** a work uses a `discipline`, `tag`, `venue`, `type`, `language`, or `relation kind` not defined in `corpus/vocab.yaml`
-- **THEN** the gate rejects it
-
 ### Requirement: LaTeX house style
 
 Every `.tex` SHALL use `corpus/preamble/readmasters.sty`. Content and notation stay faithful to the
@@ -224,30 +169,3 @@ text niceties — em-dashes, `~`, `\&`, and LaTeX control spaces `\ ` (ruling R1
 
 - **WHEN** a `significance_notes` entry's `text` violates a mechanically-enforced ruling such as R2/R16
 - **THEN** `pipeline/houselint.py` (run by the gate) fails the build, naming the aside's index
-
-### Requirement: Venue metadata
-
-The `venues:` vocabulary in `corpus/vocab.yaml` SHALL accept each entry as either a bare string (the
-full venue title, as today) or an object. When an entry is an object, `name` (the full title) MUST
-be present and these fields are OPTIONAL: `aka` (short or common name), `kind` (`periodical` | `book` | `manuscript`, default
-`periodical`), `founded`/`ceased` (years), `publisher`/`place`, `note` (a one-paragraph
-description), and `archives` — an ordered list of `{label, url}` links to the repositories that host
-the digitized full run. Every `archives[].url` MUST be an absolute `http(s)` URL, and the `book` and
-`manuscript` sentinel venues MUST set `kind` accordingly so the site can exclude them from the
-Journals section. The venue **label** consumed elsewhere (catalog, citations, `venue_full`) SHALL
-resolve to `name` for objects and to the string itself for bare strings, so existing consumers are
-unaffected. Venue metadata describes a public-domain periodical and its digitizations and MUST NOT
-affect the copyright gate's verdicts.
-
-#### Scenario: Bare-string venue stays valid
-- **WHEN** a `work.yaml` sets `publication.venue` to a key whose `venues` entry is a bare string
-- **THEN** the gate accepts it and the venue label resolves to that string, exactly as before
-
-#### Scenario: Object venue with metadata is accepted
-- **WHEN** a `venues` entry is an object with `name` present, `kind` in {periodical, book, manuscript}, and every `archives[].url` an absolute http(s) URL
-- **THEN** validation passes and the venue label resolves to `name`
-
-#### Scenario: Malformed venue object is rejected
-- **WHEN** a `venues` object omits `name`, sets `kind` outside the allowed set, or gives an `archives` entry whose `url` is not an absolute http(s) URL
-- **THEN** `pipeline/validate.py` reports an error and the build fails
-

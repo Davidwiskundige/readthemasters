@@ -48,6 +48,25 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R26 — A modern restatement of the author's result goes in a significance aside (`[note n]`),
+### not in the running significance paragraph (editorial content)
+*2026-08-29.* Roch's five-page note (`roch-1865-anzahl-constanten`) is the half of the
+Riemann–Roch theorem that is universally quoted today in notation Roch never used, so its
+`significance` grew a second paragraph translating his count into $\ell(D) - \ell(K-D) = \deg D -
+p + 1$ — divisor by divisor, with the canonical divisor introduced as our word, not his. That
+paragraph was accurate and worth having, and it still doubled the note's length and buried what
+Roch actually did between two dictionary entries. **Rule: the significance paragraph says what the
+author did and why it mattered, in terms a reader of the transcription would recognise; a modern
+restatement, a dictionary between his notation and ours, or any other excursus that only some
+readers want goes in a `significance_notes` aside**, addressed from the prose by a `[note n]`
+marker and revealed on hover or click (site-catalog; the same `.pop` apparatus as the `[n]`
+citations and `\ednote`). Give the aside a short label naming what it contains ("In modern
+notation") — the label is the visible chip in the running prose, so it must let a reader decide
+whether to open it. An aside is not a licence to write at length: it holds one paragraph, it is
+subject to R11 (verify against the transcription, not general knowledge) and to the same
+plain-text-plus-KaTeX limit as the significance itself (R18), and `pipeline/validate.py` fails the
+gate on a marker with no aside behind it. Applied in `roch-1865-anzahl-constanten`.
+
 ### R25 — A heading may contain math but never a text-mode brace group; the site now typesets
 ### heading math (presentation)
 *2026-08-27.* Riemann's 1857 memoir (`riemann-1857-abelsche-functionen`) is the first corpus work
@@ -211,8 +230,9 @@ how the same text is set — and neither is caught by `validate.py`, `texcompare
 `houselint.py`, so **preview a new work in the site before opening the PR** to catch leaked markup.
 
 - The `work.yaml` **`significance`** note is rendered by `renderSignificance()` in
-  `site/src/pages/works/[id].astro`, which only HTML-escapes the prose and expands `[n]` citation
-  markers; a later client-side KaTeX pass renders `$...$`. It does **not** run the `.tex` text
+  `site/src/lib/significance.js`, which only HTML-escapes the prose and expands `[n]` citation
+  markers and `[note n]` aside markers (R26); a later client-side KaTeX pass renders `$...$` —
+  inside an aside's popover too. It does **not** run the `.tex` text
   transform, so `\emph{}`, `~`, and `---` leak as literal characters. **Rule: write `significance`
   as plain prose — a real em-dash `—`, a plain "No. LX", no `\emph`; only `$...$` math is processed.**
 - The transcription/translation `.tex` panels go through `inlineText()` in `site/src/lib/tex.js`,
@@ -326,7 +346,9 @@ was cut from the text. Rules going forward:
 - Never use `[[...]]` in corpus text — that syntax is for the assistant's own memory files only;
   the site renders it as literal brackets. Cross-reference other works by name/id in plain prose.
 - `[n]` markers in `significance` are positional to `significance_sources`, in list order; adding
-  or removing a source means renumbering every marker in the prose to match.
+  or removing a source means renumbering every marker in the prose to match. The same holds for
+  `[note n]` markers and `significance_notes` (R26). Both are now checked by `pipeline/validate.py`:
+  a marker with no entry behind it fails the gate, and an entry no marker points at warns.
 - For a multi-part work (a "Schediasma I/II" pair, etc.), draft or revise all parts' significance
   together, re-reading each one after editing the other, so they stay complementary instead of
   quietly drifting apart or repeating each other.

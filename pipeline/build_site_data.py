@@ -391,6 +391,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "publication_full": pub.get("title_full"),
             "significance": work.get("significance"),
             "significance_sources": work.get("significance_sources") or [],
+            "significance_notes": work.get("significance_notes") or [],
             # Raw backward edges from work.yaml; resolved + inverted by attach_relations() below.
             "relations": work.get("relations") or [],
             "disciplines": (disc_list := work["discipline"] if isinstance(work.get("discipline"), list)

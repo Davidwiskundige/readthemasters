@@ -185,6 +185,72 @@ def test_bad_effort_value_errors():
     assert any("effort" in e for e in iss.errors)
 
 
+# --- Significance note / marker tests ---------------------------------------- #
+def sig_issues(**fields):
+    """Run check_significance over a work carrying only the significance fields under test."""
+    iss = validate.Issues()
+    validate.check_significance(fields, "test-work", iss)
+    return iss
+
+
+def test_significance_markers_resolve():
+    iss = sig_issues(
+        significance="Roch fixed the excess.[1] [note 1]",
+        significance_sources=[{"citation": "MacTutor, Gustav Roch", "url": "https://x"}],
+        significance_notes=[{"label": "In modern notation", "text": "The Riemann-Roch formula."}])
+    assert iss.errors == [] and iss.warnings == []
+
+
+def test_unresolved_note_marker_errors():
+    iss = sig_issues(significance="An aside. [note 2]",
+                     significance_notes=[{"label": "L", "text": "T"}])
+    assert any("[note 2]" in e for e in iss.errors)
+
+
+def test_unresolved_citation_marker_errors():
+    iss = sig_issues(significance="A claim.[3]",
+                     significance_sources=[{"citation": "One source"}])
+    assert any("[3]" in e for e in iss.errors)
+
+
+def test_note_marker_is_not_read_as_a_citation_marker():
+    # "[note 1]" contains "1"; only the note list must be consulted for it.
+    iss = sig_issues(significance="An aside. [note 1]",
+                     significance_notes=[{"label": "L", "text": "T"}])
+    assert iss.errors == []
+
+
+def test_unreferenced_note_warns():
+    iss = sig_issues(significance="No markers here.",
+                     significance_notes=[{"label": "L", "text": "T"}])
+    assert iss.errors == []
+    assert any("never referenced" in x for x in iss.warnings)
+
+
+def test_note_without_label_or_text_errors():
+    iss = sig_issues(significance="An aside. [note 1] Another. [note 2]",
+                     significance_notes=[{"text": "no label"}, {"label": "no text"}])
+    assert any("label" in e for e in iss.errors)
+    assert any("text" in e for e in iss.errors)
+
+
+def test_long_note_label_warns():
+    iss = sig_issues(significance="An aside. [note 1]",
+                     significance_notes=[{"label": "x" * 41, "text": "T"}])
+    assert iss.errors == []
+    assert any("keep it short" in x for x in iss.warnings)
+
+
+def test_notes_without_significance_error():
+    iss = sig_issues(significance_notes=[{"label": "L", "text": "T"}])
+    assert any("no significance" in e for e in iss.errors)
+
+
+def test_work_without_significance_is_fine():
+    iss = sig_issues()
+    assert iss.errors == [] and iss.warnings == []
+
+
 # --- Relations / dependency graph tests -------------------------------------- #
 VOCAB = {"relation_kinds": {"cites": "Cites", "builds-on": "Builds on"}}
 

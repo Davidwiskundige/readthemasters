@@ -56,29 +56,31 @@ significance: >-
   linear equations, and shows that these are dependent precisely when the everywhere-finite
   integrands $\varphi$ vanish at the $m$ points. The result, stated in italics on p. 375, is that
   the function contains $m-p+1+q$ arbitrary constants, where $q$ counts the linearly independent
-  $\varphi$ that do vanish there.
-
-  In modern notation this is $\ell(D) - \ell(K-D) = \deg D - p + 1$ for the divisor
-  $D = \varepsilon_1 + \cdots + \varepsilon_m$ of the poles, where $\ell(D)$ is the number of
-  linearly independent functions whose poles are bounded by $D$, the constants among them
-  included. That is the same number Roch counts, because his $s'$ is by construction a linear
-  expression in its arbitrary constants — it is the displayed sum
-  $\beta_1 t_1 + \cdots + \beta_m t_m + \alpha_1 u_1 + \cdots + \alpha_p u_p + \text{const.}$ of
-  p. 373 — so counting those constants and counting a basis come to the same thing. Then
-  $\deg D = m$ and
-  $q = \ell(K-D)$. Here $K$ is the canonical divisor — the word is ours, not Roch's; for him it is
-  simply the points, counted with multiplicity, where $\varphi_1\,dz/(\partial F/\partial s)$
-  vanishes, for any one of his $\varphi_1$. The factor $\varphi_1$ is precisely what clears the
-  poles of $dz/(\partial F/\partial s)$ and makes the integrand of an everywhere-finite integral
-  holomorphic. Every other $\varphi$ then gives a
-  function $\varphi/\varphi_1$ whose poles are bounded by $K$, and $q$ counts the linearly
-  independent ones among these that in addition vanish at the $m$ points — which is what
-  $\ell(K-D)$ means.
+  $\varphi$ that do vanish there. [note 1]
 
   Roch checks the count on a quintic curve with and without a double point, and closes by noting
   that his equations (1.) recover results Weierstrass had already obtained for hyperelliptic
   integrals. He was 25 when he wrote it, and died the following year, aged 26, of what his
   contemporaries called consumption — pulmonary tuberculosis.[2]
+
+# Asides: an excursus the reader can open from the significance note instead of reading through it.
+significance_notes:
+  - label: "In modern notation"
+    text: >-
+      Roch's result is $\ell(D) - \ell(K-D) = \deg D - p + 1$ for the divisor
+      $D = \varepsilon_1 + \cdots + \varepsilon_m$ of the poles. His arbitrary constants are
+      $\ell(D)$, the number of linearly independent functions whose poles are bounded by $D$, the
+      constants among them included: his $s'$ is by construction a linear expression in those
+      arbitrary constants — the displayed sum
+      $\beta_1 t_1 + \cdots + \beta_m t_m + \alpha_1 u_1 + \cdots + \alpha_p u_p + \text{const.}$
+      of p. 373 — so counting them and counting a basis come to the same thing. Then
+      $\deg D = m$, and $q = \ell(K-D)$. The canonical divisor $K$ is our word, not Roch's: for him
+      it is simply the points, counted with multiplicity, where
+      $\varphi_1\,dz/(\partial F/\partial s)$ vanishes, for any one of his $\varphi_1$ — the factor
+      that clears the poles of $dz/(\partial F/\partial s)$ and makes the integrand of an
+      everywhere-finite integral holomorphic. Every other $\varphi$ then gives a function
+      $\varphi/\varphi_1$ whose poles are bounded by $K$, and $q$ counts the linearly independent
+      ones among these that in addition vanish at the $m$ points — which is what $\ell(K-D)$ means.
 
 significance_sources:
   - citation: >-
