@@ -16,27 +16,27 @@
 
 ## 3. Skill rewrite
 
-- [ ] 3.1 Rewrite `SKILL.md` Phase 2 to call `pipeline/prepare_pages.py` and state that prepared pages live outside the corpus
-- [ ] 3.2 Rewrite Phase 3 as the batch loop: **default batch of 4** (measured optimum is N=2–4; the curve is flat there and 4 keeps adjacent pages comparable), one subagent per batch, fragments written to `corpus/<work-id>/pages/pNNN.tex`
-- [ ] 3.2a Keep the per-page turn count at 2 (one `Read` of one text-block crop, one `Write`) — `t·(B+P)` is ~75% of the cost, so a third turn per page costs more than any batch-size choice
-- [ ] 3.2b Give the batch subagent a scratch directory it may write magnified crops into, so `\uncertain{}` reflects legibility rather than missing tooling — **capped at 3 regions per page** (an ungoverned run made 32 crops for 4 pages), with magnification preferred over guessing and `\uncertain{}` preferred over both when it does not settle the reading
-- [ ] 3.2c Pass a transcription-relevant extract of `HOUSESTYLE.md` (~4k tokens) rather than all 36KB, since every subagent re-reads the whole payload
-- [ ] 3.3 Write the subagent prompt template: pinned `prompts/transcribe-chat.md` rules, applicable `corpus/HOUSESTYLE.md` rulings, the work's `notation.md`, the previous batch's trailing ~15 lines, and the batch's image paths
-- [ ] 3.4 Fix the batch report contract: pages written, uncertainty-flag count, new notation decisions, trailing lines of the final fragment — and nothing else, so the report stays small
-- [ ] 3.5 State explicitly that the orchestrating session never calls `Read` on a scan image, and that Phases 4 and 6–8 run with no images in context
-- [ ] 3.6 Add the short-work escape hatch: below ~2 batches, transcribe inline
-- [ ] 3.7 Rewrite Phase 4 to stitch `pages/pNNN.tex` in page order into `original.tex`, and to grep/sed that file rather than re-reading it whole
-- [ ] 3.8 Rewrite Phase 5 as per-batch verification subagents returning only a discrepancy list
-- [ ] 3.9 Run `pipeline/houselint.py` over each batch's fragments as they land, not only over the assembled file
+- [x] 3.1 Rewrite `SKILL.md` Phase 2 to call `pipeline/prepare_pages.py` and state that prepared pages live outside the corpus — also states the portrait-page resolution trade explicitly
+- [x] 3.2 Rewrite Phase 3 as the batch loop: **default batch of 4** (measured optimum is N=2–4; the curve is flat there and 4 keeps adjacent pages comparable), one subagent per batch, fragments written to `corpus/<work-id>/pages/pNNN.tex`
+- [x] 3.2a Keep the per-page turn count at 2 (one `Read` of one text-block crop, one `Write`) — `t·(B+P)` is ~75% of the cost, so a third turn per page costs more than any batch-size choice
+- [x] 3.2b Give the batch subagent a scratch directory it may write magnified crops into, so `\uncertain{}` reflects legibility rather than missing tooling — **capped at 3 regions per page** (an ungoverned run made 32 crops for 4 pages), with magnification preferred over guessing and `\uncertain{}` preferred over both when it does not settle the reading
+- [x] 3.2c Pass a transcription-relevant extract of `HOUSESTYLE.md` (~4k tokens) rather than all 36KB, since every subagent re-reads the whole payload
+- [x] 3.3 Write the subagent prompt template: pinned `prompts/transcribe-chat.md` rules, applicable `corpus/HOUSESTYLE.md` rulings, the work's `notation.md`, the previous batch's trailing ~15 lines, and the batch's image paths
+- [x] 3.4 Fix the batch report contract: pages written, uncertainty-flag count, new notation decisions, trailing lines of the final fragment — and nothing else, so the report stays small
+- [x] 3.5 State explicitly that the orchestrating session never calls `Read` on a scan image, and that Phases 4 and 6–8 run with no images in context — made non-negotiable #5, with the cost consequence named
+- [x] 3.6 Add the short-work escape hatch: below ~2 batches, transcribe inline
+- [x] 3.7 Rewrite Phase 4 to stitch `pages/pNNN.tex` in page order into `original.tex`, and to grep/sed that file rather than re-reading it whole
+- [x] 3.8 Rewrite Phase 5 as per-batch verification subagents returning only a discrepancy list
+- [x] 3.9 Run `pipeline/houselint.py` over each batch's fragments as they land, not only over the assembled file
 
 ## 4. Notation glossary and flag visibility
 
-- [ ] 4.1 Define the `corpus/<work-id>/notation.md` format — decision plus one-line rationale — and document it in `SKILL.md`
-- [ ] 4.2 Have the orchestrating session create/append the glossary from batch reports, and pass it into every subsequent batch
-- [ ] 4.3 Confirm `pipeline/validate.py` tolerates `notation.md` and does not require it; add a test for a work with and without one
-- [ ] 4.4 Add a `corpus/HOUSESTYLE.md` ruling recording the glossary convention and why cross-page decisions are written down rather than remembered
-- [ ] 4.5 Carry the uncertainty-flag count through batch report → `provenance.yaml` → the Phase 8 checkpoint, reporting an explicit zero when there are none
-- [ ] 4.6 Strengthen the `\uncertain{}` / `\illegible` instruction in the subagent prompt — 151 transcribed pages currently carry zero flags between them
+- [x] 4.1 Define the `corpus/<work-id>/notation.md` format — decision plus one-line rationale — and document it in `SKILL.md` → Phase 3a
+- [x] 4.2 Have the orchestrating session create/append the glossary from batch reports, and pass it into every subsequent batch
+- [x] 4.3 Confirm `pipeline/validate.py` tolerates `notation.md` and does not require it; add a test for a work with and without one → `pipeline/tests/test_notation_glossary.py` (4 tests; the gate looks for named files rather than whitelisting, so the glossary is simply ignored)
+- [x] 4.4 Add a `corpus/HOUSESTYLE.md` ruling recording the glossary convention and why cross-page decisions are written down rather than remembered → **R27**, including the "say what NOT to do" rule the measurement forced
+- [x] 4.5 Carry the uncertainty-flag count through batch report → `provenance.yaml` → the Phase 8 checkpoint, reporting an explicit zero when there are none → new `uncertainty_flags` field
+- [x] 4.6 Strengthen the `\uncertain{}` / `\illegible` instruction in the subagent prompt — 151 transcribed pages currently carry zero flags between them → framed as "magnify rather than guess, flag rather than magnify indefinitely", since the observed failure was resolving ambiguity silently rather than ignoring the instruction
 
 ## 5. A/B quality check (gates the rollout)
 

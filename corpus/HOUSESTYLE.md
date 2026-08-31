@@ -48,6 +48,29 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R27 — A work's cross-page notation decisions are written down in `notation.md`, exactly,
+### and say what NOT to do (process)
+*2026-08-31.* Transcribing `clebsch-1864-anwendung-abelschen-functionen` in independent batches
+produced a divergence no reviewer would want to find late: two batches of the same work, same
+model, same scans, disagreed on the work's **most frequent symbol**. Pages 189–206 render Clebsch's
+summation sign as the Sigma *letter* (`\Sigma`, 21 times, never `\sum`) and one batch independently
+agreed (32 times), while another wrote `\sum` 19 times and `\Sigma` none. The print settles it —
+one slanted sigma letter throughout — but nothing in this rulings log covers it, because it is a
+fact about *this work's* typesetting, not about the house style. **Rule: decisions that must hold
+across a whole work — which glyph a recurring sign is, whether a ruling here applies to this print
+at all, how a symbol is disambiguated from its neighbour — belong in `corpus/<work-id>/notation.md`,
+a permanent committed artifact (corpus-format), not in a transcriber's head.** R19's `ſs → ß`
+mapping, for instance, has nothing to convert in an Antiqua print that sets round s throughout;
+that is a `notation.md` entry, not an exception to R19.
+
+**Write each entry exactly, and name the forbidden alternatives.** A vague entry is worse than
+none, because it licenses a *new* divergence while looking like guidance: the first version of the
+Clebsch multiplication-dot entry said only that "the spacing around it is normalized", and the next
+batch duly set 11 *spaced* dots where the work sets 63 *tight* ones. Record the decision, one line
+of why, and what not to write instead. An author's own back-references (`Gleichung (3)`,
+`équation (92)`) are printed on the page being transcribed and copied verbatim — they are not
+notation decisions. Applied in `corpus/clebsch-1864-anwendung-abelschen-functionen/notation.md`.
+
 ### R26 — A modern restatement of the author's result goes in a significance aside (`[note n]`),
 ### not in the running significance paragraph (editorial content)
 *2026-08-29.* Roch's five-page note (`roch-1865-anzahl-constanten`) is the half of the

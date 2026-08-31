@@ -28,23 +28,41 @@ Both arguments may be omitted; ask for whatever is missing.
 2. **Faithful content, standardized markup.** Transcribe exactly what is printed. Never modernize
    notation, correct the author, or paraphrase. Standardize only LaTeX markup. The full rules are
    in `prompts/transcribe-chat.md` and the rulings log in `corpus/HOUSESTYLE.md` — treat both as
-   authoritative and read them before you transcribe.
+   authoritative.
 3. **Honest provenance.** Machine output ships as `ai-draft`. Do not set a higher status than the
    review that actually happened (see the status ladder in PLAN.md §4.3: `ai-draft` → `skimmed` →
    `verified`).
 4. **You do not decide public-domain status.** You compute it from sourced facts via the gate. If
    in doubt, surface it to the contributor; do not guess.
+5. **You do not read scan images yourself.** Page images go to batch subagents (Phase 3). This is
+   not a style preference — it is the difference between ~4.2M and ~150–200k tokens per page.
+
+## Why this skill is shaped the way it is
+
+A scan image read into a context stays there, and is re-sent on every later turn. Transcribing in
+one long session therefore costs more for each page than the page before it: measured across three
+long works, **4–6M tokens per page**, with page scans making up 47–63% of all context spent. The
+worst run peaked at 920k context and compacted mid-work, losing its early pages anyway.
+
+So page-level vision work happens in **subagents**, one per small batch. A subagent has a fresh
+context, reads only its own batch's images, writes fragments to disk, and returns a short report.
+The images never enter your context, so your context stays flat across a whole work, and the
+assembly, validation and PR phases run with nothing heavy resident.
+
+Measured cost model, if you need to reason about it: a subagent costs a fixed **~63k** plus about
+**7.3k per page**, at roughly 2 turns per page. Three quarters of the total is the fixed part being
+re-sent every turn, which is why **turns per page matter far more than batch size**. Keep pages at
+one image and one write each.
 
 ## Before you start
 
 Read these so your output matches the house style exactly:
 
-- `prompts/transcribe-chat.md` (at the repository root, like every path in this skill) — the
-  canonical transcription rules and current `prompt_version`.
-- `corpus/HOUSESTYLE.md` — the notation-vs-presentation principle and the rulings log (R1–R10).
+- `prompts/transcribe-chat.md` — the canonical transcription rules and current `prompt_version`.
+- `corpus/HOUSESTYLE.md` — the notation-vs-presentation principle and the rulings log.
+- `corpus/<work-id>/notation.md`, if the work has one — this work's own cross-page decisions.
 - `corpus/preamble/readmasters.sty` — the macros available (`\origpage`, `\uncertain`,
   `\illegible`, `\ednote`, `\rmfigure`).
-- An existing work as a shape reference, e.g. `corpus/fagnano-1718-lemniscata/`.
 
 ## Phase 1 — Locate the work and clear the gate
 
@@ -65,32 +83,101 @@ Read these so your output matches the house style exactly:
 3. Confirm the work is public domain. If `public_domain: false`, STOP and tell the contributor
    which rule failed — this work cannot be published.
 
-## Phase 2 — Acquire the scan pages
+## Phase 2 — Prepare the pages
 
 - Use `source.scan_url` / `scan_id` in `work.yaml` to locate the pages named in `<pages>`.
 - If the contributor has the images/PDF locally, use those. If pages must be downloaded, confirm
   the source and the page range with the contributor first (downloading is a side effect).
-- Work in small batches (a few pages) so quality stays high, exactly as the chat prompt advises.
+- Turn the raw scans into one prepared image per page:
 
-## Phase 3 — Transcribe, page by page
+  ```bash
+  python pipeline/prepare_pages.py --images <scans> --pages <spec> --out <prepared>
+  ```
 
-For each page, following `prompts/transcribe-chat.md` and `corpus/HOUSESTYLE.md`:
+  This crops each page to its printed text block and caps the long edge at 1568px, which is where
+  the vision API downscales anyway. It prints a line per page (source size, crop box, output size,
+  estimated tokens) and passes through any page whose text block it cannot find — check those by
+  eye before transcribing.
 
-- Start the page with `\origpage{N}` (N = the printed page number).
-- Transcribe faithfully: keep the author's spelling, symbols, and notation (`zz` for z², archaic
+- Prepared pages live **outside the corpus**, in a scratch directory. They are working files; only
+  figure crops (`corpus/<work-id>/figures/`) are ever committed.
+- **A portrait page loses width to the 1568px cap** (~1180px of text against a half-page crop's
+  1500px). That is the accepted trade — one image per page saves a turn, and turns dominate. Where
+  a specific glyph is genuinely unreadable at that size, the batch subagent magnifies that region
+  (see Phase 3), rather than every page being split in advance.
+
+## Phase 3 — Transcribe in batches, via subagents
+
+**You do not read the page images.** For each batch of pages, dispatch one subagent.
+
+**Batch size: 4 by default.** The measured optimum is 2–4 and the curve is flat there; 4 keeps
+several adjacent pages visible to one agent, which is what lets it join text across page breaks and
+compare a doubtful glyph against a clearer instance nearby. Below about two batches' worth of pages,
+just transcribe inline yourself — one subagent's fixed cost exceeds the saving on a very short work.
+
+Give each batch subagent:
+
+- the pinned rules from `prompts/transcribe-chat.md`;
+- the **transcription-relevant** house-style rulings, not all of `corpus/HOUSESTYLE.md` — it is 36KB
+  and most of its rulings concern site rendering; every subagent re-reads whatever you send;
+- the work's `corpus/<work-id>/notation.md` if it exists, and an instruction to follow it;
+- the **previous batch's trailing ~15 lines**, so text spanning the batch boundary joins correctly;
+- the paths of its own prepared page images, and nothing else;
+- a scratch directory it may write magnified crops into, **capped at 3 regions per page**.
+
+Instruct each subagent to:
+
+- write one fragment per page to `corpus/<work-id>/pages/p<N>.tex`, starting with `\origpage{N}`
+  (the printed page number) and containing body LaTeX only;
+- transcribe faithfully — keep the author's spelling, symbols, and notation (`zz` for z², archaic
   spelling, `arc.`); normalize typography only (Fraktur/long-ſ → normal letters, expand ligatures,
-  drop line-break hyphenation).
-- Mark anything you are unsure of with `\uncertain{...}`; use `\illegible` for unrecoverable text.
-  These are honest flags for the reviewer — prefer them over a confident guess.
-- For a figure, emit `\rmfigure{figures/fig-XX.png}{<figure number only>}{<alt text>}` — do **not**
-  redraw it. The crop is added separately.
-- Reproduce apparent printer's errors faithfully and note them for the reviewer (ruling R4); never
-  silently "fix" the author.
+  drop line-break hyphenation);
+- **magnify rather than guess, and flag rather than magnify indefinitely**: where a glyph is
+  doubtful, crop and enlarge that region; if that does not settle it, mark `\uncertain{...}`, or
+  `\illegible` for unrecoverable text. These are honest signals for the reviewer;
+- emit `\rmfigure{figures/fig-XX.png}{<figure number only>}{<alt text>}` for a figure — never
+  redraw it. The crop is added separately;
+- reproduce apparent printer's errors faithfully and report them (ruling R4); never silently "fix"
+  the author;
+- not transcribe running heads, page numbers, or signature lines.
+
+Require a report back with exactly these sections, and nothing else — the report is what enters
+**your** context, so it must stay small:
+
+1. **PAGES WRITTEN**
+2. **FLAGS** — count of `\uncertain{}` and `\illegible` per page
+3. **NOTATION DECISIONS** — decisions that must hold across the rest of the work, one line each
+   with a rationale; "none" if none
+4. **TRAILING LINES** — the last ~15 lines of the final fragment, verbatim
+5. **DIFFICULTIES** — anything about the scan or the mathematics that made a page hard
+
+After each batch: append any reported decisions to `corpus/<work-id>/notation.md` (Phase 3a), run
+`python pipeline/houselint.py corpus/<work-id>/pages/p<N>.tex` over the new fragments so house-style
+drift is caught at the batch that caused it, and carry the trailing lines into the next batch.
+
+### Phase 3a — Keep the notation glossary
+
+`corpus/<work-id>/notation.md` records this work's cross-page rendering decisions. It is a
+**permanent, committed artifact**, not a scratch file (corpus-format).
+
+This matters more than it sounds. Two isolated batches of the same work, same model, same scans,
+**disagreed on that work's most frequent symbol** — one wrote Clebsch's summation sign `\sum` 19
+times where the rest of the work uses the Sigma letter. Given the glossary, a later batch got it
+right 19 times out of 19. Batches cannot see each other; the file is how they agree.
+
+**Write entries exactly, and say what NOT to do.** A vague entry is worse than none: an entry that
+said only that spacing "is normalized" produced 11 spaced dots where the work uses 63 tight ones.
+Record the decision, one line of rationale, and the forbidden alternatives. When a batch reports a
+decision, write it down at that precision — do not paraphrase it.
+
+Author back-references (`équation (92)`, `Gleichung (3)`, section numbers) are printed on the page
+being transcribed and are copied verbatim. They are not glossary entries.
 
 ## Phase 4 — Stitch and normalize
 
-- Assemble the page fragments in order into `corpus/<work-id>/original.tex`, wrapped in the
-  standard document scaffold (see any existing `original.tex`):
+- Concatenate `corpus/<work-id>/pages/p<N>.tex` **in page order** into
+  `corpus/<work-id>/original.tex`, wrapped in the standard scaffold (see any existing
+  `original.tex`):
 
   ```latex
   \documentclass{article}
@@ -100,17 +187,21 @@ For each page, following `prompts/transcribe-chat.md` and `corpus/HOUSESTYLE.md`
   \end{document}
   ```
 
-- One cleanup pass: fix heading structure (`\section*{}` only where the source has a heading),
-  paragraph breaks, and macro consistency. Keep a leading comment noting the source and that this
-  is a faithful transcription (match the style of existing files).
+- Check `\origpage` markers are contiguous with no gaps or duplicates.
+- One cleanup pass: heading structure (`\section*{}` only where the source has a heading),
+  paragraph breaks, macro consistency.
+- **Do not re-read the whole assembled file repeatedly** — grep or sed the parts you need. It is the
+  largest text object in the run and every full read of it stays in your context.
 
 ## Phase 5 — Verification pass
 
-Re-read the assembled `original.tex` against each scan page:
+Verify each batch against its scans, **in a subagent, per batch** — do not rely on images being
+resident, and do not read them yourself. Give each verification subagent that batch's fragments and
+its prepared page images, and ask for only a discrepancy list back.
 
 - Check every formula, equation number (`\tag{n}`), label, and `\origpage{N}` against the image.
-- Where the transcription and the scan disagree, fix it or flag it with `\uncertain{}`.
-- Keep a short list of the pages you flagged; it goes into provenance and the PR body.
+- Resolve each discrepancy or flag it with `\uncertain{}`.
+- Keep the list of flagged pages; it goes into provenance and the PR body.
 
 ## Phase 6 — Write provenance
 
@@ -122,13 +213,18 @@ changelog:                    # seeds the work page's revision history
     summary: Transcription added (AI draft).
 transcription:
   status: ai-draft            # machine output; a human has not yet checked it
-  model: claude-opus-4-8      # the model you are actually running as
+  model: claude-opus-5        # the model you are actually running as
   effort: high                # your thinking/effort level, or null if unknown
   prompt_version: transcribe-v1   # match prompts/transcribe-chat.md
   submitted_via: skill
   produced: "YYYY-MM-DD"      # today
   verification: { flagged_pages: [...], date: "YYYY-MM-DD" }
+  uncertainty_flags: N        # total \uncertain{} + \illegible; report 0 explicitly
 ```
+
+Record the **total uncertainty-flag count**, and state it even when it is zero — an absence of flags
+must be distinguishable from an absence of flagging. If a batch could not magnify, say so: its flag
+count then reflects its tooling, not the scan.
 
 Set `status: ai-draft` unless the contributor tells you they have reviewed it against the scan —
 only then may it be `skimmed`, recorded with a `reviewers:` entry naming them.
@@ -150,15 +246,15 @@ Fix any schema/vocab/gate errors. Vocabulary values (`discipline`, `tags`, `venu
 the same PR and say so.
 
 `validate.py` includes the mechanical house-style linter (`pipeline/houselint.py`), which enforces
-presentation rulings such as HOUSESTYLE R2 (inline integrals over a fraction must be
-`\displaystyle\int \frac{...}{...}`, not `\int \dfrac{...}{...}`). To check a page in isolation while
-transcribing, run `python pipeline/houselint.py corpus/<work-id>/original.tex`.
+presentation rulings such as HOUSESTYLE R2. Where a work has math the site must render, check it
+through the site's own KaTeX build as well — a fragment can pass `houselint` and still fail to
+typeset.
 
 ## Phase 8 — Review checkpoint, then open the PR
 
-1. **Show the contributor the result before pushing**: the rendered transcription (or a summary of
-   what was transcribed), the flagged/uncertain passages, and the gate result. Give them the chance
-   to correct anything. This checkpoint is required — do not skip straight to the PR.
+1. **Show the contributor the result before pushing**: what was transcribed, the flagged/uncertain
+   passages and their count, any notation decisions recorded, and the gate result. This checkpoint
+   is required — do not skip straight to the PR.
 2. Create a branch, commit with a DCO sign-off, and open the PR:
 
    ```bash
@@ -169,13 +265,15 @@ transcribing, run `python pipeline/houselint.py corpus/<work-id>/original.tex`.
    ```
 
    The `-s` adds the `Signed-off-by` line the DCO requires (PLAN.md §11.1). Do not push to `main`.
-3. In the PR body, state: pages covered, model + prompt_version, the flagged/uncertain pages, and
-   that the status is `ai-draft` pending human review. Link the source scan.
+3. In the PR body, state: pages covered, model + prompt_version, the flagged/uncertain pages, the
+   flag count, and that the status is `ai-draft` pending human review. Link the source scan.
 
 ## Notes
 
 - **Translations** are a separate step (`prompts/translate-chat.md`, `translate-v1`): translate
   only from our own `original.tex`, preserve every math token and `\origpage` marker, and record
-  `source: transcription` in provenance. A translation can be added in the same PR or a later one.
+  `source: transcription` in provenance.
 - Keep `prompt_version` in provenance in sync with the prompt file you followed. If you deviate
   from the pinned prompt, say so in the PR rather than silently recording the old version.
+- To see what a run actually cost, and what filled the context:
+  `python pipeline/measure_session.py --list`, then `... <session-id> --pages N`.
