@@ -1,23 +1,25 @@
 ## 1. Baseline measurement
 
-- [ ] 1.1 Record the pre-change baseline for `clebsch-1864-anwendung-abelschen-functionen` pages 189–206 in the change folder: 347 turns, 76M tokens, 4.2M tokens/page, 220k mean context — the figure the A/B in group 5 is measured against
-- [ ] 1.2 Write a small throwaway script that reads a session transcript's `usage` fields and reports turns, mean/peak context, total tokens, and tokens/page, so the post-change run can be measured the same way
+- [x] 1.1 Record the pre-change baseline for `clebsch-1864-anwendung-abelschen-functionen` pages 189–206 in the change folder: 347 turns, 76M tokens, 4.2M tokens/page, 220k mean context — the figure the A/B in group 5 is measured against → `measurements.md`
+- [x] 1.2 Write a small throwaway script that reads a session transcript's `usage` fields and reports turns, mean/peak context, total tokens, and tokens/page, so the post-change run can be measured the same way → `pipeline/measure_session.py`; reproduces the baseline exactly, and adds the residency breakdown that identifies *what* filled the context
 
 ## 2. Text-block crop helper
 
-- [ ] 2.1 Add `pipeline/prepare_pages.py`: given a scan directory and a page range, emit one image per page cropped to the printed text block, long edge ≤ 1568px, named by printed page number
-- [ ] 2.2 Detect the text block from margin whitespace; expose `--margin`, `--max-edge`, and `--no-crop` overrides for pages the detector gets wrong
-- [ ] 2.3 Emit a per-page report line (source dimensions, crop box, output dimensions, estimated image tokens) so figure-crop iterations can be settled without a visual check
-- [ ] 2.4 Exit non-zero only on unreadable input; a page whose text block cannot be determined is reported and passed through uncropped, never fatal
-- [ ] 2.5 Add `pipeline/tests/test_prepare_pages.py` covering the pure helpers (crop-box computation, scaling, page-number resolution) with no image-library dependency in the test path
-- [ ] 2.6 Confirm `pipeline/validate.py` and the CI suite import neither the helper nor `anthropic` — assert it in the existing dependency test
+- [x] 2.1 Add `pipeline/prepare_pages.py`: given a scan directory and a page range, emit one image per page cropped to the printed text block, long edge ≤ 1568px, named by printed page number → measured 2,375 tokens/page over Clebsch pp. 207–214
+- [x] 2.2 Detect the text block from margin whitespace; expose `--margin`, `--max-edge`, and `--no-crop` overrides for pages the detector gets wrong
+- [x] 2.3 Emit a per-page report line (source dimensions, crop box, output dimensions, estimated image tokens) so figure-crop iterations can be settled without a visual check
+- [x] 2.4 Exit non-zero only on unreadable input; a page whose text block cannot be determined is reported and passed through uncropped, never fatal
+- [x] 2.5 Add `pipeline/tests/test_prepare_pages.py` covering the pure helpers (crop-box computation, scaling, page-number resolution) with no image-library dependency in the test path — 20 tests, including one pinning the portrait-page resolution trade
+- [x] 2.6 Confirm `pipeline/validate.py` and the CI suite import neither the helper, Pillow, nor `anthropic` — assert it in the existing dependency test
+- [x] 2.7 Add `pipeline/tests/test_measure_session.py` for `measure_session.py`'s pure helpers (image dimensions/tokens, residency, project slug), and assert the gate does not import it — 13 tests; suite now 178 passing (was 145)
+- [x] 2.8 Document Pillow in `pipeline/requirements.txt` as a contributor-only, lazily-imported dependency, alongside `anthropic`
 
 ## 3. Skill rewrite
 
 - [ ] 3.1 Rewrite `SKILL.md` Phase 2 to call `pipeline/prepare_pages.py` and state that prepared pages live outside the corpus
 - [ ] 3.2 Rewrite Phase 3 as the batch loop: **default batch of 4** (measured optimum is N=2–4; the curve is flat there and 4 keeps adjacent pages comparable), one subagent per batch, fragments written to `corpus/<work-id>/pages/pNNN.tex`
 - [ ] 3.2a Keep the per-page turn count at 2 (one `Read` of one text-block crop, one `Write`) — `t·(B+P)` is ~75% of the cost, so a third turn per page costs more than any batch-size choice
-- [ ] 3.2b Give the batch subagent a scratch directory it may write magnified crops into, so `\uncertain{}` reflects legibility rather than missing tooling
+- [ ] 3.2b Give the batch subagent a scratch directory it may write magnified crops into, so `\uncertain{}` reflects legibility rather than missing tooling — **capped at 3 regions per page** (an ungoverned run made 32 crops for 4 pages), with magnification preferred over guessing and `\uncertain{}` preferred over both when it does not settle the reading
 - [ ] 3.2c Pass a transcription-relevant extract of `HOUSESTYLE.md` (~4k tokens) rather than all 36KB, since every subagent re-reads the whole payload
 - [ ] 3.3 Write the subagent prompt template: pinned `prompts/transcribe-chat.md` rules, applicable `corpus/HOUSESTYLE.md` rulings, the work's `notation.md`, the previous batch's trailing ~15 lines, and the batch's image paths
 - [ ] 3.4 Fix the batch report contract: pages written, uncertainty-flag count, new notation decisions, trailing lines of the final fragment — and nothing else, so the report stays small

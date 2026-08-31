@@ -133,11 +133,31 @@ read persists.
 
 ### D5. One text-block crop per page, at 1568px on the long edge
 
-The API downscales anything longer than 1568px, so a full-page scan at 1462×1999 is effectively
-read at 1147px across the page width. Half-page crops sidestep that (1500px across the width, ~1.3×
-linear) at 2.1× the tokens — 4274/page for Clebsch against 2025 for Abel's full pages. Since most of
-a scanned page is margin, cropping to the printed text block spends the same 1568px budget on text
-and reaches half-page resolution at roughly full-page cost.
+**Corrected during implementation — the original rationale for this decision was wrong.** It claimed
+that cropping margins would buy half-page resolution at full-page cost. It does not. The 1568px cap
+applies to the image's **long edge**, which on a portrait page is the *height*, so the page height
+consumes the budget and the text width takes what is left — regardless of how much margin is
+removed. Measured on the Clebsch scans:
+
+| | source | after the cap | text width |
+|---|---|---|---|
+| full page `p207.jpg` | 1400×1859 | 1180×1568 | **1180px** |
+| half crop `c207a.jpg` | 1500×1062 | *not downscaled* | **1500px** |
+
+A half-page crop is landscape, so its long edge falls under the cap and it is not downscaled at all.
+Cropping cannot close that gap: the margins on these scans are ~10%, and the helper's detected crop
+boxes came back at 88–95% of the page.
+
+So this is a genuine trade, not a free lunch: **1180px vs 1500px of text width, 2375 vs 4274 tokens,
+2 vs 3 turns per page.** The helper measured 2,375 tokens/page over pp. 207–214.
+
+The decision is still to default to one image per page, for two reasons. Turns dominate — `t·(B+P)`
+is three quarters of the cost — so the turn saved is worth more than the tokens saved. And there is
+direct evidence the lower resolution suffices: **Abel 1841's 91 pages were transcribed at exactly
+1147×1568** and are in the corpus.
+
+But the resolution loss is real, so it is paid for **per page, on demand** rather than avoided
+blanket-wise — see D5a.
 
 The helper is standard-library/PyYAML-only and lives in `pipeline/` but is **not** imported by
 `validate.py` — the gate keeps its single dependency and CI stays AI-free and image-library-free.
@@ -147,25 +167,42 @@ skill must not fail the run over a crop it could not compute.
 **The measurement promoted this from a nice-to-have to the single largest lever.** Its value is not
 the image tokens it saves but the **turn** it saves: one image per page makes a page one `Read` plus
 one `Write`, cutting `t` from 3.4 to 2. Since `t·(B+P) = 212k/page` is three quarters of the cost,
-that is a ~40% cut on its own — far more than any batch-size choice:
+that is worth more than any batch-size choice:
 
 | scenario | N* | tokens/page | vs 4.2M baseline |
 |---|---|---|---|
-| as measured (two half-crops, full HOUSESTYLE) | 1.6 | 253k | 16.6× |
-| one text-block crop → t=2 | 2.5 | 152k | **27.6×** |
-| + trimmed style payload (P 12.7k → 4k) | 2.3 | 133k | **31.6×** |
+| as measured (two half-crops, full HOUSESTYLE) | 1.6 | 254k | 16.5× |
+| one crop, no escalation (*optimistic ceiling*) | 2.4 | 153k | 27.5× |
+| **one crop + escalation on 25% of pages** | 2.2 | 170k | **24.6×** |
+| **  + trimmed style payload** | 2.1 | 149k | **28.2×** |
+| one crop + escalation on 50% of pages | 2.1 | 188k | 22.3× |
+|   + trimmed style payload | 1.9 | 164k | 25.6× |
+
+The no-escalation row is a ceiling, not a forecast: it assumes every page is legible at 1180px.
+**Plan on ~20–28×, and let the group 5 measurement decide where in that band this lands** — the
+escalation rate is the unknown, and it is a property of the scan, not of the design.
 
 Trimming the style payload is the second lever: `HOUSESTYLE.md` is 36KB (~10k tokens) and every
 subagent re-reads all of it, though most of its 26 rulings concern site rendering rather than
 transcription. A transcription-relevant extract cuts `P` from ~12.7k to ~4k.
 
-### D5a. Batch subagents need a zoom capability
+### D5a. Per-page escalation, capped
 
-The N=12 run reported that it could not magnify a damaged spot — the Browser-pane zoom does not
-operate on local files, and the isolation rule forbade writing crops. It flagged `\uncertain{}`
-instead of guessing, which is the right behavior, but the flags were an artifact of the restriction
-rather than of the scan. A batch subagent MUST be able to write magnified crops into its own scratch
-area, or the flag rate measures tooling rather than legibility.
+Since one image per page costs ~21% of the text width (D5), the subagent MUST be able to buy that
+resolution back where it actually matters: by cropping and magnifying a *specific doubtful region*
+into its own scratch directory. Targeted magnification beats blanket half-pages because it spends
+turns only on the pages that need them — and the pages that need them announce themselves, since the
+alternative to magnifying is raising `\uncertain{}`.
+
+This is also a correctness requirement, not only a cost one. The N=12 run could not magnify at all —
+the browser zoom does not operate on local files and the isolation rule forbade writing crops — so it
+flagged rather than guessed. That was the right behavior, but it means **its flag rate measured the
+tooling it was given, not the legibility of the scan**, which is exactly the confound that would make
+group 5's quality comparison meaningless.
+
+**Escalation MUST be capped** (default 3 magnified regions per page). Given the capability and no
+cap, the glossary-test run made **32 zoom crops for 4 pages** — about 8 per page, which would add
+more turns than the half-page approach it replaces and undo the whole saving.
 
 ### D6. Rollout is gated on an A/B diff, not on judgment
 

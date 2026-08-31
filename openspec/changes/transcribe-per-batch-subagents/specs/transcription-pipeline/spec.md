@@ -103,13 +103,19 @@ knowledge of the referenced page.
 ### Requirement: Text-block page crops
 
 A helper in `pipeline/` SHALL prepare one image per scan page, cropped to the printed text block and
-sized so its long edge does not exceed 1568 pixels — the point above which the vision API downscales,
-so that resolution above it is discarded while margin inside it displaces text.
+sized so its long edge does not exceed 1568 pixels — the point above which the vision API downscales.
+One image per page is chosen because it makes a page one `Read` plus one `Write`, and turns dominate
+the cost.
+
+This trades resolution, and the trade MUST be acknowledged rather than designed around: the cap
+applies to the LONG edge, which on a portrait page is the height, so a full page yields roughly
+1180px of text width against a half-page crop's 1500px. Cropping margins does not close that gap.
+The resolution is bought back per page by escalation, not avoided by splitting every page.
 
 The helper MUST NOT be imported by `pipeline/validate.py` or the CI test suite, and MUST NOT import
 the `anthropic` SDK, so the copyright gate and CI keep their single PyYAML dependency. Where an
-automatic crop is unsafe — a fold, a plate, a skewed scan — the skill SHALL fall back to a manual
-crop for that page and continue, never failing a run over a crop it could not compute.
+automatic crop is unsafe — a fold, a plate, a skewed scan — the helper SHALL pass the page through
+uncropped, report it, and continue, never failing a run over a crop it could not compute.
 
 #### Scenario: A page is prepared for transcription
 
@@ -119,12 +125,36 @@ crop for that page and continue, never failing a run over a crop it could not co
 #### Scenario: Auto-crop cannot be computed
 
 - **WHEN** the helper cannot safely determine a page's text block
-- **THEN** the skill falls back to a manual crop for that page and the run continues
+- **THEN** that page is passed through uncropped and reported, and the run continues
 
 #### Scenario: The gate stays dependency-free
 
 - **WHEN** `pipeline/validate.py` or the CI test suite runs
-- **THEN** the crop helper and the `anthropic` SDK are not imported
+- **THEN** the crop helper, Pillow, and the `anthropic` SDK are not imported
+
+### Requirement: Capped per-page escalation
+
+A batch subagent SHALL be able to crop and magnify a specific doubtful region of its own pages into a
+scratch directory, and the number of magnified regions per page MUST be capped (default 3).
+
+The capability is required because one image per page costs roughly 21% of the text width; without
+it, a subagent's `\uncertain{}` flags measure the tooling it was given rather than the legibility of
+the scan, which would invalidate any quality comparison. The cap is required because the capability
+is used freely when ungoverned — an observed run produced 32 magnified crops for 4 pages, which would
+add more turns than the one-image-per-page design removes.
+
+Magnification is preferred over raising `\uncertain{}` where it settles the reading, and
+`\uncertain{}` is preferred over guessing where it does not.
+
+#### Scenario: A doubtful glyph is magnified rather than guessed
+
+- **WHEN** a subagent cannot resolve a glyph at the prepared page's resolution
+- **THEN** it magnifies that region into its scratch directory rather than guessing, and flags `\uncertain{}` only if magnification does not settle it
+
+#### Scenario: Escalation stays bounded
+
+- **WHEN** a page would need more magnified regions than the cap allows
+- **THEN** the subagent stops magnifying and flags the remaining doubtful passages instead
 
 ### Requirement: Uncertainty flagging is observable
 

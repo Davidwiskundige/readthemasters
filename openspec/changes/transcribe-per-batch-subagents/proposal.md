@@ -45,11 +45,14 @@ on a Claude Code subscription instead, so the fix must keep the vision work insi
   batch's trailing lines so text spanning a page break is joined correctly.
 - **The verification pass becomes per-batch too**, reading fragment plus images in a fresh context
   and returning only a discrepancy list, rather than relying on scans still being resident.
-- **One image per page, cropped to the printed text block.** A new `pipeline/` helper replaces
-  ad-hoc half-page crops. Clebsch spent 4274 tokens/page on two half-page crops against Abel's 2025
-  for one full page; half-pages buy ~1.3× linear resolution because the API downscales anything over
-  1568px on the long edge. Cropping away the margins spends that same budget on text instead, giving
-  half-page resolution at roughly full-page cost.
+- **One image per page, cropped to the printed text block, with capped per-page escalation.** A new
+  `pipeline/` helper replaces ad-hoc half-page crops: measured at 2,375 tokens/page against 4,274 for
+  two half-crops, and — the part that matters — one `Read` per page instead of two, since turns
+  dominate the cost. This does cost resolution: the 1568px cap applies to the long edge, which on a
+  portrait page is the height, so a full page yields ~1180px of text width against a half-crop's
+  1500px, and cropping margins cannot close that gap. It is bought back per page instead, by
+  magnifying a specific doubtful region (capped, default 3 per page). Abel 1841's 91 pages were
+  transcribed at exactly this resolution.
 - **An A/B quality check gates the rollout.** Clebsch pages 189–206 are already transcribed under
   the current architecture; re-transcribing a sample under the new one and diffing against the
   committed text measures any quality change on the same work and the same scans before the
