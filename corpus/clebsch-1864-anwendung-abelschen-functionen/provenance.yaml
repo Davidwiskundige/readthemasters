@@ -1,0 +1,85 @@
+changelog:
+  - date: "2026-08-31"
+    summary: Transcription extended to pp. 207–222 (AI draft).
+  - date: "2026-08-29"
+    summary: Transcription added (AI draft), pp. 189–206 from the 1864 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-08-31"
+  verification:
+    flagged_pages: [207, 214, 216, 219]
+    date: "2026-08-31"
+  note: >-
+    Clebsch's "Ueber die Anwendung der Abelschen Functionen in der Geometrie", Crelle's Journal
+    Band 63, 3. Heft (1864). The paper runs pp. 189–243; this file currently carries pp. 189–222
+    and is INCOMPLETE — pp. 223–243 are not yet transcribed. Read from half-page crops of the
+    contributor's scan (c<N>a.jpg / c<N>b.jpg per printed page). \origpage markers run 189–222
+    with no gaps; pipeline/houselint.py passes over the whole file.
+
+    HOW THESE PAGES WERE PRODUCED — the two stretches differ, and a reviewer should know which is
+    which. Pages 189–206 were transcribed on 2026-08-29 in a single long chat session, with every
+    page image accumulating in one context. Pages 207–222 were transcribed on 2026-08-31 by two
+    ISOLATED batch subagents — pp. 207–210 in one batch, pp. 211–222 in another — each given only
+    prompts/transcribe-chat.md, corpus/HOUSESTYLE.md and its own page crops, with no access to
+    this repository or to the already-transcribed pages. This was a controlled measurement of the
+    per-batch architecture proposed in openspec/changes/transcribe-per-batch-subagents; the pages
+    are kept because they are real transcription, not because the measurement succeeded.
+
+    WHAT THE ISOLATION COST, and what was done about it. Because neither batch could see the
+    established notation, they diverged from it and from each other on the work's most frequent
+    symbol. Pages 189–206 render Clebsch's summation sign as the Sigma LETTER, \Sigma, 21 times
+    and never as \sum; the pp. 211–222 batch independently reached the same reading (32 \Sigma);
+    the pp. 207–210 batch instead used \sum 19 times and \Sigma none. The scan settles it: the
+    print sets one slanted capital-sigma letter throughout. Page 207 was therefore conformed to
+    \Sigma before assembly. Page 207 is also the first place in the work where the sign carries
+    explicit limits — n=−∞ to n=+∞, h,k=1 to h,k=p, k=1 to k=p — printed ABOVE and BELOW the
+    letter; pp. 189–206 have no such case and set no precedent. These three are written
+    \mathop{\Sigma}\limits_{...}^{...}, which keeps the letter and stacks the limits as printed;
+    all forms were rendered through the site's own KaTeX 0.16 build without error, including the
+    one nested inside an exponent. This reconciliation is the reason p. 207 is flagged.
+
+    FOUR UNCERTAIN PASSAGES, all in pp. 211–222 and all marked \uncertain in the text:
+    (a) p. 216 — three words inside the italic Steiner theorems where the scan has ink loss or an
+    overprinted blot: "die nach b, c ⟨gezogenen⟩ Geraden", "die drei ⟨Geraden⟩ ab, ac, bc", and
+    "in b und ⟨c⟩ selbst". Each reading is strongly suggested by context and by surviving letter
+    fragments; none is fully legible.
+    (b) p. 219 — "u''=0", where the equals sign carries a stray diagonal mark that makes it look
+    like ≠. The parallel clause reads v''=0 and the sense requires equality, so it is transcribed
+    as equality inside \uncertain rather than reproducing a probable broken sort.
+    These four are the only uncertainty flags in the file; pp. 189–210 carry none. That is partly
+    a property of the scan and partly a known limitation of how these pages were made — see below.
+
+    A CAVEAT ON THE FLAG COUNT. The pp. 211–222 batch reported that it could not magnify a damaged
+    spot: the isolation rule forbade it writing crop files, and the browser zoom does not act on
+    local images. It flagged rather than guessed, which is the right behaviour, but it means the
+    flag rate on those pages reflects the tooling it was given as much as the legibility of the
+    scan. Pages 189–210 were made with magnification available. A reviewer should not read
+    "no flags" on the earlier pages as stronger evidence than "four flags" on the later ones.
+
+    APPARENT PRINTER'S ERRORS reproduced faithfully, not corrected (R4): p. 211 "gleich der der 63
+    Systeme" (article doubled across a line break); p. 219 "als dass Product" for "das Product";
+    p. 219 a missing comma in "So giebt es unzählige Oberflächenpaare deren Durchschnitt". The
+    running head on p. 222 misprints "Anwendnng", but running heads are not transcribed.
+
+    ONE PASSAGE FOR A REVIEWER WITH THE MATHEMATICS. On p. 214 the fourth row of the printed
+    determinant reads u_23 v_23 w_23 0 p_3 p_2, which breaks the symmetry of the rows around it.
+    It is legible and is reproduced exactly as printed, but it deserves checking against Clebsch's
+    derivation rather than against the scan.
+
+    NOTATION, recorded in full in notation.md alongside this file so the remaining pages 223–243
+    stay consistent with these: the Sigma letter as above; Clebsch's multiplication dot kept as a
+    literal "." in both numerals and symbol products (28.64, n−1.n−2, Σa_i u_i . Σb_i v_i), never
+    \cdot or \times; three-bar ≡ set \equiv and two-bar = set =, followed per occurrence because
+    the distinction is congruence versus equality; ordinals ^{\text{ter}} / ^{\text{ten}} (R21);
+    the rank set upright \mathrm{w} where the print distinguishes it from an italic w already in
+    use for another quantity; §. as a literal section sign with a non-breaking space; German
+    quotation marks as literal „ … " (R18, R22). The print is Antiqua with round s only — no
+    long-ſ and no eszett ligature — so R19 has nothing to convert and the file contains no ß.
+
+    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no one has checked these pages against the
+    scan. The four flagged pages above are where a reviewer should start.
