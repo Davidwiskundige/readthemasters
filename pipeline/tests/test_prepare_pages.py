@@ -97,6 +97,32 @@ def test_block_is_trustworthy_rejects_an_inverted_box():
     assert not prepare_pages.block_is_trustworthy((900, 900, 100, 100), 1400, 1859)
 
 
+# --- the zoom mapping a batch subagent needs to magnify without guessing ----- #
+def test_zoom_mapping_round_trips_a_cropped_page():
+    # Clebsch p.195 as actually prepared: 1400x1859 cropped to (84,80)-(1392,1859), out 1153x1568.
+    box, source, out = (84, 80, 1392, 1859), (1400, 1859), (1153, 1568)
+    ox, oy, scale = prepare_pages.zoom_mapping(box, source, out)
+    assert (ox, oy) == (84, 80)
+    # the prepared image's own corners must map back onto the crop box's corners
+    assert round(ox + 0 / scale) == box[0]
+    assert round(oy + 0 / scale) == box[1]
+    assert round(ox + out[0] / scale) == pytest.approx(box[2], abs=2)
+    assert round(oy + out[1] / scale) == pytest.approx(box[3], abs=2)
+
+
+def test_zoom_mapping_of_an_uncropped_page_is_pure_scale():
+    # a page whose text block could not be trusted is passed through with box=None
+    ox, oy, scale = prepare_pages.zoom_mapping(None, (1400, 1859), (1180, 1568))
+    assert (ox, oy) == (0, 0)
+    assert scale == pytest.approx(1568 / 1859, abs=1e-4)
+
+
+def test_zoom_mapping_is_identity_when_no_downscale_happened():
+    # a landscape crop under the long-edge cap is not resized at all
+    ox, oy, scale = prepare_pages.zoom_mapping((0, 0, 1500, 1062), (1500, 1062), (1500, 1062))
+    assert (ox, oy, scale) == (0, 0, 1.0)
+
+
 # --- the gate stays dependency-free ----------------------------------------- #
 def test_validate_does_not_import_pillow_or_the_crop_helper():
     import validate  # noqa: F401

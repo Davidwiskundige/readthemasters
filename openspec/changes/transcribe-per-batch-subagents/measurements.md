@@ -115,11 +115,157 @@ Same work, same model, same isolation. The glossary also produced 0 `\cdot`, obe
 exactly — but set 11 *spaced* dots where pp. 189–206 set 63 *tight* ones, because the entry said
 only that spacing "is normalized". Precision transmits; vagueness licenses a fresh divergence.
 
-## Post-change (to be filled by tasks 5.8 and 6.2)
+## Post-change, measured (tasks 5.8 and 6.2)
 
-| metric | target | measured |
+**Run: Clebsch pp. 223–243, 21 pages, five batches, 2026-09-01.** The first real use of the loop.
+Every figure in the "measured" columns is reported by the harness; the cumulative column is
+**modelled** as `turns × mean context`, with `mean = (B+P + end)/2` and `B+P = 62.7k` carried over
+from the fit above — subagent transcripts are still not persisted, so per-turn context remains
+unobservable. `turns = tool calls + 1`.
+
+| batch | pages | reported tokens | tool calls | crops | modelled cumulative | per page |
+|---|---|---|---|---|---|---|
+| 223–226 | 4 | 105.8k | 23 | 7 | 2.02M | 505k |
+| 227–230 | 4 | 122.2k | 20 | 7 | 1.94M | 485k |
+| 231–234 | 4 | 107.6k | 22 | 6 | 1.96M | 490k |
+| 235–238 | 4 | 99.5k | 20 | 5 | 1.70M | 426k |
+| 239–243 | 5 | 107.5k | 35 | 11 | 3.06M | 613k |
+| **transcription total** | **21** | | **120** | **36** | **10.7M** | **509k** |
+| verification 223–232 | 10 | 144.8k | 48 | 15 | 5.08M | 508k |
+
+**The comparison is like-for-like.** `measure_session.py` counts fresh input + cache reads + cache
+writes + output — raw context volume, not cost-weighted — so `turns × mean context` is the same
+quantity as the 4.2M/page baseline, which also included its verification pass.
+
+| | tokens/page | vs 4.2M baseline |
 |---|---|---|
-| tokens/page | ≤200k | — |
-| vs 4.2M baseline | ≥20× | — |
-| turns per page | 2 | — |
-| observed `B+P` | ~62.7k | — |
+| transcription only | 509k | **8.3×** |
+| transcription + verification | ~1.0M | **4.1×** |
+| design's projection (D5) | 149–170k | 20–28× |
+
+**The design's projection is not met, and the reason is turns.** D5 assumed one image read plus one
+write per page — `t = 2`. Measured `t = 5.7` for transcription and ~4.9 for verification. Two causes,
+both real and neither an implementation defect:
+
+- **Magnification costs more than D5a budgeted.** The design forecast escalation on 25–50% of pages;
+  measured, batches magnified **36 regions across 21 pages — 1.7 per page**, escalating on nearly
+  every page. Each crop is a compute-and-save plus a read, so it roughly doubles a page's turns.
+  The escalation is not waste: it settled the `y_1`/`y_2` misprint on p. 227, the roman `d` against
+  `∂` on p. 225, the two inequality sorts on pp. 229–230, and it is why 21 pages carry only one
+  `\uncertain{}`. But **D5's claim that one image per page makes a page "one Read plus one Write"
+  is false whenever the scan is doubtful, which on this work is most pages.**
+- **Verification costs about what transcription costs.** D4 called the second read "cheap precisely
+  because neither read persists". Residency is indeed not the problem, but the pass is a second full
+  reading of every page at 4.9 turns/page — 5.08M for ten pages. It is worth running (it found eight
+  real corrections, below), but it should be budgeted as a second transcription, not as a rounding
+  error.
+
+**Orchestrating session** (`measure_session.py edaf63a8`, 247 turns):
+
+| metric | value |
+|---|---|
+| **images read** | **0 (0k tokens)** |
+| mean context/turn | 192k |
+| peak context | 312k |
+| total tokens | 47.8M |
+| full-context rewrites | 3 (1.2% of turns) |
+
+The zero is the design's central claim, and it holds mechanically: no scan image entered the
+orchestrating session, and `git status` confirmed no subagent touched the repository. But the
+orchestrator is **not** cheap — its context still reached a 192k mean against the baseline's 220k,
+and the residency breakdown says the filler is now `result: Bash` (59%) and Agent prompts/reports
+(21%), not images. Removing scans from the orchestrator did not by itself make the orchestrator
+small. *Caveat: this session also ran the whole group-5 A/B, the crop-helper change and the spec
+work, so its 47.8M cannot be divided by 21 pages to get a per-page orchestration cost.*
+
+**Where this leaves the design.** The architecture works and is a real improvement — 8.3× on
+transcription, with page cost flat across batches (426k–613k, no upward drift from batch 1 to batch
+5, which is the property the change exists to buy). It is not the 20–28× D5 projected, and D5's
+"one crop, no escalation" ceiling row should be read as unreachable on a scan of this quality
+rather than as an optimistic estimate.
+
+## A/B quality check (group 5), measured
+
+**Sample: Clebsch pp. 189–196, 8 of the 18 baseline pages, two isolated batches of 4.**
+
+| batch | pages | reported tokens | tool calls | crops |
+|---|---|---|---|---|
+| 189–192 | 4 | 89.8k | 22 | 7 |
+| 193–196 | 4 | 96.7k | 27 | 8 |
+| adjudication (task 5.6) | 3 pages re-read | 97.9k | 38 | 9 |
+
+The 89.8k at N=4 reproduces the earlier clean run's 91.7k at N=4 to within 2%, confirming the cost
+model's endpoint.
+
+**Contamination tripwire (5.3): passed.** No fragment was byte-identical to the committed text.
+Similarity ran 0.938–0.999 and — the part that matters — **tracked math density rather than being
+uniformly near-perfect**: the prose-only opening page scored 0.9993 while the formula-dense p. 191
+scored 0.9383. Contamination produces uniform agreement; independent transcription produces exactly
+this gradient, because prose converges and math markup does not.
+
+**houselint (5.5): 0 violations on both sides.** Again a sampler, not a gate — see below.
+
+**Divergences (5.4): 66 spans across 8 pages, collapsing to 8 distinct decisions** (the design
+predicted "far fewer decisions than divergences"; the ratio was 8:1).
+
+| # | decision | adjudicated by | outcome |
+|---|---|---|---|
+| 1 | inner fraction of a compound fraction: `\dfrac` or `\frac` | scan | **baseline right, new run wrong** |
+| 2 | subscripts `x_{1}` or `x_1` | corpus convention | new run **split against itself** |
+| 3 | footnote markers: R15 superscript or bare `~*)` | HOUSESTYLE R15 | new run right |
+| 4 | abbreviation dot: `\ ` or `~` | HOUSESTYLE R17 | new run right |
+| 5 | word split across a page break | notation.md's own rule | new run right; **baseline had 2 bugs** |
+| 6 | `\Sigma` before a fraction: thin space, dot, or tight | scan | new run right |
+| 7 | `ihr` vs `ihre` (p. 190) | scan | tie — same text, new run flagged it |
+| 8 | `ff.` in the Prym footnote (p. 190) | scan | tie — same text, new run flagged it |
+
+Decision 1 is the substantive one and the new architecture lost it. Both batches wrote `\frac` at
+every nesting level, flattening ~28 nested fractions across pp. 193–195. The scan is unambiguous:
+measured at both nesting levels across four compound fractions on two pages, the `x` glyph is
+13–14px tall and the `∂` 21–22px **at both levels**, agreeing within ±1px, where a script-size
+shrink would put the inner `x` at 9–10px. The cause was a gap in the rules payload, not the model:
+HOUSESTYLE's `\frac`-not-`\dfrac` ruling governs the operand of a large operator and says nothing
+about nesting, so "display math is already display style" was over-applied. Recorded in
+`notation.md` with the forbidden reasoning named — and it held: the batch transcribing pp. 231–234
+under the corrected glossary got the analogous case right.
+
+Decision 2 is the failure mode the glossary exists for, caught in the act: batch 1 wrote `x_1`
+throughout pp. 191–192 and batch 2 wrote `x_{1}` throughout pp. 193–196, **in the same run**. The
+committed file had drifted the same way (pp. 189–206 braced 218 subscripts, pp. 207–222 left 166
+bare). Nothing on the page decides it; only a written-down convention can.
+
+Decision 5 found two outright bugs in the committed baseline — p. 195 ended `An-` with p. 196
+opening `zahl`, and p. 198 ended `aus-` with p. 199 opening `reichend` — both violating a rule
+already written in this work's own `notation.md`, both rendering a stray hyphen and space inside a
+running word, and both invisible to `houselint`. The new run wrote `Anzahl` whole.
+
+**Verdict (5.9): rollout proceeds.** Every substantive decision was adjudicated against the scan and
+recorded. The new architecture is not uniformly better than the baseline — it lost decision 1 — but
+the loss was a missing glossary entry, which is a repairable class, and the glossary demonstrably
+repaired it. Markup-only divergence (whitespace inside math, `\qquad`/`\quad`, `$(p=1)$` versus
+`($p=1$)`) did not block.
+
+**The mechanical checks were, again, exactly as weak as the design says.** `houselint` passed both
+versions at 0 violations while the baseline carried two page-break hyphenation bugs and nine
+R15/R17 violations, and while the new version carried 28 flattened nested fractions. Every one of
+the eight decisions was settled by the scan or by a written ruling — none by the diff or the linter.
+
+## What the verification pass caught (task 6.1, pp. 223–232)
+
+Run as a separate subagent per the D4 contract. It confirmed the two readings the transcribing
+batches had flagged as unresolved — p. 228's last line really is printed `n^{\text{ter}}` (Clebsch's
+own slip, kept per R4) and p. 227's rows 2–3 really are printed `y_2` — and found eight corrections
+the transcription had got wrong:
+
+- five continuation-dot rows with the wrong dot count (p. 224 12→10, p. 225 6→12 and 6→15 twice,
+  p. 227 9→12), all measured off the scan by pixel-lattice profile;
+- three inline fractions still written `\frac` on pp. 226–228, which predate the `\dfrac` glossary
+  entry added mid-run.
+
+It also raised one non-finding worth recording: letterspacing *inside* an already-italic passage
+looked like dropped emphasis but is correct under R24, since both devices collapse to `\emph` and a
+nested `\emph` would break `tex.js`'s `[^}]*` match. That is now a `notation.md` entry so the next
+verification pass does not re-raise it.
+
+**All 1383 math spans in the assembled pp. 189–243 render through the site's own KaTeX 0.16.47
+build**, and the site's `tex.js` tests still pass (27/27).

@@ -51,21 +51,34 @@ the new text to an `ai-draft` baseline, never to the scan. So 5.4–5.5 exist to
 its decision points; 5.6 is what actually decides. Expect far fewer decisions than divergences —
 across 18 pages, two batches produced 25 divergent spots but only two decisions to settle.
 
-- [ ] 5.1 Build an isolated sandbox: copies of `prompts/transcribe-chat.md`, the HOUSESTYLE extract and the work's `notation.md`, plus the batch's page images and a scratch dir for zoom crops, and nothing else; the subagent prompt forbids reading any other path and requires it to declare every path it read
-- [ ] 5.2 Re-transcribe a sample of Clebsch pages 189–206 into the sandbox output directory, leaving the committed `original.tex` untouched
-- [ ] 5.3 **Contamination tripwire**: byte-identical output against the committed text fails the measurement — never record it as agreement; re-run with tighter isolation
-- [ ] 5.4 Diff the sample against the committed text; classify each divergence as substantive (wording, formula, notation) or markup-only, and collapse the substantive ones into the distinct *decisions* behind them
-- [ ] 5.5 Run `pipeline/houselint.py` over both versions and compare violation counts
-- [ ] 5.6 **Adjudicate each substantive decision against the scan** — contributor, or a verification subagent reading the page images. The diff cannot say which side is right: both versions descend from an `ai-draft` baseline that no human has checked
-- [ ] 5.7 Record every adjudicated decision in the work's `notation.md`, at the precision the corrected entry uses — say what not to do, not just what to do (a vague entry licenses a fresh divergence: see design, Resolved)
-- [ ] 5.8 Record measured tokens/page for the sample against the 4.2M baseline from task 1.1
-- [ ] 5.9 Rollout proceeds when every substantive decision has been adjudicated and recorded; markup-only divergence does not block. An unadjudicated substantive divergence sends the design back to group 3
+- [x] 5.1 Build an isolated sandbox: copies of `prompts/transcribe-chat.md`, the HOUSESTYLE extract and the work's `notation.md`, plus the batch's page images and a scratch dir for zoom crops, and nothing else; the subagent prompt forbids reading any other path and requires it to declare every path it read — **isolation held**: every agent declared a repo-free path list, and `git status` independently confirmed no subagent touched the repository. Note that Claude Code offers no *mechanical* path restriction, so the prompt plus the 5.3 tripwire are the whole control; that limitation is now stated in the design
+- [x] 5.2 Re-transcribe a sample of Clebsch pages 189–206 into the sandbox output directory, leaving the committed `original.tex` untouched — pp. 189–196, 8 of 18 pages, two batches of 4
+- [x] 5.3 **Contamination tripwire**: byte-identical output against the committed text fails the measurement — **passed**; nothing byte-identical, and similarity tracked math density (0.9993 on the prose-only p. 189 against 0.9383 on the formula-dense p. 191) rather than being uniformly near-perfect, which is the signature that distinguishes independent work from copying
+- [x] 5.4 Diff the sample against the committed text; classify each divergence — **66 divergent spans across 8 pages, collapsing to 8 distinct decisions** (the design predicted far fewer decisions than divergences; the ratio was 8:1)
+- [x] 5.5 Run `pipeline/houselint.py` over both versions and compare violation counts — **0 and 0**, while the baseline carried two page-break bugs and nine R15/R17 violations and the new version carried 28 flattened nested fractions. The linter's blindness is now measured twice over, not asserted
+- [x] 5.6 **Adjudicate each substantive decision against the scan** — an isolated adjudication subagent settled all four scan-dependent decisions with pixel measurements; the other four were settled by HOUSESTYLE/corpus convention
+- [x] 5.7 Record every adjudicated decision in the work's `notation.md`, at the precision the corrected entry uses — all 8 recorded with the forbidden alternative named. **The glossary then proved itself**: the batch transcribing pp. 231–234 under the corrected nested-fraction entry got the analogous case right
+- [x] 5.8 Record measured tokens/page for the sample against the 4.2M baseline → `measurements.md`
+- [x] 5.9 Rollout proceeds when every substantive decision has been adjudicated and recorded — **proceeds.** The new architecture did not win uniformly: it lost the nested-fraction decision on ~28 spans. But the loss was a missing glossary entry rather than a reading failure, and the glossary repaired it, which is exactly the mechanism D2 predicts
 
 ## 6. First real use and close-out
 
-- [ ] 6.1 On a clean A/B, transcribe Clebsch pages 207–243 with the new loop
-- [ ] 6.2 Record the measured tokens/page and mean context for that run, and adjust the default batch size if the observed subagent baseline differs materially from the ~35k estimate
-- [ ] 6.3 Run `python pipeline/validate.py` and `python -m pytest pipeline/tests -q`
-- [ ] 6.4 Review checkpoint, then a DCO-signed PR for the Clebsch completion
+- [x] 6.1 On a clean A/B, transcribe Clebsch pages **223–243** with the new loop (207–222 were already committed) — 21 pages in five batches; the work is now complete at 55/55 pages, contiguous, houselint-clean, and all 1383 math spans render through the site's KaTeX 0.16.47 build
+- [x] 6.2 Record the measured tokens/page and mean context for that run → `measurements.md`. **Batch size needs no change** — per-page cost was flat across the five batches (426k–613k with no drift), which is the property the change exists to buy. **But the headline projection was wrong**: measured 509k/page for transcription (8.3× the 4.2M baseline), not the 149–170k (20–28×) D5 forecast, because `t` is 5.7 turns/page rather than the assumed 2. See 6.7
+- [x] 6.3 Run `python pipeline/validate.py` and `python -m pytest pipeline/tests -q` — gate passes on 13 works; 185 tests pass (was 182; +3 for the new `zoom_mapping` helper)
+- [ ] 6.4 Review checkpoint, then a DCO-signed PR for the Clebsch completion — **the Clebsch PR is #42, already open**; this pushes the completion to its branch rather than opening a new one
 - [ ] 6.5 Fold the delta spec into `openspec/specs/transcription-pipeline/spec.md` and archive the change
 - [ ] 6.6 Note in the archived change whether the two design open questions were resolved: A/B acceptance criteria, and whether `notation.md` is a permanent corpus artifact
+
+## 7. Corrections the run forced (added 2026-09-01)
+
+Recorded here rather than silently applied, because each contradicts something the design or the
+tasks asserted.
+
+- [x] 7.1 **D5's "one Read plus one Write per page" is false on a doubtful scan.** Batches magnified 36 regions across 21 pages — escalating on nearly every page, not the 25–50% D5 forecast — and that is what put per-page cost at 509k rather than ~150k. The escalation is not waste (it settled four misprints and kept 21 pages down to one `\uncertain{}`), so the honest correction is to the *forecast*, not the behaviour. `SKILL.md` now states the turn cost of a crop explicitly
+- [x] 7.2 **D4's verification pass is not cheap.** "The images are read twice, which is cheap precisely because neither read persists" is true about residency and wrong about cost: verification ran 4.9 turns/page, ~508k/page — as expensive as transcription. Budget it as a second pass, not a rounding error
+- [x] 7.3 **Ship the HOUSESTYLE extract as a file, not a per-run derivation.** Task 3.2c specified a ~4k-token extract but no file existed, so every run would have re-derived it from the 37KB source at ~9.5k tokens of orchestrator context. Added `prompts/transcribe-housestyle-extract.md` (2.6k tokens) and pointed `SKILL.md` at it
+- [x] 7.4 **Ship the crop-coordinate mapping.** A subagent that had to infer the prepared→raw mapping landed 2 of its 3 magnification crops on the wrong lines and burned its whole per-page budget settling nothing. `prepare_pages.py` now emits `zoom-map.json`; the next batch, given it, hit every crop. New `zoom_mapping` helper with 3 tests
+- [x] 7.5 **Fragments were written outside the corpus, not to `corpus/<work-id>/pages/`.** The transcription-pipeline delta spec names that path, but `corpus-format`'s amended work-directory layout does not list `pages/`, so committing it would violate the layout and leaving it untracked would litter the work directory. The two delta specs contradict each other; 6.5 must reconcile them, and the working-directory reading matches Phase 2's existing rule that prepared pages live outside the corpus
+- [x] 7.6 **A glossary entry can be over-specific as well as vague.** R27 warns that a vague entry licenses a divergence. The mirror image also bit: an entry pinning continuation rows at "nine `\cdot`s" was wrong for a print that sets 7, 10, 11, 12, 13 and 15 in different rows. Corrected to "count what the print sets", with the measured counts listed
+- [ ] 7.7 Verification of pp. 233–243 is still outstanding — the subagent was cut off twice by transport errors. pp. 223–232 are verified; pp. 233–243 are transcriber-checked only. This is stated in the PR body rather than papered over

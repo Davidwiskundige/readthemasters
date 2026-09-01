@@ -99,6 +99,14 @@ Read these so your output matches the house style exactly:
   estimated tokens) and passes through any page whose text block it cannot find — check those by
   eye before transcribing.
 
+- It also writes `<prepared>/zoom-map.json`, giving `offset_x`, `offset_y` and `scale` per page so a
+  coordinate seen in a prepared image can be mapped back onto the source scan
+  (`source_x = offset_x + prepared_x / scale`). **Pass the relevant rows to each batch subagent.**
+  Without them a subagent has to infer the mapping, and a batch that did landed 2 of its 3
+  magnification crops on the wrong lines — spending its whole per-page budget to settle nothing.
+  Keep the raw scans reachable too: magnification crops come from those, not from the prepared
+  image, which is where the lost resolution has to be bought back.
+
 - Prepared pages live **outside the corpus**, in a scratch directory. They are working files; only
   figure crops (`corpus/<work-id>/figures/`) are ever committed.
 - **A portrait page loses width to the 1568px cap** (~1180px of text against a half-page crop's
@@ -118,12 +126,21 @@ just transcribe inline yourself — one subagent's fixed cost exceeds the saving
 Give each batch subagent:
 
 - the pinned rules from `prompts/transcribe-chat.md`;
-- the **transcription-relevant** house-style rulings, not all of `corpus/HOUSESTYLE.md` — it is 36KB
-  and most of its rulings concern site rendering; every subagent re-reads whatever you send;
+- `prompts/transcribe-housestyle-extract.md` — the transcription-relevant house-style rulings
+  (~2.6k tokens), not all of `corpus/HOUSESTYLE.md` (~9.5k), most of whose rulings concern site
+  rendering; every subagent re-reads whatever you send. Do not re-derive the extract per run, and
+  do not paraphrase it into the prompt — send the file;
 - the work's `corpus/<work-id>/notation.md` if it exists, and an instruction to follow it;
 - the **previous batch's trailing ~15 lines**, so text spanning the batch boundary joins correctly;
 - the paths of its own prepared page images, and nothing else;
+- the raw scans for those pages plus their `zoom-map.json` rows, for magnification only;
 - a scratch directory it may write magnified crops into, **capped at 3 regions per page**.
+
+**Budget the magnification honestly.** It is the escalation that buys back the resolution one image
+per page gives up (Phase 2), and it is also where the turns go: two measured batches spent 7 and 8
+crops on 4 pages each, pushing them to 22 and 27 tool calls against the 14 of a batch that made
+none. That roughly doubles the per-page cost, so it is worth it only where a reading is genuinely
+in doubt. Say so in the batch prompt.
 
 Instruct each subagent to:
 

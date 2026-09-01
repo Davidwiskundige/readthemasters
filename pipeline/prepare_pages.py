@@ -23,6 +23,7 @@ its single PyYAML dependency (see tests/test_prepare_pages.py).
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -94,6 +95,24 @@ def pad_box(box: tuple[int, int, int, int], width: int, height: int,
     pad = int(min(width, height) * margin)
     return (max(0, left - pad), max(0, top - pad),
             min(width, right + pad), min(height, bottom + pad))
+
+
+def zoom_mapping(box, source_size: tuple[int, int],
+                 out_size: tuple[int, int]) -> tuple[int, int, float]:
+    """Map a coordinate seen in the prepared image back onto the source scan.
+
+    Returns `(offset_x, offset_y, scale)` such that
+
+        source_x = offset_x + prepared_x / scale
+        source_y = offset_y + prepared_y / scale
+
+    A batch subagent needs this to magnify a doubtful glyph: it sees the prepared image, but the
+    detail it wants is only in the source scan, which is cropped and downscaled differently on
+    every page. Measured cost of not shipping it: a batch that had to infer the mapping landed 2 of
+    its 3 magnification crops on the wrong lines, and spent its whole per-page crop budget doing it.
+    """
+    left, top, right, bottom = box if box else (0, 0, source_size[0], source_size[1])
+    return (left, top, round(out_size[1] / (bottom - top), 4))
 
 
 def block_is_trustworthy(box: tuple[int, int, int, int], width: int, height: int) -> bool:
@@ -202,6 +221,7 @@ def main(argv=None) -> int:
 
     total_tokens = 0
     fallbacks = 0
+    zoom_map: dict[str, dict] = {}
     for page in pages:
         src = os.path.join(args.images, found[page])
         dst = os.path.join(args.out, f"p{page}.png")
@@ -219,10 +239,19 @@ def main(argv=None) -> int:
         boxtxt = f"crop {box[0]},{box[1]}-{box[2]},{box[3]}" if box else "no crop"
         suffix = f"  [{result['note']}]" if result["note"] else ""
         print(f"p{page}: {sw}x{sh} -> {boxtxt} -> {ow}x{oh}  ~{result['tokens']} tokens{suffix}")
+        ox, oy, scale = zoom_mapping(box, result["source_size"], result["out_size"])
+        zoom_map[str(page)] = {"source": found[page], "offset_x": ox, "offset_y": oy,
+                               "scale": scale}
 
     if not args.dry_run and pages:
+        map_path = os.path.join(args.out, "zoom-map.json")
+        with open(map_path, "w", encoding="utf-8") as fh:
+            json.dump({"note": "source_x = offset_x + prepared_x / scale; same for y",
+                       "pages": zoom_map}, fh, indent=2)
         print(f"\n{len(pages)} page(s), ~{total_tokens} image tokens "
               f"({total_tokens // len(pages)} per page)")
+        print(f"zoom mapping written to {map_path} — pass it to the batch subagent so it can "
+              f"magnify a doubtful glyph without guessing coordinates")
         if fallbacks:
             print(f"{fallbacks} page(s) kept full — check those crops by eye before transcribing")
     return 0

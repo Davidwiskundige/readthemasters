@@ -258,6 +258,44 @@ Rollback is reverting `SKILL.md`; the crop helper and any `notation.md` written 
 own, and no corpus content produced under the new loop differs in format from content produced under
 the old one.
 
+## Corrected by the first real run (2026-09-01)
+
+The loop was run end-to-end on Clebsch pp. 223–243 and A/B-tested on pp. 189–196. Three claims above
+did not survive it. They are corrected here rather than edited away, because the reasoning that
+produced them is the reasoning most likely to produce them again.
+
+**C1. The 20–28× projection is wrong; measured is 8.3× on transcription, ~4× including
+verification.** Per-page cost came in at 509k, not the 149–170k D5 forecast. The whole gap is `t`:
+D5 assumed one image read plus one write per page, `t = 2`; measured `t = 5.7`. The cost *model* is
+fine — `t·(B+P)` does dominate, exactly as measured — but the input to it was wrong, and it was
+wrong in the one term the model says matters most. D5's own logic ("turns dominate, so spend a token
+to save a turn") should have made its `t = 2` assumption the most load-bearing number in the design
+and therefore the one to measure first, rather than the one carried forward unexamined.
+
+**C2. Escalation is the norm, not the exception, and D5a's cap is doing real work.** The design
+forecast magnification on 25–50% of pages. Measured: 36 regions over 21 pages, on nearly every page.
+This is not a defect — the crops settled four misprints (`y_2` on p. 227, a roman `d` for `∂` on
+p. 225, two inequality sorts on pp. 229–230, `n` for `k` on p. 228) and are why 21 pages carry a
+single `\uncertain{}`. It does mean D5's "one crop, no escalation" ceiling row describes a scan this
+project does not have. The trade D5 identified is real; the price is roughly double what it quoted.
+
+**C3. Verification costs about what transcription costs.** D4 argued the second read is "cheap
+precisely because neither read persists". Residency is genuinely not the problem, but cost is not
+residency: the pass ran 4.9 turns/page and ~508k/page. It earns its place — it found eight
+corrections and settled two open readings — but it must be planned as a second transcription.
+
+Two smaller things the run settled, both now in `SKILL.md` and `prepare_pages.py`: the HOUSESTYLE
+extract has to ship **as a file** (task 3.2c specified its size but not its existence, so every run
+would have re-derived it), and `prepare_pages.py` has to emit the **prepared→raw coordinate
+mapping** (a subagent left to infer it put 2 of 3 crops on the wrong lines).
+
+**On isolation.** Claude Code exposes no mechanical way to confine a subagent to a directory. Task
+5.1's sandbox is therefore prompt-enforced, with two independent checks after the fact: each agent
+declares every path it read, and `git status` shows whether the repository was touched. Both were
+clean on all eight subagents, and the 5.3 tripwire (byte-identity, plus the similarity-versus-math-
+density gradient) is what actually distinguishes independent work from copying. Anyone repeating
+this measurement should keep the tripwire rather than trusting the prompt.
+
 ## Open Questions
 
 None outstanding.
