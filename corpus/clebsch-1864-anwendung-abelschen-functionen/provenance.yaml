@@ -1,4 +1,6 @@
 changelog:
+  - date: "2026-09-01"
+    summary: Transcription completed to pp. 223–243; earlier pages conformed to notation.md.
   - date: "2026-08-31"
     summary: Transcription extended to pp. 207–222 (AI draft).
   - date: "2026-08-29"
@@ -10,76 +12,106 @@ transcription:
   effort: high
   prompt_version: transcribe-v1
   submitted_via: skill
-  produced: "2026-08-31"
+  produced: "2026-09-01"
   verification:
-    flagged_pages: [207, 214, 216, 219]
-    date: "2026-08-31"
+    flagged_pages: [207, 214, 216, 219, 223, 225, 227, 228, 229, 233, 234, 236, 239]
+    date: "2026-09-01"
+  uncertainty_flags: 5
   note: >-
     Clebsch's "Ueber die Anwendung der Abelschen Functionen in der Geometrie", Crelle's Journal
-    Band 63, 3. Heft (1864). The paper runs pp. 189–243; this file currently carries pp. 189–222
-    and is INCOMPLETE — pp. 223–243 are not yet transcribed. Read from half-page crops of the
-    contributor's scan (c<N>a.jpg / c<N>b.jpg per printed page). \origpage markers run 189–222
-    with no gaps; pipeline/houselint.py passes over the whole file.
+    Band 63, 3. Heft (1864). The paper runs pp. 189–243 and this file is now COMPLETE: \origpage
+    markers run 189–243 with no gaps or duplicates, pipeline/houselint.py passes over the whole
+    file, and all 1383 math spans render through the site's own KaTeX 0.16.47 build.
 
-    HOW THESE PAGES WERE PRODUCED — the two stretches differ, and a reviewer should know which is
-    which. Pages 189–206 were transcribed on 2026-08-29 in a single long chat session, with every
-    page image accumulating in one context. Pages 207–222 were transcribed on 2026-08-31 by two
-    ISOLATED batch subagents — pp. 207–210 in one batch, pp. 211–222 in another — each given only
-    prompts/transcribe-chat.md, corpus/HOUSESTYLE.md and its own page crops, with no access to
-    this repository or to the already-transcribed pages. This was a controlled measurement of the
-    per-batch architecture proposed in openspec/changes/transcribe-per-batch-subagents; the pages
-    are kept because they are real transcription, not because the measurement succeeded.
+    HOW THESE PAGES WERE PRODUCED — three stretches, made differently, and a reviewer should know
+    which is which.
 
-    WHAT THE ISOLATION COST, and what was done about it. Because neither batch could see the
-    established notation, they diverged from it and from each other on the work's most frequent
-    symbol. Pages 189–206 render Clebsch's summation sign as the Sigma LETTER, \Sigma, 21 times
-    and never as \sum; the pp. 211–222 batch independently reached the same reading (32 \Sigma);
-    the pp. 207–210 batch instead used \sum 19 times and \Sigma none. The scan settles it: the
-    print sets one slanted capital-sigma letter throughout. Page 207 was therefore conformed to
-    \Sigma before assembly. Page 207 is also the first place in the work where the sign carries
-    explicit limits — n=−∞ to n=+∞, h,k=1 to h,k=p, k=1 to k=p — printed ABOVE and BELOW the
-    letter; pp. 189–206 have no such case and set no precedent. These three are written
-    \mathop{\Sigma}\limits_{...}^{...}, which keeps the letter and stacks the limits as printed;
-    all forms were rendered through the site's own KaTeX 0.16 build without error, including the
-    one nested inside an exponent. This reconciliation is the reason p. 207 is flagged.
+    Pages 189–206 were transcribed on 2026-08-29 in a single long chat session, with every page
+    image accumulating in one context (measured: 4.2M tokens per page).
 
-    FOUR UNCERTAIN PASSAGES, all in pp. 211–222 and all marked \uncertain in the text:
+    Pages 207–222 were transcribed on 2026-08-31 by two ISOLATED batch subagents — pp. 207–210 and
+    pp. 211–222 — each given only prompts/transcribe-chat.md, corpus/HOUSESTYLE.md and its own page
+    crops, with no access to this repository. That was a controlled measurement, not a production
+    run; the pages are kept because they are real transcription.
+
+    Pages 223–243 were transcribed on 2026-09-01 by five batch subagents (223–226, 227–230,
+    231–234, 235–238, 239–243) under the rewritten /transcribe skill: one image per page cropped to
+    the text block at 1568px, each subagent reading only its own batch's images plus this work's
+    notation.md, writing one fragment per page, and returning a short report. The orchestrating
+    session read NO scan image at any point (measured: 0 image tokens). Pages 223–232 were then
+    re-read against the scans by a separate verification subagent.
+
+    WHAT CHANGED IN THE EARLIER PAGES ON 2026-09-01. Re-transcribing a sample of pp. 189–196 under
+    the new loop and diffing against the committed text (openspec/changes/transcribe-per-batch-
+    subagents, task group 5) surfaced defects in the 2026-08-29 stretch that no linter catches:
+      - TWO WORDS LEFT SPLIT ACROSS A PAGE BREAK with the print's hyphen retained — p. 195 ended
+        "An-" with p. 196 opening "zahl", and p. 198 ended "aus-" with p. 199 opening "reichend".
+        Both rendered a stray hyphen and space inside a running word. Repaired.
+      - FOOTNOTE MARKUP not following HOUSESTYLE R15: four in-text markers were "~*)" and five notes
+        opened with a bare "*)". Conformed to the R15 form (${}^{*)}$ in text, \textbf{*)} at the
+        note), which pp. 207–222 already used.
+      - ABBREVIATION SPACING mixed "~" and "\ " (8 against 13) where R17 wants the control space;
+        pp. 207–222 used it exclusively (40). Normalized.
+      - SUBSCRIPTS were braced in pp. 189–206 (218) and bare in pp. 207–222 (166) — the same file
+        disagreeing with itself. Normalized to braced throughout; both forms render identically, so
+        this is consistency, not correction.
+    None of these changes any word or formula Clebsch wrote.
+
+    ONE PLACE THE NEW LOOP WAS WORSE, AND HOW IT WAS CAUGHT. Both A/B batches wrote \frac where the
+    print sets a nested fraction at full size, flattening about 28 compound fractions. Measured
+    against the scan on pp. 193 and 195, the glyphs at both nesting levels agree within ±1px, where
+    a script-size shrink would be ~30% smaller. The rule is now recorded in notation.md, and the
+    batch transcribing pp. 231–234 under the corrected glossary got the analogous case right.
+
+    FIVE UNCERTAIN PASSAGES, all marked \uncertain in the text — pp. 216 (3), 219 (1), 234 (1):
     (a) p. 216 — three words inside the italic Steiner theorems where the scan has ink loss or an
-    overprinted blot: "die nach b, c ⟨gezogenen⟩ Geraden", "die drei ⟨Geraden⟩ ab, ac, bc", and
-    "in b und ⟨c⟩ selbst". Each reading is strongly suggested by context and by surviving letter
-    fragments; none is fully legible.
-    (b) p. 219 — "u''=0", where the equals sign carries a stray diagonal mark that makes it look
-    like ≠. The parallel clause reads v''=0 and the sense requires equality, so it is transcribed
-    as equality inside \uncertain rather than reproducing a probable broken sort.
-    These four are the only uncertainty flags in the file; pp. 189–210 carry none. That is partly
-    a property of the scan and partly a known limitation of how these pages were made — see below.
+    overprinted blot.
+    (b) p. 219 — "u''=0", where the equals sign carries a stray diagonal mark making it look like ≠;
+    the parallel clause reads v''=0 and the sense requires equality.
+    (c) p. 234 — the variable in "wenn r = 2, k = m+n-4", where the sort is broken; context
+    ("r-punktig", and "zweipunktig" in the next Satz) forces r.
 
-    A CAVEAT ON THE FLAG COUNT. The pp. 211–222 batch reported that it could not magnify a damaged
-    spot: the isolation rule forbade it writing crop files, and the browser zoom does not act on
-    local images. It flagged rather than guessed, which is the right behaviour, but it means the
-    flag rate on those pages reflects the tooling it was given as much as the legibility of the
-    scan. Pages 189–210 were made with magnification available. A reviewer should not read
-    "no flags" on the earlier pages as stronger evidence than "four flags" on the later ones.
+    A CAVEAT ON THE FLAG COUNT. The pp. 211–222 batch could not magnify a damaged spot — the
+    isolation rule forbade it writing crop files — so its flag rate reflects the tooling it was
+    given as much as the legibility of the scan. Pages 189–210 and 223–243 were made with
+    magnification available, and pp. 223–243 used it heavily (36 magnified regions across 21 pages),
+    which is why 21 pages carry only one flag: doubtful readings were settled rather than flagged.
+    A reviewer should not read "few flags" as "few doubts".
 
-    APPARENT PRINTER'S ERRORS reproduced faithfully, not corrected (R4): p. 211 "gleich der der 63
-    Systeme" (article doubled across a line break); p. 219 "als dass Product" for "das Product";
-    p. 219 a missing comma in "So giebt es unzählige Oberflächenpaare deren Durchschnitt". The
-    running head on p. 222 misprints "Anwendnng", but running heads are not transcribed.
+    APPARENT PRINTER'S ERRORS reproduced faithfully, not corrected (R4). pp. 211–222: "gleich der
+    der 63 Systeme" (article doubled across a line break, p. 211); "als dass Product" for "das
+    Product" (p. 219); a missing comma in "So giebt es unzählige Oberflächenpaare deren
+    Durchschnitt" (p. 219). pp. 223–243: p. 223 sets "Σ± a_i b_i x_i dx_i" with four identical
+    indices where the same result on p. 222 reads a_1 b_2 x_3 dx_4; p. 225 sets a roman d in
+    "∂u^(s)/dx_2" where every neighbouring denominator has ∂; p. 227's last display sets the
+    coefficient y_2 in rows 2 and 3 where the mathematics wants y_1 (confirmed twice, by the
+    transcribing batch and by the verification pass); p. 228 has "Auschluss" for Ausschluss,
+    "Hülfsatz" for Hülfssatz, eq. (23.) row 2 ending in a period where its neighbours take commas,
+    and — confirmed against the scan — "die Fläche n^{ter} Ordnung als System von k Ebenen", where
+    the mathematics wants k^{ter}; p. 232's Satz shifts from plural to singular ("berühren, und
+    ausserdem durch … gegebene Punkte geht"); p. 233 sets n^{2p} and (n/2)^{2p} where the author's
+    own preceding theorem requires (mn)^{2p} and (mn/2)^{2p}; p. 234 leaves "die zur Bestimmung …
+    gleich" without the noun it governs; p. 236 sets "Schwingungsebene" once for "Schmiegungsebene"
+    and sets a two-bar = in eq. (28.) where (26.) and (27.) take the three-bar ≡; p. 239's second
+    display carries a stray full stop before the ≡. Running heads are not transcribed, so p. 222's
+    misprinted "Anwendnng" does not appear.
 
-    ONE PASSAGE FOR A REVIEWER WITH THE MATHEMATICS. On p. 214 the fourth row of the printed
-    determinant reads u_23 v_23 w_23 0 p_3 p_2, which breaks the symmetry of the rows around it.
-    It is legible and is reproduced exactly as printed, but it deserves checking against Clebsch's
-    derivation rather than against the scan.
+    TWO PASSAGES FOR A REVIEWER WITH THE MATHEMATICS. On p. 214 the fourth row of the printed
+    determinant reads u_23 v_23 w_23 0 p_3 p_2, breaking the symmetry of the rows around it; it is
+    legible and reproduced exactly, but deserves checking against Clebsch's derivation. On p. 229 the
+    second row of the first display reads du_2^{(mnk)}; the glyph after the d is degraded in this
+    scan and the verification pass could not distinguish a broken u from a printed v. The
+    mathematics wants u, and it is left as u rather than changed on weak evidence.
 
-    NOTATION, recorded in full in notation.md alongside this file so the remaining pages 223–243
-    stay consistent with these: the Sigma letter as above; Clebsch's multiplication dot kept as a
-    literal "." in both numerals and symbol products (28.64, n−1.n−2, Σa_i u_i . Σb_i v_i), never
-    \cdot or \times; three-bar ≡ set \equiv and two-bar = set =, followed per occurrence because
-    the distinction is congruence versus equality; ordinals ^{\text{ter}} / ^{\text{ten}} (R21);
-    the rank set upright \mathrm{w} where the print distinguishes it from an italic w already in
-    use for another quantity; §. as a literal section sign with a non-breaking space; German
-    quotation marks as literal „ … " (R18, R22). The print is Antiqua with round s only — no
-    long-ſ and no eszett ligature — so R19 has nothing to convert and the file contains no ß.
+    NOTATION is recorded in full in notation.md alongside this file, which now covers the whole
+    paper: the Sigma letter rather than \sum; Clebsch's multiplication dot as a tight literal ".";
+    ≡ against = followed per occurrence; nested fractions and full-size inline fractions as \dfrac;
+    braced subscripts; ordinals ^{\text{ter}}/{ten}/{te}/{tes}; the upright \mathrm{w} for rank;
+    both double-barred inequality sorts as \geqq; ellipsis height per context (\cdots against
+    \ldots); continuation-dot rows counted off the print rather than assumed; and the fact that
+    equation numbering RESTARTS at (1.) in §. 19 rather than running continuously. The print is
+    Antiqua with round s only — no long-ſ, no eszett — so R19 has nothing to convert and the file
+    contains no ß.
 
-    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no one has checked these pages against the
-    scan. The four flagged pages above are where a reviewer should start.
+    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
+    scan. The flagged pages above are where a reviewer should start.
