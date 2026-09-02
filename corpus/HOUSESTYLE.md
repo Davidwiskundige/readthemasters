@@ -48,6 +48,25 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R28 — A text-mode `\ldots` between two formulas is rendered by the site, not written into the
+### math (presentation)
+*2026-09-01.* Nineteenth-century mathematics lists variables as "$x_{1}$, $x_{2}$ \ldots $x_{r}$",
+where the ellipsis belongs to the **prose** between two formulas rather than to either formula — so
+it is set outside the `$...$`, never reaches KaTeX, and leaked to the reader as a literal `\ldots`.
+Found by previewing `clebsch-1864-anwendung-abelschen-functionen` (the R18 rule), and **pre-existing
+in four works**: 26 occurrences in Clebsch, 3 in `jacobi-1832-considerationes`, 2 in
+`roch-1865-anzahl-constanten`, 1 each in `abel-1841-fonctions-transcendantes` and its `en`
+translation. `validate.py`, `texcompare.py` and `houselint.py` all passed it.
+
+**Fix: `tex.js` `inlineText` now maps a text-mode `\ldots` / `\dots` / `\cdots` to `…`**, with a
+negative lookahead so it cannot eat a longer control word. Math is stashed before the substitution
+runs, so an `\ldots` inside `$...$` is untouched and still reaches KaTeX. This follows the precedent
+of R14, R17, R19 and R25: **the site is extended so the work's natural markup renders, rather than
+the work being bent around the site** — the alternative, writing `$\ldots$` in every such spot,
+would put a math span around prose punctuation and would have had to be applied to four works.
+Covered by `site/src/lib/tex.test.mjs` (`npm test`, run in CI). `\cdots` is raised in print but has
+no text-mode web equivalent; between two rendered formulas `…` reads correctly.
+
 ### R27 — A work's cross-page notation decisions are written down in `notation.md`, exactly,
 ### and say what NOT to do (process)
 *2026-08-31.* Transcribing `clebsch-1864-anwendung-abelschen-functionen` in independent batches

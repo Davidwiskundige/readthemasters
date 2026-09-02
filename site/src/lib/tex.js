@@ -52,6 +52,13 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     // cross-references. The negative lookahead keeps it from eating a longer control word — there is
     // no text macro named \S… , and any \Sigma etc. lives inside the already-stashed math spans.
     .replace(/\\S(?![a-zA-Z])/g, "§")
+    // \ldots / \dots / \cdots in TEXT mode. Authors write an ellipsis between two formulas —
+    // "$x_{1}$, $x_{2}$ \ldots $x_{r}$" — where the dots belong to the prose, not to either math
+    // span, so they are set outside the $...$ and never reach KaTeX. Without this they leaked to
+    // the reader as a literal "\ldots". Math is already stashed, so an \ldots inside $...$ is
+    // untouched. \cdots is raised in print but there is no text-mode equivalent on the web, and a
+    // mid-line ellipsis between two rendered formulas reads correctly as "…".
+    .replace(/\\(?:ldots|cdots|dots)(?![a-zA-Z])/g, "…")
     // LaTeX control space "\ " (backslash-space): authors write it after an abbreviation dot
     // (`v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`) so a real engine sets an inter-word — not
     // inter-sentence — space. On the web that is just one normal space; drop the backslash. Runs

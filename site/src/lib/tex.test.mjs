@@ -49,6 +49,22 @@ test("\\S does not eat a following control word or math \\Sigma", () => {
   assert.match(html, /§ 4 following/); // text \S -> §
 });
 
+test("a text-mode \\ldots between two formulas renders as an ellipsis, not literal markup", () => {
+  // Clebsch writes variable lists as "$x_{1}$, $x_{2}$ \ldots $x_{r}$": the dots sit in the prose
+  // between two math spans, so they never reach KaTeX and used to leak as a literal "\ldots".
+  const html = render("Die Variabeln $x_{1}$, $x_{2}$ \\ldots $x_{r}$ seien gegeben.");
+  assert.match(html, /…/);
+  assert.ok(!html.includes("\\ldots"), "the \\ldots backslash must not leak into the text");
+  assert.match(html, /\$x_\{1\}\$/); // the math spans themselves are untouched
+});
+
+test("\\ldots inside math is left for KaTeX, and \\ldots does not eat a control word", () => {
+  const html = render("sum $a_{1}+\\ldots+a_{n}$ and \\cdots between, but not \\ldotsfoo.");
+  assert.match(html, /\$a_\{1\}\+\\ldots\+a_\{n\}\$/); // stashed math keeps its macro
+  assert.match(html, /… between/); // text \cdots -> …
+  assert.match(html, /\\ldotsfoo/); // longer control word untouched
+});
+
 test("math in a heading is wrapped so the lazy typesetter reaches it", () => {
   // The reader only observes span.math / span.mathblock (the work page's mathWatch), so a heading
   // whose math is not wrapped is never typeset and shows the raw $...$ to the reader. Riemann's
