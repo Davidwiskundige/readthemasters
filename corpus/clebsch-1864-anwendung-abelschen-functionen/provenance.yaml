@@ -39,7 +39,20 @@ transcription:
     the text block at 1568px, each subagent reading only its own batch's images plus this work's
     notation.md, writing one fragment per page, and returning a short report. The orchestrating
     session read NO scan image at any point (measured: 0 image tokens). Pages 223–232 were then
-    re-read against the scans by a separate verification subagent.
+    re-read against the scans by two separate verification subagents covering pp. 223-232 and
+    233-243, which corrected ten things the transcription had wrong: six continuation-dot rows with
+    the wrong dot count or the wrong distribution across cells, three inline fractions still written
+    \frac, and the p. 239 mark discussed below.
+
+    ONE EDITORIAL JUDGMENT, recorded because it goes against the usual presumption. On p. 239 the
+    second display carries a mark between u'''_k and the equivalence sign. It is NOT transcribed.
+    In this work's notation a literal "." is the multiplication sign, so reproducing it would assert
+    a product between a variable and a relation sign - not mathematics Clebsch could have written.
+    Measured, the mark is 3x4px, area 8, sitting below the formula baseline, against the 5x5px
+    area-20 dots this print sets in display math; that points to a speck rather than type, though it
+    is within the size range of a text period elsewhere on the same page. R4 protects the author's
+    misprints, not the scan's dirt, and the reading it would produce is impossible - so it is
+    dropped rather than reproduced. A reviewer with the original in hand should confirm.
 
     WHAT CHANGED IN THE EARLIER PAGES ON 2026-09-01. Re-transcribing a sample of pp. 189–196 under
     the new loop and diffing against the committed text (openspec/changes/transcribe-per-batch-
@@ -93,7 +106,8 @@ transcription:
     own preceding theorem requires (mn)^{2p} and (mn/2)^{2p}; p. 234 leaves "die zur Bestimmung …
     gleich" without the noun it governs; p. 236 sets "Schwingungsebene" once for "Schmiegungsebene"
     and sets a two-bar = in eq. (28.) where (26.) and (27.) take the three-bar ≡; p. 239's second
-    display carries a stray full stop before the ≡. Running heads are not transcribed, so p. 222's
+    display carries a mark before the ≡, which is NOT reproduced — see the editorial judgment above.
+    Running heads are not transcribed, so p. 222's
     misprinted "Anwendnng" does not appear.
 
     TWO PASSAGES FOR A REVIEWER WITH THE MATHEMATICS. On p. 214 the fourth row of the printed

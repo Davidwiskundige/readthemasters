@@ -24,11 +24,12 @@ The whole paper, pp. 189–243, follows this list.
   a matrix or array continuation row — never as a product, and never replaced by `\vdots`, `\ddots`
   or an `\ldots` row. Write `\cdot`s separated by `\quad`, **counting the dots the print actually
   sets** — it is not a fixed number (7 and 11 on p. 231, 9 on pp. 227–230, 13 on p. 234). Inside an
-  `aligned`, give the row an empty second cell so the dots stop at the equation body and do not run
-  under the `= 0` / `\equiv` column. Counts verified against the scan: 10 on p. 224 (a 4-column
-  matrix row, distributed 3/3/2/2), 12 and 15 and 15 on p. 225, 12 on p. 227, 9 on pp. 228–230,
-  7 and 11 on p. 231, 13 on p. 234, 11 and 10 on p. 240, 6 on p. 242. **Count them; do not assume
-  the neighbouring page's number.**
+  `aligned`, put the dots in the body cell so they do not run under the `= 0` / `\equiv` column —
+  **unless the print sets one out there**, which it does on p. 234 (12 under the body, then a
+  thirteenth past the `≡`, under the `A/2` column). Follow the page. Counts verified against the
+  scan: 10 on p. 224 (a 4-column matrix row, distributed 3/3/2/2), 12 and 15 and 15 on p. 225, 12 on
+  p. 227, 9 on pp. 228–230, 7 and 11 on p. 231, 12+1 on p. 234, 11 and 10 on p. 240, 6 on p. 242.
+  **Count them; do not assume the neighbouring page's number, and do not assume the distribution.**
 - **A `\Sigma` standing immediately before a fraction takes a thin space: `\Sigma\,\frac{...}`** —
   never a tight `\Sigma\frac`, and never a multiplication dot `\Sigma.\frac`. Measured on the scan
   (p. 195): the print leaves a 9px gap there and sets no dot, where a real multiplication period on
@@ -50,7 +51,10 @@ The whole paper, pp. 189–243, follows this list.
   baseline.** The print raises the dots to the operators' centre in a `+`-chain
   (`m^{(1)}+m^{(2)}+\cdots+m^{(s)}`) and sets them on the baseline in comma lists and products
   (`x_{1}$, $x_{2}$, \ldots`, `X_{1}X_{2}\ldots X_{s}`). Do not unify on one macro in either
-  direction.
+  direction. An ellipsis that falls **between** two formulas belongs to the prose and is written in
+  text mode — `$x_{1}$, $x_{2}$ \ldots $x_{r}$`, not `$x_{1}, x_{2} \ldots x_{r}$` — which the site
+  renders as `…` since HOUSESTYLE R28. This work supplied 26 of the 33 text-mode ellipses that
+  ruling was written for.
 - **An ordinal fused to a parenthesised index is one exponent: `m^{(1)\text{ten}}`** — never
   `m^{(1)}{}^{\text{ten}}`, which sets a second exponent group, and never a bare `m^{(1)ten}`
   (p. 227).
