@@ -52,6 +52,13 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     // cross-references. The negative lookahead keeps it from eating a longer control word — there is
     // no text macro named \S… , and any \Sigma etc. lives inside the already-stashed math spans.
     .replace(/\\S(?![a-zA-Z])/g, "§")
+    // \ldots / \dots / \cdots in TEXT mode. Authors write an ellipsis between two formulas —
+    // "$x_{1}$, $x_{2}$ \ldots $x_{r}$" — where the dots belong to the prose, not to either math
+    // span, so they are set outside the $...$ and never reach KaTeX. Without this they leaked to
+    // the reader as a literal "\ldots". Math is already stashed, so an \ldots inside $...$ is
+    // untouched. \cdots is raised in print but there is no text-mode equivalent on the web, and a
+    // mid-line ellipsis between two rendered formulas reads correctly as "…".
+    .replace(/\\(?:ldots|cdots|dots)(?![a-zA-Z])/g, "…")
     // LaTeX control space "\ " (backslash-space): authors write it after an abbreviation dot
     // (`v.\ g.`, `Apr.\ pag.`, `scil.\ spatiolum`) so a real engine sets an inter-word — not
     // inter-sentence — space. On the web that is just one normal space; drop the backslash. Runs
@@ -81,6 +88,55 @@ function wrapMath(html) {
       (_, m) => `<span class="math" data-pagefind-ignore>$${m}$</span>`);
 }
 
+// A heading's argument is read with real brace balancing, not `[^}]*`.
+//
+// `[^}]*` stops at the FIRST closing brace, which is wrong whenever a heading contains math that
+// itself carries a brace group — `\subsection*{... Curve $n^{\text{ter}}$ Ordnung ...}` ends at the
+// `}` inside `\text{ter}` and leaks the rest into the running text. Math being stashed inside
+// `inlineText` does not save it: the block-promotion pass below runs on the raw source, before any
+// stashing. Found by previewing Clebsch 1864, which is the first corpus work whose section titles
+// carry an ordinal.
+//
+// Returns `{ body, end }` — the argument between the braces, and the index just past the matching
+// `}` — or null if the braces never balance (in which case callers leave the text alone). An
+// escaped brace is a literal character and does not move the depth, matching a real TeX engine.
+function bracedArg(text, open) {
+  let depth = 0;
+  for (let i = open; i < text.length; i++) {
+    const ch = text[i];
+    if (ch === "\\") { i++; continue; }
+    if (ch === "{") depth++;
+    else if (ch === "}") {
+      depth--;
+      if (depth === 0) return { body: text.slice(open + 1, i), end: i + 1 };
+    }
+  }
+  return null;
+}
+
+// Promote every \section/\subsection to its own paragraph, reading its argument with balancing.
+function promoteHeadings(text) {
+  const re = /\\(?:sub)?section\*?\{/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(text)) !== null) {
+    const arg = bracedArg(text, m.index + m[0].length - 1);
+    if (!arg) continue;                       // unbalanced — leave it exactly as written
+    out += text.slice(last, m.index) + `\n\n${text.slice(m.index, arg.end)}\n\n`;
+    last = arg.end;
+    re.lastIndex = arg.end;
+  }
+  return out + text.slice(last);
+}
+
+// Split a paragraph that starts with a heading into [level, title, rest], or null.
+function splitHeading(para) {
+  const m = para.match(/^\\(sub)?section\*?\{/);
+  if (!m) return null;
+  const arg = bracedArg(para, m[0].length - 1);
+  if (!arg) return null;
+  return [m[1] ? "h3" : "h2", arg.body, para.slice(arg.end).trim()];
+}
+
 export function texToHtml(tex, opts = {}) {
   if (!tex) return "";
   const figureBase = opts.figureBase || "";
@@ -100,9 +156,7 @@ export function texToHtml(tex, opts = {}) {
 
   // Promote block-level markers to their own paragraphs so they render even when they share a
   // source line/paragraph with surrounding text (e.g. \origpage{n} immediately before \section).
-  body = body
-    .replace(/\\subsection\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
-    .replace(/\\section\*?\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
+  body = promoteHeadings(body)
     .replace(/\\rmfigure\{[^}]*\}\{[^}]*\}\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
     .replace(/\\origpage\{\d+\}/g, (m) => `\n\n${m}\n\n`);
 
@@ -125,21 +179,18 @@ export function texToHtml(tex, opts = {}) {
     }
 
     // Section / subsection headings.
-    const sec = para.match(/^\\section\*?\{([^}]*)\}\s*([\s\S]*)$/);
-    const sub = para.match(/^\\subsection\*?\{([^}]*)\}\s*([\s\S]*)$/);
+    const head = splitHeading(para);
     let heading = "";
     // Headings go through wrapMath too, like figure captions: the reader typesets lazily and only
     // ever observes the `span.math` / `span.mathblock` wrappers this adds (see the work page's
     // mathWatch), so an unwrapped `$\omega$` in a heading would sit on the page as literal TeX.
     // Riemann's descriptive titles ("Allenthalben endliche Functionen $\omega$. …") are the first
     // corpus headings to name a symbol.
-    if (sec) {
-      heading = `<h2 id="${idPrefix}sec-${++secCount}">${wrapMath(inlineText(escapeHtml(sec[1]), ctx))}</h2>`;
-      para = sec[2].trim();
-      if (!para) { out.push(heading); continue; }
-    } else if (sub) {
-      heading = `<h3 id="${idPrefix}sec-${++secCount}">${wrapMath(inlineText(escapeHtml(sub[1]), ctx))}</h3>`;
-      para = sub[2].trim();
+    if (head) {
+      const [tag, title, rest] = head;
+      heading = `<${tag} id="${idPrefix}sec-${++secCount}">` +
+        `${wrapMath(inlineText(escapeHtml(title), ctx))}</${tag}>`;
+      para = rest;
       if (!para) { out.push(heading); continue; }
     }
 

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import difflib
 import re
 import sys
 from pathlib import Path
@@ -387,6 +388,119 @@ def check_significance(work: dict, work_id: str, issues: Issues) -> None:
                 issues.warn(w, f"{field}[{i}] is never referenced from the significance text "
                                f"(add a {marker.format(n=i + 1)} marker, or drop the entry)")
 
+def check_page_markers(work_dir: Path, issues: Issues) -> None:
+    """`\\origpage{N}` markers must be an ascending run with no gaps or duplicates.
+
+    A batched transcription assembles one fragment per page, so a dropped, duplicated or
+    out-of-order fragment is a real failure mode — and until this check existed nothing caught it:
+    the gate never looked at page markers, and `houselint` has no opinion on them. Cheap, textual,
+    and stdlib-only, so it costs the gate nothing.
+
+    A missing page is reported as a gap rather than assumed fatal ordering: a work may legitimately
+    transcribe a non-contiguous selection of pages, so only DUPLICATES and DESCENDING order are
+    errors; a gap is a warning, since it is usually intentional and always worth stating.
+    """
+    original = work_dir / "original.tex"
+    if not original.exists():
+        return
+    rel = original.relative_to(work_dir.parent).as_posix()
+    # Strip comments first: a file's header comment may legitimately *discuss* a marker (Jacobi's
+    # explains why the display spanning pp. 400-401 is split around \origpage{401}), and counting
+    # that as a real marker reports a duplicate that is not there.
+    body = houselint.strip_comments(original.read_text(encoding="utf-8"))
+    pages = [int(n) for n in re.findall(r"\\origpage\{(\d+)\}", body)]
+    if not pages:
+        return
+    dupes = sorted({p for p in pages if pages.count(p) > 1})
+    if dupes:
+        issues.error(rel, f"duplicate \\origpage marker(s): {', '.join(map(str, dupes))}")
+    if pages != sorted(pages):
+        out_of_order = [b for a, b in zip(pages, pages[1:]) if b < a]
+        issues.error(rel, "\\origpage markers are not in ascending order "
+                          f"(descends at: {', '.join(map(str, out_of_order))})")
+    gaps = [f"{a + 1}-{b - 1}" if b - a > 2 else str(a + 1)
+            for a, b in zip(pages, pages[1:]) if b - a > 1]
+    if gaps and not dupes:
+        issues.warn(rel, f"\\origpage markers skip page(s): {', '.join(gaps)} "
+                         "(fine if the work transcribes a selection; check no fragment was lost)")
+
+
+def check_title_matches_transcription(work_dir: Path, work: dict, issues: Issues) -> None:
+    """Warn when the transcription sets the work's title but spells it differently from work.yaml.
+
+    Most works do not transcribe their title into the body at all, so equality cannot be required.
+    But when a heading is *nearly* the recorded title and not exactly it, one of the two is wrong —
+    and the transcription, read off the page, is the one more likely to be right.
+
+    Caught on Noether 1869, whose title line reads `Variabeln` where the metadata, taken from a
+    catalogue record, said `Variablen`. Nothing else compares the two: the gate never reads the
+    prose, and a proofread has no access to work.yaml.
+    """
+    original = work_dir / "original.tex"
+    title = (work.get("title") or "").strip()
+    if not original.exists() or not title:
+        return
+    body = houselint.strip_comments(original.read_text(encoding="utf-8"))
+    headings = re.findall(r"\\(?:sub)?section\*?\{([^}]*)\}", body)
+
+    def norm(t):
+        t = " ".join(t.split()).strip()
+        # A transcribed title line often keeps the print's own article number ("30.", "III.")
+        # while work.yaml's title correctly omits it. Strip that prefix before comparing, or
+        # every such work reports a spurious near-match.
+        t = re.sub(r"^(?:[IVXLCDM]+|\d+)\.\s*", "", t)
+        return t.rstrip(".")
+
+    target = norm(title)
+    best, best_ratio = None, 0.0
+    for h in headings:
+        h = norm(h)
+        if h == target:
+            return                                   # exact match: nothing to say
+        ratio = difflib.SequenceMatcher(None, target, h).ratio()
+        if ratio > best_ratio:
+            best, best_ratio = h, ratio
+    if best is not None and 0.85 <= best_ratio < 1.0:
+        rel = original.relative_to(work_dir.parent).as_posix()
+        issues.warn(rel, "a heading nearly matches work.yaml's title but is not identical "
+                         f"({best_ratio:.0%}) — check which spelling the print actually uses:\n"
+                         f"        work.yaml:      {title}\n"
+                         f"        transcription:  {best}")
+
+
+def check_figure_references(work_dir: Path, issues: Issues) -> None:
+    r"""Every `\rmfigure{figures/...}` must point at a file that exists, and vice versa.
+
+    A dangling figure reference renders as a broken image on the work page, and nothing caught it:
+    `houselint` has no opinion on figures, and `texcompare` only checks that the path is *invariant*
+    between an original and its translation — not that it resolves. Clebsch shipped
+    `\rmfigure{figures/fig-215.png}` against a file committed as `fig-1.png`, and only previewing
+    the page revealed it.
+
+    An unreferenced file in `figures/` warns rather than errors: a crop may be staged ahead of the
+    text that will use it.
+    """
+    rel_dir = work_dir.name
+    referenced: set[str] = set()
+    texs = [work_dir / "original.tex", *sorted((work_dir / "translations").glob("*.tex"))]
+    for tpath in texs:
+        if not tpath.exists():
+            continue
+        body = houselint.strip_comments(tpath.read_text(encoding="utf-8"))
+        for ref in re.findall(r"\\rmfigure\{([^}]*)\}", body):
+            referenced.add(ref)
+            if not (work_dir / ref).exists():
+                issues.error(f"{rel_dir}/{tpath.name}",
+                             f"\\rmfigure points at a missing file: {ref}")
+
+    fig_dir = work_dir / "figures"
+    if fig_dir.is_dir():
+        for f in sorted(fig_dir.iterdir()):
+            if f.is_file() and f"figures/{f.name}" not in referenced:
+                issues.warn(f"{rel_dir}/figures/{f.name}",
+                            "figure file is not referenced by any \\rmfigure")
+
+
 def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
 
@@ -528,6 +642,9 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_provenance(provenance, work_id, issues)
     check_translation_math(work_dir, issues)
     check_significance(work, work_id, issues)
+    check_page_markers(work_dir, issues)
+    check_figure_references(work_dir, issues)
+    check_title_matches_transcription(work_dir, work, issues)
     check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
@@ -553,7 +670,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
 
 
 def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = False,
-                    write: bool = False) -> Issues:
+                    write: bool = False, write_only: str | None = None) -> Issues:
     issues = Issues()
     vocab_path = corpus_dir / "vocab.yaml"
     if not vocab_path.exists():
@@ -574,7 +691,10 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
     # Keyed by directory name — the dependency graph is validated across the whole corpus below.
     works_by_id: dict[str, dict] = {}
     for wd in work_dirs:
-        validate_work(wd, vocab, now_year, strict_pma_100, issues, write=write)
+        # --write rewrites (and reformats) every work.yaml it touches, so a run that only
+        # means to fill in ONE new work would otherwise churn the whole corpus.
+        wd_write = write and (write_only is None or wd.name == write_only)
+        validate_work(wd, vocab, now_year, strict_pma_100, issues, write=wd_write)
         # Cross-work: unique ids.
         if (wd / "work.yaml").exists():
             work = load_yaml(wd / "work.yaml") or {}
@@ -611,6 +731,10 @@ def main(argv: list[str] | None = None) -> int:
                         help="override the current year (for reproducible checks/tests)")
     parser.add_argument("--write", action="store_true",
                         help="recompute and rewrite each work.yaml copyright_assessment")
+    parser.add_argument("--only", metavar="WORK_ID", default=None,
+                        help="with --write, rewrite only this work's work.yaml. Use it when adding "
+                             "one work: --write reformats every file it rewrites (dropping quoting "
+                             "and comments), so an unscoped run leaves the whole corpus dirty.")
     args = parser.parse_args(argv)
 
     corpus_dir = Path(args.corpus)
@@ -618,7 +742,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: corpus directory '{corpus_dir}' does not exist", file=sys.stderr)
         return 2
 
-    issues = validate_corpus(corpus_dir, args.now_year, args.strict_pma_100, args.write)
+    if args.only and not args.write:
+        print('error: --only has no effect without --write', file=sys.stderr)
+        return 2
+    if args.only and not (corpus_dir / args.only / 'work.yaml').exists():
+        print(f"error: --only {args.only}: no such work", file=sys.stderr)
+        return 2
+    issues = validate_corpus(corpus_dir, args.now_year, args.strict_pma_100, args.write,
+                             write_only=args.only)
 
     for w in issues.warnings:
         print(f"WARN  {w}")
