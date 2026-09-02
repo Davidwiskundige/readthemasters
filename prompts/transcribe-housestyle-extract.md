@@ -57,7 +57,7 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
   *abscisse*, *elisse*), abbreviations (`arc.`). Content, not presentation.
 - **Printer's errors are kept and flagged, never silently fixed** (R4). Reproduce the misprint
   exactly, and report it so it reaches the file header / provenance. Do not correct the author.
-- **Before deciding a mark was ADDED, check whether ink is MISSING nearby** (R28). Letterpress
+- **Before deciding a mark was ADDED, check whether ink is MISSING nearby** (R29). Letterpress
   fails by dropping ink, not only by setting the wrong sort, and a letter that breaks up leaves
   fragments that read as separate marks. "The mark is cleanly inked and at the right height,
   therefore it is type" is *not* a sufficient test — it cannot tell ink that was put there from ink
