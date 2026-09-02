@@ -42,9 +42,7 @@ transcription:
     (b) p. 300 - "Singularitäten enthalten. die denen analog wären": a full stop where a comma
     belongs, with the following "die" left lowercase.
     (c) p. 301 - the substitution display opens two parentheses and closes only one.
-    (d) p. 301 - "F'" carries a prime where the paper writes plain F everywhere else, including
-    three times in the sentence directly below it and at every occurrence on pp. 302-303. Two
-    batches examined the glyph independently; it is cleanly inked at cap height, not a speck.
+    (d) [WITHDRAWN - was not a printer's error. See CORRECTIONS FROM HUMAN REVIEW below.]
     (e) p. 302 - Theorem 3's quotation is opened and never closed, though Theorem 2's on the same
     page is closed.
     (f) p. 302 - display (1) sets "φ_i(μ,ν)" with a comma and "φ'_i(μν)" without one, and sets a
@@ -75,6 +73,27 @@ transcription:
     "Variablen" given by the EuDML catalogue record. work.yaml follows the print (R12: the
     edition's own orthography is kept).
 
-    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
-    scan. The flagged pages above are where a reviewer should start, and p. 302's display (1) is
-    the single passage most worth a specialist's attention.
+    CORRECTIONS FROM HUMAN REVIEW (2026-09-02). A contributor read the draft against the scan and
+    found two errors that every automated pass had missed or got wrong:
+
+    1. p. 301, the "F'" listed above as printer's error (d). IT IS NOT A PRIME. Ink is missing from
+    the top of the F, and the surviving fragment of its upper arm reads as a detached mark. The
+    correct reading is plain F, consistent with every other occurrence in the paper. Corrected.
+    This one is worth dwelling on: THREE separate AI passes examined that glyph — the transcribing
+    batch, the next batch corroborating from its own pages, and the verification pass — and all
+    three concluded it was cleanly inked type and reproduced it faithfully under R4. Their shared
+    reasoning was "the mark is well-inked and at cap height, therefore it was set", a test that
+    cannot tell ink that was PUT there from ink that was LEFT BEHIND when a letter broke up. The
+    corroboration between passes made the wrong answer look stronger rather than weaker, because
+    each pass applied the same flawed test. Recorded in notation.md as a failure mode.
+
+    2. p. 300, the ditto array. The ditto in the last column repeats the word "mal" from the row
+    above, and "etc." follows AFTER that column, where "mal" would have been written. The draft
+    folded the ditto and "etc." into a single text run, losing the alignment that carries the
+    meaning. Corrected to give the ditto its own cell.
+
+    NOT YET FULLY HUMAN-REVIEWED. Status stays ai-draft: the review above was a spot check that
+    found two specific errors, not a line-by-line verification of all nine pages. The flagged pages
+    are where a further reviewer should start, and p. 302's display (1) — which descends in lambda
+    as r, r-1 but indexes its final coefficient with sigma — remains the passage most worth a
+    specialist's attention.

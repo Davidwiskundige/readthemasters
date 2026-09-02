@@ -42,11 +42,17 @@ the alternatives that are **not** to be used. The whole paper, pp. 298–306, fo
   zero everywhere else. Magnification shows a tall full-height 0 beside the small round `o` of
   `$p = o$` on the same page. Both are transcribed as printed: do not regularize the `0` to `o`,
   and do not regularize the surrounding `o`s to `0`.
-- **A prime on `F`.** The display on p. 301 sets `F'` where the object is plain `F` everywhere else
-  in the paper — three times in the sentence directly below it, and at every occurrence on
-  pp. 302–303. Two batches examined it independently; the glyph is cleanly inked at cap height, not
-  a speck. It is reproduced as printed under R4 (a printer's error is kept and flagged, never
-  silently fixed) and recorded in `provenance.yaml`. **Do not write `F'` anywhere else.**
+- **`F` never carries a prime — there is no `F'` in this paper.** The display on p. 301 appears to
+  set one, and three separate AI passes (both transcribing batches and the verification pass) agreed
+  it was a real inked mark and reproduced it under R4. **They were all wrong.** A human reviewer
+  identified the cause: **ink is missing from the top of the `F`**, and the surviving fragment of
+  its upper arm reads as a detached prime. The mark is an *absence*, not a glyph.
+  *This is worth remembering as a failure mode, not just as a fact about this page.* The AI passes
+  reasoned "the mark is cleanly inked and cap-height, therefore it is type" — a test that cannot
+  distinguish ink that was set from ink that was left behind when a letter broke up. When a mark
+  appears exactly once on a symbol that is otherwise plain throughout a paper, the likeliest
+  explanation is damage to the neighbouring glyph, not a deliberate prime. Check whether the
+  adjacent letter is *missing* ink before concluding that a mark was *added*.
 
 ## Typography
 
@@ -64,6 +70,15 @@ the alternatives that are **not** to be used. The whole paper, pp. 298–306, fo
   repeats `„` at the head of every line of a block quotation, that is a line-break artifact and is
   dropped to a single opening/closing pair (R22). A `„` standing in the **middle** of a line is a
   ditto mark and is kept.
+- **A ditto mark stands for the word in the column above it, and anything following the ditto is a
+  separate item.** In the p. 300 array the last column of row 1 reads `mal,`; row 2 sets a ditto in
+  that column position and then `etc.` *after* it — the ditto repeats "mal", and "etc." follows
+  where "mal" would have been written. The ditto must therefore **align in the same column as the
+  word it repeats**, with what follows set off from it:
+  `… & (\mu - 2) & \text{„}\quad\text{etc.}` — never `… & (\mu - 2) \text{ „ etc.}`, which folds
+  the ditto and the next word into one run and loses the alignment that carries the meaning.
+  (A sixth column for `etc.` is equivalent but overflows the reader's column; KaTeX does not
+  support `@{}` column separators, so the `\quad` is how the spacing is set.)
 - **Letterspaced runs become `\emph{...}`** (R20): `\emph{einer}`, `\emph{Geschlecht}`,
   `\emph{Theorem 1:}`. A theorem label is **one** `\emph` run including its number and punctuation —
   never split into `\emph{Theorem} 2.:`.
