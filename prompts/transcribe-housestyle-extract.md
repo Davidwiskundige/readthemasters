@@ -57,6 +57,19 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
   *abscisse*, *elisse*), abbreviations (`arc.`). Content, not presentation.
 - **Printer's errors are kept and flagged, never silently fixed** (R4). Reproduce the misprint
   exactly, and report it so it reaches the file header / provenance. Do not correct the author.
+- **Before deciding a mark was ADDED, check whether ink is MISSING nearby** (R28). Letterpress
+  fails by dropping ink, not only by setting the wrong sort, and a letter that breaks up leaves
+  fragments that read as separate marks. "The mark is cleanly inked and at the right height,
+  therefore it is type" is *not* a sufficient test — it cannot tell ink that was put there from ink
+  left behind when a neighbouring glyph broke.
+  *Measured failure:* Noether 1869 p. 301 appears to set `F'` where the paper writes plain `F`
+  everywhere else. Three independent passes — two transcribing batches and a verification pass —
+  each applied that test, each concluded it was real type, and each was wrong: ink is missing from
+  the top of the `F` and the surviving fragment of its upper arm reads as a prime. Because all
+  three shared the same flawed test, their agreement made the wrong answer look *better* supported.
+  **When a mark appears exactly once on a symbol that is plain throughout a work, suspect damage to
+  the adjacent glyph before you suspect a deliberate mark** — and say so in your report rather than
+  reproducing it silently under R4.
 - **Edition orthography is kept exactly as printed** (R12). Capital `V` for `U` (`EVLERO`,
   `AEQVATIONIS`), no `u`/`v` distinction (`inuentionum`, `vt`, `vti`), period `i`/`j` usage,
   edition spelling (`Ueber` not `Über`, `Coefficienten`, `Function`, `nemliche`). What *is*

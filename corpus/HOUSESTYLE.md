@@ -67,6 +67,33 @@ would put a math span around prose punctuation and would have had to be applied 
 Covered by `site/src/lib/tex.test.mjs` (`npm test`, run in CI). `\cdots` is raised in print but has
 no text-mode web equivalent; between two rendered formulas `…` reads correctly.
 
+### R28 — A mark that appears once on an otherwise-plain symbol is damage to the neighbouring
+### glyph until proven otherwise (notation)
+*2026-09-02.* Noether's 1869 Göttingen note (`noether-1869-algebraische-functionen-mehrerer-variablen`)
+prints what looks like `F'` in one display, where the paper writes plain `F` everywhere else —
+three times in the sentence directly below it, and at every occurrence on the following pages.
+**Three independent AI passes** — the transcribing batch, the next batch corroborating from its own
+pages, and the verification pass — magnified the glyph, judged it cleanly inked at cap height, and
+reproduced it faithfully as a printer's error under R4. A human reviewer then identified the actual
+cause: **ink is missing from the top of the `F`**, and the surviving fragment of its upper arm reads
+as a detached prime. The mark is an *absence*, not a glyph.
+
+**Rule: before concluding that a mark was ADDED, check whether ink is MISSING from the adjacent
+letter.** Letterpress fails by dropping ink at least as often as by setting a wrong sort, and a
+letter that breaks up leaves fragments that read as separate marks. The test those passes shared —
+"the mark is well-inked and at the right height, therefore it was set" — cannot distinguish ink
+that was *put* there from ink *left behind*. Where a mark appears **exactly once** on a symbol that
+is plain throughout a work, damage is the likelier explanation than a deliberate prime, dot or
+accent; treat R4 as applying only once that has been ruled out, and say in the report which it is.
+
+**A second lesson, about corroboration.** The three passes agreeing made the wrong answer look
+*better* supported, when in fact they were applying the same flawed test to the same artifact.
+Agreement between passes is only evidence when the passes can fail independently — which per-batch
+passes examining one glyph cannot. This is the same reason `houselint` passing 16/16 fragments said
+nothing about a notation error (R27's evidence): a check repeated is not a check corroborated.
+Applied in `noether-1869-algebraische-functionen-mehrerer-variablen`; carried into
+`prompts/transcribe-housestyle-extract.md`, which every batch subagent reads.
+
 ### R27 — A work's cross-page notation decisions are written down in `notation.md`, exactly,
 ### and say what NOT to do (process)
 *2026-08-31.* Transcribing `clebsch-1864-anwendung-abelschen-functionen` in independent batches
