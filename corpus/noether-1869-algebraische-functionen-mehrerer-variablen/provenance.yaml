@@ -1,0 +1,80 @@
+changelog:
+  - date: "2026-09-02"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-02"
+  verification:
+    flagged_pages: [298, 300, 301, 302, 304, 305]
+    date: "2026-09-02"
+  uncertainty_flags: 0
+  note: >-
+    Max Noether's "Zur Theorie der algebraischen Functionen mehrerer complexer Variabeln",
+    Göttinger Nachrichten 1869, pp. 298-306 — the complete paper, 9 of 9 pages. Read from
+    one text-block crop per page of the GDZ scan (PPN252457072_1869, images 300-308).
+    \origpage markers run 298-306 with no gaps; pipeline/houselint.py passes over every fragment
+    and over the assembled file.
+
+    HOW THESE PAGES WERE PRODUCED. Two isolated batch subagents under the /transcribe skill —
+    pp. 298-301 and pp. 302-306 — each given only prompts/transcribe-chat.md, the
+    transcription-relevant house-style extract, its own page images, and (for the second batch)
+    this work's notation.md as written from the first batch's report. The orchestrating session
+    read no scan image at any point. Both batches were then re-read against the scans by a
+    verification subagent, and the assembled file was proofread once more WITHOUT the scans.
+
+    A CAVEAT ON THIS SCAN'S RESOLUTION, which a reviewer should weigh. These pages are unusually
+    tall relative to their width, so capping the long edge at 1568px leaves only about 850px of
+    text width — against roughly 1180px for a more typical page. Both batches reported that this
+    is comfortable for the German prose but NOT for the mathematics: every one of their 25
+    magnification crops went to a subscript, an exponent, or a small punctuation mark, and both
+    hit the 3-crops-per-page cap on nearly every page. The transcription carries zero uncertainty
+    flags, but that reflects magnification resolving each doubt, not an easy scan.
+
+    APPARENT PRINTER'S ERRORS reproduced faithfully, not corrected (R4). Each was confirmed
+    against the scan at magnification:
+    (a) p. 298 - "mit d Doppel- und r Rückkehrpunkten", with the verb "ist" missing before the
+    following clause.
+    (b) p. 300 - "Singularitäten enthalten. die denen analog wären": a full stop where a comma
+    belongs, with the following "die" left lowercase.
+    (c) p. 301 - the substitution display opens two parentheses and closes only one.
+    (d) p. 301 - "F'" carries a prime where the paper writes plain F everywhere else, including
+    three times in the sentence directly below it and at every occurrence on pp. 302-303. Two
+    batches examined the glyph independently; it is cleanly inked at cap height, not a speck.
+    (e) p. 302 - Theorem 3's quotation is opened and never closed, though Theorem 2's on the same
+    page is closed.
+    (f) p. 302 - display (1) sets "φ_i(μ,ν)" with a comma and "φ'_i(μν)" without one, and sets a
+    multiplication period on the first term but none on the second.
+    (g) p. 302 - "ψ(μ,ν) = 0" uses a DIGIT zero where the work sets the letter o for zero
+    everywhere else. Magnified, the glyph is taller and more oval than the o of "p = o" two lines
+    below.
+    (h) p. 304 - "dem Theorem 3) analogen Theoremen", a closing parenthesis where every other
+    back-reference reads "Theorem 3.".
+    (i) p. 305 - display (4) row 3 reads "r x_3" where the five parallel rows read "ϱ x_i"; the
+    glyph has no bowl and no descender, so it is a wrong sort rather than a broken ϱ.
+    (j) p. 305 - a stray comma in "ξ_1, ξ_4 A" where the line above sets "ξ_1 ξ_4 B" with none,
+    and a missing comma in "Φ(x_1 x_2, x_3, x_4)".
+
+    TWO INCONSISTENCIES IN THE PRINT that a proofread flagged as suspected transcription errors
+    and the scan then confirmed as the author's or compositor's own:
+    - p. 302, display (1): the expansion descends in λ as λ^r, λ^(r-1), … but its final
+    coefficient is indexed σ, not r. A degree-r polynomial ending in the σ-th coefficient does not
+    close, and r is already the paper's dimension parameter. Both exponents were magnified against
+    the σ on the following line: they are unmistakably italic r (open stem-and-shoulder) and the σ
+    is a closed bowl. The print really does mix the two indices. Left as printed; worth a
+    mathematician's eye.
+    - p. 300: Theorem 1 is labelled "Theorem 1:" with no period before the colon, where Theorems
+    2, 3 and 4 all read "Theorem N.:". Verified by counting dots against a same-typesetting
+    control: two for Theorem 1, three for Theorem 3.
+
+    THE TITLE. The print sets "Variabeln" (letterspaced, so unambiguous letter by letter), not the
+    "Variablen" given by the EuDML catalogue record. work.yaml follows the print (R12: the
+    edition's own orthography is kept).
+
+    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
+    scan. The flagged pages above are where a reviewer should start, and p. 302's display (1) is
+    the single passage most worth a specialist's attention.
