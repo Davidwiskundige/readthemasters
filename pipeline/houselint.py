@@ -47,7 +47,7 @@ _INLINE_RE = re.compile(r"\$((?:\\.|[^$\\])*?)\$", re.DOTALL)
 
 
 def strip_comments(latex: str) -> str:
-    """Drop LaTeX comments so commented-out examples never count as content.
+    r"""Drop LaTeX comments so commented-out examples never count as content.
 
     Public because validate.py reuses it: a file header comment may discuss an \origpage marker,
     and the page-marker check must not count that as a real one.
