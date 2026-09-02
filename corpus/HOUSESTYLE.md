@@ -125,18 +125,31 @@ through `wrapMath` too**, exactly like figure captions — one call per heading 
 R19, where the site was extended so a new work's markup renders, rather than the work being bent
 around the site.
 
-The complementary half of this ruling is a **limit that stands**: a heading's argument is matched
-with `[^}]*` (both in the block-promotion pass and in the heading match), so it **may not contain a
-text-mode brace group** — `\section*{Theorie der \emph{Abel}'schen Functionen.}` ends the heading at
-`\emph{Abel}` and leaks `'schen Functionen.}` into the following paragraph, silently, since the file
-is still valid LaTeX. This is the same failure R18 records for `\ednote`/`\uncertain`. Math is safe
-because `$...$` spans are stashed before those regexes run, which is why `$\omega$` in a heading is
-fine and `\emph{...}` is not. In practice a heading needs no `\emph` anyway: R20 already rules that
-a heading's own face carries its prominence and is not additionally emphasised, so the Riemann title
-is written `\section*{Theorie der Abel'schen Functionen.}` even though the print italicises the name.
-`pipeline/houselint.py` today flags this class of nested brace only inside `\ednote`/`\uncertain`;
-**extending it to headings is still open** and would have caught the title above in CI instead of by
-eye.
+**The complementary half of this ruling was a limit — and it is now LIFTED, because the reason
+given for it was wrong.** *Superseded 2026-09-02.* The original text said a heading "may not contain
+a text-mode brace group", because both the block-promotion pass and the heading match used `[^}]*`,
+and asserted that **math is safe** since `$...$` spans are stashed before those regexes run.
+
+That last claim is false, and Clebsch 1864 falsified it. Its section titles carry an ordinal —
+`\subsection*{Zusammenhang einer Curve $n^{\text{ter}}$ Ordnung …}` — and the heading ended at the
+`}` inside `\text{ter}`, leaving a literal `$n^{\text{ter` in the title and a stray `}$ Ordnung …}`
+in the running text. Math is stashed inside `inlineText`, but **the block-promotion pass runs on the
+raw source, before any stashing**, so a brace group inside heading math truncates the heading just
+as `\emph{...}` does. Three titles were affected, on a page where `validate.py`, `houselint.py` and
+`texcompare.py` all passed and only previewing the work revealed it.
+
+**Fix: `site/src/lib/tex.js` now reads a heading's argument with real brace balancing** (`bracedArg`,
+used by both the promotion pass and the heading split), so a heading may contain math with brace
+groups, and `\emph{...}` too. An unbalanced brace leaves the text untouched rather than swallowing
+the document. Covered by four cases in `site/src/lib/tex.test.mjs` (`npm test`, run in CI). This
+follows the same precedent as R14, R17, R19 and the first half of R25: extend the site so a new
+work's markup renders, rather than bending the work around the site.
+
+What still stands is the **style** point, which never depended on the parser: a heading needs no
+`\emph` anyway, since R20 rules that a heading's own face carries its prominence. The Riemann title
+is still written `\section*{Theorie der Abel'schen Functionen.}`. And R18's identical limit on
+`\ednote{...}` / `\uncertain{...}` is **unaffected** — those are still matched with `[^}]*` and still
+take no braces.
 
 ### R24 — When a print uses TWO emphasis devices (italic and letterspacing), both collapse to
 ### `\emph`, and the distinction is recorded in the file header instead (presentation)

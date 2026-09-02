@@ -79,3 +79,36 @@ test("a heading with no math is unchanged by the wrapping", () => {
   assert.match(html, /<h2[^>]*>Erste Abtheilung\.<\/h2>/);
   assert.ok(!html.includes('class="math"'), "nothing to wrap, so no wrapper is added");
 });
+
+test("a heading whose math carries a brace group is not truncated at the inner brace", () => {
+  // Clebsch 1864 is the first corpus work whose section titles carry an ordinal. Matching the
+  // heading argument with [^}]* ended it at the `}` inside \text{ter} and leaked the tail into the
+  // running text — on the page that showed as a literal `$n^{\text{ter` plus a stray `}$ Ordnung`.
+  // Found by previewing the work; validate.py, houselint and texcompare all passed it.
+  const html = render(
+    "\\subsection*{Zusammenhang einer Curve $n^{\\text{ter}}$ Ordnung mit einer Classe.}");
+  assert.match(html, /<h3[^>]*>Zusammenhang einer Curve [\s\S]*Ordnung mit einer Classe\.<\/h3>/);
+  assert.ok(!/<\/h3>[\s\S]*\\text\{ter/.test(html), "no truncated fragment leaks past the heading");
+});
+
+test("a heading with several brace-carrying math spans keeps all of them", () => {
+  const html = render(
+    "\\subsection*{Curven $(n-3)^{\\text{ter}}$ Ordnung, welche eine Curve " +
+    "$n^{\\text{ter}}$ Ordnung in $\\dfrac{n.n-3}{2}$ Punkten berühren.}");
+  const h3 = html.match(/<h3[^>]*>([\s\S]*?)<\/h3>/);
+  assert.ok(h3, "heading is emitted");
+  assert.equal((h3[1].match(/class="math"/g) || []).length, 3, "all three spans are wrapped");
+  assert.match(h3[1], /Punkten berühren\.$/);
+});
+
+test("a heading followed by body text still splits correctly when its math has braces", () => {
+  const html = render(
+    "\\subsection*{Curve $n^{\\text{ter}}$ Ordnung.}\n\nDer folgende Satz gilt allgemein.");
+  assert.match(html, /<h3[^>]*>Curve <span class="math"[^>]*>[\s\S]*?<\/span> Ordnung\.<\/h3>/);
+  assert.match(html, /<p>Der folgende Satz gilt allgemein\.<\/p>/);
+});
+
+test("an unbalanced heading brace is left alone rather than swallowing the document", () => {
+  const html = render("\\subsection*{Never closed\n\nDer Text danach.");
+  assert.match(html, /Der Text danach\./, "following text survives");
+});

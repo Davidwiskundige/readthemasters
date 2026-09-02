@@ -424,6 +424,39 @@ def check_page_markers(work_dir: Path, issues: Issues) -> None:
                          "(fine if the work transcribes a selection; check no fragment was lost)")
 
 
+def check_figure_references(work_dir: Path, issues: Issues) -> None:
+    r"""Every `\rmfigure{figures/...}` must point at a file that exists, and vice versa.
+
+    A dangling figure reference renders as a broken image on the work page, and nothing caught it:
+    `houselint` has no opinion on figures, and `texcompare` only checks that the path is *invariant*
+    between an original and its translation — not that it resolves. Clebsch shipped
+    `\rmfigure{figures/fig-215.png}` against a file committed as `fig-1.png`, and only previewing
+    the page revealed it.
+
+    An unreferenced file in `figures/` warns rather than errors: a crop may be staged ahead of the
+    text that will use it.
+    """
+    rel_dir = work_dir.name
+    referenced: set[str] = set()
+    texs = [work_dir / "original.tex", *sorted((work_dir / "translations").glob("*.tex"))]
+    for tpath in texs:
+        if not tpath.exists():
+            continue
+        body = houselint.strip_comments(tpath.read_text(encoding="utf-8"))
+        for ref in re.findall(r"\\rmfigure\{([^}]*)\}", body):
+            referenced.add(ref)
+            if not (work_dir / ref).exists():
+                issues.error(f"{rel_dir}/{tpath.name}",
+                             f"\\rmfigure points at a missing file: {ref}")
+
+    fig_dir = work_dir / "figures"
+    if fig_dir.is_dir():
+        for f in sorted(fig_dir.iterdir()):
+            if f.is_file() and f"figures/{f.name}" not in referenced:
+                issues.warn(f"{rel_dir}/figures/{f.name}",
+                            "figure file is not referenced by any \\rmfigure")
+
+
 def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
 
@@ -566,6 +599,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_translation_math(work_dir, issues)
     check_significance(work, work_id, issues)
     check_page_markers(work_dir, issues)
+    check_figure_references(work_dir, issues)
     check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
