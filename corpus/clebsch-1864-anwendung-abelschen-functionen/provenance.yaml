@@ -127,5 +127,37 @@ transcription:
     Antiqua with round s only — no long-ſ, no eszett — so R19 has nothing to convert and the file
     contains no ß.
 
+    A WHOLE-WORK PROOFREAD OF THE TEXT ALONE was then run over pp. 189-243 — no scans, one context,
+    reading for the things a page-by-page check against the scan structurally cannot see. It
+    confirmed the skeleton is sound (55 contiguous page markers, equation numbering, environment and
+    brace balance, math delimiters, and 53 of 54 page joins carrying their sentences across intact)
+    and found defects concentrated almost entirely in the pp. 207-222 stretch, which was a
+    measurement run and had never had a verification pass. Repaired:
+      - A THIRD word left split across a page break: p. 197 ended "In-" with p. 198 opening
+        "tegrale". It had survived the earlier sweep because the hyphen sits behind a closing brace
+        rather than at end of line.
+      - SIX pages opening mid-sentence carried a blank line after their \origpage (208, 209, 213,
+        214, 216, 221), inserting a paragraph break inside a sentence.
+      - TWENTY multiplication dots set thin-spaced or spaced (pp. 207-209, 221-222) where this work
+        sets them tight; nine relation signs padded \;\equiv\; where the other 83 are plain; six
+        primes written after the subscript instead of before; two German closing quotes as ASCII
+        rather than Unicode; one footnote mark set as baseline text inside a display instead of the
+        R15 superscript; and two inline fractions written \frac where the identical formula is
+        \dfrac elsewhere in the work.
+    None of these changes a word or formula Clebsch wrote. All 1383 math spans still render.
+
+    STILL OPEN, needing the print (a reviewer should start here, with the flagged pages):
+      - p. 234 cites "§. 16" twice from inside §. 16, for formulas printed in §. 14 on p. 229.
+        Probably a misprint or a misreading of the section number.
+      - p. 223 sets "$m+n-4^{\text{ter}}$ Ordnung" without parentheses, where four neighbouring
+        occurrences read "$(m+n-4)^{\text{ter}}$". As transcribed the exponent binds only to the 4.
+      - p. 224's first display omits the "+" before its \cdots, where every comparable chain has one.
+      - Five \tfrac spans (pp. 204, 220, 222) and a dozen inline \frac spans in pp. 207-222 that may
+        or may not match the printed fraction size; the rule is to match the print, so only the scan
+        settles them.
+      - p. 211's "gleich der der 63 Systeme" is listed above as a doubled article, but reads as
+        ordinary German with a pronominal "der", and the same construction stands uncorrected on
+        p. 221. The R4 entry may be over-called.
+
     NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
     scan. The flagged pages above are where a reviewer should start.
