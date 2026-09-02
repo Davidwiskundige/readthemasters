@@ -144,7 +144,7 @@ in doubt. Say so in the batch prompt.
 
 Instruct each subagent to:
 
-- write one fragment per page to `corpus/<work-id>/pages/p<N>.tex`, starting with `\origpage{N}`
+- write one fragment per page to `p<N>.tex` in the scratch directory you give it, starting with `\origpage{N}`
   (the printed page number) and containing body LaTeX only;
 - transcribe faithfully — keep the author's spelling, symbols, and notation (`zz` for z², archaic
   spelling, `arc.`); normalize typography only (Fraktur/long-ſ → normal letters, expand ligatures,
@@ -169,7 +169,7 @@ Require a report back with exactly these sections, and nothing else — the repo
 5. **DIFFICULTIES** — anything about the scan or the mathematics that made a page hard
 
 After each batch: append any reported decisions to `corpus/<work-id>/notation.md` (Phase 3a), run
-`python pipeline/houselint.py corpus/<work-id>/pages/p<N>.tex` over the new fragments so house-style
+`python pipeline/houselint.py <scratch>/p<N>.tex` over the new fragments so house-style
 drift is caught at the batch that caused it, and carry the trailing lines into the next batch.
 
 ### Phase 3a — Keep the notation glossary
@@ -192,7 +192,7 @@ being transcribed and are copied verbatim. They are not glossary entries.
 
 ## Phase 4 — Stitch and normalize
 
-- Concatenate `corpus/<work-id>/pages/p<N>.tex` **in page order** into
+- Concatenate the scratch directory's `p<N>.tex` fragments **in page order** into
   `corpus/<work-id>/original.tex`, wrapped in the standard scaffold (see any existing
   `original.tex`):
 

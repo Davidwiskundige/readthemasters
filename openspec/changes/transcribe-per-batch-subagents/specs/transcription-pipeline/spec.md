@@ -11,14 +11,23 @@ The skill SHALL execute page-level transcription in **bounded context**, so that
 transcribing a page does not grow with the number of pages already transcribed. The orchestrating
 session MUST NOT read scan images itself. Instead it dispatches one subagent per batch of pages
 (default 4, adjustable), each of which reads only its own batch's images, writes one fragment per
-page to `corpus/<work-id>/pages/pNNN.tex`, and returns a text report naming the pages written, the
+page to `pNNN.tex`, and returns a text report naming the pages written, the
 uncertainty flags raised, any notation decision it had to make, and the trailing lines of its final
 fragment. Scan images therefore never enter the orchestrating session's context, and the assembly,
 validation, review, and pull-request phases run with no images resident.
 
-Each batch subagent SHALL receive the pinned `prompts/transcribe-chat.md` rules, the applicable
-`corpus/HOUSESTYLE.md` rulings, the work's notation glossary when one exists, and the previous
-batch's trailing lines so that text spanning a batch boundary is joined correctly.
+Per-page fragments are **working files and live outside the corpus**, in the same scratch area as
+the prepared page images. They are stitched into `corpus/<work-id>/original.tex`, which is what is
+committed. `corpus-format`'s work-directory layout is the authority on what a work directory
+contains, and it does not list a `pages/` directory; writing fragments inside the corpus would put
+uncommitted files there and contradict that layout.
+
+Each batch subagent SHALL receive the pinned `prompts/transcribe-chat.md` rules, a
+**transcription-relevant extract** of `corpus/HOUSESTYLE.md` rather than the whole file, the work's
+notation glossary when one exists, and the previous batch's trailing lines so that text spanning a
+batch boundary is joined correctly. The extract is a maintained file, not something each run
+re-derives: `HOUSESTYLE.md` is ~9.5k tokens and most of its rulings govern site rendering rather
+than transcription, and every subagent re-reads whatever payload it is sent.
 
 Below a work-size threshold of about two batches the skill MAY transcribe inline in the
 orchestrating session, because the fixed per-subagent overhead would otherwise exceed the saving.
@@ -56,6 +65,38 @@ transcription phase.
 The mechanical house-style linter (`pipeline/houselint.py`) SHALL run over each batch's fragments as
 they land, not only over the assembled `original.tex`, so that a batch which drifts from house style
 is identified as the batch that caused it.
+
+**Verification against the scans is not sufficient on its own.** A per-batch pass compares page N's
+text to page N's image, so it is structurally blind to any defect that spans a page or batch join,
+or that makes two parts of the work disagree — which is the failure mode a batched architecture
+most endangers. The skill SHALL therefore ALSO run a **text-only proofread of the assembled
+`original.tex`**: one subagent, one context, reading the whole file together with the work's
+notation glossary and **no scan images**, returning findings only.
+
+That pass SHALL classify each finding as a **defect** (the transcription is internally broken), an
+**inconsistency** (two parts of the work, or the work and its glossary, disagree), or **needs scan**
+(only the print can settle it). It SHALL be given `provenance.yaml` so it does not re-report the
+printer's errors already documented there. Its findings MUST be verified before they are acted on:
+it cannot see the print, so a confident-sounding claim may be inference rather than observation.
+
+This pass is cheap relative to what it covers — a 130KB work is roughly 32k tokens, about a
+twentieth of the cost of scan-verifying the same pages — and it covers the whole work rather than
+one batch.
+
+#### Scenario: A defect spanning a page join is caught
+
+- **WHEN** a word, sentence, or convention is broken across a page or batch boundary
+- **THEN** the text-only proofread reports it, even though every page passed its own check against its own scan image
+
+#### Scenario: The proofread does not re-report documented misprints
+
+- **WHEN** the work reproduces a printer's error that `provenance.yaml` already records under R4
+- **THEN** the proofread leaves it alone rather than reporting it as a defect
+
+#### Scenario: A proofread finding is verified before it is applied
+
+- **WHEN** the text-only proofread asserts that some markup is broken
+- **THEN** the claim is tested before any edit is made, because the pass cannot see the print and may be reasoning rather than observing
 
 #### Scenario: Discrepancies are flagged before proposing
 
@@ -155,6 +196,53 @@ Magnification is preferred over raising `\uncertain{}` where it settles the read
 
 - **WHEN** a page would need more magnified regions than the cap allows
 - **THEN** the subagent stops magnifying and flags the remaining doubtful passages instead
+
+### Requirement: Page-marker integrity is enforced by the gate
+
+`pipeline/validate.py` SHALL check that a transcription's `\origpage{N}` markers form an ascending
+run. Duplicate markers and descending order are **errors** that block publication; a gap is a
+**warning**, because a work may legitimately transcribe a selection of pages rather than a
+contiguous range.
+
+This exists because a batched transcription assembles one fragment per printed page, so a dropped,
+duplicated, or mis-ordered fragment is a real and silent failure mode. Nothing caught it before: the
+gate never looked at page markers and `houselint` has no opinion on them.
+
+The check SHALL strip LaTeX comments before extracting markers, since a file's header comment may
+legitimately discuss a marker without being one. It stays stdlib-only, so the gate keeps its single
+PyYAML dependency.
+
+#### Scenario: A duplicated or mis-ordered fragment blocks publication
+
+- **WHEN** an assembled `original.tex` repeats an `\origpage` number, or its markers descend
+- **THEN** `pipeline/validate.py` fails and the work does not publish
+
+#### Scenario: A deliberate page selection is not blocked
+
+- **WHEN** a work transcribes a non-contiguous selection of pages
+- **THEN** the gate warns which pages are skipped but does not fail
+
+#### Scenario: A marker discussed in a comment is not counted
+
+- **WHEN** a file's header comment mentions an `\origpage` marker in prose
+- **THEN** the check ignores it rather than reporting a duplicate
+
+### Requirement: Prepared pages carry a coordinate mapping back to the scan
+
+The page-preparation helper SHALL emit, alongside the prepared images, a machine-readable mapping
+from each prepared image's coordinate space back to its source scan — an offset and a scale per
+page, such that `source = offset + prepared / scale`.
+
+A batch subagent sees the prepared image but must magnify out of the source scan, which is cropped
+and downscaled differently on every page. Without the mapping it has to infer one: a measured batch
+that did so landed two of its three magnification crops on the wrong lines, spending its entire
+per-page escalation budget without settling anything. The orchestrating session passes the relevant
+rows to each batch.
+
+#### Scenario: A subagent magnifies without guessing coordinates
+
+- **WHEN** a batch subagent needs to magnify a doubtful region
+- **THEN** it converts the coordinate using the supplied mapping rather than inferring the crop and scale
 
 ### Requirement: Uncertainty flagging is observable
 
