@@ -85,3 +85,40 @@ def test_clebsch_is_contiguous_over_the_whole_paper():
     import re
     pages = [int(n) for n in re.findall(r"\\origpage\{(\d+)\}", body)]
     assert pages == list(range(189, 244)), "pp. 189-243, contiguous, no duplicates"
+
+
+# --- the title / transcription cross-check ---------------------------------- #
+def test_title_near_match_warns(tmp_path):
+    """Noether 1869: metadata said 'Variablen', the print sets 'Variabeln'."""
+    work = _work(tmp_path, "\section*{Zur Theorie der Functionen complexer Variabeln.}")
+    issues = validate.Issues()
+    validate.check_title_matches_transcription(
+        work, {"title": "Zur Theorie der Functionen complexer Variablen."}, issues)
+    assert any("nearly matches" in w for w in issues.warnings)
+    assert issues.errors == []
+
+
+def test_title_exact_match_is_silent(tmp_path):
+    work = _work(tmp_path, "\section*{Zur Theorie der Functionen complexer Variabeln.}")
+    issues = validate.Issues()
+    validate.check_title_matches_transcription(
+        work, {"title": "Zur Theorie der Functionen complexer Variabeln."}, issues)
+    assert issues.warnings == []
+
+
+def test_a_printed_article_number_prefix_is_not_a_mismatch(tmp_path):
+    """Three shipped works keep the print's article number in the heading; that is not a defect."""
+    work = _work(tmp_path, "\section*{30. Remarques sur quelques proprietes generales}")
+    issues = validate.Issues()
+    validate.check_title_matches_transcription(
+        work, {"title": "Remarques sur quelques proprietes generales."}, issues)
+    assert issues.warnings == []
+
+
+def test_a_work_that_does_not_transcribe_its_title_is_silent(tmp_path):
+    # most corpus works have no title line at all — the check must not invent one
+    work = _work(tmp_path, "\section*{I.}\n\nDer Text beginnt hier.")
+    issues = validate.Issues()
+    validate.check_title_matches_transcription(
+        work, {"title": "Ein ganz anderer Titel uber etwas anderes."}, issues)
+    assert issues.warnings == []

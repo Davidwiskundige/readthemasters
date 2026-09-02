@@ -73,15 +73,27 @@ Read these so your output matches the house style exactly:
    - Every copyright-critical fact (author death dates, first-publication year, edition) MUST be
      **sourced** in the `sources:` block, or the gate fails by design.
 2. Fill/refresh the `copyright_assessment` block by running the gate in write mode, then reviewing
-   the diff — never hand-write the verdicts:
+   the diff — never hand-write the verdicts. **Scope it to the work you are adding:**
 
    ```bash
-   python pipeline/validate.py --write
+   python pipeline/validate.py --write --only <work-id>
    git diff corpus/<work-id>/work.yaml
    ```
 
+   `--write` **rewrites every `work.yaml` it touches**, reformatting the YAML and dropping its
+   quoting and comments — including the `# https://mathshistory…` MacTutor links. An unscoped
+   `--write` therefore leaves the whole corpus dirty for a one-work change. `--only` exists because
+   that happened. Then check `git status`, not just the one file's diff: the narrow `git add` in
+   Phase 8 would leave any collateral edits sitting in the working tree unnoticed.
+
 3. Confirm the work is public domain. If `public_domain: false`, STOP and tell the contributor
    which rule failed — this work cannot be published.
+
+4. **Take the title from the print, not from a catalogue.** EuDML, Wikidata and library records
+   routinely modernize spelling. Noether 1869 is catalogued as `…complexer Variablen`; the printed
+   title line reads `Variabeln`, and R12 keeps the edition's own orthography. Where the transcription
+   sets a title line, `validate.py` warns when it nearly-but-not-exactly matches `work.yaml` — but
+   only the scan settles which is right, so read the title off the page when you first see it.
 
 ## Phase 2 — Prepare the pages
 
@@ -113,6 +125,20 @@ Read these so your output matches the house style exactly:
   1500px). That is the accepted trade — one image per page saves a turn, and turns dominate. Where
   a specific glyph is genuinely unreadable at that size, the batch subagent magnifies that region
   (see Phase 3), rather than every page being split in advance.
+
+- **But the trade depends on the page's aspect ratio, and the helper now tells you.** The cap binds
+  the LONG edge, so the taller the page the less width survives. `prepare_pages.py` prints a
+  **WARNING** when pages come out under 1000px of text width. Do not ignore it:
+  - Measured on Göttinger Nachrichten 1869 (aspect 1:1.73), pages came out at **817–907px**, and
+    both batches then hit the 3-crops-per-page cap on nearly every page — **all 25 of their crops
+    went to subscripts, exponents and small punctuation**, none to prose. The prose was fine
+    throughout; it is the mathematics that collapses.
+  - On such a scan, prefer **half-page crops**: a landscape half falls *under* the cap and is not
+    downscaled at all, so it recovers the width outright, at one extra image and one extra turn per
+    page. That is a worse deal on a normal page and a better one here.
+  - Either way, **say which you chose in provenance**. A zero uncertainty-flag count means something
+    different on a narrow scan — there it records magnification doing heavy lifting, not an easy
+    page.
 
 ## Phase 3 — Transcribe in batches, via subagents
 
@@ -186,6 +212,14 @@ right 19 times out of 19. Batches cannot see each other; the file is how they ag
 said only that spacing "is normalized" produced 11 spaced dots where the work uses 63 tight ones.
 Record the decision, one line of rationale, and the forbidden alternatives. When a batch reports a
 decision, write it down at that precision — do not paraphrase it.
+
+**State the rule; do not merely show it in an example.** This is the same failure in its subtlest
+form, and it recurs. A Noether entry read "the multiplication sign is a period on the baseline" and
+illustrated it with `$\frac{n-1.\; n-2}{1.\; 2.}$` — the `\;` visible in every example but never
+named as part of the rule. The next batch duly set a tight dot, and the verification pass had to
+catch it. If spacing, bracing, or placement is part of a decision, **write a sentence saying so**,
+and say where the rule does *not* apply (that same entry now reads: spaced `\;` in ordinary math,
+tight inside a superscript, and a literal space is not spacing because TeX ignores it).
 
 Author back-references (`équation (92)`, `Gleichung (3)`, section numbers) are printed on the page
 being transcribed and are copied verbatim. They are not glossary entries.

@@ -29,6 +29,13 @@ import re
 import sys
 
 DEFAULT_MAX_EDGE = 1568      # above this the vision API downscales, so resolution above it is lost
+# Below this much text width, one image per page stops being a fair trade. A typical portrait page
+# yields ~1180px; measured on a much taller format (Goettinger Nachrichten 1869, aspect 1:1.73) it
+# fell to ~850px, and both transcribing batches then hit the 3-crops-per-page escalation cap on
+# nearly every page, spending every crop on subscripts and exponents. The cap applies to the LONG
+# edge, so the taller the page the less width survives — and that is a property of the scan, which
+# is why the helper reports it instead of the skill guessing.
+MIN_COMFORTABLE_WIDTH = 1000
 DEFAULT_MARGIN = 0.02        # padding around the detected text block, as a fraction of the page
 DEFAULT_THRESHOLD = 200      # 0-255; below this a pixel counts as ink
 MIN_BLOCK_FRACTION = 0.25    # a "text block" smaller than this fraction of the page is not trusted
@@ -222,6 +229,7 @@ def main(argv=None) -> int:
     total_tokens = 0
     fallbacks = 0
     zoom_map: dict[str, dict] = {}
+    widths: list[int] = []
     for page in pages:
         src = os.path.join(args.images, found[page])
         dst = os.path.join(args.out, f"p{page}.png")
@@ -231,6 +239,7 @@ def main(argv=None) -> int:
         result = prepare_page(src, dst, args.max_edge, args.margin,
                               crop=page not in skip_crop)
         total_tokens += result["tokens"]
+        widths.append(result["out_size"][0])
         if result["note"]:
             fallbacks += 1
         sw, sh = result["source_size"]
@@ -254,6 +263,19 @@ def main(argv=None) -> int:
               f"magnify a doubtful glyph without guessing coordinates")
         if fallbacks:
             print(f"{fallbacks} page(s) kept full — check those crops by eye before transcribing")
+        narrow = [p for p, row in zip(pages, widths) if row < MIN_COMFORTABLE_WIDTH]
+        if narrow:
+            worst = min(widths)
+            print(f"\nWARNING: {len(narrow)} of {len(pages)} page(s) come out under "
+                  f"{MIN_COMFORTABLE_WIDTH}px of text width (narrowest {worst}px). These pages are "
+                  f"tall relative to their width, so the {args.max_edge}px long-edge cap spends the "
+                  f"budget on height.\n"
+                  f"         Expect the batch subagents to exhaust their magnification budget on "
+                  f"subscripts and exponents. Consider splitting these pages into half-page crops "
+                  f"instead: a landscape half falls under the cap and is not downscaled at all, "
+                  f"which buys back the width at the cost of one image and one turn per page.\n"
+                  f"         Whichever you choose, say so in provenance — a zero uncertainty-flag "
+                  f"count means something different on a scan this narrow.")
     return 0
 
 

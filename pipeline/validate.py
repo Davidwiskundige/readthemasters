@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import difflib
 import re
 import sys
 from pathlib import Path
@@ -424,6 +425,49 @@ def check_page_markers(work_dir: Path, issues: Issues) -> None:
                          "(fine if the work transcribes a selection; check no fragment was lost)")
 
 
+def check_title_matches_transcription(work_dir: Path, work: dict, issues: Issues) -> None:
+    """Warn when the transcription sets the work's title but spells it differently from work.yaml.
+
+    Most works do not transcribe their title into the body at all, so equality cannot be required.
+    But when a heading is *nearly* the recorded title and not exactly it, one of the two is wrong —
+    and the transcription, read off the page, is the one more likely to be right.
+
+    Caught on Noether 1869, whose title line reads `Variabeln` where the metadata, taken from a
+    catalogue record, said `Variablen`. Nothing else compares the two: the gate never reads the
+    prose, and a proofread has no access to work.yaml.
+    """
+    original = work_dir / "original.tex"
+    title = (work.get("title") or "").strip()
+    if not original.exists() or not title:
+        return
+    body = houselint.strip_comments(original.read_text(encoding="utf-8"))
+    headings = re.findall(r"\\(?:sub)?section\*?\{([^}]*)\}", body)
+
+    def norm(t):
+        t = " ".join(t.split()).strip()
+        # A transcribed title line often keeps the print's own article number ("30.", "III.")
+        # while work.yaml's title correctly omits it. Strip that prefix before comparing, or
+        # every such work reports a spurious near-match.
+        t = re.sub(r"^(?:[IVXLCDM]+|\d+)\.\s*", "", t)
+        return t.rstrip(".")
+
+    target = norm(title)
+    best, best_ratio = None, 0.0
+    for h in headings:
+        h = norm(h)
+        if h == target:
+            return                                   # exact match: nothing to say
+        ratio = difflib.SequenceMatcher(None, target, h).ratio()
+        if ratio > best_ratio:
+            best, best_ratio = h, ratio
+    if best is not None and 0.85 <= best_ratio < 1.0:
+        rel = original.relative_to(work_dir.parent).as_posix()
+        issues.warn(rel, "a heading nearly matches work.yaml's title but is not identical "
+                         f"({best_ratio:.0%}) — check which spelling the print actually uses:\n"
+                         f"        work.yaml:      {title}\n"
+                         f"        transcription:  {best}")
+
+
 def check_figure_references(work_dir: Path, issues: Issues) -> None:
     r"""Every `\rmfigure{figures/...}` must point at a file that exists, and vice versa.
 
@@ -600,6 +644,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_significance(work, work_id, issues)
     check_page_markers(work_dir, issues)
     check_figure_references(work_dir, issues)
+    check_title_matches_transcription(work_dir, work, issues)
     check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)
@@ -625,7 +670,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
 
 
 def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = False,
-                    write: bool = False) -> Issues:
+                    write: bool = False, write_only: str | None = None) -> Issues:
     issues = Issues()
     vocab_path = corpus_dir / "vocab.yaml"
     if not vocab_path.exists():
@@ -646,7 +691,10 @@ def validate_corpus(corpus_dir: Path, now_year: int, strict_pma_100: bool = Fals
     # Keyed by directory name — the dependency graph is validated across the whole corpus below.
     works_by_id: dict[str, dict] = {}
     for wd in work_dirs:
-        validate_work(wd, vocab, now_year, strict_pma_100, issues, write=write)
+        # --write rewrites (and reformats) every work.yaml it touches, so a run that only
+        # means to fill in ONE new work would otherwise churn the whole corpus.
+        wd_write = write and (write_only is None or wd.name == write_only)
+        validate_work(wd, vocab, now_year, strict_pma_100, issues, write=wd_write)
         # Cross-work: unique ids.
         if (wd / "work.yaml").exists():
             work = load_yaml(wd / "work.yaml") or {}
@@ -683,6 +731,10 @@ def main(argv: list[str] | None = None) -> int:
                         help="override the current year (for reproducible checks/tests)")
     parser.add_argument("--write", action="store_true",
                         help="recompute and rewrite each work.yaml copyright_assessment")
+    parser.add_argument("--only", metavar="WORK_ID", default=None,
+                        help="with --write, rewrite only this work's work.yaml. Use it when adding "
+                             "one work: --write reformats every file it rewrites (dropping quoting "
+                             "and comments), so an unscoped run leaves the whole corpus dirty.")
     args = parser.parse_args(argv)
 
     corpus_dir = Path(args.corpus)
@@ -690,7 +742,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: corpus directory '{corpus_dir}' does not exist", file=sys.stderr)
         return 2
 
-    issues = validate_corpus(corpus_dir, args.now_year, args.strict_pma_100, args.write)
+    if args.only and not args.write:
+        print('error: --only has no effect without --write', file=sys.stderr)
+        return 2
+    if args.only and not (corpus_dir / args.only / 'work.yaml').exists():
+        print(f"error: --only {args.only}: no such work", file=sys.stderr)
+        return 2
+    issues = validate_corpus(corpus_dir, args.now_year, args.strict_pma_100, args.write,
+                             write_only=args.only)
 
     for w in issues.warnings:
         print(f"WARN  {w}")
