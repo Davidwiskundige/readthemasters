@@ -387,6 +387,43 @@ def check_significance(work: dict, work_id: str, issues: Issues) -> None:
                 issues.warn(w, f"{field}[{i}] is never referenced from the significance text "
                                f"(add a {marker.format(n=i + 1)} marker, or drop the entry)")
 
+def check_page_markers(work_dir: Path, issues: Issues) -> None:
+    """`\\origpage{N}` markers must be an ascending run with no gaps or duplicates.
+
+    A batched transcription assembles one fragment per page, so a dropped, duplicated or
+    out-of-order fragment is a real failure mode — and until this check existed nothing caught it:
+    the gate never looked at page markers, and `houselint` has no opinion on them. Cheap, textual,
+    and stdlib-only, so it costs the gate nothing.
+
+    A missing page is reported as a gap rather than assumed fatal ordering: a work may legitimately
+    transcribe a non-contiguous selection of pages, so only DUPLICATES and DESCENDING order are
+    errors; a gap is a warning, since it is usually intentional and always worth stating.
+    """
+    original = work_dir / "original.tex"
+    if not original.exists():
+        return
+    rel = original.relative_to(work_dir.parent).as_posix()
+    # Strip comments first: a file's header comment may legitimately *discuss* a marker (Jacobi's
+    # explains why the display spanning pp. 400-401 is split around \origpage{401}), and counting
+    # that as a real marker reports a duplicate that is not there.
+    body = houselint.strip_comments(original.read_text(encoding="utf-8"))
+    pages = [int(n) for n in re.findall(r"\\origpage\{(\d+)\}", body)]
+    if not pages:
+        return
+    dupes = sorted({p for p in pages if pages.count(p) > 1})
+    if dupes:
+        issues.error(rel, f"duplicate \\origpage marker(s): {', '.join(map(str, dupes))}")
+    if pages != sorted(pages):
+        out_of_order = [b for a, b in zip(pages, pages[1:]) if b < a]
+        issues.error(rel, "\\origpage markers are not in ascending order "
+                          f"(descends at: {', '.join(map(str, out_of_order))})")
+    gaps = [f"{a + 1}-{b - 1}" if b - a > 2 else str(a + 1)
+            for a, b in zip(pages, pages[1:]) if b - a > 1]
+    if gaps and not dupes:
+        issues.warn(rel, f"\\origpage markers skip page(s): {', '.join(gaps)} "
+                         "(fine if the work transcribes a selection; check no fragment was lost)")
+
+
 def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     """Mechanical presentation-layer house-style rules (corpus/HOUSESTYLE.md).
 
@@ -528,6 +565,7 @@ def validate_work(work_dir: Path, vocab: dict, now_year: int,
     check_provenance(provenance, work_id, issues)
     check_translation_math(work_dir, issues)
     check_significance(work, work_id, issues)
+    check_page_markers(work_dir, issues)
     check_house_style(work_dir, work, issues)
 
     computed = evaluate_copyright(work, provenance, now_year, strict_pma_100)

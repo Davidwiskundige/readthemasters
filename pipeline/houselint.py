@@ -46,8 +46,12 @@ _DISPLAY_PATTERNS = [
 _INLINE_RE = re.compile(r"\$((?:\\.|[^$\\])*?)\$", re.DOTALL)
 
 
-def _strip_comments(latex: str) -> str:
-    """Drop LaTeX comments so commented-out examples never count as content."""
+def strip_comments(latex: str) -> str:
+    """Drop LaTeX comments so commented-out examples never count as content.
+
+    Public because validate.py reuses it: a file header comment may discuss an \origpage marker,
+    and the page-marker check must not count that as a real one.
+    """
     return "\n".join(_COMMENT_RE.sub("", line) for line in latex.splitlines())
 
 
@@ -62,7 +66,7 @@ def inline_spans(latex: str):
     Display forms are blanked first (preserving line breaks) so a ``$`` inside ``$$...$$`` or a
     display block is never mistaken for an inline delimiter.
     """
-    text = _strip_comments(latex)
+    text = strip_comments(latex)
     for pat in _DISPLAY_PATTERNS:
         text = pat.sub(_blank_preserving_lines, text)
     for m in _INLINE_RE.finditer(text):
@@ -78,7 +82,7 @@ def text_mode_body(latex: str) -> str:
     so anything inside math cannot break them. Every removal preserves the region's newlines, so
     line numbers computed against the result still match the source file.
     """
-    text = _strip_comments(latex)
+    text = strip_comments(latex)
     for pat in _DISPLAY_PATTERNS:
         text = pat.sub(_blank_preserving_lines, text)
     return _INLINE_RE.sub(_blank_preserving_lines, text)

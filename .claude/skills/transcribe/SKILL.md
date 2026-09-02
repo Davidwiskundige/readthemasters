@@ -220,6 +220,36 @@ its prepared page images, and ask for only a discrepancy list back.
 - Resolve each discrepancy or flag it with `\uncertain{}`.
 - Keep the list of flagged pages; it goes into provenance and the PR body.
 
+### Phase 5b — Proofread the assembled text, without the scans
+
+**Required, and cheap.** Phase 5a compares page N's text to page N's image, so it is structurally
+blind to everything that spans a join or makes two parts of the work disagree — which is exactly
+what a batched architecture endangers. One subagent reads the whole assembled `original.tex` plus
+`notation.md` and **no images**, and returns findings only. A 130KB work is ~32k tokens: about a
+twentieth of what scan-verifying the same pages costs, for whole-work coverage.
+
+Tell it to script the mechanical checks rather than eyeball them — `\origpage` contiguity, `\tag`
+sequence, `\begin`/`\end` and `\[`/`\]` pairing, `$` parity, brace balance, `notation.md`
+conformance work-wide, any hyphen before a page break — and to spend its reading on:
+
+- **every page join**, and especially the batch joins, where two agents met with no shared context;
+- **a page that opens mid-sentence**, which must have *no* blank line after its `\origpage`;
+- **recurring constructions** set two ways in different parts of the work;
+- **the German**, for sentences that do not parse.
+
+Require each finding classified **DEFECT** (internally broken) / **INCONSISTENCY** (two parts
+disagree) / **NEEDS SCAN** (only the print settles it), and tell it not to re-report the printer's
+errors provenance already documents. Give it `provenance.yaml` so it can tell the difference.
+
+*Measured on Clebsch:* this pass found a word split across a page break that a trailing-hyphen grep
+had missed (the hyphen sat behind a closing brace), six paragraph breaks inserted mid-sentence, and
+four separate conventions on which one batch disagreed with the rest of the work — none of which
+any per-page check, `houselint`, or `validate.py` can see.
+
+**Verify its claims before acting on them.** It cannot see the print, so a confident-sounding
+finding may be inference. One run reported that `r'^{2p}` fails to render; it renders fine in both
+KaTeX and pdfLaTeX. Test the mechanical claims; send the rest back to the scan.
+
 ## Phase 6 — Write provenance
 
 Create/update `corpus/<work-id>/provenance.yaml` (see the template and existing works):
