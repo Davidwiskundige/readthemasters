@@ -1,9 +1,11 @@
 changelog:
   - date: "2026-09-02"
     summary: Transcription added (AI draft).
+  - date: "2026-09-02"
+    summary: Reviewed against the scan; status raised to skimmed.
 
 transcription:
-  status: ai-draft
+  status: skimmed
   model: claude-opus-5
   effort: high
   prompt_version: transcribe-v1
@@ -13,6 +15,16 @@ transcription:
     flagged_pages: [298, 300, 301, 302, 304, 305]
     date: "2026-09-02"
   uncertainty_flags: 0
+  reviewers:
+    - name: DvdL
+      level: skimmed
+      date: "2026-09-02"
+      note: >-
+        Read against the scan. Found two errors every automated pass had missed or got wrong: the
+        apparent prime on F (p. 301) is ink missing from the top of the letter, not a mark; and the
+        ditto in the p. 300 array repeats "mal" from the row above, with "etc." following that
+        column rather than folded into one run with the ditto. Both corrected. Not a word-for-word
+        proofread of all nine pages.
   note: >-
     Max Noether's "Zur Theorie der algebraischen Functionen mehrerer complexer Variabeln",
     Göttinger Nachrichten 1869, pp. 298-306 — the complete paper, 9 of 9 pages. Read from
@@ -92,8 +104,8 @@ transcription:
     folded the ditto and "etc." into a single text run, losing the alignment that carries the
     meaning. Corrected to give the ditto its own cell.
 
-    NOT YET FULLY HUMAN-REVIEWED. Status stays ai-draft: the review above was a spot check that
-    found two specific errors, not a line-by-line verification of all nine pages. The flagged pages
-    are where a further reviewer should start, and p. 302's display (1) — which descends in lambda
+    STATUS skimmed. A contributor has read the draft against the scan and corrected what that
+    found (see reviewers). It is not a word-for-word verification of all nine pages, which is what
+    `verified` would require. The flagged pages are where a further reviewer should start, and p. 302's display (1) — which descends in lambda
     as r, r-1 but indexes its final coefficient with sigma — remains the passage most worth a
     specialist's attention.
