@@ -167,7 +167,13 @@ The whole paper, pp. 189–243, follows this list.
 - **A prime on a subscripted variable goes before the subscript: `u'_{k}`, `u''_{k}`, `A'_{k}`** —
   never `u_{k}'`. The print stacks the prime directly above the subscript (p. 238); writing it after
   sets it beside the subscript instead. **A primed variable raised to a power is braced:
-  `{r'}^{2p}`** — never `r'^{2p}`, which KaTeX rejects as a double superscript (p. 242).
+  `{r'}^{2p}`** (p. 242), for legibility of the source — **not** because the unbraced form breaks.
+  An earlier version of this entry claimed KaTeX rejects `r'^{2p}` as a double superscript. That is
+  **false**, and was written from a batch report without being tested: `r'^{2p}` renders in KaTeX
+  0.16.47 and compiles under pdfLaTeX, because TeX's prime mechanism folds into a following
+  superscript rather than colliding with it. The braced form is a preference, so pp. 203 and 233 are
+  left unbraced rather than churned. Recorded because a rule with a fabricated reason is worse than
+  no rule — the next reader would have "fixed" three working spans on its authority.
 
 - **A display whose continuation line hangs its relation sign out to the left** is an `aligned` with
   the sign in the left cell — `& body \\ \equiv{} & body` (p. 240 eq. (3.), p. 241). Never `cases`,
@@ -183,9 +189,15 @@ The whole paper, pp. 189–243, follows this list.
   `\subsection*{...}` for the descriptive title beneath it, matching the print's two lines.
 - **Words hyphenated across a page break** are written whole on the page where the word *begins*;
   the next fragment starts at the following word. This keeps concatenated fragments from inserting
-  a break mid-word. Two pages violated this and were repaired on 2026-08-31: p. 195 ended `An-`
-  with p. 196 opening `zahl`, and p. 198 ended `aus-` with p. 199 opening `reichend`, both of which
-  rendered as a stray hyphen and space inside the running word.
+  a break mid-word. **Three** pages violated this: p. 195 ended `An-` with p. 196 opening `zahl`,
+  p. 198 ended `aus-` with p. 199 opening `reichend`, and p. 197 ended `In-}` with p. 198 opening
+  `\emph{tegrale`. All repaired. *When checking for this, do not grep for a hyphen at end of line* —
+  the third instance hid behind a closing brace (`In-}`) and survived a sweep that caught the other
+  two. Grep for a hyphen before an optional brace before the `\origpage`.
+- **A page that opens mid-sentence takes NO blank line after its `\origpage{N}`**; only a page
+  opening a new paragraph takes one. A blank line there is a `\par` inside a sentence, which breaks
+  the paragraph on the rendered page. Six pages carried one — 208, 209, 213, 214, 216, 221, all in
+  the pp. 207–222 stretch, which wrote a blank line unconditionally on all 16 of its pages. Repaired.
 - **Running heads, page numbers and signature lines** (e.g. `27 *`) are page furniture and are not
   transcribed.
 - **An unnumbered figure** (p. 215, referenced only as "siehe die Fig.") is keyed to its page:
