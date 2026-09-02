@@ -1,0 +1,71 @@
+id: noether-1869-algebraische-functionen-mehrerer-variablen
+title: Zur Theorie der algebraischen Functionen mehrerer complexer Variabeln.
+title_en: On the theory of algebraic functions of several complex variables.
+authors:
+- name: Max Noether
+  wikidata_id: Q77500
+  birth_year: 1844
+  death_year: 1921
+  mactutor: Noether_Max
+publication:
+  year: 1869
+  venue: goettingen-nachrichten
+  volume: '1869'
+  pages: 298–306
+  title_full: '"Zur Theorie der algebraischen Functionen mehrerer complexer Variablen",
+    Nachrichten von der Königl. Gesellschaft der Wissenschaften und der Georg-Augusts-Universität
+    zu Göttingen, 1869, Nr. 15 (Göttingen: Dieterichsche Buchhandlung, 1869), pp.
+    298–306.'
+edition:
+  year: 1869
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in the Nachrichten von der Königl.
+    Gesellschaft der Wissenschaften und der Georg-Augusts-Universität zu Göttingen,
+    1869, pp. 298–306 — an original edition with no modern critical apparatus, commentary,
+    or re-typesetting. Only Noether's own text is transcribed; running heads and signature
+    marks are not.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+- algebra
+language: de
+type: paper
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN252457072_1869
+  scan_id: gdz:PPN252457072_1869 (Göttinger Nachrichten 1869, pp. 298–306; scan images
+    300–308). The same original printing is catalogued by EuDML as http://eudml.org/doc/179431.
+sources:
+  death_date: Max Noether, 24 September 1844 – 13 December 1921 (wikidata:Q77500;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Max/,
+    which gives Mannheim as his birthplace and Erlangen as his place of death).
+  publication_date: First published 1869 in the Nachrichten von der Königl. Gesellschaft
+    der Wissenschaften und der Georg-Augusts-Universität zu Göttingen, pp. 298–306
+    (EuDML http://eudml.org/doc/179431; GDZ PPN252457072_1869).
+  edition: Original printing, Nachrichten von der Königl. Gesellschaft der Wissenschaften
+    und der Georg-Augusts-Universität zu Göttingen, 1869 (Göttingen), pp. 298–306.
+    Digitized by the Göttinger Digitalisierungszentrum (GDZ), PPN252457072_1869.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1921
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1869
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-02'

@@ -95,6 +95,22 @@ venues:
         url: "https://gdz.sub.uni-goettingen.de/id/PPN250442582"
       - label: "EuDML"
         url: "https://eudml.org/journal/10140"
+  goettingen-nachrichten:
+    name: >-
+      Nachrichten von der Königl. Gesellschaft der Wissenschaften und der
+      Georg-Augusts-Universität zu Göttingen
+    aka: "Gött. Nachr."
+    founded: 1845
+    place: "Göttingen"
+    publisher: "Königliche Gesellschaft der Wissenschaften zu Göttingen"
+    note: >-
+      The Göttingen Academy's short-communications series, distinct from its Abhandlungen: the
+      Nachrichten carried brief notes and session reports, the Abhandlungen full-length memoirs.
+    archives:
+      - label: "GDZ (Göttingen)"
+        url: "https://gdz.sub.uni-goettingen.de/id/PPN252457072"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10176"
   phil-trans:
     name: "Philosophical Transactions of the Royal Society"
     aka: "Phil. Trans."
