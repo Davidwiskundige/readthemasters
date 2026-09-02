@@ -38,7 +38,7 @@ transcription:
     231–234, 235–238, 239–243) under the rewritten /transcribe skill: one image per page cropped to
     the text block at 1568px, each subagent reading only its own batch's images plus this work's
     notation.md, writing one fragment per page, and returning a short report. The orchestrating
-    session read NO scan image at any point (measured: 0 image tokens). Pages 223–232 were then
+    session read NO scan image at any point (measured: 0 image tokens). Pages 223–243 were then
     re-read against the scans by two separate verification subagents covering pp. 223-232 and
     233-243, which corrected ten things the transcription had wrong: six continuation-dot rows with
     the wrong dot count or the wrong distribution across cells, three inline fractions still written
