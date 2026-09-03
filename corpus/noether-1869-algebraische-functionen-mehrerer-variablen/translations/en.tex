@@ -1,0 +1,216 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker and \emph span is
+% reproduced unchanged; only the prose is translated — including the prose set INSIDE math via a
+% text insert, which is translated like any other prose (HOUSESTYLE R21).
+% pipeline/texcompare.py ignores the CONTENT of such an insert while still checking that each one
+% is present, unmoved, and that all surrounding math is identical, so those changes were verified
+% by hand. They are of three kinds:
+%   * The ordinal suffix: $n^{\text{ter}}$ / $n^{\text{ten}}$ / $(n-4)^{\text{ter}}$ all become
+%     $n^{\text{th}}$ etc. German marks the ordinal on the adjective ("Curve $n^{\text{ter}}$
+%     Ordnung"), English on the numeral ("curve of the $n^{\text{th}}$ order"), so the German case
+%     ending disappears into the English "of the ... order".
+%   * The p. 300 array: \text{auf} becomes \text{on} and \text{mal,} becomes \text{times,}.
+%   * The two ditto marks \text{„} in that same array are NOT translated. They are the edition's
+%     punctuation, not language — the same reasoning by which the quotation glyphs „…“ around the
+%     four theorems are kept (HOUSESTYLE R22, and the precedent of jacobi-1832-considerationes and
+%     abel-1841-fonctions-transcendantes). Each ditto stands for the entry in the column above it,
+%     so in this translation the first repeats "on" and the second repeats "times"; the column
+%     alignment that carries that meaning is preserved exactly, with \quad\text{etc.} set off after
+%     the second ditto (see this work's notation.md).
+%
+% WORD ORDER IS CONSTRAINED BY THE PRESERVATION CHECK. texcompare compares the SEQUENCE of math
+% spans, so a clause cannot be re-ordered around them even where idiomatic English would prefer it.
+% The clearest case is the last sentence of §. IV (p. 306): the German puts "$x_1, x_2, x_3, x_4$
+% resp.\ $\xi_1, \xi_2, \xi_3, \xi_4$ gesetzt", and the natural English ("thinks of $\xi$ as put in
+% place of $x$") would reverse the two spans, so it is rendered "$x_1, x_2, x_3, x_4$ as replaced
+% respectively by $\xi_1, \xi_2, \xi_3, \xi_4$" instead — same sense, same order. Likewise the
+% $(r-1)$-fold series on pp. 299-300 and the two theorem statements broken across pp. 301-302 keep
+% a slightly Germanic order so that each \origpage marker still falls at the printed break.
+%
+% THE PRINT'S OWN ERRORS ARE CARRIED ACROSS, NOT REPAIRED (HOUSESTYLE R4), exactly as the
+% transcription carries them; provenance.yaml lists all of them with the scan evidence. Three are
+% visible in the English and a reader should not take them for translation slips:
+%   * p. 298, "If $f = o$ the homogeneous equation of a curve ...": the German has no verb here
+%     either ("Wenn $f = o$ die homogene Gleichung ... mit $d$ Doppel- und $r$ Rückkehrpunkten, so
+%     ist ..."). The missing "ist" is the printer's, and the gap is reproduced rather than filled.
+%   * p. 300, "... special singularities. which would be analogous to those ...": the print sets a
+%     full stop where a comma belongs and leaves the following "die" lowercase. Both are kept.
+%   * p. 302, Theorem 3's quotation is opened with „ and never closed, though Theorem 2's on the
+%     same page is closed. Kept open.
+% The remaining ones are inside preserved formulae and therefore stand of themselves: the
+% unclosed parenthesis in the p. 301 display, the mixed r/sigma indexing and the comma/period
+% irregularities in display (1), the digit 0 in $\psi(\mu,\nu) = 0$ against the letter o used for
+% zero everywhere else, the "r x_3" for "\varrho x_3" in display (4), and "Theorem 3)" for
+% "Theorem 3." on p. 304.
+%
+% TERMINOLOGY. Applied from corpus/noether-1869-algebraische-functionen-mehrerer-variablen/
+% glossary.yaml, which mirrors the Riemann 1857 and Clebsch 1864 glossaries for every shared term,
+% since this note is built directly on both: Knotenpunkt = "node", Rückkehrpunkt = "cusp",
+% Schaar = "family", Kegelschnitt = "conic", Grösse = "quantity", Klasse = "class".
+% Four choices worth naming:
+%   * Geschlecht = "genus". Clebsch's coinage, which Noether extends here from curves to surfaces
+%     and then to manifolds of any dimension; Cayley's English word for the same number was
+%     "deficiency", but "genus" is the literal rendering of the German and the one that survived.
+%     Flächengeschlecht = "surface genus", Curvengeschlecht = "curve genus".
+%   * eindeutig = "one-to-one". Of a correspondence or a transformation the word means
+%     single-valued in both directions — Noether says "Punkt für Punkt eindeutig" and adds "und
+%     umgekehrt". This is a different sense from the one in the Riemann 1857 glossary, where the
+%     same adjective qualifies a FUNCTION and is rendered "uniquely determined".
+%   * Abbildung = "representation", the word Cayley and Salmon use for carrying a surface onto a
+%     plane, rather than the modern "map"; hence "representability" for Abbildbarkeit.
+%   * Querschnitt (p. 304) = "cross-section", a plane section of a skew surface. It is NOT
+%     Riemann's Querschnitt, which this corpus renders "crosscut" — a false friend across two works
+%     that sit side by side, so it is flagged here and in the glossary.
+% Where the print uses two different German words, this translation uses two different English
+% ones: Bewegung = "motion" (p. 302), Fortbewegung = "progressive motion" (p. 304), Fortschreitung
+% = "progression" (p. 303); and Ordnung = "order" is kept apart from Grad = "degree" throughout.
+%
+% Book and journal titles are left in their own language, as elsewhere in this corpus
+% ("Theorie der Abelschen Funct.", "Abel'sche Funct."); only "Bd." is rendered "vol.", following
+% the Clebsch translation.
+%
+% No \uncertain span was needed: the transcription carries zero uncertainty flags and nothing in
+% the prose was ambiguous enough to require one. The one passage worth a specialist's eye is
+% mathematical rather than linguistic and lies inside a preserved formula — display (1) on p. 302,
+% which descends in $\lambda$ as $r$, $r-1$ but indexes its last coefficient with $\sigma$.
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{298}
+
+\section*{On the theory of algebraic functions of several complex variables.}
+
+\subsection*{By Max Nöther.}
+
+In the theory of algebraic functions of \emph{one} complex variable Riemann has set up a classification of the equations${}^{1)}$ which define these functions. The characteristic of a class is that all equations belonging to it can be transformed into one another one-to-one by rational substitutions. If $f = o$ the homogeneous equation of a curve of the $n^{\text{th}}$ order with $d$ double points and $r$ cusps${}^{2)}$, then $p = \frac{n-1.\; n-2}{1.\; 2.} - d - r$ is the class number
+
+\textbf{1)} Crelle's Journal, vol.\ 54.
+
+\textbf{2)} Clebsch and Gordan, Theorie der Abelschen Funct.
+
+\origpage{299}
+of the class to which $f = o$ belongs, and the equality of this number for two curves is the necessary and at the same time sufficient condition for the one-to-one correspondence of the two curves. Only a short time ago Mr.\ Clebsch has extended this theorem to functions of two variables${}^{1)}$. If two surfaces which possess only the ordinary singularities, double curve and cuspidal curve, can be transformed rationally into one another, then they have according to this a class number $p$ in common, which Mr.\ Clebsch designates as the \emph{genus} of the surface. The genus $p$ of a surface of the $n^{\text{th}}$ order $f = o$ is the number of coefficients which still remain undetermined in a surface of the $(n-4)^{\text{th}}$ order, when one makes this surface pass through the double curve and cuspidal curve of $f = o$.
+
+I intend in this communication to extend these theorems in several directions. In the first place I shall draw into the circle of consideration also the surfaces with higher conical nodes and higher multiple curves; secondly I shall at once give this division into classes for the algebraic figures of arbitrarily many dimensions, in the same extent as has just been indicated for surfaces, and thirdly I shall show that besides the equality of the number $p$ designated as the „genus“ of a figure there exist yet further conditions for the one-to-one correspondence of two figures, namely that within each class of figures of $2r$ dimensions characterized by a $p$ one must still set up an $(r-1)$-fold infinite series of
+
+\textbf{1)} Comptes Rendus of 21 Dec.\ 1868, p.\ 1238.
+
+\origpage{300}
+classes, whose characteristic numbers have quite a similar significance to $p$ itself.
+
+\section*{I.}
+
+An algebraic function $s$ of $r$ independently variable complex quantities $x_1, x_2, \ldots x_r$ is defined by an algebraic equation of the $n^{\text{th}}$ degree
+\[ f(s, x_1, x_2, \ldots x_r) = o, \]
+which represents a $2r$-fold infinite manifold. For brevity I shall in what follows designate a $2h$-fold infinite manifold as an $\infty^{2h}$. $f = o$ can contain $\infty^{2h}$ to be counted multiply, for $h = o$ up to $h = r - 1$, just as a surface can contain multiple curves and nodes. We assume, however, that these multiple manifolds lying on $f = o$ do not themselves again contain special singularities. which would be analogous to those which in the case of a surface arise through the coincidence of tangent planes along a multiple curve or through the passage of a conical node into a planar one. Further we always assume that the equation $f = o$ is irreducible.
+
+\emph{Theorem 1:} „The \emph{genus} $p$ of this manifold $f = o$ is equal to the number of constants which still remain undetermined in an $\infty^{2r}$ of degree $n - r - 2$, $\theta = o$, when $\theta = o$ is compelled to pass through the multiple manifolds lying on $f = o$, and indeed through each $\mu$-fold counting
+\[
+\begin{array}{lllll}
+\infty^{2(r-1)} & \text{on} & f = o & (\mu - 1) & \text{times,}\\
+\infty^{2(r-2)} & \text{„} & \text{„} & (\mu - 2) & \text{„}\quad\text{etc.}
+\end{array}
+\]
+finally through a $\mu$-fold curve of $f$ $(\mu - r$
+
+\origpage{301}
+$+ 1)$ times, and a $\mu$-fold conical node $(\mu - r)$ times.
+
+This number $p$ has the property of being the same for every other $\infty^{2r}$, $\varphi = o$, which in general corresponds to $f = o$ point for point one-to-one, so that $p$, the genus of $f = o$, is the class number for the class to which $f = o$ belongs. The equality of the number $p$ is the necessary criterion for the possibility of a one-to-one rational transformation of two $\infty^{2r}$ into one another.“
+
+\section*{II.}
+
+In the one-to-one correspondence of higher manifolds there occur peculiarities, of which I shall state a few in the example of $\infty^{2.3}$.
+
+Let the manifold of $2.\;3$ dimensions which is given by the homogeneous equation
+\[ f(x_1, x_2, x_3, x_4, x_5) = o \]
+be carried over by the rational substitution formulae
+\[ (\varrho x_i = \varphi_i(y_1, y_2, y_3, y_4, y_5), \quad (i = 1, 2, \ldots 5) \]
+into the manifold
+\[ F(y_1, y_2, y_3, y_4, y_5) = o \]
+and indeed in such a way that conversely also, by the help of $F = o$, the $y$ can be expressed as rational functions of the $x$. In general $f = o$ and $F = o$ then correspond to one another point for point one-to-one. In particular, however, it can happen that to a point of the one manifold there corresponds a surface $(\infty^{2.2})$ or curve $(\infty^{2.1})$ of the other, or to a curve of the one a surface of the other.
+
+\emph{Theorem 2.:} „In case the functions $\varphi$ at a simple point of $F = o$
+
+\origpage{302}
+all vanish, there corresponds to this point on $f = o$ a surface which can be expressed rationally by two parameters, or a curve which can be expressed rationally by one parameter.“
+
+\emph{Theorem 3.:} „In case the functions $\varphi$ along a simple curve of $F = o$ all vanish, there corresponds to this curve on $f = o$ a surface which is generated by the motion of a curve that is expressed rationally by one parameter. This surface has the surface genus $p = o$, but cannot in general be expressed rationally by two parameters.
+
+The surfaces of higher genus $p$ one can always let correspond to multiple curves on $F = o$.
+
+\section*{III.}
+
+If a surface has the property that its coordinates can be represented in the following manner:
+\[ \varrho x_i = \varphi_i(\mu,\nu).\; \lambda^{r} + \varphi'_i(\mu\nu) \lambda^{r-1} + \ldots + \varphi_i^{(\sigma)}(\mu,\nu), \tag{1} \]
+where
+\[ \psi(\mu,\nu) = 0, \tag{2} \]
+namely as rational functions of a parameter $\lambda$ whose coefficients are rational functions of two parameters $\mu, \nu$, between which there subsists the algebraic equation (2) independent of $\lambda$, then the surface has the surface genus $p = o$.
+
+All surfaces with $p = o$ which contain at least \emph{one} simply infinite family of rational curves can be put into the form (1), (2). These surfaces are distinguished
+
+\origpage{303}
+still further, however, according to the irrationality of the curve equation (2) to which they lead.
+
+\emph{Definition.} I designate as the \emph{curve genus} $p'$ of a surface with $p = o$ the genus of the curve (2) to which this surface leads.
+
+\emph{Theorem 4.:} „The necessary and sufficient${}^{1)}$ condition for the one-to-one correspondence of two surfaces with $p = o$ is the equality of the curve genus $p'$ of the two surfaces.“
+
+According to this the class of surfaces $p = o$ falls into further classes according to the curve genus $p'$. This $p'$ is the genus of the plane curve of intersection of the cone which can be represented by equation (2) and which corresponds to the given surface one-to-one, point for point. One can further think of the surface as generated by irrational progression of a rational curve, whereby the irrational progression determines the curve genus. By Theorem 3. $p'$ is then at the same time the genus of the curve lying on $F = o$ to which the surface on $f = o$ corresponds. The normal surfaces of this class are the cones described over the normal curves${}^{2)}$. The coordinates of the surfaces are expressed as rational functions of a parameter whose coefficients are Abelian functions. The application of these functions to the geometry of curves${}^{3)}$ given by Mr.\ Clebsch can therefore be carried over also to the
+
+\textbf{1)} The word sufficient refers of course only to the form of the two equations, which can still be distinguished from one another by the special values of the moduli.
+
+\textbf{2)} Clebsch and Gordan, Abel'sche Funct.\ §.\ 18.
+
+\textbf{3)} Crelle's Journal, vol.\ 63.
+
+\origpage{304}
+geometry of surfaces of surface genus $o$.
+
+Under this form fall above all the \emph{skew surfaces}, which all possess the surface genus $= o$, while by their curve genus they fall into classes. Their curve genus is at the same time that of their plane cross-section.${}^{1)}$
+
+As a corollary one has further the theorem, important for the representation of surfaces on planes: „the necessary and sufficient criterion for the representability of a surface on a plane is that the surface has the surface genus $p$ and the curve genus $p' = o$.“
+
+For surfaces of higher surface genus, as well as for higher manifolds, similar criteria and divisions into classes can be set up, which one most simply derives from the theorems analogous to Theorem 3). I shall communicate the closer working-out, as well as the proofs of the foregoing theorems, in another place.
+
+\section*{IV.}
+
+One can make of this theory an application, important for geometry, to the line-complexes of the first and second degree. The elimination of one of the coordinates from the two equations corresponding to one of the complexes yields an equation homogeneous in 5 coordinates. This represents a higher figure, which one can regard as generated by the rational progressive motion of a surface which can be represented on a plane. From this
+
+\textbf{1)} This division of the ruled surfaces agrees with that given by Mr.\ Schwarz in Crelle's Journal vol.\ 64 and 67, and by Mr.\ Lüroth vol.\ 67.
+
+\origpage{305}
+it follows that that figure has both the general genus $p$ and the surface and curve genus $= o$. It is therefore possible to represent the line-complexes of the first and second degree in our \emph{space} in such a way that in general to every point of space there corresponds \emph{one} ray of the complex and conversely, and one can by a one-to-one representation carry over the whole geometry of our space to the geometry of these complexes.
+
+If the equations of a line-complex of the first degree are written in the form:
+\[
+\begin{aligned}
+o &= x_1 x_4 + x_2 x_5 + x_3 x_6 \\
+o &= \Phi(x_1 x_2, x_3, x_4) + A x_5 + B x_6
+\end{aligned}
+\tag{3}
+\]
+where $\Phi$ is a linear function and $A$ and $B$ are constants, then the simplest representation is given by the formulae:
+\[
+\begin{aligned}
+\varrho x_1 &= \xi_1 (A\xi_3 - B\xi_2) \\
+\varrho x_2 &= \xi_2 (A\xi_3 - B\xi_2) \\
+r x_3 &= \xi_3 (A\xi_3 - B\xi_2) \\
+\varrho x_4 &= \xi_4 (A\xi_3 - B\xi_2) \\
+\varrho x_5 &= \xi_1 \xi_4 B - \xi_3 \Phi(\xi_1, \xi_2, \xi_3, \xi_4) \\
+\varrho x_6 &= - \xi_1, \xi_4 A + \xi_2 \Phi(\xi_1, \xi_2, \xi_3, \xi_4)
+\end{aligned}
+\tag{4}
+\]
+where the fundamental figure lying in space consists of a conic.
+
+The simplest representation of a line-complex of the second degree I owe to Dr.\ Klein. If one refers the complex to a tetrahedron which lies with respect to it in such a way that all straight lines which pass through the point common to the two edges 5 and 6, within the plane determined by these, belong to the complex, then its equations can likewise be written in the form (3), where one has only to understand by $\Phi$ a homogeneous function of the second degree, and by $A$ and $B$ linear homogeneous functions
+
+\origpage{306}
+of $x_1, x_2, x_3, x_4$. If one further thinks, in the formulae (4), in $A, B$ of $x_1, x_2, x_3, x_4$ as replaced respectively by $\xi_1, \xi_2, \xi_3, \xi_4$, then the complex is represented in space by these functions of the third order, and as fundamental figure there appears a curve of the 5th order.
+
+\emph{Göttingen}, 30 June 1869.
+
+\end{document}

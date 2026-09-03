@@ -3,6 +3,61 @@ changelog:
     summary: Transcription added (AI draft).
   - date: "2026-09-02"
     summary: Reviewed against the scan; status raised to skimmed.
+  - date: "2026-09-03"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-03"
+    glossary: glossary.yaml
+    uncertainty_flags: 0
+    note: >-
+      Translated from our own original.tex, never from any published translation. The glossary was
+      written as part of this pass and deliberately mirrors the Riemann 1857 and Clebsch 1864
+      glossaries already in the corpus for every shared term, since this note is built directly on
+      both: Knotenpunkt = "node", Rückkehrpunkt = "cusp", Schaar = "family", Kegelschnitt = "conic",
+      Grösse = "quantity", Klasse = "class".
+
+      Four renderings a reviewer should weigh. (1) Geschlecht = "genus" — Clebsch's coinage, which
+      Noether extends here from curves to surfaces and then to manifolds of any dimension; Cayley's
+      English word for the same number was "deficiency", but "genus" is the literal rendering of the
+      German and the one that survived. (2) eindeutig = "one-to-one" — of a correspondence the word
+      means single-valued in both directions ("Punkt für Punkt eindeutig ... und umgekehrt"), a
+      different sense from the one in the Riemann 1857 glossary, where the same adjective qualifies
+      a function and is rendered "uniquely determined". (3) Abbildung = "representation", Cayley's
+      and Salmon's period word for carrying a surface onto a plane, not the modern "map". (4)
+      Querschnitt (p. 304) = "cross-section", a plane section of a skew surface — NOT Riemann's
+      Querschnitt, which this corpus renders "crosscut". That false friend across two works sitting
+      side by side is flagged in the glossary and in the file header.
+
+      Three text inserts were translated under HOUSESTYLE R21: the ordinal suffix (ter/ten → th),
+      and \text{auf} → \text{on} and \text{mal,} → \text{times,} in the p. 300 array. The two ditto
+      marks \text{„} in that same array were NOT translated — they are the edition's punctuation,
+      not language, on the same reasoning by which the „…“ quotation glyphs around the four theorems
+      are kept (R22, following jacobi-1832-considerationes). texcompare ignores the content of an
+      insert, so all five of these were checked by hand.
+
+      Word order is constrained by the preservation check, which compares the sequence of math
+      spans. The last sentence of §. IV (p. 306) is the clearest case: the natural English "thinks
+      of ξ as put in place of x" would reverse two spans the print puts the other way round, so it
+      reads "$x_1, x_2, x_3, x_4$ as replaced respectively by $\xi_1, \xi_2, \xi_3, \xi_4$" instead.
+      The two theorem statements broken across pp. 301–302 likewise keep a slightly Germanic order
+      so each \origpage marker still falls at the printed break.
+
+      The print's own errors are carried across rather than repaired (R4), as the transcription
+      carries them. Three are visible in the English prose and should not be read as translation
+      slips: the missing verb on p. 298 ("If $f = o$ the homogeneous equation of a curve …"), the
+      full stop before a lowercase "which" on p. 300, and Theorem 3's quotation left unclosed on
+      p. 302. The rest sit inside preserved formulae.
+
+      STATUS ai-draft. No human has read this against the original yet. pipeline/texcompare.py and
+      pipeline/houselint.py both pass over the file.
 
 transcription:
   status: skimmed
