@@ -1,0 +1,57 @@
+# Term renderings for clebsch-1868-surfaces-algebriques, applied consistently across the
+# translation. Format: `terms: {French as printed: English}` — the shape pipeline/translate.py
+# reads with --glossary, so the Tier-3 path reproduces the same renderings as this Tier-2 pass.
+#
+# The note is two printed pages, so this file is short by nature. It exists because the note is a
+# précis of clebsch-1864-anwendung-abelschen-functionen and a source of
+# noether-1869-algebraische-functionen-mehrerer-variablen: the same objects are named in three
+# works and two languages, and the English should not drift between them.
+#
+# Two principles, the same as the 1864 glossary's:
+#   * Period English over the modern equivalent, and where Clebsch's English contemporaries have
+#     the word, theirs — Cayley, whom the note cites by name, and Salmon, whose "cusp" and
+#     "cuspidal curve" the 1864 glossary already adopts.
+#   * The author's own term is kept, not glossed. "genre" is his word for what the note is about
+#     and becomes "genus"; the note supplies its own English synonym, Cayley's "deficiency", which
+#     needs no translation because it is already English.
+#
+# NOTE on the 1864 glossary: its TERM renderings carry over where the two works name the same
+# thing (cusp, double point, order, class, tangent plane). Its NOTATION rules do not — see
+# notation.md, which records that this print's multiplication dot is spaced where the 1864 memoir's
+# is tight.
+
+terms:
+  # --- the classification ---
+  genre: genus                          # \emph{genre}; Clebsch's own term, kept as the noun
+  deficiency: deficiency                # Cayley's English word, quoted by the note; untranslated
+  courbes normales: normal curves
+  espèce: species                       # "une espèce particulière de ce genre"
+  ordre: order                          # "de l'ordre $n - 4$" = "of the order $n - 4$"
+  classe: class
+
+  # --- curves, surfaces, singularities ---
+  courbe algébrique: algebraic curve
+  surface algébrique: algebraic surface
+  point double: double point
+  point de rebroussement: cusp                    # Salmon's word; cf. the 1864 glossary
+  points doubles ou de rebroussement: double points or cusps
+  courbe double: double curve
+  courbes doubles ou de rebroussement: double or cuspidal curves
+  singularité régulière: regular singularity
+  plan tangent: tangent plane
+  plan tangent double: double tangent plane       # not "bitangent plane"
+  plan: plane
+
+  # --- transformation ---
+  réciproque: reciprocal                # the reciprocal (polar) surface; also used as a noun
+  surface réciproque: reciprocal surface
+  transformable: transformable
+  d'une manière algébrique et rationnelle: in an algebraic and rational manner
+  faire correspondre: to make correspond
+  réciproquement: conversely
+
+  # --- the count ---
+  coefficient arbitraire: arbitrary coefficient
+  coefficient indéterminé: indeterminate coefficient
+  eu égard à: in respect of
+  fonctions algébriques à deux variables: algebraic functions of two variables

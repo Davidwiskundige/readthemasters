@@ -1,0 +1,141 @@
+id: clebsch-1868-surfaces-algebriques
+title: "Sur les surfaces algébriques."
+title_en: "On algebraic surfaces."
+
+authors:
+  - name: "Alfred Clebsch"
+    wikidata_id: Q61737
+    birth_year: 1833
+    death_year: 1872
+    mactutor: Clebsch  # https://mathshistory.st-andrews.ac.uk/Biographies/Clebsch/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Alfred Clebsch"
+      credit: >-
+        Photograph of Clebsch, photographer and date unknown; described on Commons as a
+        photograph of the Königsberg mathematician Alfred Clebsch (1833–1872). Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Alfred_Clebsch.jpeg"
+
+publication:
+  year: 1868
+  venue: comptes-rendus
+  volume: "67"
+  pages: "1238–1239"
+  title_full: >-
+    "Sur les surfaces algébriques. Note de M. A. Clebsch, présentée par M. Chasles", Comptes
+    rendus hebdomadaires des séances de l'Académie des sciences, tome soixante-septième
+    (juillet–décembre 1868), séance du lundi 21 décembre 1868 (Paris: Gauthier-Villars,
+    imprimeur-libraire, 1868), pp. 1238–1239.
+
+edition:
+  year: 1868
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in the Comptes rendus hebdomadaires des séances
+    de l'Académie des sciences, tome 67 (Paris: Gauthier-Villars, 1868), pp. 1238–1239 — an
+    original edition with no modern critical apparatus, commentary, or re-typesetting. Only
+    Clebsch's own note is transcribed, from its section heading to its closing quotation mark;
+    the unrelated Academy business printed above it on p. 1238 (and the footnote belonging to
+    that business), the running heads and the signature mark are not.
+
+discipline: mathematics
+tags: [geometry, algebra, analysis]
+language: fr
+type: paper
+
+relations:
+  - to: clebsch-1864-anwendung-abelschen-functionen
+    kind: builds-on
+    recommended: primary
+    note: >-
+      The note's first paragraph is a précis of the 1864 Crelle memoir: the genus
+      $p = \frac{(n-1)(n-2)}{2} - d$ of a plane curve, its invariance under one-to-one
+      transformation, and the normal curves of each genus. "J'ai proposé de nommer genre d'une
+      courbe le nombre..." refers to that memoir, whose §. 1 eq. (4.) is where the number is
+      computed from the order and the double points. The 1868 note carries the same construction
+      from curves to surfaces, replacing the adjoint curves of order $n-3$ by adjoint surfaces of
+      order $n-4$.
+  - to: riemann-1857-abelsche-functionen
+    kind: builds-on
+    note: >-
+      The opening sentence credits the whole classification to Riemann — "Les théorèmes de M.
+      Riemann sur les fonctions algébriques à deux variables ont donné un principe pour classifier
+      les courbes algébriques" — without a page citation; the 1864 memoir it is summarizing cites
+      Riemann's Band 54 memoir by page for the number $p$.
+
+significance: >-
+  Two printed pages, read to the Academy by Chasles on 21 December 1868, in which the genus of a
+  surface first appears. For curves Clebsch already had $p = \frac{(n-1)(n-2)}{2} - d$, a number
+  unchanged when two curves are put in one-to-one correspondence.[1] Here he claims the same for
+  surfaces: take $f = 0$ of order $n$, and count the arbitrary coefficients in a surface of order
+  $n-4$ passing through its double and cuspidal curves. That number, Clebsch states, is the same
+  for any two surfaces transformable into one another algebraically and rationally — a birational
+  invariant got from nothing but a count of coefficients, and the one now known as the geometric
+  genus $p_g$. For a surface with no double curve at all it comes to
+  $\frac{(n-1)(n-2)(n-3)}{1 \,.\, 2 \,.\, 3}$, in the print's own spaced multiplication periods.
+  [note 1] No proof is given: "je suis parvenu à démontrer" ("I have managed to prove") is as far
+  as the two pages go.
+
+# Asides: an excursus the reader can open from the significance note instead of reading through it.
+significance_notes:
+  - label: "In modern notation"
+    text: >-
+      Clebsch's surfaces of order $n-4$ through the double and cuspidal curves are the adjoint
+      surfaces, and they cut on $f = 0$ the canonical system; his $p$ is therefore the geometric
+      genus $p_g = h^{0}(K)$, and his theorem is that $p_g$ is a birational invariant. For a smooth
+      surface of degree $n$ in $\mathbf{P}^{3}$ the adjoints are all surfaces of degree $n-4$,
+      giving $p_g = \binom{n-1}{3} = \frac{(n-1)(n-2)(n-3)}{6}$, which is his count; $n = 4$ makes
+      it $1$, the K3 case. Note the direction of his claim about genus $0$: he says every surface
+      transformable into a plane has $p = 0$, which is true, and not the converse. The converse is
+      false — a ruled surface over a curve of positive genus has $p_g = 0$ and is not rational —
+      and settling what must be added to $p_g = 0$ took until Castelnuovo's 1896 criterion, that a
+      surface is rational exactly when $q = 0$ and $P_{2} = 0$.
+
+significance_sources:
+  - citation: >-
+      Clebsch's own earlier definition of the genus of a curve, in this corpus: "Ueber die
+      Anwendung der Abelschen Functionen in der Geometrie", Crelle 63 (1864), §. 1, where
+      $p = \frac{(n-1)(n-2)}{2} - d$ is read off the order and the double points.
+    url: "/works/clebsch-1864-anwendung-abelschen-functionen/"
+
+source:
+  scan_url: "https://archive.org/details/comptesrendusheb67acad"
+  scan_id: >-
+    archive.org:comptesrendusheb67acad (Comptes rendus, tome 67, 1868; printed pp. 1238–1239 =
+    scan leaves n1243–n1244, the leaf index running five ahead of the printed number). The whole
+    run of the Comptes rendus is also served by Gallica (BnF),
+    https://gallica.bnf.fr/ark:/12148/cb343481087/date.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Alfred Clebsch, 1833–1872 (wikidata:Q61737; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Clebsch/).
+  publication_date: >-
+    First published 1868 in the Comptes rendus hebdomadaires des séances de l'Académie des
+    sciences, tome 67, pp. 1238–1239, in the report of the séance of Monday 21 December 1868
+    (séance heading read from the scan at printed p. 1205). Volume digitized by the Internet
+    Archive as comptesrendusheb67acad.
+  edition: >-
+    Original first printing, Comptes rendus hebdomadaires des séances de l'Académie des sciences,
+    tome soixante-septième (juillet–décembre 1868) (Paris: Gauthier-Villars, imprimeur-libraire,
+    1868), pp. 1238–1239.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1872], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1868, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-09-03"

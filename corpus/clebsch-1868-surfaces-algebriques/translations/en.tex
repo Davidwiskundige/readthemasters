@@ -1,0 +1,56 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \origpage{N} marker and \emph run is reproduced
+% unchanged; only the prose is translated. The note carries no display formula, no \tag, no
+% \rmfigure and no \text{...} insert, so HOUSESTYLE R21 (translating prose inside a formula) never
+% arises here — all three fractions are copied verbatim, including the SPACED multiplication
+% periods of $1 \,.\, 2 \,.\, 3$ (notation.md).
+%
+% QUOTATION MARKS ARE NOT TRANSLATED. The paragraph-initial « / » of the Comptes rendus and the
+% pair around each quoted theorem statement are a typographic feature of the source edition
+% (HOUSESTYLE R18, R22), not prose, so they stand exactly where the transcription puts them —
+% following abel-1841-fonctions-transcendantes, the corpus's other French work, whose English
+% translation keeps its guillemets for the same reason. The outer quotation is left unclosed here
+% too, because the print never closes it.
+%
+% THE TWO PRINTER'S ERRORS ARE CARRIED OVER, NOT REPAIRED (HOUSESTYLE R4). "the surface of the
+% order $n = 4$" keeps the print's equals sign where the sense requires $n - 4$, and the first
+% theorem still measures the adjoint of $f = 0$ — the surface of order $m$ — as one "of the order
+% $n - 4$". Both are math, so texcompare would reject a silent correction in any case; they are
+% noted in notation.md and left for the reader to see.
+%
+% TERMINOLOGY. Period English, and where Clebsch's English contemporaries have the word, theirs:
+%   * genre = "genus" — his own term, and the one the note itself glosses by Cayley's English
+%     "deficiency", which stands untranslated as the English word it already is.
+%   * points doubles ou de rebroussement = "double points or cusps"; courbes doubles ou de
+%     rebroussement = "double or cuspidal curves" (Salmon's words, as in the glossary of
+%     clebsch-1864-anwendung-abelschen-functionen: Rückkehrpunkt = "cusp").
+%   * plans tangents doubles = "double tangent planes" (not "bitangent planes"), same glossary.
+%   * réciproque = "reciprocal" — the reciprocal (polar) surface, the period term; kept as a noun
+%     in "its reciprocal" exactly as the French has it.
+%   * de l'ordre $n$ = "of the order $n$", matching the ordinal construction used throughout the
+%     translation of the 1864 memoir.
+%   * eu égard à = "in respect of", in both of its occurrences.
+% "M." is left as printed, as in the abel-1841 translation; the German book title in the closing
+% citation, and the "und" joining its two authors, are bibliography and stand unchanged.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1238}
+\section*{Geometry. --- On algebraic surfaces. Note by M.\ A.\ Clebsch, presented by M.\ Chasles.}
+
+«M.\ Riemann's theorems on algebraic functions of two variables have given a principle for classifying algebraic curves. I have proposed to call the \emph{genus} of a curve the number $p = \dfrac{(n-1)(n-2)}{2} - d$ (the \emph{deficiency} of M.\ Cayley), $n$ being the order of the curve, $d$ the number of its double points or cusps. The genus of two algebraic curves must be the same in order that one may make a single point of the other correspond to each point of the one, and conversely. All curves of the same genus can be transformed algebraically into a particular species of that genus, which has a sufficient number of arbitrary coefficients; for $p > 2$, these \emph{normal curves} are of the order $p + 1$, and the number of their double points or cusps is equal to $\dfrac{p(p-3)}{2}$. (\emph{See Clebsch und Gordan, Theorie der Abelschen Functionen}.)
+
+»Now I have found that, for algebraic surfaces, there are
+\origpage{1239}
+entirely analogous theorems. I have managed to prove the following theorem:
+
+«Let there be given two surfaces $f = 0$ and $\varphi = 0$ of the orders $m$ and $n$ respectively. Suppose that one may make a single point of $\varphi = 0$ correspond to each point of $f = 0$, and conversely, so that these surfaces are transformable one into the other in an algebraic and rational manner. Suppose, for greater simplicity, that these surfaces have only regular singularities, that is to say singularities which lie on each surface or on its reciprocal. Then let $p$ be the number of arbitrary coefficients of a surface of the order $n - 4$ passing through the double or cuspidal curves which lie on $f = 0$, and $p'$ the corresponding number in respect of $\varphi = 0$. One will always have $p' = p$.»
+
+»This theorem allows us to classify these surfaces in respect of their \emph{genus} $p$. Two surfaces must belong to the same genus in order to be transformed one into the other in a rational manner. When a given surface has no double or cuspidal curve at all, its genus will be equal to $\dfrac{(n-1)(n-2)(n-3)}{1 \,.\, 2 \,.\, 3}$, all the coefficients of the surface of the order $n = 4$ being arbitrary. On the contrary, when there is no surface of the order $n - 4$ which passes through the double and cuspidal curves of the given surface of the order $n$, this surface will belong to the genus $p = 0$. To this genus belong all the surfaces which can be transformed into a plane; which is the case for most of the surfaces that have been considered hitherto, and of which M.\ Chasles, M.\ Cremona and I myself have offered a fairly large number of examples.
+
+»When the reciprocal surface of a given one belongs to the same genus, one has the special theorem:
+
+«Given a surface of the order $n$ and of the class $k$, the number of indeterminate coefficients of a surface of the order $n - 4$ passing through the double or cuspidal curves of the given surface is equal to the number of indeterminate coefficients of a surface of the class $k - 4$ which has for its tangent planes all the double tangent planes of the given surface.»
+
+\end{document}
