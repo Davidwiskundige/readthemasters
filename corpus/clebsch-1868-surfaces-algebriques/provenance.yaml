@@ -1,0 +1,149 @@
+changelog:
+  - date: "2026-09-04"
+    summary: Translation (en) added (AI draft); glossary.yaml added.
+  - date: "2026-09-03"
+    summary: Transcription added (AI draft), pp. 1238–1239 from the 1868 Comptes rendus scan.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-03"
+  verification:
+    flagged_pages: []
+    date: "2026-09-03"
+  uncertainty_flags: 0
+  note: >-
+    Full French text of Clebsch's two-page note "Sur les surfaces algébriques", printed pages
+    1238–1239, from the original first printing in the Comptes rendus hebdomadaires des séances
+    de l'Académie des sciences, tome 67 (Paris: Gauthier-Villars, 1868), in the report of the
+    séance of Monday 21 December 1868. The note begins partway down p. 1238 and ends on p. 1239;
+    it has no sections, no footnotes of its own, no figures, and no displayed formula — four
+    paragraphs of prose carrying two quoted theorem statements and three inline fractions.
+
+    ZERO UNCERTAINTY FLAGS, and that number is a claim about this scan, not an absence of
+    flagging. The file contains no \uncertain{} and no \illegible, and no page is listed as
+    flagged, because every doubtful glyph was settled by magnification rather than guessed. What
+    was magnified out of the raw scan and read at 3–6x: the "n = 4" equals sign, the "p > 2"
+    inequality, the phi glyph, the spaced multiplication dots of the denominator 1 . 2 . 3, the
+    "des ordres m et n" assignment, and the o/e in "coefficients". A reviewer should read that
+    count as "the scan is clean and the escalation was used", not as "the page was easy".
+
+    PAGE PREPARATION departed from the skill's default of one prepared image per page.
+    pipeline/prepare_pages.py cropped the two pages to 1016px and 1122px of text width — above its
+    1000px warning threshold, but the Comptes rendus sets small, dense type, so each page was
+    additionally split into overlapping top and bottom halves taken from the raw 1932x2770 scan.
+    A landscape half falls under the vision API's 1568px long-edge cap and is not downscaled, so
+    the halves carry the full 1568px of text width. On a two-page work the extra image and extra
+    turn per page cost almost nothing; on a long work this would be the wrong trade.
+
+    NO BATCH SUBAGENTS. At two pages the work is below the threshold at which one subagent's fixed
+    cost pays for itself, so the pages were transcribed inline, as the skill directs for a very
+    short work. A separate verification pass was run in a subagent with fresh context, reading the
+    scans independently of the transcription; it returned no discrepancies in prose, formulas,
+    emphasis, the page break or the guillemet placement, and independently confirmed both
+    printer's errors below at magnification.
+
+    That pass also rejected two claims the first draft had made with more confidence than the
+    scan supports, and both were corrected rather than shipped. (i) notation.md had said the
+    oldstyle zero can be told from a roman "o" under magnification. It cannot: in this face the
+    two are the same sort, and the character in "f = o" is identical in shape and width to the "o"
+    of "l'ordre" on the same line. The reading 0 is certain, but it rests on the mathematics, and
+    the entry now says so. (ii) The period closing "(Voir ... Functionen.)" was said to be set
+    roman. A period has no italic form to read; it sits outside the \emph run because the
+    parenthesis does, not because the scan decides it.
+
+    The scan is the Internet Archive's copy of the volume, comptesrendusheb67acad. Its leaf index
+    runs five ahead of the printed page number (printed 1238 = leaf n1243), a mapping confirmed by
+    reading running heads off three separate probe leaves rather than assumed from the PDF page
+    offset. The séance date in work.yaml was likewise read off the scan: the volume's OCR text is
+    unreliable here — it renders the date line as "SEANCE DU LUNDI li DECEMBRE 18G8" and misreads
+    an errata heading's date — so the séance heading page (printed p. 1205) was fetched and read
+    directly, giving "SÉANCE DU LUNDI 21 DÉCEMBRE 1868."
+
+    QUOTATION MARKS, the one structural decision in the note. The print repeats the quotation mark
+    at two scales and only one of them is a line-break artifact. A single « opens the note and a »
+    heads each of the three following paragraphs — the Comptes rendus convention for a
+    communication quoted continuously across paragraphs — and those per-paragraph marks are kept
+    exactly as printed. Inside the two quoted theorem statements a » additionally heads every
+    printed line; that per-line repetition is the artifact HOUSESTYLE R22 governs, and it is
+    collapsed to a single «...» pair around each statement. The print never closes the outer
+    quotation and none is supplied. Guillemets are literal Unicode set tight against the text,
+    following abel-1841-fonctions-transcendantes (R18, R22).
+
+    Apparent printer's errors are kept as printed (R4), and both are on p. 1239. Neither is given
+    an in-text \ednote popover, but both would mislead a reader of the mathematics and a reviewer
+    should check them against a second copy:
+    (a) "tous les coefficients de la surface de l'ordre n = 4 étant arbitraires" sets an equals
+    sign where the sense requires a minus, and where the very next sentence writes "l'ordre n - 4"
+    correctly. Magnified at 6x it is two clean parallel rules of equal length — type, not a
+    damaged or doubly-inked dash, so R29 does not apply.
+    (b) the first theorem gives f = 0 the order m and phi = 0 the order n, then measures the
+    adjoint of f = 0 as a surface "de l'ordre n - 4", where its own lettering calls for m - 4.
+    Every occurrence was read magnified; the statement is transcribed as it stands.
+
+    NOTATION, all recorded in notation.md and followed symbol by symbol. This work deliberately
+    does NOT inherit the glossary of clebsch-1864-anwendung-abelschen-functionen: same author, but
+    a different edition and compositor, and the two prints disagree on the multiplication dot,
+    which the 1864 Crelle memoir sets tight 63 times and this note sets spaced. Also recorded: the
+    oldstyle zero, which is the digit and not a roman o; \varphi and not \phi, the print's glyph
+    being the closed single-storey phi; \dfrac for all three fractions, which run inline at full
+    display size with the line spacing opening to take them, so the file contains no display math
+    and no \tag at all; "coefficients" with separate o and e rather than the œ ligature the period
+    sometimes uses; and the unaccented capital in "A ce genre", kept per R12.
+
+    EMPHASIS (R20, R24, R25). The print uses two devices, italic for stress and titles and small
+    capitals for author names, and both collapse to \emph. Where they meet — "(Voir CLEBSCH und
+    GORDAN, Theorie der Abelschen Functionen.)", small caps inside an italic run — the run is not
+    split: it is one \emph, with the closing period and parenthesis left outside, as the print
+    sets them roman. The heading carries no \emph at all (R25) and its small-capital subject
+    rubric GÉOMÉTRIE is normalized to "Géométrie", case being a typeface shape.
+
+    The single page turn falls mid-sentence between "il y a des" and "théorèmes tout à fait
+    analogues", with no hyphenation at the break, so \origpage{1239} takes no blank line after it.
+
+    Not transcribed, all deliberate: the unrelated Academy business above the note on p. 1238
+    (four letters from M. Zantedeschi, a notice from M. Aug. Duméril) together with the footnote
+    (1) at the foot of that page, which belongs to the Zantedeschi item and not to Clebsch; the
+    running heads; and the signature mark 163 at the foot of p. 1239.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-09-04"
+    note: >-
+      Full English translation of the two-page note, made only from our own original.tex and never
+      from an existing published translation. pipeline/texcompare.py reports math, \origpage
+      markers and refs preserved; pipeline/houselint.py is clean over both files. No \uncertain{}
+      and no \ednote were added: the note is four paragraphs of ordinary scientific French with no
+      archaic or ambiguous term in it, and nothing in it needed a hedge.
+
+      QUOTATION MARKS ARE NOT TRANSLATED. The paragraph-initial « / » and the pair around each
+      quoted theorem statement are a typographic feature of the source edition (R18, R22), not
+      prose, so they stand exactly where the transcription puts them, and the outer quotation is
+      left unclosed here too. This follows abel-1841-fonctions-transcendantes, the corpus's other
+      French work, whose English translation keeps its guillemets on the same reasoning.
+
+      BOTH PRINTER'S ERRORS ARE CARRIED OVER UNREPAIRED (R4): "the surface of the order $n = 4$"
+      keeps the print's equals sign, and the first theorem still measures the adjoint of $f = 0$ —
+      the surface of order $m$ — as one "of the order $n - 4$". Both live inside math, so
+      texcompare would reject a silent correction in any case.
+
+      TERMINOLOGY is recorded in glossary.yaml, added with this translation. Its term renderings
+      agree with the glossary of clebsch-1864-anwendung-abelschen-functionen wherever the two works
+      name the same thing, so that the 1864 memoir, this note and the 1869 Noether paper read
+      consistently in English: point de rebroussement = "cusp" and courbes doubles ou de
+      rebroussement = "double or cuspidal curves" (Salmon's words), plans tangents doubles =
+      "double tangent planes" not "bitangent planes", de l'ordre $n$ = "of the order $n$" matching
+      the 1864 translation's ordinal construction, eu égard à = "in respect of" in both of its
+      occurrences. Clebsch's own \emph{genre} becomes "genus"; the English word the note itself
+      supplies for it, Cayley's \emph{deficiency}, is left as it stands, being English already.
+      "M." is left as printed, as in the abel-1841 translation, and the German book title of the
+      closing citation — with the "und" joining its two authors — is bibliography and unchanged.

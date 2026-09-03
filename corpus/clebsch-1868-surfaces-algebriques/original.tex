@@ -1,0 +1,57 @@
+% Faithful transcription — original French. Transcribed from the original first printing:
+% A. Clebsch, "Sur les surfaces algébriques", Note présentée par M. Chasles, Comptes rendus
+% hebdomadaires des séances de l'Académie des sciences, tome soixante-septième
+% (juillet–décembre 1868), séance du lundi 21 décembre 1868 (Paris: Gauthier-Villars,
+% imprimeur-libraire, 1868), pp. 1238–1239. Scan: Internet Archive, comptesrendusheb67acad
+% (printed pp. 1238–1239 = leaves n1243–n1244).
+%
+% \origpage uses the PRINTED page numbers. The note begins partway down p. 1238, below unrelated
+% Academy business (four letters from M. Zantedeschi, and a notice from M. Aug. Duméril) and the
+% footnote (1) at the foot of that page, which belongs to the Zantedeschi item and not to
+% Clebsch; none of that is transcribed, nor are the running heads or the signature mark 163 at
+% the foot of p. 1239. p. 1239 opens mid-sentence, with no hyphenation at the break.
+%
+% The note is printed as a quotation from Clebsch's communication, and the quotation mark is
+% repeated at two different scales. A single « opens the first paragraph and a » heads each of
+% the three following paragraphs: that is the Comptes rendus convention for a communication
+% quoted continuously across paragraphs, and those per-PARAGRAPH marks are kept as printed. The
+% outer quotation is never closed by the print, and no closing mark is supplied here. Inside the
+% two quoted theorem statements a » additionally heads every printed LINE; that per-line
+% repetition is a line-break artifact and is collapsed to a single «...» pair (HOUSESTYLE R22).
+% Guillemets are written as literal Unicode and set tight against the text (R18), following
+% abel-1841-fonctions-transcendantes.
+%
+% The print sets no display formula anywhere in the note: all three fractions run inline at full
+% display size, so they are \dfrac and there is no \[ ... \] and no \tag. The multiplication dot
+% in the denominator 1 . 2 . 3 is set SPACED, unlike the tight dots of Clebsch's 1864 Crelle
+% memoir. See notation.md for these and the remaining work-spanning decisions.
+%
+% Two apparent printer's errors are reproduced faithfully and are NOT corrected (HOUSESTYLE R4):
+%   p. 1239 — "tous les coefficients de la surface de l'ordre n = 4 étant arbitraires" sets an
+%     equals sign where the sense, and the next sentence, require the minus of "l'ordre n - 4".
+%     Magnified, it is two clean parallel rules of equal length: type, not a damaged dash.
+%   p. 1239 — the first theorem gives f = 0 the order m and phi = 0 the order n, then measures
+%     the adjoint of f = 0 as a surface "de l'ordre n - 4", where its own lettering calls for
+%     m - 4. Both readings verified against the scan.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1238}
+\section*{Géométrie. --- Sur les surfaces algébriques. Note de M.\ A.\ Clebsch, présentée par M.\ Chasles.}
+
+«Les théorèmes de M.\ Riemann sur les fonctions algébriques à deux variables ont donné un principe pour classifier les courbes algébriques. J'ai proposé de nommer \emph{genre} d'une courbe le nombre $p = \dfrac{(n-1)(n-2)}{2} - d$ (\emph{deficiency} de M.\ Cayley), $n$ étant l'ordre de la courbe, $d$ le nombre de ses points doubles ou de rebroussement. Le genre de deux courbes algébriques doit être le même pour que l'on puisse faire correspondre à chaque point de l'une un seul point de l'autre, et réciproquement. Toutes les courbes du même genre peuvent être transformées algébriquement dans une espèce particulière de ce genre, laquelle a un nombre suffisant de coefficients arbitraires; pour $p > 2$, ces \emph{courbes normales} sont de l'ordre $p + 1$, et le nombre de leurs points doubles ou de rebroussement est égal à $\dfrac{p(p-3)}{2}$. (\emph{Voir Clebsch und Gordan, Theorie der Abelschen Functionen}.)
+
+»Maintenant j'ai trouvé que, pour les surfaces algébriques, il y a des
+\origpage{1239}
+théorèmes tout à fait analogues. Je suis parvenu à démontrer le théorème suivant:
+
+«Soient données deux surfaces $f = 0$ et $\varphi = 0$ des ordres $m$ et $n$ respectivement. Supposons que l'on puisse faire correspondre à chaque point de $f = 0$ un seul point de $\varphi = 0$ et réciproquement, de sorte que ces surfaces soient transformables l'une dans l'autre d'une manière algébrique et rationnelle. Supposons, pour plus de simplicité, que ces surfaces n'aient que des singularités régulières, c'est-à-dire des singularités qui se trouvent sur chaque surface ou sur sa réciproque. Alors soit $p$ le nombre de coefficients arbitraires d'une surface de l'ordre $n - 4$ passant par les courbes doubles ou de rebroussement qui se trouvent sur $f = 0$, et $p'$ le nombre correspondant eu égard à $\varphi = 0$. On aura toujours $p' = p$.»
+
+»Ce théorème nous permet de classifier ces surfaces eu égard à leur \emph{genre} $p$. Deux surfaces devront appartenir au même genre pour être transformées l'une en l'autre d'une manière rationnelle. Lorsqu'une surface donnée n'a aucune courbe double ou de rebroussement, son genre sera égal à $\dfrac{(n-1)(n-2)(n-3)}{1 \,.\, 2 \,.\, 3}$, tous les coefficients de la surface de l'ordre $n = 4$ étant arbitraires. Au contraire, lorsqu'il n'y a aucune surface de l'ordre $n - 4$, qui passe par les courbes doubles et de rebroussement de la surface donnée de l'ordre $n$, cette surface appartiendra au genre $p = 0$. A ce genre appartiennent toutes les surfaces qui peuvent être transformées dans un plan; ce qui se fait pour la plupart des surfaces que l'on a considérées actuellement, et dont M.\ Chasles, M.\ Cremona et moi-même avons offert des exemples assez nombreux.
+
+»Lorsque la surface réciproque d'une donnée appartient au même genre, on a le théorème spécial:
+
+«Étant donnée une surface de l'ordre $n$ et de la classe $k$, le nombre de coefficients indéterminés d'une surface de l'ordre $n - 4$ passant par les courbes doubles ou de rebroussement de la surface donnée, est égal au nombre de coefficients indéterminés d'une surface de la classe $k - 4$, qui a pour plans tangents tous les plans tangents doubles de la surface donnée.»
+
+\end{document}
