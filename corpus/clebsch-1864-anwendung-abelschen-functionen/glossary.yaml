@@ -1,0 +1,117 @@
+# Term renderings for clebsch-1864-anwendung-abelschen-functionen, applied consistently across the
+# whole translation. Format: `terms: {German as printed: English}` — the shape pipeline/translate.py
+# reads with --glossary, so the Tier-3 path reproduces the same renderings as this Tier-2 pass.
+#
+# Three principles behind the choices below:
+#   * Period-appropriate terminology over the modern equivalent: ganze Function = "integral
+#     function" (not "polynomial"), Doppeltangente = "double tangent" (not "bitangent"),
+#     Functionaldeterminante = "functional determinant" (not "Jacobian"). Clebsch's English
+#     contemporary is Salmon, whose "Higher Plane Curves" and "Geometry of Three Dimensions" he
+#     cites by name; where Salmon has a word for the thing, that word is used.
+#   * Where the print uses TWO different German words, the translation uses two different English
+#     words: Büschel/Schaar, Aufsatz/Abhandlung, Satz/Hülfssatz, Durchschnitt/Schnitt.
+#   * The ordinal construction is the work's most frequent phrase. "Curve $n^{\text{ter}}$ Ordnung"
+#     becomes "curve of the $n^{\text{th}}$ order" — the ordinal suffix lives inside the formula as
+#     a \text insert and is translated there (HOUSESTYLE R21), so ter/ten/te/tes all become "th".
+
+terms:
+  # --- curves, surfaces and their orders ---
+  Curve: curve
+  Raumcurve: space curve
+  Schnittcurve: curve of intersection
+  Durchschnittscurve: curve of intersection
+  Curven doppelter Krümmung: curves of double curvature
+  doppelt gekrümmt: doubly curved
+  Fläche: surface
+  Oberfläche: surface
+  Ebene: plane
+  Kegelschnitt: conic
+  Gerade: straight line
+  Strahl: ray
+  Sehne: chord
+  Ordnung: order
+  Grad: degree
+  Classe: class
+  Rang: rank
+  Dimension: dimension
+
+  # --- contact ---
+  berühren: to touch
+  Berührung: contact
+  Berührungspunkt: point of contact
+  Berührungscurve: contact curve
+  Berührungsfläche: contact surface
+  Berührungskegelschnitt: contact conic
+  r-punktig berühren: to touch with $r$-point contact
+  zweipunktig: with two-point contact
+  dreipunktig: with three-point contact
+  vierpunktig: with four-point contact
+  mehrpunktig: with multiple-point contact
+  Doppeltangente: double tangent
+  Tangentenebene: tangent plane
+  Schmiegungsebene: osculating plane
+  Wendungsberührebene: inflexional tangent plane
+  Wendepunkt: point of inflexion
+  Wendetangente: inflexional tangent
+  Rückkehrpunkt: cusp                 # also Rückkehrspunkt (p. 192); Salmon's word
+  Rückkehrtangente: cuspidal tangent
+  Doppelpunkt: double point
+  Knotenpunkt: node
+  harmonische Polare: harmonic polar
+  harmonisches System: harmonic system
+
+  # --- intersection and position ---
+  Durchschnitt: intersection          # the complete intersection, as a thing
+  Schnitt: section                    # the act/section; Schnittpunkt keeps "point of intersection"
+  Schnittpunkt: point of intersection
+  Schnittsystem: system of intersection
+  Büschel: pencil                     # of rays or of planes, with an axis
+  Schaar: family                      # a one-parameter family of surfaces; kept apart from Büschel
+  Bündel: bundle
+  vollständiges Viereck: complete quadrangle
+  Ecke: vertex
+  Polartetraeder: polar tetrahedron
+  Verbindungslinie: connecting line
+  Lage: position
+  gegenseitige Lage: mutual position
+
+  # --- the analysis ---
+  Abelsche Functionen: Abelian functions
+  Abelsche Integrale: Abelian integrals
+  Abelsche Transcendenten: Abelian transcendents
+  überall endliche Integrale: everywhere finite integrals
+  ganze Function: integral function
+  homogene Function: homogeneous function
+  Functionaldeterminante: functional determinant
+  Unterdeterminante: minor determinant
+  überschlagene Determinante: skew determinant
+  Covariante: covariant
+  Grösse: quantity
+  Werthsystem: system of values
+  obere Grenze: upper limit
+  untere Grenze: lower limit
+  Theilung: division                  # the division of the elliptic functions
+  Partialbruchzerlegung: decomposition into partial fractions
+  Entwicklung: expansion              # of a series; "development" where it means an argument
+  Reihenentwicklung: series expansion
+  Abzählung: enumeration
+  Gruppirung: grouping
+  Modulsystem: system of moduli
+  congruent: congruent
+  relative Primzahlen: relatively prime
+  Submultiplum: submultiple
+
+  # --- discourse ---
+  Satz: theorem
+  Hülfssatz: lemma
+  Aufsatz: paper
+  Abhandlung: memoir
+  Aufgabe: problem
+  Problem: problem
+  Umkehrung: converse                 # of a theorem; "inversion" only in N.'s cited book title
+  Erweiterung: extension
+  Zusammenhang: connexion
+  Band: volume
+  dieses Journals: of this Journal
+  a. a. O.: loc. cit.                 # German abbreviation; the print's own Latin "l. c." stands
+  Herr: Mr.
