@@ -1,0 +1,145 @@
+# Term renderings for noether-1869-algebraische-functionen-mehrerer-variablen, applied consistently
+# across the whole translation. Format: `terms: {German as printed: English}` — the shape
+# pipeline/translate.py reads with --glossary, so the Tier-3 path reproduces the same renderings as
+# this Tier-2 pass.
+#
+# Four principles behind the choices below:
+#   * This nine-page note stands on Riemann 1857, Clebsch–Gordan and Clebsch 1864, all of which are
+#     in this corpus. Every term Noether shares with them takes the SAME English word as in
+#     corpus/riemann-1857-abelsche-functionen/glossary.yaml and
+#     corpus/clebsch-1864-anwendung-abelschen-functionen/glossary.yaml — Knotenpunkt = "node",
+#     Rückkehrpunkt = "cusp", Schaar = "family", Kegelschnitt = "conic", Grösse = "quantity",
+#     Klasse = "class", Constante = "constant" — so a reader moving between the four meets one
+#     vocabulary.
+#   * Period-appropriate terminology over the modern equivalent. Abbildung = "representation", the
+#     word Cayley and Salmon use for carrying a surface onto a plane, not the modern "map";
+#     windschiefe Fläche = "skew surface" (Salmon's term); Liniencomplex = "line-complex".
+#   * Where the print uses TWO different German words, the translation uses two different English
+#     words, so a distinction Noether draws is not destroyed: Bewegung / Fortbewegung /
+#     Fortschreitung, and Grad / Ordnung.
+#   * The ordinal construction lives inside the formula as a \text insert and is translated there
+#     (HOUSESTYLE R21): "Curve $n^{\text{ter}}$ Ordnung" becomes "curve of the $n^{\text{th}}$
+#     order", so ter/ten alike become "th".
+
+terms:
+  # --- the paper's central vocabulary ---
+  Geschlecht: genus                    # Clebsch's coinage; Cayley's English word was "deficiency",
+                                       # but "genus" is the literal rendering and the one that stuck
+  Flächengeschlecht: surface genus
+  Curvengeschlecht: curve genus        # Noether's own new invariant, defined on p. 303
+  Klassenzahl: class number
+  Klasse: class                        # as in the Riemann 1857 glossary
+  Klasseneintheilung: division into classes
+  Mannigfaltigkeit: manifold           # Riemann's word for an n-dimensional extent
+  Gebilde: figure                      # an algebraic entity of any dimension; NOT "configuration",
+                                       # which is a distinct technical term (Konfiguration)
+  Fundamentalgebilde: fundamental figure
+  Dimension: dimension
+  Charakteristische: characteristic
+
+  # --- correspondence and transformation ---
+  eindeutig: one-to-one                # of a correspondence or transformation: single-valued both
+                                       # ways, "Punkt für Punkt". In Riemann 1857 the same adjective
+                                       # is applied to a FUNCTION and is rendered there "uniquely
+                                       # determined"; the sense here is the geometric one
+  eindeutiges Entsprechen: one-to-one correspondence
+  entsprechen: to correspond
+  Punkt für Punkt: point for point
+  Transformation: transformation
+  transformiren: to transform
+  Substitution: substitution
+  Substitutionsformel: substitution formula
+  Abbildung: representation            # Cayley's and Salmon's word for the mapping of a surface on
+                                       # a plane; "map" would be the modern anachronism
+  abbilden: to represent
+  Abbildbarkeit: representability
+  übertragen: to carry over
+  überführen: to carry over into
+  rational: rational
+  rationale Function: rational function
+  irrationell: irrational
+  Irrationalität: irrationality
+
+  # --- curves, surfaces, orders ---
+  Curve: curve
+  Schnittcurve: curve of intersection
+  Querschnitt: cross-section           # p. 304, a PLANE section of a skew surface — NOT Riemann's
+                                       # Querschnitt = "crosscut", a different thing entirely
+  Fläche: surface
+  Ebene: plane
+  Kegel: cone
+  Kegelschnitt: conic
+  Tetraeder: tetrahedron
+  Kante: edge
+  Strahl: ray
+  gerade Linie: straight line
+  Raum: space
+  Ordnung: order
+  Grad: degree                         # kept apart from Ordnung, as the print keeps them apart
+  Normalfläche: normal surface
+  Normalcurve: normal curve
+  windschiefe Fläche: skew surface     # Salmon's term for a ruled non-developable
+  Regelfläche: ruled surface           # Noether uses both words; so does this translation
+  Schaar: family                       # "einfach unendliche Schaar" = simply infinite family
+
+  # --- singularities ---
+  Singularität: singularity
+  Doppelpunkt: double point
+  Rückkehrpunkt: cusp                  # Salmon's word, as in the Clebsch glossary
+  Doppelcurve: double curve
+  Rückkehrcurve: cuspidal curve
+  Knotenpunkt: node
+  konischer Knotenpunkt: conical node
+  planarer Knotenpunkt: planar node
+  vielfache Curve: multiple curve
+  einfacher Punkt: simple point
+  Tangentenebene: tangent plane
+  Zusammenfallen: coincidence
+  Uebergang: passage
+
+  # --- generation of a surface: three distinct German words, three English ones ---
+  Bewegung: motion                     # "durch die Bewegung einer Curve erzeugt", p. 302
+  Fortbewegung: progressive motion     # "rationale Fortbewegung einer Fläche", p. 304
+  Fortschreitung: progression          # "irrationale Fortschreitung einer rationalen Curve", p. 303
+  erzeugen: to generate
+
+  # --- line geometry ---
+  Liniencomplex: line-complex
+  Complex: complex
+
+  # --- general mathematical vocabulary ---
+  Grösse: quantity
+  Constante: constant
+  Coefficient: coefficient
+  Parameter: parameter
+  Modul: modulus                       # plural "Moduln" = moduli
+  Gleichung: equation
+  homogene Gleichung: homogeneous equation
+  irreducibel: irreducible
+  Elimination: elimination
+  unbestimmt bleibend: still remaining undetermined
+  verschwinden: to vanish
+  Anzahl: number
+  Bedingung: condition
+  nothwendig: necessary
+  hinreichend: sufficient
+  Kriterium: criterion
+  Corollar: corollary
+  Satz: theorem
+  Theorem: theorem
+  Definition: definition
+  Beweis: proof
+  ableiten: to derive
+  aufstellen: to set up
+  statuiren: to set up                 # "Klassen statuiren", p. 300
+  voraussetzen: to assume
+  im Allgemeinen: in general
+  im Besondern: in particular
+  zugleich: at the same time
+
+  # --- apparatus ---
+  Mittheilung: communication           # a note in the Göttinger Nachrichten
+  mittheilen: to communicate
+  Ausführung: working-out
+  Bd.: vol.                            # as in the Clebsch translation
+  Herr: Mr.

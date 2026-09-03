@@ -32,6 +32,47 @@ tags:
 - algebra
 language: de
 type: paper
+
+significance: >-
+  Clebsch had just carried Riemann's class number from curves to surfaces and named it the
+  Geschlecht.[1] Noether, then 24, carries it to varieties of every dimension: the genus $p$ of an
+  $r$-dimensional $f = 0$ of degree $n$ is the number of constants left free in an auxiliary
+  variety of degree $n - r - 2$ forced through its multiple loci — the adjoint system, and so the
+  canonical one.[note 1] Then the news. Above dimension one, equality of $p$ no longer suffices for
+  two varieties to be carried into each other by rational substitutions; further numbers must be
+  counted, and §. III finds the first, the Curvengeschlecht $p'$. Hence the corollary: a surface can
+  be represented on a plane exactly when $p = 0$ and $p' = 0$ — announced without proof,[2] and not
+  right as it stands. The criterion that survived is Castelnuovo's of 1894.[3]
+
+significance_notes:
+  - label: "In modern notation"
+    text: >-
+      Noether's $\infty^{2r}$ is an $r$-dimensional variety, counted by its $2r$ real dimensions,
+      cut in $\mathbb{P}^{r+1}$. His auxiliary system of degree $n - r - 2$, forced through the
+      multiple loci with the multiplicities he prescribes, is the adjoint system: on a smooth
+      hypersurface of degree $n$, adjunction gives $K = (n - r - 2)H$, so his $p$ is $h^0(K)$, the
+      geometric genus $p_g$. His $p'$ is the genus of the base curve of a ruled surface, which is
+      that surface's irregularity $q$ — and the independence of $q$ from $p_g$ is exactly what he
+      is asserting.
+
+significance_sources:
+  - citation: >-
+      Clebsch's extension of the class number to surfaces, Comptes Rendus de l'Académie des
+      Sciences, 21 December 1868, p. 1238, which Noether cites in his own footnote on p. 299. The
+      curve case is Clebsch's "Ueber die Anwendung der Abelschen Functionen in der Geometrie",
+      Crelle's Journal 63 (1864), in this corpus.
+    url: "/works/clebsch-1864-anwendung-abelschen-functionen/"
+  - citation: >-
+      Max Noether, "Zur Theorie des eindeutigen Entsprechens algebraischer Gebilde von beliebig
+      vielen Dimensionen", Mathematische Annalen 2 (1870), pp. 293–316 — the promised working-out,
+      its title this note's third aim verbatim.
+    url: "https://link.springer.com/article/10.1007/BF01444023"
+  - citation: >-
+      Guido Castelnuovo, "Sulla razionalità delle involuzioni piane", Mathematische Annalen 44
+      (1894), pp. 125–155: a surface is rational exactly when its irregularity $q$ and its second
+      plurigenus $P_2$ both vanish.
+    url: "https://link.springer.com/article/10.1007/BF01446977"
+
 source:
   scan_url: https://gdz.sub.uni-goettingen.de/id/PPN252457072_1869
   scan_id: gdz:PPN252457072_1869 (Göttinger Nachrichten 1869, pp. 298–306; scan images
