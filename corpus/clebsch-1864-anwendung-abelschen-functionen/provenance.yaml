@@ -1,4 +1,9 @@
 changelog:
+  - date: "2026-09-03"
+    summary: >-
+      Translation (en) added (AI draft); glossary.yaml added; the eight misprints that mislead a
+      reader of the mathematics marked with an \ednote popover in the transcription and the
+      translation alike (R4 + R10); significance note and Clebsch portrait added.
   - date: "2026-09-01"
     summary: Transcription completed to pp. 223–243; earlier pages conformed to notation.md.
   - date: "2026-08-31"
@@ -161,3 +166,119 @@ transcription:
 
     NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
     scan. The flagged pages above are where a reviewer should start.
+
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN §2.2)
+    produced: "2026-09-02"
+    note: >-
+      Full English translation of all 55 pages (189–243), made only from our own original.tex and
+      never from an existing published translation. pipeline/texcompare.py reports math, \origpage
+      markers and refs preserved, and pipeline/houselint.py is clean over both files. The
+      translated body is line-for-line identical in structure to original.tex — 1476 lines against
+      1476, every \origpage, display, \tag, \emph run, footnote and blank line on the same line
+      number — so the two files can be diffed side by side and every difference is prose.
+
+      Prose set INSIDE math via a text insert is translated (HOUSESTYLE R21). This work has 168 of
+      them and they are almost all one construction: 162 ordinal suffixes (128 "ter", 24 "ten",
+      7 "te", 3 "tes"), which become "th" because English marks the ordinal on the numeral rather
+      than on the adjective — "Curve $n^{\text{ter}}$ Ordnung" reads "curve of the $n^{\text{th}}$
+      order". Two of the 162 have a numeral stem and take the form that numeral demands, so p. 239
+      reads "$2^{\text{nd}}$", "$3^{\text{rd}}$". The remaining six inserts are the abbreviation
+      "mod.", identical in both languages, and stand unchanged. texcompare ignores the content of
+      an insert while still checking that each is present and unmoved, so these changes are
+      invisible to it and were verified by hand against a listing of every insert in both files.
+
+      TERMINOLOGY is recorded in glossary.yaml, added with this translation, and the reasoning is
+      summarized in the file header of en.tex. The two decisions worth a reviewer's attention:
+      period English over the modern word wherever Clebsch's own English contemporary Salmon — whom
+      he cites twice by name — has one (Doppeltangente = "double tangent", not "bitangent";
+      Rückkehrpunkt = "cusp"; ganze Function = "integral function"; Functionaldeterminante =
+      "functional determinant", not "Jacobian"); and keeping Büschel = "pencil" apart from Schaar =
+      "family", which modern usage would merge, because Clebsch uses them for different things.
+
+      "$r$-punktig berühren", the paper's central phrase, is "touch with $r$-point contact", so
+      that "in $p$ Punkten $r$-punktig berühren" reads "touch at $p$ points with $r$-point
+      contact" and the two counts stay separate.
+
+      NAMES. The print italicizes the stem inside a derived adjective and the transcription wraps
+      the stem only; English suffixes attach to the same stems, giving \emph{Abel}ian and
+      \emph{Jacobi}an as in the Riemann and Roch translations. "Hessian" and "Cayleyan" (p. 217)
+      alter the stem, so those two are emphasized whole. Cited titles are left in their original
+      language, inside the print's own German quotation marks where it sets them.
+
+      GERMAN COMPOSITOR'S SLIPS ARE NOT CARRIED ACROSS — they have nothing to be faithful to in
+      English and are rendered by the correct word, remaining recorded in the transcription and in
+      the transcription note above: p. 190 "Dnrchgangspunkt" and "ihr Geltung", p. 219 "als dass
+      Product", p. 228 "Auschluss" and "Hülfsatz", p. 232's shift from plural to singular inside
+      one Satz, and the sentence on p. 195 that ends without its full stop.
+
+      EIGHT MISPRINTS NOW CARRY AN IN-TEXT \ednote POPOVER, in original.tex and in en.tex alike, at
+      the same line number in both. The criterion is the one the Riemann memoir set: an apparent
+      misprint is reproduced faithfully (R4) and recorded here, and is marked in-text (R10) only
+      when it would mislead a reader of the MATHEMATICS. Each note names what the print sets and
+      what the surrounding argument requires, and ends "Kept as printed":
+      (a) p. 223 — the displayed integral in the first theorem is printed with one index throughout,
+      Σ± a_i b_i x_i dx_i, where the same alternating sum is set with four distinct indices on
+      pp. 221 and 222 and in the very next theorem.
+      (b) p. 225 — the second row of the differentiated system has a roman d in its last denominator
+      where every other denominator in the same system has ∂.
+      (c) p. 226 — Clebsch writes that the bracketed expression is "0 oder gleich dem entsprechenden
+      Werth von 1/R, jenachdem die $x'$ ein zusammengehöriges System bilden oder nicht", but by his
+      own equation (21.) and the argument just above it the expression is 1/R when the $x'$ DO
+      belong together and 0 when they do not — the two alternatives are paired the wrong way round.
+      His order is KEPT: that is a statement about the mathematics, not a slip in the German, so it
+      is translated exactly as it stands rather than quietly reordered. The note matters most here,
+      and for a reason specific to translation — the sentence says which of two alternatives holds
+      and gives a reader nothing to check it against, so an unmarked "or not" in the English would
+      read as the TRANSLATOR's error rather than the author's.
+      (d) p. 227 — rows 2 and 3 of the homogeneity relations carry the coefficient y_2 where Euler's
+      relation, of which row 1 is the pattern, pairs y_1 with ∂v/∂y_1.
+      (e) p. 228 — "die Fläche n^{ter} Ordnung als System von k Ebenen": it is the cutting surface
+      w=0, of order k, that degenerates, and the same clause counts k planes.
+      (f) p. 233 — the §. 16 theorem is printed with n^{2p} and (n/2)^{2p}, carried over from the
+      corresponding plane theorem in §. 7; the curve here is of order m.n, so §. 15 gives (mn)^{2p}
+      and (mn/2)^{2p}.
+      (g) p. 236 — "Schwingungsebene" (plane of oscillation) where the sentences on either side and
+      the mathematics all require "Schmiegungsebene" (osculating plane). A whole wrong word rather
+      than a misspelling, so it is the one misprint of the eight that the TRANSLATION does not
+      reproduce: en.tex reads "osculating plane" and its note says so, where the transcription's
+      note ends "Kept as printed". The only one of the eight whose two notes differ in wording.
+      (h) p. 236 — equation (28.) is set with a two-bar = where (25.), (26.) and (27.) all take the
+      three-bar ≡; these are congruences with respect to the periods.
+
+      Adding (a), (b), (d), (e), (f), (g) and (h) to original.tex is a transcription-side change
+      made during this translation pass, on the contributor's instruction, applying the rule the
+      corpus already had rather than a new one. None of them adds or alters mathematics, and
+      texcompare still reports the two files identical in every math span, \origpage marker and ref.
+
+      ONE BRACKETED SUPPLY, on p. 234. "so ist nach §. 16 die zur Bestimmung der Schnittpunkte der
+      Fläche mit der Curve gleich" is missing the noun that "die" governs, so the English clause has
+      no subject. The translation supplies "[number]" in square brackets, the house device for a
+      translator's addition (R9); the author's own asides use parentheses and ours never do. This is
+      a gap in the German rather than a misprint in the mathematics, so it takes no popover.
+
+      STILL UNMARKED, and where a reviewer with the print should start. The remaining slips listed
+      in the transcription note are orthographic or grammatical and mislead nobody about the
+      mathematics: "Auschluss" and "Hülfsatz" (p. 228), "als dass Product" (p. 219), the doubled
+      article on p. 211, eq. (23.)'s row ending in a period, p. 232's shift from plural to singular.
+      Three readings the transcription lists as STILL OPEN are also left unmarked, because settling
+      them needs the scan rather than an argument from the text: p. 234's "§. 16" citing formulas
+      printed in §. 14, p. 223's "m+n-4^{ter} Ordnung" without parentheses, and p. 224's chain
+      missing the "+" before its ellipsis. If those hold against the print they should get the same
+      popover the eight above have.
+
+      The five \uncertain spans of the transcription are carried across and translated in place
+      (p. 216 "gezogenen" → "drawn", "Geraden" → "straight lines", and a bare "$c$"; the p. 219 and
+      p. 234 spans are mathematics and stand unchanged). Four sentences could not keep both their
+      word order and their page break, since German holds its verb to the end; the \origpage
+      markers did not move and the English clause was rebalanced around them instead (202/203,
+      207/208, 220/221, 229/230). All are listed in the file header.
+
+      NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked this translation against
+      the transcription.

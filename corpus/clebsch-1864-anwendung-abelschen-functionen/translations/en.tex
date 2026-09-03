@@ -1,0 +1,1611 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker, \rmfigure path and
+% \uncertain span is reproduced unchanged; only the prose is translated — including the prose set
+% INSIDE math via a text insert, which is translated like any other prose (HOUSESTYLE R21).
+% pipeline/texcompare.py ignores the CONTENT of such an insert while still checking that each one
+% is present, unmoved, and that all surrounding math is identical, so those changes were verified
+% by hand.
+%
+% THE ORDINAL INSERT is this work's most frequent one and carries the paper's most frequent phrase.
+% German marks the ordinal on the adjective ("Curve $n^{\text{ter}}$ Ordnung"), English on the
+% numeral ("curve of the $n^{\text{th}}$ order"), so every ter/ten/te/tes becomes "th" — 162 of
+% them, 128 of them "ter" — and the German case ending disappears into the English "of the ...
+% order". Two of the 162 have a numeral for their stem and take the English form that numeral
+% demands: $2^{\text{te}}$ and $3^{\text{te}}$ on p. 239 read "$2^{\text{nd}}$" and
+% "$3^{\text{rd}}$". The six remaining inserts, four "\text{mod. }" and two "\text{(mod.\ 2)}",
+% are the same abbreviation in both languages and stand unchanged.
+%
+% TERMINOLOGY. Applied consistently from corpus/clebsch-1864-anwendung-abelschen-functionen/
+% glossary.yaml. Period English is preferred over the modern equivalent, and where Clebsch's own
+% English contemporary Salmon — whom he cites twice by name — has a word for the thing, that word
+% is used: Doppeltangente = "double tangent" (not "bitangent"), Rückkehrpunkt = "cusp",
+% Rückkehrtangente = "cuspidal tangent", ganze Function = "integral function" (not "polynomial"),
+% Functionaldeterminante = "functional determinant" (not "Jacobian"), überschlagene Determinante =
+% "skew determinant", Unterdeterminante = "minor determinant", Wendepunkt = "point of inflexion".
+%
+% Where the print uses TWO different German words, this translation uses two different English
+% ones, so that a distinction the author draws is not destroyed:
+%   * Büschel = "pencil" (of rays or of planes, always with an axis) versus Schaar = "family"
+%     (a one-parameter family of surfaces, e.g. "Flächenschaar zweiter Ordnung", pp. 236-238).
+%     Modern usage would call both a pencil; Clebsch keeps them apart and so does this.
+%   * Satz = "theorem" versus Hülfssatz = "lemma"; Aufsatz = "paper" (the present one) versus
+%     Abhandlung = "memoir" (the ones he cites).
+%   * Durchschnitt = "intersection" (the complete figure) versus Schnitt = "section", with
+%     Schnittcurve = "curve of section" and Schnittpunkt = "point of intersection".
+%   * "a.\ a.\ O." (am angeführten Orte) is rendered "loc.\ cit."; the print's own Latin "l.\ c."
+%     is already Latin and stands unchanged, so the two abbreviations stay distinct here too.
+%
+% "$r$-punktig berühren" is rendered "touch with $r$-point contact" throughout — the phrase names
+% contact of order r at a point, and "touch at p points with r-point contact" keeps the two counts
+% (how many points, how close the contact) separate, which "touch r-point-wise" would not.
+%
+% NAMES. The print italicizes the stem of a personal name inside a derived adjective, and the
+% transcription wraps the stem only (\emph{Abel}schen, \emph{Jacobi}sche). English suffixes attach
+% to the same stems, so those come across directly: \emph{Abel}ian, \emph{Jacobi}an, matching the
+% Riemann and Roch translations. Two do not: English "Hessian" and "Cayleyan" (p. 217) drop or
+% alter the final letter of Hesse and Cayley, so the stem cannot be isolated; those two adjectives
+% are emphasized whole, as \emph{Hessian} and \emph{Cayleyan}. Headings carry no \emph (R25), so
+% "eines Steinerschen Problems" in the §. 19 heading reads "of a problem of Steiner", plain.
+%
+% CITED TITLES ARE NOT TRANSLATED. C. Neumann's "Die Umkehrung der Abelschen Integrale" (p. 190),
+% Prym's Latin "Theoria nova ff. ultraellipticarum", Cremona's Italian "Introduzione ad una teoria
+% geometrica della curve piane" (p. 217) and Clebsch's own "über eine Classe von Gleichungen,
+% welche nur reelle Wurzeln besitzen" (p. 243) are bibliographic titles and stand as printed,
+% inside the print's own German quotation marks where it sets them. Salmon's two titles are
+% already English and likewise stand. The words AROUND them are translated: "Band 54 dieses
+% Journals" reads "Volume 54 of this Journal".
+%
+% GERMAN COMPOSITOR'S SLIPS ARE NOT CARRIED ACROSS. They have nothing to be faithful to in English
+% and are rendered by the correct word; they remain recorded in original.tex and provenance.yaml.
+% p. 190 "Dnrchgangspunkt" (u set upside down) reads "point of passage"; p. 190 "ihr Geltung" reads
+% "their validity"; p. 219 "als dass Product" reads "as the product"; p. 228 "Auschluss" reads
+% "exclusion" and "Hülfsatz" reads "lemma"; p. 232's Satz, which shifts from plural to singular
+% mid-sentence ("berühren, und ausserdem ... geht"), is put in the plural throughout. Likewise
+% p. 195 ends its last sentence without a full stop where the sense plainly closes it; the English
+% sentence takes the stop.
+%
+% EIGHT EDITORIAL NOTES, following the criterion the Riemann memoir set: an apparent misprint is
+% reproduced faithfully (R4) and recorded in provenance, and is ADDITIONALLY marked in-text with an
+% \ednote popover (R10) only when it would mislead a reader of the MATHEMATICS. Every one of the
+% eight stands at the same line number in original.tex and in this file, and each names what the
+% print sets and what the surrounding argument requires:
+%   * p. 223 — the displayed integral in the first theorem is printed with one index throughout,
+%     $\Sigma\pm a_{i}b_{i}x_{i}\,dx_{i}$; the same alternating sum is set with four distinct
+%     indices on pp. 221 and 222 and in the very next theorem.
+%   * p. 225 — the second row of the differentiated system has a roman $d$ in its last denominator
+%     where every other denominator in the same system has $\partial$.
+%   * p. 226 — Clebsch writes that the bracketed expression "ist 0 oder gleich dem entsprechenden
+%     Werth von $\dfrac{1}{R}$, jenachdem die $x'$ ein zusammengehöriges System bilden oder nicht",
+%     but by his own equation (21.) and by the argument just above it the expression is $1/R$ when
+%     the $x'$ DO belong together and 0 when they do not, so the two alternatives are paired the
+%     wrong way round. His order is KEPT — the pairing is a statement about the mathematics, not a
+%     compositor's slip in the German, so it is translated exactly as it stands rather than quietly
+%     reordered. The note matters most here: the sentence says which of two alternatives holds and
+%     offers a reader nothing to check it against, so an unmarked "or not" in the English would
+%     read as the TRANSLATOR's slip rather than the author's.
+%   * p. 227 — rows 2 and 3 of the homogeneity relations carry the coefficient $y_{2}$ where
+%     Euler's relation, of which row 1 is the pattern, pairs $y_{1}$ with $\partial v/\partial
+%     y_{1}$.
+%   * p. 228 — "die Fläche $n^{\text{ter}}$ Ordnung als System von $k$ Ebenen": it is the cutting
+%     surface $w=0$, of order $k$, that degenerates, and the same clause counts $k$ planes.
+%   * p. 233 — the §. 16 theorem is printed with $n^{2p}$ and $\left(\dfrac{n}{2}\right)^{2p}$,
+%     carried over from the corresponding plane theorem in §. 7; the curve here is of order $m.n$,
+%     so $(mn)^{2p}$ and $\left(\dfrac{mn}{2}\right)^{2p}$ are what §. 15 gives.
+%   * p. 236 — the print sets "Schwingungsebene" (plane of oscillation) where the sentence before
+%     it, the sentence after it and the mathematics all require "Schmiegungsebene" (osculating
+%     plane). It is a whole wrong word, not a misspelling, so unlike the slips above it cannot
+%     simply be rendered silently: this translation gives "osculating plane", and its note says so
+%     where the transcription's note ends "Kept as printed". The only one of the eight whose two
+%     notes differ in wording, and the only misprint this translation does not reproduce.
+%   * p. 236 — equation (28.) is set with a two-bar $=$ where (25.), (26.) and (27.) all take the
+%     three-bar $\equiv$; these are congruences with respect to the periods.
+%
+% ONE BRACKETED SUPPLY, on p. 234. The print reads "so ist nach §. 16 die zur Bestimmung der
+% Schnittpunkte der Fläche mit der Curve gleich" — the noun that "die" governs is missing from the
+% sentence, so English has nothing to inflect and the clause has no subject. The translation
+% supplies "[number]" in square brackets, the house device for a translator's addition (R9);
+% parentheses are the author's own, and are never used for ours.
+%
+% THE FIVE \uncertain SPANS of the transcription are carried across and translated in place:
+% p. 216 "gezogenen" -> "drawn", "Geraden" -> "straight lines", and the bare "$c$" (math, so
+% unchanged); p. 219 "$u''=0$" and p. 234 "$r$" are both mathematics and stand as they are. On
+% p. 216 the English word order moves "$b$, $c$" from the first \emph run to the second; the
+% \uncertain span stays on the word it flags, and texcompare confirms the math is untouched.
+%
+% WORD ORDER AT A PAGE BREAK. German holds its verb to the end, so four sentences cannot keep both
+% their order and their break. The \origpage markers do not move; the English clause is rebalanced
+% around them instead. The 207/208 turn is the clearest: "das letzte durch die übrigen $p-k-1$ |
+% bestimmt" becomes "the last is always determined by the remaining $p-k-1$ | of them". At 202/203
+% "die betreffenden Integrale durch ... | bezeichnet werden:" becomes "the integrals in question
+% are denoted by ... | one always has:"; at 220/221 "zweier Oberflächen | sei, welche sich nicht
+% berühren" becomes "of two surfaces | which do not touch one another"; at 229/230 "die
+% Differentialgleichungen ... | die vollständige algebraische Integration zulassen, so sehen wir"
+% becomes "the differential equations ... | admit of complete algebraic integration; we then see".
+% Every other page break falls at a point where English can follow the German directly.
+%
+% NOT MARKED IN-TEXT, by the same criterion. The remaining slips this work's provenance lists are
+% orthographic or grammatical and mislead nobody about the mathematics, so they stay reproduced and
+% recorded with no popover: "Auschluss" and "Hülfsatz" (p. 228), "als dass Product" (p. 219), the
+% doubled article on p. 211, eq. (23.)'s row ending in a period, p. 232's shift from plural to
+% singular, and p. 234's missing noun, which the translation handles with the bracketed supply
+% above. Three readings the transcription lists as STILL OPEN are also left unmarked, because they
+% need the print rather than an argument from the text: p. 234's "§. 16" citing formulas printed in
+% §. 14, p. 223's "$m+n-4^{\text{ter}}$ Ordnung" without parentheses, and p. 224's chain missing
+% the "+" before its \cdots. A reviewer with the scan should settle those three, and add notes then
+% if they hold.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{189}
+\section*{On the application of Abelian functions in geometry.}
+
+(By Mr.\ \emph{A.\ Clebsch} of Giessen.)
+
+The applications which the elliptic functions have hitherto found in geometry are, although restricted to very few among the possible cases, nevertheless already numerous enough to let their general character come forward. All these applications proceed from the division, and show how the solutions of certain algebraic equations occurring in geometry can be simply represented by means of the division of the elliptic functions. This is the more valuable in that those equations themselves are in general very hard to set up, on account of their involved form; but no less so because the peculiar relations and groupings of the roots among one another thereby come out in the clearest way. That \emph{Steiner} knew how to follow up these relations in so many cases, and that many problems solved by him first find their true analytical expression through the theory of the elliptic functions, is not the least of the remarkable facts which fill us with ever growing admiration in the study of the writings of this great geometer.
+
+To bring forward similar applications of the theory of \emph{Abel}ian functions is the purpose of the present paper; and I believe that the few principles to be set forth may serve to make the study of algebraic curves easier in many respects. That such applications have not been attempted hitherto, although we have possessed \emph{Riemann}'s theory of these functions for six years, is without doubt to be ascribed in great part to the difficulties which still stand in the way of an understanding of the memoirs in question, and which have not been entirely removed even by the more recent efforts of younger mathematicians. Another ground lies in this, that in these applications one must return to that way of conceiving the nature of these functions which \emph{Jacobi} set up in the $9^{\text{th}}$ and $13^{\text{th}}$ volumes of this Journal, and which in Mr.\ \emph{Riemann} is found replaced by another, although for the passage
+
+\origpage{190}
+to the \emph{Jacobi}an way of conceiving it the necessary material is given. One may say that in \emph{Jacobi} the mutual dependence of two series of equally many variables comes into the foreground, while in Mr.\ \emph{Riemann} it is chiefly a matter of a series expansion. In what follows I shall always make use of the mode of representation as \emph{Jacobi} employs it. The developments made from the theory of the \emph{Abel}ian functions (by Mr.\ \emph{C.\ Neumann}${}^{*)}$ and Mr.\ \emph{Prym}${}^{**)}$) seem even to show that this \emph{Jacobi}an standpoint forms the necessary point of passage, and that all developments appear first in the form foretold by \emph{Jacobi}, even when one strives, as Mr.\ \emph{Prym} does, to avoid it.
+
+The geometrical applications of this theory which are opened up in what follows are so numerous that I have attempted to carry out only a few cases more closely. These developments relate in particular to the theory of the plane curves of the fourth order, and contain among others a solution of the problem of the double tangents, which recommends itself by a perspicuous grouping of these remarkable straight lines flowing from the nature of the thing itself. In this way there result almost of themselves a series of theorems which \emph{Hesse} and \emph{Steiner} have given in the $49^{\text{th}}$ volume of this Journal, and upon which \emph{Hesse} has founded his elegant interpretation of the relations subsisting among the 28 double tangents by means of the connecting lines of 8 points in space. It lies in the nature of the methods here applied that all these theorems appear as quite special cases of others, very general ones, which retain their validity in the same way not merely for plane curves of arbitrary order, but also for all curves of double curvature.
+
+\section*{§.~1.}
+\subsection*{Connexion of a curve of the $n^{\text{th}}$ order with a class of Abelian integrals.}
+
+Every algebraic equation $F(s, z) = 0$, by virtue of which $s$ is determined as a function of $z$, founds, according to Mr.\ \emph{Riemann}, a class of \emph{Abel}ian integrals. Out of the everywhere finite integrals which one obtains thereby, the arguments of $\theta$-functions are put together in a linear way. If one assumes the $p$ arguments of a $\theta$-function as known,
+
+\textbf{*)} Die Umkehrung der \emph{Abel}schen Integrale, Halle 1863.
+
+\textbf{**)} Theoria nova ff. ultraellipticarum, Diss. Berlin 1863.
+
+\origpage{191}
+then there correspond to them $p$ values of $z$, which form the upper limits of the constituent integrals; and these, or any algebraic functions of them, are determined as roots of an equation of the $p^{\text{th}}$ degree, whose coefficients are put together rationally out of $\theta$-functions. The number $p$ is found by means of the formula
+\[ p = \frac{\mathrm{w}}{2} - (n-1)\,{}^{*)} \]
+here $n$ is the degree to which $s$ rises in the given equation, but $\mathrm{w}$ is the number of the systems of values for which $F'(s) = 0$ without $F'(z) = 0$. It is thereby presupposed that for those systems of values where $F'(s) = 0$ and $F'(z) = 0$, $F''(ss).F''(zz) - F''(sz)^{2} = 0$ shall not hold.
+
+Mr.\ \emph{Riemann} lays the equation $F(s, z) = 0$ at the foundation in the form that, when one orders the equation according to powers of $s$, every coefficient shall be of equally high order in $z$. For the geometrical application it is expedient to consider another form as the general fundamental form, namely that which, by substitution of $-\dfrac{a_{1}x_{1} + a_{2}x_{2} + a_{3}x_{3}}{b_{1}x_{1} + b_{2}x_{2} + b_{3}x_{3}}$ for $z$, and of $-\dfrac{\alpha_{1}x_{1} + \alpha_{2}x_{2} + \alpha_{3}x_{3}}{\beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3}}$ for $s$, can be carried over into a homogeneous function of the $n^{\text{th}}$ order of the three variables $x_{1}$, $x_{2}$, $x_{3}$, where the $a$, $b$, $\alpha$, $\beta$ denote arbitrary constants.
+
+Let the equation thus arising
+\[ f(x_{1}, x_{2}, x_{3}) = 0 \tag{1.} \]
+be the equation of a curve of the $n^{\text{th}}$ order. The reduction of this equation to the form
+\[ F(s, z) = 0 \tag{2.} \]
+by means of the equations
+\[
+\left\{
+\begin{aligned}
+(a_{1}x_{1} + a_{2}x_{2} + a_{3}x_{3}) + z(b_{1}x_{1} + b_{2}x_{2} + b_{3}x_{3}) &= 0, \\
+(\alpha_{1}x_{1} + \alpha_{2}x_{2} + \alpha_{3}x_{3}) + s(\beta_{1}x_{1} + \beta_{2}x_{2} + \beta_{3}x_{3}) &= 0
+\end{aligned}
+\right.
+\tag{3.}
+\]
+then corresponds to the representation of the curve as the intersection of corresponding rays of the pencils (3.), in which $s$, $z$ form the variable parameters. Let us investigate how great the number $\mathrm{w}$ becomes accordingly.
+
+If $F's = 0$ without $F'z = 0$, then the equation has two equal roots $z$; to two consecutive rays of the first pencil there corresponds
+
+\textbf{*)} Volume 54 of this Journal p.\ 129.
+
+\origpage{192}
+\emph{one} of the second. In other words, a ray of the second pencil becomes a tangent of the curve. The case $F''s = 0$, $F'''s = 0$ etc.\ is easy to take into account; the tangent then touches to a higher order. But this can occur only for particular values of the $a$, $b$, $\alpha$, $\beta$.
+
+If $F'(s) = 0$ and $F'(z) = 0$, then also
+\[ \frac{\partial f}{\partial x_{1}} = 0, \qquad \frac{\partial f}{\partial x_{2}} = 0, \qquad \frac{\partial f}{\partial x_{3}} = 0; \]
+the curve then has a double point. That the condition
+\[ F''(ss).F''(zz) - F''(sz)^{2} = 0 \]
+is excluded means that no double point shall become a cusp${}^{*)}$.
+
+If therefore the number of the double points is equal to $d$, one has, by a known formula for the number of the tangents,
+\[ \mathrm{w} = n.(n-1) - 2d. \]
+Hence
+\[ p = \frac{(n-1)(n-2)}{2} - d. \tag{4.} \]
+This then is the number which gives the class of the \emph{Abel}ian functions belonging to a curve of the $n^{\text{th}}$ order.
+
+Thus the elliptic functions $(p = 1)$ correspond to the general curves of the third order, to the curves of the fourth order with two double points etc.; the first class of the \emph{Abel}ian transcendents to the curves of the fourth order with one double point, or to those of the fifth order with four double points etc.; the following class $(p = 3)$ to the general curves of the fourth order etc.
+
+According to the theory of the \emph{Abel}ian functions one finds $z$ expressed by $\theta$-functions by means of an equation of the $p^{\text{th}}$ degree. The first equation (3.) therefore makes known a linear relation between the coordinates of a point, when the $p$ arguments of the $\theta$ are presupposed as known; the $s$ belonging to $z$, whose expression one derives from that of $z$ and from its differential quotients taken with respect to the arguments of the $\theta$-functions, furnishes a second; and one can finally express the coordinates of a curve by $\theta$-functions in this way, where, besides the general theory of the
+
+\textbf{*)} This restriction can, as it seems, be lifted, by laying down that for every cusp the number of the tangents shall at the same time be increased by one.
+
+\origpage{193}
+\emph{Abel}ian functions in question, only the solution of a single equation of the $p^{\text{th}}$ degree is demanded.
+
+The everywhere finite integrals out of which the arguments of the $\theta$-functions are put together can, following \emph{Riemann} (loc.\ cit.\ pag.\ 131.) and by means of the equations
+\[ \frac{x_{2}\,dx_{3} - x_{3}\,dx_{2}}{\dfrac{\partial f}{\partial x_{1}}} = \frac{x_{3}\,dx_{1} - x_{1}\,dx_{3}}{\dfrac{\partial f}{\partial x_{2}}} = \frac{x_{1}\,dx_{2} - x_{2}\,dx_{1}}{\dfrac{\partial f}{\partial x_{3}}} \]
+be brought into the form:
+\[ \int \Theta.\frac{\Sigma\pm c_{1}x_{2}\,dx_{3}}{c_{1}\dfrac{\partial f}{\partial x_{1}} + c_{2}\dfrac{\partial f}{\partial x_{2}} + c_{3}\dfrac{\partial f}{\partial x_{3}}}, \]
+where $\Theta$ is an integral homogeneous function of the order $n-3$ which vanishes for the double points of the curve, and where the equation $f = 0$ is regarded as subsisting between the $x$. The $c$, which are introduced for the sake of symmetry (cf. \emph{Aronhold}, Monatsber. der Berl. Acad., session of 25 April 1861), have no influence at all upon the integral, since the quantity under the integral sign is in truth independent of them. The expedient choice of the lower limits, as well as of the coefficients occurring in the $\Theta$, Mr.\ \emph{Riemann} has taught; I shall presuppose both as they are given in the second Division of the memoir cited.
+
+\section*{§.~2.}
+\subsection*{Application of Abel's theorem to the intersection of two curves.}
+
+\emph{Abel}'s theorem (volume 4 pag.\ 200 of this Journal) can now, with homogeneous equations laid at the foundation instead of those used by \emph{Abel}, be enunciated in a way which permits important consequences. I shall add the proof, as it shapes itself under the modification indicated.
+
+Let $f = 0$ be the equation of a curve of the $n^{\text{th}}$ order, $\varphi = 0$ that of another curve of the $m^{\text{th}}$ order. Let further $\Theta$ be an arbitrary rational homogeneous function of the $(n-3)^{\text{th}}$ order. Let us consider the sum
+\[ \Sigma\int \Theta.\frac{\Sigma\pm c_{1}x_{2}\,dx_{3}}{c_{1}\dfrac{\partial f}{\partial x_{1}} + c_{2}\dfrac{\partial f}{\partial x_{2}} + c_{3}\dfrac{\partial f}{\partial x_{3}}}, \]
+
+\origpage{194}
+extended over all those points as upper limits of the integrals which form the system of intersection of $f = 0$, $\varphi = 0$.
+
+Under the integral sign the $x$ by no means satisfy the equation $\varphi = 0$, in so far as this represents a determinate curve; but we can assume the equation $\varphi = 0$ as subsisting, by introducing its coefficients as variables, to which the given values in question are to be assigned only in the limits.
+
+If one now multiplies numerator and denominator under the integral sign by $\Sigma\pm k_{1}\dfrac{\partial f}{\partial x_{2}}\dfrac{\partial \varphi}{\partial x_{3}}$, where the $k$ are arbitrary quantities, one finds in the numerator the determinant:
+\[
+\begin{vmatrix}
+\Sigma k_{i}c_{i}, & \Sigma k_{i}x_{i}, & \Sigma k_{i}\,dx_{i} \\[4pt]
+\Sigma c_{i}\dfrac{\partial f}{\partial x_{i}}, & \Sigma x_{i}\dfrac{\partial f}{\partial x_{i}}, & \Sigma \dfrac{\partial f}{\partial x_{i}}\,dx_{i} \\[4pt]
+\Sigma c_{i}\dfrac{\partial \varphi}{\partial x_{i}}, & \Sigma x_{i}\dfrac{\partial \varphi}{\partial x_{i}}, & \Sigma \dfrac{\partial \varphi}{\partial x_{i}}\,dx_{i}
+\end{vmatrix}.
+\]
+Of the elements of this determinant three vanish; the last becomes equal to $-\delta\varphi$, if $\delta\varphi$ denotes that which arises from $\varphi$ by differentiation of the coefficients; and one has finally as the value of the determinant:
+\[ \Sigma c_{i}\frac{\partial f}{\partial x_{i}}.\Sigma k_{i}x_{i}.\delta\varphi, \]
+so that the sum sought passes over into
+\[ \Sigma\int \Theta.\frac{\Sigma k_{i}x_{i}}{\Sigma\pm k_{1}\dfrac{\partial f}{\partial x_{2}}\dfrac{\partial \varphi}{\partial x_{3}}}.\delta\varphi. \]
+Here the increments of the individual coefficients of $\varphi$ are now multiplied into rational functions of the coordinates of the various points which satisfy the equations $f = 0$, $\varphi = 0$ together. All the points occur symmetrically in these functions; one can therefore represent the latter as rational functions of the coefficients of $f$ and $\varphi$; and by integrating with respect to the latter one obtains, besides rational functions of the coefficients, only logarithmic and circular functions of such. This is \emph{Abel}'s theorem.
+
+Let us now remark in particular that, if $\Theta$ is at the same time an \emph{integral} function, the sum of the functions standing under the integral sign always vanishes. For by applying the theorem enunciated by \emph{Jacobi} (volume 14 of this
+
+\origpage{195}
+Journal p.\ 286) to homogeneous equations, and remarking at the same time that, if $f = 0$, $\varphi = 0$, then also:
+\[ \frac{\dfrac{\partial f}{\partial x_{2}}\dfrac{\partial \varphi}{\partial x_{3}} - \dfrac{\partial f}{\partial x_{3}}\dfrac{\partial \varphi}{\partial x_{2}}}{x_{1}} = \frac{\dfrac{\partial f}{\partial x_{3}}\dfrac{\partial \varphi}{\partial x_{1}} - \dfrac{\partial f}{\partial x_{1}}\dfrac{\partial \varphi}{\partial x_{3}}}{x_{2}} = \frac{\dfrac{\partial f}{\partial x_{1}}\dfrac{\partial \varphi}{\partial x_{2}} - \dfrac{\partial f}{\partial x_{2}}\dfrac{\partial \varphi}{\partial x_{1}}}{x_{3}}, \]
+one obtains the formula:
+\[ \Sigma\frac{\Omega(k_{1}x_{1} + k_{2}x_{2} + k_{3}x_{3})}{\Sigma\pm k_{1}\dfrac{\partial f}{\partial x_{2}}\dfrac{\partial \varphi}{\partial x_{3}}} = 0, \]
+where $\Omega$ is an integral homogeneous function of the order $m+n-3$, and where the sum relates to all systems of values which satisfy the equations $f = 0$, $\varphi = 0$ simultaneously. Since now $\Theta.\delta\varphi$ is of the form $\Omega$ as soon as $\Theta$, which was of the $(n-3)^{\text{th}}$ order, denotes an \emph{integral} function, the above sum of integrals then becomes constant, i.\ e.\ independent of the coefficients of $\varphi$.
+
+One has therefore the following theorem:
+
+\emph{If $f = 0$ denotes the equation of a curve of the $n^{\text{th}}$ order, and if the integral}
+\[ \int \Theta.\frac{\Sigma\pm c_{1}x_{2}\,dx_{3}}{c_{1}\dfrac{\partial f}{\partial x_{1}} + c_{2}\dfrac{\partial f}{\partial x_{2}} + c_{3}\dfrac{\partial f}{\partial x_{3}}}, \]
+\emph{in which $\Theta$ is a homogeneous function of the $(n-3)^{\text{th}}$ order, is formed in such a way that one makes the $x$ dependent upon one another by the equation $f = 0$, then the sum of all values of the integral for the points of intersection of $f = 0$ with another curve $\varphi = 0$ (of the $m^{\text{th}}$ order) is representable as an aggregate of rational functions and of logarithms of rational functions of the coefficients of $\varphi$; but in particular this sum is independent of the coefficients of $\varphi$ as soon as $\Theta$ is at the same time an integral function.}
+
+Since $\Theta$, if it is an integral function, still contains $\dfrac{n-1.n-2}{2}$ arbitrary coefficients, one obtains from this just as many separate equations, which give sums of $mn$ integrals equal to constants. These $\dfrac{n-1.n-2}{2}$ equations in no way contain the coefficients of $\varphi$; they are therefore in general the conditions that $mn$ points of a curve of the $n^{\text{th}}$ order lie on a curve of the $m^{\text{th}}$ order. If $m \geqq n$, then, as is known, the number
+
+\origpage{196}
+of the conditions requisite for this is exactly equal to $\dfrac{n-1.n-2}{2}\,{}^{*)}$; but if $m$ is smaller than $n$, then the number of the requisite conditions is:
+\[ mn - \frac{m.m+3}{2}, \]
+and since
+\[ \left(mn - \frac{m.m+3}{2}\right) - \frac{n-1.n-2}{2} = -\frac{n-m-1.n-m-2}{2}, \]
+the number of the equations obtained is, for $m = n-1$, $m = n-2$ also, still equal to the number of the requisite conditions. If $m < n-2$, the number of the equations of condition becomes greater; but they cannot cease to be compatible with one another, and to take the place of the sufficient number of determinations.
+
+If the curve considered possesses no double point, and therefore in general, the equations given by the theorem subsist only between everywhere finite integrals, such as are used in the formation of the arguments of the $\Theta$-functions. This general case shall be treated first. If double points exist, then in just as many equations the integrals no longer belong under this category.
+
+\section*{§.~3.}
+\subsection*{Determination of the constants of Abel's theorem, and converse of the theorem on the points of intersection of algebraic curves.}
+
+Let us presuppose in what follows that the curve possesses no double point. From this case all the others can be derived as special ones. We have $p = \dfrac{n-1.n-2}{2}$; the everywhere finite integrals we denote by
+\[ u_{1}, \quad u_{2}, \quad \ldots \quad u_{p}, \]
+and distinguish those belonging to different points by upper indices. The $u$ shall be determined as Mr.\ \emph{Riemann} employs them for the formation of the arguments of the $\theta$-functions; thereby the lower limits are determined on the one hand, and on the other hand it is laid down what changes the $u$ undergo through alteration of the path of integration, namely that, the upper limit remaining the same, they can thereby only be carried over into
+
+\textbf{*)} \emph{Jacobi}, this Journal volume 15. pag.\ 285.
+
+\origpage{197}
+the system:
+\[ u_{1} + A_{1}, \quad u_{2} + A_{2}, \quad \ldots \quad u_{p} + A_{p}, \]
+where, as always in what follows, the $A$ denote a system of the form
+\[
+\left\{
+\begin{aligned}
+A_{1} &= m_{1}i\pi + a_{11}q_{1} + a_{12}q_{2} + \cdots + a_{1p}q_{p}, \\
+A_{2} &= m_{2}i\pi + a_{21}q_{1} + a_{22}q_{2} + \cdots + a_{2p}q_{p}, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+A_{p} &= m_{p}i\pi + a_{p1}q_{1} + a_{p2}q_{2} + \cdots + a_{pp}q_{p}
+\end{aligned}
+\right.
+\tag{5.}
+\]
+In these expressions the $a$ are given by the equation of the curve, but the $m$, $q$ denote whole numbers.
+
+The equations of the theorem then pass over into the following form:
+\[
+\left\{
+\begin{aligned}
+u'_{1} + u_{1}^{(2)} + \cdots + u_{1}^{(mn)} &\equiv \gamma_{1}, \\
+u'_{2} + u_{2}^{(2)} + \cdots + u_{2}^{(mn)} &\equiv \gamma_{2}, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+u'_{p} + u_{p}^{(2)} + \cdots + u_{p}^{(mn)} &\equiv \gamma_{p}.
+\end{aligned}
+\right.
+\tag{6.}
+\]
+Since the curve of the $m^{\text{th}}$ order can consist of $m$ straight lines, one must be able to form each of these equations by adding the $m$ corresponding equations which subsist for $m = 1$. One therefore has at once, if $c_{1}$, $c_{2}$, $\ldots$ $c_{p}$ denote the constants $\gamma$ belonging to $m = 1$,
+\[ \gamma_{1} = mc_{1}, \quad \gamma_{2} = mc_{2}, \quad \ldots \quad \gamma_{p} = mc_{p}. \]
+The constants $c$ are then independent not merely of the coefficients but also of the degree of the curve $\varphi = 0$. I shall now show that the $c$ can all be set equal to zero.
+
+To this the consideration of the case $m = n-3$ leads. For Mr.\ \emph{Riemann} has proved loc.\ cit.\ p.\ 148 that a system of the above kind is congruent to nothing but zeros as soon as it is extended over the common solutions of $f = 0$ with those equations whose left-hand part is put together linearly out of the numerators of the functions integrated in the $u$, any double points being excluded, which here do not occur from the outset. Now a linear function of the numerators of the integrated expressions is a general homogeneous function of the $(n-3)^{\text{th}}$ order $(\Theta)$; for $m = n-3$ we therefore have $(n-3)c_{h} = 0$, hence always $c_{h} = 0$. One has therefore the following theorem:
+
+\emph{If one forms the everywhere finite integrals with the lower limits given by Mr.\ Riemann, and forms the sums of such integrals}
+
+\origpage{198}
+\emph{ for the points of intersection of the curve $f = 0$ with another, then the system of the sums of integrals obtained is at all times congruent to a system of zeros.}
+
+This theorem admits of a converse, and then runs thus:
+
+\emph{As soon as the sums of the everywhere finite integrals extended over $m.n$ points are zero, the $m.n$ points lie in the intersection of a curve of the $m^{\text{th}}$ order with the curve of the $n^{\text{th}}$ order.}
+
+For the differential equations:
+\[
+\begin{aligned}
+du'_{1} + du_{1}^{(2)} + \cdots + du_{1}^{(mn)} &= 0, \\
+du_{2}^{(1)} + du_{2}^{(2)} + \cdots + du_{2}^{(mn)} &= 0, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+du_{p}^{(1)} + du_{p}^{(2)} + \cdots + du_{p}^{(mn)} &= 0
+\end{aligned}
+\]
+are completely integrated by $p$ algebraic equations which \emph{Abel}'s theorem gives. The $p$ integrals contain $p$ arbitrary constants. Since the differential equations are further integrated by such algebraic equations as state that the $mn$ points lie on a curve of the $m^{\text{th}}$ order, these latter must be derivable from the former by a special choice of the arbitrary constants; and if one holds such values of the constants fast, then the algebraic integrals must have precisely that shape in which they characterize the $mn$ points as the intersection of a curve of the $m^{\text{th}}$ order with the given one. But the requisite determination of the constants has been accomplished above.
+
+\section*{§.~4.}
+\subsection*{Contact curves which are determined by a number of points given on the curve.}
+
+By means of the theorems developed the solution of the following problem results easily:
+
+\emph{Let $m \geqq n-2$; on the curve of the $n^{\text{th}}$ order $mn-pr$ points are given arbitrarily; through them one is to lay a curve of the $m^{\text{th}}$ order which touches the curve of the $n^{\text{th}}$ order at $p$ points with $r$-point contact.}
+
+This problem is soluble if $m \geqq n-2$. It is also determinate if $m = n-2$ or $m = n-1$. For in both cases the number of the conditions imposed, namely $mn - pr + p(r-1)$, is equal to the number of the constants contained in the equation of the curve. If $m \geqq n$, then the number of the equations of condition $(mn - p)$ is, by a theorem already mentioned, just sufficient
+
+\origpage{199}
+to determine that system of points which the curve of the $m^{\text{th}}$ order must have in common with the curve of the $n^{\text{th}}$ order; but then every curve of the $m^{\text{th}}$ order which passes through the points found fulfils the conditions imposed.
+
+Let us put for brevity $mn - pr = \lambda$. Of the points of intersection of the two curves $\lambda$ are then given; of the remaining $pr$, $r$ at a time shall coincide. Let the sums of corresponding integrals which belong to the sought points of contact be $v_{1}$, $v_{2}$, $\ldots$ $v_{p}$; the equations (6.) then take the shape:
+\[
+\begin{aligned}
+rv_{1} &\equiv -(u'_{1} + u_{1}^{(2)} + \cdots + u_{1}^{(\lambda)}), \\
+rv_{2} &\equiv -(u'_{2} + u_{2}^{(2)} + \cdots + u_{2}^{(\lambda)}), \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+rv_{p} &\equiv -(u'_{p} + u_{p}^{(2)} + \cdots + u_{p}^{(\lambda)}).
+\end{aligned}
+\]
+The right-hand parts of these congruences are given; by division by $r$ one finds, adding on the right, for the sake of generality, an arbitrary system of the $A$ divided by $r$:
+\[
+\left\{
+\begin{aligned}
+v_{1} &\equiv -\frac{u'_{1} + u_{1}^{(2)} + \cdots + u_{1}^{(\lambda)}}{r} + \frac{A_{1}}{r}, \\
+v_{2} &\equiv -\frac{u'_{2} + u_{2}^{(2)} + \cdots + u_{2}^{(\lambda)}}{r} + \frac{A_{2}}{r}, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+v_{p} &\equiv -\frac{u'_{p} + u_{p}^{(2)} + \cdots + u_{p}^{(\lambda)}}{r} + \frac{A_{p}}{r}.
+\end{aligned}
+\right.
+\tag{7.}
+\]
+If one now forms the $\theta$ whose arguments are just these $v$, and the corresponding equation of the $p^{\text{th}}$ degree, then one finds by solution the $p$ points which occur in the $v$ as upper limits, i.\ e.\ the $p$ points of contact, whereby the problem is solved.
+
+The $A$ contain the $2p$ numbers $m$, $q$, to which all values from 0 to $r-1$ may still be assigned. \emph{The number of all solutions of the problem is therefore $r^{2p}$.}
+
+The $r^{2p}$ systems of $p$ points of contact each have a very remarkable position with respect to one another. If one distinguishes $r$ such systems, of which several may also coincide in groups, by appended upper indices, and adds the corresponding equations (7.), one obtains
+
+\origpage{200}
+for $k = 1, 2, \ldots p$:
+\[ v_{k}^{(1)} + v_{k}^{(2)} + \cdots + v_{k}^{(r)} + u_{k}^{(1)} + u_{k}^{(2)} + \cdots + u_{k}^{(\lambda)} \equiv \frac{A_{k}^{(1)} + A_{k}^{(2)} + \cdots + A_{k}^{(r)}}{r}. \tag{8.} \]
+If therefore one determines the numbers $m$, $q$ occurring in the $A$ so that
+\[
+\left\{
+\begin{aligned}
+m_{k}^{(1)} + m_{k}^{(2)} + \cdots + m_{k}^{(r)} &\equiv 0 \quad (\text{mod. } r), \\
+q_{k}^{(1)} + q_{k}^{(2)} + \cdots + q_{k}^{(r)} &\equiv 0 \quad (\text{mod. } r),
+\end{aligned}
+\right.
+\tag{9.}
+\]
+then one may put zero instead of the right-hand side of (8.), and it is thus found that the $r$ systems of points of contact lie, together with the given points, on a curve of the $m^{\text{th}}$ order. From (9.) one sees that of the $r$ systems $r-1$ can be chosen arbitrarily, whereby the $r^{\text{th}}$ is then determined; and one has therefore the theorem:
+
+\emph{If one lays a curve of the $m^{\text{th}}$ order through the given points and through $r-1$ systems of points of contact, it still passes through an $r^{\text{th}}$ system. Of the former several may coincide in groups; but it may also happen that the latter coincides with one of the former, which in particular always occurs when $r = 2$.}
+
+It scarcely needs to be mentioned that, if $\mu$ systems coincide, the new curve has at the points of the system a $\mu$-point contact with the given one.
+
+\section*{§.~5.}
+\subsection*{Systems of contact curves which pass through fixed points of the curve.}
+
+In the previous problem let us make $\mu$ times $r$ of the given points, whose number may be presupposed greater than $\mu.r$, coincide. Let us then assume only the remaining $mn - (p+\mu)r$ points as given. We have then to do with the indeterminate problem:
+
+\emph{A curve of the $m^{\text{th}}$ order shall pass through $mn - (p+\mu)r$ points given on a curve of the $n^{\text{th}}$ order, and shall besides touch this curve at $p+\mu$ points with $r$-point contact.}
+
+This problem is, when $m \geqq n-2$, soluble like the previous one, and indeed $\mu$ points of contact are still arbitrary, but the $p$ remaining ones are then determined. Through the given $mn - (p+\mu)r$ points there can therefore still be laid infinitely many curves of the kind sought; and when $\mu$ points of contact have been chosen arbitrarily, still $r^{2p}$.
+
+\origpage{201}
+Mr.\ \emph{Hesse} has introduced the notion of a \emph{system} of contact curves (volume 49 of this Journal) and has made manifold use of it for the theory of the curves of the third and fourth order. For if one starts from a determinate contact curve and lets it vary continuously, then the points of contact gradually run through all the combinations that are at all possible. But it is by no means possible to arrive at \emph{all} contact curves by such continuous variation; rather, one must for this purpose let those contact curves which have in common as great a number as possible of arbitrarily chosen points of contact vary simultaneously. Out of each of these curves there then arises a system of contact curves, no one of which has a curve in common with another.
+
+One now remarks that in the present representation the various systems of contact curves are characterized by a very simple mark. For to each system there corresponds a determinate system of the $A$; for these systems are completely discrete, and it can therefore never happen that from a curve which corresponds to one system of the $A$ one should set up a continuous passage, through contact curves throughout, to curves which correspond to another system. One may therefore enunciate the following theorem:
+
+\emph{One can determine infinitely many curves of the $m^{\text{th}}$ order, if $m \geqq n-2$, which touch a curve of the $n^{\text{th}}$ order at $\dfrac{n-1.n-2}{2} + \mu$ points with $r$-point contact, while the rest of the points of intersection are given. These curves divide into $r^{2p}$ different systems, in such a way that it is not possible to pass continuously from a curve of one system, through contact curves throughout, to a curve of another system.}
+
+If we now denote the integrals corresponding to the $p+\mu$ points of contact by
+\[ w_{k}^{(1)}, \quad w_{k}^{(2)}, \quad \ldots \quad w_{k}^{(p+\mu)}, \]
+and the sums of the integrals corresponding to the fixed points by $U_{k}$, then we have:
+\[ w_{k}^{(1)} + w_{k}^{(2)} + \cdots + w_{k}^{(p+\mu)} \equiv \frac{-U_{k} + A_{k}}{r}. \]
+Let us now consider $r$ curves of the same system, and add the corresponding equations, which on the left may be indicated by the sign $\mathrm{S}$,
+
+\origpage{202}
+then there comes:
+\[ \mathrm{S}(w_{k}^{(1)} + w_{k}^{(2)} + \cdots + w_{k}^{(p+\mu)}) \equiv -U_{k}, \]
+i.\ e.
+
+\emph{The points of contact of any $r$ contact curves of the same system lie at all times on a curve of the $m^{\text{th}}$ order which passes through the given fixed points.}
+
+Besides this one has, as in the previous §., the theorem:
+
+\emph{If one lays a curve of the $m^{\text{th}}$ order through the given points and through $r-1$ systems of $p+\mu$ points of contact each, which may belong to the same or to different systems of contact curves, it still always passes through an $r^{\text{th}}$ system.}
+
+The previous theorem can be conceived as a special case of this latter one, and for $r = 2$, with two-point contact everywhere, the latter passes directly over into the former.
+
+\section*{§.~6.}
+\subsection*{Systems of curves which touch the given curve to a certain order wherever they meet it.}
+
+If $mn$ is divisible by $r$, then there occur in particular contact curves like those which Mr.\ \emph{Hesse} has investigated loc.\ cit., which touch the curve of the $n^{\text{th}}$ order with $r$-point contact everywhere where they meet it. Then $mn = (p+\mu)r$; the systems arising depend on the curve of the $n^{\text{th}}$ order alone, and are no longer, as in the foregoing, characterized besides by particular points arbitrarily chosen upon it. The remaining theorems adduced in the previous §. continue to hold here; but the number of the systems may under circumstances become another than the one given above.
+
+For let us assume that $m$ has a common factor with $r$, so that
+\[ m = m's, \qquad r = r's, \]
+where $m'$, $r'$ shall be relatively prime. As often now as all the numbers $m$, $q$ occurring in the $A$ contain the factor $s$, one has
+\[ \frac{A_{k}}{r} = \frac{A'_{k}}{r'}, \]
+where the $A'$ are expressions after the manner of the $A$. Then, if for the points of contact the integrals in question are denoted by $u_{k}^{(1)}$, $u_{k}^{(2)}$, $\ldots$ $u_{k}^{\left(\frac{mn}{r}\right)} = u_{k}^{\left(\frac{m'n}{r'}\right)}$
+
+\origpage{203}
+one always has:
+\[ u_{k}^{(1)} + u_{k}^{(2)} + \cdots + u_{k}^{\left(\frac{m'n}{r'}\right)} \equiv \frac{A'_{k}}{r'}, \]
+i.\ e.\ the system of contact curves consists in truth of curves of the order $m'$ which touch the given curve everywhere with $r'$-point contact, and which, counted $s$ times, may be regarded as systems of the $m^{\text{th}}$ order with $r$-point contact. Abstracting from these, and remarking that these exceptional systems of the $A$ are $r'^{2p}$ in number, one arrives at the theorem:
+
+\emph{If $mn = (p+\mu)r$, $m \geqq n-2$, then there are systems of curves of the $m^{\text{th}}$ order which touch the curve of the $n^{\text{th}}$ order at $p+\mu$ points with $r$-point contact, of which $\mu$ are arbitrary. If $m = m's$, $r = r's$, where $m'$, $r'$ are relatively prime, then the number of the systems is $r^{2p} - r'^{2p}$; only when $m$ and $r$ are relatively prime is their number equal to $r^{2p}$.}
+
+To this attaches itself a number of further theorems on those cases in which the points of contact of several contact curves form together the complete intersection of the curve of the $n^{\text{th}}$ order with another curve. Such theorems still exist even when one does not consider contact curves of equal order. For if $m'$, $r'$; $m''$, $r''$; $\ldots$ $m^{(s)}$, $r^{(s)}$ denote the numbers corresponding to the various contact curves considered together, and if the associated systems of the $A$ are denoted in a similar way, it is only necessary that
+\[ \frac{m'}{r'} + \frac{m''}{r''} + \cdots + \frac{m^{(\mu)}}{r^{(\mu)}} = h. \]
+be a whole number, and that the equations
+\[ \frac{A'_{k}}{r'} + \frac{A''_{k}}{r''} + \cdots + \frac{A_{k}^{(\mu)}}{r^{(\mu)}} \equiv 0, \]
+should hold, in order that the points of contact of the curves of the orders $m'$, $m''$, $\ldots$ $m^{(\mu)}$ may lie on a curve of the $h^{\text{th}}$ order.
+
+I content myself with having indicated this source of theorems here.
+
+\section*{§.~7.}
+\subsection*{Contact of a curve of the fourth order by curves of the third order, with four-point contact at three points; and contact of a curve of the sixth order by curves of the fifth order, with three-point contact at 10 points.}
+
+The problems treated in the foregoing are essentially indeterminate. But there are classes of completely determinate contact curves. For $m \geqq n$ these
+
+\origpage{204}
+always occur when $mn = pr$, or $\dfrac{m}{r} = \dfrac{p}{n}$. If now $n$ has not the form $4h+2$, then $p$ and $n$ have no common factor; one has therefore as the most general assumption $m = p.s$, $r = n.s$. Only when $n$ has the form $4h+2$ do $p$ and $s$ have the common factor 2. In this case one must therefore put $m = \dfrac{p}{2}.s$, $r = \dfrac{n}{2}.s$. And if one combines this with the determinations of the previous §., the following theorem results:
+
+\emph{If $s$ is an arbitrary number, and $n$ not of the form $4h+2$, then there are always $n^{2p}(s^{2p}-1)$ curves of the order $p.s$ which touch the curve of the $n^{\text{th}}$ order at $p$ points with $n.s$-point contact. If on the other hand $n$ is of the form $4h+2$, then there are $(\tfrac{1}{2}n)^{2p}.(s^{2p}-1)$ curves of the order $\tfrac{1}{2}p.s$ which touch the curve of the $n^{\text{th}}$ order at $p$ points with $\tfrac{1}{2}n.s$-point contact.}
+
+This theorem must apparently suffer two exceptions, for $s = 1$ and $n = 4$ or $n = 6$, because in these cases $m < n$. But in both cases the theorem is nevertheless correct, of which one convinces oneself in the following way. The number of conditions to which a curve touching at $\dfrac{mn}{r}$ points with $r$-point contact is subjected is found equal to $\dfrac{mn}{r}(r-1)$. In order that the curve of the $m^{\text{th}}$ order $(m < n)$ shall thereby be completely determined, one must have the equation:
+\[ \frac{mn(r-1)}{r} = \frac{m.m+3}{2}, \]
+or
+\[ m = \frac{2n(r-1)}{r} - 3. \]
+First, then, $r$ must be a factor of $2n$; if one further puts $m < n$, one finds $r < 2 + \dfrac{6}{n-3}$. These conditions are in general satisfied only by $r = 2$; but besides by $r = 4$ for $n = 4$, and $r = 3$ for $n = 6$. One therefore obtains the following contact problems, which as completely determinate are of particular interest:
+
+\emph{The curve of the $n^{\text{th}}$ order shall be touched by a curve of the $(n-3)^{\text{th}}$ order at $\dfrac{n.n-3}{2}$ points with two-point contact;}
+of which the problem of the double tangents in the curves of the fourth order is a particular case;
+
+\emph{a given curve of the fourth order shall be touched by a curve of the third order at three points with four-point contact;}
+
+\origpage{205}
+\emph{a given curve of the sixth order shall be touched by a curve of the fifth order at ten points with three-point contact.}
+
+The two last problems are already contained in the theorem given above; nevertheless the general results may here be specialized still more closely for these two cases.
+
+For the second problem one obtains the following determination:
+
+\emph{There are 4096 curves of the third order which touch a given curve of the fourth order at three points with four-point contact.}
+
+The 4096 curves correspond to the 4096 different systems of the $A$ which one can form for $p = 3$ when the numbers $m$, $q$ may receive the values 0, 1, 2, 3. The points of contact of each curve are determined by an equation of the third degree; the coefficients of the equation are $\theta$-functions with the arguments:
+\[
+\left\{
+\begin{aligned}
+v_{1} &= u_{1}^{(1)} + u_{1}^{(2)} + u_{1}^{(3)} \equiv \frac{A_{1}}{4}, \\
+v_{2} &= u_{2}^{(1)} + u_{2}^{(2)} + u_{2}^{(3)} \equiv \frac{A_{2}}{4}, \\
+v_{3} &= u_{3}^{(1)} + u_{3}^{(2)} + u_{3}^{(3)} \equiv \frac{A_{3}}{4}.
+\end{aligned}
+\right.
+\tag{10.}
+\]
+If one denotes the numbers $m$, $q$ corresponding to the various contact curves by upper indices, \emph{then one always has the points of contact of three curves upon a new curve of the third order}, as soon as
+\[
+\begin{aligned}
+m'_{i} + m''_{i} + m'''_{i} + m''''_{i} &\equiv 0 \quad (\text{mod. } 4), \\
+q'_{i} + q''_{i} + q'''_{i} + q''''_{i} &\equiv 0 \quad (\text{mod. } 4).
+\end{aligned}
+\]
+The curves of the third order thus obtained divide into three classes; the curves of the first touch with two-point contact at the points of contact of two of the above curves; those of the second touch with two-point contact at the points of contact of one curve, and pass through the points of contact of two others; those of the third class, finally, pass through the points of contact of four different curves. The number of all these curves is very great, and one obtains it easily by a simple enumeration, which I believe I may pass over here. For more on the grouping of these contact curves see below.
+
+If a curve of the sixth order is to be touched by a curve of the fifth order at ten points with three-point contact, then one has $p = 10$, $m = 5$, $n = 6$, $r = 3$; each system of ten points of contact is found by means of an equation
+
+\origpage{206}
+of the tenth degree, whose coefficients are $\theta$-functions with the arguments:
+\[
+\begin{aligned}
+v_{1} &= u_{1}^{(1)} + u_{1}^{(2)} + \cdots + u_{1}^{(10)} \equiv \frac{A_{1}}{3}, \\
+v_{2} &= u_{2}^{(1)} + u_{2}^{(2)} + \cdots + u_{2}^{(10)} \equiv \frac{A_{2}}{3}, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+v_{10} &= u_{10}^{(1)} + u_{10}^{(2)} + \cdots + u_{10}^{(10)} \equiv \frac{A_{10}}{3}.
+\end{aligned}
+\]
+\emph{The number of the contact curves is $3^{20}$.} By adding the equations of this kind which belong to three different contact curves, and then putting
+\[ \frac{A_{k} + A'_{k} + A''_{k}}{3} \equiv 0 \]
+one finds the theorem:
+
+\emph{Any two systems of points of contact lie on a curve of the fifth order, which cuts the curve of the sixth order further in the points of contact of a third contact curve. Of such curves of the fifth order there are therefore $\dfrac{3^{20}.3^{20}-1}{6}$.}
+
+\section*{§.~8.}
+\subsection*{Curves of the $(n-3)^{\text{th}}$ order which touch a given curve of the $n^{\text{th}}$ order at $\dfrac{n.n-3}{2}$ points with two-point contact.}
+
+The problem, \emph{so to lay a curve of the $(n-3)^{\text{th}}$ order that it touches a given curve of the $n^{\text{th}}$ order at $\dfrac{n.n-3}{2}$ points with two-point contact}, is by far more important than the previous ones, and of outstanding interest. Keeping to the notation used hitherto, the equations between the integrals to which this problem leads present themselves as follows:
+\[
+\left\{
+\begin{aligned}
+u_{1}^{(1)} + u_{1}^{(2)} + \cdots + u_{1}^{\left(\frac{n.n-3}{2}\right)} &\equiv \frac{A_{1}}{2}, \\
+u_{2}^{(1)} + u_{2}^{(2)} + \cdots + u_{2}^{\left(\frac{n.n-3}{2}\right)} &\equiv \frac{A_{2}}{2}, \\
+&\ \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+u_{\left(\frac{n-1.n-2}{2}\right)}^{(1)} + u_{\left(\frac{n-1.n-2}{2}\right)}^{(2)} + \cdots + u_{\left(\frac{n-1.n-2}{2}\right)}^{\left(\frac{n.n-3}{2}\right)} &\equiv \frac{A_{\left(\frac{n-1.n-2}{2}\right)}}{2}.
+\end{aligned}
+\right.
+\tag{11.}
+\]
+
+\origpage{207}
+
+The number of these equations is greater by one than that of the unknowns. Nevertheless the equations are compatible with one another, as shall now be shown; but no one of them is a consequence of the others, rather they can subsist side by side only for certain systems of the $A$.
+
+Mr.\ \emph{Riemann} has proved loc.\ cit.\ p.\ 147 the theorem that one can set a given system of $p$ quantities equal to the sums of $p-1$ corresponding integrals each always and only then, and in general only in one way, when $\theta$ vanishes for the given quantities as arguments. In our case $p = \dfrac{n-1.n-2}{2}$, $p-1 = \dfrac{n.n-3}{2}$; there is therefore always a contact curve of the kind sought as soon as $\theta$, formed with the arguments $\frac{A_{1}}{2}$, $\frac{A_{2}}{2}$, \ldots $\frac{A_{p}}{2}$, becomes equal to zero. One must therefore have:
+\[
+\begin{aligned}
+0 &= \mathop{\Sigma}\limits_{n=-\infty}^{n=+\infty} e^{\mathop{\Sigma}\limits_{h,k=1}^{h,k=p} a_{hk}\,n_{h}\,(n_{k}+q_{k}) \,+\, i\pi \mathop{\Sigma}\limits_{k=1}^{k=p} n_{k}m_{k}}\\[2ex]
+&= e^{-\frac{i\pi}{2}\Sigma m_{k}q_{k} \,-\, \frac{1}{4}\Sigma\Sigma a_{hk}\,q_{h}q_{k}}.\Sigma e^{\Sigma\Sigma \frac{2n_{h}+q_{h}}{2}.\frac{2n_{k}+q_{k}}{2}\,a_{hk} \,+\, i\pi\Sigma \frac{2n_{k}+q_{k}}{2}\,m_{k}}.
+\end{aligned}
+\]
+The sum occurring in the last form passes over, if one puts $-(n_{k}+q_{k})$, $-(n_{h}+q_{h})$ for $n_{k}$, $n_{h}$, also into
+\[
+\Sigma e^{\Sigma\Sigma \frac{2n_{h}+q_{h}}{2}.\frac{2n_{k}+q_{k}}{2}\,a_{hk} \,-\, i\pi \Sigma \frac{2n_{k}+q_{k}}{2}\,m_{k}},
+\]
+and if one adds this sum to the previous one, with which it is identical, there is found:
+\[
+0 = \left\{ \Sigma e^{\Sigma\Sigma \frac{2n_{h}+q_{h}}{2}.\frac{2n_{k}+q_{k}}{2}\,a_{hk}}.(-1)^{\Sigma n_{k}m_{k}} \right\} \cos\left(\frac{\Sigma q_{k}m_{k}}{2}\pi\right).
+\]
+The $\theta$-function considered therefore always vanishes when
+\[
+q_{1}m_{1}+q_{2}m_{2}+\cdots+q_{p}m_{p} = 2h+1, \tag{12.}
+\]
+and this is the condition for the coexistence of the equations (11.).
+
+Let us now investigate the number of the combinations by which the equations (12.) can be satisfied. Let $k$ of the quantities $q$ be equal to 0, the remaining $(p-k)$ equal to 1; the $m$ corresponding to the first quantities $q$ can then be 0 or 1, which gives $2^{k}$ combinations; but the sum of the other $m$ must be odd, or the last is always determined by the remaining $p-k-1$
+
+\origpage{208}
+of them. The latter $m$ can therefore still be chosen in $2^{p-k-1}$ ways, or the $m$ as a whole in $2^{p-1}$ ways. Since the $q$ can satisfy the stated conditions in $\frac{p.p-1\ldots p-k+1}{1.2\ldots k}$ ways, there are
+\[
+\frac{p.p-1\ldots p-k+1}{1.2\ldots k}.2^{p-1}
+\]
+systems of the $A$ in which $k$ of the quantities $q$ are equal to 0. If we now put $k = 0,\ 1,\ 2,\ \ldots p-1$, there are found in all
+\[
+2^{p-1}\left(1+\frac{p}{1}+\frac{p.p-1}{1.2}+\cdots+p\right) = 2^{p-1}(2^{p}-1)
+\]
+systems of the $A$, or the theorem:
+
+\emph{There are $2^{\frac{n.n-3}{2}}\left(2^{\frac{n-1.n-2}{2}}-1\right)$ curves of the $(n-3)^{\text{th}}$ order which touch a given curve of the $n^{\text{th}}$ order at $\frac{n.n-3}{2}$ points with two-point contact.}
+
+For $n=4$ this gives the 28 double tangents.
+
+The points of contact of each curve can be found by means of an equation of the $(p-1)^{\text{th}}$ degree. For one needs only to add, on both sides of the equations (11.), the $u$ corresponding to an arbitrarily given point, and one then has before one the arguments of $\theta$-functions. Out of these are put together the coefficients of an equation of the $p^{\text{th}}$ degree, of which one root (corresponding to the arbitrarily chosen point) is known.
+
+The points of contact of $\mu$ curves of this kind lie in every case on a curve of the order $\frac{\mu(n-3)}{2}$, as soon as the system subsists:
+\[
+\frac{A_{k}^{(1)}+A_{k}^{(2)}+\cdots+A_{k}^{(\mu)}}{2} \equiv 0,
+\]
+in which the upper indices relate to the various curves considered. One surveys the field of theorems and enumerations which result from this, and which form the natural generalization of those results to which one is led in the theory of the double tangents of the curves of the fourth order. I remark upon only one further theorem, which likewise, in its most special form, is already known in the case of the curves of the fourth order. For if one considers the curves of the $2h-(n-3)^{\text{th}}$ order which touch a curve of the $n^{\text{th}}$ order at $hn-\frac{n.n-3}{2}$ points with two-point contact, and adds to the corresponding equations
+\[
+u_{k}^{(1)}+u_{k}^{(2)}+\cdots+u_{k}^{\left(hn-\frac{n.n-3}{2}\right)} \equiv \frac{A_{k}}{2}
+\]
+
+\origpage{209}
+the equations (11.), on the presupposition of the same system of the $A$, then it is found that the first $hn-\frac{n.n-3}{2}$ points of contact lie, together with the $\frac{n.n-3}{2}$ points of contact of the curve of the $(n-3)^{\text{th}}$ order, on a curve of the $h^{\text{th}}$ order. Now the number of the systems of contact curves of the $2h-(n-3)^{\text{th}}$ order is equal to $2^{2p}$, and only when $n$ is odd must one exclude the system for which the system of the $A$ vanishes. One has therefore the following theorem:
+
+\emph{Among the $2^{2p}\left(p = \frac{n-1.n-2}{2}\right)$ systems of contact curves which, for even $n$, are of odd order $m$, or, for odd $n$, of even order $m$, and which touch the given curve of the $n^{\text{th}}$ order with two-point contact everywhere where they meet it, there are always $2^{p-1}(2^{p}-1)$ such that the points of contact of every curve of the system lie, together with those of a determinate one of the above contact curves of the $(n-3)^{\text{th}}$ order, on a curve of the $\frac{m+n-3}{2}{}^{\text{th}}$ order; and there are, for even $n$, $2^{p-1}(2^{p}+1)$, for odd, $2^{p-1}(2^{p}+1)-1$ such systems in which the points of contact never lie on a curve of the $\frac{m+n-3}{2}{}^{\text{th}}$ order.}
+
+\section*{§.~9.}
+
+\subsection*{The double tangents of the curves of the fourth order.}
+
+The general results developed shall now be carried out more closely for the curves of the fourth order.
+
+The number of the double tangents is, by §.~8, equal to 28, as is known. But according to the foregoing one can represent them schematically, as follows. Each double tangent may be denoted by the series, enclosed in brackets, of the numbers $m$, $q$ corresponding to it, that is by:
+\[
+(m_{1},\, m_{2},\, m_{3};\, q_{1},\, q_{2},\, q_{3}).
+\]
+The numbers can be 0 or 1, yet so that always
+\[
+m_{1}q_{1}+m_{2}q_{2}+m_{3}q_{3} \equiv 1 \quad \text{(mod.\ 2)}.
+\]
+If therefore we take for the $m$ all possible systems consisting of the numbers 0 and 1, $0,0,0$ excepted, and determine, in accordance with the above equation, the corresponding systems of the $q$, we obtain the 28 double tangents in the following scheme:
+\[
+\begin{array}{ccccccc}
+(100,\,100) & (010,\,010) & (001,\,001) & (011,\,010) & (101,\,100) & (110,\,100) & (111,\,100)\\
+(100,\,110) & (010,\,110) & (001,\,011) & (011,\,001) & (101,\,110) & (110,\,101) & (111,\,010)\\
+(100,\,101) & (010,\,011) & (001,\,101) & (011,\,110) & (101,\,001) & (110,\,010) & (111,\,001)\\
+(100,\,111) & (010,\,111) & (001,\,111) & (011,\,101) & (101,\,011) & (110,\,011) & (111,\,111).
+\end{array}
+\]
+
+\origpage{210}
+
+There are, by §.~5, 63 systems of conics (\emph{Hesse}, this Journal volume 49.) which touch the curve at 4 points, corresponding to the 63 possible combinations
+\[
+(m_{1},\, m_{2},\, m_{3};\, q_{1},\, q_{2},\, q_{3}),
+\]
+the combination $(000,\, 000)$ alone excepted.
+
+Such a contact conic always breaks up into two double tangents
+\[
+(m'_{1},\, m'_{2},\, m'_{3};\; q'_{1},\, q'_{2},\, q'_{3}), \qquad (m''_{1},\, m''_{2},\, m''_{3};\; q''_{1},\, q''_{2},\, q''_{3}),
+\]
+as soon as
+\[
+m'_{i}+m''_{i} \equiv m_{i}, \qquad q'_{i}+q''_{i} \equiv q_{i} \quad \text{(mod.\ 2)}, \tag{13.}
+\]
+where besides it must be the case that:
+\[
+\left\{
+\begin{aligned}
+m'_{1}q'_{1}+m'_{2}q'_{2}+m'_{3}q'_{3} &\equiv 1,\\
+m''_{1}q''_{1}+m''_{2}q''_{2}+m''_{3}q''_{3} &\equiv 1.
+\end{aligned}
+\right. \tag{14.}
+\]
+Here either the $q$ or the $m$ are not all zero; let us assume that this occurs with the $q$; otherwise, in the following determination, the $q$ would merely have to be interchanged with the $m$. Then, first, the equations (13.) show that for given $q_{i}$ one can choose the $q'_{i}$, $q''_{i}$ in six different ways. For in general there exist eight combinations of the $q'$, $q''$ which satisfy those equations; but of these the two are to be excluded for which all the $q'$ or all the $q''$ are zero (which cannot occur together). These six ways give three pairs of systems $q'$, $q''$, since two ways always differ from one another only by the interchange of the $q'$ with the $q''$.
+
+In each pair of systems at least one pair of corresponding $q$ is unequal, hence 0 and 1, and accordingly some other one is 1 and 0 or 1 and 1. There exist therefore a $q'$ and a $q''$ with different lower index which are equal to 1. If one now determines the $m$ corresponding to the third index so that they satisfy the equation (13.) in question (which can happen in two ways), then the remaining $m$ are determined successively from (14.) and (13.). To each of the three pairs $q$ there correspond therefore two pairs $m$; or one has the theorem:
+
+\emph{In every system of contact conics there occur six pairs of double tangents.} (\emph{Hesse}, l.\ c., \emph{Salmon}, higher plane curves.)
+
+Since for any two such pairs belonging to the same system the sum of all the $m_{i}$ as well as the sum of all the $q_{i}$ is always even, one has further the theorem:
+
+\origpage{211}
+
+\emph{The points of contact of any two pairs which belong to the same system lie on a conic.} (ib., ib.)
+
+The number of the conics thus obtained is, as is known, equal to that of the 63 systems, multiplied by the number 15 of the combinations of 6 pairs two at a time, and divided by 3, since any four tangents whose points of contact lie on a conic can be resolved into two pairs in three ways, so that every conic occurs three times. Thus the number of these conics is 315. The above scheme permits one at once to put together the double tangents corresponding to such conics.
+
+The more general theorem, \emph{that the points of contact of any two conics of the same system lie on a conic} (\emph{Hesse}, l.\ c.), follows from §.~6.
+
+There are further, by §.~6, \emph{64 systems of curves of the third order which touch the curve of the fourth order at 6 points.} The integrals corresponding to the points of contact then always satisfy the equations:
+\[
+u_{k}^{(1)}+u_{k}^{(2)}+\cdots+u_{k}^{(6)} \equiv \frac{A_{k}}{2}. \tag{15.}
+\]
+One now sees at a glance that these 64 systems separate at once into two classes, according as the system of the $A$ occurs at the same time among the double tangents or not; that is, according as $\Sigma mq \equiv 1$ (which happens 28 times) or $\Sigma mq \equiv 0$ (which can happen in 36 ways). For if one has for any double tangent
+\[
+u_{k}^{(7)}+u_{k}^{(8)} \equiv \frac{A_{k}}{2}, \tag{16.}
+\]
+then it follows that
+\[
+u_{k}^{(1)}+u_{k}^{(2)}+\cdots+u_{k}^{(8)} \equiv 0,
+\]
+i.\ e.\ the points of contact of the curve of the third order lie, together with those of the double tangent, on a conic; whereas, if for a system of the $A$ there is no equation like (16.), the points of contact of the curve cannot lie on any conic either, since the equation (15.) then admits of no suitable completion. One has therefore the theorem (\emph{Hesse}, l.\ c.):
+
+\emph{Of the 64 systems of the curves of the third order, 28 have the property that the 6 points of contact of a curve lie on a conic, and every conic then still always passes through the points of contact of a double tangent, which remains constant for the same system. The points of contact in the case of the curves of the remaining 36 systems do not lie on a conic.}
+
+\origpage{212}
+
+On the other hand both classes have, by §.~6, the common property \emph{that the points of contact of any two curves of the same system lie on a curve of the third order.} (\emph{Hesse}, l.\ c.)
+
+To these systems belong also the 4096 curves of the third order which touch the curve of the fourth order at three points with four-point contact (§.~7). In fact there follows from (10.)
+\[
+2\,(u_{k}^{(1)}+u_{k}^{(2)}+u_{k}^{(3)}) \equiv \frac{A_{k}}{2};
+\]
+every curve therefore belongs to that system of contact curves to which the system of the $A_{k}$ pertains. Conversely, however, there follows from this equation
+\[
+u_{k}^{(1)}+u_{k}^{(2)}+u_{k}^{(3)} \equiv \frac{A_{k}}{4}+\frac{A'_{k}}{2},
+\]
+where in $A_{k}$, $A'_{k}$ the numbers $m$, $q$ may now everywhere receive only the values 0 and 1. If the $A_{k}$ have been disposed of, then the $A'_{k}$ can still be chosen in 64 ways; \emph{hence to each of the 64 systems of contact curves of the third order there belong 64 such curves as touch the curve of the fourth order at three points with four-point contact.} This agrees with the fact that, by §.~4, through any two points of a curve of the fourth order 64 conics can be laid which touch it at three points. If one lays these conics through the points of contact of a double tangent, then the points of contact of the conic are at the same time those at which a curve of the third order can touch with four-point contact. \emph{Thus one obtains the $28.64$ contact curves which belong to the 28 systems mentioned; but one sees that there are still $36.64$ such contact curves at whose points of contact a conic cannot at the same time touch the curve of the fourth order.}
+
+\emph{In general there are, by §.~5, 63 systems of curves of the $(2m)^{\text{th}}$ order and 64 systems of curves of the $(2m+1)^{\text{th}}$ order which touch the curve of the fourth order with two-point contact wherever they meet it. And these latter 64 systems always divide into 28 and 36 in such a way that the points of contact of a curve out of one of the 28 systems always lie, together with the points of contact of one of the 28 double tangents, on a curve of the $(m+1)^{\text{th}}$ order, while anything similar never takes place with the other 36 systems. But all the systems have the property that the points of contact of any two curves of the same system lie on a curve of the same degree.}
+
+From these theorems one can easily pass to a more exact discussion of those cases in which the points of contact of 6, 8 etc.\ double tangents
+
+\origpage{213}
+lie on a curve of the third, fourth etc.\ order, on which theorems have been found by \emph{Hesse} and \emph{Steiner} (vol.\ 49 of this Journal). I pass over these developments, which by the principles developed can be obtained by mere enumerations.
+
+Of curves which touch the curve of the fourth order with multiple-point contact I will at least adduce those of the third order. From §.~6 there follows the theorem:
+
+\emph{There are 728 systems of curves of the third order which touch a curve of the fourth order at four points with three-point contact.}
+
+Between the integrals there subsist here the equations:
+\[
+u_{k}^{(1)}+u_{k}^{(2)}+u_{k}^{(3)}+u_{k}^{(4)} \equiv \frac{A_{k}}{3};
+\]
+the system of the $A$ may never vanish. If one considers a curve belonging to another system, for which $2A_{k}$ always takes the place of $A_{k}$, and adds the equations corresponding to such a curve to the previous ones, then the sum of analogous integrals is always found congruent to zero. One has therefore the following theorem, which (among others) characterizes the behaviour of these systems:
+
+\emph{These 728 systems divide into 364 pairs, two at a time, in such a way that the points of contact of every curve of the one system lie, together with those of every curve of the other system, on a conic.}
+
+Similar theorems can be set up in abundance for the contact curves of this and of other orders.
+
+\section*{§.~10.}
+
+\subsection*{On some theorems of Steiner concerning the curves of the fourth order.}
+
+I take this opportunity to prove some theorems on curves of the fourth order which \emph{Steiner} (this Journal vol.\ 49, p.\ 266 ff.) has given, although they do not belong to the series of considerations here set forth.
+
+According to \emph{Hesse} (this Journal volume 49, p.\ 261) the setting up of a contact conic comes to this, that one gives the equation of the curve the form
+\[
+uw - v^{2} = 0
+\]
+where $u$, $v$, $w$ are expressions of the second order. All conics which belong to the same one of the 63 systems are then contained in the form
+\[
+u + 2\lambda v + \lambda^{2} w = 0,
+\]
+
+\origpage{214}
+and one finds the 6 pairs of tangents occurring in the system by an equation of the sixth degree in $\lambda$, by letting the determinant of this conic vanish. For the point of intersection $x$ of the tangents of a pair the differential quotients
+\[
+u_{i} + 2\lambda v_{i} + \lambda^{2} w_{i}
+\]
+must then vanish, and one finds, by a known procedure, the products and squares of the coordinates $x$ proportional to the minor determinants of the conic $u+2\lambda v+\lambda^{2}w = 0$. These expressions have, as one sees at once, the form:
+\[
+\varrho\, x_{i} x_{k} = p_{ik}+\lambda q_{ik}+\lambda^{2} r_{ik}+\lambda^{3} s_{ik}+\lambda^{4} t_{ik},
+\]
+where $\varrho$ denotes an arbitrary factor, and where the $p$, $q$, $\ldots$ depend only upon the coefficients of the curve. If therefore one forms the determinant of these six equations, eliminating $\varrho$ and $\lambda$, one has an equation of the second degree for the $x$ which is entirely independent of the root $\lambda$ chosen. And thus one has the theorem given by \emph{Steiner} loc.\ cit.:
+
+\emph{The double points of the 6 pairs of double tangents belonging to the same system lie on a conic.}
+
+Since identically
+\[
+(uw-v^{2})(k-\lambda)^{2} = (u+2kv+k^{2}w)(u+2\lambda v+\lambda^{2}w)-(u+(k+\lambda)v+k\lambda w)^{2},
+\]
+we have
+\[
+u+(k+\lambda)v+k\lambda w = 0,
+\]
+or, what is the same thing, every conic of the form
+\[
+\alpha u+\beta v+\gamma w = 0
+\]
+is one which passes through the points of contact of two conics of the system. If one lets it break up into a pair of lines $p$, $q$, i.\ e.\ if one puts:
+\[
+\alpha u_{ik}+\beta v_{ik}+\gamma w_{ik} = p_{i} q_{k}+q_{i} p_{k},
+\]
+then the coordinates of a straight line of the pair satisfy the equation which arises by elimination of $\alpha$, $\beta$, $\gamma$, $q_{1}$, $q_{2}$, $q_{3}$:
+\[
+K = \begin{vmatrix}
+u_{11} & v_{11} & w_{11} & 2p_{1} & 0 & 0\\
+u_{22} & v_{22} & w_{22} & 0 & 2p_{2} & 0\\
+u_{33} & v_{33} & w_{33} & 0 & 0 & 2p_{3}\\
+u_{23} & v_{23} & w_{23} & 0 & p_{3} & p_{2}\\
+u_{31} & v_{31} & w_{31} & p_{3} & 0 & p_{1}\\
+u_{12} & v_{12} & w_{12} & p_{2} & p_{1} & 0
+\end{vmatrix} = 0.
+\]
+
+\origpage{215}
+
+The double points of the pairs must at the same time satisfy the equations:
+\[
+\alpha u_{i}+\beta v_{i}+\gamma w_{i} = 0,
+\]
+or, eliminating $\alpha$, $\beta$, $\gamma$, the equation
+\[
+G = \begin{vmatrix}
+u_{1} & v_{1} & w_{1}\\
+u_{2} & v_{2} & w_{2}\\
+u_{3} & v_{3} & w_{3}
+\end{vmatrix} = 0.
+\]
+One has therefore the theorem:
+
+\emph{If one constructs the complete quadrangles whose vertices are the points of contact of conics of the same system, then the intersections of opposite sides form the curve of the third order $G=0$, and the sides themselves envelop the curve of the third class $K=0$.}
+
+In particular there follow from this, as special cases, the theorems given by \emph{Steiner} loc.\ cit.:
+
+\emph{On the curve $G=0$ lie the double points of the 6 pairs of double tangents belonging to the system, as well as the points of intersection of the straight lines which connect the points of contact of each pair crosswise.}
+
+And:
+
+\emph{The curve $K=0$ is touched by the six pairs of double tangents belonging to the system, as well as by the straight lines which connect the points of contact of the pairs crosswise.}
+
+If in a complete quadrangle 1, 2, 3, 4, whose vertices are to be points of contact of a conic, one lets two, say 2 and 3, coincide, then 5, 6 (see the Fig.) also fall into the same point. But the points 5, 6 belong to the curve $G=0$; this therefore cuts the given curve of the fourth order at the point in question, the former having the straight line 5, 6, the latter the straight line 2, 3, for tangent. The points of intersection of $G=0$ with the given curve have therefore the property that at them a conic can touch the curve with four-point contact, which besides touches it twice more (at 1 and 4) with two-point contact. In every system there are accordingly 12 conics of this kind.
+
+\rmfigure{figures/fig-215.png}{Fig.}{Line diagram of a degenerate complete quadrilateral: points 5 and 2, 3 near the top, with straight lines through them meeting at points labelled 6, 8, 4 in the interior and at 1 (lower left) and 7 (right), illustrating the harmonic system 1, 8, 4, 7.}
+
+Since further the points 1, 8, 4, 7 form a harmonic system, so also, at the points considered, the tangent to the given curve, the tangent to $G=0$, and the straight lines drawn from the place of four-point contact to
+
+\origpage{216}
+the places of two-point contact form a harmonic system. --- The point 7 belongs to the curve $G=0$; it becomes here the intersection of the tangent at the place of four-point contact with the chord which joins the places of two-point contact.
+
+The tangent 2, 3 at one of the places of four-point contact is a tangent to $K=0$; likewise the straight lines 2, 1; 3, 4, which join that place with those of two-point contact; since now 3, 1; 2, 4 are also tangents of this curve, and these coincide infinitely nearly with the straight lines just named, 1, 4, the places of two-point contact, must lie on $K=0$ as points of intersection of consecutive tangents. This curve is of the sixth order; the 24 points 1, 4 occurring in one system therefore represent the complete system of intersection of the curve $K=0$ with the given curve. Thus the following theorems given by \emph{Steiner} are proved:
+
+\emph{There are $63.12 = 756$ conics which touch a given curve of the fourth order at one point $a$ with four-point contact, and besides at two others, $b$, $c$, with two-point contact.}
+
+\emph{The points $a$ are in every system the 12 intersections of $G=0$ with the given curve; on $G=0$ lie also $b$, $c$ and the point of intersection of the tangent of the given curve at the point $a$ with the chord $b$, $c$.}
+
+\emph{At every point $a$ the straight lines} \uncertain{drawn} \emph{to $b$, $c$ form, with the tangents of the given curve and of the curve $G=0$, a harmonic system.}
+
+\emph{The tangent at $a$, as well as the three} \uncertain{straight lines} \emph{$ab$, $ac$, $bc$, touch the curve $K=0$, and indeed $ab$, $ac$ at $b$ and} \uncertain{$c$} \emph{themselves, so that the points $b$, $c$ represent in every system the complete intersection of $K=0$ with the given curve.}
+
+\emph{Steiner} finally develops connexions between the curves $G=0$, $K=0$. The relation in which these curves stand to one another can be recognized as follows.
+
+Let us consider, instead of the functions $u$, $v$, $w$, any linear combinations of them
+\[
+\begin{aligned}
+U_{1} &= a_{1} u+b_{1} v+c_{1} w,\\
+U_{2} &= a_{2} u+b_{2} v+c_{2} w,\\
+U_{3} &= a_{3} u+b_{3} v+c_{3} w.
+\end{aligned}
+\]
+
+\origpage{217}
+
+These three new functions can always be so determined that they are the partial differential quotients of a function of the third order with respect to $x_{1}$, $x_{2}$, $x_{3}$. For this it is necessary that the following identical equations subsist:
+\[
+\begin{aligned}
+a_{2} u_{3}+b_{2} v_{3}+c_{2} w_{3} &= a_{3} u_{2}+b_{3} v_{2}+c_{3} w_{2},\\
+a_{3} u_{1}+b_{3} v_{1}+c_{3} w_{1} &= a_{1} u_{3}+b_{1} v_{3}+c_{1} w_{3},\\
+a_{1} u_{2}+b_{1} v_{2}+c_{1} w_{2} &= a_{2} u_{1}+b_{2} v_{1}+c_{2} w_{1}.
+\end{aligned}
+\]
+These equations are linear in the $x$; if therefore one sets the coefficients on both sides equal to one another, one finds 9 linear equations which are homogeneous with respect to the sought quantities $a$, $b$, $c$. Nevertheless they can be satisfied; for one remarks at once that their determinant is a skew one, and accordingly, being of odd degree, vanishes identically.
+
+Now the expressions $G$ and $K$ obviously do not change at all if in forming them one lays at the foundation, instead of $u$, $v$, $w$, any linear combinations of them, e.\ g.\ the partial differential quotients, just found, of a homogeneous function $f$ of the third order. But then one has, up to a numerical factor:
+\[
+G = \Delta_{f}, \qquad K = S_{f},
+\]
+where $\Delta_{f}$ denotes the covariant of the third order, $S_{f}$ the first associated form of the third class of $f$. From the known part which the curves $\Delta_{f}=0$, $S_{f}=0$ play in the theory of the curves of the third order there follow therefore immediately the relations given by \emph{Steiner}. The curves $\Delta_{f}=0$, $S_{f}=0$ are the same which Mr.\ \emph{Cremona}, in his „Introduzione ad una teoria geometrica della curve piane“, has designated as the \emph{Hessian} and the \emph{Cayleyan} curve. Of these the following theorems hold:
+
+\emph{The harmonic polars belonging to the points of inflexion of the Hessian curve are the cuspidal tangents of the Cayleyan curve.} (\emph{Hesse}, this Journal vol.\ 38, p.\ 252.)
+
+\emph{The harmonic points belonging to the cuspidal tangents of the Cayleyan curve are the points of inflexion of the Hessian curve.} (ib.)
+
+\emph{The inflexional tangents of $u=0$ touch the Hessian and the Cayleyan curve at the same 9 points.} (\emph{Cremona}, l.\ c.\ p.\ 116.)
+
+\emph{Every tangent of the Cayleyan curve cuts the Hessian curve at two points whose tangents meet on the Hessian curve, and at a third point which forms a harmonic system with the point of contact on the Cayleyan curve and with the other two points of intersection.} (ib.)
+
+\origpage{218}
+
+\emph{From every point of the Hessian curve three tangents go to the Cayleyan; the connecting line of the points of contact of two of them is a tangent of the Cayleyan curve; the third forms a harmonic system with the tangent drawn to the Hessian curve at the starting point and with the first two tangents.} (ib.)
+
+The mere application of these theorems gives the following results, given by \emph{Steiner}:
+
+\emph{From every point of inflexion $w$ of the curve $G=0$ three tangents $Q$, $Q_{1}$, $Q_{2}$ go to the curve, which touch at $q$, $q_{1}$, $q_{2}$. These latter three points lie on a cuspidal tangent $R$ of the curve $K=0$. This cuts $K=0$, besides at $q$ and besides at the cusp $r$, at two points $q'$, $q''$, whose tangents $Q'$, $Q''$ likewise intersect at $w$. The points $r$, $q$, $q_{1}$, $q_{2}$ form a harmonic system, the tangents $Q$, $Q'$, $Q''$ with the inflexional tangent drawn at $w$ a second.}
+
+\section*{§.~11.}
+
+\subsection*{On the connexion of the curves of double curvature with Abelian functions.}
+
+In the foregoing only plane curves have been treated. I shall now show how similar principles can be set up for the treatment of the curves of double curvature.
+
+Let us consider the intersection of two algebraic surfaces. Let the one of them, $u=0$, be of the $m^{\text{th}}$ order, the other, $v=0$, of the $n^{\text{th}}$ order. The curve of intersection we can bring into connexion with two pencils of planes, whose axes lie arbitrarily in space, in such a way that two corresponding planes of the two pencils intersect one another on the curve. For if the equations of the pencils are
+\[
+\left\{
+\begin{aligned}
+(a_{1} x_{1}+a_{2} x_{2}+a_{3} x_{3}+a_{4} x_{4})+z\,(b_{1} x_{1}+b_{2} x_{2}+b_{3} x_{3}+b_{4} x_{4}) &= 0,\\
+(\alpha_{1} x_{1}+\alpha_{2} x_{2}+\alpha_{3} x_{3}+\alpha_{4} x_{4})+s\,(\beta_{1} x_{1}+\beta_{2} x_{2}+\beta_{3} x_{3}+\beta_{4} x_{4}) &= 0,
+\end{aligned}
+\right. \tag{17.}
+\]
+then the elimination of the $x$ from these equations and from $u=0$, $v=0$ leads to an equation
+\[
+F(s,z) = 0, \tag{18.}
+\]
+which expresses the mutual relation of dependence of the parameters of the pencils.
+
+\origpage{219}
+
+This equation is of the degree $m+n$ for $s$ as well as for $z$. But it is not irreducible under all circumstances; rather, if the surfaces $u=0$, $v=0$ have particular positions with respect to one another, it breaks up of itself into factors. For let a part of the curve of section be at the same time representable as part of the intersection of two surfaces $u'=0$, $v'=0$ which are of lower degree than $u=0$, $v=0$; let the part $a'$ thus added, together with another $a''$, be the curve of section of two surfaces \uncertain{$u''=0$}, $v''=0$ which are again of lower degree, and so on, until at last a part of a curve $a^{(\mu-1)}$, together with a curve $a^{(\mu)}$, is the intersection of two surfaces $u^{(\mu)}=0$, $v^{(\mu)}=0$, and $a^{(\mu)}$ can be represented as the complete section of two surfaces of lower degree. Thus there are innumerable pairs of surfaces whose intersection breaks up into another curve and into a space curve of the third order; this, together with a straight line, is representable as the intersection of two surfaces of the second order, and the straight line added forms finally the complete intersection of two planes. If we now conceive the equations corresponding to the equation (18.) to be formed in succession for all these curves of section;
+\[
+F(s,z)=0, \qquad F^{(1)}(s,z)=0, \qquad \ldots \qquad F^{(\mu+1)}(s,z)=0,
+\]
+then the following equations must subsist, in which the $\varphi$ denote integral functions:
+\[
+\begin{aligned}
+F^{(\mu)}(s,z) &= \varphi^{(\mu)}(s,z).F^{(\mu+1)}(s,z),\\
+F^{(\mu-1)}(s,z) &= \varphi^{(\mu-1)}(s,z).\varphi^{(\mu)}(s,z),\\
+F^{(\mu-2)}(s,z) &= \varphi^{(\mu-2)}(s,z).\varphi^{(\mu-1)}(s,z),
+\end{aligned}
+\]
+\[
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot
+\]
+\[
+F(s,z) = \varphi(s,z).\varphi^{(1)}(s,z).
+\]
+In this case, therefore, the equation $F(s,z)=0$ is reducible, and one can conceive it as the product of two, or, generally speaking, of several irreducible factors. Every branch of a space curve which corresponds to such a factor may count as an \emph{algebraically defined simple space curve}. Its order is the order of $s$ and $z$ in the corresponding factor; orders which will always be equal, as follows from the scheme just adduced, since, according to what precedes, $s$ and $z$ occur in all the functions $F$ to equal orders.
+
+Every such simple space curve now founds a class of \emph{Abel}ian functions. Let $k$ be the order of the curve, $\varphi(s,z)=0$ the equation corresponding to it.
+
+\origpage{220}
+
+The number $p$ which characterizes the associated \emph{Abel}ian functions is then, by §.~1.\ equal to $\tfrac{1}{2}\mathrm{w}-(k-1)$, where $\mathrm{w}$ denotes the number of those systems of values $s$, $z$ for which $\varphi'(s)=0$ without $\varphi'(z)=0$.
+
+If $\varphi'(s)=0$, this means that the equation $\varphi=0$ has two equal roots $s$. The corresponding value of $z$ determines a plane of the first pencil (17.), which cuts the curve at $k$ points; of these two must coincide in order that two of the corresponding planes of the pencil $s$ shall become identical. Here the following cases may now occur. Either the plane in question of the pencil $z$ is a tangent plane of the curve; or the plane $s$ intersects the plane $z$ in a straight line which meets the curve at two different points; or finally the curve has a double point, which indicates a contact of the given surfaces or a node in one of the two. In the two last cases a double value of $s$ belongs to a value of $z$ just as much as, conversely, a double value of $z$ belongs to a value of $s$; in both cases, therefore, both $\varphi'(s)$ and $\varphi'(z)$ must vanish. We exclude only those cases in which the double point passes over into a cusp and therefore also $\varphi''(ss)\,\varphi''(zz)-\varphi''(sz)^{2}=0$.
+
+The number $\mathrm{w}$ therefore obviously denotes the \emph{rank} of the curve, i.\ e.\ the number of those tangents of the curve which meet a given straight line. For as often as the axis of the pencil $s$ is met by a tangent of the curve, a plane of the pencil is a tangent plane of the curve, and therefore for it $\varphi'(s)=0$ without $\varphi'(z)$ vanishing. According to Mr.\ \emph{Salmon} (Geometry of three dimensions p.\ 237) this number is determined from the formula
+\[
+\mathrm{w} = k(k-1)-2d,
+\]
+where $d$ denotes the number of the rays proceeding from a point which meet the curve twice, whether this twofold meeting take place, as in the case of a double point, at the same point, or at different points.
+
+Thus one has finally
+\[
+p = \frac{(k-1)(k-2)}{2}-d
+\]
+for the characteristic number of the \emph{Abel}ian functions belonging to the curve.
+
+In what follows I shall presuppose that the curve considered is the complete intersection, not resolvable into parts, of two surfaces
+
+\origpage{221}
+which do not touch one another; that the curve possesses no cusps and no double points whatever ${}^{*)}$. In this case the order of the curve becomes $=mn$, and, according to Mr.\ \emph{Salmon} (l.\ c.\ p.\ 249), its rank
+\[
+\mathrm{w} = mn\,(m+n-2),
+\]
+hence
+\[
+p = \frac{mn\,(m+n-4)}{2}+1;
+\]
+a number which, in agreement with what precedes, passes over for $m=1$ into $\dfrac{n-1.n-2}{2}$.
+
+It is easy to form the $p$ everywhere finite integrals which correspond to this case. From the equations
+\[
+\begin{aligned}
+u_{1} x_{1}+u_{2} x_{2}+u_{3} x_{3}+u_{4} x_{4} &= 0,\\
+v_{1} x_{1}+v_{2} x_{2}+v_{3} x_{3}+v_{4} x_{4} &= 0,\\
+u_{1}\,dx_{1}+u_{2}\,dx_{2}+u_{3}\,dx_{3}+u_{4}\,dx_{4} &= 0,\\
+v_{1}\,dx_{1}+v_{2}\,dx_{2}+v_{3}\,dx_{3}+v_{4}\,dx_{4} &= 0
+\end{aligned}
+\qquad
+\left(u_{i} = \frac{\partial u}{\partial x_{i}}, \quad v_{i} = \frac{\partial v}{\partial x_{i}}\right)
+\]
+there result the following, in which $d\mu$ denotes an indeterminate factor:
+\[
+\begin{aligned}
+x_{1}\,dx_{2}-x_{2}\,dx_{1} &= (u_{3} v_{4}-u_{4} v_{3})\,d\mu, & x_{2}\,dx_{3}-x_{3}\,dx_{2} &= (u_{1} v_{4}-u_{4} v_{1})\,d\mu,\\
+x_{1}\,dx_{3}-x_{3}\,dx_{1} &= (u_{4} v_{2}-u_{2} v_{4})\,d\mu, & x_{3}\,dx_{4}-x_{4}\,dx_{3} &= (u_{1} v_{2}-u_{2} v_{1})\,d\mu,\\
+x_{1}\,dx_{4}-x_{4}\,dx_{1} &= (u_{2} v_{3}-u_{3} v_{2})\,d\mu, & x_{4}\,dx_{2}-x_{2}\,dx_{4} &= (u_{1} v_{3}-u_{3} v_{1})\,d\mu.
+\end{aligned}
+\]
+If therefore $a_{1}$, $a_{2}$, $\ldots$, $b_{1}$, $b_{2}$, $\ldots$ denote entirely arbitrary quantities, then the expression
+\[
+\frac{\Sigma \pm a_{1} b_{2} x_{3}\,dx_{4}}{\Sigma a_{i} u_{i}.\Sigma b_{i} v_{i} - \Sigma a_{i} v_{i}.\Sigma b_{i} u_{i}} = d\mu,
+\]
+is accordingly completely independent of the values of these quantities. It is of the $-(m+n-4)^{\text{th}}$ dimension; the integral
+\[
+\Psi = \int \frac{\Theta.\Sigma \pm a_{1} b_{2} x_{3}\,dx_{4}}{\Sigma a_{i} u_{i}.\Sigma b_{i} v_{i} - \Sigma a_{i} v_{i}.\Sigma b_{i} u_{i}}
+\]
+can therefore, by means of $u=0$, $v=0$, be represented as the integral of a differential expression with a single variable, as soon as $\Theta$ is a homogeneous function of the order $(m+n-4)$. Under the presuppositions made this
+
+\textbf{*)} Such a curve shall sometimes, for brevity, be called a curve of the $mn^{\text{th}}$ order. The nature of the curve then depends not merely on the number of its order, but also on its resolution, i.\ e.\ on the orders of the surfaces which intersect one another in it.
+
+\origpage{222}
+
+integral also remains everywhere finite, and it is only still necessary to convince oneself whether $p$ integrals are really obtained by different assumptions of $\Theta$. Let us remark for this purpose that $\Theta$ can be transformed by means of the equations $u=0$, $v=0$ without the integral changing. One can therefore, if $U$, $V$ denote two functions of the $(m-4)^{\text{th}}$ and $(n-4)^{\text{th}}$ order, put in place of $\Theta$ the function
+\[
+\Theta+Uu+Vv
+\]
+and determine the constants of $U$, $V$ so that just as many constants vanish in $\Theta$. Accordingly the number of the arbitrary constants contained in $\Theta$ is still
+\[
+\begin{aligned}
+&\tfrac{1}{6}\{(m+n-1)(m+n-2)(m+n-3)-(m-1)(m-2)(m-3)-(n-1)(n-2)(n-3)\}\\
+&\qquad = \frac{mn\,(m+n-4)}{2}+1 = p.
+\end{aligned}
+\]
+One therefore really obtains neither more nor fewer than $p$ independent, everywhere finite integrals by assigning to these constants all possible values.
+
+\section*{§.~12.}
+
+\subsection*{Abel's theorem applied to the section of algebraic surfaces.}
+
+Let now $w=0$ be a surface of the $k^{\text{th}}$ order. Let us consider the expression $\Sigma\Psi$ extended over all the points of intersection of the surface $w=0$ with the given curve. Let us again introduce in the integration the coefficients of a function $w$, by the equation $w=0$, as variables, so that only in the upper limits does $w$ pass over into the given surface. If we denote by $\delta w$ that which arises from $w$ by variation of the coefficients, then
+\[
+\Sigma w_{i}\,dx_{i} = -\delta w.
+\]
+
+If we therefore multiply under the integral sign of $\Psi$ by the determinant
+\[
+\Sigma \pm c_{1} u_{2} v_{3} w_{4},
+\]
+we obtain in the numerator:
+\[
+\Sigma \pm a_{1} b_{2} x_{3}\,dx_{4}.\Sigma \pm c_{1} u_{2} v_{3} w_{4} =
+\begin{vmatrix}
+\Sigma a_{i} c_{i} & \Sigma b_{i} c_{i} & \Sigma c_{i} x_{i} & \Sigma c_{i}\,dx_{i}\\
+\Sigma a_{i} u_{i} & \Sigma b_{i} u_{i} & 0 & 0\\
+\Sigma a_{i} v_{i} & \Sigma b_{i} v_{i} & 0 & 0\\
+\Sigma a_{i} w_{i} & \Sigma b_{i} w_{i} & 0 & -\delta w
+\end{vmatrix}
+\]
+\[
+= -\delta w.\Sigma c_{i} x_{i}.\{\Sigma a_{i} u_{i} \Sigma b_{i} v_{i} - \Sigma b_{i} u_{i} \Sigma a_{i} v_{i}\},
+\]
+
+\origpage{223}
+hence
+\[
+\Psi = -\int \frac{\Theta.\Sigma c_{i}x_{i}.\delta w}{\Sigma\pm c_{1}u_{2}v_{3}w_{4}}.
+\]
+If we now form the sum of such expressions, extended over the points of intersection considered:
+\[
+\Sigma\Psi = -\int\Sigma\,\frac{\Theta.\Sigma c_{i}x_{i}.\delta w}{\Sigma\pm c_{1}u_{2}v_{3}w_{4}}, \tag{19.}
+\]
+and if we presuppose about $\Theta$ only that it is a homogeneous function of the $m+n-4^{\text{th}}$ order, then with the variation of each coefficient of $w$ there is multiplied only a rational symmetric function of the coordinates of all the points of intersection, which can be expressed rationally by the coefficients of $w$. The performance of the integration can therefore lead only to rational and logarithmic functions of the coefficients of $w$. And thus one has the following theorem:
+
+\emph{If one cuts the curve of section of two surfaces $u=0$, $v=0$ of the $m^{\text{th}}$ and $n^{\text{th}}$ order by a surface $w=0$, and if $\Theta$ is a homogeneous rational function of the $(m+n-4)^{\text{th}}$ order, then the sum of the integrals}
+\[
+\int \frac{\Theta.\Sigma\pm a_{i}b_{i}x_{i}\,dx_{i}}{\Sigma a_{i}u_{i}.\Sigma b_{i}v_{i} - \Sigma b_{i}u_{i}.\Sigma a_{i}v_{i}},
+\]
+\emph{extended over all the points of intersection of the curve with $w=0$, becomes an aggregate of rational and logarithmic functions of the coefficients of $w$.}\ednote{The numerator of the displayed integral is printed with one index throughout, $\Sigma\pm a_{i}b_{i}x_{i}\,dx_{i}$. The same sum is set $\Sigma\pm a_{1}b_{2}x_{3}\,dx_{4}$ on pp. 221 and 222, and again in the very next theorem; the alternating sum requires four distinct indices. Kept as printed.}
+
+One can, however, as shall be done in the following §., prove that, if $\Theta$ is an \emph{integral} function of the $(m+n-4)^{\text{th}}$ order, the expression standing under the integral sign in the equation (19.) vanishes, since in general the sum of the expressions
+\[
+\frac{F.\Sigma c_{i}x_{i}}{\Sigma\pm c_{1}u_{2}v_{3}w_{4}},
+\]
+where $F$ is a homogeneous function of the $(m+n+k-4)^{\text{th}}$ order, vanishes when one extends it over the points of intersection of the surfaces $u=0$, $v=0$, $w=0$. Then $\Sigma\Psi$ becomes a constant, and one obtains the theorem:
+
+\emph{The sum of the integrals}
+\[
+\int \frac{\Theta.\Sigma\pm a_{1}b_{2}x_{3}\,dx_{4}}{\Sigma a_{i}u_{i}.\Sigma b_{i}v_{i} - \Sigma a_{i}v_{i}.\Sigma b_{i}u_{i}},
+\]
+\emph{where $\Theta$ is an integral function of the $(m+n-4)^{\text{th}}$ order, becomes equal to a constant if one extends the sum over all the points of intersection of the surfaces of the $m^{\text{th}}$, $n^{\text{th}}$ and $k^{\text{th}}$ order $u=0$, $v=0$, $w=0$.}
+
+\origpage{224}
+
+These theorems are special cases of the following, which is enunciated for an arbitrary number of variables:
+
+\emph{Let the variables $x_{1}$, $x_{2}$ \ldots $x_{r}$ be brought into connexion with one another by the equations}
+\[
+u_{1}=0, \quad u_{2}=0, \quad \ldots \quad u_{r-2}=0,
+\]
+\emph{which shall be homogeneous with respect to them and of the order $m_{1}$, $m_{2}$, \ldots $m_{r-2}$. If we now choose quite arbitrarily any $r(r-2)$ quantities}
+\[
+\begin{matrix}
+a_{1}^{(1)}, & a_{2}^{(1)}, & \ldots & a_{r}^{(1)},\\
+a_{1}^{(2)}, & a_{2}^{(2)}, & \ldots & a_{r}^{(2)},\\
+\cdot\quad\cdot\quad\cdot & \cdot\quad\cdot\quad\cdot & \cdot\quad\cdot & \cdot\quad\cdot\\
+a_{1}^{(r-2)}, & a_{2}^{(r-2)}, & \ldots & a_{r}^{(r-2)},
+\end{matrix}
+\]
+\emph{and denote by $\alpha_{k}^{(i)}$ the expression}
+\[
+\alpha_{k}^{(i)} = a_{1}^{(i)}\frac{\partial u_{k}}{\partial x_{1}} + a_{2}^{(i)}\frac{\partial u_{k}}{\partial x_{2}}\cdots + a_{r}^{(i)}\frac{\partial u_{k}}{\partial x_{r}},
+\]
+\emph{and if finally $\Theta$ is a homogeneous function of the $(m_{1}+m_{2}+\cdots+m_{r-2}-r)^{\text{th}}$ order, then the sum of the integrals}
+\[
+\int \frac{\Theta.\Sigma\pm a_{1}^{(1)}a_{2}^{(2)}\ldots a_{r-2}^{(r-2)}x_{r-1}\,dx_{r}}{\Sigma\pm\alpha_{1}^{(1)}\alpha_{2}^{(2)}\ldots\alpha_{r}^{(r)}},
+\]
+\emph{extended over all the systems of values which the given equations determine together with an $(r-1)^{\text{th}}$ equation $u=0$, is composed of algebraic and logarithmic functions of the coefficients of the last equation, and is in particular constant when $\Theta$ is an integral function.}
+
+\section*{§.~13.}
+
+\subsection*{Extension of an algebraic theorem set up by Jacobi.}
+
+The lemma applied above can now be derived for arbitrarily many variables in the following way, extending the proof carried out by \emph{Jacobi} (this Journal vol.\ 14, pag.\ 281.).
+
+Let $s$ equations
+\[
+u^{(1)}=0, \quad u^{(2)}=0, \quad \ldots \quad u^{(s)}=0
+\]
+be given which contain the unknowns $x_{1}$, $x_{2}$, \ldots $x_{s}$, not homogeneously. The number of the solutions common to all is $\mu$. One can find these solutions by eliminating all the unknowns but one, and then solving an
+
+\origpage{225}
+equation of the $\mu^{\text{th}}$ degree. According as $x_{1}$, $x_{2}$ \ldots $x_{s}$ is the unknown retained, let these final equations of the $\mu^{\text{th}}$ degree be denoted by
+\[
+X_{1}=0, \quad X_{2}=0, \quad \ldots \quad X_{s}=0
+\]
+One can then put identically:
+\[
+\left\{
+\begin{aligned}
+M_{1}^{(1)}u^{(1)}+M_{1}^{(2)}u^{(2)}+\cdots+M_{1}^{(s)}u^{(s)} &= X_{1},\\
+M_{2}^{(1)}u^{(1)}+M_{2}^{(2)}u^{(2)}+\cdots+M_{2}^{(s)}u^{(s)} &= X_{2},\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \\
+M_{s}^{(1)}u^{(1)}+M_{s}^{(2)}u^{(2)}+\cdots+M_{s}^{(s)}u^{(s)} &= X_{s};
+\end{aligned}
+\right. \tag{20.}
+\]
+and here, if $m^{(i)}$ denotes the degree of $u^{(i)}$, $M_{k}^{(i)}$ is of the order $\mu-m^{(i)}$. If we now substitute in these equations for the $x$ values which indeed satisfy singly the equations $X_{1}=0$, $X_{2}=0$, \ldots $X_{s}=0$, but form no system of values belonging together and satisfying the given equations, then in (20.) the left-hand sides vanish, but not the $u$, \emph{and the determinant of the $M$ must therefore vanish.}
+
+Let us now differentiate the equations (20.) with respect to the various $x$, and then substitute systems of values belonging together. From the differentiation of the $i^{\text{th}}$ equation we obtain the system\ednote{The second row of the system below is printed with a roman $d$ in its last denominator, $\partial u^{(s)}/dx_{2}$. Every other denominator in the system has $\partial$, and a partial derivative is what the differentiation requires. Kept as printed.}
+\[
+\begin{aligned}
+M_{i}^{(1)}\frac{\partial u^{(1)}}{\partial x_{1}} + M_{i}^{(2)}\frac{\partial u^{(2)}}{\partial x_{1}} + \cdots + M_{i}^{(s)}\frac{\partial u^{(s)}}{\partial x_{1}} &= 0,\\
+M_{i}^{(1)}\frac{\partial u^{(1)}}{\partial x_{2}} + M_{i}^{(2)}\frac{\partial u^{(2)}}{\partial x_{2}} + \cdots + M_{i}^{(s)}\frac{\partial u^{(s)}}{dx_{2}} &= 0,\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \\
+M_{i}^{(1)}\frac{\partial u^{(1)}}{\partial x_{i}} + M_{i}^{(2)}\frac{\partial u^{(2)}}{\partial x_{i}} + \cdots + M_{i}^{(s)}\frac{\partial u^{(s)}}{\partial x_{i}} &= \frac{\partial X_{i}}{\partial x_{i}},\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \\
+M_{i}^{(1)}\frac{\partial u^{(1)}}{\partial x_{s}} + M_{i}^{(2)}\frac{\partial u^{(2)}}{\partial x_{s}} + \cdots + M_{i}^{(s)}\frac{\partial u^{(s)}}{\partial x_{s}} &= 0,
+\end{aligned}
+\]
+and, if $R$ is the functional determinant of the $u$, by solution:
+\[
+R.M_{i}^{(h)} = \frac{\partial X_{i}}{\partial x_{i}}.\frac{\partial R}{\partial\dfrac{\partial u^{(h)}}{\partial x_{i}}}.
+\]
+If therefore one now forms the determinant $\Delta$ of the $M$ for such a system of the $x$ belonging together, there is found:
+\[
+\Delta = \frac{1}{R}.\frac{\partial X_{1}}{\partial x_{1}}.\frac{\partial X_{2}}{\partial x_{2}}\ldots\frac{\partial X_{s}}{\partial x_{s}}. \tag{21.}
+\]
+
+\origpage{226}
+Meanwhile one has, by the ordinary rules of decomposition into partial fractions:
+\[
+\frac{\Delta}{X_{1}X_{2}\ldots X_{s}} = \Sigma\left(\frac{\Delta}{\dfrac{\partial X_{1}}{\partial x_{1}}\dfrac{\partial X_{2}}{\partial x_{2}}\ldots\dfrac{\partial X_{s}}{\partial x_{s}}}\right).\frac{1}{x_{1}-x'_{1}.x_{2}-x'_{2}\ldots x_{s}-x'_{s}},
+\]
+where $x'_{1}$, $x'_{2}$, \ldots $x'_{s}$ denote any roots of $X_{1}=0$, $X_{2}=0$, \ldots $X_{s}=0$ which are to be put in the bracketed expression for $x_{1}$, $x_{2}$, \ldots $x_{s}$, and where the sum relates to all possible combinations of these roots. Now, by the foregoing, the bracketed expression is 0 or equal to the corresponding value of $\dfrac{1}{R}$, according as the $x'$ form a system belonging together or not.\ednote{Printed so. By equation (21.) and by the argument just above it, the bracketed expression equals $1/R$ when the $x'$ DO form a system belonging together and 0 when they do not, so the two alternatives are paired the wrong way round. Kept as printed.} If we therefore denote the systems belonging together by upper indices 1, 2, \ldots $\mu$, one has
+\[
+\frac{\Delta}{X_{1}X_{2}\ldots X_{s}} = \mathop{\Sigma}\limits_{h=1}^{h=\mu}\,\frac{1}{R^{(h)}.x_{1}-x_{1}^{(h)}.x_{2}-x_{2}^{(h)}\ldots x_{s}-x_{s}^{(h)}}. \tag{22.}
+\]
+The formula can, in accordance with a remark of \emph{Jacobi}, be applied to determine the values of the sums
+\[
+\mathop{\Sigma}\limits_{h=1}^{h=\mu}\left(x_{1}^{\alpha_{1}}x_{2}^{\alpha_{2}}\ldots x_{s}^{\alpha_{s}}\right)^{h}
+\]
+where none of the exponents $\alpha$ vanishes. For let us multiply (22.) by any function $\Omega$ of $x_{1}$, $x_{2}$, \ldots $x_{s}$. Let the value of $\Omega$ for the $h^{\text{th}}$ system belonging together be $\Omega^{(h)}$; one has then
+\[
+\Omega = \Omega^{(h)}+A_{1}(x_{1}-x_{1}^{(h)})+A_{2}(x_{2}-x_{2}^{(h)})\ldots.
+\]
+If therefore one restricts oneself to those terms which, developed according to descending powers of the $x$, contain negative powers of all the $x$, then one may put on the right in (22.), under the summation sign, $\Omega^{(h)}$ instead of $\Omega$. And if one finally puts $\Omega=R$, one finds \emph{that the expansion of} $\dfrac{\Delta R}{X_{1}X_{2}\ldots X_{s}}$ \emph{agrees with the expansion of the sum}
+\[
+\mathop{\Sigma}\limits_{h=1}^{h=\mu}\,\frac{1}{x_{1}-x_{1}^{(h)}.x_{2}-x_{2}^{(h)}\ldots x_{s}-x_{s}^{(h)}}
+\]
+\emph{in all those terms which contain negative powers of all the $x$; that therefore}
+\[
+\mathop{\Sigma}\limits_{h=1}^{h=\mu}\left(x_{1}^{(h)}\right)^{\alpha_{1}}.\left(x_{2}^{(h)}\right)^{\alpha_{2}}\ldots\left(x_{s}^{(h)}\right)^{\alpha_{s}}
+\]
+\emph{is equal to the coefficient of} $x_{1}^{-\alpha_{1}-1}.x_{2}^{-\alpha_{2}-1}\ldots x_{s}^{-\alpha_{s}-1}$ \emph{in the expansion of} $\dfrac{\Delta R}{X_{1}X_{2}\ldots X_{s}}$\emph{, as soon as none of the $\alpha$ vanishes.}
+
+\origpage{227}
+
+In the formula (22.) $\Delta$ is of the order
+\[
+s\mu-m^{(1)}-m^{(2)}-\cdots-m^{(s)},
+\]
+while the denominator $X_{1}X_{2}\ldots X_{s}$ is of the order $s\mu$. If therefore one expands on the right in (22.) according to descending powers of the $x$, then the sums of the coefficients of $x_{1}^{-\alpha_{1}-1}.x_{2}^{-\alpha_{2}-1}\ldots x_{s}^{-\alpha_{s}-1}$ vanish, i.\ e.\ the sums
+\[
+\mathop{\Sigma}\limits_{h=1}^{h=\mu}\,\frac{\left(x_{1}^{(h)}\right)^{\alpha_{1}}.\left(x_{2}^{(h)}\right)^{\alpha_{2}}\ldots\left(x_{s}^{(h)}\right)^{\alpha_{s}}}{R^{(h)}},
+\]
+as soon as $\alpha_{1}+\alpha_{2}+\cdots+\alpha_{s}<m^{(1)}+m^{(2)}+\cdots+m^{(s)}-s$. And one has therefore the theorem:
+
+\emph{If $R$ is the functional determinant of the $s$ functions of the $m^{(1)\text{th}}$, $m^{(2)\text{th}}$, \ldots $m^{(s)\text{th}}$ degree $u^{(1)}$, $u^{(2)}$, \ldots $u^{(s)}$ with respect to the variables $x_{1}$, $x_{2}$, \ldots $x_{s}$, and if $F$ is any function of the $x$ which does not exceed the degree $m^{(1)}+m^{(2)}+\cdots+m^{(s)}-s-1$, then the sum of the values of $\dfrac{F}{R}$, taken for all the systems of values of the $x$ which satisfy the equations}
+\[
+u^{(1)}=0,\qquad u^{(2)}=0,\qquad \ldots\qquad u^{(s)}=0
+\]
+\emph{vanishes}${}^{*)}$.
+
+Let us finally let $x_{1}$, $x_{2}$, \ldots $x_{s}$ pass over into $\dfrac{y_{1}}{y}$, $\dfrac{y_{2}}{y}$, \ldots $\dfrac{y_{s}}{y}$, and the $u$ into homogeneous functions $v$ of these $s+1$ variables, divided by the corresponding powers of $y$. If then $D$ is the functional determinant of the $v$ with respect to $y_{1}$, $y_{2}$, \ldots $y_{s}$, one has also
+\[
+R = \frac{D}{y^{m^{(1)}+m^{(2)}+\cdots+m^{(s)}-s}};
+\]
+and since $F$ too passes over into a homogeneous function $\Phi$ divided by $y^{m^{(1)}+m^{(2)}+\cdots+m^{(s)}-s-1}$, one obtains the formula
+\[
+0 = \Sigma\,\frac{\Phi.y}{D}.
+\]
+Since now the equations subsist:\ednote{Rows 2 and 3 below are printed with the coefficient $y_{2}$ on the second term. Euler's relation for a homogeneous function, of which row 1 is the pattern, pairs $y_{1}$ with $\partial v/\partial y_{1}$, so $y_{1}$ is what the argument requires. Kept as printed.}
+\[
+\begin{aligned}
+y\frac{\partial v^{(1)}}{\partial y}+y_{1}\frac{\partial v^{(1)}}{\partial y_{1}}+\cdots+y_{s}\frac{\partial v^{(1)}}{\partial y_{s}} &= 0,\\
+y\frac{\partial v^{(2)}}{\partial y}+y_{2}\frac{\partial v^{(2)}}{\partial y_{1}}+\cdots+y_{s}\frac{\partial v^{(2)}}{\partial y_{s}} &= 0,\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+y\frac{\partial v^{(s)}}{\partial y}+y_{2}\frac{\partial v^{(s)}}{\partial y_{1}}+\cdots+y_{s}\frac{\partial v^{(s)}}{\partial y_{s}} &= 0,
+\end{aligned}
+\]
+
+\textbf{*)} For three equations \emph{Jacobi} has communicated this theorem without proof. Volume 15, of this Journal pag.\ 307.
+
+\origpage{228}
+we have the proportion
+\[
+y:y_{1}:\ldots:y_{s} = D:D_{1}:\ldots:D_{s},
+\]
+where $D_{i}$ denotes the functional determinant of the $v$ with respect to the $y$ with the exclusion of $y_{i}$, and with suitably chosen sign. It is therefore also the case that
+\[
+\frac{y}{D} = \frac{cy+c_{1}y_{1}+\cdots+c_{s}y_{s}}{\Sigma\pm c\dfrac{\partial v^{(1)}}{\partial y_{1}}\dfrac{\partial v^{(2)}}{\partial y_{2}}\ldots\dfrac{\partial v^{(s)}}{\partial y_{s}}},
+\]
+whatever values may be assigned to the $c$. And finally one has the theorem which is the lemma applied above itself:
+
+\emph{If $v^{(1)}$, $v^{(2)}$, \ldots $v^{(s)}$ are homogeneous functions of $y$, $y_{1}$, \ldots $y_{s}$ of the orders $m_{1}$, $m_{2}$, \ldots $m_{s}$, and if $\Phi$ is a homogeneous function of the order $m^{(1)}+m^{(2)}+\cdots+m^{(s)}-s-1$, then the sum of the expressions}
+\[
+\frac{\Phi.(cy+c_{1}y_{1}+\cdots+c_{s}y_{s})}{\Sigma\pm c\dfrac{\partial v^{(1)}}{\partial y_{1}}.\dfrac{\partial v^{(2)}}{\partial y_{2}}\ldots\dfrac{\partial v^{(s)}}{\partial y_{s}}},
+\]
+\emph{formed for all the systems of values of the $y$ which satisfy the equations $v^{(1)}=0$, $v^{(2)}=0$, \ldots $v^{(s)}=0$ simultaneously, always vanishes.}
+
+\section*{§.~14.}
+
+\subsection*{Determination of the constants, and converse of the theorem on the points of a curve of the $mn^{\text{th}}$ order which lie on a surface of the $k^{\text{th}}$ order.}
+
+Let us return to the complete and non-resolvable curve of section of the surfaces $u=0$, $v=0$ of the $m^{\text{th}}$ and $n^{\text{th}}$ order. Let the everywhere finite integrals corresponding to any point of the curve again be $u_{1}$, $u_{2}$, \ldots $u_{p}$ $\left(p=\dfrac{mn(m+n-4)}{2}+1\right)$, and let them be distinguished for different points by upper indices.
+
+For the $mnk$ points of intersection of the curve with a surface of the $k^{\text{th}}$ order, $w=0$, one has then, by the foregoing:
+\[
+\left\{
+\begin{aligned}
+u_{1}^{(1)}+u_{1}^{(2)}+\cdots+u_{1}^{(mnk)} &\equiv \gamma_{1},\\
+u_{2}^{(1)}+u_{2}^{(2)}+\cdots+u_{2}^{(mnk)} &\equiv \gamma_{2}.\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+u_{p}^{(1)}+u_{p}^{(2)}+\cdots+u_{p}^{(mnk)} &\equiv \gamma_{p},
+\end{aligned}
+\right.\tag{23.}
+\]
+where the $\gamma$ depend only on the \emph{order} of $w$. Since further the surface of the $n^{\text{th}}$ order\ednote{Printed $n^{\text{ter}}$. It is the cutting surface $w=0$, of order $k$, that is allowed to degenerate, and the same clause counts $k$ planes, so $k^{\text{ter}}$ is what the argument requires. Kept as printed.} can appear as a system of $k$ planes, one obviously has
+
+\origpage{229}
+$\gamma_{i}=k.c_{i}$, where the $c$ correspond to the intersection of a plane with the curve. Finally (cf.\ §.~3) these constants are zero when $w$ passes over into a function $\Theta$, hence for $k=m+n-4$, and they are therefore zero in general. And one has the theorem:
+
+\emph{The sums of the corresponding everywhere finite integrals, extended over the points of intersection of an algebraic surface with the given curve, are equal to zero.}
+
+According to \emph{Jacobi} (this Journal vol.\ 15, p.\ 305), of such $mnk$ points of a given curve of section of two surfaces of the $m^{\text{th}}$ and $n^{\text{th}}$ order as can lie on a surface of the $k^{\text{th}}$ order, a certain number is always determined by the rest; and indeed the number of those determined by the rest is, when
+\[
+k\geqq m+n-3,\qquad k\geqq m,\qquad k\geqq n,
+\]
+exactly equal to $p$. But if $k<m+n-3$, this number becomes smaller, namely equal to
+\[
+p-\frac{m+n-k-1.m+n-k-2.m+n-k-3}{6},
+\]
+so long as $k$ remains greater than the numbers $m$, $n$; it is equal to
+\[
+mnk-\frac{k+1.k+2.k+3}{6}+\frac{k-n+1.k-n+2.k-n+3}{6}+1,
+\]
+when $m>k\geqq n-3$, and equal to
+\[
+mnk-\frac{k+1.k+2.k+3}{6}+1,
+\]
+when $k$ is smaller than both numbers. From this it appears \emph{that, if $k\geqq m+n-3$, the number of the equations (23.) is exactly equal to the number of the points to be determined by means of them, which, besides a number to be chosen arbitrarily, can lie on a surface of the $k^{\text{th}}$ order; and that, if $k<m+n-3$, the number of those equations is greater, in particular for $k=m+n-4$ greater by 1, without their being able on that account to cease to be compatible.}
+
+Let us now remark that, by \emph{Abel}'s theorem, the differential equations
+\[
+\begin{aligned}
+du_{1}^{(1)}+du_{1}^{(2)}+\cdots+du_{1}^{(mnk)} &= 0,\\
+du_{2}^{(1)}+du_{2}^{(2)}+\cdots+du_{2}^{(mnk)} &= 0,\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+du_{p}^{(1)}+du_{p}^{(2)}+\cdots+du_{p}^{(mnk)} &= 0
+\end{aligned}
+\]
+
+\origpage{230}
+admit of complete algebraic integration; we then see that in particular these algebraic integrals must, by means of a suitable determination of the constants contained in them, be capable of being brought to express the conditions under which $mnk$ points of the curve lie on a surface of the $k^{\text{th}}$ order. Since now the suitable determination of these constants has just been accomplished in the transcendent form of the integral equations, one can set up the converse theorem:
+
+\emph{As soon as between the everywhere finite integrals, formed in accordance with the conditions set up by Mr.\ Riemann, the equations subsist:}
+\[
+\left\{
+\begin{aligned}
+u_{1}^{(1)}+u_{1}^{(2)}+\cdots+u_{1}^{(mnk)} &= 0,\\
+u_{2}^{(1)}+u_{2}^{(2)}+\cdots+u_{2}^{(mnk)} &= 0,\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+u_{p}^{(1)}+u_{p}^{(2)}+\cdots+u_{p}^{(mnk)} &= 0,
+\end{aligned}
+\right.\tag{24.}
+\]
+\emph{the corresponding $mnk$ points of the curve lie on a surface of the $k^{\text{th}}$ order.}
+
+\section*{§.~15.}
+
+\subsection*{Contact surfaces which pass through given points of the curve. Systems of contact surfaces.}
+
+The problems which were treated earlier in the case of plane curves can now be carried through in an entirely similar way in the case of space curves.
+
+\emph{Let $k\geqq m+n-3$; on the curve of the $mn^{\text{th}}$ order let $mnk-pr$ points be given arbitrarily; through them one is to lay a surface of the $k^{\text{th}}$ order}${}^{*)}$ \emph{which touches the curve at $p$ points with $r$-point contact.}
+\[
+\left(p=\frac{mn(m+n-4)}{2}+1\right).
+\]
+
+\textbf{*)} If $k\geqq n$, $k<m$, then the surface of the $k^{\text{th}}$ order becomes indeterminate in so far as every surface of the $k^{\text{th}}$ order which passes through its section with the surface of the $n^{\text{th}}$ order satisfies the same conditions. In this case one may therefore speak, instead of the surface of the $k^{\text{th}}$ order, of the \emph{space curve} of the $kn^{\text{th}}$ order, which remains constant under such changes, and may assign to it the properties which are demanded of the surface of the $k^{\text{th}}$ order. If on the other hand $k$ is also $\geqq m$, then every surface which passes through the points of intersection of the three surfaces of the $m^{\text{th}}$, $n^{\text{th}}$, $k^{\text{th}}$ order has the required properties. In this case, therefore, one has to do only with a determinate system of points, which forms the common element of a bundle of surfaces.
+
+\origpage{231}
+
+The number of the conditions contained in the problem is
+\[
+mnk-pr+p(r-1) = mnk-p.
+\]
+If we add that, by the foregoing, $p$ conditions occur for the $mnk$ points of intersection of a surface of the $k^{\text{th}}$ order with the curve, one sees that the problem is both determinate and soluble. But only the points of contact are really determinate under all circumstances; the surface of the $k^{\text{th}}$ order itself may, according to the magnitude of $k$, remain more or less arbitrary.
+
+Let the sums of integrals corresponding to the given points of intersection now be $U_{1}$, $U_{2}$, \ldots $U_{p}$; those corresponding to the sought $p$ points of contact be $v_{1}$, $v_{2}$, \ldots $v_{p}$. The equations (24.) then pass over, for the present case, into:
+\[
+\begin{aligned}
+rv_{1} &\equiv -U_{1},\\
+rv_{2} &\equiv -U_{2},\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+rv_{p} &\equiv -U_{p},
+\end{aligned}
+\]
+or into:
+\[
+\begin{aligned}
+v_{1} &\equiv -\frac{U_{1}}{r}+\frac{A_{1}}{r},\\
+v_{2} &\equiv -\frac{U_{2}}{r}+\frac{A_{2}}{r},\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot &\\
+v_{p} &\equiv -\frac{U_{p}}{r}+\frac{A_{p}}{r}.
+\end{aligned}
+\]
+The $p$ points of contact are therefore determined by an equation of the $p^{\text{th}}$ degree, whose coefficients are $\theta$-functions with the arguments $v$. The latter contain the $2p$ numbers $m$, $q$ in the $A$, and since to each of these all values from 0 to $r-1$ may be assigned, \emph{the number of all solutions of the problem is:}
+\[
+r^{2p} = r^{mn(m+n-4)+2}.
+\]
+One can here institute considerations similar to those in §.~4, and finds the theorem:
+
+\emph{If one lays a surface of the $k^{\text{th}}$ order through $r-1$ systems of points of contact and through the given points, then it cuts the given curve at $p$ points at which a surface of the $k^{\text{th}}$ order passing through the given points touches the curve.}
+
+\origpage{232}
+
+Of the $r-1$ systems several may coincide, in which case the surface of the $k^{\text{th}}$ order first mentioned must touch at such points.
+
+Of the given points, $\mu$ times $r$ may themselves come together in such a way that at them the surface sought likewise touches with $r$-point contact. Then the surfaces considered touch at $(p+\mu)$ points with $r$-point contact, and besides pass through $mnk-(p+\mu)r$ given points.
+
+If we let only the latter be given, then the problem obviously becomes indeterminate, and $\mu$ points of contact can always be chosen arbitrarily, in which case the problem still admits in each instance of $r^{2p}$ solutions.
+
+Herewith arises the notion of a \emph{system of contact surfaces}. By continuous alteration of the $\mu$ points of contact that may be chosen, one can derive continuously from one contact surface infinitely many; but only those for which the system of the $A$ is the same. If therefore we designate \emph{as a system of contact surfaces those which can be derived from one another by continuous passage,} then one has the theorem:
+
+\emph{A curve of the $m.n^{\text{th}}$ order admits of $r^{mn(m+n-4)+2}$ systems of contact surfaces of the $k^{\text{th}}$ order, which touch the curve at $p+\mu$ points with $r$-point contact, and besides pass through $mnk-(p+\mu)r$ points given on the curve; where $k\geqq m+n-3$ is presupposed.}
+
+And concerning them one has (cf.\ §.~5.) the following theorems:
+
+\emph{The points of contact of any $r$ surfaces of the same system lie on a surface of the $k^{\text{th}}$ order which passes through the fixed points.}
+
+\emph{If one lays a surface of the $k^{\text{th}}$ order through the given points and through $r-1$ systems of $p+\mu$ points of contact each, which may belong to the same or to different systems, it still always meets an $r^{\text{th}}$ system of points of contact.}
+
+Of particular interest is the case where $mnk$ is divisible by $r$. In this case one can let all the points of intersection of the surface of the $k^{\text{th}}$ order with the curve draw together, $r$ at a time, into $\dfrac{mnk}{r}$ points, and one then obtains systems of contact surfaces which touch the given curve with $r$-point contact wherever they meet it. These systems are important in this, that they depend only on the nature of the curve itself, no longer on the position of a system of points arbitrarily chosen upon it. The $p+\mu = \dfrac{mnk}{r}$ integrals $u_{h}$ which correspond to the points of contact are here determined
+
+\origpage{233}
+by equations of the form:
+\[
+u_{h}^{(1)}+u_{h}^{(2)}+\cdots+u_{h}^{\left(\frac{mnk}{r}\right)} \equiv \frac{A_{h}}{r}.
+\]
+From this one deduces, as in §.~6, the theorem:
+
+\emph{If $k\geqq m+n-3$ and $mn = (p+\mu)r$, then there are systems of surfaces of the $k^{\text{th}}$ order which touch the curve of the $m.n^{\text{th}}$ order at $p+\mu$ points with $r$-point contact. The number of the systems is $r^{2p}$ when $k$ and $r$ are relatively prime; if on the other hand $k=k's$, $r=r's$, and $k'$, $r'$ are relatively prime, then the number of the systems is $r^{2p}-r'^{2p}$.}
+
+Theorems on the position of the points of contact one obtains as is indicated in §.~6.
+
+\section*{§.~16.}
+
+\subsection*{Contact surfaces which exist only in finite number.}
+
+Among the problems just treated some are distinguished by the property of being completely determinate.
+
+If $k\geqq m+n-3$ and $mnk = pr$, then one has before one a surface touching at $p$ points with $r$-point contact, whose points of contact at least are perfectly determinate. Now the numbers $mn$ and $p = \dfrac{mn(m+n-4)}{2}+1$ can have only the factor 2 in common, and this too only when one of the numbers $m$, $n$ has the form $4h+2$ while the other is odd. In this case one puts
+\[
+k = \frac{p}{2}.s, \quad r = \frac{mn}{2}.s,
+\]
+in every other
+\[
+k = p.s, \quad r = mn.s,
+\]
+and one obtains, by the theorems of the previous §., for the problems in question, whose solution lies at hand, the following determinations:
+
+\emph{For a curve of the $m.n^{\text{th}}$ order there are $n^{2p}(s^{2p}-1)$ contact surfaces of the order $p.s$ which touch at $p$ points with $mn.s$-point contact. Only when one of the numbers $m$, $n$ is of the form $4h+2$ and the other is odd are there $\left(\dfrac{n}{2}\right)^{2p}(s^{2p}-1)$ contact surfaces of the order $\dfrac{p}{2}.s$ which touch at $p$ points with $\dfrac{mn}{2}.s$-point contact.}\ednote{Printed $n^{2p}$ and $\left(\dfrac{n}{2}\right)^{2p}$. The curve here is of order $m.n$, not $n$, and the theorem of §.~15 that this specializes gives the count as a power of the number of systems, so $(mn)^{2p}$ and $\left(\dfrac{mn}{2}\right)^{2p}$ are what the argument requires; the $n^{2p}$ of the corresponding plane theorem in §.~7, where the curve really is of order $n$, appears to have been carried over. Kept as printed.}
+
+\origpage{234}
+
+Concerning the mutual position of the systems of points of contact analogous theorems hold as in the case of the systems of contact surfaces.
+
+But to these problems there come others which are likewise completely determinate, and remarkable in this, that for $n=1$, $m=4$ the double tangents of the curves of the fourth order appear as a special case. For if $k<m+n-3$, but at the same time $k$ is equal to or greater than the numbers $m$, $n$, then by §.~16 the [number] serving for the determination of the points of intersection of the surface with the curve is equal to
+\[
+p-\frac{m+n-k-1.m+n-k-2.m+n-k-3}{6}
+\]
+In order that a surface of the $n^{\text{th}}$ order shall touch with $r$-point contact everywhere where it meets the curve, $mnk.\dfrac{r-1}{r}$ conditions are to be fulfilled. This number becomes equal to the previous one, and hence the problem completely determinate, when \uncertain{$r$} $= 2$, $k = m+n-4$. And one has therefore the theorem:
+
+\emph{The curve of the $m.n^{\text{th}}$ order can be touched by a determinate number of surfaces of the order $m+n-4$ at $\dfrac{mn(m+n-4)}{2}$ points with two-point contact.}
+
+This is still correct even when, what was at first excluded, $k = m+n-4$ becomes smaller than one of the numbers $m$ or $n$. For if $n=2$ or $n=3$, one has $k=m-2$ or $k=m-1$. By §.~16 the equation
+\[
+mnk-\frac{k+1.k+2.k+3}{6}+\frac{k-n+1.k-n+2.k-n+3}{6}+1 = \frac{mnk}{2}
+\]
+must, in order that the above theorem may then still remain correct, hold, which is really the case.
+
+The points of contact of such a surface are found, like the points of contact of the curves in §.~8, from the equations
+\[
+\begin{aligned}
+u_{1}^{(1)}+u_{1}^{(2)}+\cdots+u_{1}^{(p-1)} &\equiv \frac{A_{1}}{2},\\
+u_{2}^{(1)}+u_{2}^{(2)}+\cdots+u_{2}^{(p-1)} &\equiv \frac{A_{2}}{2},\\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \cdot\\
+u_{p}^{(1)}+u_{p}^{(2)}+\cdots+u_{p}^{(p-1)} &\equiv \frac{A_{p}}{2},
+\end{aligned}
+\]
+which can subsist only when between the numbers $m$, $q$ contained in the $A$ the relation subsists:
+\[
+m_{1}q_{1}+m_{2}q_{2}+\cdots+m_{p}q_{p} = 2h+1.
+\]
+From this one finds, by the mode of reasoning of the § cited:
+
+\origpage{235}
+
+\emph{The number of these contact surfaces is:}
+\[
+2^{\frac{mn(m+n-4)}{2}}\left\{2^{\frac{mn(m+n-4)}{2}+1}-1\right\}.
+\]
+On the mutual position of the systems of points of contact cf.\ §.~8. In particular there is found here, similarly as there, the theorem:
+
+\emph{Among the $2^{2p}\left(p = \dfrac{mn(m+n-4)}{2}+1\right)$ systems of contact surfaces of the $k^{\text{th}}$ order which, for even $m+n$, are of even order, for odd $m+n$ of odd order, and which touch the curve of the $m.n^{\text{th}}$ order with two-point contact everywhere where they meet it, there are always $2^{p-1}(2^{p}-1)$ systems in which the points of contact of every surface lie, together with those of a determinate one of the contact surfaces of the $(m+n-4)^{\text{th}}$ order treated just now, on a surface of the $\dfrac{k+m+n-4}{2}{}^{\text{th}}$ order; and there are, when $m+n$ is even, $2^{p-1}(2^{p}+1)-1$, when $m+n$ is odd, $2^{p-1}(2^{p}+1)$ such systems in which the points of contact of a surface never lie on a surface of the order $\dfrac{k+m+n-4}{2}$.}
+
+\section*{§.~17.}
+\subsection*{Curves of the fourth order which form the section of two surfaces of the second order.}
+
+The simplest complete space curves are those of the fourth order which form the intersection of two surfaces of the second order. For these $p=1$; they therefore lead to elliptic functions, of which one convinces oneself also by direct consideration of the everywhere finite integral. Four points which lie in a plane then satisfy, on a suitable determination of the initial value of that integral, the equation:
+\[
+u^{(1)}+u^{(2)}+u^{(3)}+u^{(4)} \equiv 0.
+\]
+Instead of the systems of moduli $A$ one may here put the quantities $2aK+2biK'$. First, then, by setting the quantities $u$ all equal to one another, one finds \emph{the points at which a plane can touch with four-point contact}, from the formula:
+\[
+u \equiv \frac{2aK+2biK'}{4}. \tag{25.}
+\]
+The numbers $a$, $b$ may receive the values 0, 1, 2, 3; \emph{the number of such points is therefore 16}, as is known. For one of them $a=0$, $b=0$, hence \emph{also $u=0$; the lower limit of the integral $u$ is therefore to be so chosen that for the point of contact of an inflexional tangent plane the integral vanishes.}
+
+\origpage{236}
+
+If one lets only three of the $u$ become equal to one another, one has an equation of the form:
+\[
+u+3u' \equiv 0,
+\]
+or
+\[
+u' \equiv -\frac{u}{3}+\frac{2aK+2biK'}{3}, \tag{26.}
+\]
+whence the theorem follows:
+
+\emph{Through every point of the curve of the fourth order one can lay nine osculating planes to the curve.}
+
+Among these the osculating plane at the point itself is not included.\ednote{Printed Schwingungsebene, the plane of oscillation. The sentence before it, the sentence after it and the mathematics all require Schmiegungsebene, the osculating plane. The transcription keeps the misprint; this translation renders the word the sense requires.}
+
+If one lets only two of the $u$ become equal to one another, one has
+\[
+u'' \equiv -\frac{u+u'}{2}+\frac{2aK+2biK'}{2}, \tag{27.}
+\]
+i.\ e.
+
+\emph{Through any two points of the curve four tangent planes to it can be laid.}
+
+If the other $u$ also become equal to one another, one has a doubly touching plane, and for the points of contact\ednote{Equation (28.) is printed with a two-bar $=$, where (25.), (26.) and (27.) all set the three-bar $\equiv$. These are congruences with respect to the periods, not equations, so $\equiv$ is what the argument requires. Kept as printed.}
+\[
+u+u' = \frac{2aK+2biK'}{2}, \tag{28.}
+\]
+i.\ e.
+
+\emph{There are four systems of planes which touch the curve twice, and through every tangent there passes a plane of each system.}
+
+If one adds the four arguments $u''$ which spring from the equation (27.), one finds their sum equal to $-2(u+u')$, i.\ e.
+
+\emph{Through any two points of the curve and the points of contact of the tangent planes laid through them to the curve, a family of surfaces of the second order can be laid which touch the curve at the given points.}
+
+Of the 9 points (26.) at which an osculating plane laid from a given point can touch the curve, three lie with the given one in a plane as often as the sums of the corresponding $a$ and of the corresponding $b$ are divisible by three. With regard to the representation of the points of inflexion of a curve of the third order given by me pag.\ 111 of this volume, one can express these relations by the following theorem:
+
+\emph{If one joins a point of the curve of the fourth order with those 9 points at which an osculating plane laid from it}
+
+\origpage{237}
+\emph{can touch the curve, and if one cuts these 9 rays by any plane, then one obtains a system of points which can be the system of points of inflexion of a curve of the third order.}
+
+Further:
+
+\emph{As often as three of these 9 points lie with the given one in a plane, the other 6 lie on a family of surfaces of the second order which touch the curve at the given point.}
+
+\emph{All 9 points lie on a family of surfaces of the third order which touch the curve at the given point with three-point contact.}
+
+Let us further consider the mutual position of the points of contact of the inflexional tangent planes, which are given by the formula (25.). If we denote any one of those 16 points, corresponding to the coefficients $a$, $b$, by $(a,b)$, then obviously, because the corresponding $u$ are together congruent to 0, $(a,b)$, $(a+2,b)$, $(a,b+2)$, $(a+2,b+2)$ lie in a plane. Further, the sum of any two of the integrals belonging to such four points, multiplied by 2, is also congruent to 0. One has therefore the theorems:
+
+\emph{The 16 points of contact of the inflexional tangent planes divide into four groups of four. Any four points of the same group lie in a plane; and the tangents at any two points of the same group lie likewise in a plane, so that four such tangents intersect at the same point.}
+
+As is known, those four planes are those of the polar tetrahedron common to the two surfaces, and the points last mentioned are its vertices.
+
+\section*{§.~18.}
+\subsection*{Space curves of the sixth order.}
+
+The theory of the curves of the sixth order which are the complete intersection of surfaces of the second and third order attaches itself essentially to the theory of the triply touching planes, which play for them almost exactly the same part as the double tangents for the plane curves of the fourth order. For these curves one has $p=4$; the conditions, therefore, that 6 points of the curve lie in a plane are contained in the equations
+\[
+\begin{aligned}
+u_{1}^{(1)}+u_{1}^{(2)}+\cdots+u_{1}^{(6)} &\equiv 0,\\
+u_{2}^{(1)}+u_{2}^{(2)}+\cdots+u_{2}^{(6)} &\equiv 0,\\
+u_{3}^{(1)}+u_{3}^{(2)}+\cdots+u_{3}^{(6)} &\equiv 0,\\
+u_{4}^{(1)}+u_{4}^{(2)}+\cdots+u_{4}^{(6)} &\equiv 0.
+\end{aligned}
+\]
+
+\origpage{238}
+Triply touching planes one obtains when three times two systems of the $u$ coincide, that is when
+\[
+u'_{k}+u''_{k}+u'''_{k} \equiv \frac{A_{k}}{2}.
+\]
+The conclusion of §.~16 then leads at once to the following theorems:
+
+\emph{There are 120 planes which touch a space curve of the sixth order at three different points.}
+
+\emph{If one lays a surface of the $h^{\text{th}}$ order through any three points of contact of such a plane, then it cuts the curve further at $6h-3$ points at which the curve can be touched with two-point contact by a surface of the $(2h-1)^{\text{th}}$ order. One thus obtains 120 systems of contact surfaces of the $(2h-1)^{\text{th}}$ order. There are 136 others of them, whose points of contact never lie on a surface of the $h^{\text{th}}$ order. But all 256 systems have the common property that the points of contact of any two surfaces of the same system lie on a surface of the $(2h-1)^{\text{th}}$ order.}
+
+Further:
+
+\emph{There are 255 systems of surfaces of the second order which touch the curve of the sixth order at 6 different points; the points of contact of any two surfaces of the same system lie on a surface of the second order.}
+
+\emph{In each of these systems there occur 28 surfaces which break up into pairs of triply touching planes. The 12 points of contact of any two such pairs lie on a family of surfaces of the second order, i.\ e. on a space curve of the fourth order.}
+
+Of such space curves of the fourth order there are accordingly $\dfrac{255.28.27}{2}$. But since a system of four planes can be divided into two pairs in three ways, every curve of the fourth order is thereby counted three times. \emph{The actual number of these curves of the fourth order is therefore $\dfrac{255.28.27}{2.3}=32130$.}
+
+Since all 360 points of contact can be distributed in several ways among 30 surfaces of the second order (space curves of the fourth order) in such a way that no point lies on more than one surface, \emph{all 360 points of contact lie on a family of surfaces of the sixtieth order, and are the complete intersection of the same with the curve of the sixth order.}
+
+In order that 12 points of the curve of the sixth order shall lie on a family of surfaces of the second order, or on a space curve of the fourth order,
+
+\origpage{239}
+the equations
+\[ u_{k}^{(1)}+u_{k}^{(2)}+\cdots+u_{k}^{(12)} \equiv 0 \]
+must be fulfilled. If one lets three points coincide four times over, then the integrals which have remained different result from equations of the form
+\[ u_{k}+u'_{k}+u''_{k}+u'''_{k} \equiv \frac{A_{k}}{3}, \]
+according to which the points are in each case determined by means of an equation of the fourth degree. One has therefore the theorem:
+
+\emph{There are $3^{8} = 6561$ space curves of the fourth order which touch the space curve of the sixth order at four different points with three-point contact.}
+
+And:
+
+\emph{If one lays a surface of the second order through the points of contact of two such curves, then it cuts the curve of the sixth order further in the points of contact of a third contact curve.}
+
+\section*{§.~19.}
+\subsection*{Extension of a problem of Steiner.}
+
+In the foregoing exclusively problems of contact have been treated, and it has been shown how their solution presents itself in the simplest way by means of the \emph{Abel}ian functions. I shall now investigate yet another very general problem; a problem whose most special case has been treated by \emph{Steiner}, and of which I have given on p.\ 94 and following of this volume an analytical solution which likewise rests essentially on the principles here set forth. This general problem runs as follows:
+
+\emph{Given are $r$ groups of $mnk-pf$ points each of a curve of the $mn^{\text{th}}$ order ($k \geqq m+n-3$); sought are $r$ systems of $p$ points each upon it, in the following manner. A surface of the $k^{\text{th}}$ order shall pass through the points of the first group and the first $f-1$ systems; it is thereby completely determined, and its remaining points of intersection with the curve form the $f^{\text{th}}$ system. A second surface of the $k^{\text{th}}$ order shall pass through the second group and through the $2^{\text{nd}}$, $3^{\text{rd}}$, \ldots $f^{\text{th}}$ system; it determines the $f+1^{\text{th}}$ system. In this way one is to proceed, so that in succession $r$ surfaces of the $k^{\text{th}}$ order are formed, and so that the series of the systems closes, in that after the $r^{\text{th}}$ system no new one is generated any more, but again the first, after this the second, and so on.}
+
+\origpage{240}
+One obtains the corresponding problem for the plane by merely putting $n=1$.
+
+Let us denote the sums of integrals corresponding to the groups by $w_{k}$, those corresponding to the systems by $v_{k}$, distinguishing the various groups and systems by upper indices. The statement of the problem is then contained in the following equations:
+\[ \left\{ \begin{aligned}
+v_{k}^{(1)}+v_{k}^{(2)}+\cdots+v_{k}^{(f)} &\equiv -w_{k}^{(1)}, \\
+v_{k}^{(2)}+v_{k}^{(3)}+\cdots+v_{k}^{(f+1)} &\equiv -w_{k}^{(2)}, \\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \\
+v_{k}^{(r)}+v_{k}^{(1)}+\cdots+v_{k}^{(f-1)} &\equiv -w_{k}^{(r)}.
+\end{aligned} \right. \tag{1.} \]
+In order to facilitate the solution of these equations, which are linear in the $v$, I shall understand by $v_{k}^{(h)}$ a quantity $v_{k}$ even when the index $h$ exceeds the value $r$; and indeed $v_{k}^{(h)}$ shall then denote that $v$ whose upper index remains as remainder on the division of $h$ by $r$. From the above equations there are then first deduced the following, in which $h$ denotes an arbitrary index:
+\[ w_{k}^{(h+1)}-w_{k}^{(h)} \equiv v_{k}^{(h)}-v_{k}^{(f+h)}; \]
+hence also:
+\[ \mathop{\Sigma}\limits_{\lambda=0}^{\lambda=s-1} \left\{ w_{k}^{(h+1+\lambda f)}-w_{k}^{(h+\lambda f)} \right\} \equiv v_{k}^{(h)}-v_{k}^{(h+sf)}. \tag{2.} \]
+
+Now one remarks that two cases must be distinguished. For if $f$ and $r$ are not relatively prime, so that say
+\[ f=g.f', \qquad r=g.r', \]
+where $f'$, $r'$ are relatively prime, then on the right-hand side there stands zero as soon as one makes $s=r'$. One is then led to conditions between the $v$, and can enunciate the following theorem:
+
+\emph{If $f$, $r$ are not relatively prime, but $f=gf'$, $r=gr'$, where $f'$, $r'$ are relatively prime, then the above problem is possible only when the $p(g-1)$ conditions are fulfilled:}
+
+\[ \left\{ \begin{aligned}
+& w_{k}^{(1)}+w_{k}^{(f+1)}+\cdots+w_{k}^{((r'-1)f+1)} \\
+\equiv{} & w_{k}^{(2)}+w_{k}^{(f+2)}+\cdots+w_{k}^{((r'-1)f+2)} \\
+& \cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot \\
+\equiv{} & w_{k}^{(g)}+w_{k}^{(f+g)}+\cdots+w_{k}^{((r'-1)f+g)};
+\end{aligned} \right. \tag{3.} \]
+
+\origpage{241}
+\emph{and when these equations are fulfilled, the problem admits of infinitely many solutions, since the first $f-1$ systems can be chosen quite arbitrarily.}
+
+If on the other hand $f$, $r$ are relatively prime, then by means of the equation (2.) one can express all the $v_{k}$ by any one of them, and obtains:
+\[ v_{k}^{(h+sf)} \equiv v_{k}^{(h)}+\mathop{\Sigma}\limits_{\lambda=0}^{\lambda=s-1}\left\{ w_{k}^{(h+\lambda f)}-w_{k}^{(h+1+\lambda f)} \right\}. \tag{4.} \]
+If we now add all the equations (1.), there is found
+\[ f\Sigma v_{k} \equiv -\Sigma w_{k}, \]
+or, if $\Sigma w_{k}=z_{k}$ is put, and one remarks that all the $v_{k}$ must, by (4.), contain the same submultiple of the periods, and their sum therefore $r$ times such a one:
+\[ v_{k}^{(1)}+v_{k}^{(2)}+\cdots+v_{k}^{(r)} \equiv -\frac{z_{k}}{f}+\frac{rA_{k}}{f}. \]
+If we substitute in this equation the values of the $v$ obtained above in (4.), there comes:
+\[ \begin{aligned}
+& r v_{k}^{(h)}+\mathop{\Sigma}\limits_{s=1}^{s=r-1}\mathop{\Sigma}\limits_{\lambda=0}^{\lambda=s-1}\left( w_{k}^{(h+\lambda f)}-w_{k}^{(h+1+\lambda f)} \right) \equiv -\frac{z_{k}}{f}+\frac{rA_{k}}{f} \\
+\equiv{} & r v_{k}^{(h)}+\mathop{\Sigma}\limits_{\lambda=0}^{\lambda=r-2}(r-\lambda-1)\left( w_{k}^{(h+\lambda f)}-w_{k}^{(h+1+\lambda f)} \right).
+\end{aligned} \]
+If therefore one finally introduces the notation:
+\[ z_{k}^{(h)} = (r-1)w_{k}^{(h)}+(r-2)w_{k}^{(h+f)}+\cdots+1.w_{k}^{(h+(r-2)f)}, \tag{5.} \]
+there results:
+\[ v_{k}^{(h)} \equiv -\frac{z_{k}}{rf}+\frac{z_{k}^{(h+1)}-z_{k}^{(h)}}{r}+\frac{A_{k}}{f}. \tag{6.} \]
+
+By this formula the solution of the problem is completely given, since from the values of the $v$ found one calculates the points of the systems by means of equations of the $p^{\text{th}}$ degree. Since in the $A$ the numbers $m$, $q$ may receive all values from 0 to $f-1$, one obtains the result:
+
+\emph{If $f$, $r$ are relatively prime, then the problem is soluble in $f^{2p}$ ways.}
+
+This problem \emph{Steiner} has not treated loc.\ cit.; but he has treated, for plane curves of the third order ($p=1$), a particular case of the problem recognized above as indeterminate. For one may lay down that the $r=gr'$ groups shall not all be different, but that only $g$
+
+\origpage{242}
+different groups exist, which are used $r'$ times in succession in the same order. One may further lay down that the number of the points of each group be equal to $p$, as in the systems, so that
+\[ mnk = p(f+1). \]
+Similarly as in §.~16 there then results
+\[ k=\frac{p}{2}.s, \qquad f=\frac{mn}{2}.s-1, \]
+when one of the numbers $m$, $n$ is of the form $4h+2$ and the other odd; and
+\[ k=ps, \qquad f=mns-1 \]
+in every other case. The equations (3.) then pass over into:
+\[ r'.w_{k}^{(1)} \equiv r'.w_{k}^{(2)} \ldots \equiv r'.w_{k}^{(g)}, \]
+and if therefore the first group is assumed arbitrarily, then the points of the remaining groups are determined, in accordance with the equations
+\[ \begin{aligned}
+w_{k}^{(2)} &\equiv w_{k}^{(1)}+\frac{A_{k}}{r'}, \\
+w_{k}^{(3)} &\equiv w_{k}^{(1)}+\frac{A'_{k}}{r'}, \\
+\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot & \\
+w_{k}^{(g)} &\equiv w_{k}^{(1)}+\frac{A_{k}^{(g-2)}}{r'}
+\end{aligned} \]
+by just as many equations of the $p^{\text{th}}$ degree. In these equations the values $0$, $1$, \ldots $r'-1$ may be assigned to the numbers $m$, $q$ occurring in the $A$; yet so that two systems of the $A$ with unequal upper indices never become equal. The number of all possible series of groups belonging to a given one is therefore:
+\[ \frac{{r'}^{2p}-1.{r'}^{2p}-2\ldots{r'}^{2p}-(g-1)}{1.2\ldots(g-1)}. \]
+
+Among these solutions of the problems there are, however, if $r'$ is not a prime number, also such as those in which the circle of surfaces closes earlier than after an $r'$-fold use of all the groups, and which therefore count for the problem in hand only in so far as the series of surfaces thereby formed is reckoned several times.
+
+This is the immediate extension of the \emph{Steiner} problem cited, which, as one sees, occurs for all plane and doubly curved curves, and in all cases, by the principles here developed, is solved with
+
+\origpage{243}
+ease. For the mutual position of the groups of points obtained from the individual solutions there exist theorems similar to those which I have developed with respect to the original \emph{Steiner} problem in the memoir cited. A more exact entering into these relations would lead too far here; it also seems as if, with problems so general, it is chiefly the insight that their solution can be derived in a determinate way from given principles which is of interest, and less the development of the circumstances thereby occurring, which by the nature of the case cannot be otherwise than prolix if it is to be in any degree exhaustive. ---
+
+I take this opportunity to add a remark with respect to my memoir „über eine Classe von Gleichungen, welche nur reelle Wurzeln besitzen“ (vol.\ 62, p.\ 232 of this Journal). Equations of the kind considered have already been investigated earlier by \emph{Hermite} in the Comptes Rendus of the Paris Academy, 1855, second semester, where their property of possessing only real roots is found stated.
+
+Giessen, 28 October 1863.
+
+\end{document}

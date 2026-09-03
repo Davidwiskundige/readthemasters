@@ -8,6 +8,13 @@ authors:
     birth_year: 1833
     death_year: 1872
     mactutor: Clebsch  # https://mathshistory.st-andrews.ac.uk/Biographies/Clebsch/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Alfred Clebsch"
+      credit: >-
+        Photograph of Clebsch, photographer and date unknown; described on Commons as a
+        photograph of the Königsberg mathematician Alfred Clebsch (1833–1872). Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Alfred_Clebsch.jpeg"
 
 publication:
   year: 1864
@@ -33,6 +40,56 @@ discipline: mathematics
 tags: [geometry, analysis, algebra]
 language: de
 type: paper
+
+significance: >-
+  Riemann's theory of Abelian functions had been in print for six years, Clebsch remarks on his
+  first page, without anyone having applied it to geometry; this paper is the application. To a
+  plane curve $f = 0$ of order $n$ carrying $d$ double points he attaches the class of Abelian
+  integrals belonging to it, and reads Riemann's characteristic number off the geometry alone:
+  $p = \frac{(n-1)(n-2)}{2} - d$ (§. 1, eq. (4.))[1] — a quantity that had belonged to a Riemann
+  surface, now computed from nothing but the order of a curve and its double points. Each of those
+  $p$ integrals takes a value at every point of the curve, and Clebsch works throughout with the
+  totals got by adding those values over all the points of a set — his Integralsummen. Now deform a
+  curve of order $m$ that cuts $f = 0$: its $mn$ intersections with $f = 0$ all shift at once, and
+  the shifts cancel, so the total does not move. That is Abel's theorem, which §. 2 casts in this
+  geometric form, and it is why one and the same total can serve every curve of order $m$ at once.
+  §. 3 determines it: the total is zero, provided the integrals are measured from the starting
+  points Riemann prescribes. Clebsch then turns the statement round: any $mn$ points whose totals
+  come out zero are exactly the points some curve of order $m$ cuts out — the harder half, which he
+  argues from the differential equations rather than proves. A geometric question,
+  which sets of points other curves can carve out of $f = 0$, has become an arithmetic one.
+  [note 1] §. 8 shows what that buys: a curve of order $n-3$ touching $f = 0$ twice at each of
+  $\frac{n(n-3)}{2}$ points can be laid in
+  $2^{\frac{n(n-3)}{2}}\left(2^{\frac{(n-1)(n-2)}{2}}-1\right)$ ways, and "for $n = 4$ this gives
+  the 28 double tangents", so that Hesse's and Steiner's results on the quartic[2] fall out as
+  counting exercises rather than constructions. §§. 11 to 18 carry the same method to curves in
+  space.
+
+# Asides: an excursus the reader can open from the significance note instead of reading through it.
+significance_notes:
+  - label: "In modern notation"
+    text: >-
+      Clebsch's $p$ is the genus, and his §. 3 pair of theorems says that the divisors cut on
+      $f = 0$ by the curves of a fixed order form one linear equivalence class: the Abel–Jacobi map
+      sends such a divisor to $0$, and only such divisors go to $0$. A contact problem then asks
+      for a divisor $D$ with $rD$ linearly equivalent to a fixed divisor, so its solutions form a
+      coset of the $r$-torsion of the Jacobian — a group with $r^{2p}$ elements, which is his
+      count, and a discrete one, which is his observation that no continuous variation carries a
+      curve of one system into a curve of another. In §. 8 the divisor is canonical and $r = 2$,
+      so his contact curves of order $n-3$ are the odd theta characteristics, of which there are
+      $2^{p-1}(2^p - 1)$; his binary triples $(m; q)$ are those characteristics written out, and
+      his parity condition is oddness. For a plane quartic $p = 3$, and $4 \cdot 7 = 28$.
+
+significance_sources:
+  - citation: >-
+      Riemann's own count, in this corpus: "Theorie der Abel'schen Functionen", printed p. 129,
+      "so ist p = (n-1)(m-1) - r" — the formula Clebsch's footnote on p. 191 cites as "Band 54
+      dieses Journals p. 129".
+    url: "/works/riemann-1857-abelsche-functionen/#p-129"
+  - citation: >-
+      Hesse's and Steiner's results on the double tangents of quartic curves and on systems of
+      contact conics, in volume 49 of the same Journal, which Clebsch cites by page throughout
+      §§. 9 and 10 (Hesse, p. 261; Steiner, p. 266 and following) and recovers as special cases.
 
 source:
   scan_url: "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0063"
