@@ -97,6 +97,46 @@ def test_block_is_trustworthy_rejects_an_inverted_box():
     assert not prepare_pages.block_is_trustworthy((900, 900, 100, 100), 1400, 1859)
 
 
+def test_block_covers_whole_page_flags_a_saturated_threshold():
+    # The MDZ scan of Betti 1871 has a grey page edge sitting just under the default cut-off, so
+    # every pixel counted as ink and the "block" came out as the entire scan. That must be caught:
+    # it is large enough to look trustworthy, so it would otherwise cost the crop in silence.
+    assert prepare_pages.block_covers_whole_page((0, 0, 2425, 3147), 2425, 3147)
+
+
+def test_block_covers_whole_page_accepts_a_real_block():
+    assert not prepare_pages.block_covers_whole_page((471, 385, 2172, 2639), 2425, 3147)
+
+
+def test_block_covers_whole_page_needs_both_dimensions():
+    # full width but a genuine top and bottom margin is a normal wide page, not a failure
+    assert not prepare_pages.block_covers_whole_page((0, 300, 2425, 2800), 2425, 3147)
+
+
+# --- profile-based extents: one speck must not drag the box to the page edge - #
+def test_profile_extent_ignores_isolated_specks():
+    # a dust speck at the page edge (3 dark pixels) beside three columns of real type
+    profile = [3] + [0] * 3 + [400, 600, 400] + [0] * 3
+    assert prepare_pages.profile_extent(profile, 15) == (4, 7)       # speck excluded
+    assert prepare_pages.profile_extent(profile, 2) == (0, 7)        # threshold low enough: in
+
+
+def test_profile_extent_keeps_a_sparse_column_of_real_type():
+    # p154's right-hand columns hold four flush-right equation numbers out of ~45 lines: a
+    # vanishing FRACTION of the column, but unmistakably type. A count-based rule keeps them.
+    profile = [0] * 5 + [800, 800] + [0] * 20 + [60] + [0] * 4
+    assert prepare_pages.profile_extent(profile, 15) == (5, 28)
+
+
+def test_profile_extent_spans_from_first_to_last_hit():
+    profile = [0, 0, 300, 4, 400, 0]
+    assert prepare_pages.profile_extent(profile, 15) == (2, 5)
+
+
+def test_profile_extent_returns_none_on_a_blank_page():
+    assert prepare_pages.profile_extent([0] * 20, 15) is None
+
+
 # --- the zoom mapping a batch subagent needs to magnify without guessing ----- #
 def test_zoom_mapping_round_trips_a_cropped_page():
     # Clebsch p.195 as actually prepared: 1400x1859 cropped to (84,80)-(1392,1859), out 1153x1568.

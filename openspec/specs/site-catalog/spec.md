@@ -62,6 +62,14 @@ Because typesetting a formula changes the height of the text around it, a deep l
 typeset this way SHALL be scrolled to its anchor again once the formulas around that anchor have been
 typeset, so the reader still lands on the linked page marker.
 
+Deferring on visibility has one case it cannot decide for itself: math inside a region that is
+hidden until the reader asks for it, such as an editorial note's popover card. Such a card is
+`display: none`, so its formulas have no box, never approach the viewport, and would never be
+typeset at all — the reader would open the note and be shown raw LaTeX. Math in a hidden card SHALL
+therefore be typeset with the marker that opens it, which is itself laid out in the text. This is
+not an exception to deferral but the same rule applied to the element that is actually visible; the
+cards are a handful per work and cost nothing beside a panel's formulas.
+
 Two consequences are accepted rather than fixed, and are recorded so they are not re-derived. Jumping
 directly to a distant part of a long work settles briefly as the formulas there typeset and grow,
 because there is no runway in which to typeset ahead; reserving space for display equations does not
@@ -121,6 +129,11 @@ either order, so both SHALL be driven by the panel's observed change in visibili
 
 - **WHEN** the reader scrolls into a part of the text whose formulas have not been typeset
 - **THEN** those formulas are typeset as they approach the viewport, and are then fitted like any other equation
+
+#### Scenario: An editorial note's formulas are ready before it is opened
+
+- **WHEN** the reader opens an editorial note whose text contains formulas
+- **THEN** those formulas are already typeset rather than shown as raw LaTeX, having been typeset with the marker that opens the note
 
 #### Scenario: A hidden panel costs nothing until opened
 

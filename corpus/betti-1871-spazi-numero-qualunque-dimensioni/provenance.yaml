@@ -1,0 +1,139 @@
+changelog:
+  - date: "2026-09-04"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-04"
+  verification:
+    flagged_pages: [141, 142, 152, 153, 155, 156, 157]
+    date: "2026-09-04"
+  uncertainty_flags: 0
+  note: >-
+    Enrico Betti's "Sopra gli spazi di un numero qualunque di dimensioni", Annali di Matematica
+    Pura ed Applicata, serie II, tomo IV (1870-71), pp. 140-158 — the complete paper, 19 of 19
+    pages. Read from one text-block crop per page of the MDZ scan (bsb10525788, images
+    00150-00168; printed page N is image N+10). \origpage markers run 140-158 with no gaps or
+    duplicates; pipeline/houselint.py passes over every fragment and over the assembled file, and
+    all 660 math spans render under KaTeX 0.16 with throwOnError.
+
+    HOW THESE PAGES WERE PRODUCED. Five isolated batch subagents under the /transcribe skill —
+    pp. 140-143, 144-147, 148-151, 152-155, 156-158 — each given only prompts/transcribe-chat.md,
+    the transcription-relevant house-style extract, its own page images, and this work's
+    notation.md as accumulated from the earlier batches' reports. The orchestrating session read
+    no scan image at any point. Every batch was then re-read against the scans by a verification
+    subagent, and the assembled file was proofread once more WITHOUT the scans; the readings that
+    proofread could not settle went back to the scan in two further targeted passes.
+
+    A NOTE ON THIS SCAN, which a reviewer should weigh. The pages are comparatively wide (aspect
+    1:1.30), so one crop per page leaves 1090-1568px of text width, which is comfortable — this is
+    not the narrow-scan case that forces half-page crops. The real obstacle is different: the leaf
+    bleeds MIRRORED show-through from its reverse at very nearly the type's own grey, and it lands
+    on subscripts. Every batch spent its magnification budget on that, and twice the show-through
+    was mistaken for type before being caught — a centred dot row and a marginal "(2)" on p152 are
+    p151's equation (2) showing through reversed, and a stray "+" across a fraction bar on p153 is
+    the same effect. Neither is transcribed. The zero uncertainty-flag count therefore records
+    magnification resolving each doubt, not an easy page.
+
+    APPARENT PRINTER'S ERRORS reproduced faithfully, not corrected (R4). Each was confirmed
+    against the scan at magnification:
+    (a) p. 141, eq. (4) - "dn_{n-1}" where the mathematics requires "du_{n-1}"; the glyph has no
+    bowl and no u-cup, and the same row sets unambiguous u's for comparison.
+    (b) p. 141, eq. (7) - "dF/dz_{n}" where the mathematics requires "dz_{m}". Settled by pixel
+    measurement after the transcribing batch and the verifier disagreed: the glyph is 11px wide
+    with a two-lobe ink profile, against 17px and three lobes for the known m of dA_m on the same
+    line and 19px for the m of eq. (5). The batch's argument that eq. (5) shows "the same worn
+    glyph" was wrong; they are different letters.
+    (c) p. 142 - "lo spazio T_{n-1}" where every neighbouring reference reads S_{n-1}.
+    (d) p. 142 and again p. 152 - "l'ordine delle z_1, z_2,... z_m" where the list runs to z_n.
+    The two pages were magnified independently; on p152 the disputed glyph measures 20-22px with
+    three legs against 14-17px and two for the calibration n. The print repeats its own slip.
+    (e) p. 142 - "dall'equazioni (9)" for "dalle equazioni".
+    (f) p. 146 - a stray comma in "di t' spazi chiusi di m, dimensioni".
+    (g) p. 150 - "transformazione" (the work sets "trasformazione" everywhere else), "punti
+    sezioni" (elsewhere "punti sezione"), and "farci" (elsewhere "farvi").
+    (h) p. 151 - "si riduce semplicemente connesse", feminine plural against the singular
+    masculine spazio; and "esce dello spazio R" where "dallo" is expected.
+    (i) p. 152 - the second of the paired "Avremo dunque" displays omits the "..." that the first
+    sets between dz_{r+1} and dz_n; the gap is empty paper.
+    (j) p. 153 - the first group of differentials ends "du_{n-1}" with no prime, while the
+    parallel second group has "du''_{n-1}" complete.
+    (k) p. 153 - in the unnumbered determinant after "Ma:", row 2's last entry is inverted,
+    du_{n-1} over dz_2, where rows 1 and n read dz_r over du_{n-1}. Real type, not show-through:
+    it is as dense and sharp as the fraction rule beside it.
+    (l) p. 153 - eq. (3)'s integral sign is printed bare, with no multiplicity beneath it, unlike
+    every neighbouring integral.
+    (m) p. 154 - "da (z_2^0, z_2^0,... z_n^0)": the first coordinate carries subscript 2 where the
+    sense and p153 require 1.
+    (n) p. 155 - "finite continue" with no conjunction, where the work elsewhere sets "finite e
+    continue"; and "la connessione di specie (n-1)esima", the only one of some 28 occurrences that
+    inverts "connessione di X specie".
+    (o) p. 155 - an integral over the surface A_r written "dV/dp_t" where the integrals over C on
+    the same page use "dp_c".
+    (p) p. 155 - the closing theorem sets "di ordine p_n+1" where the prose two paragraphs above
+    sets p_{n-1}+1 for the same quantity; and "di n-1 dimensioni, contenute in R", feminine plural
+    agreeing with nothing.
+    (q) p. 156 - the same label C' is set for BOTH spaces in the theorem, where the sense wants
+    two distinct spaces; both primes were magnified and are single strokes.
+    (r) p. 156 - a semicolon INSIDE the first bracket, "z_1 = z_1(v_1; v_2)", where every parallel
+    position uses a comma. (The list separator after the second group, which the transcribing
+    batch also read as a semicolon, is in fact a comma and was corrected.)
+    (s) p. 156 - "in tutta R", feminine against the masculine spazio R; and "determinato
+    dall'equazione:" singular, introducing a display of several equations.
+    (t) p. 157 - "dz_n dz_t" where the summation and the determinant rows both run over r and t,
+    so the mathematics wants dz_r; and "l'integral doppio", missing the final e; and no colon
+    after "Dunque l'integrale" where parallel places print one.
+    (u) p. 157 - the theorem states the connection of 1st species as "di ordine p_1", where p156
+    states the same hypothesis as p_1+1.
+    (v) p. 158 - the print switches within one sentence from Z^0, Z' to Z_0, Z_1 for the same two
+    endpoints.
+    Also reproduced, and NOT errors: the bare summation sign wherever the print sets one (eqq. (5)
+    and (6) carry limits and a running index, eq. (10) repeats (6) with none), and the archaic
+    spellings imaginare, Poiche, perche, purche, sodisfaccia, sodisfatte, dinoteremo,
+    contradizione, disuguaglianze and qui.
+
+    CORRECTIONS MADE DURING VERIFICATION. Seven readings were changed after the batches had
+    finished, each on evidence from the scan:
+    1. p. 141, system (2) - a second row of omitted-row dots restored; the print sets two dot
+    lines, the batch transcribed one.
+    2. p. 141 and p. 142 - paragraph breaks restored. Both pages open with an indented new
+    paragraph, which the batches had run on. Settled by measuring the leftmost ink of each line:
+    this scan's body margin sits at x 31-36 in the prepared image and a paragraph indent at x
+    62-70, with controls on the same pages either side of the boundary.
+    3. p. 141, eq. (7) - dz_m corrected to dz_n; see (b) above.
+    4. p. 153 - the inverted determinant entry restored as printed; see (k) above.
+    5. p. 156 - the list separator after the second group corrected from semicolon to comma.
+    6. p. 157 - a paragraph break before "Dunque l'integrale" removed; the line is flush at x 34.
+    A further four constructions that two batches had rendered two different ways were normalized
+    on presentation grounds only, and the rules recorded in notation.md: the thin space before a
+    differential following a non-differential factor (31 junctions), the separator in a displayed
+    list of equations, the separator inside a function's argument list, and the shape of an elided
+    row inside an aligned system.
+
+    ONE PIPELINE FIX WAS NEEDED to transcribe this scan at all, and is included in the same change.
+    prepare_pages.py detected its text block by thresholding ink and taking the bounding box. On
+    this scan the grey page edge sits just under the default cut-off, so every pixel counted as ink
+    and the "text block" came out as the whole page — silently, because a full-page box is large
+    enough to look trustworthy. Detection is now profile-based (erode, discard a border fraction,
+    keep rows and columns carrying at least a glyph's worth of ink), the threshold and the ink
+    floor are exposed as flags, and a whole-page box is reported rather than accepted. The ink
+    floor is a pixel COUNT, not a fraction: a fraction rule cut the right-hand columns of p154,
+    which hold nothing but four flush-right equation numbers out of forty-five lines, and would
+    have dropped those \tag numbers from the transcription.
+
+    IN-TEXT EDITORIAL NOTES. Three of the printer's errors above are not merely odd but
+    mathematically WRONG as printed, and each carries an \ednote at the point of use giving the
+    reading the mathematics requires, in the style already used in abel-1826 and abel-1828 —
+    (b) p. 141 eq. (7), where dz_n should be dz_m; (k) p. 153's determinant, whose second row is
+    inverted against its first and last; and (t) p. 157's closing display, where dz_n should be
+    dz_r. Nothing is corrected in the text itself: the note states what is printed, what the
+    mathematics requires, and that the printed reading stands. The remaining errors are recorded
+    here in provenance only, since they are orthographic or grammatical rather than mathematical.
+
+    STATUS ai-draft. No human has read this against the original yet. The flagged pages are where
+    a reviewer should start — they carry the contested readings above, and the three that carry an
+    \ednote are the ones most worth a specialist's eye.

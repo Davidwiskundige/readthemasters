@@ -1,0 +1,73 @@
+id: betti-1871-spazi-numero-qualunque-dimensioni
+title: "Sopra gli spazi di un numero qualunque di dimensioni."
+title_en: "On spaces of any number of dimensions."
+
+authors:
+  - name: "Enrico Betti"
+    wikidata_id: Q250920
+    birth_year: 1823
+    death_year: 1892
+    mactutor: Betti  # https://mathshistory.st-andrews.ac.uk/Biographies/Betti/
+
+publication:
+  year: 1871
+  venue: annali-di-matematica
+  volume: "4"
+  pages: "140–158"
+  title_full: >-
+    "Sopra gli spazi di un numero qualunque di dimensioni", Annali di Matematica Pura ed
+    Applicata, serie II, tomo IV (Milan, 1870–71), pp. 140–158.
+
+edition:
+  year: 1871
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Annali di Matematica Pura ed Applicata,
+    serie II, tomo IV (Milan, 1870–71), pp. 140–158 — an original edition with no modern
+    critical apparatus, commentary, or re-typesetting. Only Betti's own text is transcribed;
+    running heads and signature marks are not.
+
+discipline: mathematics
+tags: [topology, geometry, analysis]
+language: it
+type: paper
+
+source:
+  scan_url: "https://www.digitale-sammlungen.de/en/view/bsb10525788?page=150"
+  scan_id: >-
+    bsb:bsb10525788 (Annali di Matematica Pura ed Applicata, serie II, tomo IV, 1870/71,
+    pp. 140–158; scan images 00150–00168). Münchener Digitalisierungszentrum (MDZ),
+    Bayerische Staatsbibliothek. The same original printing carries the retrodigitization
+    DOI 10.1007/BF02420029.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Enrico Betti, 1823–1892 (wikidata:Q250920; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Betti/).
+  publication_date: >-
+    First published in Annali di Matematica Pura ed Applicata, serie II, tomo IV (1870–71),
+    pp. 140–158 (MDZ bsb10525788; retrodigitization DOI 10.1007/BF02420029).
+  edition: >-
+    Original first printing, Annali di Matematica Pura ed Applicata, serie II, tomo IV
+    (Milan, 1870–71), pp. 140–158. Digitized by the Münchener Digitalisierungszentrum,
+    Bayerische Staatsbibliothek, bsb10525788.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1892], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1871, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-09-04"

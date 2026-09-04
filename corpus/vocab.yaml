@@ -149,6 +149,20 @@ venues:
     archives:
       - label: "Project Euclid"
         url: "https://projecteuclid.org/journals/acta-mathematica/issues"
+  annali-di-matematica:
+    name: "Annali di Matematica Pura ed Applicata"
+    aka: "Annali di Matematica"
+    founded: 1858
+    place: "Milan / Rome"
+    note: >-
+      Italy's principal mathematics journal, continuing the Annali di Scienze Matematiche e Fisiche
+      founded by Barnaba Tortolini in 1850; from 1858 edited by Brioschi, Betti, Casorati and
+      Genocchi, and from 1868 (second series) published in Milan.
+    archives:
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10231"
+      - label: "MDZ (Munich)"
+        url: "https://www.digitale-sammlungen.de/en/search?query=Annali+di+matematica+pura+ed+applicata"
   mathematische-annalen:
     name: "Mathematische Annalen"
     founded: 1868
