@@ -474,6 +474,14 @@ function relatedNavHtml(bottom) {
       for (const span of root.querySelectorAll('span.math, span.mathblock')) {
         if (!typeset.has(span)) mathWatch.observe(span);
       }
+      // A popover's card is display:none until it is hovered or opened, so a math span inside one
+      // has no box, never intersects anything, and would sit in the reader's face as raw LaTeX the
+      // moment they opened it. Observe the .pop wrapper instead — the marker IS laid out — and
+      // typeset the whole thing, card included, when the marker comes near. KaTeX does not care
+      // that the card is hidden. Affects every \ednote carrying a formula (abel-1826, betti-1871).
+      for (const pop of root.querySelectorAll('.pop')) {
+        if (!typeset.has(pop)) mathWatch.observe(pop);
+      }
     }
 
     // The heading and the significance note are always visible and tiny (2 and 6 formulas on

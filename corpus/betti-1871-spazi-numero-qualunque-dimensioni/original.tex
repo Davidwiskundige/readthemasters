@@ -1,0 +1,400 @@
+\
+% Faithful transcription — original Italian. Transcribed from the original first printing in
+% Annali di Matematica Pura ed Applicata, serie II, tomo IV (Milan, 1870–71), printed pages
+% 140–158: E. Betti, "Sopra gli spazi di un numero qualunque di dimensioni".
+% Scan: Münchener Digitalisierungszentrum (MDZ), Bayerische Staatsbibliothek, bsb10525788
+% (scan images 00150–00168; printed page N is image N+10).
+%
+% \\origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: the running heads
+% (which read "Sugli spazi di un numero qualunque di dimensioni", differing from the title's
+% "Sopra gli spazi"), the page numbers, the signature marks ("19", "20"), the foot line
+% "Annali di Matematica, tomo IV.", and the ornamental rule under the byline. The decorated
+% drop cap opening p140 is transcribed as a plain letter.
+%
+% ORTHOGRAPHY. Only period glyph shapes are normalized — ligatures expanded, end-of-line
+% hyphenation and original line breaks dropped. Betti's own spelling is kept throughout,
+% including the archaic forms imaginare, Poichè, perchè, purchè, sodisfaccia, sodisfatte,
+% dinoteremo, contradizione, disuguaglianze and quì.
+%
+% PRINTER'S ERRORS are reproduced as printed, never silently corrected (HOUSESTYLE R4); each was
+% confirmed under magnification against the scan and is listed in provenance.yaml. The three
+% that are mathematically wrong as printed carry an in-text \ednote giving the reading the
+% mathematics requires (p. 141 eq. (7), p. 153's determinant, p. 157's closing display). This scan
+% bleeds mirrored show-through from the reverse leaf at nearly the type's own grey; none of it is
+% transcribed. Cross-page rendering decisions are recorded in notation.md.
+%
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{140}
+\section*{Sopra gli spazi di un numero qualunque di dimensioni.}
+
+(\emph{del prof.\ Enrico Betti, a Pisa.})
+
+\section*{1.}
+
+Siano $z_{1}$, $z_{2},\ldots z_{n}$ $n$ variabili che possono prendere tutti i valori reali da $-\infty$ a $+\infty$. Il campo $n$ volte infinito dei sistemi di valori di queste variabili lo diremo uno \emph{spazio} di $n$ dimensioni e lo dinoteremo con $S_{n}$. Un sistema $(z_{1}^{0}, z_{2}^{0},\ldots, z_{n}^{0})$ determinerà un punto $L_{0}$ di questo spazio, e $z_{1}^{0}$, $z_{2}^{0},\ldots z_{n}^{0}$ si diranno le \emph{coordinate} di questo punto.
+
+Un sistema di $m$ equazioni determinerà un campo dei sistemi di valori di $n-m$ variabili indipendenti che sarà uno spazio $S_{n-m}$ di altrettante dimensioni, contenuto in $S_{n}$. Uno spazio di una sola dimensione che forma una semplice continuità lo chiameremo una \emph{linea}.
+
+Sia:
+\[ F(z_{1}, z_{2},\ldots, z_{n}) = 0 \tag{1} \]
+la equazione di uno spazio $S_{n-1}$ di $n-1$ dimensioni. Se la funzione $F$ è continua e ad un sol valore per tutti i valori reali delle coordinate, lo spazio $S_{n-1}$ in generale separerà $S_{n}$ in due regioni, in una delle quali sarà $F < 0$, e nell'altra $F > 0$; e non si potrà con variazioni continue dal sistema di valori delle coordinate di un punto della prima regione passare al sistema di valori delle coordinate di un punto dell'altra regione senza passare per un sistema di valori che sodisfaccia alla equazione (1). Le due regioni saranno due spazi di $n$ dimensioni limitati dallo spazio $S_{n-1}$. Se dal sistema di valori delle coordinate di un punto qualunque di una delle due regioni si potrà sempre con variazione continua passare al sistema di valori delle coordinate di un altro punto qualunque della medesima regione senza passare per i valori delle coordinate di un punto di $S_{n-1}$, si dirà che questa regione è uno spazio \emph{connesso}.
+
+\origpage{141}
+
+Siano:
+\[
+\left.
+\begin{aligned}
+z_{1} &= z_{1}(u_{1}, u_{2},\ldots u_{n-1}),\\
+z_{2} &= z_{2}(u_{1}, u_{2},\ldots u_{n-1}),\\
+&\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\
+&\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\
+z_{n} &= z_{n}(u_{1}, u_{2},\ldots u_{n-1}),
+\end{aligned}
+\right\}
+\tag{2}
+\]
+tali funzioni continue e ad un sol valore, che sostituite nella equazione (1) la sodisfacciano identicamente. Lo spazio $S_{n-1}$ si potrà riguardare come il campo dei sistemi di valori delle $n-1$ variabili reali: $u_{1}$, $u_{2},\ldots u_{n-1}$.
+
+È evidente che in $S_{n-1}$ saranno sodisfatte le $n-1$ equazioni:
+\[ \frac{dF}{dz_{1}}\frac{dz_{1}}{du_{m}} + \frac{dF}{dz_{2}}\frac{dz_{2}}{du_{m}} + \cdots + \frac{dF}{dz_{n}}\frac{dz_{n}}{du_{m}} = 0, \tag{3} \]
+che si ottengono prendendo successivamente per $m$ i numeri $1, 2,\ldots n-1$.
+
+Denotando con $A_{1}$, $A_{2},\ldots$, $A_{n}$ quantità indeterminate qualunque, e ponendo:
+\[
+\Delta =
+\begin{vmatrix}
+A_{1} & \dfrac{dz_{1}}{du_{1}} & \dfrac{dz_{1}}{du_{2}} & \cdots & \dfrac{dz_{1}}{dn_{n-1}}\\[6pt]
+A_{2} & \dfrac{dz_{2}}{du_{1}} & \dfrac{dz_{2}}{du_{2}} & \cdots & \dfrac{dz_{2}}{du_{n-1}}\\[6pt]
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+A_{n} & \dfrac{dz_{n}}{du_{1}} & \dfrac{dz_{n}}{du_{2}} & \cdots & \dfrac{dz_{n}}{du_{n-1}}
+\end{vmatrix}
+\tag{4}
+\]
+\[ \mu^{2} = \sum_{1}^{n}{}_{m}\left(\frac{dF}{dz_{m}}\right)^{2}, \tag{5} \]
+\[ M^{2} = \sum_{1}^{n}{}_{m}\left(\frac{d\Delta}{dA_{m}}\right)^{2}, \tag{6} \]
+dalle equazioni (3) otterremo:\ednote{The left-hand side of the following equation is printed $\frac{dF}{dz_{n}}$; equations (3), (5) and (6) all run over the index $m$, and p.~142 uses this equation with $\frac{dF}{dz_{m}}$, so it should read $dz_{m}$. The glyph was magnified and measured against a known $m$ and a known $n$ on the same page: it is an $n$. An apparent misprint, reproduced here as printed.}
+\[ \frac{dF}{dz_{n}} = \frac{\mu}{M}\frac{d\Delta}{dA_{m}}. \tag{7} \]
+Ora sia $L$ una linea determinata dalle equazioni:
+\[ z_{1} = l_{1}(t), \quad z_{2} = l_{2}(t),\ldots z_{n} = l_{n}(t) \tag{8} \]
+
+\origpage{142}
+
+Se la equazione (1), sostituendovi questi valori, è soddisfatta soltanto da un numero finito di valori reali di $t$, la linea $L$ intersecherà lo spazio $T_{n-1}$ soltanto in un numero finito di punti. Sia $T_{0}$ uno di questi punti di intersezione corrispondente a $t = t_{0}$. Sarà:
+\[ F[l_{1}(t_{0}), l_{2}(t_{0}),\ldots, l_{n}(t_{0})] = 0. \]
+Consideriamo ora i due punti di $L$ corrispondenti a:
+\[
+\begin{gathered}
+t = t_{0} + \delta t_{0}\\
+t = t_{0} - \delta t_{0}
+\end{gathered}
+\]
+essendo $\delta t_{0}$ un infinitesimo.
+
+Per il primo di questi valori di $t$ la funzione $F$ diviene:
+\[ \delta F = \delta t_{0}\sum_{1}^{n}{}_{m}\frac{dF}{dz_{m}}\frac{dl_{m}}{dt_{0}}, \]
+per il secondo:
+\[ \delta' F = -\delta t_{0}\sum_{1}^{n}{}_{m}\frac{dF}{dz_{m}}\frac{dl_{m}}{dt_{0}}. \]
+Rammentando le equazioni (7) si ottiene:
+\[
+\left.
+\begin{aligned}
+\delta F &= \frac{\mu D}{M}\,\delta t_{0}\\[4pt]
+\delta' F &= -\frac{\mu D}{M}\,\delta t_{0}
+\end{aligned}
+\right\}
+\tag{9}
+\]
+essendo $D$ il determinante $\Delta$ nel quale alle $A_{m}$ sono sostituite le quantità $\dfrac{dl_{m}}{dt_{0}}$.
+
+Se ora prendiamo pei radicali che danno $\mu$ ed $M$ il segno positivo, e fissiamo convenientemente l'ordine delle $z_{1}$, $z_{2},\ldots z_{m}$, e percorriamo la linea $L$ facendo crescere $t$ con continuità, dall'equazioni (9) si deduce che se $D > 0$, quando $L$ interseca $S_{n-1}$ nel punto $T_{0}$, si esce da quella regione in cui $F < 0$ e si entra in quella in cui $F > 0$, e viceversa se $D < 0$, si esce da quella in cui $F > 0$ e si entra in quella in cui $F < 0$.
+
+Se poniamo:
+\[ ds_{n}^{2} = dz_{1}^{2} + dz_{2}^{2} + \cdots + dz_{n}^{2}, \]
+e $ds_{n}$ è l'\emph{elemento lineare} di $S_{n}$ (nel qual caso \emph{Riemann} chiama \emph{piano} lo
+
+\origpage{143}
+spazio $S_{n}$), nello spazio $S_{n-1}$ l'elemento lineare $ds_{n-1}$ sarà dato dalla formula:
+\[ ds_{n-1}^{2} = \sum\sum E_{rs}\,du_{r}\,du_{s}, \]
+essendo:
+\[ E_{rs} = \sum \frac{dz_{m}}{du_{r}}\frac{dz_{m}}{du_{s}}, \]
+e per una nota proprietà dei determinanti sarà:
+\[
+M^{2} = \sum\left(\frac{d\Delta}{dA_{m}}\right)^{2} =
+\begin{vmatrix}
+E_{11} & E_{12} & \cdots & E_{1,n-1}\\
+E_{12} & E_{22} & \cdots & E_{2,n-1}\\
+\cdots & \cdots & \cdots & \cdots\\
+\cdots & \cdots & \cdots & \cdots\\
+E_{1,n-1} & E_{2,n-1} & \cdots & E_{n-1,n-1}
+\end{vmatrix}.
+\tag{10}
+\]
+Se:
+\[ dS_{n} = dz_{1}\,dz_{2}\ldots dz_{n} \]
+è l'\emph{elemento dello spazio} $S_{n}$, l'elemento di $S_{n-1}$ sarà:
+\[ dS_{n-1} = M\,du_{1}\,du_{2}\ldots du_{n-1}. \tag{11} \]
+Sia ora:
+\[ F_{1}(u_{1}, u_{2},\ldots, u_{n-1}) = 0 \]
+la equazione di uno spazio $S_{n-2}$ contenuto in $S_{n-1}$. Se $F_{1}$ è una funzione continua e ad un sol valore, $S_{n-2}$ in generale separerà $S_{n-1}$ in due regioni, in una delle quali sarà $F_{1} < 0$ e nell'altra $F_{1} > 0$. Potrà riguardarsi $S_{n-2}$ come il campo di $n-2$ variabili reali, e potrà ripetersi ciò che abbiamo detto per $S_{n-1}$. L'elemento lineare sarà sempre una forma omogenea di $2^{\circ}$ grado, ma i coefficienti avranno una forma differente, come pure differente sarà il coefficiente $M$ per mezzo del quale si ottiene l'elemento dello spazio $S_{n-2}$. Analoghe osservazioni valgono per gli spazi di un minor numero di dimensioni.
+
+\section*{2.}
+
+Diremo che uno spazio $S_{n-m}$ di $n-m$ dimensioni è \emph{linearmente connesso}, se prendendo in esso due punti qualunque si potrà condurre una linea continua che senza uscire da $S_{n-m}$ vada da uno di questi punti all'altro.
+
+\origpage{144}
+
+Diremo che uno spazio $S_{n-1}$ è \emph{chiuso}, se divide $S_{n}$ in due spazi linearmente connessi, in modo che da un punto di uno di questi non si possa condurre una linea continua a un punto qualunque dell'altro che non intersechi $S_{n-1}$. Diremo che uno spazio linearmente connesso $S_{n-2}$ è \emph{chiuso} se divide uno spazio chiuso $S_{n-1}$ in due regioni ciascuna linearmente connessa e tali che non si possa da un punto qualunque di una di esse condurre una linea continua tutta contenuta in $S_{n-1}$, a un punto qualunque dell'altra che non intersechi $S_{n-2}$: e così di seguito.
+
+Considerando, invece di una sola, un numero qualunque di disuguaglianze:
+\[ F_{1} < 0, \quad F_{2} < 0,\ldots \quad F_{m} < 0 \]
+determineremo una parte $R$ di uno spazio $S_{t}$ che potrà essere connessa linearmente. La totalità degli spazi di $t-1$ dimensioni:
+\[ F_{1} = 0, \quad F_{2} = 0,\ldots \quad F_{m} = 0 \]
+che limita $R$ in modo che da un punto qualunque di $R$ non si può condurre una linea continua a un punto fuori di $R$, che non intersechi alcuno di questi spazi, si chiamerà il \emph{contorno} di $R$.
+
+Si dirà che uno spazio è \emph{finito} se le coordinate di tutti i suoi punti hanno valori finiti.
+
+Uno spazio finito e linearmente connesso o sarà chiuso o avrà un contorno.
+
+\section*{3.}
+
+Uno spazio finito ha proprietà indipendenti dalla grandezza delle sue dimensioni, e dalla forma dei suoi elementi. Queste proprietà che si riferiscono soltanto al modo di connessione delle sue parti furono considerate da \emph{Listing} per gli spazi ordinari in una Memoria intitolata \emph{Der Census räumlicher Complexe}, e furon determinate da \emph{Riemann} per le superficie.
+
+Oltre la connessione lineare che si presenta sola nelle superficie, io ho osservato che negli spazi di un numero di dimensioni maggiore di due si possono considerare altre specie di connessioni.
+
+Se in uno spazio $R$ di $n$ dimensioni limitato da uno ò più spazi di $n-1$ dimensioni, ogni spazio chiuso di $m$ dimensioni, essendo $m < n$, è il contorno di una parte di uno spazio linearmente connesso di $m+1$ dimensioni, tutta quanta contenuta in $R$, avremo una connessione secondo $m+1$ dimensioni, e diremo che $R$ ha \emph{semplice} la connessione di $m^{\text{esima}}$ specie. Se uno
+
+\origpage{145}
+spazio $R$ ha semplici tutte le connessioni, diremo che è \emph{semplicemente connesso}. Se invece in $R$ si può imaginare un numero $p_{m}$ di spazi chiusi di $m$ dimensioni che non possano formare il contorno di una parte linearmente connessa di uno spazio di $m+1$ dimensioni, tutta quanta contenuta in $R$, e tali che ogni altro spazio chiuso di $m$ dimensioni formi solo o con una parte di essi o con tutti il contorno di una parte linearmente connessa di uno spazio di $m+1$ dimensioni tutta quanta contenuta in $R$, diremo che $R$ ha di $(p_{m}+1)^{\text{esimo}}$ ordine la connessione di $m^{\text{esima}}$ specie.
+
+\emph{Esempi.} Nello spazio ordinario, quello compreso tra due sfere concentriche ha di $2^{\circ}$ ordine la connessione di $2^{\text{a}}$ specie, e semplice quella di $1^{\text{a}}$ specie.
+
+Lo spazio compreso da un anello ha semplice la connessione di $2^{\text{a}}$ specie, e di $2^{\circ}$ ordine quella di $1^{\text{a}}$ specie.
+
+Lo spazio compreso tra due anelli uno interno all'altro ha di $2^{\circ}$ ordine la connessione di $2^{\text{a}}$ specie, e di $3^{\circ}$ ordine quella di $1^{\text{a}}$ specie.
+
+Lo spazio compreso tra una sfera e un anello ha di $2^{\circ}$ ordine ambedue le connessioni.
+
+Per giustificare la definizione che abbiamo data delle differenti specie di connessione, è necessario dimostrare che per ogni spazio limitato $R$ il numero $p_{m}$ è determinato, cioè che comunque si conducano gli spazi chiusi di $m$ dimensioni che godono la esposta proprietà, il loro numero è sempre lo stesso. Perciò ci fonderemo, come ha fatto \emph{Riemann} per provare il teorema corrispondente relativo alle superficie, sopra il lemma seguente:
+
+\emph{Se un sistema $A$ insieme con un altro sistema $C$ di spazi chiusi di $m$ dimensioni forma il contorno di uno spazio $S_{m+1}$ di $m+1$ dimensioni linearmente connesso contenuto tutto quanto in $R$, e se un altro sistema $B$ di spazi chiusi di $m$ dimensioni forma insieme col sistema $C$ il contorno di uno spazio linearmente connesso $S'_{m+1}$ contenuto tutto in $R$; il sistema $A$ col sistema $B$ formerà il contorno di uno spazio di $m+1$ dimensioni linearmente connesso contenuto tutto in $R$.}
+
+Infatti i due spazi $S_{m+1}$ ed $S'_{m+1}$ saranno o da parti opposte, o dalla stessa parte del contorno $C$. Nel primo caso lo spazio composto di $S_{m+1}$ e di $S'_{m+1}$ avrà per contorno il sistema $A$ col sistema $B$; nel secondo caso togliendo $S'_{m+1}$ da $S_{m+1}$ rimarrà uno spazio che avrà per contorno il sistema $A$ col sistema $B$.
+
+\emph{Se $t$ spazi chiusi di $m$ dimensioni $A_{1}$, $A_{2},\ldots A_{t}$ non possono formare soli, e con ogni altro spazio chiuso di $m$ dimensioni}
+
+\origpage{146}
+\emph{formano il contorno di uno spazio linearmente connesso di $m+1$ dimensioni tutto quanto contenuto in $R$; e se un altro sistema di $t'$ spazi chiusi di $m$, dimensioni $B_{1}$, $B_{2},\ldots B_{t'}$, gode la stessa proprietà, sarà $t = t'$.}
+
+Infatti, supponiamo $t' > t$. Se $C$ è uno spazio chiuso qualunque di $m$ dimensioni, tanto il sistema $(A_{1}, A_{2},\ldots A_{t}, C)$ quanto il sistema $(A_{1}, A_{2},\ldots A_{t}, B_{1})$ formerà il contorno di uno spazio linearmente connesso di $m+1$ dimensioni tutto contenuto in $R$; quindi tanto il sistema $(A_{2}, A_{3},\ldots A_{t}, C)$ quanto il sistema $(A_{2}, A_{3},\ldots A_{t}, B_{1})$ formerà insieme con $A_{1}$ il contorno di uno spazio linearmente connesso di $m+1$ dimensioni tutto contenuto in $R$; e in conseguenza, per il lemma precedente, il sistema $(A_{2}, A_{3},\ldots A_{t}, C)$ insieme col sistema $(A_{2}, A_{3},\ldots A_{t}, B_{1})$ cioè il sistema $(B_{1}, A_{2}, A_{3},\ldots A_{t}, C)$ formerà il contorno di uno spazio di $m+1$ dimensioni tutto contenuto in $R$. Così il sistema $(B_{1}, A_{2}, A_{3},\ldots A_{t})$ unito con uno spazio chiuso qualunque $C$ forma il contorno di uno spazio linearmente connesso di $m+1$ dimensioni; e ora seguitando sostituiremo successivamente a uno degli spazi $A$ uno degli spazi $B$, e avremo finalmente che il sistema $(B_{1}, B_{2},\ldots B_{t})$ formerà con uno spazio qualunque chiuso, e quindi anche con $B_{t+1}$ il contorno di uno spazio di $m+1$ dimensioni linearmente connesso contenuto tutto in $R$, e questo è in contradizione con ciò che abbiamo supposto se $t' > t$. Ugualmente si dimostra che non può essere $t > t'$. Dunque $t = t'$ come volevamo dimostrare.
+
+\section*{4.}
+
+Quando supponiamo rotta la connessione di uno spazio limitato $R$ lungo uno spazio di un minor numero di dimensioni, che ha il contorno sopra il contorno di $R$, si dice che si fa in $R$ una \emph{sezione trasversa}.
+
+Se da uno spazio di $m$ dimensioni se ne separa una parte infinitesima che abbia per contorno uno spazio infinitesimo di $m-1$ dimensioni, diremo che vi si fa un \emph{punto sezione}.
+
+Se uno spazio limitato $R$ si può ridurre ad un altro $R'$ senza farvi nessuna sezione trasversa e soltanto mediante continui ingrandimenti e impiccolimenti delle sue parti, diremo che $R$ può con \emph{trasformazione continua} ridursi ad $R'$.
+
+Due spazi limitati $R$ ed $R'$ che si possono ridurre uno all'altro mediante
+
+\origpage{147}
+trasformazione continua avranno uguali gli ordini di tutte le specie di connessione. Ora un punto è semplicemente connesso, dunque ogni spazio che con trasformazione continua può ridursi ad un punto sarà semplicemente connesso.
+
+\emph{Ad uno spazio che ha un contorno si può sempre con trasformazione continua far perdere una dimensione.}
+
+Infatti sia $R$ questo spazio, $m$ il numero delle sue dimensioni, $C$ il suo contorno, $S_{m}$ lo spazio di cui è parte, e $u_{1}$, $u_{2}$, $u_{3},\ldots u_{m}$ denotino un sistema di coordinate in $S_{m}$. Imaginiamo un sistema $m-1$ volte infinito di linee che occupino con continuità tutto quanto $S_{m}$, per esempio le linee che hanno per equazioni:
+\[ u_{2} = a_{2}, \quad u_{3} = a_{3},\ldots, \quad u_{m-1} = a_{m-1} \]
+dove $a_{2}$, $a_{3},\ldots, a_{m-1}$ prendono tutti i valori da $-\infty$ a $+\infty$, e di questo sistema consideriamo soltanto quella parte che contiene le linee che incontrano il contorno $C$ di $R$. Ciascuna di queste linee continue col crescere di $u_{1}$ incontrando $C$, tante volte entrerà in $R$ e altrettante ne uscirà, e si potrà con trasformazione continua avvicinare indefinitamente ciascun punto d'ingresso al punto di egresso successivo, e così far perdere ad $R$ una dimensione come volevamo dimostrare.
+
+\emph{Ad uno spazio chiuso si può sempre con trasformazione continua far perdere una dimensione, dopo averci fatto un punto sezione.}
+
+Infatti, dopo avervi fatto un punto sezione lo spazio acquista un contorno, e quindi per il teorema precedente può sempre con trasformazione continua perdere una dimensione.
+
+\emph{Se in uno spazio chiuso $R$ di $m$ dimensioni si fa un solo punto sezione, non si mutano gli ordini delle sue connessioni; ma se vi si fanno $s+1$ punti sezione, l'ordine di $(m-1)^{\text{esima}}$ specie aumenta di $s$ unità, mentre gli ordini di connessione di specie inferiore non mutano.}
+
+Infatti sia $\alpha+1$ l'ordine di connessione di $(m-1)^{\text{esima}}$ specie dello spazio chiuso $R$ di $m$ dimensioni. Potremo imaginare in $R$ un sistema $A$ di $\alpha$ spazi chiusi di $m-1$ dimensioni che non formi solo, ma con ogni altro spazio chiuso $C$ di $m-1$ dimensioni formi il contorno di una parte di $R$. Poichè $R$ è chiuso il sistema $A$ con $C$ lo dividerà in due regioni separate, $R'$ e $R''$, ambedue aventi il medesimo contorno, cioè il sistema $A$ con $C$. Ora se
+
+\origpage{148}
+facciamo in $R$ un punto sezione, questo sarà in una delle due regioni; supponiamolo in $R'$. È chiaro che allora il sistema $A$ con $C$ non formerà più tutto il contorno di $R'$, ma però farà sempre tutto il contorno di $R''$. Dunque l'ordine di connessione di $(m-1)^{\text{esima}}$ specie di $R$ non sarà mutato da un sol punto sezione. Ma se facciamo in $R$ due punti sezione, potremo sempre prendere $C$ in modo che uno di questi punti sia in $R'$ e l'altro in $R''$, e quindi il sistema $A$ con $C$ non formerà più il contorno di una parte di $R$, e sarà necessario aggiungere un altro spazio chiuso di $m-1$ dimensioni per avere tutto il contorno di una parte di $R$. Dunque con due punti sezione si aumenta di una unità l'ordine di connessione di $(m-1)^{\text{esima}}$ specie di $R$. Analogamente si dimostra che con 3, 4,\ldots\ $s+1$ punti sezione si aumenta quest'ordine di 2, 3,\ldots\ $s$ unità.
+
+Ora sia $\beta+1$ l'ordine di connessione di $(m-t-1)^{\text{esima}}$ specie di $R$, essendo $0 < t < m$; si potrà imaginare in $R$ un sistema $A$ di spazi chiusi di $m-t-1$ dimensioni che non formi solo il contorno di uno spazio $T$ di $m-t$ dimensioni tutto contenuto in $R$. Siano quanti si vogliano i punti sezione fatti in $R$, purchè in numero finito; potremo sempre col dato contorno condurre $T$ in modo che non passi per ciascuno di questi punti sezione. Dunque un numero finito qualunque di punti sezione non muta gli ordini di connessione di specie inferiore alla $(m-1)^{\text{esima}}$.
+
+Poichè non si mutano gli ordini delle connessioni di uno spazio chiuso $R$ facendovi un sol punto sezione, per determinare questi ordini sarà indifferente riguardare $R$ come chiuso o come avente un contorno infinitesimo. Dunque si potrà ritenere uno spazio finito come limitato sempre da un contorno, e quindi gli si potrà sempre far perdere una dimensione con trasformazione continua, senza mutare gli ordini delle sue connessioni.
+
+\section*{5.}
+
+\emph{Per rendere semplicemente connesso, mediante sezioni trasverse semplicemente connesse, uno spazio finito $R$ di $n$ dimensioni, è necessario e sufficiente di fare $p_{n-1}$ sezioni lineari, $p_{n-2}$ di due, $p_{n-3}$ di tre,\ldots\ $p_{1}$ di $n-1$ dimensioni, se $p_{1}+1$, $p_{2}+1,\ldots p_{n-1}+1$ sono rispettivamente gli ordini delle sue connessioni di $1^{\text{a}}$, $2^{\text{a}},\ldots (n-1)^{\text{esima}}$ specie.}
+
+Infatti, essendo $p_{n-1}+1$ l'ordine di connessione di $(n-1)^{\text{esima}}$ specie di
+
+\origpage{149}
+$R$, potremo imaginare in esso un sistema $A$ di $p_{n-1}$ spazi chiusi di $n-1$ dimensioni che non formi solo il contorno di una parte di $R$, ma lo formi con ogni altro spazio chiuso di $n-1$ dimensioni. Si avranno così più regioni limitate, ciascuna delle quali avrà per contorno tutto o parte del sistema $A$ e una parte del contorno di $R$; quindi facendo perdere a queste regioni con trasformazione continua una dimensione, esse si ridurranno al sistema $A$, connesso lungo spazi di $n-2$ dimensioni. Dunque $R$ si potrà ridurre con trasformazione continua ad uno spazio $R_{1}$ di $n-1$ dimensioni formato di $p_{n-1}$ spazi chiusi $A$ di $n-1$ dimensioni connessi tra loro lungo spazi di $n-2$ dimensioni, ed $R_{1}$ avrà uguali a quelli di $R$ gli ordini delle connessioni di $(n-2)^{\text{esima}}$, $(n-3)^{\text{esima}},\ldots, 1^{\text{a}}$ specie. Ora senza mutare gli ordini delle connessioni di $R_{1}$, potremo farvi al più tanti punti sezione quanti sono gli spazi chiusi dei quali è formato, cioè $p_{n-1}$. Sia $R'_{1}$ lo spazio $R_{1}$ in cui sono fatti questi punti sezione.
+
+Riducendo $R'_{1}$ ad $R$ con trasformazione continua, i punti sezione acquistano una dimensione e divengono linee continue, che vanno da un punto del contorno di $R$ ad un altro punto del medesimo contorno, cioè divengono sezioni lineari trasverse e così gli ordini delle connessioni di specie inferiore alla $(n-1)^{\text{esima}}$ restano ancora gli stessi. Dunque in $R$ si può fare soltanto un numero $p_{n-1}$ di sezioni trasverse che non mutano i suoi ordini di connessione di specie inferiore alla $(n-1)^{\text{esima}}$.
+
+Ora ciascuna di queste $p_{n-1}$ sezioni trasverse lineari attraversa uno dei $p_{n-1}$ spazi chiusi $A$, che al più si potevano condurre in $R$ in modo che non formassero soli il contorno di una porzione di $R$, ma che lo formassero quando ad essi se ne aggiungeva un altro di $n-1$ dimensioni. Dunque dopo aver condotte queste sezioni trasverse, ciascuno degli spazi $A$ non è più chiuso, e quindi ogni spazio chiuso di $n-1$ dimensioni diviene il contorno di una porzione di $R$ ed è resa semplice la connessione di $R$ di $(n-1)^{\text{esima}}$ specie.
+
+Dunque per rendere semplice la connessione di $(n-1)^{\text{esima}}$ specie di $R$ mediante sezioni trasverse semplicemente connesse senza mutare gli ordini delle connessioni di specie inferiore, è necessario e sufficiente di farvi $p_{n-1}$ sezioni trasverse lineari.
+
+Lo spazio $R'_{1}$ di $n-1$ dimensioni, al quale si è ridotto con trasformazione continua lo spazio $R$ in cui sono fatte le $p_{n-1}$ sezioni lineari trasverse, avendo un punto sezione in ognun degli spazi chiusi dei quali è formato, e avendo l'ordine di connessione di $(n-2)^{\text{esima}}$ specie uguale a $p_{n-2}$, potrà con trasformazione continua perdere una dimensione, e ridursi a uno spazio $R_{2}$
+
+\origpage{150}
+formato di $p_{n-2}$ spazi chiusi di $n-2$ dimensioni connessi lungo spazi di $n-3$ dimensioni. Ora senza mutare gli ordini delle connessioni di $R_{2}$ possiamo farvi al più $p_{n-2}$ punti sezione. Denotiamo con $R'_{2}$ lo spazio $R_{2}$ in cui sono fatti questi punti sezioni. Riducendo $R'_{2}$ ad $R$, i punti sezione di $R'_{2}$ acquistano due dimensioni e divengono spazi di due dimensioni che hanno il contorno sopra il contorno di $R$, e sono semplicemente connessi perchè riducibili a un punto con transformazione continua, e quindi sono sezioni trasverse di due dimensioni. Denoteremo con $R''$ lo spazio $R$ in cui sono fatte le sezioni trasverse di una e di due dimensioni. Le sezioni trasverse di due dimensioni rendono semplice la connessione di $(n-2)^{\text{esima}}$ specie. Dunque per ridurre $R$ mediante sezioni trasverse semplicemente connesse ad uno spazio $R''$ che abbia semplici le connessioni di $(n-1)^{\text{esima}}$ ed $(n-2)^{\text{esima}}$ specie senza mutare gli ordini delle connessioni di specie inferiori, è necessario e sufficiente farci $p_{n-1}$ sezioni trasverse lineari e $p_{n-2}$ di due dimensioni. Così seguitando per le connessioni di specie inferiori.
+
+\emph{Quando uno spazio finito $R$ è ridotto semplicemente connesso mediante sezioni trasverse semplicemente connesse, ogni spazio chiuso di $m$ dimensioni condotto in $R$ forma con altrettanti spazi chiusi di $m$ dimensioni quante sono le sezioni trasverse di $n-m$ dimensioni che esso incontra, il contorno di uno spazio di $m+1$ dimensioni tutto contenuto in $R$.}
+
+Infatti se $p_{m}+1$ è l'ordine di connessione di $m^{\text{esima}}$ specie di $R$, ogni spazio chiuso $C$ di $m$ dimensioni formerà con un sistema $A$ di $p_{m}$ spazi chiusi di $m$ dimensioni il contorno di uno spazio $S$ di $m+1$ dimensioni tutto contenuto in $R$. Ora ciascuno degli spazi $A$ sarà intersecato da una e da una soltanto delle sezioni trasverse di $n-m$ dimensioni che fanno parte di quelle che rendono $R$ semplicemente connesso, e quindi poichè ciascuna di queste sezioni ha il contorno sopra il contorno di $R$, se $C$ formerà con $s$ degli spazi $A$ il contorno di $S$, dovrà intersecare precisamente le $s$ sezioni trasverse che intersecano quelli $s$ spazi chiusi del sistema $A$.
+
+Per maggior chiarezza facciamo alcune applicazioni allo spazio ordinario.
+
+Lo spazio compreso tra due sfere concentriche si riduce semplicemente connesso mediante una sola sezione trasversa lineare che va da un punto della superficie sferica maggiore a un punto qualunque della minore.
+
+Lo spazio compreso da una superficie anulare si riduce semplicemente connesso mediante una sola sezione trasversa superficiale fatta lungo il meridiano della superficie.
+
+\origpage{151}
+
+Lo spazio compreso tra due superficie anulari si riduce semplicemente connesse mediante una sola sezione trasversa lineare che va da un punto della superficie anulare maggiore a uno della minore, e mediante due sezioni trasverse superficiali ambedue condotte per la sezione lineare; una fatta lungo il meridiano e una lungo l'equatore della superficie.
+
+Lo spazio compreso tra una sfera e un anello si riduce semplicemente connesso mediante una sezione lineare trasversa che va dalla superficie della sfera a quella dell'anello, e l'altra superficiale che terminando alla sezione lineare va pure dalla superficie dell'anello a quella della sfera.
+
+\section*{6.}
+
+Sia dato uno spazio $R$ di $n$ dimensioni limitato da un numero qualunque di spazi chiusi di $n-1$ dimensioni: $S'_{n-1}$, $S''_{n-1},\ldots S^{(t)}_{n-1}$ i quali abbiano per equazioni
+\[ F_{1} = 0, \quad F_{2} = 0,\ldots \quad F_{t} = 0, \]
+e $R$ sia determinato dalle disuguaglianze:
+\[ F_{1} < 0, \quad F_{2} < 0,\ldots \quad F_{t} < 0. \tag{1} \]
+
+Siano: $X_{1}$, $X_{2},\ldots X_{n}$ $n$ funzioni dei punti di $R$ finite e continue; prendiamo a considerare l'integrale $n^{\text{uplo}}$:
+\[ \Omega_{n} = \int_{n} \left( \frac{dX_{1}}{dz_{1}} + \frac{dX_{2}}{dz_{2}} + \cdots + \frac{dX_{n}}{dz_{n}} \right)\,dz_{1}\,dz_{2}\ldots dz_{n} \]
+esteso a tutto lo spazio $R$.
+
+Distinguendo con indici pari i valori di $X_{r}$ nei punti nei quali la linea $Z_{r}$ che ha per equazioni:
+\[ z_{1} = a_{1}, \quad z_{2} = a_{2},\ldots \quad z_{r-1} = a_{r-1}, \quad z_{r+1} = a_{r+1},\ldots \quad z_{n} = a_{n} \tag{2} \]
+col crescere di $z_{r}$, attraversando uno degli spazi $S_{n-1}$, entra nello spazio $R$ nel quale sono sodisfatte tutte le disuguaglianze (1), e distinguendo con indici dispari i valori di $X_{r}$ nei punti nei quali la linea $Z_{r}$ attraversando uno degli spazi $S_{n-1}$ esce dello spazio $R$, avremo:
+\[ \int_{n-1} \frac{dX_{r}}{dz_{r}}\,dz_{r} = X_{r}^{0} - X_{r}' + X_{r}'' - X_{r}''' + \cdots \]
+
+\origpage{152}
+Onde:
+\[ \Omega_{n} = \sum \int_{n-1} (X_{r}^{0} - X_{r}' + X_{r}'' - X_{r}''' + \cdots)\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n}. \]
+Ora il numero dei punti nei quali la linea $Z_{r}$ incontra ciascuno degli spazi chiusi $S_{n-1}$ è pari, e in quanti di essi $Z_{r}$ entra in $R$ da altrettanti esce. Per esempio lo spazio $S'_{n-1}$ sarà incontrato da $Z_{r}$ nei punti 0, $2l_{1}+1$, $2l_{2}$, $2l_{3}+1,\ldots$, e la parte dell'integrale $\Omega_{n}$ che si riferisce ai punti di $S'_{n-1}$ sarà:
+\[ \Omega'_{n} = \int_{n-1} (X_{r}^{0} - X_{r}^{(2l_{1}+1)} + X_{r}^{(2l_{2})} - X_{r}^{(2l_{3}+1)} + \cdots)\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n}. \]
+
+Considerando $S'_{n-1}$ come il campo delle $n-1$ variabili reali: $u'_{1}$, $u'_{2},\ldots u'_{n-1}$, avremo:
+\[ dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n} = \pm \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+dove è da prendersi il segno $+$ o il segno $-$ secondo che $\dfrac{d\Delta}{dA_{r}}$ è $>$ oppure è $< 0$.
+
+Ora da ciò che abbiamo dimostrato nel primo paragrafo risulta che si può sempre prendere l'ordine delle $z_{1}$, $z_{2},\ldots z_{m}$ in modo che il segno di $\dfrac{d\Delta}{dA_{r}}$ sia uguale a quello di $\dfrac{dF_{1}}{dz_{r}}$, essendo $F_{1} = 0$ l'equazione di $S'_{n-1}$.
+
+Ora $\dfrac{dF_{1}}{dz_{r}} < 0$ nei punti di $S'_{n-1}$ nei quali $Z_{r}$ entra in $R$, e $\dfrac{dF_{1}}{dz_{r}} > 0$ nei punti nei quali esce. Avremo dunque:
+\[ \int_{n-1} X_{r}^{0}\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n} = - \int_{n-1} X_{r}^{0} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+\[ \int_{n-1} X_{r}^{(2l_{1}+1)}\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\,dz_{n} = \int_{n-1} X_{r}^{(2l_{1}+1)} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1}. \]
+Onde:
+\[ \Omega'_{n} = - \int_{n-1} \left( X_{r}^{0} \frac{d\Delta}{dA_{r}} + X_{r}^{(2l_{1}+1)} \frac{d\Delta}{dA_{r}} + \cdots \right)\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+ossia:
+\[ \Omega'_{n} = - \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+esteso a tutto lo spazio $S'_{n-1}$.
+
+\origpage{153}
+
+Analoga riduzione si può fare per gli altri spazi, e si ottiene
+\[ \Omega_{n} = - \sum \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du_{n-1} - \sum \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du''_{1}\,du''_{2}\ldots du''_{n-1} - \cdots \]
+Ma:\ednote{In the following determinant the last entry of the second row is printed $\frac{du_{n-1}}{dz_{2}}$, inverted with respect to the first and last rows, which read $\frac{dz_{1}}{du_{n-1}}$ and $\frac{dz_{n}}{du_{n-1}}$; it should read $\frac{dz_{2}}{du_{n-1}}$. Magnified, the inversion is solid type and not the show-through that crosses this page. An apparent misprint, reproduced here as printed.}
+\[ \sum X_{r} \frac{d\Delta}{dA_{r}} = \begin{vmatrix} X_{1} & \dfrac{dz_{1}}{du_{1}} & \cdots & \dfrac{dz_{1}}{du_{n-1}} \\ X_{2} & \dfrac{dz_{2}}{du_{1}} & \cdots & \dfrac{du_{n-1}}{dz_{2}} \\ \cdots & \cdots & \cdots & \cdots \\ X_{n} & \dfrac{dz_{n}}{du_{1}} & \cdots & \dfrac{dz_{n}}{du_{n-1}} \end{vmatrix} \]
+Dunque:
+\[ \Omega_{n} = - \sum_{t} \int \begin{vmatrix} X_{1} & \dfrac{dz_{1}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{1}}{du^{(t)}_{n-1}} \\ X_{2} & \dfrac{dz_{2}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{2}}{du^{(t)}_{n-1}} \\ \cdots & \cdots & \cdots & \cdots \\ X_{n} & \dfrac{dz_{n}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{n}}{du^{(t)}_{n-1}} \end{vmatrix}\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1} \tag{3} \]
+
+Se $(z_{1}^{0}, z_{2}^{0},\ldots, z_{n}^{0})$ è un punto di $S^{(t)}_{n-1}$, una linea che passa per questo punto ed ha per equazioni:
+\[ \begin{aligned} z_{1} - z_{1}^{0} &= \frac{dF_{t}}{dz_{1}^{0}}\frac{\rho}{\mu} \\ z_{2} - z_{2}^{0} &= \frac{dF_{t}}{dz_{2}^{0}}\frac{\rho}{\mu} \\ &\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\ &\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\ z_{n} - z_{n}^{0} &= \frac{dF_{t}}{dz_{n}^{0}}\frac{\rho}{\mu} \end{aligned} \]
+si dice la normale allo spazio $S^{(t)}_{n-1}$; e siccome di quì abbiamo:
+\[ \rho^{2} = (z_{1} - z_{1}^{0})^{2} + (z_{2} - z_{2}^{0})^{2} + \cdots + (z_{n} - z_{n}^{0})^{2}, \]
+
+\origpage{154}
+$\rho$ si chiama la distanza del punto $(z_{1}, z_{2},\ldots z_{n})$ da $(z_{2}^{0}, z_{2}^{0},\ldots z_{n}^{0})$. Se $\rho$ è infinitesimo e uguale a $dp_{t}$, abbiamo:
+\[ \frac{dz_{r}}{dp_{t}} = \frac{dF_{t}}{dz_{r}}\frac{1}{\mu}. \]
+Ma:
+\[ \frac{dF_{t}}{dz_{r}} = \frac{d\Delta}{dA_{r}}\frac{\mu}{M}, \]
+onde:
+\[ \frac{dz_{r}}{dp_{t}} = \frac{d\Delta}{dA_{r}}\frac{1}{M}. \]
+Onde sostituendo:
+\[ \Omega_{n} = - \sum_{t} \int_{n-1} \left( X_{1} \frac{dz_{1}}{dp_{t}} + X_{2} \frac{dz_{2}}{dp_{t}} + \cdots + X_{n} \frac{dz_{n}}{dp_{t}} \right) M\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1}. \]
+Ma essendo $dS^{(t)}_{n-1}$ l'elemento dello spazio $S^{(t)}_{n-1}$, abbiamo:
+\[ dS^{(t)}_{n-1} = M\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1}, \]
+onde:
+\[ \Omega_{n} = - \sum_{t} \int_{S^{(t)}_{n-1}} \sum_{r} X_{r} \frac{dz_{r}}{dp_{t}}\,dS^{(t)}_{n-1}. \]
+Quindi se:
+\[ X_{r} = \frac{dV}{dz_{r}}, \]
+avremo:
+\[ \begin{aligned} \Omega_{n} &= \int_{R} \left( \frac{d^{2}V}{dz_{1}^{2}} + \frac{d^{2}V}{dz_{2}^{2}} + \cdots + \frac{d^{2}V}{dz_{n}^{2}} \right)\,dR \\ &= - \sum_{t} \int_{S^{(t)}_{n-1}} \frac{dV}{dp_{t}}\,dS^{(t)}_{n-1}, \end{aligned} \]
+e perciò se:
+\[ \frac{d^{2}V}{dz_{1}^{2}} + \frac{d^{2}V}{dz_{2}^{2}} + \cdots + \frac{d^{2}V}{dz_{n}^{2}} = 0 \tag{4} \]
+in tutto lo spazio $R$, sarà:
+\[ \sum_{t} \int_{S^{(t)}_{n-1}} \frac{dV}{dp_{t}}\,dS^{(t)}_{n-1} = 0. \tag{5} \]
+
+\origpage{155}
+
+Se lo spazio $R$ ha semplice la connessione di $(n-1)^{\text{esima}}$ specie, ogni spazio chiuso $C$ di $n-1$ dimensioni condotto in esso, forma il contorno di una porzione di $R$; quindi se la equazione (4) è sodisfatta per tutto $R$, e vi sono finite continue $V$ e le sue derivate prime, sarà sempre:
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC = 0. \]
+
+Se poi lo spazio $R$ ha la connessione di specie $(n-1)^{\text{esima}}$ di ordine $p_{n-1}+1$, condotti in esso $p_{n-1}$ spazi chiusi $A_{1}$, $A_{2},\ldots A_{p_{n-1}}$ di $n-1$ dimensioni, ogni spazio chiuso $C$ contenuto in $R$ formerà col sistema $A$ il contorno di una parte di $R$: e se $a_{1}$, $a_{2},\ldots a_{p_{n-1}}$ sono le sezioni trasverse lineari che attraversano rispettivamente gli spazi chiusi $A_{1}$, $A_{2},\ldots A_{p_{n-1}}$, e rendono semplice la connessione di $(n-1)^{\text{esima}}$ specie dello spazio $R$, $C$ formerà il contorno di una parte di $R$ con quelli spazi del sistema che sono attraversati dalle sezioni $a$ che incontra $C$.
+
+Ponendo dunque:
+\[ \int_{A_{r}} \frac{dV}{dp_{t}}\,dA_{r} = M_{r} \]
+avremo:
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC + \sum M_{r} = 0 \]
+estendendo la somma a tutti i valori di $r$ che sono indici delle sezioni trasverse incontrate da $C$, ed abbiamo il seguente teorema:
+
+\emph{Se lo spazio $R$ ha la connessione di $(n-1)^{\text{esima}}$ specie di ordine $p_{n}+1$, se con sezioni trasverse lineari si rende semplice questa connessione, e $C$ è uno spazio chiuso di $n-1$ dimensioni, contenute in $R$, l'integrale:}
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC \]
+\emph{differirà da zero di tanti moduli di periodicità quante sono le sezioni trasverse lineari che attraversa lo spazio $C$.}
+
+Poichè due spazi di $n-1$ dimensioni che hanno uno stesso contorno formano insieme uno spazio chiuso, avremo ancora il seguente teorema:
+
+\origpage{156}
+
+\emph{Dato, nello spazio $R$ di $n$ dimensioni, che ha la connessione di $(n-1)^{\text{esima}}$ specie di ordine $p_{n-1}+1$, uno spazio chiuso $\Gamma$ di $n-2$ dimensioni, resa mediante $p_{n-1}$ sezioni lineari semplice questa connessione, l'integrale precedente esteso a uno spazio $C'$ che ha per contorno $\Gamma$ e incontra $s$ sezioni trasverse lineari, differirà dal medesimo integrale esteso a uno spazio $C'$ che ha lo stesso contorno e non incontra alcuna sezione, dei moduli di periodicità relativi a quelle sezioni, e quindi se lo spazio $R$ ha semplice la connessione di $(n-1)^{\text{esima}}$ specie l'integrale esteso a uno spazio qualunque $C$ contenuto in $R$ che ha per contorno $\Gamma$ avrà sempre lo stesso valore.}
+
+\section*{7.}
+
+In uno spazio chiuso $R$ di $n$ dimensioni che ha la connessione di $1^{\text{a}}$ specie di ordine $p_{1}+1$, siano $s_{1}$, $s_{2},\ldots s_{p_{1}}$ le $p_{1}$ sezioni trasverse semplicemente connesse di $n-1$ dimensioni che rendono semplice la connessione di $1^{\text{a}}$ specie di $R$. Siano $L_{1}$, $L_{2},\ldots L_{p_{1}}$ $p_{1}$ linee chiuse che rispettivamente attraversano le sezioni $s_{1}$, $s_{2},\ldots s_{p_{1}}$ e che sono tali che ogni altra linea $l$ chiusa, con quelle delle linee $L$ che attraversano le medesime sezioni che essa attraversa, forma il contorno di uno spazio $C$ di due dimensioni contenuto tutto in $R$.
+
+Siano:
+\[ z_{1} = z_{1}(u), \quad z_{2} = z_{2}(u),\ldots \quad z_{n} = z_{n}(u) \tag{1} \]
+le equazioni della linea $l$, e prendiamo a considerare l'integrale:
+\[ \Omega_{1} = \sum \int X_{r}\,dz_{r} = \sum \int X_{r} \frac{dz_{r}}{du}\,du \]
+esteso a tutta la linea $l$, essendo le $X_{r}$ finite e continue in tutta $R$.
+
+Ora la linea $l$ formando parte del contorno di $C$, se lo spazio $C$ sarà determinato dall'equazione:
+\[ z_{1} = z_{1}(v_{1}; v_{2}), \quad z_{2} = z_{2}(v_{1}, v_{2}),\ldots \quad z_{n} = z_{n}(v_{1}, v_{2}) \]
+avremo:
+\[ \frac{dz_{r}}{du}\,du = \frac{dz_{r}}{dv_{1}}\,dv_{1} + \frac{dz_{r}}{dv_{2}}\,dv_{2} \]
+
+\origpage{157}
+e quindi:
+\[ \Omega_{1} = \int \sum X_{r} \frac{dz_{r}}{dv_{1}}\,dv_{1} + \int \sum X_{r} \frac{dz_{r}}{dv_{2}}\,dv_{2}. \]
+Ora per quello che abbiamo dimostrato nel paragrafo precedente:
+\[ \begin{aligned} & \iint \left[ \frac{d}{dv_{2}} \left( \sum X_{r} \frac{dz_{r}}{dv_{1}} \right) - \frac{d}{dv_{1}} \left( \sum X_{r} \frac{dz_{r}}{dv_{2}} \right) \right] dv_{1}\,dv_{2} \\ &= \int \sum X_{r} \frac{dz_{r}}{dv_{1}}\,dv_{1} + \int \sum X_{r} \frac{dz_{r}}{dv_{2}}\,dv_{2} \end{aligned} \]
+dove l'integrale doppio è esteso a tutto lo spazio $C$ e il semplice a tutto il sistema di linee $l$, $L_{1}$, $L_{2},\ldots$ che formano il contorno di $C$.
+
+Ma abbiamo:\ednote{The last display below closes with $dz_{n}\,dz_{t}$; the summation and the determinant above it both run over $r$ and $t$, so it should read $dz_{r}\,dz_{t}$. The subscript was magnified and is unambiguously $n$. An apparent misprint, reproduced here as printed.}
+\[ \begin{aligned} & \iint \left[ \frac{d}{dv_{2}} \left( \sum X_{r} \frac{dz_{r}}{dv_{1}} \right) - \frac{d}{dv_{1}} \left( \sum X_{r} \frac{dz_{r}}{dv_{2}} \right) \right] dv_{1}\,dv_{2} \\ &= \iint \sum \frac{dX_{r}}{dz_{t}} \begin{vmatrix} \dfrac{dz_{r}}{dv_{1}} & \dfrac{dz_{r}}{dv_{2}} \\ \dfrac{dz_{t}}{dv_{1}} & \dfrac{dz_{t}}{dv_{2}} \end{vmatrix}\,dv_{1}\,dv_{2} = \sum \iint \left( \frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} \right)\,dz_{n}\,dz_{t}. \end{aligned} \]
+
+Quindi l'integral doppio è nullo se in tutto $R$ sono verificate anche le equazioni:
+\[ \frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0. \tag{2} \]
+Dunque l'integrale
+\[ \sum \int X_{r}\,dz_{r} \]
+esteso a tutte le linee $l$, $L_{1}$, $L_{2},\ldots$ che formano il contorno di uno spazio $C$, è sempre nullo, qualunque sia la linea chiusa $l$, se le $X_{r}$ sodisfano le (2) e sono finite e continue in $R$. Da ciò si ricava il teorema seguente:
+
+\emph{Se in uno spazio $R$ di $n$ dimensioni, che ha la connessione di $1^{\text{a}}$ specie di ordine $p_{1}$, sono $s_{1}$, $s_{2},\ldots s_{p_{1}}$ le sezioni trasverse di $n-1$ dimensioni, semplicemente connesse che rendono semplice la connessione di $1^{\text{a}}$ specie di $R$, ed $L_{1}$, $L_{2},\ldots L_{p_{1}}$ $p_{1}$ linee chiuse che incontrano rispettivamente le sezioni $s_{1}$, $s_{2},\ldots s_{p_{1}}$ e poniamo:}
+\[ M_{t} = \sum \int X_{r}\,dz_{r}, \]
+
+\origpage{158}
+\emph{l'integrale:}
+\[ \sum \int_{Z^{0}}^{Z'} X_{r}\,dz_{r} \]
+\emph{esteso tra due punti $Z^{0}$ e $Z'$ lungo una linea che incontra più sezioni $s$, differirà da quello preso lungo una linea che va dal punto $Z^{0}$ al punto $Z'$ senza incontrare nessuna sezione $s$, delle quantità $M$ relative alle sezioni $s$ incontrate, prese queste positivamente o negativamente secondo che sono incontrate progredendo in una o in altra direzione; se poi la connessione di $1^{\text{a}}$ specie dello spazio $R$ è semplice, l'integrale preso lungo una linea qualunque che in $R$ va da $Z_{0}$ a $Z_{1}$ ha sempre lo stesso valore.}
+
+\end{document}

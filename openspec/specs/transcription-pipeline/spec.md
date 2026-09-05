@@ -261,6 +261,26 @@ the `anthropic` SDK, so the copyright gate and CI keep their single PyYAML depen
 automatic crop is unsafe — a fold, a plate, a skewed scan — the helper SHALL pass the page through
 uncropped, report it, and continue, never failing a run over a crop it could not compute.
 
+Detection SHALL NOT be a bounding box over every dark pixel, and its ink test SHALL be a **count of
+dark pixels per row and column, not a fraction** of them. Both rules exist because the naive forms
+fail silently, which is worse than failing loudly:
+
+- A bounding box is set by its extremes, so one speck of dust or one nick in a page edge drags the
+  box out to the whole scan and the crop quietly becomes a no-op. The helper therefore projects the
+  ink onto each axis and keeps the rows and columns actually carrying type, having first eroded the
+  mask and discarded a border fraction — the scanner background and the page edge live there and are
+  dense enough to pass any ink test.
+- A fraction rule drops a column of genuine but sparse type. Measured on Betti 1871, the right-hand
+  columns of one page hold nothing but four flush-right equation numbers out of forty-five lines: a
+  vanishing fraction, unmistakably type, and cropping them would have removed four `\tag` numbers
+  from the transcription.
+
+A detected block covering essentially the whole page SHALL be reported and refused rather than used.
+It is not the untrusted-block case above — it looks large and plausible, so it passes any
+"is this block big enough" test — and it means the ink threshold is counting the scanner background
+as type. The threshold and the ink floor SHALL therefore be adjustable per run, since which value
+works is a property of the scan and not something the helper can know in advance.
+
 #### Scenario: A page is prepared for transcription
 
 - **WHEN** the helper crops a scan page
@@ -270,6 +290,21 @@ uncropped, report it, and continue, never failing a run over a crop it could not
 
 - **WHEN** the helper cannot safely determine a page's text block
 - **THEN** that page is passed through uncropped and reported, and the run continues
+
+#### Scenario: A speck of dust does not defeat the crop
+
+- **WHEN** a page carries isolated marks outside the printed text block
+- **THEN** they are excluded from the detected block, and the crop is still tight to the type
+
+#### Scenario: A sparse column of real type is kept
+
+- **WHEN** a column of the text block holds only a few flush-right equation numbers
+- **THEN** it is kept inside the crop, because the ink test counts pixels rather than proportions
+
+#### Scenario: The ink threshold is saturated by the scan's background
+
+- **WHEN** the detected text block covers essentially the whole page
+- **THEN** the helper reports it and keeps the page uncropped, rather than accepting a crop that does nothing
 
 #### Scenario: The gate stays dependency-free
 

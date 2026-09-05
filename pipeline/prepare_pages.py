@@ -39,6 +39,21 @@ MIN_COMFORTABLE_WIDTH = 1000
 DEFAULT_MARGIN = 0.02        # padding around the detected text block, as a fraction of the page
 DEFAULT_THRESHOLD = 200      # 0-255; below this a pixel counts as ink
 MIN_BLOCK_FRACTION = 0.25    # a "text block" smaller than this fraction of the page is not trusted
+# ... and a block covering more than this fraction of BOTH page dimensions is not a text block at
+# all: no printed page has margins that thin. It means the ink threshold caught the scanner
+# background (Betti 1871 in the MDZ scan has a grey right-hand edge sitting just under 200), so the
+# crop silently becomes a no-op instead of failing loudly. Detected, reported, and fixed with
+# --threshold.
+MAX_BLOCK_FRACTION = 0.98
+# A row or column joins the text block once it carries at least this many dark pixels — about one
+# glyph's worth. A COUNT, not a fraction: a column at the right-hand edge of the block may hold
+# nothing but four flush-right equation numbers out of forty-five lines, which is a vanishing
+# fraction but unmistakably type. Measured on Betti 1871, a 2% fraction rule cut exactly those
+# columns and would have dropped four 	ag numbers off p154.
+MIN_INK_PIXELS = 15
+# Ignore this fraction of each edge before detecting. The scanner background and the page edge sit
+# there and are dense enough to pass any ink test, which would peg the block to the whole scan.
+BORDER_FRACTION = 0.03
 IMAGE_SUFFIXES = (".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp")
 
 
@@ -131,34 +146,80 @@ def block_is_trustworthy(box: tuple[int, int, int, int], width: int, height: int
     return area >= MIN_BLOCK_FRACTION * width * height
 
 
+def block_covers_whole_page(box: tuple[int, int, int, int], width: int, height: int) -> bool:
+    """True when the detected block spans essentially the whole page in both dimensions."""
+    left, top, right, bottom = box
+    return ((right - left) >= MAX_BLOCK_FRACTION * width
+            and (bottom - top) >= MAX_BLOCK_FRACTION * height)
+
+
 # --------------------------------------------------------------------------- #
 # Image work (lazily imports Pillow)
 # --------------------------------------------------------------------------- #
 def _pillow():
     try:
-        from PIL import Image  # noqa: PLC0415 — contributor-only dependency, imported lazily
+        from PIL import Image, ImageFilter  # noqa: PLC0415 — contributor-only, imported lazily
     except ImportError:
         raise SystemExit(
             "error: the 'Pillow' package is required to prepare pages.\n"
             "       pip install Pillow\n"
             "       (it is NOT needed by pipeline/validate.py or CI.)"
         )
-    return Image
+    return Image, ImageFilter
 
 
-def detect_text_block(image, threshold: int = DEFAULT_THRESHOLD):
-    """Bounding box of the inked area, or None if nothing convincing was found."""
+def profile_extent(profile: list[int], min_pixels: int) -> tuple[int, int] | None:
+    """First and last index carrying at least `min_pixels` of ink (half-open at the end)."""
+    hits = [i for i, value in enumerate(profile) if value >= min_pixels]
+    if not hits:
+        return None
+    return hits[0], hits[-1] + 1
+
+
+def detect_text_block(image, threshold: int = DEFAULT_THRESHOLD,
+                      min_pixels: int = MIN_INK_PIXELS,
+                      border: float = BORDER_FRACTION):
+    """Bounding box of the printed text block, or None if nothing convincing was found.
+
+    Deliberately NOT mask.getbbox(): that bounds every dark pixel, so one speck of dust drags the
+    box out to the whole scan and the crop silently becomes a no-op. Instead:
+
+      1. threshold to an ink mask, and erode it, which removes specks thinner than the kernel;
+      2. discard a `border` fraction of each edge, where the scanner background and the page edge
+         live — those are dense, so no ink test alone can tell them from type;
+      3. project what is left onto each axis and keep the rows and columns carrying at least
+         `min_pixels` of ink.
+
+    BOX resampling to a 1px strip is how the per-row and per-column sums are taken, which keeps
+    this pure Pillow (no numpy).
+    """
+    Image, ImageFilter = _pillow()
     grey = image.convert("L")
-    # Everything darker than `threshold` becomes non-zero; getbbox() then bounds the ink.
-    mask = grey.point(lambda value: 255 if value < threshold else 0)
-    return mask.getbbox()
+    # Everything darker than `threshold` becomes ink (255); everything lighter becomes 0.
+    mask = grey.point(lambda value: 255 if value < threshold else 0).filter(ImageFilter.MinFilter(3))
+    width, height = mask.size
+    inset_x, inset_y = int(width * border), int(height * border)
+    inner = mask.crop((inset_x, inset_y, width - inset_x, height - inset_y))
+    inner_w, inner_h = inner.size
+    if inner_w < 1 or inner_h < 1:
+        return None
+    # resize to a 1px strip averages the axis; multiply back out to recover a pixel count
+    columns = [round(v / 255 * inner_h) for v in inner.resize((inner_w, 1), Image.BOX).getdata()]
+    rows = [round(v / 255 * inner_w) for v in inner.resize((1, inner_h), Image.BOX).getdata()]
+    horizontal = profile_extent(columns, min_pixels)
+    vertical = profile_extent(rows, min_pixels)
+    if not horizontal or not vertical:
+        return None
+    return (horizontal[0] + inset_x, vertical[0] + inset_y,
+            horizontal[1] + inset_x, vertical[1] + inset_y)
 
 
 def prepare_page(path: str, out_path: str, max_edge: int, margin: float,
-                 crop: bool = True) -> dict:
+                 crop: bool = True, threshold: int = DEFAULT_THRESHOLD,
+                 min_ink: int = MIN_INK_PIXELS) -> dict:
     """Crop one page to its text block and scale it. Returns a report dict; never raises on a
     page whose block cannot be found — it falls back to the uncropped page."""
-    Image = _pillow()
+    Image, _ = _pillow()
     with Image.open(path) as image:
         image.load()
         source_size = image.size
@@ -167,10 +228,18 @@ def prepare_page(path: str, out_path: str, max_edge: int, margin: float,
         box = None
         if crop:
             try:
-                box = detect_text_block(image)
+                box = detect_text_block(image, threshold, min_ink)
             except Exception:                      # noqa: BLE001 — detection must never be fatal
                 box = None
-            if box and block_is_trustworthy(box, width, height):
+            if box and block_covers_whole_page(box, width, height):
+                # getbbox() returned (nearly) the entire page. On a clean scan that cannot happen;
+                # it means `threshold` is counting the scanner background as ink — a grey page edge
+                # or gutter shadow sitting just under the cut-off. This is NOT the untrusted-block
+                # case below: the box looks large and plausible, so it would sail through
+                # block_is_trustworthy() and silently cost the crop. Say so, and suggest the fix.
+                note = f"text block = whole page — try a stricter --threshold (now {threshold})"
+                box = None
+            elif box and block_is_trustworthy(box, width, height):
                 box = pad_box(box, width, height, margin)
             else:
                 note = "no trustworthy text block — kept full page"
@@ -202,6 +271,13 @@ def main(argv=None) -> int:
                         help=f"long-edge cap in px (default {DEFAULT_MAX_EDGE})")
     parser.add_argument("--margin", type=float, default=DEFAULT_MARGIN,
                         help=f"padding around the text block (default {DEFAULT_MARGIN})")
+    parser.add_argument("--threshold", type=int, default=DEFAULT_THRESHOLD,
+                        help=f"grey level below which a pixel counts as ink "
+                             f"(default {DEFAULT_THRESHOLD}); lower it when a scan's grey "
+                             f"background is being detected as text")
+    parser.add_argument("--min-ink", type=int, default=MIN_INK_PIXELS,
+                        help=f"dark pixels a row/column needs to join the text block "
+                             f"(default {MIN_INK_PIXELS})")
     parser.add_argument("--no-crop", default="",
                         help="comma-separated pages to pass through uncropped")
     parser.add_argument("--dry-run", action="store_true", help="report without writing files")
@@ -237,7 +313,8 @@ def main(argv=None) -> int:
             print(f"p{page}: would prepare from {found[page]}")
             continue
         result = prepare_page(src, dst, args.max_edge, args.margin,
-                              crop=page not in skip_crop)
+                              crop=page not in skip_crop, threshold=args.threshold,
+                              min_ink=args.min_ink)
         total_tokens += result["tokens"]
         widths.append(result["out_size"][0])
         if result["note"]:
