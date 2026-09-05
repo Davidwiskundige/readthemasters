@@ -1,0 +1,444 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker, \ednote and \emph span
+% is reproduced unchanged; only the prose is translated — including the prose set INSIDE math via
+% a text insert, which is translated like any other prose (HOUSESTYLE R21).
+% pipeline/texcompare.py ignores the CONTENT of such an insert while still checking that each one
+% is present, unmoved, and that all surrounding math is identical, so those changes were verified
+% by hand.
+%
+% THE ORDINAL INSERTS are this work's only ones, and they carry its central phrase, "la connessione
+% di $m^{\text{esima}}$ specie". Italian marks the ordinal with a word ending, English with a
+% two-letter suffix, so every esima/esimo/a becomes st/nd/th: $m^{\text{esima}}$ ->
+% $m^{\text{th}}$, $(n-1)^{\text{esima}}$ -> $(n-1)^{\text{th}}$, $(p_{m}+1)^{\text{esimo}}$ ->
+% $(p_{m}+1)^{\text{th}}$, $1^{\text{a}}$ -> $1^{\text{st}}$, $2^{\text{a}}$ -> $2^{\text{nd}}$.
+% One insert is not an ordinal: "l'integrale $n^{\text{uplo}}$" (p. 150) is rendered
+% "the $n^{\text{-tuple}}$ integral" — the period English word for an integral of multiplicity n,
+% and, like Betti's own, a suffix set on the n rather than a separate word.
+%
+% THE DEGREE ORDINAL $2^{\circ}$ IS MATHEMATICS, NOT A TEXT INSERT, and is therefore reproduced
+% unchanged: "di $2^{\circ}$ ordine" reads "of the $2^{\circ}$ order", "di $2^{\circ}$ grado"
+% "of the $2^{\circ}$ degree". Betti sets two different ordinal forms — the abbreviation
+% $2^{\circ}$ for the ORDER of a connection and the spelled $2^{\text{a}}$ for its SPECIES — and
+% keeping the first as printed preserves that distinction on the page.
+%
+% TERMINOLOGY. Applied from corpus/betti-1871-spazi-numero-qualunque-dimensioni/glossary.yaml.
+% Betti is writing Riemann's theory in Italian, so wherever he has an Italian word for one of
+% Riemann's, this translation uses the English word the corpus already uses for Riemann's:
+% contorno = "boundary" (Riemann's Begrenzung), ad un sol valore = "single-valued" (einwerthig),
+% modulo di periodicità = "modulus of periodicity" (Periodicitätsmodul), semplicemente connesso =
+% "simply connected", superficie = "surface", ordine = "order", grado = "degree".
+%
+% Two of his terms are his own and are rendered literally, not by the modern word:
+%   * "sezione trasversa" = "transverse section". Riemann's Querschnitt is rendered "crosscut" in
+%     this corpus, but Betti's sections are of every dimension from 1 to n-1, not Riemann's curve
+%     across a surface, and "transverse section" is his own Italian phrase rendered word for word.
+%   * "punto sezione" = "point section" — Betti's own coinage for the infinitesimal piece removed
+%     from a closed space, and kept as odd in English as it is in Italian.
+% Likewise "connessione di m esima specie" = "connection of the $m^{\text{th}}$ species": the
+% modern reading (the rank of the m-th homology group) belongs in the work's significance note,
+% not inside Betti's sentences.
+%
+% ITALIAN COMPOSITOR'S AND GRAMMATICAL SLIPS ARE NOT CARRIED ACROSS, following the corpus practice
+% set in roch-1865. The ones recorded in original.tex and provenance.yaml that live in the prose
+% have nothing to be faithful to in English and are rendered by the correct word or simply
+% disappear: the archaic spellings (imaginare, Poichè, perchè, purchè, sodisfaccia, dinoteremo,
+% contradizione, quì) have no English counterpart; "transformazione" (p. 150) reads
+% "transformation" like every other occurrence; "l'integral doppio" (p. 157) reads "the double
+% integral"; "dall'equazioni (9)" (p. 142) reads "from equations (9)"; the stray comma in "di $m$,
+% dimensioni" (p. 146) is not reproduced; and the feminine plurals that agree with nothing
+% ("si riduce semplicemente connesse" p. 151, "contenute in $R$" p. 155, "in tutta $R$" p. 156)
+% vanish with Italian gender. "finite continue" (p. 155), which omits the conjunction the work sets
+% everywhere else, is rendered "finite and continuous".
+%
+% ONE PRINTED INVERSION IS KEPT, because English can carry it: p. 155 sets "la connessione di
+% specie $(n-1)^{\text{esima}}$", inverting the "connessione di X specie" of its 27 other
+% occurrences, and is rendered "the connection of species $(n-1)^{\text{th}}$" against "the
+% connection of the $(n-1)^{\text{th}}$ species" elsewhere.
+%
+% THE THREE MATHEMATICAL MISPRINTS keep both the printed reading and the \ednote that states what
+% the mathematics requires (p. 141 eq. (7), p. 153's determinant, p. 157's closing display). The
+% notes were written in English in the transcription and stand unchanged here; the wrong symbols
+% are mathematics and are reproduced as printed, exactly as in the original.
+%
+% WORD ORDER AT A PAGE BREAK. Italian puts the predicative adjective before its object in
+% "\emph{Riemann} chiama \emph{piano} lo | spazio $S_{n}$", and the printed break falls between
+% them. English cannot: p. 142 here ends "\emph{Riemann} calls the" and p. 143 opens "space
+% $S_{n}$ \emph{plane})". The \origpage marker itself has not moved, so the alignment is unchanged;
+% the same happens at the 144/145 and 145/146 turns, where the break falls inside a clause whose
+% English order differs.
+%
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{140}
+\section*{On spaces of any number of dimensions.}
+
+(\emph{by Prof.\ Enrico Betti, at Pisa.})
+
+\section*{1.}
+
+Let $z_{1}$, $z_{2},\ldots z_{n}$ be $n$ variables which can take all real values from $-\infty$ to $+\infty$. The $n$-fold infinite field of the systems of values of these variables we shall call a \emph{space} of $n$ dimensions, and we shall denote it by $S_{n}$. A system $(z_{1}^{0}, z_{2}^{0},\ldots, z_{n}^{0})$ will determine a point $L_{0}$ of this space, and $z_{1}^{0}$, $z_{2}^{0},\ldots z_{n}^{0}$ will be called the \emph{coordinates} of this point.
+
+A system of $m$ equations will determine a field of the systems of values of $n-m$ independent variables, which will be a space $S_{n-m}$ of as many dimensions, contained in $S_{n}$. A space of a single dimension which forms a simple continuity we shall call a \emph{line}.
+
+Let:
+\[ F(z_{1}, z_{2},\ldots, z_{n}) = 0 \tag{1} \]
+be the equation of a space $S_{n-1}$ of $n-1$ dimensions. If the function $F$ is continuous and single-valued for all real values of the coordinates, the space $S_{n-1}$ will in general separate $S_{n}$ into two regions, in one of which $F < 0$ and in the other $F > 0$; and it will not be possible, by continuous variations, to pass from the system of values of the coordinates of a point of the first region to the system of values of the coordinates of a point of the other region without passing through a system of values which satisfies equation (1). The two regions will be two spaces of $n$ dimensions bounded by the space $S_{n-1}$. If from the system of values of the coordinates of any point whatever of one of the two regions one can always pass, by continuous variation, to the system of values of the coordinates of any other point whatever of the same region without passing through the values of the coordinates of a point of $S_{n-1}$, this region will be said to be a \emph{connected} space.
+
+\origpage{141}
+
+Let:
+\[
+\left.
+\begin{aligned}
+z_{1} &= z_{1}(u_{1}, u_{2},\ldots u_{n-1}),\\
+z_{2} &= z_{2}(u_{1}, u_{2},\ldots u_{n-1}),\\
+&\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\
+&\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\
+z_{n} &= z_{n}(u_{1}, u_{2},\ldots u_{n-1}),
+\end{aligned}
+\right\}
+\tag{2}
+\]
+be such continuous and single-valued functions that, substituted in equation (1), they satisfy it identically. The space $S_{n-1}$ may be regarded as the field of the systems of values of the $n-1$ real variables: $u_{1}$, $u_{2},\ldots u_{n-1}$.
+
+It is evident that in $S_{n-1}$ there will be satisfied the $n-1$ equations:
+\[ \frac{dF}{dz_{1}}\frac{dz_{1}}{du_{m}} + \frac{dF}{dz_{2}}\frac{dz_{2}}{du_{m}} + \cdots + \frac{dF}{dz_{n}}\frac{dz_{n}}{du_{m}} = 0, \tag{3} \]
+which are obtained by taking successively for $m$ the numbers $1, 2,\ldots n-1$.
+
+Denoting by $A_{1}$, $A_{2},\ldots$, $A_{n}$ any indeterminate quantities whatever, and putting:
+\[
+\Delta =
+\begin{vmatrix}
+A_{1} & \dfrac{dz_{1}}{du_{1}} & \dfrac{dz_{1}}{du_{2}} & \cdots & \dfrac{dz_{1}}{dn_{n-1}}\\[6pt]
+A_{2} & \dfrac{dz_{2}}{du_{1}} & \dfrac{dz_{2}}{du_{2}} & \cdots & \dfrac{dz_{2}}{du_{n-1}}\\[6pt]
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+\cdots & \cdots & \cdots & \cdots & \cdots\\
+A_{n} & \dfrac{dz_{n}}{du_{1}} & \dfrac{dz_{n}}{du_{2}} & \cdots & \dfrac{dz_{n}}{du_{n-1}}
+\end{vmatrix}
+\tag{4}
+\]
+\[ \mu^{2} = \sum_{1}^{n}{}_{m}\left(\frac{dF}{dz_{m}}\right)^{2}, \tag{5} \]
+\[ M^{2} = \sum_{1}^{n}{}_{m}\left(\frac{d\Delta}{dA_{m}}\right)^{2}, \tag{6} \]
+we shall obtain from equations (3):\ednote{The left-hand side of the following equation is printed $\frac{dF}{dz_{n}}$; equations (3), (5) and (6) all run over the index $m$, and p.~142 uses this equation with $\frac{dF}{dz_{m}}$, so it should read $dz_{m}$. The glyph was magnified and measured against a known $m$ and a known $n$ on the same page: it is an $n$. An apparent misprint, reproduced here as printed.}
+\[ \frac{dF}{dz_{n}} = \frac{\mu}{M}\frac{d\Delta}{dA_{m}}. \tag{7} \]
+Now let $L$ be a line determined by the equations:
+\[ z_{1} = l_{1}(t), \quad z_{2} = l_{2}(t),\ldots z_{n} = l_{n}(t) \tag{8} \]
+
+\origpage{142}
+
+If equation (1), on substituting these values in it, is satisfied only by a finite number of real values of $t$, the line $L$ will intersect the space $T_{n-1}$ only in a finite number of points. Let $T_{0}$ be one of these points of intersection, corresponding to $t = t_{0}$. We shall have:
+\[ F[l_{1}(t_{0}), l_{2}(t_{0}),\ldots, l_{n}(t_{0})] = 0. \]
+Let us now consider the two points of $L$ corresponding to:
+\[
+\begin{gathered}
+t = t_{0} + \delta t_{0}\\
+t = t_{0} - \delta t_{0}
+\end{gathered}
+\]
+$\delta t_{0}$ being an infinitesimal.
+
+For the first of these values of $t$ the function $F$ becomes:
+\[ \delta F = \delta t_{0}\sum_{1}^{n}{}_{m}\frac{dF}{dz_{m}}\frac{dl_{m}}{dt_{0}}, \]
+for the second:
+\[ \delta' F = -\delta t_{0}\sum_{1}^{n}{}_{m}\frac{dF}{dz_{m}}\frac{dl_{m}}{dt_{0}}. \]
+Recalling equations (7), one obtains:
+\[
+\left.
+\begin{aligned}
+\delta F &= \frac{\mu D}{M}\,\delta t_{0}\\[4pt]
+\delta' F &= -\frac{\mu D}{M}\,\delta t_{0}
+\end{aligned}
+\right\}
+\tag{9}
+\]
+$D$ being the determinant $\Delta$ in which the quantities $\dfrac{dl_{m}}{dt_{0}}$ are substituted for the $A_{m}$.
+
+If we now take the positive sign for the radicals which give $\mu$ and $M$, and fix conveniently the order of the $z_{1}$, $z_{2},\ldots z_{m}$, and traverse the line $L$ making $t$ increase continuously, it follows from equations (9) that if $D > 0$, when $L$ intersects $S_{n-1}$ at the point $T_{0}$, one goes out of that region in which $F < 0$ and enters that in which $F > 0$; and conversely if $D < 0$, one goes out of that in which $F > 0$ and enters that in which $F < 0$.
+
+If we put:
+\[ ds_{n}^{2} = dz_{1}^{2} + dz_{2}^{2} + \cdots + dz_{n}^{2}, \]
+and $ds_{n}$ is the \emph{linear element} of $S_{n}$ (in which case \emph{Riemann} calls the
+
+\origpage{143}
+space $S_{n}$ \emph{plane}), in the space $S_{n-1}$ the linear element $ds_{n-1}$ will be given by the formula:
+\[ ds_{n-1}^{2} = \sum\sum E_{rs}\,du_{r}\,du_{s}, \]
+where:
+\[ E_{rs} = \sum \frac{dz_{m}}{du_{r}}\frac{dz_{m}}{du_{s}}, \]
+and by a known property of determinants we shall have:
+\[
+M^{2} = \sum\left(\frac{d\Delta}{dA_{m}}\right)^{2} =
+\begin{vmatrix}
+E_{11} & E_{12} & \cdots & E_{1,n-1}\\
+E_{12} & E_{22} & \cdots & E_{2,n-1}\\
+\cdots & \cdots & \cdots & \cdots\\
+\cdots & \cdots & \cdots & \cdots\\
+E_{1,n-1} & E_{2,n-1} & \cdots & E_{n-1,n-1}
+\end{vmatrix}.
+\tag{10}
+\]
+If:
+\[ dS_{n} = dz_{1}\,dz_{2}\ldots dz_{n} \]
+is the \emph{element of the space} $S_{n}$, the element of $S_{n-1}$ will be:
+\[ dS_{n-1} = M\,du_{1}\,du_{2}\ldots du_{n-1}. \tag{11} \]
+Now let:
+\[ F_{1}(u_{1}, u_{2},\ldots, u_{n-1}) = 0 \]
+be the equation of a space $S_{n-2}$ contained in $S_{n-1}$. If $F_{1}$ is a continuous and single-valued function, $S_{n-2}$ will in general separate $S_{n-1}$ into two regions, in one of which $F_{1} < 0$ and in the other $F_{1} > 0$. $S_{n-2}$ may be regarded as the field of $n-2$ real variables, and what we have said for $S_{n-1}$ may be repeated. The linear element will always be a homogeneous form of the $2^{\circ}$ degree, but the coefficients will have a different form, as will also the coefficient $M$ by means of which the element of the space $S_{n-2}$ is obtained. Analogous observations hold for the spaces of a smaller number of dimensions.
+
+\section*{2.}
+
+We shall say that a space $S_{n-m}$ of $n-m$ dimensions is \emph{linearly connected} if, taking in it any two points whatever, a continuous line can be drawn which, without going out of $S_{n-m}$, goes from one of these points to the other.
+
+\origpage{144}
+
+We shall say that a space $S_{n-1}$ is \emph{closed} if it divides $S_{n}$ into two linearly connected spaces, in such a way that from a point of one of these no continuous line can be drawn to any point whatever of the other which does not intersect $S_{n-1}$. We shall say that a linearly connected space $S_{n-2}$ is \emph{closed} if it divides a closed space $S_{n-1}$ into two regions each linearly connected and such that from any point whatever of one of them no continuous line lying wholly in $S_{n-1}$ can be drawn to any point whatever of the other which does not intersect $S_{n-2}$: and so on.
+
+Considering, instead of a single one, any number whatever of inequalities:
+\[ F_{1} < 0, \quad F_{2} < 0,\ldots \quad F_{m} < 0 \]
+we shall determine a part $R$ of a space $S_{t}$ which may be linearly connected. The totality of the spaces of $t-1$ dimensions:
+\[ F_{1} = 0, \quad F_{2} = 0,\ldots \quad F_{m} = 0 \]
+which bounds $R$ in such a way that from any point whatever of $R$ no continuous line can be drawn to a point outside $R$ which does not intersect some one of these spaces, will be called the \emph{boundary} of $R$.
+
+A space will be said to be \emph{finite} if the coordinates of all its points have finite values.
+
+A finite and linearly connected space will either be closed or will have a boundary.
+
+\section*{3.}
+
+A finite space has properties independent of the magnitude of its dimensions and of the form of its elements. These properties, which refer only to the mode of connection of its parts, were considered by \emph{Listing} for ordinary spaces in a Memoir entitled \emph{Der Census räumlicher Complexe}, and were determined by \emph{Riemann} for surfaces.
+
+Besides the linear connection, which alone presents itself in surfaces, I have observed that in spaces of a number of dimensions greater than two other species of connection may be considered.
+
+If in a space $R$ of $n$ dimensions bounded by one or more spaces of $n-1$ dimensions every closed space of $m$ dimensions, where $m < n$, is the boundary of a part of a linearly connected space of $m+1$ dimensions lying wholly in $R$, we shall have a connection according to $m+1$ dimensions, and we shall say that $R$ has \emph{simple} the connection of the $m^{\text{th}}$ species. If a
+
+\origpage{145}
+space $R$ has all its connections simple, we shall say that it is \emph{simply connected}. If on the contrary one can imagine in $R$ a number $p_{m}$ of closed spaces of $m$ dimensions which cannot form the boundary of a linearly connected part of a space of $m+1$ dimensions lying wholly in $R$, and such that every other closed space of $m$ dimensions forms, either alone or with a part of them or with all of them, the boundary of a linearly connected part of a space of $m+1$ dimensions lying wholly in $R$, we shall say that $R$ has of the $(p_{m}+1)^{\text{th}}$ order the connection of the $m^{\text{th}}$ species.
+
+\emph{Examples.} In ordinary space, that comprised between two concentric spheres has of the $2^{\circ}$ order the connection of the $2^{\text{nd}}$ species, and simple that of the $1^{\text{st}}$ species.
+
+The space comprised by a ring has simple the connection of the $2^{\text{nd}}$ species, and of the $2^{\circ}$ order that of the $1^{\text{st}}$ species.
+
+The space comprised between two rings, one inside the other, has of the $2^{\circ}$ order the connection of the $2^{\text{nd}}$ species, and of the $3^{\circ}$ order that of the $1^{\text{st}}$ species.
+
+The space comprised between a sphere and a ring has of the $2^{\circ}$ order both connections.
+
+To justify the definition we have given of the different species of connection, it is necessary to show that for every bounded space $R$ the number $p_{m}$ is determinate, that is, that however the closed spaces of $m$ dimensions enjoying the property set forth be drawn, their number is always the same. For this we shall rest, as \emph{Riemann} has done in proving the corresponding theorem relating to surfaces, upon the following lemma:
+
+\emph{If a system $A$ together with another system $C$ of closed spaces of $m$ dimensions forms the boundary of a linearly connected space $S_{m+1}$ of $m+1$ dimensions contained wholly in $R$, and if another system $B$ of closed spaces of $m$ dimensions forms together with the system $C$ the boundary of a linearly connected space $S'_{m+1}$ contained wholly in $R$; the system $A$ with the system $B$ will form the boundary of a linearly connected space of $m+1$ dimensions contained wholly in $R$.}
+
+In fact the two spaces $S_{m+1}$ and $S'_{m+1}$ will lie either on opposite sides or on the same side of the boundary $C$. In the first case the space composed of $S_{m+1}$ and of $S'_{m+1}$ will have for boundary the system $A$ with the system $B$; in the second case, on taking $S'_{m+1}$ away from $S_{m+1}$, there will remain a space which will have for boundary the system $A$ with the system $B$.
+
+\emph{If $t$ closed spaces of $m$ dimensions $A_{1}$, $A_{2},\ldots A_{t}$ cannot form alone, and with every other closed space of $m$ dimensions do}
+
+\origpage{146}
+\emph{form the boundary of a linearly connected space of $m+1$ dimensions contained wholly in $R$; and if another system of $t'$ closed spaces of $m$ dimensions $B_{1}$, $B_{2},\ldots B_{t'}$ enjoys the same property, then $t = t'$.}
+
+In fact, let us suppose $t' > t$. If $C$ is any closed space whatever of $m$ dimensions, both the system $(A_{1}, A_{2},\ldots A_{t}, C)$ and the system $(A_{1}, A_{2},\ldots A_{t}, B_{1})$ will form the boundary of a linearly connected space of $m+1$ dimensions contained wholly in $R$; hence both the system $(A_{2}, A_{3},\ldots A_{t}, C)$ and the system $(A_{2}, A_{3},\ldots A_{t}, B_{1})$ will form together with $A_{1}$ the boundary of a linearly connected space of $m+1$ dimensions contained wholly in $R$; and consequently, by the preceding lemma, the system $(A_{2}, A_{3},\ldots A_{t}, C)$ together with the system $(A_{2}, A_{3},\ldots A_{t}, B_{1})$, that is the system $(B_{1}, A_{2}, A_{3},\ldots A_{t}, C)$, will form the boundary of a space of $m+1$ dimensions contained wholly in $R$. Thus the system $(B_{1}, A_{2}, A_{3},\ldots A_{t})$ united with any closed space whatever $C$ forms the boundary of a linearly connected space of $m+1$ dimensions; and now, continuing, we shall substitute successively one of the spaces $B$ for one of the spaces $A$, and we shall have at last that the system $(B_{1}, B_{2},\ldots B_{t})$ will form, with any closed space whatever, and therefore also with $B_{t+1}$, the boundary of a linearly connected space of $m+1$ dimensions contained wholly in $R$; and this is in contradiction with what we have supposed if $t' > t$. In the same way it is shown that $t > t'$ cannot hold. Therefore $t = t'$, as we wished to prove.
+
+\section*{4.}
+
+When we suppose the connection of a bounded space $R$ broken along a space of a smaller number of dimensions which has its boundary upon the boundary of $R$, we say that a \emph{transverse section} is made in $R$.
+
+If from a space of $m$ dimensions there is separated an infinitesimal part having for boundary an infinitesimal space of $m-1$ dimensions, we shall say that a \emph{point section} is made in it.
+
+If a bounded space $R$ can be reduced to another $R'$ without making in it any transverse section and solely by means of continuous enlargements and diminutions of its parts, we shall say that $R$ can be reduced to $R'$ by \emph{continuous transformation}.
+
+Two bounded spaces $R$ and $R'$ which can be reduced one to the other by
+
+\origpage{147}
+continuous transformation will have equal the orders of all the species of connection. Now a point is simply connected; hence every space which by continuous transformation can be reduced to a point will be simply connected.
+
+\emph{A space which has a boundary can always be made to lose one dimension by continuous transformation.}
+
+In fact let $R$ be this space, $m$ the number of its dimensions, $C$ its boundary, $S_{m}$ the space of which it is a part, and let $u_{1}$, $u_{2}$, $u_{3},\ldots u_{m}$ denote a system of coordinates in $S_{m}$. Let us imagine an $m-1$-fold infinite system of lines occupying continuously the whole of $S_{m}$, for example the lines which have for equations:
+\[ u_{2} = a_{2}, \quad u_{3} = a_{3},\ldots, \quad u_{m-1} = a_{m-1} \]
+where $a_{2}$, $a_{3},\ldots, a_{m-1}$ take all the values from $-\infty$ to $+\infty$; and of this system let us consider only that part which contains the lines that meet the boundary $C$ of $R$. Each of these continuous lines, as $u_{1}$ increases, meeting $C$, will enter $R$ as many times as it goes out of it; and by continuous transformation each point of entry can be brought indefinitely near to the next point of exit, and thus $R$ can be made to lose one dimension, as we wished to prove.
+
+\emph{A closed space can always be made to lose one dimension by continuous transformation, after a point section has been made in it.}
+
+In fact, after a point section has been made in it the space acquires a boundary, and hence by the preceding theorem it can always lose one dimension by continuous transformation.
+
+\emph{If in a closed space $R$ of $m$ dimensions a single point section is made, the orders of its connections are not changed; but if $s+1$ point sections are made in it, the order of the $(m-1)^{\text{th}}$ species increases by $s$ units, while the orders of connection of lower species do not change.}
+
+In fact let $\alpha+1$ be the order of connection of the $(m-1)^{\text{th}}$ species of the closed space $R$ of $m$ dimensions. We shall be able to imagine in $R$ a system $A$ of $\alpha$ closed spaces of $m-1$ dimensions which does not alone form, but which with every other closed space $C$ of $m-1$ dimensions does form, the boundary of a part of $R$. Since $R$ is closed, the system $A$ with $C$ will divide it into two separate regions, $R'$ and $R''$, both having the same boundary, namely the system $A$ with $C$. Now if
+
+\origpage{148}
+we make a point section in $R$, this will be in one of the two regions; let us suppose it in $R'$. It is clear that then the system $A$ with $C$ will no longer form the whole boundary of $R'$, but will still make the whole boundary of $R''$. Therefore the order of connection of the $(m-1)^{\text{th}}$ species of $R$ will not be changed by a single point section. But if we make two point sections in $R$, we shall always be able to take $C$ in such a way that one of these points is in $R'$ and the other in $R''$, and then the system $A$ with $C$ will no longer form the boundary of a part of $R$, and it will be necessary to add another closed space of $m-1$ dimensions in order to have the whole boundary of a part of $R$. Therefore with two point sections the order of connection of the $(m-1)^{\text{th}}$ species of $R$ is increased by one unit. Analogously it is shown that with 3, 4,\ldots\ $s+1$ point sections this order is increased by 2, 3,\ldots\ $s$ units.
+
+Now let $\beta+1$ be the order of connection of the $(m-t-1)^{\text{th}}$ species of $R$, where $0 < t < m$; one will be able to imagine in $R$ a system $A$ of closed spaces of $m-t-1$ dimensions which does not alone form the boundary of a space $T$ of $m-t$ dimensions contained wholly in $R$. Let the point sections made in $R$ be as many as one pleases, provided they be finite in number; we shall always be able, with the given boundary, to draw $T$ in such a way that it does not pass through any one of these point sections. Therefore any finite number whatever of point sections does not change the orders of connection of species lower than the $(m-1)^{\text{th}}$.
+
+Since the orders of the connections of a closed space $R$ are not changed by making a single point section in it, in order to determine these orders it will be indifferent whether $R$ be regarded as closed or as having an infinitesimal boundary. Therefore a finite space may always be held to be bounded by a boundary, and hence it can always be made to lose one dimension by continuous transformation without changing the orders of its connections.
+
+\section*{5.}
+
+\emph{In order to render simply connected, by means of simply connected transverse sections, a finite space $R$ of $n$ dimensions, it is necessary and sufficient to make $p_{n-1}$ linear sections, $p_{n-2}$ of two, $p_{n-3}$ of three,\ldots\ $p_{1}$ of $n-1$ dimensions, if $p_{1}+1$, $p_{2}+1,\ldots p_{n-1}+1$ are respectively the orders of its connections of the $1^{\text{st}}$, $2^{\text{nd}},\ldots (n-1)^{\text{th}}$ species.}
+
+In fact, $p_{n-1}+1$ being the order of connection of the $(n-1)^{\text{th}}$ species of
+
+\origpage{149}
+$R$, we shall be able to imagine in it a system $A$ of $p_{n-1}$ closed spaces of $n-1$ dimensions which does not alone form the boundary of a part of $R$, but forms it with every other closed space of $n-1$ dimensions. There will thus be several bounded regions, each of which will have for boundary the whole or a part of the system $A$ and a part of the boundary of $R$; hence, making these regions lose one dimension by continuous transformation, they will reduce to the system $A$, connected along spaces of $n-2$ dimensions. Therefore $R$ can be reduced by continuous transformation to a space $R_{1}$ of $n-1$ dimensions formed of $p_{n-1}$ closed spaces $A$ of $n-1$ dimensions connected among themselves along spaces of $n-2$ dimensions; and $R_{1}$ will have the orders of the connections of the $(n-2)^{\text{th}}$, $(n-3)^{\text{th}},\ldots, 1^{\text{st}}$ species equal to those of $R$. Now without changing the orders of the connections of $R_{1}$ we shall be able to make in it at most as many point sections as there are closed spaces of which it is formed, that is $p_{n-1}$. Let $R'_{1}$ be the space $R_{1}$ in which these point sections are made.
+
+Reducing $R'_{1}$ to $R$ by continuous transformation, the point sections acquire one dimension and become continuous lines, which go from a point of the boundary of $R$ to another point of the same boundary, that is they become linear transverse sections; and thus the orders of the connections of species lower than the $(n-1)^{\text{th}}$ still remain the same. Therefore in $R$ there can be made only a number $p_{n-1}$ of transverse sections which do not change its orders of connection of species lower than the $(n-1)^{\text{th}}$.
+
+Now each of these $p_{n-1}$ linear transverse sections crosses one of the $p_{n-1}$ closed spaces $A$, which at most could be drawn in $R$ in such a way that they did not alone form the boundary of a portion of $R$, but formed it when another of $n-1$ dimensions was added to them. Therefore after these transverse sections have been drawn, each of the spaces $A$ is no longer closed, and hence every closed space of $n-1$ dimensions becomes the boundary of a portion of $R$, and the connection of $R$ of the $(n-1)^{\text{th}}$ species is rendered simple.
+
+Therefore, in order to render simple the connection of the $(n-1)^{\text{th}}$ species of $R$ by means of simply connected transverse sections without changing the orders of the connections of lower species, it is necessary and sufficient to make in it $p_{n-1}$ linear transverse sections.
+
+The space $R'_{1}$ of $n-1$ dimensions, to which the space $R$ with the $p_{n-1}$ linear transverse sections made in it has been reduced by continuous transformation, having a point section in each of the closed spaces of which it is formed, and having the order of connection of the $(n-2)^{\text{th}}$ species equal to $p_{n-2}$, will be able by continuous transformation to lose one dimension and to reduce to a space $R_{2}$
+
+\origpage{150}
+formed of $p_{n-2}$ closed spaces of $n-2$ dimensions connected along spaces of $n-3$ dimensions. Now without changing the orders of the connections of $R_{2}$ we can make in it at most $p_{n-2}$ point sections. Let us denote by $R'_{2}$ the space $R_{2}$ in which these point sections are made. Reducing $R'_{2}$ to $R$, the point sections of $R'_{2}$ acquire two dimensions and become spaces of two dimensions which have their boundary upon the boundary of $R$, and are simply connected because reducible to a point by continuous transformation, and hence are transverse sections of two dimensions. We shall denote by $R''$ the space $R$ in which the transverse sections of one and of two dimensions are made. The transverse sections of two dimensions render simple the connection of the $(n-2)^{\text{th}}$ species. Therefore, in order to reduce $R$ by means of simply connected transverse sections to a space $R''$ having simple the connections of the $(n-1)^{\text{th}}$ and $(n-2)^{\text{th}}$ species without changing the orders of the connections of lower species, it is necessary and sufficient to make in it $p_{n-1}$ linear transverse sections and $p_{n-2}$ of two dimensions. And so on for the connections of lower species.
+
+\emph{When a finite space $R$ is rendered simply connected by means of simply connected transverse sections, every closed space of $m$ dimensions drawn in $R$ forms, with as many closed spaces of $m$ dimensions as there are transverse sections of $n-m$ dimensions which it meets, the boundary of a space of $m+1$ dimensions contained wholly in $R$.}
+
+In fact if $p_{m}+1$ is the order of connection of the $m^{\text{th}}$ species of $R$, every closed space $C$ of $m$ dimensions will form with a system $A$ of $p_{m}$ closed spaces of $m$ dimensions the boundary of a space $S$ of $m+1$ dimensions contained wholly in $R$. Now each of the spaces $A$ will be intersected by one and by one only of the transverse sections of $n-m$ dimensions which are among those that render $R$ simply connected; and hence, since each of these sections has its boundary upon the boundary of $R$, if $C$ forms with $s$ of the spaces $A$ the boundary of $S$, it must intersect precisely the $s$ transverse sections which intersect those $s$ closed spaces of the system $A$.
+
+For greater clearness let us make some applications to ordinary space.
+
+The space comprised between two concentric spheres is rendered simply connected by means of a single linear transverse section going from a point of the greater spherical surface to any point whatever of the smaller.
+
+The space comprised by an annular surface is rendered simply connected by means of a single superficial transverse section made along the meridian of the surface.
+
+\origpage{151}
+
+The space comprised between two annular surfaces is rendered simply connected by means of a single linear transverse section going from a point of the greater annular surface to one of the smaller, and by means of two superficial transverse sections both drawn through the linear section: one made along the meridian and one along the equator of the surface.
+
+The space comprised between a sphere and a ring is rendered simply connected by means of a linear transverse section going from the surface of the sphere to that of the ring, and another, superficial, which, ending at the linear section, goes likewise from the surface of the ring to that of the sphere.
+
+\section*{6.}
+
+Let there be given a space $R$ of $n$ dimensions bounded by any number whatever of closed spaces of $n-1$ dimensions: $S'_{n-1}$, $S''_{n-1},\ldots S^{(t)}_{n-1}$, which have for equations
+\[ F_{1} = 0, \quad F_{2} = 0,\ldots \quad F_{t} = 0, \]
+and let $R$ be determined by the inequalities:
+\[ F_{1} < 0, \quad F_{2} < 0,\ldots \quad F_{t} < 0. \tag{1} \]
+
+Let $X_{1}$, $X_{2},\ldots X_{n}$ be $n$ functions of the points of $R$, finite and continuous; let us take into consideration the $n^{\text{-tuple}}$ integral:
+\[ \Omega_{n} = \int_{n} \left( \frac{dX_{1}}{dz_{1}} + \frac{dX_{2}}{dz_{2}} + \cdots + \frac{dX_{n}}{dz_{n}} \right)\,dz_{1}\,dz_{2}\ldots dz_{n} \]
+extended to the whole space $R$.
+
+Distinguishing by even indices the values of $X_{r}$ at the points at which the line $Z_{r}$, which has for equations:
+\[ z_{1} = a_{1}, \quad z_{2} = a_{2},\ldots \quad z_{r-1} = a_{r-1}, \quad z_{r+1} = a_{r+1},\ldots \quad z_{n} = a_{n} \tag{2} \]
+as $z_{r}$ increases, crossing one of the spaces $S_{n-1}$, enters the space $R$ in which all the inequalities (1) are satisfied, and distinguishing by odd indices the values of $X_{r}$ at the points at which the line $Z_{r}$, crossing one of the spaces $S_{n-1}$, goes out of the space $R$, we shall have:
+\[ \int_{n-1} \frac{dX_{r}}{dz_{r}}\,dz_{r} = X_{r}^{0} - X_{r}' + X_{r}'' - X_{r}''' + \cdots \]
+
+\origpage{152}
+Whence:
+\[ \Omega_{n} = \sum \int_{n-1} (X_{r}^{0} - X_{r}' + X_{r}'' - X_{r}''' + \cdots)\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n}. \]
+Now the number of the points at which the line $Z_{r}$ meets each of the closed spaces $S_{n-1}$ is even, and at as many of them as $Z_{r}$ enters $R$, at just as many it goes out. For example the space $S'_{n-1}$ will be met by $Z_{r}$ at the points 0, $2l_{1}+1$, $2l_{2}$, $2l_{3}+1,\ldots$, and the part of the integral $\Omega_{n}$ which refers to the points of $S'_{n-1}$ will be:
+\[ \Omega'_{n} = \int_{n-1} (X_{r}^{0} - X_{r}^{(2l_{1}+1)} + X_{r}^{(2l_{2})} - X_{r}^{(2l_{3}+1)} + \cdots)\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n}. \]
+
+Considering $S'_{n-1}$ as the field of the $n-1$ real variables: $u'_{1}$, $u'_{2},\ldots u'_{n-1}$, we shall have:
+\[ dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n} = \pm \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+where the sign $+$ or the sign $-$ is to be taken according as $\dfrac{d\Delta}{dA_{r}}$ is $>$ or is $< 0$.
+
+Now from what we have shown in the first paragraph it results that the order of the $z_{1}$, $z_{2},\ldots z_{m}$ can always be taken in such a way that the sign of $\dfrac{d\Delta}{dA_{r}}$ is equal to that of $\dfrac{dF_{1}}{dz_{r}}$, $F_{1} = 0$ being the equation of $S'_{n-1}$.
+
+Now $\dfrac{dF_{1}}{dz_{r}} < 0$ at the points of $S'_{n-1}$ at which $Z_{r}$ enters $R$, and $\dfrac{dF_{1}}{dz_{r}} > 0$ at the points at which it goes out. We shall have therefore:
+\[ \int_{n-1} X_{r}^{0}\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\ldots dz_{n} = - \int_{n-1} X_{r}^{0} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+\[ \int_{n-1} X_{r}^{(2l_{1}+1)}\,dz_{1}\,dz_{2}\ldots dz_{r-1}\,dz_{r+1}\,dz_{n} = \int_{n-1} X_{r}^{(2l_{1}+1)} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1}. \]
+Whence:
+\[ \Omega'_{n} = - \int_{n-1} \left( X_{r}^{0} \frac{d\Delta}{dA_{r}} + X_{r}^{(2l_{1}+1)} \frac{d\Delta}{dA_{r}} + \cdots \right)\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+that is:
+\[ \Omega'_{n} = - \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du'_{n-1} \]
+extended to the whole space $S'_{n-1}$.
+
+\origpage{153}
+
+An analogous reduction can be made for the other spaces, and one obtains
+\[ \Omega_{n} = - \sum \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du'_{1}\,du'_{2}\ldots du_{n-1} - \sum \int_{n-1} X_{r} \frac{d\Delta}{dA_{r}}\,du''_{1}\,du''_{2}\ldots du''_{n-1} - \cdots \]
+But:\ednote{In the following determinant the last entry of the second row is printed $\frac{du_{n-1}}{dz_{2}}$, inverted with respect to the first and last rows, which read $\frac{dz_{1}}{du_{n-1}}$ and $\frac{dz_{n}}{du_{n-1}}$; it should read $\frac{dz_{2}}{du_{n-1}}$. Magnified, the inversion is solid type and not the show-through that crosses this page. An apparent misprint, reproduced here as printed.}
+\[ \sum X_{r} \frac{d\Delta}{dA_{r}} = \begin{vmatrix} X_{1} & \dfrac{dz_{1}}{du_{1}} & \cdots & \dfrac{dz_{1}}{du_{n-1}} \\ X_{2} & \dfrac{dz_{2}}{du_{1}} & \cdots & \dfrac{du_{n-1}}{dz_{2}} \\ \cdots & \cdots & \cdots & \cdots \\ X_{n} & \dfrac{dz_{n}}{du_{1}} & \cdots & \dfrac{dz_{n}}{du_{n-1}} \end{vmatrix} \]
+Therefore:
+\[ \Omega_{n} = - \sum_{t} \int \begin{vmatrix} X_{1} & \dfrac{dz_{1}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{1}}{du^{(t)}_{n-1}} \\ X_{2} & \dfrac{dz_{2}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{2}}{du^{(t)}_{n-1}} \\ \cdots & \cdots & \cdots & \cdots \\ X_{n} & \dfrac{dz_{n}}{du^{(t)}_{1}} & \cdots & \dfrac{dz_{n}}{du^{(t)}_{n-1}} \end{vmatrix}\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1} \tag{3} \]
+
+If $(z_{1}^{0}, z_{2}^{0},\ldots, z_{n}^{0})$ is a point of $S^{(t)}_{n-1}$, a line passing through this point and having for equations:
+\[ \begin{aligned} z_{1} - z_{1}^{0} &= \frac{dF_{t}}{dz_{1}^{0}}\frac{\rho}{\mu} \\ z_{2} - z_{2}^{0} &= \frac{dF_{t}}{dz_{2}^{0}}\frac{\rho}{\mu} \\ &\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\ &\;\;\cdots\cdots\cdots\cdots\cdots\cdots\\ z_{n} - z_{n}^{0} &= \frac{dF_{t}}{dz_{n}^{0}}\frac{\rho}{\mu} \end{aligned} \]
+is called the normal to the space $S^{(t)}_{n-1}$; and since from this we have:
+\[ \rho^{2} = (z_{1} - z_{1}^{0})^{2} + (z_{2} - z_{2}^{0})^{2} + \cdots + (z_{n} - z_{n}^{0})^{2}, \]
+
+\origpage{154}
+$\rho$ is called the distance of the point $(z_{1}, z_{2},\ldots z_{n})$ from $(z_{2}^{0}, z_{2}^{0},\ldots z_{n}^{0})$. If $\rho$ is infinitesimal and equal to $dp_{t}$, we have:
+\[ \frac{dz_{r}}{dp_{t}} = \frac{dF_{t}}{dz_{r}}\frac{1}{\mu}. \]
+But:
+\[ \frac{dF_{t}}{dz_{r}} = \frac{d\Delta}{dA_{r}}\frac{\mu}{M}, \]
+whence:
+\[ \frac{dz_{r}}{dp_{t}} = \frac{d\Delta}{dA_{r}}\frac{1}{M}. \]
+Whence, substituting:
+\[ \Omega_{n} = - \sum_{t} \int_{n-1} \left( X_{1} \frac{dz_{1}}{dp_{t}} + X_{2} \frac{dz_{2}}{dp_{t}} + \cdots + X_{n} \frac{dz_{n}}{dp_{t}} \right) M\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1}. \]
+But $dS^{(t)}_{n-1}$ being the element of the space $S^{(t)}_{n-1}$, we have:
+\[ dS^{(t)}_{n-1} = M\,du^{(t)}_{1}\,du^{(t)}_{2}\ldots du^{(t)}_{n-1}, \]
+whence:
+\[ \Omega_{n} = - \sum_{t} \int_{S^{(t)}_{n-1}} \sum_{r} X_{r} \frac{dz_{r}}{dp_{t}}\,dS^{(t)}_{n-1}. \]
+Hence if:
+\[ X_{r} = \frac{dV}{dz_{r}}, \]
+we shall have:
+\[ \begin{aligned} \Omega_{n} &= \int_{R} \left( \frac{d^{2}V}{dz_{1}^{2}} + \frac{d^{2}V}{dz_{2}^{2}} + \cdots + \frac{d^{2}V}{dz_{n}^{2}} \right)\,dR \\ &= - \sum_{t} \int_{S^{(t)}_{n-1}} \frac{dV}{dp_{t}}\,dS^{(t)}_{n-1}, \end{aligned} \]
+and therefore if:
+\[ \frac{d^{2}V}{dz_{1}^{2}} + \frac{d^{2}V}{dz_{2}^{2}} + \cdots + \frac{d^{2}V}{dz_{n}^{2}} = 0 \tag{4} \]
+in the whole space $R$, we shall have:
+\[ \sum_{t} \int_{S^{(t)}_{n-1}} \frac{dV}{dp_{t}}\,dS^{(t)}_{n-1} = 0. \tag{5} \]
+
+\origpage{155}
+
+If the space $R$ has simple the connection of the $(n-1)^{\text{th}}$ species, every closed space $C$ of $n-1$ dimensions drawn in it forms the boundary of a portion of $R$; hence if equation (4) is satisfied throughout $R$, and $V$ and its first derivatives are finite and continuous there, we shall always have:
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC = 0. \]
+
+If on the other hand the space $R$ has the connection of species $(n-1)^{\text{th}}$ of order $p_{n-1}+1$, then, $p_{n-1}$ closed spaces $A_{1}$, $A_{2},\ldots A_{p_{n-1}}$ of $n-1$ dimensions having been drawn in it, every closed space $C$ contained in $R$ will form with the system $A$ the boundary of a part of $R$; and if $a_{1}$, $a_{2},\ldots a_{p_{n-1}}$ are the linear transverse sections which cross respectively the closed spaces $A_{1}$, $A_{2},\ldots A_{p_{n-1}}$ and render simple the connection of the $(n-1)^{\text{th}}$ species of the space $R$, $C$ will form the boundary of a part of $R$ with those spaces of the system which are crossed by the sections $a$ that $C$ meets.
+
+Putting therefore:
+\[ \int_{A_{r}} \frac{dV}{dp_{t}}\,dA_{r} = M_{r} \]
+we shall have:
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC + \sum M_{r} = 0 \]
+extending the sum to all the values of $r$ which are indices of the transverse sections met by $C$; and we have the following theorem:
+
+\emph{If the space $R$ has the connection of the $(n-1)^{\text{th}}$ species of order $p_{n}+1$, if this connection is rendered simple by linear transverse sections, and $C$ is a closed space of $n-1$ dimensions contained in $R$, the integral:}
+\[ \int_{C} \frac{dV}{dp_{c}}\,dC \]
+\emph{will differ from zero by as many moduli of periodicity as there are linear transverse sections which the space $C$ crosses.}
+
+Since two spaces of $n-1$ dimensions which have one and the same boundary together form a closed space, we shall have further the following theorem:
+
+\origpage{156}
+
+\emph{Given, in the space $R$ of $n$ dimensions which has the connection of the $(n-1)^{\text{th}}$ species of order $p_{n-1}+1$, a closed space $\Gamma$ of $n-2$ dimensions, this connection having been rendered simple by means of $p_{n-1}$ linear sections, the preceding integral extended to a space $C'$ which has $\Gamma$ for boundary and meets $s$ linear transverse sections will differ from the same integral extended to a space $C'$ which has the same boundary and meets no section, by the moduli of periodicity relative to those sections; and hence if the space $R$ has simple the connection of the $(n-1)^{\text{th}}$ species the integral extended to any space whatever $C$ contained in $R$ which has $\Gamma$ for boundary will always have the same value.}
+
+\section*{7.}
+
+In a closed space $R$ of $n$ dimensions which has the connection of the $1^{\text{st}}$ species of order $p_{1}+1$, let $s_{1}$, $s_{2},\ldots s_{p_{1}}$ be the $p_{1}$ simply connected transverse sections of $n-1$ dimensions which render simple the connection of the $1^{\text{st}}$ species of $R$. Let $L_{1}$, $L_{2},\ldots L_{p_{1}}$ be $p_{1}$ closed lines which cross respectively the sections $s_{1}$, $s_{2},\ldots s_{p_{1}}$ and which are such that every other closed line $l$ forms, with those of the lines $L$ which cross the same sections that it crosses, the boundary of a space $C$ of two dimensions contained wholly in $R$.
+
+Let:
+\[ z_{1} = z_{1}(u), \quad z_{2} = z_{2}(u),\ldots \quad z_{n} = z_{n}(u) \tag{1} \]
+be the equations of the line $l$, and let us take into consideration the integral:
+\[ \Omega_{1} = \sum \int X_{r}\,dz_{r} = \sum \int X_{r} \frac{dz_{r}}{du}\,du \]
+extended to the whole line $l$, the $X_{r}$ being finite and continuous throughout $R$.
+
+Now, the line $l$ forming part of the boundary of $C$, if the space $C$ is determined by the equation:
+\[ z_{1} = z_{1}(v_{1}; v_{2}), \quad z_{2} = z_{2}(v_{1}, v_{2}),\ldots \quad z_{n} = z_{n}(v_{1}, v_{2}) \]
+we shall have:
+\[ \frac{dz_{r}}{du}\,du = \frac{dz_{r}}{dv_{1}}\,dv_{1} + \frac{dz_{r}}{dv_{2}}\,dv_{2} \]
+
+\origpage{157}
+and hence:
+\[ \Omega_{1} = \int \sum X_{r} \frac{dz_{r}}{dv_{1}}\,dv_{1} + \int \sum X_{r} \frac{dz_{r}}{dv_{2}}\,dv_{2}. \]
+Now by what we have shown in the preceding paragraph:
+\[ \begin{aligned} & \iint \left[ \frac{d}{dv_{2}} \left( \sum X_{r} \frac{dz_{r}}{dv_{1}} \right) - \frac{d}{dv_{1}} \left( \sum X_{r} \frac{dz_{r}}{dv_{2}} \right) \right] dv_{1}\,dv_{2} \\ &= \int \sum X_{r} \frac{dz_{r}}{dv_{1}}\,dv_{1} + \int \sum X_{r} \frac{dz_{r}}{dv_{2}}\,dv_{2} \end{aligned} \]
+where the double integral is extended to the whole space $C$ and the simple one to the whole system of lines $l$, $L_{1}$, $L_{2},\ldots$ which form the boundary of $C$.
+
+But we have:\ednote{The last display below closes with $dz_{n}\,dz_{t}$; the summation and the determinant above it both run over $r$ and $t$, so it should read $dz_{r}\,dz_{t}$. The subscript was magnified and is unambiguously $n$. An apparent misprint, reproduced here as printed.}
+\[ \begin{aligned} & \iint \left[ \frac{d}{dv_{2}} \left( \sum X_{r} \frac{dz_{r}}{dv_{1}} \right) - \frac{d}{dv_{1}} \left( \sum X_{r} \frac{dz_{r}}{dv_{2}} \right) \right] dv_{1}\,dv_{2} \\ &= \iint \sum \frac{dX_{r}}{dz_{t}} \begin{vmatrix} \dfrac{dz_{r}}{dv_{1}} & \dfrac{dz_{r}}{dv_{2}} \\ \dfrac{dz_{t}}{dv_{1}} & \dfrac{dz_{t}}{dv_{2}} \end{vmatrix}\,dv_{1}\,dv_{2} = \sum \iint \left( \frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} \right)\,dz_{n}\,dz_{t}. \end{aligned} \]
+
+Hence the double integral is null if throughout $R$ the equations:
+\[ \frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0. \tag{2} \]
+are also verified. Therefore the integral
+\[ \sum \int X_{r}\,dz_{r} \]
+extended to all the lines $l$, $L_{1}$, $L_{2},\ldots$ which form the boundary of a space $C$ is always null, whatever the closed line $l$ may be, if the $X_{r}$ satisfy (2) and are finite and continuous in $R$. From this the following theorem is drawn:
+
+\emph{If in a space $R$ of $n$ dimensions, which has the connection of the $1^{\text{st}}$ species of order $p_{1}$, $s_{1}$, $s_{2},\ldots s_{p_{1}}$ are the simply connected transverse sections of $n-1$ dimensions which render simple the connection of the $1^{\text{st}}$ species of $R$, and $L_{1}$, $L_{2},\ldots L_{p_{1}}$ are $p_{1}$ closed lines which meet respectively the sections $s_{1}$, $s_{2},\ldots s_{p_{1}}$, and we put:}
+\[ M_{t} = \sum \int X_{r}\,dz_{r}, \]
+
+\origpage{158}
+\emph{the integral:}
+\[ \sum \int_{Z^{0}}^{Z'} X_{r}\,dz_{r} \]
+\emph{extended between two points $Z^{0}$ and $Z'$ along a line which meets several sections $s$, will differ from that taken along a line which goes from the point $Z^{0}$ to the point $Z'$ without meeting any section $s$, by the quantities $M$ relative to the sections $s$ met, these being taken positively or negatively according as they are met in proceeding in one or in the other direction; if moreover the connection of the $1^{\text{st}}$ species of the space $R$ is simple, the integral taken along any line whatever which in $R$ goes from $Z_{0}$ to $Z_{1}$ has always the same value.}
+
+\end{document}
