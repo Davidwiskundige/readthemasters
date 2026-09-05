@@ -8,6 +8,14 @@ authors:
     birth_year: 1823
     death_year: 1892
     mactutor: Betti  # https://mathshistory.st-andrews.ac.uk/Biographies/Betti/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Enrico Betti"
+      credit: >-
+        Photograph of Betti, photographer unknown, dated before 1885 on Commons and credited
+        there to the University of St Andrews — the same archive as the MacTutor biography
+        linked above. Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Betti_Enrico.jpg"
 
 publication:
   year: 1871
