@@ -34,41 +34,18 @@ language: it
 type: paper
 
 significance: >-
-  Riemann gave a surface one number — the order of connection, which counts the crosscuts needed to
-  cut it into a simply connected piece[1]. Betti asks what a space of $n$ dimensions has in its
-  place, and answers that it has $n-1$ numbers. On his p. 144 he names the two works he means to
-  generalize, Listing's "Der Census räumlicher Complexe" for ordinary space[2] and Riemann for
-  surfaces, and then states the observation the paper rests on: "Besides the linear connection,
-  which alone presents itself in surfaces, I have observed that in spaces of a number of dimensions
-  greater than two other species of connection may be considered." A space $R$ has simple connection
-  of the $m^{\text{th}}$ species when every closed space of $m$ dimensions drawn in it bounds a
-  piece of $m+1$ dimensions lying in $R$; when it does not, there are $p_{m}$ closed
-  $m$-dimensional spaces that bound nothing by themselves and together with which every other one
-  does bound, and Betti calls $p_{m}+1$ the order of the connection of the $m^{\text{th}}$ species.
-  Those $p_{1}, p_{2},\ldots p_{n-1}$ are the numbers Poincaré named after him a quarter-century
-  later[3]. That $p_{m}$ is a number at all is the delicate point, and §3 settles it by exchange:
-  if a system $A$ bounds together with $C$, and $B$ bounds together with $C$, then $A$ bounds
-  together with $B$; put any $C$ against two competing systems of $t$ and $t'$ spaces, swap the
-  members one at a time, and $t' > t$ contradicts itself. Systems are combined by union alone —
-  no multiples of a space, no coefficients — which fixes both the reach of the argument and its
-  limits.[note 1] §5 turns the numbers into a recipe: to make a finite $R$ of $n$ dimensions simply
-  connected one must make $p_{n-1}$ transverse sections of one dimension, $p_{n-2}$ of two, and so
-  on down to $p_{1}$ of $n-1$ dimensions, so that a cut of $k$ dimensions is what kills the
-  connection of species $n-k$. In ordinary space, his own examples: the region between two
-  concentric spheres has $p_{2} = 1$ and $p_{1} = 0$, the solid ring has $p_{1} = 1$ and
-  $p_{2} = 0$, the region between two rings one inside the other has $p_{2} = 1$ and $p_{1} = 2$.
-  §§6 and 7 say why he wanted them. §6 proves the divergence theorem in $n$ dimensions and reads it
-  for a $V$ satisfying $\frac{d^{2}V}{dz_{1}^{2}} + \cdots + \frac{d^{2}V}{dz_{n}^{2}} = 0$: over a
-  closed $C$ of $n-1$ dimensions the integral $\displaystyle\int_{C} \frac{dV}{dp_{c}}\,dC$ vanishes if the
-  connection of the $(n-1)^{\text{th}}$ species is simple, and otherwise differs from zero by one
-  modulus of periodicity for each linear transverse section $C$ crosses. §7 does the same one
-  dimension down: where $\frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0$ holds throughout $R$,
-  the value of $\displaystyle\sum \int X_{r}\,dz_{r}$ between two points depends on the path only through which
-  of the $p_{1}$ sections it crosses. The numbers exist, in this paper, to measure how far a
-  potential in $n$ variables fails to be single-valued — the service Riemann's $p$ performs for an
-  abelian integral, carried into every dimension at once. Betti worked the ideas out in Riemann's
-  company: Riemann spent his last winters in Pisa, and Betti's own correspondence records the
-  construction as his[4].
+  Riemann gave a surface one number, the order of connection that counts the crosscuts needed to
+  cut it simply connected[1]. Betti asks what a space of $n$ dimensions has in its place, and
+  answers that it has $n-1$: it has simple connection of the $m^{\text{th}}$ species when every
+  closed space of $m$ dimensions in it bounds a piece of $m+1$ dimensions, and otherwise $p_{m}$
+  of them bound nothing alone while every other one bounds together with those. §3 proves $p_{m}$
+  independent of the choice, which is what makes it a number; §5 shows that a cut of $k$ dimensions
+  kills the connection of species $n-k$. These are the numbers Poincaré named after him a
+  quarter-century later[2]. He wanted them for §§6 and 7, where the integral of a harmonic
+  function's normal derivative over a closed space, and the line integral of a system satisfying
+  $\frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0$, each pick up one period per transverse
+  section crossed. They measure how far a potential in $n$ variables fails to be single-valued —
+  the service Riemann's $p$ performs for an abelian integral, carried into every dimension.[note 1]
 
 # Asides: an excursus the reader can open from the significance note instead of reading through it.
 significance_notes:
@@ -80,11 +57,11 @@ significance_notes:
       apart from a multiple of it, so torsion is invisible to his count — the gap Poincaré filled
       with the torsion coefficients of the complements to "Analysis situs". His §5 pairing of a
       cut of $k$ dimensions with the connection of species $n-k$ is an early trace of what became
-      Poincaré duality, and §§6–7, which integrate a closed system of the $X_{r}$ over the cycles
-      the sections cross and get one period apiece, are de Rham's pairing in embryo. His examples
-      read off at once: the region between two concentric spheres has the homotopy type of $S^{2}$,
-      whence $p_{2} = 1$, $p_{1} = 0$; the solid ring that of $S^{1}$, whence $p_{1} = 1$,
-      $p_{2} = 0$.
+      Poincaré duality, and §§6–7, which integrate a closed system over the cycles the sections
+      cross and get one period apiece, are de Rham's pairing in embryo. His four ordinary-space
+      examples read off at once: the region between two concentric spheres has the homotopy type
+      of $S^{2}$, whence $p_{2} = 1$ and $p_{1} = 0$; the solid ring that of $S^{1}$, whence
+      $p_{1} = 1$ and $p_{2} = 0$.
 
 significance_sources:
   - citation: >-
@@ -93,16 +70,9 @@ significance_sources:
       single number Betti's $n-1$ numbers generalize.
     url: "/works/riemann-1857-abelsche-functionen/#p-118"
   - citation: >-
-      J. B. Listing, "Der Census räumlicher Complexe oder Verallgemeinerung des Euler'schen Satzes
-      von den Polyëdern", Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu
-      Göttingen, Band 10 (Göttingen, 1861–62) — the memoir Betti names by title on his p. 144.
-  - citation: >-
       H. Poincaré, "Analysis situs", Journal de l'École Polytechnique, 2e série, cahier 1 (1895),
       where the connectivity numbers of a manifold are called "les nombres de Betti" after this
       paper.
-  - citation: >-
-      A. Weil, "Riemann, Betti and the birth of topology", Archive for History of Exact Sciences
-      20 (1979), on Betti's correspondence and Riemann's stays in Pisa.
 
 source:
   scan_url: "https://www.digitale-sammlungen.de/en/view/bsb10525788?page=150"
