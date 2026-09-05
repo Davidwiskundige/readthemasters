@@ -1,0 +1,94 @@
+# Term renderings for betti-1871-spazi-numero-qualunque-dimensioni, applied consistently across the
+# whole translation. Format: `terms: {Italian as printed: English}` — the shape
+# pipeline/translate.py reads with --glossary, so the Tier-3 path reproduces the same renderings as
+# this Tier-2 pass.
+#
+# Three principles behind the choices below:
+#   * Betti is writing Riemann's theory in Italian, and says so on p. 144. Wherever he has an
+#     Italian word for one of Riemann's, the English word is the one this corpus already uses for
+#     Riemann's — see corpus/riemann-1857-abelsche-functionen/glossary.yaml. A reader coming from
+#     the memoir to this paper meets the same vocabulary.
+#   * Where the term is Betti's OWN (sezione trasversa of every dimension, punto sezione,
+#     connessione di m esima specie), it is rendered literally rather than by its modern
+#     equivalent. The modern reading belongs in the work's significance note, not in his sentences.
+#   * Where the print uses TWO different words, the translation uses two different words:
+#     linea/superficie, ds_n/dS_n (linear element / element of the space), sezione trasversa /
+#     punto sezione, connesso / linearmente connesso / semplicemente connesso.
+
+terms:
+  # --- the spaces and their parts ---
+  spazio: space
+  spazio di n dimensioni: space of n dimensions
+  campo: field
+  n volte infinito: n-fold infinite
+  linea: line
+  superficie: surface
+  superficie anulare: annular surface
+  anello: ring
+  sfera: sphere
+  regione: region
+  parte: part
+  porzione: portion
+  punto: point
+  coordinate: coordinates
+  contorno: boundary                       # Riemann's Begrenzung
+  limitato: bounded
+  finito: finite
+  normale: normal
+  distanza: distance
+
+  # --- connection ---
+  connesso: connected
+  linearmente connesso: linearly connected
+  semplicemente connesso: simply connected               # Riemann's einfach zusammenhangend
+  chiuso: closed
+  connessione: connection                                # Riemann's Zusammenhang
+  connessione di m esima specie: connection of the m-th species
+  specie: species
+  ordine: order
+  grado: degree
+  modo di connessione: mode of connection
+
+  # --- Betti's own operations ---
+  sezione trasversa: transverse section     # NOT "crosscut": Riemann's Querschnitt is a curve on a
+                                            # surface, Betti's sections run through every dimension
+                                            # from 1 to n-1. His own phrase, rendered word for word
+  sezione lineare: linear section
+  sezione superficiale: superficial section
+  punto sezione: point section              # Betti's coinage; kept as odd in English as in Italian
+  trasformazione continua: continuous transformation
+  ingrandimento: enlargement
+  impiccolimento: diminution
+  ridurre: to reduce
+  condurre: to draw                         # of a space or a section drawn in R
+  attraversare: to cross                    # a section crossing a closed space
+  incontrare: to meet
+  intersecare: to intersect
+
+  # --- functions, elements, integrals ---
+  funzione: function
+  ad un sol valore: single-valued           # Riemann's einwerthig
+  continuo: continuous
+  finite e continue: finite and continuous
+  variabile: variable
+  quantità indeterminata: indeterminate quantity
+  elemento lineare: linear element          # lowercase ds_n
+  elemento dello spazio: element of the space   # capital dS_n; the two are distinct objects
+  determinante: determinant
+  integrale: integral
+  integrale n uplo: n-tuple integral        # the insert $n^{\text{uplo}}$ -> $n^{\text{-tuple}}$
+  integrale doppio: double integral
+  integrale semplice: simple integral
+  esteso a: extended to
+  modulo di periodicità: modulus of periodicity   # Riemann's Periodicitätsmodul
+  disuguaglianza: inequality
+  infinitesimo: infinitesimal
+
+  # --- text apparatus ---
+  Memoria: Memoir
+  lemma: lemma
+  teorema: theorem
+  paragrafo: paragraph
+  esempi: examples
+  come volevamo dimostrare: as we wished to prove
+  in contradizione: in contradiction

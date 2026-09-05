@@ -41,6 +41,31 @@ tags: [topology, geometry, analysis]
 language: it
 type: paper
 
+significance: >-
+  Riemann gave a surface one number, the order of connection that counts the crosscuts needed to
+  cut it simply connected[1]. Betti asks what a space of $n$ dimensions has in its place, and
+  answers that it has $n-1$: it has simple connection of the $m^{\text{th}}$ species when every
+  closed space of $m$ dimensions in it bounds a piece of $m+1$ dimensions, and otherwise $p_{m}$
+  of them bound nothing alone while every other one bounds together with those. §3 proves $p_{m}$
+  independent of the choice, which is what makes it a number; §5 shows that a cut of $k$ dimensions
+  kills the connection of species $n-k$. These are the numbers Poincaré named after him a
+  quarter-century later[2]. He wanted them for §§6 and 7, where the integral of a harmonic
+  function's normal derivative over a closed space, and the line integral of a system satisfying
+  $\frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0$, each pick up one period per transverse
+  section crossed. They measure how far a potential in $n$ variables fails to be single-valued —
+  the service Riemann's $p$ performs for an abelian integral, carried into every dimension.
+
+significance_sources:
+  - citation: >-
+      Riemann's surface case, in this corpus: "Theorie der Abel'schen Functionen", printed p. 118,
+      where a closed surface $T$ is cut by $2p$ crosscuts into a simply connected $T'$ — the
+      single number Betti's $n-1$ numbers generalize.
+    url: "/works/riemann-1857-abelsche-functionen/#p-118"
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique, 2e série, cahier 1 (1895),
+      where the connectivity numbers of a manifold are called "les nombres de Betti" after this
+      paper.
+
 source:
   scan_url: "https://www.digitale-sammlungen.de/en/view/bsb10525788?page=150"
   scan_id: >-

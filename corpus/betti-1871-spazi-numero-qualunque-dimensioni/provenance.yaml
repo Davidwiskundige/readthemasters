@@ -1,6 +1,59 @@
 changelog:
   - date: "2026-09-04"
     summary: Transcription added (AI draft).
+  - date: "2026-09-05"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-09-05"
+    summary: Significance note added.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-05"
+    note: >-
+      Translated from our own original.tex, never from a published translation; no English
+      translation of this paper was consulted or is known to the translator. pipeline/texcompare.py
+      and pipeline/houselint.py both pass, and the translation is line-for-line structurally
+      identical to the transcription — same paragraph breaks, same displays, same \origpage
+      placement — which was checked mechanically as well as by eye.
+
+      TERMINOLOGY is recorded in glossary.yaml, added with this translation. Betti is writing
+      Riemann's theory in Italian, so where he has an Italian word for one of Riemann's the English
+      word is the one riemann-1857-abelsche-functionen already uses (contorno = "boundary",
+      ad un sol valore = "single-valued", modulo di periodicità = "modulus of periodicity"). Two
+      terms are his own and are rendered literally rather than by their modern equivalents:
+      "sezione trasversa" = "transverse section" (NOT Riemann's "crosscut" — Betti's sections run
+      through every dimension from 1 to n-1) and "punto sezione" = "point section", his own
+      coinage. "connessione di m esima specie" is "connection of the m-th species"; the modern
+      reading is in the work's significance aside, not in his sentences.
+
+      THE 43 TEXT INSERTS all carry ordinals and all were translated in place under HOUSESTYLE R21:
+      27 esima + 1 esimo -> 28 "th", 14 "a" -> 10 "st" + 4 "nd", and the one non-ordinal,
+      "l'integrale $n^{\text{uplo}}$" (p. 150), -> "the $n^{\text{-tuple}}$ integral". The counts
+      were checked against the original with comments stripped. The DEGREE ordinal $2^{\circ}$ is
+      mathematics, not an insert, and stands unchanged ("of the $2^{\circ}$ order"), which also
+      preserves Betti's own distinction between the abbreviated ordinal he uses for the ORDER of a
+      connection and the spelled one he uses for its SPECIES.
+
+      ITALIAN COMPOSITOR'S SLIPS ARE NOT CARRIED ACROSS, following roch-1865: the archaic spellings
+      have no English counterpart, "transformazione" (p. 150) reads "transformation",
+      "l'integral doppio" (p. 157) "the double integral", "dall'equazioni (9)" (p. 142) "from
+      equations (9)", the stray comma of "di $m$, dimensioni" (p. 146) is dropped, the feminine
+      plurals agreeing with nothing vanish with Italian gender, and "finite continue" (p. 155)
+      reads "finite and continuous". One printed oddity IS kept, because English can carry it:
+      p. 155's inverted "la connessione di specie $(n-1)^{\text{esima}}$" reads "the connection of
+      species $(n-1)^{\text{th}}$" against "the connection of the $(n-1)^{\text{th}}$ species" in
+      its 27 other occurrences. The three MATHEMATICAL misprints are mathematics and are reproduced
+      as printed, with the transcription's \ednote at each point of use.
+
+      NO \uncertain SPANS. Betti's prose is plain and technical and nothing in it needed hedging;
+      the passages a reviewer should weigh are the terminology decisions above, not any single
+      sentence. STATUS ai-draft — no human has read this against original.tex yet.
 
 transcription:
   status: ai-draft
