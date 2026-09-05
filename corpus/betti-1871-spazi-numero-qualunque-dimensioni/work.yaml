@@ -45,23 +45,7 @@ significance: >-
   function's normal derivative over a closed space, and the line integral of a system satisfying
   $\frac{dX_{r}}{dz_{t}} - \frac{dX_{t}}{dz_{r}} = 0$, each pick up one period per transverse
   section crossed. They measure how far a potential in $n$ variables fails to be single-valued —
-  the service Riemann's $p$ performs for an abelian integral, carried into every dimension.[note 1]
-
-# Asides: an excursus the reader can open from the significance note instead of reading through it.
-significance_notes:
-  - label: "In modern notation"
-    text: >-
-      Betti's $p_{m}$ is the $m$-th Betti number, the rank of $H_{m}(R)$, and his "order"
-      $p_{m}+1$ keeps Riemann's convention, in which the sphere is simply connected and counts 1.
-      Because his systems of closed spaces are combined by union only, nothing in §3 tells a cycle
-      apart from a multiple of it, so torsion is invisible to his count — the gap Poincaré filled
-      with the torsion coefficients of the complements to "Analysis situs". His §5 pairing of a
-      cut of $k$ dimensions with the connection of species $n-k$ is an early trace of what became
-      Poincaré duality, and §§6–7, which integrate a closed system over the cycles the sections
-      cross and get one period apiece, are de Rham's pairing in embryo. His four ordinary-space
-      examples read off at once: the region between two concentric spheres has the homotopy type
-      of $S^{2}$, whence $p_{2} = 1$ and $p_{1} = 0$; the solid ring that of $S^{1}$, whence
-      $p_{1} = 1$ and $p_{2} = 0$.
+  the service Riemann's $p$ performs for an abelian integral, carried into every dimension.
 
 significance_sources:
   - citation: >-
