@@ -21,7 +21,14 @@ _DISPLAY_PATTERNS = [
     re.compile(r"\\begin\{(" + _MATH_ENVS + r")\*?\}(.*?)\\end\{\1\*?\}", re.DOTALL),
     re.compile(r"\\\[(.*?)\\\]", re.DOTALL),
     re.compile(r"\\\((.*?)\\\)", re.DOTALL),
-    re.compile(r"\$\$(.*?)\$\$", re.DOTALL),
+    # NOTE: plain-TeX `$$...$$` display math is deliberately NOT matched here. The house style
+    # sets a footnote marker attached to a formula as its own adjacent math group with no space
+    # between them — `$|C|$${}^{*)}$`, `courbes${}^{*)}$${}^{**)}$` (R15, and the notation.md of
+    # castelnuovo-enriques-1897-surfaces-algebriques) — so a `$$` in a corpus file is two
+    # adjacent inline spans, never a display. Matching it as a display swallowed the prose
+    # between one such pair and the next, and since that prose differs between an original and
+    # its translation, every such work failed the check spuriously. No corpus work uses `$$` for
+    # display math; displays are `\[ ... \]` (R5).
 ]
 _INLINE_RE = re.compile(r"\$((?:\\.|[^$\\])*?)\$", re.DOTALL)
 

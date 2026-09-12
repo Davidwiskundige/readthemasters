@@ -1,0 +1,248 @@
+changelog:
+  - date: "2026-09-12"
+    summary: Transcription added (AI draft), pp. 241–316 from the 1897 Mathematische Annalen scan.
+  - date: "2026-09-12"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-12"
+    note: >-
+      Translated from our own original.tex, never from a published translation; no English
+      translation of this memoir was consulted, and none is known to the translator.
+      pipeline/texcompare.py and pipeline/houselint.py both pass, and the translation is
+      block-for-block structurally identical to the transcription — 651 blank-line-separated
+      blocks in each, in the same order and of the same kind, with the same 76 \origpage markers,
+      73 displays, 14 \tag numbers, 8 \section* and 48 \subsection* headings, 120 footnote leads,
+      783 \emph runs, 2 guillemet pairs, 13 em-dashes and 86 ellipses. That was checked
+      mechanically, not by eye alone.
+
+      ONE PIPELINE FIX WAS NEEDED, and ships with this translation. pipeline/texcompare.py listed
+      plain-TeX `$$...$$` among its DISPLAY math patterns, and stripped each match before scanning
+      for inline `$...$`. This work is the first in the corpus to contain a literal `$$` — twelve
+      of them, every one produced by the house style itself, which attaches a footnote marker to a
+      formula as its own adjacent math group with no space between (R15, and this work's
+      notation.md): `$|C|$${}^{*)}$`, `courbes${}^{*)}$${}^{**)}$`. Read as a display, each such
+      `$$` swallowed all the prose up to the next one, and since that prose is exactly what a
+      translation changes, the check failed on ~250 lines of French that no rule asks a translator
+      to keep. The `$$` pattern is removed, with a comment saying why, and three regression tests
+      are added; displays in this corpus are `\[ ... \]` (R5), and no work uses `$$`. All 246
+      pipeline tests pass, and the other fifteen translations are unaffected.
+
+      TEXT INSERTS (HOUSESTYLE R21). Two were translated in place: the connective joining the two
+      alternative values of $P_{2}$ in article 31, `\text{ou}` -> `\text{or}`, and the gloss on
+      $\omega$ under display (2) of article 33, `\text{étant la surabondance}` -> `\text{being the
+      surabundance}`. Both keep their position and every symbol around them. The remaining inserts
+      are NOT prose and stand as printed: the superscript series designations of the cited
+      journals (French `4${}^{\text{e}}$ s${}^{\text{e}}$`, Italian `2${}^{\text{a}}$`, the
+      `t${}^{\text{e}}$` of the Journal de Mathématiques) are bibliography, following
+      clebsch-1868-surfaces-algebriques, which likewise leaves its German book title alone; the
+      authors' own cross-reference `n${}^{\text{o}}$` to their numbered articles is a math span
+      texcompare requires to be present, so "No. 9" is not available and the printed form is kept;
+      and `\text{etc.}` and `\text{const.}` are already English.
+
+      TERMINOLOGY, recorded in full in the translation's own file header. The decisions a reviewer
+      should weigh are these four. (1) `courbe de diramation` = "branch curve". R9's preference
+      for a literal untranslated rendering is for an author's coined term of art; "diramation" is
+      ordinary French for branching, "branch curve" is the genuine period English, and the
+      authors' own German gloss (\emph{Uebergangscurve}) stands beside it at first use in article
+      38. (2) `théorème du reste` = "theorem of the remainder" — the authors' own name for their
+      addition theorem in article 9, deliberately distinct from Brill and Nöther's
+      \emph{Restsatz}, which they name in German and which is kept in German throughout. (3)
+      `champ algébrique` / `champ de rationnalité` / `corps de fonctions algébriques` = "algebraic
+      field" / "field of rationality" / "field of algebraic functions", kept parallel as the print
+      keeps them, rather than reaching for Kronecker's usual English "domain of rationality". (4)
+      `groupe` of points cut on a curve stays "group", never "divisor": the authors have no
+      divisor, and the anachronism would modernize the notation, not the prose. Nöther's German
+      terms (\emph{Restsatz}, \emph{ausgezeichnete Curven}, \emph{adjungirte Flächen},
+      \emph{Vollschaar}, \emph{Flächengeschlecht}, \emph{Curvengeschlecht}) and the authors'
+      Italian glosses (\emph{sistema normale}, \emph{sistemi completi}, subaggiunta, deficienza,
+      difetto di completezza) are their citations of other people's words and are kept as printed.
+
+      PRINTER'S SLIPS. The two French typos ("ou aura" for "on aura", article 24; singular
+      "courbe" for "courbes", article 31) and the print's erratic accents ("rélation",
+      "géomètrique", "géomètrie"), all kept in the transcription under R4/R23, have no English
+      counterpart and are simply translated as the words they are; they stay visible in
+      original.tex. The slips that are MATHEMATICS are copied verbatim, errors and all — the stray
+      closing parenthesis in `|C' + D)|` (article 15) and `3p - 6` for `3p_{g} - 6` (article 31) —
+      as texcompare requires. So is the doubled `))` after the footnote marker on p268, and the
+      hyphen the print sets where a full stop belongs, after "result complete" in article 27.
+
+      THE PRONOUN FOR THE INDEFINITE READER. Four passages address an unnamed, indefinite person
+      — the reader who will not follow the authors up the mountain (p244), the reader who wants to
+      go deeper (p255), the reader not to be wearied (article 17). French gives these a generic
+      "il"; the translation uses singular "they", which is ordinary English and assigns no gender
+      to a person who has none in the text. Named historical figures keep the pronouns the source
+      uses for them.
+
+      NO \uncertain SPANS AND NO \ednote. The memoir's prose is plain expository French and
+      nothing in it needed hedging; what a reviewer should weigh are the four terminology
+      decisions above, not any single sentence. STATUS ai-draft — no human has read this against
+      original.tex yet. The places to start are articles 9, 15, 27, 33 and 38, which carry
+      respectively the "theorem of the remainder", the printer's stray parenthesis, the
+      hyphen-for-full-stop, the first translated \text insert, and the branch-curve decision.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-12"
+  verification:
+    flagged_pages: []
+    date: "2026-09-12"
+  uncertainty_flags: 0
+  note: >-
+    Castelnuovo and Enriques, "Sur quelques récents résultats dans la théorie des surfaces
+    algébriques", Mathematische Annalen Band 48 (1897), pp. 241–316. The file is COMPLETE:
+    \origpage markers run 241–316 with no gaps or duplicates, pipeline/houselint.py passes over the
+    whole file, and all 2146 math spans (2073 inline, 73 display) render through the site's own
+    KaTeX build.
+
+    HOW THESE PAGES WERE PRODUCED. Nineteen batch subagents of four pages each, under the
+    /transcribe skill: each read only its own pages' images plus this work's notation.md, wrote one
+    fragment per page, and returned a short report. The orchestrating session read no page image
+    except the top half of p241, to take the title off the print rather than from a catalogue.
+    Every page was then re-read against the corrected scans by thirteen verification subagents, and
+    the assembled text was proofread once more as a TEXT, with no scans, to catch what a per-page
+    check structurally cannot see.
+
+    THE SCAN IS TALL (aspect 1:1.7), AND THAT CHANGED THE METHOD. At one prepared image per page
+    the 1568px long-edge cap left only 895–1064px of text width, and pipeline/prepare_pages.py
+    warned on 72 of the 76 pages. Pages were therefore split into LANDSCAPE HALF-PAGE crops, which
+    come out at the full 1568px of width — about 65% more resolution across the line, at the cost
+    of one extra image and one extra turn per page. Read the zero flag count in that light: it
+    records legibility bought by the split and by magnification, not an easy scan.
+
+    TWO CROPPING DEFECTS WERE FOUND AND FIXED, and one of them cost text before it was:
+      - The detected text block stopped SHORT OF THE LAST PRINTED LINE on 12 of the 76 pages, by up
+        to 38px — enough to cut a footnote line in half. Caught on p242, then measured across the
+        range. (A first version of that check called all 76 pages clean because it stopped
+        searching at 97% of page height, which on this scan is above the crop bottom; corrected, it
+        found the 12.)
+      - The block also undershot the RIGHT-HAND MEASURE on 17 pages by 9–15px — under half a
+        character, but enough to drop a line's terminal punctuation. Reported independently by two
+        batches, then measured.
+    Both were fixed by following the actual ink on all four sides. Pages 241–268 had already been
+    transcribed from the undershooting crops, so every page was re-verified against corrected
+    images; that pass recovered ONE genuinely lost word — the italic $C$ in "pour la courbe $C$
+    générale" on p255 — and confirmed no other line-end anywhere had been truncated.
+
+    NOTATION is recorded in full in notation.md. Batches cannot see each other, and several
+    conventions had to be settled after they disagreed:
+      - SECTION HEADINGS. The print sets an article's bare number on its own centred line above its
+        title, and six batches produced three different shapes for it. Settled as ONE heading with
+        the number inside (\subsection*{9. Title.}, \section*{Chapitre III. …}): a standalone
+        \subsection*{13.} renders on the site as a meaningless lone numeral, and the number is
+        load-bearing because the text back-references articles as n${}^{\text{o}}$ 9.
+      - THE ELLIPSIS, which is two different things here. The bibliographic ellipsis standing for
+        the tail of a cited title is three tight ASCII periods in text mode; an ellipsis of omitted
+        terms is \ldots (or \cdots between operators). One batch extended the tight form into math;
+        corrected, following settled corpus practice (nine works use \ldots/\cdots in math, none
+        uses tight periods there).
+      - WORDS HYPHENATED ACROSS A PAGE BREAK are joined, the whole word placed before the next
+        \origpage, since R22 drops line-break hyphenation and no corpus work leaves such a word
+        split. Two occurred (p282/283 "précédentes", p297/298 "différentes"). The second is worth
+        noting for anyone building a similar check: its hyphen sits ABOVE the page's footnote block
+        rather than next to the \origpage marker, so a trailing-hyphen match does not see it — the
+        same miss recorded from the Clebsch run.
+      - PARENTHETICALS whose contents are entirely mathematical are one math span with the
+        parentheses inside; one containing words stays in text mode with a span per symbol. Eleven
+        were normalized to the first form after the work was found to favour it 5-to-1 for the very
+        same expression.
+    Also settled there: \geqq/\leqq (this print uses the double-bar sorts throughout, confirmed by
+    magnification on five separate pages), \gtreqqless, \neq, \varrho and \varphi, series symbols
+    as g_{n}^{r} with the subscript first, |C| with plain ASCII bars, \binom for the print's
+    staggered parenthesized pairs, the footnote series *) **) ***) †) ††), and Max Noether's name
+    kept as the print spells it, Nöther (R12).
+
+    WHAT VERIFICATION CHANGED. Besides the recovered word on p255, the passes corrected: four
+    silent "improvements" to the author's own spelling, which R4/R23 forbid — "irregulières" on
+    p282 and "rationnalité" on p303 had been normalized to the modern forms, and both are restored
+    (each was scoped to its own page, because this edition genuinely alternates and the single-n
+    "rationalité" on pp. 313 and 314 was separately confirmed to be the print's); a dropped
+    sentence period after the ellipsis on p304; two italic runs with the wrong boundary (p261
+    closing a word early, p293 running one clause too far); the elided article l' placed outside
+    an italic run on pp. 249 and 250 where the print sets it italic; an inline fraction on p296
+    that the print sets at reduced size, so \frac not \dfrac; and a handful of spacing
+    inconsistencies. The elided-article finding came with a control case — l'\emph{Analysis situs}
+    on p248, where the l' really is roman — so the print distinguishes these per instance and
+    notation.md now says so.
+
+    ONE STRUCTURAL REPAIR. A footnote running from p304 onto p305 had been transcribed as two
+    separate notes, which left p305 carrying a note with no in-text marker and split the citation
+    "(Rendic. | Circolo Mat. di Palermo, t. I)" across the page boundary with an unbalanced
+    parenthesis on each side. R15 gives such a note whole at the page where it BEGINS, which is how
+    the analogous note running from p315 onto p316 was already handled; the two halves are now one
+    note under p304.
+
+    THE ONE UNCERTAIN PASSAGE IS NOW SETTLED. p313 "un systèmé linéaire de courbes" was flagged
+    \uncertain because a lone raised mark is exactly the R29 failure mode in which a broken
+    neighbouring sort leaves ink that reads as an accent. Magnified, the acute has the same stroke
+    weight, height and lean as the real acute in "linéaire" on the same line, leans opposite to the
+    grave on the word's own è, and no neighbouring sort has lost ink. It is real type and a genuine
+    printer's error, so it is reproduced plainly and the flag is removed. The work therefore
+    carries no \uncertain and no \illegible.
+
+    APPARENT PRINTER'S ERRORS REPRODUCED FAITHFULLY, NOT CORRECTED (R4). This edition's accents are
+    genuinely erratic and are reproduced per occurrence (R23), often with the correct spelling a few
+    lines away on the same page: rélation/rélations (pp. 242, 276, 282, 286), géomètrique (pp. 242,
+    291), géomètrie (p244), deduire (pp. 246, 304), considerée (p249), dependît (p250), difference
+    (p252), rationnalité (pp. 247, 257, 303, 305, 306, 307, 310, 311, 312, 314), prémière and dejà
+    (p258), systémes, consideré and completer (p259), Géometrie du plan (p260, four lines from a
+    correct Géométrie), dejà (pp. 263, 272, 311), Géometrie (p265), récourir (p274), partiale and
+    théoreme (p275), present (pp. 279, 285, 306), se decompose (p280), néammoins and tetraèdre
+    (p283), determination (p286), reglées (p287), verifiée and appellons (p288), réglee (p289),
+    tetraèdre (p291), equation (p293), systemes and géometrique (p298), numerique (p300),
+    dégénerations beside a correct dégénérations in the same paragraph (p306), reduction and
+    presenter (p310), entraine (p311), systèmé (p313).
+    Grammatical and typographic slips, likewise reproduced: "représent" and "appelerons" (p248);
+    "des systèmes pas linéaires" (p254); a missing comma after "sistema normale" (p256); "adjoint a
+    celui-là" (p268); "|C' + D)|" with a stray closing parenthesis inside the system bars (p269);
+    "qu'il ne sont pas" (p270); "ou aura" for "on aura" and "à montré" for "a montré" (p281); a
+    hyphen where the sentence needs a full stop (p287); "en de positions générales" (p292); "en de
+    points variables" (p279); "de courbes elliptiques" for "des" (p308); "à projecter" for projeter
+    (p309); "a ce qu'il paraît" without the grave (p310); "l'une d'elle" for d'elles (p311);
+    "l'influence exercitée", an Italianism for exercée (p312); "bien de cas" (p313); "à de séries
+    différentes" and "que nous disons" for disions (p315); "en quatre droite d'un faisceau" between
+    two plural parallels in the same sentence (p306); "Osservazioni interno" for intorno in a cited
+    title (p293); a display closing on a comma before a new sentence (p295); and on p264 a broken
+    footnote series — the text carries a *) reference while the only note at the foot is led **),
+    with no *) note and no **) reference anywhere on the page.
+    ONE THAT NEEDS THE PRINT: p301's italic theorem reads "ayant les caractères $n$, $r$, $\pi$, a,
+    par rapport au système canonique…", which has no verb. Magnification confirms an undotted
+    italic "a" followed by a comma. Either the character "$i$," was dropped before the verb "a" —
+    p300 introduces exactly the characters n, π, r, i — or the comma after the verb is spurious.
+    Reproduced as printed because the page cannot tell the two apart.
+
+    WHERE A REVIEWER WITH THE PRINT SHOULD START.
+      - p307 cites Castelnuovo's "…una rete di curve iperellittiche" and p314 the same title as
+        "iperellitiche", with one t. One of the two is wrong; neither page's verification settled it.
+      - The edition alternates on several compounds and a reviewer may want to spot-check them,
+        since they are reproduced per occurrence and never regularized: c'est à dire (pp. 254, 289)
+        against c'est-à-dire (12 pages); tout à fait (p244) against tout-à-fait (9 pages); au
+        dessous (p293) against au-dessous (p264); quelques uns (p282) against quelques-uns (p309);
+        non-linéaire against "pas linéaire" (both on p314).
+      - p299 "il faut d'abord que nous introduisons" takes the indicative where the subjunctive
+        introduisions is expected; p303 "s'appuyent"; p293 "un faisceau de courbe du genre 2"
+        against the parallel "de courbes" on p294. Each reads like the edition's own French, but
+        only the page settles it.
+      - Equation numbering restarts per article in Chapter V and runs 1–8 continuously across
+        articles 33–35 in Chapter VI. Every in-text back-reference resolves correctly under that
+        reading, so the file is self-consistent, but the uneven scheme is worth one look.
+
+    A GAP IN THE REPORTING, since closed. Two batches (pp. 305–308 and pp. 309–312) were killed by
+    a session rate limit after writing their fragments but before returning their reports, so no
+    misprint list existed for pp. 305–307 and 309–312. Those seven pages were given extra scrutiny
+    in verification and their misprints are included above; p308, the one fragment lost with them,
+    was transcribed separately.
+
+    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
+    scan.

@@ -87,6 +87,27 @@ def test_math_around_text_insert_still_checked():
     assert texcompare.preservation_report(orig, trans)["ok"] is False
 
 
+# --- adjacent math groups (footnote markers, R15) --------------------------- #
+def test_adjacent_math_groups_are_two_inline_spans_not_a_display():
+    # The house style attaches a footnote marker to a formula as its own math group with no space
+    # between them, which puts a literal `$$` in the file. That is two inline spans, not plain-TeX
+    # display math; reading it as a display used to swallow the prose up to the next such pair.
+    latex = r"les autres courbes de $|C|$${}^{*)}$. Ici l'on a $r - 1 \leqq n$."
+    assert texcompare.extract_math(latex) == ["|C|", "{}^{*)}", "r - 1 \\leqq n"]
+
+
+def test_adjacent_math_groups_survive_translation_of_the_prose_between_them():
+    orig = r"les autres courbes de $|C|$${}^{*)}$. Ici l'on a $r - 1 \leqq n$."
+    trans = r"the other curves of $|C|$${}^{*)}$. Here one has $r - 1 \leqq n$."
+    assert texcompare.preservation_report(orig, trans)["ok"] is True
+
+
+def test_two_consecutive_markers_on_one_word():
+    # `courbes${}^{*)}$${}^{**)}$` — three `$` in a row, still two spans.
+    latex = r"des courbes${}^{*)}$${}^{**)}$ de la surface"
+    assert texcompare.extract_math(latex) == ["{}^{*)}", "{}^{**)}"]
+
+
 # --- the real corpus must pass ---------------------------------------------- #
 def test_corpus_translations_preserve_math():
     corpus = REPO / "corpus"

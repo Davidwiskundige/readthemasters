@@ -1,0 +1,121 @@
+id: castelnuovo-enriques-1897-surfaces-algebriques
+title: "Sur quelques récents résultats dans la théorie des surfaces algébriques."
+title_en: "On some recent results in the theory of algebraic surfaces."
+
+authors:
+  - name: "Guido Castelnuovo"
+    wikidata_id: Q726811
+    birth_year: 1865
+    death_year: 1952
+    mactutor: Castelnuovo  # https://mathshistory.st-andrews.ac.uk/Biographies/Castelnuovo/
+  - name: "Federigo Enriques"
+    wikidata_id: Q982529
+    birth_year: 1871
+    death_year: 1946
+    mactutor: Enriques  # https://mathshistory.st-andrews.ac.uk/Biographies/Enriques/
+
+publication:
+  year: 1897
+  venue: mathematische-annalen
+  volume: "48"
+  pages: "241–316"
+  title_full: >-
+    "Sur quelques récents résultats dans la théorie des surfaces algébriques. Par MM. G.
+    Castelnuovo à Rome et F. Enriques à Bologne", Mathematische Annalen, Band 48 (Leipzig: B. G.
+    Teubner, 1897), pp. 241–316.
+
+edition:
+  year: 1897
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: >-
+    Transcribed from the original first printing in Mathematische Annalen, Band 48 (Leipzig: B. G.
+    Teubner, 1897), pp. 241–316 — an original edition with no modern critical apparatus,
+    commentary, or re-typesetting. Only the memoir itself is transcribed, from its title line on
+    p. 241 to its close on p. 316; the running heads, printed page numbers and signature marks are
+    not.
+
+discipline: mathematics
+tags: [geometry, algebra, analysis]
+language: fr
+type: paper
+
+relations:
+  - to: clebsch-1868-surfaces-algebriques
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Chapter I is headed "Genre d'une courbe et d'une surface d'après Clebsch et M. Nöther", and
+      the memoir cites Clebsch's note by date at the foot of p. 248 ("Comptes Rendus de l'Acad. d.
+      Sc., Déc. 1868") at exactly the point where it defines the genus of a surface as the number
+      of arbitrary coefficients left in an adjoint surface of order $n-4$. That is Clebsch's 1868
+      count, and this memoir is where it stops being a single unproved claim and becomes the first
+      of a family of birational invariants.
+
+significance: >-
+  Seventy-six pages, dated Florence, February 1896, in which the Italian school's theory of
+  algebraic surfaces is set out whole for the first time. Castelnuovo and Enriques open by naming
+  the two directions the subject had taken since Nöther's fundamental memoir — the transcendental
+  one pursued in France, above all by Picard, and their own geometric one — and then build the
+  second from the ground up: linear series on a curve, linear systems of curves on a surface,
+  adjoint curves and adjoint systems, and from these a sequence of numbers unchanged by birational
+  transformation. Clebsch's geometric genus $p_g$[1] is joined by Nöther's numerical genus $p_n$, by
+  the plurigenera $P_2$, $p^{(1)}$ and $p^{(2)}$, and by the characteristic series of a linear
+  system, whose defect turns out to measure exactly the difference $p_g - p_n$ — the quantity later
+  called the irregularity. Surfaces with $p_g = p_n$ they call regular. Chapter VI carries the
+  Riemann-Roch theorem across from curves to surfaces, and Chapter VII turns the machinery on the
+  rational surfaces and the double planes, deducing rationality from the numerical invariants
+  alone. The authors are candid that this is a theory still forming: they give the statements
+  and suppress the proofs, because "on ne réussit pas, pour le moment, à exposer ces démonstrations
+  de manière à éviter toute difficulté" — for the moment these proofs cannot be set out in a way
+  that avoids every difficulty. They close on a climb. What matters now, they write, is to get past
+  the obstacles on the path and reach the summit shining ahead of them; anyone unwilling to take so
+  disagreeable a route should wait, and read instead the description of the landscape as it looks
+  from the point they have so far reached, which is what this memoir is. For those who do want to
+  make the climb, the pages that follow hold everything needed to do it.
+
+significance_sources:
+  - citation: >-
+      Clebsch's original claim that the count of coefficients in an adjoint surface of order $n-4$
+      is a birational invariant, in this corpus: "Sur les surfaces algébriques", Comptes rendus 67
+      (1868), pp. 1238–1239 — cited in this memoir at the foot of p. 248.
+    url: "/works/clebsch-1868-surfaces-algebriques/"
+
+source:
+  scan_url: "http://eudml.org/doc/157819"
+  scan_id: >-
+    eudml:157819 (Mathematische Annalen 48, 1897, pp. 241–316). The volume is also digitized by
+    GDZ Göttingen, https://gdz.sub.uni-goettingen.de/volumes/id/PPN235181684.
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: >-
+    Guido Castelnuovo, 1865–1952 (wikidata:Q726811; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Castelnuovo/). Federigo Enriques, 1871–1946
+    (wikidata:Q982529; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Enriques/).
+  publication_date: >-
+    First published 1897 in Mathematische Annalen, Band 48, pp. 241–316; EuDML record
+    http://eudml.org/doc/157819. The article's opening page is the volume's p. 241 and its last
+    page the volume's p. 316, both read from the scan.
+  edition: >-
+    Original first printing, Mathematische Annalen, Band 48 (Leipzig: B. G. Teubner, 1897),
+    pp. 241–316.
+
+# Recomputed and verified by pipeline/validate.py; must match the recomputation.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs: { death_years: [1952, 1946], term: 70 }
+    us_publication:
+      verdict: pass
+      inputs: { publication_year: 1897, term: 95 }
+    edition_rights:
+      verdict: pass
+      inputs: { rights_cleared: true }
+    translation_source:
+      verdict: pass
+      inputs: { external_translations: 0 }
+  evaluated_at: "2026-09-05"
