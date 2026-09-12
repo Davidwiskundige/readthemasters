@@ -37,7 +37,7 @@ python pipeline/validate.py
 |---|---|---|
 | 0 Report errors | GitHub account | Click *Report an error* on any work page |
 | 1 Chat | Any AI chat subscription | Use [`prompts/transcribe-chat.md`](prompts/transcribe-chat.md) / [`translate-chat.md`](prompts/translate-chat.md) in your app; submit via the issue form |
-| 2 Claude Code skill | Claude Pro/Max | Run `/transcribe <work> <pages>` or `/translate <work> <lang>` (see `.claude/skills/`) |
+| 2 Agent skill | Claude Pro/Max or Google Antigravity | Run `/transcribe <work> <pages>` or `/translate <work> <lang>` (see `.claude/skills/` and `.agents/skills.json`) |
 | 3 Full pipeline | Your own API key + Python | Run `pipeline/transcribe.py <work> --pages <spec> --images <dir>` or `pipeline/translate.py <work> --lang <code>` (Batch API); open a PR |
 
 ### Adding a work by pull request (tiers 2–3)
