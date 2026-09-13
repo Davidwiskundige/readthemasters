@@ -26,6 +26,24 @@ function attribution(prov) {
   return s;
 }
 
+// The one fact about provenance the heading block cannot carry: the scan we transcribed is a later
+// reprint, not the first printing. True where the transcribed edition's year differs from the work's
+// (3 of 18 works — Leibniz from Gerhardt, both Fagnanos from the 1911 Opere). Where the years agree
+// the edition IS the original printing, and saying so again would only repeat the heading.
+// What each rung of the review ladder (validate.py STATUS_LADDER) means, for the badge's popover.
+// Wording follows /about/, which is where the badge links for the fuller account.
+const STATUS_NOTE = {
+  "ai-draft": { title: "AI draft",
+    body: "Machine output, not yet human-checked. Treat it as a working draft and check anything that matters against the scan." },
+  "skimmed": { title: "Skimmed",
+    body: "A human has read this against the original scan once — enough to catch obvious errors, short of a line-by-line collation." },
+  "verified": { title: "Verified",
+    body: "Checked in full against the original scan, rigorously and line by line." },
+};
+
+const editionYear = work.edition?.year;
+const editionNote = editionYear && editionYear !== work.year ? `from the ${editionYear} edition` : null;
+
 const figOpts = { figureBase: `/figures/${work.id}/` };
 const originalHtml = texToHtml(work.original_tex, figOpts);
 // Each translation prefixes its page anchors so `p-236` stays unique across the panels of one page.
@@ -44,12 +62,17 @@ const citeByLang = Object.fromEntries(
   citations.filter((c) => c.kind === "translation").map((c) => [c.lang, c]));
 const citeExternal = citations.filter((c) => c.kind === "external");
 
-// One consolidated download list, each row carrying its own citation.
-const downloads = [
-  { label: `Original (${work.language_label})`, tex: work.original_tex_url,
-    pdf: work.original_pdf, cite: citeTranscription },
-  ...translations.map((t) => ({ label: `${t.label} translation`, tex: t.tex_url,
-    pdf: t.pdf, cite: citeByLang[t.lang] })),
+// The text panels: the original first, then each translation. Downloads used to sit in one
+// consolidated list above the text, which cost every reader ~180px to serve the case of wanting a
+// file, and had to label each row ("Original (Latin)") because the list could not know which text
+// you meant. Inside a panel the tab has already answered that, so each text's files ride at the
+// head of its own panel, sharing a row with the provenance line that was there anyway.
+// One shape for all panels so the markup — anchor, files, provenance, text — is written once.
+const panels = [
+  { key: "original", label: `Original (${work.language_label})`, html: originalHtml, prov: tp,
+    tex: work.original_tex_url, pdf: work.original_pdf, cite: citeTranscription },
+  ...translations.map((t) => ({ key: t.lang, label: `${t.label} translation`, html: t.html,
+    prov: t.prov, tex: t.tex_url, pdf: t.pdf, cite: citeByLang[t.lang] })),
 ];
 
 // Prefilled "report an error" issue link (PLAN.md backlog #1).
@@ -74,21 +97,27 @@ const firstWords = (t, n = 5) => {
 // scrolling back up — both instances share this one render path so they can't drift apart.
 // The bottom instance omits "Read first:" — telling a reader what they should have read *before*
 // the text they just finished isn't actionable, so only "Next:" carries over there.
+//
+// The middle slot is this work's place in the whole dependency graph. It used to be a line of its
+// own below the nav, which was the same idea rendered twice over: where does this work sit relative
+// to the others. Folding it in also gives the row an anchor — 6 of 18 works have no recommended
+// previous read, and their nav used to render with a blank left half. Because the middle always has
+// something to say, BOTH navs now render on every work page: a work with no recommendations at all
+// still reaches the graph, which a conditional nav would have quietly denied it.
 function relatedNavHtml(bottom) {
   const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const side = (rec, dir) => rec
     ? `<span class="relnav-dir">${esc(dir)}</span> <a href="${esc(rec.url)}" title="${esc(rec.title)}">${esc(rec.by)}, ${esc(firstWords(rec.title))}</a>`
     : "";
+  const middle = `<span class="relnav-mid"><a href="/timeline/?focus=${esc(work.id)}">timeline</a></span>`;
   if (bottom) {
-    if (!recNext) return "";
     return `<nav class="relnav relnav-bottom" aria-label="Related reading">` +
-      `<span class="relnav-side"></span>` +
+      `<span class="relnav-side"></span>` + middle +
       `<span class="relnav-side relnav-right">${side(recNext, "Next:")}</span>` +
       `</nav>`;
   }
-  if (!recPrev && !recNext) return "";
   return `<nav class="relnav" aria-label="Related reading">` +
-    `<span class="relnav-side">${side(recPrev, "Read first:")}</span>` +
+    `<span class="relnav-side">${side(recPrev, "Read first:")}</span>` + middle +
     `<span class="relnav-side relnav-right">${side(recNext, "Next:")}</span>` +
     `</nav>`;
 }
@@ -96,9 +125,11 @@ function relatedNavHtml(bottom) {
 <Base title={work.title} description={work.title_en ?? work.title}
       ogType="article" jsonLd={workJsonLd(work, Astro.site?.origin ?? "")}>
   {/* data-pagefind-body marks what the search index covers: the significance note and the text
-      panels below. Everything else (this heading block, downloads, notices, BibTeX store, site
-      chrome) sits outside every body region, so it is not indexed as text — the heading block
-      only contributes the metadata the search-result cards are built from. */}
+      panels below. Everything else (this heading block, BibTeX store, site chrome) sits
+      outside every body region, so it is not indexed as text — the heading block only contributes
+      the metadata the search-result cards are built from. The one thing inside a body region that
+      is not the author's text is each panel's files/provenance row, excluded with
+      data-pagefind-ignore. */}
   <div class="workhead">
     {/* Display title may carry LaTeX ($…$) that KaTeX renders (see the auto-render script below);
         the plain `title` stays the machine-readable one for search, the tab, and JSON-LD. */}
@@ -114,7 +145,20 @@ function relatedNavHtml(bottom) {
       {work.venue_full && <> · {work.venue
         ? <a href={`/journals/${work.venue}/`}>{work.venue_full}</a>
         : work.venue_full}</>}
-      · <span class={`badge ${work.status}`}>{work.status}</span>
+      {/* The badge names a review level, which is jargon until something says what it means —
+          this is now the only thing on the page that says so. A `title` tooltip would be
+          unreachable on touch and to the keyboard, so this uses the site's own `.pop` behavior
+          (pop.js, loaded globally from Base.astro): the badge is the trigger, tap pins it open,
+          Escape closes. data-pagefind-ignore keeps the card out of search excerpts. */}
+      · <span class="pop statuspop" data-pagefind-ignore>
+          <button type="button" class={`badge pop-marker ${work.status}`}
+                  aria-label={`Review level: ${work.status}`}>{work.status}</button>
+          <span class="pop-content" role="note">
+            <strong>{STATUS_NOTE[work.status]?.title ?? work.status}</strong>
+            {" — "}{STATUS_NOTE[work.status]?.body}
+            {" "}<a href="/about/">How review levels work →</a>
+          </span>
+        </span>
     </p>
     {/* Key-only form (value = element text), so an author list containing commas survives. */}
     <span class="sr-only" data-pagefind-meta="author">{authors}</span>
@@ -123,12 +167,14 @@ function relatedNavHtml(bottom) {
     <span class="sr-only" data-pagefind-meta="language">{work.language_label}</span>
   </div>
 
+  {/* One line: the link that makes this text checkable, and its citation. `scan_id` is an internal
+      provenance key (sometimes several sentences of it) and `publication_full` restates the heading
+      block above on all but three works, so neither is shown — both stay in the YAML for audit. */}
   <p>
     <strong>Source:</strong>
     <a href={work.source.scan_url} rel="noopener">original scan</a>
-    {work.source.scan_id && <> ({work.source.scan_id})</>}
+    {editionNote && <> <span class="attr">({editionNote})</span></>}
     {citeOriginal && <> <button class="chip copy" type="button" data-target={`bib-${citeOriginal.key}`}><span class="g">⧉</span> BibTeX</button></>}
-    {work.publication_full && <><br /><span class="attr">{work.publication_full}</span></>}
   </p>
 
   {work.significance && (
@@ -142,41 +188,6 @@ function relatedNavHtml(bottom) {
       The full dependency graph (cites, built-on-by, …) is on /timeline/. */}
   <Fragment set:html={relatedNavHtml(false)} />
 
-  {/* Jump to this work's place in the whole dependency graph, pre-focused. */}
-  <p class="attr worktl"><a href={`/timeline/?focus=${work.id}`}>See this work in the timeline →</a></p>
-
-  <section class="downloads">
-    <h2>Downloads</h2>
-    <ul>
-      {downloads.map((d) => (
-        <li>
-          <span>{d.label}:</span>
-          {d.tex && <a class="chip" href={d.tex} download rel="noopener"><span class="g">↓</span> .tex</a>}
-          {d.pdf
-            ? <a class="chip" href={d.pdf} download rel="noopener"><span class="g">↓</span> PDF</a>
-            : <span class="attr note">PDF on deploy</span>}
-          {d.cite && <button class="chip copy" type="button" data-target={`bib-${d.cite.key}`}><span class="g">⧉</span> BibTeX</button>}
-        </li>
-      ))}
-      <li>
-        <span class="attr">Shared preamble:</span>
-        <a class="chip" href="/tex/readmasters.sty" download rel="noopener"><span class="g">↓</span> readmasters.sty</a>
-        <span class="attr">(needed to compile a <code>.tex</code>)</span>
-      </li>
-      <li>
-        <span class="attr">All citations:</span>
-        <button id="dl-bib" class="chip" type="button" data-file={`${work.id}.bib`}><span class="g">↓</span> .bib</button>
-      </li>
-    </ul>
-  </section>
-
-  {work.status === "ai-draft" && (
-    <div class="notice">
-      This text is an <strong>AI draft</strong> and has not yet been human-checked.
-      Spotted a mistake? <a href={reportUrl} rel="noopener">Report an error</a>.
-    </div>
-  )}
-
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-tab="original">Original ({work.language_label})</button>
     {translations.map((t) => (
@@ -186,17 +197,19 @@ function relatedNavHtml(bottom) {
 
   {/* Each panel carries a heading with the id the tabs and search results link to: `#original`,
       `#en`. The heading is for screen readers and for Pagefind sub-results — the visible label is
-      the tab itself. */}
-  <section class="text" data-panel="original" data-pagefind-body>
-    <h2 class="sr-only" id="original">Original ({work.language_label})</h2>
-    <p class="attr">{attribution(tp)}</p>
-    <div set:html={originalHtml} />
-  </section>
-  {translations.map((t) => (
-    <section class="text" data-panel={t.lang} data-pagefind-body hidden>
-      <h2 class="sr-only" id={t.lang}>{t.label} translation</h2>
-      <p class="attr">{attribution(t.prov)}</p>
-      <div set:html={t.html} />
+      the tab itself. Everything but the first panel starts hidden; the tabs reveal them.
+      The files/provenance row is `data-pagefind-ignore`: it sits inside the indexed body, but it
+      is ours rather than the author's, and indexing it drops chip labels into search excerpts. */}
+  {panels.map((p, i) => (
+    <section class="text" data-panel={p.key} data-pagefind-body hidden={i > 0}>
+      <h2 class="sr-only" id={p.key}>{p.label}</h2>
+      <p class="files" data-pagefind-ignore>
+        {p.tex && <a class="chip" href={p.tex} download rel="noopener"><span class="g">↓</span> .tex</a>}
+        {p.pdf && <a class="chip" href={p.pdf} download rel="noopener"><span class="g">↓</span> PDF</a>}
+        {p.cite && <button class="chip copy" type="button" data-target={`bib-${p.cite.key}`}><span class="g">⧉</span> BibTeX</button>}
+        <span class="attr">{attribution(p.prov)}</span>
+      </p>
+      <div set:html={p.html} />
     </section>
   ))}
 
@@ -311,18 +324,6 @@ function relatedNavHtml(bottom) {
         btn.textContent = ok ? 'copied ✓' : 'press Ctrl+C';
         setTimeout(() => (btn.textContent = prev), 1500);
       });
-    });
-
-    // Download all entries as one .bib file.
-    const dl = document.getElementById('dl-bib');
-    if (dl) dl.addEventListener('click', () => {
-      const all = [...document.querySelectorAll('#bib-store pre')].map((p) => p.textContent).join('\n\n');
-      const blob = new Blob([all], { type: 'application/x-bibtex' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = dl.dataset.file;
-      a.click();
-      URL.revokeObjectURL(a.href);
     });
   </script>
   {/* Bundled by Astro (no `type="module"`, which would leave it inline) so the fitmath import
