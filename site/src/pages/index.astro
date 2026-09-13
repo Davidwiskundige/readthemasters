@@ -5,6 +5,22 @@ import { websiteJsonLd } from "../lib/jsonld.js";
 
 const works = data.works ?? [];
 
+// Portrait thumbnails for the card strips (catalog-card-portraits). The author objects inside each
+// work carry the raw `portrait` block from work.yaml — no resolved URL — while the top-level
+// `authors` array carries the hosted `thumb_url` that resolve_portrait() emitted. Both are in this
+// same JSON, so the join happens here rather than being duplicated into every work record by the
+// Python build.
+const thumbs = Object.fromEntries(
+  (data.authors ?? []).map((a) => [a.slug, a.portrait?.thumb_url]).filter(([, url]) => url)
+);
+
+// Placeholder initial for an author with no portrait, so their card keeps the same left inset as
+// every other one. Last name, matching the author index's placeholder.
+const initial = (name) => {
+  const last = (name ?? "").trim().split(/\s+/).pop() ?? "";
+  return [...last][0]?.toUpperCase() ?? "";   // spread, so a surrogate pair stays one character
+};
+
 // Build facet option lists from the corpus.
 const uniq = (arr) => [...new Set(arr)].filter(Boolean);
 const disciplines = uniq(works.flatMap((w) => w.disciplines)).map((d) => {
@@ -87,8 +103,16 @@ const maxYear = years.length ? Math.max(...years) : 0;
           </select>
         </label>
       </div>
-      <ul class="works" id="works">
-        {works.map((w) => (
+      {/* `works` carries the shared list layout; `catalog` scopes the portrait rules to THIS list.
+          `ul.works` is also the author page's work list, whose works are all by one author and
+          which must keep no portraits — so the portrait CSS may not key off `.works`. */}
+      <ul class="works catalog" id="works">
+        {works.map((w) => {
+          // First author only: a second portrait would break the uniform 69px column for the one
+          // multi-author work in the corpus, and the meta row below names every author anyway.
+          const lead = w.authors[0];
+          const thumb = lead ? thumbs[lead.slug] : null;
+          return (
           <li class="card"
               data-title={(w.title ?? "").toLowerCase()}
               data-title-en={(w.title_en ?? "").toLowerCase()}
@@ -100,27 +124,41 @@ const maxYear = years.length ? Math.max(...years) : 0;
               data-type={w.type}
               data-status={w.status}
               data-year={w.year}>
-            {/* Display title may carry inline LaTeX ($…$), rendered by the KaTeX pass below;
-                data-title above keeps the plain text for filtering and sorting. */}
-            <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
-            {(w.title_en_tex ?? w.title_en) && (
-              <div class="meta"><em>{w.title_en_tex ?? w.title_en}</em></div>
-            )}
-            <div class="meta">
-              <span>{w.authors.map((a, i) => (
-                <>{i > 0 && ", "}<a href={`/authors/${a.slug}/`}>{a.name}</a></>
-              ))}</span>
-              <span>· {w.year}</span>
-              {w.venue_full && (
-                <span class="pill">{w.venue
-                  ? <a href={`/journals/${w.venue}/`}>{w.venue_full}</a>
-                  : w.venue_full}</span>
+            {/* The portrait strip repeats the title's destination rather than offering a second
+                one, so it widens the card's main target instead of competing with it. Hidden from
+                assistive technology and out of the tab order: the title link beside it is already
+                announced and already focusable, and this would add a stop with no accessible name.
+                The image is absolutely positioned inside the box (see .pbox in global.css), so a
+                card's height still comes from its text alone. */}
+            <a class={thumb ? "pbox" : "pbox mono"} href={w.url} aria-hidden="true" tabindex="-1">
+              {thumb
+                ? <img src={thumb} alt="" width="69" height="86" loading="lazy" />
+                : initial(lead?.name)}
+            </a>
+            <div class="body">
+              {/* Display title may carry inline LaTeX ($…$), rendered by the KaTeX pass below;
+                  data-title above keeps the plain text for filtering and sorting. */}
+              <h3><a href={w.url}>{w.title_tex ?? w.title}</a></h3>
+              {(w.title_en_tex ?? w.title_en) && (
+                <div class="meta"><em>{w.title_en_tex ?? w.title_en}</em></div>
               )}
-              <span class={`badge ${w.status}`}>{w.status}</span>
-              {(w.translation_langs ?? []).map((l) => <span class="pill">→ {l.toUpperCase()}</span>)}
+              <div class="meta">
+                <span>{w.authors.map((a, i) => (
+                  <>{i > 0 && ", "}<a href={`/authors/${a.slug}/`}>{a.name}</a></>
+                ))}</span>
+                <span>· {w.year}</span>
+                {w.venue_full && (
+                  <span class="pill">{w.venue
+                    ? <a href={`/journals/${w.venue}/`}>{w.venue_full}</a>
+                    : w.venue_full}</span>
+                )}
+                <span class={`badge ${w.status}`}>{w.status}</span>
+                {(w.translation_langs ?? []).map((l) => <span class="pill">→ {l.toUpperCase()}</span>)}
+              </div>
             </div>
           </li>
-        ))}
+          );
+        })}
       </ul>
       <p id="empty" hidden>No works match these filters.</p>
     </section>
