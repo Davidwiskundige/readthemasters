@@ -16,6 +16,7 @@ import argparse
 import datetime
 import json
 import shutil
+import sys
 import unicodedata
 from pathlib import Path
 
@@ -97,6 +98,15 @@ def resolve_portrait(corpus_dir: Path, author_root: Path | None, slug: str,
     and unlike full scans (which we never rehost). The source image is committed under
     `corpus/authors/<slug>/`; the copy under `site/public/authors/<slug>/` is built here, never
     committed. Returns the portrait dict with a `url` added (None if the file is missing).
+
+    The author index draws the portrait in a 69x86 box, for which the full image is an order of
+    magnitude too heavy, so a committed thumbnail is hosted beside it and returned as `thumb_url`.
+    It is found by CONVENTION — `portrait.jpg` -> `portrait-thumb.jpg`, the name
+    `pipeline/make_portrait_thumb.py` writes — rather than declared in work.yaml, because the
+    `portrait` block is duplicated across every work.yaml by the same author and a declared key
+    would have to be kept in sync in all of them. A missing thumbnail warns and falls back to the
+    full image: the page stays correct and merely heavier, which is the right failure mode for a
+    cosmetic asset (and why the copyright gate has no opinion about it).
     """
     if not portrait or not portrait.get("file"):
         return None
@@ -104,12 +114,23 @@ def resolve_portrait(corpus_dir: Path, author_root: Path | None, slug: str,
     src = corpus_dir / "authors" / slug / portrait["file"]
     if not src.exists():
         out["url"] = None
+        out["thumb_url"] = None
         return out
+    thumb = src.with_name(src.stem + "-thumb.jpg")
     if author_root is not None:
         dest = author_root / slug / portrait["file"]
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, dest)
+        if thumb.exists():
+            shutil.copyfile(thumb, dest.with_name(thumb.name))
     out["url"] = f"/authors/{slug}/{portrait['file']}"
+    if thumb.exists():
+        out["thumb_url"] = f"/authors/{slug}/{thumb.name}"
+    else:
+        print(f"warning: no index thumbnail for {slug} ({thumb.name} missing beside "
+              f"{portrait['file']}); the authors index will serve the full-size portrait.\n"
+              f"         python pipeline/make_portrait_thumb.py {slug}", file=sys.stderr)
+        out["thumb_url"] = out["url"]
     return out
 
 

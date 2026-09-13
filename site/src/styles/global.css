@@ -108,6 +108,20 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .authorhead .links { margin: .3rem 0 0; font-size: .9rem; }
 .worksh { font-size: 1.05rem; margin: 1.5rem 0 .6rem; }
 ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+/* Author index cards carry a portrait at the card's left edge (author-index-portraits). Scoped to
+   .authorlist .card throughout, never bare .card, which the catalog, journal and work lists share.
+   The image MUST NOT be able to make the card taller: it is absolutely positioned inside a
+   fixed-width box, so the row's height comes from its text exactly as it did before. A plain <img>
+   in the flex row would contribute its intrinsic aspect ratio instead and cards would vary. */
+.authorlist .card { display: flex; align-items: stretch; gap: .9rem; padding: 0; overflow: hidden; }
+.authorlist .card .pbox { flex: 0 0 69px; position: relative; background: var(--border); }
+.authorlist .card .pbox img { position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block; }
+/* Placeholder for an author with no portrait: their last initial, quiet enough to read as an
+   absence rather than as a heading, keeping the text column aligned with every other card. */
+.authorlist .card .pbox.mono { display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 1.6rem; line-height: 1; user-select: none; }
+.authorlist .card .body { padding: .9rem 1.1rem .9rem 0; min-width: 0; }
 /* Journal (venue) pages. Head mirrors .authorhead; "Find the originals" is a plain link list. */
 .journalhead { margin-bottom: 1rem; }
 .journalhead h1 { margin: 0 0 .3rem; }
