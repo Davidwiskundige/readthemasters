@@ -89,5 +89,5 @@ compiles without it.
 ## 7. Close out
 
 - [x] 7.1 Run `openspec validate simplify-work-page`.
-- [ ] 7.2 Sync the `site-catalog` deltas into `openspec/specs/site-catalog/spec.md` and archive the
+- [x] 7.2 Sync the `site-catalog` deltas into `openspec/specs/site-catalog/spec.md` and archive the
       change (`/opsx:sync`, then `/opsx:archive`).
