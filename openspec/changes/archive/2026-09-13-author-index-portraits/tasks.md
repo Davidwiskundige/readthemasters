@@ -41,5 +41,5 @@
 
 ## 6. Wrap-up
 
-- [ ] 6.1 Update `openspec/specs/site-catalog/spec.md` with the modified **Author pages** requirement and archive the change (`/opsx:archive`).
-- [ ] 6.2 Open a pull request with a DCO `Signed-off-by` line, including before/after screenshots of the index at desktop and mobile widths.
+- [x] 6.1 Update `openspec/specs/site-catalog/spec.md` with the modified **Author pages** requirement and archive the change (`/opsx:archive`).
+- [x] 6.2 Open a pull request with a DCO `Signed-off-by` line: Davidwiskundige/readthemasters#53, stacked on the six-portraits commit in one PR.
