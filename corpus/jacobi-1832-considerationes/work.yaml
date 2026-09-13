@@ -8,6 +8,13 @@ authors:
     birth_year: 1804
     death_year: 1851
     mactutor: Jacobi  # https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Carl Gustav Jacob Jacobi"
+      credit: >-
+        Portrait of Jacobi, artist and date unknown; the Commons copy is reworked from the
+        Smithsonian Libraries' "Scientific Identity" collection of portraits. Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Carl_Jacobi.jpg"
 
 publication:
   year: 1832
