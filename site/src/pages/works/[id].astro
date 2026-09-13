@@ -125,7 +125,7 @@ function relatedNavHtml(bottom) {
 <Base title={work.title} description={work.title_en ?? work.title}
       ogType="article" jsonLd={workJsonLd(work, Astro.site?.origin ?? "")}>
   {/* data-pagefind-body marks what the search index covers: the significance note and the text
-      panels below. Everything else (this heading block, notices, BibTeX store, site chrome) sits
+      panels below. Everything else (this heading block, BibTeX store, site chrome) sits
       outside every body region, so it is not indexed as text — the heading block only contributes
       the metadata the search-result cards are built from. The one thing inside a body region that
       is not the author's text is each panel's files/provenance row, excluded with
@@ -146,7 +146,7 @@ function relatedNavHtml(bottom) {
         ? <a href={`/journals/${work.venue}/`}>{work.venue_full}</a>
         : work.venue_full}</>}
       {/* The badge names a review level, which is jargon until something says what it means —
-          `ai-draft` at least gets a notice below, `skimmed` got nothing. A `title` tooltip would be
+          this is now the only thing on the page that says so. A `title` tooltip would be
           unreachable on touch and to the keyboard, so this uses the site's own `.pop` behavior
           (pop.js, loaded globally from Base.astro): the badge is the trigger, tap pins it open,
           Escape closes. data-pagefind-ignore keeps the card out of search excerpts. */}
@@ -187,13 +187,6 @@ function relatedNavHtml(bottom) {
   {/* Related reading — the recommended spine on one line: previous read left, next read right.
       The full dependency graph (cites, built-on-by, …) is on /timeline/. */}
   <Fragment set:html={relatedNavHtml(false)} />
-
-  {work.status === "ai-draft" && (
-    <div class="notice">
-      This text is an <strong>AI draft</strong> and has not yet been human-checked.
-      Spotted a mistake? <a href={reportUrl} rel="noopener">Report an error</a>.
-    </div>
-  )}
 
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-tab="original">Original ({work.language_label})</button>

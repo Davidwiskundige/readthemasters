@@ -47,8 +47,8 @@ Constraints:
   wrong trade.
 - Not moving `Next:` off the top of the page. Readers walking the development forward want it before
   the text, not only after.
-- Not touching the revision history, the "report an error" links, the external-translations section,
-  or the `ai-draft` notice.
+- Not touching the revision history, the "report an error" link below the text, or the
+  external-translations section.
 - Not restyling the significance callout, the tabs, or the text itself.
 - Not removing `scan_id`, `publication_full` or `edition` from the corpus YAML. They remain for
   validation, audit, and the copyright gate.
@@ -199,6 +199,30 @@ with no new script.
 
 Follow the `.signote` variant (`global.css:273-278` — baseline-aligned, bordered, accent hover)
 rather than the superscript `.ednote` style: the trigger is a badge, not a footnote mark.
+
+### 5b. The `ai-draft` banner goes, now that the badge carries its warning
+
+**Added after the first implementation pass, at the user's request.** The Non-Goals above originally
+promised to leave this banner alone; decision 5 is what changed the calculus.
+
+```
+  This text is an AI draft and has not yet been human-checked.
+  Spotted a mistake? Report an error.
+```
+
+It rendered above the text on **14 of 18 works** — near-permanent furniture rather than an alert, and
+it pushed the text down on exactly the works a reader most wants to check against the scan. Both of
+its payloads survive elsewhere on the page:
+
+| Payload | Where it now lives |
+|---|---|
+| "this is machine output, not yet human-checked" | the status badge's popover (decision 5), verbatim |
+| "report an error" | the prefilled link below the text, unchanged and on every work |
+
+This is only defensible *because* decision 5 shipped first. Without the popover, removing the banner
+would delete the project's not-yet-checked warning outright rather than relocating it — and PLAN.md
+§1 is explicit that nothing hides how a text was made. The order matters: badge popover first,
+banner second. `.notice` was used nowhere else, so its CSS rule goes with it.
 
 ### 6. Absent PDFs render nothing
 

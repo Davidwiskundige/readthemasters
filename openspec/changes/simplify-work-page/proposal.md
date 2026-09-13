@@ -51,6 +51,10 @@ all stay in the YAML for validation and audit.
   empty.
 - **The status badge explains itself** through the site's existing `.pop` popover — the same
   mechanism as `\ednote` editorial notes and significance citations.
+- **The `ai-draft` banner above the text is removed.** It rendered on 14 of 18 works, which made it
+  furniture rather than an alert, and both its payloads survive: the badge popover now carries the
+  "machine output, not yet human-checked" warning, and the prefilled "report an error" link below
+  the text is unchanged and appears on every work regardless of status.
 
 No breaking changes. Every URL, anchor and download path is unchanged.
 
@@ -79,8 +83,11 @@ None. This change modifies how an existing capability presents itself.
 ### Modified Capabilities
 
 - `site-catalog`: six requirements change behaviour.
-  - **Work page** — the source line drops `scan_id` and `publication_full`, gaining a conditional
-    edition note; the status badge gains a popover explaining its review level.
+  - **Work page** — a status no longer gets a banner above the text; the review level is carried by
+    the badge and its popover alone, and the prefilled "report an error" link below the text is
+    stated as belonging to every work rather than to `ai-draft` ones. This replaces the existing
+    scenario *"ai-draft work is marked"*. The source line and the badge popover arrive as two new
+    requirements beside it rather than as edits to this one, since neither contradicts it.
   - **Downloads** — no longer "one consolidated list" above the text, and no longer offers the
     shared preamble; per-text downloads move into their own tab panel and the served `.tex` is
     self-contained.

@@ -195,7 +195,6 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .katex-display.wide > .katex { text-align: left; }
 .katex-display.tag-below > .katex > .katex-html > .tag {
   position: static; display: block; text-align: right; margin-top: .3rem; }
-.notice { background: var(--accent-weak); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .9rem; font-size: .85rem; margin: 1rem 0; }
 .revhistory { margin: 1.5rem 0; font-size: .85rem; }
 .revhistory summary { cursor: pointer; color: var(--muted); }
 .revhistory ul { margin: .6rem 0 0; padding-left: 1.1rem; }
