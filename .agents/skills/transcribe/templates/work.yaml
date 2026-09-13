@@ -1,0 +1,65 @@
+# Annotated work.yaml template — copy to corpus/<work-id>/work.yaml and fill in.
+# <work-id> MUST equal the directory name and follows PLAN.md §3.2:
+#   Wikidata QID → DOI → deterministic `author-year-shorttitle` slug.
+# Every value under `discipline`, `tags`, `venue`, `type`, `language` must exist in
+# corpus/vocab.yaml, or the gate rejects it. The copyright_assessment block is written and
+# verified by `python pipeline/validate.py --write` — do NOT hand-write its verdicts.
+
+id: author-year-shorttitle          # == directory name
+title: "Original-language title exactly as printed"
+title_en: "English title (optional)"
+
+authors:
+  - name: "Full Name"
+    wikidata_id: Qxxxxx             # enables the death-date cross-check
+    birth_year: 0000                # optional
+    death_year: 0000               # required unless `anonymous: true`
+    # anonymous: true              # use instead of death_year for anonymous works
+
+publication:
+  year: 0000                        # first-publication year (drives the US 95-year rule)
+  venue: some-vocab-key             # must be a key in corpus/vocab.yaml `venues`
+  volume: ""                       # optional
+  pages: ""                        # optional, e.g. "293–297"
+  title_full: >-                    # optional long-form citation
+    Journal name, volume (year), pp. x–y.
+
+edition:
+  year: 0000
+  is_transcribed_edition: true
+  rights_cleared: true              # true only for an original/early edition, no modern apparatus
+  rights_note: >-
+    Which physical edition this is transcribed from, and confirmation that no modern
+    critical apparatus, commentary, or re-typesetting is included.
+
+discipline: mathematics             # a vocab key, or a list e.g. [mathematics, physics]
+tags: [analysis]                    # each a vocab key
+language: la                        # ISO 639-1, a vocab key
+type: paper                         # a vocab key (paper|book|chapter|letter|lecture|manuscript)
+
+source:
+  scan_url: "https://…"            # where the scan lives
+  scan_id: "library:identifier"     # stable identifier for the scan
+
+# Optional editorial context shown on the work page (ours, not the author's text):
+# significance: >-
+#   One short paragraph on the work's historical importance.
+
+# Optional: translations that exist elsewhere; we link, never host.
+# external_translations:
+#   - language: en
+#     title: "…"
+#     translator: "…"
+#     year: 0000
+#     license: public-domain
+#     url: "https://…"
+
+# Copyright-critical facts MUST be sourced, or the gate fails by design (PLAN.md §2.5).
+sources:
+  death_date: "wikidata:Qxxxxx"
+  publication_date: "catalogue record / DOI / library id"
+  edition: "identifier of the edition transcribed"
+
+# Leave this out and run `python pipeline/validate.py --write` to generate it, then review the
+# diff. The gate FAILS if a hand-edited block does not match the recomputation from the facts above.
+# copyright_assessment: { … }
