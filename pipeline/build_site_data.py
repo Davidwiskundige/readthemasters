@@ -51,15 +51,56 @@ def venue_citation(venue_label: str | None, volume, pages, month=None) -> str | 
     return s
 
 
-def write_tex_copy(tex_root: Path | None, work_id: str, name: str, text: str | None) -> str | None:
+def preamble_body(sty_text: str) -> str:
+    """Turn readmasters.sty into a block that can sit inline in a document preamble.
+
+    A downloaded .tex used to need readmasters.sty beside it to compile — one file short of
+    working, and the only place the site ever mentioned the .sty was a download row. Inlining the
+    preamble into the *served* copy makes the download self-contained, so the row (and the "needed
+    to compile a .tex" note beside it) is no longer needed at all.
+
+    Four things in a .sty are package-file syntax and must not survive the move into a document:
+    \\NeedsTeXFormat and \\ProvidesPackage declare a package identity, \\endinput would end input of
+    the document itself (silently dropping the text below it), and \\RequirePackage is spelled
+    \\usepackage in a document preamble. The file's own leading comment block describes the package
+    rather than the work, so it goes too; the per-macro comments stay, since they explain markup a
+    reader of the .tex will meet in the text.
+    """
+    lines = sty_text.splitlines()
+    # Drop the leading comment block (everything before the first non-comment, non-blank line).
+    start = next((i for i, ln in enumerate(lines)
+                  if ln.strip() and not ln.lstrip().startswith("%")), len(lines))
+    kept = []
+    for ln in lines[start:]:
+        stripped = ln.lstrip()
+        if stripped.startswith((r"\NeedsTeXFormat", r"\ProvidesPackage", r"\endinput")):
+            continue
+        kept.append(re.sub(r"\\RequirePackage\b", r"\\usepackage", ln))
+    return "\n".join(kept).strip("\n")
+
+
+def write_tex_copy(tex_root: Path | None, work_id: str, name: str, text: str | None,
+                   preamble: str | None = None) -> str | None:
     """Copy a source .tex into the site's public/ so it can be downloaded, return its URL.
 
     The corpus .tex is the faithful, compilable artifact; we expose it for download (curl-able,
     right-clickable) rather than only rendering a simplified HTML view. Emitted at build time,
     never committed (site/public/tex is git-ignored).
+
+    `preamble` (from preamble_body) is substituted for the \\usepackage{readmasters} line so the
+    served copy compiles on its own. Only this generated copy is flattened — the corpus .tex still
+    reads \\usepackage{readmasters}, as corpus-format requires, and stays the copy to read. A
+    download therefore also carries the macros it was compiled against rather than tracking a
+    moving .sty.
     """
     if tex_root is None or text is None:
         return None
+    if preamble:
+        text = text.replace(
+            "\\usepackage{readmasters}",
+            "% The ReadTheMasters house-style preamble (readmasters.sty), inlined so this file\n"
+            "% compiles on its own. In the corpus it is loaded as a package in a single line.\n"
+            + preamble, 1)
     dest = tex_root / work_id / f"{name}.tex"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(text, encoding="utf-8")
@@ -359,13 +400,17 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
     min_rank = STATUS_LADDER.index(min_status)
     works = []
 
-    # Make the shared preamble downloadable alongside sources, so a downloaded .tex compiles.
+    # The shared preamble, inlined into every served .tex below so a download compiles on its own.
+    # The .sty itself is still emitted and served at /tex/readmasters.sty: no page links to it any
+    # more, but existing external links and bookmarks keep resolving.
+    inline_preamble = None
     if tex_root is not None:
         preamble = corpus_dir / "preamble" / "readmasters.sty"
         if preamble.exists():
+            sty = preamble.read_text(encoding="utf-8")
+            inline_preamble = preamble_body(sty)
             tex_root.mkdir(parents=True, exist_ok=True)
-            (tex_root / "readmasters.sty").write_text(
-                preamble.read_text(encoding="utf-8"), encoding="utf-8")
+            (tex_root / "readmasters.sty").write_text(sty, encoding="utf-8")
 
     for wd in sorted(corpus_dir.iterdir()):
         wp = wd / "work.yaml"
@@ -387,7 +432,7 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             translations[lang] = {
                 "label": (vocab.get("languages") or {}).get(lang, lang),
                 "tex": t_tex,
-                "tex_url": write_tex_copy(tex_root, work["id"], lang, t_tex),
+                "tex_url": write_tex_copy(tex_root, work["id"], lang, t_tex, inline_preamble),
                 "provenance": prov["translations"][lang],
                 "pdf": pdf_url(pdf_root, work["id"], lang),
             }
@@ -430,7 +475,8 @@ def build(corpus_dir: Path, now_year: int, min_status: str,
             "copyright_assessment": work.get("copyright_assessment"),
             "status": status,
             "original_tex": (orig_tex := read_text(wd / "original.tex")),
-            "original_tex_url": write_tex_copy(tex_root, work["id"], "original", orig_tex),
+            "original_tex_url": write_tex_copy(tex_root, work["id"], "original", orig_tex,
+                                               inline_preamble),
             "original_pdf": pdf_url(pdf_root, work["id"], "original"),
             "transcription_provenance": prov.get("transcription"),
             "translations": translations,

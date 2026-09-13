@@ -161,11 +161,14 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
   flex-wrap: wrap; align-items: baseline; }
 .jwork-meta a.scanlink { color: var(--accent); text-decoration: none; }
 .attr { font-size: .85rem; color: var(--muted); }
-.downloads { border: 1px solid var(--border); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; margin: 1rem 0; }
-.downloads h2 { font-size: .95rem; margin: .2rem 0 .5rem; }
-.downloads ul { margin: 0; padding: 0; list-style: none; }
-.downloads li { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; margin: .35rem 0; }
-.downloads li .note { font-style: italic; }
+/* A text panel's own files, sharing one row with that text's provenance line. The chips sit at
+   the head of the panel they belong to rather than in a list above the text, so no row has to name
+   which text it is — the tab has already said so. The provenance pushes right on a wide screen and
+   wraps under the chips on a narrow one. */
+.files { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem;
+  margin: .2rem 0 .9rem; padding-bottom: .6rem; border-bottom: 1px solid var(--border); }
+.files .attr { margin-left: auto; }
+@media (max-width: 34rem) { .files .attr { margin-left: 0; flex-basis: 100%; } }
 
 /* Neutral pill "chips" for actions — same rounded shape as the status badge, but not colored,
    so actions read distinctly from state. ↓ = download, ⧉ = copy. Used on links and buttons. */
@@ -240,15 +243,17 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .tl-card .tl-card-meta a { color: var(--link); }
 
 /* Related reading — the recommended spine on a single line (work-relations): previous read on the
-   left, next read on the right. The full dependency graph lives on /timeline/. */
+   left, this work's place in the dependency graph in the middle, next read on the right. The two
+   sides share the leftover width equally and the middle does not grow, so the timeline link stays
+   centred whether one side is empty, both are, or neither. The full graph lives on /timeline/. */
 .relnav { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem 1.5rem;
   flex-wrap: wrap; margin: 1.1rem 0; padding: .5rem .9rem; border: 1px solid var(--border);
   border-radius: 8px; font-size: .9rem; }
 .relnav .relnav-side { flex: 1 1 0; min-width: 0; }
+.relnav .relnav-mid { flex: 0 0 auto; text-align: center; }
 .relnav .relnav-right { text-align: right; }
 .relnav .relnav-dir { color: var(--accent); font-weight: 700; }
 .relnav-bottom { margin-top: 2.2rem; }
-.worktl { margin: .5rem 0 0; }
 
 /* Inline popover markers — content stays hidden until hover/click (a popover). Shared by
    significance citation markers, significance asides ([note n]), and in-text editorial
@@ -276,6 +281,16 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .signote .pop-marker::after { content: " ›"; font-weight: 400; opacity: .7; }
 .signote .pop-marker:hover { text-decoration: none; border-color: var(--accent); background: var(--accent-weak); }
 .signote .pop-content { max-width: min(32rem, 88vw); max-height: 60vh; overflow-y: auto; font-size: .85rem; }
+
+/* The work page's status badge, which is also its own popover trigger: the badge says which review
+   level, the card says what that level means. Follows the .signote shape (baseline-aligned, its own
+   pill) rather than the superscript .ednote marker — the trigger here is a badge, not a footnote
+   mark — so it keeps the .badge colours while becoming a real, focusable button. */
+.statuspop .pop-marker { font: inherit; vertical-align: baseline; cursor: pointer;
+  font-size: .72rem; font-weight: 700; letter-spacing: .02em; }
+.statuspop .pop-marker::after { content: " ›"; font-weight: 400; opacity: .7; }
+.statuspop .pop-marker:hover { text-decoration: none; border-color: var(--accent); }
+.statuspop .pop-content { max-width: min(28rem, 88vw); font-size: .85rem; font-weight: 400; }
 
 /* Available to screen readers and to the search indexer, invisible on the page: panel headings
    (the visible label is the tab) and the metadata the result cards are built from. */
