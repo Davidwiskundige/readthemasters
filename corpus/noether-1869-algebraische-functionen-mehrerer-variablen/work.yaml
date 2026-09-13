@@ -7,6 +7,13 @@ authors:
   birth_year: 1844
   death_year: 1921
   mactutor: Noether_Max
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Max Noether
+    credit: >-
+      Faculty photograph of Noether from his years at the University of Heidelberg, dated
+      between 1870 and 1875 on Commons and credited there to the university. Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Noether_2514_(4x5_cropped).JPG"
 publication:
   year: 1869
   venue: goettingen-nachrichten

@@ -8,11 +8,25 @@ authors:
     birth_year: 1865
     death_year: 1952
     mactutor: Castelnuovo  # https://mathshistory.st-andrews.ac.uk/Biographies/Castelnuovo/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Guido Castelnuovo"
+      credit: >-
+        Photograph of Castelnuovo as a young man, photographer unknown, dated circa 1885 on
+        Commons. Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Guido_Castelnuovo3.jpg"
   - name: "Federigo Enriques"
     wikidata_id: Q982529
     birth_year: 1871
     death_year: 1946
     mactutor: Enriques  # https://mathshistory.st-andrews.ac.uk/Biographies/Enriques/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Federigo Enriques"
+      credit: >-
+        Photograph of Enriques, photographer unknown, dated 1914 on Commons and credited there
+        to the Centro Studi Enriques. Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Federigo_Enriques.jpg"
 
 publication:
   year: 1897

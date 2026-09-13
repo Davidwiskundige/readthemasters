@@ -8,6 +8,13 @@ authors:
     birth_year: 1839
     death_year: 1866
     mactutor: Roch  # https://mathshistory.st-andrews.ac.uk/Biographies/Roch/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Gustav Roch"
+      credit: >-
+        Photograph of Roch, photographer unknown, dated to the nineteenth century on Commons;
+        Roch died in 1866, aged 26. Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Roch.jpeg"
 
 publication:
   year: 1865

@@ -8,6 +8,13 @@ authors:
     birth_year: 1826
     death_year: 1866
     mactutor: Riemann  # https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/
+    portrait:
+      file: portrait.jpg
+      alt: "Photographic portrait of Bernhard Riemann"
+      credit: >-
+        Photograph of Riemann, photographer and date unknown; described on Commons simply as a
+        portrait of Bernhard Riemann (1826–1866). Public domain.
+      source: "https://commons.wikimedia.org/wiki/File:Bernhard_Riemann_1.jpg"
 
 publication:
   year: 1857
