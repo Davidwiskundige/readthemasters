@@ -72,3 +72,34 @@ def test_work_yaml_template_validity():
     assert "wikidata_id" in data["authors"][0]
     assert "death_year" in data["authors"][0]
     assert "year" in data["publication"]
+
+
+def test_skills_branch_isolation_and_worktrees():
+    skills = [
+        REPO / ".agents" / "skills" / "transcribe" / "SKILL.md",
+        REPO / ".claude" / "skills" / "transcribe" / "SKILL.md",
+    ]
+
+    for skill_file in skills:
+        assert skill_file.exists(), f"Missing skill file: {skill_file}"
+        content = skill_file.read_text(encoding="utf-8")
+
+        # Phase 1 must contain branch isolation and worktree instruction
+        assert "git checkout -b transcribe/<work-id> origin/main" in content, (
+            f"{skill_file} missing Phase 1 branch creation instruction"
+        )
+        assert "git worktree add ../rtm-<work-id> -b transcribe/<work-id> origin/main" in content, (
+            f"{skill_file} missing worktree instruction"
+        )
+
+        # Phase 8 must NOT instruct creating the branch again
+        phase_8_idx = content.find("## Phase 8")
+        assert phase_8_idx != -1, f"Missing Phase 8 in {skill_file}"
+        phase_8_text = content[phase_8_idx:]
+        assert "git checkout -b" not in phase_8_text, (
+            f"{skill_file} must not run 'git checkout -b' in Phase 8; branch is established in Phase 1"
+        )
+        assert "git worktree remove" in phase_8_text, (
+            f"{skill_file} must document worktree cleanup in Phase 8"
+        )
+

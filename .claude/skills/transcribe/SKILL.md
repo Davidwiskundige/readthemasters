@@ -74,7 +74,24 @@ Read these so your output matches the house style exactly:
 - `corpus/preamble/readmasters.sty` — the macros available (`\origpage`, `\uncertain`,
   `\illegible`, `\ednote`, `\rmfigure`).
 
-## Phase 1 — Locate the work and clear the gate
+## Phase 1 — Isolate workspace, locate the work, and clear the gate
+
+0. **Isolate your branch or worktree before touching files**:
+   Never start transcription on `main` or an unrelated feature branch.
+   - **Single session**: create and switch to a dedicated branch off `origin/main`:
+     ```bash
+     git checkout -b transcribe/<work-id> origin/main
+     ```
+   - **Parallel sessions (recommended for concurrent runs)**: If transcribing multiple works in
+     parallel (e.g. across multiple terminal sessions, subagents, or between Claude Code and
+     Antigravity), create an isolated git worktree:
+     ```bash
+     git worktree add ../rtm-<work-id> -b transcribe/<work-id> origin/main
+     cd ../rtm-<work-id>
+     ```
+     *Why?* `pipeline/validate.py` inspects the entire `corpus/` tree. Multiple sessions sharing
+     a single working copy will cross-contaminate the directory with untracked or in-progress files
+     from other works, causing validation to fail, and branch switching will disrupt running sessions.
 
 1. If `corpus/<work-id>/work.yaml` exists, read it. Otherwise the work is new:
    - Help the contributor create `corpus/<work-id>/work.yaml` from
@@ -418,16 +435,20 @@ typeset.
 1. **Show the contributor the result before pushing**: what was transcribed, the flagged/uncertain
    passages and their count, any notation decisions recorded, and the gate result. This checkpoint
    is required — do not skip straight to the PR.
-2. Create a branch, commit with a DCO sign-off, and open the PR:
+2. Commit with a DCO sign-off and open the PR (the branch was already established in Phase 1):
 
    ```bash
-   git checkout -b transcribe/<work-id>
    git add corpus/<work-id>/
    git commit -s -m "Add <work-id> transcription (ai-draft)"
    gh pr create --fill
    ```
 
    The `-s` adds the `Signed-off-by` line the DCO requires (PLAN.md §11.1). Do not push to `main`.
+   If you worked in a separate git worktree, remove it once the PR is merged or closed:
+   ```bash
+   cd ../ReadTheMastersAI
+   git worktree remove ../rtm-<work-id>
+   ```
 3. In the PR body, state: pages covered, model + prompt_version, the flagged/uncertain pages, the
    flag count, and that the status is `ai-draft` pending human review. Link the source scan.
 

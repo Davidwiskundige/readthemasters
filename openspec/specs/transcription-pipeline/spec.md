@@ -465,3 +465,20 @@ The automated test suite SHALL verify the structure, YAML frontmatter, and refer
 - **WHEN** pytest runs `pipeline/tests/test_skills.py`
 - **THEN** it verifies that `.agents/skills/transcribe/SKILL.md` exists, contains valid YAML frontmatter with `name: transcribe` and a non-empty `description`, and all referenced repo paths and templates exist
 
+### Requirement: Workspace and branch isolation for Tier-2 skills
+
+Tier-2 transcription skills (both Claude Code and Antigravity) SHALL establish workspace and branch isolation before creating or modifying any work files in Phase 1, rather than deferring branch creation to Phase 8.
+
+Single-session runs SHALL switch to a dedicated branch `transcribe/<work-id>` off `origin/main` at Phase 1 Step 0.
+
+Concurrent or parallel transcription runs (running across multiple sessions, tools, or models) SHALL execute in isolated git worktrees (`git worktree add ../rtm-<work-id> -b transcribe/<work-id> origin/main`), ensuring independent working directories and indices so that in-progress work files and whole-corpus validation runs (`pipeline/validate.py`) in one session do not collide with or block other active sessions.
+
+#### Scenario: Branch isolation established in Phase 1
+- **WHEN** a transcription skill starts working on `<work-id>`
+- **THEN** it creates or checks out the branch `transcribe/<work-id>` before generating or editing files, keeping `main` clean
+
+#### Scenario: Concurrent transcription sessions use git worktrees
+- **WHEN** multiple transcription sessions execute in parallel
+- **THEN** each session runs in an independent git worktree, preventing `pipeline/validate.py` failures caused by partial works in sibling sessions
+
+
