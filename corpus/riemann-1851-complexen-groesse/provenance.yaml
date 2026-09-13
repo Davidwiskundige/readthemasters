@@ -1,0 +1,44 @@
+changelog:
+  - date: "2026-09-13"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-09-13"
+    summary: Transcription added (AI draft).
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-13"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-13"
+  uncertainty_flags: 0
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-13"
+    note: >-
+      Full English translation of all 32 pages (Articles 1–22), made only from our own original.tex,
+      never from an existing published translation. Every math span, \tag{}, \origpage{N} marker,
+      and \ednote is reproduced unchanged — texcompare reports 1297 math spans, 32 page markers,
+      and refs preserved. Only the prose differs.
+
+      Prose set inside math via text inserts is translated (HOUSESTYLE R21): "und"→"and",
+      "durch die ganze Fläche ausgedehnt einen endlichen"→"extended through the whole surface has a finite",
+      "für jede im Innern von T* von O_0 nach O gehende Linie denselben"→"for every line in the interior of T* going from O_0 to O has the same",
+      "w. z. b. w."→"q. e. d.".
+
+      Terminology follows corpus/riemann-1851-complexen-groesse/glossary.yaml and is harmonized with
+      riemann-1857-abelsche-functionen: veränderliche complexe Grösse = "variable complex quantity",
+      Differentialquotient = "differential quotient", Queerschnitt = "crosscut",
+      Windungspunkt = "winding point", in den kleinsten Theilen ähnlich = "similar in the smallest parts",
+      Ordnung des Zusammenhangs = "order of connectivity", Lehrsatz = "Theorem".
+

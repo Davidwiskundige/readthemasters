@@ -1,0 +1,71 @@
+# Term renderings for riemann-1851-complexen-groesse, applied consistently across the whole
+# translation. Format: `terms: {German as printed: English}` — matching the shape pipeline/translate.py
+# reads with --glossary, so the Tier-3 path reproduces the same renderings as this Tier-2 pass.
+#
+# Principles:
+#   * Period-appropriate terminology over modern equivalents (Differentialquotient = "differential
+#     quotient", not "derivative"; veränderliche complexe Grösse = "variable complex quantity",
+#     not "complex variable"; Grössenoperationen = "operations on quantities").
+#   * Topological distinctions are kept faithful (Windungspunkt = "winding point", Zweigpunkt =
+#     "branch point", Queerschnitt = "crosscut", schlicht = "simple", ausgebreitet = "spread out").
+
+terms:
+  # --- complex quantities and operations ---
+  Grösse: quantity
+  veränderliche Grösse: variable quantity
+  veränderliche complexe Grösse: variable complex quantity
+  unbestimmte Grösse: indeterminate quantity
+  Grössenoperationen: operations on quantities
+  Grössengebiet: domain of quantities
+  Bestimmungsstücke: determining elements
+  Bedingungsgleichung: equation of condition
+  Abhängigkeitsgesetz: law of dependence
+  Differentialquotient: differential quotient
+  Werthe: values
+  Anfangspunkt: origin
+
+  # --- functions and continuity ---
+  Function: function
+  stetig: continuous
+  continuirlich: continuous
+  stetig oder continuirlich: continuous
+  Unstetigkeit: discontinuity
+  Unstetigkeitsstelle: point of discontinuity
+  unendlich klein von der ersten Ordnung: infinitely small of the first order
+  unendlich gross: infinitely large
+  willkührlich: arbitrary
+  Ordnung: order
+
+  # --- the surface and topology ---
+  Fläche: surface
+  Flächenstück: piece of surface
+  Flächentheil: part of surface
+  ausgebreitet: spread out
+  schlicht: simple
+  Umfaltung: folding over
+  Spaltung: splitting
+  zusammenhängend: connected
+  einfach zusammenhängend: simply connected
+  mehrfach zusammenhängend: multiply connected
+  fach zusammenhängend: -fold connected
+  Ordnung des Zusammenhangs: order of connectivity
+  Queerschnitt: crosscut
+  Schnitt: cut
+  Begrenzung: boundary
+  Begrenzungsstück: piece of boundary
+  Windungspunkt: winding point
+  Zweigpunkt: branch point
+  Umlauf: circuit
+  Ueberschreiten: crossing
+  Uebertritt: passage
+
+  # --- mapping and geometry ---
+  Abbildung: mapping
+  abbilden: to map
+  in den kleinsten Theilen ähnlich: similar in the smallest parts
+  Aehnlichkeit: similarity
+
+  # --- formal apparatus ---
+  Lehrsatz: Theorem
+  w. z. b. w.: q. e. d.
+  w. z. v. w.: q. e. d.

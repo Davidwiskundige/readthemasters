@@ -1,0 +1,695 @@
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1}
+\section*{1.}
+
+Denkt man sich unter $z$ eine veränderliche Grösse, welche nach und nach alle möglichen reellen Werthe annehmen kann, so wird, wenn jedem ihrer Werthe ein einziger Werth der unbestimmten Grösse $w$ entspricht, $w$ eine Function von $z$ genannt, und wenn, während $z$ alle zwischen zwei festen Werthen gelegenen Werthe stetig durchläuft, $w$ ebenfalls stetig sich ändert, so heisst diese Function innerhalb dieses Intervalls stetig oder continuirlich.
+
+Diese Definition setzt offenbar zwischen den einzelnen Werthen der Function durchaus kein Gesetz fest, indem, wenn über diese Function für ein bestimmtes Intervall verfügt ist, die Art ihrer Fortsetzung ausserhalb desselben ganz der Willkühr überlassen bleibt.
+
+Die Abhängigkeit der Grösse $w$ von $z$ kann durch ein mathematisches Gesetz gegeben sein, so dass durch bestimmte Grössenoperationen zu jedem Werthe von $z$ das ihm entsprechende $w$ gefunden wird. Die Fähigkeit, für alle innerhalb eines gegebenen Intervalls liegenden Werthe von $z$ durch dasselbe Abhängigkeitsgesetz bestimmt zu werden, schrieb man früher nur einer gewissen Gattung von Functionen zu (\emph{functiones continuae} nach Euler's Sprachgebrauch); neuere Untersuchungen haben indess gezeigt, dass es analytische Ausdrücke giebt, durch welche eine jede stetige Function für ein gegebenes Intervall dargestellt werden kann. Es ist daher einerlei, ob man die Abhängigkeit der Grösse $w$ von der Grösse $z$ als eine willkührlich gegebene oder als eine durch bestimmte Grössenoperationen bedingte definirt. Beide Begriffe sind in Folge der erwähnten Theoreme congruent.
+
+Anders verhält es sich aber, wenn die Veränderlichkeit der Grösse $z$ nicht auf reelle Werthe beschränkt wird, sondern auch complexe von der Form $x + yi$ (wo $i = \sqrt{-1}$) zugelassen werden.
+
+Es seien $x + yi$ und $x + yi + dx + dy\,i$ zwei unendlich wenig verschiedene Werthe der Grösse $z$, welchen die Werthe $u + vi$ und $u + vi + du + dv\,i$ der Grösse $w$ entsprechen. Alsdann wird, wenn die Abhängigkeit der Grösse $w$ von $z$ eine willkührlich angenommene ist, das Verhältniss $\frac{du + dv\,i}{dx + dy\,i}$ sich mit den Werthen von $dx$ und $dy$ allgemein zu reden ändern,
+
+\origpage{2}
+indem, wenn man $dx + dy\,i = \varepsilon e^{\varphi i}$ setzt,
+\[
+\begin{aligned}
+\frac{du + dv\,i}{dx + dy\,i} &= \frac{1}{2}\left(\frac{du}{dx} + \frac{dv}{dy}\right) + \frac{1}{2}\left(\frac{dv}{dx} - \frac{du}{dy}\right)i + \frac{1}{2}\left[\frac{du}{dx} - \frac{dv}{dy} + \left(\frac{dv}{dx} + \frac{du}{dy}\right)i\right]\frac{dx - dy\,i}{dx + dy\,i} \\
+&= \frac{1}{2}\left(\frac{du}{dx} + \frac{dv}{dy}\right) + \frac{1}{2}\left(\frac{dv}{dx} - \frac{du}{dy}\right)i + \frac{1}{2}\left[\frac{du}{dx} - \frac{dv}{dy} + \left(\frac{dv}{dx} + \frac{du}{dy}\right)i\right]e^{-2\varphi i}
+\end{aligned}
+\]
+wird. Auf welche Art aber auch $w$ als Function von $z$ durch Verbindung der einfachen Grössenoperationen bestimmt werden möge, immer wird der Werth des Differentialquotienten $\frac{dw}{dz}$ von dem besondern Werthe des Differentials $dz$ unabhängig sein${}^{*)}$. Offenbar kann also auf diesem Wege nicht jede beliebige Abhängigkeit der complexen Grösse $w$ von der complexen Grösse $z$ ausgedrückt werden.
+
+Das eben hervorgehobene Merkmal aller irgendwie durch Grössenoperationen bestimmbaren Functionen werden wir für die folgende Untersuchung, wo eine solche Function unabhängig von ihrem Ausdrucke betrachtet werden soll, zu Grunde legen, indem wir, ohne jetzt dessen Allgemeingültigkeit und Zulänglichkeit für den Begriff einer durch Grössenoperationen ausdrückbaren Abhängigkeit zu beweisen, von folgender Definition ausgehen:
+
+Eine veränderliche complexe Grösse $w$ heisst eine Function einer andern veränderlichen complexen Grösse $z$, wenn sie mit ihr sich so ändert, dass der Werth des Differentialquotienten $\frac{dw}{dz}$ unabhängig von dem Werthe des Differentials $dz$ ist.
+
+\section*{2.}
+
+Sowohl die Grösse $z$, als die Grösse $w$ werden als veränderliche Grössen betrachtet, die jeden complexen Werth annehmen können. Die Auffassung einer solchen Veränderlichkeit, welche sich auf ein zusammenhängendes Gebiet von zwei Dimensionen erstreckt, wird wesentlich erleichtert durch eine Anknüpfung an räumliche Anschauungen.
+
+Man denke sich jeden Werth $x + yi$ der Grösse $z$ repräsentirt durch einen Punkt $O$ der Ebene $A$, dessen rechtwinklige Coordinaten $x$, $y$, jeden Werth $u + vi$ der Grösse $w$ durch einen Punkt $Q$ der Ebene $B$, dessen rechtwinklige Coordinaten $u$, $v$ sind. Eine jede Abhängigkeit der Grösse $w$ von $z$ wird sich dann darstellen als eine Abhängigkeit der Lage des Punktes $Q$ von der des Punktes $O$. Entspricht jedem Werthe von $z$ ein bestimmter mit $z$ stetig sich ändernder Werth von $w$, mit andern Worten, sind $u$ und $v$ stetige Functionen von $x$, $y$, so wird jedem Punkte der Ebene $A$ ein Punkt der Ebene $B$, jeder Linie, allgemein zu reden, eine Linie, jedem zusammenhängenden Flächenstücke ein zusammenhängendes Flächenstück entsprechen. Man wird sich also diese Abhängigkeit der Grösse $w$ von $z$ vorstellen können als eine Abbildung der Ebene $A$ auf der Ebene $B$.
+
+\vspace{1em}\noindent\textbf{*)} Diese Behauptung ist offenbar in allen Fällen gerechtfertigt, wo sich aus dem Ausdrucke von $w$ durch $z$ mittelst der Regeln der Differentiation ein Ausdruck von $\frac{dw}{dz}$ durch $z$ finden lässt; ihre streng allgemeine Gültigkeit bleibt für jetzt dahin gestellt.
+
+\origpage{3}
+\section*{3.}
+
+Es soll nun untersucht werden, welche Eigenschaft diese Abbildung erhält, wenn $w$ eine Function der complexen Grösse $z$, d.\ h.\ wenn $\frac{dw}{dz}$ von $dz$ unabhängig ist.
+
+Wir bezeichnen durch $o$ einen unbestimmten Punkt der Ebene $A$ in der Nähe von $O$, sein Bild in der Ebene $B$ durch $q$, ferner durch $x + yi + dx + dy\,i$ und $u + vi + du + dv\,i$ die Werthe der Grössen $z$ und $w$ in diesen Punkten. Es können dann $dx$, $dy$ und $du$, $dv$ als rechtwinklige Coordinaten der Punkte $o$ und $q$ in Bezug auf die Punkte $O$ und $Q$ als Anfangspunkte angesehen werden, und wenn man $dx + dy\,i = \varepsilon e^{\varphi i}$ und $du + dv\,i = \eta e^{\psi i}$ setzt, so werden die Grössen $\varepsilon$, $\varphi$, $\eta$, $\psi$ Polarcoordinaten dieser Punkte für dieselben Anfangspunkte sein. Sind nun $o'$ und $o''$ irgend zwei bestimmte Lagen des Punktes $o$ in unendlicher Nähe von $O$, und drückt man die von ihnen abhängigen Bedeutungen der übrigen Zeichen durch entsprechende Indices aus, so giebt die Voraussetzung
+\[
+\frac{du' + dv'i}{dx' + dy'i} = \frac{du'' + dv''i}{dx'' + dy''i}
+\]
+und folglich
+\[
+\frac{du' + dv'i}{du'' + dv''i} = \frac{\eta'}{\eta''} e^{(\psi' - \psi'')i} = \frac{dx' + dy'i}{dx'' + dy''i} = \frac{\varepsilon'}{\varepsilon''} e^{(\varphi' - \varphi'')i},
+\]
+woraus
+\[
+\frac{\eta'}{\eta''} = \frac{\varepsilon'}{\varepsilon''} \quad \text{und} \quad \psi' - \psi'' = \varphi' - \varphi'',
+\]
+d.\ h.\ in den Dreiecken $o'Oo''$ und $q'Qq''$ sind die Winkel $o'Oo''$ und $q'Qq''$ gleich und die sie einschliessenden Seiten einander proportional.
+
+Es findet also zwischen zwei einander entsprechenden unendlich kleinen Dreiecken und folglich allgemein zwischen den kleinsten Theilen der Ebene $A$ und ihres Bildes auf der Ebene $B$ Aehnlichkeit Statt. Eine Ausnahme von diesem Satze tritt nur in den besonderen Fällen ein, wenn die einander entsprechenden Aenderungen der Grössen $z$ und $w$ nicht in einem endlichen Verhältnisse zu einander stehen, was bei Herleitung desselben stillschweigend vorausgesetzt ist${}^{*)}$.
+
+\section*{4.}
+
+Bringt man den Differentialquotienten $\frac{du + dv\,i}{dx + dy\,i}$ in die Form
+\[
+\frac{\left(\frac{du}{dx} + \frac{dv}{dx}i\right)dx + \left(\frac{dv}{dy} - \frac{du}{dy}i\right)dy\,i}{dx + dy\,i},
+\]
+
+\vspace{1em}\noindent\textbf{*)} Ueber diesen Gegenstand sehe man:\\
+„Allgemeine Auflösung der Aufgabe: die Theile einer gegebenen Fläche so abzubilden, dass die Abbildung dem Abgebildeten in den kleinsten Theilen ähnlich wird, von C.~F.~Gauss. (Als Beantwortung der von der königlichen Societät der Wissenschaften in Copenhagen für 1822 aufgegebenen Preisfrage“, abgedruckt in: „Astronomische Abhandlungen, herausgegeben von Schumacher. Drittes Heft. Altona. 1825“).
+
+\origpage{4}
+so erhellt, dass er und zwar nur dann für je zwei Werthe von $dx$ und $dy$ denselben Werth haben wird, wenn
+\[
+\frac{du}{dx} = \frac{dv}{dy} \quad \text{und} \quad \frac{dv}{dx} = -\frac{du}{dy}
+\]
+ist. Diese Bedingungen sind also hinreichend und nothwendig, damit $w = u + vi$ eine Function von $z = x + yi$ sei. Für die einzelnen Glieder dieser Function fliessen aus ihnen die folgenden:
+\[
+\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2} = o, \quad \frac{d^2v}{dx^2} + \frac{d^2v}{dy^2} = o,
+\]
+welche für die Untersuchung der Eigenschaften, die Einem Gliede einer solchen Function einzeln betrachtet zukommen, die Grundlage bilden. Wir werden den Beweis für die wichtigsten dieser Eigenschaften einer eingehenderen Betrachtung der vollständigen Function voraufgehen lassen, zuvor aber noch einige Punkte, welche allgemeineren Gebieten angehören, erörtern und festlegen, um uns den Boden für jene Untersuchungen zu ebenen.
+
+\begin{center}
+* \qquad * \qquad *
+\end{center}
+
+\section*{5.}
+
+Für die folgenden Betrachtungen beschränken wir die Veränderlichkeit der Grössen $x$, $y$ auf ein endliches Gebiet, indem wir als Ort des Punktes $O$ nicht mehr die Ebene $A$ selbst, sondern eine über dieselbe ausgebreitete Fläche $T$ betrachten. Wir wählen diese Einkleidung, bei der es unanstössig sein wird, von aufeinander liegenden Flächen zu reden, um die Möglichkeit offen zu lassen, dass der Ort des Punktes $O$ über denselben Theil der Ebene sich mehrfach erstrecke; setzen jedoch für einen solchen Fall voraus, dass die auf einander liegenden Flächentheile nicht längs einer Linie zusammenhängen, so dass eine Umfaltung der Fläche, oder eine Spaltung in auf einander liegende Theile nicht vorkommt.
+
+Die Anzahl der in jedem Theile der Ebene auf einander liegenden Flächentheile ist alsdann vollkommen bestimmt, wenn die Begrenzung der Lage und dem Sinne nach (d.\ h.\ ihre innere und äussere Seite) gegeben ist; ihr Verlauf kann sich jedoch noch verschieden gestalten.
+
+In der That, ziehen wir durch den von der Fläche bedeckten Theil der Ebene eine beliebige Linie $l$, so ändert sich die Anzahl der über einander liegenden Flächentheile nur beim Ueberschreiten der Begrenzung, und zwar beim Uebertritt von Aussen nach Innen um $+1$, im entgegengesetzten Falle um $-1$, und ist also überall bestimmt. Längs des Ufers dieser Linie setzt sich nun jeder angrenzende Flächentheil auf ganz bestimmte Art fort, so lange die Linie die Begrenzung nicht trifft, da eine Unbestimmtheit jedenfalls nur in einem einzelnen Punkte und also entweder in einem Punkte der Linie selbst oder in einer endlichen Entfernung von derselben Statt hat; wir können daher, wenn wir unsere Betrachtung auf einen im Innern der Fläche verlaufenden Theil der Linie $l$ und zu beiden Seiten auf einen hinreichend kleinen Flächenstreifen beschränken, von bestimmten angrenzenden Flächentheilen reden, deren Anzahl auf jeder Seite gleich ist, und die wir, indem wir der Linie eine bestimmte Richtung beilegen, auf der Linken mit $a_1$, $a_2$, \dots\ $a_n$, auf der Rechten mit $a'_1$, $a'_2$, \dots\ $a'_n$ bezeichnen. Jeder Flächentheil $a$ wird sich dann in einen der Flächentheile $a'$ fortsetzen; dieser wird zwar im Allgemeinen für den ganzen Lauf der Linie $l$ derselbe sein, kann sich jedoch für besondere Lagen von $l$ in einem ihrer Punkte ändern. Nehmen wir an, dass oberhalb eines solchen Punktes $\sigma$ (d.\ h.
+
+\origpage{5}
+längs des vorhergehenden Theils von $l$) mit den Flächentheilen $a'_{1}$, $a'_{2}$, \dots\ $a'_{n}$ der Reihe nach die Flächentheile $a_{1}$, $a_{2}$, \dots\ $a_{n}$ verbunden seien, unterhalb desselben aber die Flächentheile $a_{\alpha_1}$, $a_{\alpha_2}$, \dots\ $a_{\alpha_n}$, wo $\alpha_1$, $\alpha_2$, \dots\ $\alpha_n$ nur in der Anordnung von $1$, $2$, \dots\ $n$ verschieden sind, so wird ein oberhalb $\sigma$ von $a_1$ in $a'_1$ eintretender Punkt, wenn er unterhalb $\sigma$ auf die linke Seite zurücktritt, in den Flächentheil $a_{\alpha_1}$ gelangen, und wenn er den Punkt $\sigma$ von der Linken zur Rechten umkreiset, wird der Index des Flächentheils, in welchem er sich befindet, der Reihe nach die Zahlen
+\[
+1, \, \alpha_1, \, \alpha_{\alpha_1}, \, \dots \, \mu, \, \alpha_\mu, \, \dots
+\]
+durchlaufen. In dieser Reihe sind, so lange das Glied $1$ nicht wiederkehrt, nothwendig alle Glieder von einander verschieden, weil einem beliebigen mittlern Gliede $\alpha_\mu$ nothwendig $\mu$ und nach einander alle früheren Glieder bis $1$ in unmittelbarer Folge vorhergehen; wenn aber nach einer Anzahl von Gliedern, die offenbar kleiner als $n$ sein muss und $= m$ sei, das Glied $1$ wiederkehrt, so müssen die übrigen Glieder in derselben Ordnung folgen. Der um $\sigma$ sich bewegende Punkt kommt alsdann nach je $m$ Umläufen in denselben Flächentheil zurück und ist auf $m$ der auf einander liegenden Flächentheile eingeschränkt, welche sich über $\sigma$ zu einem einzigen Punkte vereinigen. Wir nennen diesen Punkt einen Windungspunkt $m-1\text{ster}$ Ordnung der Fläche $T$. Durch Anwendung desselben Verfahrens auf die übrigen $n-m$ Flächentheile, werden diese, wenn sie nicht gesondert verlaufen, in Systeme von $m_1$, $m_2$, \dots\ Flächentheilen zerfallen, in welchem Falle auch noch Windungspunkte $m_1-1\text{ster}$, $m_2-1\text{ster}$ Ordnung in dem Punkte $\sigma$ liegen.
+
+Wenn die Lage und der Sinn der Begrenzung von $T$ und die Lage ihrer Windungspunkte gegeben ist, so ist $T$ entweder vollkommen bestimmt oder doch auf eine endliche Anzahl verschiedener Gestalten beschränkt; Letzteres, in so fern sich diese Bestimmungsstücke auf verschiedene der auf einander liegenden Flächentheile beziehen können.
+
+Eine veränderliche Grösse, die für jeden Punkt $O$ der Fläche $T$, allgemein zu reden, d.\ h.\ ohne eine Ausnahme in einzelnen Linien und Punkten${}^{*)}$ auszuschliessen, Einen bestimmten mit der Lage desselben stetig sich ändernden Werth annimmt, kann offenbar als eine Function von $x$, $y$ angesehen werden, und überall, wo in der Folge von Functionen von $x$, $y$ die Rede sein wird, werden wir den Begriff derselben auf diese Art festlegen.
+
+Ehe wir uns jedoch zur Betrachtung solcher Functionen wenden, schalten wir noch einige Erörterungen über den Zusammenhang einer Fläche ein. Wir beschränken uns dabei auf solche Flächen, die sich nicht längs einer Linie spalten.
+
+\vspace{1em}\noindent\textbf{*)} Diese Beschränkung ist zwar nicht durch den Begriff einer Function an sich geboten, aber um Infinitesimalrechnung auf sie anwenden zu können erforderlich: eine Function, die in allen Punkten einer Fläche unstetig ist, wie z.\ B.\ eine Function, die für ein commensurables $x$ und ein commensurables $y$ den Werth $1$, sonst aber den Werth $2$ hat, kann weder einer Differentiation, noch einer Integration, also (unmittelbar) der Infinitesimalrechnung überhaupt nicht unterworfen werden. Die für die Fläche $T$ hier willkührlich gemachte Beschränkung wird sich später (Art.~15) rechtfertigen.
+
+\origpage{6}
+\section*{6.}
+
+Wir betrachten zwei Flächentheile als zusammenhängend oder Einem Stücke angehörig, wenn sich von einem Punkte des einen durch das Innere der Fläche eine Linie nach einem Punkte des andern ziehen lässt, als getrennt, wenn diese Möglichkeit nicht Statt findet.
+
+Die Untersuchung des Zusammenhangs einer Fläche beruht auf ihrer Zerlegung durch Queerschnitte, d.\ h.\ Linien, welche von einem Begrenzungspunkte das Innere einfach --- keinen Punkt mehrfach --- bis zu einem Begrenzungspunkte durchschneiden. Letzterer kann auch in dem zur Begrenzung hinzugekommenen Theile, also in einem frühern Punkte des Queerschnitts, liegen.
+
+Eine zusammenhängende Fläche heisst, wenn sie durch jeden Queerschnitt in Stücke zerfällt, eine einfach zusammenhängende, andernfalls eine mehrfach zusammenhängende.
+
+\emph{Lehrsatz I.} Eine einfach zusammenhängende Fläche $A$ zerfällt durch jeden Queerschnitt $a\,b$ in zwei einfach zusammenhängende Stücke.
+
+Gesetzt, eins dieser Stücke würde durch einen Queerschnitt $c\,d$ nicht zerstückt, so erhielte man offenbar, je nachdem keiner seiner Endpunkte oder der Endpunkt $c$ oder beide Endpunkte in $a\,b$ fielen, durch Herstellung der Verbindung längs der ganzen Linie $a\,b$ oder längs des Theils $c\,b$ oder des Theils $c\,d$ derselben eine zusammenhängende Fläche, welche durch einen Queerschnitt aus $A$ entstände, gegen die Voraussetzung.
+
+\emph{Lehrsatz II.} Wenn eine Fläche $T$ durch $n_1{}^{*)}$ Queerschnitte $q_1$ in ein System $T_1$ von $m_1$ einfach zusammenhängenden Flächenstücken und durch $n_2$ Queerschnitte $q_2$ in ein System $T_2$ von $m_2$ Flächenstücken zerfällt, so kann $n_2 - m_2$ nicht $> n_1 - m_1$ sein.
+
+Jede Linie $q_2$ bildet, wenn sie nicht ganz in das Queerschnittsystem $q_1$ fällt, zugleich einen oder mehrere Queerschnitte $q'_2$ der Fläche $T_1$. Als Endpunkte der Queerschnitte $q'_2$ sind anzusehen:
+\begin{enumerate}
+\item[1)] die $2n_2$ Endpunkte der Queerschnitte $q_2$, ausgenommen, wenn ihre Enden mit einem Theil des Liniensystems $q_1$ zusammenfallen,
+\item[2)] jeder mittlere Punkt eines Queerschnitts $q_2$, in welchem er in einen mittlern Punkt einer Linie $q_1$ eintritt, ausgenommen, wenn er sich schon in einer andern Linie $q_1$ befindet, d.\ h.\ wenn ein Ende eines Queerschnitts $q_1$ mit ihm zusammenfällt.
+\end{enumerate}
+Bezeichnet nun $\mu$, wie oft Linien beider Systeme während ihres Laufes zusammentreffen oder auseinandergehen (wo also ein einzelner gemeinsamer Punkt doppelt zu rechnen ist), $\nu_1$, wie oft ein Endstück der $q_1$ mit einem mittlern Stücke der $q_2$, $\nu_2$, wie oft ein Endstück der $q_2$
+
+\vspace{1em}\noindent\textbf{*)} Unter einer Zerlegung durch mehrere Queerschnitte ist stets eine successive zu verstehen, d.\ h.\ eine solche, wo die durch einen Queerschnitt entstandene Fläche durch einen neuen Queerschnitt weiter zerlegt wird.
+
+\origpage{7}
+mit einem mittlern Stücke der $q_1$, endlich $\nu_3$, wie oft ein Endstück der $q_1$ mit einem Endstücke der $q_2$ zusammenfällt, so liefert No.\ 1 $2n_2 - \nu_2 - \nu_3$, No.\ 2 $\mu - \nu_1$ Endpunkte der Queerschnitte $q'_2$; beide Fälle zusammengenommen aber umfassen sämmtliche Endpunkte und jeden nur einmal, und die Anzahl dieser Queerschnitte ist daher
+\[
+\frac{2n_2 - \nu_2 - \nu_3 + \mu - \nu_1}{2} = n_2 + s.
+\]
+Durch ganz ähnliche Schlüsse ergiebt sich die Anzahl der Queerschnitte $q'_1$ der Fläche $T_2$, welche durch die Linien $q_1$ gebildet werden,
+\[
+= \frac{2n_1 - \nu_1 - \nu_3 + \mu - \nu_2}{2}, \quad \text{also} \quad = n_1 + s.
+\]
+Die Fläche $T_1$ wird nun offenbar durch die $n_2 + s$ Queerschnitte $q'_2$ in dieselbe Fläche verwandelt, in welche $T_2$ durch die $n_1 + s$ Queerschnitte $q'_1$ zerfällt wird. Es besteht aber $T_1$ aus $m_1$ einfach zusammenhängenden Stücken und zerfällt daher nach Satz I.\ durch $n_2 + s$ Queerschnitte in $m_1 + n_2 + s$ Flächenstücke; folglich müsste, wäre $m_2 < m_1 + n_2 - n_1$, die Zahl der Flächenstücke $T_2$ durch $n_1 + s$ Queerschnitte um mehr als $n_1 + s$ vermehrt werden, was ungereimt ist.
+
+Zufolge dieses Lehrsatzes ist, wenn die Anzahl der Queerschnitte unbestimmt durch $n$, die Anzahl der Stücke durch $m$ bezeichnet wird, $n - m$ für alle Zerlegungen einer Fläche in einfach zusammenhängende Stücke constant; denn betrachten wir irgend zwei bestimmte Zerlegungen durch $n_1$ Queerschnitte in $m_1$ Stücke und durch $n_2$ Queerschnitte in $m_2$ Stücke, so muss, wenn erstere einfach zusammenhängend sind, $n_2 - m_2 \le n_1 - m_1$, und wenn letztere einfach zusammenhängend sind, $n_1 - m_1 \le n_2 - m_2$, also wenn Beides zutrifft, $n_2 - m_2 = n_1 - m_1$ sein.
+
+Diese Zahl kann füglich mit dem Namen »Ordnung des Zusammenhangs« einer Fläche belegt werden; sie wird
+\begin{itemize}
+\item[] durch jeden Queerschnitt um $1$ erniedrigt --- nach der Definition ---,
+\item[] durch eine von einem innern Punkte das Innere einfach bis zu einem Begrenzungspunkte oder einem frühern Schnittpunkte durchschneidende Linie nicht geändert und
+\item[] durch einen innern allenthalben einfachen in zwei Punkten endenden Schnitt um $1$ erhöht,
+\end{itemize}
+weil erstere durch Einen, letztere aber durch zwei Queerschnitte in Einen Queerschnitt verwandelt werden kann.
+
+Endlich wird die Ordnung des Zusammenhangs einer aus mehreren Stücken bestehenden Fläche erhalten, wenn man die Ordnungen des Zusammenhangs dieser Stücke zu einander addirt.
+
+Wir werden uns indess in der Folge meistens auf eine aus Einem Stücke bestehende Fläche beschränken, und uns für ihren Zusammenhang der kunstloseren Bezeichnung eines einfachen, zweifachen etc.\ bedienen, indem wir unter einer $n$\,fach zusammenhängenden Fläche eine solche verstehen, die durch $n-1$ Queerschnitte in eine einfach zusammenhängende zerlegbar ist.
+
+In Bezug auf die Abhängigkeit des Zusammenhangs der Begrenzung von dem Zusammenhang einer Fläche erhellt leicht:
+
+\origpage{8}
+\begin{enumerate}
+\item[1)] Die Begrenzung einer einfach zusammenhängenden Fläche besteht nothwendig aus Einer in sich zurücklaufenden Linie.
+\end{enumerate}
+Bestände die Begrenzung aus getrennten Stücken, so würde ein Queerschnitt $q$, der einen Punkt eines Stücks $a$ mit einem Punkte eines andern $b$ verbände, nur zusammenhängende Flächentheile von einander scheiden, da sich im Innern der Fläche längs $a$ eine Linie von der einen Seite des Queerschnitts $q$ an die entgegengesetzte führen liesse; und folglich würde $q$ die Fläche nicht zerstücken, gegen die Voraussetzung.
+
+\begin{enumerate}
+\item[2)] Durch jeden Queerschnitt wird die Anzahl der Begrenzungsstücke entweder um $1$ vermindert oder um $1$ vermehrt.
+\end{enumerate}
+Ein Queerschnitt $q$ verbindet entweder einen Punkt eines Begrenzungsstücks $a$ mit einem Punkte eines andern $b$, --- in diesem Falle bilden alle diese Linien zusammengenommen in der Folge $a$, $q$, $b$, $q$ ein einziges in sich zurücklaufendes Stück der Begrenzung ---
+
+oder er verbindet zwei Punkte Eines Stücks der Begrenzung, --- in diesem Falle zerfällt dieses durch seine beiden Endpunkte in zwei Stücke, deren jedes mit dem Queerschnitte zusammengenommen ein in sich zurücklaufendes Begrenzungsstück bildet ---
+
+oder endlich, er endet in einem seiner früheren Punkte und kann betrachtet werden als zusammengesetzt aus einer in sich zurücklaufenden Linie $o$ und einer andern $l$, welche einen Punkt von $o$ mit einem Punkte eines Begrenzungsstücks $a$ verbindet, --- in welchem Falle $o$ eines Theils, und $a$, $l$, $o$, $l$ andern Theils je ein in sich zurücklaufendes Begrenzungsstück bilden.
+
+Es treten also entweder --- im ersten Falle --- an die Stelle zweier Ein, oder --- in den beiden letzteren Fällen --- an die Stelle Eines zwei Begrenzungsstücke, woraus unser Satz folgt.
+
+Die Anzahl der Stücke, aus welchen die Begrenzung eines $n$\,fach zusammenhängenden Flächenstücks besteht, ist daher entweder $= n$ oder um eine gerade Zahl kleiner.
+
+Hieraus ziehen wir noch das Corollar:
+
+Wenn die Anzahl der Begrenzungsstücke einer $n$\,fach zusammenhängenden Fläche $= n$ ist, so zerfällt diese durch jeden überall einfachen im Innern in sich zurücklaufenden Schnitt in zwei getrennte Stücke.
+
+Denn die Ordnung des Zusammenhangs wird dadurch nicht geändert, die Anzahl der Begrenzungsstücke um $2$ vermehrt; die Fläche würde also, wenn sie eine zusammenhängende wäre, einen $n$\,fachen Zusammenhang und $n+2$ Begrenzungsstücke haben, was unmöglich ist.
+
+\section*{7.}
+
+Sind $X$ und $Y$ zwei in allen Punkten der über $A$ ausgebreiteten Fläche $T$ stetige Functionen von $x$, $y$, so ist das über alle Elemente $dT$ dieser Fläche ausgedehnte Integral
+\[
+\int \left(\frac{dX}{dx} + \frac{dY}{dy}\right) dT = -\int (X\cos\xi + Y\cos\eta)\,ds,
+\]
+wenn in jedem Punkte der Begrenzung die Neigung einer auf sie nach Innen gezogenen Normale gegen die $x$-Axe durch $\xi$, gegen die $y$-Axe durch $\eta$ bezeichnet wird, und sich diese Integration auf sämmtliche Elemente $ds$ der Begrenzungslinie erstreckt.
+
+Um das Integral $\displaystyle\int \frac{dX}{dx}\,dT$ zu transformiren, zerlegen wir den von der Fläche $T$ bedeckten
+
+\origpage{9}
+Theil der Ebene $A$ durch ein System der $x$-Axe paralleler Linien in Elementarstreifen, und zwar so, dass jeder Windungspunkt der Fläche $T$ in eine dieser Linien fällt. Unter dieser Voraussetzung besteht der auf jeden derselben fallende Theil von $T$ aus einem oder mehreren abgesondert verlaufenden trapezförmigen Stücken. Der Beitrag eines unbestimmten dieser Flächenstreifen, welcher aus der $y$-Axe das Element $dy$ ausscheidet, zu dem Werthe von $\displaystyle\int \frac{dX}{dx}\,dT$ wird dann offenbar $= dy\displaystyle\int \frac{dX}{dx}\,dx$, wenn diese Integration durch diejenige oder diejenigen der Fläche $T$ angehörigen geraden Linien ausgedehnt wird, welche auf eine durch einen Punkt von $dy$ gehende Normale fallen. Sind nun die unteren Endpunkte derselben (d.\ h.\ welchen die kleinsten Werthe von $x$ entsprechen) $O_{'}$, $O_{''}$, $O_{'''}$, \dots, die oberen $O'$, $O''$, $O'''$, \dots\ und bezeichnen wir mit $X_{'}$, $X_{''}$, \dots\ $X'$, $X''$, \dots\ die Werthe von $X$ in diesen Punkten, mit $ds_{'}$, $ds_{''}$, \dots\ $ds'$, $ds''$, \dots\ die entsprechenden von dem Flächenstreifen aus der Begrenzung ausgeschiedenen Elemente, mit $\xi_{'}$, $\xi_{''}$, \dots\ $\xi'$, $\xi''$, \dots\ die Werthe von $\xi$ an diesen Elementen, so wird
+\[
+\begin{aligned}
+\int \frac{dX}{dx}\,dx = & - X_{'} - X_{''} - X_{'''} \dots \\
+& + X' + X'' + X''' \dots
+\end{aligned}
+\]
+Die Winkel $\xi$ werden offenbar spitz an den unteren, stumpf an den oberen Endpunkten, und es wird daher
+\[
+\begin{aligned}
+dy &= \phantom{-}\cos\xi_{'}\,ds_{'} = \phantom{-}\cos\xi_{''}\,ds_{''} \dots \\
+&= -\cos\xi'\,ds' = -\cos\xi''\,ds'' \dots
+\end{aligned}
+\]
+Durch Substitution dieser Werthe ergiebt sich
+\[
+dy \int \frac{dX}{dx} = -\Sigma X\cos\xi\,ds,
+\]
+wo sich die Summation auf alle Begrenzungselemente bezieht, welche in der $y$-Axe $dy$ zur Projection haben.
+
+Durch Integration über sämmtliche in Betracht kommende $dy$ werden offenbar sämmtliche Elemente der Fläche $T$ und sämmtliche Elemente der Begrenzung erschöpft, und man erhält daher, in diesem Umfange genommen,
+\[
+\int \frac{dX}{dx}\,dT = -\int Y\cos\xi\,ds.\ednote{Printed $Y$ here; mathematically $X$ is required.}
+\]
+Durch ganz ähnliche Schlüsse findet man
+\[
+\int \frac{dY}{dy}\,dT = -\int Y\cos\eta\,ds \quad \text{und folglich}
+\]
+\[
+\int \left(\frac{dX}{dx} + \frac{dY}{dy}\right) dT = -\int (X\cos\xi + Y\cos\eta)\,ds, \quad \text{w.\ z.\ b.\ w.}
+\]
+
+\section*{8.}
+
+Bezeichnen wir in der Begrenzungslinie, von einem festen Anfangspunkte aus in einer bestimmten später festzusetzenden Richtung gerechnet, die Länge derselben bis zu einem unbe-
+
+\origpage{10}
+stimmten Punkte $O_0$ durch $s$, und in der in diesem Punkte $O_0$ errichteten Normalen die Entfernung eines unbestimmten Punktes $O$ von demselben und zwar nach Innen zu als positiv betrachtet durch $p$, so können offenbar die Werthe von $x$ und $y$ im Punkte $O$ als Functionen von $s$ und $p$ angesehen werden, und es werden dann in den Punkten der Begrenzungslinie die partiellen Differentialquotienten
+\[
+\frac{dx}{dp} = \cos\xi, \quad \frac{dy}{dp} = \cos\eta, \quad \frac{dx}{ds} = \pm\cos\eta, \quad \frac{dy}{ds} = \mp\cos\xi,
+\]
+wo die oberen Zeichen gelten, wenn die Richtung, in welcher die Grösse $s$ als wachsend betrachtet wird, mit $p$ einen gleichen Winkel einschliesst, wie die $x$-Axe mit der $y$-Axe, wenn einen entgegengesetzten, die unteren. Wir werden diese Richtung in allen Theilen der Begrenzung so annehmen, dass $\frac{dx}{ds} = \frac{dy}{dp}$ und folglich $\frac{dy}{ds} = -\frac{dx}{dp}$ ist, was die Allgemeinheit unserer Resultate im Wesentlichen nicht beeinträchtigt.
+
+Offenbar können wir diese Bestimmungen auch auf Linien im Innern von $T$ ausdehnen; nur haben wir hier zur Bestimmung der Vorzeichen von $dp$ und $ds$, wenn deren gegenseitige Abhängigkeit wie dort festgesetzt wird, noch eine Angabe hinzuzufügen, welche entweder das Vorzeichen von $dp$ oder von $ds$ festsetzt; und zwar werden wir bei einer in sich zurücklaufenden Linie angeben, von welchem der durch sie geschiedenen Flächentheile sie als Begrenzung gelten solle, wodurch das Vorzeichen von $dp$ bestimmt wird, bei einer nicht in sich zurücklaufenden aber ihren Anfangspunkt, d.\ h.\ den Endpunkt, wo $s$ den kleinsten Werth annimmt.
+
+Die Einführung der für $\cos\xi$ und $\cos\eta$ erhaltenen Werthe in die im vorigen Art.\ bewiesene Gleichung giebt, in demselben Umfange wie dort genommen,
+\[
+\int \left(\frac{dX}{dx} + \frac{dY}{dy}\right) dT = -\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds = \int \left(X\frac{dy}{ds} - Y\frac{dx}{ds}\right) ds.
+\]
+
+\section*{9.}
+
+Durch Anwendung des Satzes am Schlusse des vorigen Art.\ auf den Fall, wo in allen Theilen der Fläche $\frac{dX}{dx} + \frac{dY}{dy} = o$ ist, erhalten wir folgende Sätze:
+
+\emph{I.} Sind $X$ und $Y$ zwei in allen Punkten von $T$ endliche und stetige und der Gleichung $\frac{dX}{dx} + \frac{dY}{dy} = o$ genügende Functionen, so ist durch die ganze Begrenzung von $T$ ausgedehnt
+\[
+\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds = o.
+\]
+
+Denkt man sich eine beliebige über $A$ ausgestreckte Fläche $T_1$ in zwei Stücke $T_2$ und $T_3$ auf beliebige Art zerfällt, so kann das Integral $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$ in Bezug auf die Begrenzung von $T_2$ betrachtet werden als die Differenz der Integrale in Bezug auf die Begrenzung
+
+\origpage{11}
+von $T_1$ und in Bezug auf die Begrenzung von $T_3$, indem, wo $T_3$ sich bis zur Begrenzung von $T_1$ erstreckt, beide Integrale sich aufheben, alle übrigen Elemente aber einem Elemente der Begrenzung von $T_2$ entsprechen.
+
+Mittelst dieser Umformung ergiebt sich aus I.:
+
+\emph{II.} Der Werth des Integrals $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$, durch die ganze Begrenzung einer über $A$ ausgebreiteten Fläche erstreckt, bleibt bei beliebiger Erweiterung oder Verengerung derselben constant, wenn nur dadurch keine Flächentheile aus- oder eintreten, innerhalb welcher die Voraussetzungen des Satzes I.\ nicht erfüllt sind.
+
+Wenn nun die Functionen $X$, $Y$ zwar in jedem Theile der Fläche $T$ der vorgeschriebenen Differentialgleichung genügen, aber in einzelnen Linien oder Punkten mit einer Unstetigkeit behaftet sind, so kann man jede solche Linie und jeden solchen Punkt mit einem beliebig kleinen Flächentheil als Hülle umgeben und erhält dann durch Anwendung des Satzes II.:
+
+\emph{III.} Das Integral $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$ in Bezug auf die ganze Begrenzung von $T$ ist gleich der Summe der Integrale $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$ in Bezug auf die Umgrenzungen aller Unstetigkeitsstellen, und zwar behält in Bezug auf jede einzelne dieser Stellen das Integral denselben Werth, in wie enge Grenzen man sie auch einschliessen möge.
+
+Dieser Werth ist für einen blossen Unstetigkeitspunkt nothwendig gleich $o$, wenn mit der Entfernung $\varrho$ des Punktes $O$ von demselben zugleich $\varrho X$ und $\varrho Y$ unendlich klein werden; denn führt man in Bezug auf einen solchen Punkt als Anfangspunkt und eine beliebige Anfangsrichtung Polarcoordinaten $\varrho$, $\varphi$ ein und wählt zur Umgrenzung einen um denselben mit dem Radius $\varrho$ beschriebenen Kreis, so wird das auf ihn bezügliche Integral durch
+\[
+\int_o^{2\pi} \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) \varrho\,d\varphi
+\]
+ausgedrückt und kann folglich nicht einen von Null verschiedenen Werth $x$ haben, weil, was auch $x$ sei, $\varrho$ immer so klein angenommen werden kann, dass abgesehen vom Zeichen $\left(X\frac{dx}{dp} - Y\frac{dy}{dp}\right)\varrho$\ednote{Printed $-$ here; mathematically $+$ is intended.} für jeden Werth von $\varphi < \frac{x}{2\pi}$ und folglich
+\[
+\int_0^{2\pi} \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) \varrho\,d\varphi < x
+\]
+wird.
+
+\emph{IV.} Ist in einer einfach zusammenhängenden über $A$ ausgebreiteten Fläche für jeden Flächentheil das durch dessen ganze Begrenzung erstreckte Integral $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$ oder $\displaystyle\int \left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds = o$, so erhält für irgend zwei feste Punkte $O_0$ und $O$ dies Integral in Bezug auf alle von $O_0$ in derselben nach $O$ gehende Linien denselben Werth.
+
+Je zwei die Punkte $O_0$ und $O$ verbindende Linien $s_1$ und $s_2$ bilden zusammengenommen
+
+\origpage{12}
+eine in sich zurücklaufende Linie $s_3$. Diese Linie besitzt entweder selbst die Eigenschaft, keinen Punkt mehrfach zu durchschneiden, oder man kann sie in mehrere allenthalben einfache in sich zurücklaufende Linien zerlegen, indem man von einem beliebigen Punkte aus dieselbe durchlaufend jedesmal, wenn man zu einem frühern Punkte zurückgelangt, den inzwischen durchlaufenen Theil ausscheidet und den folgenden als unmittelbare Fortsetzung des vorhergehenden betrachtet. Jede solche Linie aber zerlegt die Fläche in eine einfach und eine zweifach zusammenhängende; sie bildet daher nothwendig von Einem dieser Stücke die ganze Begrenzung, und das durch sie erstreckte Integral $\displaystyle\int \left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds$ wird also der Voraussetzung nach $= o$. Dasselbe gilt folglich auch von dem durch die ganze Linie $s_3$ erstreckten Integrale, wenn die Grösse $s$ überall in derselben Richtung als wachsend betrachtet wird; es müssen daher die durch die Linien $s_1$ und $s_2$ erstreckten Integrale, wenn diese Richtung ungeändert bleibt, d.\ h.\ in einer derselben von $O_0$ nach $O$ und in der andern von $O$ nach $O_0$ geht, einander aufheben, also, wenn sie in letzterer geändert wird, gleich werden.
+
+Hat man nun irgend eine beliebige Fläche $T$, in welcher allgemein zu reden $\frac{dX}{dx} + \frac{dY}{dy} = o$ ist, so schliesse man zunächst, wenn nöthig, die Unstetigkeitsstellen aus, so dass im übrigen Flächenstücke für jeden Flächentheil $\displaystyle\int \left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds = o$ ist, und zerlege dieses durch Queerschnitte in eine einfach zusammenhängende Fläche $T^*$. Für jede im Innern von $T^*$ von einem Punkte $O_0$ nach einem andern $O$ gehende Linie hat dann unser Integral denselben Werth; dieser Werth, für den zur Abkürzung die Bezeichnung $\displaystyle\int_{O_0}^O \left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds$ gestattet sein möge, ist daher, $O_0$ als fest, $O$ als beweglich gedacht, für jede Lage von $O$ abgesehen vom Laufe der Verbindungslinie ein bestimmter und kann folglich als Function von $x$, $y$ betrachtet werden. Die Aenderung dieser Function wird für eine Verrückung von $O$ längs eines beliebigen Linienelements $ds$ durch $\left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds$ ausgedrückt, ist in $T^*$ überall stetig und längs eines Queerschnitts von $T$ zu beiden Seiten gleich;
+
+\emph{V.} das Integral $Z = \displaystyle\int_{O_0}^O \left(Y\frac{dx}{ds} - X\frac{dy}{ds}\right) ds$ bildet daher, $O_0$ als fest gedacht, eine Function von $x$, $y$, welche in $T^*$ überall sich stetig, beim Ueberschreiten der Queerschnitte von $T$ aber um eine längs derselben von einem Zweigpunkte zum andern constante Grösse ändert, und von welcher der partielle Differentialquotient
+\[
+\frac{dZ}{dx} = Y, \quad \frac{dZ}{dy} = -X \quad \text{ist.}
+\]
+
+Die Aenderungen beim Ueberschreiten der Queerschnitte sind von einer der Zahl der Queerschnitte gleichen Anzahl von einander unabhängiger Grössen abhängig; denn wenn man
+
+\origpage{13}
+das Queerschnittsystem rückwärts --- die späteren Theile zuerst --- durchläuft, so ist diese Aenderung überall bestimmt, wenn ihr Werth beim Beginn jedes Queerschnitts gegeben wird; letztere Werthe aber sind von einander unabhängig.
+
+\section*{10.}
+
+Setzt man für die bisher durch $X$ bezeichnete Function $u\frac{du'}{dx} - u'\frac{du}{dx}$ und $u\frac{du'}{dy} - u'\frac{du}{dy}$ für $Y$, so wird
+\[
+\frac{dX}{dx} + \frac{dY}{dy} = u\left(\frac{d^2u'}{dx^2} + \frac{d^2u'}{dy^2}\right) - u'\left(\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}\right),
+\]
+wenn also die Functionen $u$ und $u'$ den Gleichungen
+\[
+\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2} = o, \quad \frac{d^2u'}{dx^2} + \frac{d^2u'}{dx^2} = o
+\]\ednote{Printed $\frac{d^2u'}{dx^2}$ here; mathematically $\frac{d^2u'}{dy^2}$ is intended.}
+genügen, so wird $\frac{dX}{dx} + \frac{dY}{dy} = o$, und es finden auf den Ausdruck $\displaystyle\int \left(X\frac{dx}{dp} + Y\frac{dy}{dp}\right) ds$, welcher $= \displaystyle\int \left(u\frac{du'}{dp} - u'\frac{du}{dp}\right) ds$ wird, die Sätze des vorigen Art.\ Anwendung.
+
+Machen wir nun in Bezug auf die Function $u$ die Voraussetzung, dass sie nebst ihren ersten Differentialquotienten etwaige Unstetigkeiten jedenfalls nicht längs einer Linie erleidet, und für jeden Unstetigkeitspunkt zugleich mit der Entfernung $\varrho$ des Punktes $O$ von demselben $\varrho\frac{du}{dx}$ und $\varrho\frac{du}{dy}$ unendlich klein werden; so können die Unstetigkeiten von $u$ in Folge der Bemerkung zu III.\ des vorigen Art.\ ganz unberücksichtigt bleiben.
+
+Denn alsdann kann man in jeder von einem Unstetigkeitspunkte ausgehenden geraden Linie einen Werth $R$ von $\varrho$ so annehmen, dass $\varrho\frac{du}{d\varrho} = \varrho\frac{du}{dx}\frac{dx}{d\varrho} + \varrho\frac{du}{dy}\frac{dy}{d\varrho}$ unterhalb desselben immer endlich bleibt, und bezeichnet $U$ den Werth von $u$ für $\varrho = R$, $M$ abgesehen vom Zeichen den grössten Werth der Function $\varrho\frac{du}{d\varrho}$ in jenem Intervall; so wird in derselben Bedeutung genommen stets $u - U < M(\log\varrho - \log R)$ sein, folglich $\varrho(u - U)$ und also auch $\varrho u$ mit $\varrho$ zugleich unendlich klein werden; dasselbe gilt aber der Voraussetzung nach von $\varrho\frac{du}{dx}$ und $\varrho\frac{du}{dy}$ und folglich, wenn $u'$ keiner Unstetigkeit unterliegt, auch von $\varrho\left(u\frac{du'}{dx} - u'\frac{du}{dx}\right)$ und $\varrho\left(u\frac{du'}{dy} - u'\frac{du}{dy}\right)$; der im vorigen Art.\ erörterte Fall tritt hier also ein.
+
+Wir nehmen nun ferner an, dass die den Ort des Punktes $O$ bildende Fläche $T$ allenthalben einfach über $A$ ausgebreitet sei, und denken uns in derselben einen beliebigen festen Punkt $O_0$, wo $u$, $x$, $y$ die Werthe $u_0$, $x_0$, $y_0$ erhalten. Die Grösse $\frac{1}{2}\log[(x - x_0)^2 + (y - y_0)^2] = \log r$ als Function von $x$, $y$ betrachtet, hat alsdann die Eigen-
+
+\origpage{14}
+schaft, dass $\frac{d^2\log r}{dx^2} + \frac{d^2\log r}{dy^2} = o$ wird, und ist nur für $x = x_0$, $y = y_0$, also in unserm Falle nur für Einen Punkt der Fläche $T$ mit einer Unstetigkeit behaftet.
+
+Es wird daher nach Art.\ 9., III., wenn wir $\log r$ für $u'$ setzen $\displaystyle\int \left(u\frac{d\log r}{dp} - \log r\frac{du}{dp}\right) ds$ in Bezug auf die ganze Begrenzung von $T$ gleich diesem Integrale in Bezug auf eine beliebige Umgrenzung des Punktes $O_0$ und also, wenn wir dazu die Peripherie eines Kreises, wo $r$ einen constanten Werth hat, wählen und von einem ihrer Punkte in einer beliebigen festen Richtung den Bogen bis $O$ in Theilen des Halbmessers durch $\varphi$ bezeichnen, gleich
+\[
+-\int_0^{2\pi} u\frac{d\log r}{dr} r\,d\varphi - \log r\int \frac{du}{dp}\,ds, \quad \text{oder da} \quad \int \frac{du}{dp}\,ds = o \quad \text{ist,} \quad = -\int_0^{2\pi} u\,d\varphi,
+\]
+welcher Werth, wenn $u$ im Punkte $O_0$ stetig ist, für ein unendlich kleines $r$ in $-u_0 2\pi$ übergeht.
+
+Unter den in Bezug auf $u$ und $T$ gemachten Voraussetzungen haben wir daher für einen beliebigen Punkt $O_0$ im Innern der Fläche, in welchem $u$ stetig ist,
+\[
+\begin{aligned}
+u_0 &= \frac{1}{2\pi}\int \left(\log r\frac{du}{dp} - u\frac{d\log r}{dp}\right) ds \quad \text{in Bezug auf die ganze Begrenzung derselben und} \\
+&= \frac{1}{2\pi}\int_0^{2\pi} u\,d\varphi \quad \text{in Bezug auf einen um $O_0$ beschriebenen Kreis.}
+\end{aligned}
+\]
+
+Aus dem ersten dieser Ausdrücke ziehen wir folgenden
+
+\emph{Lehrsatz.} Wenn eine Function $u$ innerhalb einer die Ebene $A$ allenthalben einfach bedeckenden Fläche $T$ allgemein zu reden der Differentialgleichung $\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2} = o$ genügt und zwar so, dass
+\begin{enumerate}
+\item[1)] die Punkte, in welchen diese Differentialgleichung nicht erfüllt ist, keinen Flächentheil,
+\item[2)] die Punkte, in welchen $u$, $\frac{du}{dx}$, $\frac{du}{dy}$ unstetig werden, keine Linie stetig erfüllen,
+\item[3)] für jeden Unstetigkeitspunkt zugleich mit der Entfernung $\varrho$ des Punktes $O$ von demselben die Grössen $\varrho\frac{du}{dx}$, $\varrho\frac{du}{dy}$ unendlich klein werden und
+\item[4)] bei $u$ eine durch Abänderung ihres Werthes in einzelnen Punkten hebbare Unstetigkeit ausgeschlossen ist,
+\end{enumerate}
+so ist sie nothwendig nebst allen ihren Differentialquotienten für alle Punkte im Innern dieser Fläche endlich und stetig.
+
+In der That, betrachten wir den Punkt $O_0$ als beweglich, so ändern sich in dem Ausdrucke $\displaystyle\int \left(\log r\frac{du}{dp} - u\frac{d\log r}{dp}\right) ds$ nur die Werthe $\log r$, $\frac{d\log r}{dx}$, $\frac{d\log r}{dy}$. Diese Grössen aber sind für jedes Element der Begrenzung, so lange $O_0$ im Innern von $T$ bleibt, nebst allen
+
+\origpage{15}
+ihren Differentialquotienten endliche und stetige Functionen von $x_0$, $y_0$, da die Differentialquotienten durch gebrochene rationale Functionen dieser Grössen ausgedrückt werden, die nur Potenzen von $r$ im Nenner enthalten. Dasselbe gilt daher auch für den Werth unsers Integrals und folglich für die Function $u_0$. Denn diese könnte unter den früheren Voraussetzungen nur in einzelnen Punkten, indem sie unstetig würde, einen davon verschiedenen Werth haben, welche Möglichkeit durch die Voraussetzung 4.\ unsers Lehrsatzes wegfällt.
+
+\section*{11.}
+
+Unter denselben Voraussetzungen in Bezug auf $u$ und $T$, wie am Schlusse des vorigen Art.\ haben wir folgende Sätze:
+
+\emph{I.} Wenn längs einer Linie $u = o$ und $\frac{du}{dp} = o$ ist, so ist $u$ überall $= o$.
+
+Wir beweisen zunächst, dass eine Linie $\lambda$, wo $u = o$ und $\frac{du}{dp} = o$ ist, nicht die Begrenzung eines Flächentheils $a$, wo $u$ positiv ist, bilden könne.
+
+Gesetzt, dies fände Statt, so scheide man aus $a$ ein Stück aus, welches eines Theils durch $\lambda$, andern Theils durch eine Kreislinie begrenzt wird und den Mittelpunkt dieses Kreises nicht enthält, welche Construction allemal möglich ist. Man hat dann, wenn man die Polarcoordinaten von $O$ in Bezug auf $O_0$ durch $r$, $\varphi$ bezeichnet, durch die ganze Begrenzung dieses Stücks ausgedehnt $\displaystyle\int \log r\frac{du}{dp}\,ds - \displaystyle\int u\frac{d\log r}{dp}\,ds = o$, also in Folge der Annahme auch für den ganzen ihr angehörigen Kreisbogen
+\[
+\int u\,d\varphi + \log r \int \frac{du}{dp}\,ds = o, \quad \text{oder da} \quad \int \frac{du}{dp}\,ds = o \quad \text{ist,} \quad \int u\,d\varphi = o,
+\]
+was mit der Voraussetzung, dass $u$ im Innern von $a$ positiv sei, unverträglich ist.
+
+Auf ähnliche Art wird bewiesen, dass die Gleichungen $u = o$ und $\frac{du}{dp} = o$ nicht in einem Begrenzungstheile eines Flächenstücks $b$, wo $u$ negativ ist, stattfinden könne.
+
+Wenn nun in der Fläche $T$ in einer Linie $u = o$ und $\frac{du}{dp} = o$ ist und in irgend einem Theile derselben $u$ von Null verschieden wäre, so müsste ein solcher Flächentheil offenbar entweder durch diese Linie selbst oder durch einen Flächentheil, wo $u = o$ wäre, also jedenfalls durch eine Linie wo $u$ und $\frac{du}{dp} = o$ wäre, begrenzt werden, was nothwendig auf eine der vorhin widerlegten Annahmen führt.
+
+\emph{II.} Wenn der Werth von $u$ und $\frac{du}{dp}$ längs einer Linie gegeben ist, so ist $u$ dadurch in allen Theilen von $T$ bestimmt.
+
+Sind $u_1$ und $u_2$ irgend zwei bestimmte Functionen, welche den der Function $u$ auferlegten
+
+\origpage{16}
+Bedingungen genügen, so gilt dies auch, wie sich durch Substitution in diesen Bedingungen so fort ergiebt, für ihre Differenz $u_1 - u_2$. Stimmten nun $u_1$ und $u_2$ längs einer Linie nebst ihren ersten Differentialquotienten nach $p$ überein, in einem andern Flächentheile aber nicht, so würden längs dieser Linie $u_1 - u_2 = o$ und $\frac{d(u_1 - u_2)}{dp} = o$ sein, ohne überall $= o$ zu sein, dem Satze I.\ zuwider.
+
+\emph{III.} Die Punkte im Innern von $T$, wo $u$ einen constanten Werth hat, bilden, wenn $u$ nicht überall constant ist, nothwendig Linien, welche Flächentheile, wo $u$ grösser ist, von Flächentheilen, wo $u$ kleiner ist, scheiden.
+
+Dieser Satz ist aus folgenden zusammengesetzt:
+
+$u$ kann nicht in einem Punkte im Innern von $T$ ein Minimum oder ein Maximum haben;
+
+$u$ kann nicht \emph{nur} in einem Theile der Fläche constant sein;
+
+die Linien, in denen $u = a$ ist, können nicht beiderseits Flächentheile begrenzen, wo $u - a$ dasselbe Zeichen hat;
+
+Sätze, deren Gegentheil, wie leicht zu sehen, allemal eine Verletzung der im vorigen Art.\ bewiesenen Gleichung
+\[
+u_0 = \frac{1}{2\pi}\int_0^{2\pi} u\,d\varphi \quad \text{oder} \quad \int_0^{2\pi} (u - u_0)\,d\varphi = o
+\]
+herbeiführen müsste und folglich unmöglich ist.
+
+\section*{12.}
+
+Wir wenden uns jetzt zurück zur Betrachtung einer veränderlichen complexen Grösse $w = u + vi$, welche allgemein zu reden (d.\ h.\ ohne eine Ausnahme in einzelnen Linien und Punkten auszuschliessen), für jeden Punkt $O$ der Fläche $T$ Einen bestimmten mit der Lage desselben stetig und den Gleichungen $\frac{du}{dx} = \frac{dv}{dy}$, $\frac{du}{dy} = -\frac{dv}{dx}$ gemäss sich ändernden Werth hat, und bezeichnen diese Eigenschaft von $w$ nach dem früher Festgestellten dadurch, dass wir $w$ eine Function von $z = x + yi$ nennen. Zur Vereinfachung des Folgenden setzen wir dabei im Voraus fest, dass bei einer Function von $z$ eine durch Abänderung ihres Werthes in einem einzelnen Punkte hebbare Unstetigkeit nicht vorkommen solle.
+
+Der Fläche $T$ wird vorerst ein einfacher Zusammenhang und eine allenthalben einfache Ausbreitung über die Ebene $A$ beigelegt.
+
+\emph{Lehrsatz.} Wenn eine Function $w$ von $z$ eine Unterbrechung der Stetigkeit jedenfalls nicht längs einer Linie erleidet und ferner für jeden beliebigen Punkt $O'$ der Fläche, wo $z = z'$ sei, $w(z - z')$ mit unendlicher Annäherung des Punktes $O$ unendlich klein wird, so ist sie nothwendig nebst allen ihren Differentialquotienten in allen Punkten im Innern der Fläche endlich und stetig.
+
+Die über die Veränderungen der Grösse $w$ gemachten Voraussetzungen zerfallen, wenn $z - z' = \varrho e^{\varphi i}$ gesetzt wird, für $u$ und $v$ in die folgenden: 1) $\frac{du}{dx} - \frac{dv}{dy} = o$ und 2) $\frac{du}{dy} + \frac{dv}{dx} = o$ für jeden Theil der Fläche $T$; 3) die Functionen $u$ und $v$ sind nicht längs einer
+
+\origpage{17}
+Linie unstetig; 4) für jeden Punkt $O'$ werden mit der Entfernung $\varrho$ des Punktes $O$ von demselben $\varrho u$ und $\varrho v$ unendlich klein; 5) für die Functionen $u$ und $v$ sind Unstetigkeiten, die durch Abänderung ihres Werthes in einzelnen Punkten gehoben werden könnten, ausgeschlossen.
+
+In Folge der Voraussetzungen 2, 3, 4, ist für jeden Theil der Fläche $T$ das über dessen ganze Begrenzung ausgedehnte Integral $\displaystyle\int \Bigl(u\,\frac{dx}{ds} - v\,\frac{dy}{ds}\Bigr)\,ds$ nach Art.~9., III.\ $= o$ und das Integral $\displaystyle\int_{O_0}^O \Bigl(\frac{dx}{ds} - v\,\frac{dy}{ds}\Bigr)\,ds$\ednote{Im Druck fehlt $u$ vor $dx/ds$; gemeint ist $u\,dx/ds - v\,dy/ds$.} erhält daher (nach Artikel 9., IV.) durch jede von $O_0$ nach $O$ gehende Linie erstreckt denselben Werth und bildet, $O_0$ als fest gedacht, eine bis auf einzelne Punkte nothwendig stetige Function $U$ von $x$, $y$, von welcher (und zwar nach 5, in jedem Punkte) der Differentialquotient $\frac{dU}{dx} = u$ und $\frac{dU}{dy} = -v$ ist. Durch Substitution dieser Werthe für $u$ und $v$ aber gehen die Voraussetzungen 1, 3, 4 in die Bedingungen des Lehrsatzes am Schlusse des Art.~10.\ über. Die Function $U$ ist daher nebst allen ihren Differentialquotienten in allen Punkten von $T$ endlich und stetig und dasselbe gilt folglich auch von der complexen Function $w = \frac{dU}{dx} - \frac{dU}{dy}\,i$ und ihren nach $z$ genommenen Differentialquotienten.
+
+\section*{13.}
+
+Es soll jetzt untersucht werden, was eintritt, wenn wir unter Beibehaltung der sonstigen Voraussetzungen des Art.~12.\ annehmen, dass für einen bestimmten Punkt $O'$ im Innern der Fläche $(z - z')\,w = \varrho e^{\varphi i}w$ bei unendlicher Annäherung des Punktes $O$ nicht mehr unendlich klein wird. In diesem Falle wird also $w$ bei unendlicher Annäherung des Punktes $O$ an $O'$ unendlich gross, und wir nehmen an, dass, wenn die Grösse $w$ nicht mit $\frac{1}{\varrho}$ von gleicher Ordnung bleibt, d.\ h.\ der Quotient beider sich einer endlichen Grenze nähert, wenigstens die Ordnungen beider Grössen in einem endlichen Verhältnisse zu einander stehen, so dass sich eine Potenz von $\varrho$ angeben lässt, deren Product in $w$ für ein unendlich kleines $\varrho$ entweder unendlich klein wird oder endlich bleibt. Ist $\mu$ der Exponent einer solchen Potenz und $n$ die nächst grössere ganze Zahl, so wird die Grösse $(z - z')^n w = \varrho^n e^{n\varphi i} w$ mit $\varrho$ unendlich klein, und es ist daher $(z - z')^{n-1} w$ eine Function von $z$ (da $\frac{d(z - z')^{n-1} w}{dz}$ von $dz$ unabhängig ist), welche in diesem Theile der Fläche den Voraussetzungen des Art.~12.\ genügt und folglich im Punkte $O'$ endlich und stetig ist. Bezeichnen wir ihren Werth im Punkte $O'$ mit $a_{n-1}$, so ist $(z - z')^{n-1} w - a_{n-1}$ eine Function, die in diesem Punkte stetig und $= o$ ist und folglich mit $\varrho$ unendlich klein wird, woraus man nach Artikel 12.\ schliesst, dass
+
+\origpage{18}
+$(z - z')^{n-1}w - \frac{a_{n-1}}{z - z'}$\ednote{So im Druck; gemeint ist $(z - z')^{n-2}w - a_{n-1}/(z - z')$.} eine im Punkte $O'$ stetige Function ist. Durch Fortsetzung dieses Verfahrens wird offenbar $w$ mittelst Subtraction eines Ausdruckes von der Form
+\[
+\frac{a_1}{z - z'} + \frac{a_2}{(z - z')^2} \dots \frac{a_{n-1}}{(z - z')^{n-1}}
+\]
+in eine Function verwandelt, welche im Punkte $O'$ endlich und stetig bleibt.
+
+Wenn daher unter den Voraussetzungen des Art.~12.\ die Aenderung eintritt, dass bei unendlicher Annäherung von $O$ an einen Punkt $O'$ im Innern der Fläche $T$ die Function $w$ unendlich gross wird, so ist die Ordnung dieses unendlich Grossen (eine im verkehrten Verhältnisse der Entfernung wachsende Grösse als ein unendlich Grosses erster Ordnung betrachtet) wenn sie endlich ist, nothwendig eine ganze Zahl; und ist diese Zahl $= m$, so kann die Function $w$ durch Hinzufügung einer Function, welche $2m$ willkührliche Constanten enthält, in eine in diesem Punkte $O'$ stetige verwandelt werden.
+
+\emph{Anm.} Wir betrachten eine Function als Eine willkührliche Constante enthaltend, wenn die möglichen Arten, sie zu bestimmen, ein stetiges Gebiet von Einer Dimension umfassen.
+
+\section*{14.}
+
+Die im Art.~12.\ und 13.\ in Bezug auf die Fläche $T$ gemachten Beschränkungen sind für die Gültigkeit der gewonnenen Resultate nicht wesentlich. Offenbar kann man jeden Punkt im Innern einer beliebigen Fläche mit einem Stücke derselben umgeben, welches die dort vorausgesetzten Eigenschaften besitzt, mit alleiniger Ausnahme des Falles, wo dieser Punkt ein Windungspunkt der Fläche ist.
+
+Um diesen Fall zu untersuchen, denken wir uns die Fläche $T$ oder ein beliebiges Stück derselben, welches einen Windungspunkt $(n-1)$ster Ordnung $O'$, wo $z = z' = x' = y'i$\ednote{So im Druck; gemeint ist $z = z' = x' + y'i$.} sei, enthält, mittelst der Funktion $\zeta = (z - z')^{\frac{1}{n}}$ auf einer andern Ebene $A$ abgebildet, d.\ h.\ wir denken uns den Werth der Function $\zeta = \xi + \eta i$ im Punkte $O$ durch einen Punkt $\varTheta$, dessen rechtwinklige Coordinaten $\xi$, $\eta$ sind, in dieser Ebene vertreten, und betrachten $\varTheta$ als Bild des Punktes $O$. Auf diesem Wege erhält man als Abbildung dieses Theils der Fläche $T$ eine zusammenhängende über $\lambda$\ednote{So im Druck; gemeint ist $A$.} ausgebreitete Fläche, die im Punkte $\varTheta'$, dem Bilde des Punktes $O'$ keinen Windungspunkt hat, wie sogleich gezeigt werden soll.
+
+Zur Fixirung der Vorstellungen denke man sich um den Punkt $O'$ in der Ebene $A$ mit dem Halbmesser $R$ einen Kreis beschrieben und parallel mit der $x$-Axe einen Durchmesser gezogen, wo also $z - z'$ reelle Werthe annehmen wird. Das durch diesen Kreis ausgeschiedene den Windungspunkt umgebende Stück der Fläche $T$ wird dann zu beiden Seiten des Durchmessers in $n$, wenn $R$ hinreichend klein gewählt wird, abgesondert verlaufende halbkreisförmige Flächenstücke zerfallen. Wir bezeichnen auf derjenigen Seite des Durchmessers, wo $y - y'$ positiv ist, diese Flächenstücke durch $a_1$, $a_2$ \dots\ $a_n$, auf der entgegengesetzten Seite durch $a'_1$, $a'_2$ \dots\ $a'_n$, und nehmen an, dass für negative Werthe von $z - z'$ $a_1$, $a_2$ \dots\ $a_n$ der
+
+\origpage{19}
+Reihe nach mit $a'_1$, $a'_2$ \dots\ $a'_n$, für positive dagegen mit $a'_n$, $a'_1$ \dots\ $a'_{n-1}$ verbunden seien, so dass ein den Punkt $O'$ (im erforderlichen Sinne) umkreisender Punkt der Reihe nach die Flächen $a_1$, $a'_1$, $a_2$, $a'_2$ \dots\ $a_n$, $a'_n$ durchläuft und durch $a'_n$ wieder in $a_1$ zurückgelangt, welche Annahme offenbar gestattet ist. Führen wir nun für beide Ebenen Polarcoordinaten ein, indem wir $z - z' = \varrho e^{\varphi i}$, $\zeta = \sigma e^{\psi i}$ setzen, und wählen zur Abbildung des Flächenstücks $a_1$ denjenigen Werth von $(z - z')^{\frac{1}{n}} = \varrho^{\frac{1}{n}} e^{\frac{1}{n}\varphi i}$, welchen letzterer Ausdruck unter der Annahme $o \leqq \varphi \leqq \pi$ erhält, so wird für alle Punkte von $a_1$ $\sigma \leqq R^{\frac{1}{n}}$ und $o \leqq \psi \leqq \frac{\pi}{n}$, die Bilder derselben in der Ebene $A$ fallen also sämmtlich in einen von $\psi = o$ bis $\psi = \frac{\pi}{n}$ sich erstreckenden Sector eines um $\varTheta'$ mit dem Radius $R^{\frac{1}{n}}$ beschriebenen Kreises, und zwar entspricht jedem Punkte von $a_1$ Ein zugleich mit demselben stetig fortrückender Punkt dieses Sectors und umgekehrt, woraus folgt, dass die Abbildung der Fläche $a_1$ eine zusammenhängende einfach über diesen Sector ausgebreitete Fläche ist. Auf ähnliche Art erhält man für die Fläche $a'_1$ als Abbildung einen von $\psi = \frac{\pi}{n}$ bis $\psi = \frac{2\pi}{n}$, für $a_2$ einen von $\psi = \frac{2\pi}{n}$ bis $\psi = \frac{3\pi}{n}$, endlich für $a'_n$ einen von $\psi = \frac{2n - 1}{n}\pi$ bis $\psi = 2\pi$ sich erstreckenden Sector, wenn man $\varphi$ für jeden Punkt dieser Flächen der Reihe nach zwischen $\pi$ und $2\pi$, $2\pi$ und $3\pi$ \dots\ $(2n-1)\pi$ und $2n\pi$ wählt, was immer und nur auf eine Weise möglich ist. Diese Sectoren schliessen sich aber in derselben Folge an einander, wie die Flächen $a$ und $a'$, und zwar so, dass den hier zusammenstossenden Punkten auch dort zusammenstossende Punkte entsprechen; sie können daher zu einer zusammenhängenden Abbildung eines den Punkt $O'$ einschliessenden Stückes der Fläche $T$ zusammengefügt werden, und diese Abbildung ist offenbar eine über die Ebene $A$ einfach ausgebreitete Fläche.
+
+Eine veränderliche Grösse, die für jeden Punkt $O$ einen bestimmten Werth hat, hat dies auch für jeden Punkt $\varTheta$ und umgekehrt, da jedem $O$ nur ein $\varTheta$ und jedem $\varTheta$ nur ein $O$ entspricht; ist sie ferner eine Function von $z$, so ist sie dies auch von $\zeta$, indem, wenn $\frac{dw}{dz}$ von $dz$, auch $\frac{dw}{d\zeta}$ von $d\zeta$ unabhängig ist, und umgekehrt. Es ergiebt sich hieraus, dass auf alle Functionen $w$ von $z$ auch im Windungspunkte $O'$ die Sätze der Art.~12.\ und 13.\ angewandt werden können, wenn man sie als Functionen von $(z - z')^{\frac{1}{n}}$ betrachtet. Dies liefert folgenden Satz:
+
+Wenn eine Function $w$ von $z$ bei unendlicher Annäherung von $O$ an einen Windungspunkt $(n-1)$ster Ordnung $O'$ unendlich wird, so ist dieses unendlich Grosse nothwendig von gleicher
+
+\origpage{20}
+Ordnung mit einer Potenz der Entfernung, deren Exponent ein Vielfaches von $\frac{1}{n}$ ist, und kann, wenn dieser Exponent $= -\frac{m}{n}$ ist, durch Hinzufügung eines Ausdrucks von der Form
+\[
+\frac{a_1}{(z - z')^{\frac{1}{n}}} + \frac{a_2}{(z - z')^{\frac{2}{n}}} \dots \frac{a_m}{(z - z')^{\frac{m}{n}}},
+\]
+wo $a_1$, $a_2$ \dots\ $a_m$ willkührliche complexe Grössen sind, in eine im Punkte $O'$ stetige verwandelt werden.
+
+Dieser Satz enthält als Corollar, dass die Function $w$ im Punkte $O'$ stetig ist, wenn $(z - z')^{\frac{1}{n}} w$ bei unendlicher Annäherung des Punktes $O$ an $O'$ unendlich klein wird.
+
+\section*{15.}
+
+Denken wir uns jetzt eine Function von $z$, welche für jeden Punkt $O$ der beliebig über $A$ ausgebreiteten Fläche $T$ einen bestimmten Werth hat und nicht überall constant ist, geometrisch dargestellt, so dass ihr Werth $w = u + vi$ im Punkte $O$ durch einen Punkt $Q$ der Ebene $B$ vertreten wird, dessen rechtwinklige Coordinaten $u$, $v$ sind, so ergiebt sich Folgendes:
+
+\emph{I.} Die Gesammtheit der Punkte $Q$ kann betrachtet werden, als eine Fläche $S$ bildend, in welcher jedem Punkte Ein bestimmter mit ihm stetig in $T$ fortrückender Punkt $O$ entspricht.
+
+Um dieses zu beweisen, ist offenbar nur der Nachweis erforderlich, dass die Lage des Punktes $Q$ mit der des Punktes $O$ sich allemal (und zwar allgemein zu reden stetig) ändert. Dieser ist in dem Satze enthalten:
+
+Eine Function $w = u + vi$ von $z$ kann nicht längs einer Linie constant sein, wenn sie nicht überall constant ist. Beweis: Hätte $w$ längs einer Linie einen constanten Werth $a + bi$, so wären $u - a$ und $\frac{d(u - a)}{dp}$, welches $= \frac{dv}{ds}$, für diese Linie und $\frac{d^2(u - a)}{dx^2} + \frac{d^2(u - a)}{dy^2}$ überall $= o$, es müsste also nach Satz 11., I.\ $u - a$ und folglich da $\frac{du}{dx} = \frac{dv}{dy}$, $\frac{du}{dy} = -\frac{dv}{dx}$, auch $v - b$ überall $= o$ sein, gegen die Voraussetzung.
+
+\emph{II.} In Folge der in I.\ gemachten Voraussetzung kann zwischen den Theilen von $S$ nicht ein Zusammenhang Statt finden ohne einen Zusammenhang der entsprechenden Theile von $T$; umgekehrt kann überall, wo in $T$ Zusammenhang Statt findet und $w$ stetig ist, der Fläche $S$ ein entsprechender Zusammenhang beigelegt werden.
+
+Dieses vorausgesetzt entspricht die Begrenzung von $S$ einestheils der Begrenzung von $T$, anderntheils den Unstetigkeitsstellen; ihre inneren Theile aber sind, einzelne Punkte ausgenommen, überall schlicht über $B$ ausgebreitet, d.\ h.\ es findet nirgends eine Spaltung in auf einander liegende Theile und nirgends eine Umfaltung Statt.
+
+Ersteres könnte, da $T$ überall einen entsprechenden Zusammenhang besitzt, offenbar nur eintreten, wenn in $T$ eine Spaltung vorkäme -- der Annahme zuwider --; Letzteres soll sogleich bewiesen werden.
+
+\origpage{21}
+Wir beweisen zuvörderst, dass ein Punkt $Q'$, wo $\frac{dw}{dz}$ endlich ist, nicht in einer Falte der Fläche $S$ liegen kann.
+
+In der That, umgeben wir den Punkt $O'$, welcher $Q'$ entspricht, mit einem Stücke der Fläche $T$ von beliebiger Gestalt und unbestimmten Dimensionen, so müssen (nach Art.~3.) die Dimensionen desselben stets so klein angenommen werden können, dass die Gestalt des entsprechenden Theils von $S$ beliebig wenig abweicht, und folglich so klein, dass die Begrenzung desselben aus der Ebene $B$ ein $Q'$ einschliessendes Stück ausscheidet. Dies aber ist unmöglich, wenn $Q'$ in einer Falte der Fläche $S$ liegt.
+
+Nun kann $\frac{dw}{dz}$, als Function von $z$, nach I.\ nur in einzelnen Punkten $= o$, und, da $w$ in den in Betracht kommenden Punkten von $T$ stetig ist, nur in den Windungspunkten dieser Fläche unendlich werden; folglich etc.\ w.\ z.\ b.\ w.
+
+3.\ednote{So im Druck; im Verfolg von I und II wäre III zu erwarten.} Die Fläche $S$ ist folglich eine Fläche, für welche die im Art.~5.\ für $T$ gemachten Voraussetzungen zutreffen; und in dieser Fläche hat für jeden Punkt $Q$ die unbestimmte Grösse $z$ Einen bestimmten Werth, welcher sich mit der Lage von $Q$ stetig und so ändert, dass $\frac{dz}{dw}$ von der Richtung der Ortsänderung unabhängig ist. Es bildet daher in dem früher festgelegten Sinne $z$ eine stetige Function der veränderlichen complexen Grösse $w$ für das durch $S$ dargestellte Grössengebiet.
+
+Hieraus folgt ferner:
+
+Sind $O'$ und $Q'$ zwei entsprechende innere Punkte der Flächen $T$ und $S$ und in denselben $z = z'$, $w = w'$, so nähert sich, wenn keiner von ihnen ein Windungspunkt ist, bei unendlicher Annäherung von $O$ an $O'$ $\frac{w - w'}{z - z'}$ einer endlichen Grenze, und die Abbildung ist daselbst eine in den kleinsten Theilen ähnliche; wenn aber $Q'$ ein Windungspunkt $n-1$ster, $O'$ ein Windungspunkt $m-1$ster Ordnung ist, so nähert sich $\frac{(w - w')^{\frac{1}{n}}}{(z - z')^{\frac{1}{m}}}$ bei unendlicher Annäherung von $O$ an $O'$ einer endlichen Grenze, und für die anstossenden Flächentheile findet eine Abbildungsart Statt, die sich leicht aus Art.~14.\ ergiebt.
+
+\begin{center}
+* \qquad * \qquad *
+\end{center}
+
+\section*{16.}
+
+\emph{Lehrsatz.} Sind $\alpha$ und $\beta$ zwei beliebige Functionen von $x$, $y$, für welche das Integral
+\[
+\int \biggl[\Bigl(\frac{d\alpha}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{d\alpha}{dy} + \frac{d\beta}{dx}\Bigr)^2\biggr]\,dT
+\]
+durch alle Theile der beliebig über $A$ ausgebreiteten Fläche $T$ ausgedehnt einen endlichen Werth hat, so erhält das Integral bei Aenderung von $\alpha$ um stetige oder doch nur in einzelnen Punkten unstetige Functionen, die am Rande $= o$ sind,
+
+\origpage{22}
+immer für eine dieser Functionen einen Minimumwerth und, wenn man durch Abänderung in einzelnen Punkten hebbare Unstetigkeiten ausschliesst, nur für Eine.
+
+Wir bezeichnen durch $\lambda$ eine unbestimmte stetige oder doch nur in einzelnen Punkten unstetige Function, welche am Rande $= o$ ist und für welche das Integral
+\[
+L = \int \biggl[\Bigl(\frac{d\lambda}{dx}\Bigr)^2 + \Bigl(\frac{d\lambda}{dy}\Bigr)^2\biggr] dT
+\]
+über die ganze Fläche ausgedehnt einen endlichen Werth erhält, durch $\omega$ eine unbestimmte der Functionen $\alpha + \lambda$, endlich das über die ganze Fläche erstreckte Integral $\displaystyle\int \biggl[\Bigl(\frac{d\omega}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{d\omega}{dy} + \frac{d\beta}{dx}\Bigr)^2\biggr] dT$ durch $\varOmega$. Die Gesammtheit der Function $\lambda$ bildet ein zusammenhängendes in sich abgeschlossenes Gebiet, indem jede dieser Functionen stetig in jede andere übergehen, sich aber nicht einer längs einer Linie unstetigen unendlich annähern kann, ohne dass $L$ unendlich wird (Art.~16.); für jedes $\lambda$ erhält nun, $\omega = \alpha + \lambda$ gesetzt, $\varOmega$ einen endlichen Werth, der mit $L$ zugleich unendlich wird, sich mit der Gestalt von $\lambda$ stetig ändert, aber nie unter Null herabsinken kann; folglich hat $\varOmega$ wenigstens für Eine Gestalt der Function $\omega$ ein Minimum.
+
+Um den zweiten Theil unseres Satzes zu beweisen, sei $u$ eine der Functionen $\omega$, welche $\varOmega$ einen Minimumwerth ertheilt, $h$ eine unbestimmte in der ganzen Fläche constante Grösse, so dass $u + h\lambda$ den der Function $\omega$ vorgeschriebenen Bedingungen genügt. Der Werth von $\varOmega$ für $\omega = u + h\lambda$, welcher
+\begin{align*}
+&= \int \biggl[\Bigl(\frac{du}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{du}{dy} + \frac{d\beta}{dx}\Bigr)^2\biggr] dT \\
+&\quad + 2h \int \biggl[\Bigl(\frac{du}{dx} - \frac{d\beta}{dy}\Bigr)\frac{d\lambda}{dx} + \Bigl(\frac{du}{dy} + \frac{d\beta}{dx}\Bigr)\frac{d\lambda}{dy}\biggr] dT \\
+&\quad + h^2 \int \biggl[\Bigl(\frac{d\lambda}{dx}\Bigr)^2 + \Bigl(\frac{d\lambda}{dy}\Bigr)^2\biggr] dT = M + 2Nh + Lh^2 \text{ wird},
+\end{align*}
+muss alsdann für jedes $\lambda$ (nach dem Begriffe des Minimums) grösser als $M$ werden, sobald $h$ nur hinreichend klein genommen ist. Dies erfordert aber, dass für jedes $\lambda$ $N = o$ sei; denn andernfalls würde $2Nh + Lh^2 = Lh^2\bigl(1 + \frac{2N}{Lh}\bigr)$ negativ werden, wenn $h$ dem $N$ entgegengesetzt und abgesehen vom Zeichen $< \frac{2N}{L}$ angenommen würde. Der Werth von $\varOmega$ für $\omega = u + \lambda$, in welcher Form offenbar alle möglichen Werthe von $\omega$ enthalten sind, wird daher $= M + L$, und folglich kann, da $L$ wesentlich positiv ist, $\varOmega$ für keine Gestalt der Function $\omega$ einen kleinern Werth erhalten, als für $\omega = u$.
+
+Findet nun für eine andere $u'$ der Functionen $\omega$ ein Minimumwerth $M'$ von $\varOmega$ Statt, so muss von diesem offenbar dasselbe gelten, man hat also $M' \leqq M$ und $M \leqq M'$, folglich $M = M'$. Bringt man aber $u'$ auf die Form $u + \lambda'$, so erhält man für $M'$ den Ausdruck $M + L'$, wenn $L'$ den Werth von $L$ für $\lambda = \lambda'$ bezeichnet, und die Gleichung $M = M'$ giebt $L' = o$. Dies ist nur möglich, wenn in allen Flächentheilen $\frac{d\lambda'}{dx} = o$, $\frac{d\lambda'}{dy} = o$ ist, und es hat daher, so weit $\lambda'$ stetig
+
+\origpage{23}
+ist, diese Function nothwendig einen constanten und folglich, da sie am Rande $= o$ und nicht längs einer Linie unstetig ist, höchstens in einzelnen Punkten einen von Null verschiedenen Werth. Zwei der Functionen $\omega$, welche $\varOmega$ einen Minimumwerth ertheilen, können also nur in einzelnen Punkten von einander verschieden sein, und wenn in der Funktion $u$ alle durch Abänderung in einzelnen Punkten hebbaren Unstetigkeiten beseitigt werden, ist diese vollkommen bestimmt.
+
+\section*{17.}
+
+Es soll jetzt der Beweis nachgeliefert werden, dass $\lambda$ unbeschadet der Endlichkeit von $L$ sich nicht einer längs einer Linie unstetigen Function $\gamma$ unendlich annähern könne, d.\ h.\ wird die Function $\lambda$ der Bedingung unterworfen, ausserhalb eines die Unstetigkeitslinie einschliessenden Flächentheils $T'$ mit $\gamma$ übereinzustimmen, so kann $T'$ stets so klein angenommen werden, dass $L$ grösser als eine beliebig gegebene Grösse $C$ werden muss.
+
+Wir bezeichnen, $s$ und $p$ in Bezug auf die Unstetigkeitslinie in der gewohnten Bedeutung genommen, für ein unbestimmtes $s$ die Krümmung, eine auf der Seite der positiven $p$ convexe als positiv betrachtet, durch $\varkappa$, den Werth von $p$ an der Grenze von $T'$ auf der positiven Seite durch $p_1$, auf der negativen Seite durch $p_2$ und die entsprechenden Werthe von $\gamma$ durch $\gamma_1$ und $\gamma_2$. Betrachten wir nun irgend einen stetig gekrümmten Theil dieser Linie, so liefert der zwischen den Normalen in den Endpunkten enthaltene Theil von $T'$, wenn er sich nicht bis zu den Krümmungsmittelpunkten erstreckt, zu $L$ den Beitrag
+\[
+\int ds \int_{p_2}^{p_1} dp\,(1 - \varkappa p) \biggl[\Bigl(\frac{d\lambda}{dp}\Bigr)^2 + \Bigl(\frac{d\lambda}{ds}\Bigr)^2 \frac{1}{(1 - \varkappa p)^2}\biggr];
+\]
+der kleinste Werth des Ausdrucks
+\[
+\int_{p_2}^{p_1} \Bigl(\frac{d\lambda}{dp}\Bigr)^2 (1 - \varkappa p)\,dp
+\]
+bei den festen Grenzwerthen $\gamma_1$ und $\gamma_2$ von $\lambda$ findet sich aber nach bekannten Regeln
+\[
+= \frac{(\gamma_1 - \gamma_2)^2 \varkappa}{\log(1 - \varkappa p_2) - \log(1 - \varkappa p_1)}
+\]
+und folglich wird jener Beitrag nothwendig, wie auch $\lambda$ innerhalb $T'$ angenommen werden möge,
+\[
+> \int \frac{(\gamma_1 - \gamma_2)^2 \varkappa\,ds}{\log(1 - \varkappa p_2) - \log(1 - \varkappa p_1)}.
+\]
+Die Function $\gamma$ wäre für $p = o$ stetig, wenn der grösste Werth, den $(\gamma_1 - \gamma_2)^2$ für $\pi_1 > p_1 > o$ und $\pi_2 < p_2 < o$ erhalten kann, mit $\pi_1 - \pi_2$ unendlich klein würde; wir können folglich für jeden Werth von $s$ eine endliche Grösse $m$ so annehmen, dass, wie klein auch $\pi_1 - \pi_2$ angenommen werden möge, stets innerhalb der durch $\pi_1 > p_1 \geqq o$ und $\pi_2 < p_2 \leqq o$ (wo die Gleichheiten sich gegenseitig ausschliessen) ausgedrückten Grenzen Werthe von $p_1$ und $p_2$ enthalten sind, für welche $(\gamma_1 - \gamma_2)^2 > m$ wird. Nehmen wir ferner unter den früheren Beschränkungen eine Gestalt von $T'$ beliebig an, indem wir $p_1$ und $p_2$ bestimmte Werthe $P_1$ und $P_2$ beilegen, und bezeichnen den Werth des
+
+\origpage{24}
+durch den in Betracht gezogenen Theil der Unstetigkeitslinie ausgedehnten Integrals
+\[
+\int \frac{m\varkappa\,ds}{\log(1 - \varkappa P_2) - \log(1 - \varkappa P_1)} \quad \text{durch } a\text{, so können wir offenbar}
+\]
+\[
+\int \frac{(\gamma_1 - \gamma_2)^2 \varkappa\,ds}{\log(1 - \varkappa p_2) - \log(1 - \varkappa p_1)} > C
+\]
+machen, indem wir $p_1$ und $p_2$ für jeden Werth von $s$ so annehmen, dass den Ungleichheiten
+\[
+p_1 < \frac{1 - (1 - \varkappa P_1)^{\frac{a}{C}}}{\varkappa}, \quad p_2 > \frac{1 - (1 - \varkappa P_2)^{\frac{a}{C}}}{\varkappa} \quad \text{und} \quad (\gamma_1 - \gamma_2)^2 > m
+\]
+genügt wird. Dies aber hat zur Folge, dass, wie auch $L$ innerhalb $T'$ angenommen werden möge, der aus dem in Betracht gezogenen Stücke von $T'$ stammende Theil von $L$ und folglich um so mehr $L$ selbst $> C$ wird, w.\ z.\ v.\ w.\ednote{So im Druck; gemeint ist wohl w.\ z.\ b.\ w.}
+
+\begin{center}
+*
+\end{center}
+
+\section*{18.}
+
+Nach Art.~16.\ haben wir für die dort festgelegte Function $u$ und für irgend eine der Functionen $\lambda$
+\[
+N = \int \biggl[\Bigl(\frac{du}{dx} - \frac{d\beta}{dy}\Bigr)\frac{d\lambda}{dx} + \Bigl(\frac{du}{dy} + \frac{d\beta}{dx}\Bigr)\frac{d\lambda}{dy}\biggr] dT
+\]
+durch die ganze Fläche $T$ ausgedehnt $= o$. Aus dieser Gleichung sollen jetzt weitere Schlüsse gezogen werden.
+
+Scheidet man aus der Fläche $T$ ein die Unstetigkeitsstellen von $u$, $\beta$, $\lambda$ einschliessendes Stück $T'$ aus, so findet sich der von dem übrigen Stücke $T''$ herrührende Theil von $N$ mit Hülfe des Art.~7., wenn man $\Bigl(\frac{du}{dx} - \frac{d\beta}{dy}\Bigr)\lambda$ für $X$ und $\Bigl(\frac{du}{dy} + \frac{d\beta}{dx}\Bigr)\lambda$ für $Y$ setzt,
+\[
+= -\int \lambda \Bigl(\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}\Bigr) dT - \int \Bigl(\frac{du}{dp} - \frac{d\beta}{ds}\Bigr)\lambda\,ds.
+\]
+In Folge der der Function $\lambda$ auferlegten Grenzbedingung wird der auf das mit $T$ gemeinschaftliche Begrenzungsstück von $T''$ bezügliche Theil von $\displaystyle\int \Bigl(\frac{du}{dp} - \frac{d\beta}{ds}\Bigr)\lambda\,ds$ gleich $o$, so dass $N$ betrachtet werden kann als zusammengesetzt aus dem Integral
+\[
+-\int \lambda \Bigl(\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}\Bigr) dT \quad \text{in Bezug auf } T'' \quad \text{und}
+\]
+\[
+\int \biggl[\Bigl(\frac{du}{dx} - \frac{d\beta}{dy}\Bigr)\frac{d\lambda}{dx} + \Bigl(\frac{du}{dy} + \frac{d\beta}{dx}\Bigr)\frac{d\lambda}{dy}\biggr] dT + \int \Bigl(\frac{du}{dp} - \frac{d\beta}{ds}\Bigr)\lambda\,ds \quad \text{in Bezug auf } T'.
+\]
+
+Offenbar würde nun, wenn $\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}$ in irgend einem Theile der Fläche $T$ von $o$ verschieden wäre, $N$ ebenfalls einen von $o$ verschiedenen Werth erhalten, so bald man $\lambda$, was frei steht, innerhalb $T'$ gleich $o$ und innerhalb $T''$ so wählte, dass $\lambda \Bigl(\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}\Bigr)$ überall dasselbe Zeichen hätte. Ist aber $\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}$ in allen Theilen von $T = o$, so verschwindet der
+
+\origpage{25}
+von $T''$ herrührende Bestandtheil von $N$ für jedes $\lambda$, und die Bedingung $N = o$ ergiebt dann, dass die auf die Unstetigkeitsstellen bezüglichen Bestandtheile $= o$ werden.
+
+Für die Functionen $\frac{du}{dx} - \frac{d\beta}{dy}$, $\frac{du}{dy} + \frac{d\beta}{dx}$ haben wir daher, wenn wir erstere $= X$ und letztere $= Y$ setzen, nicht bloss allgemein zu reden die Gleichung $\frac{dX}{dx} + \frac{dY}{dy} = o$, sondern es wird auch durch die ganze Begrenzung irgend eines Theils von $T$ erstreckt
+\[
+\int \Bigl(X\frac{dx}{dp} + Y\frac{dy}{dp}\Bigr)\,ds = o, \quad \text{in so fern dieser Ausdruck überhaupt einen bestimmten}
+\]
+Werth hat.
+
+Zerlegen wir also (nach Art.~9., V.) die Fläche $T$, wenn sie einen mehrfachen Zusammenhang besitzt, durch Queerschnitte in eine einfach zusammenhängende $T^*$, so hat das Integral
+\[
+\int_{O_0}^O \Bigl(\frac{du}{dp} - \frac{d\beta}{ds}\Bigr)\,ds \quad \text{für jede im Innern von } T^* \text{ von } O_0 \text{ nach } O \text{ gehende Linie denselben}
+\]
+Werth und bildet, $O_0$ als fest gedacht, eine Function von $x$, $y$, welche in $T^*$ überall eine stetige und längs eines Queerschnitts beiderseits eine gleiche Aenderung erleidet. Diese Function $\nu$ zu $\beta$ hinzugefügt, liefert uns eine Function $v = \beta + \nu$, von welcher der Differentialquotient $\frac{dv}{dx} = -\frac{du}{dy}$ und $\frac{dv}{dy} = \frac{du}{dx}$ ist.
+
+Wir haben daher folgenden
+
+\emph{Lehrsatz.} Ist in einer zusammenhängenden durch Queerschnitte in eine einfach zusammenhängende $T^*$ zerlegten Fläche $T$ eine complexe Function $\alpha + \beta i$ von $x$, $y$ gegeben, für welche
+\[
+\int \biggl[\Bigl(\frac{d\alpha}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{d\alpha}{dx} + \frac{d\beta}{dy}\Bigr)^2\biggr] dT \quad \text{durch die ganze Fläche ausgedehnt einen endlichen}
+\]\ednote{So im Druck; gemeint ist wohl $(d\alpha/dy + d\beta/dx)^2$.}
+Werth hat, so kann sie immer und nur auf Eine Art in eine Function von $z$ verwandelt werden durch Hinzufügung einer Function $\mu + \nu i$ von $x$, $y$, welche folgenden Bedingungen genügt:
+\begin{enumerate}
+\item[1)] $\mu$ ist am Rande $= o$ oder doch nur in einzelnen Punkten davon verschieden, $\nu$ in Einem Punkte beliebig gegeben,
+\item[2)] die Aenderungen von $\mu$ sind in $T$, von $\nu$ in $T^*$ nur in einzelnen Punkten und nur so unstetig, dass $\displaystyle\int \biggl[\Bigl(\frac{d\mu}{dx}\Bigr)^2 + \Bigl(\frac{d\mu}{dy}\Bigr)^2\biggr]\,dT$ und $\displaystyle\int \biggl[\Bigl(\frac{d\nu}{dx}\Bigr)^2 + \Bigl(\frac{d\nu}{dy}\Bigr)^2\biggr]\,dT$ durch die ganze Fläche erstreckt endlich bleiben, und letztere längs der Queerschnitte beiderseits gleich.
+\end{enumerate}
+
+Die Zulänglichkeit der Bedingungen zur Bestimmung von $\mu + \nu i$ folgt daraus, dass $\mu$, durch welches $\nu$ bis auf eine additive Constante bestimmt ist, stets zugleich ein Minimum des Integrals $\Omega$ liefert, da, $u = \alpha + \mu$ gesetzt, offenbar für jedes $\lambda$ $N = o$ wird; eine Eigenschaft, die nach Art.~16.\ nur einer Function zukommen kann.
+
+\origpage{26}
+\section*{19.}
+
+Die Principien, welche dem Lehrsatze am Schlusse des vorigen Art.\ zu Grunde liegen, eröffnen den Weg, \emph{bestimmte} Functionen einer veränderlichen complexen Grösse (unabhängig von einem Ausdrucke für dieselben) zu untersuchen.
+
+Zur Orientirung auf diesem Felde wird ein Ueberschlag über den Umfang der zur Bestimmung einer solchen Function innerhalb eines gegebenen Grössengebiets erforderlichen Bedingungen dienen.
+
+Halten wir uns zunächst an einen bestimmten Fall, so kann, wenn die über $A$ ausgebreitete Fläche, durch welche dies Grössengebiet dargestellt wird, eine einfach zusammenhängende ist, die Function $w = u + vi$ von $z$ folgenden Bedingungen gemäss bestimmt werden:
+\begin{enumerate}
+\item[1)] für $u$ ist in allen Begrenzungspunkten ein Werth gegeben, der sich für eine unendlich kleine Ortsänderung um eine unendlich kleine Grösse von derselben Ordnung, übrigens aber beliebig ändert${}^{*)}$;
+\item[2)] der Werth von $v$ ist in irgend einem Punkte beliebig gegeben;
+\item[3)] die Function soll in allen Punkten endlich und stetig sein.
+\end{enumerate}
+Durch diese Bedingungen aber ist sie vollkommen bestimmt.
+
+In der That folgt dies aus dem Lehrsatze des vorigen Art., wenn man, was immer möglich sein wird, $\alpha + \beta i$ so bestimmt, dass $\alpha$ am Rande dem gegebenen Werth gleich und in der ganzen Fläche für jede unendlich kleine Ortsänderung die Aenderung von $\alpha + \beta i$ unendlich klein von derselben Ordnung ist.
+
+Es kann also, allgemein zu reden, $u$ am Rande als eine ganz willkührliche Function von $s$ gegeben werden, und dadurch ist $v$ überall mit bestimmt; umgekehrt kann aber auch $v$ in jedem Begrenzungspunkte beliebig angenommen werden, woraus dann der Werth von $u$ folgt. Der Spielraum für die Wahl der Werthe von $w$ am Rande umfasst daher eine Mannigfaltigkeit von Einer Dimension für jeden Begrenzungspunkt, und die vollständige Bestimmung derselben erfordert für jeden Begrenzungspunkt Eine Gleichung, wobei es indess nicht wesentlich sein wird, dass jede dieser Gleichungen sich auf den Werth Eines Gliedes in Einem Begrenzungspunkte allein bezieht. Es wird diese Bestimmung auch so geschehen können, dass für jeden Begrenzungspunkt Eine mit der Lage dieses Punktes ihre Form stetig ändernde beide Glieder enthaltende Gleichung gegeben ist, oder für mehrere Theile der Begrenzung gleichzeitig so, dass jedem Punkte eines dieser Theile $n - 1$ bestimmte Punkte, aus jedem der übrigen Theile einer, zugesellt und für je $n$ solcher Punkte gemeinschaftlich $n$ mit ihrer Lage stetig veränderliche Gleichungen gegeben sind. Diese Bedingungen, deren Gesammtheit eine stetige Mannigfaltigkeit bildet und welche durch Gleichungen zwischen willkührlichen Functionen ausgedrückt werden, werden aber, um für die Bestimmung einer im Innern des Grössengebiets überall stetigen Function zulässig und hinreichend zu sein, allgemein zu reden, noch einer Beschränkung oder Ergänzung
+
+\vspace{1em}\noindent\textbf{*)} An sich sind die Aenderungen dieses Werthes nur der Beschränkung unterworfen, nicht längs eines Theils der Begrenzung unstetig zu sein; eine weitere Beschränkung ist nur gemacht, um hier unnöthige Weitläuftigkeiten zu vermeiden.
+
+\origpage{27}
+durch einzelne Bedingungsgleichungen --- Gleichungen für willkührliche Constanten --- bedürfen, indem bis auf diese sich die Genauigkeit unserer Schätzung offenbar nicht erstreckt.
+
+Für den Fall, wo das Gebiet der Veränderlichkeit der Grösse $z$ durch eine mehrfach zusammenhängende Fläche dargestellt wird, erleiden diese Betrachtungen keine wesentliche Abänderung, indem die Anwendung des Lehrsatzes im Art.~18.\ eine bis auf die Aenderungen beim Ueberschreiten der Queerschnitte ebenso wie vorhin beschaffene Function liefert --- Aenderungen, welche $= o$ gemacht werden können, wenn die Grenzbedingungen eine der Anzahl der Queerschnitte gleiche Anzahl verfügbarer Constanten enthalten.
+
+Der Fall, wo im Innern längs einer Linie auf Stetigkeit verzichtet wird, ordnet sich dem vorigen unter, wenn man diese Linie als einen Schnitt der Fläche betrachtet.
+
+Wenn endlich in einem einzelnen Punkte eine Verletzung der Stetigkeit, also nach Art.~12.\ ein Unendlichwerden der Function, zugelassen wird; so kann unter Beibehaltung der sonstigen in unserm Anfangsfalle gemachten Voraussetzungen für diesen Punkt eine Function von $z$, nach deren Subtraction die zu bestimmende Function stetig werden soll, beliebig gegeben werden; dadurch aber ist sie völlig bestimmt. Denn nimmt man die Grösse $\alpha + \beta i$ in einem beliebig kleinen um den Unstetigkeitspunkt beschriebenen Kreise gleich dieser gegebenen Function, übrigens aber den früheren Vorschriften gemäss an, so wird das Integral
+\[
+\int \biggl[\Bigl(\frac{d\alpha}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{d\alpha}{dy} + \frac{d\beta}{dx}\Bigr)^2\biggr] dT \quad \text{über diesen Kreis erstreckt } = o,
+\]
+über den übrigen Theil erstreckt einer endlichen Grösse gleich, und man kann also den Lehrsatz des vorigen Art.\ anwenden, wodurch man eine Function mit den verlangten Eigenschaften erhält. Hieraus kann man mit Hülfe des Lehrsatzes im Art.~13.\ folgern, dass im Allgemeinen, wenn in einem einzelnen Unstetigkeitspunkte die Function unendlich gross von der Ordnung $n$ werden darf, eine Anzahl von $2n$ Constanten verfügbar wird.
+
+Geometrisch dargestellt liefert (nach Art.~15.) eine Function $w$ einer innerhalb eines gegebenen Grössengebiets von zwei Dimensionen veränderlichen complexen Grösse $z$ von einer gegebenen $A$ bedeckenden Fläche $T$ ein ihr in den kleinsten Theilen, einzelne Punkte ausgenommen, ähnliches $B$ bedeckendes Abbild $S$. Die Bedingungen, welche so eben zur Bestimmung der Function hinreichend und nothwendig befunden worden sind, beziehen sich auf ihren Werth entweder in Begrenzungs- oder in Unstetigkeitspunkten; sie erscheinen also (Art.~15.) sämmtlich als Bedingungen für die Lage der Begrenzung von $S$, und zwar geben sie für jeden Begrenzungspunkt Eine Bedingungsgleichung. Bezieht sich jede derselben nur auf Einen Begrenzungspunkt, so werden sie durch eine Schaar von Curven repräsentirt, von denen für jeden Begrenzungspunkt Eine den geometrischen Ort bildet. Werden zwei mit einander stetig fortrückende Begrenzungspunkte gemeinschaftlich zwei Bedingungsgleichungen unterworfen, so entsteht dadurch zwischen zwei Begrenzungstheilen eine solche Abhängigkeit, dass, wenn die Lage des einen willkührlich angenommen wird, die Lage des andern daraus folgt. Aehnlicher Weise ergiebt sich für andere Formen der Bedingungsgleichungen eine geometrische Bedeutung, was wir indess nicht weiter verfolgen wollen.
+
+\section*{20.}
+
+Die Einführung der complexen Grössen in die Mathematik hat ihren Ursprung und nächsten
+
+\origpage{28}
+Zweck in der Theorie einfacher${}^{*)}$ durch Grössenoperationen ausgedrückter Abhängigkeitsgesetze zwischen veränderlichen Grössen. Wendet man nämlich diese Abhängigkeitsgesetze in einem erweiterten Umfange an, indem man den veränderlichen Grössen, auf welche sie sich beziehen, complexe Werthe giebt, so tritt eine sonst versteckt bleibende Harmonie und Regelmässigkeit hervor. Die Fälle, in denen dies geschehen ist, umfassen zwar bis jetzt erst ein kleines Gebiet --- sie lassen sich fast sämmtlich auf diejenigen Abhängigkeitsgesetze zwischen zwei veränderlichen Grössen zurückführen, wo die eine entweder eine algebraische${}^{**)}$ Function der andern ist oder eine solche Function, deren Differentialquotient eine algebraische Function ist --- aber beinahe jeder Schritt, der hier gethan ist, hat nicht bloss den ohne Hülfe der complexen Grössen gewonnenen Resultaten eine einfachere, geschlossenere Gestalt gegeben, sondern auch zu neuen Entdeckungen die Bahn gebrochen, wozu die Geschichte der Untersuchungen über algebraische Functionen, Kreis- oder Exponentialfunctionen, elliptische und Abel'sche Functionen den Beleg liefert.
+
+Es soll kurz angedeutet werden, was durch unsere Untersuchung für die Theorie solcher Functionen gewonnen ist.
+
+Die bisherigen Methoden, diese Functionen zu behandeln, legten stets als Definition einen Ausdruck der Function zu Grunde, wodurch ihr Werth für jeden Werth ihres Arguments gegeben wurde; durch unsere Untersuchung ist gezeigt, dass, in Folge des allgemeinen Charakters einer Function einer veränderlichen complexen Grösse, in einer Definition dieser Art ein Theil der Bestimmungsstücke eine Folge der übrigen ist, und zwar ist der Umfang der Bestimmungsstücke auf die zur Bestimmung nothwendigen zurückgeführt worden. Dies vereinfacht die Behandlung derselben wesentlich. Um z.\ B.\ die Gleichheit zweier Ausdrücke derselben Function zu beweisen, musste man sonst den einen in den andern transformiren, d.\ h.\ zeigen, dass beide für jeden Werth der veränderlichen Grösse übereinstimmten; jetzt genügt der Nachweis ihrer Uebereinstimmung in einem weit geringern Umfange.
+
+Eine Theorie dieser Functionen auf den hier gelieferten Grundlagen würde die Gestaltung der Function (d.\ h.\ ihren Werth für jeden Werth ihres Arguments) unabhängig von einer Bestimmungsweise derselben durch Grössenoperationen festlegen, indem zu dem allgemeinen Begriffe einer Function einer veränderlichen complexen Grösse nur die zur Bestimmung der Function nothwendigen Merkmale hinzugefügt würden, und dann erst zu den verschiedenen Ausdrücken deren die Function fähig ist übergehen. Der gemeinsame Charakter einer Gattung von Functionen, welche auf ähnliche Art durch Grössenoperationen ausgedrückt werden, stellt sich dann dar in der Form der ihnen auferlegten Grenz- und Unstetigkeitsbedingungen. Wird z.\ B.\ das Gebiet der Veränderlichkeit der Grösse $z$ über die ganze unendliche Ebene $A$ einfach oder mehrfach erstreckt, und innerhalb derselben der Function nur in einzelnen Punkten eine Unstetigkeit, und zwar nur ein Unendlichwerden, dessen Ordnung endlich ist, gestattet (wobei für ein unendliches $z$ diese Grösse selbst, für jeden endlichen Werth $z'$ derselben aber
+
+\vspace{1em}\noindent\textbf{*)} Wir betrachten hier als Elementaroperationen Addition und Subtraction, Multiplication und Division, Integration und Differentiation, und ein Abhängigkeitsgesetz als desto einfacher, durch je weniger Elementaroperationen die Abhängigkeit bedingt wird. In der That lassen sich durch eine endliche Anzahl dieser Operationen alle bis jetzt in der Analysis benutzten Functionen definiren.
+
+\noindent\textbf{**)} D.\ h.\ wo zwischen beiden eine algebraische Gleichung Statt findet.
+
+\origpage{29}
+$\frac{1}{z - z'}$ als ein unendlich Grosses erster Ordnung gilt), so ist die Function nothwendig algebraisch, und umgekehrt erfüllt diese Bedingung jede algebraische Function.
+
+Die Ausführung dieser Theorie, welche, wie bemerkt, einfache durch Grössenoperationen bedingte Abhängigkeitsgesetze ins Licht zu setzen bestimmt ist, unterlassen wir indess jetzt, da wir die Betrachtung des Ausdruckes einer Function gegenwärtig ausschliessen.
+
+Aus demselben Grunde befassen wir uns hier auch nicht damit, die Brauchbarkeit unserer Sätze als Grundlagen einer \emph{allgemeinen} Theorie dieser Abhängigkeitsgesetze darzuthun, wozu der Beweis erfordert wird, dass der hier zu Grunde gelegte Begriff einer Function einer veränderlichen complexen Grösse mit dem einer durch Grössenoperationen ausdrückbaren Abhängigkeit${}^{*)}$ völlig zusammenfällt.
+
+\section*{21.}
+
+Es wird jedoch zur Erläuterung unserer allgemeinen Sätze ein ausgeführtes Beispiel ihrer Anwendung von Nutzen sein.
+
+Die im vorigen Artikel bezeichnete Anwendung derselben ist, obwohl die bei ihrer Aufstellung zunächst beabsichtigte, doch nur eine specielle. Denn wenn die Abhängigkeit durch eine endliche Anzahl der dort als Elementaroperationen betrachteten Grössenoperationen bedingt ist, so enthält die Function nur eine endliche Anzahl von Parametern, was für die Form eines Systems von einander unabhängiger Grenz- und Unstetigkeitsbedingungen, die zu ihrer Bestimmung hinreichen, den Erfolg hat, dass unter ihnen längs einer Linie in jedem Punkte willkührlich zu bestimmende Bedingungen gar nicht vorkommen können. Für unsern jetzigen Zweck schien es daher geeigneter, nicht ein dorther entnommenes Beispiel zu wählen, sondern vielmehr ein solches, wo die Function der complexen Veränderlichen von einer willkührlichen Function abhängt.
+
+Zur Veranschaulichung und bequemeren Fassung geben wir demselben die am Schlusse des Art.~18.\ gebrauchte geometrische Einkleidung. Es erscheint dann als eine Untersuchung über die Möglichkeit, von einer gegebenen Fläche ein zusammenhängendes in den kleinsten Theilen ähnliches Abbild zu liefern, dessen Gestalt gegeben ist, wo also, in obiger Form ausgedrückt, für jeden Begrenzungspunkt des Abbildes eine Ortscurve, und zwar für alle dieselbe, ausserdem aber (Art.~5.) der Sinn der Begrenzung und die Windungspunkte desselben gegeben sind. Wir beschränken uns auf die Lösung dieser Aufgabe in dem Falle, wo jedem Punkte der einen Fläche nur Ein Punkt der andern entsprechen soll und die Flächen einfach zusammenhängend sind, für welchen Fall sie in folgendem Lehrsatze enthalten ist.
+
+Zwei gegebene einfach zusammenhängende ebene Flächen können stets so auf einander bezogen werden, dass jedem Punkte der einen Ein mit ihm stetig fortrückender Punkt der andern entspricht und ihre entsprechenden kleinsten Theile ähnlich sind; und zwar kann zu Einem innern
+
+\vspace{1em}\noindent\textbf{*)} Es wird darunter jede durch eine endliche oder unendliche Anzahl der vier einfachsten Rechnungsoperationen, Addition und Subtraction, Multiplication und Division, ausdrückbare Abhängigkeit begriffen. Der Ausdruck Grössenoperationen soll (im Gegensatze zu Zahlenoperationen) solche Rechnungsoperationen andeuten, bei denen die Commensurabilität der Grössen nicht in Betracht kommt.
+
+\origpage{30}
+Punkte und zu Einem Begrenzungspunkte der entsprechende beliebig gegeben werden; dadurch aber ist für alle Punkte die Beziehung bestimmt.
+
+Wenn zwei Flächen $T$ und $R$ auf eine dritte $S$ so bezogen sind, dass zwischen den entsprechenden kleinsten Theilen Aehnlichkeit Statt findet, so ergiebt sich daraus eine Beziehung zwischen den Flächen $T$ und $R$, von welcher offenbar dasselbe gilt. Die Aufgabe, zwei beliebige Flächen auf einander so zu beziehen, dass Aehnlichkeit in den kleinsten Theilen Statt findet, ist dadurch auf die zurückgeführt, jede beliebige Fläche durch Eine bestimmte in den kleinsten Theilen ähnlich abzubilden. Wir haben hiernach, wenn wir in der Ebene $B$ um den Punkt, wo $w = o$ ist, mit dem Radius $1$ einen Kreis $K$ beschreiben, um unsern Lehrsatz darzuthun, nur nöthig zu beweisen: Eine beliebige einfach zusammenhängende $A$ bedeckende Fläche $T$ kann durch den Kreis $K$ stets zusammenhängend und in den kleinsten Theilen ähnlich abgebildet werden und zwar nur auf Eine Art so, dass dem Mittelpunkte ein beliebig gegebener innerer Punkt $O_0$ und einem beliebig gegebenen Punkte der Peripherie ein beliebig gegebener Begrenzungspunkt $O'$ der Fläche $T$ entspricht.
+
+Wir bezeichnen die bestimmten Bedeutungen von $z$, $Q$ für die Punkte $O_0$, $O'$ durch entsprechende Indices und beschreiben in $T$ um $O_0$ als Mittelpunkt einen beliebigen Kreis $\varTheta$, welcher sich nicht bis zur Begrenzung von $T$ erstreckt und keinen Windungspunkt enthält. Führen wir Polarcoordinaten ein, indem wir $z - z_0 = r e^{\varphi i}$ setzen, so wird die Function $\log(z - z_0) = \log r + \varphi i$. Der reelle Werth ändert sich daher im ganzen Kreise mit Ausnahme des Punktes $O_0$, wo er unendlich wird, stetig. Der imaginäre aber erhält, wenn überall unter den möglichen Werthen von $\varphi$ der kleinste positive gewählt wird, längs des Radius, wo $z - z_0$ reelle positive Werthe annimmt, auf der einen Seite den Werth $o$, auf der andern den Werth $2\pi$, ändert sich aber dann in allen übrigen Punkten stetig. Offenbar kann dieser Radius durch eine ganz beliebige vom Mittelpunkte nach der Peripherie gezogene Linie $l$ ersetzt werden, so dass die Function $\log(z - z_0)$ beim Uebertritt des Punktes $O$ von der negativen (d.\ h.\ wo nach Art.~8.\ $p$ negativ wird) auf die positive Seite dieser Linie eine plötzliche Verminderung um $2\pi i$ erleidet, übrigens aber sich mit dessen Lage im ganzen Kreise $\varTheta$ stetig ändert. Nehmen wir nun die complexe Function $\alpha + \beta i$ von $x$, $y$ im Kreise $\varTheta = \log(z - z_0)$, ausserhalb desselben aber, indem wir $l$ beliebig bis an den Rand verlängern, so an, dass sie
+\begin{enumerate}
+\item[1)] an der Peripherie von $\varTheta = \log(z - z_0)$, am Rande von $T$ bloss imaginär wird,
+\item[2)] beim Uebertritt von der negativen auf die positive Seite der Linie $l$ sich um $-2\pi i$, sonst aber bei jeder unendlich kleinen Ortsänderung um eine unendlich kleine Grösse von derselben Ordnung ändert,
+\end{enumerate}
+was immer möglich sein wird: so erhält das $\displaystyle\int \biggl[\Bigl(\frac{d\alpha}{dx} - \frac{d\beta}{dy}\Bigr)^2 + \Bigl(\frac{d\alpha}{dy} + \frac{d\beta}{dx}\Bigr)^2\biggr]\,dT$ über $\varTheta$ ausgedehnt den Werth Null, über den ganzen übrigen Theil erstreckt einen endlichen Werth, und es kann daher $\alpha + \beta i$ durch Hinzufügung einer bis auf einen bloss imaginären constanten
+
+\origpage{31}
+Rest bestimmten stetigen Function von $x$, $y$, welche am Rande bloss imaginär ist, in eine Function $t = m + ni$ von $z$ verwandelt werden. Der reelle Theil $m$ dieser Function wird am Rande $= o$, im Punkte $O_0 = -\infty$ und ändert sich im ganzen übrigen $T$ stetig. Für jeden zwischen $o$ und $-\infty$ liegenden Werth $a$ von $m$ zerfällt daher $T$ durch eine Linie, wo $m = a$ ist, in Theile, wo $m < a$ ist und die $O_0$ im Innern enthalten, einerseits und andererseits in Theile, wo $m > a$ ist und deren Begrenzung theils durch den Rand von $T$, theils durch Linien, wo $m = a$ ist, gebildet wird. Die Ordnung des Zusammenhangs der Fläche $T$ wird durch diese Zerfällung entweder nicht geändert oder erniedrigt, die Fläche zerfällt daher, da diese Ordnung $= -1$ ist, entweder in zwei Stücke von der Ordnung des Zusammenhangs $o$ und $-1$, oder in mehr als zwei Stücke. Letzteres aber ist unmöglich, weil dann wenigstens in Einem dieser Stücke $m$ überall endlich und stetig und in allen Theilen der Begrenzung constant sein müsste, folglich entweder in einem Flächentheil einen constanten Werth, oder irgendwo, --- in einem Punkte oder längs einer Linie --- einen Maximum- oder Minimumwerth haben müsste, gegen Art.~11., III. Die Punkte, wo $m$ constant ist, bilden also in sich zurücklaufende allenthalben einfache Linien, welche ein den Punkt $O_0$ einschliessendes Stück begrenzen, und zwar nimmt $m$ nach Innen zu nothwendig ab, woraus folgt, dass bei einem positiven Umlaufe (wo nach Art.~8.\ $s$ wächst) $n$, soweit es stetig ist, stets zunimmt, und also, da es nur beim Uebertritt von der negativen auf die positive Seite der Linie $l$ eine plötzliche Aenderung um $-2\pi^{*)}$ erleidet, jedem Werth zwischen $o$ und $2\pi$ Einmal von einem Vielfachen von $2\pi$ abgesehen gleich wird. Setzen wir nun $e^t = w$, so werden $e^m$ und $n$ Polarcoordinaten des Punktes $Q$ in Bezug auf den Mittelpunkt des Kreises $K$. Die Gesammtheit der Punkte $Q$ bildet dann offenbar eine über $K$ allenthalben einfach ausgebreitete Fläche $S$; der Punkt $Q_0$ derselben fällt auf den Mittelpunkt des Kreises; der Punkt $Q'$ aber kann vermittelst der in $n$ noch verfügbaren Constante auf einen beliebig gegebenen Punkt der Peripherie gerückt werden, w.\ z.\ v.\ w.\ednote{So im Druck; gemeint ist wohl w.\ z.\ b.\ w.}
+
+In dem Falle, wo der Punkt $O_0$ ein Windungspunkt $n-1$ster Ordnung ist, gelangt man, wenn nur $\log(z - z_0)$ durch $\frac{1}{n}\log(z - z_0)$ ersetzt wird, durch ganz ähnliche Schlüsse zum Ziele, deren weitere Ausführung man indess aus Art.~14.\ leicht ergänzen wird.
+
+\section*{22.}
+
+Die vollständige Durchführung der Untersuchung des vorigen Artikels für den allgemeinern Fall, wo Einem Punkte der einen Fläche mehrere Punkte der andern entsprechen sollen, und ein einfacher Zusammenhang für dieselben nicht vorausgesetzt wird, unterlassen wir hier, zunächst
+
+\vspace{1em}\noindent\textbf{*)} Da die Linie $l$ von einem im Innern des Stücks gelegenen Punkte bis zu einem äussern führt, so muss sie, wenn sie dessen Begrenzung mehrmals schneidet, Einmal mehr von Innen nach Aussen, als von Aussen nach Innen gehen, und die Summe der plötzlichen Aenderungen von $n$ während eines positiven Umlaufs ist daher stets $= 2 - \pi$\ednote{So im Druck; gemeint ist wohl $-2\pi$.}.
+
+\origpage{32}
+mal da, aus geometrischem Gesichtspunkte aufgefasst, unsere ganze Untersuchung sich in einer allgemeinern Gestalt hätte führen lassen. Die Beschränkung auf ebene, einzelne Punkte ausgenommen, schlichte Flächen, ist nämlich für dieselbe nicht wesentlich; vielmehr gestattet die Aufgabe, eine beliebig gegebene Fläche auf einer andern beliebig gegebenen in den kleinsten Theilen ähnlich abzubilden, eine ganz ähnliche Behandlung. Wir begnügen uns hierüber auf zwei \emph{Gauss'sche} Abhandlungen, die zu Art.~3.\ citirte und die disquis.\ gen.\ circa superf.\ art.~13., zu verweisen.
+
+\end{document}
