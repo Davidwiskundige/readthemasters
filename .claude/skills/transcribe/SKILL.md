@@ -50,9 +50,19 @@ The images never enter your context, so your context stays flat across a whole w
 assembly, validation and PR phases run with nothing heavy resident.
 
 Measured cost model, if you need to reason about it: a subagent costs a fixed **~63k** plus about
-**7.3k per page**, at roughly 2 turns per page. Three quarters of the total is the fixed part being
-re-sent every turn, which is why **turns per page matter far more than batch size**. Keep pages at
-one image and one write each.
+**7.3k per page**. Three quarters of the total is the fixed part being re-sent every turn, which is
+why **turns per page matter far more than batch size**.
+
+The design that introduced batching assumed 2 turns per page — one image read, one write. Its
+Clebsch figure of **5.7** was computed as `tool calls + 1`, which is not a turn count: independent
+calls issued in one message cost one turn between them. `pipeline/magnify.py` (Phase 3) exists to
+make that distinction pay — a page's regions come out of one call and are read in one message.
+
+Measured on Picard 1885, a whole batch of four pages runs in **4 turns** when everything
+independent is batched, against 12 for an otherwise identical batch that wrote its fragments one
+per message. Budget **about one turn per page for a batch**, and account for anything beyond it.
+Count turns, not tool calls — the two diverge by 3× under this design, and only turns re-send the
+fixed payload.
 
 ## Before you start
 
@@ -113,11 +123,12 @@ Read these so your output matches the house style exactly:
 
 - It also writes `<prepared>/zoom-map.json`, giving `offset_x`, `offset_y` and `scale` per page so a
   coordinate seen in a prepared image can be mapped back onto the source scan
-  (`source_x = offset_x + prepared_x / scale`). **Pass the relevant rows to each batch subagent.**
-  Without them a subagent has to infer the mapping, and a batch that did landed 2 of its 3
-  magnification crops on the wrong lines — spending its whole per-page budget to settle nothing.
-  Keep the raw scans reachable too: magnification crops come from those, not from the prepared
-  image, which is where the lost resolution has to be bought back.
+  (`source_x = offset_x + prepared_x / scale`). **You do not pass those rows around any more, and
+  no subagent does that arithmetic by hand** — `pipeline/magnify.py` reads the map itself (Phase 3).
+  A batch that once inferred the mapping landed 2 of its 3 magnification crops on the wrong lines,
+  spending its whole per-page budget to settle nothing; that is now tested code. Keep the raw scans
+  reachable, though: magnification crops come from those, not from the prepared image, which is
+  where the lost resolution has to be bought back.
 
 - Prepared pages live **outside the corpus**, in a scratch directory. They are working files; only
   figure crops (`corpus/<work-id>/figures/`) are ever committed.
@@ -159,14 +170,51 @@ Give each batch subagent:
 - the work's `corpus/<work-id>/notation.md` if it exists, and an instruction to follow it;
 - the **previous batch's trailing ~15 lines**, so text spanning the batch boundary joins correctly;
 - the paths of its own prepared page images, and nothing else;
-- the raw scans for those pages plus their `zoom-map.json` rows, for magnification only;
+- the **prepared-pages directory and the raw-scans directory**, for `magnify.py` to use — not
+  `zoom-map.json` rows, and not the source-scan paths for hand-cropping;
 - a scratch directory it may write magnified crops into, **capped at 3 regions per page**.
 
-**Budget the magnification honestly.** It is the escalation that buys back the resolution one image
-per page gives up (Phase 2), and it is also where the turns go: two measured batches spent 7 and 8
-crops on 4 pages each, pushing them to 22 and 27 tool calls against the 14 of a batch that made
-none. That roughly doubles the per-page cost, so it is worth it only where a reading is genuinely
-in doubt. Say so in the batch prompt.
+**Magnify a page's regions in one call.** The escalation buys back the resolution one image per page
+gives up (Phase 2), and it is also where the turns went: cropping each region separately costs a
+compute-and-save turn plus a read turn, and at a measured 1.7 regions per page that roughly doubled
+the cost of a page — two batches spent 7 and 8 crops on 4 pages each, reaching 22 and 27 tool calls
+against the 14 of a batch that made none. So the batch prompt must tell the subagent to collect a
+page's doubtful regions first and then issue **one** command:
+
+```bash
+python pipeline/magnify.py --prepared <prepared> --scans <scans> --page <N> \
+    --regions "l,t,r,b; l,t,r,b" --out <scratch>
+```
+
+Regions are named in **prepared-image** coordinates — the space of the image the subagent can
+actually see. The helper converts them, crops from the source scan, enforces the 3-region cap **per
+page across all calls** (a second call for the same page does not buy more regions, and would
+overwrite the first call's crops), and refuses a box that lands off the page or collapses to less
+than a glyph rather than returning a plausible crop of blank paper.
+
+**Tell the subagent to batch everything independent into one message — not just the crop reads.**
+This is the instruction that actually decides the cost, and it is worth being explicit about,
+because the capability alone does not produce the saving. Measured on Picard 1885, five batches of
+four pages each with identical tooling:
+
+| batch | tool calls | **turns** | what it did differently |
+|---|---|---|---|
+| 1 | 26 | **12** | wrote its four fragments in four separate messages; ran two greps as their own messages |
+| 2 | 24 | 5 | chained all four `magnify.py` calls into one Bash; read all 12 crops in one message |
+| 3–5 | 21–24 | **4** | as batch 2, and issued all four `Write` calls in one message too |
+
+Three times the cost for the same work, same scan, same helper. So spell out the shape:
+
+1. one message reading the rules, the glossary and **all** the batch's page images together;
+2. one message with a **single Bash command chaining every page's `magnify.py` call**;
+3. one message reading **all** the crops together;
+4. one message issuing **all** the fragment `Write` calls together.
+
+Fragments do not depend on each other, so writing them one per message is pure loss. Fold any grep
+or check into a Bash command already being sent.
+
+Magnification is still not free, and it is still only for readings genuinely in doubt. Say so in the
+batch prompt: what got cheaper is the mechanics, not the judgement.
 
 Instruct each subagent to:
 
@@ -176,8 +224,9 @@ Instruct each subagent to:
   spelling, `arc.`); normalize typography only (Fraktur/long-ſ → normal letters, expand ligatures,
   drop line-break hyphenation);
 - **magnify rather than guess, and flag rather than magnify indefinitely**: where a glyph is
-  doubtful, crop and enlarge that region; if that does not settle it, mark `\uncertain{...}`, or
-  `\illegible` for unrecoverable text. These are honest signals for the reviewer;
+  doubtful, note the region and settle the page's doubts with one `magnify.py` call, reading the
+  crops in one message; if that does not settle a reading, mark `\uncertain{...}`, or `\illegible`
+  for unrecoverable text. These are honest signals for the reviewer;
 - emit `\rmfigure{figures/fig-XX.png}{<figure number only>}{<alt text>}` for a figure — never
   redraw it. The crop is added separately;
 - reproduce apparent printer's errors faithfully and report them (ruling R4); never silently "fix"
@@ -189,10 +238,16 @@ Require a report back with exactly these sections, and nothing else — the repo
 
 1. **PAGES WRITTEN**
 2. **FLAGS** — count of `\uncertain{}` and `\illegible` per page
-3. **NOTATION DECISIONS** — decisions that must hold across the rest of the work, one line each
+3. **MAGNIFIED** — count of magnified regions per page, and 0 where none were needed
+4. **NOTATION DECISIONS** — decisions that must hold across the rest of the work, one line each
    with a rationale; "none" if none
-4. **TRAILING LINES** — the last ~15 lines of the final fragment, verbatim
-5. **DIFFICULTIES** — anything about the scan or the mathematics that made a page hard
+5. **TRAILING LINES** — the last ~15 lines of the final fragment, verbatim
+6. **DIFFICULTIES** — anything about the scan or the mathematics that made a page hard
+
+Section 3 exists because this change made magnification cheap, and the measured behaviour when it is
+cheap and ungoverned is 32 crops for 4 pages. The cap is enforced in `magnify.py`, but the *volume*
+has to stay visible: a run drifting toward the cap on every page is telling you something about the
+scan, and it is the same signal that makes an uncertainty-flag count interpretable (Phase 6).
 
 After each batch: append any reported decisions to `corpus/<work-id>/notation.md` (Phase 3a), run
 `python pipeline/houselint.py <scratch>/p<N>.tex` over the new fragments so house-style
@@ -244,23 +299,18 @@ being transcribed and are copied verbatim. They are not glossary entries.
 - **Do not re-read the whole assembled file repeatedly** — grep or sed the parts you need. It is the
   largest text object in the run and every full read of it stays in your context.
 
-## Phase 5 — Verification pass
+## Phase 5 — Proofread the assembled text, without the scans
 
-Verify each batch against its scans, **in a subagent, per batch** — do not rely on images being
-resident, and do not read them yourself. Give each verification subagent that batch's fragments and
-its prepared page images, and ask for only a discrepancy list back.
-
-- Check every formula, equation number (`\tag{n}`), label, and `\origpage{N}` against the image.
-- Resolve each discrepancy or flag it with `\uncertain{}`.
-- Keep the list of flagged pages; it goes into provenance and the PR body.
-
-### Phase 5b — Proofread the assembled text, without the scans
-
-**Required, and cheap.** Phase 5a compares page N's text to page N's image, so it is structurally
-blind to everything that spans a join or makes two parts of the work disagree — which is exactly
-what a batched architecture endangers. One subagent reads the whole assembled `original.tex` plus
+**Required, cheap, and first.** One subagent reads the whole assembled `original.tex` plus
 `notation.md` and **no images**, and returns findings only. A 130KB work is ~32k tokens: about a
 twentieth of what scan-verifying the same pages costs, for whole-work coverage.
+
+It runs *before* the scan verifiers, and that ordering is the point. This pass classifies findings
+as DEFECT / INCONSISTENCY / **NEEDS SCAN**, and a NEEDS SCAN finding is by definition one only the
+print can settle. Run last, every one of them is stranded — you cannot read images yourself, so
+settling them costs a further subagent re-reading scans the verifiers have just put down. Run
+first, they become targeted questions you hand to the verifier that already has those pages open
+(Phase 5a). Three waves become two, and each page's scan is read once.
 
 Tell it to script the mechanical checks rather than eyeball them — `\origpage` contiguity, `\tag`
 sequence, `\begin`/`\end` and `\[`/`\]` pairing, `$` parity, brace balance, `notation.md`
@@ -273,16 +323,44 @@ conformance work-wide, any hyphen before a page break — and to spend its readi
 
 Require each finding classified **DEFECT** (internally broken) / **INCONSISTENCY** (two parts
 disagree) / **NEEDS SCAN** (only the print settles it), and tell it not to re-report the printer's
-errors provenance already documents. Give it `provenance.yaml` so it can tell the difference.
+errors provenance already documents. Give it `provenance.yaml` so it can tell the difference — it
+reads the text before verification has corrected anything, which changes nothing about this
+contract: the printer's errors it must leave alone are already recorded, and the pass has never
+depended on having seen a scan.
 
 *Measured on Clebsch:* this pass found a word split across a page break that a trailing-hyphen grep
 had missed (the hyphen sat behind a closing brace), six paragraph breaks inserted mid-sentence, and
 four separate conventions on which one batch disagreed with the rest of the work — none of which
-any per-page check, `houselint`, or `validate.py` can see.
+any per-page check, `houselint`, or `validate.py` can see. None of those is a defect verification
+would have introduced or removed, which is why reading pre-verification text costs so little.
 
 **Verify its claims before acting on them.** It cannot see the print, so a confident-sounding
 finding may be inference. One run reported that `r'^{2p}` fails to render; it renders fine in both
-KaTeX and pdfLaTeX. Test the mechanical claims; send the rest back to the scan.
+KaTeX and pdfLaTeX. Test the mechanical claims; route the rest to Phase 5a as NEEDS SCAN rather
+than acting on them here.
+
+### Phase 5a — Verify each batch against its scans, concurrently
+
+Verify each batch against its scans, **in a subagent, per batch** — do not rely on images being
+resident, and do not read them yourself. Give each verification subagent that batch's fragments,
+its prepared page images, and **the NEEDS SCAN findings for its own pages** from Phase 5, and ask
+for only a discrepancy list back.
+
+**Dispatch these subagents concurrently.** Nothing orders them: each re-reads its own images in a
+fresh context and consumes no other subagent's output. This is the one place in the run where
+concurrency is free — it is *not* the same as parallelizing transcription, which is deliberately
+sequential because `notation.md` accumulates one batch at a time and a batch that cannot see the
+previous batch's decisions will diverge from them.
+
+- Check every formula, equation number (`\tag{n}`), label, and `\origpage{N}` against the image.
+- Settle each NEEDS SCAN question handed down from Phase 5, and say what the print showed.
+- Resolve each discrepancy or flag it with `\uncertain{}`.
+- Keep the list of flagged pages; it goes into provenance and the PR body.
+
+Batch size here is inherited from transcription rather than measured. Four adjacent pages let one
+verifier compare a doubtful glyph against a clearer instance nearby, which is what settles dot
+counts and subscript conventions; one page per subagent would lose that and may or may not cost
+more per page. If you are in a position to measure it, do.
 
 ## Phase 6 — Write provenance
 
@@ -299,9 +377,13 @@ transcription:
   prompt_version: transcribe-v1   # match prompts/transcribe-chat.md
   submitted_via: skill
   produced: "YYYY-MM-DD"      # today
-  verification: { flagged_pages: [...], date: "YYYY-MM-DD" }
+  verification: { model: claude-opus-5, flagged_pages: [...], date: "YYYY-MM-DD" }
   uncertainty_flags: N        # total \uncertain{} + \illegible; report 0 explicitly
 ```
+
+Record the **verification model** — the tier the Phase 5a verifiers actually ran on, which need not
+be the transcription model. Tier-3 runs have always recorded it (`pipeline/transcribe.py`); Tier-2
+runs did not, which made a run's verification tier something a reader had to infer. State it.
 
 Record the **total uncertainty-flag count**, and state it even when it is zero — an absence of flags
 must be distinguishable from an absence of flagging. If a batch could not magnify, say so: its flag
