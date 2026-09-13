@@ -6,6 +6,14 @@ const authors = data.authors ?? [];
 const life = (a) => (a.birth_year || a.death_year)
   ? `${a.birth_year ?? "?"} – ${a.death_year ?? "?"}` : null;
 const plural = authors.length === 1 ? "" : "s";
+
+// Placeholder initial for an author with no portrait, so their card keeps the same left inset as
+// every other one and the text column stays aligned down the list. Last name, since that is what
+// the list is sorted and scanned by.
+const initial = (name) => {
+  const last = (name ?? "").trim().split(/\s+/).pop() ?? "";
+  return [...last][0]?.toUpperCase() ?? "";   // spread, so a surrogate pair stays one character
+};
 ---
 <Base title="Authors" description="Authors of the public-domain works transcribed and translated on ReadTheMasters.">
   <h1>Authors</h1>
@@ -14,11 +22,18 @@ const plural = authors.length === 1 ? "" : "s";
   <ul class="authorlist" id="authorlist">
     {authors.map((a) => (
       <li class="card" data-search={`${a.name} ${a.bio ?? ""}`.toLowerCase()}>
-        <h3><a href={a.url}>{a.name}</a></h3>
-        <div class="meta">
-          {life(a) && <span>{life(a)}</span>}
-          {a.bio && <span>· {a.bio}</span>}
-          <span class="pill">{a.work_count} work{a.work_count === 1 ? "" : "s"}</span>
+        {/* Decorative: the name is in the heading beside it, inside the same link, so a described
+            image would make a screen reader announce every author twice. */}
+        {a.portrait?.thumb_url
+          ? <div class="pbox"><img src={a.portrait.thumb_url} alt="" width="69" height="86" loading="lazy" /></div>
+          : <div class="pbox mono" aria-hidden="true">{initial(a.name)}</div>}
+        <div class="body">
+          <h3><a href={a.url}>{a.name}</a></h3>
+          <div class="meta">
+            {life(a) && <span>{life(a)}</span>}
+            {a.bio && <span>· {a.bio}</span>}
+            <span class="pill">{a.work_count} work{a.work_count === 1 ? "" : "s"}</span>
+          </div>
         </div>
       </li>
     ))}

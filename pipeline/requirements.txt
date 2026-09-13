@@ -7,6 +7,8 @@ PyYAML>=6.0
 # CI, which stay AI-free and depend only on PyYAML:
 #   pip install anthropic   (and set ANTHROPIC_API_KEY)
 #
-# Pillow is only needed to prepare scan pages (pipeline/prepare_pages.py) before transcribing.
+# Pillow is only needed to prepare scan pages (pipeline/prepare_pages.py) before transcribing,
+# and to make an author's index-card thumbnail (pipeline/make_portrait_thumb.py) when adding a
+# portrait. Both write files a contributor commits, so neither runs at build time.
 # Like anthropic it is imported lazily and is NOT used by validate.py or CI:
 #   pip install Pillow

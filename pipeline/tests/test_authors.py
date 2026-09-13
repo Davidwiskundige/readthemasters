@@ -95,9 +95,50 @@ def test_resolve_portrait_copies_and_returns_url(tmp_path):
     assert (public_authors / "leibniz" / "portrait.jpg").read_bytes() == b"\xff\xd8\xff\xe0JPEG"
 
 
+def test_resolve_portrait_hosts_the_index_thumbnail_beside_it(tmp_path):
+    # The 69px index card is served the committed derivative, found by convention, not by schema.
+    corpus = tmp_path / "corpus"
+    (corpus / "authors" / "euler").mkdir(parents=True)
+    (corpus / "authors" / "euler" / "portrait.jpg").write_bytes(b"FULL")
+    (corpus / "authors" / "euler" / "portrait-thumb.jpg").write_bytes(b"THUMB")
+    public_authors = tmp_path / "site" / "public" / "authors"
+
+    p = bsd.resolve_portrait(corpus, public_authors, "euler", {"file": "portrait.jpg"})
+    assert p["url"] == "/authors/euler/portrait.jpg"
+    assert p["thumb_url"] == "/authors/euler/portrait-thumb.jpg"
+    assert (public_authors / "euler" / "portrait.jpg").read_bytes() == b"FULL"
+    assert (public_authors / "euler" / "portrait-thumb.jpg").read_bytes() == b"THUMB"
+
+
+def test_resolve_portrait_without_thumbnail_falls_back_and_warns(tmp_path, capsys):
+    # A cosmetic asset must degrade, not fail: the page renders from the full image instead.
+    corpus = tmp_path / "corpus"
+    (corpus / "authors" / "picard").mkdir(parents=True)
+    (corpus / "authors" / "picard" / "portrait.jpg").write_bytes(b"FULL")
+    public_authors = tmp_path / "site" / "public" / "authors"
+
+    p = bsd.resolve_portrait(corpus, public_authors, "picard", {"file": "portrait.jpg"})
+    assert p["thumb_url"] == p["url"] == "/authors/picard/portrait.jpg"
+    assert not (public_authors / "picard" / "portrait-thumb.jpg").exists()
+    assert "picard" in capsys.readouterr().err
+
+
+def test_resolve_portrait_thumbnail_sibling_is_jpg_whatever_the_source_suffix(tmp_path):
+    # The derivative is always .jpg — make_portrait_thumb.py writes JPEG regardless of the source.
+    corpus = tmp_path / "corpus"
+    (corpus / "authors" / "roch").mkdir(parents=True)
+    (corpus / "authors" / "roch" / "portrait.png").write_bytes(b"FULL")
+    (corpus / "authors" / "roch" / "portrait-thumb.jpg").write_bytes(b"THUMB")
+
+    p = bsd.resolve_portrait(corpus, None, "roch", {"file": "portrait.png"})
+    assert p["url"] == "/authors/roch/portrait.png"
+    assert p["thumb_url"] == "/authors/roch/portrait-thumb.jpg"
+
+
 def test_resolve_portrait_missing_file_yields_no_url(tmp_path):
     p = bsd.resolve_portrait(tmp_path, None, "nobody", {"file": "ghost.jpg"})
     assert p["url"] is None
+    assert p["thumb_url"] is None
 
 
 def test_resolve_portrait_none_when_absent():
