@@ -1,0 +1,97 @@
+id: riemann-1851-complexen-groesse
+title: Grundlagen für eine allgemeine Theorie der Functionen einer veränderlichen
+  complexen Grösse.
+title_en: Foundations for a general theory of functions of a variable complex quantity
+authors:
+- name: Bernhard Riemann
+  wikidata_id: Q42299
+  birth_year: 1826
+  death_year: 1866
+  mactutor: Riemann
+publication:
+  year: 1851
+  venue: book
+  title_full: '"Grundlagen für eine allgemeine Theorie der Functionen einer veränderlichen
+    complexen Grösse", Inaugural-Dissertation zur Erlangung der philosophischen Doctorwürde
+    an der Georg-Augusts-Universität zu Göttingen (Göttingen: Druck der Univ.-Buchdruckerei
+    von E. A. Huth, 1851), 35 pp.'
+edition:
+  year: 1867
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the second, unaltered reprint: "Grundlagen für eine
+    allgemeine Theorie der Functionen einer veränderlichen complexen Grösse. Von Bernhard
+    Riemann. Zweiter, unveränderter Abdruck" (Göttingen: Verlag von Adalbert Rente,
+    1867), pp. 1–32. This is an early public-domain reprint with no modern critical
+    apparatus, commentary, or re-typesetting. Only Riemann''s own text (including
+    his footnotes) is transcribed; running heads and page headers are not.'
+discipline: mathematics
+tags:
+- analysis
+- geometry
+- topology
+- foundations
+language: de
+type: book
+
+significance: >-
+  This doctoral dissertation marks the birth of the theory of Riemann surfaces and modern topology.
+  Breaking decisively with the tradition that approached complex functions primarily through
+  explicit algebraic and analytical formulas, Riemann reoriented the subject around global
+  geometric properties, boundary conditions, and potential theory.[1] By introducing multi-sheeted
+  covering surfaces, he allowed multi-valued relations to be investigated as single-valued functions
+  on a geometric domain, making topology an indispensable instrument of analysis.[2] The
+  dissertation also established the foundations of conformal mapping, including what is now the
+  Riemann Mapping Theorem, and introduced the Dirichlet principle to solve boundary value problems,
+  initiating a conceptual transformation that reshaped complex analysis, algebraic geometry, and
+  mathematical physics.[1]
+
+significance_sources:
+  - citation: >-
+      Felix Klein, "Vorlesungen über die Entwicklung der Mathematik im 19. Jahrhundert", Band 1
+      (Berlin: Julius Springer, 1926), Kapitel VI: "Riemann", pp. 247–266 — on Riemann's
+      conceptual revolution in function theory and the transition from analytical formulas to
+      geometric and potential-theoretic methods.
+    url: "https://eudml.org/doc/224673"
+  - citation: >-
+      Alexander Brill and Max Noether, "Die Entwicklung der Theorie der algebraischen Functionen in
+      älterer und neuerer Zeit", Jahresbericht der Deutschen Mathematiker-Vereinigung 3 (1894),
+      Abschnitt VI: "Riemann" — on the introduction of Riemann surfaces, analysis situs, and their
+      decisive role in the evolution of modern algebraic geometry.
+    url: "https://eudml.org/doc/144593"
+
+
+source:
+  scan_url: https://archive.org/details/bub_gb_PpALAAAAYAAJ
+  scan_id: archive.org:bub_gb_PpALAAAAYAAJ (Google Books scan from Harvard University
+    Library)
+sources:
+  death_date: Bernhard Riemann, 1826–1866 (wikidata:Q42299; MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/).
+  publication_date: 'First published 1851 as Inaugural-Dissertation, Göttingen: E.
+    A. Huth, 1851.'
+  edition: 'Zweiter, unveränderter Abdruck, Göttingen: Verlag von Adalbert Rente,
+    1867, pp. 1–32; digitized by Google from Harvard University Library (Internet
+    Archive bub_gb_PpALAAAAYAAJ).'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1866
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1851
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-13'
