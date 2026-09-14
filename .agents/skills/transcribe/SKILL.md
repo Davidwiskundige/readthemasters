@@ -4,7 +4,8 @@ description: >-
   Transcribe scanned pages of a public-domain mathematics or physics text into
   house-style LaTeX and assemble them into the ReadTheMasters corpus, then open a
   pull request. Use when the user runs `/transcribe <work-id> <pages>` or asks to
-  transcribe a work's scan pages in Antigravity using Gemini 3.8 Flash.
+  transcribe a work's scan pages in Antigravity using Gemini 3.8 Flash. Executes
+  immediately without creating an implementation plan or asking for plan approval.
 ---
 
 # Transcribe a work into the corpus (Antigravity & Gemini 3.8 Flash)
@@ -17,8 +18,16 @@ and assemble the submission for contributor review. **The human contributor revi
 Invocation: `/transcribe <work-id> <pages>` — e.g. `/transcribe fagnano-1718-lemniscata 293-297`.
 Both arguments may be omitted; ask for whatever is missing.
 
+## Direct Execution (Do NOT create an implementation plan)
+
+**CRITICAL**: When this skill is invoked, **DO NOT enter planning mode**, **DO NOT create an `implementation_plan.md` artifact**, and **DO NOT stop to ask the user to approve a plan**.
+The transcription workflow is already fully specified by this skill as a predetermined procedure.
+Begin executing **Phase 1** immediately upon invocation. Contributor review occurs at Phase 8 before anything is pushed.
+
 ## Non-negotiables (read first)
 
+0. **Direct execution without plan approval.** Never create `implementation_plan.md` or wait for user
+   plan approval; execute Phase 1 immediately.
 1. **The copyright gate is absolute.** Never transcribe or open a PR for a work that does not pass
    `pipeline/validate.py`. If `work.yaml` is missing sourced copyright facts, STOP at Phase 1 and
    resolve that first — the gate evaluates BOTH life+70 and the US 95-year rule, plus edition

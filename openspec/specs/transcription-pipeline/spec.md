@@ -420,10 +420,15 @@ The skill SHALL leverage Gemini 3.8 Flash's multimodal long-context capabilities
 3. **Long-context retention**: The skill MAY retain the entire work's images and preceding transcriptions resident in context across turns.
 4. **Thinking effort**: The skill SHALL instruct Gemini 3.8 Flash with `effort: high` for both transcription and verification, and record this setting in `provenance.yaml`.
 5. **Invariants**: The skill SHALL enforce the copyright gate as a hard precondition (`pipeline/validate.py`), adhere strictly to `prompts/transcribe-chat.md` and `corpus/HOUSESTYLE.md`, and record status `ai-draft` pending human review.
+6. **Direct execution without plan approval**: The skill SHALL execute immediately upon invocation without entering planning mode, creating `implementation_plan.md`, or pausing for user plan approval; human contributor review is held at Phase 8 before pushing to git.
 
 #### Scenario: Invoked in Antigravity to transcribe a work
 - **WHEN** a contributor asks Antigravity to transcribe a public-domain work
 - **THEN** the skill executes the transcription pipeline and opens a pull request
+
+#### Scenario: Direct execution without planning mode
+- **WHEN** `/transcribe` is invoked in Antigravity
+- **THEN** the skill begins Phase 1 immediately without creating an implementation plan or asking for approval
 
 #### Scenario: Global notation scan before transcription
 - **WHEN** transcribing a multi-page work

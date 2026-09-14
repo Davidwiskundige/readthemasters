@@ -121,3 +121,26 @@ PyYAML + stdlib footprint and cost the project nothing.
 
 - **WHEN** `pipeline/validate.py`, `pipeline/texcompare.py`, or the CI test suite runs
 - **THEN** the `anthropic` SDK is not imported
+
+### Requirement: Antigravity Tier-2 translation skill
+
+An Antigravity workspace skill at `.agents/skills/translate/SKILL.md` SHALL translate a work's transcription into a target language and open a pull request. Invoked within Antigravity as `/translate <work-id> <lang>` or in response to an agentic translation instruction.
+
+The skill SHALL leverage Gemini 3.8 Flash:
+1. **Thinking effort**: The skill SHALL instruct Gemini 3.8 Flash with `effort: high` across translation and verification passes, and record this setting in `provenance.yaml`.
+2. **Direct execution without plan approval**: The skill SHALL execute immediately upon invocation without entering planning mode, creating `implementation_plan.md`, or pausing for user plan approval; human contributor review is held at Phase 8 before pushing to git.
+3. **Branch and workspace isolation**: The skill SHALL establish branch and workspace isolation in Phase 1 before modifying or creating files (`git checkout -b translate/<work-id>-<lang> origin/main`, or `git worktree add ../rtm-<work-id>-<lang> -b translate/<work-id>-<lang> origin/main` for parallel sessions).
+4. **Invariants**: The skill SHALL enforce the copyright gate (`pipeline/validate.py`), math preservation (`pipeline/texcompare.py`), house style (`pipeline/houselint.py`), and record status `ai-draft` with model `gemini-3-8-flash` in provenance.
+
+#### Scenario: Invoked in Antigravity to translate a work
+- **WHEN** a contributor asks Antigravity to translate a transcribed work into `<lang>`
+- **THEN** the skill executes the translation pipeline and opens a pull request
+
+#### Scenario: Direct execution without planning mode
+- **WHEN** `/translate` is invoked in Antigravity
+- **THEN** the skill begins Phase 1 immediately without creating an implementation plan or asking for approval
+
+#### Scenario: Branch isolation established in Phase 1
+- **WHEN** a translation skill starts working on `<work-id>` and `<lang>`
+- **THEN** it creates or checks out the branch `translate/<work-id>-<lang>` before generating or editing files, keeping `main` clean
+
