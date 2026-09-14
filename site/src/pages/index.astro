@@ -124,17 +124,28 @@ const maxYear = years.length ? Math.max(...years) : 0;
               data-type={w.type}
               data-status={w.status}
               data-year={w.year}>
-            {/* The portrait strip repeats the title's destination rather than offering a second
-                one, so it widens the card's main target instead of competing with it. Hidden from
-                assistive technology and out of the tab order: the title link beside it is already
-                announced and already focusable, and this would add a stop with no accessible name.
+            {/* The portrait goes to the person in it (catalog-portrait-links-author) — the first
+                author, the same destination as the first name in the meta row below. NOT the work:
+                every other surface treats a face as that author, and the catalog was the one place
+                where clicking one opened a paper.
+                Hidden from assistive technology and out of the tab order because that meta-row
+                author link is already announced and already focusable, so this is a redundant path
+                and would only add a stop with no accessible name. That redundancy is the whole
+                licence for hiding it: if this ever points somewhere the card does not otherwise
+                link to, it must stop being hidden. See the spec's "The portrait is a redundant
+                target, not a second one".
                 The image is absolutely positioned inside the box (see .pbox in global.css), so a
                 card's height still comes from its text alone. */}
-            <a class={thumb ? "pbox" : "pbox mono"} href={w.url} aria-hidden="true" tabindex="-1">
-              {thumb
-                ? <img src={thumb} alt="" width="69" height="86" loading="lazy" />
-                : initial(lead?.name)}
-            </a>
+            {lead
+              ? <a class={thumb ? "pbox" : "pbox mono"} href={`/authors/${lead.slug}/`}
+                   aria-hidden="true" tabindex="-1">
+                  {thumb
+                    ? <img src={thumb} alt="" width="69" height="86" loading="lazy" />
+                    : initial(lead.name)}
+                </a>
+              /* No author to point at: a link would have no destination. Same box, no anchor —
+                 the shape /authors/ already renders for a portrait-less author. */
+              : <div class="pbox mono" aria-hidden="true"></div>}
             <div class="body">
               {/* Display title may carry inline LaTeX ($…$), rendered by the KaTeX pass below;
                   data-title above keeps the plain text for filtering and sorting. */}
