@@ -1,0 +1,72 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag, \origpage{N} marker and \emph run is reproduced
+% unchanged; only the prose is translated.
+%
+% PROSE INSIDE FORMULA TRANSLATED (HOUSESTYLE R21):
+% The connective in the display on p. 1148 (\int \frac{B\,dx - A\,dy}{f'_{z}} \quad\text{et}\quad ...)
+% is translated from \text{et} to \text{and}.
+%
+% QUOTATION MARKS ARE NOT TRANSLATED (HOUSESTYLE R18, R22):
+% The paragraph-initial « / » of the Comptes rendus and the terminal » at the end of p. 1149 are
+% typographic features of the source edition and stand exactly where the transcription puts them,
+% set tight against the text.
+%
+% TERMINOLOGY:
+%   * intégrales de différentielles totales = "integrals of total differentials"
+%   * première espèce = "first kind"
+%   * fonctions uniformes = "single-valued functions"
+%   * fonctions quadruplement périodiques = "quadruply periodic functions"
+%   * surface d'ordre m = "surface of order m"
+%   * singularités ordinaires = "ordinary singularities"
+%   * point quelconque = "arbitrary point"
+%   * multiples des périodes = "multiples of the periods"
+%   * conditions nécessaires et suffisantes = "necessary and sufficient conditions"
+%   * courbe double = "double curve"
+%   * déterminant ... n'est pas identiquement nul = "determinant ... is not identically zero"
+%   * points doubles isolés = "isolated double points"
+%   * genre = "genus"
+%   * paires de périodes simultanées = "pairs of simultaneous periods"
+%   * équations aux différentielles totales = "total differential equations"
+%   * section plane quelconque = "arbitrary plane section"
+%   * intégrales abéliennes = "abelian integrals"
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1147}
+\section*{Mathematical Analysis. --- On integrals of total differentials and on a class of algebraic surfaces. Note by M.~E.~Picard, presented by M.~Hermite.}
+
+«In a recent Communication (\emph{Comptes rendus}, meeting of 1~December 1884), I stated a fundamental proposition concerning integrals of algebraic total differentials that always remain finite, integrals which I designate for this reason by the name of \emph{integrals of the first kind}. The applications of this theory, which I am currently developing in an extensive Memoir, may perhaps present some
+\origpage{1148}interest; among these applications, one of the simplest concerns algebraic surfaces whose coordinates can be expressed by single-valued quadruply periodic functions of two parameters. I request permission to state here a general proposition concerning these surfaces.
+
+»Given a surface of order $m$
+\[
+f(x, y, z) = 0,
+\]
+possessing only the ordinary singularities considered in the cited Note, let us investigate how one can recognize whether the coordinates $x$, $y$, $z$ of an arbitrary point can be expressed by quadruply periodic functions of two parameters, and this in such a manner that to an arbitrary point of the surface there corresponds only a single system of values of the two parameters, disregarding multiples of the periods. The \emph{necessary and sufficient} conditions for this to be the case can be formulated in the following manner:
+
+»\emph{The proposed surface has a double curve of order $\frac{m(m - 4)}{2}$ and it possesses two integrals of total differentials of the first kind}
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}} \quad\text{and}\quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}},
+\]
+\emph{for which the determinant $AB_{1} - A_{1}B$ is not identically zero.}
+
+»The number $m$ is necessarily even, and it follows from the preceding conditions that the surface has no \emph{isolated} double points; furthermore, the \emph{genus} of the surface is equal to unity.
+
+»The two preceding integrals will have \emph{four} pairs of simultaneous periods, and the two total differential equations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv
+\end{aligned}
+\]
+will give for $x$ and $y$ single-valued, quadruply periodic functions of $u$ and $v$.
+
+»We have shown how one can recognize whether a surface admits integrals of the first kind, and find them when they exist; the proposed problem is therefore completely solved.
+
+»An arbitrary plane section of the surface is of degree $m$ and of
+\origpage{1149}genus $\frac{m + 2}{2}$, and this curve presents an interesting peculiarity from the point of view of the reduction of the number of periods of the abelian integrals corresponding to it.
+
+»It follows, indeed, immediately from the preceding results that, among these abelian integrals, \emph{there are two that have only four pairs of corresponding periods}.»
+
+\end{document}

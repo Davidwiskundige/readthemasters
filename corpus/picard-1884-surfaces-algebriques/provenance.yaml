@@ -1,0 +1,62 @@
+changelog:
+  - date: "2026-09-14"
+    summary: Transcription added (AI draft).
+  - date: "2026-09-14"
+    summary: Translation (en) added (AI draft); glossary.yaml and significance note added.
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-14"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-14"
+  uncertainty_flags: 0
+  note: >-
+    Émile Picard, "Sur les intégrales de différentielles totales et sur une classe de surfaces
+    algébriques", Comptes rendus hebdomadaires des séances de l'Académie des sciences, tome 99,
+    2e semestre, séance du lundi 22 décembre 1884 (n° 25), pp. 1147–1149. COMPLETE: all pages
+    1147–1149 of the note are transcribed. \origpage markers run 1147–1149 with no gaps or
+    duplicates, pipeline/houselint.py passes over the whole file, and the mechanical checks
+    (display pairing, $ parity, brace balance, seamless page boundary joins) pass.
+
+    HOW THESE PAGES WERE PRODUCED. Read directly from high-resolution BnF/Gallica IIIF scans
+    (ark:/12148/bpt6k3055h, vues f1147–f1149) under the /transcribe skill using Gemini 3.8 Flash
+    with high thinking effort. An upfront Phase 0 Global Notation Scan established notation.md
+    across all three pages before fragment generation.
+
+    UNCERTAINTY FLAGS: ZERO. Every formula, subscript, prime, differential, and punctuation
+    mark was verified against the high-resolution scan images.
+
+    QUOTATION AND APPARATUS CONVENTIONS. The communication's opening « on p. 1147, paragraph-initial
+    » markers on pp. 1148 and 1149, and the terminal closing » on p. 1149 are transcribed
+    faithfully per HOUSESTYLE R22. Surrounding material in the Comptes rendus issue (Poincaré's
+    note on p. 1147, running heads, issue notices, and M. Amigues' note on p. 1149) is omitted.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-14"
+    note: >-
+      Full English translation of Picard's second 1884 note, made directly and solely from our
+      own transcription (original.tex), not from any existing translation. Math, \origpage
+      markers, and displays are verified identical by pipeline/texcompare.py. House style is
+      verified clean by pipeline/houselint.py.
+
+      PROSE INSIDE DISPLAY TRANSLATED (HOUSESTYLE R21): The connective \text{et} inside the
+      display on p. 1148 is translated to \text{and}.
+
+      QUOTATION MARKS ARE PRESERVED (HOUSESTYLE R18, R22): The Comptes rendus guillemets « and »
+      are retained tight against the text.
+
+      TERMINOLOGY: Documented in glossary.yaml alongside this file, aligned with
+      picard-1884-integrales-differentielles-totales and picard-1885-integrales-differentielles-totales.

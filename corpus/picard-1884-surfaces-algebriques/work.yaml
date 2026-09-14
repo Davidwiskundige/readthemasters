@@ -1,0 +1,97 @@
+id: picard-1884-surfaces-algebriques
+title: Sur les intégrales de différentielles totales et sur une classe de surfaces
+  algébriques.
+title_en: On integrals of total differentials and on a class of algebraic surfaces.
+authors:
+- name: Émile Picard
+  wikidata_id: Q286375
+  birth_year: 1856
+  death_year: 1941
+  mactutor: Picard_Emile
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Émile Picard
+    credit: >-
+      Photograph of Picard by Pierre Petit (1831–1909), dated before 1909 on Commons and held by
+      the Accademia delle Scienze di Torino (accession IST. 4.1.3.2). Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Charles-Emile_Picard,_ante_1909_-_Accademia_delle_Scienze_di_Torino_0148_B.jpg"
+publication:
+  year: 1884
+  venue: comptes-rendus
+  volume: Tome 99
+  pages: 1147–1149
+  title_full: Comptes rendus hebdomadaires des séances de l'Académie des sciences,
+    tome 99, 2e semestre, séance du 22 décembre 1884 (n° 25), pp. 1147–1149.
+edition:
+  year: 1884
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1884 printing in the Comptes rendus hebdomadaires
+    des séances de l'Académie des sciences (tome 99, n° 25, pp. 1147–1149), as digitized
+    by the Bibliothèque nationale de France on Gallica (ark:/12148/bpt6k3055h). A
+    faithful photographic reproduction of a public-domain edition carrying no modern
+    critical apparatus, commentary, or re-typesetting, and only the note itself is
+    transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+relations:
+- to: picard-1884-integrales-differentielles-totales
+  kind: builds-on
+  recommended: primary
+  note: Direct sequel to Picard's note of 1 December 1884. Where the earlier note
+    introduced integrals of total differentials of the first kind on algebraic surfaces,
+    this note applies the theory to surfaces whose coordinates are quadruple-periodic
+    uniform functions of two parameters (Abelian functions), showing they possess
+    exactly two independent integrals of the first kind and a double curve of order
+    m(m-4)/2.
+significance: 'Presented to the Académie des sciences by Hermite on 22 December 1884,
+  three weeks after his initial announcement,[1] this second note applies Picard''s
+  new theory of integrals of algebraic total differentials of the first kind to surfaces
+  uniformizable by quadruple-periodic functions of two variables. Picard establishes
+  necessary and sufficient conditions: the surface of degree $m$ must admit a double
+  curve of order $\frac{m(m-4)}{2}$, have geometric genus 1 with no isolated double
+  points, and possess exactly two independent integrals of the first kind with four
+  pairs of simultaneous periods, a theorem central to his 1885 memoir.[2]'
+significance_sources:
+- citation: Émile Picard, "Sur les intégrales de différentielles totales algébriques",
+    Comptes rendus hebdomadaires des séances de l'Académie des sciences 99 (1884),
+    pp. 961–963.
+  url: /works/picard-1884-integrales-differentielles-totales/
+- citation: Émile Picard, "Sur les intégrales de différentielles totales algébriques
+    de première espèce", Journal de mathématiques pures et appliquées, 4e série, tome
+    1 (1885), pp. 281–346.
+  url: /works/picard-1885-integrales-differentielles-totales/
+source:
+  scan_url: https://gallica.bnf.fr/ark:/12148/bpt6k3055h/f1147.item
+  scan_id: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 1147–1149)
+sources:
+  death_date: wikidata:Q286375
+  publication_date: gallica:ark:/12148/bpt6k3055h/f1147
+  edition: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 1147–1149)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1941
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1884
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-14'
