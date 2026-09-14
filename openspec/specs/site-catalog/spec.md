@@ -30,6 +30,80 @@ string so a filtered view is shareable.
 - **WHEN** a visitor applies facets and a text query
 - **THEN** the filter state is encoded in the URL query string and reopening it restores the same view
 
+### Requirement: Catalog card portraits
+
+Each catalog card SHALL carry the portrait thumbnail of its work's first author as a 69px-wide
+strip flush to the card's left edge, clipped by the card's own rounded corners — the same treatment
+and the same committed derivative the author index uses, so the two surfaces read as one system.
+A face is recognized faster than a name is read, and the catalog is where a reader scans for an
+author's works.
+
+The portrait MUST NOT contribute to the card's height at any card height. Catalog cards vary with
+their content (108–219px against an 86px portrait box), so the image is absolutely positioned
+inside a fixed-width box and sized with `object-fit: cover`: a card's height is determined by its
+text exactly as it was before portraits existed, and the image fills whatever height it is given.
+The visible slice of the thumbnail therefore narrows as a card grows taller; this is accepted, and
+the derivative is centre-cropped on the face before it is scaled, so the face survives the tallest
+card.
+
+The strip is wrapped in a link to the work — the same destination as the card's title, so the
+card's left edge widens its main target rather than competing with it. That link is hidden from
+assistive technology (`aria-hidden`, removed from the tab order) and the image carries an empty
+`alt`: it is a redundant path to a link already announced and already focusable, and a second
+nameless stop would be noise. A work whose first author has no portrait renders the same monogram
+placeholder the author index uses, so the text column stays aligned down the list. A multi-author
+work shows its first author's portrait only; the meta row already names every author.
+
+Portraits apply at every viewport width, with no narrow-screen breakpoint. On a phone the strip
+costs roughly a fifth more scrolling, which is accepted deliberately: shrinking the box below
+legibility or hiding it would remove the benefit exactly where the list is longest.
+
+Catalog portrait styling SHALL be scoped to a class carried only by the catalog's own list. Neither
+bare `.card` nor `.works` is such a scope: `/authors/<slug>/`'s work list uses both, and its works
+are all by one author, so it keeps no portraits and no visual change. The catalog's list carries an
+additional `catalog` class for this purpose, following the convention `.authorlist` and
+`.journallist` already set.
+
+#### Scenario: Catalog cards show portraits without growing
+
+- **WHEN** a reader loads the catalog at a desktop width
+- **THEN** every card shows its first author's portrait thumbnail at the card's left edge, and no card is taller than its text alone requires
+
+#### Scenario: A tall card crops rather than reflows
+
+- **WHEN** a work's title wraps enough to make its card considerably taller than the portrait's natural height
+- **THEN** the portrait fills the card's full height, cropped horizontally about its centre, and the card's height is still set by its text
+
+#### Scenario: The portrait is a redundant target, not a second one
+
+- **WHEN** a visitor clicks the portrait strip, or reaches the card by keyboard or screen reader
+- **THEN** clicking opens the work, and the strip contributes no extra tab stop and no announcement, the card presenting its title and author links exactly as before
+
+#### Scenario: A work whose author has no portrait keeps the column aligned
+
+- **WHEN** a work's first author has no `portrait` in their records
+- **THEN** its card shows a monogram placeholder of the same footprint, hidden from assistive technology, so the text column stays aligned with every other card
+
+#### Scenario: A multi-author work shows one portrait
+
+- **WHEN** a work has more than one author
+- **THEN** its card shows the first author's portrait only, and the meta row still links every author
+
+#### Scenario: The author page's work list keeps no portraits
+
+- **WHEN** a reader opens `/authors/<slug>/`, whose work list shares both the `card` class and the `works` list class with the catalog
+- **THEN** its cards render exactly as before — no portrait, no flex layout, their padding intact
+
+#### Scenario: Portraits survive filtering and sorting
+
+- **WHEN** a visitor filters by facet or changes the sort order
+- **THEN** the surviving cards keep their portraits, including after cards are reordered in the DOM
+
+#### Scenario: The catalog reuses the author index's derivative
+
+- **WHEN** the catalog is built
+- **THEN** it reads `thumb_url` from the `authors` array of the existing `works.json`, joined to each work by author slug at build time, adding no field to `work.yaml`, no key to the works records, and no step to the Python pipeline
+
 ### Requirement: Work page
 
 Each work SHALL have a page showing metadata, the source scan link + citation, a status badge, and
@@ -506,9 +580,11 @@ footprint carrying the initial of their last name, so the text column stays alig
 Because the author's name sits in the adjacent heading inside the same link, the thumbnail is
 decorative — the image carries an empty `alt` and the placeholder is hidden from assistive
 technology, rather than repeating the name. The index card shows no `credit` attribution; it links
-through to the author page, which carries the attribution and the Commons `source` link. All
-index-card styling is scoped to `.authorlist .card` so the `.card` class shared with the catalog,
-journal and work-list pages is unaffected.
+through to the author page, which carries the attribution and the Commons `source` link. Index-card
+layout is scoped to `.authorlist .card`; the portrait box itself — the absolutely positioned
+`object-fit: cover` image and the monogram placeholder — is a shared `.pbox` block the catalog's
+card portraits use too. No bare `.card` rule is changed, so the class shared with the work-list
+pages is unaffected.
 
 Thumbnails are served from a committed derivative rather than the full portrait, which is an order
 of magnitude too heavy for a 69px box. `resolve_portrait()` locates it by convention as a sibling of
