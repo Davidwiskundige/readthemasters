@@ -1,0 +1,214 @@
+changelog:
+  - date: "2026-09-12"
+    summary: Transcription added (AI draft), pp. 281–300 of 281–346.
+  - date: "2026-09-14"
+    summary: Transcription completed (AI draft), pp. 301–346; the memoir is now whole.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-14"
+  verification:
+    model: claude-opus-5
+    flagged_pages: [303, 313, 323, 324, 325, 329, 331, 333, 335, 338, 342, 345, 346]
+    date: "2026-09-14"
+  uncertainty_flags: 0
+  note: >-
+    Émile Picard, "Sur les intégrales de différentielles totales algébriques de première espèce",
+    Journal de mathématiques pures et appliquées, 4e série, tome 1 (1885), pp. 281–346. COMPLETE:
+    all 66 printed pages of the memoir are transcribed. \origpage markers run 281–346 with no gaps
+    or duplicates; pipeline/houselint.py and pipeline/validate.py pass; the mechanical checks
+    (display pairing, environment pairing, $ parity, brace balance per page and whole-file, no
+    hyphen before a page break) pass; all 1601 math spans render under the site's own KaTeX build;
+    and the file compiles under XeLaTeX with no errors and no missing characters.
+
+    HOW THIS WAS PRODUCED, IN TWO RUNS. Pages 281–300 were transcribed on 2026-09-12 by five batch
+    subagents of four pages each; pages 301–346 on 2026-09-14 by twelve more (301–304 … 341–344,
+    345–346). Each batch read only its own pages' images plus this work's notation.md, wrote one
+    fragment per page, and returned a short report; the orchestrating session read no page image in
+    either run. Scans are the NUMDAM facsimile (item JMPA_1885_4_1__281_0), 3308x4678 bilevel per
+    page, digitized by the BnF for Gallica. One prepared image per page: at aspect 1:1.41 the
+    1568px long-edge cap left 977–1277px of text width (median 1015), and pipeline/prepare_pages.py
+    warned on 9 of the 66 pages, so the half-page split was not needed.
+
+    THE 2026-09-14 RUN REBUILT THE WHOLE FILE FROM FRAGMENTS. The first run's verification
+    corrections had been applied to the assembled original.tex, not to the page fragments, so
+    re-stitching would have lost them. They were re-applied verbatim from that run's own script,
+    each asserting it matched exactly once, and the result diffed against a pre-verification
+    snapshot of pp. 281–300: the only differences are those seven corrections. Pages 281–300 are
+    therefore byte-identical to what the earlier run shipped, apart from the paragraph-break repair
+    described below.
+
+    UNCERTAINTY FLAGS: ZERO, and that number needs reading in context. Across both runs four
+    \uncertain{} flags were raised during transcription and all four were resolved by verification
+    against the scan. The zero records doubts settled, not doubts never raised: the second run used
+    121 magnified regions across its 46 pages, 2.6 per page against the 3-per-page cap, and the
+    verification pass spent roughly three more per page on top of that. Several readings are
+    settled by derivation rather than by ink and are listed as such below; where a doubt survived
+    verification it is named in flagged_pages and in the notes here, not hidden behind a zero.
+
+    THE SCAN'S INK FAILS IN DISPLAY MATH. Horizontal strokes survive where verticals drop out, so
+    "=" and "+" both degrade toward a bare dash and delimiters vanish. Many relation signs were
+    therefore settled by deriving the formula rather than by reading the ink, and the batches said
+    so case by case. Restorations of failed ink (R29) are editorial and are not corrections of the
+    author: dropped parentheses on pp. 294, 297 (twice), 298, 300, 302, 305, 306, 309, 314, 319,
+    320, 324, 342, 343, 344 and 346; a "=" surviving only as broken dot pairs on pp. 305, 317, 318,
+    322, 328, 337 and 346; a "+" that lost its vertical on pp. 323, 343 and 346; and two damaged
+    letters, p. 304's "tormes" (an f that lost its ascender and crossbar, four lines below a clean
+    "formes") and p. 334's "constan'e". The test in every case was whether the sort is damaged or
+    absent, and the verification pass re-applied it: on pp. 342–344 it confirmed damage by finding
+    a fully inked partner in the parallel line, and on p. 344 it confirmed absence the same way.
+    The largest single restoration is p. 318's equation (1), whose minus sign had vanished
+    entirely: the slot between the "=" and the "1/a" measures 49px of clean paper where p. 319's
+    identical construction fits a 21px minus rule with ~14px either side, so the width is a
+    reserved slot whose sort failed to ink rather than a sign the author never wrote. Without it
+    (1) and (2) contradict p. 319's own conclusion R = -(1/a)Q. This one was found by the text-only
+    proofread, which could not see the print, and settled by the verifier holding the page.
+
+    APPARENT PRINTER'S ERRORS AND ORTHOGRAPHY REPRODUCED FAITHFULLY (R4, R12, R23), each verified
+    against the scan rather than inferred:
+      - Circumflex-less forms, the edition's own: reconnaitre (pp. 282, 283, 297, 335, 338 twice),
+        reconnait (pp. 286, 298), apparait (p. 290). Against these, paraît on p. 297 DOES carry its
+        circumflex — verified by magnification, and it is the work's only circumflexed -aît.
+      - Accent-less forms, each verified magnified with a clean control on the same line: p. 288
+        "homogenes" (five lines below "homogènes"), p. 303 "de première espece" and "possede",
+        p. 306 "possedent" (four lines below "possède"), p. 341 "entiere". p. 306 also sets
+        "celles ci" with no hyphen. The control matters: a magnified crop of p. 313 lost EVERY
+        diacritic on its line including a certain acute, so a crop showing no accent is not by
+        itself evidence of absence, and each verdict above names an accented word on the same line
+        that the crop does resolve. By contrast the
+        flat-looking accents on pp. 313, 316, 335 and 346 are blur, not absence: this face does
+        print graves, confirmed magnified on p. 316's "c'est-à-dire".
+      - An unaccented capital A for "À" on pp. 328, 337 and 339, each verified.
+      - p. 288 "les intégrales remplissant les questions précédentes", where the sense wants
+        conditions; the print reads questions.
+      - p. 284 "d_{4}" in the third homography row, where rows 1 and 2 carry d_{1}, d_{2} and a
+        three-row homography has no d_4. Kept as printed.
+      - p. 292 sets an upright roman capital B in "+ a'x dx - By dy +", a different sort from the
+        italic lowercase b of the same term four lines below, where the algebra wants lowercase.
+      - p. 300 "= p\varphi." ends with a period that breaks the sentence; p. 300 "de degré
+        moindre", an elliptical comparative with no comparand.
+      - p. 303 sets a comma where the sentence wants a full stop (verified: a wedge with a tail,
+        against the square baseline dot ending the same page's last display), and the indicative
+        "ne sont pas" where a subjunctive is expected. p. 302 "Nous sommes donc assuré", unagreed.
+      - p. 308 carries four deviations in one page, every one verified magnified: "AB_{1} - BA_{1}"
+        in display (2) where pp. 304–307 set "AB_{1} - A_{1}B"; a bare "Qf'" in that display's
+        third row, its subscript slot clean white where rows 1 and 2 carry solid z and x (p. 307's
+        parallel triple, magnified as a control, reads Qf'_z, Qf'_x, Qf'_y); "Dans la première des
+        équations (4)", a cross-reference to a display not set until p. 309, the numeral
+        unmistakably a 4; and a final display whose "(\lambda x + \mu y + \nu z);" is missing the
+        \varphi the algebra requires. The paragraph ending "des polynômes du même degré" carries no
+        terminal mark at all — the only such paragraph in the memoir, verified as absent.
+      - p. 310 sets "\partial L_{1}/dx" with an italic d where its neighbours have \partial; the
+        d's ascender is complete and the neighbouring partials' curls are fully inked, so the test
+        comes out wrong-sort, not lost ink.
+      - p. 309's display (4) really does end its three rows "," "." "," and the display below it
+        ends "0." twice; p. 310's parallel two-line system ends "0," then "0.". Verified by
+        comparing the marks side by side in one crop.
+      - p. 311 "doivent passer pour cette conique" — the sense wants "par"; the print reads "pour",
+        with a fully formed o and u.
+      - p. 311's primed triple ends "a'_{2}, b'_{2}, c_{2}": the third prime is absent, with clean
+        white paper above the c while the two primes beside it are solidly inked.
+      - p. 322 sets no terminal mark on either ratio display and no comma in "les valeurs u_0 v_0",
+        both verified as absent against that page's own heavily inked commas; p. 326 sets the
+        matching pair with a comma and a period, and p. 326's second mark is a period mid-sentence.
+      - p. 324 "représenté par des séries ordonnées", singular after a plural subject.
+      - p. 326 sets "f'_{z}" where its partners set "f'_{x_{0}}" and "f'_{y_{0}}", and p. 327 sets
+        "p(y - y)^{2}" and "3\beta(x - x_{0})^{2}(y - y)" — the 0 subscript absent three times,
+        with no ink at all in the slot and clean 0s elsewhere on the same lines.
+      - p. 332 sets the adjoint's order as "(n - 4)" where pp. 304, 306, 317, 319 and 344 set
+        "(m - 4)"; magnified, the letter has two legs, not three.
+      - p. 334 "va correspondre. au moyen des équations précédentes" and p. 339 "abstraction faite,
+        bien entendu. de multiples des périodes" — a full stop mid-sentence in both, each a clean
+        tailless baseline dot beside a fully tailed comma on the same line.
+      - p. 336's display of the two integrals ends in a full stop mid-sentence, verified against a
+        fully tailed comma four glyphs to its left.
+      - p. 341 "où P et Q sont rationnelles en u, v, w, ces deux sommes. En remplaçant" — a
+        dangling clause closed by a clean full point.
+      - p. 344's display under "Nous devrons donc avoir" omits the v and w factors the mathematics
+        requires: the gap carries zero ink and its width equals the compositor's alignment quad, in
+        a zone where the surrounding glyphs are among the most heavily inked on the page.
+      - The factor-ordering inconsistency recurs at eight sites — "AB_{1} - A_{1}B" against
+        "AB_{1} - BA_{1}" or "BA_{1} - AB_{1}" on pp. 304, 308, 309/310, 316, 318, 321/323, 323 and
+        p. 345's "a f'_{w} f'_{v}" against display (4)'s "a f'_{v} f'_{w}". Each reproduced as
+        printed; none normalized.
+      - pp. 285 and 286 both carry a live equation "(1)", and the memoir restarts its equation
+        numbering at every division and at many article heads besides — Part III restarts on
+        pp. 314, 316, 318, 330, 333 and 337, Part IV on pp. 343 and 344. The author's numerals are
+        copied, never renumbered; Picard disambiguates in words.
+      - THE MEMOIR'S DIVISIONS ARE NAMED INCONSISTENTLY AND ARE SET AS PRINTED: "PREMIÈRE PARTIE."
+        (p. 283), "CHAPITRE II." (p. 299), "TROISIÈME PARTIE." (p. 312), "QUATRIÈME PARTIE."
+        (p. 338). There is no "CHAPITRE I." and no "DEUXIÈME PARTIE" anywhere, although p. 282
+        refers to "les deux premiers Chapitres"; the running text calls all four "Chapitre". Each
+        heading was read letter by letter against the scan. Part III also carries no article "1.":
+        the margin beside its opening paragraph is blank paper, and its first printed numeral is
+        "2." on p. 314 — verified, not inferred.
+      - p. 317 cites "(nº 1, Part. II)" where p. 316 cites the same article "(nº 1, Chap. II)", and
+        p. 319 writes "Chap. I" where pp. 320 and 331 write "Chap. Iᵉʳ" and "Chapitre Iᵉʳ" — the
+        ~13px that superscript occupies on p. 320 being empty on p. 319, so it was never set.
+        p. 320 then sets "(Chap. Iᵉʳ. nº 2)" with a period where the sense wants a comma; the
+        mark's box bottoms out 3–5px below the baseline where this face's comma descends 15–16px.
+      - The "première partie" ordinal is set two ways and both are reproduced: a genuine capital I
+        on pp. 303 and 307 (cap-height stem, slab serifs extending to both sides top and foot),
+        the old-style figure one on pp. 329 and 331 (angled top-left flag, single wide base serif).
+        p. 331 proves the contrast on its own page, setting "1ʳᵉ Partie" beside a true capital in
+        "Chapitre Iᵉʳ". The figure is transcribed as an ordinary digit, per this journal's
+        old-style figures generally.
+      - p. 307's \theta_4 display ends in a COLON and p. 338 sets one in prose, each identified by
+        measuring the lower element against the upper: a colon's two dots match within a few
+        percent, this face's semicolon runs its lower element about twice the upper dot's height
+        with a down-left taper, and a tailless comma would keep a head markedly wider than a
+        colon's dot. p. 307's second display mark, re-measured, really is a semicolon.
+      - p. 285 states the integral is "de première espèce" and then gives a condition for it to be
+        "de première espèce". The circularity is Picard's; verified in the print.
+
+    READINGS SETTLED BY DERIVATION RATHER THAN BY INK, and recorded because a reviewer should know
+    which they are. This print's old-style 3 and 5 are near-indistinguishable at source resolution,
+    so every isolated one was decided by sequence or subject matter: the article numerals on
+    pp. 287, 303, 316, 336 and 344, and the cross-references on pp. 296, 302, 303, 318, 319, 329,
+    332, 336 and 344. Likewise the \theta subscripts on p. 307 (this face's 1 and 4 both degrade to
+    a thin vertical), the coefficient degrees on pp. 305 and 312, and p. 345's f'_u, f'_v, f'_w.
+    The clearest case is p. 335's genus condition "p (q ≤ p)": the relation sign is not damaged, it
+    is simply not there — the span between q and p is bare paper — so neither R4 nor R29 applies
+    and the "≤" is an inference from the mathematics, recorded here as one.
+
+    A PARAGRAPH-BREAK DEFECT WAS REPAIRED WORK-WIDE. A blank line after a display starts a new
+    indented LaTeX paragraph, and 39 displays across the memoir were followed by one where the
+    sentence plainly continued (the next line opening with a lowercase letter or with inline math).
+    They were concentrated in three batches but the repair was applied throughout, including to
+    pp. 281–300. This is presentation, decided by the text rather than by the scan: a sentence
+    cannot continue in a new paragraph.
+
+    THE SHARED PREAMBLE GAINED SIX UNICODE MAPPINGS IN THIS RUN. The memoir sets superscripted
+    ordinals — "1ʳᵉ Partie", "Chap. Iᵉʳ", "nᵒˢ 4, 5, 6" — which the transcription writes as literal
+    Unicode modifier letters, as the site's .tex-to-HTML transform and the browser both want. A
+    LaTeX engine does not: XeTeX has no glyph for them and DROPS THEM SILENTLY, so "1ʳᵉ Partie"
+    set as "1 Partie" in the PDF with nothing but a "Missing character" line in the log.
+    corpus/preamble/readmasters.sty now maps each to \textsuperscript. This also fixes the same
+    latent loss in riemann-1857-abelsche-functionen, which uses ⁿ and ᵐ.
+
+    THE TITLE WARNING FROM validate.py IS EXPECTED. The printed title line ends with a SEMICOLON
+    ("...de première espèce;"), verified against the scan, with the byline set well below it as a
+    separate line — so the semicolon terminates the title as printed and original.tex reproduces
+    it. work.yaml keeps a period, the catalogue form used by NUMDAM and by the rest of the corpus,
+    because a trailing semicolon in a metadata title reads as an error in citations and on the
+    site. The gate's 99% near-match warning therefore stands deliberately; it is a punctuation
+    difference, not the spelling difference (R12) the check exists to catch. A maintainer who
+    prefers strict identity should change work.yaml, not the transcription.
+
+    WHAT REMAINS DOUBTFUL, page by page, after verification. These are the flagged_pages above,
+    and none of them changes the mathematics: p. 313, whether the integral's limits are
+    parenthesized (the p. 296 form is unparenthesized and p. 300's is not) and two flat accents;
+    p. 323, the \alpha glyphs themselves, settled from p. 324's list; p. 324, the accent on
+    "plutôt"; p. 325, two display-terminal marks read as commas on grammatical grounds; p. 329, the
+    first "2P" denominator and one numeral, both settled by parallels; p. 331, equation (3)'s
+    half-inked terminal comma; p. 333, a mark read as a semicolon rather than a colon; p. 335, the
+    genus relation sign described above; p. 338, one mark read as a semicolon rather than a colon;
+    p. 342, one display-terminal mark; p. 345, an inline fraction sized from the prepared image
+    rather than a crop; p. 346, one accent the bottom crop clipped.
+
+    NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
+    scan.

@@ -209,6 +209,23 @@ venues:
     archives:
       - label: "Biodiversity Heritage Library"
         url: "https://www.biodiversitylibrary.org/bibliography/9527"
+  journal-de-mathematiques-pures-et-appliquees:
+    name: "Journal de mathématiques pures et appliquées"
+    aka: "Liouville's Journal"
+    founded: 1836
+    place: "Paris"
+    publisher: "Joseph Liouville (founder)"
+    note: >-
+      Founded by Joseph Liouville in 1836 and long known by his name; it published Galois's
+      collected work in 1846 and remained a principal French mathematical journal through the
+      nineteenth century.
+    archives:
+      - label: "NUMDAM"
+        url: "http://www.numdam.org/journals/JMPA/"
+      - label: "Gallica (BnF)"
+        url: "https://gallica.bnf.fr/ark:/12148/cb343487840/date"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10256"
   memoires-divers-savants:
     name: >-
       Mémoires présentés par divers savants à l'Académie royale des sciences de l'Institut de

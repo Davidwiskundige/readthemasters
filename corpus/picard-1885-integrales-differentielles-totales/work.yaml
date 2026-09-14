@@ -1,0 +1,61 @@
+id: picard-1885-integrales-differentielles-totales
+title: Sur les intégrales de différentielles totales algébriques de première espèce.
+title_en: On the integrals of algebraic total differentials of the first kind.
+authors:
+- name: Émile Picard
+  wikidata_id: Q286375
+  # https://mathshistory.st-andrews.ac.uk/Biographies/Picard_Emile/
+  birth_year: 1856
+  death_year: 1941
+publication:
+  year: 1885
+  venue: journal-de-mathematiques-pures-et-appliquees
+  volume: 4e série, tome 1
+  pages: 281–346
+  title_full: Journal de mathématiques pures et appliquées, 4e série, tome 1 (1885),
+    pp. 281–346.
+edition:
+  year: 1885
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1885 printing in the Journal de mathématiques
+    pures et appliquées (4e série, tome 1, pp. 281–346), as digitized by NUMDAM from
+    the Bibliothèque nationale de France's Gallica scan. A faithful photographic reproduction
+    of a public-domain edition; it carries no modern critical apparatus, commentary,
+    or re-typesetting, and only the memoir itself is transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+source:
+  scan_url: http://www.numdam.org/item?id=JMPA_1885_4_1__281_0
+  scan_id: numdam:JMPA_1885_4_1__281_0
+sources:
+  death_date: wikidata:Q286375
+  publication_date: numdam:JMPA_1885_4_1__281_0
+  edition: numdam:JMPA_1885_4_1__281_0 (Gallica/BnF scan of the 1885 printing)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1941
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1885
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-13'

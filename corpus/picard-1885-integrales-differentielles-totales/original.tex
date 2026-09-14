@@ -1,0 +1,2231 @@
+% Faithful transcription — original French. Transcribed from the original printing in the
+% Journal de mathématiques pures et appliquées, 4e série, tome 1 (1885), printed pages
+% 281–346: É. Picard, "Sur les intégrales de différentielles totales algébriques de première
+% espèce". This is the complete memoir.
+% Scan: NUMDAM (item JMPA_1885_4_1__281_0), digitized by the Bibliothèque nationale de France
+% for Gallica and catalogued by Mathdoc.
+%
+% \origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: the running heads
+% ("INTÉGRALES DE DIFFÉRENTIELLES TOTALES ALGÉBRIQUES." on versos, "É. PICARD." on rectos),
+% the page numbers, the signature lines, and the printer's ornament closing p. 346.
+%
+% ORTHOGRAPHY. Only period glyph shapes are normalized — old-style figures are set as ordinary
+% digits (this journal prints zero as a small "o" and one as a dotless "ı"), ligatures are
+% expanded, and end-of-line hyphenation is dropped. The author's own spelling is kept exactly,
+% including the circumflex-less "reconnaitre" (pp. 282, 283, 297, 335, 338 twice), "reconnait"
+% (pp. 286, 298) and "apparait" (p. 290), and the accent-less "homogenes" (p. 288), "possedent"
+% (p. 306) and "entiere" (p. 341), which are the edition's forms, not scan artefacts (R12, R23).
+%
+% THE SCAN'S INK FAILS IN DISPLAY MATH. Horizontal strokes survive where verticals drop out, so
+% "=" and "+" both degrade toward a bare dash and delimiters vanish outright. Readings so
+% affected were settled by deriving the formula, not by reading the ink, and the classes of case
+% are listed in provenance.yaml — including the places where a dropped parenthesis or a broken
+% "=" was restored because the mathematics forces it. Those restorations are editorial (R29) and
+% are recorded as such; they are not silent corrections of the author, whose own errors (R4) are
+% reproduced and listed separately.
+%
+% THE PRINT'S DIVISIONS ARE INCONSISTENT, and are set exactly as printed: "PREMIÈRE PARTIE."
+% (p. 283), "CHAPITRE II." (p. 299), "TROISIÈME PARTIE." (p. 312), "QUATRIÈME PARTIE." (p. 338).
+% There is no "CHAPITRE I." and no "DEUXIÈME PARTIE" anywhere in the memoir. Article numbers and
+% equation numbers restart with each division, and within a division the equation numbers often
+% restart again at an article head — Part III does so on pp. 314, 316, 318, 330, 333 and 337, and
+% Part IV on pp. 343 and 344. The author's own numerals are copied, never renumbered, so the same
+% number is live in several places; Picard disambiguates in words.
+%
+% This work's cross-page rendering decisions are recorded in notation.md alongside this file.
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{281}
+
+\section*{Sur les intégrales de différentielles totales algébriques de première espèce;}
+
+Par M. Émile Picard.
+
+On sait quelle est, en Analyse, l'importance des intégrales
+\[
+\int P(x, y)\,dx,
+\tag{1}
+\]
+où $P(x, y)$ désigne une fonction rationnelle de $x$ et $y$, et où $y$ est la fonction algébrique de $x$ définie par la relation
+\[
+f(x, y) = 0,
+\]
+$f$ étant un polynôme. Ces intégrales ont été partagées en trois espèces; nous n'avons besoin ici que de rappeler la définition des intégrales de \emph{première} espèce~: une intégrale telle que (1) est dite de première espèce quand elle reste finie pour toute valeur, finie ou infinie, de la variable $x$.
+
+Considérons maintenant une fonction algébrique $z$ de deux variables indépendantes de $x$ et $y$, définie par l'équation irréductible
+\[
+f(x, y, z) = 0,
+\]
+où $f$ est un polynôme. On peut faire correspondre à cette surface des intégrales de différentielles totales de la forme
+\[
+\int P(x, y, z)\,dx + Q(x, y, z)\,dy,
+\tag{2}
+\]
+
+\origpage{282}
+
+où $P$ et $Q$ sont des fonctions rationnelles de $x$, $y$ et $z$; ces deux fonctions ne peuvent, bien entendu, être prises arbitrairement, et la condition d'intégrabilité de l'expression différentielle
+\[
+P\,dx + Q\,dy
+\]
+doit être supposée satisfaite.
+
+Les intégrales de la forme (2) sont susceptibles d'une classification analogue à celle qui vient d'être rappelée pour les intégrales de différentielles algébriques, dans le cas d'une seule variable. Nous ne voulons considérer dans ce travail que les intégrales de différentielles totales de \emph{première espèce} ${}^{(1)}$, c'est-à-dire celles \emph{qui restent finies pour tout système de valeurs, finies ou infinies, des variables indépendantes $x$ et $y$}.
+
+Dès le début de cette étude, on rencontre une différence bien profonde entre le cas d'une variable et celui de deux variables. On sait, en effet, qu'à une courbe algébrique correspondent en général des intégrales de première espèce; ainsi, pour parler plus nettement, la courbe la plus générale d'un degré donné $m$ possède un certain nombre, bien connu, d'intégrales de première espèce, linéairement indépendantes.
+
+Il n'en est pas ainsi pour les surfaces algébriques~: il n'existe pas d'intégrales de différentielles totales de première espèce, correspondant à la surface la plus générale de degré $m$. Comment peut-on reconnaitre si une surface donnée possède des intégrales de première espèce, et quel est le nombre de ces intégrales linéairement indépendantes? Telles sont les questions dont nous nous occupons dans les deux premiers Chapitres de ce Mémoire.
+
+Le troisième Chapitre est consacré à l'étude d'une classe de surfaces algébriques, dans laquelle la notion des intégrales de première espèce joue un rôle important~: ce sont les surfaces pour lesquelles les coordonnées d'un point quelconque s'expriment par des fonctions uniformes
+
+\textbf{(1)} Sur les intégrales de seconde espèce, j'ai déjà présenté quelques considérations dans les \emph{Comptes rendus des séances de l'Académie des Sciences} (mars 1885); l'étude de ces intégrales et de celles de troisième espèce fera l'objet d'un autre Mémoire.
+
+\origpage{283}
+
+quadruplement périodiques de deux paramètres, et nous y ajoutons cette autre condition qu'à un point \emph{arbitraire} de la surface ne corresponde qu'un \emph{seul} système de valeurs des deux paramètres, abstraction faite, bien entendu, des multiples des périodes. Tel ne serait pas, par exemple, le cas de la surface célèbre du quatrième degré découverte par Kummer; les coordonnées d'un point de cette surface s'expriment bien par des fonctions uniformes quadruplement périodiques de deux paramètres; mais il est facile de vérifier que, dans ce cas, à un point arbitraire de la surface correspondent \emph{deux} systèmes distincts de valeurs de ces paramètres. Nous montrons comment on peut reconnaitre si une surface donnée est susceptible d'avoir les coordonnées d'un quelconque de ses points exprimées, de la manière indiquée, par des fonctions quadruplement périodiques de deux paramètres. Il faut aller jusqu'aux surfaces du \emph{sixième} degré pour rencontrer une surface jouissant de cette propriété.
+
+Nous terminons ce travail par l'étude des équations de la forme
+\[
+f\left(u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right) = 0,
+\]
+nous proposant de reconnaitre si l'on peut satisfaire à cette équation, en prenant pour $u$ une fonction uniforme quadruplement périodique de $x$ et $y$; c'est, comme on voit, la généralisation d'un problème traité par MM. Briot et Bouquet dans leur beau Mémoire sur l'intégration des équations différentielles de la forme
+\[
+f\left(u, \frac{du}{dz}\right) = 0
+\]
+au moyen des fonctions elliptiques.
+
+\section*{PREMIÈRE PARTIE.}
+
+\textbf{1.} Soit donnée une relation algébrique de degré $m$
+\[
+F(x, y, z) = 0
+\]
+définissant une fonction algébrique $z$ de $x$ et $y$, et considérons la différentielle
+
+\origpage{284}
+
+totale
+\[
+\frac{P\,dx + Q\,dy}{M},
+\]
+où $P$, $Q$ et $M$ sont des polynômes en $x$, $y$ et $z$, et pour laquelle la condition d'intégrabilité est supposée satisfaite.
+
+Effectuons sur $x$, $y$, $z$ une transformation homographique quelconque
+\[
+\begin{aligned}
+x &= \frac{a_{1}x' + b_{1}y' + c_{1}z' + d_{1}}{ax' + by' + cz' + d},\\
+y &= \frac{a_{2}x' + b_{2}y' + c_{2}z' + d_{2}}{ax' + by' + cz' + d},\\
+z &= \frac{a_{3}x' + b_{3}y' + c_{3}z' + d_{4}}{ax' + by' + cz' + d};
+\end{aligned}
+\]
+la relation précédente deviendra
+\[
+f(x', y', z') = 0.
+\]
+
+Différentions $x$ et $y$, on aura
+\[
+dx = \frac{A\,dx' + B\,dy'}{(ax' + by' + cz' + d)^{2}\dfrac{\partial f}{\partial z'}}, \quad
+dy = -\frac{A_{1}\,dx' + B_{1}\,dy'}{(ax' + by' + cz' + d)^{2}\dfrac{\partial f}{\partial z'}}.
+\]
+$A$ et $A_{1}$ étant des polynômes en $x'$, $y'$, $z'$, de degré $m - 1$ par rapport à $x'$ et $z'$, et de degré $m$ par rapport à $y'$; de même $B$ et $B_{1}$ sont des polynômes de degré $m - 1$ en $y'$ et $z'$, et de degré $m$ par rapport à $x'$.
+
+Si maintenant $n'$ est le degré de $P$ et $Q$, et $n$ celui de $M$, on aura
+\[
+\frac{P}{M} = \frac{P'}{M'(ax' + by' + cz' + d)^{n'-n}}, \quad
+\frac{Q}{M} = \frac{Q'}{M'(ax' + by' + cz' + d)^{n'-n}},
+\]
+$P'$ et $Q'$ étant de degré $n'$, et $M'$ du degré $n$.
+
+Il s'ensuit que l'expression précédente prend la forme, en supprimant les accents,
+\[
+\frac{P_{1}\,dx + Q_{1}\,dy}{M_{1}f'_{z}(x, y, z)},
+\]
+en désignant par $\mu$ le degré de $M_{1}$ par rapport à $x$, $y$ et $z$; le degré
+\origpage{285}
+de $P_{1}$ par rapport à $x$ et $z$ est $\mu + m - 3$, et par rapport à $y$ est $\mu + m - 2$; de même pour $Q_{1}$ le degré par rapport à $y$ et $z$ est $\mu + m - 3$, et $\mu + m - 2$ par rapport à $x$.
+
+La différentielle totale étant mise sous cette forme, envisageons maintenant l'intégrale
+\[
+\int_{x_{0}, y_{0}}^{x, y} \frac{P_{1}\,dx + Q_{1}\,dy}{M_{1}f'_{z}},
+\]
+et supposons que, pour toute valeur finie ou infinie de $x$ et $y$, cette intégrale reste finie; cherchons quelle conséquence on pourra en tirer~: $z$ est définie en fonction de $x$ et $y$ par la relation
+\[
+f(x, y, z) = 0
+\]
+de degré $m$, et nous pouvons évidemment supposer qu'elle renferme un terme en $z^{m}$.
+
+Si nous laissons d'abord $y$ constant, faisant seulement varier $x$, nous aurons une intégrale abélienne ordinaire de première espèce, et, pour qu'elle soit de première espèce, il est nécessaire que $M_{1}$ ne dépende pas de $x$; le même raisonnement, appliqué à $y$, nous montre que $M_{1}$ ne peut dépendre de $y$. Nous arrivons donc de suite à cette conclusion que $M_{1}$ doit être une constante, et nous écrirons l'intégrale sous la forme
+\[
+\int_{x_{0}, y_{0}}^{x, y} \frac{P\,dx + Q\,dy}{f'_{z}(x, y, z)}, \tag{1}
+\]
+$P$ est un polynôme de degré $m - 2$ en $x$, $y$, $z$, et de degré $m - 3$ en $x$ et $z$; pareillement, $Q$ est un polynôme de degré $m - 2$ en $x$, $y$ et $z$, et de degré $m - 3$ en $y$ et $z$.
+
+\textbf{2.} Nous avons jusqu'ici laissé de côté la condition d'intégrabilité que nous avons maintenant à considérer. On aura
+\[
+\frac{\partial}{\partial y}\left(\frac{P}{f'_{z}}\right) = \frac{\partial}{\partial x}\left(\frac{Q}{f'_{z}}\right),
+\]
+en considérant $z$ comme fonction de $x$ et $y$. Cette relation pourra
+\origpage{286}
+s'écrire
+\[
+\begin{aligned}
+&\left(\frac{\partial P}{\partial y}f'_{z} - \frac{\partial P}{\partial z}f'_{y}\right)f'_{z} - P(f''_{zy}f'_{z} - f''_{zz}f'_{y}) \\
+&\qquad - \left(\frac{\partial Q}{\partial x}f'_{z} - f'_{x}\frac{\partial Q}{\partial z}\right)f'_{z} + Q(f''_{zx}f'_{z} - f''_{zz}f'_{x}) = 0.
+\end{aligned}
+\]
+
+Le premier membre de cette égalité est un polynôme en $x$, $y$ et $z$; il n'est pas nécessairement nul identiquement, mais seulement en vertu de l'équation
+\[
+f(x, y, z) = 0;
+\]
+on reconnait facilement que l'on peut écrire la relation précédente sous la forme
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial}{\partial z}\left(\frac{Pf'_{y} - Qf'_{x}}{f'_{z}}\right) = 0. \tag{1}
+\]
+
+Or, si dans l'intégrale (1) nous prenons $x$ et $z$ pour variables au lieu de $x$ et $y$, nous devons tomber sur une expression de même forme; or l'intégrale devient
+\[
+\int \frac{\left(\dfrac{Pf'_{y} - Qf'_{x}}{f'_{z}}\right)\,dx - Q\,dz}{f'_{y}}.
+\]
+
+Il est donc nécessaire que l'expression
+\[
+\frac{Pf'_{y} - Qf'_{x}}{f'_{z}}
+\]
+puisse, en vertu de l'équation $f(x, y, z) = 0$, se mettre sous la forme d'un polynôme en $x$, $y$ et $z$. Posons donc
+\[
+\frac{Pf'_{y} - Qf'_{x}}{f'_{z}} = R,
+\]
+ou, en écrivant sous forme d'identité indépendamment de l'équation $f = 0$,
+\[
+Pf'_{y} - Qf'_{x} - Rf'_{z} = Nf(x, y, z), \tag{2}
+\]
+$N$ étant aussi un polynôme.
+
+\origpage{287}
+
+Ceci posé, revenons à l'équation (1) qui pourra s'écrire
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial R}{\partial z} + N + f(x, y, z)\frac{\partial}{\partial z}\left(\frac{N}{f'_{z}}\right) = 0.
+\]
+
+On a par conséquent, en vertu de $f = 0$,
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial R}{\partial z} + N = 0. \tag{3}
+\]
+
+Mais $P$, $Q$, $R$ et $N$ sont des polynômes de degré inférieur à $m$. Si donc, comme nous le supposons, le polynôme $f(x, y, z)$ n'est pas un produit de polynômes de degré moindre, l'\emph{égalité précédente sera une identité}, quels que soient $x$, $y$ et $z$.
+
+$P$ est de degré $m - 3$ par rapport à $x$ et à $z$, et de degré $m - 2$ en $y$; $Q$ est de degré $m - 3$ en $y$ et $z$, et de degré $m - 2$ en $x$; enfin $R$ est de degré $m - 3$ par rapport à $x$ et $y$, et de degré $m - 2$ par rapport à $z$, et ces trois polynômes sont de degré $m - 2$ en $x$, $y$, $z$ pris simultanément. Quant à $N$, il est de degré $m - 3$ en $x$, $y$ et $z$.
+
+Posons
+\[
+Q = -A, \quad P = +B, \quad R = -C.
+\]
+
+Les identités (2) et (3) se résumeront dans l'identité unique
+\[
+Af'_{x} + Bf'_{y} + Cf'_{z} = \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right)f(x, y, z).
+\]
+
+Ainsi on doit pouvoir trouver trois polynômes $A$, $B$, $C$ des degrés indiqués par rapport aux variables $x$, $y$, $z$, et tels que l'identité précédente soit vérifiée.
+
+\textbf{3.} Nous pouvons approfondir davantage la forme des polynômes $A$, $B$, $C$. Ceux-ci sont nécessairement de la forme
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\psi(x, y, z) + B_{1}(x, y, z), \\
+C &= z\chi(x, y, z) + C_{1}(x, y, z),
+\end{aligned}
+\]
+\origpage{288}
+$\varphi$, $\psi$ et $\chi$ étant des polynômes \emph{homogènes} en $x$, $y$ et $z$ de degré $m - 3$; quant à $A_{1}$, $B_{1}$, $C_{1}$, ce sont des polynômes en $x$, $y$ et $z$ d'ordre $m - 3$.
+
+Or considérons l'intégrale
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}.
+\]
+
+Posons $y = \mu x$, $\mu$ étant une constante, nous aurons l'intégrale abélienne de première espèce
+\[
+\int \frac{(B - A\mu)\,dx}{f'_{z}};
+\]
+$B - A\mu$ devra être au plus du degré $m - 3$; donc l'expression
+\[
+\mu x[\psi(x, \mu x, z) - \varphi(x, \mu x, z)]
+\]
+qui, dans $B - A\mu$, est du degré $m - 2$, devra être nulle, et l'on aura alors
+\[
+\psi(x, \mu x, z) - \varphi(x, \mu x, z) = 0,
+\]
+quel que soit $\mu$; on en conclut, puisque $\psi$ et $\varphi$ sont homogenes,
+\[
+\psi(x, y, z) = \varphi(x, y, z).
+\]
+
+En mettant l'intégrale sous la forme
+\[
+\int \frac{-C\,dx + A\,dz}{f'_{y}},
+\]
+on démontrerait de la même manière que $\chi(x, y, z) = \varphi(x, y, z)$.
+
+Nous arrivons à la conclusion suivante~:
+\[
+\varphi(x, y, z) = \psi(x, y, z) = \chi(x, y, z).
+\]
+
+\textbf{4.} Nous venons de trouver les formes nécessaires des intégrales de différentielles totales, qui restent finies. Nous avons maintenant à nous demander si les intégrales remplissant les questions précédentes restent toujours finies.
+
+\origpage{289}
+
+Nous supposons donc que l'on ait, après une transformation homographique quelconque, la surface
+\[
+f(x, y, z) = 0.
+\]
+
+Celle-ci ne possède que des \emph{singularités ordinaires}, c'est-à-dire soit des points doubles isolés, pour lesquels le cône des tangentes ne se réduise pas à deux plans, soit des courbes doubles, sans points singuliers, pour lesquelles les deux plans tangents à la surface en chaque point seront \emph{toujours distincts}.
+
+Nous supposons que l'on puisse trouver trois polynômes $A$, $B$, $C$ satisfaisant aux conditions suivantes~: le premier $A$ est au plus de degré $m - 2$ par rapport à $x$, et de degré $m - 3$ par rapport à $y$ et $z$, $B$ est de degré $m - 2$ par rapport à $y$, et de degré $m - 3$ par rapport à $x$ et $z$, enfin $C$ est de degré $m - 2$ en $z$, et de degré $m - 3$ en $x$ et $y$. On a d'ailleurs l'identité
+\[
+A f'_{x} + B f'_{y} + C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z)
+\tag{2}
+\]
+
+Ceci posé, considérons l'intégrale
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\]
+la condition d'intégrabilité sera remplie, car elle se réduit (nº 1) à
+\[
+- \frac{\partial B}{\partial y} - \frac{\partial A}{\partial x} + \frac{\partial}{\partial z} \left( \frac{B f'_{y} + A f'_{x}}{f'_{z}} \right) = 0.
+\]
+
+Or, d'après l'identité, on a, en tenant compte de $f(x, y, z) = 0$,
+\[
+\frac{\partial}{\partial z} \left( \frac{B f'_{y} + A f'_{x}}{f'_{z}} \right) = - \frac{\partial C}{\partial z} + \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z},
+\]
+et, par suite, la condition d'intégrabilité est vérifiée.
+
+Nous allons chercher si l'intégrale reste finie pour toute valeur du point analytique $(x, y, z)$.
+
+\origpage{290}
+
+\textbf{5.} Ne considérons d'abord que des points à distance finie. Si $(x, y, z)$ n'est pas un point double de la surface, il n'y a aucune difficulté, car le résultat apparait immédiatement, en employant l'une ou l'autre des trois formes de l'intégrale
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)} = \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{- C\,dx + A\,dz}{f'_{y}(x, y, z)} = \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{C\,dy - B\,dz}{f'_{x}(x, y, z)}.
+\]
+
+Supposons, en second lieu, que $(x, y, z)$ tende vers un point double \emph{isolé} $(a, b, c)$ de la surface. On remarquera d'abord que les surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+passent par ce point; on a, en effet, en différentiant l'identité (2) par rapport à $x$, $y$ et $z$, et faisant $x = a$, $y = b$, $z = c$,
+\[
+\begin{aligned}
+A(a, b, c) f''_{aa} + B(a, b, c) f''_{ab} + C(a, b, c) f''_{ac} &= 0, \\
+A(a, b, c) f''_{ab} + B(a, b, c) f''_{bb} + C(a, b, c) f''_{bc} &= 0, \\
+A(a, b, c) f''_{ac} + B(a, b, c) f''_{bc} + C(a, b, c) f''_{cc} &= 0;
+\end{aligned}
+\]
+on en conclut que
+\[
+A(a, b, c) = B(a, b, c) = C(a, b, c) = 0,
+\]
+puisque le déterminant des dérivées secondes de $f$ n'est pas nul au point $abc$, qui n'est pas un point biplanaire.
+
+Posons
+\[
+y = b + t(x - a),
+\]
+$t$ étant la variable que nous allons substituer à $y$, et soit
+\[
+f(x, y, z) = \varphi(x - a, y - b, z - c) + \psi(x - a, y - b, z - c) + \ldots
+\]
+$\varphi$, $\psi$, \ldots étant homogènes par rapport à $x - a$, $y - b$, $z - c$ et de degrés respectivement égaux à deux, trois, \ldots, et $\varphi$ renfermant un terme en $(z - c)^{2}$; il en sera ainsi, si, ce qu'on peut supposer, les parallèles menées par $(a, b, c)$ aux axes de coordonnées ne sont pas sur le cône.
+
+\origpage{291}
+
+De l'équation $f(x, y, z) = 0$ on déduira pour $z = c$ deux développements distincts ordonnés suivant les puissances croissantes de $x - a$, sauf pour les valeurs de $t$, telles que l'équation du second degré en $\theta$
+\[
+\varphi(1, t, \theta) = 0
+\]
+ait une racine double; ces valeurs de $t$ sont évidemment au nombre de deux, et l'on peut les supposer finies, soient $t_{1}$ et $t_{2}$.
+
+Ceci posé, $t$ ayant une valeur variable, mais ne tendant pas vers $t_{1}$ ou $t_{2}$, l'expression
+\[
+\frac{B\,dx - A\,dy}{f'_{z}}
+\]
+prendra la forme
+\[
+\frac{(B - At)\,dx - A(x - a)\,dt}{f'_{z}}.
+\]
+
+Or $B$ et $A$ contiennent en facteur $(x - a)$, et $f'_{z}$ contient en facteur $(x - a)$, mais ne contient pas $(x - a)^{2}$. Il en résulte que l'intégrale tendra certainement vers une valeur finie, quand $(x, y, z)$ tendra vers $(a, b, c)$, de telle manière que le rapport $\dfrac{y - b}{x - a}$ ait une limite différente de $t_{1}$ ou $t_{2}$.
+
+Il n'y a aucune difficulté à étudier le cas où le rapport $\dfrac{y - b}{x - a}$ tend vers $t_{1}$ ou $t_{2}$; il suffit, pour cela, d'employer une des autres formes de l'intégrale. Les plans parallèles aux plans de coordonnées passant par le point $(a, b, c)$ pouvant être supposés non tangents au cône,
+\[
+\varphi(x - a, y - b, z - c) = 0,
+\]
+la difficulté qui se présentait relativement à $x$ et $y$ pris comme variables indépendantes ne se présentera plus avec $x$ et $z$, puisqu'un plan tangent à la surface conique ne peut passer à la fois par l'axe des $z$ et l'axe des $y$.
+
+Nous voyons donc que, de quelque manière que le point $x$, $y$, $z$ tende vers le point double $(a, b, c)$, la valeur de l'intégrale
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+\origpage{292}
+reste finie. On voit, d'ailleurs, bien aisément que la valeur de cette intégrale est indépendante de la façon dont le point $(x, y, z)$ se rapproche du point double. Soit, en effet, après un choix d'axes convenable, et l'origine étant au point double,
+\[
+f(x, y, z) = Mx^{2} + Ny^{2} + Pz^{2} + U(x, y, z),
+\]
+les termes suivant les trois premiers étant de degré supérieur à deux, et l'on a
+\[
+MNP \neq 0;
+\]
+posons
+\[
+\begin{aligned}
+A &= ax + by + cz + \ldots, \\
+B &= a'x + b'y + c'z + \ldots, \\
+C &= a''x + b''y + c''z + \ldots;
+\end{aligned}
+\]
+l'identité
+\[
+A f'_{x} + B f'_{y} + C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z)
+\]
+donne de suite cette autre identité
+\[
+\begin{aligned}
+&2(ax + by + cz)Mx + 2(a'x + b'y + c'z)Ny + 2(a''x + b''y + c''z)Pz \\
+&\qquad = (a + b' + c'')(Mx^{2} + Ny^{2} + Pz^{2});
+\end{aligned}
+\]
+on en conclut immédiatement
+\[
+\begin{aligned}
+&a = b' = c'' = 0, \\
+&Mc + Pa'' = 0, \quad Mb + Na' = 0, \quad Nc' + Pb'' = 0.
+\end{aligned}
+\]
+
+Il viendra donc
+\[
+B\,dx - A\,dy = z(c'\,dx - c\,dy) + a'x\,dx - By\,dy + \varphi\,dx + \psi\,dy,
+\]
+$\varphi$ et $\psi$ étant au moins du second degré en $x$, $y$ et $z$; l'élément de l'intégrale sera alors
+\[
+\frac{z(c'\,dx - c\,dy) + a'x\,dx - by\,dy + \varphi\,dx + \psi\,dy}{2Pz + U'_{z}(x, y, z)};
+\]
+\origpage{293}
+or, d'après une des égalités précédentes $a' = \lambda M$, $b = -\lambda N$~: nous pourrons donc mettre cette expression sous la forme
+\[
+\frac{z(c'\,dx - c\,dy - \lambda P\,dz) + \varphi_{1}\,dx + \psi_{1}\,dy + \chi_{1}\,dz}{2Pz + U'_{z}(x, y, z)},
+\]
+$\varphi_{1}$, $\psi_{1}$ et $\chi_{1}$ étant au moins du second degré en $x$, $y$, $z$. Supposons maintenant que $x$ et $y$ tendent vers zéro, la limite de $\dfrac{y}{x}$ étant finie et n'annulant pas $M + N\left(\dfrac{y}{x}\right)^{2}$; dans cette hypothèse, $\dfrac{x}{z}$ et $\dfrac{y}{z}$ auront des limites finies, et le dernier élément de l'intégrale se réduira à
+\[
+\frac{c'\,dx - c\,dy - \lambda P\,dz}{2P}.
+\]
+Il est donc indépendant de la limite de $\dfrac{y}{x}$. En employant l'une ou l'autre forme de l'intégrale, on traiterait d'une manière toute semblable les cas exclus dans le raisonnement précédent.
+
+\textbf{6.} Étudions maintenant la valeur de l'intégrale quand $(x, y, z)$ se rapproche d'un point de la courbe double de la surface.
+
+Nous allons joindre aux hypothèses précédemment faites la suivante. Les surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+passent par la courbe double de la surface. Je dis que, dans ces conditions, l'intégrale reste finie pour tout point de la courbe double.
+
+Soient $(x_{1}, y_{1}, z_{1})$ les coordonnées d'un point $P$ de la courbe double; par ce point passent deux nappes de la surface ayant, par hypothèse, deux plans tangents différents. Supposons que $(x, y, z)$ tende vers $P$ en restant sur une certaine nappe; le plan tangent à cette nappe en $P$ n'est pas parallèle aux trois axes de coordonnées; supposons, pour fixer les idées, qu'il ne soit pas parallèle à l'axe des $z$.
+
+Pour l'une des nappes, on aura, dans le voisinage de $(x_{1}, y_{1}, z_{1})$,
+\[
+z - z_{1} = a(x - x_{1}) + b(y - y_{1}) + \varphi(x - x_{1}, y - y_{1}). \tag{1}
+\]
+$\varphi$ ne renfermant que des termes de degré supérieur au premier.
+\origpage{294}
+Pour l'autre nappe, on aura pareillement
+\[
+z - z_{1} = a'(x - x_{1}) + b'(y - y_{1}) + \psi(x - x_{1}, y - y_{1}). \tag{2}
+\]
+et l'on n'a pas à la fois
+\[
+a = a', \quad b = b'.
+\]
+
+L'équation de la surface pourra évidemment se mettre sous la forme
+\[
+\begin{aligned}
+&f(x, y, z) = F \times [z - z_{1} - a(x - x_{1}) - b(y - y_{1}) - \varphi] \\
+&\qquad \times [z - z_{1} - a'(x - x_{1}) - b'(y - y_{1}) - \psi].
+\end{aligned}
+\]
+$F$ dépendant de $x$, $y$, $z$ et ayant une valeur finie et différente de zéro pour $x = x_{1}$, $y = y_{1}$, $z = z_{1}$.
+
+On en conclut que, pour tout point $xyz$ de la nappe (1), on aura
+\[
+\begin{aligned}
+&f'_{z}(x, y, z) = F \times [(a - a')(x - x_{1}) + (b - b')(y - y_{1}) \\
+&\qquad + \varphi(x - x_{1}, y - y_{1}) - \psi(x - x_{1}, y - y_{1})].
+\end{aligned}
+\]
+
+L'équation de la projection de la courbe double sur le plan des $xy$ est obtenue en éliminant $z$ entre les équations (1) et (2), ce qui donne immédiatement
+\[
+(a - a')(x - x_{1}) + (b - b')(y - y_{1}) + \varphi - \psi = 0. \tag{3}
+\]
+On n'a pas à la fois $a - a' = 0$, $b - b' = 0$, soit, par exemple, $b - b' \neq 0$.
+
+Nous pourrons tirer de l'équation (3)
+\[
+y - y_{1} = P(x - x_{1}).
+\]
+$P$ étant une série, sans terme constant, procédant suivant les puissances de $x - x_{1}$.
+
+Ceci posé, soit
+\[
+A(x, y, z) = 0
+\]
+l'équation d'une surface passant par la courbe double, $z$ étant remplacé
+\origpage{295}
+par le développement (1), on aura, pour les points de la nappe (1) dans le voisinage de $P$,
+\[
+A(x, y, z) = \chi(x - x_{1}, y - y_{1}),
+\]
+et cette fonction sera identiquement nulle, quand on remplacera $y - y_{1}$ par $P(x - x_{1})$.
+
+On aura donc
+\[
+A(x, y, z) = [y - y_{1} - P(x - x_{1})]\chi_{1}(x - x_{1}, y - y_{1}),
+\]
+$\chi_{1}$ étant, comme $\chi$, une série procédant suivant les puissances de $x - x_{1}$ et $y - y_{1}$; on remarquera, d'autre part, d'après ce qui a été dit plus haut, que
+\[
+f'_{z}(x, y, z) = F_{1} \times [y - y_{1} - P(x - x_{1})],
+\]
+$F_{1}$ dépendant de $x$, $y$, $z$ et étant \emph{finie et différente de zéro} pour $x = x_{1}$, $y = y_{1}$, $z = z_{1}$.
+
+Si nous considérons maintenant le quotient
+\[
+\frac{A(x, y, z)}{f'_{z}(x, y, z)},
+\]
+on voit, d'après ce qui précède, qu'il tendra vers une valeur finie déterminée quand $(x, y, z)$ se rapprochera de $P$, en restant sur l'une ou l'autre nappe de la surface.
+
+Il est facile maintenant de trouver ce que devient l'intégrale
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\]
+quand $(x, y, z)$ tend vers $(x_{1}, y_{1}, z_{1})$. Les deux expressions
+\[
+\frac{B}{f'_{z}} \quad \text{et} \quad \frac{A}{f'_{z}}
+\]
+étant déterminées et continues dans le voisinage de ce point, l'intégrale aura nécessairement une valeur \emph{finie et déterminée}.
+\origpage{296}
+\textbf{7.} Il reste à étudier l'intégrale quand les variables deviennent infinies. Nous allons, dans ce but, transformer l'intégrale en nous servant des coordonnées homogènes. Remplaçons donc $x$, $y$, $z$ par $\dfrac{x}{t}$, $\dfrac{y}{t}$, $\dfrac{z}{t}$, et rappelons-nous que nous avons trouvé (nº 3)
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + B_{1}(x, y, z).
+\end{aligned}
+\]
+$\varphi$ est homogène et de degré $(m - 3)$ en $x$, $y$ et $z$; $A_{1}$ et $B_{1}$ sont des polynômes de degré $m - 3$ en $x$, $y$ et $z$.
+
+Nous aurons donc, en rendant les polynômes homogènes,
+\[
+\frac{B\,dx - A\,dy}{f'_{z}(x, y, z)} = \frac{[y\varphi(x, y, z) + tB_{1}(x, y, z, t)](t\,dx - x\,dt) - [x\varphi(x, y, z) + tA_{1}(x, y, z, t)](t\,dy - y\,dt)}{tf'_{z}(x, y, z, t)},
+\]
+qui pourra s'écrire
+\[
+\frac{-(x\,dy - y\,dx)(x\varphi + tA_{1}) + (A_{1}y - B_{1}x)(x\,dt - t\,dx)}{xf'_{z}(x, y, z, t)}.
+\]
+$x$, $y$, $z$, $t$ ne sont pas nulles à la fois; soit $x \neq 0$, et posons alors
+\[
+\frac{y}{x} = Y, \quad \frac{z}{x} = Z, \quad \frac{t}{x} = T;
+\]
+l'expression différentielle deviendra
+\[
+\frac{-[\varphi(1, Y, Z) + TA_{1}(1, Y, Z, T)]\,dY + [YA_{1}(1, Y, Z, T) - B_{1}(1, Y, Z, T)]\,dT}{f'_{Z}(1, Y, Z, T)}
+\]
+et nous sommes ramenés à étudier la valeur d'une intégrale de même forme que celle qui a été étudiée dans les numéros précédents et pour des valeurs finies des variables.
+
+Nous pouvons donc énoncer le théorème suivant~:
+
+\emph{L'intégrale}
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)}
+\]
+\origpage{297}
+\emph{reste finie pour toute valeur, finie ou infinie, de $x$ et $y$; elle est indéterminée quoique finie, pour les valeurs infinies données aux variables.}
+
+\textbf{8.} Nous savons donc reconnaitre, étant donnée une surface
+\[
+f(x, y, z) = 0,
+\]
+si elle possède ou non des intégrales de différentielles totales de \emph{première espèce}, en désignant ainsi les intégrales qui restent toujours finies.
+
+Il n'en est pas ici comme dans le cas des courbes algébriques; \emph{la surface la plus générale de degré $m$ ne possède pas d'intégrales de première espèce}. En d'autres termes, étant considérée la surface la plus générale d'ordre $m$
+\[
+f(x, y, z) = 0,
+\]
+on ne peut pas trouver de polynômes $A$, $B$, $C$ de la forme
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + B_{1}(x, y, z), \\
+C &= z\varphi(x, y, z) + C_{1}(x, y, z),
+\end{aligned}
+\]
+où $\varphi$ est un polynôme d'ordre $m - 3$ et homogène en $x$, $y$, $z$, et $A_{1}$, $B_{1}$, $C_{1}$ sont des polynômes de degré au plus égal à $m - 3$ par rapport à ces variables, qui satisfassent à l'identité
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z).
+\]
+
+C'est ce que nous allons montrer dans un instant, mais écrivons auparavant l'identité précédente sous une autre forme. Il ne paraît pas facile d'énoncer, sous forme géométrique, les conditions nécessaires et suffisantes pour que l'on puisse satisfaire à cette identité fondamentale. Transformons-la seulement pour lui donner une forme plus symétrique.
+
+On peut l'écrire
+\[
+m A f'_{x} + m B f'_{y} + m C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) (x f'_{x} + y f'_{y} + z f'_{z} + f'_{t}).
+\]
+\origpage{298}
+Posons maintenant
+\[
+\begin{aligned}
+\theta_{1} &= m A - x \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{2} &= m B - y \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{3} &= m C - z \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{4} &= - \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right),
+\end{aligned}
+\]
+les $\theta$ étant ainsi des polynômes d'ordre $m - 3$, comme on le reconnait, en se reportant aux formes de $A$, $B$, $C$.
+
+L'identité pourra s'écrire
+\[
+\theta_{1} \frac{\partial f}{\partial x} + \theta_{2} \frac{\partial f}{\partial y} + \theta_{3} \frac{\partial f}{\partial z} + \theta_{4} \frac{\partial f}{\partial t} = 0. \tag{1}
+\]
+
+Considérons les $\theta$ comme des polynômes homogènes d'ordre $m - 3$ en $x$, $y$, $z$, $t$. On aura entre ces polynômes la relation suivante qui résulte immédiatement de leur expression en $A$, $B$, $C$~:
+\[
+\frac{\partial \theta_{1}}{\partial x} + \frac{\partial \theta_{2}}{\partial y} + \frac{\partial \theta_{3}}{\partial z} + \frac{\partial \theta_{4}}{\partial t} = 0.
+\]
+
+Nous avons dit que la surface la plus générale de degré $m$ ne possédait pas d'intégrale de première espèce. Je dis, en effet, que, $f(x, y, z)$ étant le polynôme général d'ordre $m$, on ne peut pas trouver quatre polynômes $\theta_{1}$, $\theta_{2}$, $\theta_{3}$, $\theta_{4}$ de degré $(m - 3)$ vérifiant l'identité (1). Considérons, en effet, les trois surfaces
+\[
+\frac{\partial f}{\partial x} = 0, \quad \frac{\partial f}{\partial y} = 0, \quad \frac{\partial f}{\partial z} = 0;
+\]
+elles n'ont pas de courbe commune, et elles ont en commun un nombre de points distincts égal à $(m - 1)^{3}$. Pour ces points, on a
+\[
+\theta_{4} \frac{\partial f}{\partial t} = 0;
+\]
+\origpage{299}
+mais le second facteur ne sera certainement pas nul, puisqu'alors la surface aurait des points doubles; les points considérés appartiennent donc à la surface de degré $m - 3$
+\[
+\theta_{4} = 0;
+\]
+par suite, les quatre surfaces
+\[
+\frac{\partial f}{\partial x} = 0, \quad \frac{\partial f}{\partial y} = 0, \quad \frac{\partial f}{\partial z} = 0, \quad \theta_{4} = 0
+\]
+ont en commun $(m - 1)^{3}$ points distincts. Or cela est impossible, car, si nous considérons les deux surfaces de degré $m - 1$
+\[
+\begin{aligned}
+\alpha \frac{\partial f}{\partial x} + \beta \frac{\partial f}{\partial y} + \gamma \frac{\partial f}{\partial z} &= 0, \\
+\alpha' \frac{\partial f}{\partial x} + \beta' \frac{\partial f}{\partial y} + \gamma' \frac{\partial f}{\partial z} &= 0,
+\end{aligned}
+\]
+les $\alpha$, $\beta$, $\gamma$ étant des constantes arbitraires, l'intersection de ces deux surfaces devrait rencontrer la surface $\theta_{4}$ en $(m - 1)^{3}$ points. Il est, d'ailleurs, impossible que les deux surfaces précédentes aient une ligne commune avec la surface $\theta_{4}$, si les $\alpha$, $\beta$, $\gamma$ sont pris arbitrairement.
+
+\section*{CHAPITRE II.}
+
+\textbf{1.} Nous avons admis, dans les numéros précédents, que la surface n'avait que des points doubles isolés et des courbes doubles. On peut supposer, sans plus de complications, qu'elle a des points multiples et des courbes multiples d'ordre quelconque, pourvu que ces singularités soient \emph{des singularités ordinaires}; nous entendrons par là qu'en un point multiple isolé d'ordre $k$ le cône d'ordre $k$ formé par les tangentes n'a pas de droites multiples; de même, en tout point d'une courbe multiple d'ordre $k$, les $k$ plans tangents aux $k$ nappes de la surface passant par la courbe multiple sont distincts.
+
+Cherchons alors comment devront être modifiés les énoncés précédemment donnés pour que la surface possède des intégrales de première espèce. Soient $A$, $B$, $C$ trois polynômes des degrés indiqués, satisfaisant
+\origpage{300}
+à l'identité fondamentale
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z).
+\]
+
+Les surfaces $A = 0$, $B = 0$, $C = 0$ passeront par les courbes multiples, et une courbe multiple d'ordre $k$ de la surface proposée sera, pour chacune de ces surfaces, une courbe multiple d'ordre $(k - 1)$. Ces conditions sont, d'ailleurs, nécessaires et suffisantes, pour que l'intégrale
+\[
+\int^{(x, y, z)} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+reste \emph{finie}, en tout point d'une courbe multiple.
+
+L'étude de la valeur de l'intégrale, quand $(x, y, z)$ tend vers un point multiple isolé, est un peu moins simple. Supposons que ce point multiple soit à l'origine des coordonnées. Soit ce point d'ordre $p$, et écrivons
+\[
+f(x, y, z) = \varphi(x, y, z) + \ldots,
+\]
+$\varphi(x, y, z)$ étant homogène et de degré $p$, et les autres termes étant de degré supérieur à $p$ en $x$, $y$ et $z$. Soient de même $\alpha$, $\beta$ et $\gamma$ les termes homogènes et de degré moindre en $x$, $y$, $z$ dans $A$, $B$ et $C$; on aura l'identité
+\[
+\alpha \frac{\partial \varphi}{\partial x} + \beta \frac{\partial \varphi}{\partial y} + \gamma \frac{\partial \varphi}{\partial z} = \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \varphi(x, y, z);
+\]
+arrêtons-nous un instant sur cette relation. En la joignant à
+\[
+x \frac{\partial \varphi}{\partial x} + y \frac{\partial \varphi}{\partial y} + z \frac{\partial \varphi}{\partial z} = p\varphi.
+\]
+nous aurons l'identité
+\[
+\begin{aligned}
+&0 = \left[ p\alpha - x \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial x} \\
+&\qquad + \left[ p\beta - y \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial y} \\
+&\qquad + \left[ p\gamma - z \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial z}.
+\end{aligned}
+\]
+\origpage{301}
+Nous ne connaissons pas \emph{a priori} le degré de $\alpha$, $\beta$, $\gamma$; si ce degré est au plus égal à $p - 2$, nous allons immédiatement trouver la forme de ces polynômes; nous avons, en effet, dans ce cas, une relation de la forme
+\[
+P \frac{\partial \varphi}{\partial x} + Q \frac{\partial \varphi}{\partial y} + R \frac{\partial \varphi}{\partial z} = 0, \tag{1}
+\]
+où $P$, $Q$, $R$ sont des polynômes homogènes dont le degré est au plus égal à $p - 2$. Les points communs à $\dfrac{\partial \varphi}{\partial y} = 0$ et à $\dfrac{\partial \varphi}{\partial z} = 0$ doivent appartenir à la courbe $P = 0$, puisqu'on ne peut avoir en même temps $\dfrac{\partial \varphi}{\partial x} = 0$, le cône n'ayant pas de génératrice multiple. Or les points communs aux deux courbes de degré $p - 1$
+\[
+\frac{\partial \varphi}{\partial y} = 0, \quad \frac{\partial \varphi}{\partial z} = 0
+\]
+ne peuvent appartenir à la courbe de degré $p - 2$
+\[
+P = 0,
+\]
+et nous concluons de là que $P$, $Q$ et $R$ doivent être identiquement nuls. On a, par suite,
+\[
+\frac{\alpha}{x} = \frac{\beta}{y} = \frac{\gamma}{z}.
+\]
+Soit $T$ la valeur commune de ces rapports; on aura
+\[
+pT = \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right),
+\]
+ce qui montre d'abord que $T$ sera un polynôme homogène en $x$, $y$, $z$. De plus, soit $q$ son degré; l'égalité précédente nous donnera
+\[
+pT = qT + 3T,
+\]
+d'où
+\[
+q = p - 3.
+\]
+Ainsi, si le degré de $\alpha$, $\beta$, $\gamma$ n'atteint pas $p - 1$, on aura nécessairement
+\[
+\alpha = xT, \quad \beta = yT, \quad \gamma = zT,
+\]
+\origpage{302}
+$T$ étant un polynôme de degré $p - 3$. Nous sommes donc assuré que \emph{les surfaces}
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+\emph{ont un point multiple d'ordre au moins égal à $(p - 2)$, en un point multiple isolé d'ordre $p$ de la surface proposée. Dans le cas où l'ordre de multiplicité est $(p - 2)$, les termes de degré $(p - 2)$ dans $A$, $B$, $C$ ont les formes spéciales qui viennent d'être indiquées.}
+
+\textbf{2.} Il est facile de voir maintenant que, dans ces conditions, l'intégrale
+\[
+\int^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+reste finie au point multiple considéré; nous supposons, comme plus haut, que ce point multiple est l'origine.
+
+Si l'origine est un point multiple d'ordre $p - 1$ pour les surfaces
+\[
+B = 0, \quad A = 0,
+\]
+il n'y a aucune modification à faire au raisonnement qui a été fait pour le cas du point double (nº 5).
+
+Si l'origine est seulement un point multiple d'ordre $p - 2$, nous pouvons poser, d'après ce qui vient d'être dit au numéro précédent,
+\[
+A = xT + A_{1}, \quad B = yT + B_{1},
+\]
+$A_{1}$ et $B_{1}$ ne renfermant que des termes de degré supérieur à $p - 2$; on a alors la somme des deux intégrales
+\[
+\int \frac{T(y\,dx - x\,dy)}{f'_{z}} + \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+Nous venons de dire que la seconde restait finie; quant à la première, elle est comparable à l'intégrale abélienne ordinaire
+\[
+\int \frac{T\left(1, \frac{y}{x}, \frac{z}{x}\right) d\left(\frac{y}{x}\right)}{\varphi'_{z}\left(1, \frac{y}{x}, \frac{z}{x}\right)}
+\]
+\origpage{303}
+attachée à la courbe $\varphi(x, y, z) = 0$; et cette intégrale reste finie, puisque $T$ est un polynôme de degré $p - 3$.
+
+Il résulte évidemment du calcul précédent qu'en un point multiple isolé d'ordre $p$ ($p$ étant supérieur à deux), l'intégrale de différentielle totale de première espece peut avoir, tout en restant \emph{finie}, une valeur \emph{indéterminée}.
+
+Il n'en était pas de même en un point double non planaire; nous avons vu (nº 5, Iʳᵉ Partie) que, dans ce cas, l'intégrale avait toujours une valeur \emph{déterminée}.
+
+\textbf{3.} Nous ferons maintenant quelques remarques relatives au cas où la surface
+\[
+f(x, y, z) = 0
+\]
+possede deux ou plus d'intégrales de première espèce. Considérons donc deux de ces intégrales.
+
+$A$, $B$, $C$ et $A_{1}$, $B_{1}$, $C_{1}$ étant les polynômes correspondants, nous aurons les deux identités
+\[
+\begin{aligned}
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} &= \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z), \\
+A_{1} \frac{\partial f}{\partial x} + B_{1} \frac{\partial f}{\partial y} + C_{1} \frac{\partial f}{\partial z} &= \left( \frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z} \right) f(x, y, z).
+\end{aligned}
+\]
+
+Supposons que les deux intégrales
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}} \quad \text{et} \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+ne sont pas fonctions l'une de l'autre, c'est-à-dire que l'on n'a pas pour tous les points de la surface
+\[
+BA_{1} - AB_{1} = 0,
+\]
+
+Ceci entendu, nous avons pour tout point de la surface
+\[
+\begin{aligned}
+A f'_{x} + B f'_{y} + C f'_{z} &= 0, \\
+A_{1} f'_{x} + B_{1} f'_{y} + C_{1} f'_{z} &= 0.
+\end{aligned}
+\]
+\origpage{304}
+ou
+\[
+\frac{AB_{1} - A_{1}B}{f'_{z}} = \frac{BC_{1} - CB_{1}}{f'_{x}} = \frac{CA_{1} - AC_{1}}{f'_{y}}. \tag{1}
+\]
+
+Le quotient $\dfrac{AB_{1} - A_{1}B}{f'_{z}}$ reste fini pour tout point $(x, y, z)$ de la surface, situé à distance finie. D'après les égalités précédentes, ceci est évident pour les points simples de la surface, il en est aussi de même pour les points des lignes multiples, car toute ligne multiple d'ordre $p$ de la surface proposée est ligne multiple d'ordre $2p - 2$ des surfaces
+\[
+AB_{1} - A_{1}B = 0, \quad BC_{1} - CB_{1} = 0, \quad CA_{1} - AC_{1} = 0.
+\]
+
+Faisons enfin coïncider $(x, y, z)$ avec un point $P$ multiple isolé d'ordre $p$. Si les surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0 \quad \text{et} \quad A_{1} = 0, \quad B_{1} = 0, \quad C_{1} = 0
+\]
+ont le point $P$ pour point multiple d'ordre $p - 2$, on voit, d'après les formes des polynômes $A$, $B$, $C$ (numéro précédent), que les surfaces
+\[
+AB_{1} - A_{1}B = 0, \quad BC_{1} - CB_{1} = 0, \quad CA_{1} - AC_{1} = 0
+\]
+ont le point $P$ pour point multiple d'ordre $(2p - 3)$, et dans tous les autres cas le degré de multiplicité atteindra au moins cette valeur; on voit alors, d'après les égalités (1), que chacune des expressions (1) s'annule au point $P$.
+
+De ce que chacun des rapports (1) reste fini pour tout point $(x, y, z)$ de la surface, situé à distance finie, on conclut que
+\[
+\begin{aligned}
+AB_{1} - A_{1}B &= f'_{z} Q(x, y, z), \\
+BC_{1} - CB_{1} &= f'_{x} Q(x, y, z), \\
+CA_{1} - AC_{1} &= f'_{y} Q(x, y, z),
+\end{aligned}
+\tag{2}
+\]
+$Q(x, y, z)$ étant un \emph{polynôme} en $x$, $y$, $z$. Le degré de ce polynôme sera d'ailleurs $(m - 4)$ ($m$ étant le degré de la surface $f$); on voit en effet, en se reportant aux formes de $A$, $B$, $C$, que les polynômes figurant
+\origpage{305}
+dans les premiers membres des relations précédentes sont de degré $2m - 5$.
+
+On pourrait arriver aux relations (2) par une autre voie. La surface
+\[
+AB_{1} - A_{1}B = 0
+\]
+passera par l'intersection des deux surfaces
+\[
+f(x, y, z) = 0, \quad f'_{z}(x, y, z) = 0;
+\]
+or, si une surface
+\[
+F(x, y, z) = 0
+\]
+passe par l'intersection de deux surfaces
+\[
+\varphi(x, y, z) = 0, \quad \psi(x, y, z) = 0,
+\]
+et que toute courbe d'intersection de ces deux dernières surfaces, qui est pour la première une ligne multiple d'ordre $i$ et pour la seconde d'ordre $k$, soit une ligne multiple d'ordre $i + k - 1$ pour la surface $F$, on aura l'identité
+\[
+F = Q\varphi + R\psi,
+\]
+$Q$ et $R$ étant des polynômes. Cette importante proposition est due à M. Nöther (\emph{Math. Annalen}, t. VI). En l'appliquant à l'exemple actuel, on est conduit à l'identité
+\[
+AB_{1} - A_{1}B = Qf'_{z} + Rf,
+\]
+et l'on a, par suite, les relations (2) pour les points de la surface $f$.
+
+La surface d'ordre $(m - 4)$
+\[
+Q(x, y, z) = 0
+\]
+est extrêmement intéressante, car c'est une surface \emph{adjointe} à la surface proposée; cette surface, d'après la définition du polynôme $Q$, aura en effet \emph{pour courbe multiple d'ordre $p - 1$ une courbe multiple d'ordre $p$ de la surface $f$, et elle aura pour point multiple d'ordre au moins égal à $(p - 2)$ tout point multiple isolé d'ordre $p$ de cette même surface.}
+
+\origpage{306}
+
+Le polynôme \emph{adjoint} $Q$ est donc tel que l'intégrale double
+\[
+\int^{x} \int^{y} \frac{Q(x, y, z)\,dx\,dy}{f'_{z}}
+\]
+reste finie pour toute valeur de $x$ et $y$.
+
+Dans le cas où la surface a un point double isolé $(p = 2)$, la surface précédente $Q$ passe par ce point double; car les surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0 \quad \text{et} \quad A_{1} = 0, \quad B_{1} = 0, \quad C_{1} = 0
+\]
+passent par ce point double. La surface adjointe d'ordre $(m - 4)$
+\[
+Q(x, y, z) = 0
+\]
+présente donc, dans ce cas, une particularité qui n'appartient pas en général aux surfaces adjointes, car celles ci ne sont pas assujetties à passer par les points doubles isolés.
+
+\textbf{4.} Nous allons considérer maintenant quelques exemples particuliers. Les surfaces du \emph{second} degré étant unicursales, il n'y aura évidemment parmi elles aucune surface qui possède des intégrales de première espèce. La même remarque s'applique aux surfaces du \emph{troisième} degré qui sont toutes unicursales; il y a seulement une exception pour les cônes du troisième degré, qui ne sont pas des surfaces unicursales et qui possedent une intégrale de différentielle totale de première espèce; car soit
+\[
+f(x, y, z) = 0
+\]
+l'équation d'un cône du troisième degré ayant pour sommet l'origine, l'intégrale
+\[
+\int \frac{x\,dy - y\,dx}{f'_{z}(x, y, z)}
+\]
+sera de première espèce.
+
+Passons aux surfaces du quatrième degré. Une telle surface pourra posséder une intégrale de première espèce, mais nous allons immédiatement établir qu'\emph{elle ne pourra avoir deux intégrales qui ne soient pas fonctions l'une de l'autre.}
+
+\origpage{307}
+
+En effet, nous aurions ici, d'après ce que nous avons vu (nº 3 de ce Chapitre),
+\[
+\begin{aligned}
+AB_{1} - A_{1}B - Qf'_{z} &= 0, \\
+BC_{1} - CB_{1} - Qf'_{x} &= 0, \\
+CA_{1} - AC_{1} - Qf'_{y} &= 0.
+\end{aligned}
+\]
+$Q$, qui est en général d'ordre $(m - 4)$, sera ici une constante; ces relations ne sont, en général, satisfaites que pour les points de la surface $f$; mais, dans le cas actuel, ce seront des identités, puisque le premier membre de chacune d'elles est un polynôme de degré inférieur à quatre. D'ailleurs la constante $Q$ sera différente de zéro, puisque les deux intégrales ne sont pas fonctions l'une de l'autre. Nous avons donc l'identité
+\[
+Af'_{x} + Bf'_{y} + Cf'_{z} = 0;
+\]
+par suite, on a cette autre identité
+\[
+\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} = 0.
+\]
+
+Reportons-nous maintenant aux conditions mises sous forme homogène, pour que la surface ait une intégrale de première espèce (nº 8, Iʳᵉ Partie); on a
+\[
+\theta_{1}\frac{\partial f}{\partial x} + \theta_{2}\frac{\partial f}{\partial y} + \theta_{3}\frac{\partial f}{\partial z} + \theta_{4}\frac{\partial f}{\partial t} = 0,
+\]
+et $\theta_{4}$ a pour expression
+\[
+\theta_{4} = -\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right):
+\]
+on aura par conséquent $\theta_{4} = 0$; mais $\theta_{4}$ est un quelconque des polynômes $\theta$, et nous arrivons ainsi à cette conclusion absurde que
+\[
+\theta_{1} = \theta_{2} = \theta_{3} = \theta_{4} = 0.
+\]
+
+L'hypothèse faite qu'il y avait deux intégrales de première espèce qui n'étaient pas fonctions l'une de l'autre était donc inadmissible.
+
+\origpage{308}
+
+\textbf{5.} Le même théorème subsiste pour les surfaces du cinquième degré. Soit une surface qui aurait deux intégrales distinctes de première espèce; on aurait
+\[
+\begin{aligned}
+Af'_{x} + Bf'_{y} + Cf'_{z} &= \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) f(x, y, z), \\
+A_{1}f'_{x} + B_{1}f'_{y} + C_{1}f'_{z} &= \left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) f(x, y, z),
+\end{aligned}
+\tag{1}
+\]
+et les formes des $A$, $B$, $C$ seront ici
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + L(x, y, z), &\quad A_{1} &= x\varphi_{1}(x, y, z) + L_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + M(x, y, z), &\quad B_{1} &= y\varphi_{1}(x, y, z) + M_{1}(x, y, z), \\
+C &= z\varphi(x, y, z) + N(x, y, z), &\quad C_{1} &= z\varphi_{1}(x, y, z) + N_{1}(x, y, z).
+\end{aligned}
+\]
+les $\varphi$ étant un polynôme homogène du second degré, et les $L$, $M$, $N$ des polynômes du même degré
+
+D'après ce qui a été dit au nº 3, on aura nécessairement
+\[
+\begin{aligned}
+AB_{1} - BA_{1} &= Qf'_{z} + \nu f(x, y, z), \\
+BC_{1} - CB_{1} &= Qf'_{x} + \lambda f(x, y, z), \\
+CA_{1} - AC_{1} &= Qf' + \mu f(x, y, z),
+\end{aligned}
+\tag{2}
+\]
+$Q$ étant ici un polynôme du premier degré, et $\lambda$, $\mu$, $\nu$ étant trois constantes. Des trois identités précédentes, on conclut, en tenant compte des équations (1),
+\[
+\begin{aligned}
+Q\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) + \lambda A + \mu B + \nu C &= 0, \\
+Q\left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) + \lambda A_{1} + \mu B_{1} + \nu C_{1} &= 0.
+\end{aligned}
+\tag{3}
+\]
+
+Les constantes $\lambda$, $\mu$, $\nu$ sont reliées très simplement au polynôme $Q$. Supposons, en effet, que les polynômes $\varphi$ et $\varphi_{1}$ ne soient pas identiquement nuls à la fois. Soit $\varphi = 0$. Dans la première des équations (4), les termes du degré le plus élevé seront, en posant
+\[
+\begin{aligned}
+&Q = lx + my + nz + p, \\
+&5(lx + my + nz)\varphi + (\lambda x + \mu y + \nu z);
+\end{aligned}
+\]
+\origpage{309}
+on en conclut que
+\[
+\lambda = -5\frac{\partial Q}{\partial x}, \quad \mu = -5\frac{\partial Q}{\partial y}, \quad \nu = -5\frac{\partial Q}{\partial z}.
+\]
+
+La même conclusion subsiste si $\varphi$ et $\varphi_{1}$ sont identiquement nuls. Considérons en effet, dans ce cas, les relations (2); les premiers membres sont du quatrième degré; on aura donc, en désignant par $\psi(x, y, z)$ les termes homogènes du cinquième degré dans $f$,
+\[
+\begin{aligned}
+(lx + my + nz)\psi'_{z} + \nu\psi &= 0, \\
+(lx + my + nz)\psi'_{x} + \lambda\psi &= 0, \\
+(lx + my + nz)\psi'_{y} + \mu\psi &= 0;
+\end{aligned}
+\]
+d'où l'on déduit
+\[
+\frac{\psi'_{z}}{\nu} = \frac{\psi'_{x}}{\lambda} = \frac{\psi'_{y}}{\mu} = -\frac{\psi}{lx + my + nz};
+\]
+donc
+\[
+5(lx + my + nz) = -(\lambda x + \mu y + \nu z),
+\]
+et la conclusion précédente subsiste.
+
+Ceci posé, on peut, en faisant un changement d'axes, supposer que le polynôme du premier degré $Q$ se réduise à $z$; les équations se simplifieront. Écrivons les équations (2)
+\[
+\begin{aligned}
+AB_{1} - BA_{1} &= zf'_{z} - 5f(x, y, z), \\
+BC_{1} - CB_{1} &= zf'_{x}. \\
+CA_{1} - AC_{1} &= zf'_{y},
+\end{aligned}
+\tag{4}
+\]
+et les équations (3) deviennent
+\[
+\begin{aligned}
+z\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) - 5C &= 0. \\
+z\left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) - 5C_{1} &= 0.
+\end{aligned}
+\]
+
+Nous avons pour $A$, $B$, $C$ et $A_{1}$, $B_{1}$, $C_{1}$ les expressions indiquées plus haut.
+
+\origpage{310}
+
+En les introduisant, les deux dernières équations deviennent
+\[
+\begin{aligned}
+z\left(\frac{\partial L}{\partial x} + \frac{\partial M}{\partial y} + \frac{\partial N}{\partial z}\right) - 5N &= 0, \\
+z\left(\frac{\partial L_{1}}{dx} + \frac{\partial M_{1}}{\partial y} + \frac{\partial N_{1}}{\partial z}\right) - 5N_{1} &= 0.
+\end{aligned}
+\]
+
+Si donc nous posons
+\[
+\begin{aligned}
+L &= a_{0}z^{2} + a_{1}z + a_{2}, \\
+M &= b_{0}z^{2} + b_{1}z + b_{2},
+\end{aligned}
+\]
+où les $a$ et $b$ sont des polynômes en $x$ et $y$, de degré marqué par l'indice, on aura
+\[
+N = \frac{1}{3}\left(\frac{\partial a_{1}}{\partial x} + \frac{\partial b_{1}}{\partial y}\right)z^{2} + \frac{1}{4}\left(\frac{\partial a_{2}}{\partial x} + \frac{\partial b_{2}}{\partial y}\right)z,
+\]
+et, de même, en posant
+\[
+\begin{aligned}
+L_{1} &= a'_{0}z^{2} + a'_{1}z + a'_{2}, \\
+M_{1} &= b'_{0}z^{2} + b'_{1}z + b'_{2},
+\end{aligned}
+\]
+il viendra
+\[
+N_{1} = \frac{1}{3}\left(\frac{\partial a'_{1}}{\partial x} + \frac{\partial b'_{1}}{\partial y}\right)z^{2} + \frac{1}{4}\left(\frac{\partial a'_{2}}{\partial x} + \frac{\partial b'_{2}}{\partial y}\right)z;
+\]
+et soit en outre
+\[
+\begin{aligned}
+\varphi(x, y, z) &= c_{0}z^{2} + c_{1}z + c_{2}, \\
+\varphi_{1}(x, y, z) &= c'_{0}z^{2} + c'_{1}z + c'_{2},
+\end{aligned}
+\]
+où les $c$ sont des polynômes homogènes en $x$, $y$, $z$ de degré marqué par l'indice.
+
+Ceci posé, la première des équations (4) donne
+\[
+\frac{\partial}{\partial z}\left(\frac{f}{z^{5}}\right) = \frac{AB_{1} - A_{1}B}{z^{6}}.
+\]
+
+Nous allons tirer de cette dernière équation la valeur de $f$, à un terme près de la forme $Cz^{5}$, où $C$ sera une constante, car elle ne peut être une fonction de $x$ et $y$, $f$ devant être un polynôme du cinquième degré en $x$, $y$ et $z$.
+
+\origpage{311}
+
+$f$ étant ainsi déterminé, on devra avoir, d'après les équations (4),
+\[
+f'_{x} = \frac{BC_{1} - CB_{1}}{z}, \quad f'_{y} = \frac{CA_{1} - AC_{1}}{z}.
+\]
+
+\textbf{6.} Ceci posé, la surface, étant nécessairement du genre un, devra nécessairement avoir une courbe double d'un degré au moins égal à deux, et l'on peut évidemment supposer que cette courbe double est la conique représentée par les équations
+\[
+z = 0, \quad x^{2} + y^{2} + 1 = 0,
+\]
+car on se rappelle que toute ligne multiple appartient à la surface $Q = 0$.
+
+D'ailleurs les surfaces
+\[
+A = 0, \quad A_{1} = 0, \quad B = 0, \quad B_{1} = 0
+\]
+doivent passer pour cette conique; donc les polynômes
+\[
+c_{2}x + a_{2}, \quad c_{2}y + b_{2}, \quad c'_{2}x + a'_{2}, \quad c'_{2}y + b'_{2}
+\]
+doivent être divisibles par $x^{2} + y^{2} + 1$. Soit donc
+\[
+\begin{aligned}
+c_{2}x + a_{2} &= (\alpha x + \beta)(x^{2} + y^{2} + 1), \\
+c_{2}y + b_{2} &= (\alpha y + \gamma)(x^{2} + y^{2} + 1), \\
+c'_{2}x + a'_{2} &= (\alpha'x + \beta')(x^{2} + y^{2} + 1), \\
+c'_{2}y + b'_{2} &= (\alpha'y + \gamma')(x^{2} + y^{2} + 1),
+\end{aligned}
+\tag{5}
+\]
+les $\alpha$, $\beta$, $\gamma$ étant des constantes; on peut en tirer $a_{2}$, $b_{2}$, $c_{2}$ et $a'_{2}$, $b'_{2}$, $c_{2}$.
+
+Dans $f(x, y, z)$, le terme indépendant de $z$ sera
+\[
+-\frac{1}{5}[(c_{2}x + a_{2})(c'_{2}y + b'_{2}) - (c_{2}y + b_{2})(c'_{2}x + a'_{2})]
+\]
+ou
+\[
+-\frac{1}{5}(x^{2} + y^{2} + 1)^{2}[x(\alpha\gamma' - \alpha'\gamma) + y(\beta\alpha' - \beta'\alpha) + \beta\gamma' - \beta'\gamma].
+\tag{6}
+\]
+
+Cherchons, d'autre part, le terme indépendant de $z$ dans $\dfrac{BC_{1} - CB_{1}}{z}$;
+\origpage{312}
+ce sera
+\[
+(c_{2}y + b_{2})\left[c'_{2} + \frac{1}{4}\left(\frac{\partial a'_{2}}{\partial x} + \frac{\partial b'_{2}}{\partial y}\right)\right] - (c'_{2}y + b'_{2})\left[c_{2} + \frac{1}{4}\left(\frac{\partial a_{2}}{\partial x} + \frac{\partial b_{2}}{\partial y}\right)\right],
+\]
+ou, en remplaçant les $a_{2}$, $b_{2}$, $c_{2}$ par leur valeur tirée des identités (5),
+\[
+\begin{aligned}
+&(x^{2} + y^{2} + 1)[x^{2}(\alpha'\gamma - \alpha\gamma') + \frac{1}{2}y^{2}(\alpha'\gamma - \alpha\gamma') \\
+&\qquad + \frac{1}{2}(\alpha\beta' - \alpha'\beta)xy + \frac{1}{2}(\beta'\gamma - \gamma'\beta)x + \frac{1}{2}(\gamma\alpha' - \gamma'\alpha)].
+\end{aligned}
+\tag{7}
+\]
+
+L'expression (7) doit être la dérivée par rapport à $x$ de l'expression (6); or cela n'est possible que si
+\[
+\alpha'\gamma - \alpha\gamma' = \alpha\beta' - \alpha'\beta = \beta'\gamma - \gamma'\beta = 0;
+\]
+dans ces conditions, l'expression (6) est nulle, et il en résulte que $f(x, y, z)$ serait divisible par $z$; la surface se décomposerait, ce qui montre \emph{l'impossibilité de l'existence de deux intégrales distinctes de première espèce pour une surface du cinquième degré}.
+
+\section*{TROISIÈME PARTIE.}
+
+Nous allons nous occuper, dans ce Chapitre, d'une classe particulière de surfaces; supposons que les coordonnées d'un point quelconque $x$, $y$, $z$ de la surface
+\[
+f(x, y, z) = 0
+\tag{1}
+\]
+s'expriment par des fonctions uniformes de deux paramètres $u$ et $v$
+\[
+x = F(u, v), \quad y = F_{1}(u, v), \quad z = F_{2}(u, v),
+\]
+ces fonctions ayant quatre \emph{paires} de périodes simultanées. Supposons de plus qu'à un point \emph{quelconque} $(x, y, z)$ de la surface ne corresponde qu'un seul système de valeurs de $u$ et $v$, abstraction faite de multiples des périodes; \emph{dans ce cas, la surface (1) possédera deux intégrales de première espèce et deux seulement}. On le démontre immédiatement de la manière suivante~:
+\origpage{313}
+Nous avons
+\[
+\begin{aligned}
+dx &= \frac{\partial F}{\partial u}\,du + \frac{\partial F}{\partial v}\,dv, \\
+dy &= \frac{\partial F_{1}}{\partial u}\,du + \frac{\partial F_{1}}{\partial v}\,dv.
+\end{aligned}
+\]
+
+Or les coefficients de $du$ et $dv$ sont des fonctions quadruplement périodiques de $u$ et $v$; elles peuvent donc s'exprimer rationnellement en $x$, $y$, $z$, dans l'hypothèse faite qu'à un point quelconque $(x, y, z)$ ne correspond qu'un seul système de valeurs $(u, v)$; en résolvant les deux équations précédentes par rapport à $du$ et $dv$, nous aurons donc
+\[
+\begin{aligned}
+du &= P\,dx + Q\,dy, \\
+dv &= P_{1}\,dx + Q_{1}\,dy,
+\end{aligned}
+\]
+les $P$ et $Q$ étant des fonctions rationnelles de $(x, y, z)$. Les deux intégrales
+\[
+\int P\,dx + Q\,dy \quad \text{et} \quad \int P_{1}\,dx + Q_{1}\,dy
+\]
+sont évidemment des intégrales de différentielles totales algébriques, et elles sont de première espèce, puisqu'à tout point $(x, y, z)$ doivent nécessairement correspondre des valeurs finies de $u$ et $v$. Ces deux intégrales sont distinctes et linéairement indépendantes.
+
+En second lieu, il n'existe pas d'intégrale de première espèce, linéairement indépendante des deux précédentes. Soit, en effet, comme plus haut,
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+une troisième intégrale de première espèce; considérons les expressions
+\[
+\varphi = \frac{B \frac{\partial x}{\partial u} - A \frac{\partial y}{\partial u}}{f'_{z}} \quad \text{et} \quad \psi = \frac{B \frac{\partial x}{\partial v} - A \frac{\partial y}{\partial v}}{f'_{z}};
+\]
+ces expressions devront rester finies pour toute valeur de $u$ et $v$, sinon l'intégrale précédente, qui peut s'écrire $\displaystyle\int \varphi\,du + \psi\,dv$, ne resterait pas toujours finie. Les fonctions quadruplement périodiques $\varphi$ et $\psi$, restant
+\origpage{314}
+toujours finies, se réduisent, par conséquent, à des constantes. On peut donc écrire
+\[
+\frac{B\,dx - A\,dy}{f'_{z}} = \alpha\,du + \beta\,dv,
+\]
+$\alpha$ et $\beta$ étant deux constantes, ce qui démontre le théorème.
+
+\textbf{2.} Parmi les surfaces du quatrième degré, il en est une bien remarquable, dont les coordonnées s'expriment par des fonctions uniformes quadruplement périodiques de deux paramètres~: c'est la surface de Kummer; mais le théorème précédent ne peut pas lui être appliqué, car, si nous appelons $u$ et $v$ les deux paramètres, à un point \emph{quelconque} de la surface correspondent \emph{deux} systèmes distincts de valeurs $(u, v)$. Pour vérifier cette assertion, appuyons-nous sur un élégant théorème, démontré par M. Darboux (\emph{Comptes rendus}, 27 juin 1881). M. Darboux établit que l'on peut toujours faire correspondre point par point une surface de Kummer à une surface ayant une équation de la forme
+\[
+z^{2} = f(x, y),
+\tag{1}
+\]
+$f$ étant un polynôme du sixième degré en $x$, $y$, et la courbe
+\[
+f(x, y) = 0
+\tag{2}
+\]
+se composant de six droites tangentes à une même conique.
+
+On peut toujours, par une transformation préalable, faire en sorte que cette conique ait pour équation
+\[
+x^{2} - y = 0.
+\tag{K}
+\]
+Posons maintenant
+\[
+\begin{aligned}
+x &= \frac{x_{1} + x_{2}}{2}, \\
+y &= x_{1}x_{2}.
+\end{aligned}
+\]
+
+Pour une valeur fixe arbitraire donnée à $x_{1}$, ces deux équations définissent une droite tangente à la conique $(K)$. Supposons que les six
+\origpage{315}
+droites données par l'équation (2) correspondent à
+\[
+x_{1} = a_{1}, a_{2}, a_{3}, a_{4}, a_{5}, a_{6}.
+\]
+Soient maintenant
+\[
+\begin{aligned}
+y_{1}^{2} &= (x_{1} - a_{1})(x_{1} - a_{2})\ldots(x_{1} - a_{6}), \\
+y_{2}^{2} &= (x_{2} - a_{1})(x_{2} - a_{2})\ldots(x_{2} - a_{6});
+\end{aligned}
+\]
+le produit $y_{1}^{2}y_{2}^{2}$, qui est une fonction symétrique de $x_{1}$ et $x_{2}$, est un polynôme du sixième degré en $x$ et $y$; il s'annule pour
+\[
+x_{1} = a_{1}, a_{2}, \ldots, a_{6};
+\]
+quel que soit $x_{2}$, il ne diffère donc du polynôme $f(x, y)$ que par un facteur constant que l'on peut bien supposer être l'unité.
+
+Par suite, nous satisfaisons à l'équation (1) en posant
+\[
+\begin{aligned}
+x &= \frac{x_{1} + x_{2}}{2}, \\
+y &= x_{1}x_{2}, \\
+z &= y_{1}y_{2},
+\end{aligned}
+\]
+où
+\[
+y_{1} = \sqrt{(x_{1} - a_{1})\ldots(x_{1} - a_{6})}, \quad y_{2} = \sqrt{(x_{2} - a_{1})\ldots(x_{2} - a_{6})}.
+\]
+
+Si nous considérons maintenant les équations abéliennes
+\[
+\begin{aligned}
+\int^{x_{1}} \frac{dx_{1}}{y_{1}} + \int^{x_{2}} \frac{dx_{2}}{y_{2}} &= u, \\
+\int^{x_{1}} \frac{x_{1}\,dx_{1}}{y_{1}} + \int^{x_{2}} \frac{x_{2}\,dx_{2}}{y_{2}} &= v,
+\end{aligned}
+\]
+ces équations nous donnent pour $x_{1} + x_{2}$, $x_{1}x_{2}$ et $y_{1}y_{2}$ des fonctions abéliennes de $u$ et $v$. Les trois coordonnées $x$, $y$, $z$ s'expriment donc par des fonctions abéliennes de deux paramètres.
+
+Suppose-t-on maintenant donné un point $(x, y, z)$ \emph{quelconque} de la surface, on aura alors un système de valeurs $(x_{1}, x_{2})$ et le produit $y_{1}y_{2}$. On aura donc pour $y_{1}$ et $y_{2}$ deux systèmes de valeurs, soit
+\[
+y_{1}, y_{2} \quad \text{et} \quad -y_{1}, -y_{2};
+\]
+\origpage{316}
+on voit qu'alors à un point $(x, y, z)$ de la surface \emph{correspondent deux systèmes de valeurs} $(u, v)$.
+
+\textbf{3.} Revenons maintenant aux surfaces dont les coordonnées s'expriment par des fonctions uniformes quadruplement périodiques de deux paramètres, et proposons-nous la question suivante~: Étant donnée l'équation irréductible
+\[
+f(x, y, z) = 0,
+\]
+peut-on exprimer $x$, $y$, $z$ par des fonctions quadruplement périodiques de deux paramètres, avec cette condition qu'à un point quelconque de la surface ne corresponde qu'un seul système de valeurs des deux paramètres?
+
+Nous supposons, comme dans le premier Chapitre, que la surface n'a que des singularités ordinaires (nº 1, Chap. II); nous nous bornons même, pour abréger, au cas où la surface n'aurait que des points doubles et des courbes doubles; d'ailleurs, il est entendu qu'on a commencé par faire sur les variables la substitution homographique la plus générale.
+
+Il devra tout d'abord exister deux intégrales de première espèce linéairement indépendantes et deux seulement~: c'est un premier point qu'on aura à vérifier, en procédant comme il a été indiqué dans le premier Chapitre. Supposons donc que ces deux intégrales soient obtenues, et désignons-les par
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+Elles doivent, de plus, ne pas être fonction l'une de l'autre, c'est-à-dire que $BA_{1} - AB_{1}$ n'est pas identiquement nul.
+
+Considérons maintenant les équations différentielles
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv;
+\end{aligned}
+\tag{1}
+\]
+ces équations devront donner pour $x$ et $y$ des fonctions uniformes de
+\origpage{317}
+$u$ et $v$~: c'est ce que l'on voit aisément d'après ce qui a été dit plus haut, puisque, dans le cas où $x, y, z$ peuvent s'exprimer par des fonctions quadruplement périodiques de $u$ et $v$, on a (nº 1, Part. II)
+\[
+\frac{B\,dx - A\,dy}{f'_{z}} = \alpha\,du + \beta\,dv
+\]
+et de même
+\[
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} = \alpha_{1}\,du + \beta_{1}\,dv,
+\]
+les $\alpha$ et $\beta$ étant des constantes. Si nous remplaçons donc $\alpha u + \beta v$ et $\alpha_{1} u + \beta_{1} v$ par $u$ et $v$, nous avons le système des équations (1).
+
+Nous devons donc chercher \emph{si ce système d'équations aux différentielles totales admet pour intégrales des fonctions uniformes des deux variables indépendantes $u$ et $v$.}
+
+Arrêtons-nous d'abord un instant sur le genre de la surface proposée
+\[
+f(x, y, z) = 0.
+\]
+
+Si les coordonnées d'un quelconque de ses points s'expriment par des fonctions quadruplement périodiques de deux paramètres et de la manière indiquée, \emph{le genre de cette surface devra être égal à l'unité.} On le démontre de suite en remarquant que l'intégrale double
+\[
+\int \int du\,dv
+\]
+est de la forme
+\[
+\int \int \varphi(x, y, z)\,dx\,dy,
+\]
+$\varphi$ étant une fonction rationnelle de $x, y, z$. Il y a donc une intégrale de cette forme, qui reste finie pour toute valeur de $x$ et $y$; on sait, d'ailleurs, que $\varphi$ sera nécessairement de la forme
+\[
+\varphi(x, y, z) = \frac{Q(x, y, z)}{f'_{z}},
+\]
+$Q$ désignant un polynôme d'ordre $m - 4$. De plus, l'expression
+\[
+\frac{Q(x, y, z)\left(\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}\right)}{f'_{z}},
+\]
+\origpage{318}
+étant une fonction quadruplement périodique qui reste finie pour toute valeur de $u$ et $v$, se réduit à une constante; désignons cette constante par $a$. Rappelons enfin que la surface
+\[
+Q(x, y, z) = 0
+\]
+passe par la courbe double de la surface.
+
+\textbf{4.} Ces préliminaires posés, reprenons les deux équations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+et tirons de ces équations les valeurs de $\dfrac{\partial x}{\partial u}$, $\dfrac{\partial x}{\partial v}$, $\dfrac{\partial y}{\partial u}$, $\dfrac{\partial y}{\partial v}$, afin de former $\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}$; on obtient de suite
+\[
+\frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} = -\frac{(f'_{z})^{2}}{BA_{1} - AB_{1}}.
+\]
+
+Si nous rapprochons cette expression de la relation
+\[
+\frac{Q(x, y, z)\left(\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}\right)}{f'_{z}} = a,
+\]
+nous avons
+\[
+\frac{BA_{1} - AB_{1}}{f'_{z}} = -\frac{1}{a} Q(x, y, z),
+\tag{1}
+\]
+relation qui ne sera, d'ailleurs, une identité qu'en vertu de l'équation de la surface. Nous avons vu, d'autre part (nº 5, Chap. II), que
+\[
+\frac{BA_{1} - AB_{1}}{f'_{z}} = \frac{BC_{1} - CB_{1}}{f'_{x}} = \frac{CA_{1} - AC_{1}}{f'_{y}} = R(x, y, z),
+\tag{2}
+\]
+$R(x, y, z)$ étant un polynôme d'ordre $(m - 4)$. Des relations (1) et (2),
+\origpage{319}
+on conclut
+\[
+R(x, y, z) = -\frac{1}{a} Q(x, y, z),
+\]
+et cette égalité a lieu pour toute valeur de $x, y$ et $z$.
+
+Des trois valeurs que l'on peut donner à $R$, il résulte que la surface $R = 0$ passe par les points doubles isolés; en effet, nous avons vu (Chap. I, nº 5) que
+\[
+\frac{B}{f'_{z}} \quad \text{et} \quad \frac{A}{f'_{z}}
+\]
+tendent vers une limite finie quand $(x, y, z)$ se rapproche d'un point double isolé $(a, b, c)$, du moins quand $\dfrac{y - b}{x - a}$ ne tend pas vers deux certaines valeurs particulières. On a, par conséquent, $R(a, b, c) = 0$, puisque $A_{1}$ et $B_{1}$ s'annulent pour les coordonnées du point double.
+
+\textbf{5.} Nous avons maintenant à étudier les deux équations aux différentielles totales
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+et à chercher à quelles conditions elles donneront pour $x$ et $y$ des fonctions uniformes de $u$ et $v$. On peut écrire les deux équations précédentes sous la forme
+\[
+\begin{aligned}
+dx &= \frac{-A_{1}\,du + A\,dv}{R(x, y, z)}, \\
+dy &= \frac{-B_{1}\,du + B\,dv}{R(x, y, z)}.
+\end{aligned}
+\]
+
+En tout point de la surface, situé à distance finie, et pour lequel $R(x, y, z)$ est différent de zéro, chacun des multiplicateurs de $du$ et $dv$ a une valeur finie parfaitement déterminée.
+
+Nous devons chercher les valeurs pour lesquelles les fonctions $x$ et $y$, définies par les deux équations aux différentielles totales précédentes, pourraient cesser d'être des fonctions uniformes de $u$ et $v$. On sait, d'après une proposition générale due à M. Bouquet (\emph{Bulletin des}
+\origpage{320}
+\emph{Sciences mathématiques,} t. III), que $x$ et $y$ ne cesseront pas d'être des fonctions holomorphes de $u$ et $v$, tant que les coefficients de $du$ et $dv$ seront des fonctions holomorphes de $x$ et $y$.
+
+Les points communs à la surface proposée et à la surface
+\[
+R(x, y, z) = 0
+\]
+joueront un rôle important dans la discussion qui va suivre, puisque, pour ces points, le dénominateur commun de $dx$ et $dy$ s'annulera. L'intersection de ces deux surfaces se composera d'abord des courbes doubles de la surface $f$, et il pourra y avoir, en outre, une ou plusieurs autres courbes d'intersection; désignons par $\Gamma$ ces courbes complémentaires.
+
+Ne considérons, pour le moment, que les points de la surface situés à distance finie, et prenons d'abord les points \emph{simples} en dehors des courbes $\Gamma$. Si, pour un pareil point $(x, y, z)$, on n'a pas $f'_{z} = 0$, il est clair que
+\[
+\frac{A}{R}, \quad \frac{A_{1}}{R}, \quad \frac{B}{R}, \quad \frac{B_{1}}{R}
+\]
+seront des fonctions holomorphes de $x$ et $y$ dans le voisinage de ce point. Il n'en est plus ainsi si $f'_{z} = 0$, mais la difficulté n'est qu'apparente. Le point étant simple, $f'_{x}$ et $f'_{y}$ ne seront pas nuls simultanément; soit $f'_{x} \neq 0$.
+
+Des équations
+\[
+dx = \frac{-A_{1}\,du + A\,dv}{R(x, y, z)}, \quad dy = \frac{-B_{1}\,du + B\,dv}{R(x, y, z)},
+\]
+auxquelles j'associe
+\[
+f'_{x}\,dx + f'_{y}\,dy + f'_{z}\,dz = 0,
+\]
+on tire
+\[
+\begin{aligned}
+dy &= \frac{-B_{1}\,du + B\,dv}{R}, \\
+dz &= \frac{-C_{1}\,du + C\,dv}{R},
+\end{aligned}
+\]
+les polynômes $C$ et $C_{1}$ étant ceux qui ont été considérés (Chap. Iᵉʳ. nº 2).
+\origpage{321}
+$x$ étant ici fonction holomorphe de $y$ et $z$, puisque $f'_{x} \neq 0$, nous concluons des deux dernières équations que $y$ et $z$ sont fonctions holomorphes de $u$ et $v$, et, par suite, il en est de même de $x$, d'après l'équation
+\[
+dx = -\frac{f'_{y}}{f'_{x}}\,dy - \frac{f'_{z}}{f'_{x}}\,dz.
+\]
+
+Donc, tant que le point $(x, y, z)$, restant à distance finie, ne vient pas sur la surface
+\[
+R(x, y, z) = 0,
+\]
+\emph{$x$ et $y$ ne cessent pas d'être des fonctions holomorphes de $u$ et $v$.}
+
+\textbf{6.} Nous n'aurons encore aucune difficulté quand $(x, y, z)$, restant toujours à distance finie, s'approche d'un point $A$ de la courbe double, qui n'appartient pas aux courbes complémentaires $\Gamma$. D'après cette hypothèse, la surface $R$ ne sera tangente en $A$ à aucune des deux nappes de la surface passant en ce point.
+
+Si la nappe de la surface, sur laquelle le point $(x, y, z)$ s'approche de $A$, n'a pas son plan tangent en ce point parallèle à l'axe des $z$, ce qu'on peut toujours supposer d'après le numéro précédent, les coefficients de $du$ et $dv$ seront des fonctions holomorphes de $x$ et $y$, et, par suite, $x$ et $y$ seront des fonctions holomorphes de $u$ et $v$ dans le voisinage des valeurs correspondantes de ces variables.
+
+\textbf{7.} Nous avons maintenant à considérer le cas où $(x, y, z)$ s'approcherait d'une courbe complémentaire $\Gamma$. Soit $M$ un point quelconque d'une telle courbe; d'après les équations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+on voit que le rapport $\dfrac{du}{dv}$ est indépendant de $\dfrac{dy}{dx}$, quand $(x, y, z)$ s'approche de $M$, car on a, au point $M$,
+\[
+AB_{1} - A_{1}B = 0.
+\]
+
+\origpage{322}
+
+Donc les valeurs $u_{0}$ $v_{0}$ des intégrales $u$ et $v$ correspondant au point $M$ ne donnent pas pour les fonctions $x$ et $y$ un point ordinaire; ceci n'est pas douteux, puisque $x$ et $y$ ne pourront tendre vers $x_{0}$ et $y_{0}$, que si la limite du rapport $\dfrac{u - u_{0}}{v - v_{0}}$ a une valeur déterminée.
+
+Si donc les équations précédentes sont satisfaites par des fonctions analytiques uniformes de $u$ et $v$, le point $(u_{0}, v_{0})$ sera pour ces fonctions un point d'indétermination. Mais, quand $M$ se déplacera sur la courbe $\Gamma$, le système de valeurs $(u_{0}, v_{0})$ ne peut pas varier d'une manière continue, car une fonction uniforme de deux variables indépendantes, qui présente pour tout système fini de valeurs des variables le caractère d'une fonction rationnelle, ne peut pas avoir une suite de points d'indétermination se suivant d'une manière continue. Par conséquent, $u$ et $v$ gardent une valeur constante quand $(x_{0}, y_{0}, z_{0})$ se déplace sur la courbe $\Gamma$. Nous avons alors, pour cette courbe,
+\[
+B\,dx - A\,dy = 0, \quad B_{1}\,dx - A_{1}\,dy = 0,
+\]
+et, puisque
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = 0,
+\]
+en même temps que
+\[
+\frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy + \frac{\partial f}{\partial z}\,dz = 0,
+\]
+on en conclut
+\[
+\frac{dx}{A} = \frac{dy}{B} = \frac{dz}{C}
+\]
+et pareillement
+\[
+\frac{dx}{A_{1}} = \frac{dy}{B_{1}} = \frac{dz}{C_{1}}
+\]
+
+La courbe $\Gamma$ étant une courbe d'intersection de la surface proposée et de la surface
+\[
+R(x, y, z) = 0,
+\]
+on aura, d'après ce qui précède, en tous les points de cette courbe,
+\[
+A \frac{\partial R}{\partial x} + B \frac{\partial R}{\partial y} + C \frac{\partial R}{\partial z} = 0,
+\]
+cette relation doit être vérifiée en tous les points des courbes complémentaires
+\origpage{323}
+d'intersection. Ceci posé, considérons une de ces courbes $\Gamma$; soit $(x_{0}, y_{0}, z_{0})$ un point simple de cette courbe, qui soit en même temps un point simple de la surface, et soit $f'_{z}$ différent de zéro, ce qu'il est bien permis de supposer. Nous aurons
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0};
+\end{aligned}
+\]
+faisons tendre $(x, y, z)$ vers $(x_{0}, y_{0}, z_{0})$. On peut écrire
+\[
+\begin{aligned}
+&\frac{B\,dx - A\,dy}{f'_{z}} \\
+&\qquad = [\beta + P(x - x_{0}, y - y_{0})]\,dx + [\alpha + Q(x - x_{0}, y - y_{0})]\,dy, \\
+&\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} \\
+&\qquad = [\beta_{1} + P_{1}(x - x_{0}, y - y_{0})]\,dx + [\alpha_{1} + Q_{1}(x - x_{0}, y - y_{0})]\,dy,
+\end{aligned}
+\]
+les $P$ et $Q$ étant des séries ordonnées suivant les puissances croissantes de $x - x_{0}$ et $y - y_{0}$, qui ne renferment pas de terme constant, et, puisque
+\[
+BA_{1} - AB_{1} = 0 \quad \text{pour} \quad x_{0}, y_{0}, z_{0},
+\]
+on aura
+\[
+\beta\alpha_{1} - \alpha\beta_{1} = 0.
+\]
+
+Nous pourrons enfin écrire, après intégration,
+\[
+\begin{aligned}
+\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots &= u - u_{0}, \\
+\beta_{1}(x - x_{0}) + \alpha_{1}(y - y_{0}) + \ldots &= v - v_{0}.
+\end{aligned}
+\tag{I}
+\]
+
+Le point $(x_{0}, y_{0}, z_{0})$ étant un point simple de la courbe $\Gamma$, $A$, $B$, $C$ et $A_{1}$, $B_{1}$, $C_{1}$ ne s'annulent pas simultanément en ce point; car, s'il en était ainsi, l'égalité
+\[
+R(x, y, z) = \frac{AB_{1} - A_{1}B}{f'_{z}}
+\]
+\origpage{324}
+montrerait que $(x_{0}, y_{0}, z_{0})$ est un point double de la surface $R$, et, par conséquent, un point double de $\Gamma$. On peut donc supposer que $\alpha$, $\beta$, $\alpha_{1}$ et $\beta_{1}$ ne sont pas nuls simultanément; soit $\beta \neq 0$.
+
+Revenons aux équations (I); elles montrent que le rapport $\dfrac{v - v_{0}}{u - u_{0}}$ tend vers une limite indépendante du rapport $\dfrac{y - y_{0}}{x - x_{0}}$.
+
+Posons
+\[
+\begin{aligned}
+u - u_{0} &= t\lambda(t), \\
+v - v_{0} &= t\lambda_{1}(t),
+\end{aligned}
+\]
+$\lambda$ et $\lambda_{1}$ étant deux fonctions holomorphes de $t$, dans le voisinage de $t = 0$; elles sont, d'ailleurs, uniquement assujetties à satisfaire la relation
+\[
+\beta_{1}\lambda(0) - \beta\lambda_{1}(0) = 0.
+\]
+
+Substituons ces valeurs de $u$ et $v$ dans les équations (I). On aura
+\[
+\begin{aligned}
+\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots &= t\lambda(t), \\
+\beta_{1}(x - x_{0}) + \alpha_{1}(y - y_{0}) + \ldots &= t\lambda_{1}(t).
+\end{aligned}
+\tag{II}
+\]
+
+Si l'on fait, dans ces équations, $t = 0$, on a deux équations qui seront satisfaites par un même développement de $x - x_{0}$ en série ordonnée suivant les puissances croissantes de $y - y_{0}$; c'est le développement qui donne la courbe $\Gamma$ ou plutôt sa projection sur le plan des $xy$; ceci résulte de ce que $u$ et $v$ gardent les valeurs constantes $u_{0}$ et $v_{0}$, quand $(x, y, z)$ se déplace sur la courbe $\Gamma$.
+
+Cette remarque faite, revenons aux équations (II). Nous tirerons de la première $x - x_{0}$ en fonction de $t$ et de $y - y_{0}$, et nous substituerons cette valeur de $x - x_{0}$ dans la seconde équation. La relation ainsi obtenue devra être vérifiée pour $t = 0$, quel que soit $y$, d'après ce qui vient d'être dit; tous les termes contiendront donc $t$ en facteur. Ce facteur enlevé, il restera un terme du premier degré en $y - y_{0}$, et nous aurons ainsi le développement de $y - y_{0}$ suivant les puissances croissantes de $t$, développement qui ne contiendra pas de terme indépendant de $t$. Nous avons ainsi $x - x_{0}$ et $y - y_{0}$, représenté par des séries ordonnées suivant les puissances croissantes de $t$. Il importe de s'assurer
+\origpage{325}
+s'il y a bien, comme nous venons de le dire, un terme du premier degré en $y - y_{0}$. Nous allons établir que, si, comme il a été supposé, \emph{le point $(x_{0}, y_{0}, z_{0})$ est un point simple de la courbe $\Gamma$}, il reste toujours un terme du premier degré dans l'équation précédente. Pour le démontrer, substituons aux équations (II) les deux équations suivantes
+\[
+\begin{aligned}
+&\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots = t\lambda(t), \\
+&m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2} + \ldots \\
+&\qquad = t[\beta_{1}\lambda(t) - \beta\lambda_{1}(t)],
+\end{aligned}
+\]
+ce qui revient à supposer que $\beta_{1} = \alpha_{1} = 0$, c'est-à-dire que les surfaces
+\[
+B_{1} = 0, \quad A_{1} = 0
+\]
+passent en $(x_{0}, y_{0}, z_{0})$. Or nous aurons sans peine les valeurs de $m$, $n$ et $p$. Le développement de l'intégrale
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+montre immédiatement que l'on a, à un facteur près fini et différent de zéro,
+\[
+\begin{aligned}
+m &= \left( \frac{\partial B_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{x_{0}}, \\
+n &= \left( \frac{\partial B_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{y_{0}} = - \left[ \left( \frac{\partial A_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right], \\
+p &= - \left[ \left( \frac{\partial A_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right].
+\end{aligned}
+\]
+
+On a, d'ailleurs,
+\[
+\beta = B_{0}, \quad \alpha = - A_{0}.
+\]
+Si, dans l'équation finale, le terme du premier degré en $y - y_{0}$ disparaît, le trinôme
+\[
+m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2},
+\]
+qui a nécessairement une racine commune avec
+\[
+\beta(x - x_{0}) + \alpha(y - y_{0}),
+\]
+\origpage{326}
+aura cette racine pour racine double; par conséquent, on aura
+\[
+m\alpha - n\beta = 0, \quad n\alpha - p\beta = 0.
+\]
+ce qui nous donne
+\[
+\begin{aligned}
+A_{0} \left[ \left( \frac{\partial B_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right] - B_{0} \left[ \left( \frac{\partial A_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right] &= 0, \\
+A_{0} \left[ \left( \frac{\partial B_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right] - B_{0} \left[ \left( \frac{\partial A_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right] &= 0,
+\end{aligned}
+\]
+que nous écrirons enfin
+\[
+\frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial x} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial x} \right)_{0}}{f'_{x_{0}}} = \frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial y} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial y} \right)_{0}}{f'_{y_{0}}} = \frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial z} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial z} \right)_{0}}{f'_{z}};
+\]
+d'où l'on conclurait que la surface, représentée par l'équation
+\[
+AB_{1} - BA_{1} = 0,
+\]
+c'est-à-dire la surface $R = 0$, est tangente en $(x_{0}, y_{0}, z_{0})$ à la surface proposée.
+
+\textbf{8.} Supposons maintenant que la surface $R$ soit tangente à la surface $f$ en un point simple $(x_{0}, y_{0}, z_{0})$ de cette surface. La courbe $\Gamma$ aura en ce point un point double; or la courbe $\Gamma$ satisfait aux équations différentielles
+\[
+\frac{dx}{A} = \frac{dy}{B} = \frac{dz}{C},
+\]
+ainsi qu'aux suivantes~:
+\[
+\frac{dx}{A_{1}} = \frac{dy}{B_{1}} = \frac{dz}{C_{1}}.
+\]
+
+Si donc les six quantités $A$, $B$, $C$, $A_{1}$, $B_{1}$ et $C_{1}$ ne s'annulent pas simultanément en $(x_{0}, y_{0}, z_{0})$, on aura, par l'une ou l'autre de ces équations, un développement qui ne donnera qu'une seule branche de courbe passant en $(x_{0}, y_{0}, z_{0})$. La conclusion est qu'on a en $(x_{0}, y_{0}, z_{0})$
+\[
+A = B = C = A_{1} = B_{1} = C_{1} = 0.
+\]
+\origpage{327}
+Ceci posé, les deux équations
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0}
+\end{aligned}
+\]
+deviendront
+\[
+\begin{aligned}
+m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2} + \ldots &= u - u_{0}, \\
+m_{1}(x - x_{0})^{2} + 2n_{1}(x - x_{0})(y - y_{0}) + p_{1}(y - y_{0})^{2} + \ldots &= v - v_{0},
+\end{aligned}
+\]
+et l'on aura évidemment
+\[
+\frac{m}{m_{1}} = \frac{n}{n_{1}} = \frac{p}{p_{1}}.
+\]
+
+Nous pouvons faire une combinaison de ces équations, de manière que la seconde n'ait pas de terme du second degré en $x - x_{0}$ et $y - y_{0}$. Nous pouvons donc supposer, afin de ne pas multiplier les notations, que cette condition est précisément remplie dans les deux équations précédentes, c'est-à-dire que
+\[
+m_{1} = n_{1} = p_{1} = 0.
+\]
+Écrivons donc
+\[
+\begin{aligned}
+&m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y)^{2} + \ldots = u - u_{0}, \\
+&\alpha(x - x_{0})^{3} + 3\beta(x - x_{0})^{2}(y - y) \\
+&\qquad + 3\gamma(x - x_{0})(y - y_{0})^{2} + \delta(y - y_{0})^{3} + \ldots = v - v_{0};
+\end{aligned}
+\]
+puisque, en faisant $u = u_{0}$, $v = v_{0}$, les deux équations en $x$ et $y$ qu'on obtient ainsi seront vérifiées pour les deux branches de la courbe $\Gamma$ qui passe en $x_{0}$, $y_{0}$, il est clair que les racines du polynôme
+\[
+m + 2n\theta + p\theta^{2}
+\]
+seront racines du polynôme
+\[
+\alpha + 3\beta\theta + 3\gamma\theta^{2} + \delta\theta^{3}.
+\]
+\origpage{328}
+Fait-on maintenant, dans les équations précédentes,
+\[
+u - u_{0} = t^{2}\lambda(t), \quad v - v_{0} = t^{3}\lambda_{1}(t),
+\]
+où $\lambda$ et $\lambda_{1}$ sont des fonctions holomorphes de $t$ dans le voisinage de $t = 0$, et d'ailleurs quelconques. A une valeur de $t$ et, par suite, de $u - u_{0}$ et $v - v_{0}$ correspondent, par les équations précédentes, quatre systèmes de valeurs de $x - x_{0}$ et $y - y_{0}$.
+
+On voit qu'alors les équations
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}}^{x, y} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}}^{x, y} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0}
+\end{aligned}
+\]
+ne donnent pas, pour une suite continue de valeurs de $u$ et $v$ dans le voisinage de $u_{0}$ et $v_{0}$, un seul système de valeurs correspondantes de $x$ et $y$. Il est donc impossible que la surface
+\[
+R(x, y, z) = 0
+\]
+soit tangente à la surface
+\[
+f(x, y, z) = 0
+\]
+en un point simple $(x_{0}, y_{0}, z_{0})$ de cette dernière.
+
+\textbf{9.} Nous devons maintenant considérer le cas où $(x, y, z)$ tend vers un point double de la surface, par lequel passe une courbe $\Gamma$. Supposons d'abord qu'une courbe $\Gamma$ rencontre la courbe double en un point $(x_{0}, y_{0}, z_{0})$; il n'y aura, dans ce cas, aucune difficulté, car on pourra raisonner, comme au numéro précédent, en considérant simplement la nappe de la surface passant en $(x_{0}, y_{0}, z_{0})$ sur laquelle se trouve la courbe $\Gamma$.
+
+Une autre circonstance reste à examiner; la surface
+\[
+R(x, y, z) = 0
+\]
+passe par les points doubles \emph{isolés} de la surface. La courbe complémentaire
+\origpage{329}
+$\Gamma$ aura donc un point double, en un point double isolé $(x_{0}, y_{0}, z_{0})$ de la surface proposée que nous allons supposer être l'origine.
+
+Nous avons vu qu'en un pareil point l'intégrale avait une valeur parfaitement déterminée (1ʳᵉ Partie, nº 5). De plus, quand la limite de $\dfrac{y}{x}$ est finie et n'annule pas $M + N\left( \dfrac{y}{x} \right)^{2}$ (\emph{voir} le numéro cité), ce que l'on peut toujours supposer, les termes du premier ordre dans l'intégrale
+\[
+\int_{0, 0, 0}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+se réduisent à
+\[
+\frac{c'x - cy - \lambda Pz}{2P},
+\]
+et pareillement pour l'intégrale
+\[
+\int_{0, 0, 0}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}},
+\]
+les termes du premier degré seront
+\[
+\frac{c'_{1}x - c_{1}y - \lambda_{1}Pz}{2P}.
+\]
+La surface
+\[
+R(x, y, z) = 0
+\]
+aura généralement à l'origine un point simple, et la courbe $\Gamma$ un point double dont les deux tangentes seront distinctes. Puisque les deux intégrales $u$ et $v$ gardent sur la courbe $\Gamma$ les valeurs constantes $u_{0}$ et $v_{0}$, les deux expressions
+\[
+\begin{aligned}
+&c'x - cy - \lambda Pz, \\
+&c'_{1}x - c_{1}y - \lambda_{1}Pz
+\end{aligned}
+\]
+doivent s'annuler pour l'une et l'autre direction correspondant aux tangentes à la courbe $\Gamma$. Les plans, obtenus en égalant ces expressions à
+\origpage{330}
+zéro, coïncident donc. Ceci posé, revenons aux équations, en faisant $u_{0} = v_{0} = 0$,
+\[
+\begin{aligned}
+\frac{c'x - cy - \lambda Pz}{2P} + \ldots &= u, \\
+\frac{c'_{1}x - c_{1}y - \lambda_{1}Pz}{2P} + \ldots &= v.
+\end{aligned}
+\]
+
+La discussion de ces deux équations pourra être faite de la manière suivante. On remarque d'abord que les deux intégrales $u$ et $v$ peuvent être écrites sous forme de série procédant suivant les puissances croissantes de $x$, $y$ et $z$; nous pouvons d'abord supposer que $v$ ne contient pas de terme du premier degré, il suffit, pour cela, de faire une combinaison linéaire convenable des deux équations précédentes. Écrivons donc
+\[
+\begin{aligned}
+\frac{c'x - cy - \lambda Pz}{2P} + \ldots &= u, \\
+\varphi_{2}(x, y, z) + \ldots &= v,
+\end{aligned}
+\]
+$\varphi_{2}(x, y, z)$ étant un polynôme homogène du second degré en $x$, $y$ et $z$. Posons
+\[
+u = t\lambda(t), \quad v = t^{2}\lambda_{1}(t),
+\]
+$\lambda$ et $\lambda_{1}$ étant des fonctions holomorphes quelconques de $t$ dans le voisinage de $t = 0$.
+
+De la première équation nous pouvons tirer $z$ sous forme de série procédant suivant les puissances croissantes de $x$, $y$ et $t$; substituons cette valeur de $z$ dans la seconde équation. Il viendra
+\[
+P(x, y) + tQ(x, y, t) = t^{2}\lambda_{1}(t), \tag{1}
+\]
+$P$ étant une série dont les premiers termes sont du second degré en $x$ et $y$. Nous avons, de plus, la relation
+\[
+f(x, y, z) = 0
+\]
+qui devient, par la substitution de la valeur de $z$,
+\[
+P_{1}(x, y) + tQ_{1}(x, y, t) = 0, \tag{2}
+\]
+\origpage{331}
+$P_{1}$ commençant, comme $P$, par des termes du second degré. L'équation
+\[
+P_{1}(x, y) = 0
+\]
+donne les deux branches de la courbe $\Gamma$ passant par l'origine, et il en est de même de
+\[
+P(x, y) = 0.
+\]
+Par suite, $P$ et $P_{1}$ peuvent être supposés identiques, et nous avons, à la place des équations (1) et (2),
+\[
+Q(x, y, t) - Q_{1}(x, y, t) = t\lambda_{1}(t), \tag{3}
+\]
+\[
+P_{1}(x, y) + tQ_{1}(x, y, t) = 0. \tag{4}
+\]
+L'équation (3) permettra de développer $y$ suivant les puissances croissantes de $x$ et $t$, et l'on substituera ce développement dans l'équation (4). Il arrivera, par conséquent, que l'équation (4), ainsi transformée, commencera par des termes du second degré en $x$ et $t$; donc, en général, à une valeur de $t$ correspondront deux valeurs de $x$. Les deux équations ne donnent donc pas une inversion uniforme~: c'est du moins ce qui aura lieu en général, et, dans chaque cas particulier, on pourra faire la discussion complète en suivant la méthode précédente.
+
+\textbf{10.} Nous avons supposé, dans les numéros qui précèdent, que le point $(x, y, z)$ restait à distance finie. Employons, comme au nº 7 du Chapitre Iᵉʳ, les coordonnées homogènes $(x, y, z, t)$; ces quatre coordonnées ne sont pas nulles à la fois, et soit, par exemple, le point s'éloignant à l'infini, de telle manière que $x$ soit différent de zéro. Nous poserons alors
+\[
+\frac{y}{x} = Y, \quad \frac{z}{x} = Z, \quad \frac{t}{x} = T.
+\]
+
+Nous avons vu (nº 7, 1ʳᵉ Partie) que la différentielle
+\[
+\frac{B\,dx - A\,dy}{f'_{z}}
+\]
+prend alors la forme
+\[
+\frac{N\,dY - M\,dT}{f'_{z}(1, Y, Z, T)},
+\]
+\origpage{332}
+où $M$ et $N$ sont des polynômes en $Y$, $Z$, $T$. Nous aurons donc les deux équations
+\[
+\begin{aligned}
+\frac{N\,dY - M\,dT}{f'_{z}} &= du, \\
+\frac{N_{1}\,dY - M_{1}\,dT}{f'_{z}} &= dv,
+\end{aligned}
+\]
+entièrement semblables à celles que nous avons discutées dans les numéros précédents.
+
+Au point à l'infini que nous avions à considérer avec les anciennes variables se trouve substitué un point $(Y, Z, T)$ à distance finie, et l'on peut faire la discussion, comme nous l'avons montré plus haut.
+
+Si l'on revient aux valeurs de $x$, $y$, $z$, dont nous nous sommes servi avant l'emploi des coordonnées homogènes, on aura
+\[
+x = \frac{1}{T}, \quad y = \frac{Y}{T}, \quad z = \frac{Z}{T}.
+\]
+
+\textbf{11.} Résumons maintenant les résultats de la discussion qui vient d'être faite dans les numéros précédents (du nº 5 au nº 10). Nous supposerons, d'après ce que nous avons dit (nº 9), que la surface n'a pas de points doubles isolés; d'autre part, la surface adjointe
+\[
+R(x, y, z) = 0
+\]
+d'ordre $(n - 4)$ coupe d'abord la surface suivant les courbes doubles, et soit $\Gamma$ la courbe complémentaire d'intersection. La surface $R$ ne sera tangente à la surface donnée $f$ en aucun point de la courbe $\Gamma$ (nº 8), si ce n'est bien entendu aux points de rencontre de la courbe $\Gamma$ et de la courbe double. La courbe $\Gamma$ n'aura pas de points doubles. Nous avons considéré (nº 7) le cas où $(x, y, z)$ s'approche d'un point $(x_{0}, y_{0}, z_{0})$ de la courbe $\Gamma$; en désignant par $u_{0}$ et $v_{0}$ les valeurs correspondantes de $u$ et $v$, nous avons vu que la limite $\lambda$ du rapport
+\[
+\frac{u - u_{0}}{v - v_{0}}
+\]
+était égale à
+\[
+\frac{B(x_{0}, y_{0}, z_{0})}{B_{1}(x_{0}, y_{0}, z_{0})}
+\]
+\origpage{333}
+qui peut aussi s'écrire
+\[
+\frac{A(x_{0}, y_{0}, z_{0})}{A_{1}(x_{0}, y_{0}, z_{0})};
+\]
+de plus, $x - x_{0}$ et $y - y_{0}$ sont développables en séries ordonnées suivant les puissances croissantes de $t$, quand on a posé
+\[
+\begin{aligned}
+u - u_{0} &= t\lambda(t), \\
+v - v_{0} &= t\lambda_{1}(t)
+\end{aligned}
+\]
+avec la condition
+\[
+B_{1}(x_{0}, y_{0}, z_{0})\lambda(0) - B(x_{0}, y_{0}, z_{0})\lambda_{1}(0) = 0.
+\]
+
+Supposons maintenant que $(x, y, z)$, partant de $(x_{0}, y_{0}, z_{0})$, suive la courbe $\Gamma$, les valeurs de $u$ et $v$ ne changeront pas; admettons qu'en un autre point $(x_{1}, y_{1}, z_{1})$ on ait
+\[
+\frac{B(x_{1}, y_{1}, z_{1})}{B_{1}(x_{1}, y_{1}, z_{1})} = \frac{B(x_{0}, y_{0}, z_{0})}{B_{1}(x_{0}, y_{0}, z_{0})}; \tag{1}
+\]
+les équations
+\[
+\begin{aligned}
+u - u_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \\
+v - v_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\end{aligned}
+\]
+seront vérifiées pour $u = u_{0}$, $v = v_{0}$ par $x = x_{1}$, $y = y_{1}$. Posons, comme plus haut,
+\[
+u - u_{0} = t\lambda(t), \quad v - v_{0} = t\lambda_{1}(t)
+\]
+avec la condition
+\[
+B_{1}(x_{1}, y_{1}, z_{1})\lambda(0) - B(x_{1}, y_{1}, z_{1})\lambda_{1}(0) = 0;
+\]
+nous pourrons prendre, par suite, à cause de la relation (1), pour $\lambda$ et $\lambda_{1}$, les mêmes fonctions que précédemment, et l'on voit alors que, pour une même valeur de $t$, on aura à la fois pour $x$ et $y$ des valeurs voisines
+\origpage{334}
+de $(x_{1}, y_{1})$ et des valeurs de $(x_{0}, y_{0})$; $x$ et $y$ ne seraient pas des fonctions uniformes de $u$ et $v$. On conclut de là un théorème fort important pour l'étude qui nous occupe. Les deux équations
+\[
+B - \mu B_{1} = 0, \quad A - \mu A_{1} = 0,
+\]
+où $\mu$ est une constante arbitraire, ne peuvent être vérifiées que pour \emph{un seul point} d'une courbe $\Gamma$, bien entendu, en dehors des points de la courbe double. \emph{La courbe $\Gamma$ est donc unicursale}, et les trois équations
+\[
+\begin{aligned}
+B - \mu B_{1} &= 0, \\
+A - \mu A_{1} &= 0, \\
+f(x, y, z) &= 0
+\end{aligned}
+\]
+donnent pour $x$, $y$ et $z$ des fonctions rationnelles de $\mu$.
+
+Les conditions que nous venons de trouver sont, d'ailleurs, suffisantes. Considérons, en effet, les équations
+\[
+\begin{aligned}
+u - u_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \\
+v - v_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}};
+\end{aligned}
+\]
+nous supposons que $(x, y, z)$ arrive en un point $(x_{0}, y_{0}, z_{0})$ de la courbe $\Gamma$, $u$ et $v$ tendant vers les valeurs $u_{0}$ et $v_{0}$. Je dis que, pour tout système de valeurs $(u, v)$ dans le voisinage de $(u_{0}, v_{0})$, va correspondre. au moyen des équations précédentes, un point parfaitement déterminé $(x, y, z)$; faisons, en effet, partir $(u, v)$ de $(u_{0}, v_{0})$, et indiquons la loi de ce déplacement par les formules
+\[
+u - u_{0} = t\lambda(t), \quad v - v_{0} = t\lambda_{1}(t),
+\]
+où $\lambda$ et $\lambda_{1}$ sont deux fonctions holomorphes, d'ailleurs arbitraires, de $t$ dans le voisinage de $t = 0$.
+
+Soit $\mu$ la valeur du quotient $\dfrac{\lambda(0)}{\lambda_{1}(0)}$; à cette valeur ne correspondra
+\origpage{335}
+qu'un point $(x_{1}, y_{1}, z_{1})$ sur la courbe $\Gamma$, et, en raisonnant comme plus haut, on voit que $x - x_{1}$ et $y - y_{1}$ peuvent être développés suivant les puissances de $t$.
+
+\textbf{12.} Nous savons donc maintenant reconnaitre si les équations aux différentielles totales
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv
+\end{aligned}
+\]
+donnent pour $x$ et $y$ des fonctions uniformes de $u$ et $v$.
+
+Ces fonctions seront nécessairement des fonctions quadruplement périodiques de $u$ et $v$. C'est un point qu'il est bien facile d'établir; tout d'abord les deux intégrales
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+n'auront évidemment pas plus de quatre paires de périodes, puisque les fonctions $x$ et $y$ données par les équations aux différentielles totales correspondantes sont des fonctions uniformes. D'autre part, le nombre des périodes sera effectivement \emph{quatre}; c'est ce qui résulte du théorème suivant que je me borne à énoncer~: \emph{$q$ intégrales abéliennes distinctes de première espèce correspondant à une courbe de genre $p (q \leq p)$ ne peuvent avoir moins de $2q$ systèmes de périodes simultanées.}
+
+Un cas particulier intéressant et simple est celui où la courbe $\Gamma$ n'existerait pas; dans ce cas, la courbe double de la surface serait d'ordre $\dfrac{m(m - 4)}{2}$, et, pour tout système de valeurs de $u$ et $v$, laissant $x$, $y$, $z$ finis, ces fonctions ont une valeur parfaitement déterminée.
+
+Toute surface, dont les coordonnées s'expriment, de la manière indiquée, par des fonctions quadruplement périodiques de deux paramètres, donne des exemples de réduction dans le nombre des périodes de certaines intégrales abéliennes correspondant à une courbe algébrique. Considérons une section plane quelconque de la surface
+\[
+f(x, y, z) = 0.
+\]
+\origpage{336}
+Soit
+\[
+z = ax + by + c
+\]
+l'équation du plan sécant; la courbe
+\[
+f(x, y, ax + by + c) = 0 \tag{C}
+\]
+présente une particularité intéressante au point de vue de la réduction du nombre des périodes des intégrales abéliennes correspondantes. Si, en effet, dans les deux intégrales
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+on remplace $z$ par
+\[
+ax + by + c,
+\]
+$x$ et $y$ étant alors liés par la relation (C), on aura \emph{deux} intégrales de première espèce correspondant à la courbe (C), \emph{ayant seulement quatre paires de périodes simultanées.}
+
+\textbf{13.} Quelles sont les surfaces de moindre degré dont les coordonnées peuvent s'exprimer par des fonctions uniformes quadruplement périodiques de deux paramètres, et de telle manière qu'à un point arbitraire de la surface ne corresponde, abstraction faite de multiples des périodes, qu'un seul système de valeurs des paramètres?
+
+Nous avons vu précédemment (Chap. II, nᵒˢ 4, 5, 6) que les surfaces du quatrième degré et les surfaces du cinquième degré ne pouvaient avoir deux intégrales distinctes de première espèce. Nous pouvons donc en conclure le théorème suivant~:
+
+\emph{Il n'existe pas de surfaces du quatrième et du cinquième degré dont les coordonnées s'expriment de la manière indiquée par des fonctions quadruplement périodiques de deux paramètres.}
+
+C'est parmi les surfaces du sixième degré que l'on rencontre les premières surfaces jouissant de cette propriété. En voici un exemple~: posons
+\origpage{337}
+\[
+\begin{aligned}
+x &= P(u), \\
+y &= Q(v), \\
+z &= P'(u) + Q'(v),
+\end{aligned}
+\tag{1}
+\]
+$P(u)$ désignant la fonction doublement périodique de $u$, liée à sa dérivée $P'(u)$ par la relation
+\[
+P'(u) = \sqrt{aP^{3} + bP^{2} + cP + d},
+\]
+et $Q(v)$ une fonction doublement périodique de $v$ définie par la relation
+\[
+Q'(v) = \sqrt{\alpha Q^{3} + \beta Q^{2} + \gamma Q + \delta}.
+\]
+
+Les équations (1) définissent donc la surface du sixième degré
+\[
+z = \sqrt{ax^{3} + bx^{2} + cx + d} + \sqrt{\alpha y^{3} + \beta y^{2} + \gamma y + \delta}. \tag{2}
+\]
+
+A un point arbitraire $(x, y, z)$ ne correspond qu'un seul système de valeurs de $u$ et $v$. Quelles sont les singularités de la surface (2)? Écrivons son équation sous forme homogène
+\[
+zt^{\frac{1}{2}} = \sqrt{ax^{3} + bx^{2}t + cxt^{2} + dt^{3}} + \sqrt{\alpha y^{3} + \beta y^{2}t + \gamma yt^{2} + \delta t^{3}}.
+\]
+
+Elle aura pour courbe double la cubique définie par les équations
+\[
+z = 0, \quad ax^{3} + bx^{2}t + cxt^{2} + dt^{3} = \alpha y^{3} + \beta y^{2}t + \gamma yt^{2} + \delta t^{3},
+\]
+et aussi les trois droites
+\[
+t = 0, \quad ax^{3} = \alpha y^{3}.
+\]
+
+La courbe double est donc du \emph{sixième} degré, se décomposant en une cubique plane et trois droites.
+
+\origpage{338}
+
+\section*{QUATRIÈME PARTIE.}
+
+\textbf{1.} Nous allons considérer, dans ce Chapitre, les équations différentielles de la forme
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0, \tag{1}
+\]
+$f$ étant un polynôme. On sait qu'il existe une relation algébrique entre une fonction uniforme quadruplement périodique $u(x, y)$ et ses deux dérivées partielles $\dfrac{\partial u}{\partial x}$ et $\dfrac{\partial u}{\partial y}$. Il y aura donc des équations aux dérivées partielles de la forme (1), auxquelles on pourra satisfaire en prenant pour $u$ une fonction uniforme quadruplement périodique de $x$ et $y$~: je me propose de traiter la question inverse, c'est-à-dire de reconnaitre si l'on peut satisfaire à une équation donnée
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0,
+\]
+en prenant pour $u$ une fonction uniforme quadruplement périodique de $x$ et $y$. On voit que c'est l'extension au cas de deux variables, d'un des problèmes traités par MM. Briot et Bouquet dans leur mémorable Mémoire sur l'intégration par les fonctions elliptiques, problème dont l'objet était de reconnaitre si l'équation
+\[
+f\left( u, \frac{du}{dz} \right) = 0
+\]
+pouvait être satisfaite par une fonction doublement périodique de $z$.
+
+Nous commencerons par démontrer le théorème suivant qui est fondamental pour ce qui va suivre~:
+
+\emph{$u$ étant une fonction uniforme quadruplement périodique de $x$ et $y$, soit}
+\[
+f(u, v, w) = 0
+\]
+\origpage{339}
+\emph{la relation algébrique existant entre $u$ et ses dérivées partielles $v = \dfrac{\partial u}{\partial x}$ et $w = \dfrac{\partial u}{\partial y}$. A un point arbitraire de la surface précédente ne correspond qu'un seul système de valeurs de $x$ et $y$, abstraction faite, bien entendu. de multiples des périodes.}
+
+Considérons, pour les deux variables indépendantes de $x$ et $y$, le domaine que, suivant l'expression de M. Kronecker, on peut appeler le prismatoïde des périodes; supposons qu'à un point \emph{quelconque} $(u, v, w)$ de la surface $f$ correspondent $m$ systèmes de valeurs de $x$ et $y$
+\[
+(x_{1}, y_{1}), \quad (x_{2}, y_{2}), \quad \ldots, \quad (x_{m}, y_{m}),
+\]
+considérons les deux sommes $x_{1} + x_{2} + \ldots + x_{m}$ et $y_{1} + y_{2} + \ldots + y_{m}$~: comme pour chaque point $(u, v, w)$ ces expressions n'ont qu'une valeur, abstraction faite de multiples de périodes, ce sont des intégrales de différentielles totales de première espèce. Supposons d'abord qu'elles se réduisent à des constantes. Désignons par
+\[
+(x'_{1}, y'_{1}), \quad (x'_{2}, y'_{2}), \quad \ldots, \quad (x'_{m}, y'_{m})
+\]
+un second système de valeurs, respectivement voisines des premières, pour lesquelles on aura
+\[
+u(x'_{1}, y'_{1}) = u(x'_{2}, y'_{2}) = \ldots = u(x'_{m}, y'_{m}),
+\]
+et de même pour $v$ et $w$. Nous avons, d'ailleurs, d'après ce que nous venons de supposer,
+\[
+\begin{aligned}
+x_{1} + x_{2} + \ldots + x_{m} &= x'_{1} + x'_{2} + \ldots + x'_{m}, \\
+y_{1} + y_{2} + \ldots + y_{m} &= y'_{1} + y'_{2} + \ldots + y'_{m}.
+\end{aligned}
+\tag{2}
+\]
+
+Or on a, à un infiniment petit près par rapport à $x'_{1} - x_{1}$ et $y'_{1} - y_{1}$,
+\[
+u(x'_{1}, y'_{1}) - u(x_{1}, y_{1}) = (x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}},
+\]
+\origpage{340}
+et de même
+\[
+\begin{aligned}
+u(x'_{2}, y'_{2}) - u(x_{2}, y_{2}) &= (x'_{2} - x_{2})\frac{\partial u}{\partial x_{2}} + (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}}, \\
+\ldots\ldots\ldots\ldots\ldots\ldots &\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots \\
+u(x'_{m}, y'_{m}) - u(x_{m}, y_{m}) &= (x'_{m} - x_{m})\frac{\partial u}{\partial x_{m}} + (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\]
+
+Or $v = \dfrac{\partial u}{\partial x}$ et $w = \dfrac{\partial u}{\partial y}$ ont les mêmes valeurs en
+\[
+(x_{1}, y_{1}), \quad (x_{2}, y_{2}), \quad \ldots, \quad (x_{m}, y_{m}).
+\]
+
+On a donc
+\[
+\begin{aligned}
+\frac{\partial u}{\partial x_{1}} &= \frac{\partial u}{\partial x_{2}} = \ldots = \frac{\partial u}{\partial x_{m}}, \\
+\frac{\partial u}{\partial y_{1}} &= \frac{\partial u}{\partial y_{2}} = \ldots = \frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\tag{3}
+\]
+
+Des égalités précédentes on conclut
+\[
+\begin{aligned}
+&(x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = (x'_{2} - x_{2})\frac{\partial u}{\partial x_{2}} + (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}} = \ldots \\
+&\qquad = (x'_{m} - x_{m})\frac{\partial u}{\partial x_{m}} + (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\]
+
+D'ailleurs, en vertu des relations (2) et (3), la somme de toutes ces expressions est nulle; nous pouvons donc écrire
+\[
+(x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = 0,
+\]
+et, comme $x'_{1} - x_{1}$ et $y'_{1} - y_{1}$ sont dans un rapport arbitraire, on aurait
+\[
+\frac{\partial u}{\partial x_{1}} = \frac{\partial u}{\partial y_{1}} = 0,
+\]
+et ces deux relations ne sont évidemment pas vérifiées pour un point arbitraire $(x_{1}, y_{1})$. Par suite, à un point \emph{quelconque} de la surface
+\[
+f(u, v, w) = 0
+\]
+\origpage{341}
+ne correspond qu'un seul système de valeurs de $(x, y)$, abstraction faite des multiples des périodes.
+
+Nous avons supposé, dans ce qui précède, que les deux sommes
+\[
+x_{1} + x_{2} + \ldots + x_{m} \quad \text{et} \quad y_{1} + y_{2} + \ldots + y_{m}
+\]
+étaient constantes, abstraction faite de multiples de périodes. Examinons les autres circonstances qui pourraient se présenter.
+
+Nous avons dit que les deux sommes précédentes étaient nécessairement des intégrales de différentielles totales de première espèce; ces deux intégrales ne peuvent être distinctes. Soient, en effet,
+\[
+\int^{u, v, w} P\,du + Q\,dv \quad \text{et} \quad \int^{u, v, w} P_{1}\,du + Q_{1}\,dv,
+\]
+où $P$ et $Q$ sont rationnelles en $u$, $v$, $w$, ces deux sommes. En remplaçant $u$, $v$, $w$ par leur valeur en $x$ et $y$, chacune des intégrales précédentes devient une fonction linéaire de $x$ et $y$, soient
+\[
+\alpha x + \beta y + \gamma \quad \text{et} \quad \alpha_{1}x + \beta_{1}y + \gamma_{1}.
+\]
+
+Si l'on n'avait pas $\alpha\beta_{1} - \alpha_{1}\beta = 0$, on pourrait prendre
+\[
+\alpha x + \beta y \quad \text{et} \quad \alpha_{1}x + \beta_{1}y
+\]
+comme nouvelles variables à la place de $x$ et $y$, et l'on voit alors qu'à un système de valeurs $u$, $v$, $w$ ne correspondrait qu'un seul système de valeurs de $x$ et $y$.
+
+Des deux intégrales, l'une est donc une fonction entiere et du premier degré de l'autre, soit
+\[
+y_{1} + y_{2} + \ldots + y_{m} = A(x_{1} + x_{2} + \ldots + x_{m}) + B,
+\]
+$A$ et $B$ étant des constantes.
+
+Prenons alors $y - Ax$ et $x$ comme variables dans $u$ et $v$, et désignons $y - Ax$ par $y$, pour ne pas multiplier les notations. Dans ce cas, la somme
+\[
+y_{1} + y_{2} + \ldots + y_{m}
+\]
+\origpage{342}
+est constante, la somme
+\[
+x_{1} + x_{2} + \ldots + x_{m}
+\]
+pouvant être variable. Dans cette hypothèse, cette somme représentera, comme nous l'avons dit, une intégrale de première espèce et pourra, par suite, se mettre sous la forme
+\[
+\alpha x + \beta y + \gamma;
+\]
+$\alpha$ ne sera pas nul, sinon il n'y aurait contre l'hypothèse qu'une valeur pour $y$ correspondant à un point $(u, v, w)$. Prenons donc
+\[
+\alpha x + \beta y + \gamma
+\]
+pour variable, en la désignant par $x$; de cette manière, à un \emph{point quelconque} $(u, v, w)$ correspondent $m$ systèmes
+\[
+(x_{1}, y_{1}), \quad (x_{1}, y_{2}), \quad \ldots, \quad (x_{1}, y_{m}),
+\]
+$x$ ayant la même valeur dans chacun de ces systèmes, et la somme
+\[
+y_{1} + y_{2} + \ldots + y_{m}
+\]
+étant constante.
+
+Répétons alors le mode de raisonnement dont nous nous sommes servi plus haut; nous aurons
+\[
+(y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}} = \ldots = (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}},
+\]
+et, par suite,
+\[
+y'_{1} - y_{1} = y'_{2} - y_{2} = \ldots = y'_{m} - y_{m},
+\]
+si la valeur commune de $\dfrac{\partial u}{\partial y_{1}}$, $\dfrac{\partial u}{\partial y_{2}}$, $\ldots$, $\dfrac{\partial u}{\partial y_{m}}$ n'est pas zéro, ce qui aura lieu évidemment pour un système arbitraire $(x_{1}, y_{1})$.
+
+Mais la somme $y_{1} + y_{2} + \ldots + y_{m}$ reste constante, et l'on arrive, par suite, au résultat absurde
+\[
+y'_{1} = y_{1}, \quad y'_{2} = y_{2}, \quad \ldots, \quad y'_{m} = y_{m}.
+\]
+
+\origpage{343}
+
+\textbf{2.} Il résulte immédiatement du théorème précédent que, si l'on peut satisfaire à l'équation
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0,
+\]
+en prenant pour $u$ une fonction uniforme quadruplement périodique de $x$ et $y$, la surface
+\[
+f(u, v, w) = 0
+\]
+rentrera dans la classe des surfaces dont nous avons fait l'étude au Chapitre précédent.
+
+On aura donc tout d'abord à rechercher si l'on peut exprimer $u$, $v$, $w$ par des fonctions quadruplement périodiques de deux paramètres $x$ et $y$. La surface devra admettre deux intégrales de première espèce
+\[
+\int \frac{B\,du - A\,dv}{f'_{w}}, \quad \int \frac{B_{1}\,du - A_{1}\,dv}{f'_{w}}.
+\]
+
+On doit pouvoir trouver deux combinaisons linéaires indépendantes de ces intégrales, telles que les deux équations aux différentielles totales
+\[
+\begin{aligned}
+\frac{(lB + mB_{1})\,du - (lA + mA_{1})\,dv}{f'_{w}} &= dx, \\
+\frac{(nB + pB_{1})\,du - (nA + pA_{1})\,dv}{f'_{w}} &= dy
+\end{aligned}
+\tag{1}
+\]
+donnent pour $u$, $v$, $w$ des fonctions quadruplement périodiques de $x$ et de $y$, et telles que
+\[
+v = \frac{\partial u}{\partial x}, \quad w = \frac{\partial u}{\partial y}.
+\]
+
+Cherchons à quelles conditions on pourra déterminer les quatre constantes $(l, m, n, p)$, de façon qu'il en soit ainsi; nous n'aurons qu'à calculer $\dfrac{\partial u}{\partial x}$ et $\dfrac{\partial u}{\partial y}$ à l'aide des équations précédentes. On trouve de suite, en se rappelant que $BA_{1} - AB_{1}$ est divisible par $f'_{w}$, et posant, comme plus haut,
+\[
+\begin{aligned}
+&BA_{1} - AB_{1} = f'_{w}Q(u, v, w), \\
+&\frac{\partial u}{\partial x} = \frac{nA + pA_{1}}{(lp - mn)Q(u, v, w)}, \quad \frac{\partial u}{\partial y} = -\frac{lA + mA_{1}}{(lp - mn)Q(u, v, w)}.
+\end{aligned}
+\]
+\origpage{344}
+Nous devrons donc avoir
+\[
+\begin{aligned}
+nA + pA_{1} &= (lp - mn)Q(u, v, w), \\
+lA + mA_{1} &= -(lp - mn)Q(u, v, w),
+\end{aligned}
+\]
+et ces relations devant avoir lieu, pour tout point de la surface, seront des identités, puisque les degrés des polynômes qui y figurent sont moindres que le degré de la surface.
+
+Nous pouvons donc enfin écrire
+\[
+\begin{aligned}
+A &= -Q(u, v, w)(mv + pw), \\
+A_{1} &= Q(u, v, w)(lv + nw).
+\end{aligned}
+\]
+
+Ainsi les polynômes $A$ et $A_{1}$ doivent être divisibles par $Q(u, v, w)$, et les quotients sont homogènes et linéaires en $v$ et $w$. Lorsque ces conditions seront remplies, on aura, par la division même de $A$ et $A_{1}$ par $Q$, les quatre constantes $l$, $m$, $n$, $p$ et les équations aux différentielles totales (1) qui doivent donner $u$ en fonction de $x$ et $y$ seront complètement déterminées.
+
+\textbf{3.} Les considérations précédentes nous donnent une solution du problème proposé, mais elles exigent la recherche préalable des intégrales de différentielles totales relatives à la surface
+\[
+f(u, v, w) = 0. \tag{1}
+\]
+
+On peut résoudre autrement le problème, sans passer par cette recherche préalable des intégrales de différentielles totales de première espèce, ou du moins déduire ces intégrales de l'équation proposée et d'une seconde équation qui se forme immédiatement à l'aide d'un polynôme adjoint $Q$.
+
+Désignons comme plus haut (nº 3, Chap. III) par $Q(u, v, w)$ le polynôme adjoint d'ordre $(m - 4)$; ce polynôme sera déterminé à un facteur près, puisque la surface $f$ doit être nécessairement du genre un. Soit $Q$ un polynôme parfaitement déterminé.
+
+\origpage{345}
+
+On aura (voir \emph{loc.\ cit.})
+\[
+\frac{Q(u, v, w)\left( \frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} \right)}{f'_{w}(u, v, w)} = a,
+\]
+$a$ étant une constante, et cette équation pourra s'écrire
+\[
+\frac{Q(u, v, w)\left( \frac{\partial u}{\partial x} \frac{\partial^{2} u}{\partial x\,\partial y} - \frac{\partial u}{\partial y} \frac{\partial^{2} u}{\partial x^{2}} \right)}{f'_{w}(u, v, w)} = a. \tag{2}
+\]
+
+De l'équation (1), nous tirons d'autre part
+\[
+f'_{u} v + f'_{v}\frac{\partial^{2} u}{\partial x^{2}} + f'_{w}\frac{\partial^{2} u}{\partial x\,\partial y} = 0. \tag{3}
+\]
+
+Les équations (2) et (3) permettent d'exprimer $\frac{\partial^{2} u}{\partial x^{2}}$ et $\frac{\partial^{2} u}{\partial x\,\partial y}$ en fonction de $u$, $v$, $w$.
+
+Portant ces valeurs dans les deux équations
+\[
+du = \frac{\partial u}{\partial x}\,dx + \frac{\partial u}{\partial y}\,dy, \quad dv = \frac{\partial^{2} u}{\partial x^{2}}\,dx + \frac{\partial^{2} u}{\partial x\,\partial y}\,dy,
+\]
+nous allons en tirer
+\[
+\begin{aligned}
+dx &= M\,du + N\,dv, \\
+dy &= M_{1}\,du + N_{1}\,dv,
+\end{aligned}
+\]
+les $M$ et les $N$ étant des fonctions rationnelles de $u$, $v$, $w$. On trouve ainsi
+\[
+\begin{aligned}
+dx &= \frac{\frac{a f'_{w} f'_{v} - v w Q f'_{u}}{v f'_{v} + w f'_{w}}\,du - Q w\,dv}{a f'_{w}}, \\
+dy &= \frac{\frac{a (f'_{w})^{2} + Q v^{2} f'_{u}}{v f'_{v} + w f'_{w}}\,du + Q v\,dv}{a f'_{w}}.
+\end{aligned}
+\]
+$dx$ et $dy$ devront être des différentielles totales de première espèce. On devra donc pouvoir choisir la constante $a$ de telle sorte que
+\[
+\frac{a f'_{v} f'_{w} - v w Q f'_{u}}{v f'_{v} + w f'_{w}} \tag{4}
+\]
+\origpage{346}
+puisse se mettre sous la forme d'un polynôme entier en $u$, $v$, $w$, en tenant compte toutefois de la relation
+\[
+f(u, v, w) = 0.
+\]
+
+Il en sera de même pour l'expression
+\[
+\frac{a (f'_{w})^{2} + Q v^{2} f'_{u}}{v f'_{v} + w f'_{w}} \tag{5}
+\]
+qui, pour la même valeur de $a$, devra être égale à un polynôme. On aura immédiatement la valeur de $a$ qui pourrait remplir les conditions précédentes, en prenant un système $(u, v, w)$ satisfaisant aux deux équations
+\[
+v f'_{v} + w f'_{w} = 0, \quad f(u, v, w) = 0,
+\]
+et pour lequel $f'_{w}$ soit différent de zéro. L'équation
+\[
+a (f'_{w})^{2} + Q v^{2} f'_{u} = 0
+\]
+donnera la valeur de $a$, et il restera simplement à vérifier si les deux expressions (4) et (5) sont susceptibles de la forme indiquée. S'il en est ainsi, on n'aura plus qu'à vérifier si $dx$ et $dy$ sont des différentielles totales de première espèce, et l'étude s'achèvera comme au numéro précédent.
+
+\end{document}

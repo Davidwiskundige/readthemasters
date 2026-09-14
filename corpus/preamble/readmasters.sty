@@ -21,6 +21,23 @@
 \RequirePackage[normalem]{ulem}   % \uwave for uncertain readings (PDF); site maps to a CSS style
 
 % ---------------------------------------------------------------------------
+% Superscripted ordinals.
+% ---------------------------------------------------------------------------
+% Transcriptions write a printed superscript ordinal as a literal Unicode modifier letter —
+% "Iʳᵉ Partie", "Chap. Iᵉʳ", "nᵒˢ 4, 5, 6" (Picard 1885), "nᵐ" (Riemann 1857) — because that is what
+% the browser needs and the site's .tex-to-HTML transform passes text through unchanged.
+% A LaTeX engine does not agree: XeTeX has no glyph for these in the default font and DROPS them
+% SILENTLY, so "Iʳᵉ Partie" sets as "I Partie" in the PDF with nothing but a "Missing character"
+% line in the log to say so. Map each to \textsuperscript so both outputs carry the same text.
+\RequirePackage{newunicodechar}
+\newunicodechar{ʳ}{\textsuperscript{r}}
+\newunicodechar{ᵉ}{\textsuperscript{e}}
+\newunicodechar{ᵒ}{\textsuperscript{o}}
+\newunicodechar{ˢ}{\textsuperscript{s}}
+\newunicodechar{ⁿ}{\textsuperscript{n}}
+\newunicodechar{ᵐ}{\textsuperscript{m}}
+
+% ---------------------------------------------------------------------------
 % Scholarly apparatus macros — make transcription honesty machine-readable.
 % ---------------------------------------------------------------------------
 
