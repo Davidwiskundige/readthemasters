@@ -3,6 +3,8 @@ changelog:
     summary: Transcription added (AI draft), pp. 281–300 of 281–346.
   - date: "2026-09-14"
     summary: Transcription completed (AI draft), pp. 301–346; the memoir is now whole.
+  - date: "2026-09-14"
+    summary: Translation (en) added (AI draft).
 
 transcription:
   status: ai-draft
@@ -212,3 +214,49 @@ transcription:
 
     NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked these pages against the
     scan.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-14"
+    note: >-
+      Full English translation of all 66 pages, made directly and solely from our own
+      transcription (original.tex), never from any existing translation. pipeline/texcompare.py
+      reports every math expression, \origpage marker and ref preserved; pipeline/houselint.py
+      reports no house-style violation on either file; pipeline/validate.py passes.
+
+      PROSE INSIDE FORMULAS TRANSLATED (HOUSESTYLE R21): the memoir carries 13 text inserts, all
+      of them prose. The twelve \text{et} connectives joining paired expressions (pp. 295, 303,
+      304, 306, 313 twice, 315, 319 and 341 four times) become \text{and}, and the single
+      \text{pour} of p. 323's "BA_{1} - AB_{1} = 0 pour x_{0}, y_{0}, z_{0}" becomes \text{for}.
+      Counted mechanically in both files: 13 inserts each, same page distribution, and the
+      surrounding math untouched.
+
+      TERMINOLOGY: recorded in glossary.yaml alongside this file, a superset of the glossary of
+      picard-1884-integrales-differentielles-totales; every term shared with that Comptes rendus
+      note is rendered here identically. Kronecker's "prismatoïde des périodes" (p. 339) is
+      rendered literally as "prismatoid of the periods", not glossed (R9).
+
+      CITATIONS keep the print's own form ("Math. Annalen, t. VI"; "Bulletin des Sciences
+      mathématiques, t. III", its title broken across the pp. 319–320 turn); only the month is
+      translated. The print's inconsistent divisions are translated as printed — FIRST PART,
+      CHAPTER II, THIRD PART, FOURTH PART, with no CHAPTER I and no SECOND PART supplied — and
+      Picard's own article and equation numbers are copied, never renumbered.
+
+      PRINTER'S ERRORS: every erroneous formula listed in the transcription note above is
+      reproduced verbatim, math being preserved unchanged, and the erroneous prose is translated
+      as it stands (p. 288's "questions" for conditions, p. 308's forward cross-reference and its
+      unterminated paragraph, the mid-sentence full stops of pp. 334 and 339). ONE EXCEPTION,
+      the only place sense is followed over letter: p. 311's "doivent passer pour cette conique"
+      is rendered "must pass through this conic", since "pass for" carries no English sense and
+      the transcription already records that the passage wants "par". The file header states
+      this.
+
+      NOT YET HUMAN-REVIEWED. Status stays ai-draft: no person has checked this translation
+      against original.tex. Zero \uncertain{} flags and zero \ednote{} were raised — the memoir's
+      prose is plain expository French throughout, with no passage whose rendering was in doubt.
