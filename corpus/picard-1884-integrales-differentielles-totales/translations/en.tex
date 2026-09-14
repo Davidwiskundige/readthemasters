@@ -1,0 +1,107 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag, \origpage{N} marker and \emph run is reproduced
+% unchanged; only the prose is translated.
+%
+% PROSE INSIDE FORMULA TRANSLATED (HOUSESTYLE R21):
+% The connective in the display on p. 963 (\int P\,dx + Q\,dy \quad\text{et}\quad \int P_{1}\,dx + Q_{1}\,dy;)
+% is translated from \text{et} to \text{and}.
+%
+% QUOTATION MARKS ARE NOT TRANSLATED (HOUSESTYLE R18, R22):
+% The paragraph-initial « / » of the Comptes rendus and the terminal » at the end of p. 963 are
+% typographic features of the source edition and stand exactly where the transcription puts them,
+% set tight against the text.
+%
+% FAITHFULNESS TO APPARENT PRINTER'S ERROR (HOUSESTYLE R4):
+% On p. 962, "trouver trois polynômes \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}" is translated
+% faithfully as "find three polynomials \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}", preserving
+% the printer's count ("three") where four polynomials are listed.
+%
+% TERMINOLOGY:
+%   * intégrales de différentielles totales = "integrals of total differentials"
+%   * première espèce = "first kind"
+%   * fonctions uniformes = "single-valued functions"
+%   * unicursales = "unicursal"
+%   * point quelconque = "arbitrary point"
+%   * singularités ordinaires = "ordinary singularities"
+%   * cône des tangentes = "tangent cone"
+%   * points doubles isolés = "isolated double points"
+%   * courbe double = "double curve"
+%   * finie et déterminée = "finite and determinate"
+%   * indéterminée, mais finie = "indeterminate, but finite"
+%   * de degré / d'ordre = "of degree" / "of order"
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{961}
+\section*{Mathematical Analysis. --- On the integrals of algebraic total differentials. Note by M.~E.~Picard, presented by M.~Hermite.}
+
+«Consider an algebraic relation between three variables $x$, $y$, $z$. We perform on $x$, $y$, $z$ an arbitrary homographic substitution, and let, denoting the variables by the same letters,
+\[
+f(x, y, z) = 0
+\tag{1}
+\]
+be the new equation obtained, $f$ being a polynomial of degree $m$. This equation will define an algebraic function $z$ of $x$ and $y$. I consider the integral of a total differential
+\[
+\int_{x_{0},\,y_{0}}^{x,\,y} P\,dx + Q\,dy,
+\]
+$P$ and $Q$ being rational functions of $x$, $y$, $z$ and the condition of integrability being satisfied.
+
+»Among such integrals, unlimited in number, are there any that remain \emph{finite} for every finite or infinite value of the independent variables $x$ and $y$? This is what we shall investigate. Supposing that the surface (1) possesses only ordinary singularities, that is to say that it has only isolated double points whose tangent cone does not reduce to two planes and, in addition, double curves, the two tangent planes at every point of the double curve being distinct. One will recognize that, if such an integral exists, it is necessarily of the form
+\[
+\int_{(x_{0},\,y_{0},\,z_{0})}^{(x,\,y,\,z)} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\tag{2}
+\]
+$A$ and $B$ being polynomials of degree $m - 2$ in $x$, $y$, $z$ taken simultaneously; furthermore, $B$ is only of degree $m - 3$ in $x$ and $z$, and $A$ of degree $m - 3$
+\origpage{962}
+in $y$ and $z$. One must, in addition, be able to find a third polynomial $C$, of order $m - 2$ in $x$, $y$, $z$ and of degree $m - 3$ in $x$ and $y$. The polynomials $A$, $B$, $C$ satisfy the identity
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) f(x, y, z).
+\tag{3}
+\]
+
+»The \emph{necessary} conditions that we have just indicated are \emph{sufficient}, adding however that, in the case where there is a double curve, the surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+pass through the double curve.
+
+»Under these conditions, the integral (2) will have a \emph{finite} and \emph{determinate} value for every simple point of the surface situated at a finite distance; it will have an \emph{indeterminate}, but \emph{finite}, value for every isolated double point of the surface, and it will be the same for the points at infinity.
+
+»One may substitute for relation (3) a more symmetric relation. The form made homogeneous $f(x, y, z, t)$, of degree $m$, must be such that one can find three polynomials $\theta_{1}$, $\theta_{2}$, $\theta_{3}$, $\theta_{4}$ of order $m - 3$, satisfying the relation
+\[
+\theta_{1} \frac{\partial f}{\partial x} + \theta_{2} \frac{\partial f}{\partial y} + \theta_{3} \frac{\partial f}{\partial z} + \theta_{4} \frac{\partial f}{\partial t} = 0,
+\]
+and one must have between these polynomials the relation
+\[
+\frac{\partial \theta_{1}}{\partial x} + \frac{\partial \theta_{2}}{\partial y} + \frac{\partial \theta_{3}}{\partial z} + \frac{\partial \theta_{4}}{\partial t} = 0.
+\]
+
+»According to the preceding theorems, one will know how to recognize, given an algebraic relation between three variables, whether or not there exist corresponding integrals \emph{of the first kind}, designating thus, by analogy, the integrals that remain always finite. It is not here as in the case of algebraic curves; the most general surface of degree $m$ possesses no integrals of the first kind.
+
+»We shall consider two integrals of the first kind as independent when they are not functions of one another. Surfaces of the second and third order, being unicursal, will possess no integrals of the first kind; it is among surfaces of the fourth degree that one encounters the first surfaces with such integrals, and a surface of the fourth degree cannot possess more than one integral.
+
+»If the coordinates of a point of a surface are expressed by abelian
+\origpage{963}
+functions of two parameters $u$ and $v$, and that in such a manner that to an \emph{arbitrary} point of the surface there corresponds only a single system of values of $u$ and $v$ (leaving aside multiples of the periods), the surface will possess two independent integrals of the first kind, and two only.
+
+»Let us remark, in passing, that, as is well known, the coordinates of a point of Kummer's surface are expressed by abelian functions of two parameters $u$ and $v$, but the preceding remarks do not apply to it, for one easily recognizes that, in this case, to an \emph{arbitrary} point of the surface there correspond \emph{two} systems of values of $u$ and $v$.
+
+»The preceding results allow one to recognize, given a surface
+\[
+f(x, y, z) = 0,
+\]
+whether one can express $x$, $y$ and $z$ by abelian functions of two parameters, and in the manner indicated above. There must exist two independent integrals of the first kind, and two only; one will be able to form them; let us designate them by
+\[
+\int P\,dx + Q\,dy \quad\text{and}\quad \int P_{1}\,dx + Q_{1}\,dy;
+\]
+one will then have to study the system of two equations
+\[
+\begin{aligned}
+P\,dx + Q\,dy &= du, \\
+P_{1}\,dx + Q_{1}\,dy &= dv,
+\end{aligned}
+\]
+and we show how one will be able to recognize whether one can satisfy these equations by single-valued functions $x$ and $y$ of $u$ and $v$; if such is the case, $x$, $y$ and $z$ will be abelian functions of these two parameters.»
+
+\end{document}

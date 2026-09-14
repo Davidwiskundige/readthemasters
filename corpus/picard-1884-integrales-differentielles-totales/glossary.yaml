@@ -1,0 +1,40 @@
+# Term renderings for picard-1884-integrales-differentielles-totales, applied consistently
+# across the translation. Format: `terms: {French as printed: English}`.
+#
+# Connects to clebsch-1868-surfaces-algebriques and picard-1885-integrales-differentielles-totales
+# across the corpus.
+
+terms:
+  # --- differentials and integrals ---
+  intégrale de différentielle totale: integral of a total differential
+  intégrales de différentielles totales algébriques: integrals of algebraic total differentials
+  première espèce: first kind
+  intégrales de première espèce: integrals of the first kind
+  condition d'intégrabilité: condition of integrability
+  finie et déterminée: finite and determinate
+  indéterminée, mais finie: indeterminate, but finite
+
+  # --- surfaces and singularities ---
+  surface algébrique: algebraic surface
+  singularités ordinaires: ordinary singularities
+  point double isolé: isolated double point
+  points doubles isolés: isolated double points
+  courbe double: double curve
+  courbes doubles: double curves
+  cône des tangentes: tangent cone
+  plan tangent: tangent plane
+  plans tangents: tangent planes
+  point simple: simple point
+  point quelconque: arbitrary point
+  points à l'infini: points at infinity
+
+  # --- algebra and functions ---
+  substitution homographique: homographic substitution
+  forme rendue homogène: form made homogeneous
+  fonctions rationnelles: rational functions
+  fonctions uniformes: single-valued functions
+  fonctions abéliennes: abelian functions
+  unicursales: unicursal
+  ordre: order
+  degré: degree
+  multiples des périodes: multiples of the periods

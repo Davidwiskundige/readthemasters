@@ -1,0 +1,73 @@
+changelog:
+  - date: "2026-09-14"
+    summary: Translation (en) added (AI draft); glossary.yaml, significance note and aside added.
+  - date: "2026-09-14"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-14"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-14"
+  uncertainty_flags: 0
+  note: >-
+    Émile Picard, "Sur les intégrales de différentielles totales algébriques",
+    Comptes rendus hebdomadaires des séances de l'Académie des sciences, tome 99,
+    2e semestre, séance du lundi 1er décembre 1884 (n° 22), pp. 961–963. COMPLETE:
+    all pages 961–963 of the note are transcribed. \origpage markers run 961–963
+    with no gaps or duplicates, pipeline/houselint.py passes over the whole file,
+    and the mechanical checks (display pairing, $ parity, brace balance, seamless page
+    boundary joins) pass.
+
+    HOW THESE PAGES WERE PRODUCED. Read directly from high-resolution BnF/Gallica IIIF
+    scans (ark:/12148/bpt6k3055h, vues f961–f963) under the /transcribe skill using
+    Gemini 3.8 Flash with high thinking effort. An upfront Phase 0 Global Notation Scan
+    established notation.md across all three pages before fragment generation.
+
+    UNCERTAINTY FLAGS: ZERO. Every formula, subscript, prime, differential, and punctuation
+    mark was verified against the high-resolution scan images.
+
+    QUOTATION AND APPARATUS CONVENTIONS. The communication's opening « on p. 961, paragraph-initial
+    » markers on pp. 961, 962, and 963, and the terminal closing » on p. 963 are transcribed
+    faithfully per HOUSESTYLE R22. Unrelated surrounding material in the Comptes rendus issue
+    (the preceding terrestrial magnetism paper and footnote (1) on p. 961, the running heads,
+    the issue footer on p. 961, and M. G. Fouret's note on p. 963) is omitted.
+
+    APPARENT PRINTER'S ERROR REPRODUCED FAITHFULLY (R4):
+      - p. 962: "trouver trois polynômes \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}".
+        The print sets "trois" where four polynomials are listed. Verified against the scan
+        and preserved as printed.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-14"
+    note: >-
+      Full English translation of Picard's 1884 note, made directly and solely from our
+      own transcription (original.tex), not from any existing translation. Math, \origpage
+      markers, equation numbers, and displays are verified identical by pipeline/texcompare.py.
+      House style is verified clean by pipeline/houselint.py.
+
+      PROSE INSIDE DISPLAY TRANSLATED (HOUSESTYLE R21): The connective \text{et} inside the
+      display on p. 963 is translated to \text{and}.
+
+      QUOTATION MARKS ARE PRESERVED (HOUSESTYLE R18, R22): The Comptes rendus guillemets « and »
+      are retained tight against the text.
+
+      APPARENT PRINTER'S ERROR REPRODUCED FAITHFULLY (HOUSESTYLE R4): On p. 962, "trouver trois
+      polynômes \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}" is rendered as "find three polynomials
+      \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4}".
+
+      TERMINOLOGY: Documented in glossary.yaml alongside this file, aligned with Clebsch 1868
+      and Picard 1885.
