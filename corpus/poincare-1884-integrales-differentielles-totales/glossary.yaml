@@ -1,0 +1,40 @@
+# Term renderings for poincare-1884-integrales-differentielles-totales, applied consistently
+# across the translation. Format: `terms: {French as printed: English}`.
+#
+# Connects to picard-1884-integrales-differentielles-totales and
+# picard-1885-integrales-differentielles-totales across the corpus.
+
+terms:
+  # --- differentials and integrals ---
+  différentielles totales de première espèce: total differentials of the first kind
+  intégrales de différentielles totales: integrals of total differentials
+  intégrale de première espèce: integral of the first kind
+  intégrales de première espèce: integrals of the first kind
+  intégrales elliptiques: elliptic integrals
+  théorème d'Abel: Abel's theorem
+
+  # --- surfaces and singularities ---
+  surface algébrique: algebraic surface
+  surfaces du quatrième ordre: surfaces of the fourth order
+  surface réglée: ruled surface
+  surfaces réglées: ruled surfaces
+  surface de révolution: surface of revolution
+  surfaces de révolution: surfaces of revolution
+  courbe unicursale: unicursal curve
+  courbes unicursales: unicursal curves
+  unicursales: unicursal
+  point conique du second ordre: conical point of the second order
+  cône tangent: tangent cone
+  indécomposable: indecomposable
+  série de courbes: series of curves
+  séries de courbes: series of curves
+
+  # --- algebra and functions ---
+  changement linéaire de variables: linear change of variables
+  polynômes: polynomials
+  polygones: polygons
+  polynômes entiers: polynomials
+  genre: genus
+  déterminée: determinate
+  analystes: analysts
+  géomètres: geometers
