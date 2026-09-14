@@ -50,5 +50,5 @@ title wrapping. Two cards gained a line at 1280px, one of them the monogram card
 ## 6. Ship
 
 - [x] 6.1 Run `python pipeline/validate.py` and the site build; both clean
-- [ ] 6.2 Open the PR with before/after screenshots at 1280px and 375px, and the measured list-height deltas
-- [ ] 6.3 After merge, fold the delta spec into `openspec/specs/site-catalog/spec.md` and archive the change
+- [x] 6.2 Open the PR with before/after screenshots at 1280px and 375px, and the measured list-height deltas
+- [x] 6.3 After merge, fold the delta spec into `openspec/specs/site-catalog/spec.md` and archive the change

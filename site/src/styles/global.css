@@ -85,6 +85,42 @@ ul.works { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .catalog .card .pbox { flex: 0 0 69px; }
 .catalog .card .body { padding: .9rem 1.1rem .9rem 0; min-width: 0; }
 
+/* Narrow screens restack the card (catalog-card-portraits-phone): the title takes the full width,
+   and the portrait drops to the bottom-left beside the English title and meta row TOGETHER.
+   Why both blocks and not the meta alone: the meta's own height varies more than twice over and
+   collapses to two lines (~55px) on a sparse record — shorter than the portrait is wide — so a
+   portrait matched to it is either taller than its text or cropped top-to-bottom into a letterbox.
+   Paired with the English title too, the block never drops below ~120px, so the box stays taller
+   than it is wide and the crop is always horizontal. A face may lose its sides; never its crown.
+
+   `display: contents` on .body is what lets one DOM serve both layouts: it dissolves the wrapper so
+   h3, .pbox and .txt become siblings of the card's flex container and `order` can rearrange them.
+   .body is a presentational div with no semantics, so dissolving it costs the a11y tree nothing.
+
+   The breakpoint is the CARD's, not the 800px one that collapses the filter sidebar: on a wide card
+   the title fits in one or two lines and gains nothing from the extra width, while the portrait row
+   imposes a height floor the strip layout does not — measured 15% taller at 768px.
+
+   500px, not the 560px height-parity crossover, because a stricter limit binds first. As the card
+   widens the text block beside the portrait shrinks, and once it drops under 86px the `min-height`
+   floor below makes the portrait taller than its own text — the defect this layout exists to fix.
+   Measured on the built site: clean at 510px, broken on 3 of 18 cards at 530px. 500px keeps the
+   invariant with ~30px of margin and is still 1.9% shorter than the strip layout there. */
+@media (max-width: 500px) {
+  /* Row gap must be 0: the wide layout's `gap: .9rem` is a column gap there, but once the flex
+     wraps it applies between rows too, double-spacing the title from the portrait row on top of
+     h3's own .25rem bottom margin. Measured, that alone cost 259px across 18 cards. */
+  .catalog .card { flex-wrap: wrap; gap: 0 .9rem; padding: .9rem 1.1rem; }
+  .catalog .card .body { display: contents; }
+  .catalog .card h3 { order: 1; flex: 0 0 100%; }
+  /* Negative margin bleeds the portrait back out to the card's left edge, where the strip sat. */
+  .catalog .card .pbox { order: 2; flex: 0 0 69px; min-height: 86px; margin-left: -1.1rem; }
+  .catalog .card .txt { order: 3; flex: 1; min-width: 0; }
+  /* Without this the meta's wrapped flex lines spread apart to fill the stretched row, so the text
+     no longer starts level with the top of the portrait beside it. */
+  .catalog .card .txt .meta { align-content: flex-start; }
+}
+
 .badge { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .02em;
   padding: .12rem .5rem; border-radius: 999px; border: 1px solid var(--border); }
 .badge.ai-draft { background: #eceae6; color: #55524c; }
