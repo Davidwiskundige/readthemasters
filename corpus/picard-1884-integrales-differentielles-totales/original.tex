@@ -1,0 +1,102 @@
+% Faithful transcription — original French. Transcribed from the original first printing:
+% Émile Picard, "Sur les intégrales de différentielles totales algébriques", Note présentée
+% par M. Hermite, Comptes rendus hebdomadaires des séances de l'Académie des sciences, tome 99,
+% 2e semestre, séance du lundi 1er décembre 1884 (Paris: Gauthier-Villars, 1884), pp. 961–963.
+% Scan: Bibliothèque nationale de France / Gallica (ark:/12148/bpt6k3055h, vues f961–f963).
+%
+% \origpage uses the PRINTED page numbers. The note begins partway down p. 961, below an unrelated
+% note on terrestrial magnetism and its footnote (1), which belongs to that note; none of that
+% is transcribed, nor are the running heads or the volume/issue notice "C. R., 1884, 2e Semestre..."
+% at the foot of p. 961. The subsequent note by M. G. Fouret on p. 963 is likewise omitted.
+%
+% Page boundary joins:
+% - p. 961 ends mid-sentence ("... et A de degré $m - 3$"); p. 962 opens immediately with no blank
+%   line after \origpage{962} ("en $y$ et $z$.").
+% - p. 962 ends with the hyphenated word "fonc-", completed as "fonctions" on p. 962; p. 963 opens
+%   mid-sentence with no blank line after \origpage{963} ("abéliennes de deux paramètres...").
+%
+% QUOTATION MARKS. Following Comptes rendus convention for communications quoted across paragraphs,
+% a single « opens the first paragraph on p. 961, » heads each following paragraph, and » closes
+% the communication at the end of p. 963. Guillemets are set tight against the text (R18, R22).
+%
+% FAITHFULNESS TO APPARENT PRINTER'S ERROR (R4):
+% - p. 962: "trouver trois polynômes \theta_{1}, \theta_{2}, \theta_{3}, \theta_{4} d'ordre m - 3".
+%   The word "trois" is set although four polynomials are listed. Reproduced as printed.
+%
+% Cross-page decisions are recorded in notation.md alongside this file.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{961}
+\section*{Analyse mathématique. --- Sur les intégrales de différentielles totales algébriques. Note de M.~E.~Picard, présentée par M.~Hermite.}
+
+«Considérons une relation algébrique entre trois variables $x$, $y$, $z$. Nous effectuons sur $x$, $y$, $z$ une substitution homographique arbitraire, et soit, en désignant les variables par les mêmes lettres,
+\[
+f(x, y, z) = 0
+\tag{1}
+\]
+la nouvelle équation obtenue, $f$ étant un polynôme de degré $m$. Cette équation définira une fonction algébrique $z$ de $x$ et $y$. J'envisage l'intégrale de différentielle totale
+\[
+\int_{x_{0},\,y_{0}}^{x,\,y} P\,dx + Q\,dy,
+\]
+$P$ et $Q$ étant des fonctions rationnelles de $x$, $y$, $z$ et la condition d'intégrabilité étant satisfaite.
+
+»Parmi de telles intégrales, en nombre illimité, en existe-t-il qui restent \emph{finies} pour toute valeur finie ou infinie des variables indépendantes $x$ et $y$? C'est ce que nous allons chercher. En supposant que la surface (1) ne possède que des singularités ordinaires, c'est-à-dire qu'elle n'a que des points doubles isolés, dont le cône des tangentes ne se réduit pas à deux plans et, en outre, des courbes doubles, les deux plans tangents en tout point de la courbe double étant distincts. On reconnaîtra que, si une telle intégrale existe, elle est nécessairement de la forme
+\[
+\int_{(x_{0},\,y_{0},\,z_{0})}^{(x,\,y,\,z)} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\tag{2}
+\]
+$A$ et $B$ étant des polynômes de degré $m - 2$ en $x$, $y$, $z$ pris simultanément; de plus, $B$ est seulement de degré $m - 3$ en $x$ et $z$, et $A$ de degré $m - 3$
+\origpage{962}
+en $y$ et $z$. On doit pouvoir, en outre, trouver un troisième polynôme $C$, d'ordre $m - 2$ en $x$, $y$, $z$ et de degré $m - 3$ en $x$ et $y$. Les polynômes $A$, $B$, $C$ satisfont à l'identité
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) f(x, y, z).
+\tag{3}
+\]
+
+»Les conditions \emph{nécessaires} que nous venons d'indiquer sont \emph{suffisantes}, en ajoutant toutefois que, dans le cas où il y a une courbe double, les surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+passent par la courbe double.
+
+»Dans ces conditions, l'intégrale (2) aura une valeur \emph{finie} et \emph{déterminée} pour tout point simple de la surface situé à distance finie; elle aura une valeur \emph{indéterminée}, mais \emph{finie}, pour tout point double isolé de la surface, et il en sera de même pour les points à l'infini.
+
+»On peut substituer à la relation (3) une relation plus symétrique. La forme rendue homogène $f(x, y, z, t)$, de degré $m$, devra être telle que l'on puisse trouver trois polynômes $\theta_{1}$, $\theta_{2}$, $\theta_{3}$, $\theta_{4}$ d'ordre $m - 3$, satisfaisant à la relation
+\[
+\theta_{1} \frac{\partial f}{\partial x} + \theta_{2} \frac{\partial f}{\partial y} + \theta_{3} \frac{\partial f}{\partial z} + \theta_{4} \frac{\partial f}{\partial t} = 0,
+\]
+et l'on doit avoir entre ces polynômes la relation
+\[
+\frac{\partial \theta_{1}}{\partial x} + \frac{\partial \theta_{2}}{\partial y} + \frac{\partial \theta_{3}}{\partial z} + \frac{\partial \theta_{4}}{\partial t} = 0.
+\]
+
+»D'après les théorèmes précédents, on saura reconnaître, étant donnée une relation algébrique entre trois variables, s'il existe ou non des intégrales correspondantes \emph{de première espèce}, en désignant ainsi, par analogie, les intégrales qui restent toujours finies. Il n'en est pas ici comme dans le cas des courbes algébriques; la surface la plus générale de degré $m$ ne possède pas d'intégrales de première espèce.
+
+»Nous considérerons comme indépendantes deux intégrales de première espèce quand elles ne seront pas fonctions l'une de l'autre. Les surfaces du second et du troisième ordre, étant unicursales, ne posséderont pas d'intégrales de première espèce; c'est dans les surfaces du quatrième degré que l'on rencontre les premières surfaces avec de telles intégrales, et une surface du quatrième degré ne peut posséder plus d'une intégrale.
+
+»Si les coordonnées d'un point d'une surface s'expriment par des fonctions
+\origpage{963}
+abéliennes de deux paramètres $u$ et $v$, et cela de telle manière qu'à un point \emph{quelconque} de la surface ne corresponde qu'un seul système de valeurs de $u$ et $v$ (abstraction faite de multiples des périodes), la surface possédera deux intégrales indépendantes de première espèce, et deux seulement.
+
+»Remarquons, en passant, que, comme il est bien connu, les coordonnées d'un point de la surface de Kummer s'expriment par des fonctions abéliennes de deux paramètres $u$ et $v$, mais les remarques précédentes ne s'y appliquent pas, car l'on reconnaît aisément que, dans ce cas, à un point \emph{quelconque} de la surface correspondent \emph{deux} systèmes de valeurs de $u$ et $v$.
+
+»Les résultats précédents permettent de reconnaître, étant donnée une surface
+\[
+f(x, y, z) = 0,
+\]
+si l'on peut exprimer $x$, $y$ et $z$ par des fonctions abéliennes de deux paramètres, et de la manière indiquée plus haut. Il devra exister deux intégrales indépendantes de première espèce, et deux seulement; on pourra les former; désignons-les par
+\[
+\int P\,dx + Q\,dy \quad\text{et}\quad \int P_{1}\,dx + Q_{1}\,dy;
+\]
+on aura alors à étudier le système des deux équations
+\[
+\begin{aligned}
+P\,dx + Q\,dy &= du, \\
+P_{1}\,dx + Q_{1}\,dy &= dv,
+\end{aligned}
+\]
+et nous montrons comment on pourra reconnaître si l'on peut satisfaire à ces équations par des fonctions uniformes $x$ et $y$ de $u$ et $v$; s'il en est ainsi, $x$, $y$ et $z$ seront des fonctions abéliennes de ces deux paramètres.»
+
+\end{document}

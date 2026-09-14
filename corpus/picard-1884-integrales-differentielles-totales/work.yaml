@@ -1,0 +1,94 @@
+id: picard-1884-integrales-differentielles-totales
+title: Sur les intégrales de différentielles totales algébriques.
+title_en: On the integrals of algebraic total differentials.
+authors:
+- name: Émile Picard
+  wikidata_id: Q286375
+  birth_year: 1856
+  death_year: 1941
+publication:
+  year: 1884
+  venue: comptes-rendus
+  volume: Tome 99
+  pages: 961–963
+  title_full: Comptes rendus hebdomadaires des séances de l'Académie des sciences,
+    tome 99, 2e semestre, séance du 1er décembre 1884 (n° 22), pp. 961–963.
+edition:
+  year: 1884
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1884 printing in the Comptes rendus hebdomadaires
+    des séances de l'Académie des sciences (tome 99, n° 22, pp. 961–963), as digitized
+    by the Bibliothèque nationale de France on Gallica (ark:/12148/bpt6k3055h). A
+    faithful photographic reproduction of a public-domain edition carrying no modern
+    critical apparatus, commentary, or re-typesetting, and only the note itself is
+    transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+
+relations:
+  - to: clebsch-1868-surfaces-algebriques
+    kind: builds-on
+    recommended: primary
+    note: >-
+      Clebsch's 1868 note introduced the geometric genus $p_g$ via the number of arbitrary
+      coefficients in adjoint surfaces of order $n - 4$ passing through the double curves,
+      corresponding to double integrals of algebraic surfaces. Picard extends this inquiry to
+      single integrals of algebraic total differentials $\displaystyle\int P\,dx + Q\,dy$ on an algebraic
+      surface, seeking the conditions under which they remain everywhere finite (integrals of
+      the first kind).
+
+significance: >-
+  Presented to the Académie des sciences by Hermite on 1 December 1884, this note marks the
+  birth of Émile Picard's theory of algebraic differentials on surfaces. Where Riemann had studied
+  abelian integrals on curves and Clebsch investigated double integrals on surfaces,[1] Picard opened
+  a new direction by asking whether an algebraic surface admits single integrals of total
+  differentials $\displaystyle\int P\,dx + Q\,dy$ that remain everywhere finite. He showed that
+  unlike algebraic curves, a general surface admits no such integrals of the first kind, and
+  established that surfaces uniformizable by abelian functions of two parameters must possess
+  exactly two independent integrals—a foundation developed systematically in his 1885 memoir.[2]
+
+significance_sources:
+  - citation: >-
+      Alfred Clebsch, "Sur les surfaces algébriques", Comptes rendus hebdomadaires des séances de
+      l'Académie des sciences 67 (1868), pp. 1238–1239.
+    url: "/works/clebsch-1868-surfaces-algebriques/"
+  - citation: >-
+      Émile Picard, "Sur les intégrales de différentielles totales algébriques de première espèce",
+      Journal de mathématiques pures et appliquées, 4e série, tome 1 (1885), pp. 281–346.
+    url: "/works/picard-1885-integrales-differentielles-totales/"
+
+source:
+  scan_url: https://gallica.bnf.fr/ark:/12148/bpt6k3055h/f961.item
+  scan_id: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 961–963)
+sources:
+  death_date: wikidata:Q286375
+  publication_date: gallica:ark:/12148/bpt6k3055h/f961
+  edition: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 961–963)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1941
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1884
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-14'
