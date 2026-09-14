@@ -78,6 +78,7 @@ def test_skills_branch_isolation_and_worktrees():
     skills = [
         REPO / ".agents" / "skills" / "transcribe" / "SKILL.md",
         REPO / ".claude" / "skills" / "transcribe" / "SKILL.md",
+        REPO / ".agents" / "skills" / "translate" / "SKILL.md",
     ]
 
     for skill_file in skills:
@@ -85,12 +86,20 @@ def test_skills_branch_isolation_and_worktrees():
         content = skill_file.read_text(encoding="utf-8")
 
         # Phase 1 must contain branch isolation and worktree instruction
-        assert "git checkout -b transcribe/<work-id> origin/main" in content, (
-            f"{skill_file} missing Phase 1 branch creation instruction"
-        )
-        assert "git worktree add ../rtm-<work-id> -b transcribe/<work-id> origin/main" in content, (
-            f"{skill_file} missing worktree instruction"
-        )
+        if "transcribe" in skill_file.parts:
+            assert "git checkout -b transcribe/<work-id> origin/main" in content, (
+                f"{skill_file} missing Phase 1 branch creation instruction"
+            )
+            assert "git worktree add ../rtm-<work-id> -b transcribe/<work-id> origin/main" in content, (
+                f"{skill_file} missing worktree instruction"
+            )
+        else:
+            assert "git checkout -b translate/<work-id>-<lang> origin/main" in content, (
+                f"{skill_file} missing Phase 1 branch creation instruction"
+            )
+            assert "git worktree add ../rtm-<work-id>-<lang> -b translate/<work-id>-<lang> origin/main" in content, (
+                f"{skill_file} missing worktree instruction"
+            )
 
         # Phase 8 must NOT instruct creating the branch again
         phase_8_idx = content.find("## Phase 8")
@@ -102,4 +111,71 @@ def test_skills_branch_isolation_and_worktrees():
         assert "git worktree remove" in phase_8_text, (
             f"{skill_file} must document worktree cleanup in Phase 8"
         )
+
+
+def test_antigravity_translate_skill_exists_and_has_valid_frontmatter():
+    skill_file = REPO / ".agents" / "skills" / "translate" / "SKILL.md"
+    assert skill_file.exists(), f"Missing skill file: {skill_file}"
+
+    content = skill_file.read_text(encoding="utf-8")
+    assert content.startswith("---"), "SKILL.md must start with YAML frontmatter"
+
+    parts = content.split("---", 2)
+    assert len(parts) >= 3, "Malformed YAML frontmatter in SKILL.md"
+
+    frontmatter = yaml.safe_load(parts[1])
+    assert isinstance(frontmatter, dict), "Frontmatter must be a YAML dictionary"
+    assert frontmatter.get("name") == "translate", "Skill name must be 'translate'"
+    assert "description" in frontmatter and len(frontmatter["description"].strip()) > 0
+
+
+def test_antigravity_translate_skill_referenced_repo_paths_exist():
+    skill_file = REPO / ".agents" / "skills" / "translate" / "SKILL.md"
+    content = skill_file.read_text(encoding="utf-8")
+
+    expected_paths = [
+        "pipeline/validate.py",
+        "pipeline/houselint.py",
+        "pipeline/texcompare.py",
+        "prompts/translate-chat.md",
+        "corpus/HOUSESTYLE.md",
+        "corpus/preamble/readmasters.sty",
+    ]
+
+    for rel_path in expected_paths:
+        assert rel_path in content, f"Expected reference to {rel_path} in SKILL.md"
+        target_path = REPO / Path(rel_path)
+        assert target_path.exists(), f"Referenced path {rel_path} does not exist on disk"
+
+
+def test_antigravity_skills_direct_execution_instructions():
+    skills = [
+        REPO / ".agents" / "skills" / "transcribe" / "SKILL.md",
+        REPO / ".agents" / "skills" / "translate" / "SKILL.md",
+    ]
+
+    for skill_file in skills:
+        assert skill_file.exists(), f"Missing skill file: {skill_file}"
+        content = skill_file.read_text(encoding="utf-8")
+        assert "implementation_plan.md" in content, (
+            f"{skill_file} must instruct not to create implementation_plan.md"
+        )
+        assert "planning mode" in content.lower(), (
+            f"{skill_file} must instruct not to enter planning mode"
+        )
+
+
+def test_agents_and_gemini_rules_direct_execution():
+    rule_files = [
+        REPO / "AGENTS.md",
+        REPO / "GEMINI.md",
+    ]
+
+    for rule_file in rule_files:
+        assert rule_file.exists(), f"Missing rule file: {rule_file}"
+        content = rule_file.read_text(encoding="utf-8")
+        assert "implementation_plan.md" in content or "implementation plan" in content.lower()
+        assert "transcribe" in content.lower()
+        assert "translate" in content.lower()
+
 
