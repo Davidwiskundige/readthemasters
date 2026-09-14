@@ -43,8 +43,8 @@
 ## 6. Ship
 
 - [x] 6.1 Run `python pipeline/validate.py` and the full site build; both clean
-- [ ] 6.2 Open the PR with before/after screenshots at 375px and 430px and the measured height and crop deltas
-- [ ] 6.3 After merge, fold the delta spec into `openspec/specs/site-catalog/spec.md` and archive the change
+- [x] 6.2 Open the PR with before/after screenshots at 375px and 430px and the measured height and crop deltas
+- [x] 6.3 After merge, fold the delta spec into `openspec/specs/site-catalog/spec.md` and archive the change
 
 ## Measured results
 

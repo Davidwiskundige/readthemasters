@@ -33,5 +33,5 @@
 
 ## 5. Spec sync
 
-- [ ] 5.1 Fold `catalog-card-portraits-phone`'s delta into `openspec/specs/site-catalog/spec.md` and archive that change **first** — it shipped in PR #62 and its delta is still pending, so the main spec's `Catalog card portraits` requirement is stale and folding in the wrong order would revert the narrow layout's text
-- [ ] 5.2 Then fold this change's delta and archive it; confirm the resulting requirement carries both the narrow layout and the author destination
+- [x] 5.1 Fold `catalog-card-portraits-phone`'s delta into `openspec/specs/site-catalog/spec.md` and archive that change **first** — it shipped in PR #62 and its delta is still pending, so the main spec's `Catalog card portraits` requirement is stale and folding in the wrong order would revert the narrow layout's text
+- [x] 5.2 Then fold this change's delta and archive it; confirm the resulting requirement carries both the narrow layout and the author destination
