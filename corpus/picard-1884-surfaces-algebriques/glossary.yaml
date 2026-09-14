@@ -1,0 +1,38 @@
+# Term renderings for picard-1884-surfaces-algebriques, applied consistently
+# across the translation. Format: `terms: {French as printed: English}`.
+#
+# Connects to picard-1884-integrales-differentielles-totales, clebsch-1868-surfaces-algebriques,
+# and picard-1885-integrales-differentielles-totales across the corpus.
+
+terms:
+  # --- differentials and integrals ---
+  intégrale de différentielle totale: integral of a total differential
+  intégrales de différentielles totales: integrals of total differentials
+  première espèce: first kind
+  intégrales de première espèce: integrals of the first kind
+  intégrales abéliennes: abelian integrals
+  équations aux différentielles totales: total differential equations
+  paires de périodes: pairs of periods
+  paires de périodes simultanées: pairs of simultaneous periods
+  multiples des périodes: multiples of the periods
+
+  # --- surfaces and geometry ---
+  surface algébrique: algebraic surface
+  surfaces algébriques: algebraic surfaces
+  singularités ordinaires: ordinary singularities
+  point quelconque: arbitrary point
+  point double isolé: isolated double point
+  points doubles isolés: isolated double points
+  courbe double: double curve
+  genre: genus
+  section plane quelconque: arbitrary plane section
+  ordre: order
+  degré: degree
+
+  # --- algebra and functions ---
+  fonctions uniformes: single-valued functions
+  fonctions quadruplement périodiques: quadruply periodic functions
+  fonctions uniformes, quadruplement périodiques: single-valued, quadruply periodic functions
+  conditions nécessaires et suffisantes: necessary and sufficient conditions
+  déterminant: determinant
+  identiquement nul: identically zero
