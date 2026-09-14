@@ -1,0 +1,104 @@
+﻿% Faithful transcription — original French. Transcribed from the original first printing:
+% Henri Poincaré, "Sur les intégrales de différentielles totales", Note présentée
+% par M. Hermite, Comptes rendus hebdomadaires des séances de l'Académie des sciences, tome 99,
+% 2e semestre, séance du lundi 29 décembre 1884 (Paris: Gauthier-Villars, 1884), pp. 1145–1147.
+% Scan: Bibliothèque nationale de France / Gallica (ark:/12148/bpt6k3055h, vues f1145–f1147).
+%
+% \origpage uses the PRINTED page numbers. The note begins partway down p. 1145, below unrelated
+% Academy communications; none of that is transcribed, nor are running heads or volume notices.
+% The subsequent note by M. Émile Picard on p. 1147 is likewise omitted.
+%
+% Page boundary joins:
+% - p. 1145 ends with a complete paragraph.
+% - p. 1146 ends mid-sentence ("... l'élimination de deux"); p. 1147 opens immediately with no blank
+%   line after \origpage{1147} ("paramètres $a$ et $b$...").
+%
+% QUOTATION MARKS. Following Comptes rendus convention for communications quoted across paragraphs,
+% a single « opens the first paragraph on p. 1145, » heads each following paragraph, and » closes
+% the communication at the end of p. 1147. Guillemets are set tight against the text (R18, R22).
+% The terminal » is placed immediately following the closing display delimiter \]» to avoid KaTeX
+% unicode math-mode warnings.
+%
+% FAITHFULNESS TO APPARENT PRINTER'S ERRORS (R4):
+% - p. 1146, display 1: x^{2}(az^{2} + 2b - z + c). The print sets a dash/hyphen between b and z.
+%   Reproduced faithfully and noted with \ednote.
+% - p. 1146, line 11: "deux polygones de degré 2 et 4 en z". The word "polygones" is set for
+%   "polynômes". Reproduced faithfully and noted with \ednote.
+% - p. 1146, line 14: "» Il est ailleurs aisé de voir". The print sets "ailleurs" for "d'ailleurs".
+%   Reproduced as printed.
+% - p. 1146, line 18: "» De inême". The print sets "inême" for "même". Reproduced as printed.
+%
+% Cross-page decisions are recorded in notation.md alongside this file.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1145}
+\section*{Analyse mathématique. --- Sur les intégrales de différentielles totales. Note de M.~H.~Poincaré, présentée par M.~Hermite.}
+
+«La découverte récente de M.~Picard sur les différentielles totales de première espèce a ouvert aux analystes une voie toute nouvelle où ils rencontreront sans aucun doute bien des propositions importantes. Aussi ne sera-t-il peut-être pas sans intérêt de signaler ici certains résultats partiels qui, bien que très faciles à démontrer, pourront être utiles aux géomètres qui s'occuperont de cette question.
+
+\origpage{1146}
+»J'ai cherché d'abord à déterminer quelles sont les surfaces du quatrième ordre qui possèdent des intégrales de première espèce. J'ai trouvé que toutes ces surfaces peuvent se ramener, par un changement linéaire de variables, soit à la surface réglée
+\[
+\begin{aligned}
+x^{2}(az^{2} + 2b - z + c) &+ 2xy(a'z^{2} + 2b'z + c') \\
+&+ y^{2}(a''z^{2} + 2b''z + c'') = 0,
+\end{aligned}
+\]\ednote{Printed $2b - z + c$ --- an apparent misprint for $2bz$, matching $2b'z$ and $2b''z$, and the denominator of the integral immediately following. Reproduced here as printed.}
+qui admet l'intégrale
+\[
+\int \frac{y\,dz}{x(az^{2} + 2bz + c) + y(a'z^{2} + 2b'z + c')},
+\]
+soit à la surface de révolution
+\[
+(x^{2} + y^{2})^{2} + 2(x^{2} + y^{2})Z_{2} + Z_{4} = 0
+\]
+($Z_{2}$ et $Z_{4}$ désignant deux polygones\ednote{Printed ``polygones'' --- an apparent compositor's slip for ``polynômes''. Reproduced here as printed.} de degré 2 et 4 en $z$), qui admet l'intégrale
+\[
+\int \frac{dz}{x^{2} + y^{2} + Z_{2}}.
+\]
+
+»Il est ailleurs aisé de voir que toutes les surfaces réglées et toutes les surfaces de révolution admettent des intégrales de première espèce, à moins, bien entendu, qu'elles ne soient unicursales.
+
+»Si une surface admet une intégrale de première espèce $u$, réductible aux intégrales elliptiques, les courbes $u = \text{const.}$ sont algébriques.
+
+»Si l'on peut tracer sur une surface une courbe unicursale, et si $u$ est une intégrale de première espèce quelconque de cette surface, la valeur de $u$ sera la même tout le long de la courbe.
+
+»De inême, si la surface admet un point conique du second ordre, dont le cône tangent soit indécomposable, la valeur de $u$ en ce point conique sera \emph{déterminée}.
+
+»Si l'on peut tracer sur une surface deux séries de courbes unicursales, elle n'aura pas d'intégrale de première espèce; si, sur une surface non unicursale, on peut tracer une série de courbes unicursales, de telle façon que par chaque point de la surface passe, en général, une seule de ces courbes, elle aura des intégrales de première espèce.
+
+»Supposons qu'une surface soit engendrée par l'élimination de deux
+\origpage{1147}
+paramètres $a$ et $b$, entre les trois équations
+\[
+\begin{gathered}
+\varphi(x, y, z, a, b) = 0, \\
+\varphi_{1}(x, y, z, a, b) = 0, \\
+\psi(a, b) = 0.
+\end{gathered}
+\]
+
+»Si les trois polynômes $\varphi$, $\varphi_{1}$ et $\psi$ sont \emph{les plus généraux de leurs degrés}, la relation $\psi = 0$ est de genre plus grand que 0; à un point de la surface correspond un seul système de valeurs des paramètres et, par conséquent, la surface admet des intégrales de première espèce.
+
+»Enfin, le théorème d'Abel s'applique aux intégrales de différentielles totales.
+
+»Soient $M_{1}, M_{2}, \ldots, M_{q}$ les points d'intersection de la surface avec la courbe
+\[
+\frac{\alpha}{\lambda} = \frac{\beta}{\mu} = \frac{\gamma}{\nu},
+\]
+$\alpha$, $\beta$, $\gamma$ étant des polynômes entiers en $x$, $y$, $z$ et $\lambda$, $\mu$, $\nu$ des constantes. Soient $u_{1}, u_{2}, \ldots, u_{q}$ les valeurs d'une certaine intégrale de première espèce $u$ en ces différents points.
+
+»Soient $M'_{1}, M'_{2}, \ldots, M'_{q}$ les points d'intersection de la surface avec la courbe
+\[
+\frac{\alpha}{\lambda'} = \frac{\beta}{\mu'} = \frac{\gamma}{\nu'},
+\]
+$\lambda'$, $\mu'$ et $\nu'$ étant de nouvelles constantes. Soient $u'_{1}, u'_{2}, \ldots, u'_{q}$ les valeurs de l'intégrale $u$ aux points $M'_{1}, M'_{2}, \ldots, M'_{q}$.
+
+»On aura
+\[
+u_{1} + u_{2} + \ldots + u_{q} = u'_{1} + u'_{2} + \ldots + u'_{q},
+\]»
+
+\end{document}

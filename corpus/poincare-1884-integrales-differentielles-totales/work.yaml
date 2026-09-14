@@ -1,0 +1,88 @@
+id: poincare-1884-integrales-differentielles-totales
+title: Sur les intégrales de différentielles totales.
+title_en: On integrals of total differentials.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Henri Poincaré
+    credit: Photograph of Poincaré from the 1880s, author unknown, held on Wikimedia
+      Commons. Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Henri_Poincar%C3%A9_in_1880s.jpg
+publication:
+  year: 1884
+  venue: comptes-rendus
+  volume: Tome 99
+  pages: 1145–1147
+  title_full: Comptes rendus hebdomadaires des séances de l'Académie des sciences,
+    tome 99, 2e semestre, séance du 29 décembre 1884 (n° 26), pp. 1145–1147.
+edition:
+  year: 1884
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1884 printing in the Comptes rendus hebdomadaires
+    des séances de l'Académie des sciences (tome 99, n° 26, pp. 1145–1147), as digitized
+    by the Bibliothèque nationale de France on Gallica (ark:/12148/bpt6k3055h). A
+    faithful photographic reproduction of a public-domain edition carrying no modern
+    critical apparatus, commentary, or re-typesetting, and only the note itself is
+    transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+relations:
+- to: picard-1884-integrales-differentielles-totales
+  kind: builds-on
+  recommended: primary
+  note: Poincaré responds directly to Picard's note presented three weeks earlier
+    (1 December 1884), examining fourth-order algebraic surfaces possessing integrals
+    of total differentials of the first kind and extending Abel's theorem to such
+    integrals.
+significance: Presented to the Académie des sciences by Hermite on 29 December 1884,
+  this note marks Henri Poincaré's immediate response to Émile Picard's breakthrough
+  note of 1 December 1884 on total differentials on algebraic surfaces.[1] Poincaré identifies
+  fourth-order surfaces that admit integrals of the first kind (ruled surfaces and
+  surfaces of revolution), observes that unicursal curves on a surface force any integral
+  of the first kind to be constant along them, and states an analogue of Abel's theorem
+  for integrals of total differentials on algebraic surfaces.
+significance_sources:
+- citation: Émile Picard, "Sur les intégrales de différentielles totales algébriques",
+    Comptes rendus hebdomadaires des séances de l'Académie des sciences 99 (1884),
+    pp. 961–963.
+  url: /works/picard-1884-integrales-differentielles-totales/
+source:
+  scan_url: https://gallica.bnf.fr/ark:/12148/bpt6k3055h/f1145.item
+  scan_id: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 1145–1147)
+sources:
+  death_date: wikidata:Q81082
+  publication_date: gallica:ark:/12148/bpt6k3055h/f1145
+  edition: gallica:ark:/12148/bpt6k3055h (Comptes rendus t. 99, 1884, pp. 1145–1147)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1884
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-14'
