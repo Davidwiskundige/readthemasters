@@ -29,7 +29,7 @@
 
 - [x] 4.1 Run `python pipeline/validate.py` and the full site build; both clean
 - [x] 4.2 Run `openspec validate --changes catalog-portrait-links-author`
-- [ ] 4.3 Open the PR, noting that the change is one `href` plus a no-author guard and that the a11y posture is re-justified rather than relaxed
+- [x] 4.3 Open the PR, noting that the change is one `href` plus a no-author guard and that the a11y posture is re-justified rather than relaxed
 
 ## 5. Spec sync
 
