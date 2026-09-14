@@ -6,6 +6,14 @@ authors:
   wikidata_id: Q286375
   birth_year: 1856
   death_year: 1941
+  mactutor: Picard_Emile
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Émile Picard
+    credit: >-
+      Photograph of Picard by Pierre Petit (1831–1909), dated before 1909 on Commons and held by
+      the Accademia delle Scienze di Torino (accession IST. 4.1.3.2). Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Charles-Emile_Picard,_ante_1909_-_Accademia_delle_Scienze_di_Torino_0148_B.jpg"
 publication:
   year: 1884
   venue: comptes-rendus
