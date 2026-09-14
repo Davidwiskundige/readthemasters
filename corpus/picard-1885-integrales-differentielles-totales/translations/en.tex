@@ -1,0 +1,2252 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag, \origpage{N} marker and \emph run is reproduced
+% unchanged; only the prose is translated.
+%
+% THE PRINT'S INCONSISTENT DIVISIONS ARE TRANSLATED AS PRINTED, not regularized: "PREMIÈRE PARTIE."
+% (p. 283) → "FIRST PART.", "CHAPITRE II." (p. 299) → "CHAPTER II.", "TROISIÈME PARTIE." (p. 312) →
+% "THIRD PART.", "QUATRIÈME PARTIE." (p. 338) → "FOURTH PART.". There is no "CHAPITRE I." and no
+% "DEUXIÈME PARTIE" in the memoir, and none is supplied. Picard's own article and equation numbers
+% are copied, never renumbered, so the same number is live in several places, exactly as in the
+% original.
+%
+% TITLES OF CITED PERIODICALS ARE NOT TRANSLATED, and their citation strings keep the form the
+% print gives them: "Comptes rendus des séances de l'Académie des Sciences" (p. 282), "Math.
+% Annalen, t. VI" (p. 305) and "Bulletin des Sciences mathématiques, t. III" (pp. 319–320, the
+% title itself broken across the page turn) stand as the author set them, since they name the
+% publication rather than describe it. Only the month in a citation is translated ("mars 1885" →
+% "March 1885", p. 282; "27 juin 1881" → "27 June 1881", p. 314), following the en translation of
+% the 1884 note.
+%
+% APPARENT PRINTER'S ERRORS ARE CARRIED THROUGH, NOT SILENTLY MENDED (HOUSESTYLE R4). The
+% transcription records each of these as a reading verified against the scan; provenance.yaml
+% lists them.
+%   * Every erroneous FORMULA is reproduced verbatim, math being preserved unchanged: "d_{4}" in
+%     the third homography row (p. 284); the upright "B" in "+ a'x\,dx - By\,dy +" (p. 292) against
+%     the lowercase b four lines below; "AB_{1} - BA_{1}" and the bare "Qf'" in display (2)
+%     (p. 308); "\partial L_{1}/dx" with an italic d (p. 310); "c_{2}" closing the primed triple
+%     where "c'_{2}" is wanted (p. 311); "f'_{z}" among its partners "f'_{x_{0}}", "f'_{y_{0}}"
+%     (p. 326); "(y - y)" for "(y - y_{0})", twice (p. 327); and the adjoint's order "(n - 4)"
+%     where the memoir elsewhere sets "(m - 4)" (p. 332).
+%   * Erroneous PROSE is translated as it stands: "the integrals fulfilling the preceding
+%     questions", where the sense wants conditions (p. 288); the cross-reference "In the first of
+%     equations (4)" to a display not set until p. 309 (p. 308); the paragraph ending "polynomials
+%     of the same degree" with no terminal mark at all, the memoir's only one (p. 308); and the
+%     full stop set mid-sentence on p. 334 ("there will correspond. by means of") and p. 339
+%     ("of course. multiples of the periods"), each left where the print puts it.
+%   * ONE EXCEPTION — the single place this translation follows sense over letter. P. 311's
+%     "doivent passer pour cette conique" is rendered "must pass through this conic". The print's
+%     "pour" is a fully formed word, but "pass for" carries no English sense here and the
+%     transcription already records that the passage wants "par"; the error itself is preserved
+%     where it is legible, in original.tex.
+%
+% TERMINOLOGY (carried over from the en translation of Picard's 1884 Comptes rendus note, which
+% announces these same results):
+%   * intégrales de différentielles totales = "integrals of total differentials"
+%   * première / seconde / troisième espèce = "first / second / third kind"
+%   * fonctions uniformes = "single-valued functions"
+%   * fonctions quadruplement périodiques = "quadruply periodic functions"
+%   * unicursales = "unicursal"
+%   * point quelconque / arbitraire = "arbitrary point"
+%   * singularités ordinaires = "ordinary singularities"
+%   * cône des tangentes = "tangent cone"
+%   * points doubles isolés = "isolated double points"
+%   * courbe double = "double curve"
+%   * finie et déterminée = "finite and determinate"
+%   * de degré / d'ordre = "of degree" / "of order"
+%   * transformation homographique = "homographic transformation"
+%   * condition d'intégrabilité = "condition of integrability"
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{281}
+
+\section*{On the integrals of algebraic total differentials of the first kind;}
+
+By M. Émile Picard.
+
+One knows the importance in Analysis of the integrals
+\[
+\int P(x, y)\,dx,
+\tag{1}
+\]
+where $P(x, y)$ denotes a rational function of $x$ and $y$, and where $y$ is the algebraic function of $x$ defined by the relation
+\[
+f(x, y) = 0,
+\]
+$f$ being a polynomial. These integrals have been divided into three kinds; we need here only recall the definition of the integrals of the \emph{first} kind~: an integral such as (1) is said to be of the first kind when it remains finite for every value, finite or infinite, of the variable $x$.
+
+Let us now consider an algebraic function $z$ of two independent variables $x$ and $y$, defined by the irreducible equation
+\[
+f(x, y, z) = 0,
+\]
+where $f$ is a polynomial. One may make correspond to this surface integrals of total differentials of the form
+\[
+\int P(x, y, z)\,dx + Q(x, y, z)\,dy,
+\tag{2}
+\]
+
+\origpage{282}
+
+where $P$ and $Q$ are rational functions of $x$, $y$ and $z$; these two functions cannot, of course, be taken arbitrarily, and the condition of integrability of the differential expression
+\[
+P\,dx + Q\,dy
+\]
+must be supposed satisfied.
+
+The integrals of the form (2) admit a classification analogous to the one just recalled for the integrals of algebraic differentials in the case of a single variable. We wish to consider in this work only the integrals of total differentials of the \emph{first kind} ${}^{(1)}$, that is to say those \emph{which remain finite for every system of values, finite or infinite, of the independent variables $x$ and $y$}.
+
+From the very beginning of this study, one meets a very profound difference between the case of one variable and that of two variables. One knows, in fact, that to an algebraic curve there correspond in general integrals of the first kind; thus, to speak more precisely, the most general curve of a given degree $m$ possesses a certain well known number of linearly independent integrals of the first kind.
+
+It is not so for algebraic surfaces~: there exist no integrals of total differentials of the first kind corresponding to the most general surface of degree $m$. How can one recognize whether a given surface possesses integrals of the first kind, and what is the number of these linearly independent integrals? Such are the questions with which we occupy ourselves in the first two Chapters of this Memoir.
+
+The third Chapter is devoted to the study of a class of algebraic surfaces in which the notion of the integrals of the first kind plays an important role~: these are the surfaces for which the coordinates of an arbitrary point are expressed by single-valued
+
+\textbf{(1)} On the integrals of the second kind, I have already presented some considerations in the \emph{Comptes rendus des séances de l'Académie des Sciences} (March 1885); the study of these integrals and of those of the third kind will be the object of another Memoir.
+
+\origpage{283}
+
+quadruply periodic functions of two parameters, and we add to it this further condition, that to an \emph{arbitrary} point of the surface there correspond only a \emph{single} system of values of the two parameters, leaving aside, of course, multiples of the periods. Such would not be, for example, the case of the celebrated surface of the fourth degree discovered by Kummer; the coordinates of a point of this surface are indeed expressed by single-valued quadruply periodic functions of two parameters; but it is easy to verify that, in this case, to an arbitrary point of the surface there correspond \emph{two} distinct systems of values of these parameters. We show how one can recognize whether a given surface is capable of having the coordinates of any one of its points expressed, in the manner indicated, by quadruply periodic functions of two parameters. One must go as far as the surfaces of the \emph{sixth} degree to meet a surface enjoying this property.
+
+We conclude this work with the study of the equations of the form
+\[
+f\left(u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}\right) = 0,
+\]
+proposing to recognize whether one can satisfy this equation by taking for $u$ a single-valued quadruply periodic function of $x$ and $y$; it is, as one sees, the generalization of a problem treated by MM. Briot and Bouquet in their beautiful Memoir on the integration of the differential equations of the form
+\[
+f\left(u, \frac{du}{dz}\right) = 0
+\]
+by means of elliptic functions.
+
+\section*{FIRST PART.}
+
+\textbf{1.} Let there be given an algebraic relation of degree $m$
+\[
+F(x, y, z) = 0
+\]
+defining an algebraic function $z$ of $x$ and $y$, and let us consider the total
+
+\origpage{284}
+
+differential
+\[
+\frac{P\,dx + Q\,dy}{M},
+\]
+where $P$, $Q$ and $M$ are polynomials in $x$, $y$ and $z$, and for which the condition of integrability is supposed satisfied.
+
+Let us perform on $x$, $y$, $z$ an arbitrary homographic transformation
+\[
+\begin{aligned}
+x &= \frac{a_{1}x' + b_{1}y' + c_{1}z' + d_{1}}{ax' + by' + cz' + d},\\
+y &= \frac{a_{2}x' + b_{2}y' + c_{2}z' + d_{2}}{ax' + by' + cz' + d},\\
+z &= \frac{a_{3}x' + b_{3}y' + c_{3}z' + d_{4}}{ax' + by' + cz' + d};
+\end{aligned}
+\]
+the preceding relation will become
+\[
+f(x', y', z') = 0.
+\]
+
+Let us differentiate $x$ and $y$; one will have
+\[
+dx = \frac{A\,dx' + B\,dy'}{(ax' + by' + cz' + d)^{2}\dfrac{\partial f}{\partial z'}}, \quad
+dy = -\frac{A_{1}\,dx' + B_{1}\,dy'}{(ax' + by' + cz' + d)^{2}\dfrac{\partial f}{\partial z'}}.
+\]
+$A$ and $A_{1}$ being polynomials in $x'$, $y'$, $z'$, of degree $m - 1$ with respect to $x'$ and $z'$, and of degree $m$ with respect to $y'$; likewise $B$ and $B_{1}$ are polynomials of degree $m - 1$ in $y'$ and $z'$, and of degree $m$ with respect to $x'$.
+
+If now $n'$ is the degree of $P$ and $Q$, and $n$ that of $M$, one will have
+\[
+\frac{P}{M} = \frac{P'}{M'(ax' + by' + cz' + d)^{n'-n}}, \quad
+\frac{Q}{M} = \frac{Q'}{M'(ax' + by' + cz' + d)^{n'-n}},
+\]
+$P'$ and $Q'$ being of degree $n'$, and $M'$ of degree $n$.
+
+It follows that the preceding expression takes the form, on suppressing the primes,
+\[
+\frac{P_{1}\,dx + Q_{1}\,dy}{M_{1}f'_{z}(x, y, z)},
+\]
+denoting by $\mu$ the degree of $M_{1}$ with respect to $x$, $y$ and $z$; the degree
+\origpage{285}
+of $P_{1}$ with respect to $x$ and $z$ is $\mu + m - 3$, and with respect to $y$ is $\mu + m - 2$; likewise for $Q_{1}$ the degree with respect to $y$ and $z$ is $\mu + m - 3$, and $\mu + m - 2$ with respect to $x$.
+
+The total differential being put under this form, let us now consider the integral
+\[
+\int_{x_{0}, y_{0}}^{x, y} \frac{P_{1}\,dx + Q_{1}\,dy}{M_{1}f'_{z}},
+\]
+and let us suppose that, for every finite or infinite value of $x$ and $y$, this integral remains finite; let us seek what consequence one may draw from it~: $z$ is defined as a function of $x$ and $y$ by the relation
+\[
+f(x, y, z) = 0
+\]
+of degree $m$, and we may evidently suppose that it contains a term in $z^{m}$.
+
+If we first leave $y$ constant, letting only $x$ vary, we shall have an ordinary abelian integral of the first kind, and, in order that it be of the first kind, it is necessary that $M_{1}$ do not depend on $x$; the same reasoning, applied to $y$, shows us that $M_{1}$ cannot depend on $y$. We thus arrive at once at this conclusion, that $M_{1}$ must be a constant, and we shall write the integral under the form
+\[
+\int_{x_{0}, y_{0}}^{x, y} \frac{P\,dx + Q\,dy}{f'_{z}(x, y, z)}, \tag{1}
+\]
+$P$ is a polynomial of degree $m - 2$ in $x$, $y$, $z$, and of degree $m - 3$ in $x$ and $z$; similarly, $Q$ is a polynomial of degree $m - 2$ in $x$, $y$ and $z$, and of degree $m - 3$ in $y$ and $z$.
+
+\textbf{2.} We have so far left aside the condition of integrability, which we have now to consider. One will have
+\[
+\frac{\partial}{\partial y}\left(\frac{P}{f'_{z}}\right) = \frac{\partial}{\partial x}\left(\frac{Q}{f'_{z}}\right),
+\]
+regarding $z$ as a function of $x$ and $y$. This relation may
+\origpage{286}
+be written
+\[
+\begin{aligned}
+&\left(\frac{\partial P}{\partial y}f'_{z} - \frac{\partial P}{\partial z}f'_{y}\right)f'_{z} - P(f''_{zy}f'_{z} - f''_{zz}f'_{y}) \\
+&\qquad - \left(\frac{\partial Q}{\partial x}f'_{z} - f'_{x}\frac{\partial Q}{\partial z}\right)f'_{z} + Q(f''_{zx}f'_{z} - f''_{zz}f'_{x}) = 0.
+\end{aligned}
+\]
+
+The first member of this equality is a polynomial in $x$, $y$ and $z$; it is not necessarily identically zero, but only in virtue of the equation
+\[
+f(x, y, z) = 0;
+\]
+one easily recognizes that one may write the preceding relation under the form
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial}{\partial z}\left(\frac{Pf'_{y} - Qf'_{x}}{f'_{z}}\right) = 0. \tag{1}
+\]
+
+Now, if in the integral (1) we take $x$ and $z$ for variables instead of $x$ and $y$, we must fall upon an expression of the same form; now the integral becomes
+\[
+\int \frac{\left(\dfrac{Pf'_{y} - Qf'_{x}}{f'_{z}}\right)\,dx - Q\,dz}{f'_{y}}.
+\]
+
+It is therefore necessary that the expression
+\[
+\frac{Pf'_{y} - Qf'_{x}}{f'_{z}}
+\]
+can, in virtue of the equation $f(x, y, z) = 0$, be put under the form of a polynomial in $x$, $y$ and $z$. Let us therefore set
+\[
+\frac{Pf'_{y} - Qf'_{x}}{f'_{z}} = R,
+\]
+or, writing it under the form of an identity independently of the equation $f = 0$,
+\[
+Pf'_{y} - Qf'_{x} - Rf'_{z} = Nf(x, y, z), \tag{2}
+\]
+$N$ being also a polynomial.
+
+\origpage{287}
+
+This laid down, let us return to equation (1), which may be written
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial R}{\partial z} + N + f(x, y, z)\frac{\partial}{\partial z}\left(\frac{N}{f'_{z}}\right) = 0.
+\]
+
+One has consequently, in virtue of $f = 0$,
+\[
+-\frac{\partial P}{\partial y} + \frac{\partial Q}{\partial x} + \frac{\partial R}{\partial z} + N = 0. \tag{3}
+\]
+
+But $P$, $Q$, $R$ and $N$ are polynomials of degree less than $m$. If therefore, as we suppose, the polynomial $f(x, y, z)$ is not a product of polynomials of lower degree, the \emph{preceding equality will be an identity}, whatever $x$, $y$ and $z$ may be.
+
+$P$ is of degree $m - 3$ with respect to $x$ and to $z$, and of degree $m - 2$ in $y$; $Q$ is of degree $m - 3$ in $y$ and $z$, and of degree $m - 2$ in $x$; finally $R$ is of degree $m - 3$ with respect to $x$ and $y$, and of degree $m - 2$ with respect to $z$, and these three polynomials are of degree $m - 2$ in $x$, $y$, $z$ taken simultaneously. As for $N$, it is of degree $m - 3$ in $x$, $y$ and $z$.
+
+Let us set
+\[
+Q = -A, \quad P = +B, \quad R = -C.
+\]
+
+The identities (2) and (3) will be summed up in the single identity
+\[
+Af'_{x} + Bf'_{y} + Cf'_{z} = \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right)f(x, y, z).
+\]
+
+Thus one must be able to find three polynomials $A$, $B$, $C$ of the degrees indicated with respect to the variables $x$, $y$, $z$, and such that the preceding identity be verified.
+
+\textbf{3.} We can go more deeply into the form of the polynomials $A$, $B$, $C$. These are necessarily of the form
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\psi(x, y, z) + B_{1}(x, y, z), \\
+C &= z\chi(x, y, z) + C_{1}(x, y, z),
+\end{aligned}
+\]
+\origpage{288}
+$\varphi$, $\psi$ and $\chi$ being \emph{homogeneous} polynomials in $x$, $y$ and $z$ of degree $m - 3$; as for $A_{1}$, $B_{1}$, $C_{1}$, these are polynomials in $x$, $y$ and $z$ of order $m - 3$.
+
+Now let us consider the integral
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}.
+\]
+
+Let us set $y = \mu x$, $\mu$ being a constant; we shall have the abelian integral of the first kind
+\[
+\int \frac{(B - A\mu)\,dx}{f'_{z}};
+\]
+$B - A\mu$ must be at most of degree $m - 3$; hence the expression
+\[
+\mu x[\psi(x, \mu x, z) - \varphi(x, \mu x, z)]
+\]
+which, in $B - A\mu$, is of degree $m - 2$, must be zero, and one will then have
+\[
+\psi(x, \mu x, z) - \varphi(x, \mu x, z) = 0,
+\]
+whatever $\mu$ may be; one concludes from it, since $\psi$ and $\varphi$ are homogeneous,
+\[
+\psi(x, y, z) = \varphi(x, y, z).
+\]
+
+On putting the integral under the form
+\[
+\int \frac{-C\,dx + A\,dz}{f'_{y}},
+\]
+one would prove in the same manner that $\chi(x, y, z) = \varphi(x, y, z)$.
+
+We arrive at the following conclusion~:
+\[
+\varphi(x, y, z) = \psi(x, y, z) = \chi(x, y, z).
+\]
+
+\textbf{4.} We have just found the necessary forms of the integrals of total differentials which remain finite. We have now to ask ourselves whether the integrals fulfilling the preceding questions always remain finite.
+
+\origpage{289}
+
+We suppose therefore that one has, after an arbitrary homographic transformation, the surface
+\[
+f(x, y, z) = 0.
+\]
+
+This one possesses only \emph{ordinary singularities}, that is to say either isolated double points, for which the tangent cone does not reduce to two planes, or double curves, without singular points, for which the two planes tangent to the surface at each point will be \emph{always distinct}.
+
+We suppose that one can find three polynomials $A$, $B$, $C$ satisfying the following conditions~: the first, $A$, is at most of degree $m - 2$ with respect to $x$, and of degree $m - 3$ with respect to $y$ and $z$; $B$ is of degree $m - 2$ with respect to $y$, and of degree $m - 3$ with respect to $x$ and $z$; finally $C$ is of degree $m - 2$ in $z$, and of degree $m - 3$ in $x$ and $y$. One has moreover the identity
+\[
+A f'_{x} + B f'_{y} + C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z)
+\tag{2}
+\]
+
+This laid down, let us consider the integral
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\]
+the condition of integrability will be fulfilled, for it reduces (no. 1) to
+\[
+- \frac{\partial B}{\partial y} - \frac{\partial A}{\partial x} + \frac{\partial}{\partial z} \left( \frac{B f'_{y} + A f'_{x}}{f'_{z}} \right) = 0.
+\]
+
+Now, according to the identity, one has, taking account of $f(x, y, z) = 0$,
+\[
+\frac{\partial}{\partial z} \left( \frac{B f'_{y} + A f'_{x}}{f'_{z}} \right) = - \frac{\partial C}{\partial z} + \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z},
+\]
+and, consequently, the condition of integrability is verified.
+
+We are going to seek whether the integral remains finite for every value of the analytic point $(x, y, z)$.
+
+\origpage{290}
+
+\textbf{5.} Let us first consider only points at a finite distance. If $(x, y, z)$ is not a double point of the surface, there is no difficulty, for the result appears immediately, on employing one or another of the three forms of the integral
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)} = \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{- C\,dx + A\,dz}{f'_{y}(x, y, z)} = \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{C\,dy - B\,dz}{f'_{x}(x, y, z)}.
+\]
+
+Let us suppose, in the second place, that $(x, y, z)$ tends toward an \emph{isolated} double point $(a, b, c)$ of the surface. One will remark first that the surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+pass through this point; one has, in fact, on differentiating the identity (2) with respect to $x$, $y$ and $z$, and making $x = a$, $y = b$, $z = c$,
+\[
+\begin{aligned}
+A(a, b, c) f''_{aa} + B(a, b, c) f''_{ab} + C(a, b, c) f''_{ac} &= 0, \\
+A(a, b, c) f''_{ab} + B(a, b, c) f''_{bb} + C(a, b, c) f''_{bc} &= 0, \\
+A(a, b, c) f''_{ac} + B(a, b, c) f''_{bc} + C(a, b, c) f''_{cc} &= 0;
+\end{aligned}
+\]
+one concludes from it that
+\[
+A(a, b, c) = B(a, b, c) = C(a, b, c) = 0,
+\]
+since the determinant of the second derivatives of $f$ is not zero at the point $abc$, which is not a biplanar point.
+
+Let us set
+\[
+y = b + t(x - a),
+\]
+$t$ being the variable which we are going to substitute for $y$, and let
+\[
+f(x, y, z) = \varphi(x - a, y - b, z - c) + \psi(x - a, y - b, z - c) + \ldots
+\]
+$\varphi$, $\psi$, \ldots being homogeneous with respect to $x - a$, $y - b$, $z - c$ and of degrees respectively equal to two, three, \ldots, and $\varphi$ containing a term in $(z - c)^{2}$; it will be so if, as one may suppose, the parallels drawn through $(a, b, c)$ to the coordinate axes are not on the cone.
+
+\origpage{291}
+
+From the equation $f(x, y, z) = 0$ one will deduce for $z = c$ two distinct developments ordered according to the increasing powers of $x - a$, except for the values of $t$ such that the equation of the second degree in $\theta$
+\[
+\varphi(1, t, \theta) = 0
+\]
+has a double root; these values of $t$ are evidently two in number, and one may suppose them finite, say $t_{1}$ and $t_{2}$.
+
+This laid down, $t$ having a variable value, but not tending toward $t_{1}$ or $t_{2}$, the expression
+\[
+\frac{B\,dx - A\,dy}{f'_{z}}
+\]
+will take the form
+\[
+\frac{(B - At)\,dx - A(x - a)\,dt}{f'_{z}}.
+\]
+
+Now $B$ and $A$ contain $(x - a)$ as a factor, and $f'_{z}$ contains $(x - a)$ as a factor, but does not contain $(x - a)^{2}$. It results from this that the integral will certainly tend toward a finite value when $(x, y, z)$ tends toward $(a, b, c)$ in such a manner that the ratio $\dfrac{y - b}{x - a}$ has a limit different from $t_{1}$ or $t_{2}$.
+
+There is no difficulty in studying the case where the ratio $\dfrac{y - b}{x - a}$ tends toward $t_{1}$ or $t_{2}$; it suffices, for that, to employ one of the other forms of the integral. The planes parallel to the coordinate planes passing through the point $(a, b, c)$ being supposable non-tangent to the cone,
+\[
+\varphi(x - a, y - b, z - c) = 0,
+\]
+the difficulty which presented itself relative to $x$ and $y$ taken as independent variables will no longer present itself with $x$ and $z$, since a plane tangent to the conical surface cannot pass at once through the axis of $z$ and the axis of $y$.
+
+We see therefore that, in whatever manner the point $x$, $y$, $z$ tends toward the double point $(a, b, c)$, the value of the integral
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+\origpage{292}
+remains finite. One sees, moreover, quite easily that the value of this integral is independent of the manner in which the point $(x, y, z)$ approaches the double point. Let there be, in fact, after a suitable choice of axes, and the origin being at the double point,
+\[
+f(x, y, z) = Mx^{2} + Ny^{2} + Pz^{2} + U(x, y, z),
+\]
+the terms following the first three being of degree higher than two, and one has
+\[
+MNP \neq 0;
+\]
+let us set
+\[
+\begin{aligned}
+A &= ax + by + cz + \ldots, \\
+B &= a'x + b'y + c'z + \ldots, \\
+C &= a''x + b''y + c''z + \ldots;
+\end{aligned}
+\]
+the identity
+\[
+A f'_{x} + B f'_{y} + C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z)
+\]
+gives at once this other identity
+\[
+\begin{aligned}
+&2(ax + by + cz)Mx + 2(a'x + b'y + c'z)Ny + 2(a''x + b''y + c''z)Pz \\
+&\qquad = (a + b' + c'')(Mx^{2} + Ny^{2} + Pz^{2});
+\end{aligned}
+\]
+one concludes from it immediately
+\[
+\begin{aligned}
+&a = b' = c'' = 0, \\
+&Mc + Pa'' = 0, \quad Mb + Na' = 0, \quad Nc' + Pb'' = 0.
+\end{aligned}
+\]
+
+There will come therefore
+\[
+B\,dx - A\,dy = z(c'\,dx - c\,dy) + a'x\,dx - By\,dy + \varphi\,dx + \psi\,dy,
+\]
+$\varphi$ and $\psi$ being at least of the second degree in $x$, $y$ and $z$; the element of the integral will then be
+\[
+\frac{z(c'\,dx - c\,dy) + a'x\,dx - by\,dy + \varphi\,dx + \psi\,dy}{2Pz + U'_{z}(x, y, z)};
+\]
+\origpage{293}
+now, according to one of the preceding equalities, $a' = \lambda M$, $b = -\lambda N$~: we shall therefore be able to put this expression under the form
+\[
+\frac{z(c'\,dx - c\,dy - \lambda P\,dz) + \varphi_{1}\,dx + \psi_{1}\,dy + \chi_{1}\,dz}{2Pz + U'_{z}(x, y, z)},
+\]
+$\varphi_{1}$, $\psi_{1}$ and $\chi_{1}$ being at least of the second degree in $x$, $y$, $z$. Let us now suppose that $x$ and $y$ tend toward zero, the limit of $\dfrac{y}{x}$ being finite and not annulling $M + N\left(\dfrac{y}{x}\right)^{2}$; under this hypothesis, $\dfrac{x}{z}$ and $\dfrac{y}{z}$ will have finite limits, and the last element of the integral will reduce to
+\[
+\frac{c'\,dx - c\,dy - \lambda P\,dz}{2P}.
+\]
+It is therefore independent of the limit of $\dfrac{y}{x}$. On employing one or another form of the integral, one would treat in a wholly similar manner the cases excluded in the preceding reasoning.
+
+\textbf{6.} Let us now study the value of the integral when $(x, y, z)$ approaches a point of the double curve of the surface.
+
+We are going to join to the hypotheses previously made the following one. The surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+pass through the double curve of the surface. I say that, under these conditions, the integral remains finite for every point of the double curve.
+
+Let $(x_{1}, y_{1}, z_{1})$ be the coordinates of a point $P$ of the double curve; through this point there pass two sheets of the surface having, by hypothesis, two different tangent planes. Let us suppose that $(x, y, z)$ tends toward $P$ while remaining on a certain sheet; the plane tangent to this sheet at $P$ is not parallel to the three coordinate axes; let us suppose, to fix the ideas, that it is not parallel to the axis of $z$.
+
+For one of the sheets, one will have, in the neighbourhood of $(x_{1}, y_{1}, z_{1})$,
+\[
+z - z_{1} = a(x - x_{1}) + b(y - y_{1}) + \varphi(x - x_{1}, y - y_{1}). \tag{1}
+\]
+$\varphi$ containing only terms of degree higher than the first.
+\origpage{294}
+For the other sheet, one will have similarly
+\[
+z - z_{1} = a'(x - x_{1}) + b'(y - y_{1}) + \psi(x - x_{1}, y - y_{1}). \tag{2}
+\]
+and one does not have at the same time
+\[
+a = a', \quad b = b'.
+\]
+
+The equation of the surface may evidently be put under the form
+\[
+\begin{aligned}
+&f(x, y, z) = F \times [z - z_{1} - a(x - x_{1}) - b(y - y_{1}) - \varphi] \\
+&\qquad \times [z - z_{1} - a'(x - x_{1}) - b'(y - y_{1}) - \psi].
+\end{aligned}
+\]
+$F$ depending on $x$, $y$, $z$ and having a finite value different from zero for $x = x_{1}$, $y = y_{1}$, $z = z_{1}$.
+
+One concludes from it that, for every point $xyz$ of the sheet (1), one will have
+\[
+\begin{aligned}
+&f'_{z}(x, y, z) = F \times [(a - a')(x - x_{1}) + (b - b')(y - y_{1}) \\
+&\qquad + \varphi(x - x_{1}, y - y_{1}) - \psi(x - x_{1}, y - y_{1})].
+\end{aligned}
+\]
+
+The equation of the projection of the double curve on the plane of the $xy$ is obtained by eliminating $z$ between the equations (1) and (2), which gives immediately
+\[
+(a - a')(x - x_{1}) + (b - b')(y - y_{1}) + \varphi - \psi = 0. \tag{3}
+\]
+One does not have at the same time $a - a' = 0$, $b - b' = 0$; let, for example, $b - b' \neq 0$.
+
+We shall be able to draw from equation (3)
+\[
+y - y_{1} = P(x - x_{1}).
+\]
+$P$ being a series, without constant term, proceeding according to the powers of $x - x_{1}$.
+
+This laid down, let
+\[
+A(x, y, z) = 0
+\]
+be the equation of a surface passing through the double curve; $z$ being replaced
+\origpage{295}
+by the development (1), one will have, for the points of the sheet (1) in the neighbourhood of $P$,
+\[
+A(x, y, z) = \chi(x - x_{1}, y - y_{1}),
+\]
+and this function will be identically zero when one replaces $y - y_{1}$ by $P(x - x_{1})$.
+
+One will therefore have
+\[
+A(x, y, z) = [y - y_{1} - P(x - x_{1})]\chi_{1}(x - x_{1}, y - y_{1}),
+\]
+$\chi_{1}$ being, like $\chi$, a series proceeding according to the powers of $x - x_{1}$ and $y - y_{1}$; one will remark, on the other hand, according to what has been said above, that
+\[
+f'_{z}(x, y, z) = F_{1} \times [y - y_{1} - P(x - x_{1})],
+\]
+$F_{1}$ depending on $x$, $y$, $z$ and being \emph{finite and different from zero} for $x = x_{1}$, $y = y_{1}$, $z = z_{1}$.
+
+If we now consider the quotient
+\[
+\frac{A(x, y, z)}{f'_{z}(x, y, z)},
+\]
+one sees, according to what precedes, that it will tend toward a determinate finite value when $(x, y, z)$ approaches $P$, remaining on one or the other sheet of the surface.
+
+It is easy now to find what the integral
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)},
+\]
+becomes when $(x, y, z)$ tends toward $(x_{1}, y_{1}, z_{1})$. The two expressions
+\[
+\frac{B}{f'_{z}} \quad \text{and} \quad \frac{A}{f'_{z}}
+\]
+being determinate and continuous in the neighbourhood of this point, the integral will necessarily have a \emph{finite and determinate} value.
+\origpage{296}
+\textbf{7.} It remains to study the integral when the variables become infinite. We are going, to this end, to transform the integral by making use of homogeneous coordinates. Let us therefore replace $x$, $y$, $z$ by $\dfrac{x}{t}$, $\dfrac{y}{t}$, $\dfrac{z}{t}$, and let us recall that we have found (no. 3)
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + B_{1}(x, y, z).
+\end{aligned}
+\]
+$\varphi$ is homogeneous and of degree $(m - 3)$ in $x$, $y$ and $z$; $A_{1}$ and $B_{1}$ are polynomials of degree $m - 3$ in $x$, $y$ and $z$.
+
+We shall therefore have, on making the polynomials homogeneous,
+\[
+\frac{B\,dx - A\,dy}{f'_{z}(x, y, z)} = \frac{[y\varphi(x, y, z) + tB_{1}(x, y, z, t)](t\,dx - x\,dt) - [x\varphi(x, y, z) + tA_{1}(x, y, z, t)](t\,dy - y\,dt)}{tf'_{z}(x, y, z, t)},
+\]
+which may be written
+\[
+\frac{-(x\,dy - y\,dx)(x\varphi + tA_{1}) + (A_{1}y - B_{1}x)(x\,dt - t\,dx)}{xf'_{z}(x, y, z, t)}.
+\]
+$x$, $y$, $z$, $t$ are not zero at the same time; let $x \neq 0$, and let us then set
+\[
+\frac{y}{x} = Y, \quad \frac{z}{x} = Z, \quad \frac{t}{x} = T;
+\]
+the differential expression will become
+\[
+\frac{-[\varphi(1, Y, Z) + TA_{1}(1, Y, Z, T)]\,dY + [YA_{1}(1, Y, Z, T) - B_{1}(1, Y, Z, T)]\,dT}{f'_{Z}(1, Y, Z, T)}
+\]
+and we are brought back to studying the value of an integral of the same form as the one which has been studied in the preceding numbers, and for finite values of the variables.
+
+We can therefore state the following theorem~:
+
+\emph{The integral}
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}(x, y, z)}
+\]
+\origpage{297}
+\emph{remains finite for every value, finite or infinite, of $x$ and $y$; it is indeterminate, though finite, for the infinite values given to the variables.}
+
+\textbf{8.} We therefore know how to recognize, a surface
+\[
+f(x, y, z) = 0,
+\]
+being given, whether or not it possesses integrals of total differentials of the \emph{first kind}, designating thus the integrals which always remain finite.
+
+It is not here as in the case of algebraic curves; \emph{the most general surface of degree $m$ does not possess integrals of the first kind}. In other terms, the most general surface of order $m$ being considered
+\[
+f(x, y, z) = 0,
+\]
+one cannot find polynomials $A$, $B$, $C$ of the form
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + A_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + B_{1}(x, y, z), \\
+C &= z\varphi(x, y, z) + C_{1}(x, y, z),
+\end{aligned}
+\]
+where $\varphi$ is a polynomial of order $m - 3$ and homogeneous in $x$, $y$, $z$, and $A_{1}$, $B_{1}$, $C_{1}$ are polynomials of degree at most equal to $m - 3$ with respect to these variables, which satisfy the identity
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z).
+\]
+
+This is what we are going to show in a moment; but let us first write the preceding identity under another form. It does not appear easy to state, under geometric form, the necessary and sufficient conditions for one to be able to satisfy this fundamental identity. Let us merely transform it so as to give it a more symmetric form.
+
+One may write it
+\[
+m A f'_{x} + m B f'_{y} + m C f'_{z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) (x f'_{x} + y f'_{y} + z f'_{z} + f'_{t}).
+\]
+\origpage{298}
+Let us now set
+\[
+\begin{aligned}
+\theta_{1} &= m A - x \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{2} &= m B - y \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{3} &= m C - z \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right), \\
+\theta_{4} &= - \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right),
+\end{aligned}
+\]
+the $\theta$ being thus polynomials of order $m - 3$, as one recognizes on referring to the forms of $A$, $B$, $C$.
+
+The identity may be written
+\[
+\theta_{1} \frac{\partial f}{\partial x} + \theta_{2} \frac{\partial f}{\partial y} + \theta_{3} \frac{\partial f}{\partial z} + \theta_{4} \frac{\partial f}{\partial t} = 0. \tag{1}
+\]
+
+Let us consider the $\theta$ as homogeneous polynomials of order $m - 3$ in $x$, $y$, $z$, $t$. One will have between these polynomials the following relation, which results immediately from their expression in $A$, $B$, $C$~:
+\[
+\frac{\partial \theta_{1}}{\partial x} + \frac{\partial \theta_{2}}{\partial y} + \frac{\partial \theta_{3}}{\partial z} + \frac{\partial \theta_{4}}{\partial t} = 0.
+\]
+
+We have said that the most general surface of degree $m$ did not possess an integral of the first kind. I say, in fact, that, $f(x, y, z)$ being the general polynomial of order $m$, one cannot find four polynomials $\theta_{1}$, $\theta_{2}$, $\theta_{3}$, $\theta_{4}$ of degree $(m - 3)$ verifying the identity (1). Let us consider, in fact, the three surfaces
+\[
+\frac{\partial f}{\partial x} = 0, \quad \frac{\partial f}{\partial y} = 0, \quad \frac{\partial f}{\partial z} = 0;
+\]
+they have no common curve, and they have in common a number of distinct points equal to $(m - 1)^{3}$. For these points, one has
+\[
+\theta_{4} \frac{\partial f}{\partial t} = 0;
+\]
+\origpage{299}
+but the second factor will certainly not be zero, since the surface would then have double points; the points considered therefore belong to the surface of degree $m - 3$
+\[
+\theta_{4} = 0;
+\]
+consequently, the four surfaces
+\[
+\frac{\partial f}{\partial x} = 0, \quad \frac{\partial f}{\partial y} = 0, \quad \frac{\partial f}{\partial z} = 0, \quad \theta_{4} = 0
+\]
+have in common $(m - 1)^{3}$ distinct points. Now that is impossible, for, if we consider the two surfaces of degree $m - 1$
+\[
+\begin{aligned}
+\alpha \frac{\partial f}{\partial x} + \beta \frac{\partial f}{\partial y} + \gamma \frac{\partial f}{\partial z} &= 0, \\
+\alpha' \frac{\partial f}{\partial x} + \beta' \frac{\partial f}{\partial y} + \gamma' \frac{\partial f}{\partial z} &= 0,
+\end{aligned}
+\]
+the $\alpha$, $\beta$, $\gamma$ being arbitrary constants, the intersection of these two surfaces would have to meet the surface $\theta_{4}$ in $(m - 1)^{3}$ points. It is, moreover, impossible that the two preceding surfaces should have a line in common with the surface $\theta_{4}$, if the $\alpha$, $\beta$, $\gamma$ are taken arbitrarily.
+
+\section*{CHAPTER II.}
+
+\textbf{1.} We have admitted, in the preceding numbers, that the surface had only isolated double points and double curves. One may suppose, without more complication, that it has multiple points and multiple curves of arbitrary order, provided that these singularities be \emph{ordinary singularities}; we shall understand by that, that at an isolated multiple point of order $k$ the cone of order $k$ formed by the tangents has no multiple lines; likewise, at every point of a multiple curve of order $k$, the $k$ planes tangent to the $k$ sheets of the surface passing through the multiple curve are distinct.
+
+Let us then seek how the statements previously given must be modified in order that the surface possess integrals of the first kind. Let $A$, $B$, $C$ be three polynomials of the degrees indicated, satisfying
+\origpage{300}
+the fundamental identity
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z).
+\]
+
+The surfaces $A = 0$, $B = 0$, $C = 0$ will pass through the multiple curves, and a multiple curve of order $k$ of the proposed surface will be, for each of these surfaces, a multiple curve of order $(k - 1)$. These conditions are, moreover, necessary and sufficient in order that the integral
+\[
+\int^{(x, y, z)} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+remain \emph{finite} at every point of a multiple curve.
+
+The study of the value of the integral, when $(x, y, z)$ tends toward an isolated multiple point, is a little less simple. Let us suppose that this multiple point is at the origin of the coordinates. Let this point be of order $p$, and let us write
+\[
+f(x, y, z) = \varphi(x, y, z) + \ldots,
+\]
+$\varphi(x, y, z)$ being homogeneous and of degree $p$, and the other terms being of degree higher than $p$ in $x$, $y$ and $z$. Let likewise $\alpha$, $\beta$ and $\gamma$ be the homogeneous terms of lowest degree in $x$, $y$, $z$ in $A$, $B$ and $C$; one will have the identity
+\[
+\alpha \frac{\partial \varphi}{\partial x} + \beta \frac{\partial \varphi}{\partial y} + \gamma \frac{\partial \varphi}{\partial z} = \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \varphi(x, y, z);
+\]
+let us dwell a moment on this relation. On joining it to
+\[
+x \frac{\partial \varphi}{\partial x} + y \frac{\partial \varphi}{\partial y} + z \frac{\partial \varphi}{\partial z} = p\varphi.
+\]
+we shall have the identity
+\[
+\begin{aligned}
+&0 = \left[ p\alpha - x \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial x} \\
+&\qquad + \left[ p\beta - y \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial y} \\
+&\qquad + \left[ p\gamma - z \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right) \right] \frac{\partial \varphi}{\partial z}.
+\end{aligned}
+\]
+\origpage{301}
+We do not know \emph{a priori} the degree of $\alpha$, $\beta$, $\gamma$; if this degree is at most equal to $p - 2$, we are going immediately to find the form of these polynomials; we have, in fact, in this case, a relation of the form
+\[
+P \frac{\partial \varphi}{\partial x} + Q \frac{\partial \varphi}{\partial y} + R \frac{\partial \varphi}{\partial z} = 0, \tag{1}
+\]
+where $P$, $Q$, $R$ are homogeneous polynomials whose degree is at most equal to $p - 2$. The points common to $\dfrac{\partial \varphi}{\partial y} = 0$ and to $\dfrac{\partial \varphi}{\partial z} = 0$ must belong to the curve $P = 0$, since one cannot have at the same time $\dfrac{\partial \varphi}{\partial x} = 0$, the cone having no multiple generator. Now the points common to the two curves of degree $p - 1$
+\[
+\frac{\partial \varphi}{\partial y} = 0, \quad \frac{\partial \varphi}{\partial z} = 0
+\]
+cannot belong to the curve of degree $p - 2$
+\[
+P = 0,
+\]
+and we conclude from this that $P$, $Q$ and $R$ must be identically zero. One has, consequently,
+\[
+\frac{\alpha}{x} = \frac{\beta}{y} = \frac{\gamma}{z}.
+\]
+Let $T$ be the common value of these ratios; one will have
+\[
+pT = \left( \frac{\partial \alpha}{\partial x} + \frac{\partial \beta}{\partial y} + \frac{\partial \gamma}{\partial z} \right),
+\]
+which shows first that $T$ will be a homogeneous polynomial in $x$, $y$, $z$. Moreover, let $q$ be its degree; the preceding equality will give us
+\[
+pT = qT + 3T,
+\]
+whence
+\[
+q = p - 3.
+\]
+Thus, if the degree of $\alpha$, $\beta$, $\gamma$ does not attain $p - 1$, one will necessarily have
+\[
+\alpha = xT, \quad \beta = yT, \quad \gamma = zT,
+\]
+\origpage{302}
+$T$ being a polynomial of degree $p - 3$. We are therefore assured that \emph{the surfaces}
+\[
+A = 0, \quad B = 0, \quad C = 0
+\]
+\emph{have a multiple point of order at least equal to $(p - 2)$, at an isolated multiple point of order $p$ of the proposed surface. In the case where the order of multiplicity is $(p - 2)$, the terms of degree $(p - 2)$ in $A$, $B$, $C$ have the special forms which have just been indicated.}
+
+\textbf{2.} It is easy to see now that, under these conditions, the integral
+\[
+\int^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+remains finite at the multiple point considered; we suppose, as above, that this multiple point is the origin.
+
+If the origin is a multiple point of order $p - 1$ for the surfaces
+\[
+B = 0, \quad A = 0,
+\]
+there is no modification to make to the reasoning which was made for the case of the double point (no. 5).
+
+If the origin is only a multiple point of order $p - 2$, we may set, according to what has just been said in the preceding number,
+\[
+A = xT + A_{1}, \quad B = yT + B_{1},
+\]
+$A_{1}$ and $B_{1}$ containing only terms of degree higher than $p - 2$; one has then the sum of the two integrals
+\[
+\int \frac{T(y\,dx - x\,dy)}{f'_{z}} + \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+We have just said that the second remained finite; as for the first, it is comparable to the ordinary abelian integral
+\[
+\int \frac{T\left(1, \frac{y}{x}, \frac{z}{x}\right) d\left(\frac{y}{x}\right)}{\varphi'_{z}\left(1, \frac{y}{x}, \frac{z}{x}\right)}
+\]
+\origpage{303}
+attached to the curve $\varphi(x, y, z) = 0$; and this integral remains finite, since $T$ is a polynomial of degree $p - 3$.
+
+It evidently results from the preceding calculation that at an isolated multiple point of order $p$ ($p$ being greater than two), the integral of a total differential of the first kind may have, while still remaining \emph{finite}, an \emph{indeterminate} value.
+
+It was not so at a non-planar double point; we have seen (no. 5, First Part) that, in this case, the integral always had a \emph{determinate} value.
+
+\textbf{3.} We shall now make some remarks relative to the case where the surface
+\[
+f(x, y, z) = 0
+\]
+possesses two or more integrals of the first kind. Let us therefore consider two of these integrals.
+
+$A$, $B$, $C$ and $A_{1}$, $B_{1}$, $C_{1}$ being the corresponding polynomials, we shall have the two identities
+\[
+\begin{aligned}
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} &= \left( \frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} \right) f(x, y, z), \\
+A_{1} \frac{\partial f}{\partial x} + B_{1} \frac{\partial f}{\partial y} + C_{1} \frac{\partial f}{\partial z} &= \left( \frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z} \right) f(x, y, z).
+\end{aligned}
+\]
+
+Let us suppose that the two integrals
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}} \quad \text{and} \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+are not functions of one another, that is to say that one does not have for all the points of the surface
+\[
+BA_{1} - AB_{1} = 0,
+\]
+
+This understood, we have for every point of the surface
+\[
+\begin{aligned}
+A f'_{x} + B f'_{y} + C f'_{z} &= 0, \\
+A_{1} f'_{x} + B_{1} f'_{y} + C_{1} f'_{z} &= 0.
+\end{aligned}
+\]
+\origpage{304}
+or
+\[
+\frac{AB_{1} - A_{1}B}{f'_{z}} = \frac{BC_{1} - CB_{1}}{f'_{x}} = \frac{CA_{1} - AC_{1}}{f'_{y}}. \tag{1}
+\]
+
+The quotient $\dfrac{AB_{1} - A_{1}B}{f'_{z}}$ remains finite for every point $(x, y, z)$ of the surface situated at a finite distance. According to the preceding equalities, this is evident for the simple points of the surface; it is likewise so for the points of the multiple lines, for every multiple line of order $p$ of the proposed surface is a multiple line of order $2p - 2$ of the surfaces
+\[
+AB_{1} - A_{1}B = 0, \quad BC_{1} - CB_{1} = 0, \quad CA_{1} - AC_{1} = 0.
+\]
+
+Let us finally make $(x, y, z)$ coincide with an isolated multiple point $P$ of order $p$. If the surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0 \quad \text{and} \quad A_{1} = 0, \quad B_{1} = 0, \quad C_{1} = 0
+\]
+have the point $P$ as a multiple point of order $p - 2$, one sees, according to the forms of the polynomials $A$, $B$, $C$ (preceding number), that the surfaces
+\[
+AB_{1} - A_{1}B = 0, \quad BC_{1} - CB_{1} = 0, \quad CA_{1} - AC_{1} = 0
+\]
+have the point $P$ as a multiple point of order $(2p - 3)$, and in all the other cases the degree of multiplicity will attain at least this value; one sees then, according to the equalities (1), that each of the expressions (1) vanishes at the point $P$.
+
+From the fact that each of the ratios (1) remains finite for every point $(x, y, z)$ of the surface situated at a finite distance, one concludes that
+\[
+\begin{aligned}
+AB_{1} - A_{1}B &= f'_{z} Q(x, y, z), \\
+BC_{1} - CB_{1} &= f'_{x} Q(x, y, z), \\
+CA_{1} - AC_{1} &= f'_{y} Q(x, y, z),
+\end{aligned}
+\tag{2}
+\]
+$Q(x, y, z)$ being a \emph{polynomial} in $x$, $y$, $z$. The degree of this polynomial will moreover be $(m - 4)$ ($m$ being the degree of the surface $f$); one sees in fact, on referring to the forms of $A$, $B$, $C$, that the polynomials figuring
+\origpage{305}
+in the first members of the preceding relations are of degree $2m - 5$.
+
+One could arrive at the relations (2) by another route. The surface
+\[
+AB_{1} - A_{1}B = 0
+\]
+will pass through the intersection of the two surfaces
+\[
+f(x, y, z) = 0, \quad f'_{z}(x, y, z) = 0;
+\]
+now, if a surface
+\[
+F(x, y, z) = 0
+\]
+passes through the intersection of two surfaces
+\[
+\varphi(x, y, z) = 0, \quad \psi(x, y, z) = 0,
+\]
+and if every curve of intersection of these two latter surfaces, which is for the first a multiple line of order $i$ and for the second of order $k$, is a multiple line of order $i + k - 1$ for the surface $F$, one will have the identity
+\[
+F = Q\varphi + R\psi,
+\]
+$Q$ and $R$ being polynomials. This important proposition is due to M. Nöther (\emph{Math. Annalen}, t. VI). On applying it to the present example, one is led to the identity
+\[
+AB_{1} - A_{1}B = Qf'_{z} + Rf,
+\]
+and one has, consequently, the relations (2) for the points of the surface $f$.
+
+The surface of order $(m - 4)$
+\[
+Q(x, y, z) = 0
+\]
+is extremely interesting, for it is a surface \emph{adjoint} to the proposed surface; this surface, according to the definition of the polynomial $Q$, will in fact have \emph{as a multiple curve of order $p - 1$ a multiple curve of order $p$ of the surface $f$, and it will have as a multiple point of order at least equal to $(p - 2)$ every isolated multiple point of order $p$ of this same surface.}
+
+\origpage{306}
+
+The \emph{adjoint} polynomial $Q$ is therefore such that the double integral
+\[
+\int^{x} \int^{y} \frac{Q(x, y, z)\,dx\,dy}{f'_{z}}
+\]
+remains finite for every value of $x$ and $y$.
+
+In the case where the surface has an isolated double point $(p = 2)$, the preceding surface $Q$ passes through this double point; for the surfaces
+\[
+A = 0, \quad B = 0, \quad C = 0 \quad \text{and} \quad A_{1} = 0, \quad B_{1} = 0, \quad C_{1} = 0
+\]
+pass through this double point. The adjoint surface of order $(m - 4)$
+\[
+Q(x, y, z) = 0
+\]
+therefore presents, in this case, a peculiarity which does not in general belong to adjoint surfaces, for these latter are not constrained to pass through the isolated double points.
+
+\textbf{4.} We are now going to consider some particular examples. The surfaces of the \emph{second} degree being unicursal, there will evidently be among them no surface possessing integrals of the first kind. The same remark applies to the surfaces of the \emph{third} degree, which are all unicursal; there is only one exception, for the cones of the third degree, which are not unicursal surfaces and which possess an integral of a total differential of the first kind; for let
+\[
+f(x, y, z) = 0
+\]
+be the equation of a cone of the third degree having the origin for vertex; the integral
+\[
+\int \frac{x\,dy - y\,dx}{f'_{z}(x, y, z)}
+\]
+will be of the first kind.
+
+Let us pass to the surfaces of the fourth degree. Such a surface may possess an integral of the first kind, but we are going immediately to establish that \emph{it cannot have two integrals which are not functions of one another.}
+
+\origpage{307}
+
+In fact, we should have here, according to what we have seen (no. 3 of this Chapter),
+\[
+\begin{aligned}
+AB_{1} - A_{1}B - Qf'_{z} &= 0, \\
+BC_{1} - CB_{1} - Qf'_{x} &= 0, \\
+CA_{1} - AC_{1} - Qf'_{y} &= 0.
+\end{aligned}
+\]
+$Q$, which is in general of order $(m - 4)$, will here be a constant; these relations are, in general, satisfied only for the points of the surface $f$; but, in the present case, they will be identities, since the first member of each of them is a polynomial of degree less than four. Moreover the constant $Q$ will be different from zero, since the two integrals are not functions of one another. We have therefore the identity
+\[
+Af'_{x} + Bf'_{y} + Cf'_{z} = 0;
+\]
+consequently, one has this other identity
+\[
+\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z} = 0.
+\]
+
+Let us now refer to the conditions put under homogeneous form for the surface to have an integral of the first kind (no. 8, First Part); one has
+\[
+\theta_{1}\frac{\partial f}{\partial x} + \theta_{2}\frac{\partial f}{\partial y} + \theta_{3}\frac{\partial f}{\partial z} + \theta_{4}\frac{\partial f}{\partial t} = 0,
+\]
+and $\theta_{4}$ has for expression
+\[
+\theta_{4} = -\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right):
+\]
+one will consequently have $\theta_{4} = 0$; but $\theta_{4}$ is any one whatever of the polynomials $\theta$, and we thus arrive at this absurd conclusion, that
+\[
+\theta_{1} = \theta_{2} = \theta_{3} = \theta_{4} = 0.
+\]
+
+The hypothesis made, that there were two integrals of the first kind which were not functions of one another, was therefore inadmissible.
+
+\origpage{308}
+
+\textbf{5.} The same theorem subsists for the surfaces of the fifth degree. Let there be a surface which should have two distinct integrals of the first kind; one would have
+\[
+\begin{aligned}
+Af'_{x} + Bf'_{y} + Cf'_{z} &= \left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) f(x, y, z), \\
+A_{1}f'_{x} + B_{1}f'_{y} + C_{1}f'_{z} &= \left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) f(x, y, z),
+\end{aligned}
+\tag{1}
+\]
+and the forms of the $A$, $B$, $C$ will here be
+\[
+\begin{aligned}
+A &= x\varphi(x, y, z) + L(x, y, z), &\quad A_{1} &= x\varphi_{1}(x, y, z) + L_{1}(x, y, z), \\
+B &= y\varphi(x, y, z) + M(x, y, z), &\quad B_{1} &= y\varphi_{1}(x, y, z) + M_{1}(x, y, z), \\
+C &= z\varphi(x, y, z) + N(x, y, z), &\quad C_{1} &= z\varphi_{1}(x, y, z) + N_{1}(x, y, z).
+\end{aligned}
+\]
+the $\varphi$ being a homogeneous polynomial of the second degree, and the $L$, $M$, $N$ polynomials of the same degree
+
+According to what has been said in no. 3, one will necessarily have
+\[
+\begin{aligned}
+AB_{1} - BA_{1} &= Qf'_{z} + \nu f(x, y, z), \\
+BC_{1} - CB_{1} &= Qf'_{x} + \lambda f(x, y, z), \\
+CA_{1} - AC_{1} &= Qf' + \mu f(x, y, z),
+\end{aligned}
+\tag{2}
+\]
+$Q$ being here a polynomial of the first degree, and $\lambda$, $\mu$, $\nu$ being three constants. From the three preceding identities one concludes, taking account of equations (1),
+\[
+\begin{aligned}
+Q\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) + \lambda A + \mu B + \nu C &= 0, \\
+Q\left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) + \lambda A_{1} + \mu B_{1} + \nu C_{1} &= 0.
+\end{aligned}
+\tag{3}
+\]
+
+The constants $\lambda$, $\mu$, $\nu$ are connected very simply to the polynomial $Q$. Let us suppose, in fact, that the polynomials $\varphi$ and $\varphi_{1}$ are not both identically zero. Let $\varphi = 0$. In the first of equations (4), the terms of highest degree will be, on setting
+\[
+\begin{aligned}
+&Q = lx + my + nz + p, \\
+&5(lx + my + nz)\varphi + (\lambda x + \mu y + \nu z);
+\end{aligned}
+\]
+\origpage{309}
+one concludes from it that
+\[
+\lambda = -5\frac{\partial Q}{\partial x}, \quad \mu = -5\frac{\partial Q}{\partial y}, \quad \nu = -5\frac{\partial Q}{\partial z}.
+\]
+
+The same conclusion subsists if $\varphi$ and $\varphi_{1}$ are identically zero. Let us consider in fact, in this case, the relations (2); the first members are of the fourth degree; one will therefore have, denoting by $\psi(x, y, z)$ the homogeneous terms of the fifth degree in $f$,
+\[
+\begin{aligned}
+(lx + my + nz)\psi'_{z} + \nu\psi &= 0, \\
+(lx + my + nz)\psi'_{x} + \lambda\psi &= 0, \\
+(lx + my + nz)\psi'_{y} + \mu\psi &= 0;
+\end{aligned}
+\]
+whence one deduces
+\[
+\frac{\psi'_{z}}{\nu} = \frac{\psi'_{x}}{\lambda} = \frac{\psi'_{y}}{\mu} = -\frac{\psi}{lx + my + nz};
+\]
+hence
+\[
+5(lx + my + nz) = -(\lambda x + \mu y + \nu z),
+\]
+and the preceding conclusion subsists.
+
+This laid down, one may, by making a change of axes, suppose that the polynomial of the first degree $Q$ reduces to $z$; the equations will be simplified. Let us write the equations (2)
+\[
+\begin{aligned}
+AB_{1} - BA_{1} &= zf'_{z} - 5f(x, y, z), \\
+BC_{1} - CB_{1} &= zf'_{x}. \\
+CA_{1} - AC_{1} &= zf'_{y},
+\end{aligned}
+\tag{4}
+\]
+and the equations (3) become
+\[
+\begin{aligned}
+z\left(\frac{\partial A}{\partial x} + \frac{\partial B}{\partial y} + \frac{\partial C}{\partial z}\right) - 5C &= 0. \\
+z\left(\frac{\partial A_{1}}{\partial x} + \frac{\partial B_{1}}{\partial y} + \frac{\partial C_{1}}{\partial z}\right) - 5C_{1} &= 0.
+\end{aligned}
+\]
+
+We have for $A$, $B$, $C$ and $A_{1}$, $B_{1}$, $C_{1}$ the expressions indicated above.
+
+\origpage{310}
+
+On introducing them, the two last equations become
+\[
+\begin{aligned}
+z\left(\frac{\partial L}{\partial x} + \frac{\partial M}{\partial y} + \frac{\partial N}{\partial z}\right) - 5N &= 0, \\
+z\left(\frac{\partial L_{1}}{dx} + \frac{\partial M_{1}}{\partial y} + \frac{\partial N_{1}}{\partial z}\right) - 5N_{1} &= 0.
+\end{aligned}
+\]
+
+If therefore we set
+\[
+\begin{aligned}
+L &= a_{0}z^{2} + a_{1}z + a_{2}, \\
+M &= b_{0}z^{2} + b_{1}z + b_{2},
+\end{aligned}
+\]
+where the $a$ and $b$ are polynomials in $x$ and $y$, of degree marked by the index, one will have
+\[
+N = \frac{1}{3}\left(\frac{\partial a_{1}}{\partial x} + \frac{\partial b_{1}}{\partial y}\right)z^{2} + \frac{1}{4}\left(\frac{\partial a_{2}}{\partial x} + \frac{\partial b_{2}}{\partial y}\right)z,
+\]
+and, likewise, on setting
+\[
+\begin{aligned}
+L_{1} &= a'_{0}z^{2} + a'_{1}z + a'_{2}, \\
+M_{1} &= b'_{0}z^{2} + b'_{1}z + b'_{2},
+\end{aligned}
+\]
+there will come
+\[
+N_{1} = \frac{1}{3}\left(\frac{\partial a'_{1}}{\partial x} + \frac{\partial b'_{1}}{\partial y}\right)z^{2} + \frac{1}{4}\left(\frac{\partial a'_{2}}{\partial x} + \frac{\partial b'_{2}}{\partial y}\right)z;
+\]
+and let there be besides
+\[
+\begin{aligned}
+\varphi(x, y, z) &= c_{0}z^{2} + c_{1}z + c_{2}, \\
+\varphi_{1}(x, y, z) &= c'_{0}z^{2} + c'_{1}z + c'_{2},
+\end{aligned}
+\]
+where the $c$ are homogeneous polynomials in $x$, $y$, $z$ of degree marked by the index.
+
+This laid down, the first of equations (4) gives
+\[
+\frac{\partial}{\partial z}\left(\frac{f}{z^{5}}\right) = \frac{AB_{1} - A_{1}B}{z^{6}}.
+\]
+
+We are going to draw from this last equation the value of $f$, to within a term of the form $Cz^{5}$, where $C$ will be a constant, for it cannot be a function of $x$ and $y$, $f$ having to be a polynomial of the fifth degree in $x$, $y$ and $z$.
+
+\origpage{311}
+
+$f$ being thus determined, one must have, according to equations (4),
+\[
+f'_{x} = \frac{BC_{1} - CB_{1}}{z}, \quad f'_{y} = \frac{CA_{1} - AC_{1}}{z}.
+\]
+
+\textbf{6.} This laid down, the surface, being necessarily of genus one, must necessarily have a double curve of degree at least equal to two, and one may evidently suppose that this double curve is the conic represented by the equations
+\[
+z = 0, \quad x^{2} + y^{2} + 1 = 0,
+\]
+for one recalls that every multiple line belongs to the surface $Q = 0$.
+
+Moreover the surfaces
+\[
+A = 0, \quad A_{1} = 0, \quad B = 0, \quad B_{1} = 0
+\]
+must pass through this conic; hence the polynomials
+\[
+c_{2}x + a_{2}, \quad c_{2}y + b_{2}, \quad c'_{2}x + a'_{2}, \quad c'_{2}y + b'_{2}
+\]
+must be divisible by $x^{2} + y^{2} + 1$. Let therefore
+\[
+\begin{aligned}
+c_{2}x + a_{2} &= (\alpha x + \beta)(x^{2} + y^{2} + 1), \\
+c_{2}y + b_{2} &= (\alpha y + \gamma)(x^{2} + y^{2} + 1), \\
+c'_{2}x + a'_{2} &= (\alpha'x + \beta')(x^{2} + y^{2} + 1), \\
+c'_{2}y + b'_{2} &= (\alpha'y + \gamma')(x^{2} + y^{2} + 1),
+\end{aligned}
+\tag{5}
+\]
+the $\alpha$, $\beta$, $\gamma$ being constants; one may draw from them $a_{2}$, $b_{2}$, $c_{2}$ and $a'_{2}$, $b'_{2}$, $c_{2}$.
+
+In $f(x, y, z)$, the term independent of $z$ will be
+\[
+-\frac{1}{5}[(c_{2}x + a_{2})(c'_{2}y + b'_{2}) - (c_{2}y + b_{2})(c'_{2}x + a'_{2})]
+\]
+or
+\[
+-\frac{1}{5}(x^{2} + y^{2} + 1)^{2}[x(\alpha\gamma' - \alpha'\gamma) + y(\beta\alpha' - \beta'\alpha) + \beta\gamma' - \beta'\gamma].
+\tag{6}
+\]
+
+Let us seek, on the other hand, the term independent of $z$ in $\dfrac{BC_{1} - CB_{1}}{z}$;
+\origpage{312}
+it will be
+\[
+(c_{2}y + b_{2})\left[c'_{2} + \frac{1}{4}\left(\frac{\partial a'_{2}}{\partial x} + \frac{\partial b'_{2}}{\partial y}\right)\right] - (c'_{2}y + b'_{2})\left[c_{2} + \frac{1}{4}\left(\frac{\partial a_{2}}{\partial x} + \frac{\partial b_{2}}{\partial y}\right)\right],
+\]
+or, on replacing the $a_{2}$, $b_{2}$, $c_{2}$ by their value drawn from the identities (5),
+\[
+\begin{aligned}
+&(x^{2} + y^{2} + 1)[x^{2}(\alpha'\gamma - \alpha\gamma') + \frac{1}{2}y^{2}(\alpha'\gamma - \alpha\gamma') \\
+&\qquad + \frac{1}{2}(\alpha\beta' - \alpha'\beta)xy + \frac{1}{2}(\beta'\gamma - \gamma'\beta)x + \frac{1}{2}(\gamma\alpha' - \gamma'\alpha)].
+\end{aligned}
+\tag{7}
+\]
+
+The expression (7) must be the derivative with respect to $x$ of the expression (6); now that is possible only if
+\[
+\alpha'\gamma - \alpha\gamma' = \alpha\beta' - \alpha'\beta = \beta'\gamma - \gamma'\beta = 0;
+\]
+under these conditions, the expression (6) is zero, and it results from this that $f(x, y, z)$ would be divisible by $z$; the surface would decompose, which shows \emph{the impossibility of the existence of two distinct integrals of the first kind for a surface of the fifth degree}.
+
+\section*{THIRD PART.}
+
+We are going to occupy ourselves, in this Chapter, with a particular class of surfaces; let us suppose that the coordinates of an arbitrary point $x$, $y$, $z$ of the surface
+\[
+f(x, y, z) = 0
+\tag{1}
+\]
+are expressed by single-valued functions of two parameters $u$ and $v$
+\[
+x = F(u, v), \quad y = F_{1}(u, v), \quad z = F_{2}(u, v),
+\]
+these functions having four \emph{pairs} of simultaneous periods. Let us suppose moreover that to an \emph{arbitrary} point $(x, y, z)$ of the surface there correspond only a single system of values of $u$ and $v$, leaving aside multiples of the periods; \emph{in this case, the surface (1) will possess two integrals of the first kind and two only}. One proves it immediately in the following manner~:
+\origpage{313}
+We have
+\[
+\begin{aligned}
+dx &= \frac{\partial F}{\partial u}\,du + \frac{\partial F}{\partial v}\,dv, \\
+dy &= \frac{\partial F_{1}}{\partial u}\,du + \frac{\partial F_{1}}{\partial v}\,dv.
+\end{aligned}
+\]
+
+Now the coefficients of $du$ and $dv$ are quadruply periodic functions of $u$ and $v$; they can therefore be expressed rationally in $x$, $y$, $z$, under the hypothesis made that to an arbitrary point $(x, y, z)$ there corresponds only a single system of values $(u, v)$; on solving the two preceding equations with respect to $du$ and $dv$, we shall therefore have
+\[
+\begin{aligned}
+du &= P\,dx + Q\,dy, \\
+dv &= P_{1}\,dx + Q_{1}\,dy,
+\end{aligned}
+\]
+the $P$ and $Q$ being rational functions of $(x, y, z)$. The two integrals
+\[
+\int P\,dx + Q\,dy \quad \text{and} \quad \int P_{1}\,dx + Q_{1}\,dy
+\]
+are evidently integrals of algebraic total differentials, and they are of the first kind, since to every point $(x, y, z)$ there must necessarily correspond finite values of $u$ and $v$. These two integrals are distinct and linearly independent.
+
+In the second place, there exists no integral of the first kind linearly independent of the two preceding ones. Let there be, in fact, as above,
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+a third integral of the first kind; let us consider the expressions
+\[
+\varphi = \frac{B \frac{\partial x}{\partial u} - A \frac{\partial y}{\partial u}}{f'_{z}} \quad \text{and} \quad \psi = \frac{B \frac{\partial x}{\partial v} - A \frac{\partial y}{\partial v}}{f'_{z}};
+\]
+these expressions must remain finite for every value of $u$ and $v$, otherwise the preceding integral, which may be written $\displaystyle\int \varphi\,du + \psi\,dv$, would not always remain finite. The quadruply periodic functions $\varphi$ and $\psi$, remaining
+\origpage{314}
+always finite, reduce consequently to constants. One may therefore write
+\[
+\frac{B\,dx - A\,dy}{f'_{z}} = \alpha\,du + \beta\,dv,
+\]
+$\alpha$ and $\beta$ being two constants, which proves the theorem.
+
+\textbf{2.} Among the surfaces of the fourth degree, there is one very remarkable, whose coordinates are expressed by single-valued quadruply periodic functions of two parameters~: it is Kummer's surface; but the preceding theorem cannot be applied to it, for, if we call $u$ and $v$ the two parameters, to an \emph{arbitrary} point of the surface there correspond \emph{two} distinct systems of values $(u, v)$. To verify this assertion, let us rely on an elegant theorem, proved by M. Darboux (\emph{Comptes rendus}, 27 June 1881). M. Darboux establishes that one can always make a Kummer surface correspond point by point to a surface having an equation of the form
+\[
+z^{2} = f(x, y),
+\tag{1}
+\]
+$f$ being a polynomial of the sixth degree in $x$, $y$, and the curve
+\[
+f(x, y) = 0
+\tag{2}
+\]
+being composed of six straight lines tangent to one and the same conic.
+
+One can always, by a preliminary transformation, arrange that this conic have for equation
+\[
+x^{2} - y = 0.
+\tag{K}
+\]
+Let us now set
+\[
+\begin{aligned}
+x &= \frac{x_{1} + x_{2}}{2}, \\
+y &= x_{1}x_{2}.
+\end{aligned}
+\]
+
+For an arbitrary fixed value given to $x_{1}$, these two equations define a straight line tangent to the conic $(K)$. Let us suppose that the six
+\origpage{315}
+straight lines given by equation (2) correspond to
+\[
+x_{1} = a_{1}, a_{2}, a_{3}, a_{4}, a_{5}, a_{6}.
+\]
+Let now
+\[
+\begin{aligned}
+y_{1}^{2} &= (x_{1} - a_{1})(x_{1} - a_{2})\ldots(x_{1} - a_{6}), \\
+y_{2}^{2} &= (x_{2} - a_{1})(x_{2} - a_{2})\ldots(x_{2} - a_{6});
+\end{aligned}
+\]
+the product $y_{1}^{2}y_{2}^{2}$, which is a symmetric function of $x_{1}$ and $x_{2}$, is a polynomial of the sixth degree in $x$ and $y$; it vanishes for
+\[
+x_{1} = a_{1}, a_{2}, \ldots, a_{6};
+\]
+whatever $x_{2}$ may be, it therefore differs from the polynomial $f(x, y)$ only by a constant factor which one may well suppose to be unity.
+
+Consequently, we satisfy equation (1) by setting
+\[
+\begin{aligned}
+x &= \frac{x_{1} + x_{2}}{2}, \\
+y &= x_{1}x_{2}, \\
+z &= y_{1}y_{2},
+\end{aligned}
+\]
+where
+\[
+y_{1} = \sqrt{(x_{1} - a_{1})\ldots(x_{1} - a_{6})}, \quad y_{2} = \sqrt{(x_{2} - a_{1})\ldots(x_{2} - a_{6})}.
+\]
+
+If we now consider the abelian equations
+\[
+\begin{aligned}
+\int^{x_{1}} \frac{dx_{1}}{y_{1}} + \int^{x_{2}} \frac{dx_{2}}{y_{2}} &= u, \\
+\int^{x_{1}} \frac{x_{1}\,dx_{1}}{y_{1}} + \int^{x_{2}} \frac{x_{2}\,dx_{2}}{y_{2}} &= v,
+\end{aligned}
+\]
+these equations give us for $x_{1} + x_{2}$, $x_{1}x_{2}$ and $y_{1}y_{2}$ abelian functions of $u$ and $v$. The three coordinates $x$, $y$, $z$ are therefore expressed by abelian functions of two parameters.
+
+Suppose now that an \emph{arbitrary} point $(x, y, z)$ of the surface is given; one will then have a system of values $(x_{1}, x_{2})$ and the product $y_{1}y_{2}$. One will therefore have for $y_{1}$ and $y_{2}$ two systems of values, namely
+\[
+y_{1}, y_{2} \quad \text{and} \quad -y_{1}, -y_{2};
+\]
+\origpage{316}
+one sees that then to a point $(x, y, z)$ of the surface there \emph{correspond two systems of values} $(u, v)$.
+
+\textbf{3.} Let us now return to the surfaces whose coordinates are expressed by single-valued quadruply periodic functions of two parameters, and let us propose to ourselves the following question~: The irreducible equation
+\[
+f(x, y, z) = 0,
+\]
+being given, can one express $x$, $y$, $z$ by quadruply periodic functions of two parameters, with this condition, that to an arbitrary point of the surface there correspond only a single system of values of the two parameters?
+
+We suppose, as in the first Chapter, that the surface has only ordinary singularities (no. 1, Chap. II); we even confine ourselves, for brevity, to the case where the surface should have only double points and double curves; moreover, it is understood that one has begun by making on the variables the most general homographic substitution.
+
+There must first of all exist two linearly independent integrals of the first kind, and two only~: that is a first point which one will have to verify, proceeding as has been indicated in the first Chapter. Let us suppose then that these two integrals are obtained, and let us designate them by
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+They must, moreover, not be functions of one another, that is to say that $BA_{1} - AB_{1}$ is not identically zero.
+
+Let us now consider the differential equations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv;
+\end{aligned}
+\tag{1}
+\]
+these equations must give for $x$ and $y$ single-valued functions of
+\origpage{317}
+$u$ and $v$~: this is what one sees easily according to what has been said above, since, in the case where $x, y, z$ can be expressed by quadruply periodic functions of $u$ and $v$, one has (no. 1, Part. II)
+\[
+\frac{B\,dx - A\,dy}{f'_{z}} = \alpha\,du + \beta\,dv
+\]
+and likewise
+\[
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} = \alpha_{1}\,du + \beta_{1}\,dv,
+\]
+the $\alpha$ and $\beta$ being constants. If therefore we replace $\alpha u + \beta v$ and $\alpha_{1} u + \beta_{1} v$ by $u$ and $v$, we have the system of equations (1).
+
+We must therefore seek \emph{whether this system of equations in total differentials admits as integrals single-valued functions of the two independent variables $u$ and $v$.}
+
+Let us first dwell a moment on the genus of the proposed surface
+\[
+f(x, y, z) = 0.
+\]
+
+If the coordinates of any one of its points are expressed by quadruply periodic functions of two parameters and in the manner indicated, \emph{the genus of this surface must be equal to unity.} One proves it at once by remarking that the double integral
+\[
+\int \int du\,dv
+\]
+is of the form
+\[
+\int \int \varphi(x, y, z)\,dx\,dy,
+\]
+$\varphi$ being a rational function of $x, y, z$. There is therefore an integral of this form which remains finite for every value of $x$ and $y$; one knows, moreover, that $\varphi$ will necessarily be of the form
+\[
+\varphi(x, y, z) = \frac{Q(x, y, z)}{f'_{z}},
+\]
+$Q$ denoting a polynomial of order $m - 4$. Moreover, the expression
+\[
+\frac{Q(x, y, z)\left(\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}\right)}{f'_{z}},
+\]
+\origpage{318}
+being a quadruply periodic function which remains finite for every value of $u$ and $v$, reduces to a constant; let us designate this constant by $a$. Let us finally recall that the surface
+\[
+Q(x, y, z) = 0
+\]
+passes through the double curve of the surface.
+
+\textbf{4.} These preliminaries laid down, let us take up again the two equations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+and let us draw from these equations the values of $\dfrac{\partial x}{\partial u}$, $\dfrac{\partial x}{\partial v}$, $\dfrac{\partial y}{\partial u}$, $\dfrac{\partial y}{\partial v}$, in order to form $\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}$; one obtains at once
+\[
+\frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u} = -\frac{(f'_{z})^{2}}{BA_{1} - AB_{1}}.
+\]
+
+If we bring this expression together with the relation
+\[
+\frac{Q(x, y, z)\left(\dfrac{\partial x}{\partial u} \dfrac{\partial y}{\partial v} - \dfrac{\partial x}{\partial v} \dfrac{\partial y}{\partial u}\right)}{f'_{z}} = a,
+\]
+we have
+\[
+\frac{BA_{1} - AB_{1}}{f'_{z}} = -\frac{1}{a} Q(x, y, z),
+\tag{1}
+\]
+a relation which will, moreover, be an identity only in virtue of the equation of the surface. We have seen, on the other hand (no. 5, Chap. II), that
+\[
+\frac{BA_{1} - AB_{1}}{f'_{z}} = \frac{BC_{1} - CB_{1}}{f'_{x}} = \frac{CA_{1} - AC_{1}}{f'_{y}} = R(x, y, z),
+\tag{2}
+\]
+$R(x, y, z)$ being a polynomial of order $(m - 4)$. From the relations (1) and (2),
+\origpage{319}
+one concludes
+\[
+R(x, y, z) = -\frac{1}{a} Q(x, y, z),
+\]
+and this equality holds for every value of $x, y$ and $z$.
+
+From the three values which one may give to $R$, it results that the surface $R = 0$ passes through the isolated double points; in fact, we have seen (Chap. I, no. 5) that
+\[
+\frac{B}{f'_{z}} \quad \text{and} \quad \frac{A}{f'_{z}}
+\]
+tend toward a finite limit when $(x, y, z)$ approaches an isolated double point $(a, b, c)$, at least when $\dfrac{y - b}{x - a}$ does not tend toward two certain particular values. One has, consequently, $R(a, b, c) = 0$, since $A_{1}$ and $B_{1}$ vanish for the coordinates of the double point.
+
+\textbf{5.} We have now to study the two equations in total differentials
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+and to seek under what conditions they will give for $x$ and $y$ single-valued functions of $u$ and $v$. One may write the two preceding equations under the form
+\[
+\begin{aligned}
+dx &= \frac{-A_{1}\,du + A\,dv}{R(x, y, z)}, \\
+dy &= \frac{-B_{1}\,du + B\,dv}{R(x, y, z)}.
+\end{aligned}
+\]
+
+At every point of the surface situated at a finite distance, and for which $R(x, y, z)$ is different from zero, each of the multipliers of $du$ and $dv$ has a perfectly determinate finite value.
+
+We must seek the values for which the functions $x$ and $y$, defined by the two preceding equations in total differentials, could cease to be single-valued functions of $u$ and $v$. One knows, according to a general proposition due to M. Bouquet (\emph{Bulletin des}
+\origpage{320}
+\emph{Sciences mathématiques,} t. III), that $x$ and $y$ will not cease to be holomorphic functions of $u$ and $v$ so long as the coefficients of $du$ and $dv$ are holomorphic functions of $x$ and $y$.
+
+The points common to the proposed surface and to the surface
+\[
+R(x, y, z) = 0
+\]
+will play an important role in the discussion which is going to follow, since, for these points, the common denominator of $dx$ and $dy$ will vanish. The intersection of these two surfaces will be composed first of the double curves of the surface $f$, and there may be, besides, one or more other curves of intersection; let us designate by $\Gamma$ these complementary curves.
+
+Let us consider, for the moment, only the points of the surface situated at a finite distance, and let us take first the \emph{simple} points outside the curves $\Gamma$. If, for such a point $(x, y, z)$, one does not have $f'_{z} = 0$, it is clear that
+\[
+\frac{A}{R}, \quad \frac{A_{1}}{R}, \quad \frac{B}{R}, \quad \frac{B_{1}}{R}
+\]
+will be holomorphic functions of $x$ and $y$ in the neighbourhood of this point. It is no longer so if $f'_{z} = 0$, but the difficulty is only apparent. The point being simple, $f'_{x}$ and $f'_{y}$ will not be zero simultaneously; let $f'_{x} \neq 0$.
+
+From the equations
+\[
+dx = \frac{-A_{1}\,du + A\,dv}{R(x, y, z)}, \quad dy = \frac{-B_{1}\,du + B\,dv}{R(x, y, z)},
+\]
+with which I associate
+\[
+f'_{x}\,dx + f'_{y}\,dy + f'_{z}\,dz = 0,
+\]
+one draws
+\[
+\begin{aligned}
+dy &= \frac{-B_{1}\,du + B\,dv}{R}, \\
+dz &= \frac{-C_{1}\,du + C\,dv}{R},
+\end{aligned}
+\]
+the polynomials $C$ and $C_{1}$ being those which have been considered (Chap. I. no. 2).
+\origpage{321}
+$x$ being here a holomorphic function of $y$ and $z$, since $f'_{x} \neq 0$, we conclude from the two last equations that $y$ and $z$ are holomorphic functions of $u$ and $v$, and, consequently, it is the same for $x$, according to the equation
+\[
+dx = -\frac{f'_{y}}{f'_{x}}\,dy - \frac{f'_{z}}{f'_{x}}\,dz.
+\]
+
+Hence, so long as the point $(x, y, z)$, remaining at a finite distance, does not come upon the surface
+\[
+R(x, y, z) = 0,
+\]
+\emph{$x$ and $y$ do not cease to be holomorphic functions of $u$ and $v$.}
+
+\textbf{6.} We shall still have no difficulty when $(x, y, z)$, always remaining at a finite distance, approaches a point $A$ of the double curve which does not belong to the complementary curves $\Gamma$. According to this hypothesis, the surface $R$ will not be tangent at $A$ to either of the two sheets of the surface passing through this point.
+
+If the sheet of the surface on which the point $(x, y, z)$ approaches $A$ does not have its tangent plane at this point parallel to the axis of $z$, which one may always suppose according to the preceding number, the coefficients of $du$ and $dv$ will be holomorphic functions of $x$ and $y$, and, consequently, $x$ and $y$ will be holomorphic functions of $u$ and $v$ in the neighbourhood of the corresponding values of these variables.
+
+\textbf{7.} We have now to consider the case where $(x, y, z)$ should approach a complementary curve $\Gamma$. Let $M$ be an arbitrary point of such a curve; according to the equations
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv,
+\end{aligned}
+\]
+one sees that the ratio $\dfrac{du}{dv}$ is independent of $\dfrac{dy}{dx}$ when $(x, y, z)$ approaches $M$, for one has, at the point $M$,
+\[
+AB_{1} - A_{1}B = 0.
+\]
+
+\origpage{322}
+
+Hence the values $u_{0}$ $v_{0}$ of the integrals $u$ and $v$ corresponding to the point $M$ do not give an ordinary point for the functions $x$ and $y$; this is not doubtful, since $x$ and $y$ will be able to tend toward $x_{0}$ and $y_{0}$ only if the limit of the ratio $\dfrac{u - u_{0}}{v - v_{0}}$ has a determinate value.
+
+If therefore the preceding equations are satisfied by single-valued analytic functions of $u$ and $v$, the point $(u_{0}, v_{0})$ will be for these functions a point of indetermination. But, when $M$ moves on the curve $\Gamma$, the system of values $(u_{0}, v_{0})$ cannot vary in a continuous manner, for a single-valued function of two independent variables, which presents for every finite system of values of the variables the character of a rational function, cannot have a succession of points of indetermination following one another in a continuous manner. Consequently, $u$ and $v$ keep a constant value when $(x_{0}, y_{0}, z_{0})$ moves on the curve $\Gamma$. We have then, for this curve,
+\[
+B\,dx - A\,dy = 0, \quad B_{1}\,dx - A_{1}\,dy = 0,
+\]
+and, since
+\[
+A \frac{\partial f}{\partial x} + B \frac{\partial f}{\partial y} + C \frac{\partial f}{\partial z} = 0,
+\]
+at the same time as
+\[
+\frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy + \frac{\partial f}{\partial z}\,dz = 0,
+\]
+one concludes from it
+\[
+\frac{dx}{A} = \frac{dy}{B} = \frac{dz}{C}
+\]
+and similarly
+\[
+\frac{dx}{A_{1}} = \frac{dy}{B_{1}} = \frac{dz}{C_{1}}
+\]
+
+The curve $\Gamma$ being a curve of intersection of the proposed surface and of the surface
+\[
+R(x, y, z) = 0,
+\]
+one will have, according to what precedes, at all the points of this curve,
+\[
+A \frac{\partial R}{\partial x} + B \frac{\partial R}{\partial y} + C \frac{\partial R}{\partial z} = 0,
+\]
+this relation must be verified at all the points of the complementary curves
+\origpage{323}
+of intersection. This laid down, let us consider one of these curves $\Gamma$; let $(x_{0}, y_{0}, z_{0})$ be a simple point of this curve which is at the same time a simple point of the surface, and let $f'_{z}$ be different from zero, which it is quite permissible to suppose. We shall have
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0};
+\end{aligned}
+\]
+let us make $(x, y, z)$ tend toward $(x_{0}, y_{0}, z_{0})$. One may write
+\[
+\begin{aligned}
+&\frac{B\,dx - A\,dy}{f'_{z}} \\
+&\qquad = [\beta + P(x - x_{0}, y - y_{0})]\,dx + [\alpha + Q(x - x_{0}, y - y_{0})]\,dy, \\
+&\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} \\
+&\qquad = [\beta_{1} + P_{1}(x - x_{0}, y - y_{0})]\,dx + [\alpha_{1} + Q_{1}(x - x_{0}, y - y_{0})]\,dy,
+\end{aligned}
+\]
+the $P$ and $Q$ being series ordered according to the increasing powers of $x - x_{0}$ and $y - y_{0}$, which contain no constant term, and, since
+\[
+BA_{1} - AB_{1} = 0 \quad \text{for} \quad x_{0}, y_{0}, z_{0},
+\]
+one will have
+\[
+\beta\alpha_{1} - \alpha\beta_{1} = 0.
+\]
+
+We shall finally be able to write, after integration,
+\[
+\begin{aligned}
+\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots &= u - u_{0}, \\
+\beta_{1}(x - x_{0}) + \alpha_{1}(y - y_{0}) + \ldots &= v - v_{0}.
+\end{aligned}
+\tag{I}
+\]
+
+The point $(x_{0}, y_{0}, z_{0})$ being a simple point of the curve $\Gamma$, $A$, $B$, $C$ and $A_{1}$, $B_{1}$, $C_{1}$ do not vanish simultaneously at this point; for, if it were so, the equality
+\[
+R(x, y, z) = \frac{AB_{1} - A_{1}B}{f'_{z}}
+\]
+\origpage{324}
+would show that $(x_{0}, y_{0}, z_{0})$ is a double point of the surface $R$, and, consequently, a double point of $\Gamma$. One may therefore suppose that $\alpha$, $\beta$, $\alpha_{1}$ and $\beta_{1}$ are not zero simultaneously; let $\beta \neq 0$.
+
+Let us return to the equations (I); they show that the ratio $\dfrac{v - v_{0}}{u - u_{0}}$ tends toward a limit independent of the ratio $\dfrac{y - y_{0}}{x - x_{0}}$.
+
+Let us set
+\[
+\begin{aligned}
+u - u_{0} &= t\lambda(t), \\
+v - v_{0} &= t\lambda_{1}(t),
+\end{aligned}
+\]
+$\lambda$ and $\lambda_{1}$ being two holomorphic functions of $t$ in the neighbourhood of $t = 0$; they are, moreover, solely constrained to satisfy the relation
+\[
+\beta_{1}\lambda(0) - \beta\lambda_{1}(0) = 0.
+\]
+
+Let us substitute these values of $u$ and $v$ in the equations (I). One will have
+\[
+\begin{aligned}
+\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots &= t\lambda(t), \\
+\beta_{1}(x - x_{0}) + \alpha_{1}(y - y_{0}) + \ldots &= t\lambda_{1}(t).
+\end{aligned}
+\tag{II}
+\]
+
+If one makes, in these equations, $t = 0$, one has two equations which will be satisfied by one and the same development of $x - x_{0}$ in a series ordered according to the increasing powers of $y - y_{0}$; it is the development which gives the curve $\Gamma$, or rather its projection on the plane of the $xy$; this results from the fact that $u$ and $v$ keep the constant values $u_{0}$ and $v_{0}$ when $(x, y, z)$ moves on the curve $\Gamma$.
+
+This remark made, let us return to the equations (II). We shall draw from the first $x - x_{0}$ as a function of $t$ and of $y - y_{0}$, and we shall substitute this value of $x - x_{0}$ in the second equation. The relation thus obtained must be verified for $t = 0$, whatever $y$ may be, according to what has just been said; all the terms will therefore contain $t$ as a factor. This factor removed, there will remain a term of the first degree in $y - y_{0}$, and we shall thus have the development of $y - y_{0}$ according to the increasing powers of $t$, a development which will contain no term independent of $t$. We have thus $x - x_{0}$ and $y - y_{0}$ represented by series ordered according to the increasing powers of $t$. It matters to make sure
+\origpage{325}
+whether there is indeed, as we have just said, a term of the first degree in $y - y_{0}$. We are going to establish that, if, as has been supposed, \emph{the point $(x_{0}, y_{0}, z_{0})$ is a simple point of the curve $\Gamma$}, there always remains a term of the first degree in the preceding equation. To prove it, let us substitute for the equations (II) the two following equations
+\[
+\begin{aligned}
+&\beta(x - x_{0}) + \alpha(y - y_{0}) + \ldots = t\lambda(t), \\
+&m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2} + \ldots \\
+&\qquad = t[\beta_{1}\lambda(t) - \beta\lambda_{1}(t)],
+\end{aligned}
+\]
+which amounts to supposing that $\beta_{1} = \alpha_{1} = 0$, that is to say that the surfaces
+\[
+B_{1} = 0, \quad A_{1} = 0
+\]
+pass through $(x_{0}, y_{0}, z_{0})$. Now we shall have without difficulty the values of $m$, $n$ and $p$. The development of the integral
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+shows immediately that one has, to within a finite factor different from zero,
+\[
+\begin{aligned}
+m &= \left( \frac{\partial B_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{x_{0}}, \\
+n &= \left( \frac{\partial B_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{y_{0}} = - \left[ \left( \frac{\partial A_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right], \\
+p &= - \left[ \left( \frac{\partial A_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right].
+\end{aligned}
+\]
+
+One has, moreover,
+\[
+\beta = B_{0}, \quad \alpha = - A_{0}.
+\]
+If, in the final equation, the term of the first degree in $y - y_{0}$ disappears, the trinomial
+\[
+m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2},
+\]
+which necessarily has a root in common with
+\[
+\beta(x - x_{0}) + \alpha(y - y_{0}),
+\]
+\origpage{326}
+will have this root as a double root; consequently, one will have
+\[
+m\alpha - n\beta = 0, \quad n\alpha - p\beta = 0.
+\]
+which gives us
+\[
+\begin{aligned}
+A_{0} \left[ \left( \frac{\partial B_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right] - B_{0} \left[ \left( \frac{\partial A_{1}}{\partial x} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{x_{0}} \right] &= 0, \\
+A_{0} \left[ \left( \frac{\partial B_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial B_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right] - B_{0} \left[ \left( \frac{\partial A_{1}}{\partial y} \right)_{0} f'_{z_{0}} - \left( \frac{\partial A_{1}}{\partial z} \right)_{0} f'_{y_{0}} \right] &= 0,
+\end{aligned}
+\]
+which we shall finally write
+\[
+\frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial x} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial x} \right)_{0}}{f'_{x_{0}}} = \frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial y} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial y} \right)_{0}}{f'_{y_{0}}} = \frac{A_{0} \left( \dfrac{\partial B_{1}}{\partial z} \right)_{0} - B_{0} \left( \dfrac{\partial A_{1}}{\partial z} \right)_{0}}{f'_{z}};
+\]
+whence one would conclude that the surface represented by the equation
+\[
+AB_{1} - BA_{1} = 0,
+\]
+that is to say the surface $R = 0$, is tangent at $(x_{0}, y_{0}, z_{0})$ to the proposed surface.
+
+\textbf{8.} Let us now suppose that the surface $R$ is tangent to the surface $f$ at a simple point $(x_{0}, y_{0}, z_{0})$ of this surface. The curve $\Gamma$ will have at this point a double point; now the curve $\Gamma$ satisfies the differential equations
+\[
+\frac{dx}{A} = \frac{dy}{B} = \frac{dz}{C},
+\]
+as well as the following~:
+\[
+\frac{dx}{A_{1}} = \frac{dy}{B_{1}} = \frac{dz}{C_{1}}.
+\]
+
+If therefore the six quantities $A$, $B$, $C$, $A_{1}$, $B_{1}$ and $C_{1}$ do not vanish simultaneously at $(x_{0}, y_{0}, z_{0})$, one will have, by one or the other of these equations, a development which will give only a single branch of curve passing through $(x_{0}, y_{0}, z_{0})$. The conclusion is that one has at $(x_{0}, y_{0}, z_{0})$
+\[
+A = B = C = A_{1} = B_{1} = C_{1} = 0.
+\]
+\origpage{327}
+This laid down, the two equations
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0}
+\end{aligned}
+\]
+will become
+\[
+\begin{aligned}
+m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y_{0})^{2} + \ldots &= u - u_{0}, \\
+m_{1}(x - x_{0})^{2} + 2n_{1}(x - x_{0})(y - y_{0}) + p_{1}(y - y_{0})^{2} + \ldots &= v - v_{0},
+\end{aligned}
+\]
+and one will evidently have
+\[
+\frac{m}{m_{1}} = \frac{n}{n_{1}} = \frac{p}{p_{1}}.
+\]
+
+We may make a combination of these equations such that the second has no term of the second degree in $x - x_{0}$ and $y - y_{0}$. We may therefore suppose, in order not to multiply the notations, that this condition is precisely fulfilled in the two preceding equations, that is to say that
+\[
+m_{1} = n_{1} = p_{1} = 0.
+\]
+Let us therefore write
+\[
+\begin{aligned}
+&m(x - x_{0})^{2} + 2n(x - x_{0})(y - y_{0}) + p(y - y)^{2} + \ldots = u - u_{0}, \\
+&\alpha(x - x_{0})^{3} + 3\beta(x - x_{0})^{2}(y - y) \\
+&\qquad + 3\gamma(x - x_{0})(y - y_{0})^{2} + \delta(y - y_{0})^{3} + \ldots = v - v_{0};
+\end{aligned}
+\]
+since, on making $u = u_{0}$, $v = v_{0}$, the two equations in $x$ and $y$ which one thus obtains will be verified for the two branches of the curve $\Gamma$ which passes through $x_{0}$, $y_{0}$, it is clear that the roots of the polynomial
+\[
+m + 2n\theta + p\theta^{2}
+\]
+will be roots of the polynomial
+\[
+\alpha + 3\beta\theta + 3\gamma\theta^{2} + \delta\theta^{3}.
+\]
+\origpage{328}
+If one now makes, in the preceding equations,
+\[
+u - u_{0} = t^{2}\lambda(t), \quad v - v_{0} = t^{3}\lambda_{1}(t),
+\]
+where $\lambda$ and $\lambda_{1}$ are holomorphic functions of $t$ in the neighbourhood of $t = 0$, and moreover arbitrary. To one value of $t$, and consequently of $u - u_{0}$ and $v - v_{0}$, there correspond, by the preceding equations, four systems of values of $x - x_{0}$ and $y - y_{0}$.
+
+One sees that then the equations
+\[
+\begin{aligned}
+\int_{x_{0}, y_{0}}^{x, y} \frac{B\,dx - A\,dy}{f'_{z}} &= u - u_{0}, \\
+\int_{x_{0}, y_{0}}^{x, y} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= v - v_{0}
+\end{aligned}
+\]
+do not give, for a continuous succession of values of $u$ and $v$ in the neighbourhood of $u_{0}$ and $v_{0}$, a single system of corresponding values of $x$ and $y$. It is therefore impossible that the surface
+\[
+R(x, y, z) = 0
+\]
+be tangent to the surface
+\[
+f(x, y, z) = 0
+\]
+at a simple point $(x_{0}, y_{0}, z_{0})$ of this latter.
+
+\textbf{9.} We must now consider the case where $(x, y, z)$ tends toward a double point of the surface through which a curve $\Gamma$ passes. Let us suppose first that a curve $\Gamma$ meets the double curve at a point $(x_{0}, y_{0}, z_{0})$; there will be, in this case, no difficulty, for one will be able to reason, as in the preceding number, by considering simply the sheet of the surface passing through $(x_{0}, y_{0}, z_{0})$ on which the curve $\Gamma$ lies.
+
+Another circumstance remains to be examined; the surface
+\[
+R(x, y, z) = 0
+\]
+passes through the \emph{isolated} double points of the surface. The complementary curve
+\origpage{329}
+$\Gamma$ will therefore have a double point at an isolated double point $(x_{0}, y_{0}, z_{0})$ of the proposed surface, which we are going to suppose to be the origin.
+
+We have seen that at such a point the integral had a perfectly determinate value (First Part, no. 5). Moreover, when the limit of $\dfrac{y}{x}$ is finite and does not annul $M + N\left( \dfrac{y}{x} \right)^{2}$ (\emph{see} the number cited), which one may always suppose, the terms of the first order in the integral
+\[
+\int_{0, 0, 0}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}
+\]
+reduce to
+\[
+\frac{c'x - cy - \lambda Pz}{2P},
+\]
+and similarly for the integral
+\[
+\int_{0, 0, 0}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}},
+\]
+the terms of the first degree will be
+\[
+\frac{c'_{1}x - c_{1}y - \lambda_{1}Pz}{2P}.
+\]
+The surface
+\[
+R(x, y, z) = 0
+\]
+will generally have at the origin a simple point, and the curve $\Gamma$ a double point whose two tangents will be distinct. Since the two integrals $u$ and $v$ keep on the curve $\Gamma$ the constant values $u_{0}$ and $v_{0}$, the two expressions
+\[
+\begin{aligned}
+&c'x - cy - \lambda Pz, \\
+&c'_{1}x - c_{1}y - \lambda_{1}Pz
+\end{aligned}
+\]
+must vanish for one and the other direction corresponding to the tangents to the curve $\Gamma$. The planes obtained by equating these expressions to
+\origpage{330}
+zero therefore coincide. This laid down, let us return to the equations, making $u_{0} = v_{0} = 0$,
+\[
+\begin{aligned}
+\frac{c'x - cy - \lambda Pz}{2P} + \ldots &= u, \\
+\frac{c'_{1}x - c_{1}y - \lambda_{1}Pz}{2P} + \ldots &= v.
+\end{aligned}
+\]
+
+The discussion of these two equations may be made in the following manner. One remarks first that the two integrals $u$ and $v$ may be written under the form of a series proceeding according to the increasing powers of $x$, $y$ and $z$; we may suppose first that $v$ contains no term of the first degree; it suffices, for that, to make a suitable linear combination of the two preceding equations. Let us therefore write
+\[
+\begin{aligned}
+\frac{c'x - cy - \lambda Pz}{2P} + \ldots &= u, \\
+\varphi_{2}(x, y, z) + \ldots &= v,
+\end{aligned}
+\]
+$\varphi_{2}(x, y, z)$ being a homogeneous polynomial of the second degree in $x$, $y$ and $z$. Let us set
+\[
+u = t\lambda(t), \quad v = t^{2}\lambda_{1}(t),
+\]
+$\lambda$ and $\lambda_{1}$ being arbitrary holomorphic functions of $t$ in the neighbourhood of $t = 0$.
+
+From the first equation we may draw $z$ under the form of a series proceeding according to the increasing powers of $x$, $y$ and $t$; let us substitute this value of $z$ in the second equation. There will come
+\[
+P(x, y) + tQ(x, y, t) = t^{2}\lambda_{1}(t), \tag{1}
+\]
+$P$ being a series whose first terms are of the second degree in $x$ and $y$. We have, moreover, the relation
+\[
+f(x, y, z) = 0
+\]
+which becomes, by the substitution of the value of $z$,
+\[
+P_{1}(x, y) + tQ_{1}(x, y, t) = 0, \tag{2}
+\]
+\origpage{331}
+$P_{1}$ beginning, like $P$, with terms of the second degree. The equation
+\[
+P_{1}(x, y) = 0
+\]
+gives the two branches of the curve $\Gamma$ passing through the origin, and it is the same for
+\[
+P(x, y) = 0.
+\]
+Consequently, $P$ and $P_{1}$ may be supposed identical, and we have, in place of the equations (1) and (2),
+\[
+Q(x, y, t) - Q_{1}(x, y, t) = t\lambda_{1}(t), \tag{3}
+\]
+\[
+P_{1}(x, y) + tQ_{1}(x, y, t) = 0. \tag{4}
+\]
+Equation (3) will permit one to develop $y$ according to the increasing powers of $x$ and $t$, and one will substitute this development in equation (4). It will happen, consequently, that equation (4), thus transformed, will begin with terms of the second degree in $x$ and $t$; hence, in general, to one value of $t$ there will correspond two values of $x$. The two equations therefore do not give a single-valued inversion~: that at least is what will take place in general, and, in each particular case, one will be able to make the complete discussion by following the preceding method.
+
+\textbf{10.} We have supposed, in the numbers which precede, that the point $(x, y, z)$ remained at a finite distance. Let us employ, as in no. 7 of Chapter I, the homogeneous coordinates $(x, y, z, t)$; these four coordinates are not zero at the same time, and let, for example, the point recede to infinity in such a manner that $x$ be different from zero. We shall then set
+\[
+\frac{y}{x} = Y, \quad \frac{z}{x} = Z, \quad \frac{t}{x} = T.
+\]
+
+We have seen (no. 7, First Part) that the differential
+\[
+\frac{B\,dx - A\,dy}{f'_{z}}
+\]
+then takes the form
+\[
+\frac{N\,dY - M\,dT}{f'_{z}(1, Y, Z, T)},
+\]
+\origpage{332}
+where $M$ and $N$ are polynomials in $Y$, $Z$, $T$. We shall therefore have the two equations
+\[
+\begin{aligned}
+\frac{N\,dY - M\,dT}{f'_{z}} &= du, \\
+\frac{N_{1}\,dY - M_{1}\,dT}{f'_{z}} &= dv,
+\end{aligned}
+\]
+entirely similar to those which we have discussed in the preceding numbers.
+
+For the point at infinity which we had to consider with the old variables there is substituted a point $(Y, Z, T)$ at a finite distance, and one may make the discussion as we have shown above.
+
+If one returns to the values of $x$, $y$, $z$ which we made use of before the employment of homogeneous coordinates, one will have
+\[
+x = \frac{1}{T}, \quad y = \frac{Y}{T}, \quad z = \frac{Z}{T}.
+\]
+
+\textbf{11.} Let us now sum up the results of the discussion which has just been made in the preceding numbers (from no. 5 to no. 10). We shall suppose, according to what we have said (no. 9), that the surface has no isolated double points; on the other hand, the adjoint surface
+\[
+R(x, y, z) = 0
+\]
+of order $(n - 4)$ cuts the surface first along the double curves, and let $\Gamma$ be the complementary curve of intersection. The surface $R$ will be tangent to the given surface $f$ at no point of the curve $\Gamma$ (no. 8), except of course at the points of meeting of the curve $\Gamma$ and the double curve. The curve $\Gamma$ will have no double points. We have considered (no. 7) the case where $(x, y, z)$ approaches a point $(x_{0}, y_{0}, z_{0})$ of the curve $\Gamma$; designating by $u_{0}$ and $v_{0}$ the corresponding values of $u$ and $v$, we have seen that the limit $\lambda$ of the ratio
+\[
+\frac{u - u_{0}}{v - v_{0}}
+\]
+was equal to
+\[
+\frac{B(x_{0}, y_{0}, z_{0})}{B_{1}(x_{0}, y_{0}, z_{0})}
+\]
+\origpage{333}
+which may also be written
+\[
+\frac{A(x_{0}, y_{0}, z_{0})}{A_{1}(x_{0}, y_{0}, z_{0})};
+\]
+moreover, $x - x_{0}$ and $y - y_{0}$ are developable in series ordered according to the increasing powers of $t$, when one has set
+\[
+\begin{aligned}
+u - u_{0} &= t\lambda(t), \\
+v - v_{0} &= t\lambda_{1}(t)
+\end{aligned}
+\]
+with the condition
+\[
+B_{1}(x_{0}, y_{0}, z_{0})\lambda(0) - B(x_{0}, y_{0}, z_{0})\lambda_{1}(0) = 0.
+\]
+
+Let us now suppose that $(x, y, z)$, starting from $(x_{0}, y_{0}, z_{0})$, follows the curve $\Gamma$; the values of $u$ and $v$ will not change; let us admit that at another point $(x_{1}, y_{1}, z_{1})$ one has
+\[
+\frac{B(x_{1}, y_{1}, z_{1})}{B_{1}(x_{1}, y_{1}, z_{1})} = \frac{B(x_{0}, y_{0}, z_{0})}{B_{1}(x_{0}, y_{0}, z_{0})}; \tag{1}
+\]
+the equations
+\[
+\begin{aligned}
+u - u_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \\
+v - v_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\end{aligned}
+\]
+will be verified for $u = u_{0}$, $v = v_{0}$ by $x = x_{1}$, $y = y_{1}$. Let us set, as above,
+\[
+u - u_{0} = t\lambda(t), \quad v - v_{0} = t\lambda_{1}(t)
+\]
+with the condition
+\[
+B_{1}(x_{1}, y_{1}, z_{1})\lambda(0) - B(x_{1}, y_{1}, z_{1})\lambda_{1}(0) = 0;
+\]
+we shall be able to take, consequently, on account of the relation (1), for $\lambda$ and $\lambda_{1}$ the same functions as previously, and one sees then that, for one and the same value of $t$, one will have at once for $x$ and $y$ values neighbouring
+\origpage{334}
+on $(x_{1}, y_{1})$ and values of $(x_{0}, y_{0})$; $x$ and $y$ would not be single-valued functions of $u$ and $v$. One concludes from this a theorem very important for the study which occupies us. The two equations
+\[
+B - \mu B_{1} = 0, \quad A - \mu A_{1} = 0,
+\]
+where $\mu$ is an arbitrary constant, can be verified only for \emph{a single point} of a curve $\Gamma$, outside the points of the double curve, of course. \emph{The curve $\Gamma$ is therefore unicursal}, and the three equations
+\[
+\begin{aligned}
+B - \mu B_{1} &= 0, \\
+A - \mu A_{1} &= 0, \\
+f(x, y, z) &= 0
+\end{aligned}
+\]
+give for $x$, $y$ and $z$ rational functions of $\mu$.
+
+The conditions which we have just found are, moreover, sufficient. Let us consider, in fact, the equations
+\[
+\begin{aligned}
+u - u_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \\
+v - v_{0} &= \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}};
+\end{aligned}
+\]
+we suppose that $(x, y, z)$ arrives at a point $(x_{0}, y_{0}, z_{0})$ of the curve $\Gamma$, $u$ and $v$ tending toward the values $u_{0}$ and $v_{0}$. I say that, to every system of values $(u, v)$ in the neighbourhood of $(u_{0}, v_{0})$, there will correspond. by means of the preceding equations, a perfectly determinate point $(x, y, z)$; let us, in fact, make $(u, v)$ start from $(u_{0}, v_{0})$, and let us indicate the law of this displacement by the formulas
+\[
+u - u_{0} = t\lambda(t), \quad v - v_{0} = t\lambda_{1}(t),
+\]
+where $\lambda$ and $\lambda_{1}$ are two holomorphic, and moreover arbitrary, functions of $t$ in the neighbourhood of $t = 0$.
+
+Let $\mu$ be the value of the quotient $\dfrac{\lambda(0)}{\lambda_{1}(0)}$; to this value there will correspond
+\origpage{335}
+only one point $(x_{1}, y_{1}, z_{1})$ on the curve $\Gamma$, and, reasoning as above, one sees that $x - x_{1}$ and $y - y_{1}$ can be developed according to the powers of $t$.
+
+\textbf{12.} We therefore now know how to recognize whether the equations in total differentials
+\[
+\begin{aligned}
+\frac{B\,dx - A\,dy}{f'_{z}} &= du, \\
+\frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}} &= dv
+\end{aligned}
+\]
+give for $x$ and $y$ single-valued functions of $u$ and $v$.
+
+These functions will necessarily be quadruply periodic functions of $u$ and $v$. It is a point which is quite easy to establish; first of all the two integrals
+\[
+\int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int_{x_{0}, y_{0}, z_{0}}^{x, y, z} \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}
+\]
+will evidently have no more than four pairs of periods, since the functions $x$ and $y$ given by the corresponding equations in total differentials are single-valued functions. On the other hand, the number of the periods will effectively be \emph{four}; this is what results from the following theorem, which I confine myself to stating~: \emph{$q$ distinct abelian integrals of the first kind corresponding to a curve of genus $p (q \leq p)$ cannot have fewer than $2q$ systems of simultaneous periods.}
+
+An interesting and simple particular case is that where the curve $\Gamma$ should not exist; in this case, the double curve of the surface would be of order $\dfrac{m(m - 4)}{2}$, and, for every system of values of $u$ and $v$ leaving $x$, $y$, $z$ finite, these functions have a perfectly determinate value.
+
+Every surface whose coordinates are expressed, in the manner indicated, by quadruply periodic functions of two parameters gives examples of reduction in the number of the periods of certain abelian integrals corresponding to an algebraic curve. Let us consider an arbitrary plane section of the surface
+\[
+f(x, y, z) = 0.
+\]
+\origpage{336}
+Let
+\[
+z = ax + by + c
+\]
+be the equation of the cutting plane; the curve
+\[
+f(x, y, ax + by + c) = 0 \tag{C}
+\]
+presents an interesting peculiarity from the point of view of the reduction of the number of the periods of the corresponding abelian integrals. If, in fact, in the two integrals
+\[
+\int \frac{B\,dx - A\,dy}{f'_{z}}, \quad \int \frac{B_{1}\,dx - A_{1}\,dy}{f'_{z}}.
+\]
+one replaces $z$ by
+\[
+ax + by + c,
+\]
+$x$ and $y$ being then connected by the relation (C), one will have \emph{two} integrals of the first kind corresponding to the curve (C), \emph{having only four pairs of simultaneous periods.}
+
+\textbf{13.} What are the surfaces of least degree whose coordinates can be expressed by single-valued quadruply periodic functions of two parameters, and in such a manner that to an arbitrary point of the surface there correspond, leaving aside multiples of the periods, only a single system of values of the parameters?
+
+We have seen previously (Chap. II, nos. 4, 5, 6) that the surfaces of the fourth degree and the surfaces of the fifth degree could not have two distinct integrals of the first kind. We may therefore conclude from it the following theorem~:
+
+\emph{There exist no surfaces of the fourth and of the fifth degree whose coordinates are expressed in the manner indicated by quadruply periodic functions of two parameters.}
+
+It is among the surfaces of the sixth degree that one meets the first surfaces enjoying this property. Here is an example of it~: let us set
+\origpage{337}
+\[
+\begin{aligned}
+x &= P(u), \\
+y &= Q(v), \\
+z &= P'(u) + Q'(v),
+\end{aligned}
+\tag{1}
+\]
+$P(u)$ denoting the doubly periodic function of $u$ connected to its derivative $P'(u)$ by the relation
+\[
+P'(u) = \sqrt{aP^{3} + bP^{2} + cP + d},
+\]
+and $Q(v)$ a doubly periodic function of $v$ defined by the relation
+\[
+Q'(v) = \sqrt{\alpha Q^{3} + \beta Q^{2} + \gamma Q + \delta}.
+\]
+
+The equations (1) therefore define the surface of the sixth degree
+\[
+z = \sqrt{ax^{3} + bx^{2} + cx + d} + \sqrt{\alpha y^{3} + \beta y^{2} + \gamma y + \delta}. \tag{2}
+\]
+
+To an arbitrary point $(x, y, z)$ there corresponds only a single system of values of $u$ and $v$. What are the singularities of the surface (2)? Let us write its equation under homogeneous form
+\[
+zt^{\frac{1}{2}} = \sqrt{ax^{3} + bx^{2}t + cxt^{2} + dt^{3}} + \sqrt{\alpha y^{3} + \beta y^{2}t + \gamma yt^{2} + \delta t^{3}}.
+\]
+
+It will have for double curve the cubic defined by the equations
+\[
+z = 0, \quad ax^{3} + bx^{2}t + cxt^{2} + dt^{3} = \alpha y^{3} + \beta y^{2}t + \gamma yt^{2} + \delta t^{3},
+\]
+and also the three straight lines
+\[
+t = 0, \quad ax^{3} = \alpha y^{3}.
+\]
+
+The double curve is therefore of the \emph{sixth} degree, decomposing into a plane cubic and three straight lines.
+
+\origpage{338}
+
+\section*{FOURTH PART.}
+
+\textbf{1.} We are going to consider, in this Chapter, the differential equations of the form
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0, \tag{1}
+\]
+$f$ being a polynomial. One knows that there exists an algebraic relation between a single-valued quadruply periodic function $u(x, y)$ and its two partial derivatives $\dfrac{\partial u}{\partial x}$ and $\dfrac{\partial u}{\partial y}$. There will therefore be partial differential equations of the form (1) which one will be able to satisfy by taking for $u$ a single-valued quadruply periodic function of $x$ and $y$~: I propose to treat the inverse question, that is to say to recognize whether one can satisfy a given equation
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0,
+\]
+by taking for $u$ a single-valued quadruply periodic function of $x$ and $y$. One sees that it is the extension to the case of two variables of one of the problems treated by MM. Briot and Bouquet in their memorable Memoir on integration by elliptic functions, a problem whose object was to recognize whether the equation
+\[
+f\left( u, \frac{du}{dz} \right) = 0
+\]
+could be satisfied by a doubly periodic function of $z$.
+
+We shall begin by proving the following theorem, which is fundamental for what is going to follow~:
+
+\emph{$u$ being a single-valued quadruply periodic function of $x$ and $y$, let}
+\[
+f(u, v, w) = 0
+\]
+\origpage{339}
+\emph{be the algebraic relation existing between $u$ and its partial derivatives $v = \dfrac{\partial u}{\partial x}$ and $w = \dfrac{\partial u}{\partial y}$. To an arbitrary point of the preceding surface there corresponds only a single system of values of $x$ and $y$, leaving aside, of course. multiples of the periods.}
+
+Let us consider, for the two independent variables $x$ and $y$, the domain which, following M. Kronecker's expression, one may call the prismatoid of the periods; let us suppose that to an \emph{arbitrary} point $(u, v, w)$ of the surface $f$ there correspond $m$ systems of values of $x$ and $y$
+\[
+(x_{1}, y_{1}), \quad (x_{2}, y_{2}), \quad \ldots, \quad (x_{m}, y_{m}),
+\]
+let us consider the two sums $x_{1} + x_{2} + \ldots + x_{m}$ and $y_{1} + y_{2} + \ldots + y_{m}$~: since for each point $(u, v, w)$ these expressions have only one value, leaving aside multiples of periods, they are integrals of total differentials of the first kind. Let us suppose first that they reduce to constants. Let us designate by
+\[
+(x'_{1}, y'_{1}), \quad (x'_{2}, y'_{2}), \quad \ldots, \quad (x'_{m}, y'_{m})
+\]
+a second system of values, respectively neighbouring on the first, for which one will have
+\[
+u(x'_{1}, y'_{1}) = u(x'_{2}, y'_{2}) = \ldots = u(x'_{m}, y'_{m}),
+\]
+and likewise for $v$ and $w$. We have, moreover, according to what we have just supposed,
+\[
+\begin{aligned}
+x_{1} + x_{2} + \ldots + x_{m} &= x'_{1} + x'_{2} + \ldots + x'_{m}, \\
+y_{1} + y_{2} + \ldots + y_{m} &= y'_{1} + y'_{2} + \ldots + y'_{m}.
+\end{aligned}
+\tag{2}
+\]
+
+Now one has, to within an infinitely small quantity with respect to $x'_{1} - x_{1}$ and $y'_{1} - y_{1}$,
+\[
+u(x'_{1}, y'_{1}) - u(x_{1}, y_{1}) = (x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}},
+\]
+\origpage{340}
+and likewise
+\[
+\begin{aligned}
+u(x'_{2}, y'_{2}) - u(x_{2}, y_{2}) &= (x'_{2} - x_{2})\frac{\partial u}{\partial x_{2}} + (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}}, \\
+\ldots\ldots\ldots\ldots\ldots\ldots &\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots \\
+u(x'_{m}, y'_{m}) - u(x_{m}, y_{m}) &= (x'_{m} - x_{m})\frac{\partial u}{\partial x_{m}} + (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\]
+
+Now $v = \dfrac{\partial u}{\partial x}$ and $w = \dfrac{\partial u}{\partial y}$ have the same values at
+\[
+(x_{1}, y_{1}), \quad (x_{2}, y_{2}), \quad \ldots, \quad (x_{m}, y_{m}).
+\]
+
+One has therefore
+\[
+\begin{aligned}
+\frac{\partial u}{\partial x_{1}} &= \frac{\partial u}{\partial x_{2}} = \ldots = \frac{\partial u}{\partial x_{m}}, \\
+\frac{\partial u}{\partial y_{1}} &= \frac{\partial u}{\partial y_{2}} = \ldots = \frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\tag{3}
+\]
+
+From the preceding equalities one concludes
+\[
+\begin{aligned}
+&(x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = (x'_{2} - x_{2})\frac{\partial u}{\partial x_{2}} + (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}} = \ldots \\
+&\qquad = (x'_{m} - x_{m})\frac{\partial u}{\partial x_{m}} + (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}}.
+\end{aligned}
+\]
+
+Moreover, in virtue of the relations (2) and (3), the sum of all these expressions is zero; we may therefore write
+\[
+(x'_{1} - x_{1})\frac{\partial u}{\partial x_{1}} + (y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = 0,
+\]
+and, as $x'_{1} - x_{1}$ and $y'_{1} - y_{1}$ are in an arbitrary ratio, one would have
+\[
+\frac{\partial u}{\partial x_{1}} = \frac{\partial u}{\partial y_{1}} = 0,
+\]
+and these two relations are evidently not verified for an arbitrary point $(x_{1}, y_{1})$. Consequently, to an \emph{arbitrary} point of the surface
+\[
+f(u, v, w) = 0
+\]
+\origpage{341}
+there corresponds only a single system of values of $(x, y)$, leaving aside multiples of the periods.
+
+We have supposed, in what precedes, that the two sums
+\[
+x_{1} + x_{2} + \ldots + x_{m} \quad \text{and} \quad y_{1} + y_{2} + \ldots + y_{m}
+\]
+were constant, leaving aside multiples of periods. Let us examine the other circumstances which might present themselves.
+
+We have said that the two preceding sums were necessarily integrals of total differentials of the first kind; these two integrals cannot be distinct. Let, in fact,
+\[
+\int^{u, v, w} P\,du + Q\,dv \quad \text{and} \quad \int^{u, v, w} P_{1}\,du + Q_{1}\,dv,
+\]
+where $P$ and $Q$ are rational in $u$, $v$, $w$, be these two sums. On replacing $u$, $v$, $w$ by their value in $x$ and $y$, each of the preceding integrals becomes a linear function of $x$ and $y$; let them be
+\[
+\alpha x + \beta y + \gamma \quad \text{and} \quad \alpha_{1}x + \beta_{1}y + \gamma_{1}.
+\]
+
+If one did not have $\alpha\beta_{1} - \alpha_{1}\beta = 0$, one could take
+\[
+\alpha x + \beta y \quad \text{and} \quad \alpha_{1}x + \beta_{1}y
+\]
+as new variables in place of $x$ and $y$, and one sees then that to a system of values $u$, $v$, $w$ there would correspond only a single system of values of $x$ and $y$.
+
+Of the two integrals, one is therefore an integral function of the first degree of the other; let
+\[
+y_{1} + y_{2} + \ldots + y_{m} = A(x_{1} + x_{2} + \ldots + x_{m}) + B,
+\]
+$A$ and $B$ being constants.
+
+Let us then take $y - Ax$ and $x$ as variables in $u$ and $v$, and let us designate $y - Ax$ by $y$, in order not to multiply the notations. In this case, the sum
+\[
+y_{1} + y_{2} + \ldots + y_{m}
+\]
+\origpage{342}
+is constant, the sum
+\[
+x_{1} + x_{2} + \ldots + x_{m}
+\]
+being able to be variable. Under this hypothesis, this sum will represent, as we have said, an integral of the first kind and will be able, consequently, to be put under the form
+\[
+\alpha x + \beta y + \gamma;
+\]
+$\alpha$ will not be zero, otherwise there would be, contrary to the hypothesis, only one value for $y$ corresponding to a point $(u, v, w)$. Let us therefore take
+\[
+\alpha x + \beta y + \gamma
+\]
+for variable, designating it by $x$; in this manner, to an \emph{arbitrary point} $(u, v, w)$ there correspond $m$ systems
+\[
+(x_{1}, y_{1}), \quad (x_{1}, y_{2}), \quad \ldots, \quad (x_{1}, y_{m}),
+\]
+$x$ having the same value in each of these systems, and the sum
+\[
+y_{1} + y_{2} + \ldots + y_{m}
+\]
+being constant.
+
+Let us then repeat the mode of reasoning which we made use of above; we shall have
+\[
+(y'_{1} - y_{1})\frac{\partial u}{\partial y_{1}} = (y'_{2} - y_{2})\frac{\partial u}{\partial y_{2}} = \ldots = (y'_{m} - y_{m})\frac{\partial u}{\partial y_{m}},
+\]
+and, consequently,
+\[
+y'_{1} - y_{1} = y'_{2} - y_{2} = \ldots = y'_{m} - y_{m},
+\]
+if the common value of $\dfrac{\partial u}{\partial y_{1}}$, $\dfrac{\partial u}{\partial y_{2}}$, $\ldots$, $\dfrac{\partial u}{\partial y_{m}}$ is not zero, which will evidently take place for an arbitrary system $(x_{1}, y_{1})$.
+
+But the sum $y_{1} + y_{2} + \ldots + y_{m}$ remains constant, and one arrives, consequently, at the absurd result
+\[
+y'_{1} = y_{1}, \quad y'_{2} = y_{2}, \quad \ldots, \quad y'_{m} = y_{m}.
+\]
+
+\origpage{343}
+
+\textbf{2.} It results immediately from the preceding theorem that, if one can satisfy the equation
+\[
+f\left( u, \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y} \right) = 0,
+\]
+by taking for $u$ a single-valued quadruply periodic function of $x$ and $y$, the surface
+\[
+f(u, v, w) = 0
+\]
+will fall into the class of surfaces of which we made the study in the preceding Chapter.
+
+One will therefore have first of all to investigate whether one can express $u$, $v$, $w$ by quadruply periodic functions of two parameters $x$ and $y$. The surface must admit two integrals of the first kind
+\[
+\int \frac{B\,du - A\,dv}{f'_{w}}, \quad \int \frac{B_{1}\,du - A_{1}\,dv}{f'_{w}}.
+\]
+
+One must be able to find two independent linear combinations of these integrals such that the two equations in total differentials
+\[
+\begin{aligned}
+\frac{(lB + mB_{1})\,du - (lA + mA_{1})\,dv}{f'_{w}} &= dx, \\
+\frac{(nB + pB_{1})\,du - (nA + pA_{1})\,dv}{f'_{w}} &= dy
+\end{aligned}
+\tag{1}
+\]
+give for $u$, $v$, $w$ quadruply periodic functions of $x$ and of $y$, and such that
+\[
+v = \frac{\partial u}{\partial x}, \quad w = \frac{\partial u}{\partial y}.
+\]
+
+Let us seek under what conditions one will be able to determine the four constants $(l, m, n, p)$ so that it be so; we shall have only to calculate $\dfrac{\partial u}{\partial x}$ and $\dfrac{\partial u}{\partial y}$ by means of the preceding equations. One finds at once, recalling that $BA_{1} - AB_{1}$ is divisible by $f'_{w}$, and setting, as above,
+\[
+\begin{aligned}
+&BA_{1} - AB_{1} = f'_{w}Q(u, v, w), \\
+&\frac{\partial u}{\partial x} = \frac{nA + pA_{1}}{(lp - mn)Q(u, v, w)}, \quad \frac{\partial u}{\partial y} = -\frac{lA + mA_{1}}{(lp - mn)Q(u, v, w)}.
+\end{aligned}
+\]
+\origpage{344}
+We must therefore have
+\[
+\begin{aligned}
+nA + pA_{1} &= (lp - mn)Q(u, v, w), \\
+lA + mA_{1} &= -(lp - mn)Q(u, v, w),
+\end{aligned}
+\]
+and these relations, having to hold for every point of the surface, will be identities, since the degrees of the polynomials figuring in them are less than the degree of the surface.
+
+We may therefore finally write
+\[
+\begin{aligned}
+A &= -Q(u, v, w)(mv + pw), \\
+A_{1} &= Q(u, v, w)(lv + nw).
+\end{aligned}
+\]
+
+Thus the polynomials $A$ and $A_{1}$ must be divisible by $Q(u, v, w)$, and the quotients are homogeneous and linear in $v$ and $w$. When these conditions are fulfilled, one will have, by the very division of $A$ and $A_{1}$ by $Q$, the four constants $l$, $m$, $n$, $p$, and the equations in total differentials (1) which must give $u$ as a function of $x$ and $y$ will be completely determined.
+
+\textbf{3.} The preceding considerations give us a solution of the proposed problem, but they require the preliminary search for the integrals of total differentials relative to the surface
+\[
+f(u, v, w) = 0. \tag{1}
+\]
+
+One may solve the problem otherwise, without passing through this preliminary search for the integrals of total differentials of the first kind, or at least deduce these integrals from the proposed equation and from a second equation which is formed immediately by means of an adjoint polynomial $Q$.
+
+Let us designate as above (no. 3, Chap. III) by $Q(u, v, w)$ the adjoint polynomial of order $(m - 4)$; this polynomial will be determined to within a factor, since the surface $f$ must necessarily be of genus one. Let $Q$ be a perfectly determinate polynomial.
+
+\origpage{345}
+
+One will have (see \emph{loc.\ cit.})
+\[
+\frac{Q(u, v, w)\left( \frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} \right)}{f'_{w}(u, v, w)} = a,
+\]
+$a$ being a constant, and this equation may be written
+\[
+\frac{Q(u, v, w)\left( \frac{\partial u}{\partial x} \frac{\partial^{2} u}{\partial x\,\partial y} - \frac{\partial u}{\partial y} \frac{\partial^{2} u}{\partial x^{2}} \right)}{f'_{w}(u, v, w)} = a. \tag{2}
+\]
+
+From equation (1), we draw on the other hand
+\[
+f'_{u} v + f'_{v}\frac{\partial^{2} u}{\partial x^{2}} + f'_{w}\frac{\partial^{2} u}{\partial x\,\partial y} = 0. \tag{3}
+\]
+
+The equations (2) and (3) permit one to express $\frac{\partial^{2} u}{\partial x^{2}}$ and $\frac{\partial^{2} u}{\partial x\,\partial y}$ as functions of $u$, $v$, $w$.
+
+Carrying these values into the two equations
+\[
+du = \frac{\partial u}{\partial x}\,dx + \frac{\partial u}{\partial y}\,dy, \quad dv = \frac{\partial^{2} u}{\partial x^{2}}\,dx + \frac{\partial^{2} u}{\partial x\,\partial y}\,dy,
+\]
+we are going to draw from them
+\[
+\begin{aligned}
+dx &= M\,du + N\,dv, \\
+dy &= M_{1}\,du + N_{1}\,dv,
+\end{aligned}
+\]
+the $M$ and the $N$ being rational functions of $u$, $v$, $w$. One finds thus
+\[
+\begin{aligned}
+dx &= \frac{\frac{a f'_{w} f'_{v} - v w Q f'_{u}}{v f'_{v} + w f'_{w}}\,du - Q w\,dv}{a f'_{w}}, \\
+dy &= \frac{\frac{a (f'_{w})^{2} + Q v^{2} f'_{u}}{v f'_{v} + w f'_{w}}\,du + Q v\,dv}{a f'_{w}}.
+\end{aligned}
+\]
+$dx$ and $dy$ must be total differentials of the first kind. One must therefore be able to choose the constant $a$ in such a way that
+\[
+\frac{a f'_{v} f'_{w} - v w Q f'_{u}}{v f'_{v} + w f'_{w}} \tag{4}
+\]
+\origpage{346}
+can be put under the form of an integral polynomial in $u$, $v$, $w$, taking account however of the relation
+\[
+f(u, v, w) = 0.
+\]
+
+It will be the same for the expression
+\[
+\frac{a (f'_{w})^{2} + Q v^{2} f'_{u}}{v f'_{v} + w f'_{w}} \tag{5}
+\]
+which, for the same value of $a$, must be equal to a polynomial. One will immediately have the value of $a$ which could fulfil the preceding conditions, by taking a system $(u, v, w)$ satisfying the two equations
+\[
+v f'_{v} + w f'_{w} = 0, \quad f(u, v, w) = 0,
+\]
+and for which $f'_{w}$ is different from zero. The equation
+\[
+a (f'_{w})^{2} + Q v^{2} f'_{u} = 0
+\]
+will give the value of $a$, and it will simply remain to verify whether the two expressions (4) and (5) are susceptible of the form indicated. If it is so, one will have only to verify whether $dx$ and $dy$ are total differentials of the first kind, and the study will be completed as in the preceding number.
+
+\end{document}

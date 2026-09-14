@@ -1,0 +1,70 @@
+# Term renderings for picard-1885-integrales-differentielles-totales, applied consistently
+# across the translation. Format: `terms: {French as printed: English}`.
+#
+# A superset of the glossary of picard-1884-integrales-differentielles-totales, the Comptes rendus
+# note that announces these same results: every term shared with the note is rendered there
+# identically. Also connects to clebsch-1868-surfaces-algebriques and
+# castelnuovo-enriques-1897-surfaces-algebriques across the corpus.
+
+terms:
+  # --- differentials and integrals ---
+  intégrale de différentielle totale: integral of a total differential
+  intégrales de différentielles totales algébriques: integrals of algebraic total differentials
+  équations aux différentielles totales: equations in total differentials
+  première espèce: first kind
+  seconde espèce: second kind
+  troisième espèce: third kind
+  intégrales de première espèce: integrals of the first kind
+  intégrale abélienne: abelian integral
+  intégrale double: double integral
+  condition d'intégrabilité: condition of integrability
+  finie et déterminée: finite and determinate
+  indéterminée, mais finie: indeterminate, but finite
+
+  # --- surfaces and singularities ---
+  surface algébrique: algebraic surface
+  singularités ordinaires: ordinary singularities
+  point double isolé: isolated double point
+  points doubles isolés: isolated double points
+  point multiple isolé: isolated multiple point
+  courbe double: double curve
+  courbes doubles: double curves
+  courbe multiple: multiple curve
+  ligne multiple: multiple line
+  courbe complémentaire: complementary curve
+  cône des tangentes: tangent cone
+  génératrice multiple: multiple generator
+  point biplanaire: biplanar point
+  plan tangent: tangent plane
+  plans tangents: tangent planes
+  nappe: sheet
+  point simple: simple point
+  point quelconque: arbitrary point
+  points à l'infini: points at infinity
+  à distance finie: at a finite distance
+  surface adjointe: adjoint surface
+  polynôme adjoint: adjoint polynomial
+  genre: genus
+
+  # --- algebra and functions ---
+  substitution homographique: homographic substitution
+  transformation homographique: homographic transformation
+  coordonnées homogènes: homogeneous coordinates
+  forme rendue homogène: form made homogeneous
+  fonctions rationnelles: rational functions
+  fonctions uniformes: single-valued functions
+  fonctions abéliennes: abelian functions
+  fonctions holomorphes: holomorphic functions
+  fonction doublement périodique: doubly periodic function
+  fonctions quadruplement périodiques: quadruply periodic functions
+  paires de périodes simultanées: pairs of simultaneous periods
+  point d'indétermination: point of indetermination
+  fonction entière: integral function
+  unicursales: unicursal
+  ordre: order
+  degré: degree
+  multiples des périodes: multiples of the periods
+
+  # --- kept as the author's own term ---
+  # Kronecker's name for the period domain; rendered literally, not glossed (HOUSESTYLE R9).
+  prismatoïde des périodes: prismatoid of the periods
