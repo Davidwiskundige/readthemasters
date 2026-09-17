@@ -1,0 +1,96 @@
+id: cayley-1871-deficiency-surfaces
+title: On the Deficiency of Certain Surfaces.
+title_en: On the Deficiency of Certain Surfaces.
+authors:
+- name: Arthur Cayley
+  wikidata_id: Q159430
+  birth_year: 1821
+  death_year: 1895
+  mactutor: Cayley
+  portrait:
+    file: portrait.jpg
+    alt: "Photographic portrait of Arthur Cayley"
+    credit: >-
+      Photograph of Arthur Cayley by Herbert Rose Barraud (1845–1896). MacTutor
+      History of Mathematics archive. Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Arthur_Cayley.jpg"
+publication:
+  year: 1871
+  venue: mathematische-annalen
+  volume: '3'
+  pages: 526–529
+  title_full: '"On the Deficiency of Certain Surfaces", Mathematische Annalen, Band
+    3, Heft 4 (1871), pp. 526–529.'
+edition:
+  year: 1871
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original first printing in Mathematische Annalen,
+    Band 3 (1871), pp. 526–529 — an original edition with no modern critical apparatus,
+    commentary, or re-typesetting. Only Cayley's own paper is transcribed; running
+    heads and page numbers are not.
+discipline: mathematics
+tags:
+- geometry
+- algebra
+language: en
+type: paper
+relations:
+- to: clebsch-1868-surfaces-algebriques
+  kind: builds-on
+  recommended: primary
+  note: Cayley builds directly on Clebsch's 1868 definition of the deficiency (Flächengeschlecht)
+    of an algebraic surface, extending Clebsch's formula for surfaces with double
+    and cuspidal curves to higher-order singular curves and conical points.
+- to: noether-1869-algebraische-functionen-mehrerer-variablen
+  kind: builds-on
+  note: Cayley applies Noether's postulation formula for an $i$-tuple curve and conical
+    points, citing Noether's results on the deficiency-value of singularities.
+significance: 'In this four-page note in the Mathematische Annalen (1871), Arthur
+  Cayley reveals a striking phenomenon in the nascent geometry of algebraic surfaces:
+  the deficiency (arithmetic genus $p_a$) can be negative. Clebsch (1868) and Noether
+  (1869) had defined the genus of a surface of degree $n$ through the postulation
+  of adjoint surfaces of degree $n-4$. Cayley evaluates this formula for ruled surfaces
+  (scrolls) and cones over curves of genus $p > 0$, showing that the deficiency equals
+  $-p$, the negative of the genus of the plane section.[1] Cayley conjectures that
+  surfaces of negative deficiency are precisely the rational transforms of cones over
+  curves of positive deficiency, and demonstrates this with a quintic surface having
+  two cubiconical points and a nodal conic.'
+significance_sources:
+- citation: Arthur Cayley, "On the deficiency of certain surfaces", Mathematische
+    Annalen 3 (1871), pp. 526–529; reprinted in The Collected Mathematical Papers
+    of Arthur Cayley, Vol. 8, pp. 162–165.
+  url: https://eudml.org/doc/156505
+source:
+  scan_url: https://eudml.org/doc/156505
+  scan_id: eudml:156505
+sources:
+  death_date: Arthur Cayley, 16 August 1821 – 26 January 1895 (wikidata:Q159430; MacTutor
+    archive, https://mathshistory.st-andrews.ac.uk/Biographies/Cayley/).
+  publication_date: First published 1871 in Mathematische Annalen, Band 3, pp. 526–529
+    (EuDML https://eudml.org/doc/156505; GDZ PPN235181684_0003).
+  edition: Original printing in Mathematische Annalen, Band 3 (1871), pp. 526–529.
+    Digitized by EuDML (https://eudml.org/doc/156505).
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1895
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1871
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-14'
