@@ -1,0 +1,87 @@
+id: noether-1870-eindeutigen-entsprechens
+title: Zur Theorie des eindeutigen Entsprechens algebraischer Gebilde von beliebig
+  vielen Dimensionen.
+title_en: On the theory of the unique correspondence of algebraic entities of arbitrarily
+  many dimensions.
+authors:
+- name: Max Noether
+  wikidata_id: Q77500
+  birth_year: 1844
+  death_year: 1921
+  mactutor: Noether_Max
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Max Noether
+    credit: Faculty photograph of Noether from his years at the University of Heidelberg,
+      dated between 1870 and 1875 on Commons and credited there to the university.
+      Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Noether_2514_(4x5_cropped).JPG
+publication:
+  year: 1870
+  venue: mathematische-annalen
+  volume: '2'
+  pages: 293–316
+  title_full: '"Zur Theorie des eindeutigen Entsprechens algebraischer Gebilde von
+    beliebig vielen Dimensionen", Mathematische Annalen 2 (1870), pp. 293–316.'
+edition:
+  year: 1870
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in Mathematische Annalen 2 (1870),
+    pp. 293–316 — an original edition with no modern critical apparatus, commentary,
+    or re-typesetting. Only Noether's own text is transcribed; running heads and signature
+    marks are not.
+discipline: mathematics
+tags:
+- geometry
+- algebra
+- analysis
+language: de
+type: paper
+relations:
+- to: noether-1869-algebraische-functionen-mehrerer-variablen
+  kind: builds-on
+- to: clebsch-1868-surfaces-algebriques
+  kind: cites
+- to: clebsch-1864-anwendung-abelschen-functionen
+  kind: cites
+- to: riemann-1857-abelsche-functionen
+  kind: cites
+significance: The full memoir behind Noether's 1869 Göttingen note, carrying Clebsch's
+  genus from curves and surfaces to algebraic varieties of arbitrary dimension. Noether
+  proves the birational invariance of the dimension of the space of everywhere finite
+  $r$-fold differential forms (the geometric genus $p_g$) and establishes the role
+  of adjoint systems for varieties with multiple loci.
+source:
+  scan_url: https://eudml.org/doc/156448
+  scan_id: eudml:156448 (Mathematische Annalen 2, 1870, pp. 293–316; GDZ PPN235181684_0002)
+sources:
+  death_date: Max Noether, 24 September 1844 – 13 December 1921 (wikidata:Q77500;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Max/).
+  publication_date: First published 1870 in Mathematische Annalen 2, pp. 293–316 (EuDML
+    http://eudml.org/doc/156448; GDZ PPN235181684_0002; DOI 10.1007/BF01444023).
+  edition: Original printing, Mathematische Annalen 2 (1870), pp. 293–316. Digitized
+    by GDZ / EuDML doc 156448.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1921
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1870
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-18'

@@ -1,0 +1,16 @@
+changelog:
+  - date: "2026-09-18"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-18"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-18"
+  uncertainty_flags: 0
