@@ -173,6 +173,35 @@ def _r18_violations(text: str) -> list[dict]:
     return problems
 
 
+_BARE_ENV_RE = re.compile(r"\\begin\{(" + _MATH_ENVS + r")\*?\}")
+
+
+def _r16_violations(latex: str) -> list[dict]:
+    r"""R16: Display math must use \[ ... \]; multiline displays must be enclosed in \[ ... \].
+
+    Bare environments like \begin{gather*} or \begin{align*} bypass the site's mathblock
+    wrapping and fail to render in KaTeX on the web. Use \[ \begin{gathered} ... \end{gathered} \]
+    or \[ \begin{aligned} ... \end{aligned} \].
+    """
+    text = strip_comments(latex)
+    problems: list[dict] = []
+    for m in _BARE_ENV_RE.finditer(text):
+        idx = m.start()
+        before = text[:idx]
+        last_open = before.rfind(r"\[")
+        last_close = before.rfind(r"\]")
+        if last_open <= last_close:
+            env_name = m.group(1)
+            line = text.count("\n", 0, idx) + 1
+            rec_env = "gathered" if "gather" in env_name else "aligned" if "align" in env_name else env_name
+            problems.append({
+                "line": line,
+                "problem": rf"display math environment must be enclosed in \[ ... \]; use \[ \begin{{{rec_env}}} ... \end{{{rec_env}}} \]",
+                "excerpt": _excerpt(text[idx:idx + 50]),
+            })
+    return problems
+
+
 # Registry: (rule id, human name, scope, predicate). `inline-math` predicates take one `$...$` span
 # and return a list of problem strings; `document` predicates take the text-mode body (see
 # text_mode_body) and return {line, problem, excerpt} records. Add future machine-checkable rulings
@@ -180,6 +209,8 @@ def _r18_violations(text: str) -> list[dict]:
 _RULES = [
     ("R2", "inline large operator uses \\displaystyle (\\int/\\sum/\\prod)",
      "inline-math", _r2_problems),
+    ("R16", "display math environment enclosed in \\[ ... \\] (\\begin{gathered}/\\begin{aligned})",
+     "raw-latex", _r16_violations),
     ("R18", "apparatus note takes no braces in its argument (\\ednote/\\uncertain)",
      "document", _r18_violations),
 ]
@@ -206,6 +237,9 @@ def lint(latex: str) -> list[dict]:
                         "problem": "; ".join(problems),
                         "span": " ".join(span.split()),
                     })
+        elif scope == "raw-latex":
+            for found in predicate(latex):
+                violations.append({**found, "rule": rule_id})
         else:
             if body is None:
                 body = text_mode_body(latex)

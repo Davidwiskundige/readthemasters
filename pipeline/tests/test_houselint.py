@@ -81,6 +81,33 @@ def test_format_violations_nonempty_on_hit():
     assert "foo.tex" in out and "R2" in out
 
 
+# --- R16: display math must use \[ ... \], not bare environments ------------ #
+def test_flags_bare_gather_environment():
+    latex = "\\begin{gather*}\nx = 1 \\\\\ny = 2\n\\end{gather*}"
+    vios = houselint.lint(latex)
+    assert len(vios) == 1
+    assert vios[0]["rule"] == "R16"
+    assert "gathered" in vios[0]["problem"]
+
+
+def test_flags_bare_align_environment():
+    latex = "\\begin{align*}\nx &= 1 \\\\\ny &= 2\n\\end{align*}"
+    vios = houselint.lint(latex)
+    assert len(vios) == 1
+    assert vios[0]["rule"] == "R16"
+    assert "aligned" in vios[0]["problem"]
+
+
+def test_clean_display_math_with_gathered():
+    latex = "\\[\n\\begin{gathered}\nx = 1 \\\\\ny = 2\n\\end{gathered}\n\\]"
+    assert houselint.lint(latex) == []
+
+
+def test_clean_display_math_with_aligned():
+    latex = "\\[\n\\begin{aligned}\nx &= 1 \\\\\ny &= 2\n\\end{aligned}\n\\]"
+    assert houselint.lint(latex) == []
+
+
 # --- R18: apparatus notes take no braces in their argument ------------------ #
 # The site's transform (site/src/lib/tex.js) matches \ednote{}/\uncertain{} with [^}]*, so a nested
 # brace ends the note at the first "}" and its tail leaks into the author's running text — while the
