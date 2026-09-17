@@ -38,8 +38,10 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 - **The author's own division sign stays faithful.** If the print writes `∫(a dz : √…)`, transcribe
   `$\displaystyle\int(a\,dz : \sqrt{...})$` — add the `\displaystyle`, do **not** rewrite the `:` or
   `/` into a `\frac`. (R16)
-- **Standalone formulas** go in display math `\[ ... \]`. Display math is already display style, so
-  no `\displaystyle` there.
+- **All display math must use `\[ ... \]`**. Display math is already display style, so
+  no `\displaystyle` there. Multiline displays must be wrapped in `\[ \begin{gathered} ... \end{gathered} \]`
+  or `\[ \begin{aligned} ... \end{aligned} \]`. Never write bare `\begin{gather*}` or `\begin{align*}`
+  outside `\[ ... \]`, as they bypass KaTeX display wrapping on the web and fail houselint. (R16)
 - **Equation numbers go on the right, via `\tag{n}` inside the display**, even where the print sets
   them on the left — number *position* is presentation. The number *itself* is faithful: force the
   author's own number with `\tag{}`, never LaTeX auto-numbering, so in-text references match. If
@@ -55,8 +57,10 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 - **Author notation is faithful** (R3). Keep `zz` for $z^2$, archaic spelling (*ànno*, *Bernulli*,
   *abscisse*, *elisse*), abbreviations (`arc.`). Content, not presentation.
-- **Printer's errors are kept and flagged, never silently fixed** (R4). Reproduce the misprint
-  exactly, and report it so it reaches the file header / provenance. Do not correct the author.
+- **Printer's errors are kept and flagged with an `\ednote`, never silently fixed** (R4). Reproduce
+  the misprint exactly as printed in the scan, and attach an `\ednote{...}` directly at the error
+  explaining the misprint and the expected correction. Do not use curly braces in the note's prose
+  (R18; inline math `$x$` is fine). Report all misprints in the transcription summary. Do not correct the author.
 - **Before deciding a mark was ADDED, check whether ink is MISSING nearby** (R29). Letterpress
   fails by dropping ink, not only by setting the wrong sort, and a letter that breaks up leaves
   fragments that read as separate marks. "The mark is cleanly inked and at the right height,

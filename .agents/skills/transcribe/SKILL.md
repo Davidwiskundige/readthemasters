@@ -156,7 +156,8 @@ Before generating any LaTeX fragments, perform an upfront global notation pass:
    - Transcribe faithfully: author's spelling, symbols, and archaic forms (`zz` for $z^2$, `arc.`).
    - Normalize typography only (Fraktur/long-ſ → modern letters, expand ligatures, drop line-break hyphens).
    - Figures: emit `\rmfigure{figures/fig-XX.png}{<fig-num>}{<alt text>}` — never redraw.
-   - Apparent printer's errors: reproduce faithfully and note them (ruling R4); do not silently fix.
+   - **Display math wrapping (HOUSESTYLE R16)**: All standalone formulas must be wrapped in `\[ ... \]`. Multiline display math must be enclosed in `\[ \begin{gathered} ... \end{gathered} \]` or `\[ \begin{aligned} ... \end{aligned} \]`. Never write bare `\begin{gather*}` or `\begin{align*}` outside `\[ ... \]` (the site requires `\[ ... \]` to wrap display math for KaTeX).
+   - **Printer's errors & compositor misprints (HOUSESTYLE R4)**: Transcribe the text and math faithfully as printed in the scan (do not silently fix). **Always attach an `\ednote{...}` directly at each error** explaining the misprint and the expected correction (e.g. `\ednote{In the following equation the fourth argument is printed $y_1$ instead of $y_4$; an apparent misprint.}`). Note R18: no curly braces in the note's prose (inline math like `$y_4$` is permitted).
    - Do not transcribe running heads, signature marks, or isolated page numbers.
 2. **Early Linting**: Immediately after each fragment is written, run the house-style linter:
 
@@ -198,13 +199,18 @@ Before opening any scan images for verification, run a whole-document text-only 
 `corpus/<work-id>/original.tex` and `notation.md`:
 1. Mechanical checks:
    - Delimiter balance: `begin`/`end`, `\[`/`\]`, `$` parity, curly brace balance.
+   - Display math wrapping: verify all display formulas use `\[ ... \]`, with multiline formulas using `gathered` or `aligned` within `\[ ... \]` (no bare `\begin{gather*}` or `\begin{align*}`).
    - Equation numbering: monotonic `\tag{n}` sequence.
    - Invariant check: run `python pipeline/texcompare.py` against previous drafts if applicable.
 2. Cross-work consistency & prose checks:
    - Conformance to `notation.md` throughout.
    - Seamless text joins across page boundaries.
    - German / French syntax parsing.
-3. Classify all findings:
+3. Printer error & apparatus audit:
+   - Scan the text and math for apparent compositor errors (transposed letters, wrong indices, repeated arguments, misprints).
+   - Verify that every identified error in the scan has an accompanying `\ednote{...}` annotation in `original.tex`.
+   - Verify that every `\ednote` complies with R18 (no curly braces in prose).
+4. Classify all findings:
    - **DEFECT**: Internal syntax/markup error (fix immediately in `original.tex`).
    - **INCONSISTENCY**: Two parts of the text diverge from `notation.md` (resolve or record).
    - **NEEDS SCAN**: Ambiguous math, punctuation, or reading that only the printed scan can settle.
@@ -216,9 +222,10 @@ Before opening any scan images for verification, run a whole-document text-only 
 
 Verify each page against its source scan image:
 1. Verify line-by-line fidelity of all displayed formulas, subscripts, exponents, and punctuation.
-2. Settle every targeted **NEEDS SCAN** query from Phase 5 using the scan.
-3. Any unresolved ambiguity that remains doubtful must be marked with `\uncertain{...}`.
-4. Record all pages containing `\uncertain{}` or `\illegible` flags.
+2. Scrutinize equations and prose for compositor misprints (wrong indices, repeated symbols, inverted letters) and ensure an `\ednote{...}` is placed at each one.
+3. Settle every targeted **NEEDS SCAN** query from Phase 5 using the scan.
+4. Any unresolved ambiguity that remains doubtful must be marked with `\uncertain{...}`.
+5. Record all pages containing `\uncertain{}` or `\illegible` flags, and all `\ednote{}` locations.
 
 ---
 
@@ -269,6 +276,7 @@ Fix any schema, vocab, or house-style issues. Both commands must pass cleanly wi
 1. **Show the contributor the result before pushing**:
    - Pages transcribed.
    - Notation decisions documented in `notation.md`.
+   - Editorial notes (`\ednote`) added for printer's errors / misprints.
    - Total uncertainty flags count and flagged pages.
    - Copyright gate validation result.
 2. Upon contributor approval, commit with DCO sign-off (`-s`), and open the PR (the branch was already established in Phase 1):
