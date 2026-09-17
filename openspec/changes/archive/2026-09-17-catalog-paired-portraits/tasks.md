@@ -42,4 +42,4 @@
 
 - [x] 6.1 Run `python pipeline/validate.py` and confirm the copyright gate is unaffected — VERIFIED: "OK — 20 work(s) pass the copyright gate". The one WARN (a trailing `.` vs `;` in a Picard heading) predates this change and is unrelated
 - [x] 6.2 Fold the delta into `openspec/specs/site-catalog/spec.md` and archive this change (`/opsx:archive`)
-- [ ] 6.3 Open the PR against `main` with before/after screenshots of the card at both layouts
+- [x] 6.3 Open the PR against `main` with before/after screenshots of the card at both layouts
