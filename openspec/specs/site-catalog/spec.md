@@ -5,9 +5,7 @@
 Current source of truth for the public static site. Astro site under `site/`, fed by
 `pipeline/build_site_data.py` (emits `site/src/data/works.json`). Established by the `site-catalog`
 change (archived 2026-07-18).
-
 ## Requirements
-
 ### Requirement: Only public-domain works are published
 
 The site build SHALL include a work only if it passes the copyright gate and meets the minimum
@@ -32,21 +30,23 @@ string so a filtered view is shareable.
 
 ### Requirement: Catalog card portraits
 
-Each catalog card SHALL carry the portrait thumbnail of its work's first author — the same
-committed derivative the author index uses, so the two surfaces read as one system. A face is
-recognized faster than a name is read, and the catalog is where a reader scans for an author's
-works. The card takes one of two layouts, chosen by a breakpoint that belongs to the card itself.
+Each catalog card SHALL carry a portrait thumbnail at its left edge — the same committed derivative
+the author index uses, so the two surfaces read as one system. For nearly every work that is the
+first author's portrait; a work with exactly two authors who both have one carries both, divided by
+a diagonal cut (see **Paired portraits** below). A face is recognized faster than a name is read,
+and the catalog is where a reader scans for an author's works. The card takes one of two layouts,
+chosen by a breakpoint that belongs to the card itself.
 
 **Wide layout.** Above the breakpoint the portrait is a 69px-wide strip flush to the card's left
 edge, clipped by the card's own rounded corners, spanning the card's full height.
 
-The portrait MUST NOT contribute to the card's height at any card height. Catalog cards vary with
-their content (108–219px against an 86px portrait box), so the image is absolutely positioned
-inside a fixed-width box and sized with `object-fit: cover`: a card's height is determined by its
-text exactly as it was before portraits existed, and the image fills whatever height it is given.
-The visible slice of the thumbnail therefore narrows as a card grows taller; this is accepted, and
-the derivative is centre-cropped on the face before it is scaled, so the face survives the tallest
-card.
+The portrait MUST NOT contribute to the card's height at any card height, and this holds for a
+paired card exactly as for a single one. Catalog cards vary with their content (108–219px against an
+86px portrait box), so the image is absolutely positioned inside a fixed-width box and sized with
+`object-fit: cover`: a card's height is determined by its text exactly as it was before portraits
+existed, and the image fills whatever height it is given. The visible slice of the thumbnail
+therefore narrows as a card grows taller; this is accepted, and the derivative is centre-cropped on
+the face before it is scaled, so the face survives the tallest card.
 
 **Narrow layout.** Below the breakpoint the card restacks: the original title SHALL span the card's
 full width, and the portrait SHALL sit at the card's bottom-left beside the English title and the
@@ -74,27 +74,63 @@ broken. It MUST NOT reuse the breakpoint that collapses the filter sidebar: that
 question, and well above the card breakpoint the narrow layout is measurably taller than the wide
 one.
 
-**The portrait's destination.** The portrait SHALL be wrapped in a link to the page of the author
-whose face it shows — the card's first author, `/authors/<slug>/`. A portrait means the person in
-it, and the rest of the site already honours that: `/authors/` pairs the same derivative with a name
-that opens the author, `/authors/<slug>/` shows the portrait full size. The catalog MUST NOT be the
-one surface where clicking a face opens a paper. This destination is deliberately *not* the card's
-title's: widening the title's target by repeating it at the card's left edge is worth less than
-matching what a reader already expects a portrait to do.
+**Paired portraits.** A card whose work has **exactly two authors, both of whom have a portrait**,
+SHALL divide the same 69px box between them rather than showing the first author alone. Everything
+above still governs the box: its width, its clipping by the card's corners, and its inability to
+affect the card's height are unchanged, and no other card on the catalog changes in any way.
 
-That link is hidden from assistive technology (`aria-hidden`, removed from the tab order) and the
-image carries an empty `alt`: the first author's name is already a link to the same author page in
-the card's own meta row, so the portrait remains a redundant path to a link already announced and
-already focusable, and a second nameless stop would be noise. The portrait MUST stay redundant with
-a visible link on the card — it is hidden from assistive technology only because nothing is lost by
-hiding it.
+The division SHALL be a straight cut crossing the box's vertical midpoint, dropping **8px across the
+box's 69px width** — 6.6° — lowest at the left edge and highest at the right. The first author takes
+the upper-left wedge and the second the lower-right, matching the order the meta row names them in.
+
+The drop MUST be expressed in px, never as a percentage of the box's height. Catalog cards run
+108–219px tall, so a percentage cut would render near 9° on a short card and near 18° on a tall one;
+the slant would differ visibly down a list in which every other card's geometry is constant. A
+px-specified drop renders at the same angle on every card.
+
+The two wedges SHALL be separated by a **2px seam** showing the box's own background, which is the
+card's border token and therefore re-colours itself between light and dark themes. Without it the
+two photographs meet directly and the cut reads as a rendering artefact rather than a decision.
+
+The slant SHALL be gentle. Because the cut pivots about the midpoint, it does not change how much of
+either face is visible — the wedge's area is the box's width times the cut's height whatever the
+angle — but it does change the shape of what is hidden: a shallow cut hides a thin even band, a
+steep one hides a triangle concentrated in a single corner. At the lower wedge that corner is where
+the second author's crown sits, so a steep cut shears a forehead that a shallow cut leaves intact.
+
+A wedge is the first portrait box on this surface that can be **wider** than the derivative's 0.802
+aspect, so a paired crop can run vertically where a single one never does. Where it does, the
+vertical framing MUST be anchored toward the top of the derivative, so the loss falls on the collar
+and coat below the face. The rule that a face may lose its sides but MUST NOT lose its crown or chin
+holds for a paired card too, and is satisfied by that anchoring rather than by the box's aspect.
+
+**The portrait's destination.** A portrait SHALL be wrapped in a link to the page of the author whose
+face it shows, `/authors/<slug>/`. On a single-portrait card that is the card's first author; on a
+paired card **each wedge SHALL link to its own author**, so the upper-left wedge opens the first and
+the lower-right the second. A portrait means the person in it, and the rest of the site already
+honours that: `/authors/` pairs the same derivative with a name that opens the author,
+`/authors/<slug>/` shows the portrait full size. The catalog MUST NOT be the one surface where
+clicking a face opens a paper. This destination is deliberately *not* the card's title's: widening
+the title's target by repeating it at the card's left edge is worth less than matching what a reader
+already expects a portrait to do.
+
+Those links are hidden from assistive technology (`aria-hidden`, removed from the tab order) and the
+images carry an empty `alt`: every author a portrait points at is already a link to the same author
+page in the card's own meta row, so each portrait remains a redundant path to a link already
+announced and already focusable, and further nameless stops would be noise. A portrait MUST stay
+redundant with a visible link on the card — it is hidden from assistive technology only because
+nothing is lost by hiding it. On a paired card this MUST hold for **both** wedges: a paired card
+adds two hidden links and no visible destination that was not already reachable.
 
 Where a card has no first author to point at, the portrait box SHALL render as a plain element
 rather than a link, never as a link with no destination or one aimed elsewhere.
 
 A work whose first author has no portrait renders the same monogram placeholder the author
-index uses, so the text column stays aligned down the list. A multi-author work shows its first
-author's portrait only; the meta row already names every author. All of this holds in both layouts.
+index uses, so the text column stays aligned down the list. A work with three or more authors, and a
+two-author work where either author lacks a portrait, SHALL show the first author's portrait alone —
+the single-portrait behaviour above, unchanged — because a 69px box cannot carry three legible faces
+and a pair with one face missing has no second wedge to fill. The meta row names and links every
+author in all of these cases. All of this holds in both layouts.
 
 Catalog portrait styling SHALL be scoped to a class carried only by the catalog's own list. Neither
 bare `.card` nor `.works` is such a scope: `/authors/<slug>/`'s work list uses both, and its works
@@ -105,7 +141,7 @@ additional `catalog` class for this purpose, following the convention `.authorli
 #### Scenario: Catalog cards show portraits without growing
 
 - **WHEN** a reader loads the catalog at a desktop width
-- **THEN** every card shows its first author's portrait thumbnail at the card's left edge, and no card is taller than its text alone requires
+- **THEN** every card shows a portrait thumbnail at its left edge, and no card is taller than its text alone requires
 
 #### Scenario: A tall card crops rather than reflows
 
@@ -139,13 +175,13 @@ additional `catalog` class for this purpose, following the convention `.authorli
 
 #### Scenario: Clicking a face opens that person
 
-- **WHEN** a visitor clicks the portrait on a catalog card, in either layout
-- **THEN** the first author's page opens — the same destination as that author's name in the card's meta row, and not the work the title opens
+- **WHEN** a visitor clicks a portrait on a catalog card, in either layout
+- **THEN** the page of the author whose face was clicked opens — the same destination as that author's name in the card's meta row, and not the work the title opens
 
 #### Scenario: The portrait is a redundant target, not a second one
 
 - **WHEN** a visitor reaches the card by keyboard or screen reader, in either layout
-- **THEN** the portrait contributes no extra tab stop and no announcement, the card presenting its title and author links exactly as before, every destination the portrait offers still reachable through the meta row's author link
+- **THEN** the portrait contributes no extra tab stop and no announcement, the card presenting its title and author links exactly as before, every destination the portrait offers still reachable through the meta row's author links
 
 #### Scenario: A card with no author to point at renders no link
 
@@ -157,9 +193,34 @@ additional `catalog` class for this purpose, following the convention `.authorli
 - **WHEN** a work's first author has no `portrait` in their records
 - **THEN** its card shows a monogram placeholder of the same footprint, hidden from assistive technology, so the text column stays aligned with every other card
 
-#### Scenario: A multi-author work shows one portrait
+#### Scenario: A two-author work shows both portraits
 
-- **WHEN** a work has more than one author
+- **WHEN** a work has exactly two authors and both have a portrait in their records
+- **THEN** its card divides the same 69px box between them along a diagonal cut, the first author upper-left and the second lower-right, the box no wider and the card no taller than before
+
+#### Scenario: The slant is identical on every card that carries it
+
+- **WHEN** a paired card is measured at the shortest and the tallest heights the catalog produces
+- **THEN** the cut drops the same 8px across the box's 69px width at both, because the drop is specified in px rather than as a fraction of the box's height
+
+#### Scenario: Each face opens its own author
+
+- **WHEN** a visitor clicks the upper-left wedge of a paired card, and then the lower-right wedge
+- **THEN** the first author's page opens from the first and the second author's page from the second, the hit regions following the diagonal rather than a rectangle
+
+#### Scenario: A paired crop keeps both crowns
+
+- **WHEN** a paired card is rendered at every card height the catalog produces, in both layouts
+- **THEN** neither face loses its crown or chin, the vertical framing spending any vertical crop on the collar and coat below the face
+
+#### Scenario: A pair with a portrait missing falls back to one face
+
+- **WHEN** a work has exactly two authors but only one of them has a portrait
+- **THEN** its card shows the first author's portrait alone, exactly as a single-author card does, and the meta row still links both authors
+
+#### Scenario: Three or more authors keep the single portrait
+
+- **WHEN** a work has three or more authors
 - **THEN** its card shows the first author's portrait only, and the meta row still links every author
 
 #### Scenario: The author page's work list keeps no portraits

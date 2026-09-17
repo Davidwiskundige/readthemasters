@@ -177,6 +177,42 @@ ul.authorlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .8r
    absence rather than as a heading, keeping the text column aligned with every other card. */
 .pbox.mono { display: flex; align-items: center; justify-content: center;
   color: var(--muted); font-size: 1.6rem; line-height: 1; user-select: none; }
+
+/* A work by exactly two authors, both with portraits, divides the same box between them along a
+   diagonal cut (catalog-paired-portraits). Scoped to `.pbox.duo` throughout — a single-portrait box
+   carries no `.duo` and no `.w` children, so none of this can reach it, and the box's width, its
+   clipping by the card's corners and its inability to affect the card's height all still come from
+   `.pbox` above, unchanged.
+
+   The cut drops 8px across the box's 69px width — 6.6° — lowest at the left edge and highest at the
+   right, crossing the vertical midpoint. The drop is in PX and MUST stay so. Catalog cards run
+   108–219px tall, so a drop expressed as a percentage of the box would render near 9° on the
+   shortest card and near 18° on the tallest; the angle is the one property of this cut that must
+   not vary down the list.
+
+   The slant is deliberately gentle. Because the cut pivots about the midpoint it does not change
+   how much of either face is visible — a wedge's area is 69px times the cut's height at any angle —
+   only the shape of what is hidden: a shallow cut hides a thin even band, a steep one hides a
+   triangle of the same area piled into one corner. At the lower wedge that corner is where the
+   second author's crown sits, so a steep cut shears a forehead this one leaves intact.
+
+   The two wedges are offset 2px from each other, so `.pbox`'s own background — the card's --border
+   token — shows through as the seam and re-colours itself in dark mode with no second rule. Without
+   it the two photographs meet directly and the cut reads as a misalignment rather than a decision.
+
+   Each image runs down to the cut's LOWEST point plus 2px of overlap, anchored to its own end of
+   the box, so the seam cannot open a sub-pixel gap at a fractional card height. That makes a wedge
+   the first portrait box on this site that can be WIDER than the 138x172 derivative's 0.802 aspect:
+   below a 160px box the crop runs vertically, where a single portrait's never does. The
+   object-position y values hold each face near the top of its derivative so that crop is spent on
+   the collar and coat beneath it. A face may lose its sides; it may not lose its crown or chin. */
+.pbox.duo .w { position: absolute; inset: 0; display: block; }
+.pbox.duo .w img { position: absolute; left: 0; right: auto; width: 100%;
+  height: calc(50% + 6px); object-fit: cover; display: block; }
+.pbox.duo .w.a img { top: 0; bottom: auto; object-position: 50% 8%; }
+.pbox.duo .w.b img { top: auto; bottom: 0; object-position: 50% 14%; }
+.pbox.duo .w.a { clip-path: polygon(0 0, 100% 0, 100% calc(50% - 5px), 0 calc(50% + 3px)); }
+.pbox.duo .w.b { clip-path: polygon(0 calc(50% + 5px), 100% calc(50% - 3px), 100% 100%, 0 100%); }
 /* Journal (venue) pages. Head mirrors .authorhead; "Find the originals" is a plain link list. */
 .journalhead { margin-bottom: 1rem; }
 .journalhead h1 { margin: 0 0 .3rem; }
