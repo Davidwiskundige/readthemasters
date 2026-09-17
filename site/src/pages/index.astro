@@ -108,10 +108,18 @@ const maxYear = years.length ? Math.max(...years) : 0;
           which must keep no portraits — so the portrait CSS may not key off `.works`. */}
       <ul class="works catalog" id="works">
         {works.map((w) => {
-          // First author only: a second portrait would break the uniform 69px column for the one
-          // multi-author work in the corpus, and the meta row below names every author anyway.
           const lead = w.authors[0];
           const thumb = lead ? thumbs[lead.slug] : null;
+          // A work by exactly two authors who BOTH have a portrait shows both, divided by a
+          // diagonal cut (catalog-paired-portraits). Everything else falls through to the
+          // single-portrait branches below, unchanged: a work with three or more authors, because
+          // a 69px box cannot carry three legible faces; and a pair where one portrait is missing,
+          // because there is then no second face to fill the lower wedge. Neither case exists in
+          // the corpus — it tops out at two authors and both have portraits — so both are guards,
+          // and the meta row names and links every author in all of them. See design decision 9.
+          const second = w.authors.length === 2 ? w.authors[1] : null;
+          const secondThumb = second ? thumbs[second.slug] : null;
+          const paired = thumb && secondThumb ? [lead, second] : null;
           return (
           <li class="card"
               data-title={(w.title ?? "").toLowerCase()}
@@ -124,10 +132,10 @@ const maxYear = years.length ? Math.max(...years) : 0;
               data-type={w.type}
               data-status={w.status}
               data-year={w.year}>
-            {/* The portrait goes to the person in it (catalog-portrait-links-author) — the first
-                author, the same destination as the first name in the meta row below. NOT the work:
-                every other surface treats a face as that author, and the catalog was the one place
-                where clicking one opened a paper.
+            {/* A portrait goes to the person in it (catalog-portrait-links-author) — the same
+                destination as that author's name in the meta row below. NOT the work: every other
+                surface treats a face as that author, and the catalog was the one place where
+                clicking one opened a paper.
                 Hidden from assistive technology and out of the tab order because that meta-row
                 author link is already announced and already focusable, so this is a redundant path
                 and would only add a stop with no accessible name. That redundancy is the whole
@@ -136,7 +144,23 @@ const maxYear = years.length ? Math.max(...years) : 0;
                 target, not a second one".
                 The image is absolutely positioned inside the box (see .pbox in global.css), so a
                 card's height still comes from its text alone. */}
-            {lead
+            {paired
+              /* Two authors, two faces, one box (catalog-paired-portraits). Each wedge links to
+                 its OWN author rather than both pointing at the first: with two faces a split
+                 target is the only honest mapping, where on a single face it would have been
+                 arbitrary. `clip-path` clips pointer events as well as paint, so the hit regions
+                 follow the diagonal. Both wedges stay hidden for the same reason the single
+                 portrait is — BOTH authors are already links in the meta row below, so this adds
+                 two redundant paths and no destination the card does not otherwise offer. */
+              ? <div class="pbox duo" aria-hidden="true">
+                  <a class="w a" href={`/authors/${paired[0].slug}/`} tabindex="-1">
+                    <img src={thumb} alt="" width="69" height="86" loading="lazy" />
+                  </a>
+                  <a class="w b" href={`/authors/${paired[1].slug}/`} tabindex="-1">
+                    <img src={secondThumb} alt="" width="69" height="86" loading="lazy" />
+                  </a>
+                </div>
+              : lead
               ? <a class={thumb ? "pbox" : "pbox mono"} href={`/authors/${lead.slug}/`}
                    aria-hidden="true" tabindex="-1">
                   {thumb
