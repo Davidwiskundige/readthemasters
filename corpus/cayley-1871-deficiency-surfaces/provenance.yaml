@@ -1,0 +1,44 @@
+changelog:
+  - date: "2026-09-15"
+    summary: Transcription added (AI draft), pp. 526–529 from Mathematische Annalen Bd. 3 (1871).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-15"
+  verification:
+    flagged_pages: []
+    date: "2026-09-15"
+  uncertainty_flags: 0
+  note: >-
+    Full English text of Arthur Cayley's four-page paper "On the Deficiency of Certain Surfaces",
+    printed pages 526–529, from the original first printing in Mathematische Annalen, Band 3,
+    Heft 4 (Leipzig: B. G. Teubner, 1871). The paper has no figures, no footnotes, and consists of
+    detailed algebraic-geometric calculations of deficiency formulas for surfaces with singularities,
+    scrolls, torses, and cones.
+
+    ZERO UNCERTAINTY FLAGS: Every symbol and glyph was verified at 300 DPI scan resolution and
+    magnified crops. The transcription contains no \uncertain{} and no \illegible. Key readings
+    resolved by magnification:
+    - Cuspidal lines on pp. 526–527 are Greek script kappa (\varkappa), representing the classical
+      singularity count \delta nodes and \varkappa cusps of the tangent-cone section, clearly distinguished
+      from Latin x. On p. 528, Latin x represents the actual double points of space curves following
+      Salmon's notation (x = 1/2(r^2 - r - n - 3m)). On p. 529, x, y, z are homogeneous coordinates
+      and \omega is Greek omega (\omega).
+    - German quotation marks „..." are preserved as literal Unicode per HOUSESTYLE R22, reflecting
+      the Leipzig compositor's typeset.
+    - Greek \beta and \gamma on p. 527 represent stationary points on the double curve b and
+      cuspidal curve c respectively; \gamma was verified under magnification and cross-checked against
+      Cayley's 1869 Memoir on Reciprocal Surfaces (Phil. Trans. 159).
+    - Greek \Theta on p. 527 represents the singular points on c whose nature Cayley notes he does
+      not completely understand.
+
+    PRINTER'S ERRORS FAITHFULLY PRESERVED (HOUSESTYLE R4) WITH \ednote POPOVERS:
+    - p. 527: "the nature of wich I do not completely understand" sets "wich" without an h (\ednote).
+    - p. 528: double hyphen "--" in "10m -- 3n" in the formula for h (\ednote).
+    - p. 528: small ink defect/speckle above the minus sign in "(m - 1)" in the evaluation of D (\ednote).
+    - p. 529: double hyphen "--" in "\delta y -- \beta\omega" in the cubic cone equation (\ednote).
+
