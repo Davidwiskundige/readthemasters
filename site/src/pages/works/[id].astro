@@ -467,7 +467,7 @@ function relatedNavHtml(bottom) {
     function hashTargetInside(el) {
       const id = decodeURIComponent((location.hash || '').slice(1));
       const target = id && document.getElementById(id);
-      return !!target && el.closest('[data-panel]') === target.closest('[data-panel]');
+      return !!target && (target.contains(el) || el.contains(target));
     }
 
     // Math spans only exist in the served HTML; a panel's are observed once it can be seen.
@@ -491,9 +491,20 @@ function relatedNavHtml(bottom) {
     observeMath(document);
     observeEquations(document);
 
+    let userScrolled = false;
+    const disarmScroll = () => { userScrolled = true; };
+    addEventListener('wheel', disarmScroll, { passive: true });
+    addEventListener('touchmove', disarmScroll, { passive: true });
+    addEventListener('keydown', (e) => {
+      if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) {
+        userScrolled = true;
+      }
+    }, { passive: true });
+
     // Arriving at a deep link after load (a search result opened in the same tab, or the back
     // button) has to typeset around the new target too, not just the one the page loaded with.
     addEventListener('hashchange', () => {
+      userScrolled = false;
       const id = decodeURIComponent((location.hash || '').slice(1));
       const target = id && document.getElementById(id);
       const panel = target && target.closest('[data-panel]');
@@ -507,6 +518,7 @@ function relatedNavHtml(bottom) {
     // `deepOnly` skips the case where the hash is just a panel's own id: a tab click rewrites the
     // hash to `#en`, and that is a record of which tab is open, not a request to jump anywhere.
     function scrollToHash(deepOnly) {
+      if (userScrolled) return;
       const id = decodeURIComponent((location.hash || '').slice(1));
       const el = id && document.getElementById(id);
       if (!el || el.closest('[data-panel][hidden]')) return;
