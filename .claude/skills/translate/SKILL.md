@@ -50,6 +50,16 @@ Read these so your output matches the house style and translation rules exactly:
 
 ## Phase 1 — Locate the work and clear the gate
 
+0. **Check for existing translation and warn before proceeding**:
+   Before modifying files, check whether `corpus/<work-id>/translations/<lang>.tex` already exists:
+   - If `corpus/<work-id>/translations/<lang>.tex` exists and is non-empty:
+     **STOP AND WARN THE CONTRIBUTOR IMMEDIATELY**:
+     > ⚠️ **Existing Translation Warning**: The `<lang>` translation for `<work-id>` already exists at `corpus/<work-id>/translations/<lang>.tex`.
+     > Re-translating will overwrite existing translation text and verified edits.
+     > Do you intend to re-translate and overwrite this translation, or did you specify the wrong language/work ID?
+     **Do not proceed without explicit confirmation from the contributor.**
+   - If the contributor explicitly confirms or if the file does not exist, proceed to step 1.
+
 1. Read `corpus/<work-id>/work.yaml` and `corpus/<work-id>/original.tex`. If `original.tex` does
    not exist, STOP — the work must be transcribed first (Tier-2 `/transcribe` or Tier-3).
 2. Confirm the work is public domain:
