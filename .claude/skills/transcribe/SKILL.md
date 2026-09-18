@@ -76,17 +76,7 @@ Read these so your output matches the house style exactly:
 
 ## Phase 1 — Isolate workspace, locate the work, and clear the gate
 
-0. **Check for existing transcription and warn before proceeding**:
-   Before creating branches or modifying files, check whether `corpus/<work-id>/original.tex` already exists:
-   - If `corpus/<work-id>/original.tex` exists and is non-empty:
-     **STOP AND WARN THE CONTRIBUTOR IMMEDIATELY**:
-     > ⚠️ **Existing Transcription Warning**: The work `<work-id>` already exists in the corpus at `corpus/<work-id>/original.tex` (current transcription status: `<status>` in `provenance.yaml`).
-     > Re-transcribing will overwrite existing transcription and verified edits.
-     > Do you intend to re-transcribe and overwrite this work, append pages, or did you specify the wrong work ID?
-     **Do not create branches or proceed without explicit confirmation from the contributor.**
-   - If the contributor explicitly confirms or if `original.tex` does not exist, proceed to step 1.
-
-1. **Isolate your branch or worktree before touching files**:
+0. **Isolate your branch or worktree before touching files**:
    Never start transcription on `main` or an unrelated feature branch.
    - **Single session**: create and switch to a dedicated branch off `origin/main`:
      ```bash
@@ -103,7 +93,7 @@ Read these so your output matches the house style exactly:
      a single working copy will cross-contaminate the directory with untracked or in-progress files
      from other works, causing validation to fail, and branch switching will disrupt running sessions.
 
-2. If `corpus/<work-id>/work.yaml` exists, read it. Otherwise the work is new:
+1. If `corpus/<work-id>/work.yaml` exists, read it. Otherwise the work is new:
    - Help the contributor create `corpus/<work-id>/work.yaml` from
      `.claude/skills/transcribe/templates/work.yaml`. The `<work-id>` follows PLAN.md §3.2
      (Wikidata QID → DOI → `author-year-shorttitle` slug) and must equal the directory name.
