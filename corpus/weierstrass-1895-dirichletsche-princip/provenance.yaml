@@ -1,0 +1,165 @@
+changelog:
+  - date: "2026-09-20"
+    summary: Transcription added (AI draft), pp. 49–54 from the 1895 Mathematische Werke scan.
+  - date: "2026-09-21"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-21"
+    uncertainty_flags: 0
+    note: >-
+      Translated from our own original.tex, never from any published translation — and this paper
+      has well-known ones, none of which was opened. pipeline/texcompare.py and
+      pipeline/houselint.py both pass: all 18 displays and every inline span are copied character
+      for character, the six \origpage markers keep their positions inside the sentences, and the
+      nine \emph runs sit on the words the print letterspaces. The file carries no \uncertain and
+      no \ednote, because the German of this note is plain and the transcription flagged nothing.
+
+      NO \text{...} INSERT ANYWHERE, so HOUSESTYLE R21 has nothing to apply in this work. The one
+      thing inside a formula that looks translatable is \operatorname{arctg}, Weierstrass's own
+      printed name for the inverse tangent, and R21 deliberately excludes \operatorname: it names
+      an operator, not prose. It is therefore left as arctg and NOT rendered \arctan — a reviewer
+      should not "fix" it.
+
+      QUOTATION GLYPHS ARE THE EDITION'S, NOT ENGLISH ONES. The long quotation from Dirichlet's
+      summer-1856 lecture and the two inline quotations on p. 49 keep German » … « (opening »,
+      closing «, the reverse of the French ordering), following the same reasoning by which the
+      Abel 1841 translation keeps that memoir's French guillemets: the glyph is a feature of the
+      source edition (HOUSESTYLE R22/R18), not prose. The print's own conventions come across
+      intact — » at the head of every quoted paragraph, a closing « only at the five places the
+      print sets one, and the paragraph "For the proof we premise the following theorem:" left
+      unclosed as the print leaves it.
+
+      TERMINOLOGY. Schlussweise = "mode of inference" (Verfahren = "procedure", Beweisverfahren =
+      "method of proof"); Derivirte = "derivative", taken from the riemann-1857-abelsche-functionen
+      glossary; Grösse = "quantity"; Nachschrift = "transcript"; theilweise Integration =
+      "integration by parts"; körperlicher Raum = "solid space"; d. h. = "that is", as in
+      riemann-1851-complexen-groesse. The decision worth a reviewer's eye is untere Grenze =
+      "lower bound" — the paper's central term, letterspaced in the print, and the thing
+      Weierstrass says the integral can approach without attaining. "Lower limit" is the more
+      literal reading of the German, but it collides with the integration-limit sense the same
+      word carries elsewhere in the corpus, and "lower bound" is the concept he is separating from
+      "minimum", which is the whole argument. The interval's Grenze and the space's Begrenzung are
+      both rendered "boundary", so the two senses of the German word stay visibly distinct.
+
+      GERMAN VERB-FINAL CLAUSES CLOSING AFTER A DISPLAY were the one structural problem, since the
+      display may not move. Each was solved by leaving the English sentence a tail: "der Gleichung
+      … Genüge leistet" → "satisfies the equation … everywhere"; "sein muss" → "must hold";
+      "ein (absolutes) Minimum ist" → "is an (absolute) minimum". One place has no word left to
+      carry — the bare "ist." closing the M/N pair on p. 51 — and there the copula is absorbed
+      into the "where" that introduces the display. Nothing is added and nothing is dropped, and
+      the paragraph structure matches original.tex exactly: 17 paragraphs, in the same order, with
+      the flush-left resumptions after displays kept as continuations rather than new paragraphs.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-20"
+  verification:
+    model: claude-opus-5
+    flagged_pages: []
+    date: "2026-09-20"
+  uncertainty_flags: 0
+  note: >-
+    Full German text of Weierstrass's "Über das sogenannte Dirichlet’sche Princip", printed pages
+    49–54, from Mathematische Werke von Karl Weierstrass, Zweiter Band: Abhandlungen II (Berlin:
+    Mayer & Müller, 1895). Read from the Internet Archive scan of the University of Toronto copy,
+    archive.org/details/mathematischewer02weieuoft, leaves n60–n65.
+
+    FIRST PUBLICATION, NOT A REPRINT. Weierstrass read this to the Berlin Academy on 14 July 1870
+    and no text was printed at the time. The Academy's Monatsberichte aus dem Jahre 1870 (Berlin,
+    1871) carry a one-line minute at p. 575 — "Hr. Weierstraß las: Bemerkungen über das sogenannte
+    Dirichlet’sche Princip." — with the article's text nowhere in the volume, and the
+    Namen-Register stars the entry as unprinted, as it also stars his other 1870 communication at
+    p. 139, which is likewise a bare minute. The page was read directly
+    (archive.org/details/monatsberichtede1870unse, leaf n612), not inferred from a catalogue. The
+    Werke's own table of contents corroborates it: every other paper in the volume carries a
+    parenthetical line naming its earlier printing, and this one carries none. So the 1895 Werke
+    text is the earliest printing that exists, and there is no journal original to prefer to it.
+
+    METHOD. Six pages in two batches of three (pp. 49–51, pp. 52–54), each transcribed by its own
+    subagent against its own page images, with the work's notation.md carried forward between
+    them; then one whole-file proofreading pass with no images, then two scan-verification
+    subagents run concurrently, one per batch. Every doubtful reading was settled by magnifying
+    the region against the source scan rather than flagged: the file contains no \uncertain{} and
+    no \illegible, and that is a magnification result, not an easy scan.
+
+    PAGE PREPARATION. Full-page crops, not half-page crops. At prepare_pages.py's default ink
+    threshold the text block was not found cleanly — a black scan edge on the odd pages dragged
+    the crop out to nearly the full leaf, and three of six pages came out under 1000 px of text
+    width, which triggered the narrow-scan warning. Re-running at --threshold 140 --min-ink 60
+    found the true text block and raised the pages to 1184–1568 px with no warning, so the
+    half-page split was not needed. Magnification was still used: 15 regions over six pages in
+    transcription (2, 2, 3, 3, 3, 2) and 18 more in verification, spent on the curly ∂ against d,
+    ε against e and s, the centred interval dots, and letterspacing, which the strong show-through
+    from the facing leaf makes unjudgeable by eye on this scan.
+
+    NOTATION, all recorded in the file header and in notation.md, and followed symbol by symbol:
+    both kinds of derivative are printed and each stays where it belongs, ∂ in the potential
+    theory of pp. 50–52 and straight d in the counterexample of pp. 52–54, which prints its
+    argument as well, d\varphi(x)/dx; \varphi never \phi; the author's own "arctg" as
+    \operatorname{arctg} with its fraction argument abutting it and no added parentheses; the
+    curly \varepsilon never \epsilon; the interval's centred dots as \cdots never \ldots.
+
+    QUOTATION (R22). Weierstrass quotes at length from a Dirichlet lecture of summer semester
+    1856, from Dedekind's manuscript Nachschrift. The edition sets German angle quotes with »
+    opening and « closing, the reverse of the French ordering, written as literal Unicode. The
+    opening » is repeated at the head of each quoted PARAGRAPH and never at the start of an
+    interior printed line — checked on every page of the quotation — so it is the print's own
+    convention for a multi-paragraph quotation, not the line-break artifact R22 collapses, and
+    each paragraph keeps its ». Closing « is written only where the print sets one: pp. 49, 50, 51
+    and twice on p. 52. One quoted paragraph, "»Zum Beweise schicken wir den folgenden Satz
+    voraus:" on p. 49, is left unclosed by the print and is left unclosed here.
+
+    NO ESZETT. This print has no long-s and no eszett ligature: it sets "ss" throughout (dass,
+    muss, Grösse, Grössen, müsste, Schlussweise, schliesslich, gemäss, Masse), each checked at
+    magnification as two round s. HOUSESTYLE R19's ligature rule therefore has nothing to convert
+    and the file contains no ß — a property of this print, not a transcription choice. The
+    adjectival apostrophe is the raised comma, literal U+2019: Dirichlet’sche, Dirichlet’s,
+    Newton’schen.
+
+    EMPHASIS (R20, R24). The print's one device is letterspacing (Sperrung), rendered \emph: the
+    names Lejeune Dirichlet, Riemann and Dedekind on p. 49, and kleinsten (p. 50), eine einzige
+    and absolutes Minimum (p. 51), überall and untere Grenze (p. 52), positive (p. 53). Each was
+    confirmed by magnifying the word, because the loose justification of this print makes a wide
+    inter-word gap look like Sperrung at page resolution; the test applied was inter-letter gaps
+    inside a single word. Two inconsistencies of the print are reproduced rather than regularized
+    (R23): "eine einzige" is plain on p. 49 and letterspaced on p. 51, and "überall" is plain at
+    its first occurrence on p. 52 and letterspaced at its second, where "(absolutes)" on the same
+    page is plain although "absolutes Minimum" on p. 51 is not. Numerals in this volume carry a
+    naturally wide digit spacing that is not Sperrung, so 1856 and 1870 are left plain.
+
+    NO APPARENT PRINTER'S ERRORS were found on any of the six pages, so the file carries no
+    \ednote (R4). ONE READING THAT LOOKS LIKE ONE AND IS NOT, and the reason a reviewer should not
+    "fix" it: the standalone display on p. 54 contains the bare fraction d\varphi(x)/dx with no
+    leading x, although it is x·dφ/dx that the vanishing of the integral forces to be zero. The
+    whole left half of that text block was magnified and is blank, so the print really does set
+    the fraction alone — and the argument is complete as printed, because the sentence's appeal to
+    the continuity of φ(x) and dφ(x)/dx is exactly what carries x·φ' = 0 to φ' = 0 at x = 0 as
+    well.
+
+    PARAGRAPHING. This volume sets a line flush left where a paragraph continues after a display
+    and indents only a genuine new paragraph, so the flush-left resumptions ("Genüge leistet." on
+    p. 50, "so ist für diese specielle Function" and "Daraus erhellt…" on p. 53) take no paragraph
+    break. The indentation of each page's opening line was checked against the scan, including
+    p. 54, whose first line is indented and so begins a new paragraph.
+
+    Mechanical checks run against this file, beyond validate.py and houselint.py: \origpage markers
+    run 49–54 with no gaps or duplicates; \[ / \] pairing, environment pairing, $ parity and brace
+    balance all check out; no hyphen stands before a page break, including behind a closing brace;
+    no \phi, \arctan, \epsilon, \ldots, ß or bare align*/gather* anywhere; every \emph run contains
+    plain text only; and an \origpage is followed by a blank line only on pp. 49 and 54, the two
+    pages that open a paragraph. All 95 math spans (18 display, 77 inline) were rendered through
+    the site's own KaTeX build with throwOnError, 0 failures, and the file was pushed through
+    site/src/lib/tex.js with the math wrappers stripped, confirming that no TeX markup leaks into
+    the rendered prose.

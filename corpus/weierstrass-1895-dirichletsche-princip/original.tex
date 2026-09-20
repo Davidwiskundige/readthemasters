@@ -1,0 +1,201 @@
+% Faithful transcription — original German. Transcribed from Mathematische Werke von Karl
+% Weierstrass, Zweiter Band: Abhandlungen II (Berlin: Mayer & Müller, 1895), printed pages 49–54:
+% K. Weierstrass, "Über das sogenannte Dirichlet’sche Princip".
+% Scan: Internet Archive, archive.org/details/mathematischewer02weieuoft (University of Toronto
+% copy); printed pp. 49–54 are scan leaves n60–n65.
+%
+% FIRST PUBLICATION. This Werke printing is the paper's first appearance in print, not a reprint.
+% Weierstrass read it to the Königlich Preussische Akademie der Wissenschaften zu Berlin on
+% 14 July 1870 and no text was printed then: the Academy's Monatsberichte for 1870 (Berlin, 1871)
+% carry a one-line minute at p. 575 — "Hr. Weierstraß las: Bemerkungen über das sogenannte
+% Dirichlet’sche Princip." — and nothing more, and the volume's Namen-Register stars the entry as
+% unprinted. The Werke's own table of contents confirms it: every other paper in the volume
+% carries a parenthetical line naming its earlier printing, and this one carries none.
+%
+% \origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: the running heads
+% ("ÜBER DAS SOGENANNTE DIRICHLET’SCHE PRINCIP."), the page numbers, the signature marks at the
+% feet of pp. 49 and 51 ("II." / "7" / "7*"), and the centred rule that closes the paper on p. 54.
+% The parenthetical reading-date line under the title IS part of the article and is transcribed.
+% The paper has no footnotes, no figures, and no numbered equations.
+%
+% TYPEFACE AND ORTHOGRAPHY. The prose is set in Antiqua (roman), not Fraktur. There is no long-s
+% and no eszett ligature anywhere in this print: it sets "ss" throughout — dass, muss, Grösse,
+% Grössen, müsste, Schlussweise, schliesslich, gemäss, Masse — checked at high magnification in
+% both batches. So this file contains no ß, and HOUSESTYLE R19 has nothing to convert here. The
+% adjectival apostrophe is the raised comma, written as literal U+2019: Dirichlet’sche,
+% Dirichlet’s, Newton’schen. The 1895 spelling is kept faithful (R12): Function, Princip,
+% Potentialtheorie, eigenthümlichen, mittheilen, Werth, giebt, Derivirten, Grenzen, stetig.
+% Literal UTF-8 is used for ä ö ü (R18).
+%
+% QUOTATION (HOUSESTYLE R22). Weierstrass quotes at length from a Dirichlet lecture of summer
+% semester 1856, from Dedekind's manuscript Nachschrift. The edition sets the quotation in German
+% angle quotes with » opening and « closing — the reverse of the French ordering — written as
+% literal Unicode. The opening » is repeated at the head of each quoted PARAGRAPH, which is the
+% print's own convention for a multi-paragraph quotation and not the line-break artifact R22
+% collapses: it never appears at the start of an interior printed line. So each quoted paragraph
+% keeps its », and a closing « is written only where the print sets one — pp. 49, 50, 51 and
+% twice on p. 52. The print leaves one quoted paragraph unclosed, »Zum Beweise schicken wir den
+% folgenden Satz voraus:, on p. 49, and it stays unclosed here. The two inline quotations on
+% p. 49, »Dirichlet’sches Princip« and »Princips«, carry both marks.
+%
+% EMPHASIS (HOUSESTYLE R20/R24). The print's one emphasis device is letterspacing (Sperrung),
+% rendered \emph throughout: the names Lejeune Dirichlet, Riemann and Dedekind on p. 49, and the
+% words kleinsten (p. 50), eine einzige and absolutes Minimum (p. 51), überall and untere Grenze
+% (p. 52), positive (p. 53). Identifying letterspacing on this scan is a best-effort pass — the
+% facing page shows through strongly and the justification is loose — so each reading above was
+% confirmed by magnifying the word rather than judged from the full page.
+% Two inconsistencies of the print are reproduced rather than regularized (R23): "eine einzige" is
+% plain on p. 49 and letterspaced on p. 51; "überall" is plain at its first occurrence on p. 52
+% and letterspaced at its second, and "(absolutes)" on p. 52 is plain although "absolutes Minimum"
+% on p. 51 is letterspaced. Numerals in this volume are set with a naturally wide spacing that is
+% not Sperrung, so 1856 and 1870 are not emphasized.
+%
+% NOTATION — the author's own, followed symbol by symbol:
+%   * Both kinds of derivative are printed and each is kept where it belongs. The potential-theory
+%     discussion on pp. 50–52 sets the curly ∂ (confirmed under magnification on p. 50), so it is
+%     \partial; the one-dimensional counterexample on pp. 52–54 sets the straight d, so it is
+%     \frac{d\varphi(x)}{dx} — with the argument, which is how the print sets it.
+%   * The standalone display on p. 54 contains that bare fraction and NO leading x. It looks at
+%     first like a dropped factor, since it is x·dφ/dx that the vanishing integral forces to be
+%     zero; the whole left half of the text block was magnified and is blank, so the print really
+%     sets the fraction alone, and the reasoning is complete as printed — the sentence's appeal to
+%     the continuity of φ(x) and dφ(x)/dx is exactly what carries x·φ' = 0 to φ' = 0 at x = 0 too.
+%     Nothing is misprinted, so there is no \ednote here.
+%   * The function is the curly φ: \varphi, never \phi.
+%   * The inverse tangent is the author's own "arctg", set \operatorname{arctg}, never \arctan.
+%     Its argument abuts the operator name with no added parentheses: \operatorname{arctg}
+%     \frac{x}{\varepsilon}.
+%   * The small Greek of the counterexample is the curly ε: \varepsilon, never \epsilon.
+%   * The interval is printed with centred dots and is written $(-1 \cdots +1)$, not \ldots.
+%
+% PARAGRAPHING. This volume sets a line flush left after a display when the paragraph continues,
+% and indents only a genuine new paragraph. Flush-left resumptions ("Genüge leistet." on p. 50,
+% "so ist für diese specielle Function" and "Daraus erhellt…" on p. 53) therefore take no
+% paragraph break here.
+%
+% NO APPARENT PRINTER'S ERRORS were found on any of the six pages, so there is no \ednote in this
+% file (HOUSESTYLE R4). There are no \uncertain or \illegible flags either: every doubtful reading
+% was settled by magnifying the region against the source scan.
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{49}
+
+\section*{Über das sogenannte Dirichlet’sche Princip.}
+
+(Gelesen in der Königl. Akademie der Wissenschaften am 14. Juli 1870.)
+
+In seinen Vorlesungen über die Kräfte, welche nach dem Newton’schen Gesetz wirken, hat sich \emph{Lejeune Dirichlet} zur Begründung eines Hauptsatzes der Potentialtheorie einer eigenthümlichen Schlussweise bedient, welche später auch von anderen Mathematikern, namentlich von \emph{Riemann}, vielfach angewandt worden ist und den Namen »Dirichlet’sches Princip« erhalten hat.
+
+Über die Zulässigkeit dieses »Princips« haben sich seitdem manche Zweifel geltend gemacht, welche, wie ich im Folgenden zeigen werde, durchaus begründet sind. Ehe ich aber darauf eingehe, will ich, da Dirichlet über den in Rede stehenden Gegenstand nichts veröffentlicht hat, aus einer von Dirichlet im Sommer-Semester 1856 gehaltenen Vorlesung, welche mir in einer von Herrn \emph{Dedekind} angefertigten sorgfältigen Nachschrift vorliegt, die folgende Stelle mittheilen, aus welcher mit voller Bestimmtheit hervorgeht, was Dirichlet gemeint und wie er sein Beweisverfahren zu rechtfertigen versucht hat:
+
+»Ist irgend eine endliche Fläche gegeben, so kann man dieselbe stets, aber nur auf eine Weise, so mit Masse belegen, dass das Potential in jedem Punkte der Fläche einen beliebig vorgeschriebenen (nach der Stetigkeit sich ändernden) Werth hat.«
+
+»Zum Beweise schicken wir den folgenden Satz voraus:
+
+»Ist irgend ein endlicher zusammenhängender Raum $t$ gegeben, so giebt es stets eine, aber nur eine einzige Function $w$, welche sich nebst ihren ersten Derivirten überall in $t$ stetig ändert, auf der Begrenzung von $t$ überall
+\origpage{50}
+beliebig vorgeschriebene (stetig veränderliche) Werthe annimmt und innerhalb $t$ überall der Gleichung
+\[
+\frac{\partial^{2}w}{\partial x^{2}} + \frac{\partial^{2}w}{\partial y^{2}} + \frac{\partial^{2}w}{\partial z^{2}} = 0
+\]
+Genüge leistet. --- Dieser Satz ist eigentlich identisch mit einem anderen aus der Wärmelehre, der dort Jedem unmittelbar evident erscheint, dass nämlich, wenn die Begrenzung von $t$ auf einer überall beliebig vorgeschriebenen Temperatur constant erhalten wird, es stets eine, aber auch nur eine Temperaturvertheilung im Inneren giebt, bei welcher Gleichgewicht stattfindet; oder dass, wie man auch sagen kann, wenn die ursprüngliche Temperatur im Inneren eine beliebige war, diese sich einem Finalzustande nähert, bei welchem Gleichgewicht stattfinden würde.«
+
+»Wir beweisen den Satz, indem wir von einer rein mathematischen Evidenz ausgehen. Es ist in der That einleuchtend, dass unter allen Functionen $u$, welche überall nebst ihren ersten Derivirten sich stetig in $t$ ändern und auf der Begrenzung von $t$ die vorgeschriebenen Werthe annehmen, es eine (oder mehrere) geben muss, für welche das durch den ganzen Raum $t$ ausgedehnte Integral
+\[
+U = \int\left\{\left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2} + \left(\frac{\partial u}{\partial z}\right)^{2}\right\}\,dt
+\]
+seinen \emph{kleinsten} Werth erhält. Wir wollen eine solche Function gerade mit $u$ und das Minimum des Integrals mit $U$ bezeichnen. Sei nun $u'$ irgend eine andere Function, welche dieselben Grenz- und Stetigkeitsbedingungen wie $u$ erfüllt, und $U'$ der entsprechende Werth des Integrals, so kann $U'-U$ nie negativ sein. Setzen wir nun
+\[
+u + hw = u',
+\]
+wo $h$ einen unbestimmten constanten Factor bezeichnet, so ist $w$ eine Function, welche dieselben Stetigkeitsbedingungen wie $u$ und $u'$ erfüllt und auf der Begrenzung von $t$ überall gleich Null wird, sonst aber ganz willkürlich ist. Dann findet man leicht
+\[
+U'-U = 2hM + h^{2}N,
+\]
+\origpage{51}
+wo
+\[
+\begin{aligned}
+M &= \int\left\{\frac{\partial u}{\partial x}\,\frac{\partial w}{\partial x} + \frac{\partial u}{\partial y}\,\frac{\partial w}{\partial y} + \frac{\partial u}{\partial z}\,\frac{\partial w}{\partial z}\right\}\,dt, \\
+N &= \int\left\{\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2}\right\}\,dt
+\end{aligned}
+\]
+ist. Durch theilweise Integration mit Rücksicht auf die Grenz- und Stetigkeitsbedingungen für $w$ und die Stetigkeitsbedingungen für die ersten Derivirten von $u$ findet man leicht
+\[
+M = -\int w\left\{\frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} + \frac{\partial^{2}u}{\partial z^{2}}\right\}\,dt.
+\]
+Da nun $U'-U$ für jedes auch noch so kleine $h$ niemals negativ sein kann, und $N$ eine endliche positive Grösse ist, so folgt, dass $M$ nothwendig gleich Null ist; und da dies der Fall sein muss, wie auch $w$ beschaffen sein mag, so müssen wir schliessen, dass überall innerhalb $t$ (höchstens mit Ausnahme einzelner Flächen, Linien, Punkte)
+\[
+\frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} + \frac{\partial^{2}u}{\partial z^{2}} = 0
+\]
+sein muss; denn wäre dies Trinom in einem körperlichen Raume von Null verschieden, so brauchte man nur $w$ überall dasselbe Zeichen wie jenem Trinom zu geben, um einen von Null verschiedenen Werth für $M$ zu erhalten.«
+
+»Es giebt also jedenfalls eine solche Function $u$, welche die angegebenen Grenz- und Stetigkeitsbedingungen erfüllt und der partiellen Differentialgleichung genügt. Aber es giebt auch nur \emph{eine einzige} solche Function $u$. Denn ist $u' = u+w$ irgend eine andere Function, welche dieselben Grenz- und Stetigkeitsbedingungen erfüllt, so ist das entsprechende Integral
+\[
+U' = U + \int\left\{\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2}\right\}\,dt,
+\]
+und folglich ist $U$ wirklich ein \emph{absolutes Minimum}; und sollte etwa $U' = U$ sein, so müsste, wie leicht zu sehen, im ganzen Raume $t$
+\[
+\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2} = 0
+\]
+sein. Daraus würde folgen, dass $w$ constant ist; und da es stetig und auf
+\origpage{52}
+der Begrenzung von $t$ Null ist, so muss es überall Null sein, d.\ h. $u'$ muss mit $u$ identisch sein.«
+
+»Es wird später gezeigt werden, dass dieses $u$, welches die Grenz- und Stetigkeitsbedingungen erfüllt, und von welchem wir wissen, dass es der partiellen Differentialgleichung höchstens in einzelnen Punkten, Linien oder Flächen innerhalb $t$ widerspricht, \emph{überall}, d.\ h. in jedem Punkte ihr genügen muss, dass also solche Ausnahmestellen unmöglich sind.«
+
+Unter der Voraussetzung, dass es für den Raum $t$ überhaupt eine den festgesetzten Grenz- und Stetigkeitsbedingungen genügende Function gebe, soll hiernach das im Vorstehenden auseinandergesetzte Dirichlet’sche Verfahren dazu dienen, die Existenz einer Function von $x$, $y$, $z$ nachzuweisen, welche der Differentialgleichung
+\[
+\frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} + \frac{\partial^{2} u}{\partial z^{2}} = 0
+\]
+und zugleich den angegebenen Nebenbedingungen genügt. Das letztere ist in jedem bestimmten Falle leicht zu beweisen; das andere aber gilt nur in dem Falle, wo sich zeigen lässt, dass es eine Function $u$ giebt, für welche der Werth des Ausdrucks
+\[
+\int \left\{ \left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2} + \left(\frac{\partial u}{\partial z}\right)^{2} \right\} \,dt,
+\]
+ein (absolutes) Minimum ist. Dieses lässt sich aber aus den von Dirichlet gemachten Voraussetzungen keineswegs folgern, sondern es kann nur behauptet werden, dass es für den in Rede stehenden Ausdruck eine bestimmte \emph{untere Grenze} giebt, welcher er beliebig nahe kommen kann, ohne sie wirklich erreichen zu müssen. Hiernach erweist sich Dirichlet’s Schlussweise als hinfällig.
+
+Ich will schliesslich das Vorstehende noch an einem einfachen Beispiel erläutern, durch welches die Unzulässigkeit der Dirichlet’schen Schlussweise evident dargethan wird.
+
+Es bezeichne nämlich $\varphi(x)$ eine reelle eindeutige Function der reellen Veränderlichen $x$ von der Beschaffenheit, dass erstens $\varphi(x)$ und $\frac{d\varphi(x)}{dx}$ im Intervall $(-1 \cdots +1)$ stetige Functionen von $x$ sind, und dass zweitens $\varphi(x)$ an der Grenze $-1$ des Intervalls den vorgeschriebenen Werth $a$, an der
+\origpage{53}
+Grenze $+1$ den vorgeschriebenen Werth $b$ hat. Dabei sollen die beiden Constanten $a$ und $b$ zwei von einander verschiedene Grössen sein. Wenn nun die Dirichlet’sche Schlussweise zulässig wäre, so müsste sich unter den betrachteten Functionen $\varphi(x)$ eine solche specielle Function befinden, für welche der Werth des Integrals
+\[
+J = \int_{-1}^{+1} \left( x \frac{d\varphi(x)}{dx} \right)^{2} \,dx
+\]
+gleich der unteren Grenze aller derjenigen Werthe ist, die dieses Integral für die verschiedenen der betrachteten Gesammtheit angehörenden Functionen $\varphi(x)$ annehmen kann.
+
+Die erwähnte untere Grenze ist aber in dem vorliegenden Falle nothwendig gleich Null. Denn setzt man z.\ B.
+\[
+\varphi(x) = \frac{a+b}{2} + \frac{b-a}{2} \frac{\operatorname{arctg} \frac{x}{\varepsilon}}{\operatorname{arctg} \frac{1}{\varepsilon}},
+\]
+wo $\varepsilon$ eine willkürlich anzunehmende \emph{positive} Grösse bezeichnet, so erfüllt diese Function die beiden ersten Bedingungen; und da
+\[
+J < \int_{-1}^{+1} (x^{2} + \varepsilon^{2}) \left( \frac{d\varphi(x)}{dx} \right)^{2} \,dx
+\]
+und
+\[
+\frac{d\varphi(x)}{dx} = \frac{b-a}{2 \operatorname{arctg} \frac{1}{\varepsilon}} \cdot \frac{\varepsilon}{x^{2} + \varepsilon^{2}},
+\]
+so ist für diese specielle Function
+\[
+J < \varepsilon \frac{(b-a)^{2}}{\left( 2 \operatorname{arctg} \frac{1}{\varepsilon} \right)^{2}} \int_{-1}^{+1} \frac{\varepsilon \,dx}{x^{2} + \varepsilon^{2}}
+\]
+und somit
+\[
+J < \frac{\varepsilon}{2} \frac{(b-a)^{2}}{\operatorname{arctg} \frac{1}{\varepsilon}}.
+\]
+Daraus erhellt, da man $\varepsilon$ beliebig klein annehmen kann, dass die untere Grenze des Werthes von $J$ gleich Null ist, denn negative Werthe kann $J$ überhaupt nicht annehmen.
+\origpage{54}
+
+Diese Grenze kann aber der Werth von $J$ nicht erreichen, wie man auch den obigen beiden Bedingungen gemäss die Function $\varphi(x)$ wählen möge. Denn da $\varphi(x)$ und $\frac{d\varphi(x)}{dx}$ stetige Functionen von $x$ sein sollen, so wäre hierzu erforderlich, dass
+\[
+\frac{d\varphi(x)}{dx}
+\]
+für jeden dem Intervall $(-1 \cdots +1)$ angehörenden Werth von $x$ verschwinde, dass also $\varphi(x)$ eine Constante sei. Dies ist aber mit der Annahme, dass $a$ und $b$ von einander verschieden sind, unverträglich.
+
+Die Dirichlet’sche Schlussweise führt also in dem betrachteten Falle offenbar zu einem falschen Resultat.
+
+\end{document}
