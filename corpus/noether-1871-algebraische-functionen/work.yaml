@@ -1,0 +1,119 @@
+id: noether-1871-algebraische-functionen
+title: Ueber die algebraischen Functionen einer und zweier Variabeln.
+title_en: On the algebraic functions of one and two variables.
+authors:
+- name: Max Noether
+  wikidata_id: Q77500
+  birth_year: 1844
+  death_year: 1921
+  mactutor: Noether_Max
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Max Noether
+    credit: Faculty photograph of Noether from his years at the University of Heidelberg,
+      dated between 1870 and 1875 on Commons and credited there to the university.
+      Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Noether_2514_(4x5_cropped).JPG
+publication:
+  year: 1871
+  venue: goettingen-nachrichten
+  volume: '1871'
+  pages: 267–278
+  title_full: '"Ueber die algebraischen Functionen einer und zweier Variabeln", Nachrichten
+    von der Königl. Gesellschaft der Wissenschaften und der Georg-Augusts-Universität
+    zu Göttingen, 1871, Nr. 9 (Göttingen: Dieterichsche Buchhandlung, 1871), pp. 267–278.'
+edition:
+  year: 1871
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in the Nachrichten von der Königl.
+    Gesellschaft der Wissenschaften und der Georg-Augusts-Universität zu Göttingen,
+    1871, pp. 267–278 — an original edition with no modern critical apparatus, commentary,
+    or re-typesetting. Only Noether's own text is transcribed; running heads and signature
+    marks are not.
+discipline: mathematics
+tags:
+- geometry
+- algebra
+- analysis
+language: de
+type: paper
+significance: >-
+  Continuing his 1869 note,[1] Noether introduces here the algebraic resolution of
+  singularities by successive birational quadratic transformations. In §. I, he shows
+  how to decompose higher curve singularities into ordinary multiple points without
+  Puiseux expansions,[2] computing the equivalent numbers of double points and cusps.
+  In §§. II–III, he extends this technique to three dimensions to determine the exact
+  reduction of the surface genus (arithmetic genus $p_a$) caused by singular nodes,
+  uniplanar points, and multiple curves. Applying this to double planes branched along
+  a curve of order $2m$, Noether derives the genus formula $p = \frac{1}{2}(m-1)(m-2) - \Sigma_i \frac{1}{2} i(i-1)\alpha_i$,
+  proves the rationality criterion $p = 0$, and generalises Cayley's discovery[3] that
+  surfaces of negative deficiency ($p = -q$) correspond to scrolls and cones over curves
+  of genus $q$.[note 1]
+significance_notes:
+  - label: "In modern terms"
+    text: >-
+      Noether's curve resolution theorem by quadratic transformations is a foundation of
+      classical algebraic geometry. For double planes branched along a curve $B \subset \mathbb{P}^2$
+      of degree $2m$, the smooth model has geometric genus $p_g = \frac{1}{2}(m-1)(m-2)$ and
+      arithmetic genus $p_a = p_g$ when regular. Cayley's negative deficiency $p = -q$ represents
+      an irregular ruled surface with $p_g = 0$ and irregularity $q = h^1(\mathcal{O}_X) > 0$,
+      so $p_a = p_g - q = -q$.
+significance_sources:
+  - citation: >-
+      Max Noether, "Zur Theorie der algebraischen Functionen mehrerer complexer Variablen",
+      Nachrichten von der Königl. Gesellschaft der Wissenschaften zu Göttingen (1869), pp. 297–306.
+    url: https://eudml.org/doc/182601
+  - citation: >-
+      Arthur Cayley, "On the deficiency of certain surfaces", Quarterly Journal of Pure and Applied Mathematics 7 (1866), pp. 212–223.
+  - citation: >-
+      Arthur Cayley, "On the deficiency of certain surfaces", Mathematische Annalen 3 (1871), pp. 526–529.
+    url: https://eudml.org/doc/156505
+relations:
+- to: noether-1869-algebraische-functionen-mehrerer-variablen
+  kind: builds-on
+  recommended: primary
+  note: Noether explicitly designates this paper as "Note 2", continuing his 1869
+    note "Zur Theorie der algebraischen Functionen mehrerer complexer Variabeln".
+- to: cayley-1871-deficiency-surfaces
+  kind: cites
+  note: Noether discusses Cayley's method of resolving higher curve singularities
+    via Puiseux expansions and addresses the deficiency and representation of algebraic
+    surfaces.
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN252457072_1871
+  scan_id: gdz:PPN252457072_1871 (Göttinger Nachrichten 1871, pp. 267–278; scan images
+    269–280). Catalogued by EuDML as http://eudml.org/doc/179511.
+sources:
+  death_date: Max Noether, 24 September 1844 – 13 December 1921 (wikidata:Q77500;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Max/,
+    which gives Mannheim as his birthplace and Erlangen as his place of death).
+  publication_date: First published 1871 in the Nachrichten von der Königl. Gesellschaft
+    der Wissenschaften und der Georg-Augusts-Universität zu Göttingen, pp. 267–278
+    (EuDML http://eudml.org/doc/179511; GDZ PPN252457072_1871).
+  edition: Original printing, Nachrichten von der Königl. Gesellschaft der Wissenschaften
+    und der Georg-Augusts-Universität zu Göttingen, 1871 (Göttingen), pp. 267–278.
+    Digitized by the Göttinger Digitalisierungszentrum (GDZ), PPN252457072_1871.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1921
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1871
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-20'

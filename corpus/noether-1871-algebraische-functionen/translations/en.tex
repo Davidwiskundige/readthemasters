@@ -1,0 +1,209 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker and \ednote is reproduced
+% unchanged; only the prose is translated — including prose set INSIDE math via a text insert,
+% which is translated like any other prose (HOUSESTYLE R21).
+%
+% PIPELINE/TEXCOMPARE.PY ignores the content of \text{...} inserts while checking that each one is
+% present and that all surrounding math is identical. Those inserts are:
+%   * Ordinal suffixes: $\mu^{\text{ter}}$, $2n^{\text{ter}}$, $(m-4)^{\text{ter}}$, $(m-3)^{\text{ter}}$,
+%     $(\nu-1)^{\text{ten}}$, $4^{\text{ter}}$, $6^{\text{ter}}$, $3^{\text{ter}}$, $(m-1)^{\text{ter}}$,
+%     $(2m-4)^{\text{ter}}$, $(\varrho-2)^{\text{ten}}$, $(2m-4)^{\text{ten}}$, $(\varrho-2)^{\text{ter}}$,
+%     $2m^{\text{ter}}$, $(m+1)^{\text{ter}}$ become $\mu^{\text{th}}$, $2n^{\text{th}}$, etc. ($3^{\text{rd}}$).
+%   * The conditions in displays: \text{für } becomes \text{for }.
+%
+% TYPOGRAPHY & APPARATUS:
+%   * The source quotation glyphs »...« around theorem statements and terms are kept per HOUSESTYLE R22.
+%   * All seven \ednote annotations for compositor misprints from original.tex are carried over verbatim.
+%   * Footnotes are numbered ${}^{1)}$, ${}^{2)}$ led by \textbf{1)}, \textbf{2)} matching original.tex.
+%
+% TERMINOLOGY. Applied from corpus/noether-1871-algebraische-functionen/glossary.yaml and the
+% companion glossary for Note 1 (noether-1869-algebraische-functionen-mehrerer-variablen):
+% Geschlecht = "genus", Flächengeschlecht = "surface genus", Curvengeschlecht = "curve genus",
+% Knotenpunkt = "node", Rückkehrpunkt = "cusp", Selbstberührungspunkt = "point of self-contact",
+% Abbildung = "representation", abbildbar = "representable", Uebergangscurve = "transition curve".
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{267}
+
+\section*{On the Algebraic Functions of One and Two Variables.}
+
+\subsection*{Note 2${}^{1)}$. By Max Noether in Heidelberg. (Communicated by A.~Clebsch.)}
+
+\section*{I.}
+
+One can provide a general method to transform rationally a given curve with arbitrary singular points into another that contains only ordinary multiple points. Mr.~Cayley has shown${}^{2)}$ how one can make use of the Puiseux series expansions at a singular point of a curve in order to obtain the number of double points and cusps equivalent to such a point in respect of the
+
+\textbf{1)} Cf.\ Note 1 in these »Nachrichten«, of 14~July 1869.
+
+\textbf{2)} Quarterly Journal of Mathematics, 1866, vol.\ VII, p.\ 212.
+
+\origpage{268}
+irrationality of the curve. This same determination can be achieved directly with the help of the mentioned transformation, without presupposing the Pniseux\ednote{Printed Pniseux'schen with an n instead of a u; an apparent misprint for Puiseux'schen.} expansions.
+
+For this purpose it suffices to apply to the curve any rational transformation in which a fundamental point is placed at the singular point $P$ of the curve $C$. Here only such a general position of the transformation curves with respect to $C$ is presupposed that the Jacobian curve of the transformation is not touched by the tangents of $C$ at $P$.
+
+In such a transformation, the singularity originating from the multiple ($\nu$-fold) point $P$ as such resolves itself in the transformed curve $C'$; and accordingly there remain on $C'$, corresponding to the point $P$, points of lower singularity, which together, combined with a general $\nu$-fold point, are equivalent to the point $P$ of $C$. Upon continued application of transformations to the singular points of the resulting curves $C'$, $C'', \ldots$ the singularity of the points corresponding to $P$ is thus lowered more and more, until finally a series of simple points of the transformed curve corresponds to the point $P$.
+
+This resolution of the singularity of $P$ into that of several points is identical to the separation of the values of the function around the singular point into classes. The number of separated simple points that ultimately correspond to $P$ is equal to the number of cyclic
+
+\origpage{269}
+systems of function values around the singular point${}^{1)}$.
+
+The singularity of $C$ at $P$ counts, in respect of the genus of $C$, for $\frac{\nu(\nu-1)}{1.2}$ double points, plus the number of double points contained in the singular points of $C'$ corresponding to the point $P$; and it is thus determined by continuing this enumeration under successive transformations. Also the number of cusps contained among them (and at the same time the number of roots contained in one of the cyclic systems) is determined from the manner of contact of $C'$ with the fundamental curve of the transformation corresponding to $P$; contact of the $\mu^{\text{th}}$ order of a branch of $C'$ with this curve signifies a cyclic system of $\mu+1$ roots or $\mu$ cusps among the number of double points originating therefrom.
+
+The simplest and most convenient among the transformations to be applied here is the plane quadratic one, in which conics through 3 fixed points correspond to the straight lines of the plane.
+
+Thus one converts the hyperelliptic curve of the $2n^{\text{th}}$ order with a singular $(2n-2)$-fold point $P$ ($x_1 = x_2 = 0$)
+\[ C = x_3^2 f_{n-1}(x_1, x_2) + f_{2n}(x_1, x_2) = 0, \]
+where, as also in what follows, the index on $f$ indicates the order of the functions $f$, by the quadratic transformation
+
+\textbf{1)} See Puiseux, in Lionville's\ednote{Printed Lionville's with an n instead of a u; an apparent misprint for Liouville's.} Journal, t.\ 15 and 16.
+
+\origpage{270}
+\[ y_1 : y_2 : y_3 = x_2 x_3 : x_3 x_1 : x_1 x_2 \]
+into the curve
+\[ C' = y_1^2 y_2^2 f_{n-1}^2(y_2, y_1) + f_{2n}(y_2, y_1) \cdot y_3^2 = 0. \]\ednote{Printed with an exponent 2 on $f_{n-1}$; an apparent misprint for $f_{n-1}$.}
+
+To the singular point of $C$ there correspond on $C'$ the $n-1$ ordinary double points $y_3 = 0$, $f_{n-1}(y_2, y_1) = 0$, and $P$ is equivalent to
+\[ \frac{(2n-2)(2n-3)}{1.2} + (n-1) \]
+double points, or the genus of $C$ is $n-1$. Here there are first formed $n-1$ classes, each of which then decomposes into two; that is, $C$ has a $(2n-2)$-fold point with $n-1$ distinct tangents, in each of which it has a point of self-contact.
+
+\section*{II.}
+
+The method of this transformation can be extended to algebraic functions of two variables and leads here in particular to the investigation of singular nodes of a surface and to the determination of their effect on the surface genus, which hitherto has been established only for multiple curves and general conical nodes of the surface${}^{1)}$.
+
+If one applies a space transformation${}^{2)}$,
+
+\textbf{1)} See my already cited Note of 14~July 1869.
+
+\textbf{2)} On the transformations most suitable for this purpose, the directly invertible ones, cf.\ Cayley, Proc.\ of the London Math.\ Soc., vol.\ III, 1870.
+Cremona, these »Nachrichten« of 4~May 1871, and Rendiconti del R.\ Istit.\ Lombardo, of 5~May 1871, as well as my memoir published simultaneously with these two notes in Math.\ Ann., vol.\ 3, p.\ 547.
+
+\origpage{271}
+in which a fundamental point is placed at the singular point $P$ of the surface $F$, then to the point $P$ on the transformed surface $F'$ there corresponds a curve $C'$, through which $F'$ will in general pass multiply and singularly, but in such a way that the order of this singularity is lower than that of $P$ on $F$. One can now either repeat this procedure by taking $C'$ as the fundamental curve of a second transformation, whereby one is led to curves of lower singularity; or, what is in general more advantageous, one directly determines the influence of the multiple curve of $F'$ on the surface genus of this surface. The surface genus, if $F'$ is of the order $m$, is equal to the number of surfaces of the $(m-4)^{\text{th}}$ order which must behave along the multiple curves in exactly the same way as the curves of the $(m-3)^{\text{th}}$ order, which determine the genus of a plane cross-section of the surface, behave at the points of intersection of this cross-section with the multiple curves. From the series expansions in a plane cross-section at a point of $C'$, which correspond to those in a plane cross-section through $P$ on $F$ and are only of lower order, one therefore deduces the behavior of the surfaces of the $(m-4)^{\text{th}}$ order, and thereby the surface genus $p$ of $F$.
+
+These series expansions, if one leaves the plane cross-section undetermined, become invalid at individual points of the multiple curves; but for the behavior of the surfaces of the $(m-4)^{\text{th}}$ order the investigation of these points,
+
+\origpage{272}
+which moreover could itself take place according to the method indicated, is superfluous.
+
+Most convenient for the transformation is the quadratic one:
+\[
+\begin{aligned}
+x_1 : x_2 : x_3 : x_4 &= y_1 y_4 : y_2 y_4 : y_3 y_4 : \varphi_2(y_1, y_2, y_3) \\
+y_1 : y_2 : y_3 : y_4 &= x_1 x_4 : x_2 x_4 : x_3 x_4 : \varphi_2(x_1, x_2, x_3)
+\end{aligned}
+\tag{1}
+\]
+in which to the point\ednote{Printed Puncte with a c, alongside Punkte with a k elsewhere in the text.} $P$ ($x_1 = x_2 = x_3 = 0$) there corresponds the plane $E'$ ($y_4 = 0$), which further contains the fundamental conic $K'$ ($y_4 = 0$, $\varphi_2(y) = 0$), and to a tangent plane $A(x_1, x_2, x_3) = 0$ of $F$ at the point $P$ a straight line $A(y_1, y_2, y_3) = 0$, $y_4 = 0$ of $F'$.
+
+I take the liberty of showing the applicability of the method by several examples.
+
+a) If the singularity of a $\mu$-fold point $P$ of $F$ consists in the tangent cone of the $\mu^{\text{th}}$ order at $P$ possessing a $\nu$-fold edge, then the surface $F'$ corresponding according to 1) acquires the singularity that it is touched by the plane $E'$ at a point in the $(\nu-1)^{\text{th}}$ order, which is without influence on the genus of $F'$. Therefore the special $\mu$-fold point $P$ also reduces the genus $p$ of $F$ only by $\frac{1}{6}\mu(\mu-1)(\mu-2)$.
+
+b) Let $F$ again be a surface with a $\mu$-fold singular node $P$:
+\[
+\begin{aligned}
+F = x_4^{n-\mu} f_\mu(x_1, x_2, x_3) &+ x_4^{n-\mu-1} f_{\mu+1}(x) \\
+&+ \ldots + f_n(x) = 0,
+\end{aligned}
+\tag{2}
+\]
+and let in particular $x_1 = x_2 = 0$ be a $(\nu-1)$-fold
+
+\origpage{273}
+edge for $f_{\mu+i}(x_1, x_2, x_3) = 0$, from $i = 0$ to $i = \nu - 1$, for $\mu + \nu - 1 \leqq n$. Then $y_1 = y_2 = y_4 = 0$ becomes a $\nu$-fold point of $F'$, and the genus $p$ of $F$ is lowered by $P$ by
+\[ \frac{1}{6}\mu(\mu-1)(\mu-2) + \frac{1}{6}\nu(\nu-1)(\nu-2). \]
+
+Thus, for $n = 5$, $\mu = 3$, $\nu = 3$, the surface $F_5$, if it possesses in addition a double line, becomes representable on the plane.
+
+c) In the case of the surface 2), let the straight line $x_1 = x_2 = 0$ be a $\nu$-fold edge of $f_\mu(x) = 0$, $f_{\mu+1}(x) = 0, \ldots$ and $f_n(x) = 0$, for $\nu \leqq \mu$. Under the special transformation 1), $F'$ then acquires a similar system with an $n$-fold point $P'$ ($y_1 = y_2 = y_3 = 0$) and a $\nu$-fold straight line $y_1 = y_2 = 0$. And from equating the reduction of $p$ for both multiple straight lines, one deduces the theorem that if a surface contains a $\mu$-fold point which by itself produces the reduction $M = \frac{1}{6}\mu(\mu-1)(\mu-2)$, and a $\nu$-fold curve proceeding from $P$ which by itself would produce the reduction $N$ on the genus of the surface, the total reduction by point and curve
+\[ M + N - \frac{\nu(\nu-1)(3\mu-2\nu-2)}{6}, \quad \text{for } \nu \leqq \mu, \]
+amounts to this.
+
+d) Let $F$ possess a uniplanar node of the $\mu^{\text{th}}$ order, but singular in such a manner that $F$ has the equation:
+
+\origpage{274}
+\[
+\begin{aligned}
+F = x_4^{n-\mu} x_1^\mu &+ x_4^{n-\mu-1} x_1^{\mu-1} f_2(x_1, x_2, x_3) \ldots \\
+&+ x_4^{n-2\mu+1} x_1 f_{2\mu-2}(x) + x_4^{n-2\mu} f_{2\mu}(x) \ldots \\
+&+ f_n(x) = 0, \qquad\qquad \text{for } 2\mu-1 > n.
+\end{aligned}
+\]
+
+Then $F'$ acquires according to 1) as a further singularity a $\mu$-fold straight line $y_1 = y_4 = 0$, by which the genus, upon taking into account${}^{1)}$ the two points of intersection of this line with $K'$, is lowered by $\frac{1}{2}\mu(\mu-1)^2$. The singular uniplanar node of $F$ therefore reduces the genus $p$ by
+\[ \frac{1}{6}\mu(\mu-1)(\mu-2) + \frac{1}{2}\mu(\mu-1)^2 = \frac{1}{6}\mu(\mu-1)(4\mu-5). \]
+
+For $\mu = 2$ it results specially that a uniplanar double point, of such a kind that every plane passing through it intersects the surface in a curve with two coincident double points, that is, a point of self-contact\ednote{Printed Selbstberührungspunkte with a trailing e; an apparent misprint for the singular Selbstberührungspunkt.} of the surface, lowers its genus by 1, and a surface of the $4^{\text{th}}$ order
+\[ x_4^2 x_1^2 + 2 x_4 x_1 f_2(x_1, x_2, x_3) + f_4(x_1, x_2, x_3) = 0 \]
+must be representable on the plane. Indeed, this surface leads also to a double plane with a »transition curve« of the $4^{\text{th}}$ order${}^{2)}$.
+
+\textbf{1)} See the »postulation« formula in the already cited Cayley memoir on space transformations, pag.\ 180.
+
+\textbf{2)} See Clebsch, Math.\ Ann., vol.\ 3, pag.\ 51.
+
+\origpage{275}
+The plane sections of the surface are represented by curves of the $6^{\text{th}}$ order ($1^2$, $2^2, \ldots 7^2$, $8$, $9$, $10$, $11$), where the points $8$, $9$, $10$, $11$ are cut out from one of the curves of the $6^{\text{th}}$ order by a curve of the $3^{\text{rd}}$ order ($1$, $2, \ldots 7$). The system of the 28 further doubly tangent planes\ednote{Printed Ebene in the singular; an apparent misprint for the plural Ebenen.} passing through the uniplanar point is identical with that of the double tangents of a curve of the $4^{\text{th}}$ order${}^{1)}$.
+
+\section*{III.}
+
+I make a further application of this theory to the investigation of the condition under which a geometric double plane becomes representable on a conical surface. Of representations on the simple plane, Mr.~Clebsch has given examples in his already cited memoir, Math.\ Ann.\ vol.\ 3.
+
+Let the »transition curve« of the double plane be a curve of the order $2m$, $\varOmega_{2m}(x_1, x_2, x_3) = 0$. I consider the surface
+\[ F = x_4^2 f_{m-1}^2(x_1, x_2, x_3) - \varOmega_{2m}(x_1, x_2, x_3) = 0, \]
+which becomes representable on a conical surface at the same time as the double plane. Its singularity lies in the $(2m-2)$-fold point $P$ ($y_1 = y_2 = y_3 = 0$). The transformation 1) of II.\ yields
+\[ F' = \varphi_2^2 f_{m-1}^2(y_1, y_2, y_3) - y_4^2 \varOmega_{2m}(y_1, y_2, y_3) = 0, \]
+
+\textbf{1)} A special case of this surface is found mentioned by Mr.~Cremona, these Nachrichten of 3~May 1871, p.\ 714.
+
+\origpage{276}
+a surface of the order $2m+2$, with a general $2m$-fold point $P'$ ($y_1 = y_2 = y_3 = 0$), with the double conic $K'$ and with a general double curve of the $(m-1)^{\text{th}}$ order lying in its plane ($y_4 = 0$, $f_{m-1}(y) = 0$). The genus of this surface is $\frac{1}{2}(m-1)(m-2)$.
+
+»The surface genus of the surfaces that lead to a double plane with a general transition curve is $\frac{1}{2}(m-1)(m-2)$«.
+
+If $\varOmega_{2m}(x) = 0$ possesses a $\nu$-fold point at $x_2 = x_3 = 0$, then $F$ acquires a singular uniplanar double point at the point $\varPi$ ($x_2 = x_3 = x_4 = 0$). One therefore performs a transformation
+\[ x_2 : x_3 : x_4 : x_1 = \xi_2 \xi_1 : \xi_3 \xi_1 : \xi_4 \xi_1 : \psi_2(\xi_2, \xi_3, \xi_4) \]
+and obtains a surface $\varPhi$ with a singular straight line $G$ ($\xi_1 = \xi_4 = 0$). For an even $\nu$, $\nu = 2\varrho$, there then result at a point of $G$ two separated series expansions:
+\[
+\begin{gathered}
+\xi_4 = \varkappa \xi_1^{\varrho-1} + \ldots \\
+\xi_4 = -\varkappa \xi_1^{\varrho-1} + \ldots,
+\end{gathered}
+\]
+and the surface $\varPhi$ has two sheets, which meet with $(\varrho-1)$-point contact at each point of the straight line $G$, in the singular tangent plane $\xi_4 = 0$. One deduces from this that the surfaces of the $(2m-4)^{\text{th}}$ order whose number determines the genus $p$ of the surface $F$ must pass through the point $\varPi$ in such a manner that they touch the plane
+
+\origpage{277}
+$x_4 = 0$ there in the $(\varrho-2)^{\text{th}}$ order, which represents $\frac{\varrho(\varrho-1)}{1.2}$ conditions.
+
+If $\nu$ is odd${}^{1)}$, $\nu = 2\varrho+1$, then one obtains at a point of $G$ a cyclic system of 2 roots and the series expansion for these two roots:
+\[ \xi_4 = \pm \varkappa \xi_1^{\frac{2\varrho-1}{2}}. \]
+The surface $\varPhi$ then has at $\xi_1 = \xi_4 = 0$ two sheets, which intersect in $\varrho-1$ coincident straight lines, and the singular double line is equivalent to $(\varrho-2)$ double lines and one cuspidal line. Here too it follows that those surfaces of the $(2m-4)^{\text{th}}$ order must touch the plane $x_4 = 0$ at $P$\ednote{Printed $P$; in the preceding text on p.~276 this point was denoted $\varPi$.} in the $(\varrho-2)^{\text{th}}$ order, which again gives $\frac{\varrho(\varrho-1)}{1.2}$ conditions.
+
+»The genus of a surface that leads to a double plane with a transition curve of the order $2m$, which possesses $\alpha_i$ $2i$-fold or $(2i+1)$-fold points, is $=\frac{1}{2}(m-1)(m-2) - \Sigma_i \frac{1}{2} i(i-1)\alpha_i$.
+
+That this expression vanish is the condition for the representability of the double plane on the simple plane. Furthermore, this expression must become $=-q$ if the double plane is to be representable on a cone whose plane cross-sections have the genus $q$.«
+
+\textbf{1)} In accordance with this, a remark by Zeuthen, Math.\ Ann.\ vol.\ 3, pag.\ 324, is to be corrected.
+
+\origpage{278}
+This latter remark follows from a theorem of Mr.~Cayley${}^{1)}$, that the surface genus of surfaces for which the numerical formula gives the same $\leqq 0$ becomes equal to the »curve genus«${}^{2)}$, taken negatively.
+
+Therefore, for example, a double plane with a transition curve of the $2m^{\text{th}}$ order that possesses a $(2m-2)$-fold point must be representable on the plane. Indeed, the surfaces of the $(m+1)^{\text{th}}$ order with an $(m-1)$-fold straight line also lead to such a double plane. Their representation takes place exactly according to the procedure given by Mr.~Clebsch for $m = 3$${}^{3)}$. To the straight lines of the double plane one can make correspond, on the simple plane, curves of the order $n+1$, with an $(n-1)$-fold and $4n-2$ simple fixed points, and the number of such representations amounts to $2^{4n-4}$.
+
+A surface of the $4^{\text{th}}$ order with 2 uniplanar double points that are points of self-contact leads to a transition curve of the $4^{\text{th}}$ order with a $4$-fold point. Therefore this surface can be represented on a cone of the third order${}^{4)}$.
+
+\textbf{1)} According to a private communication from Mr.~Cayley.
+
+\textbf{2)} See the first Note of 14~July 1869.
+
+\textbf{3)} Math.\ Ann., vol.\ 3, pag.\ 64.
+
+\textbf{4)} Ibid.\ pag.\ 558.
+
+\emph{Heidelberg}, 26~May 1871.
+
+\end{document}
