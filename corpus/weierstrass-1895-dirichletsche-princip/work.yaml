@@ -1,0 +1,139 @@
+id: weierstrass-1895-dirichletsche-princip
+title: Über das sogenannte Dirichlet’sche Princip.
+title_en: On the so-called Dirichlet principle.
+authors:
+- name: Karl Weierstrass
+  wikidata_id: Q57103
+  birth_year: 1815
+  death_year: 1897
+  mactutor: Weierstrass  # https://mathshistory.st-andrews.ac.uk/Biographies/Weierstrass/
+  portrait:
+    file: portrait.jpg
+    alt: "Photographic portrait of Karl Weierstrass in later life"
+    credit: >-
+      Photograph of Weierstrass, photographer unknown, from the Smithsonian Institution
+      Libraries' Scientific Identity collection of portraits from the Dibner Library of the
+      History of Science and Technology. Public domain (Commons: PD-Art, PD-old-70).
+    source: "https://commons.wikimedia.org/wiki/File:Karl_Weierstrass.jpg"
+publication:
+  year: 1895
+  venue: collected-works
+  volume: '2'
+  pages: 49–54
+  title_full: '"Über das sogenannte Dirichlet’sche Princip", read to the Königlich
+    Preussische Akademie der Wissenschaften zu Berlin on 14 July 1870 and first printed
+    in Mathematische Werke von Karl Weierstrass, Zweiter Band: Abhandlungen II, ed.
+    Johannes Knoblauch (Berlin: Mayer & Müller, 1895), pp. 49–54. The Academy''s Monatsberichte
+    for 1870 record the reading at p. 575 as a title-only minute ("Hr. Weierstraß
+    las: Bemerkungen über das sogenannte Dirichlet’sche Princip.") and print no text,
+    so this Werke printing is the first publication, not a reprint.'
+edition:
+  year: 1895
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from Mathematische Werke von Karl Weierstrass, Zweiter
+    Band: Abhandlungen II (Berlin: Mayer & Müller, 1895), pp. 49–54 — the first printing
+    of this text and the earliest edition that exists, since the 1870 reading was
+    never printed. Only Weierstrass''s own text and the heading''s parenthetical reading-date
+    line are transcribed; running heads, page numbers and signature marks are not.
+    The volume was seen through the press by Johannes Knoblauch (1855–1915) for the
+    Prussian Academy, so any editorial matter in it is itself long out of copyright
+    under life+70; these six pages in any case carry no editorial footnotes, commentary,
+    or critical apparatus. No modern re-typesetting is involved.'
+discipline: mathematics
+tags:
+- analysis
+- foundations
+language: de
+type: paper
+relations:
+- to: riemann-1851-complexen-groesse
+  kind: builds-on
+  recommended: primary
+  note: 'Weierstrass''s opening sentence names Riemann as the mathematician who applied
+    Dirichlet''s mode of inference most widely, and Riemann''s 1851 dissertation is
+    where that application is made: the existence theorems for functions on a surface
+    rest there on the assumption that the Dirichlet integral attains its minimum.
+    This note is the critique of that assumption, so the edge runs backward to the
+    work it undermines rather than extends.'
+significance: 'Weierstrass read these six pages to the Berlin Academy on 14 July 1870,
+  and they ended a twenty-year habit of argument. Dirichlet had justified a main theorem
+  of potential theory by observing that a certain non-negative integral must have
+  a smallest value, and that the function realizing it must then satisfy Laplace''s
+  equation; Riemann built the existence theorems of his function theory on the same
+  step, and named it the Dirichlet principle.[1] Weierstrass grants the integral a
+  greatest lower bound and denies the inference to a minimizing function: a quantity
+  bounded below need not attain its bound within the class of functions considered.
+
+  He makes the objection unanswerable with a one-dimensional counterexample rather
+  than a general argument. Taking $J = \displaystyle\int_{-1}^{+1} \left(x \frac{d\varphi}{dx}\right)^{2}
+  dx$ over the continuously differentiable $\varphi$ with prescribed values $a$ and
+  $b$ at the two endpoints, he exhibits admissible functions making $J$ as small as
+  one pleases, so the lower bound is zero; and he shows that zero is not attained,
+  because reaching it would require $d\varphi/dx$ to vanish at every point of the interval,
+  making $\varphi$ constant and contradicting $a \neq b$. The greatest lower bound is therefore not a minimum, and the Dirichlet
+  inference, applied here, yields a false result.
+
+  The consequences were large and slow. Riemann''s theory was left resting on an unproved
+  foundation, and the repair took decades: Schwarz''s alternating method, presented
+  to the same Academy that October by Weierstrass himself, and Neumann''s arithmetic
+  mean, replaced the principle for the cases that mattered, and Hilbert rehabilitated
+  the principle itself in 1900 by restricting the class of admissible functions.[2]
+  The episode is also the clearest single specimen of what Weierstrass''s rigor cost
+  and bought: the counterexample is elementary, the class of functions is the author''s
+  own, and the target was the most convenient tool in analysis.'
+significance_sources:
+- citation: 'Riemann''s use of the principle, in this corpus: "Grundlagen für eine
+    allgemeine Theorie der Functionen einer veränderlichen complexen Grösse" (Göttingen,
+    1851).'
+  url: /works/riemann-1851-complexen-groesse/
+- citation: H. A. Schwarz, "Über die Integration der partiellen Differentialgleichung
+    ∂²u/∂x² + ∂²u/∂y² = 0 unter vorgeschriebenen Grenz- und Unstetigkeitsbedingungen",
+    presented by Weierstrass on 10 October 1870, Monatsberichte der Königlich Preussischen
+    Akademie der Wissenschaften zu Berlin (1870), pp. 767–795.
+  url: https://archive.org/details/monatsberichtede1870unse/page/n808/mode/2up
+source:
+  scan_url: https://archive.org/details/mathematischewer02weieuoft
+  scan_id: 'archive.org:mathematischewer02weieuoft (Mathematische Werke von Karl Weierstrass,
+    Zweiter Band, Berlin: Mayer & Müller, 1895; digitized from the University of Toronto
+    copy). Printed pp. 49–54 are scan leaves n60–n65.'
+sources:
+  death_date: Karl Theodor Wilhelm Weierstrass, 31 October 1815 – 19 February 1897
+    (wikidata:Q57103; MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Weierstrass/).
+  publication_date: 'First published 1895 in Mathematische Werke von Karl Weierstrass,
+    Zweiter Band: Abhandlungen II (Berlin: Mayer & Müller, 1895), pp. 49–54; title
+    page dated 1895 (archive.org:mathematischewer02weieuoft, leaf n8). The paper was
+    read to the Berlin Academy on 14 July 1870, but no text was printed then: the
+    Monatsberichte der Königlich Preussischen Akademie der Wissenschaften zu Berlin,
+    aus dem Jahre 1870 (Berlin, 1871) record only a one-line minute at p. 575, and
+    its Namen-Register stars the entry as unprinted (archive.org:monatsberichtede1870unse,
+    leaf n612). The Werke volume''s own table of contents confirms this: every other
+    paper in it carries a parenthetical line naming its earlier printing, and item
+    4 carries none.'
+  edition: 'Mathematische Werke von Karl Weierstrass, Zweiter Band: Abhandlungen II,
+    herausgegeben unter Mitwirkung einer von der Königlich preussischen Akademie der
+    Wissenschaften eingesetzten Commission (Berlin: Mayer & Müller, 1895), pp. 49–54.
+    Volume editor Johannes Knoblauch, 1855–1915.'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1897
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1895
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-20'

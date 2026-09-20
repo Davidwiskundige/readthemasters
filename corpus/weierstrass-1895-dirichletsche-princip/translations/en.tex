@@ -1,0 +1,162 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \origpage{N} marker and \emph run is reproduced
+% unchanged; only the prose is translated. This work carries no \tag, no \ednote, no \uncertain
+% and no \text{...} insert, so HOUSESTYLE R21 has nothing to apply here — all 18 displays and
+% every inline span are copied character for character from original.tex.
+%
+% QUOTATION GLYPHS. The long quotation from Dirichlet's 1856 lecture (pp. 49–52), and the two
+% inline quotations on p. 49, keep the edition's German angle quotes »…« — opening », closing «,
+% the reverse of the French ordering. They are a typographic feature of the source edition
+% (HOUSESTYLE R22, written as literal Unicode per R18), not prose to translate, exactly as the
+% Abel 1841 translation keeps that memoir's French guillemets. The print's own conventions are
+% carried across unchanged: the » stands at the head of every quoted PARAGRAPH, a closing « only
+% where the print sets one (pp. 49, 50, 51 and twice on p. 52), and the paragraph »For the proof
+% we premise the following theorem: is left unclosed, as the print leaves it.
+%
+% PARAGRAPHING is the original's. This volume sets a line flush left where a paragraph continues
+% after a display, so the translation breaks paragraphs exactly where original.tex does and every
+% \origpage marker keeps its place in the sentence.
+%
+% TERMINOLOGY:
+%   * Schlussweise = "mode of inference"; Verfahren = "procedure"; Beweisverfahren = "method of
+%     proof"
+%   * Princip = "principle", so »Dirichlet’sches Princip« = »Dirichlet principle«, matching
+%     work.yaml's title_en
+%   * Grösse = "quantity", Werth = "value", Function = "function", Fläche = "surface"
+%   * Derivirte = "derivative" (as in riemann-1857-abelsche-functionen's glossary)
+%   * untere Grenze = "lower bound" — the paper's central term, letterspaced in the print: the
+%     quantity the integral approaches without attaining. The interval's Grenze and the space's
+%     Begrenzung are both "boundary", and Grenzbedingungen are "boundary conditions"
+%   * theilweise Integration = "integration by parts"; Trinom = "trinomial"
+%   * Nachschrift = "transcript"; eindeutige Function = "single-valued function"
+%   * körperlicher Raum = "solid space"; Wärmelehre = "theory of heat"
+%   * d.\ h. = "that is" (as in riemann-1851-complexen-groesse); z.\ B. = "for example"
+%
+% GERMAN VERB-FINAL CLAUSES THAT CLOSE AFTER A DISPLAY are rendered so that the display keeps its
+% position and the sentence keeps a tail: "der Gleichung … Genüge leistet" becomes "satisfies the
+% equation … everywhere", "sein muss" becomes "must hold", "ein (absolutes) Minimum ist" becomes
+% "is an (absolute) minimum". In the one place where English leaves no word to carry after the
+% display — the "ist." closing the $M$/$N$ pair on p. 51 — the copula is absorbed into the
+% "where" that precedes the display. Nothing is added and nothing is dropped.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{49}
+
+\section*{On the so-called Dirichlet principle.}
+
+(Read in the Royal Academy of Sciences on 14 July 1870.)
+
+In his lectures on the forces which act according to Newton's law, \emph{Lejeune Dirichlet} made use, in order to establish a main theorem of potential theory, of a peculiar mode of inference which has since been applied in many ways by other mathematicians as well, in particular by \emph{Riemann}, and which has received the name »Dirichlet principle«.
+
+Concerning the admissibility of this »principle« various doubts have since made themselves felt, which, as I shall show in what follows, are thoroughly well founded. Before I enter upon them, however, since Dirichlet has published nothing on the subject in question, I wish to communicate the following passage from a lecture delivered by Dirichlet in the summer semester of 1856, which lies before me in a careful transcript prepared by Herr \emph{Dedekind}, and from which it emerges with full definiteness what Dirichlet meant and how he sought to justify his method of proof:
+
+»If any finite surface whatever is given, then one can always, but only in one way, cover it with mass in such a way that the potential at every point of the surface has an arbitrarily prescribed value (varying according to continuity).«
+
+»For the proof we premise the following theorem:
+
+»If any finite connected space $t$ whatever is given, then there always exists one, but only one single function $w$ which, together with its first derivatives, varies continuously everywhere in $t$, which on the boundary of $t$ everywhere
+\origpage{50}
+assumes arbitrarily prescribed (continuously variable) values, and which within $t$ satisfies the equation
+\[
+\frac{\partial^{2}w}{\partial x^{2}} + \frac{\partial^{2}w}{\partial y^{2}} + \frac{\partial^{2}w}{\partial z^{2}} = 0
+\]
+everywhere. --- This theorem is properly identical with another one from the theory of heat, which there appears immediately evident to everyone, namely that, if the boundary of $t$ is kept constant at an everywhere arbitrarily prescribed temperature, there always exists one, but also only one, distribution of temperature in the interior at which equilibrium subsists; or that, as one may also say, if the original temperature in the interior was an arbitrary one, it approaches a final state at which equilibrium would subsist.«
+
+»We prove the theorem by starting from a purely mathematical evidence. It is in fact clear that among all functions $u$ which, together with their first derivatives, vary continuously everywhere in $t$ and assume the prescribed values on the boundary of $t$, there must be one (or several) for which the integral extended through the whole space $t$
+\[
+U = \int\left\{\left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2} + \left(\frac{\partial u}{\partial z}\right)^{2}\right\}\,dt
+\]
+receives its \emph{smallest} value. We will denote such a function precisely by $u$ and the minimum of the integral by $U$. Now let $u'$ be any other function which fulfils the same boundary and continuity conditions as $u$, and $U'$ the corresponding value of the integral; then $U'-U$ can never be negative. If we now set
+\[
+u + hw = u',
+\]
+where $h$ denotes an indeterminate constant factor, then $w$ is a function which fulfils the same continuity conditions as $u$ and $u'$ and becomes equal to zero everywhere on the boundary of $t$, but is otherwise entirely arbitrary. Then one easily finds
+\[
+U'-U = 2hM + h^{2}N,
+\]
+\origpage{51}
+where
+\[
+\begin{aligned}
+M &= \int\left\{\frac{\partial u}{\partial x}\,\frac{\partial w}{\partial x} + \frac{\partial u}{\partial y}\,\frac{\partial w}{\partial y} + \frac{\partial u}{\partial z}\,\frac{\partial w}{\partial z}\right\}\,dt, \\
+N &= \int\left\{\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2}\right\}\,dt
+\end{aligned}
+\]
+By integration by parts, having regard to the boundary and continuity conditions for $w$ and the continuity conditions for the first derivatives of $u$, one easily finds
+\[
+M = -\int w\left\{\frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} + \frac{\partial^{2}u}{\partial z^{2}}\right\}\,dt.
+\]
+Now since $U'-U$ can never be negative for any $h$, however small it may be, and $N$ is a finite positive quantity, it follows that $M$ is necessarily equal to zero; and since this must be the case however $w$ may be constituted, we must conclude that everywhere within $t$ (at most with the exception of isolated surfaces, lines, points)
+\[
+\frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} + \frac{\partial^{2}u}{\partial z^{2}} = 0
+\]
+must hold; for if this trinomial were different from zero in a solid space, one would need only to give $w$ everywhere the same sign as that trinomial in order to obtain a value different from zero for $M$.«
+
+»There exists therefore in any case such a function $u$, which fulfils the stated boundary and continuity conditions and satisfies the partial differential equation. But there also exists only \emph{one single} such function $u$. For if $u' = u+w$ is any other function which fulfils the same boundary and continuity conditions, then the corresponding integral is
+\[
+U' = U + \int\left\{\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2}\right\}\,dt,
+\]
+and consequently $U$ is really an \emph{absolute minimum}; and if perchance $U' = U$ should hold, then, as is easily seen, in the whole space $t$
+\[
+\left(\frac{\partial w}{\partial x}\right)^{2} + \left(\frac{\partial w}{\partial y}\right)^{2} + \left(\frac{\partial w}{\partial z}\right)^{2} = 0
+\]
+would have to hold. From this it would follow that $w$ is constant; and since it is continuous and on
+\origpage{52}
+the boundary of $t$ is zero, it must be zero everywhere, that is, $u'$ must be identical with $u$.«
+
+»It will be shown later that this $u$, which fulfils the boundary and continuity conditions, and of which we know that it contradicts the partial differential equation at most in isolated points, lines or surfaces within $t$, must satisfy it \emph{everywhere}, that is, at every point, so that such exceptional places are impossible.«
+
+Under the assumption that for the space $t$ there exists at all a function satisfying the prescribed boundary and continuity conditions, the Dirichlet procedure set forth above is accordingly to serve to demonstrate the existence of a function of $x$, $y$, $z$ which satisfies the differential equation
+\[
+\frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} + \frac{\partial^{2} u}{\partial z^{2}} = 0
+\]
+and at the same time the stated subsidiary conditions. The latter is easy to prove in every determinate case; the other, however, holds only in the case where it can be shown that there exists a function $u$ for which the value of the expression
+\[
+\int \left\{ \left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2} + \left(\frac{\partial u}{\partial z}\right)^{2} \right\} \,dt,
+\]
+is an (absolute) minimum. This, however, can by no means be inferred from the assumptions made by Dirichlet; it can only be asserted that for the expression in question there exists a determinate \emph{lower bound} which it can approach arbitrarily closely without having actually to attain it. Accordingly Dirichlet's mode of inference proves to be untenable.
+
+Finally I will illustrate the foregoing by a simple example, through which the inadmissibility of the Dirichlet mode of inference is evidently demonstrated.
+
+Let $\varphi(x)$ denote, namely, a real single-valued function of the real variable $x$ of such a nature that, first, $\varphi(x)$ and $\frac{d\varphi(x)}{dx}$ are continuous functions of $x$ in the interval $(-1 \cdots +1)$, and that, secondly, $\varphi(x)$ has at the boundary $-1$ of the interval the prescribed value $a$, and at the
+\origpage{53}
+boundary $+1$ the prescribed value $b$. Here the two constants $a$ and $b$ are to be two quantities different from one another. If now the Dirichlet mode of inference were admissible, then there would have to be found among the functions $\varphi(x)$ under consideration a special function for which the value of the integral
+\[
+J = \int_{-1}^{+1} \left( x \frac{d\varphi(x)}{dx} \right)^{2} \,dx
+\]
+is equal to the lower bound of all those values which this integral can assume for the various functions $\varphi(x)$ belonging to the totality under consideration.
+
+The lower bound mentioned is, however, in the present case necessarily equal to zero. For if one sets, for example,
+\[
+\varphi(x) = \frac{a+b}{2} + \frac{b-a}{2} \frac{\operatorname{arctg} \frac{x}{\varepsilon}}{\operatorname{arctg} \frac{1}{\varepsilon}},
+\]
+where $\varepsilon$ denotes an arbitrarily assumable \emph{positive} quantity, then this function fulfils the first two conditions; and since
+\[
+J < \int_{-1}^{+1} (x^{2} + \varepsilon^{2}) \left( \frac{d\varphi(x)}{dx} \right)^{2} \,dx
+\]
+and
+\[
+\frac{d\varphi(x)}{dx} = \frac{b-a}{2 \operatorname{arctg} \frac{1}{\varepsilon}} \cdot \frac{\varepsilon}{x^{2} + \varepsilon^{2}},
+\]
+then for this special function
+\[
+J < \varepsilon \frac{(b-a)^{2}}{\left( 2 \operatorname{arctg} \frac{1}{\varepsilon} \right)^{2}} \int_{-1}^{+1} \frac{\varepsilon \,dx}{x^{2} + \varepsilon^{2}}
+\]
+and thus
+\[
+J < \frac{\varepsilon}{2} \frac{(b-a)^{2}}{\operatorname{arctg} \frac{1}{\varepsilon}}.
+\]
+From this it is clear, since one can assume $\varepsilon$ arbitrarily small, that the lower bound of the value of $J$ is equal to zero, for $J$ cannot assume negative values at all.
+\origpage{54}
+
+This bound, however, the value of $J$ cannot attain, however one may choose the function $\varphi(x)$ in accordance with the two conditions above. For since $\varphi(x)$ and $\frac{d\varphi(x)}{dx}$ are to be continuous functions of $x$, it would be requisite for this that
+\[
+\frac{d\varphi(x)}{dx}
+\]
+should vanish for every value of $x$ belonging to the interval $(-1 \cdots +1)$, and therefore that $\varphi(x)$ should be a constant. This, however, is incompatible with the assumption that $a$ and $b$ are different from one another.
+
+The Dirichlet mode of inference therefore evidently leads, in the case considered, to a false result.
+
+\end{document}

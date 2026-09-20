@@ -259,6 +259,16 @@ venues:
   book:
     name: "(published as a book / monograph)"
     kind: book
+  collected-works:
+    name: "(first published in the author's collected works)"
+    kind: book
+    note: >-
+      For a text whose first printing is a posthumous or late-career edition of the author's
+      collected works, with no earlier journal or book publication — a paper read to an academy
+      but never printed at the time, or a piece left among the author's papers. The edition itself
+      is named in `publication.title_full` and judged by `edition_rights`. A work first published
+      in a journal and merely reprinted in collected works does not belong here: it keeps the
+      journal's own venue key.
   manuscript:
     name: "(unpublished manuscript)"
     kind: manuscript
