@@ -1,0 +1,108 @@
+id: noether-1926-elementarteilertheorie-gruppentheorie
+title: Ableitung der Elementarteilertheorie aus der Gruppentheorie.
+title_en: Derivation of elementary divisor theory from group theory.
+authors:
+- name: Emmy Noether
+  wikidata_id: Q7099
+  birth_year: 1882
+  death_year: 1935
+  # https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Emmy/
+  mactutor: Noether_Emmy
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Emmy Noether
+    credit: >-
+      Studio photograph of Noether, author unknown, dated around 1900 on Commons following
+      Cordula Tollmien and in any case before 1910. Circulated by the Mathematical Association
+      of America and held by the Brooklyn Museum. Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Emmy_Noether_(3x4_cropped).jpg"
+publication:
+  year: 1926
+  venue: jahresbericht-dmv
+  volume: '34'
+  pages: '104'
+  title_full: '"Ableitung der Elementarteilertheorie aus der Gruppentheorie", Jahresbericht
+    der Deutschen Mathematiker-Vereinigung 34 (1926), Abteilung 2 ("Mitteilungen und
+    Nachrichten"), p. 104 — the printed abstract of a lecture to the Mathematische
+    Gesellschaft in Göttingen on 27 January 1925, carried in that society''s collective
+    meeting report.'
+edition:
+  year: 1926
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in the Jahresbericht der Deutschen
+    Mathematiker-Vereinigung 34 (1926), Abteilung 2 ("Mitteilungen und Nachrichten"),
+    p. 104 — an original edition with no modern critical apparatus, commentary, or
+    re-typesetting. Only Noether's own abstract is transcribed; the surrounding meeting
+    report is not — neither the abstracts of the five other speakers printed on the
+    same page, nor the date headings, nor the running head.
+discipline: mathematics
+tags:
+- algebra
+- topology
+language: de
+type: lecture
+significance: >-
+  Fifteen printed lines — the only thing Emmy Noether published on the idea that made topology
+  algebraic. Elementary divisor theory was the standard road to the structure of finitely
+  generated abelian groups; she reverses it, winning the decomposition theorem directly and purely
+  group-theoretically, then deriving elementary divisor theory back out of that. Hence the clause
+  that outlived the rest: in applications — Betti and torsion numbers in topology — going back to
+  elementary divisors is not required. Topologists had held the groups themselves superfluous,
+  rank and torsion numbers describing them completely.[1] Hopf and Alexandroff credited the
+  algebraisation of topology to her regardless.[2] She never wrote it up; this page is what there
+  is, and it was left out of her Gesammelte Abhandlungen.[1]
+
+significance_sources:
+  - citation: >-
+      Friedrich Hirzebruch, "Emmy Noether and Topology", Bar-Ilan University, 2 December 1996
+      (MPIM preprint 1997-34). It cites this abstract as [N1] — the one publication that can be
+      cited for Noether's algebraisation of topology, and one not reprinted in her Gesammelte
+      Abhandlungen — and carries the Lefschetz and Alexandroff–Hopf passages. It is also careful
+      that Vietoris and Mayer reached homology groups independently of her.
+    url: "https://hirzebruch.mpim-bonn.mpg.de/id/eprint/98/6/preprint_1997_34.pdf"
+  - citation: >-
+      Heinz Hopf, "Eine Verallgemeinerung der Euler-Poincaréschen Formel", Nachrichten von der
+      Gesellschaft der Wissenschaften zu Göttingen, Math.-Phys. Klasse (1928), pp. 127–136, with
+      the footnote Hopf added on reprinting it in his Selecta (Springer, 1964).
+    url: "https://gdz.sub.uni-goettingen.de/id/PPN252457811_1928"
+
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN37721857X_0034
+  scan_id: gdz:PPN37721857X_0034 (Jahresbericht der DMV 34, Abteilung 2, p. 104 =
+    scan image 361 of the bound volume, whose two page runs are Abt. 1 pp. 1–248 and
+    Abt. 2 pp. 1–184).
+sources:
+  death_date: Emmy Noether, 23 March 1882 – 14 April 1935 (wikidata:Q7099; MacTutor
+    archive, https://mathshistory.st-andrews.ac.uk/Biographies/Noether_Emmy/, which
+    gives Erlangen as her birthplace and Bryn Mawr, Pennsylvania as her place of death).
+  publication_date: First published 1926 in the Jahresbericht der Deutschen Mathematiker-Vereinigung
+    34, Abteilung 2 ("Mitteilungen und Nachrichten"), p. 104 (GDZ PPN37721857X_0034,
+    the digitized volume dated 1926). The lecture it reports was given on 27 January
+    1925.
+  edition: 'Original printing, Jahresbericht der Deutschen Mathematiker-Vereinigung
+    34, Abteilung 2, 1926 (Leipzig and Berlin: B. G. Teubner), p. 104. Digitized by
+    the Göttinger Digitalisierungszentrum (GDZ), PPN37721857X_0034.'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1935
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1926
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-20'

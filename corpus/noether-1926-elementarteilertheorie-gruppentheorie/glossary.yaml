@@ -1,0 +1,57 @@
+# Term renderings for noether-1926-elementarteilertheorie-gruppentheorie, applied consistently
+# across the translation. Format: `terms: {German as printed: English}` — the shape
+# pipeline/translate.py reads with --glossary, so the Tier-3 path reproduces the same renderings
+# as this Tier-2 pass.
+#
+# One principle governs almost every choice here. The abstract is an argument about the ORDER of
+# two theories — which is prior, which is derived — and every object in it has a modern name that
+# would quietly settle that argument in the reader's head before Noether makes it. Normalbasis is
+# the Smith normal form; Restklassensystem is a quotient group; Moduln aus ganzzahligen
+# Linearformen are lattices. Each modern term is avoided. The reader should meet the 1925 words
+# and watch Noether reverse the dependence between them.
+#
+# The one place the translation adds anything is "größter zyklischer", where the head noun is
+# elliptical in the print and English cannot carry the ellipsis; it is supplied in SQUARE
+# brackets, never parentheses, which are the author's own device.
+
+terms:
+  # --- the two theories the abstract sets against each other ---
+  Elementarteilertheorie: elementary divisor theory
+  Elementarteiler: elementary divisors
+  Gruppentheorie: group theory
+  gruppentheoretisch: group-theoretically
+  Gruppensatz: group theorem          # Noether's shorthand for the decomposition theorem once it
+                                      # is proved group-theoretically, i.e. as HER theorem
+  Zerlegungssatz: decomposition theorem
+  mitbewiesen: proved as well         # "mit-" = proved along with the other result, not separately
+
+  # --- the objects, each kept in its 1925 dress ---
+  Moduln: modules                     # NOT "lattices"
+  ganzzahlige Linearformen: integral linear forms
+  Normalbasis: normal basis           # NOT "Smith normal form", which is what it is
+  Restklassensystem: residue class system   # NOT "quotient group" / "factor group"
+  Abelsche Gruppe: Abelian group      # capital A, from the name, as the print has it
+  Erzeugende: generators
+  direkte Summe: direct sum
+  zyklisch: cyclic
+
+  # --- the topology clause, the sentence the abstract is remembered for ---
+  Bettische Zahlen: Betti numbers
+  Torsionszahlen: torsion numbers
+  Topologie: topology
+  Zurückgehen auf: going back to      # NOT "recourse to"; the literal word carries her point that
+                                      # elementary divisors are a detour one need not take
+
+  # --- ordinary connective vocabulary, fixed so it does not drift ---
+  bekanntlich: as is well known
+  bis aufs Vorzeichen: up to sign
+  eindeutig festgelegt: uniquely determined
+  teilbar: divisible
+  isomorph: isomorphic
+  in Verallgemeinerung: in generalization
+  üblich: customary
+  Übergang: passing                   # "durch Übergang vom … zum …" = "by passing from … to …"
+  erweist sich als: proves to be
+  somit: accordingly
+  erforderlich: required
+  "z.\\ B.": "e.\\ g."                # the control space is kept, matching the transcription (R17)

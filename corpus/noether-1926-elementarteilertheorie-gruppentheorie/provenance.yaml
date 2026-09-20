@@ -1,0 +1,149 @@
+changelog:
+  - date: "2026-09-20"
+    summary: Transcription added (AI draft).
+  - date: "2026-09-20"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-20"
+    glossary: glossary.yaml
+    uncertainty_flags: 0
+    note: >-
+      Translated from our own original.tex, never from a published translation — and there is no
+      published English translation of this abstract to have been tempted by. Hirzebruch, looking
+      for a Noether publication on the algebraisation of topology, could cite only this page, and
+      recorded that it was not reprinted in her Gesammelte Abhandlungen. 135 words, the whole item.
+      pipeline/texcompare.py and pipeline/houselint.py both pass.
+
+      THE ONE ADDITION, and the only place the translation is not word-for-word. "als direkte
+      Summe größter zyklischer" is elliptical in the print: the head noun is simply not set, which
+      German carries and English does not. It is supplied as "largest cyclic [groups]" in SQUARE
+      brackets, per the translate prompt's rule that a genuinely necessary gloss is bracketed and
+      never parenthesized, parentheses being the author's own device for asides. Nothing else is
+      added and nothing is removed.
+
+      FOUR PERIOD TERMS KEPT LITERAL, and this is the substantive translation decision in the
+      piece. The abstract is an argument about which of two theories is PRIOR to the other, and
+      every object in it has a modern name that would settle that argument in the reader's head
+      before Noether makes it. So: Normalbasis = "normal basis", not "Smith normal form" — which
+      is exactly what it is; Restklassensystem = "residue class system", not "quotient group";
+      Moduln aus ganzzahligen Linearformen = "modules of integral linear forms", not "lattices";
+      Zurückgehen auf = "going back to", not "recourse to", because the literal word carries her
+      point that elementary divisors are a detour one need not take. glossary.yaml records all
+      31 renderings with the reasoning.
+
+      SMALLER CALLS a reviewer might weigh. (1) mitbewiesen = "proved as well"; the "mit-" means
+      proved along with the other result rather than separately, and "thereby ... as well" carries
+      it without the redundancy of "thereby proved along with it". (2) Abelsche = "Abelian" with a
+      capital A, following the print, which capitalises it from the name. (3) Gruppensatz = "group
+      theorem", her shorthand for the decomposition theorem once it has been proved
+      group-theoretically. (4) "z.\ B." becomes "e.\ g." keeping the R17 control space and the
+      print's own sentence-spacing after the second dot. (5) The two em-dashes are Noether's own
+      parenthetical dashes inside her final sentence, not the report's speaker separators, and are
+      kept as `---`.
+
+      NO INDEPENDENT PASS RAN OVER THIS TRANSLATION, unlike the transcription, which was verified
+      against the scan by a separate subagent that magnified 30 regions. The translation was
+      re-read against original.tex by the session that wrote it, which is a weaker check and is
+      exactly the shared-test problem HOUSESTYLE R29 describes. At 135 words the exposure is
+      small, but a reviewer should treat the renderings above as unconfirmed by a second reader.
+
+      STATUS ai-draft. No human has read this against the original.
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-20"
+  verification:
+    model: claude-opus-5
+    flagged_pages: []
+    date: "2026-09-20"
+  uncertainty_flags: 0
+  note: >-
+    Emmy Noether's "Ableitung der Elementarteilertheorie aus der Gruppentheorie", Jahresbericht
+    der DMV 34 (1926), Abteilung 2, p. 104 — the whole item, 1 of 1 page. Read from the GDZ scan
+    (PPN37721857X_0034, image 361). \origpage carries the single marker 104, which is the printed
+    page number of ABTEILUNG 2; the bound volume has two page runs, Abt. 1 pp. 1–248 and Abt. 2
+    pp. 1–184, so p. 104 of Abt. 1 is a different page of the same book.
+
+    WHAT THE ITEM IS, AND WHY THE SCOPE MATTERS MORE THAN USUAL HERE. This is not a paper but the
+    abstract of a lecture, printed run-in inside the collective meeting report of the
+    Mathematische Gesellschaft in Göttingen. Printed p. 104 carries SIX abstracts by six different
+    speakers — Geiger, Ostrowski, Noether, Landau, Ore, Kneser — and four date headings. Only
+    Noether's paragraph is this work. The other five abstracts are equally public domain and sit
+    on the same page, and are nonetheless different works by different authors; they are not
+    transcribed, and neither are the report's date headings, its running head, or the em-dashes
+    it uses to separate one speaker from the next. The two em-dashes that ARE transcribed are
+    parenthetical dashes inside Noether's own final sentence. `type: lecture` rather than `paper`
+    follows from the same fact.
+
+    HOW THESE PAGES WERE PRODUCED, AND WHERE THIS RUN DEPARTS FROM THE SKILL'S DEFAULT SHAPE. The
+    /transcribe skill routes page images to batch subagents so that scans never enter the
+    orchestrating context, at a measured fixed cost of ~63k tokens per subagent. That was not done
+    for the transcription pass here, deliberately and on the skill's own terms: the work is a
+    single page, below the skill's stated two-batch threshold at which it directs the transcriber
+    to work inline, and the page image was already resident in this session's context from the
+    bibliographic search that located the item. A batch subagent would have paid the fixed cost to
+    buy nothing. pipeline/prepare_pages.py and pipeline/magnify.py were likewise not used, because
+    there were no local scans to prepare; magnification was taken directly from the GDZ IIIF
+    endpoint as percentage-region crops of the source image, which is the same resolution those
+    helpers exist to recover. The full page was read once at 1052x1600, plus three magnified crops
+    (the paragraph, the formula line, the run-in title line).
+
+    WHAT WAS NOT SKIPPED IS THE INDEPENDENT CHECK. Phase 5a verification ran in its own subagent
+    with a fresh context, given the fragment, the house-style extract, notation.md and the IIIF
+    endpoint, and no access to this session's reasoning — which is the point, since HOUSESTYLE R29
+    records a case where three passes applying the same flawed test agreed with each other and
+    were all wrong. That pass magnified 30 regions and returned ZERO discrepancies. It separately
+    confirmed, at magnification: both subscript 1s, both subscript 2s and both italic r's in
+    $(e_1 y_1, e_2 y_2, \ldots, e_r y_r)$; a three-dot ellipsis with no fourth dot lost; that both
+    bare $e$'s in the running text are italic in the print, not roman; that the gap between $e_1$
+    and $y_1$ is kerning and not an operator; the word space in "z. B." (hence z.\ B., not z.B.);
+    "größter" as the item's only eszett; and that the title line ends with the period the print
+    sets. Phase 5's separate no-scan proofread was folded into that pass rather than run on its
+    own: at 15 printed lines and 135 words, a whole-work read costs nothing to include, and there were no batch
+    joins for it to check because there was only one batch.
+
+    LETTERSPACING (R20). The speaker's surname is letterspaced in the print, as every speaker name
+    in the report is; nothing inside Noether's abstract body is. The verification pass checked
+    both halves of that claim line by line and confirmed both, including the candidates a
+    compositor might plausibly have spaced (Elementarteilertheorie, Zerlegungssatz, Abelsche,
+    Bettische, Gruppensatz). The name is therefore NOT carried into the heading as \emph: R25
+    forbids a brace group inside a heading and R20 rules that a heading's own face carries its
+    prominence.
+
+    NO PRINTER'S ERRORS, and that verdict was tested in the direction R29 requires — whether ink
+    is MISSING — not merely the direction that asks whether a mark looks deliberate. Three marginal
+    specks that read as possible hyphens were rejected because the adjacent words are fully inked
+    (so nothing detached from them), because the three specks differ from each other in size and
+    height where type would not, and because no hyphenation is possible at any of those breaks.
+    The two semicolons were checked against being colons with a damaged lower dot, and are
+    geometrically identical to each other, which damage does not reproduce. No \ednote is warranted
+    and none is present.
+
+    TWO READINGS LEFT AS PRINTED, recorded so a reviewer does not take either for a slip.
+    (a) "als direkte Summe größter zyklischer mitbewiesen" — the noun is genuinely absent in the
+    print. It is the author's own compression in a terse abstract, not a compositor's drop, so it
+    is neither completed nor given an \ednote.
+    (b) "isomorph ist, ist dadurch" — the repeated "ist" is correct German here, not a doubled
+    word.
+
+    ZERO UNCERTAINTY FLAGS, and on this scan that figure means what it says rather than recording
+    magnification doing heavy lifting. The source is 3112x4733 at 600 ppi on a wide-measure
+    Antiqua page; the verification pass reported the scan was never its limiting factor. The one
+    glyph it would not call plainly legible is the subscript 2, judged on its flat base stroke and
+    on the two subscripts being identical to each other; a lossless derivative of that region
+    would settle it beyond doubt.
+
+    STATUS ai-draft. No human has read this against the scan. Both AI passes agree and the second
+    was independent, but that is what R29 warns is not the same thing as a human check.
