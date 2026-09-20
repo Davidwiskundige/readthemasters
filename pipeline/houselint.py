@@ -32,7 +32,15 @@ Pure text processing, stdlib only — so it runs in the free CI gate as well as 
 """
 from __future__ import annotations
 
+import json
+from pathlib import Path
 import re
+import shutil
+import subprocess
+import tempfile
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+LINT_MATH_SCRIPT = REPO_ROOT / "site" / "scripts" / "lint-math.mjs"
 
 # --- comment stripping + math-span isolation -------------------------------- #
 _COMMENT_RE = re.compile(r"(?<!\\)%.*")
@@ -216,7 +224,95 @@ _RULES = [
 ]
 
 
-def lint(latex: str) -> list[dict]:
+def _lint_math_node(filepath: Path) -> list[dict]:
+    """Call site/scripts/lint-math.mjs on filepath via Node and return violations."""
+    if not shutil.which("node") or not LINT_MATH_SCRIPT.exists():
+        return []
+    try:
+        proc = subprocess.run(
+            ["node", str(LINT_MATH_SCRIPT), "--json", str(filepath)],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        if proc.stdout.strip():
+            data = json.loads(proc.stdout)
+            if data and isinstance(data, list):
+                out = []
+                for v in data[0].get("violations", []):
+                    out.append({
+                        "line": v.get("line", 1),
+                        "rule": "MATH",
+                        "problem": v.get("error", "KaTeX syntax error"),
+                        "excerpt": v.get("math", ""),
+                    })
+                return out
+    except Exception:
+        pass
+    return []
+
+
+def _lint_math_fallback(latex: str) -> list[dict]:
+    """Pure Python fallback for math syntax checks when Node is not available."""
+    text = strip_comments(latex)
+    problems = []
+
+    # 1. Check unescaped $ delimiter balance
+    masked_display = text
+    for pat in _DISPLAY_PATTERNS:
+        masked_display = pat.sub(_blank_preserving_lines, masked_display)
+
+    no_math = _INLINE_RE.sub(_blank_preserving_lines, masked_display)
+    stray_match = re.search(r"(?<!\\)\$", no_math)
+    if stray_match:
+        line = no_math.count("\n", 0, stray_match.start()) + 1
+        problems.append({
+            "line": line,
+            "rule": "MATH",
+            "problem": "unbalanced or unclosed math delimiter ($)",
+            "excerpt": "$",
+        })
+
+    # 2. Check brace balance and apparatus in inline spans
+    for line, span in inline_spans(latex):
+        # Apparatus macros in math
+        app = re.search(r"\\(uncertain|origpage|ednote|rmfigure|illegible)\b", span)
+        if app:
+            problems.append({
+                "line": line,
+                "rule": "MATH",
+                "problem": f"Apparatus macro \\{app.group(1)} found inside inline math. Apparatus macros belong in text mode.",
+                "excerpt": span[:50],
+            })
+        clean_span = re.sub(r"\\[{}]", "", span)
+        if clean_span.count("{") != clean_span.count("}"):
+            problems.append({
+                "line": line,
+                "rule": "MATH",
+                "problem": "unbalanced curly braces inside math span",
+                "excerpt": span[:50],
+            })
+
+    return problems
+
+
+def lint_math(latex: str, filepath: str | Path | None = None) -> list[dict]:
+    """Lint LaTeX math syntax using KaTeX (via Node), falling back to Python checks."""
+    if shutil.which("node") and LINT_MATH_SCRIPT.exists():
+        if filepath and Path(filepath).exists():
+            return _lint_math_node(Path(filepath))
+        # Write to temp file
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".tex", delete=False) as tf:
+            tf.write(latex)
+            tmp_path = Path(tf.name)
+        try:
+            return _lint_math_node(tmp_path)
+        finally:
+            tmp_path.unlink(missing_ok=True)
+    return _lint_math_fallback(latex)
+
+
+def lint(latex: str, filepath: str | Path | None = None, check_math: bool = True) -> list[dict]:
     """Return a list of house-style violations, each ``{line, rule, problem, ...}``.
 
     An `inline-math` rule contributes a `span` (rendered back as `$…$`); a `document` rule
@@ -245,6 +341,10 @@ def lint(latex: str) -> list[dict]:
                 body = text_mode_body(latex)
             for found in predicate(body):
                 violations.append({**found, "rule": rule_id})
+
+    if check_math and ("$" in latex or r"\[" in latex or "$$" in latex):
+        violations.extend(lint_math(latex, filepath=filepath))
+
     violations.sort(key=lambda v: (v["line"], v["rule"]))
     return violations
 
@@ -266,11 +366,11 @@ if __name__ == "__main__":
     any_bad = False
     for arg in sys.argv[1:]:
         text = open(arg, encoding="utf-8").read()
-        vios = lint(text)
+        vios = lint(text, filepath=arg)
         if vios:
             any_bad = True
             print(f"{arg}:")
-            print(format_violations(vios))
+            print(format_violations(vios, path=arg))
     if any_bad:
         print("\nHouse-style violations found (see corpus/HOUSESTYLE.md).")
         raise SystemExit(1)

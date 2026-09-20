@@ -8,6 +8,7 @@
     "dev": "npm run data && astro dev",
     "build": "npm run data && astro build && pagefind --site dist",
     "preview": "astro preview",
+    "lint:math": "node scripts/lint-math.mjs",
     "test": "node --test"
   },
   "dependencies": {

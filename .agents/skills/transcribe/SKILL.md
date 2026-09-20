@@ -172,13 +172,13 @@ Before generating any LaTeX fragments, perform an upfront global notation pass:
    - **Display math wrapping (HOUSESTYLE R16)**: All standalone formulas must be wrapped in `\[ ... \]`. Multiline display math must be enclosed in `\[ \begin{gathered} ... \end{gathered} \]` or `\[ \begin{aligned} ... \end{aligned} \]`. Never write bare `\begin{gather*}` or `\begin{align*}` outside `\[ ... \]` (the site requires `\[ ... \]` to wrap display math for KaTeX).
    - **Printer's errors & compositor misprints (HOUSESTYLE R4)**: Transcribe the text and math faithfully as printed in the scan (do not silently fix). **Always attach an `\ednote{...}` directly at each error** explaining the misprint and the expected correction (e.g. `\ednote{In the following equation the fourth argument is printed $y_1$ instead of $y_4$; an apparent misprint.}`). Note R18: no curly braces in the note's prose (inline math like `$y_4$` is permitted).
    - Do not transcribe running heads, signature marks, or isolated page numbers.
-2. **Early Linting**: Immediately after each fragment is written, run the house-style linter:
+2. **Early Linting**: Immediately after each fragment is written, run the house-style and math linter:
 
    ```bash
    python pipeline/houselint.py <scratch>/p<N>.tex
    ```
 
-   Fix any formatting or macro violations immediately before moving to the next chunk.
+   This validates house-style rules (R2, R16, R18) and tests all math expressions against KaTeX via `site/scripts/lint-math.mjs`. Fix any syntax errors, bare align/gather environments, unclosed math delimiters, apparatus-in-math violations, or formatting issues immediately before moving to the next chunk.
 3. If an obscure glyph is unreadable even at high resolution:
    - Call `pipeline/magnify.py` if localized sub-pixel cropping is needed:
      ```bash
@@ -280,7 +280,7 @@ python pipeline/validate.py
 python -m pytest pipeline/tests -q
 ```
 
-Fix any schema, vocab, or house-style issues. Both commands must pass cleanly with zero errors.
+Fix any schema, vocab, house-style, or math syntax issues (`validate.py` includes `pipeline/houselint.py` and KaTeX math linting). You can also run the math linter directly via `npm run lint:math -- corpus/<work-id>/original.tex` from `site/`. Both commands must pass cleanly with zero errors.
 
 ---
 

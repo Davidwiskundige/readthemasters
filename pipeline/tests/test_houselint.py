@@ -173,10 +173,71 @@ def test_corpus_is_house_style_clean():
     corpus = REPO / "corpus"
     checked = 0
     for tex in sorted(corpus.glob("*/original.tex")) + sorted(corpus.glob("*/translations/*.tex")):
-        vios = houselint.lint(tex.read_text(encoding="utf-8"))
+        vios = houselint.lint(tex.read_text(encoding="utf-8"), filepath=tex)
         assert not vios, f"{tex} has house-style violations:\n{houselint.format_violations(vios)}"
         checked += 1
     assert checked > 0, "expected at least one corpus .tex to lint"
+
+
+# --- KaTeX math syntax linter ---------------------------------------------- #
+def test_lint_math_catches_syntax_error():
+    latex = "text $\\frac{1}$ more"
+    vios = houselint.lint(latex)
+    assert any(v["rule"] == "MATH" for v in vios)
+    math_vios = [v for v in vios if v["rule"] == "MATH"]
+    assert "KaTeX parse error" in math_vios[0]["problem"]
+
+
+def test_lint_math_catches_apparatus_macro_in_math():
+    latex = r"text $\uncertain{reading}$ more"
+    vios = houselint.lint(latex)
+    assert any(v["rule"] == "MATH" and "apparatus macro" in v["problem"].lower() for v in vios)
+
+    latex_page = r"text $\origpage{42}$ more"
+    vios_page = houselint.lint(latex_page)
+    assert any(v["rule"] == "MATH" and "apparatus macro" in v["problem"].lower() for v in vios_page)
+
+
+def test_lint_math_catches_unclosed_dollar():
+    latex = "text $x + y = z without closing dollar"
+    vios = houselint.lint(latex)
+    assert any(v["rule"] == "MATH" and "unclosed" in v["problem"] for v in vios)
+
+
+def test_lint_math_clean():
+    latex = r"""
+Here is valid math $x^2 + y^2 = z^2$ and $\frac{a}{b}$.
+\[
+  \begin{aligned}
+    a &= b \\
+    c &= d
+  \end{aligned}
+\]
+"""
+    assert houselint.lint(latex) == []
+
+
+def test_lint_math_fallback():
+    # Test fallback directly (when Node is not used or unavailable)
+    unclosed = "unclosed $x + y"
+    vios = houselint._lint_math_fallback(unclosed)
+    assert any("unbalanced or unclosed math delimiter" in v["problem"] for v in vios)
+
+    app_macro = r"test $\origpage{10}$"
+    vios_app = houselint._lint_math_fallback(app_macro)
+    assert any("apparatus macro" in v["problem"].lower() for v in vios_app)
+
+    unbalanced_braces = r"test $\frac{1}{2$"
+    vios_braces = houselint._lint_math_fallback(unbalanced_braces)
+    assert any("unbalanced curly braces" in v["problem"] for v in vios_braces)
+
+
+def test_format_violations_with_math_violation():
+    latex = "line 1\nline 2 $\\frac{1}$ end"
+    vios = houselint.lint(latex)
+    out = houselint.format_violations(vios, path="doc.tex")
+    assert "doc.tex" in out
+    assert "MATH" in out
 
 
 def test_corpus_significance_is_house_style_clean():

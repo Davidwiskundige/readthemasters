@@ -518,7 +518,7 @@ def check_house_style(work_dir: Path, work: dict, issues: Issues) -> None:
     if trans_dir.is_dir():
         texs.extend(sorted(trans_dir.glob("*.tex")))
     for tpath in texs:
-        violations = houselint.lint(tpath.read_text(encoding="utf-8"))
+        violations = houselint.lint(tpath.read_text(encoding="utf-8"), filepath=tpath)
         if violations:
             rel = tpath.relative_to(work_dir.parent).as_posix()
             issues.error(rel, "house-style violations (corpus/HOUSESTYLE.md):\n"

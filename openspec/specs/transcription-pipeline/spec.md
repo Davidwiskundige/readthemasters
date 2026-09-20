@@ -99,9 +99,11 @@ batch, reading that batch's fragments together with that batch's scan images in 
 returning only a discrepancy list. It MUST NOT depend on scan images still being resident from the
 transcription phase.
 
-The mechanical house-style linter (`pipeline/houselint.py`) SHALL run over each batch's fragments as
-they land, not only over the assembled `original.tex`, so that a batch which drifts from house style
-is identified as the batch that caused it.
+The mechanical house-style and math linter (`pipeline/houselint.py`, backed by `site/scripts/lint-math.mjs`)
+SHALL run over each batch's fragments as they land, not only over the assembled `original.tex`. This
+verifies that both house-style presentation rules and KaTeX mathematical syntax parse cleanly with
+zero errors, so that any batch which introduces broken math or drifts from house style is identified
+and corrected immediately.
 
 **Verification against the scans is not sufficient on its own.** A per-batch pass compares page N's
 text to page N's image, so it is structurally blind to any defect that spans a page or batch join,
@@ -134,6 +136,11 @@ one batch.
 
 - **WHEN** a batch's fragments violate a house-style ruling
 - **THEN** `houselint` reports it as those fragments land, before the work is assembled
+
+#### Scenario: Math syntax error in a fragment fails early linting
+
+- **WHEN** a batch's fragment contains invalid KaTeX syntax, unsupported macros, or bare display environments
+- **THEN** early linting reports the line and error and fails immediately before proceeding to the next batch
 
 #### Scenario: A defect spanning a page join is caught
 

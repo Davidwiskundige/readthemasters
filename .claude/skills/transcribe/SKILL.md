@@ -278,7 +278,8 @@ scan, and it is the same signal that makes an uncertainty-flag count interpretab
 
 After each batch: append any reported decisions to `corpus/<work-id>/notation.md` (Phase 3a), run
 `python pipeline/houselint.py <scratch>/p<N>.tex` over the new fragments so house-style
-drift is caught at the batch that caused it, and carry the trailing lines into the next batch.
+drift and KaTeX math syntax errors (backed by `site/scripts/lint-math.mjs`) are caught at the batch
+that caused them, and carry the trailing lines into the next batch.
 
 ### Phase 3a — Keep the notation glossary
 
@@ -435,10 +436,10 @@ Fix any schema/vocab/gate errors. Vocabulary values (`discipline`, `tags`, `venu
 `language`) must already exist in `corpus/vocab.yaml`; if a genuinely new value is needed, add it in
 the same PR and say so.
 
-`validate.py` includes the mechanical house-style linter (`pipeline/houselint.py`), which enforces
-presentation rulings such as HOUSESTYLE R2. Where a work has math the site must render, check it
-through the site's own KaTeX build as well — a fragment can pass `houselint` and still fail to
-typeset.
+`validate.py` includes the mechanical house-style and KaTeX math linter (`pipeline/houselint.py`,
+backed by `site/scripts/lint-math.mjs`), which enforces presentation rulings (such as HOUSESTYLE
+R2, R16, R18) and tests every mathematical expression against KaTeX to prevent syntax crashes. You
+can also test math directly via `npm run lint:math -- corpus/<work-id>/original.tex` from `site/`.
 
 ## Phase 8 — Review checkpoint, then open the PR
 
