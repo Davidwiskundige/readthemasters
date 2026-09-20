@@ -239,6 +239,23 @@ venues:
     archives:
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb328135052/date"
+  jahresbericht-dmv:
+    name: "Jahresbericht der Deutschen Mathematiker-Vereinigung"
+    aka: "Jber. DMV"
+    founded: 1891
+    place: "Leipzig / Berlin"
+    publisher: "B. G. Teubner, for the Deutsche Mathematiker-Vereinigung"
+    note: >-
+      The journal of the German Mathematical Society, whose first volume (for 1890–91) appeared in
+      1891. Alongside the survey reports it was founded to carry, each volume has a separately
+      paginated second part, "Mitteilungen und Nachrichten", holding society business and the
+      meeting reports of the local mathematical societies — where a talk often survives only as a
+      paragraph of abstract.
+    archives:
+      - label: "GDZ (Göttingen)"
+        url: "https://gdz.sub.uni-goettingen.de/volumes/id/PPN37721857X"
+      - label: "EuDML"
+        url: "https://eudml.org/journal/10148"
   book:
     name: "(published as a book / monograph)"
     kind: book
