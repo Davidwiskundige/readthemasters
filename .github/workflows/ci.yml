@@ -87,12 +87,17 @@ jobs:
         with:
           name: site-dist
           path: site/dist
+      # cloudflare/pages-action was retired by Cloudflare and its repository removed, which
+      # broke this job on EVERY branch: Actions resolves every `uses:` at job setup, before any
+      # step-level `if` is evaluated, so a deploy step gated to main-pushes still failed PR
+      # builds. wrangler-action is Cloudflare's replacement and runs the same deploy via the
+      # Wrangler CLI. It has no `gitHubToken` input, so the GitHub deployment status the old
+      # action created is no longer posted; the `deployments: write` permission above is kept
+      # for now in case that is restored.
       - name: Deploy to Cloudflare Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: readthemasters
-          directory: site/dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy site/dist --project-name=readthemasters
