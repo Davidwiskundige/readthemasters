@@ -1,6 +1,9 @@
 """Tests for the mechanical house-style linter (pure text processing, no dependencies)."""
+import shutil
 import sys
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import houselint  # noqa: E402
@@ -181,6 +184,15 @@ def test_corpus_is_house_style_clean():
 
 # --- KaTeX math syntax linter ---------------------------------------------- #
 def test_lint_math_catches_syntax_error():
+    latex = "text $\\frac{1}{2$ more"
+    vios = houselint.lint(latex)
+    assert any(v["rule"] == "MATH" for v in vios)
+
+
+def test_lint_math_katex_missing_arg():
+    site_dir = REPO / "site"
+    if not (shutil.which("node") and (site_dir / "node_modules" / "katex").exists()):
+        pytest.skip("Node and KaTeX required for full macro parser error check")
     latex = "text $\\frac{1}$ more"
     vios = houselint.lint(latex)
     assert any(v["rule"] == "MATH" for v in vios)
@@ -233,7 +245,7 @@ def test_lint_math_fallback():
 
 
 def test_format_violations_with_math_violation():
-    latex = "line 1\nline 2 $\\frac{1}$ end"
+    latex = "line 1\nline 2 $\\frac{1}{2$ end"
     vios = houselint.lint(latex)
     out = houselint.format_violations(vios, path="doc.tex")
     assert "doc.tex" in out

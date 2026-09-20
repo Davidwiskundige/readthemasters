@@ -39,10 +39,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "site/package-lock.json"
       - name: Install dependencies
         run: |
           pip install -r pipeline/requirements.txt
           pip install pytest
+          npm ci --prefix site
       - name: Copyright gate (validate corpus)
         run: python pipeline/validate.py
       - name: Run test suite

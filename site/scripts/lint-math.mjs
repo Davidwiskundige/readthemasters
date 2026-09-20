@@ -23,8 +23,12 @@ let katex;
 try {
   katex = (await import('../node_modules/katex/dist/katex.mjs')).default;
 } catch {
-  // Fallback to standard package import if running in environment where node_modules is in path
-  katex = (await import('katex')).default;
+  try {
+    katex = (await import('katex')).default;
+  } catch (err) {
+    console.error(`Error: KaTeX module not found. Run 'npm install' in site/. Details: ${err.message}`);
+    process.exit(2);
+  }
 }
 
 const APPARATUS_IN_MATH_RE = /\\(uncertain|origpage|ednote|rmfigure|illegible)\b/;

@@ -224,10 +224,10 @@ _RULES = [
 ]
 
 
-def _lint_math_node(filepath: Path) -> list[dict]:
-    """Call site/scripts/lint-math.mjs on filepath via Node and return violations."""
+def _lint_math_node(filepath: Path) -> list[dict] | None:
+    """Call site/scripts/lint-math.mjs on filepath via Node and return violations, or None on failure."""
     if not shutil.which("node") or not LINT_MATH_SCRIPT.exists():
-        return []
+        return None
     try:
         proc = subprocess.run(
             ["node", str(LINT_MATH_SCRIPT), "--json", str(filepath)],
@@ -235,7 +235,9 @@ def _lint_math_node(filepath: Path) -> list[dict]:
             text=True,
             encoding="utf-8",
         )
-        if proc.stdout.strip():
+        if proc.returncode in (0, 1):
+            if not proc.stdout.strip():
+                return []
             data = json.loads(proc.stdout)
             if data and isinstance(data, list):
                 out = []
@@ -249,7 +251,7 @@ def _lint_math_node(filepath: Path) -> list[dict]:
                 return out
     except Exception:
         pass
-    return []
+    return None
 
 
 def _lint_math_fallback(latex: str) -> list[dict]:
@@ -299,16 +301,19 @@ def _lint_math_fallback(latex: str) -> list[dict]:
 def lint_math(latex: str, filepath: str | Path | None = None) -> list[dict]:
     """Lint LaTeX math syntax using KaTeX (via Node), falling back to Python checks."""
     if shutil.which("node") and LINT_MATH_SCRIPT.exists():
+        res = None
         if filepath and Path(filepath).exists():
-            return _lint_math_node(Path(filepath))
-        # Write to temp file
-        with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".tex", delete=False) as tf:
-            tf.write(latex)
-            tmp_path = Path(tf.name)
-        try:
-            return _lint_math_node(tmp_path)
-        finally:
-            tmp_path.unlink(missing_ok=True)
+            res = _lint_math_node(Path(filepath))
+        else:
+            with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".tex", delete=False) as tf:
+                tf.write(latex)
+                tmp_path = Path(tf.name)
+            try:
+                res = _lint_math_node(tmp_path)
+            finally:
+                tmp_path.unlink(missing_ok=True)
+        if res is not None:
+            return res
     return _lint_math_fallback(latex)
 
 
