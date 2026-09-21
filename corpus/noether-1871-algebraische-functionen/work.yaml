@@ -39,27 +39,11 @@ tags:
 language: de
 type: paper
 significance: >-
-  Continuing his 1869 note,[1] Noether introduces here the algebraic resolution of
-  singularities by successive birational quadratic transformations. In §. I, he shows
-  how to decompose higher curve singularities into ordinary multiple points without
-  Puiseux expansions,[2] computing the equivalent numbers of double points and cusps.
-  In §§. II–III, he extends this technique to three dimensions to determine the exact
-  reduction of the surface genus (arithmetic genus $p_a$) caused by singular nodes,
-  uniplanar points, and multiple curves. Applying this to double planes branched along
-  a curve of order $2m$, Noether derives the genus formula $p = \frac{1}{2}(m-1)(m-2) - \Sigma_i \frac{1}{2} i(i-1)\alpha_i$,
-  proves the rationality criterion $p = 0$, and generalises Cayley's discovery[3] that
-  surfaces of negative deficiency ($p = -q$) correspond to scrolls and cones over curves
-  of genus $q$.
-significance_sources:
-  - citation: >-
-      Max Noether, "Zur Theorie der algebraischen Functionen mehrerer complexer Variablen",
-      Nachrichten von der Königl. Gesellschaft der Wissenschaften zu Göttingen (1869), pp. 297–306.
-    url: https://eudml.org/doc/182601
-  - citation: >-
-      Arthur Cayley, "On the deficiency of certain surfaces", Quarterly Journal of Pure and Applied Mathematics 7 (1866), pp. 212–223.
-  - citation: >-
-      Arthur Cayley, "On the deficiency of certain surfaces", Mathematische Annalen 3 (1871), pp. 526–529.
-    url: https://eudml.org/doc/156505
+  Noether introduces the resolution of curve singularities by successive quadratic
+  transformations without Puiseux expansions. Extending the technique to surfaces,
+  he calculates the genus reduction for double planes and generalises Cayley's
+  discovery that negative deficiency ($p = -q$) characterizes scrolls and cones over
+  curves of genus $q$.
 relations:
 - to: noether-1869-algebraische-functionen-mehrerer-variablen
   kind: builds-on
