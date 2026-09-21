@@ -25,6 +25,15 @@
 }
 
 * { box-sizing: border-box; }
+/* `hidden` hides an element only through the user-agent stylesheet's `[hidden] { display: none }`,
+   and a UA declaration loses to ANY author `display` rule whatever its specificity. Three filtered
+   lists set one for their own layout — `.catalog .card` and `.authorlist .card` are flex to seat a
+   portrait beside the text, `.journallist .jrow` to lay out a title-led row — so a filter setting
+   `hidden` on their rows left every row on screen while the live count dropped. Restoring the
+   guarantee as an author rule needs `!important`: without it `[hidden]` (0,1,0) still loses to
+   `.catalog .card` (0,2,0). Filtered-out rows must not be rendered — see the site-catalog spec,
+   "A filtered-out row is not rendered". */
+[hidden] { display: none !important; }
 body {
   margin: 0;
   background: var(--bg);
