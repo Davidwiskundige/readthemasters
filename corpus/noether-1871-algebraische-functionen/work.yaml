@@ -49,16 +49,7 @@ significance: >-
   a curve of order $2m$, Noether derives the genus formula $p = \frac{1}{2}(m-1)(m-2) - \Sigma_i \frac{1}{2} i(i-1)\alpha_i$,
   proves the rationality criterion $p = 0$, and generalises Cayley's discovery[3] that
   surfaces of negative deficiency ($p = -q$) correspond to scrolls and cones over curves
-  of genus $q$.[note 1]
-significance_notes:
-  - label: "In modern terms"
-    text: >-
-      Noether's curve resolution theorem by quadratic transformations is a foundation of
-      classical algebraic geometry. For double planes branched along a curve $B \subset \mathbb{P}^2$
-      of degree $2m$, the smooth model has geometric genus $p_g = \frac{1}{2}(m-1)(m-2)$ and
-      arithmetic genus $p_a = p_g$ when regular. Cayley's negative deficiency $p = -q$ represents
-      an irregular ruled surface with $p_g = 0$ and irregularity $q = h^1(\mathcal{O}_X) > 0$,
-      so $p_a = p_g - q = -q$.
+  of genus $q$.
 significance_sources:
   - citation: >-
       Max Noether, "Zur Theorie der algebraischen Functionen mehrerer complexer Variablen",
