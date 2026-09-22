@@ -1,0 +1,78 @@
+id: riemann-1866-verschwinden-theta-functionen
+title: Ueber das Verschwinden der $\vartheta$-Functionen.
+title_en: On the vanishing of the $\vartheta$-functions.
+authors:
+- name: Bernhard Riemann
+  wikidata_id: Q42299
+  birth_year: 1826
+  death_year: 1866
+  mactutor: Riemann
+publication:
+  year: 1866
+  venue: crelle
+  volume: '65'
+  pages: 161–172
+  title_full: '"Ueber das Verschwinden der $\vartheta$-Functionen.", Journal für die
+    reine und angewandte Mathematik (Crelle''s Journal), Fünfundsechzigster Band (Berlin:
+    G. Reimer, 1866), pp. 161–172.'
+edition:
+  year: 1866
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the original first printing in Journal für die reine
+    und angewandte Mathematik (Crelle''s Journal), Band 65 (Berlin: G. Reimer, 1866),
+    pp. 161–172 — an original edition with no modern critical apparatus, commentary,
+    or re-typesetting.'
+discipline: mathematics
+tags:
+- analysis
+- geometry
+language: de
+type: paper
+relations:
+- to: riemann-1857-abelsche-functionen
+  kind: builds-on
+  recommended: primary
+  note: Riemann's 1857 memoir on Abelian functions, whose second division established
+    the vanishing theorem for theta functions. Here Riemann provides a rigorous and
+    complete proof covering the special cases of the Jacobi inversion problem.
+significance: In this paper Riemann resolves the exceptional case in his theta-vanishing
+  theorem from the 1857 "Theorie der Abel'schen Functionen". By determining the exact
+  conditions under which the Riemann theta function vanishes identically on a Riemann
+  surface, he completes the solution to the Jacobi inversion problem and introduces
+  the fundamental concept now known as the Riemann singularity theorem.
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN243919689_0065
+  scan_id: gdz:PPN243919689_0065 (Crelle's Journal, Band 65, 1866, pp. 161–172; DMDLOG_0012
+    / GDZPPN002152711). The same original printing is catalogued by EuDML as http://eudml.org/doc/147962.
+sources:
+  death_date: Bernhard Riemann, 1826–1866 (wikidata:Q42299; MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/).
+  publication_date: First published 1866 in Journal für die reine und angewandte Mathematik
+    (Crelle's Journal), Band 65, pp. 161–172 (EuDML http://eudml.org/doc/147962; GDZ
+    PPN243919689_0065).
+  edition: 'Original first printing, Journal für die reine und angewandte Mathematik,
+    Fünfundsechzigster Band (Berlin: G. Reimer, 1866), pp. 161–172. Digitized by the
+    Göttinger Digitalisierungszentrum (GDZ), PPN243919689_0065.'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1866
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1866
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-20'
