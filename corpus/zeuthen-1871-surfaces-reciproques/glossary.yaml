@@ -1,0 +1,55 @@
+# Term renderings for zeuthen-1871-surfaces-reciproques, applied consistently across the
+# translation. Format: `terms: {French as printed: English}`.
+# Follows Cayley (1869, "A Memoir on the Theory of Reciprocal Surfaces") and Salmon:
+# pinch-point (j), close-point (chi), binode (eta), biplane (eta'),
+# punctual/tangential definition, double/cuspidal curve, stationary tangent planes.
+
+terms:
+  # --- surface and geometry concepts ---
+  surfaces réciproques: reciprocal surfaces
+  surface réciproque: reciprocal surface
+  lieu de points: locus of points
+  lieux de points: loci of points
+  enveloppe de plans: envelope of planes
+  définition ponctuelle: punctual definition
+  définition tangentielle: tangential definition
+  propriétés ponctuelles: punctual properties
+  propriétés tangentielles: tangential properties
+  principe de correspondance: principle of correspondence
+
+  # --- curves and planes ---
+  courbe double: double curve
+  courbe cuspidale: cuspidal curve
+  plan tangent: tangent plane
+  plans tangents: tangent planes
+  plan tangent double: double tangent plane
+  plans tangents doubles: double tangent planes
+  plan tangent stationnaire: stationary tangent plane
+  plans tangents stationnaires: stationary tangent planes
+  plan tangent triple: triple tangent plane
+  plans tangents triples: triple tangent planes
+  plan osculateur: osculating plane
+  plans osculateurs: osculating planes
+  arête de rebroussement: edge of regression
+  droite fixe: fixed right line
+
+  # --- singularities ---
+  point-pince: pinch-point
+  points-pinces: pinch-points
+  plan-pince: pinch-plane
+  plans-pinces: pinch-planes
+  point-clos: close-point
+  points-clos: close-points
+  plan-clos: close-plane
+  plans-clos: close-planes
+  point conique: conical point
+  points coniques: conical points
+  point double: double point
+  points doubles: double points
+  point cuspidal: cuspidal point
+  points cuspidaux: cuspidal points
+  binode: binode
+  binodes: binodes
+  biplan: biplane
+  biplans: biplanes
+  droites multiples: multiple right lines

@@ -1,0 +1,96 @@
+id: zeuthen-1871-surfaces-reciproques
+title: Note sur la théorie de surfaces réciproques.
+title_en: Note on the Theory of Reciprocal Surfaces
+authors:
+- name: Hieronymus Georg Zeuthen
+  wikidata_id: Q335116
+  birth_year: 1839
+  death_year: 1920
+  mactutor: Zeuthen
+  portrait:
+    file: portrait.jpg
+    alt: "Photographic portrait of Hieronymus Georg Zeuthen"
+    credit: >-
+      Photograph of Hieronymus Georg Zeuthen by Hansen, Schou & Weller (Copenhagen),
+      c. 1870–1885. In Das Fotoalbum für Weierstraß, ed. Reinhard Bölling (1994).
+      Wikimedia Commons. Public domain.
+    source: "https://commons.wikimedia.org/wiki/File:Das_Fotoalbum_f%C3%BCr_Weierstra%C3%9F_1_01_1_(Hieronymus_Georg_Zeuthen).jpg"
+publication:
+  year: 1871
+  venue: mathematische-annalen
+  volume: '4'
+  pages: 633–637
+  title_full: '"Note sur la théorie de surfaces réciproques", Mathematische Annalen,
+    Band 4 (1871), pp. 633–637.'
+edition:
+  year: 1871
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in Mathematische Annalen, Band
+    4 (1871), pp. 633–637, published by B. G. Teubner, Leipzig. An original edition
+    with no modern critical apparatus, commentary, or re-typesetting.
+discipline: mathematics
+tags:
+- geometry
+- algebra
+language: fr
+type: paper
+relations:
+- to: clebsch-1868-surfaces-algebriques
+  kind: builds-on
+  recommended: primary
+  note: Zeuthen works in the context of the numerical theory of singularities of algebraic
+    surfaces established by Cayley, Salmon, and Clebsch.
+significance: >-
+  In this five-page note in the Mathematische Annalen (1871), Hieronymus Georg Zeuthen clarifies
+  a crucial ambiguity in the theory of algebraic surfaces by distinguishing singularities of
+  punctual definition (such as pinch-points $j$, close-points $\chi$, and binodes $\eta$) from those
+  of tangential definition ($j', \chi', \eta'$).[1] Applying Chasles's principle of correspondence,
+  Zeuthen deduces the missing 26th reciprocal surface equation connecting the singularities of a
+  surface and its dual. He shows that Cayley's 1869 formula would assign an impossible fractional
+  coefficient ($25/3$) to close-points, demonstrating that earlier reciprocal formulations were
+  incomplete.[2] This work provides the foundational singularity analysis underlying Zeuthen's
+  proof that the arithmetic genus $p_a$ is a birational invariant—a key link between Riemann's
+  genus and the Italian theory of surfaces.
+significance_sources:
+- citation: >-
+    Hieronymus Georg Zeuthen, "Note sur la théorie de surfaces réciproques",
+    Mathematische Annalen, Band 4 (1871), pp. 633–637.
+  url: "https://eudml.org/doc/156555"
+- citation: >-
+    Arthur Cayley, "A Memoir on the Theory of Reciprocal Surfaces",
+    Philosophical Transactions of the Royal Society of London, Vol. 159 (1869), pp. 201–229.
+  url: "https://doi.org/10.1098/rstl.1869.0009"
+source:
+  scan_url: https://archive.org/details/sim_mathematische-annalen_1871_4/page/633/mode/1up
+  scan_id: internetarchive:sim_mathematische-annalen_1871_4
+sources:
+  death_date: Hieronymus Georg Zeuthen, 15 February 1839 – 6 January 1920 (wikidata:Q335116;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Zeuthen/).
+  publication_date: 'First published 1871 in Mathematische Annalen, Band 4, pp. 633–637
+    (DOI: 10.1007/bf02100585; EuDML: https://eudml.org/doc/156555).'
+  edition: Original printing in Mathematische Annalen, Band 4 (1871), pp. 633–637,
+    B. G. Teubner, Leipzig. Digitized by the Internet Archive (sim_mathematische-annalen_1871_4).
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1920
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1871
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-20'

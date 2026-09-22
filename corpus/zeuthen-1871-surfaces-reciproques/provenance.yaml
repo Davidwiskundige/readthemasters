@@ -1,0 +1,56 @@
+changelog:
+  - date: "2026-09-20"
+    summary: Transcription added (AI draft), pp. 633–637 from Mathematische Annalen Bd. 4 (1871).
+  - date: "2026-09-20"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-20"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-20"
+  uncertainty_flags: 0
+  note: >-
+    Full French text of Hieronymus Georg Zeuthen's five-page paper "Note sur la théorie de
+    surfaces réciproques", printed pages 633–637, from the original first printing in
+    Mathematische Annalen, Band 4 (Leipzig: B. G. Teubner, 1871). The paper provides critical
+    clarifications on punctual vs tangential definitions of algebraic surface singularities
+    (pinch-points, close-points, biplanes) and derives the 26th reciprocal surface equation
+    connecting the singularities.
+
+    ZERO UNCERTAINTY FLAGS: Every symbol and glyph was verified at 300 DPI scan resolution.
+    The transcription contains no \uncertain{} and no \illegible. Key readings verified:
+    - Summation operator uses capital Greek letter \Sigma (\Sigma, \Sigma') throughout, following
+      Clebsch and Zeuthen's notation, not \sum.
+    - Singularities notation: \chi, \chi' (Greek chi) for close-points and close-planes;
+      \eta, \eta' for binodes and biplanes; \xi, \xi'; \varrho, \varrho'; \gamma, \gamma'.
+    - In the formula \Sigma [2\mu + v] and \Sigma' [2\mu' + v'], Latin italic v and v' are confirmed.
+    - German quotation marks „..." are preserved as literal Unicode per HOUSESTYLE R22, reflecting
+      the Leipzig compositor's typeset.
+
+    PRINTER'S ERRORS FAITHFULLY PRESERVED (HOUSESTYLE R4) WITH \ednote POPOVERS:
+    - p. 635: "Les équations à la page 4" has a heavy ink batter/defect on the digit 4 (\ednote).
+    - p. 635: "singularites" printed without acute accent on the e (\ednote).
+    - p. 635: quotation opened with „Les équations lacks a closing quotation mark in print (\ednote).
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-20"
+    note: >-
+      Full English translation of Zeuthen's 1871 note on reciprocal surfaces, made directly
+      and solely from our own transcription (original.tex). Punctual and tangential singularities,
+      formula notation (\Sigma, \chi, \chi', \eta, \eta', pinch-points, close-points), \origpage markers,
+      and displays are verified identical by pipeline/texcompare.py. House style is verified clean
+      by pipeline/houselint.py.
