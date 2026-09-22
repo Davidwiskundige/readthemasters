@@ -1,0 +1,341 @@
+% Faithful transcription — original German. Transcribed from the original first printing in
+% Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 65 (Berlin: G. Reimer,
+% 1866), printed pages 161–172: B. Riemann, "Ueber das Verschwinden der \vartheta-Functionen."
+% Scan: Göttinger Digitalisierungszentrum (GDZ), PPN243919689_0065 (DMDLOG_0012 / GDZPPN002152711),
+% pp. 161–172. The same original printing is catalogued by EuDML as http://eudml.org/doc/147962.
+%
+% \origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: the volume article
+% number "10." above the title, running heads ("10. B. Riemann, über das Verschwinden der
+% \vartheta-Functionen."), signature marks ("21", "21 *", "22", "22 *", "Journal für die reine und
+% angewandte Mathematik Bd. LXV. Heft 2."), and printer's rules.
+%
+% TYPEFACE AND ORTHOGRAPHY. The prose is set in ANTIQUA (roman), not Fraktur. There is no long-s
+% and no eszett ligature anywhere in this print: it sets "ss" throughout, and that is what is
+% transcribed — dass, muss, lässt, ausser, Grössen, schliessen, voraussetze (checked at high
+% magnification, each is two round s). So, unlike earlier prints, this file contains no ß —
+% HOUSESTYLE R19 has nothing to convert here. The 1866 spelling is kept faithful (R12):
+% Function, Functionen, Theorie, Theil, Theile, Werthe, Abtheilung, Constanten, Grössen, Hülfe,
+% reell, complex, unendlich klein, Veränderlichen, nöthig, desshalb, Grössensystem, Grössengebiet.
+% Literal UTF-8 is used for ä ö ü (R18).
+%
+% HEADINGS. Headings are numbered sections 1.–6. (set with \section*{1.} etc.).
+% The article title is set with \section*{Ueber das Verschwinden der $\vartheta$-Functionen.}.
+%
+% EMPHASIS (HOUSESTYLE R20/R24). The print's emphasis device is italic, used for personal names
+% (Abel, B. Riemann) and stressed mathematical conditions. Both are rendered \emph:
+%   * p. 161: "\emph{Abel}schen" — only the name is italic, suffix upright.
+%   * p. 161: "(Von Herrn \emph{B.~Riemann} zu Göttingen.)"
+%   * p. 162: "\emph{und nicht identisch für jeden Werth von $z$ verschwindet}"
+%
+% NOTATION — the author's own, followed symbol by symbol:
+%   * The theta function is printed with cursive Greek theta and transcribed as \vartheta throughout.
+%   * Riemann's vector abbreviation for systems of variables:
+%     \left(\overset{m}{\underset{1}{v}}(v_\nu)\right), \vartheta\left(\overset{p}{\underset{1}{v}}(v_\nu)\right),
+%     \left(\overset{p}{\underset{1}{v}}(r_\nu)\right), \left(\overset{p}{\underset{1}{v}}(e_\nu)\right),
+%     \overset{p}{\underset{1}{\varrho}}(r_\varrho), \overset{m}{\underset{1}{\mu}}(s_\mu, z_\mu).
+%     The operator symbol is Roman italic v (and \varrho, \mu, etc.), distinct from Greek \nu.
+%   * Derivatives of \vartheta: \vartheta'_\nu, \vartheta''_{\nu,\mu}, \vartheta^{(m)}.
+%   * Crosscut notation: u_\nu^+, u_\nu^-.
+%   * Equation tags: \tag{(1.)}, \tag{(2.)}, etc. matching the print's left-hand numbers.
+%
+% APPARENT PRINTER'S ERRORS (HOUSESTYLE R4, R10):
+%   * p. 171, formula (4.): the second product sign in the denominator is printed as \prod (\Pi)
+%     over \nu=1..\nu=p, where mathematical sense requires a summation \sum over \nu. Transcribed
+%     faithfully as printed with an accompanying \ednote explaining the misprint.
+%
+% There are no figures in this work.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{161}
+\section*{Ueber das Verschwinden der $\vartheta$-Functionen.}
+
+(Von Herrn \emph{B.~Riemann} zu Göttingen.)
+
+Die zweite Abtheilung meiner im $54^{\text{sten}}$ Bande dieses Journals erschienenen Theorie der \emph{Abel}schen Functionen enthält den Beweis eines Satzes über das Verschwinden der $\vartheta$-Functionen, welchen ich sogleich wieder anführen werde, indem ich dabei die in jener Abhandlung angewandten Bezeichnungen als dem Leser bekannt voraussetze. Alles in der Abhandlung noch Folgende enthält kurze Andeutungen über die Anwendung dieses Satzes, welcher bei unserer Methode, die sich auf die Bestimmung der Functionen durch ihre Unstetigkeiten und ihr Unendlichwerden stützt, wie man leicht sieht, die Grundlage der Theorie der \emph{Abel}schen Functionen bilden muss. Bei dem Satze selbst und dessen Beweise ist jedoch der Umstand nicht gehörig berücksichtigt worden, dass die $\vartheta$-Function durch die Substitution der Integrale algebraischer Functionen Einer Veränderlichen identisch, d.~h. für jeden Werth dieser Veränderlichen, verschwinden kann. Diesem Mangel abzuhelfen ist die folgende kleine Abhandlung bestimmt.
+
+Bei der Darstellung der Untersuchungen über $\vartheta$-Functionen mit einer unbestimmten Anzahl von Variablen macht sich das Bedürfniss einer abkürzenden Bezeichnung einer Reihe, wie
+\[
+v_1,\quad v_2,\quad \dots,\quad v_m
+\]
+geltend, so bald der Ausdruck von $v_\nu$ durch $\nu$ complicirt ist. Man könnte dieses Zeichen ganz analog den Summen- und Productenzeichen bilden; eine solche Bezeichnung würde aber zu viel Raum wegnehmen und innerhalb der Functionszeichen unbequem für den Druck sein; ich ziehe es daher vor
+\[
+v_1,\quad v_2,\quad \dots,\quad v_m \quad\text{durch}\quad \left(\overset{m}{\underset{1}{v}}(v_\nu)\right)
+\]
+zu bezeichnen, also
+\[
+\vartheta(v_1, v_2, \dots, v_p) \quad\text{durch}\quad \vartheta\left(\overset{p}{\underset{1}{v}}(v_\nu)\right).
+\]
+
+\section*{1.}
+
+Wenn man in der Function $\vartheta(v_1, v_2, \dots, v_p)$ für die $p$ Veränderlichen $v$ die $p$ Integrale $u_1-e_1$, $u_2-e_2$, \dots, $u_p-e_p$ algebraischer wie die Fläche
+\origpage{162}
+$T$ verzweigter Functionen von $z$ substituirt, so erhält man eine Function von $z$, welche in der ganzen Fläche $T$ ausser den Linien $b$ sich stetig ändert, beim Uebertritt von der negativen auf die positive Seite der Linie $b_\nu$ aber den Factor $e^{-u^+_\nu-u^-_\nu+2e_\nu}$ erlangt. Wie im \S.~22 bewiesen worden ist, wird diese Function, wenn sie nicht für alle Werthe von $z$ verschwindet, nur für $p$ Punkte der Fläche $T$ unendlich klein von der ersten Ordnung. Diese Punkte wurden durch $\eta_1$, $\eta_2$, \dots, $\eta_p$ bezeichnet, und der Werth der Function $u_\nu$ im Punkte $\eta_\mu$ durch $\alpha_\nu^{(\mu)}$. Es ergab sich dann nach den $2p$ Modulsystemen der $\vartheta$-Function die Congruenz
+\[
+\tag{(1.)}
+(e_1, e_2, \dots, e_p) \equiv \left(\sum_1^p \alpha_1^{(\mu)} + K_1,\, \sum_1^p \alpha_2^{(\mu)} + K_2,\, \dots,\, \sum_1^p \alpha_p^{(\mu)} + K_p\right),
+\]
+worin die Grössen $K$ von den bis dahin noch willkürlichen additiven Constanten in den Functionen $u$ abhingen, aber von den Grössen $e$ und den Punkten $\eta$ unabhängig waren.
+
+Führt man die dort angegebene Rechnung aus, so findet sich
+\[
+\tag{(2.)}
+2K_\nu = \sum \frac{1}{\pi i} \int (u_\nu^+ + u_\nu^-) \, du_{\nu'} - \varepsilon_\nu \pi i - \sum_{\mu=1}^{\mu=p} \varepsilon'_\mu a_{\mu,\nu}.
+\]
+In diesem Ausdrucke ist das Integral $\displaystyle\int (u_\nu^+ + u_\nu^-) \, du_{\nu'}$ positiv durch $b_{\nu'}$ auszudehnen, und in der Summe sind für $\nu'$ alle Zahlen von 1 bis $p$ ausser $\nu$ zu setzen; $\varepsilon_\nu = \pm 1$, je nachdem das Ende von $l_\nu$ auf der positiven oder negativen Seite von $a_\nu$ liegt, und $\varepsilon'_\nu = \pm 1$, je nachdem dasselbe auf der positiven oder negativen Seite von $b_\nu$ liegt. Die Bestimmung der Vorzeichen ist übrigens nur nöthig, wenn die Grössen $e$ nach den in \S.~22 gegebenen Gleichungen aus den Unstetigkeiten von $\log \vartheta$ völlig bestimmt werden sollen; die obige Congruenz (1.) bleibt richtig, welche Vorzeichen man wählen mag.
+
+Wir behalten zunächst die dort gemachte vereinfachende Voraussetzung bei, dass die additiven Constanten in den Functionen $u$ so bestimmt werden, dass die Grössen $K$ sämmtlich gleich Null sind. Um die so gewonnenen Resultate schliesslich von dieser beschränkenden Voraussetzung zu befreien, hat man offenbar nur nöthig, überall in den $\vartheta$-Functionen zu den Argumenten $-K_1$, $-K_2$, \dots, $-K_p$ hinzuzufügen.
+
+Wenn also die Function $\vartheta(u_1-e_1, u_2-e_2, \dots, u_p-e_p)$ für die $p$ Punkte $\eta_1$, $\eta_2$, \dots, $\eta_p$ verschwindet \emph{und nicht identisch für jeden Werth von $z$ verschwindet}, so ist
+\[
+(e_1, e_2, \dots, e_p) \equiv \left(\sum_1^p \alpha_1^{(\mu)},\, \sum_1^p \alpha_2^{(\mu)},\, \dots,\, \sum_1^p \alpha_p^{(\mu)}\right).
+\]
+
+\origpage{163}
+Dieser Satz gilt für ganz beliebige Werthe der Grössen $e$, und wir haben hieraus, indem wir den Punkt $(s, z)$ mit dem Punkte $\eta_p$ zusammenfallen liessen, geschlossen, dass
+\[
+\vartheta\left(-\sum_1^{p-1} \alpha_1^{(\mu)}, -\sum_1^{p-1} \alpha_2^{(\mu)}, \dots, -\sum_1^{p-1} \alpha_p^{(\mu)}\right) = 0,
+\]
+oder da die $\vartheta$-Function gerade ist,
+\[
+\vartheta\left(\sum_1^{p-1} \alpha_1^{(\mu)}, \sum_1^{p-1} \alpha_2^{(\mu)}, \dots, \sum_1^{p-1} \alpha_p^{(\mu)}\right) = 0,
+\]
+welches auch die Punkte $\eta_1$, $\eta_2$, \dots, $\eta_{p-1}$ seien.
+
+\section*{2.}
+
+Der Beweis dieses Satzes bedarf jedoch einer Vervollständigung wegen des Umstandes, dass die Function $\vartheta(u_1-e_1, u_2-e_2, \dots, u_p-e_p)$ identisch verschwinden kann (was in der That bei jedem System von gleich verzweigten algebraischen Functionen für gewisse Werthe der Grössen $e$ eintritt.)
+
+Wegen dieses Umstandes muss man sich begnügen, zunächst zu zeigen, dass der Satz richtig bleibt, während die Punkte $\eta$ unabhängig von einander innerhalb endlicher Grenzen ihre Lage ändern. Hieraus folgt dann die allgemeine Richtigkeit des Satzes nach dem Principe, dass eine Function einer complexen Grösse nicht innerhalb eines endlichen Gebiets gleich Null sein kann, ohne überall gleich Null zu sein.
+
+Wenn $z$ gegeben ist, so können die Grössen $e_1$, $e_2$, \dots, $e_p$ immer so gewählt werden, dass $\vartheta(u_1-e_1, u_2-e_2, \dots, u_p-e_p)$ nicht verschwindet; denn sonst müsste die Function $\vartheta(v_1, v_2, \dots, v_p)$ für jedwede Werthe der Grössen $v$ verschwinden, und folglich müssten in ihrer Entwicklung nach ganzen Potenzen von $e^{2v_1}$, $e^{2v_2}$, \dots, $e^{2v_p}$ sämmtliche Coefficienten gleich Null sein, was nicht der Fall ist. Die Grössen $e$ können sich dann von einander unabhängig innerhalb endlicher Grössengebiete ändern, ohne dass die Function $\vartheta(u_1-e_1, u_2-e_2, \dots, u_p-e_p)$ für diesen Werth von $z$ verschwindet. Oder mit anderen Worten: man kann immer ein Grössengebiet $E$ von $2p$ Dimensionen angeben, innerhalb dessen sich das System der Grössen $e$ bewegen kann, ohne dass die Function $\vartheta(u_1-e_1, u_2-e_2, \dots, u_p-e_p)$ für diesen Werth von $z$ verschwindet. Sie wird also nur für $p$ Lagen von $(s, z)$ unendlich klein von der ersten Ordnung, und bezeichnet man diese Punkte durch $\eta_1$, $\eta_2$, \dots, $\eta_p$, so ist
+\[
+\tag{(1.)}
+(e_1, e_2, \dots, e_p) \equiv \left(\sum_1^p \alpha_1^{(\mu)}, \sum_1^p \alpha_2^{(\mu)}, \dots, \sum_1^p \alpha_p^{(\mu)}\right).
+\]
+
+\origpage{164}
+Jeder Bestimmungsweise des Systems der Grössen $e$ innerhalb $E$ oder jedem Punkte von $E$ entspricht dann eine Bestimmungsweise der Punkte $\eta$, deren Gesammtheit ein dem Grössengebiete $E$ entsprechendes Grössengebiet $H$ bildet. In Folge der Gleichung (1.) entspricht jedem Punkte von $H$ aber auch nur ein Punkt von $E$; hätte also $H$ nur $2p-1$, oder weniger Dimensionen, so würde $E$ nicht $2p$ Dimensionen haben können. Es hat folglich $H$ $2p$ Dimensionen. Die Schlüsse, auf welche sich unser Satz stützt, bleiben daher anwendbar für beliebige Lagen der Punkte $\eta$ innerhalb endlicher Gebiete, und die Gleichung
+\[
+\vartheta\left(-\sum_1^{p-1} \alpha_1^{(\mu)},\, -\sum_1^{p-1} \alpha_2^{(\mu)},\, \dots,\, -\sum_1^{p-1} \alpha_p^{(\mu)}\right) = 0
+\]
+gilt für beliebige Lagen der Punkte $\eta_1$, $\eta_2$, \dots, $\eta_{p-1}$ innerhalb endlicher Gebiete und folglich allgemein.
+
+\section*{3.}
+
+Hieraus folgt, dass sich das Grössensystem $(e_1, e_2, \dots, e_p)$ immer und nur auf eine Weise congruent einem Ausdrucke von der Form $\left(\overset{p}{\underset{1}{v}}\left(\displaystyle\sum_1^p \alpha_\nu^{(\mu)}\right)\right)$ setzen lässt, wenn $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu - e_\nu)\right)$ nicht für jeden Werth von $z$ verschwindet; denn liessen sich die Punkte $\eta_1$, $\eta_2$, \dots, $\eta_p$ auf mehr als eine Weise so bestimmen, dass der Congruenz
+\[
+\left(\overset{p}{\underset{1}{v}}(e_\nu)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^p \alpha_\nu^{(\mu)}\right)\right)
+\]
+genügt wäre, so würde nach dem eben bewiesenen Satze die Function $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu - e_\nu)\right)$ für mehr als $p$ Punkte verschwinden, ohne identisch gleich Null zu sein, was unmöglich ist.
+
+Wenn $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu - e_\nu)\right)$ identisch verschwindet, muss man, um $\left(\overset{p}{\underset{1}{v}}(e_\nu)\right)$ in die obige Form zu setzen, $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu + \alpha_\nu^{(1)} - u_\nu^{(1)} - e_\nu)\right)$ betrachten, und wenn diese Function identisch für jeden Werth von $z$, $s_1$, $z_1$ verschwindet, die Function $\vartheta\left(\overset{p}{\underset{1}{v}}\left(u_\nu + \displaystyle\sum_1^2 \alpha_\nu^{(\mu)} - \displaystyle\sum_1^2 u_\nu^{(\mu)} - e_\nu\right)\right)$.
+
+\origpage{165}
+\[
+\tag{(1.)}
+\left\{
+\begin{array}{l}
+\text{Wir nehmen an, dass} \\
+\quad \vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m \alpha_\nu^{(p+2-\mu)} - \sum_1^{m-1} u_\nu^{(p-\mu)} - e_\nu\right)\right) \\
+\text{identisch verschwindet,} \\
+\quad \vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^{m+1} \alpha_\nu^{(p+2-\mu)} - \sum_1^m u_\nu^{(p-\mu)} - e_\nu\right)\right) \\
+\text{aber nicht identisch verschwindet.}
+\end{array}
+\right.
+\]
+Diese letztere Function verschwindet dann, als Function von $\zeta_{p+1}$ betrachtet, für $\varepsilon_{p-1}$, $\varepsilon_{p-2}$, \dots, $\varepsilon_{p-m}$, ausserdem also noch für $p-m$ Punkte, und bezeichnet man diese mit $\eta_1$, $\eta_2$, \dots, $\eta_{p-m}$, so ist
+\[
+\left(\overset{p}{\underset{1}{v}}\left(-\sum_{p-m+1}^p \alpha_\nu^{(\mu)} + e_\nu\right)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^{p-m} \alpha_\nu^{(\mu)}\right)\right)
+\]
+und diese Punkte $\eta_1$, $\eta_2$, \dots, $\eta_{p-m}$ können nur auf eine Weise so bestimmt werden, dass diese Congruenz erfüllt wird, weil sonst die Function für mehr als $p$ Punkte verschwinden würde. Dieselbe Function verschwindet, als Function von $z_{p-1}$ betrachtet, ausser für $\eta_{p+1}$, $\eta_p$, \dots, $\eta_{p-m+1}$ noch für $p-m-1$ Punkte, und bezeichnet man diese durch $\varepsilon_1$, $\varepsilon_2$, \dots, $\varepsilon_{p-m-1}$, so ist
+\[
+\left(\overset{p}{\underset{1}{v}}\left(-\sum_{p-m}^{p-2} u_\nu^{(\mu)} - e_\nu\right)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^{p-m-1} u_\nu^{(\mu)}\right)\right),
+\]
+und die Punkte $\varepsilon_1$, $\varepsilon_2$, \dots, $\varepsilon_{p-m-1}$ sind durch diese Congruenz völlig bestimmt.
+
+Unter der gemachten Voraussetzung (1.) können also, um den Congruenzen
+\[
+\tag{(2.)}
+\left(\overset{p}{\underset{1}{v}}(e_\nu)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^p \alpha_\nu^{(\mu)}\right)\right)
+\]
+und
+\[
+\tag{(3.)}
+\left(\overset{p}{\underset{1}{v}}(-e_\nu)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^{p-2} u_\nu^{(\mu)}\right)\right)
+\]
+zu genügen, $m$ von den Punkten $\eta$ und $m-1$ von den Punkten $\varepsilon$ beliebig gewählt werden, dadurch aber sind die übrigen bestimmt. Offenbar gelten diese Sätze auch umgekehrt, d.~h. die Function verschwindet, wenn eine dieser Bedingungen erfüllt ist. Wenn also die Congruenz (2.) auf mehr als eine Weise lösbar ist, so ist auch die Congruenz (3.) lösbar, und wenn von den Punkten $\eta$, $m$ aber nicht mehr beliebig gewählt werden können, so können von den Punkten $\varepsilon$, $m-1$ beliebig gewählt werden und dadurch sind die übrigen bestimmt, und umgekehrt.
+
+\origpage{166}
+Auf ganz ähnlichem Wege ergiebt sich, dass, wenn
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) = 0
+\]
+ist, die Congruenzen
+\[
+\tag{(4.)}
+\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^{p-1} \alpha_\nu^{(\mu)}\right)\right),
+\]
+\[
+\tag{(5.)}
+\left(\overset{p}{\underset{1}{v}}(-r_\nu)\right) \equiv \left(\overset{p}{\underset{1}{v}}\left(\sum_1^{p-1} u_\nu^{(\mu)}\right)\right)
+\]
+immer lösbar sind; und zwar können sowohl von den Punkten $\eta$ als von den Punkten $\varepsilon$, $m$ beliebig gewählt werden, und es sind dadurch die übrigen $p-1-m$ bestimmt, wenn
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m u_\nu^{(\mu)} - \sum_1^m \alpha_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+identisch gleich Null ist,
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^{m+1} u_\nu^{(\mu)} - \sum_1^{m+1} \alpha_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+aber nicht identisch gleich Null ist, wobei der Fall $m=0$ nicht ausgeschlossen ist. Dieser Satz lässt sich auch umkehren. Wenn also von den Punkten $\eta$, $m$ und nicht mehr beliebig gewählt werden können, so ist die Voraussetzung desselben erfüllt; und es können folglich auch von den Punkten $\varepsilon$, $m$ und nicht mehr beliebig gewählt werden.
+
+\section*{4.}
+
+\[
+\tag{(1.)}
+\left\{
+\begin{array}{l}
+\text{Bezeichnen wir die Derivirte von} \\
+\quad \vartheta(v_1, v_2, \dots, v_p) \\
+\text{nach } v_\nu \text{ mit } \vartheta'_\nu\text{, die zweite Derivirte nach } v_\nu \text{ und } v_\mu \text{ mit } \vartheta''_{\nu,\mu}\text{ u.~s.~f.,}
+\end{array}
+\right.
+\]
+so sind, wenn $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)\right)$ identisch für jeden Werth von $z_1$ und $\zeta_1$ verschwindet, sämmtliche Functionen $\vartheta'\left(\overset{p}{\underset{1}{v}}(r_\nu)\right)$ gleich Null. In der That geht die Gleichung
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)\right) = 0,
+\]
+\origpage{167}
+wenn $s_1$ und $z_1$ unendlich wenig von $\sigma_1$ und $\zeta_1$ verschieden sind, über in die Gleichung
+\[
+\sum_1^p \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) d\alpha_\mu^{(1)} = 0.
+\]
+Nehmen wir an, dass
+\[
+du_\mu = \frac{\varphi_\mu(s, z)\,\partial z}{\displaystyle\frac{\partial F}{\partial s}}
+\]
+sei, so verwandelt sich diese Gleichung nach Weglassung des Factors $\displaystyle\frac{\partial \zeta_1}{\displaystyle\frac{\partial F(\sigma_1, \zeta_1)}{\partial \sigma_1}}$ in
+\[
+\sum_1^p \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) \varphi_\mu(\sigma_1, \zeta_1) = 0;
+\]
+und da zwischen den Functionen $\varphi$ keine lineare Gleichung mit constanten Coefficienten stattfindet, so folgt hieraus, dass sämmtliche erste Derivirten von $\vartheta(v_1, v_2, \dots, v_p)$ für $\overset{p}{\underset{1}{v}}(v_\nu = r_\nu)$ verschwinden müssen.
+
+Um den umgekehrten Satz zu beweisen, nehmen wir an, dass $\overset{p}{\underset{1}{v}}(v_\nu = r_\nu)$ und $\overset{p}{\underset{1}{v}}(v_\nu = t_\nu)$ zwei Werthsysteme seien, für welche die Function $\vartheta$ verschwindet, ohne für $\overset{p}{\underset{1}{v}}(v_\nu = u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)$ und $\overset{p}{\underset{1}{v}}(v_\nu = u_\nu^{(1)} - \alpha_\nu^{(1)} + t_\nu)$ identisch zu verschwinden, und bilden den Ausdruck
+\[
+\tag{(2.)}
+\frac{\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)\right)\vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^{(1)} - u_\nu^{(1)} + r_\nu)\right)}{\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + t_\nu)\right)\vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^{(1)} - u_\nu^{(1)} + t_\nu)\right)}.
+\]
+Betrachten wir diesen Ausdruck als Function von $z_1$, so ergiebt sich, dass er eine algebraische Function von $z_1$ und zwar eine rationale Function von $s_1$ und $z_1$ ist, da Nenner und Zähler in $T''$ stetig sind und an den Querschnitten dieselben Factoren erlangen. Für $z_1 = \zeta_1$ und $s_1 = \sigma_1$ werden Nenner und Zähler unendlich klein von der zweiten Ordnung, so dass die Function endlich bleibt; die übrigen Werthe aber, für welche Nenner oder Zähler verschwinden, sind, wie oben bewiesen, durch die Werthe der Grössen $r$ und der Grössen $t$ völlig bestimmt, also von $\zeta_1$ ganz unabhängig. Da nun eine algebraische Function durch die Werthe, für welche sie Null und unendlich wird, bis auf einen
+\origpage{168}
+constanten Factor bestimmt ist, so ist der Ausdruck gleich einer rationalen von $\zeta_1$ unabhängigen Function von $s_1$ und $z_1$, $\chi(s_1, z_1)$, multiplicirt in eine Constante, d.~h. eine von $z_1$ unabhängige Grösse. Da der Ausdruck symmetrisch in Bezug auf die Grössensysteme $(s_1, z_1)$ und $(\sigma_1, \zeta_1)$ ist, so ist diese Constante gleich $\chi(\sigma_1, \zeta_1)$, multiplicirt in eine auch von $\zeta_1$ unabhängige Grösse $A$. Setzt man nun $\sqrt{A}\cdot\chi(s, z) = \varrho(s, z)$, so erhält man für unsern Ausdruck (2.) den Werth
+\[
+\tag{(3.)}
+\varrho(s_1, z_1)\,\varrho(\sigma_1, \zeta_1)
+\]
+wo $\varrho(s, z)$ eine rationale Function von $s$ und $z$ ist.
+
+Um diese zu bestimmen, hat man nur nöthig $\zeta_1 = z_1$ und $\sigma_1 = s_1$ werden zu lassen; es ergiebt sich dann
+\[
+(\varrho(s_1, z_1))^2 = \left\{\frac{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) du_\mu^{(1)}}{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(t_\nu)\right) du_\mu^{(1)}}\right\}^2
+\]
+oder nach Ausziehung der Quadratwurzel und Weghebung des Factors $\displaystyle\frac{dz_1}{\displaystyle\frac{\partial F(s_1, z_1)}{\partial s_1}}$
+\[
+\tag{(4.)}
+\varrho(s_1, z_1) = \pm \frac{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) \varphi_\mu(s_1, z_1)}{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(t_\nu)\right) \varphi_\mu(s_1, z_1)}.
+\]
+Man hat daher aus (3.) und (4.) die Gleichung
+\[
+\tag{(5.)}
+\left\{
+\begin{aligned}
+& \frac{\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)\right)\vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^{(1)} - u_\nu^{(1)} + r_\nu)\right)}{\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + t_\nu)\right)\vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^{(1)} - u_\nu^{(1)} + t_\nu)\right)} \\
+&= \frac{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) \varphi_\mu(s_1, z_1)}{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(t_\nu)\right) \varphi_\mu(s_1, z_1)} \cdot \frac{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) \varphi_\mu(\sigma_1, \zeta_1)}{\sum_\mu \vartheta'_\mu\left(\overset{p}{\underset{1}{v}}(t_\nu)\right) \varphi_\mu(\sigma_1, \zeta_1)}.
+\end{aligned}
+\right.
+\]
+Aus dieser Gleichung folgt, dass $\vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^{(1)} - \alpha_\nu^{(1)} + r_\nu)\right)$ für jeden Werth
+\origpage{169}
+von $z_1$ und $\zeta_1$ gleich Null sein muss, wenn die ersten Derivirten der Function $\vartheta(v_1, v_2, \dots, v_p)$ für $\overset{p}{\underset{1}{v}}(v_\nu = r_\nu)$ sämmtlich verschwinden.
+
+\section*{5.}
+
+Wenn
+\[
+\tag{(1.)}
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m \alpha_\nu^{(\mu)} - \sum_1^m u_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+identisch, d.~h. für jedwede Werthe von $\overset{m}{\underset{1}{\mu}}(\sigma_\mu, \zeta_\mu)$ und $\overset{m}{\underset{1}{\mu}}(s_\mu, z_\mu)$, verschwindet, so findet man auf dem oben angegebenen Wege zunächst, indem man $\zeta_m = z_m$, $\sigma_m = s_m$ werden lässt, dass die ersten Derivirten der Function $\vartheta(v_1, v_2, \dots, v_p)$ für $\overset{p}{\underset{1}{v}}\left(v_\nu = \displaystyle\sum_1^{m-1} \alpha_\nu^{(\mu)} - \displaystyle\sum_1^{m-1} u_\nu^{(\mu)} + r_\nu\right)$ sämmtlich verschwinden, dann, indem man $\zeta_{m-1} - z_{m-1}$, $\sigma_{m-1} - s_{m-1}$ unendlich klein werden lässt, dass für $\overset{p}{\underset{1}{v}}\left(v_\nu = \displaystyle\sum_1^{m-2} \alpha_\nu^{(\mu)} - \displaystyle\sum_1^{m-2} u_\nu^{(\mu)} + r_\nu\right)$ auch die zweiten Derivirten sämmtlich verschwinden; und offenbar ergiebt sich allgemein, dass die Derivirten $n^{\text{ter}}$ Ordnung sämmtlich verschwinden für $\overset{p}{\underset{1}{v}}\left(v_\nu = \displaystyle\sum_1^{m-n} \alpha_\nu^{(\mu)} - \displaystyle\sum_1^{m-n} u_\nu^{(\mu)} + r_\nu\right)$, welche Werthe auch die Grössen $z$ und die Grössen $\zeta$ haben mögen.
+
+Es folgt hieraus, dass unter der gegenwärtigen Voraussetzung (1.) für $\overset{p}{\underset{1}{v}}(v_\nu = r_\nu)$ die ersten bis $m^{\text{ten}}$ Derivirten der Function $\vartheta(v_1, v_2, \dots, v_p)$ sämmtlich gleich Null sind.
+
+Um zu zeigen, dass dieser Satz auch umgekehrt gilt, beweisen wir zunächst, dass wenn $\vartheta\left(\overset{p}{\underset{1}{v}}\left(\displaystyle\sum_1^{m-1} \alpha_\nu^{(\mu)} - \displaystyle\sum_1^{m-1} u_\nu^{(\mu)} + r_\nu\right)\right)$ identisch verschwindet und die Grössen $\vartheta^{(m)}\left(\overset{p}{\underset{1}{v}}(r_\nu)\right)$ sämmtlich gleich Null sind, auch $\vartheta\left(\overset{p}{\underset{1}{v}}\left(\displaystyle\sum_1^m \alpha_\nu^{(\mu)} - \displaystyle\sum_1^m u_\nu^{(\mu)} + r_\nu\right)\right)$ identisch verschwinden muss und verallgemeinern zu diesem Zwecke die Gleichung (§.~4, (5.)).
+
+Wir nehmen an, dass $\vartheta\left(\overset{p}{\underset{1}{v}}\left(\displaystyle\sum_1^{m-1} u_\nu^{(\mu)} - \displaystyle\sum_1^{m-1} \alpha_\nu^{(\mu)} + r_\nu\right)\right)$ identisch verschwinde, $\vartheta\left(\overset{p}{\underset{1}{v}}\left(\displaystyle\sum_1^m u_\nu^{(\mu)} - \displaystyle\sum_1^m \alpha_\nu^{(\mu)} + r_\nu\right)\right)$ aber nicht identisch verschwinde, behalten in Bezug
+\origpage{170}
+auf die Grössen $t$ die frühere Voraussetzung bei und betrachten den Ausdruck
+\[
+\tag{(2.)}
+\frac{\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m u_\nu^{(\mu)} - \sum_1^m \alpha_\nu^{(\mu)} + r_\nu\right)\right) \vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m \alpha_\nu^{(\mu)} - \sum_1^m u_\nu^{(\mu)} + r_\nu\right)\right) \prod_{\varrho\varrho'} \vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^\varrho - u_\nu^{\varrho'} + t_\nu)\right) \vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^\varrho - \alpha_\nu^{\varrho'} + t_\nu)\right)}{\left(\overset{m}{\underset{1}{\Pi}}\right)^2 \vartheta\left(\overset{p}{\underset{1}{v}}(u_\nu^\varrho - \alpha_\nu^{\varrho'} + t_\nu)\right) \vartheta\left(\overset{p}{\underset{1}{v}}(\alpha_\nu^\varrho - u_\nu^{\varrho'} + t_\nu)\right)}
+\]
+In diesem Ausdrucke sind unter den Productzeichen sowohl für $\varrho$, als für $\varrho'$ sämmtliche Werthe von 1 bis $m$ zu setzen, im Zähler aber die Fälle, wo $\varrho = \varrho'$ würde, wegzulassen.
+
+Betrachten wir diesen Ausdruck als Function von $z_1$, so ergiebt sich, dass er an den Querschnitten den Factor 1 erlangt und folglich eine algebraische Function von $z_1$ ist. Für $z_1 = \zeta_\varrho$ und $s_1 = \sigma_\varrho$ werden Nenner und Zähler unendlich klein von der zweiten Ordnung, der Bruch bleibt also endlich; die übrigen Werthe aber, für welche Zähler und Nenner verschwinden, sind durch die Grössen $\overset{m}{\underset{2}{\mu}}(s_\mu, z_\mu)$, die Grössen $r$ und die Grössen $t$, wie oben (§.~3) bewiesen, völlig bestimmt, und folglich von den Grössen $\zeta$ ganz unabhängig. Da der Ausdruck nun eine symmetrische Function von den Grössen $z$ ist, so gilt dasselbe für jedes beliebige $z_\mu$: er ist eine algebraische Function von $z_\mu$, und die Werthe dieser Grösse, für welche er unendlich gross oder unendlich klein wird, sind von den Grössen $\zeta$ unabhängig. Er ist daher gleich einer von den Grössen $\zeta$ unabhängigen algebraischen Function der Grössen $z$, $\chi(z_1, z_2, \dots, z_m)$, multiplicirt in einen von den Grössen $z$ unabhängigen Factor. Da er aber ungeändert bleibt, wenn man die Grössen $z$ mit den Grössen $\zeta$ vertauscht, so ist dieser Factor gleich $\chi(\zeta_1, \zeta_2, \dots, \zeta_m)$, multiplicirt mit einer von den Grössen $z$ und den Grössen $\zeta$ unabhängigen Constanten $A$; und wir können daher, wenn wir $\sqrt{A}\cdot\chi(z_1, z_2, \dots, z_m) = \psi(z_1, z_2, \dots, z_m)$ setzen, unserm Ausdrucke (2.) die Form
+\[
+\tag{(3.)}
+\psi(z_1, z_2, \dots, z_m)\,\psi(\zeta_1, \zeta_2, \dots, \zeta_m)
+\]
+geben, wo $\psi(z_1, z_2, \dots, z_m)$ eine algebraische von den Grössen $\zeta$ unabhängige Function der Grössen $z$ ist, welche in Folge ihrer Verzweigungsart sich rational in $\overset{m}{\underset{1}{\mu}}(s_\mu, z_\mu)$ ausdrücken lassen muss. Lässt man nun die Punkte $\eta$ mit den Punkten $\varepsilon$ zusammenfallen, so dass die Grössen $\zeta_\mu - z_\mu$ und die Grössen $\sigma_\mu - s_\mu$ sämmtlich unendlich klein werden, so ergiebt sich, wenn man die Derivirten
+\origpage{171}
+von $\vartheta(v_1, v_2, \dots, v_p)$ wie oben (§.~4, (1.)) bezeichnet,
+\[
+\tag{(4.)}
+\psi(z_1, z_2, \dots, z_m) = \pm \frac{\left(\overset{p}{\underset{1}{\Sigma}}\right)^m \vartheta^{(m)}_{\nu_1, \nu_2, \dots, \nu_m}\left(\overset{p}{\underset{1}{\varrho}}(r_\varrho)\right) du_{\nu_1}^{(1)} du_{\nu_2}^{(2)} \dots du_{\nu_m}^{(m)}}{\displaystyle\prod_{\mu=1}^{\mu=m} \prod_{\nu=1}^{\nu=p} \vartheta'_\nu\left(\overset{p}{\underset{1}{\varrho}}(t_\varrho)\right) du_\nu^{(\mu)}},
+\]\ednote{The second product sign in the denominator is printed as $\Pi$; from the context, a summation over $\nu$ is required. Reproduced here as printed.}
+wo die Summationen im Zähler sich auf $\nu_1$, $\nu_2$, \dots, $\nu_m$ beziehen. Es ist kaum nöthig zu bemerken, dass die Wahl des Vorzeichens gleichgültig ist, da sie auf den Werth von $\psi(z_1, z_2, \dots, z_m)\,\psi(\zeta_1, \zeta_2, \dots, \zeta_m)$ keinen Einfluss hat, und dass statt der Grössen $du_1^{(\mu)}$, $du_2^{(\mu)}$, \dots, $du_p^{(\mu)}$ auch, im Zähler und Nenner gleichzeitig, die ihnen proportionalen Grössen $\varphi_1(s_\mu, z_\mu)$, $\varphi_2(s_\mu, z_\mu)$, \dots, $\varphi_p(s_\mu, z_\mu)$ eingeführt werden können.
+
+Aus der in (2.), (3.) und (4.) enthaltenen Gleichung, welche für den Fall bewiesen ist, dass
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^{m-1} u_\nu^{(\mu)} - \sum_1^{m-1} \alpha_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+gleich Null und
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m u_\nu^{(\mu)} - \sum_1^m \alpha_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+von Null verschieden ist, folgt, dass
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^m u_\nu^{(\mu)} - \sum_1^m \alpha_\nu^{(\mu)} + r_\nu\right)\right)
+\]
+nicht von Null verschieden sein kann, wenn die Functionen $\vartheta^{(m)}\left(\overset{p}{\underset{1}{v}}(r_\nu)\right)$ sämmtlich gleich Null sind.
+
+Wenn also die Functionen $\vartheta^{(m+1)}\left(\overset{p}{\underset{1}{v}}(r_\nu)\right)$ sämmtlich gleich Null sind, so folgt aus der Gültigkeit der Gleichung
+\[
+\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^n u_\nu^{(\mu)} - \sum_1^n \alpha_\nu^{(\mu)} + r_\nu\right)\right) = 0
+\]
+für $n=m$ ihre Gültigkeit für $n=m+1$. Gilt daher die Gleichung für $n=0$ oder ist $\vartheta\left(\overset{p}{\underset{1}{v}}(r_\nu)\right) = 0$ und verschwinden die ersten bis $m^{\text{ten}}$ Derivirten der Function $\vartheta\left(\overset{p}{\underset{1}{v}}(v_\nu)\right)$ für $\overset{p}{\underset{1}{v}}(v_\nu = r_\nu)$ sämmtlich, die $(m+1)^{\text{ten}}$ aber nicht sämmtlich,
+\origpage{172}
+so gilt die Gleichung auch für alle grösseren Werthe von $n$ bis $n=m$, aber nicht für $n=m+1$; denn aus $\displaystyle\vartheta\left(\overset{p}{\underset{1}{v}}\left(\sum_1^{m+1} u_\nu^{(\mu)} - \sum_1^{m+1} \alpha_\nu^{(\mu)} + r_\nu\right)\right) = 0$ würde, wie wir vorher schon gefunden hatten, folgen, dass die Grössen $\vartheta^{(m+1)}\left(\overset{p}{\underset{1}{v}}(r_\nu)\right)$ sämmtlich verschwinden müssten.
+
+\section*{6.}
+
+Fassen wir das eben Bewiesene mit dem Früheren zusammen, so erhalten wir folgendes Resultat:
+
+Ist $\vartheta(r_1, r_2, \dots, r_p) = 0$, so lassen sich $(p-1)$ Punkte $\eta_1$, $\eta_2$, \dots, $\eta_{p-1}$ so bestimmen, dass
+\[
+(r_1, r_2, \dots, r_p) \equiv \left(\sum_1^{p-1} \alpha_1^{(\mu)}, \sum_1^{p-1} \alpha_2^{(\mu)}, \dots, \sum_1^{p-1} \alpha_p^{(\mu)}\right);
+\]
+und umgekehrt.
+
+Wenn ausser der Function $\vartheta(v_1, v_2, \dots, v_p)$ auch ihre ersten bis $m^{\text{ten}}$ Derivirten für $v_1 = r_1$, $v_2 = r_2$, \dots, $v_p = r_p$ sämmtlich gleich Null, die $(m+1)^{\text{ten}}$ aber nicht sämmtlich gleich Null sind, so können $m$ von diesen Punkten $\eta$, ohne dass die Grössen $r$ sich ändern, beliebig gewählt werden und dadurch sind die übrigen $p-1-m$ völlig bestimmt.
+
+Und umgekehrt:
+
+Wenn $m$ und nicht mehr von den Punkten $\eta$, ohne dass sich die Grössen $r$ ändern, beliebig gewählt werden können, so sind ausser der Function $\vartheta(v_1, v_2, \dots, v_p)$ auch ihre ersten bis $m^{\text{ten}}$ Derivirten für $v_1 = r_1$, $v_2 = r_2$, \dots, $v_p = r_p$ sämmtlich gleich Null, die $(m+1)^{\text{ten}}$ aber nicht sämmtlich gleich Null.
+
+Die vollständige Untersuchung aller besonderen Fälle, welche bei dem Verschwinden einer $\vartheta$-Function eintreten können, war weniger nöthig wegen der besondern Systeme von gleichverzweigten algebraischen Functionen, für welche diese Fälle eintreten, als vielmehr desshalb, weil ohne diese Untersuchung Lücken in dem Beweise der Sätze entstehen würden, welche auf unsern Satz über das Verschwinden einer $\vartheta$-Function gegründet werden.
+
+Göttingen, im October 1865.
+
+\end{document}

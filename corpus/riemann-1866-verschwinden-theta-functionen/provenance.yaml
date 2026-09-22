@@ -1,0 +1,60 @@
+changelog:
+  - date: "2026-09-22"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-09-20"
+    summary: Transcription added (AI draft), pp. 161–172 from the 1866 Crelle's Journal scan.
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-20"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: [171]
+    date: "2026-09-20"
+  uncertainty_flags: 0
+  note: >-
+    Full German text of Riemann's "Ueber das Verschwinden der \vartheta-Functionen.", printed
+    pages 161–172 (numbered sections 1.–6.), from the original first printing in Crelle's Journal,
+    Band 65 (1866). Read from the GDZ scan PPN243919689_0065 (pp. 161–172); each page was inspected
+    and every displayed and inline formula checked against the scan. The paper is set in
+    Antiqua (roman type) using "ss" exclusively throughout (no "ß": dass, muss, lässt, ausser,
+    Grössen, schliessen, voraussetze). The 1866 orthography and notation are kept faithful
+    (Function, Functionen, Theorie, Theil, Theile, Werthe, Abtheilung, Constanten, Grössen,
+    Hülfe, reell, complex, unendlich klein, Veränderlichen; HOUSESTYLE R12 and R19). No figures appear
+    in this work.
+
+    Notation recorded in notation.md and followed symbol by symbol: cursive Greek \vartheta throughout;
+    Riemann's vector argument abbreviation using Roman italic v: \left(\overset{m}{\underset{1}{v}}(v_\nu)\right),
+    \vartheta\left(\overset{p}{\underset{1}{v}}(v_\nu)\right), \left(\overset{p}{\underset{1}{v}}(r_\nu)\right),
+    \left(\overset{p}{\underset{1}{v}}(e_\nu)\right), and respectively \overset{p}{\underset{1}{\varrho}}(r_\varrho),
+    \overset{m}{\underset{1}{\mu}}(s_\mu, z_\mu), \left(\overset{m}{\underset{1}{\Pi}}\right)^2,
+    \left(\overset{p}{\underset{1}{\Sigma}}\right)^m; derivatives \vartheta'_\nu, \vartheta''_{\nu,\mu},
+    \vartheta^{(m)}; crosscut boundary values u_\nu^+ and u_\nu^-; equation numbers (1.), (2.) set
+    at the right with \tag.
+
+    One apparent printer's error is annotated with an \ednote: on p. 171, formula (4.), the denominator
+    prints a product sign \prod (\Pi) over \nu=1..\nu=p where mathematical meaning requires a summation
+    \sum over \nu; this is transcribed faithfully as printed with an accompanying explanatory note.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-22"
+    note: >-
+      Full English translation of all 12 pages, made directly from our own original.tex, never from
+      an existing published translation. Every math span, \tag{}, \origpage{N} marker, and \ednote is
+      reproduced unchanged — texcompare confirms that math, \origpage markers, and refs are preserved.
+      Prose set inside formulas via text inserts is translated according to HOUSESTYLE R21 (ordinal
+      suffixes converted to -th, connectives translated, and array condition labels translated).
+      The printer's error on p. 171 flagged with \ednote in original.tex is carried over faithfully.
+      Terminology aligns with corpus/riemann-1866-verschwinden-theta-functionen/glossary.yaml and the
+      1857 Abelian functions memoir glossary.

@@ -1,0 +1,56 @@
+# Term renderings for riemann-1866-verschwinden-theta-functionen.
+# Inherited and adapted from riemann-1857-abelsche-functionen/glossary.yaml,
+# ensuring consistent terminology across Riemann's Abelian and theta papers.
+
+terms:
+  # --- the surface and dissection ---
+  Fläche: surface
+  Querschnitt: crosscut
+  Linie: line
+  Uebertritt: passage
+  positive Seite: positive side
+  negative Seite: negative side
+
+  # --- branching and Riemann surfaces ---
+  verzweigt: branched
+  gleichverzweigt: equally branched
+  Verzweigungsart: mode of branching
+
+  # --- functions and derivatives ---
+  Function: function
+  algebraische Function: algebraic function
+  rationale Function: rational function
+  ganze Function: integral function
+  stetig: continuous
+  stetig ändern: vary continuously
+  Unstetigkeit: discontinuity
+  Derivirte: derivative
+  erste Derivirte: first derivative
+  zweite Derivirte: second derivative
+  Derivirten n-ter Ordnung: derivatives of the n-th order
+  identisch verschwinden: vanish identically
+  unendlich klein von der ersten Ordnung: infinitely small of the first order
+  unendlich klein von der zweiten Ordnung: infinitely small of the second order
+  unendlich gross: infinitely large
+
+  # --- quantities and domains ---
+  Größe: quantity
+  Grössen: quantities
+  Grössensystem: system of quantities
+  Grössengebiet: domain of quantities
+  Werthsystem: system of values
+  Bestimmungsweise: mode of determination
+  additive Constante: additive constant
+
+  # --- series, theta, and moduli ---
+  Modulsystem: system of moduli
+  Periodicitätsmodul: modulus of periodicity
+  Entwicklung: expansion
+  ganze Potenzen: integral powers
+  Coefficient: coefficient
+
+  # --- textual apparatus ---
+  Abtheilung: Division
+  Abhandlung: memoir
+  Satz: theorem
+  Lehrsatz: theorem
