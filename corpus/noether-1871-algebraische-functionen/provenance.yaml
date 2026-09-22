@@ -1,0 +1,67 @@
+changelog:
+  - date: "2026-09-20"
+    summary: Transcription added (AI draft).
+  - date: "2026-09-20"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-20"
+    glossary: glossary.yaml
+    uncertainty_flags: 0
+    note: >-
+      English translation of Max Noether's "Ueber die algebraischen Functionen einer und zweier
+      Variabeln. (Note 2)", Göttinger Nachrichten 1871, pp. 267–278.
+      Translated directly from our own transcription (original.tex), never from any published
+      translation.
+
+      Terminology follows glossary.yaml and the Note 1 glossary (noether-1869-algebraische-functionen-mehrerer-variablen):
+      Geschlecht = "genus", Flächengeschlecht = "surface genus", Curvengeschlecht = "curve genus",
+      Knotenpunkt = "node", Rückkehrpunkt = "cusp", Selbstberührungspunkt = "point of self-contact",
+      Abbildung = "representation", abbildbar = "representable", Uebergangscurve = "transition curve".
+
+      All mathematical expressions, displays, tags, \origpage markers (267–278), and compositor
+      misprint \ednote annotations are preserved verbatim. Text inserts (\text{...}) inside math
+      modes were translated per HOUSESTYLE R21 (ordinal suffixes ter/ten → th, rd; \text{für } → \text{for }).
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-20"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-20"
+  uncertainty_flags: 0
+  note: >-
+    Max Noether's "Ueber die algebraischen Functionen einer und zweier Variabeln. (Note 2)",
+    Nachrichten von der Königl. Gesellschaft der Wissenschaften und der Georg-Augusts-Universität
+    zu Göttingen, 1871, Nr. 9, pp. 267–278 — complete paper, 12 of 12 pages.
+    Read from GDZ digital scans (PPN252457072_1871, images 269–280).
+    \origpage markers run 267–278 with no gaps; pipeline/houselint.py passes cleanly.
+
+    TYPOGRAPHY & HOUSE STYLE:
+    - Antiqua typesetting setting round s throughout (no ß).
+    - German guillemets »...« set tight against text.
+    - Double-bar inequality sort transcribed as \leqq.
+    - Ordinal suffixes raised in math mode: $n^{\text{ter}}$ Ordnung, etc.
+    - Multi-page footnote: Footnote 2 beginning on p. 270 and concluding on p. 271 is
+      assembled as a single unit on p. 270 per Ruling R15.
+
+    APPARENT PRINTER'S ERRORS & COMPOSITOR MISPRINTS annotated with \ednote:
+    - p. 268: "Pniseux'schen" printed with an n instead of a u (misprint for Puiseux'schen).
+    - p. 269: "Lionville's Journal" in footnote 1 printed with an n instead of a u (misprint for Liouville's).
+    - p. 270: Display for $C'$ sets an exponent 2 on $f_{n-1}$ ($f_{n-1}^2(y_2, y_1)$), where the linear
+      form $f_{n-1}$ is expected.
+    - p. 272: "Puncte" printed with a c, alongside "Punkte" with a k elsewhere in the text.
+    - p. 274: "Selbstberührungspunkte" printed with a trailing e where singular is required.
+    - p. 275: "Ebene" printed in the singular where the plural "Ebenen" is required.
+    - p. 277: Point $P$ printed where $\varPi$ was defined on p. 276.

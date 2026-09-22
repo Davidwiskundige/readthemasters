@@ -1,0 +1,106 @@
+# Term renderings for noether-1871-algebraische-functionen, applied consistently
+# across the whole translation. Format: `terms: {German as printed: English}`.
+#
+# Follows corpus/noether-1869-algebraische-functionen-mehrerer-variablen/glossary.yaml
+# and corpus/clebsch-1864-anwendung-abelschen-functionen/glossary.yaml.
+
+terms:
+  # --- central invariants and concepts ---
+  Geschlecht: genus
+  Flächengeschlecht: surface genus
+  Curvengeschlecht: curve genus
+  Klasse: class
+  Klassen: classes
+  Ordnung: order
+  Grad: degree
+
+  # --- points, lines, curves, surfaces ---
+  Punkt: point
+  Punkte: points
+  Puncte: points
+  einfacher Punkt: simple point
+  Doppelpunkt: double point
+  Doppelpunkte: double points
+  vielfacher Punkt: multiple point
+  $\nu$facher Punkt: $\nu$-fold point
+  $(2n-2)$facher Punkt: $(2n-2)$-fold point
+  Knotenpunkt: node
+  Knotenpunkte: nodes
+  singulärer Knotenpunkt: singular node
+  uniplanarer Knotenpunkt: uniplanar node
+  uniplanarer Doppelpunkt: uniplanar double point
+  konischer Knotenpunkt: conical node
+  Rückkehrpunkt: cusp
+  Rückkehrpunkte: cusps
+  Selbstberührungspunkt: point of self-contact
+  Selbstberührungspunkte: points of self-contact
+  Gerade: straight line
+  Geraden: straight lines
+  singuläre Gerade: singular straight line
+  Doppelgerade: double line
+  Rückkehrgerade: cuspidal line
+  Curve: curve
+  Curven: curves
+  vielfache Curve: multiple curve
+  Doppelcurve: double curve
+  Kante: edge
+  Kanten: edges
+  $\nu$fache Kante: $\nu$-fold edge
+  Fläche: surface
+  Flächen: surfaces
+  Ebene: plane
+  Ebenen: planes
+  Doppelebene: double plane
+  einfache Ebene: simple plane
+  Uebergangscurve: transition curve
+  »Uebergangscurve«: »transition curve«
+  ebener Querschnitt: plane cross-section
+  ebene Schnitte: plane sections
+  Kegel: cone
+  Kegelfläche: conical surface
+  Kegelschnitt: conic
+  Kegelschnitte: conics
+  Fundamentalkegelschnitt: fundamental conic
+  Doppelkegelschnitt: double conic
+  Tangentenkegel: tangent cone
+  Tangentenebene: tangent plane
+  Berührungsebene: tangent plane
+  singuläre Berührungsebene: singular tangent plane
+  Berührung: contact
+
+  # --- transformations and mappings ---
+  Transformation: transformation
+  Transformationen: transformations
+  transformiren: to transform
+  transformirt: transformed
+  Abbildung: representation
+  Abbildungen: representations
+  abbilden: to represent
+  abbildbar: representable
+  Abbildbarkeit: representability
+  Fundamentalpunkt: fundamental point
+  Fundamentalcurve: fundamental curve
+  Jacobi'sche Curve: Jacobian curve
+
+  # --- function theory and expansions ---
+  Puiseux'sche: Puiseux
+  Puiseux'schen: Puiseux
+  Pniseux'schen: Pniseux
+  Reihenentwicklung: series expansion
+  Reihenentwicklungen: series expansions
+  cyklisches System: cyclic system
+  cyklische Systeme: cyclic systems
+  Wurzel: root
+  Wurzeln: roots
+  Irrationalität: irrationality
+  hyperelliptische Curve: hyperelliptic curve
+
+  # --- apparatus and citations ---
+  Vgl.: Cf.
+  S.: See
+  Bd.: vol.
+  p.: p.
+  pag.: pag.
+  Ebd.: Ibid.
+  Herr: Mr.
+  Nachrichten: Nachrichten
