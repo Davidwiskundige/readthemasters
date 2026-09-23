@@ -29,25 +29,23 @@ Hieronymus Georg Zeuthen's 1871 memoir establishes the geometric theory of birat
 - **Forbidden**: Never modernize to `\sum`.
 
 ### 5. Overbars and Primes
-- **Rule**: Overbars designate auxiliary or reduced quantities: `$ar{n}'$`, `$ar{n}$`, `$ar{t}$`, `$ar{eta}'$`. Primes denote dual/reciprocal characters or second points: `$n'$`, `$c'$`, `$r'$`, `$b'$`, `$k'$`, `$P'$`.
+- **Rule**: Overbars designate auxiliary or reduced quantities: `$\bar{n}'$`, `$\bar{n}$`, `$\bar{t}$`, `$\bar{\beta}'$`. Primes denote dual/reciprocal characters or second points: `$n'$`, `$c'$`, `$r'$`, `$b'$`, `$k'$`, `$P'$`.
 - **Rationale**: Faithful reproduction of the print typography.
 
 ### 6. Display Math Wrapping (HOUSESTYLE R16)
-- **Rule**: All display equations must be enclosed in `\[ ... \]`. Multiline display equations must use `egin{aligned} ... \end{aligned}` or `egin{gathered} ... \end{gathered}` inside `\[ ... \]`.
-- **Forbidden**: Never use bare `egin{align*}` or `egin{gather*}` outside `\[ ... \]`.
+- **Rule**: All display equations must be enclosed in `\[ ... \]`. Multiline display equations must use `\begin{aligned} ... \end{aligned}` or `\begin{gathered} ... \end{gathered}` inside `\[ ... \]`.
+- **Forbidden**: Never use bare `\begin{align*}` or `\begin{gather*}` outside `\[ ... \]`.
 
 ### 7. Equation Numbering
-- **Rule**: Equation numbers are enclosed in parentheses, matching the scan: `	ag{1}`, `	ag{2}`, `	ag{$\mathrm{I}_a$}`, `	ag{$\mathrm{I}_b$}`, `	ag{$6_a$}`, `	ag{$6_b$}`.
+- **Rule**: Equation numbers are enclosed in parentheses, matching the scan: `\tag{1}`, `\tag{2}`, `\tag{$\mathrm{I}_a^{*)}$}`, `\tag{$\mathrm{I}_b$}`, `\tag{$3_a$}`, `\tag{$3_b$}`.
 
 ### 8. Footnotes (HOUSESTYLE R15)
-- **Rule**: In-text footnote callouts are set as superscript `${}^{*)}$` in math mode. The footnote body is placed at the foot of the page, led by `	extbf{*)}`.
+- **Rule**: In-text footnote callouts are set as superscript `${}^{*)}$` in math mode. The footnote body is placed at the foot of the page, led by `\textbf{*)}`.
 - **Forbidden**: Do not leave `{}^{*)}` in text mode without `$` delimiters.
 
 ### 9. French Typography and Ordinals
 - **Rule**:
-  - Ordinals: `$1^{\mathrm{re}}$`, `$2^{\mathrm{me}}$`, `$3^{\mathrm{me}}$`, `$k^{\mathrm{me}}$`, `$(s+1)	ext{-ième}$`.
-  - Number abbreviations: `
-o` or `n$^{\mathrm{o}}$`, `
-os` or `n$^{\mathrm{os}}$`.
-  - Section headers: Roman numerals `\subsection*{I.}`, `\subsection*{II.}`, etc.
-  - Section paragraphs: Bold numbers `	extbf{1.}`, `	extbf{2.}`, etc.
+  - Ordinals: `$1^{\text{re}}$`, `$2^{\text{me}}$`, `$3^{\text{me}}$`, `$k^{\text{me}}$`, `$(s+1)\text{-ième}$` (using `\text` per HOUSESTYLE R21).
+  - Number abbreviations: `\no` or `n$^{\mathrm{o}}$`, `\nos` or `n$^{\mathrm{os}}$`.
+  - Section headers: Roman numerals `\section*{I. ...}`, `\section*{II. ...}`, etc.
+  - Section paragraphs: Bold numbers `\textbf{1.}`, `\textbf{2.}`, etc.

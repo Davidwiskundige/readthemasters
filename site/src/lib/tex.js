@@ -45,6 +45,14 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     })
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
     .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
+    .replace(/\\textsc\{([^}]*)\}/g, '<span style="font-variant: small-caps;">$1</span>')
+    .replace(/\\nos\b/g, "nᵒˢ ")
+    .replace(/\\no\b/g, "nᵒ ")
+    // LaTeX umlauts/accents in text mode (e.g. \"o or \"{o} -> ö)
+    .replace(/\\(?:&quot;|")\{?([a-zA-Z])\}?/g, (_, ch) => {
+      const umlauts = { a: "ä", e: "ë", i: "ï", o: "ö", u: "ü", A: "Ä", E: "Ë", I: "Ï", O: "Ö", U: "Ü" };
+      return umlauts[ch] || ch;
+    })
     // \& is the LaTeX-escaped ampersand (needed so the .tex compiles under a real engine). In text
     // it is just an "&"; escapeHtml has already turned the "&" into the entity, so drop the slash.
     .replace(/\\&/g, "&")
@@ -81,11 +89,15 @@ const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
 // finds the delimiters inside the wrapper. Display math gets a block-level wrapper so the
 // .katex-display measurement in the reader still sees the full column width.
 function wrapMath(html) {
-  return html
-    .replace(/\\\[([\s\S]*?)\\\]/g,
-      (_, m) => `<span class="mathblock" data-pagefind-ignore>\\[${m}\\]</span>`)
-    .replace(/(?<!\\)\$((?:[^$\\]|\\.)*?)(?<!\\)\$/g,
-      (_, m) => `<span class="math" data-pagefind-ignore>$${m}$</span>`);
+  const display = [];
+  html = html.replace(/\\\[([\s\S]*?)\\\]/g, (m) => {
+    display.push(m);
+    return `D${display.length - 1}`;
+  });
+  html = html.replace(/(?<!\\)\$((?:[^$\\]|\\.)*?)(?<!\\)\$/g,
+    (_, m) => `<span class="math" data-pagefind-ignore>$${m}$</span>`);
+  return html.replace(/D(\d+)/g,
+    (_, i) => `<span class="mathblock" data-pagefind-ignore>${display[+i]}</span>`);
 }
 
 // A heading's argument is read with real brace balancing, not `[^}]*`.
@@ -153,6 +165,12 @@ export function texToHtml(tex, opts = {}) {
 
   // Drop comment lines.
   body = body.replace(/^\s*%.*$/gm, "");
+
+  // Drop vertical spacing and alignment wrappers that have no semantic role on the web.
+  body = body
+    .replace(/\\(?:bigskip|medskip|smallskip)\b/g, "")
+    .replace(/\\vspace\*?\{[^}]*\}/g, "")
+    .replace(/\\(?:begin|end)\{(?:flushleft|flushright|center)\}/g, "");
 
   // Promote block-level markers to their own paragraphs so they render even when they share a
   // source line/paragraph with surrounding text (e.g. \origpage{n} immediately before \section).

@@ -1,0 +1,829 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose is translated.
+%
+% TERMINOLOGY. Classical period English, matching Cayley and Salmon:
+%   * genre = "deficiency" (the classical English term of Cayley, cited by Zeuthen)
+%   * surface réciproque = "reciprocal surface"
+%   * faisceau de plans = "pencil of planes"
+%   * droite multiple = "multiple right line"
+%   * courbe de contact = "curve of contact"
+%   * cône circonscrit résidu = "residual circumscribed cone"
+%   * section résidue = "residual section"
+%   * point conique = "conical point"
+%   * point-pince = "pinch-point" (j)
+%   * point-clos = "close-point" (\chi)
+%   * courbe de liaison = "transition curve" (Uebergangscurve)
+%   * plans tangents stationnaires = "stationary tangent planes"
+%   * surface développable = "developable surface"
+%   * points-pinces doubles / triples = "double / triple pinch-points"
+%   * point de rebroussement = "cuspidal point"
+%   * courbe cuspidale = "cuspidal curve"
+%   * plan multiple / plan double = "multiple plane" / "double plane"
+%
+% See glossary.yaml and notation.md for full terminology choices and notation decisions.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{21}
+\section*{Geometric Studies of Some Properties of Two Surfaces Whose Points Correspond One-to-One.}
+
+\subsection*{By H.~G. \textsc{Zeuthen} in Copenhagen.}
+
+\section*{I. Preliminary Remarks${}^{*)}$.}
+
+\textbf{1.} We shall call the two surfaces $[F_1]$ and $[F_2]$, and we shall assign to the numbers of their singularities the notations indicated at the beginning of the preceding article, adding only, in order to distinguish those of the two surfaces, the suffixes 1 and 2. We shall further designate by $p_1$ and $p_2$ the deficiencies of the plane sections of $[F_1]$ and of $[F_2]$, so that for each of the surfaces
+\[
+2(p - 1) = n(n - 3) - 2b - 2c = a + c - 2n. \tag{1}
+\]
+
+\textbf{2.} To the two points of one of the surfaces which coincide in a single point of its double curve, there correspond in general, on the other surface, two distinct points, and the locus of these points is a curve which corresponds to the double curve. We shall designate the double curve of $[F_1]$ by $(B_1)$, the curve which corresponds to it on $[F_2]$ by $(B_{1, 2})$ and the order of this latter curve by $b_{1, 2}$, and we shall apply the analogous notations $(B_{2, 1})$ and $b_{2, 1}$ to the curve of $[F_1]$ which corresponds to the double curve $(B_2)$ of $[F_2]$. --- If there are on the two surfaces double curves which correspond to one another, two branches of the curve $(B_{1, 2})$ will coincide in one and two branches of $(B_{2, 1})$ will coincide in the other of these two corresponding double curves.
+
+\textbf{3.} \emph{Cuspidal Curves} (3---5). To a cuspidal curve of one of the surfaces there may correspond on the other either a simple curve or a cuspidal curve, but we shall suppose that only the first of these two cases occurs for our surfaces $[F_1]$ and $[F_2]$, and we shall designate
+
+\textbf{*)} For a part of these preliminary remarks we refer to the analytical demonstrations in a memoir of Mr.~Nöther, Mathematische Annalen, 2.~Bd.\ 294---298.
+
+\origpage{22}
+by $(C_{1, 2})$ the simple curve of $[F_2]$ which corresponds to the cuspidal curve $(C_1)$ of $[F_1]$, and by $(C_{2, 1})$ the simple curve of $[F_1]$ which corresponds to the cuspidal curve $(C_2)$ of $[F_2]$. The orders of these two curves will be named $c_{1, 2}$ and $c_{2, 1}$.
+
+In order to account for the properties of the surface $[F_2]$ at a point of $(C_{1, 2})$, we shall regard the cuspidal curve $(C_1)$ to which it corresponds as the limit of a double curve $(B_1)$. If we designate by $P_{1, 2}$ and $P'_{1, 2}$ the two points of the corresponding curve $(B_{1, 2})$ which correspond to the two points of $[F_1]$ that lie in a single point $P_1$ of the double curve $(B_1)$, one sees that a curve on $[F_2]$ which passes through both points $P_{1, 2}$ and $P'_{1, 2}$ corresponds to a curve on $[F_1]$ which has $P_1$ for double point, but that the curves on $[F_2]$ which pass through only one of the points $P_{1, 2}$ and $P'_{1, 2}$ correspond to curves of which a single branch passes through $P_1$. If the double curve $(B_1)$ tends to become cuspidal, the points $P_{1, 2}$ and $P'_{1, 2}$ will tend to coincide. The curve $(C_{1, 2})$ which corresponds to the cuspidal curve $(C_1)$ will therefore be the limit of two coincident branches of $(B_{1, 2})$, and as the right line $(P_{1, 2} P'_{1, 2})$ which joined the two points of $(B_{1, 2})$ corresponding to a single point of $(B_1)$ must have a determinate limit, there will be through each point $P_{1, 2}$ of $(C_{1, 2})$ a direction which joins the two infinitely near points corresponding to a single point of the cuspidal curve $(C_1)$. The other directions through $P_{1, 2}$ join only points of the two branches of $(B_{1, 2})$, coinciding in $(C_{1, 2})$, which correspond to points of $(C_1)$ infinitely near to one another. To a curve on $[F_2]$ which at $P_{1, 2}$ is tangent to the first direction $(P_{1, 2} P'_{1, 2})$ corresponds on $[F_1]$ a curve endowed \emph{with a cuspidal point at the point $P_1$}; but to the other curves which on $[F_2]$ pass through $P_{1, 2}$ correspond curves tangent to $(C_1)$.
+
+\textbf{4.} In looking at a curve on $[F_2]$ tangent to $(P_{1, 2} P'_{1, 2})$ and the corresponding curve on $[F_1]$, one sees that the parts of $[F_2]$ which lie on the two sides of $(C_{1, 2})$ correspond respectively to the two sheets of $[F_1]$ which are united at the cuspidal curve $(C_1)$, and that, consequently, also the curves through $P_1$ and on $[F_1]$ whose correspondents are not tangent to $(P_{1, 2} P'_{1, 2})$, pass in general from one of the two sheets to the other${}^{*)}$. A curve through $P_1$ and on $[F_1]$ remains on the same sheet only in the case where the correspondent on
+
+\textbf{*)} In general, a curve which lies on a surface endowed with a cuspidal curve $(C)$, passes from one of the sheets to the other in the case where it has a two-point contact with $(C)$, and remains on the same sheet in the case of a four-point contact, which one can prove either directly or by means of the representation with which we are concerned.
+
+\origpage{23}
+$[F_2]$ is tangent to $(C_{1, 2})$ --- or has $P_{1, 2}$ as a cuspidal point, --- and then it will have with $(C_1)$ a \emph{four-point contact}.
+
+These considerations show us that the curves on $[F_1]$ that pass through $P_1$ have, at least, a three-point contact (osculation) with \emph{a surface which is tangent to $[F_1]$ along the cuspidal curve $(C_1)$} or which only at the point $P_1$ is osculating $(C_1)$ and tangent to $[F_1]$. Let us designate by $[G]$ a surface satisfying these conditions.
+
+\textbf{5.} With the exception of curves tangent to the particular direction $(P_{1, 2} P'_{1, 2})$, every curve through the point $P_{1, 2}$ and on $[F_2]$ has therefore for its correspondent on $[F_1]$ a curve tangent to $(C_1)$ at a single point $P_1$ and osculating the surface $[G]$. The two curves on $[F_1]$ that correspond to two curves through $P_{1, 2}$ will therefore, in general, have two common points coinciding at the point $P_1$. They will have a third in the case where the two curves on $[F_2]$ touch each other at $P_{1, 2}$. Consequently, to two curves on $[F_2]$ that have contact at the point $P_{1, 2}$, there correspond on $[F_1]$ two curves that have at the point $P_1$ the same osculating plane. --- The converse proposition would not be true; for although two curves on $[F_1]$ that have at the point $P_1$ the same osculating plane also have the same curvature (that of the section made by the osculating plane of the surface $[G]$), and consequently have three common points coinciding instead of two, the third may on the two curves belong to different sheets. One sees therefore that curves through $P_1$ and on $[F_1]$ that have the same osculating plane, have as correspondents curves tangent to a single direction through $P_{1, 2}$ only in the case where their arcs situated on the same side of $P_1$ lie on the same sheet. Consequently, the curves on $[F_2]$ whose correspondents have the same osculating plane at the point $P_1$, are tangent to one or the other of \emph{two directions through $P_{1, 2}$}. The pencil formed by these pairs of directions is in \emph{involution}.
+
+The directions of a single pair coincide only in the cases where the osculating plane, which always passes through the tangent of the cuspidal curve $(C_1)$ at the point $P_1$, is there \emph{either} osculating the curve $(C_1)$ \emph{or} tangent to the surface $[F_1]$. They coincide in the first case with the tangent to the curve $(C_{1, 2})$ and, in the second, with the particular direction $(P_{1, 2} P'_{1, 2})$${}^{*)}$.
+
+Applying these considerations to \emph{a plane section made of the surface $[F_1]$ by a plane passing through the tangent of the curve $(C_1)$ at the}
+
+\textbf{*)} These properties will undergo alterations when the tangent plane to $[F_1]$ at the point $P_1$ is also osculating the curve $(C_1)$. Then the different directions through $P_{1, 2}$ will correspond to the different curvatures of the curves on $[F_1]$, which will have the same osculating plane. --- Another exceptional case will present itself when the point $P_{1, 2}$ is one of the points, called fundamental, of which we shall speak in No.~ 6. Then all curves through $P_1$ and on $[F_1]$ will have for correspondents curves having a common tangent at the point $P_{1, 2}$.
+
+\origpage{24}
+point $P_1$, one sees that the corresponding curve on $[F_2]$ has, in general, \emph{a double point at the point $P_{1, 2}$}, that this double point becomes cuspidal in the case where the plane is osculating $(C_1)$ or tangent to $[F_1]$, and that in these cases the tangent at the cuspidal point is tangent, respectively, to the curve $(C_{1, 2})$ or to the direction $(P_{1, 2} P'_{1, 2})$.
+
+It goes without saying that the surface $[F_1]$ has, at a point of $(C_{2, 1})$, properties analogous to those of $[F_2]$ at a point of $(C_{1, 2})$.
+
+\textbf{6.} \emph{Fundamental Points} (6---7). There will in general be on the two surfaces points whose correspondents remain indeterminate, so that all points of a curve correspond to one of these points. They are called \emph{fundamental} or \emph{principal points}. Every point of which more than one corresponding point is found must be a fundamental point. To a point infinitely near to a fundamental point corresponds a point infinitely near to the corresponding curve. As the infinitely near point determines a direction through the fundamental point, the directions through this point correspond to the points of the corresponding curve. To a curve $(T_1)$ that on one of the surfaces $[F_1]$ passes $\lambda$ times through one of its fundamental points $D_1$, there corresponds on the other surface $[F_2]$ a curve composed of the curve $(D_{1, 2})$ that corresponds to the fundamental point and of another curve $(T_{1, 2})$ that meets $(D_{1, 2})$ at the $\lambda$ points corresponding to the directions of the tangents to $(T_1)$ at the point $D_1$. Every other point of intersection of $(D_{1, 2})$ and of $(T_{1, 2})$ will be --- unless the intersection is due solely to a multiplicity of $[F_2]$ at this point --- a fundamental point of $[F_2]$; for it corresponds both to $D_1$ and to another point of $[F_1]$.
+
+The tangents of a surface at a fundamental point form a tangent plane if the point is simple, and a cone if it is conical. In the first case, the corresponding curve on the other surface, whose points correspond to the directions of the tangents at the fundamental point, must be of deficiency zero, and in the second, it must be of the same deficiency as the tangent cone.
+
+\textbf{7.} In order not to extend our researches too far, we shall suppose that there is on neither of the two surfaces \emph{any fundamental point endowed with a fundamental direction}, that is to say, a point where all curves whose correspondents meet a fixed curve on the other surface are tangent to a single direction. \emph{This restriction will forbid us from attributing to the tangent cones at conical fundamental points other double or cuspidal generators than $1^0$ those that are tangent there to the double or cuspidal curve, and $2^0$ those that correspond to double or cuspidal points of the curve corresponding to the fundamental point}${}^{*)}$.
+
+\textbf{*)} Indeed, in the direction of a double generator of the tangent cone at a multiple point that is not tangent to the double curve, there is only a single point
+
+\origpage{25}
+We shall begin by \emph{supposing that all conical points of the surfaces are fundamental}, and we shall show afterwards that the results obtained also apply to cases where there are on the two surfaces conical points that correspond to one another. On the other hand, we shall apply the notations $\mu$, $v$, $y$, $\eta$, $z$, $\xi$ not only to conical points, but also to simple fundamental points ($\mu = 1$, $v = \text{etc.} = 0$). We shall suppose that there is \emph{no fundamental point that lies at a pinch-point or at a non-conical point of a cuspidal curve}${}^{*)}$. For the moment we shall further suppose that \emph{the surfaces are not endowed with close-points} ($\chi = 0$).
+
+We shall designate by $\mu_{1, 2}$ the order and by $\nu_{1, 2}$ the class of the curve $(D_{1, 2})$ which on $[F_2]$ corresponds to a fundamental point $D_1$ of $[F_1]$; the curve $(D_{1, 2})$ has, according to the suppositions already made, $\eta_1$ double points and $\xi_1$ cuspidal points corresponding to the double and cuspidal generators of the tangent cone at the point $D_1$ that are not tangent to the double curve and to the cuspidal curve, and we shall further attribute to it $y_{1, 2}$ double points, apparent and proper, and $z_{1, 2}$ cuspidal points${}^{**)}$. Then one has, designating further by $\pi_1$ the common deficiency of the tangent cone at $D_1$ and of the curve $(D_{1, 2})$, the following equations (in which equation (V) of the introduction to the preceding article is contained)
+\[
+\left\{
+\begin{aligned}
+2(\pi_1 - 1) &= \nu_1 + z_1 + \xi_1 - 2\mu_1 = \mu_1(\mu_1 - 3) - 2(y_1 + \eta_1 + z_1 + \xi_1) \\
+&= \nu_{1, 2} + z_{1, 2} + \xi_1 - 2\mu_{1, 2} = \mu_{1, 2}(\mu_{1, 2} - 3) - 2(y_{1, 2} + \eta_1 + z_{1, 2} + \xi_1).
+\end{aligned}
+\right. \tag{2}
+\]
+
+The Plücker characteristics of the curve $(D_{2, 1})$ which on $[F_1]$ corresponds to a fundamental point $D_2$ of $[F_2]$ will be designated in the analogous manner; they satisfy the equations analogous to equations (2).
+
+\textbf{(* from p.~24)} consecutive point. Consequently, if in the case where the conical point is fundamental, two distinct points of its corresponding curve corresponded to generators of the tangent cone that coincide in the double generator, the unique consecutive point in this direction would have two corresponding points and would therefore be a new fundamental point coinciding with the first, and the direction would become fundamental. The case of a cuspidal generator can be regarded as a limit of that of a double generator.
+
+One could, moreover, obtain the same results by a continuation of the analytical procedures of M.~Nöther. (See the first note of the present article.)
+
+\textbf{*)} One can regard separately the two sheets that pass through points of the double curve, so long as the points of the surface which coincide there are not consecutive. (At pinch-points and at points of intersection with the cuspidal curve the coincident points are consecutive.) One of two coincident, but not consecutive, points may be fundamental; if both are, one has only two simple fundamental points.
+
+\textbf{**)} The proper double points of $(D_{1, 2})$ that are not among the $\eta_1$ that we have just named and the $z_{1, 2}$ cuspidal points, lie \emph{either} at fundamental points of $[F_2]$ \emph{or} on its double curve and its cuspidal curve.
+
+\origpage{26}
+\textbf{8.} To a curve on one of the two surfaces (of which no continuous part corresponds to a fundamental point of the other surface and which does not itself pass through a fundamental point), corresponds a curve which is of the same \emph{deficiency}, because the points of the two curves correspond one-to-one.
+
+To each intersection of two curves on one of the surfaces which is not due to a multiplicity of this surface at the point of intersection and which does not take place at a fundamental point, corresponds on the other surface an intersection of the two corresponding curves. When two of the points of intersection situated on one of the surfaces coincide, the same thing must occur for two points of intersection of the two corresponding curves. One concludes from this that the points of contact and the double and cuspidal points of curves on one of the surfaces which lie at simple and non-fundamental points, have as correspondents points of contact and double and cuspidal points of the corresponding curves on the other surface.
+
+\section*{II. Properties of Curves Which on One of the Two Surfaces Correspond to Plane Sections of the Other.}
+
+\textbf{9.} \emph{The order} $s$ of a curve $(S_1)$ which on the surface $[F_1]$ corresponds to a plane section of $[F_2]$, is equal to the number of points where it meets a plane section of $[F_1]$. $s$ is therefore the number of points of a plane section of one of the surfaces whose correspondents lie on a plane section of the other. One sees thus that \emph{the order $s$ of a curve $(S_1)$ is equal to that of a curve $(S_2)$ which on $[F_2]$ corresponds to a plane section of $[F_1]$}.
+
+\textbf{10.} We designate by $r_{s, 1}$ the class of the curve $(S_1)$, by $n_{s, 1}$ the number of osculating planes to it that pass through an arbitrary point, and by $h_{s, 1}$ the number of double generators of a cone that projects it from an arbitrary vertex. The preliminary remarks show us \emph{that it is not, in general, endowed with cuspidal points}, and that it passes $\mu_{1, 2}$ times through a fundamental point, $\mu_{1, 2}$ having the signification indicated in No.~ 7. The fundamental points therefore count in the number $h_{s, 1}$ for $\Sigma \frac{\mu_{1, 2}(\mu_{1, 2} - 1)}{2}$, where the sum $\Sigma$ is extended to all fundamental points of $[F_1]$.
+
+As the deficiency of $(S_1)$ is equal to that of a plane section of $[F_2]$, which we have called $p_2$, one finds, applying the formulas of Plücker and Clebsch to a cone that projects $(S_1)$, the following expressions:
+
+\origpage{27}
+\[
+\begin{cases}
+\begin{aligned}
+r_{s, 1} &= 2(p_2 - 1) + 2s, \\
+2h_{s, 1} &= s(s - 3) - 2(p_2 - 1), \\
+n_{s, 1} &= 6(p_2 - 1) + 3s.
+\end{aligned}
+\end{cases} \tag{$3_a$}
+\]
+One finds similarly, applying the analogous notations to a curve $(S_2)$ which on $[F_2]$ corresponds to a plane section of $[F_1]$,
+\[
+\begin{cases}
+\begin{aligned}
+r_{s, 2} &= 2(p_1 - 1) + 2s, \\
+2h_{s, 2} &= s(s - 3) - 2(p_1 - 1), \\
+n_{s, 2} &= 6(p_1 - 1) + 3s.
+\end{aligned}
+\end{cases} \tag{$3_b$}
+\]
+
+\textbf{11.} As every curve $(S_1)$ passes $\mu_{1, 2}$ times through a fundamental point of $[F_1]$, two curves $(S_1)$ meet $\Sigma(\mu_{1, 2}^2)$ times at the fundamental points. They meet further at the points corresponding to the $n_2$ intersections of the two plane sections of $[F_2]$ that correspond to the two curves $(S_1)$. Two curves $(S_1)$ meet therefore, in general, in
+\[
+\Sigma(\mu_{1, 2}^2) + n_2
+\]
+points, and to this number are added only in particular cases ``improper'' intersections at points of the double or cuspidal curve of $[F_1]$${}^{*)}$.
+
+One finds similarly that two curves $(S_2)$ have, in general,
+\[
+\Sigma(\mu_{2, 1}^2) + n_1
+\]
+intersections.
+
+\textbf{12.} The two cones which from the same vertex $O$ project two curves $(S_1)$, being of order $s$, will have $s^2$ common generators. To this number belong the right lines which join $O$ to the $\Sigma(\mu_{1, 2}^2) + n_2$ points of intersection of the two curves $(S_1)$, and, in the case where the two curves are infinitely near, one can also find an expression for the number of their \emph{apparent intersections}, which must be added to it to obtain that of all the common generators. Equating this to $s^2$, one finds an equation to which the numbers that characterize the two surfaces and the relations of the one to the other must satisfy.
+
+The number of apparent intersections of two curves $(S_1)$ infinitely near to one another will be composed $1^0$ of that of the
+\[
+\left[ h_{s, 1} - \Sigma\left( \frac{\mu_{1, 2}(\mu_{1, 2} - 1)}{2} \right) \right]
+\]
+apparent double points${}^{**)}$ of one of these curves taken \emph{twice}, and
+
+\textbf{*)} One sees that the words «improper intersections» and «apparent intersections» have different meanings. The number of apparent intersections of two curves is that of the right lines which from the same vertex project at once points of the two curves that do not coincide in an intersection point.
+
+\textbf{**)} Including the improper double points if there are double curves that correspond to one another.
+
+\origpage{28}
+$2^0$ of that of the contact generators of a cone $[O\,(S_1)]$, projecting a curve $(S_1)$, with the envelope cone of the series of cones that project all the curves $(S_1)$ which correspond to a pencil of plane sections of $[F_2]$. This envelope cone is composed $1^0$ of the cone circumscribed to the surface $[F_1]$, and $2^0$ of the cone projecting the cuspidal curve $(C_1)$ of this surface.
+
+To find the number of contacts of a cone $[O\,(S_1)]$ with the cone circumscribed to $[F_1]$ drawn from the same vertex $O$, one makes use of the first polar of $O$ with respect to $[F_1]$, which is a surface of order $n_1 - 1$, passing through the curve of contact $(A_1)$ of the circumscribed cone, through the double curve $(B_1)$ and through the cuspidal curve $(C_1)$ of the surface $[F_1]$, tangent to it along this latter curve, and having as $(\mu_1 - 1)$-tuple point every $\mu_1$-tuple point of the given surface $[F_1]$. This polar meets the curve $(S_1)$ in $s(n_1 - 1)$ points of which $\Sigma[\mu_{1, 2}(\mu_1 - 1)]$ are at the fundamental points. The others are the points (non-fundamental) where $(S_1)$ meets the curves $(A_1)$, $(B_1)$ and $(C_1)$. The points of intersection with the curve of contact $(A_1)$ determine the desired generators along which the cone $[O\,(S_1)]$ is tangent to the circumscribed cone $[O\,(A_1)]$. The points of intersection with the curve $(B_1)$ correspond to the points of intersection of a plane section of the surface $[F_2]$ with the curve $(B_{1, 2})$${}^{*)}$ corresponding to $(B_1)$, and their number is therefore equal to the order $b_{1, 2}$ of $(B_{1, 2})$. Similarly $(S_1)$ meets${}^{**)}$ the cuspidal curve $(C_1)$ in $c_{1, 2}$ points, $c_{1, 2}$ being the order of the curve $(C_{1, 2})$ corresponding to $C_1$; but at each of these $c_{1, 2}$ points there coincide (according to No.~ 4) three points of intersection of $(S_1)$ with the polar. One finds thus that the cone $[O\,(S_1)]$ which projects $(S_1)$ has
+\[
+s(n_1 - 1) - \Sigma [\mu_{1, 2}(\mu_1 - 1)] - b_{1, 2} - 3c_{1, 2}
+\]
+contacts with the circumscribed cone $[O\,(A_1)]$.
+
+The contact generators of the cone $[O\,(S_1)]$ with the cone $[O\,(C_1)]$ are determined by means of the $c_{1, 2}$ points of contact of the curve $(S_1)$ with the curve $(C_1)$, and their number is therefore $c_{1, 2}$.
+
+One thus obtains the following equation
+\[
+\begin{aligned}
+s^2 &= \Sigma(\mu_{1, 2}^2) + n_2 + 2\left[ h_{s, 1} - \Sigma\left( \frac{\mu_{1, 2}(\mu_{1, 2} - 1)}{2} \right) \right] \\
+&\quad + \{s(n_1 - 1) - \Sigma[\mu_{1, 2}(\mu_1 - 1)] - b_{1, 2} - 3c_{1, 2}\} + c_{1, 2}.
+\end{aligned}
+\]
+Substituting into it the expression (3) for $h_{s, 1}$, one finds the following equation
+
+\textbf{*)} If $(B_1)$ or $(C_1)$ passes through fundamental points, we do not regard as forming part of $(B_{1, 2})$ or of $(C_{1, 2})$ the curves which correspond to these fundamental points.
+
+\textbf{**)} It is tangent to it there; see No.~ 3.
+
+\origpage{29}
+\[
+n_2 - 2(p_2 - 1) + s(n_1 - 4) - \Sigma [\mu_{1, 2}(\mu_1 - 2)] - b_{1, 2} - 2c_{1, 2} = 0. \tag{$\mathrm{I}_a^{*)}$}
+\]
+One finds, replacing the two surfaces $[F_1]$ and $[F_2]$ by one another
+\[
+n_1 - 2(p_1 - 1) + s(n_2 - 4) - \Sigma [\mu_{2, 1}(\mu_2 - 2)] - b_{2, 1} - 2c_{2, 1} = 0. \tag{$\mathrm{I}_b$}
+\]
+
+\section*{III. Construction and Properties of Auxiliary Surfaces.}
+
+\textbf{13.} \emph{Construction of Auxiliary Surfaces.} In our subsequent researches we shall make use of an auxiliary surface $[F_3]$ defined in the following manner: \emph{the right lines which join the points of $[F_1]$ to a fixed point $O_3$ meet the planes which join the corresponding points of $[F_2]$ to a fixed right line $(M_3)$, at the points of the surface $[F_3]$}. The surface $[F_3]$ will therefore be generated by the pencil of planes passing through $(M_3)$, and by the series of cones $[O_3\,(S_1)]$ which join $O_3$ to the curves $(S_1)$ which on $[F_1]$ correspond to the sections made of $[F_2]$ by the planes of the pencil: each of the cones corresponds to a plane of the pencil which it meets in a curve situated on $[F_3]$.
+
+We shall similarly make use of a surface $[F_4]$ which is constructed in the same manner as $[F_3]$, merely substituting the two surfaces for one another. We shall designate by $O_4$ and $(M_4)$ the fixed point and fixed right line of which use is made in the construction of $[F_4]$. Where we do not directly indicate the results that relate to $[F_4]$, they are deduced without difficulty from those that relate to $[F_3]$.
+
+According to the construction of the surfaces $[F_3]$ and $[F_4]$, \emph{the points of all four surfaces $[F_1]$, $[F_2]$, $[F_3]$ and $[F_4]$ correspond one-to-one}.
+
+\textbf{14.} \emph{Order of the Surface $[F_3]$.} Designate by $P$ and $Q$ the points where a fixed right line $(L)$ meets a right line through $O_3$ and a plane through $(M_3)$ which are determined by corresponding points of $[F_1]$ and of $[F_2]$. Then, as a right line $(A\,P)$ meets $[F_1]$ in $n_1$ points, to a point $P$ correspond $n_1$ points $Q$, and, as a plane $[(M_3)\,Q]$ contains $s$ points of $[F_2]$ whose correspondents lie in the plane $[O_3\,(L)]$, to a point $Q$ correspond $s$ points $P$. There will therefore be, according to the principle of correspondence, on $(L)$ $n_1 + s$ coincidences of corresponding points $P$ and $Q$, and the number of intersections of $(L)$ with $[F_3]$, or the order of this surface, will consequently be
+\[
+n_3 = n_1 + s.
+\]
+
+One could have been content to seek the number of intersections of a right line passing through $O_3$ with the surface $[F_3]$. A right line through $O_3$ meets $[F_3]$ $1^0$ at the $n_1$ points which on this new surface corres-
+
+\textbf{*)} If the curve $(B_1)$ had been $k$-tuple, one would have had to give to the term $- b_{1, 2}$ the coefficient $(k - 1)$.
+
+\origpage{30}
+pond to the intersections of the same right line with the surface $[F_1]$, and $2^0$ at the $s$ points coinciding with $O_3$ where it meets the cone $[O_3\,(S_1)]$ determined by the curve $(S_1)$ which corresponds to the section made of $[F_2]$ by the plane $[(M_3)\,O_3]$. One sees thus at the same time that \emph{the surface $[F_3]$ has, at the point $O_3$, an $s$-tuple point}.
+
+One could similarly have been content to seek the order of the section made of $[F_3]$ by a plane passing through the \emph{right line} $(M_3)$. This section is composed $1^0$ of the curve of order $s$ where its plane meets the cone that corresponds to it in the series of cones $[O_3\,(S_1)]$, and $2^0$ of a multiple right line coinciding with $(M_3)$. This latter is \emph{$n_1$-tuple}; for at one of its points $R$ the surface $[F_3]$ has for tangent planes those which join $(M_3)$ to the $n_1$ points of $[F_2]$ that correspond to the $n_1$ points of meeting of the right line $(O_3\,R)$ with $[F_1]$.
+
+The surface $[F_4]$ is of order $n_4 = n_2 + s$; the point $O_4$ is $s$-tuple on it and the right line $(M_4)$ is $n_2$-tuple.
+
+\textbf{15.} \emph{The Singular Point $O_3$ of the Surface $[F_3]$} (15---17). We have seen that the point $O_3$ is $s$-tuple on the surface $[F_3]$, and the demonstration itself shows us that the tangent cone at this point is the cone $[O_3\,(S_1)]$ which joins $O_3$ to the curve $(S_1)$ which on $[F_1]$ corresponds to the section made of $[F_2]$ by the plane $[(M_3)\,O_3]$. We have already (in No.~ 10) spoken of the Plücker characteristics of this tangent cone. We have further to remark that the double generators of this cone are tangent to the branches of the double curve of $[F_3]$ which pass through the point $O_3$, which one sees without difficulty, and that \emph{the following generators lie entirely on the surface $[F_3]$: $1^0$ those which pass through the fundamental points of $[F_1]$, each taken $\mu_{1, 2}$ times, $2^0$ those which pass through the $n_2$ points of $[F_1]$ which correspond to the points where $[F_2]$ is met by the right line $(M_3)$, and $3^0$ those which pass through the $s$ points of the section made of the surface $[F_1]$ by the plane $[O_3\,(M_3)]$ whose correspondents on $[F_2]$ lie in the same plane}.
+
+Indeed, the points of the surface $[F_1]$ which determine the first two classes of right lines lie, as we have proved in Nos.~ 10 and 11 --- $\mu_{1, 2}$ or once --- on all the curves $(S_1)$ which correspond to the sections made of $[F_2]$ by planes passing through $(M_3)$, and the right lines which join to them the point $O_3$ lie consequently --- the same number of times --- on all the cones $[O_3\,(S_1)]$ of the series. As for the last class of right lines, they lie simultaneously in the plane $[(M_3)\,O_3]$ and on the cone which corresponds to it.
+
+\textbf{16.} Each of the points of $[F_1]$ which determine these right lines becomes a fundamental point in the correspondence of $[F_1]$ with the surface $[F_3]$, and the directions through the points on $[F_1]$ correspond to the points of the right lines on $[F_3]$. The plane through one of the right lines on $[F_3]$ determined
+
+\origpage{31}
+by a direction through the corresponding point of $[F_1]$, is tangent to $[F_3]$ at the point which corresponds to the direction. One thus has the means of determining the characteristic numbers${}^{*)}$ of these right lines situated on the surface $[F_3]$.
+
+Let us consider first the right line $(D_{1, 3})$ which joins $O_3$ to a point $(D_1)$ which is fundamental on $[F_1]$ already in its correspondence with the other given surface $[F_2]$. We have already indicated that $(D_{1, 3})$ is a $\mu_{1, 2}$-tuple right line of $[F_3]$, and one finds the $\mu_{1, 2}$ tangent planes to $[F_3]$ at an arbitrary point $P$ of $(D_{1, 3})$ by means of the plane $[(M_3)\,P]$ which joins the point $P$ to the fixed right line $(M_3)$: this plane meets the curve $(D_{1, 2})$ which on $[F_2]$ corresponds to $D_1$ in $\mu_{1, 2}$ points whose corresponding directions through the point $D_1$ determine the desired tangent planes. Conversely, a plane passing through the right line $(D_{1, 3})$ contains $\mu_1$ directions through the fundamental point: it will therefore be tangent to the surface $[F_3]$ at the $\mu_1$ points that are determined by the planes joining $(M_3)$ to the points of the curve $(D_{1, 2})$ which correspond to these directions. Two of the tangent planes to $[F_3]$ at the same point $P$ of $(D_{1, 3})$ are consecutive in the case where the plane joining $P$ to $(M_1)$ is tangent to the curve $(D_{1, 2})$, or passes through a cuspidal point of this curve, or through one of the $\eta_1$ double points${}^{**)}$ whose corresponding generators of the tangent cone at $D_1$ are double without being tangent to the double curve of $[F_1]$; and two points of contact of the same plane through $(D_{1, 3})$ are consecutive in the case where the plane is tangent to the tangent cone at the point $D_1$, or passes through one of the cuspidal generators of this cone, or through one of the $\eta_1$ double generators which are not tangent to the double curve of $[F_1]$. One finds thus --- observing that, the surface $[F_3]$ being constructed as a locus of points, the coincidences will occur in the ways that are the most general for surfaces regarded as loci of points${}^{***)}$ --- the following values of the characteristics of $(D_{1, 3})$:
+
+\textbf{*)} We refer, concerning the signification of these characteristics and the notations that we shall also apply to them here, to our preceding article, notably to the summary that is found in its No.~ 10.
+
+\textbf{**)} The notations that relate to the fundamental points of $[F_1]$ are indicated in No.~ 7 of the present article.
+
+\textbf{***)} See in the preceding article Nos.~ 3, 4 and 5. One might believe that the points of $(D_{1, 3})$, determined by the $\eta_1$ double points and the $\xi_1$ cuspidal points of $(D_{1, 2})$ whose corresponding generators of the tangent cone at the point $D_1$ are double and cuspidal without being tangent to the double curve and to the cuspidal curve of $[F_1]$, belonged to the numbers $\bar{f}$ and $\bar{i}$ of points of intersection of $(D_{1, 3})$ with the double curve and with the cuspidal curve of $[F_3]$ (see No.~ 6 of the preceding article). One sees that this does not occur, by considering the section of $[F_3]$ made by the plane joining $(M_3)$ to one of these $(\eta_1 + \xi_1)$ points. This section will have at this point a cuspidal point, and not a point of contact of two
+
+\origpage{32}
+\[
+\bar{n} = \mu_{1, 2}, \quad \bar{n}' = \mu_1, \quad 1\bar{\jmath} = \nu_{1, 2} + z_{1, 2}, \quad 2\bar{\jmath} = \eta_1, \quad 3\bar{\jmath} = \xi_1.
+\]
+\[
+1\bar{\beta}' = \nu_1 + z_1, \quad \bar{\jmath}' = \bar{\beta} = \bar{i}' = 0.
+\]
+In seeking also the points of $(D_{1, 3})$ and the planes through $(D_{1, 3})$ of which two tangent planes or two points of contact coincide without being consecutive, one would find the number $\bar{f}$ of contacts of two of the sheets of $[F_3]$ which pass through $(D_{1, 3})$. This number is also found by means of one of equations (5) of the preceding article; the other of these equations will give
+\[
+2\mu_{1, 2} + \nu_1 + z_1 = 2\mu_1 + \nu_{1, 2} + z_{1, 2},
+\]
+which is one of equations (2) of the present article. Equations (7) and (8) of the preceding article, which will undergo alterations because of the singular point $O_3$ which lies on the right line $(D_{1, 3})$, will not give us at present any new result.
+
+Analogous procedures show us that the other $n_2 + s$ right lines through $O_3$ that lie entirely on $[F_3]$ are simple, and that a plane passing through one of these right lines has, in general, only a single contact with $[F_3]$. One has therefore for each of these right lines $\bar{n} = \bar{n}' = 1$, $\bar{\jmath} = \bar{\jmath}' = \bar{\beta} = \bar{\beta}' = \bar{i} = \bar{f} = 0$.
+
+\textbf{17.} \emph{The tangent cone of a surface at an $s$-tuple point} is the locus of right lines through the point which contain $s + 1$ coincident points of the surface. There are $s(s + 1)$ generators of the cone which contain $s + 2$ coincident points. For the point $O_3$, $s$-tuple on the surface $[F_3]$, these $s(s + 1)$ generators will be: $1^0$ the $s^2$, of which we have already given account in No.~ 12, where the cone corresponding to the section made of $[F_2]$ by the plane $[(M_3)\,O_3]$ meets the consecutive cone of the series of cones $[O_3\,(S_1)]$ that correspond to planes through $(M_3)$, and $2^0$ the $s$ right lines of intersection of the same cone with the corresponding plane $[(M_3)\,O_3]$.
+
+\textbf{18.} \emph{The multiple line $(M_3)$ of the surface $[F_3]$.} We have seen that the right line $(M_3)$ is, on the surface $[F_3]$, multiple of order $n_1$. The tangent planes of the surface at an arbitrary point $R$ of $(M_3)$ are those which pass through the points of the surface $[F_2]$ that correspond to the $n_1$ points of meeting of the right line $(O_3\,R)$ with the surface $[F_1]$. The points of contact of an arbitrary plane $[Q]$ through $(M_3)$ are the points of meeting of $(M_3)$ with the right lines which join $O_3$ to the $s$ points of the curve of intersection of the plane $[O_3\,(M_3)]$ with $[F_1]$ whose correspondents on $[F_2]$ lie in the plane $[Q]$. These latter points are the points of intersection of the plane $[Q]$ with the curve $(S_2)$
+
+\textbf{(* from p.~31)} branches or a point of second-species regression [point de rebroussement de seconde espèce]. --- We shall see, moreover, that $[F_3]$ has no cuspidal curve, so that $\bar{i}$ (as well as $\bar{\beta}$) must be equal to zero.
+
+\origpage{33}
+which on $[F_2]$ corresponds to the section made of $[F_1]$ by the plane $[O_3\,(M_3)]$. Seeking further the points of $(M_3)$ where two tangent planes are consecutive, and the planes through $(M_3)$ whose two points of contact are consecutive --- which will cause no difficulty --- one finds for the multiple right line $(M_3)$ the following characteristic numbers:
+\[
+\bar{n} = n_1, \quad \bar{n}' = s, \quad \bar{\jmath} = a_1 + c_1, \quad \bar{\beta}' = r_{s, 2},
+\]
+\[
+2\bar{\jmath} = 3\bar{\jmath} = \bar{\jmath}' = \bar{\beta} = \bar{i} = 0.{}^{*)}
+\]
+
+The number $\bar{f}$ will indicate the order of a cone, the locus of right lines joining two points of $[F_1]$ whose correspondents on $[F_2]$ lie on right lines that meet a fixed right line. The vertex of the cone is here at $O_3$, and the fixed right line is at $(M_3)$.
+
+Formulas (5) of the preceding article will give us here, $1^0$ that a curve $(S_2)$ is of the same deficiency as a plane section of $[F_1]$, which we have already remarked, and $2^0$ the following expression for $\bar{f}$:
+\[
+2\bar{f} = 2\,n_1 s - 2\,s - a_1 - c_1,
+\]
+or rather (see formulas (1) of the present article)
+\[
+\bar{f} = (n_1 - 1)(s - 1) - p_1.
+\]
+
+The same result is found without difficulty by means of the principle of correspondence. --- Equation (7) of the preceding article will give us only the obvious result that the number $\bar{t}$ of intersections of the right line $(M_1)$ with other sheets of the surface than the $n_1$ which pass through it, is equal to zero. Equation (8) of the preceding article will be useful to us in what follows.
+
+\textbf{19.} \emph{Plane Section of the Surface $[F_3]$.} One finds the Plückerian characteristics of a plane section of the surface $[F_3]$ by means of the preceding article${}^{**)}$, where we expressed the Plückerian characteristics of the \emph{residual} section of a plane passing through the multiple right line --- that is to say, of what remains of the curve of intersection when one abstracts the multiple right line --- by means of those of an arbitrary section. We shall here make, of the same expressions, the inverse use, knowing that the residual section made of the surface $[F_3]$ by a plane passing through the multiple right line $(M_3)$ is the curve of intersection of this plane with a cone $[O_3\,(S_1)]$, and that it is consequently of order $s$, of class $r_{s, 1}$ and devoid of cuspidal points. This procedure is iden-
+
+\textbf{*)} In the case, which we have neglected, where there are on the two surfaces cuspidal curves corresponding to one another, $\bar{i}$ will be the order of that of the surface $[F_1]$.
+
+\textbf{**)} See the summary in its No.~ 10.
+
+\origpage{34}
+tical to the third of those which gave us the order $n_3 = n_1 + s$ of the surface $[F_3]$. One finds similarly, denoting by $a_3$ the class of a plane section of $[F_3]$,
+\[
+a_3 = r_{s, 1} + 2\,s + a_1 + c_1
+\]
+or rather, reducing this expression by means of formulas (1) and (3) of the present article
+\[
+\begin{aligned}
+a_3 &= 4\,s + 2\,n_1 + 2(p_1 - 1) + 2(p_2 - 1) \\
+&= a_1 + c_1 + a_2 + c_2 - 2\,n_2 + 4\,s.
+\end{aligned} \tag{4}
+\]
+One finds finally
+\[
+c_3 = 0, \tag{5}
+\]
+so that $[F_3]$ is devoid of a cuspidal curve. The other Plückerian characteristics of the section depend on $n_3$, on $a_3$ and on $c_3$.
+
+One would have found the same results by considering the section made of $[F_3]$ by a plane passing through its multiple point $O_3$.
+
+\textbf{20.} One sees without difficulty that the point $O_3$ is the only fundamental point of $[F_3]$ in its correspondence with $[F_1]$ or $[F_2]$, and that it has for corresponding curves, on $[F_2]$ the section made by the plane $[O_3\,(M_3)]$, and on $[F_1]$ the curve $(S_1)$ which corresponds to this section and which determines the tangent cone of $[F_3]$ at the point $O_3$. We indicated in No.~ 16, that, in the correspondence of $[F_3]$ with $[F_1]$, the fundamental points of $[F_1]$ are those which determine the right lines through $O_3$ which lie entirely on $[F_3]$, and that the corresponding curves are these right lines. One deduces from this that the fundamental points of $[F_2]$ in its correspondence with $[F_3]$ are, $1^0$ those which are so in its correspondence with $[F_1]$, $2^0$ the $n_2$ points where it is met by the right line $(M_3)$, and $3^0$ the $s$ points of the section made by the plane $[O_3\,(M_3)]$, whose correspondents on $[F_1]$ lie in the same plane.
+
+The application of formula (I) (in No.~ 12) to the correspondence of the surface $[F_3]$ with $[F_1]$ or $[F_2]$ gives no new and important result, but it can serve as verification of the results already found.
+
+\section*{IV. Cones Circumscribed to $[F_3]$ or to $[F_4]$; Use of Auxiliary Surfaces.}
+
+\textbf{21.} We have already found in No.~ 19 the order $a_3$ of a cone circumscribed to $[F_3]$, which is equal to the class of a plane section. Two other Plückerian characteristics of the circumscribed cone will be determined, each in two different ways, which will give two different expressions. \emph{By equating the two expressions of the same number one finds the equations relating to the two given surfaces which are the object of the construction of the auxiliary surfaces}.
+
+\origpage{35}
+\textbf{22.} \emph{Class of the Surface $[F_3]$} (22---24). One finds the class $n'_3$ of the surface $[F_3]$ by applying formula (8) of the preceding article
+\[
+n' = \bar{n}' + \bar{n} + \bar{t}' + 2\cdot \bar{\beta}'
+\]
+to the multiple right line $(M_3)$ of the surface $[F_3]$. Then $n'$ will be the sought class $n'_3$; $\bar{n}'$, $\bar{n}$ and $\bar{\beta}'$ will have, as we indicated in No.~ 18, the values $s$, $n_1$ and $r_{s, 2}$. It remains therefore to seek the number $\bar{t}'$ of planes $[Q]$ through the right line $(M_3)$ which have an $(s + 1)$-th contact with the surface $[F_3]$, or of planes whose residual sections have double points that are neither at the multiple point $O_3$ nor on the double curve of $[F_3]$. Now, the residual section of a plane $[Q]$ is the section made by the cone of the series $[O_3\,(S_1)]$ that corresponds to the plane $[Q]$, and this plane will therefore be one of the $\bar{t}'$ sought planes if the corresponding cone has a double generator that is not among the number of the $h_{s, 1}$ with which all cones $[O_3\,(S_1)]$ are endowed (see No.~ 10), and which determine only points of the double curve of $[F_3]$. This will happen only when the curve $(S_1)$ acquires a proper double point other than those which are at the fundamental points of $[F_1]$, which takes place in the following cases: $1^0$ when the plane $[Q]$ is tangent to $[F_2]$, $2^0$ when it is tangent to the cuspidal curve of $[F_2]$, and $3^0$ when it passes through a fundamental point $D_2$ of $[F_2]$. Indeed, in the first two cases, the point of $[F_1]$ that corresponds to the point of contact will be a double point of $(S_1)$, according to Nos.~ 8 and 5. In the third, the curve $(S_1)$ will divide, according to No.~ 6, into two curves that meet at the $\mu_2$ points of $[F_1]$ corresponding to the $\mu_2$ directions of the fundamental (and $\mu_2$-tuple) point $D_2$ that lie in the plane $[Q]$, and the curve $(D_{2, 1})$ that corresponds to the point $D_2$ will have further $\eta_2$ double points and $\xi_2$ cuspidal points, corresponding to the double and cuspidal generators of the tangent cone at $D_2$ that are not tangent to the double curve and to the cuspidal curve of $[F_2]$. One sees thus that in the plane $[(M_3)\,D_2]$ coincide $\mu_2 + \eta_2$ simple tangent planes and $\xi_2$ stationary tangent planes of $[F_3]$, so that it counts for $\mu_2 + \eta_2 + 2\,\xi_2$ simple tangent planes. One will therefore have${}^{*)}$:
+\[
+\bar{t}' = n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2),
+\]
+and the formula of the preceding article that we have just cited, thus gives us
+\[
+n'_3 = s + n_1 + n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2) + 2\,r_{s, 2} \tag{$6_a$}
+\]
+or, according to the first formula $(3_b)$ in No.~ 10,
+\[
+n'_3 = n_1 + 4(p_1 - 1) + n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2) + 5\,s \tag{$6_b$}
+\]
+
+\textbf{*)} One would have found the same result by considering immediately the correspondence of the surfaces $[F_2]$ and $[F_3]$ and of the sections that a same plane $[Q]$ makes on them, instead of that of $[F_2]$ with $[F_1]$ and of the plane section of $[F_2]$ with a curve $(S_1)$.
+
+\origpage{36}
+or rather, according to the last formula (1) in No.~ 1,
+\[
+n'_3 = 2\,a_1 + 2\,c_1 - 3\,n_1 + n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2) + 5\,s. \tag{$6_c$}
+\]
+
+\textbf{23.} One obtains by a different way another expression for $n'_3$, which is the class, not only of the surface $[F_3]$, but also of a circumscribed cone drawn to it from an arbitrary vertex $E$. This cone will have the right line $(E\,O_3)$ as multiple generator, the degree of multiplicity being equal to the number $r_{s, 1}$ of tangent planes to the tangent cone at the point $O_3$ which pass through $(E\,O_3)$. One therefore finds the class $n'_3$ of the circumscribed cone by adding the number $2\,r_{s, 1}$ to that of the planes which pass through $(E\,O_3)$ and which are tangent to $[F_3]$ at points different from $O_3$. We are going to seek this latter number.
+
+As corresponding points of the surfaces $[F_1]$ and $[F_3]$ lie on the same right lines through $O_3$, they are also on the same planes through $(E\,O_3)$, and the sections that a same plane $[R]$ through $(E\,O_3)$ makes are, consequently, corresponding curves. One sees therefore, applying to it the same reasonings as in No.~ 22, that the planes through $(E\,O_3)$ tangent to $[F_3]$ at points different from $O_3$ are: $1^0$ the $n'_1$ which are tangent to $[F_1]$, $2^0$ the $r_1$ which are tangent to the cuspidal curve $(C_1)$ of this surface, and $3^0$ those which pass through the points of $[F_1]$ which are fundamental in its correspondence with $[F_3]$. These latter tangent planes to $[F_3]$ are (see No.~ 20) the planes passing through the right lines of $[F_3]$ that emanate from $O_3$. If one employs, to determine their degrees of multiplicity, the same rules${}^{*)}$ as in No.~ 22, one finds that they count for $\Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + n_2 + s$ simple tangent planes. The sought number of tangent planes to $[F_3]$ at points different from $O_3$ is therefore
+\[
+n'_1 + r_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + n_2 + s.
+\]
+One finds thus
+\[
+n'_3 = s + n_2 + n'_1 + r_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + 2\,r_{s, 1}. \tag{7}
+\]
+
+\emph{Otherwise.} One could find the same result in a slightly different manner. The tangent planes to $[F_3]$ drawn through $(E\,O_3)$ whose points of contact are not at $O_3$, are $1^0$ those which are tangent to the cone locus of the right lines tangent to $(F_3)$ at points different from $O_3$, and $2^0$ those which pass through the right lines through $O_3$ that lie entirely on $[F_3]$. As $[F_3]$ has no cuspidal curve (see in No.~ 19), every right line which meets this surface in two consecutive points will be tangent to it, and in this condition will be the right lines through $O_3$ which meet
+
+\textbf{*)} The legitimacy of applying these rules to the present case where the curve $(D_{1, 3})$ which on $[F_3]$ corresponds to a fundamental point $D_1$ of $[F_1]$ degenerates into $\mu_{1, 2}$ coincident right lines, might seem doubtful; but the result will be secured by our second demonstration.
+
+\origpage{37}
+meet $[F_1]$ in two consecutive points. The cone locus of these tangents will therefore be composed of the cone $[O_3\,(A_1)]$ circumscribed to $[F_1]$ and of the cone $[O_3\,(C_1)]$ which projects its cuspidal curve. It will consequently be of class $n'_1 + r_1$. The planes passing through the right lines of $[F_3]$ will have according to the preceding article $\bar{n}' + 2\bar{\jmath} + 2\cdot 3\bar{\jmath}$ contacts with this surface, $\bar{n}'$, $2\bar{\jmath}$ and $3\bar{\jmath}$ taking for the respective right lines the values indicated in No.~ 16. The planes joining $(E\,O_3)$ to the right lines of $[F_3]$ count therefore for $\Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + n_2 + s$ tangent planes. ---
+
+Expression (7) will be transformed by the same substitutions that we applied to expression (6) into the following
+\[
+n'_3 = 2\,a_2 + 2\,c_2 - 3\,n_2 + n'_1 + r_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + 5\,s. \tag{$7_c$}
+\]
+
+\textbf{24.} By equating the two expressions ($6_c$) and ($7_c$) found in the preceding numbers one obtains the following equation:
+\[
+\begin{aligned}
+n'_1 - 2\,a_1 + r_1 - 2\,c_1 + 3\,n_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) \\
+= n'_2 - 2\,a_2 + r_2 - 2\,c_2 + 3\,n_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2).
+\end{aligned} \tag{II}
+\]
+This relation is the same as I set forth in the \emph{Comptes Rendus de l'Académie des Sciences}${}^{*)}$ (T.~LXX, p.~745).
+
+\textbf{25.} \emph{Identity of the Plückerian Characteristics of Certain Cones Circumscribed to the Two Auxiliary Surfaces $[F_3]$ and $[F_4]$.} One sees, by means of the preceding article${}^{**)}$ and formulas (4), ($6_c$) and ($7_c$) of the present article, that, for a vertex $P$ situated on the right line $(M_3)$, the \emph{residual} cone circumscribed to $[F_3]$ is of order
+\[
+a_3 - 2\,n_1 = 4\,s + 2(p_1 - 1) + 2(p_2 - 1),
+\]
+and of class
+\[
+\begin{aligned}
+n'_3 - s &= 2\,a_1 + 2\,c_1 - 3\,n_1 + n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2) + 4\,s \\
+&= 2\,a_2 + 2\,c_2 - 3\,n_2 + n'_1 + r_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + 4\,s.
+\end{aligned}
+\]
+The expression of the order of the cone is symmetric with respect to the characteristic numbers of the two given surfaces $[F_1]$ and $[F_2]$, and the two expressions of the class transform into one another by the substitution of one of the surfaces $[F_1]$ and $[F_2]$ for the other. The other
+
+\textbf{*)} We have here demonstrated the formula only under the hypotheses that we have already indicated, among the number of which is that there are on the given surfaces no cuspidal curves corresponding to one another. If there are, I believe I have found that one must add to the two members of the equation the respective numbers of cuspidal points of the cuspidal curves which correspond to one another on the two surfaces $[F_1]$ and $[F_2]$. I ought therefore, in the Comptes Rendus where I did not make this same restriction, to have found this result slightly modified. --- In the Comptes Rendus I attributed to the surfaces only simple fundamental points.
+
+\textbf{**)} See the table in its No.~ 10.
+
+\origpage{38}
+Plückerian characteristics of the same cone will offer the same symmetry, which it will suffice --- on account of the Plückerian relations --- to prove for a single one of those that remain. We shall do so for the number of its cuspidal edges, that is to say, for the number of right lines through the vertex $P$ which have three-point contact with $[F_3]$.
+
+Let $(L)$ be one of these right lines. Then the plane $[O_3\,(L)]$ must contain three consecutive generators of the cone $[O_3\,(S_1)]$ drawn from $O_3$ to the curve $(S_1)$ which on $[F_1]$ corresponds to the section that the plane $[(M_3)\,(L)]$ makes of the surface $[F_2]$, or rather, that it have three-point contact with this curve $(S_1)$. The sought number is therefore that of the planes of a pencil which have three-point contact with a curve $(S_1)$ which on $[F_1]$ corresponds to a section made of $[F_2]$ by a plane of another pencil. Now the three-point contact of a plane with a curve $(S_1)$ or, which is the same thing, that of the section that the plane makes of $[F_1]$ with $(S_1)$, brings about also that of the curve $(S_2)$ which on $[F_2]$ corresponds to the plane section of $[F_1]$ with the plane curve which on $[F_2]$ corresponds to $(S_1)$. The number of cuspidal edges of the cone of which we speak depends therefore in a symmetric manner on $[F_1]$ and on $[F_2]$.
+
+One sees thus, recalling the symmetry of the constructions of the two auxiliary surfaces $[F_3]$ and $[F_4]$, that \emph{the residual cones circumscribed to $[F_3]$ and to $[F_4]$ whose vertices lie, respectively, on the multiple right lines $(M_3)$ and $(M_4)$ of these surfaces, have the same Plückerian characteristics}.
+
+At the place already cited in the Comptes Rendus I demonstrated this proposition in a more direct manner, taking, in the construction of $[F_4]$, for right line $(M_4)$ a right line which joins $O_3$ to a point of $(M_3)$ and for point $O_4$ (multiple point of $[F_4]$) another point of $(M_3)$. Then one sees without difficulty that the point of meeting $P$ of $(M_3)$ and $(M_4)$ is the vertex of a cone circumscribed at the same time to both auxiliary surfaces $[F_3]$ and $[F_4]$. The proposition demonstrated in this manner would allow proving formula (II) by means of a single one of the two formulas (6) and (7). Formula ($6_c$), for example, would then show us that the class of the cone circumscribed at the same time to both surfaces $[F_3]$ and $[F_4]$, is equal to
+\[
+n'_3 - s = 2\,a_1 + 2\,c_1 - 3\,n_1 + n'_2 + r_2 + \Sigma(\mu_2 + \eta_2 + 2\,\xi_2) + 4\,s
+\]
+and to
+\[
+n'_4 - s = 2\,a_2 + 2\,c_2 - 3\,n_2 + n'_1 + r_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) + 4\,s.
+\]
+
+\textbf{26.} \emph{Number $c'_3$ of Stationary Tangent Planes of a Cone Circumscribed to the Surface $[F_3]$.} The stationary tangent planes of a cone circumscribed to a surface are the stationary tangent planes of the surface which pass through its vertex. This series of planes has for envelope a developable surface whose tangent planes passing through a given point must be counted.
+
+\origpage{39}
+Let us take the point $O_3$. The sought planes are then among the number of tangent planes to $[F_3]$ that emanate from $O_3$. These are (see No.~ 23): $1^0$ the tangent planes to the tangent cone $[O_3\,(S_1)]$ of $[F_3]$ at the point $O_3$, $2^0$ the planes which pass through the right lines of $[F_3]$ that emanate from $O_3$, and $3^0$ the tangent planes to the cone $[O_3\,(A_1)]$ circumscribed to $[F_1]$ and to the cone $[O_3\,(C_1)]$ projecting its cuspidal edge.
+
+One sees without difficulty that the tangent planes of the tangent cone at an $s$-tuple point of a surface which have stationary contact with this surface, will be $1^0$ the stationary tangent planes of the cone, and $2^0$ those whose generators of contact meet the surface in $(s + 2)$ points coinciding with the multiple point, unless these generators are \emph{only} tangent to branches of the double curve and of the cuspidal curve. As all the right lines along which these planes are tangent to the envelope of stationary tangent planes of the surface pass through the multiple point, the planes count, at least, for \emph{two} in the sought number of stationary tangent planes that emanate from the multiple point. Looking at an example${}^{*)}$ which offers no particular circumstance that could alter the general rule, one sees that the planes of the first class count for \emph{two}, and those of the second class for \emph{three} stationary tangent planes of the surface. One finds thus the two following terms${}^{**)}$ of the sought number $c'_3$
+\[
+2\cdot n_{s, 1} + 3\cdot [s(s + 1) - 2\,h_{s, 1}].
+\]
+
+As the right lines of $[F_3]$ that emanate from the point $O_3$ are among the number of the $[s(s + 1) - 2\,h_{s, 1}]$ right lines which meet $[F_3]$ in $s + 2$ points coinciding with $O_3$, the planes which have these right lines as generators of contact with the tangent cone at $O_3$ are among the number of planes that we have just named. The other planes through these right lines which have stationary contacts with $[F_3]$ are, according to the preceding article${}^{***)}$, their $\bar{\beta}' (= 1\bar{\beta}' + 2\cdot 2\bar{\jmath} + 3\cdot 3\bar{\jmath})$ stationary planes taken \emph{three times}, and \emph{two times more} the $2\bar{\jmath}$ tangent planes at their double pinch-points and \emph{four times} the $3\bar{\jmath}$ tangent planes at their triple pinch-points, the number $\bar{i}$ being equal to zero for all the right lines.
+
+\textbf{*)} One can look at a surface of the fourth order endowed with a triple point. --- The applications of the formula that we seek (see in what follows applications 2 and 3) would show it also, if we had attributed indeterminate coefficients to the terms due to these two classes of planes.
+
+\textbf{**)} For the number of planes of the second class see Nos.~ 17 and 12.
+
+\textbf{***)} See in the table of No.~ 10 the number of stationary tangent planes of the residual circumscribed cone.
+
+\origpage{40}
+For the right lines $(D_{1, 3})$ which join $O_3$ to the fundamental points $D_1$ of $[F_1]$ one has (see No.~ 16 of the present article)
+\[
+1\bar{\beta}' = \nu_1 + z_1, \quad 2\bar{\jmath} = \eta_1, \quad 3\bar{\jmath} = \xi_1, \quad \bar{\beta}' = x_1 + z_1{}^{*)},
+\]
+and for the other $n_2 + s$ right lines these characteristic numbers are equal to zero. One finds thus the following term of the sought number $c'_3$
+\[
+\Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1).
+\]
+
+A tangent plane to one of the cones $[O_3\,(A_1)]$ and $[O_3\,(C_1)]$ will be a stationary tangent plane of $[F_3]$ if its curve of intersection with $[F_3]$ has a cuspidal point. As the sections that planes through $O_3$ make of the surface $[F_3]$ correspond to those which they make of the surface $[F_1]$ (see No.~ 23), the sought planes will be $1^0$ the $c'_1$ stationary tangent planes of the surface $[F_1]$ (see No.~ 8), $2^0$ the osculating planes to the cuspidal curve $(C_1)$ of $[F_1]$, whose number we shall denote by $n_{c, 1}$ (see No.~ 5), and $3^0$ the $\sigma_1$ planes which are tangent to the surface $[F_1]$ at points of the curve $(C_1)$ (see No.~ 5). The cuspidal tangent of the section that one of these latter planes makes will be the right line which joins its cuspidal point to $O_3$; for this right line, which meets $[F_1]$ in three consecutive points, must also meet $[F_3]$ in three consecutive points${}^{**)}$. Now the cuspidal tangent of the section made by a stationary tangent plane is a generator of the envelope of stationary tangent planes. Therefore each of the $\sigma_1$ planes of which we speak counts for \emph{two} stationary tangent planes of $[F_3]$ emanating from $O_3$. One finds thus the following terms of $c'_3$
+\[
+c'_1 + n_{c, 1} + 2\,\sigma_1.
+\]
+
+The total expression for $c'_3$ becomes
+\[
+\begin{aligned}
+c'_3 &= 2\cdot n_{s, 1} + 3\cdot [s(s + 1) - 2\,h_{s, 1}] \\
+&\quad + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) + c'_1 + n_{c, 1} + 2\,\sigma_1.
+\end{aligned} \tag{$8_a$}
+\]
+Replacing $n_{c, 1}$ by the expression which the Plückerian relations give for it
+\[
+n_{c, 1} = \beta_1 + 3\,r_1 - 3\,c_1,
+\]
+and $n_{s, 1}$ and $h_{s, 1}$ by expressions (3), one finds
+\[
+\begin{aligned}
+c'_3 &= c'_1 + \beta_1 + 3\,r_1 - 3\,c_1 + 2\,\sigma_1 \\
+&\quad + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) + 18(p_2 - 1) + 18\,s.
+\end{aligned} \tag{$8_b$}
+\]
+
+\textbf{27.} One finds, by means of the preceding article and No.~ 18 of the present article, that a residual circumscribed cone, drawn to the surface $[F_3]$
+
+\textbf{*)} In formula (VI) of the introduction of the preceding article we set $v + 2\,\eta + 3\,\xi = x$.
+
+\textbf{**)} One sees also without difficulty that this right line which joins $O_3$ to the cuspidal point of the section, which we call $P_{1, 3}$, is tangent to the direction $(P_{1, 3} P'_{1, 3})$ which is tangent to curves through $P_{1, 3}$ and on $[F_3]$ whose corresponding curves on $[F_1]$ have cuspidal points (see Nos.~ 4 and 5).
+
+\origpage{41}
+from a point of its singular right line $(M_3)$ is endowed with $c'_3 - 3\,r_{s, 2}$ stationary tangent planes. As $c'_3$ has the value that we have just indicated, and $3\,r_{s, 2}$, that which is expressed in the first formula $(3_b)$, the residual circumscribed cone will have
+\[
+\begin{aligned}
+& c'_1 + \beta_1 + 3\,r_1 - 3\,c_1 + 2\,\sigma_1 - 6\,(p_1 - 1) \\
+& + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) + 18\,(p_2 - 1) + 12\,s
+\end{aligned}
+\]
+stationary tangent planes.
+
+This number must, according to No.~ 25, be equal to that of the stationary tangent planes of a residual circumscribed cone drawn from a point of the right line $(M_4)$ to the other auxiliary surface $[F_4]$, or to
+\[
+\begin{aligned}
+& c'_2 + \beta_2 + 3\,r_2 - 3\,c_2 + 2\,\sigma_2 - 6\,(p_2 - 1) \\
+& + \Sigma(3\,x_2 + 3\,z_2 + 2\,\eta_2 + 4\,\xi_2) + 18\,(p_1 - 1) + 12\,s.
+\end{aligned}
+\]
+One finds thus the following equation, where we have substituted for $2\,(p - 1)$ its expression $a + c - 2\,n$ [see formulas (1)],
+\[
+\tag{III}
+\left\{
+\begin{aligned}
+& c'_1 - 12\,a_1 + 24\,n_1 + \beta_1 + 3\,r_1 - 15\,c_1 + 2\,\sigma_1 + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) = \\
+& c'_2 - 12\,a_2 + 24\,n_2 + \beta_2 + 3\,r_2 - 15\,c_2 + 2\,\sigma_2 + \Sigma(3\,x_2 + 3\,z_2 + 2\,\eta_2 + 4\,\xi_2).
+\end{aligned}
+\right.
+\]
+The two members of this equation will make, if one subtracts $24$ from them, respectively for the two surfaces $[F_1]$ and $[F_2]$, $24$ times the expression that M.~Cayley${}^{*)}$ has given for the deficiency of a surface. Equation (III) therefore expresses the theorem of M.~Clebsch${}^{**)}$: \emph{that two surfaces whose points correspond one-to-one are of the same deficiency}.
+
+\section*{V. Extensions of the Results Expressed by Equations (I), (II) and (III).}
+
+\textbf{28.} We supposed in the deduction of equations (I), (II) and (III) (see Nos.~ 12, 24 and 28) that neither of the surfaces $[F_1]$ and $[F_2]$ is endowed with \emph{close-points} [points-clos], that is to say, non-conical points where the cuspidal curve is met by the curves of contact of all cones circumscribed to the surface. If there are any on our surfaces and \emph{if all these points are fundamental}, one will see, applying to them the same procedures as to the other fundamental points, that one can, in formulas (II) and (III), regard these points as conical points endowed with the following characteristics: $\mu = 2$, $v = z = 1$, $y = \eta = \xi = 0$, ($x = 1$). It will not
+
+\textbf{*)} Philosophical Transactions 1869, p.~227. It must be remembered that we supposed that $\chi = \vartheta = 0$ (see No.~ 7 of the present article and the introduction of the preceding article. $\vartheta$ is the number of "off-points"). As for $\chi$, we shall have regard to it in the following number, and its coefficient will agree with the expression of M.~Cayley. In what follows we shall also have regard to non-fundamental conical points.
+
+\textbf{**)} Comptes Rendus de l'Académie des Sciences 1868, Tome LXVII, p.~1238.
+
+\origpage{42}
+be the same for formulas (I); but applying the same procedures that gave these formulas to surfaces endowed with fundamental close-points, and observing that a curve passing through a close-point is tangent there to every "first polar with respect to the surface", one finds without difficulty the modifications that these formulas will undergo. $\chi_1$ and $\chi_2$ are the numbers of close-points, and we denote by $\chi_{1, 2}$ and $\chi_{2, 1}$ the orders of the curves composed of the curves corresponding to these new fundamental points. One will therefore have, separating in the named equations these points from the other fundamental points (and replacing at the same time in equations (I) $2\,(p - 1)$ by its expression $a + c - 2\,n$) the following equations:
+\[
+3\,n_2 - a_2 - c_2 + s\,(n_1 - 4) - \chi_{1, 2} - \Sigma[\mu_{1, 2}\,(\mu_1 - 2)] - b_{1, 2} - 2\,c_{1, 2} = 0, \tag*{[$\mathrm{I}_a$]}
+\]
+\[
+3\,n_1 - a_1 - c_1 + s\,(n_2 - 4) - \chi_{2, 1} - \Sigma[\mu_{2, 1}\,(\mu_2 - 2)] - b_{2, 1} - 2\,c_{2, 1} = 0, \tag*{[$\mathrm{I}_b$]}
+\]
+\[
+\begin{aligned}
+n'_1 - 2\,a_1 + 3\,n_1 + r_1 - 2\,c_1 + 2\,\chi_1 + \Sigma(\mu_1 + \eta_1 + \xi_1) \\
+= n'_2 - 2\,a_2 + 3\,n_2 + r_2 - 2\,c_2 + 2\,\chi_2 + \Sigma(\mu_2 + \eta_2 + \xi_2),
+\end{aligned} \tag*{[II]}
+\]
+\[
+\left\{
+\begin{aligned}
+& c'_1 - 12\,a_1 + 24\,n_1 + \beta_1 + 3\,r_1 - 15\,c_1 + 2\,\sigma_1 + 6\,\chi_1 \\
+&\quad + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) \\
+&= c'_2 - 12\,a_2 + 24\,n_2 + \beta_2 + 3\,r_2 - 15\,c_2 + 2\,\sigma_2 + 6\,\chi_2 \\
+&\quad + \Sigma(3\,x_2 + 3\,z_2 + 2\,\eta_2 + 4\,\xi_2),
+\end{aligned}
+\right. \tag*{[III]}
+\]
+where the sums $\Sigma$ \emph{are extended to fundamental points which lie at conical points and at simple points}. $b_{1, 2}$, $c_{1, 2}$ and $\mu_{1, 2}$ denote the orders of the curves of $[F_2]$ which correspond to the double curve, to the cuspidal curve and to a fundamental point of $[F_1]$; $b_{2, 1}$, $c_{2, 1}$ and $\mu_{2, 1}$ have analogous significations.
+
+\textbf{29.} We supposed in the preceding number that all the conical points and all the close-points are fundamental; but the formulas found will remain correct, if there are on the two surfaces:
+
+$1^0$ conical points which correspond to one another and which are of the same order $\mu$, of the same deficiency $\pi$ (for $2\,(\pi - 1) = v + z + \xi - 2\,\mu$), and endowed with the same numbers $\eta$ and $\xi$ of double and stationary generators \emph{not tangent} to the double curve and to the cuspidal curve,
+
+$2^0$ close-points which correspond to one another,
+
+and $3^0$ conical points endowed with the characteristics $\mu = 2$, $v = 2$, $y = \eta = \text{etc.} = 0$, and close-points which correspond to them,
+
+\emph{and if the sum $\Sigma$ is extended to all conical points of the surfaces and to simple fundamental points}${}^{*)}$. As simple fundamental points do not enter into equation [III], the latter expresses
+
+\textbf{*)} The equations of the introduction of the preceding article will not be altered if one extends the sum $\Sigma$ also to simple points. --- For a non-fundamental conical point, $\mu_{1, 2} = 0$ (or $\mu_{2, 1} = 0$).
+
+\origpage{43}
+\emph{a necessary, but not sufficient, condition}, which the characteristic numbers of the two surfaces must satisfy.
+
+One can prove that if two surfaces whose points correspond one-to-one have conical points which correspond to one another without satisfying the named conditions, one or the other of these surfaces will have, at the conical point that lies on it, a fundamental point endowed with a fundamental direction (see No.~ 7). Formulas [I], [II] and [III] will therefore be applicable to two surfaces, endowed with the singularities named in the introduction of the preceding article, whose points correspond one-to-one, \emph{if they do not have}
+
+$1^0$ cuspidal curves corresponding to one another (see No.~ 3),
+
+$2^0$ fundamental points endowed with fundamental directions (see No.~ 7),
+
+$3^0$ fundamental points which lie at pinch-points or at points of the cuspidal curve that are neither conical points nor close-points (see No.~ 7).
+
+\section*{VI. Applications.}
+
+\textbf{1.} \emph{The surfaces $[F_1]$ and $[F_2]$ are planes}${}^{*)}$. In this case formulas [I] give us
+\[
+\Sigma(\mu_{1, 2}) = \Sigma(\mu_{2, 1}) = 3\,(s - 1).
+\]
+$\Sigma(\mu_{1, 2})$ and $\Sigma(\mu_{2, 1})$ are the orders of the curves which, in each of the planes, are composed of all the curves corresponding to fundamental points.
+
+Equation [II] tells us that the two plane figures have the same number of fundamental points.
+
+Equation [III] becomes an identity.
+
+\textbf{2.} $[F_2]$ \emph{is a plane}, $[F_1]$ \emph{has no cuspidal curve}. Equation [III] gives us the \emph{necessary} (but not sufficient) condition:
+\[
+c'_1 - 12\,a_1 + 24\,n_1 + \Sigma(3\,x_1 + 2\,\eta_1 + 4\,\xi_1) - 24 = 0, \tag{9}
+\]
+which expresses that the deficiency of the surface $[F_1]$ must be equal to zero.
+
+Equation $[\mathrm{I}_a]$ gives us the following expression for the order of the curve which corresponds to the double curve of $[F_1]$
+\[
+b_{1, 2} = s\,(n_1 - 4) + 3 - \Sigma[\mu_{1, 2}\,(\mu_1 - 2)]. \tag{10}
+\]
+Equation $[\mathrm{I}_b]$ gives us
+\[
+\Sigma(\mu_{2, 1}) = 3\,s - 3\,n_1 + a_1. \tag{11}
+\]
+Equation [II] gives us the following expression for the number $m_2$ of fundamental points of the plane $[F_2]$:
+
+\textbf{*)} The results indicated here were found by M.~Cremona (\emph{Sulle trasformazioni geometriche delle figure piane}, Nota $\mathrm{II}^a$; tomo~V (serie $2^a$) delle \emph{Memorie dell' Academia di Bologna} 1865 and \emph{Giornale di matematiche} tomo~III).
+
+\origpage{44}
+\[
+m_2 = n'_1 - 2\,a_1 + 3\,n_1 + \Sigma(\mu_1 + \eta_1 + 2\,\xi_1) - 3. \tag{12}
+\]
+In the case where the surface $[F_1]$ has no fundamental points formulas (10) and (11) were demonstrated by M.~Clebsch${}^{*)}$, and formula (12) agrees with the results found by this scholar for particular surfaces.
+
+One can apply formulas (9)---(12) to the case of a surface $[F_1]$ endowed with a conical point $D$, whose characteristic numbers we shall denote as usual by $\mu$, $v$ etc.${}^{**)}$, and which is itself of order $\mu + 1$.
+
+The double curve of this surface is composed of $y$ double right lines, the cuspidal curve of $z$ cuspidal right lines, and there are further $\mu\,(\mu + 1) - 4\,y - 6\,z$ simple right lines which lie on the surface. All these right lines pass through $D$. There is on each of the $z$ cuspidal right lines another conical point
+\[
+(\mu = 3, \quad v = 3, \quad z = 1, \quad y = \eta = \xi = 0).
+\]
+One can find the class $n'$ of this surface and the number $c'$ of its stationary tangent planes which emanate from an arbitrary point, by the same procedure that gave us the same numbers for the surface $[F_3]$, seeking the tangent planes which pass through the conical point $D$. One finds the coefficients difficult to determine directly that one encounters in this research, and the other characteristic numbers of the surface, making use of the formulas given in the introduction of the preceding article. Then one can verify the results found by applying formulas (9)---(12) to the surface and to a plane that corresponds to it. The values that one finds are the following:
+\[
+\begin{aligned}
+n &= \mu + 1 \\
+a &= 2\,\mu + x \qquad (x = v + 2\,\eta + 3\,\xi) \\
+n' &= 2\,\mu + 3\,x - y - 3\,z - \eta - 2\,\xi \\
+c' &= 9\,x - 6\,z - 2\,\eta - 4\,\xi \\
+\varkappa &= 3\,x + 3\,y + 3\,z + \eta + 2\,\xi \\
+2\,\delta &= x\,(4\,\mu + x - 9) + 6\,z - 2\,\eta - 4\,\xi \\
+b &= y, \quad \varrho = y, \quad j = 2\,y, \quad f = 0 \\
+c &= z, \quad r = 0, \quad \sigma = 0, \quad \chi = z, \quad \beta = 0, \quad i = 0 \\
+&\phantom{{}=} \qquad\qquad\qquad \text{etc.}
+\end{aligned}
+\]
+We shall project this surface from the center $D$ onto a plane. Then the points of the surface and of the plane correspond one-to-one. In order to
+
+\textbf{*)} \emph{Intorno alla rappresentazione di superficie algebriche sopra un piano}, Istituto Lombardo 1868; \emph{Mathematische Annalen} Bd.~I, p.~280 etc.
+
+\textbf{**)} Although $z$ must be equal to zero in the present application, I suppose that it will not be devoid of interest to know the characteristic numbers of the surface in cases where $z$ is not zero.
+
+\origpage{45}
+to be able to make use of the results found in this article, we must suppose that $z = 0$; for to a cuspidal right line would correspond a fundamental point endowed with a fundamental direction. Then one has $c = 0$ [which was also supposed in formulas (9)---(12)]. The given surface has only a single fundamental point, which is situated at the conical point of order $\mu$. The curve which corresponds to it is of order $\mu_{1, 2} = \mu$. The fundamental points of the plane are those where it is met by the right lines of the surface, and the corresponding curves are these right lines, of which $y$ are double ($\mu_{2, 1} = 2$) while the other $\mu\,(\mu + 1) - 4\,y$ ($= 2\,\mu + x - 2\,y$) are simple ($\mu_{2, 1} = 1$). One has therefore
+\[
+\begin{aligned}
+m_2 &= 2\,\mu + x - y, \\
+\Sigma(\mu_{2, 1}) &= 2\,\mu + x.
+\end{aligned}
+\]
+As the double right lines correspond to points, one has $b_{1, 2} = 0$. These values are the same as one would find by means of equations (10), (11) and (12), $s$ being equal to $\mu + 1$.
+
+The characteristic numbers of the surface satisfy also equation (9). The coefficients of $\eta$ and of $\xi$ in this equation, which is a particular case of [III], are determined by means of this example, and it is thus that we found the coefficients of $2\,\bar{\jmath}$ and of $3\,\bar{\jmath}$ in the expression, indicated in No.~ 10 of the preceding article, of the number of \emph{stationary tangent planes of the "residual circumscribed cone"}.
+
+\textbf{3.} \emph{The surfaces $[F_1]$ and $[F_2]$ are two reciprocal surfaces} ($[F]$ and $[F']$). In this case one has
+\[
+\begin{aligned}
+n_1 &= n = n'_2, \\
+n'_1 &= n' = n_2, \\
+a_1 &= a = a' = a_2, \\
+&\quad\ \text{etc.}
+\end{aligned}
+\]
+A point where there is an infinity of tangent planes will be a fundamental point, and if there is, among the number of these tangent planes at a same point, an infinity which pass through a same right line, the latter will be a fundamental direction. The fundamental points will therefore be found at the conical points, at the pinch-points and at the close-points. These latter two classes of points will always have fundamental directions, and the conical points will have them, if the tangent cones are endowed with double and cuspidal generators \emph{not tangent} to the double curve and to the cuspidal curve. As we have not taken regard, in the deduction of our formulas, of fundamental directions, we must suppose that there are none on either of the two surfaces, or that
+\[
+j = j' = \chi = \chi' = 0,
+\]
+
+\origpage{46}
+and that, for every conical point and for every tangent plane along a curve of $[F]$,
+\[
+\eta = \xi = 0 \quad\text{and}\quad \eta' = \xi' = 0,
+\]
+whence
+\[
+x = v \quad\text{and}\quad x' = v'.
+\]
+The curve corresponding to a conical point is that along which the corresponding plane is tangent to the reciprocal surface, so that for all these points and planes
+\[
+\mu_{1, 2} = v = x \quad\text{and}\quad \mu_{2, 1} = v' = x'.
+\]
+One will have further
+\[
+s = a,
+\]
+\[
+b_{1, 2} = \varrho, \quad b_{2, 1} = \varrho',
+\]
+\[
+c_{1, 2} = \sigma, \quad c_{2, 1} = \sigma'.
+\]
+Equation $[\mathrm{I}_a]$ will then give us, if one replaces in it $3\,n' - c'$ by the quantity $3\,a - \varkappa$, which is equal to it (equation reciprocal to the $3^{\text{rd}}$ equation (II) of the introduction of the preceding article):
+\[
+a\,(n - 2) = \varkappa + \varrho + 2\,\sigma + \Sigma[x\,(\mu - 2)],
+\]
+which is the $1^{\text{st}}$ equation (VIII) of the preceding article.
+
+Equation $[\mathrm{I}_b]$ gives the reciprocal equation.
+
+Our two other equations, [II] and [III], give us (as $a = a'$) the following results
+\[
+2\,n + r - 2\,c + \Sigma(\mu) = 2\,n' + r' - 2\,c' + \Sigma'(\mu'), \tag{13}
+\]
+\[
+\begin{aligned}
+24\,n + \beta + 3\,r - 16\,c + 2\,\sigma + \Sigma(3\,x + 3\,z) \\
+= 24\,n' + \beta' + 3\,r' - 16\,c' + 2\,\sigma' + \Sigma'(3\,x' + 3\,z').
+\end{aligned} \tag{14}
+\]
+One cannot deduce these results from the equations which are indicated in the introduction of the preceding article and from the reciprocal equations, but rather the following equation which one finds by subtracting the two members of (14) from those of equation (13) after having multiplied the latter by $6$:
+\[
+\left\{
+\begin{aligned}
+& - 12\,n + 3\,r + 4\,c - \beta - 2\,\sigma + \Sigma(6\,\mu - 3\,x - 3\,z) = \\
+& - 12\,n' + 3\,r' + 4\,c' - \beta' - 2\,\sigma' + \Sigma'(6\,\mu' - 3\,x' - 3\,z').
+\end{aligned}
+\right. \tag{15}
+\]
+One of the two equations (13) and (14) can replace one of the two equations that we neglected in the introduction of the preceding article.
+
+Instead of deducing equation (15) from the equations of the preceding article, among the number of which is the equation $i' = i$, one can make use of equation (15), found here by another path, to demonstrate${}^{*)}$ that $i' = i$.
+
+\textbf{*)} See No.~ 11 of the preceding article.
+
+\origpage{47}
+Indeed, one finds by means of the first equation (II)${}^{*)}$ and equation (IV)
+\[
+c \cdot n\,(n - 1) = a\,c + 2\,b\,c + 3\,c + 3\,r + 6\,h + 9\,\beta.
+\]
+Subtracting from it the last equation (IX) and the last equation (VIII) after having multiplied the latter by four, one finds (as $\chi = \eta = \xi = 0$)
+\[
+c + 3\,r - \beta - 5\,\sigma + 2\,i - \Sigma(z) + \Sigma'(2\,v') = 0. \tag{16}
+\]
+One deduces, in the same manner, from the first equation (II), from the equation reciprocal to the second equation (II) and from the first equations (VIII) and (IX):
+\[
+- a + n' - \varkappa + \sigma + \Sigma(x) = 0,
+\]
+or rather, as
+\[
+\varkappa = c' + 3\,a - 3\,n' \quad\text{[equation reciprocal to the } 3^{\text{rd}} \text{ (II)]},
+\]
+\[
+4\,n' - 4\,a - c' + \sigma + \Sigma(x) = 0. \tag{17}
+\]
+One sees, by means of equations (16) and (17) and the reciprocal equations (and the equation $a' = a$), that the quantities
+\[
+c + 3\,r - \beta - 5\,\sigma + 2\,i - \Sigma(z + 2\,v)
+\]
+and
+\[
+- 4\,n + c + \sigma + \Sigma(x)
+\]
+are equal to the reciprocal quantities which one forms by substituting accented letters for unaccented letters. The quantity
+\[
+- 12\,n + 4\,c + 3\,r - \beta - 2\,\sigma + 2\,i + \Sigma(3\,x - z - 2\,v),
+\]
+which is composed of them, satisfies therefore the same condition.
+
+The same thing takes place, according to equation (15), with respect to the quantity
+\[
+- 12\,n + 4\,c + 3\,r - \beta - 2\,\sigma + \Sigma(6\,\mu - 3\,x - 3\,z),
+\]
+and, consequently, also with respect to
+\[
+2\,i + \Sigma(6\,x - 6\,\mu + 2\,z - 2\,v).
+\]
+Now one has for each conical point of $[F]$ and for each tangent plane to $[F]$ along a curve [$2^{\text{nd}}$ equation (VII)]
+\[
+\begin{aligned}
+v &= z + 3\,x - 3\,\mu, \\
+v' &= z' + 3\,x' - 3\,\mu';
+\end{aligned}
+\]
+(for, in the present case, where $\eta = 0$ and where one must consider separately a sheet passing through a conical point formed by other sheets, the tangent cone at a conical point cannot be composed of parts among the number of which there are planes). Therefore
+\[
+i = i'.
+\]
+
+\textbf{*)} The formulas of the introduction of the preceding article are, in this demonstration, the only ones which are marked with Roman numerals. ---
+
+We follow, in the deduction of equations (16) and (17), calculations made by M.~Cayley. Phil. Trans. 1869, pp.~203 and 227.
+
+\origpage{48}
+\section*{VII. Addition on the Representation of a Surface on a Multiple Plane.}
+
+One can apply the same procedures that we used in this memoir, to the research of the properties of two surfaces whose points correspond in a \emph{multiple} manner. We shall content ourselves here with occupying ourselves with the representation of a surface on a multiple plane, say $N$-tuple. In this case, to each point of the surface corresponds a single point of a plane, but to a point of the plane correspond $N$ points of the surface. For the points of a certain curve of the plane, \emph{the transition curve} (\emph{Uebergangscurve}), two of these $N$ points coincide. One sees that this curve will play the same role as, in what precedes, the curve of contact of a circumscribed cone or the cuspidal curve, and we shall denote its order by $A$, its class by $N'$ and the number of its stationary tangents by $C'$. The multiple plane can contain fundamental points: the order $\mu$ of one of these fundamental points indicates the number of sheets of the multiple plane that contribute to forming it [the points of the ($N - \mu$) other sheets that coincide with the fundamental point have as correspondents ($N - \mu$) isolated points of the surface], and the class $v$ indicates the number of branches of the transition curve that pass through the point.
+
+If we suppose that it is the surface $[F_2]$ that reduces to a multiple plane, we shall have, making the ordinary use of indices 1 and 2 and of the notation $s$, the equations
+\[
+3\,N - A + s\,(n_1 - 4) - \chi_{1, 2} - \Sigma[\mu_{1, 2}\,(\mu_1 - 2)] - b_{1, 2} - 2\,c_{1, 2} = 0 \tag*{[1]}
+\]
+\[
+\begin{aligned}
+n'_1 - 2\,a_1 + 3\,n_1 + r_1 - 2\,c_1 + 2\,\chi_1 + \Sigma[\mu_1 + \eta_1 + 2\,\xi_1] \\
+= N' - 2\,A + 3\,N + \Sigma(\mu_2)
+\end{aligned} \tag*{[2]}
+\]
+\[
+\left\{
+\begin{aligned}
+& c'_1 - 12\,a_1 + 24\,n_1 + \beta_1 + 3\,r_1 - 15\,c_1 + 2\,\sigma_1 + 6\,\chi_1 \\
+&\quad + \Sigma(3\,x_1 + 3\,z_1 + 2\,\eta_1 + 4\,\xi_1) = C' - 12\,A + 24\,N + \Sigma(3\,v_2),
+\end{aligned}
+\right. \tag*{[3]}
+\]
+which one proves like the analogous equations $[\mathrm{I}_a]$, [II] and [III]. In the demonstration of [1] one makes use of the following equation, which I proved in the \emph{Mathematische Annalen}, 3.~Bd. p.~324,
+\[
+2\,(P - 1) = A - 2\,N, \tag*{[4]}
+\]
+where $P$ is the deficiency of the curve of $[F_1]$ that corresponds to a plane section of the multiple plane. (One could call $P$ the deficiency of this section which is a multiple right line. The analogy of equation [4] with equation (1) in No.~ 1 is then evident.)
+
+Applying to the present case the same procedures that give equation $[\mathrm{I}_b]$, one sees that one must replace, in this equation,
+\[
+(s\,(n_2 - 1) - \Sigma[\mu_{2, 1}\,(\mu_2 - 1)] - b_{2, 1} - 3\,c_{2, 1}) + c_{2, 1}
+\]
+
+\origpage{49}
+by the order $A_{2, 1}$ of the curve which on $[F_1]$ corresponds to the transition curve. One finds thus
+\[
+A_{2, 1} = a_1 + c_1 - 3\,n_1 + 3\,s - \Sigma(\mu_{2, 1}). \tag*{[5]}
+\]
+To complete these results we shall place here the general equation of which equation [4] is a particular case:
+\[
+A = 2\,(P_{2, 1} - 1) - 2\,N\,(P_2 - 1),
+\]
+where $P_2$ is the deficiency of a curve in the image plane penetrating all its $N$ sheets, and $P_{2, 1}$ that of the corresponding curve. This equation is proved at the cited place.
+
+M.~Clebsch applied the representation on a double plane to the research of the properties \emph{of a surface of the fifth order endowed with a double curve of the fourth order of the first species}${}^{*)}$. This surface has the characteristic numbers:
+\[
+\begin{gathered}
+n = 5, \quad a = 12, \quad c = r = \sigma = \chi = \beta = 0 \\
+n' = 20, \quad c' = 48.
+\end{gathered}
+\]
+In the representation of this surface on a double plane of which M.~Clebsch makes use, one has
+\[
+\begin{gathered}
+N = 2, \quad s = 5, \quad A = 6, \quad N' = 16, \quad C' = 30, \\
+b_{1, 2} = 8, \quad A_{2, 1} = 7, \quad P = 2.
+\end{gathered}
+\]
+There are on the surface three simple fundamental points, to which correspond right lines ($\mu_1 = 1$, $\mu_{1, 2} = 1$). In the plane there are two fundamental points: one has
+\[
+\begin{aligned}
+\text{for the one} \quad &\mu_2 = 2, \quad v_2 = 4, \quad \mu_{2, 1} = 3, \\
+\text{for the other} \quad &\mu_2 = 2, \quad v_2 = 2, \quad \mu_{2, 1} = 2.
+\end{aligned}
+\]
+These quantities satisfy equations [1]---[5], which could help in finding them. ---
+
+We propose as an exercise the application of our formulas to the following question:
+
+\emph{Let a surface of the sixth order, endowed with two double right lines which do not meet, be represented on a double plane by projecting all its points on the plane by right lines which meet the double lines; what will then be the properties of the image, and what properties of the surface can one find by means of this representation?}
+
+As for the solution of these questions, I have myself confined myself to the determination of the numbers that enter into my formulas.
+
+\textbf{*)} Abhandlungen der Gesellschaft der Wissenschaften zu Göttingen 15.~Bd.
+
+Copenhagen, February 1871.
+
+\end{document}

@@ -1,0 +1,80 @@
+# Term renderings for zeuthen-1871-proprietes-deux-surfaces, applied consistently across
+# the translation. Format: `terms: {French as printed: English}`.
+# Follows Cayley (1869, 1871), Salmon, and classical English algebraic geometry:
+# close-point (chi), pinch-point (j), fundamental point, residual circumscribed cone,
+# transition curve, double/cuspidal curve, stationary tangent planes.
+
+terms:
+  # --- surface and correspondence concepts ---
+  surfaces réciproques: reciprocal surfaces
+  surface réciproque: reciprocal surface
+  surfaces auxiliaires: auxiliary surfaces
+  surface auxiliaire: auxiliary surface
+  points fondamentaux: fundamental points
+  point fondamental: fundamental point
+  points principaux: principal points
+  point principal: principal point
+  direction fondamentale: fundamental direction
+  directions fondamentales: fundamental directions
+  courbe correspondante: corresponding curve
+  courbes correspondantes: corresponding curves
+  plan multiple: multiple plane
+  plans multiples: multiple planes
+  courbe de liaison: transition curve
+  nappe: sheet
+  nappes: sheets
+
+  # --- cones and sections ---
+  cône circonscrit: circumscribed cone
+  cônes circonscrits: circumscribed cones
+  cône circonscrit résidu: residual circumscribed cone
+  cônes circonscrits résidus: residual circumscribed cones
+  section plane: plane section
+  sections planes: plane sections
+  section résidue: residual section
+  sections résidues: residual sections
+  première polaire: first polar
+  premières polaires: first polars
+  surface développable: developable surface
+  arête de rebroussement: edge of regression
+  contact triponctuel: three-point contact
+
+  # --- curves and planes ---
+  courbe double: double curve
+  courbes doubles: double curves
+  courbe cuspidale: cuspidal curve
+  courbes cuspidales: cuspidal curves
+  droite double: double line
+  droites doubles: double lines
+  droite cuspidale: cuspidal line
+  droites cuspidales: cuspidal lines
+  droite singulière: singular line
+  droite multiple: multiple line
+  plan tangent: tangent plane
+  plans tangents: tangent planes
+  plan tangent double: double tangent plane
+  plans tangents doubles: double tangent planes
+  plan tangent stationnaire: stationary tangent plane
+  plans tangents stationnaires: stationary tangent planes
+  plan osculateur: osculating plane
+  plans osculateurs: osculating planes
+
+  # --- singularities ---
+  point-pince: pinch-point
+  points-pinces: pinch-points
+  point-clos: close-point
+  points-clos: close-points
+  point conique: conical point
+  points coniques: conical points
+  point double: double point
+  points doubles: double points
+  point cuspidal: cuspidal point
+  points cuspidaux: cuspidal points
+  génératrices doubles: double generators
+  génératrices stationnaires: stationary generators
+  génératrices cuspidales: cuspidal generators
+
+  # --- numerical invariants ---
+  ordre: order
+  classe: class
+  genre: deficiency
