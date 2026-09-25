@@ -77,3 +77,35 @@ copyright_assessment:
       inputs:
         external_translations: 0
   evaluated_at: '2026-09-23'
+significance: 'Poincaré''s culminating 1910 memoir provides a purely transcendental
+  demonstration of the celebrated theorem of Enriques, Castelnuovo, and Severi[1]:
+  that the irregularity $q = p_g - p_a$ of an algebraic surface equals the number
+  of independent integrals of total differentials of the first kind discovered by
+  Picard[2]. Where the Italian geometers relied on delicate dynamic limits of continuous
+  systems of curves, Poincaré cuts the surface by a pencil of planes and introduces
+  the abelian sums now called *Poincaré normal functions*[note 1]. Proving via Riemann
+  theta functions that these normal functions characterize actual algebraic curves,
+  he shows that non-linear continuous families exist if and only if the abelian differentials
+  extend to total differentials, establishing the formula $q = p_g - p_a$ with analytic
+  rigor. The memoir also classifies curves into primitive curves, founding Picard''s
+  invariant $\rho$, and directly inspired Solomon Lefschetz''s proof of the Lefschetz
+  $(1,1)$-theorem[3][note 2].'
+significance_sources:
+- citation: G. Castelnuovo and F. Enriques, "Sur quelques récents résultats dans la
+    théorie des surfaces algébriques", Mathematische Annalen 48 (1897), pp. 241–316;
+    in this corpus as castelnuovo-enriques-1897-surfaces-algebriques.
+  url: /works/castelnuovo-enriques-1897-surfaces-algebriques/
+- citation: 'É. Picard and G. Simart, Théorie des fonctions algébriques de deux variables
+    indépendantes, tomes I et II (Paris: Gauthier-Villars, 1897, 1906).'
+- citation: 'S. Lefschetz, L''Analysis situs et la géométrie algébrique (Paris: Gauthier-Villars,
+    1924).'
+significance_notes:
+- label: Poincaré normal functions
+  text: An abelian integral on a moving plane section, summed across its intersections
+    with an algebraic curve on the surface, defines an analytic function of the slicing
+    parameter whose monodromy and zeros determine whether the curve belongs to a continuous
+    system.
+- label: The Lefschetz (1,1)-theorem
+  text: Lefschetz used Poincaré's normal functions and vanishing cycles to prove that
+    every integral cohomology class in $H^2(S, \mathbb{Z}) \cap H^{1,1}(S)$ is the
+    fundamental class of an algebraic divisor.
