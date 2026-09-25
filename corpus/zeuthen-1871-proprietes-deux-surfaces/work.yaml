@@ -1,0 +1,71 @@
+id: zeuthen-1871-proprietes-deux-surfaces
+title: Études géométriques de quelques-unes des propriétés de deux surfaces dont les
+  points se correspondent un-à-un.
+title_en: Geometric Studies of Some Properties of Two Surfaces Whose Points Correspond
+  One-to-One
+authors:
+- name: Hieronymus Georg Zeuthen
+  wikidata_id: Q335116
+  birth_year: 1839
+  death_year: 1920
+  mactutor: Zeuthen
+publication:
+  year: 1871
+  venue: mathematische-annalen
+  volume: '4'
+  pages: 21–49
+  title_full: '"Études géométriques de quelques-unes des propriétés de deux surfaces
+    dont les points se correspondent un-à-un", Mathematische Annalen, Band 4 (1871),
+    pp. 21–49.'
+edition:
+  year: 1871
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in Mathematische Annalen, Band
+    4 (1871), pp. 21–49, published by B. G. Teubner, Leipzig. An original edition
+    with no modern critical apparatus, commentary, or re-typesetting.
+discipline: mathematics
+tags:
+- geometry
+- algebra
+language: fr
+type: paper
+relations:
+- to: noether-1870-eindeutigen-entsprechens
+  kind: builds-on
+  note: Zeuthen investigates birational correspondences between surfaces, extending
+    the geometric framework and referencing Max Noether's 1870 investigations on one-to-one
+    correspondences.
+source:
+  scan_url: https://archive.org/details/sim_mathematische-annalen_1871_4/page/21/mode/1up
+  scan_id: internetarchive:sim_mathematische-annalen_1871_4
+sources:
+  death_date: Hieronymus Georg Zeuthen, 15 February 1839 – 6 January 1920 (wikidata:Q335116;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Zeuthen/).
+  publication_date: 'First published 1871 in Mathematische Annalen, Band 4, pp. 21–49
+    (DOI: 10.1007/bf01443296; EuDML: https://eudml.org/doc/156513).'
+  edition: Original printing in Mathematische Annalen, Band 4 (1871), pp. 21–49, B.
+    G. Teubner, Leipzig. Digitized by the Internet Archive (sim_mathematische-annalen_1871_4).
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1920
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1871
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-21'
