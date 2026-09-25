@@ -1,0 +1,67 @@
+id: weyl-1913-idee-riemannschen-flaeche
+title: Die Idee der Riemannschen Fläche
+title_en: The Concept of a Riemann Surface
+authors:
+- name: Hermann Weyl
+  wikidata_id: Q71029
+  birth_year: 1885
+  death_year: 1955
+publication:
+  year: 1913
+  venue: book
+  title_full: '"Die Idee der Riemannschen Fläche", Mathematische Vorlesungen an der
+    Universität Göttingen: V (Leipzig und Berlin: Druck und Verlag von B. G. Teubner,
+    1913), V + 169 pp.'
+edition:
+  year: 1913
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'First edition: "Die Idee der Riemannschen Fläche" (Leipzig und Berlin:
+    B. G. Teubner, 1913). This is the original 1913 public-domain edition with no
+    modern critical apparatus, commentary, or modern re-typesetting. Only Weyl''s
+    original text and footnotes are transcribed.'
+discipline: mathematics
+tags:
+- analysis
+- geometry
+- topology
+- foundations
+language: de
+type: book
+relations:
+- to: riemann-1851-complexen-groesse
+  kind: builds-on
+  recommended: primary
+- to: riemann-1857-abelsche-functionen
+  kind: builds-on
+source:
+  scan_url: https://archive.org/details/dieideederrieman00weyluoft
+  scan_id: archive.org:dieideederrieman00weyluoft (University of Toronto scan)
+sources:
+  death_date: 'Hermann Weyl, 1885–1955 (wikidata:Q71029; MacTutor archive: https://mathshistory.st-andrews.ac.uk/Biographies/Weyl/).'
+  publication_date: First edition published 1913 by B. G. Teubner, Leipzig und Berlin.
+  edition: 'First edition, Leipzig und Berlin: B. G. Teubner, 1913; digitized from
+    University of Toronto Robarts Library (Internet Archive dieideederrieman00weyluoft).'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1955
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1913
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-25'

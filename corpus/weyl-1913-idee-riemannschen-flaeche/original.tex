@@ -1,0 +1,259 @@
+\documentclass{article}
+\usepackage{readmasters}
+
+\begin{document}
+\origpage{1}
+\begin{center}
+{\large Erstes Kapitel.}
+
+\vspace{0.5em}
+{\Large\textbf{Begriff und Topologie der Riemannschen Flächen.}}
+\end{center}
+
+\subsection*{§ 1. Weierstraß' Begriff der analytischen Funktion.}
+
+Ist $z$ eine komplexe Variable und $a$ eine feste komplexe Zahl, so bezeichnet man nach Weierstraß als ein \textbf{Funktionselement mit dem Mittelpunkt} $a$ eine jede nach ganzen positiven Potenzen von $z - a$ fortschreitende Reihe
+\[ \mathfrak{P}(z - a) = A_0 + A_1(z - a) + A_2(z - a)^2 + \cdots, \tag{1} \]
+welche nicht nur für $z = a$ konvergiert. Im übrigen können die Koeffizienten $A_0$, $A_1$, $A_2$, \dots\ beliebige komplexe Zahlen sein. Der Konvergenzbereich einer solchen Potenzreihe besteht entweder aus der ganzen komplexen $z$-Ebene oder aus dem Innern eines bestimmten Kreises $|z - a| < r$ [$r > 0$], des „\textbf{Konvergenzkreises}“, und einem Teil${}^{1)}$ der auf der Peripherie $|z - a| = r$ dieses Kreises gelegenen Punkte.
+
+Im Innern ihres Konvergenzkreises (worunter gegebenenfalls auch die ganze Ebene als Kreis vom Radius $r = \infty$ verstanden werden soll) stellt ein solches Funktionselement im Cauchyschen Sinne eine reguläre analytische Funktion vor. Umgekehrt ist aus den Elementen der Funktionentheorie bekannt, daß sich eine eindeutige regulär-analytische Funktion in der Umgebung $|z - a| < r$ einer Stelle $a$ in eine in dieser Umgebung konvergente Potenzreihe (1) entwickeln läßt, falls die Umgebung ganz dem Regularitätsgebiete der analytischen Funktion angehört. Es gelangt dann allerdings durch die Potenzreihe nur ein kreisförmiges Stück des ganzen Funktionsfeldes zur Darstellung.
+
+Geht man von der Potenzreihe aus, so muß das Bestreben darauf gerichtet sein, die Definition der analytischen Funktion, welche zunächst nur innerhalb des Konvergenzkreises durch die Potenzreihe (1) gegeben ist, in der Weise über weitere Gebiete der $z$-Ebene auszudehnen, daß sie bei dieser Ausdehnung ihres analytischen Charakters nicht verlustig geht. Das Mittel dazu ist das Weierstraßsche Prinzip der analytischen Fort-
+
+\textbf{1)} Das Wort „Teil“ (einer Menge) ist hier so zu verstehen, daß sowohl die ganze Menge als auch die (kein Element enthaltende) „leere Menge“ mit unter diesen Begriff fällt.
+
+\origpage{2}
+setzung.${}^{1)}$ Es zeigt sich, daß der Plan, ein möglichst weites Gebiet der $z$-Ebene für die zu definierende analytische Funktion zu erobern, nur auf eine einzige Weise ausführbar ist. Die Eindeutigkeit der Funktion geht aber bei dem Prozeß der analytischen Fortsetzung im allgemeinen verloren. Darin darf man nicht etwa einen Mangel erblicken, sondern es ist ein großer Vorzug, daß auf diese Weise auch die mehrdeutigen analytischen Funktionen einer exakten Behandlung fähig werden.
+
+Ist $b$ ein Wert von $z$, der dem Innern des Konvergenzkreises $|z - a| < r$ angehört, so entsteht durch Umordnen der Reihe (1) nach Potenzen von $z - b$, wie man weiß, eine neue Potenzreihe
+\[ \mathfrak{Q}(z - b) = B_0 + B_1(z - b) + B_2(z - b)^2 + \cdots, \tag{2} \]
+die zum mindesten in dem Kreise $|z - b| < r - |b - a|$ konvergiert; ihr Konvergenzkreis kann aber sehr wohl einen größeren Radius als $r - |b - a|$ haben. Da auf jeden Fall (1) und (2) in dem ihren beiden Konvergenzkreisen gemeinsamen Gebiet ihren Werten nach übereinstimmen, liefert uns dann (2) eine Ausdehnung der Definition unserer analytischen Funktion über den ursprünglichen Bereich hinaus. Wir wollen sagen, daß (2) eine \textbf{unmittelbare analytische Fortsetzung} von (1) ist. Der allgemeine Prozeß der (mittelbaren) \textbf{analytischen Fortsetzung} besteht darin, daß der der unmittelbaren analytischen Fortsetzung nicht bloß einmal, sondern eine beliebige endliche Zahl von Malen hintereinander angewendet wird --- in analoger Weise etwa, wie in der projektiven Geometrie die allgemeine projektive Abbildung als Hintereinanderausführung einer beliebigen Anzahl unmittelbarer projektiver, d.\ i.\ perspektiver Abbildungen erklärt werden kann.
+
+Die \textbf{analytische Fortsetzung} kann \textbf{längs einer gegebenen Kurve} $\mathfrak{c}$ vorgenommen werden. Das soll folgendes heißen. Es möge eine von dem Punkte $z = a$ auslaufende Kurve gegeben sein, d.\ h.\ es sei jedem reellen Wert $\lambda$ im Intervall $0 \leqq \lambda \leqq 1$ ein Punkt $z_\lambda$ der komplexen $z$-Ebene in stetiger Weise zugeordnet, $\lambda = 0$ insbesondere der Punkt $z_0 = a$, $\lambda = 1$ ein gewisser Punkt $z_1 = c$. Ferner sei jedem Wert des Parameters $\lambda$ auch noch ein Funktionselement $\mathfrak{P}_\lambda$ mit dem Mittelpunkt $z_\lambda$ zugeordnet; $\mathfrak{P}_0$ sei das gegebene Funktionselement (1), und es sei außerdem diese Bedingung erfüllt: Ist $\lambda_0$ irgend ein $\lambda$-Wert, $\mathfrak{c}'$ ein beliebiger ganz im Innern des Konvergenzkreises von $\mathfrak{P}_{\lambda_0}$ liegender Teilbogen von $\mathfrak{c}$ (definiert durch eine Ungleichung von der Form $|\lambda - \lambda_0| \leqq \varepsilon$; $\varepsilon$ eine positive Konstante),
+
+\textbf{1)} Vgl.\ die in den Mathematischen Werken von Weierstraß, Bd.\ 1 (1894) zuerst veröffentlichte, im Jahre 1842 verfaßte Abhandlung über die „Definition analytischer Funktionen einer Veränderlichen vermittelst algebraischer Differentialgleichungen“, namentlich S.\ 83---84; ferner die ersten Seiten in Riemanns „Theorie der Abelschen Funktionen“ (1857) [Werke, 2.\ Aufl., S.\ 88---89]. Encyklopädie II B 1 (Artikel von Osgood), Nr.\ 13.
+
+\origpage{3}
+so entstehen die Funktionselemente $\mathfrak{P}_\lambda$, welche den dieser Ungleichung genügenden $\lambda$-Werten zugehören, alle durch unmittelbare analytische Fortsetzung aus $\mathfrak{P}_{\lambda_0}$. Dann sagen wir, es sei gelungen, das vorgegebene Element (1) längs $\mathfrak{c}$ analytisch fortzusetzen, und nennen $\mathfrak{P}_1$ dasjenige Funktionselement mit dem Mittelpunkt $c$, welches durch analytische Fortsetzung längs $\mathfrak{c}$ aus (1) entsteht. Es geht alsdann umgekehrt durch analytische Fortsetzung längs der rückwärts durchlaufenen Kurve $\mathfrak{c}$ aus $\mathfrak{P}_1$ das Element $\mathfrak{P}_0$ hervor.
+
+\emph{Die analytische Fortsetzung längs einer vorgegebenen Kurve $\mathfrak{c}$ ist, wenn überhaupt, nur auf eine Weise möglich.} Hätte man nämlich zwei verschiedene analytische Fortsetzungen
+\[ \mathfrak{P}_\lambda, \quad \mathfrak{P}_\lambda^*, \]
+so sei $\lambda_0$ die untere Grenze aller derjenigen $\lambda$-Werte, für welche die zugehörigen Potenzreihen $\mathfrak{P}_\lambda$, $\mathfrak{P}_\lambda^*$ nicht übereinstimmen. $\mathfrak{P}_{\lambda_0}$, $\mathfrak{P}_{\lambda_0}^*$ mögen beide in dem Kreise $|z - z_{\lambda_0}| < r_0$ konvergieren. Man kann dann durch eine Ungleichung der Form $|\lambda - \lambda_0| \leqq \varepsilon$ einen Bogen $\mathfrak{c}_0$ auf $\mathfrak{c}$ abgrenzen, der ganz in dem um $z_{\lambda_0}$ mit dem Radius $\frac{1}{2}r_0$ beschriebenen Kreise liegt. Die zu den Punkten dieses Bogens gehörigen $\mathfrak{P}_\lambda$, $\mathfrak{P}_\lambda^*$ entstehen durch unmittelbare analytische Fortsetzung aus $\mathfrak{P}_{\lambda_0}$, $\mathfrak{P}_{\lambda_0}^*$, und da unter den jener Ungleichung genügenden $\lambda$-Werten sich solche finden, für die $\mathfrak{P} \neq \mathfrak{P}^*$ ist, muß auch $\mathfrak{P}_{\lambda_0} \neq \mathfrak{P}_{\lambda_0}^*$ sein. Daher kann $\lambda_0$ nicht $= 0$ sein. Ist dann $\lambda_1$ ein Wert $> 0$ und $> \lambda_0 - \varepsilon$, aber $< \lambda_0$, so entstehen $\mathfrak{P}_{\lambda_0}$, $\mathfrak{P}_{\lambda_0}^*$ durch unmittelbare analytische Fortsetzung aus $\mathfrak{P}_{\lambda_1} = \mathfrak{P}_{\lambda_1}^*$. Das ist ein Widerspruch. Damit ist insbesondere gezeigt, daß das endständige Element $\mathfrak{P}_1$ durch das Ausgangselement und die Fortsetzungskurve eindeutig bestimmt ist.
+
+Wir haben uns ferner zu überlegen, daß man durch endlichmalige Anwendung unmittelbarer analytischer Fortsetzung --- wobei die auftretenden Elementmittelpunkte aufeinanderfolgende Punkte der Kurve $\mathfrak{c}$ sind --- von dem Anfangselement zum Endelement gelangen kann. In der Tat: hat eines der Funktionselemente $\mathfrak{P}_\lambda$ den Konvergenzradius $r = \infty$, so trifft das auch für alle andern, insbesondere für das Ausgangselement, zu, und das Endelement entsteht bereits durch einmalige Anwendung der unmittelbaren analytischen Fortsetzung aus ihm. Andernfalls gehört zu jedem $\lambda$ ein endlicher Konvergenzradius $r_\lambda$ von $\mathfrak{P}_\lambda$. Ist $\lambda_1$ irgendein Wert des Parameters $\lambda$, so behaupte ich, wird
+\[ |r_\lambda - r_{\lambda_1}| \leqq |z_\lambda - z_{\lambda_1}|, \]
+sein, solange sich $\lambda$ hinreichend wenig von $\lambda_1$ unterscheidet, und daraus folgt, daß $r_\lambda$ stetig von $\lambda$ ($0 \leqq \lambda \leqq 1$) abhängt. Ist nämlich $\lambda_2$ ($> \lambda_1$) ein solcher $\lambda$-Wert, daß der ganze Kurvenbogen $z_\lambda$ ($\lambda_1 \leqq \lambda \leqq \lambda_2$) im Innern des um $z_{\lambda_1}$ mit dem Radius $\frac{1}{2}r_{\lambda_1}$ beschriebenen Kreises liegt, so entsteht $\mathfrak{P}_{\lambda_2}$ aus $\mathfrak{P}_{\lambda_1}$ durch unmittelbare analytische Fortsetzung, und es ist also
+\[ r_{\lambda_2} \geqq r_{\lambda_1} - |z_{\lambda_2} - z_{\lambda_1}|. \]
+
+\origpage{4}
+Da der ganze Bogen $z_\lambda$ ($\lambda_1 \leqq \lambda \leqq \lambda_2$) aber auch in dem Konvergenzkreis von $\mathfrak{P}_{\lambda_2}$ enthalten ist, gilt auch umgekehrt
+\[ r_{\lambda_1} \geqq r_{\lambda_2} - |z_{\lambda_1} - z_{\lambda_2}|. \]
+Aus der somit erwiesenen Stetigkeit folgt, daß $r_\lambda$ ein \emph{positives} Minimum $r^0$ besitzt. Wählen wir nun die Werte $0 = \lambda_0 < \lambda_1 < \lambda_2 < \dots < \lambda_n = 1$ so, daß $|z_\lambda - z_{\lambda_h}| < r^0$ bleibt für $\lambda_h \leqq \lambda \leqq \lambda_{h+1}$ [$h = 0, 1, \dots n-1$], so entsteht in der Reihe $\mathfrak{P}_{\lambda_0}$, $\mathfrak{P}_{\lambda_1}$, \dots\ $\mathfrak{P}_{\lambda_n}$ jedes Funktionselement aus dem vorhergehenden durch unmittelbare analytische Fortsetzung.
+
+Ist die Fortsetzung des Anfangselementes längs $\mathfrak{c}$ unmöglich, so gibt es auf der Kurve einen bestimmten Punkt, den \textbf{„kritischen Punkt“}, an dem das Verfahren notwendig seine Grenze findet. Genauer formuliert: es gibt eine Schwelle $\lambda = \Lambda_0$ von der folgenden Art. Ist $\lambda_0 < \Lambda_0$, so läßt sich der Prozeß der analytischen Fortsetzung längs der Teilkurve $z = z_\lambda$ ($0 \leqq \lambda \leqq \lambda_0$) ausführen, dies hört aber von $\lambda_0 = \Lambda_0$ ab auf. Dabei kann natürlich auch $\Lambda_0 = 1$, d.\ h.\ erst der Endpunkt von $\mathfrak{c}$ der kritische Punkt sein; dagegen ist stets $\Lambda_0 > 0$.
+
+Noch ein Satz über analytische Fortsetzung ist von Wichtigkeit. Hat man zwei Kurven
+\[ z = z_1(\lambda), \quad z = z_2(\lambda), \]
+die von demselben Punkt $a$ $\{ = z_1(0) = z_2(0) \}$ zu demselben Endpunkt $c$ führen und dabei immer in hinreichender Nähe voneinander bleiben, so läßt sich die analytische Fortsetzung, falls sie sich längs der ersten Kurve vollziehen läßt, auch längs der zweiten ausführen und liefert das gleiche Endelement. Die Bedingung, daß die Kurven in hinreichender Nähe voneinander bleiben sollen, besagt: es gibt eine positive Zahl $\delta$ derart, daß, wenn für alle $\lambda$ die Ungleichung $|z_1(\lambda) - z_2(\lambda)| < \delta$ erfüllt ist, die Behauptung unseres Satzes zutrifft. Der Beweis ergibt sich ohne weiteres daraus, daß man das endständige Element durch endlichmalige Anwendung des Prozesses der unmittelbaren analytischen Fortsetzung aus dem Anfangselement gewinnen kann.
+
+Nunmehr sind wir imstande, die allgemeine Weierstraßsche Definition der analytischen Funktion so auszusprechen: \emph{Eine \textbf{analytische Funktion} ist die Gesamtheit} $\mathbf{G}$ \emph{aller derjenigen Funktionselemente, die aus einem gegebenen Funktionselement durch analytische Fortsetzung entstehen können.}
+
+Jedes Funktionselement von $\mathbf{G}$ läßt sich aus jedem solchen durch analytische Fortsetzung gewinnen.
+
+Zwei analytische Funktionen $\mathbf{G}_1$, $\mathbf{G}_2$, von denen sich nachweisen läßt, daß sie ein einziges Funktionselement gemein haben, sind überhaupt identisch, d.\ h.\ jedes Element von $\mathbf{G}_1$ ist auch in $\mathbf{G}_2$ enthalten und umgekehrt.
+
+\origpage{5}
+Ist
+\[ \mathfrak{P}(z - a) = A_0 + A_1(z - a) + A_2(z - a)^2 + \cdots \]
+ein zu $\mathbf{G}$ gehöriges Funktionselement, so heißt die Zahl $A_0$ ein \textbf{Wert} der analytischen Funktion $\mathbf{G}$ im Punkte $z = a$.
+
+Gewiß hat diese Weierstraßsche Auffassung der mehrdeutigen analytischen Funktion als einer \emph{Gesamtheit von Funktionselementen} auf den ersten Blick etwas Künstliches. Wenn man von $\sqrt{z}$ oder $\lg z$ spricht, stellt man sich dabei kaum die Gesamtheit derjenigen Potenzreihen vor, welche Stücke dieser mehrdeutigen Funktionen darzustellen vermögen. Trotzdem aber bewährt sich die Weierstraßsche Definition, der man Einfachheit und Präzision nicht absprechen kann, als fester Ausgangspunkt für die analytische Funktionentheorie. Durch allmähliche Verarbeitung der Weierstraßschen werden wir in der Folge zu der Riemannschen Auffassung gelangen, in der die unabhängige Variable $z$ ebenso wie die bisher durch eine Gesamtheit $\mathbf{G}$ von Funktionselementen repräsentierte abhängige Variable $u$ als eindeutige analytische Funktionen eines Parameters erscheinen, eines Parameters freilich, der im allgemeinen nicht in einer komplexen Ebene, sondern auf einer gewissen zweidimensionalen Mannigfaltigkeit, der sogenannten Riemannschen Fläche, variiert.
+
+Zunächst aber haben wir den Begriff der analytischen Funktion mit Weierstraß zu dem des analytischen Gebildes zu erweitern.
+
+\subsection*{§ 2. Begriff des analytischen Gebildes.}
+
+Aus einer analytischen Funktion entsteht das analytische Gebilde dadurch, daß man die Funktion nicht wie bisher bloß an denjenigen Stellen betrachtet, wo sich dieselbe regulär verhält, sondern die Stellen hinzunimmt, in denen sie einen Verzweigungspunkt endlich hoher Ordnung oder einen Pol (oder beides zugleich) besitzt. Die strenge Formulierung des Begriffes des analytischen Gebildes erhalten wir, wenn wir den bisherigen Begriff des Funktionselementes in gehöriger Weise erweitern${}^{1)}$.
+
+Das Funktionselement (1) : $u = \mathfrak{P}(z - a)$ können wir mit Hilfe eines komplexen Parameters $t$ so darstellen:
+\[ z = a + t, \quad u = \mathfrak{P}(t) = A_0 + A_1 t + A_2 t^2 + \cdots \]
+Indem wir hierin die bevorzugte Rolle, welche $z$ spielt, aufgeben und außerdem auch endlich viele negative Potenzen von $t$ zulassen, kommen wir zu der allgemeineren Erklärung:
+
+Es seien
+\[ z = P(t), \quad u = Q(t) \]
+irgend zwei Reihen, die nach ganzzahligen Potenzen von $t$ fortschreiten
+
+\textbf{1)} Siehe Weierstraß, Vorlesungen über die Theorie der Abelschen Transzendenten (bearbeitet von G.\ Hettner und I.\ Knoblauch), Werke, Bd.\ 4, S.\ 16---19.
+
+\origpage{6}
+und nur endlichviele negative Potenzen von $t$ enthalten, von der Art, daß in einer gewissen Umgebung $|t| < r$ ($r$ eine positive Konstante) des Nullpunktes der $t$-Ebene 1) beide Reihen konvergieren und 2) niemals für zwei verschiedene $t$-Werte dieser Umgebung sich das gleiche Wertepaar $(z, u)$ ergibt: so sagen wir, dieses Paar von Potenzreihen \textbf{definiere ein Funktionselement}.
+
+Unsere Meinung geht nicht dahin, daß wir unter „Funktionselement“ direkt das Potenzreihenpaar $P(t)$, $Q(t)$ verstehen; vielmehr fassen wir diese beiden Reihen nur als eine \emph{Darstellung} des gemeinten Funktionselementes auf, das neben dieser noch unendlich viele gleichberechtigte Darstellungen gestattet. Hinsichtlich des Übergangs von einer solchen Darstellung zu einer andern treffen wir folgende naheliegenden Verabredungen.
+
+Ersetzt man sowohl in $P(t)$ als in $Q(t)$ den Parameter $t$ durch eine Potenzreihe
+\[ t(\tau) = c_1 \tau + c_2 \tau^2 + \cdots, \]
+so gehe $P(t)$ in die Potenzreihe $\Pi(\tau)$, $Q(t)$ in $\mathrm{K}(\tau)$ über. Wir setzen voraus, daß $t(\tau)$ in einer gewissen Umgebung von $\tau = 0$ konvergent und der erste Koeffizient $c_1 \neq 0$ ist; dann können wir um $\tau = 0$ mit Hilfe einer gewissen positiven Konstanten $\varrho$ eine solche Umgebung $|\tau| < \varrho$ abgrenzen, daß $t(\tau)$ in ihr 1) konvergiert und dem absoluten Betrage nach $< r$ bleibt und 2) an zwei verschiedenen Stellen $\tau$ stets zwei verschiedene Werte annimmt. In dieser Umgebung $|\tau| < \varrho$ konvergieren dann auch $\Pi$ und $\mathrm{K}$ und an zwei verschiedenen Stellen $\tau_1$, $\tau_2$ dieser Umgebung ist niemals gleichzeitig $\Pi(\tau_1) = \Pi(\tau_2)$, $\mathrm{K}(\tau_1) = \mathrm{K}(\tau_2)$. Das Paar $\Pi, \mathrm{K}$ nennen wir dem ursprünglichen $P, Q$ \textbf{äquivalent}, und zwar wie auch die Koeffizienten $c_1, c_2, \dots$ der substituierten Reihe $t(\tau)$ beschaffen sein mögen, wenn nur Konvergenz statthat und $c_1 \neq 0$ ist. Diese letztere Voraussetzung hat zur Folge, daß umgekehrt $P(t), Q(t)$ dadurch aus $\Pi(\tau), \mathrm{K}(\tau)$ erhalten werden können, daß man für $\tau$ eine gewisse Potenzreihe in $t$ einsetzt:
+\[ \tau = \gamma_1 t + \gamma_2 t^2 + \cdots \quad \Bigl(\gamma_1 = \frac{1}{c_1} \neq 0\Bigr). \]
+
+Das Verhältnis der Äquivalenz ist also ein wechselseitiges. Außerdem ist offenbar jedes Potenzreihenpaar sich selbst äquivalent, und wenn zwei Potenzreihenpaare einem dritten äquivalent sind, sind sie auch untereinander äquivalent. Diese Tatsachen berechtigen dazu, äquivalente Potenzreihenpaare als \emph{Darstellungen desselben}, nicht-äquivalente als \emph{Darstellungen verschiedener} Funktionselemente aufzufassen. Oder anders ausgedrückt: \emph{Zwei Paare von Potenzreihen, welche je ein Funktionselement definieren, definieren dann und nur dann dasselbe Funktionselement, wenn sie äquivalent sind.}
+
+\origpage{7}
+Wir stützen uns hier auf eine Erklärungsweise, deren man sich auch sonst vielfach in der Mathematik bedienen muß und die ihre psychologischen Wurzeln in der Fähigkeit unseres Geistes zur \emph{Abstraktion} hat. Diese Art von Definitionen beruht auf dem folgenden allgemeinen Prinzip: Ist zwischen Dingen irgend eines Operationsbereiches eine Beziehung $\sim$ erklärt \emph{vom Charakter der Äquivalenz} [d.\ h.\ eine Beziehung, die den Regeln genügt:
+\[ \begin{gathered} \text{1.\ } a \sim a; \quad \text{2.\ aus } a \sim b \text{ folgt } b \sim a; \\ \text{3.\ aus } a \sim c, \ b \sim c \text{ folgt } a \sim b], \end{gathered} \]
+so ist es möglich, jedes der Objekte $a$ jenes ursprünglichen Operationsbereiches als \emph{Repräsentant} eines Dinges $\alpha$ derart aufzufassen, daß zwei Objekte $a, b$ dann und nur dann als Repräsentanten desselben Dinges $\alpha$ erscheinen, falls sie im Sinne der Beziehung $\sim$ einander äquivalent sind. Dieses Prinzip wird namentlich dann immer anzuwenden sein, wenn uns an den Objekten $a, b, \dots$ nur diejenigen Eigenschaften interessieren, welche gegenüber der Beziehung $\sim$ invariant sind. Seine Anwendung hat den Erfolg, daß eine schwerfällige Ausdrucksweise durch eine kürzere ersetzt wird, die dem herrschenden Interessestandpunkt der Untersuchung dadurch Rechnung trägt, daß sie von selbst alles im Sinne dieses Standpunktes \emph{Unwesentliche} an den untersuchten Objekten abstreift. Ich erwähne hier zwei Beispiele einer derartigen „\emph{Definition durch Abstraktion}“.
+
+1.\ Von zwei parallelen Geraden sagt man, sie haben dieselbe \emph{Richtung}, von zwei nicht-parallelen, sie haben verschiedene Richtung. Die ursprünglichen Objekte ($a$) sind die Geraden, die Beziehung vom Charakter der Äquivalenz ist die Parallelität; verlangt wird, jeder Geraden ein Etwas, seine „Richtung“, so zuzuordnen, daß der Parallelität der Geraden die Identität der zugeordneten „Richtungen“ entspricht.
+
+2.\ Eine „Bewegung“ (eines Punktes) ist gegeben, wenn die Lage des beweglichen Punktes $p$ in jedem Moment $\lambda$ eines gewissen Zeitintervalls $\lambda_0 \leqq \lambda \leqq \lambda_1$ gegeben ist: $p = p(\lambda)$. Hat man zwei solche Bewegungen $p = p(\lambda)$, $q = q(\mu)$, so sagt man dann und nur dann, diese Bewegungen durchlaufen denselben „\emph{Weg}“, falls $\lambda$, der Zeitparameter der ersten Bewegung, sich derart als stetige monoton wachsende Funktion des Zeitparameters $\mu$ der zweiten Bewegung ansetzen läßt: $\lambda = \lambda(\mu)$, daß dadurch die erste Bewegung in die zweite übergeht: $p(\lambda(\mu)) \equiv q(\mu)$. Hier ist es der Begriff des „Weges“, der auf diese Weise definiert werden soll${}^{1)}$.
+
+Von dieser Abschweifung kehren wir zu unserm erweiterten Begriff des Funktionselementes zurück. Unter allen äquivalenten Darstellungen
+
+\textbf{1)} Dieser Begriff meint etwas Anderes als die \emph{Punktmenge}, welche aus allen während der Bewegung passierten Punkten besteht. Es handelt sich hier um den gleichen Unterschied wie zwischen dem von einem Fußgänger zurückgelegten Wege (der, solange der Fußgänger marschiert, \emph{in statu nascendi} ist) und dem (seit langem existierenden) Wege, \emph{auf dem} er marschiert.
+
+\origpage{8}
+eines und desselben Funktionselementes werden wir versuchen, eine bestimmte, möglichst einfache als „\emph{Normaldarstellung}“ herauszuheben. Dabei unterscheiden wir mehrere Fälle. Enthält $P(t)$ keine negativen Potenzen von $t$:
+\[ z = P(t) = a + a_1 t + a_2 t^2 + \cdots \]
+und ist $a_1 \neq 0$, so können wir $z - a = \tau$ als neuen darstellenden Parameter einführen und bekommen
+\[ z = a + \tau, \quad u = \mathrm{K}(\tau) \tag{3} \]
+als neue Darstellung desselben Funktionselements. Enthält auch $Q(t)$ keine negativen Potenzen, so gilt das Gleiche von $\mathrm{K}$, und wir haben ein solches Funktionselement vor uns, wie wir sie in § 1 betrachteten und die wir jetzt zum Unterschied als \textbf{reguläre Funktionselemente} bezeichnen wollen. (3) ist die gesuchte Normaldarstellung. Ein reguläres Funktionselement gestattet nur eine einzige Normaldarstellung, und es sind daher zwei reguläre Funktionselemente sicher \emph{dann verschieden, wenn ihre Normaldarstellungen verschieden sind.} Erst auf Grund dieser Umstände sind wir eigentlich berechtigt, unsern jetzigen Begriff des Funktionselementes als eine Erweiterung des in § 1 zu Grunde gelegten zu bezeichnen.
+
+Kommen in der Entwicklung von $z$ keine Potenzen von $t$ mit negativem Exponenten vor, nehmen wir aber allgemeiner an, daß
+\[ z = a + a_\mu t^\mu + a_{\mu+1} t^{\mu+1} + \cdots \quad (a_\mu \neq 0), \]
+also $a_\mu$ ($\mu \geqq 1$) der erste von $0$ verschiedene Koeffizient außer dem konstanten Gliede ist, so kann man für $t$ eine solche Potenzreihe in $\tau$
+\[ t = c_1 \tau + c_2 \tau^2 + \cdots \quad (c_1 \neq 0) \]
+setzen, daß
+\[ z = a + \tau^\mu \]
+wird, und wir bekommen eine Darstellung von der Form
+\[ z = a + \tau^\mu, \quad u = \mathrm{K}(\tau). \tag{3*} \]
+In der Tat: wenn $\sqrt[\mu]{a_\mu}$ eine bestimmte der $\mu$ Wurzeln ist, so gibt es bekanntlich eine einzige Potenzreihe $\gamma_1 + \gamma_2 t + \gamma_3 t^2 + \cdots$ mit dem Anfangsglied $\gamma_1 = \sqrt[\mu]{a_\mu}$, deren $\mu^{\text{te}}$ Potenz $= a_\mu + a_{\mu+1} t + \cdots$ ist. Durch Auflösung von
+\[ \tau = \gamma_1 t + \gamma_2 t^2 + \cdots \]
+nach $t$ erhält man das gewünschte Resultat. Je nachdem aber, welche der $\mu$ Wurzeln $\sqrt[\mu]{a_\mu}$ man nimmt, erhält man $\mu$ verschiedene Darstellungen (3*): sie entstehen alle aus einer von ihnen, indem man $\tau$ durch $\tau \cdot \zeta$ ersetzt, wo $\zeta$ eine beliebige $\mu^{\text{te}}$ Einheitswurzel bedeutet. Ein durch
+\[ z = a' + \tau^{\mu'}, \quad u = \mathrm{K}'(\tau) \quad [\mu' \text{ ganz und positiv}] \tag{4} \]
+
+\origpage{9}
+gegebenes Funktionselement kann nur dann mit dem durch (3*) dargestellten identisch sein, wenn $a' = a$; $\mu' = \mu$ ist und überhaupt (4) mit einer der durch die Substitutionen $\tau \mid \tau \cdot \zeta$ aus (3*) entstehenden $\mu$ Normaldarstellungen Koeffizient für Koeffizient übereinstimmt. Insbesondere ist demnach die ganze Zahl $\mu$ charakteristisch für das betreffende Funktionselement und unabhängig von seiner besonderen Darstellung; wir sagen, das Element sei \textbf{von der $(\mu - 1)^{\text{ten}}$ Ordnung verzweigt}; im Falle $\mu = 1$, den wir oben betrachteten, heißt es \textbf{unverzweigt}.
+
+Kommen in der Entwicklung von $z$ negative Potenzen von $t$ vor, so sei $t^{-\nu}$ die niedrigste:
+\[ z = a_{-\nu} \cdot t^{-\nu} + a_{-\nu+1} t^{-\nu+1} + \cdots \quad (a_{-\nu} \neq 0). \]
+Man kann $t$ durch eine solche konvergente Potenzreihe in $\tau$: $t = c_1 \tau + \cdots$ ($c_1 \neq 0$) ersetzen, daß
+\[ z = \tau^{-\nu} \quad \text{und dann} \quad u = \mathrm{K}(\tau) \tag{3**} \]
+wird. Das ist jetzt die Normaldarstellung; sie ist, wenn $\nu > 1$, durch das Element nicht eindeutig bestimmt, sondern es gibt deren genau $\nu$ verschiedene, die alle aus einer dadurch hervorgehen, daß man $\tau$ ersetzt durch $\tau \cdot \zeta$, wo $\zeta$ eine beliebige $\nu^{\text{te}}$ Einheitswurzel. Auch hier spricht man von einer Verzweigung der $(\nu - 1)^{\text{ten}}$ Ordnung.
+
+Bei Herleitung der Normaldarstellungen (3), (3*), (3**) haben wir wie in § 1 die Variable $z$ vor $u$ ausgezeichnet. Neben die regulären Funktionselemente sind die irregulären, neben die unverzweigten die verzweigten getreten. Indem wir nunmehr die Begriffe der unmittelbaren und mittelbaren analytischen Fortsetzung auf beliebige (auch irreguläre) Funktionselemente übertragen, gelangen wir ohne weiteres zu der Definition des \textbf{analytischen Gebildes}.
+
+Es sei $\mathfrak{e}$ ein Funktionselement und
+\[ z = P(t), \quad u = Q(t) \tag{5} \]
+irgendeine Darstellung desselben, $|t| < r$ ($r > 0$) irgendein Kreis, in welchem diese Darstellung \textbf{gültig} ist (d.\ h.\ in welchem $P(t)$, $Q(t)$ konvergieren und niemals gleichzeitig $P(t_1) = P(t_2)$, $Q(t_1) = Q(t_2)$ für $t_1 \neq t_2$, $|t_1| < r$, $|t_2| < r$ eintritt). Für jeden Wert $t_0$, für den $|t_0| < r$ ist, können wir dann die Reihen $P(t)$, $Q(t)$ nach Potenzen von $t' = t - t_0$ umordnen und erhalten so ein neues Potenzreihenpaar $P'(t')$, $Q'(t')$ und damit ein neues Funktionselement $\mathfrak{e}_{t_0}$. Von allen so den verschiedenen im Kreise $|t_0| < r$ gelegenen $t_0$ zugehörigen Funktionselementen $\mathfrak{e}_{t_0}$ sagen wir, sie bilden eine \textbf{analytische Umgebung} des ursprünglichen Elementes $\mathfrak{e} (= \mathfrak{e}_0)$, und dieser Name soll angewendet werden, welche Darstellung des Elementes $\mathfrak{e}$ durch einen Parameter $t$ und welcher Kreis $|t| < r$, in dem diese Darstellung gültig ist, auch gewählt wurde. Die oben beschriebene, durch die Darstellung (5) zusammen mit der Ungleichung $|t| < r$ bestimmte analytische
+
+\origpage{10}
+Umgebung nennen wir, wo eine kurze Benennung erwünscht ist, mit Rücksicht auf den darstellenden Parameter eine \textbf{$t$-Umgebung}.
+
+Hat man zwei verschiedene Darstellungen desselben Funktionselements $\mathfrak{e}$:
+\[ z = P(t), \quad u = Q(t); \quad \text{bzw.} \quad z = \Pi(\tau), \quad u = \mathrm{K}(\tau) \]
+(die durch die Substitution
+\[ t = t(\tau) = c_1 \tau + c_2 \tau^2 + \cdots \quad [c_1 \neq 0] \]
+ineinander übergehen mögen), so gilt der wichtige Satz:
+
+\emph{Jede $t$-Umgebung von $\mathfrak{e}$ enthält eine $\tau$-Umgebung von $\mathfrak{e}$ und also auch umgekehrt jede $\tau$-Umgebung eine $t$-Umgebung.}
+
+Beweis: Die $t$-Umgebung sei durch $|t| < r$ bestimmt. Wir wählen dann eine positive Zahl $\varrho$ so, daß in $|\tau| < \varrho$ die Potenzreihe $t(\tau)$ konvergiert, dem absoluten Betrage nach $< r$ bleibt und keinen Wert zweimal annimmt. Diese Ungleichung $|\tau| < \varrho$ bestimmt eine $\tau$-Umgebung, von der ich behaupte, daß sie in der ursprünglichen $t$-Umgebung enthalten ist. Durch Umordnen von $\Pi(\tau), \mathrm{K}(\tau)$ nach Potenzen von $\tau' = \tau - \tau_0$ ($|\tau_0| < \varrho$) entstehe die Darstellung $\Pi'(\tau'), \mathrm{K}'(\tau')$ des Elements $\mathfrak{e}_{\tau_0}$, durch Umordnen von $P(t), Q(t)$ nach Potenzen von $t' = t - t_0$ [$t_0 = t(\tau_0)$, $|t_0| < r$] das Element $(P'(t'), Q'(t')) = \mathfrak{e}_{t_0}$; dann ist $\mathfrak{e}_{\tau_0} = \mathfrak{e}_{t_0}$. Dadurch nämlich, daß man $t(\tau)$ nach Potenzen von $\tau' = \tau - \tau_0$ umordnet, bekommt man
+\[ t'(\tau') = t(\tau) - t_0 = c_1' \tau' + c_2' \tau'^2 + \cdots, \tag{6} \]
+und es ist offenbar
+\[ P'(t'(\tau')) = \Pi'(\tau'), \quad Q'(t'(\tau')) = \mathrm{K}'(\tau'); \]
+denn in einer gewissen Umgebung des Punktes $\tau_0$ der komplexen $\tau$-Ebene sind z.\ B.\ $\Pi'(\tau - \tau_0)$, $P'(t(\tau) - t_0)$ reguläre Funktionen, die dem Werte nach mit $\Pi(\tau)$ übereinstimmen. In der Substitution (6), die das Paar $P'(t'), Q'(t')$ in $\Pi'(\tau'), \mathrm{K}'(\tau')$ überführt, ist aber der erste Koeffizient
+\[ c_1' = \left[ \frac{dt(\tau)}{d\tau} \right]_{\tau = \tau_0} \neq 0, \]
+da sonst die Funktion $t(\tau)$ in der Nähe von $\tau = \tau_0$ einen und denselben Wert $t$ immer an mindestens zwei Stellen annehmen würde. Damit ist die Identität von $\mathfrak{e}_{\tau_0}, \mathfrak{e}_{t_0}$ bewiesen.
+
+Der hier eingeführte Begriff der \textbf{analytischen Umgebung} entspricht in einer für die weiteren Formulierungen zweckmäßigeren Form dem in § 1 an seiner Stelle benutzten Begriff der unmittelbaren analytischen Fortsetzung. In diesem Begriff der analytischen Umgebung tritt es auch zutage, daß die irregulären Elemente gegenüber den regulären nur als Ausnahmestellen zu betrachten sind; denn die analytische Umgebung eines jeden Elements, wenn sie nur hinreichend klein genommen wird, besteht (abgesehen vielleicht von diesem Element selbst) stets ausschließlich aus regulären Funktionselementen. Um dies einzusehen, braucht man nur den die gesuchte Umgebung von $\mathfrak{e} = (P(t), Q(t))$ bestimmenden Kreis $|t| < r$ so
+
+\origpage{11}
+klein zu wählen, daß in ihm (außer vielleicht für $t = 0$) durchweg $\frac{dP}{dt} \neq 0$ ist.
+
+Eine \textbf{analytisch zusammenhängende Reihe von Funktionselementen} ist gegeben, wenn jedem reellen Werte $\lambda$ des Intervalls $0 \leqq \lambda \leqq 1$ ein Funktionselement $\mathfrak{e}(\lambda)$ zugeordnet ist, so daß diese Bedingung erfüllt ist: Ist $\lambda_0$ irgend ein Wert des Parameters $\lambda$, $\mathfrak{e}_0 = \mathfrak{e}(\lambda_0)$ das zugehörige Funktionselement, $\mathfrak{U}_0$ eine beliebige analytische Umgebung von $\mathfrak{e}_0$, so gibt es immer eine positive Zahl $\varepsilon$ derart, daß $\mathfrak{e}(\lambda)$ zu $\mathfrak{U}_0$ gehört, solange $|\lambda - \lambda_0| \leqq \varepsilon$ ist. Die analytisch zusammenhängende Reihe \textbf{verbindet} das Anfangselement $\mathfrak{e}(0)$ mit dem Endelement $\mathfrak{e}(1)$.
+
+\emph{Ein \textbf{analytisches Gebilde} ist eine Gesamtheit} $\mathbf{G}$ \emph{von Funktionselementen mit folgenden Eigenschaften:}
+
+\emph{1.\ Je zwei Funktionselemente, die zu} $\mathbf{G}$ \emph{gehören, können durch eine analytisch zusammenhängende Reihe von lauter zu} $\mathbf{G}$ \emph{gehörigen Funktionselementen mit einander verbunden werden.}
+
+\emph{2.\ } $\mathbf{G}$ \emph{läßt sich durch Hinzufügung von Funktionselementen auf keine Weise so erweitern, daß auch die erweiterte Gesamtheit noch die Eigenschaft 1.\ besitzt.}
+
+Aus 2.\ folgt insbesondere, daß mit einem Funktionselement $\mathfrak{e}$ auch eine jede analytische Umgebung von $\mathfrak{e}$ zu $\mathbf{G}$ gehört.
+
+Diese Erklärungen können wir uns durch eine Analogie näher bringen. Offenbar übernimmt ja in der Funktionentheorie das Weierstraßsche Funktionselement die gleiche Rolle, welche in der Geometrie, etwa des dreidimensionalen Raumes, der \emph{Punkt} als Raumelement spielt. Das Funktionselement stellen wir also in Analogie zum Punkt, und, wie vom dreidimensionalen Punktraum, sprechen wir dann vom „Raum (d.\ h.\ nichts Anderes als: von der Gesamtheit) der Funktionselemente“; da allerdings die Festlegung eines Funktionselementes von unendlich vielen stetig veränderlichen Bestimmungsstücken abhängt, müssen wir diesem Raum unendlich viele Dimensionen zuschreiben. Alle Begriffe, welche die \emph{Kontinuität} des dreidimensionalen Raumes betreffen, lassen sich auf den einen: „\emph{Umgebung} eines Punktes“ zurückführen (als Umgebung eines Punktes betrachten wir etwa das Innere einer jeden um diesen Punkt als Mittelpunkt beschriebenen Kugel). Im Raum der Funktionselemente soll das, was wir oben „analytische Umgebung“ nannten, das Analogon des gewöhnlichen Begriffs „Umgebung“ im Punktraum abgeben. Dann entspricht die \emph{analytisch zusammenhängende Reihe von Funktionselementen} ganz genau der \emph{stetigen Kurve} im Punktraum. Der Raum der Funktionselemente besitzt nach diesen Festsetzungen eine wesentlich andere Struktur als der gewöhnliche dreidimensionale Raum: während nämlich der Punktraum ein einziges zusammenhängendes Ganze ausmacht (je zwei seiner Punkte lassen sich durch eine stetige Kurve
+
+﻿\origpage{12}
+verbinden), zerfällt der unendlich-dimensionale Raum der Funktionselemente in unendlich viele (zweidimensionale) „Schichten“; jede solche Schicht für sich ist ein stetig (d.\ h.\ hier: analytisch) zusammenhängendes Ganze, aber die einzelnen Schichten stehen untereinander an keiner Stelle in Verbindung; diese „Schichten“ sind eben die analytischen Gebilde. Im Euklidischen Punktraum bezeichnet man als „\emph{Gebiet}“ eine Punktmenge von der Beschaffenheit, daß 1.\ zu jedem Punkt der Menge eine Umgebung existiert, die ganz der Menge angehört, und 2.\ je zwei Punkte der Menge sich durch eine stetige, aus lauter Punkten der Menge bestehende Kurve verbinden lassen. Darnach würde im Raum der Funktionselemente das analytische Gebilde als ein \emph{keiner weiteren Ausdehnung fähiges Gebiet} zu bezeichnen sein. Der Wille, die analytischen Gebilde auf Grund der besprochenen Analogie als \emph{zweidimensionale Mannigfaltigkeiten} aufzufassen, führt uns sogleich mitten in die Riemann-Kleinschen Vorstellungsweisen hinein. Die gewöhnlichen, in elementaren Lehrbüchern zur Darstellung kommenden Riemannschen Flächen haben ja in der Tat gerade diese Bedeutung: jedes Funktionselement des analytischen Gebildes so durch einen einzigen Punkt der Fläche zu repräsentieren, daß analytisch zusammenhängende Reihen von Funktionselementen des Gebildes als stetige Kurven auf der Riemannschen Fläche erscheinen.
+
+Bevor wir jedoch die hierdurch angeregten Gedankengänge weiter verfolgen können, müssen wir uns noch über das Verhältnis der beiden Begriffe „analytische Funktion“ und „analytisches Gebilde“ orientieren.
+
+\subsection*{§ 3. Verhältnis der Begriffe „analytische Funktion“ und „analytisches Gebilde“ zu einander.}
+
+Eine erste Bemerkung ist diese: Ist es gelungen, in der in § 1 geschilderten Weise ein reguläres Funktionselement regulär längs einer gegebenen Kurve $z = z(\lambda) [0 \leqq \lambda \leqq 1]$ fortzusetzen [wodurch jedem Wert $\lambda$ ein reguläres Funktionselement $\mathfrak{e}(\lambda)$ zugewiesen ist, in welchem die Entwicklung von $z$ nach Potenzen des Darstellungsparameters $t$ mit dem konstanten Glied $z(\lambda)$ beginnt], so hat man dadurch eine im Sinne von § 2 analytisch zusammenhängende Reihe von Funktionselementen erhalten. In Wahrheit: ist $\lambda_0$ irgend ein $\lambda$-Wert, $\mathfrak{U}_0$ eine beliebige analytische Umgebung von $\mathfrak{e}(\lambda_0) = \mathfrak{e}_0$, so kann man wegen der Regularität von $\mathfrak{e}_0$ die Variable $z' = z - z(\lambda_0)$ als Darstellungsparameter von $\mathfrak{e}_0$ wählen, und es gibt dann eine etwa durch $|z'| < r_0$ definierte $z'$-Umgebung von $\mathfrak{e}_0$, die ganz in $\mathfrak{U}_0$ enthalten ist. Grenzt man um $z(\lambda_0)$ durch die Ungleichung $|\lambda - \lambda_0| \leqq \varepsilon (\varepsilon > 0)$ einen Bogen ab, für den durchweg $|z(\lambda) - z(\lambda_0)| < r_0$ ist, so entstehen die den Punkten dieses Bogens entsprechenden $\mathfrak{e}(\lambda)$ durch Umordnen nach Potenzen von $z - z(\lambda)$ aus $\mathfrak{e}_0$, gehören demnach der durch $|z'| < r_0$ bestimmten $z'$-Umgebung von
+
+﻿\origpage{13}
+$\mathfrak{e}_0$ und damit auch der Umgebung $\mathfrak{U}_0$ an. --- Das Umgekehrte, daß eine analytisch zusammenhängende Reihe regulärer Funktionselemente aus dem Anfangselement durch den in § 1 beschriebenen Prozeß der analytischen Fortsetzung erhalten wird, bedarf keines Beweises.
+
+\emph{In einer analytisch zusammenhängenden Reihe $\mathfrak{e}(\lambda) [0 \leqq \lambda \leqq 1]$ von Funktionselementen kommen stets nur endlichviele irreguläre (insbesondere auch nur endlichviele verzweigte) Funktionselemente vor.} Sonst würden nämlich diejenigen Werte $\lambda$, denen irreguläre Elemente entsprechen, einen Verdichtungswert $\lambda_0$ besitzen, und es lägen in jeder analytischen Umgebung von $\mathfrak{e}(\lambda_0)$ unendlichviele irreguläre Elemente, was unmöglich ist.
+
+Die Entwicklung von $z$ in der Darstellung des Funktionselementes $\mathfrak{e}(\lambda)$ beginne mit dem konstanten Term $z(\lambda)$ [daß sie mit negativen Potenzen des Darstellungsparameters $t$ beginne, schließen wir der Bequemlichkeit halber aus]. Wir wollen den Fall betrachten, daß unter den $\mathfrak{e}(\lambda)$ verzweigte Funktionselemente vorkommen; $\mathfrak{e}(0)$ sei regulär, aber $\lambda_0 (< 1)$ der kleinste $\lambda$-Wert, für welchen $\mathfrak{e}(\lambda)$ irregulär ist; $\mu - 1$ sei die Verzweigungsordnung von $\mathfrak{e}(\lambda_0)$. Die Elemente $\mathfrak{e}(\lambda)$ von $\lambda = 0$ bis $\lambda_0$ (exkl.) erhält man dann eindeutig durch analytische Fortsetzung längs der gegebenen Kurve $z = z(\lambda)$. Das ändert sich aber von $\lambda_0$ ab; über $\mathfrak{e}(\lambda_0)$ hinaus läßt sich die analytische Fortsetzung längs der gegebenen Kurve auf genau $\mu$ verschiedene Weisen weiterführen: der Stamm teilt sich in $\mu$ Äste, an deren einem die gegebene analytisch zusammenhängende Reihe entlang läuft. Jeder dieser Äste kann sich im weiteren Verlauf abermals verzweigen, und die nächste Verzweigung des einen Astes kann durchaus an einer andern Stelle eintreten wie für den andern Ast; und so fort. Auch kann ein Zweig natürlich, wenn man zu einer kritischen Stelle gelangt, die nicht bloß einen Pol oder Verzweigungspunkt endlichhoher Ordnung bedeutet, ganz aufhören, bevor man auf ihm bis zu $\lambda = 1$ gelangt ist. Aus dieser Beschreibung mag man erkennen, wie glücklich die der Riemannschen Bezeichnung „Verzweigungspunkt“ zugrunde liegende anschauliche Vorstellung das Wesen der Sache trifft. Zum Beweise unserer Behauptungen reicht die folgende einfache Überlegung aus.
+\[ z = z(\lambda_0) + t^\mu, \quad u = Q(t) \]
+sei eine der $\mu$ Normaldarstellungen von $\mathfrak{e}(\lambda_0)$, die für $|t| < r$ gültig sein möge. Ein $\lambda_1 > \lambda_0$ werde so gewählt, daß $|z(\lambda) - z(\lambda_0)| < r^\mu$ bleibt für $\lambda_0 \leqq \lambda \leqq \lambda_1$. Dann gibt es in der $t$-Ebene $\mu$ von dem Nullpunkt $t = 0$ auslaufende Kurvenäste, die alle in dem Kreise $|t| < r$ bleiben und durch die Abbildung $z = z(\lambda_0) + t^\mu$ in einen und denselben Kurvenbogen $z = z(\lambda) [\lambda_0 \leqq \lambda \leqq \lambda_1]$ übergehen; diese $\mu$ Kurvenäste entstehen auseinander durch Drehung um den Nullpunkt um $\frac{2\pi}{\mu}, \frac{4\pi}{\mu}, \dots$. Indem man $Q(t)$ längs jedes dieser Kurvenäste fortsetzt (unmittelbare analytische
+
+﻿\origpage{14}
+Fortsetzung!), gewinnt man die $\mu$ möglichen Fortsetzungen von $\mathfrak{e}(\lambda_0)$ längs der vorgeschriebenen Kurve über $\lambda = \lambda_0$ hinaus bis $\lambda = \lambda_1$. Daß sich jede dieser Fortsetzungen als analytisch zusammenhängende Reihe bis zu Ende ($\lambda = 1$) durchführen läßt, wird nicht behauptet und ist auch im allgemeinen nicht richtig.
+
+Der Umstand, daß in einer jeden analytisch zusammenhängenden Reihe von Funktionselementen nur endlichviele irreguläre vorkommen, ermöglicht es, diese irregulären Elemente zu \emph{umgehen}. Zwei Funktionselemente also, die sich überhaupt durch eine analytisch zusammenhängende Reihe verbinden lassen, lassen sich auch durch eine solche verbinden, die (abgesehen vielleicht von Anfangs- und Endelement) ausschließlich aus regulären Elementen besteht. Zum Beweise nehmen wir der Einfachheit halber an, daß die analytisch zusammenhängende Reihe $\mathfrak{e}(\lambda)$ \emph{nur ein} irreguläres Element $\mathfrak{e}(\lambda_0) [0 < \lambda_0 < 1]$ enthalte.
+\[ z = P(t), \quad u = Q(t) \]
+sei eine für $|t| < r$ gültige Darstellung desselben; dabei sei $r$ so klein gewählt, daß die Elemente der durch $|t| < r$ bestimmten $t$-Umgebung $\mathfrak{U}_0$ von $\mathfrak{e}(\lambda_0)$, abgesehen von $\mathfrak{e}(\lambda_0)$ selbst, alle regulär sind. Man kann zwei Werte $\lambda_1 < \lambda_0$ und $\lambda_2 > \lambda_0$ so annehmen, daß alle $\mathfrak{e}(\lambda) [\lambda_1 \leqq \lambda \leqq \lambda_2]$ zu $\mathfrak{U}_0$ gehören. $\mathfrak{e}(\lambda_1)$ entsteht aus der zugrunde gelegten Darstellung von $\mathfrak{e}(\lambda_0)$ durch Umordnen derselben nach Potenzen von $t - t_1$ (wo $t_1$ ein gewisser, dem Kreise $|t| < r$ angehöriger Punkt ist), $\mathfrak{e}(\lambda_2)$ durch Umordnen nach Potenzen von $t - t_2$. Die beiden Punkte $t_1$, $t_2$ in der $t$-Ebene kann man durch eine Kurve innerhalb des Kreises $|t| < r$ verbinden, die nicht durch den Nullpunkt geht. Indem man jedem Punkt $t_0$ dieser Kurve dasjenige Funktionselement zuordnet, das man durch Umordnen von $P(t)$, $Q(t)$ nach Potenzen von $t - t_0$ erhält, gelingt es, $\mathfrak{e}(\lambda_1)$ mit $\mathfrak{e}(\lambda_2)$ durch eine aus lauter regulären Funktionselementen bestehende analytisch zusammenhängende Reihe zu verbinden.
+
+Aus den bewiesenen Tatsachen ergibt sich:
+
+1.\ \emph{Die sämtlichen regulären Funktionselemente eines analytischen Gebildes machen eine einzige analytische Funktion aus.}
+
+2.\ \emph{Jede analytische Funktion besteht aus den sämtlichen regulären Funktionselementen eines durch die Funktion eindeutig bestimmten analytischen Gebildes.}
+
+Dazu tritt der weitere Satz:
+
+3.\ \emph{Die irregulären Funktionselemente eines analytischen Gebildes sind nur in abzählbarer Menge vorhanden.}
+
+Den Beweis führen wir mit Hilfe des von Poincaré und Volterra${}^{1)}$
+
+\textbf{1)} Poincaré, Rendiconti del Circolo matematico di Palermo, Bd.\ 2 (1888), S.\ 197---200. Volterra, Atti della Reale Academia dei Lincei, Ser.\ 4, $\mathrm{IV}_2$, S.\ 355.
+
+﻿\origpage{15}
+ausgesprochenen Theorems, \emph{daß es in einem analytischen Gebilde höchstens abzählbar unendlichviele reguläre Funktionselemente $u = \mathfrak{P}(z - a)$ mit vorgeschriebenem Mittelpunkt $z = a$ gibt.} Denn alle diese Elemente lassen sich aus einem, $\mathfrak{P}_1$, von ihnen dadurch erzeugen, daß $\mathfrak{P}_1$ längs Kurven in der $z$-Ebene, die von $a$ ausgehen und dorthin zurückkehren, in regulärer Weise fortgesetzt wird. Zu jeder solchen Kurve kann man aber einen aus endlichvielen geradlinigen Strecken bestehenden Streckenzug konstruieren, der in solcher Nähe der Kurve verläuft, daß die reguläre analytische Fortsetzung längs des Streckenzuges gleichfalls möglich ist und zu demselben Endelement führt wie die Fortsetzung längs der Kurve. Dabei kann man noch dafür Sorge tragen, daß die Ecken dieses Streckenzuges relativ zu $a$ rationale Koordinaten besitzen; diese relativen Koordinaten $z - a$ seien:
+\[ \frac{n_1' + i n_1''}{n_1}, \quad \frac{n_2' + i n_2''}{n_2}, \dots, \frac{n_h' + i n_h''}{n_h} \qquad (i = \sqrt{-1}), \]
+wo immer $n_f'$, $n_f''$, $n_f$ ganze Zahlen ohne gemeinsamen Teiler sind und $n_f > 0$ [$f = 1, 2, \dots, h$]. Wir ordnen diesem Streckenzuge die Zahl
+\[ \sum_{f=1}^h |n_f'| + \sum_{f=1}^h |n_f''| + \sum_{f=1}^h n_f = N \]
+zu. Unter den von $a$ ausgehenden und nach $a$ zurückkehrenden Streckenzügen, deren Ecken sich von $a$ um rationale komplexe Zahlen unterscheiden, gibt es gewiß nur endlichviele, denen dieselbe Zahl $N$ zukommt. Wähle ich $N$ sukzessive $= 3, 4, 5, \dots$, so bringe ich dadurch alle diese Streckenzüge in eine abgezählte Reihe. Jeder dieser Streckenzüge bestimmt entweder ein oder kein Funktionselement mit dem Mittelpunkt $a$, jenachdem die reguläre Fortsetzung von $\mathfrak{P}_1$ längs des Streckenzuges sich bewerkstelligen läßt oder nicht. Man erhält auf diesem Wege aber auch sicher alle dem analytischen Gebilde angehörigen regulären Elemente mit dem Mittelpunkte $a$, deren Abzählbarkeit damit erwiesen ist.
+
+Statt der $z$-Ebene kann ich mich der aus ihr durch stereographische Projektion hervorgehenden $z$-Kugel bedienen, auf der auch $z = \infty$ durch einen einzigen Punkt repräsentiert wird. Ist
+\[ z = a + t^\mu, \ u = Q(t); \quad \text{bezw.} \quad z = t^{-\mu}, \ u = Q(t) \]
+ein irreguläres Element eines gegebenen analytischen Gebildes in seiner Normaldarstellung, die für $|t| < r$ gültig sein möge, so gibt es zu jedem Wert $z_0$ ($\neq a$ bzw.\ $\infty$), welcher der Bedingung
+\[ |z - a| < r^\mu \quad \text{bezw.} \quad |z| > r^{-\mu} \tag{7} \]
+genügt, genau $\mu$ reguläre Funktionselemente $u = \mathfrak{P}(z - z_0)$ mit dem Mittelpunkt $z_0$, die der durch $|t| < r$ bestimmten $t$-Umgebung des irregulären Elementes angehören. Wir sagen kurz: das irreguläre Element
+
+﻿\origpage{16}
+„induziert“ im Punkte $z_0$ jene $\mu$ regulären Elemente. Die Ungleichung (7) bedeutet auf der Kugel eine Kalotte, die ich aber jetzt lieber durch diejenige größte, nicht über sie hinausgreifende Kalotte $K$ ersetze, deren Mittelpunkt in $a$ (bzw.\ $\infty$) liegt; der Radius von $K$ heiße $\varkappa$. Verbinde ich $z_0$, das in $K$ liege, mit dem Mittelpunkt innerhalb der Kalotte durch einen Großkreis-Bogen, so entsteht das irreguläre Element aus jedem der $\mu$ in $z_0$ induzierten Elemente durch analytische Fortsetzung längs dieses Kreisbogens von $z_0$ nach $a$ (bzw.\ $\infty$). Hat man also zwei verschiedene irreguläre Elemente mit demselben Mittelpunkt $a$ bzw.\ $\infty$, so ist es ausgeschlossen, daß sie in einem Punkte $z_0$ zwei identische reguläre Elemente induzieren. Hat man zwei irreguläre Elemente $\mathfrak{e}_1$, $\mathfrak{e}_2$ mit verschiedenen Mittelpunkten und bezeichnen wir die zugehörigen Kalotten $K$ mit $K_1$, $K_2$, ihre Radien mit $\varkappa_1$, $\varkappa_2$, so lasse man beide Kalotten um ihren Mittelpunkt so zusammenschrumpfen, daß sie nur noch den halben Radius $\frac{1}{2}\varkappa_1$, $\frac{1}{2}\varkappa_2$ besitzen. Es sei etwa $\varkappa_1 \geqq \varkappa_2$. Greifen diese beiden kleineren Kalotten $k_1$, $k_2$ übereinander, so bedeute $z_0$ einen ihnen gemeinsamen Punkt. Ich behaupte dann, keines der von $\mathfrak{e}_1$ in $z_0$ induzierten Elemente ist mit einem von $\mathfrak{e}_2$ daselbst induzierten Element identisch. Denn der Mittelpunkt von $K_2$ liegt innerhalb der Kalotte $K_1$, ebenso der Großkreis-Bogen, welcher $z_0$ mit diesem Mittelpunkt innerhalb $K_2$ verbindet. Durch Fortsetzung eines der von $\mathfrak{e}_1$ in $z_0$ induzierten regulären Elemente längs dieses nach dem Mittelpunkt von $K_2$ führenden Kreisbogens erhält man eines der dort von $\mathfrak{e}_1$ induzierten regulären Elemente, niemals aber das irreguläre Element $\mathfrak{e}_2$. Damit ist unsere Behauptung begründet.
+
+In der Weise nun, wie wir hier den irregulären Elementen $\mathfrak{e}_1$, $\mathfrak{e}_2$ die (kleinen) Kalotten $k_1$, $k_2$ zuwiesen, ordnen wir jedem irregulären Element des gegebenen analytischen Gebildes eine Kalotte $k$ zu. Wären die irregulären Elemente nicht bloß in abzählbarer Menge vorhanden, so müßte es einen rationalen Punkt $z_0$ geben, der in mehr als bloß abzählbar vielen Kalotten $k$ enthalten ist. Jedes der irregulären Elemente, zu denen diese Kalotten gehören, induziert im Punkte $z_0$ mindestens ein dem analytischen Gebilde angehöriges reguläres Element, das $z_0$ zum Mittelpunkt besitzt, und zwar, wie wir soeben nachwiesen, verschiedene irreguläre Elemente auch immer verschiedene. Das ist aber unmöglich, da es nicht mehr als abzählbarviele reguläre Funktionselemente mit dem Mittelpunkt $z_0$ in dem vorgelegten analytischen Gebilde geben kann.
+
+\emph{Das analytische Gebilde unterscheidet sich demnach nur dadurch von der analytischen Funktion, daß noch abzählbarviele irreguläre Elemente hinzugetreten sind.}
+
+\subsection*{§ 4. Begriff der Fläche.}
+
+Es ist schon am Schluß von § 2 davon gesprochen worden, daß ein analytisches Gebilde dadurch sehr an Anschaulichkeit gewinnt, wenn es ge-
+
+﻿\origpage{17}
+lingt, in der Weise ein jedes Element des Gebildes durch einen Punkt einer Raumfläche $\mathfrak{F}$ zu repräsentieren, daß diese repräsentierenden Punkte insgesamt die Fläche $\mathfrak{F}$ einfach bedecken und jede analytisch zusammenhängende Reihe von Elementen des analytischen Gebildes als eine stetige Kurve auf $\mathfrak{F}$ erscheint. Das Problem, eine solche das analytische Gebilde versinnlichende Fläche $\mathfrak{F}$ ausfindig zu machen, kann freilich von einem rein objektiven Standpunkt als eine nicht sachgemäße Fragestellung verworfen werden, da der dreidimensionale Raum innerlich durchaus nichts mit analytischen Gebilden zu tun hat und man sich auf ihn auch offenbar garnicht aus logisch-mathematischen Gründen bezieht, sondern weil er unserer sinnlichen Raumanschauung besonders nahesteht; man könnte es als einen dem wissenschaftlichen Prinzip widerstreitenden Anthropomorphismus bezeichnen, in dieser Weise den Dingen, statt sie so zu nehmen, wie sie sind, wesensfremde Vorstellungen aufzudrängen, nur um unserm Bedürfnis nach „Bildern und Gleichnissen“ Genüge zu tun. Diese Vorwürfe des reinen Logikers treffen uns jedoch nicht, wenn wir der andern, auch bereits gestreiften Auffassung nachgehen, welcher \emph{das analytische Gebilde selbst als eine zweidimensionale Mannigfaltigkeit} erscheint, auf die sich alle die Begriffe der Kontinuität, die uns in der gewöhnlichen Geometrie begegnen, übertragen lassen. Im Gegenteil: es hieße, eine der wesentlichsten Seiten des Gegenstandes übersehen, wenn man sich dieser Vorstellung nicht bediente.
+
+Der Begriff der „zweidimensionalen Mannigfaltigkeit“ oder der „Fläche“ soll für uns also nicht an die Idee des Raumpunktes geknüpft sein, sondern eine viel allgemeinere abstrakte Bedeutung erhalten. Wenn überhaupt irgend eine Gesamtheit von Dingen (die die Rolle der „Punkte“ übernehmen werden) gegeben ist und definitionsgemäß zwischen ihnen ein ähnlicher kontinuierlicher Zusammenhang besteht wie zwischen den Punkten einer Ebene, so sprechen wir von einer zweidimensionalen Mannigfaltigkeit. Da sich aber alle Kontinuitätsbegriffe auf den einen der Umgebung zurückführen lassen, so gehört zur Erklärung einer zweidimensionalen Mannigfaltigkeit zweierlei:
+
+1.\ Angabe derjenigen Dinge, welche als „Punkte“ der Mannigfaltigkeit gelten sollen;
+
+2.\ eine Erklärung des Begriffes der „Umgebung“.
+
+In präziser Fassung: wann wollen wir sagen, es sei eine \textbf{zweidimensionale Mannigfaltigkeit $\mathfrak{F}$ gegeben}? Wenn folgendes der Fall ist:
+
+\emph{Gegeben eine Gesamtheit von Dingen, die} \textbf{„Punkte der Mannigfaltigkeit $\mathfrak{F}$“} \emph{heißen. Zu jedem Punkt $\mathfrak{p}$ der Mannigfaltigkeit $\mathfrak{F}$ sind gewisse Mengen von Punkten der Mannigfaltigkeit als} \textbf{„Umgebungen von $\mathfrak{p}$ auf $\mathfrak{F}$“} \emph{definiert. Jede Umgebung $\mathfrak{U}_0$ eines Punktes $\mathfrak{p}_0$ der Mannigfaltigkeit auf $\mathfrak{F}$ muß $\mathfrak{p}_0$ selbst enthalten und eine umkehrbar eindeutige Abbildung auf die inneren Punkte eines gewöhnlichen Euklidischen Kreises}
+\end{document}
