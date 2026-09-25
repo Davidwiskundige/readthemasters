@@ -1,0 +1,844 @@
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{161}
+
+\section*{Über das Dirichletsche Prinzip.${}^{*)}$}
+
+\subsection*{Von \textsc{David Hilbert} in Göttingen.}
+
+\subsection*{Inhalt.}
+
+§~1. Darlegung des Problems \dots\ 162
+
+§~2. Hilfssatz über Dirichletsche Integrale \dots\ 163
+
+§~3. Allgemeiner Hilfssatz über gleichmäßige Konvergenz \dots\ 165
+
+§~4. Hilfssatz über das Verschwinden eines gewissen Doppelintegrals bei willkürlicher Wahl einer unter dem Integralzeichen vorkommenden Funktion \dots\ 166
+
+§~5. Konstruktion der gesuchten Potentialfunktion auf Grund des Dirichletschen Prinzips \dots\ 169
+
+§~6. Beweis der Existenz der Funktion $v$ \dots\ 173
+
+§~7. Existenz der Funktion $u$ und Beweis ihrer Potentialeigenschaft \dots\ 175
+
+§~8. Beweis für die vorgeschriebene Unstetigkeit der Funktion $u$ auf der Kurve $C$ \dots\ 180
+
+§~9. Der Wert des Dirichletschen Integrals der Potentialfunktion $u$ auf der Riemannschen Fläche \dots\ 181
+
+§~10. Beweis für das reguläre Verhalten der Potentialfunktion $u$ in den unendlichfernen Punkten und in den Verzweigungspunkten der Riemannschen Fläche \dots\ 184
+
+Unter dem Dirichletschen Prinzip verstehen wir diejenige Schlußweise auf die Existenz einer Minimalfunktion, welche Gauß (1839), Thomson (1847), Dirichlet (1856) und andere Mathematiker zur Lösung sogenannter Randwertaufgaben angewandt haben und deren Unzulässigkeit zuerst von Weierstraß erkannt worden ist. Daß dieses Prinzip dennoch zur Auffindung von strengen und einfachen Existenzbeweisen dienen kann, habe ich in einem Vortrage${}^{**)}$ in der Deutschen Mathematiker-Vereinigung
+
+\textbf{*)} Abdruck aus der Festschrift zur Feier des 150\,jährigen Bestehens der Königl.\ Gesellschaft der Wissenschaften zu Göttingen 1901.
+
+\textbf{**)} Jahresbericht der Deutschen Mathematiker-Vereinigung, VIII, 1900.
+
+\origpage{162}
+hervorgehoben; meine damaligen Andeutungen sind seitdem von Ch.~A.~Noble${}^{*)}$ für einfache bestimmte Integrale und von E.~R.~Hedrick${}^{**)}$ für gewisse Fälle von Doppelintegralen ausgeführt worden.
+
+Im folgenden soll ein dem Dirichletschen Prinzip nachgebildetes Verfahren dargelegt werden, bei welchem wir nicht, wie früher, die Lösung der Randwertaufgabe für irgend ein spezielles Gebiet voraussetzen. Das neue Verfahren gestattet daher weitgehende Verallgemeinerungen auf die Lösung von Randwertaufgaben für gewisse aus Variationsproblemen entspringende partielle Differentialgleichungen oder für Systeme von solchen Differentialgleichungen. Vor allem aber scheinen mir die folgenden Entwicklungen ein methodisches Interesse zu bieten, insofern sie zeigen, wie die modernen Hilfsmittel der Analysis und insbesondere der Variationsrechnung imstande sind, den der geometrischen und physikalischen Anschauung entnommenen Grundgedanken des Dirichletschen Prinzips in genauem Anschluß an die anschauliche Bedeutung desselben derart zu verfolgen, daß aus demselben ein streng mathematischer Beweis für die Existenz der Minimalfunktion entsteht.
+
+\subsection*{§~1. Darlegung des Problems.}
+
+Durch das Dirichletsche Prinzip hat insbesondere Riemann die Existenz der überall endlichen Integrale auf einer vorgelegten Riemannschen Fläche zu beweisen gesucht. Ich bediene mich im folgenden dieses klassischen Beispiels zur Darlegung meines strengen Beweisverfahrens.
+
+Auf der Ebene der komplexen Zahlen sei eine Riemannsche Fläche $F$ gegeben mit einer gewissen endlichen Anzahl von Verzweigungspunkten und einer gewissen endlichen Anzahl von Blättern. Sodann sei auf der Riemannschen Fläche $F$ eine Kurve $C$ gegeben, die im Endlichen verläuft, keinen Verzweigungspunkt trifft und, ohne die Fläche $F$ zu zerstückeln, in sich zurückkehrt. Wir nehmen diese Kurve $C$ als einen Polygonzug an, der aus geradlinigen, teils zur $x$-Achse, teils zur $y$-Achse parallelen Stücken besteht.
+
+Eine Funktion $u$ der beiden Veränderlichen $x$, $y$, die in einem gewöhnlichen Punkte der Riemannschen Fläche nebst sämtlichen Ableitungen stetig ist und der Differentialgleichung
+
+\textbf{*)} Eine neue Methode in der Variationsrechnung, Inauguraldissertation, Göttingen 1901.
+
+\textbf{**)} Über den analytischen Charakter der Lösungen von Differentialgleichungen, Inauguraldissertation, Göttingen 1901, Kapitel V.
+
+\origpage{163}
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = \Delta u = 0
+\]
+genügt, heiße eine in diesem Punkte reguläre Potentialfunktion.
+
+Sind $a$, $b$ die Koordinaten eines $r$-fachen Verzweigungspunktes der Riemannschen Fläche $F$ und verhält sich die Potentialfunktion $u$ überall in der Umgebung dieses Verzweigungspunktes regulär, so setze man in $u$ an Stelle von $x$, $y$ bezüglich den reellen und den mit $i$ multiplizierten Bestandteil des Ausdruckes
+\[
+a + ib + (\xi + i\eta)^r;
+\]
+wenn dann $u$ in eine Potentialfunktion von $\xi$, $\eta$ übergeht, die sich auch im Punkte $\xi = 0$, $\eta = 0$ regulär verhält, so heißt die ursprüngliche Potentialfunktion von $x$, $y$ in dem Verzweigungspunkte $a$, $b$ regulär.
+
+Wenn eine Potentialfunktion $u$ in der Umgebung eines unendlichfernen Punktes unserer Riemannschen Fläche sich regulär verhält und durch die Transformation
+\[
+x = \frac{\xi}{\xi^2 + \eta^2}, \qquad y = \frac{-\eta}{\xi^2 + \eta^2}
+\]
+in eine Potentialfunktion der Veränderlichen $\xi$, $\eta$ übergeht, die sich im Punkte $\xi = 0$, $\eta = 0$ regulär verhält, so heiße die ursprüngliche Funktion $u$ von $x$, $y$ in jenem unendlichfernen Punkte regulär.
+
+Wenn endlich eine Potentialfunktion $u$ in der Umgebung der Punkte der Kurve $C$ zu beiden Seiten regulär ist, auf der Kurve $C$ aber sich in der Weise unstetig verhält, daß die Werte der Potentialfunktion $u$ auf der einen Seite, um die Konstante 1 vermehrt, genau die reguläre Fortsetzung der Potentialfunktion $u$ auf der anderen Seite der Kurve $C$ bilden, so sagen wir, die Potentialfunktion $u$ erleide beim Übergange von der einen auf die andere Seite den Sprung 1.
+
+Unsere Aufgabe soll nun darin bestehen, die Existenz einer Potentialfunktion $u$ auf der vorgelegten Riemannschen Fläche $F$ nachzuweisen, die sich in allen Punkten dieser Fläche $F$ einschließlich der unendlichfernen Punkte und der Verzweigungspunkte regulär verhält und überdies beim Übergange über die gegebene Unstetigkeitskurve $C$ den Sprung 1 erleidet. Mit der Lösung dieser Aufgabe ist bekanntlich der Nachweis für die Existenz der überall endlichen Integrale auf der Riemannschen Fläche $F$ geführt.
+
+\subsection*{§~2. Hilfssatz über Dirichletsche Integrale.}
+
+Wir erörtern in diesem und den beiden folgenden Paragraphen einige einfache Hilfssätze. Der erste Hilfssatz behandelt gewisse Ungleichungen
+
+\origpage{164}
+zwischen bestimmten Integralen, wenn das sogenannte Dirichletsche Integral für die in Betracht kommende Funktion einen bestimmten endlichen Wert hat. Wir wollen stets unter dem Dirichletschen Integral für eine vorgelegte Funktion $U$ das über ein gewisses Gebiet $G$ der $xy$-Ebene zu erstreckende Doppelintegral
+\[
+D = \int\!\!\int_{(G)} \left\{ \left(\frac{\partial U}{\partial x}\right)^2 + \left(\frac{\partial U}{\partial y}\right)^2 \right\} dx\,dy
+\]
+verstehen.
+
+Hilfssatz 1. Es sei in der $xy$-Ebene ein Rechteck $R$ gegeben, dessen Seiten parallel zur $x$-Achse bezw.\ zur $y$-Achse laufen und die Längen $l$ bezw.\ $l'$ besitzen; die Ecken dieses Rechteckes mögen die Koordinaten
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l'
+\]
+haben. Ferner bezeichne $U(x, y)$ eine Funktion der Veränderlichen $x$, $y$, die im Inneren und auf den Seiten des Rechtecks $R$ stückweise analytisch ist und es werde
+\[
+D = \int_a^{a+l} \int_b^{b+l'} \left\{ \left(\frac{\partial U}{\partial x}\right)^2 + \left(\frac{\partial U}{\partial y}\right)^2 \right\} dx\,dy
+\]
+gesetzt: dann gelten folgende drei Formeln:
+\[
+\int_a^{a+l} U(x, b)\,dx = \int_a^{a+l} U(x, b+l')\,dx + \vartheta \left(D + \frac{1}{4}\,l l'\right) \tag{I}
+\]
+\[
+\int_a^{a+l} \int_b^{b+l'} U(x, y)\,dx\,dy = l' \int_a^{a+l} U(x, b)\,dx + \vartheta' l' \left(D + \frac{1}{4}\,l l'\right) \tag{II}
+\]
+\[
+l \int_b^{b+l'} U(a, y)\,dy = l' \int_a^{a+l} U(x, b)\,dx + \vartheta'' (l + l') \left(D + \frac{1}{4}\,l l'\right); \tag{III}
+\]
+darin bedeuten $\vartheta$, $\vartheta'$, $\vartheta''$ gewisse den Ungleichungen
+\[
+-1 \leqq \vartheta \leqq +1, \quad -1 \leqq \vartheta' \leqq +1, \quad -1 \leqq \vartheta'' \leqq +1
+\]
+genügende Zahlen.
+
+„Stückweise analytisch“ heiße eine stetige Funktion, wenn sie aus einer endlichen Anzahl von analytischen Funktionen zusammengesetzt ist, die in stückweise analytischen Kurven stetig aneinander grenzen und einschließlich dieser Grenzkurven sich regulär verhalten.
+
+Beweis. Aus der Ungleichung:
+\[
+\left|\frac{\partial U}{\partial y}\right|^2 - \left|\frac{\partial U}{\partial y}\right| + \frac{1}{4} \geqq 0
+\]
+
+\origpage{165}
+folgt durch Integration nach $y$ zwischen den Grenzen $b$, $b+l'$
+\[
+\int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dy \le \int_b^{b+l'} \left(\frac{\partial U}{\partial y}\right)^2 dy + \frac{1}{4}\,l'
+\]
+und hieraus durch Integration nach $x$ zwischen den Grenzen $a$, $a+l$:
+\[
+\int_a^{a+l} \int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dx\,dy \le D + \frac{1}{4}\,l l'.
+\]
+Mit Benutzung von
+\[
+\left| \int_a^{a+l} \int_b^{b+l'} \frac{\partial U}{\partial y}\,dx\,dy \right| \leqq \int_a^{a+l} \int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dx\,dy
+\]
+erhalten wir
+\[
+\left| \int_a^{a+l} U(x, b+l')\,dx - \int_a^{a+l} U(x, b)\,dx \right| \leqq D + \frac{1}{4}\,l l'
+\]
+und damit ist die Formel I des Hilfssatzes 1 bewiesen.
+
+Die Formeln II und III sind unmittelbare Folgerungen aus Formel I.
+
+\subsection*{§~3. Allgemeiner Hilfssatz über gleichmäßige Konvergenz.}
+
+Bei der Herstellung der gesuchten Potentialfunktion $u$ werden wir folgenden, leicht zu beweisenden Hilfssatz gebrauchen, dessen wesentlicher Inhalt bekannt ist.${}^{*)}$
+
+Hilfssatz 2. Es sei $G$ ein im Endlichen gelegenes Gebiet der $xy$-Ebene und
+\[
+v_1, v_2, v_3, \dots
+\]
+seien eine unendliche Reihe von Funktionen von $x$, $y$ mit folgenden Eigenschaften:
+
+1. jede der Funktion $v_h$ sei innerhalb und auf dem Rande des Gebietes $G$ stetig und einmal nach $x$ sowie nach $y$ differentiierbar;
+
+2. die ersten Ableitungen von $v_h$ innerhalb und auf dem Rande von $G$ liegen absolut genommen unterhalb einer endlichen Größe $A$, die von $x$, $y$ und von $h$ unabhängig ist:
+
+wenn dann die Funktionen
+\[
+v_1, v_2, v_3, \dots
+\]
+
+\textbf{*)} Bendixson, Öfversigt of kongl.\ Vetenskaps-Akademiens Förhandlingar, Bd.~54, sowie Townsend, Begriff und Anwendung des Doppellimes, Inauguraldissertation, Göttingen 1900, S.~34.
+
+\origpage{166}
+für jeden Punkt einer in $G$ überall dichten Punktmenge gegen einen endlichen Grenzwert konvergieren, so konvergieren sie für jeden beliebigen Punkt in $G$ und auf dem Rande von $G$ gegen einen endlichen Grenzwert und zwar gleichmäßig für das Gebiet $G$.
+
+Der Limes
+\[
+\underset{h=\infty}{L} v_h
+\]
+stellt mithin eine in $G$ einschließlich des Randes stetige Funktion von $x$, $y$ dar.
+
+\subsection*{§~4. Hilfssatz über das Verschwinden eines gewissen Doppelintegrals bei willkürlicher Wahl einer unter dem Integralzeichen vorkommenden Funktion.}
+
+Hilfssatz 3. Es sei in der $xy$-Ebene ein Rechteck $R$ gegeben, dessen Seiten parallel zur $x$-Achse bezw.\ zur $y$-Achse laufen und die Längen $l$ bezw.\ $l'$ besitzen; die Ecken dieses Rechteckes mögen die Koordinaten\ednote{In the 1904 print the semicolon after $a, b$ is omitted; cf.\ Hilfssatz 1 on p.~164.}
+\[
+a, b \quad a+l, b; \quad a+l, b+l'; \quad a, b+l'
+\]
+haben. Ferner sei $\zeta$ eine Funktion von $x$, $y$, die folgende Bedingungen erfüllt:
+
+1. die Ableitungen
+\[
+\frac{\partial^{m+n} \zeta}{\partial x^m \partial y^n}, \qquad (m, n = 0, 1, 2, 3)
+\]
+existieren im Rechteck $R$ einschließlich der Seiten desselben und sind daselbst stetig.
+
+2. für $x=a$ und $x=a+l$ ist identisch für alle Werte von $y$
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial x} = 0, \quad \frac{\partial^2\zeta}{\partial x^2} = 0
+\]
+und für $y=b$, $y=b+l'$ ist identisch für alle Werte von $x$
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial y} = 0, \quad \frac{\partial^2\zeta}{\partial y^2} = 0;
+\]
+wenn dann $F(x, y)$ eine Funktion von $x$, $y$ bezeichnet, die in $R$ einschließlich der Seiten stetig verläuft, und wenn das über $R$ erstreckte Integral
+\[
+\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3}\,F(x, y)\,dx\,dy
+\]
+für alle den Bedingungen 1.\ und 2.\ genügenden Funktionen $\zeta$ verschwindet, so hat die Funktion $F$ notwendig die Form
+\[
+F = X + X'y + X''y^2 + Y + Y'x + Y''x^2,
+\]
+
+\origpage{167}
+wo $X$, $X'$, $X''$ stetige Funktionen von $x$ allein und $Y$, $Y'$, $Y''$ stetige Funktionen von $y$ allein bedeuten.
+
+Beweis: Es seien $s$, $\sigma$, $\alpha$, $\alpha'$, $\alpha''$ irgend solche Zahlen, daß die sämtlichen Ausdrücke
+\[
+(s + \varepsilon\sigma + e\alpha + e'\alpha' + e''\alpha'')
+\]
+\[
+(\varepsilon, e, e', e'' = 0, 1)
+\]
+Werte darstellen, die $\geqq a$ und $\leqq a+l$ sind. Desgleichen seien $t$, $\tau$, $\beta$, $\beta'$, $\beta''$ irgend solche Zahlen, daß die sämtlichen Ausdrücke
+\[
+t + \varepsilon\tau + e\beta + e'\beta' + e''\beta''
+\]
+\[
+(\varepsilon, e, e', e'' = 0, 1)
+\]
+Werte darstellen, die $\geqq b$ und $\leqq b+l'$ sind. Wir definieren dann eine Funktion $\xi$ von $x$ allein und eine Funktion $\eta$ von $y$ allein durch die Gleichungen
+\[
+\begin{aligned}
+\xi &= 0 & \text{für } & x \le s \\
+& & \text{und ,, } & x \geqq s + \sigma \\
+\xi &= (x-s)(s+\sigma-x) & \text{,, } & s \leqq x \leqq s + \sigma \\
+\eta &= 0 & \text{für } & y \le t \\
+& & \text{und ,, } & y \geqq t + \tau \\
+\eta &= (y-t)(t+\tau-y) & \text{,, } & t \leqq y \leqq t + \tau.
+\end{aligned}
+\]
+Endlich führen wir zur Abkürzung die folgenden Bezeichnungen ein, worin $A(x)$, $B(y)$ irgend welche Ausdrücke des Arguments $x$ bezw.\ $y$ bedeuten:
+\[
+\begin{aligned}
+d_x^{(\alpha)} A &= A(x+\alpha) - A(x), \\
+d_x^{(\alpha')} A &= A(x+\alpha') - A(x), \\
+d_x^{(\alpha'')} A &= A(x+\alpha'') - A(x), \\
+d_y^{(\beta)} B &= B(y+\beta) - B(y), \\
+d_y^{(\beta')} B &= B(y+\beta') - B(y), \\
+d_y^{(\beta'')} B &= B(y+\beta'') - B(y).
+\end{aligned}
+\]
+Die Funktion
+\[
+\zeta = \int_a^x \int_a^x \int_a^x d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi\,dx\,dx\,dx \cdot \int_b^y \int_b^y \int_b^y d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta\,dy\,dy\,dy
+\]
+besitzt dann offenbar alle oben vorgeschriebenen Eigenschaften und nach der Voraussetzung des zu beweisenden Hilfssatzes ist daher
+\[
+\int_a^{a+l} \int_b^{b+l'} d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi \cdot d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot F(x, y)\,dx\,dy = 0.
+\]
+
+\origpage{168}
+Setzen wir zunächst\ednote{In the 1904 print this is set as $g(x)$, whereas capital $G(x)$ is used in the subsequent equations (2) and (3); a reader has corrected this to $G(x)$ by hand in the scanned copy.}
+\[
+\int_b^{b+l'} d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot F(x, y)\,dy = g(x), \tag{1}
+\]
+so haben wir
+\[
+\int_a^{a+l} d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi \cdot G(x)\,dx = 0 \tag{2}
+\]
+oder
+\[
+\int_a^{a+l} \xi \cdot d_x^{(\alpha)} d_x^{(\alpha')} d_x^{(\alpha'')} G(x)\,dx = 0
+\]
+und, indem wir hier auf das Integral linker Hand den Mittelwertsatz für bestimmte Integrale anwenden, folgt unter Fortlassung des Faktors:
+\[
+\int_0^\sigma x(\sigma - x)\,dx:
+\]
+die Gleichung
+\[
+d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} G(s + \vartheta\sigma) = 0, \qquad (0 \leqq \vartheta \leqq 1)
+\]
+Der Grenzübergang für $\sigma = 0$ führt uns zu der Gleichung
+\[
+d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} G(s) = 0. \tag{3}
+\]
+Setzen wir in (1) statt $x$ die Variable $s$ ein und wenden wir dann die Operation $d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')}$ auf (1) an, so folgt vermöge (3) die Gleichung
+\[
+\int_b^{b+l'} d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} F(s, y)\,dy = 0
+\]
+und genau wie vorhin die Gleichung (3) aus (2) folgte, so gewinnen wir jetzt aus (4)\ednote{The preceding displayed formula is referenced here as (4), but was left unnumbered by the compositor in the 1904 print.} die Gleichung
+\[
+d_t^{(\beta)} d_t^{(\beta')} d_t^{(\beta'')} d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} F(s, t) = 0.
+\]
+Diese Formel gilt identisch für alle Zahlen $s$, $\alpha$, $\alpha'$, $\alpha''$, $t$, $\beta$, $\beta'$, $\beta''$, wenn nur die sämtlichen Ausdrücke
+\[
+s + e\alpha + e'\alpha' + e''\alpha'', \quad t + e\beta + e'\beta' + e''\beta''
+\]
+\[
+(e, e', e'' = 0, 1)
+\]
+noch in die Intervalle $a$ bis $a+l$ bezw.\ $b$ bis $b+l'$ fallen. Aus diesem Umstande folgt ohne Schwierigkeit, daß $F(x, y)$ die im Hilfssatze 3 behauptete Gestalt haben muß.
+
+\origpage{169}
+
+\subsection*{§~5. Konstruktion der gesuchten Potentialfunktion auf Grund des Dirichletschen Prinzips.}
+
+Entsprechend dem Grundgedanken des Dirichletschen Prinzips werden wir im folgenden auf unserer Riemannschen Fläche $F$ Systeme von stückweise analytischen Funktionen $U(x, y)$ ins Auge fassen, deren jede auf der Kurve $C$ den Sprung 1 erleidet und für welche das über die gesamte Riemannsche Fläche $F$ erstreckte Dirichletsche Integral einen endlichen Wert besitzt. Dabei wird, wie in Hilfssatz 1 in §~2, eine Funktion als „stückweise analytisch“ bezeichnet, wenn sie aus einer endlichen Anzahl von analytischen Funktionen zusammengesetzt ist, die in stückweise analytischen Kurven stetig aneinandergrenzen und einschließlich dieser Grenzkurven sich regulär verhalten. Daß es auf unserer Riemannschen Fläche $F$ Funktionen $U(x, y)$ von der verlangten Beschaffenheit gewiß gibt, erkennen wir leicht auf folgende Weise. Wir konstruieren auf der Riemannschen Fläche $F$ in genügender Nähe neben $C$ einen $C$ nicht schneidenden und ebenfalls geschlossenen Polygonzug $C^*$, dessen Teilstücke den geradlinigen Stücken von $C$ bezüglich parallel sind, so daß das von $C$ und $C^*$ begrenzte ringförmige Gebiet von Verzweigungspunkten frei bleibt und es möglich wird, aus linearen Funktionen von $x$, $y$ stückweise eine Funktion zusammenzusetzen, die im Inneren dieses ringförmigen Gebietes stetig ist und auf $C$ den Wert 1, auf $C^*$ den Wert 0 annimmt. Setzt man $U$ in dem zwischen $C$ und $C^*$ gelegenen Gebiete gleich dieser stückweise linearen Funktion und definiert man $U$ in allen übrigen Punkten der Riemannschen Fläche gleich 0, so erfüllt $U$ offenbar die gestellten Forderungen.
+
+Nunmehr bezeichnen wir mit $d$ die untere Grenze der Werte der Dirichletschen Integrale aller möglichen Funktionen $U(x, y)$ und denken uns dann eine solche unendliche Reihe von Funktionen $U(x, y)$ ausgewählt, etwa
+\[
+U_1, U_2, U_3, \dots, \tag{5}
+\]
+deren Dirichletsche Integrale gegen $d$ konvergieren. Endlich sei $D$ eine Zahl, die größer als alle Werte der Dirichletschen Integrale der Funktionen (5) ausfällt.
+
+Wenn wir eine Funktion $U$ um irgend eine Konstante vermehren, so ändert sich der Wert des Dirichletschen Integrals dadurch nicht. Es bezeichne $S$ auf der Riemannschen Fläche irgend eine geradlinige endliche zur $x$-Achse parallele Strecke, die keinen Verzweigungspunkt enthält und die Kurve $C$ nicht trifft; dann denken wir uns jede der Funk-
+
+\origpage{170}
+tionen (5) um je eine solche Konstante vermehrt, daß die Integrale der veränderten Funktionen, über die Strecke $S$ erstreckt, sämtlich verschwinden. Behalten wir für die veränderten Funktionen die ursprüngliche Bezeichnung $U_h$ bei, so genügen sie den folgenden Bedingungen:\ednote{The closing parenthesis in $(h = 1, 2, 3, \dots$ is omitted in the 1904 print.}
+\[
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial U_h}{\partial x}\right)^2 + \left(\frac{\partial U_h}{\partial y}\right)^2 \right\} dx\,dy < D, \qquad (h = 1, 2, 3, \dots
+\]
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(F)} \left\{ \left(\frac{\partial U_h}{\partial x}\right)^2 + \left(\frac{\partial U_h}{\partial y}\right)^2 \right\} dx\,dy = d,
+\]
+\[
+\int_{(S)} U_h\,dx = 0, \qquad (h = 1, 2, 3, \dots).
+\]
+Man könnte zeigen, daß die Werte unserer Funktionen
+\[
+U_1, U_2, U_3, \dots \tag{6}
+\]
+nicht notwendig für jeden Punkt der Riemannschen Fläche gegen einen Grenzwert konvergieren und daß es auch im allgemeinen nicht möglich ist, aus dieser Funktionenreihe (6) eine solche unendliche Reihe auszuwählen, deren Werte für jeden Punkt der Riemannschen Fläche gegen einen Grenzwert konvergieren. Hingegen wird sich aus den Funktionen (6) eine unendliche Reihe derart auswählen lassen, daß die Doppelintegrale dieser Funktionen über gewisse auf der Riemannschen Fläche gelegene Rechtecke stets gegen einen Grenzwert konvergieren und diese Grenzwerte werden uns dann zur Konstruktion der gesuchten Potentialfunktion dienen.
+
+Wir fixieren in den verschiedenen Blättern der Riemannschen Fläche sämtliche derartige Punkte, deren Koordinaten rationale Zahlen sind. Sodann fassen wir alle diejenigen auf der Riemannschen Fläche gelegenen Rechtecke $R$ ins Auge, deren Ecken derartige Punkte sind und deren Seiten parallel zur $x$-Achse und $y$-Achse laufen, die überdies so gelegen sind, daß in ihrem Inneren oder auf den Seiten kein Verzweigungspunkt der Riemannschen Fläche und auch kein Punkt der Kurve $C$ enthalten ist. Diese Rechtecke $R$ bilden eine abzählbare Menge und seien in die unendliche Reihe
+\[
+R_1, R_2, R_3, \dots \tag{7}
+\]
+angeordnet.
+
+Wir betrachten nun irgend eines der Rechtecke (7), etwa das Rechteck $R_k$ und bilden auf der Riemannschen Fläche eine endliche Kette von Rechtecken, deren erstes ein Rechteck mit der Seite $S$ und deren letztes das Rechteck $R_k$ ist und in welcher jedes folgende Rechteck mit dem vorhergehenden eine Seite gemein hat. Da die Integrale der Funktionen (6) über die Strecke $S$ sämtlich verschwinden, so schließen wir, indem wir
+
+\origpage{171}
+die Formeln I und III des Hilfssatzes 1 in §~2 auf die Rechtecke unserer Kette anwenden und unter $D$ die vorhin eingeführte obere Grenze der Dirichletschen Integrale verstehen, daß die über die Seiten von $R_k$ erstreckten Integrale der Funktionen $U_h$ absolut genommen gewiß unterhalb einer endlichen Grenze bleiben, welche nur von der Gestalt und Lage des Rechteckes $R_k$, nicht aber von dem Index $h$, d.~h.\ nicht von der Auswahl der Funktion $U_h$ aus der Reihe (6) abhängt. Wenden wir dann noch die Formel II des Hilfssatzes 1 in §~2 auf das Rechteck $R_k$ an, so folgt, daß auch das über dieses Rechteck erstreckte Doppelintegral der Funktion $U_h$, d.~h.\ das Integral
+\[
+\int\!\!\int_{(R_k)} U_h\,dx\,dy
+\]
+absolut genommen unterhalb einer endlichen vom Index $h$ unabhängigen Grenze liegen muß.
+
+Diese Betrachtung setzt uns in den Stand, in der Reihe der Funktionen (6) die gewünschte Auswahl zu treffen.
+
+Wir betrachten zunächst das Rechteck $R_1$. Da die über dieses Rechteck erstreckten Doppelintegrale
+\[
+\int\!\!\int_{(R_1)} U_h\,dx\,dy \qquad (h = 1, 2, 3, \dots)
+\]
+absolut genommen sämtlich unter einer endlichen Grenze bleiben, so ist es leicht möglich eine unendliche Anzahl aus den Funktionen $U_h$ der unendlichen Reihe (6) auszuwählen, etwa die Funktionen
+\[
+U_1', U_2', U_3', \dots \tag{8}
+\]
+derart, daß die Doppelintegrale dieser Funktionen sich einem bestimmten endlichen Grenzwerte nähern und mithin
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_1)} U_h'\,dx\,dy
+\]
+existiert. Jetzt heben wir aus der Funktionenreihe (8) eine solche unendliche Anzahl von Funktionen, etwa die Funktionen
+\[
+U_1'', U_2'', U_3'', \dots \tag{9}
+\]
+heraus derart, daß die über das Rechteck $R_2$ erstreckten Doppelintegrale dieser Funktionen sich einem bestimmten endlichen Grenzwerte nähern und mithin\ednote{Printed $U_2''$ with subscript 2 instead of $h$; an apparent compositor misprint for $U_h''$.}
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_2)} U_2''\,dx\,dy
+\]
+existiert. Entsprechend wählen wir aus der Funktionenreihe (9) eine unendliche Anzahl von Funktionen
+
+\origpage{172}
+\[
+U_1''', U_2''', U_3''', \dots
+\]
+aus derart, daß
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_3)} U_h'''\,dx\,dy
+\]
+existiert u.~s.~f.
+
+Setzen wir nun
+\[
+u_1 = U_1', \quad u_2 = U_2'', \quad u_3 = U_3''', \dots
+\]
+so ist offenbar die unendliche Funktionenreihe
+\[
+u_1, u_2, u_3, \dots \tag{10}
+\]
+eine derartige, daß für jedes Rechteck $R_k$ aus der unendlichen Reihe (7)
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_k)} u_h\,dx\,dy
+\]
+existiert.
+
+Die Funktionenreihe (10) wird uns die Konstruktion der gesuchten Potentialfunktion auf der Riemannschen Fläche in folgender Weise ermöglichen.
+
+Es sei ein Rechteck $R$ auf der Riemannschen Fläche gegeben, dessen Seiten parallel zu den Koordinatenachsen laufen und die Längen $l$ bezw.\ $l'$ besitzen, die Koordinaten der Ecken dieses Rechteckes seien
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+und $x$, $y$ seien die Koordinaten eines Punktes im Inneren oder auf einer Seite dieses Rechteckes $R$. Wir setzen zur Abkürzung
+\[
+v_h = \int_a^x \int_b^y u_h\,dx\,dy
+\]
+und beweisen dann folgende Tatsachen.
+
+I. Es existiert stets der Grenzwert
+\[
+v(x, y) = \underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy \tag{I}
+\]
+und zwar konvergieren die Funktionen $v_h$ gleichmäßig für alle Punkte $x$, $y$ im Inneren oder auf einer Seite des Rechteckes $R$ gegen jenen Grenzwert; die durch jenen Grenzwert I dargestellte Funktion ist daher eine stetige Funktion von $x$, $y$ in $R$.
+
+II. Die durch den Grenzwert I dargestellte Funktion von $x$, $y$ ist beliebig oft differentiierbar und zwar definiert
+\[
+u(x, y) = \frac{\partial^2 v}{\partial x \partial y} = \frac{\partial^2}{\partial x \partial y} \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} u_h\,dx\,dy \tag{II}
+\]
+im Rechteck $R$ die gesuchte Potentialfunktion auf der Riemannschen Fläche $F$.
+
+\origpage{173}
+
+\subsection*{§~6. Beweis der Existenz der Funktion $v$.}
+
+Zum Beweise der aufgestellten Behauptungen I und II dienen die folgenden Entwicklungen.
+
+Es sei $R_k$ ein bestimmt ausgewähltes Rechteck in der unendlichen Reihe (7) mit den Ecken $a$, $b$; $a+l$, $b$; $a+l$, $b+l'$; $a$, $b+l'$ und $x$, $y$ seien die Koordinaten eines Punktes im Inneren oder auf den Seiten dieses Rechteckes. Wir haben erkannt, daß die über die Seiten von $R_k$ erstreckten Integrale der Funktionen $U_h$ unterhalb einer endlichen von $h$ unabhängigen Grenze liegen; wir nennen diese Grenze $G_k$. Da die Funktionen $u_h$ unter den Funktionen $U_h$ enthalten sind, so gelten mithin Gleichungen von der Form
+\[
+\int_a^{a+l} u_h\,dx = \vartheta^* G_k,
+\]
+\[
+\int_b^{b+l'} u_h\,dy = \vartheta^{**} G_k,
+\]
+worin $\vartheta^*$, $\vartheta^{**}$ Zahlen sind, die den Ungleichungen
+\[
+-1 \leqq \vartheta^* \leqq +1, \qquad -1 \leqq \vartheta^{**} \leqq +1
+\]
+genügen. Wenden wir nun die Formel III des Hilfssatzes 1 in §~2 auf das Rechteck mit den Ecken
+\[
+a, b; \quad a+l, b; \quad a+l, y; \quad a, y
+\]
+an, so erhalten wir
+\[
+\begin{aligned}
+l \int_b^y u_h(a, y)\,dy &= (y-b) \int_a^{a+l} u_h(x, b)\,dx + \vartheta''(l+y-b)\left(D + \frac{1}{4}\,l(y-b)\right), \\
+&= \vartheta l' \cdot \vartheta^* G_k + \vartheta''' (l+l') \left(D + \frac{1}{4}\,l l'\right),
+\end{aligned}
+\]
+\[
+(-1 \leqq \vartheta \leqq +1, \quad -1 \leqq \vartheta'' \leqq +1 - 1 \leqq \vartheta''' \leqq +1)
+\]
+\ednote{In the 1904 print a comma is missing between $+1$ and $-1$ in the preceding inequality list.}%
+und diese Gleichung zeigt, daß der absolute Wert des einfachen Integrals\ednote{Printed with differential $dx$ instead of $dy$; an apparent compositor misprint.}
+\[
+\int_b^y u_h(a, y)\,dx
+\]
+unterhalb einer gewissen endlichen Grenze liegt, die weder von $h$ noch von der Ordinate des Punktes $x$, $y$ in $R_k$ abhängig ist. Hieraus folgt unmittelbar, wenn wir die Formel I des Hilfssatzes 1 in §~2 auf das Rechteck mit den Ecken
+\[
+a, b; \quad x, b; \quad x, y; \quad a, y
+\]
+
+\origpage{174}
+anwenden, daß auch der absolute Wert des einfachen Integrales
+\[
+\int_b^y u_h(x, y)\,dy
+\]
+unterhalb einer gewissen endlichen Grenze liegt, die weder von $h$ noch von der Lage des Punktes $x$, $y$ in $R_k$ abhängt.
+
+Das gleiche wird in analoger Weise von dem einfachen Integral
+\[
+\int_a^x u_h(x, y)\,dx
+\]
+gezeigt.
+
+Wenn die Koordinaten $x$, $y$ rationale Zahlen sind, so gehört das aus den Ecken
+\[
+a, b; \quad x, b; \quad x, y; \quad a, y
+\]
+gebildete Rechteck selbst zu den Rechtecken (7); in diesem Falle existiert mithin nach §~5 der Grenzwert
+\[
+\underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy.
+\]
+Da andererseits nach dem eben Bewiesenen die Ableitungen von $v_h$ nach $x$, $y$:
+\[
+\frac{\partial v_h}{\partial x} = \int_b^y u_h\,dy, \qquad \frac{\partial v_h}{\partial y} = \int_a^x u_h\,dx
+\]
+absolut genommen sämtlich unterhalb einer von $h$ und von $x$, $y$ unabhängigen Grenze bleiben, so erfüllt die unendliche Reihe der Funktionen
+\[
+v_1, v_2, v_3, \dots
+\]
+alle Bedingungen des Hilfssatzes 3 in §~3\ednote{Printed Hilfssatz 3 in § 3, though the lemma in § 3 was numbered Hilfssatz 2 on p.~165.}; nach diesem Hilfssatze konvergieren also diese Funktionen gleichmäßig in $R_k$ gegen eine Grenzfunktion:
+\[
+v(x, y) = \underset{h=\infty}{L} v_h;
+\]
+diese Gleichung definiert mithin eine in $R_k$ stetige Funktion der Variabeln $x$, $y$. Damit ist die Behauptung I in §~5 bewiesen für den Fall, daß wir ein Rechteck $R_k$ aus der Reihe (7) der Betrachtung zugrunde legen.
+
+Wählen wir nun statt dieses Rechteckes $R_k$ ein beliebiges Rechteck, dessen Seiten parallel zur $x$-Achse und zur $y$-Achse laufen und das keinen Verzweigungspunkt und keinen Punkt der Kurve $C$ enthält, etwa das Rechteck $R$ mit den Ecken
+\[
+\alpha, \beta; \quad \alpha+\lambda, \beta; \quad \alpha+\lambda, \beta+\lambda'; \quad \alpha, \beta+\lambda'
+\]
+
+\origpage{175}
+und bezeichnen wir mit $x$, $y$ einen in diesem Rechteck $R$ gelegenen Punkt, so erweist sich auch von der Funktionenreihe
+\[
+v_h = \int_\alpha^x \int_\beta^y u_h\,dx\,dy
+\]
+die Behauptung I in §~5 leicht als zutreffend, wenn wir ein Rechteck $R_k$ in der Reihe (7) wählen, welches das Rechteck $R$ im Inneren enthält und dann auf $R_k$ die eben bewiesene Behauptung I anwenden.
+
+\subsection*{§~7. Existenz der Funktion $u$ und Beweis ihrer Potentialeigenschaft.}
+
+Wir gehen nun zum Beweise der Behauptung II in §~5 über. Zu dem Zwecke erörtern wir zunächst folgende Eigenschaft unserer Funktionenreihe (10).
+
+Es sei $R$ irgend ein Rechteck auf unserer Riemannschen Fläche mit den Ecken
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+welches keinen Verzweigungspunkt und keinen Punkt der Kurve $C$ enthält. Wenn dann $\zeta$ irgend eine stückweise analytische Funktion von $x$, $y$ bedeutet, die nebst ihren ersten Ableitungen nach $x$, $y$ innerhalb des Rechteckes $R$ einschließlich seiner Seiten stetig ist und auf den Seiten von $R$ verschwindet, so gilt stets die Gleichung
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy = 0, \tag{11}
+\]
+wo das Doppelintegral über das Rechteck $R$ zu erstrecken ist.
+
+Zum Beweise dieser Behauptung nehmen wir im Gegenteil an, es ließe sich aus unserer Funktionenreihe (10)
+\[
+u_1, u_2, u_3, \dots
+\]
+eine unendliche Reihe
+\[
+u_1', u_2', u_3', \dots
+\]
+der Art herausgreifen, daß für alle $h$
+\[
+\int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h'}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h'}{\partial y} \right\} dx\,dy \geqq \varrho \quad \text{oder} \quad \leqq \varrho
+\]
+wäre, wo $\varrho$ im ersten Fall eine positive, im zweiten Falle eine negative, von $h$ unabhängige Zahl bedeutet. Dann setzen wir
+
+\origpage{176}
+\[
+\varkappa = \frac{\varrho}{\displaystyle\int\!\!\int_{(R)} \left\{ \left(\frac{\partial\zeta}{\partial x}\right)^2 + \left(\frac{\partial\zeta}{\partial y}\right)^2 \right\} dx\,dy}
+\]
+und definieren auf unserer Riemannschen Fläche $F$ eine stetige Funktion $\zeta$, so daß $\zeta$ in $R$ mit der vorgelegten Funktion $\zeta$ übereinstimmt und außerhalb überall den Wert 0 hat. Die Funktionen
+\[
+u_h' - \varkappa\zeta, \qquad (h = 1, 2, 3, \dots)
+\]
+sind dann stückweise analytische Funktionen auf $F$, die in $C$ den Sprung 1 erleiden, und das über $F$ erstreckte Dirichletsche Integral für diese Funktion erhält den Wert
+\[
+\begin{aligned}
+& \int\!\!\int_{(F)} \left\{ \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial x}\right)^2 + \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial y}\right)^2 \right\} dx\,dy \\
+&= \int\!\!\int_{(F)} \left\{ \left(\frac{\partial u_h'}{\partial x}\right)^2 + \left(\frac{\partial u_h'}{\partial y}\right)^2 \right\} dx\,dy - 2\varkappa \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h'}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h'}{\partial y} \right\} dx\,dy + \varkappa\varrho
+\end{aligned}
+\]
+und folglich würden wir für alle $h$
+\[
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial x}\right)^2 + \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial y}\right)^2 \right\} dx\,dy \leqq d_h - \varkappa\varrho,
+\]
+erhalten, wo $d_h$ das über $F$ erstreckte Dirichletsche Integral für $u_h'$ bedeutet und also auf Grund der Festsetzung in §~5 $d_h$ sich bei wachsendem $h$ der Grenze $d$ nähert. Da
+\[
+\varkappa\varrho = \frac{\varrho^2}{\displaystyle\int\!\!\int_{(R)} \left\{ \left(\frac{\partial\zeta}{\partial x}\right)^2 + \left(\frac{\partial\zeta}{\partial y}\right)^2 \right\} dx\,dy}
+\]
+eine positive, von $h$ unabhängige Zahl wird, so wäre mithin $d$ gewiß nicht die untere Grenze aller möglichen Werte von Dirichletschen Integralen. Dieser Widerspruch zeigt die Unzulässigkeit unserer Annahme und damit ist der Beweis für unsere obige Behauptung erbracht.
+
+Die eben bewiesene Gleichung (11) entspricht der Forderung des Verschwindens der ersten Variation in der gewöhnlichen Variationsrechnung.
+
+Um nun den Grenzübergang für $h=\infty$ unter dem Integralzeichen in (11) ausführen zu können, wenden wir das Mittel der partiellen Integration an, aber nicht, indem wir wie in der gewöhnlichen Variationsrechnung nach Lagrange die Ableitungen der Variation $\zeta$ fortschaffen,
+
+\origpage{177}
+sondern wir schaffen im Gegenteil die Ableitungen von $u_h$ fort und führen statt derselben mehrfache Integrale von $u_h$ ein.
+
+Die Variation $\zeta$ sei von nun an eine stückweise analytische Funktion von $x$, $y$, die folgende Bedingung erfüllt.
+
+1. Die Ableitungen
+\[
+\frac{\partial^{m+n} \zeta}{\partial x^m \partial y^n}, \qquad (m, n = 0, 1, 2, 3)
+\]
+existieren im Rechteck $R$ einschließlich der Seiten desselben und sind daselbst stetig.
+
+2. Für $x=a$ und $x=a+l$ ist identisch für alle Werte von $y$
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial x} = 0, \quad \frac{\partial^2\zeta}{\partial x^2} = 0,
+\]
+Für $y=b$ und $y=b+l'$ ist identisch für alle Werte von $x$
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial y} = 0, \quad \frac{\partial^2\zeta}{\partial y^2} = 0.
+\]
+Indem wir dann die Formel für partielle Integration wiederholt für die Integration nach $x$ und nach $y$ in Anwendung bringen, gelangen wir, unter $a^*$, $b^*$ irgend zwei bezüglich zwischen den Grenzen $a$, $a+l$ und $b$, $b+l'$ gelegene Zahlen verstanden, zu folgenden Gleichungen
+\[
+\int_a^{a+l} \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x}\,dx = -\int_a^{a+l} \frac{\partial^2\zeta}{\partial x^2}\,u_h\,dx
+\]
+\[
+\int_a^{a+l} \frac{\partial^2\zeta}{\partial x^2}\,u_h\,dx = -\int_a^{a+l} \frac{\partial^3\zeta}{\partial x^3} \cdot \int_{a^*}^x u_h\,dx \cdot dx
+\]
+und ferner, wenn
+\[
+v_h = \int_{a^*}^x \int_{b^*}^y u_h\,dx\,dy
+\]
+gesetzt wird:
+\[
+\int_b^{b+l'} \frac{\partial^3\zeta}{\partial x^3} \cdot \int_{a^*}^x u_h\,dx \cdot dy = -\int_b^{b+l'} \frac{\partial^4\zeta}{\partial x^3 \partial y}\,v_h\,dy
+\]
+\[
+\int_b^{b+l'} \frac{\partial^4\zeta}{\partial x^3 \partial y}\,v_h\,dy = -\int_b^{b+l'} \frac{\partial^5\zeta}{\partial x^3 \partial y^2} \cdot \int_b^y v_h\,dy \cdot dy
+\]
+\[
+\int_b^{b+l'} \frac{\partial^5\zeta}{\partial x^3 \partial y^2} \cdot \int_b^y v_h\,dy \cdot dy = -\int_b^{b+l'} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \int_b^y \int_b^y v_h\,dy\,dy \cdot dy.
+\]
+
+\origpage{178}
+Mithin ist
+\[
+\int\!\!\int_{(R)} \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x}\,dx\,dy = -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \cdot \int_b^y \int_b^y v_h\,dy\,dy \cdot dx\,dy.
+\]
+Ebenso finden wir
+\[
+\int\!\!\int_{(R)} \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y}\,dx\,dy = -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \cdot \int_a^x \int_a^x v_h\,dx\,dx \cdot dx\,dy.
+\]
+Die Addition der beiden letzten Formeln liefert
+\[
+\begin{aligned}
+& \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy \\
+&= -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v_h\,dy\,dy + \int_a^x \int_a^x v_h\,dx\,dx \right\} dx\,dy.
+\end{aligned}
+\]
+Wenden wir nun die Behauptung I in §~5, die in §~6 bereits bewiesen worden ist, auf diejenigen vier Rechtecke an, in welche das Rechteck $R$ durch die beiden Geraden
+\[
+x = a^*, \quad y = b^*
+\]
+zerlegt wird, so erkennen wir, daß die Funktionenreihe
+\[
+v_1, v_2, v_3, \dots
+\]
+gleichmäßig im Rechteck $R$ einschließlich der Seiten desselben konvergiert. Die Grenzfunktion\ednote{The closing parenthesis in $v(x, y)$ is omitted in the 1904 print.}
+\[
+v(x, y = \underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_{a^*}^x \int_{b^*}^y u_h\,dx\,dy
+\]
+ist mithin in $R$ stetig und da wegen der gleichmäßigen Konvergenz die Reihenfolge des Grenzüberganges für $h=\infty$ und der Integrationsprozesse vertauscht werden darf, so haben wir
+\[
+\begin{aligned}
+& \underset{h=\infty}{L} \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy \\
+&= -\underset{h=\infty}{L} \int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v_h\,dy\,dy + \int_a^x \int_a^x v_h\,dx\,dx \right\} dx\,dy \\
+&= -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v\,dy\,dy + \int_a^x \int_a^x v\,dx\,dx \right\} dx\,dy.
+\end{aligned}
+\]
+
+\origpage{179}
+Unter Benutzung dieser Umformung und bei Einführung der abkürzenden Bezeichnung
+\[
+w(x, y) = \int_a^x \int_a^x \int_b^y \int_b^y v\,dx\,dx\,dy\,dy
+\]
+drückt sich die in Formel (11) ausgesprochene Behauptung wie folgt aus.
+
+Die Funktion $w(x, y)$ ist von der Art, daß für jede beliebige den Bedingungen 1.\ und 2.\ genügende Funktion $\zeta$ stets das über $R$ erstreckte Doppelintegral
+\[
+\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3}\,\Delta w\,dx\,dy
+\]
+den Wert 0 hat.
+
+Da $\Delta w$ eine stetige Funktion von $x$, $y$ ist, so folgt hieraus nach Hilfssatz 3 in §~4, daß $\Delta w$ notwendig die Gestalt hat
+\[
+\Delta w = Xy^2 + X'y + X'' + Yx^2 + Y'x + Y'', \tag{12}
+\]
+wo $X$, $X'$, $X''$ stetige Funktionen der Variabeln $x$ allein und $Y$, $Y'$, $Y''$ stetige Funktionen der Variabeln $y$ allein bedeuten. Setzen wir
+\[
+\begin{aligned}
+z = w &- \int_a^x \int_a^x \left\{ Xy^2 + X'y + X'' \right\} dx\,dx + 2 \int_a^x \int_a^x \int_a^x \int_a^x X\,dx\,dx\,dx\,dx \\
+&- \int_b^y \int_b^y \left\{ Yx^2 + Y'x + Y'' \right\} dy\,dy + 2 \int_b^y \int_b^y \int_b^y \int_b^y Y\,dy\,dy\,dy\,dy,
+\end{aligned}
+\]
+so geht die Gleichung (12) über in die Gleichung
+\[
+\Delta z = 0
+\]
+und diese zeigt, daß $z$ eine innerhalb $R$ reguläre Potentialfunktion ist. Da eine reguläre Potentialfunktion nach den beiden Veränderlichen $x$, $y$ beliebig oft differentiiert werden kann und alle ihre Ableitungen ebenfalls reguläre Potentialfunktionen sind, so folgt, daß auch
+\[
+\frac{\partial^4 z}{\partial x^2 \partial y^2} = v - 2X - 2Y
+\]
+eine innerhalb $R$ reguläre Potentialfunktion ist.
+
+Setzen wir in dem Ausdruck $v - 2X - 2Y$ insbesondere $y = b^*$ ein und berücksichtigen, daß $v$ für $y = b^*$ identisch in $x$ verschwindet, so folgt, daß $X$ notwendig eine analytische und also nach $x$ differentiierbare Funktion sein muß; ebenso folgt durch Einsetzen von $x = a^*$ in jenen Ausdruck, daß $Y$ eine analytische und also nach $y$ differentiierbare Funktion sein muß. Mithin ist die Funktion $v$ analytisch und also gewiß nach $x$ und nach $y$ differentiierbar: setzen wir
+
+\origpage{180}
+\[
+u(x, y) = \frac{\partial^6 z}{\partial x^3 \partial y^3} = \frac{\partial^2 v}{\partial x \partial y},
+\]
+so erhellt, daß $u$ ebenfalls eine innerhalb $R$ reguläre Potentialfunktion ist.
+
+Die hieraus zu entnehmende Formel
+\[
+u(x, y) = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} u_h\,dx\,dy
+\]
+zeigt, daß der Wert der Funktion $u$ von der Wahl der Zahlen $a^*$, $b^*$ unabhängig ist und mithin definiert diese Formel auf der ganzen Riemannschen Fläche $F$ eine Potentialfunktion, die gewiß überall im Endlichen sich regulär verhält, wenn man von den Punkten der Kurve $C$ und den Verzweigungsstellen absieht.
+
+Um zu erkennen, daß $u(x, y)$ die gesuchte Potentialfunktion der gegebenen Riemannschen Fläche $F$ ist, erübrigt noch zu zeigen, daß $u(x, y)$ in dem in §~1 festgesetzten Sinne beim Übergange über die Kurve $C$ den Sprung 1 erleidet und daß $u$ auch in den unendlichfernen Punkten und in den Verzweigungspunkten der Riemannschen Fläche $F$ in dem in §~1 festgesetzten Sinne sich regulär verhält.
+
+\subsection*{§~8. Beweis für die verlangte Unstetigkeit der Potentialfunktion $u$ auf der Kurve $C$.}
+
+Der Nachweis für das verlangte unstetige Verhalten auf der Kurve $C$ läßt sich sehr einfach führen. Wir ändern zu dem Zwecke die Kurve $C$ auf der Riemannschen Fläche $F$ in der Weise ab, wie wir dies im §~5 getan haben, indem wir die einzelnen geradlinigen Stücke des Polygonzuges $C$ parallel mit sich nach der Seite hin verschieben, nach welcher die Vermehrung der Funktionswerte um 1 eintritt, und gleichzeitig jedes geradlinige Stück in geeigneter Weise verlängern oder verkürzen, so daß die abgeänderten Stücke wiederum einen geschlossenen Polygonzug bilden, den wir $C^*$ nennen. Wir treffen die Abänderung so, daß in dem zwischen $C$ und $C^*$ gelegenen ringförmigen Gebiete kein Verzweigungspunkt der Riemannschen Fläche zu liegen kommt. Nunmehr führen wir unsere gesamte Betrachtung für den Polygonzug $C^*$ anstatt wie früher für den Polygonzug $C$ aus. Wir bezeichnen der Kürze halber eine Funktion, die innerhalb des von $C$ und $C^*$ begrenzten ringförmigen Gebietes den konstanten Wert 1 hat und sonst überall auf der Riemannschen Fläche verschwindet, mit $1^*$. Aus jeder beliebigen Funktion $U$, die auf der Riemannschen Fläche $F$ stetig verläuft und nur in $C$ den Sprung 1
+
+\origpage{181}
+erleidet, gewinnen wir dann offenbar durch Subtraktion der Funktion $1^*$ eine Funktion, die auf der Riemannschen Fläche $F$ stetig verläuft und nur in $C^*$ den Sprung 1 erleidet und wir können offenbar für die neue Betrachtung von vornherein die Funktionenreihe
+\[
+u_1 - 1^*, \ u_2 - 1^*, \ u_3 - 1^*, \dots
+\]
+zugrunde legen, wo $u_1, u_2, u_3, \dots$ die in den vorigen Entwickelungen gewonnenen und zur Konstruktion unserer Potentialfunktion $u$ verwandten Funktionen (10) bedeuten. Unser Verfahren zeigt dann, daß sich aus dieser Funktionenreihe eine Auswahl
+\[
+u_1' - 1^*, \ u_2' - 1^*, \ u_3' - 1^*, \dots
+\]
+muß treffen lassen, derart, daß der durch die Formel
+\[
+u^* = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} (u_h' - 1^*)\,dx\,dy
+\]
+definierte Ausdruck eine Potentialfunktion darstellt, die nur in den Punkten des Polygonzuges $C^*$ unstetig ist. Nun ist aber jener Ausdruck $u^*$ offenbar gleich $u - 1^*$ und mithin $u - 1^*$ eine auf $C$ reguläre Potentialfunktion, d.~h. $u$ erleidet in dem in §~1 festgesetzten Sinne beim Übergange über die Kurve $C$ den Sprung 1.
+
+\subsection*{§~9. Der Wert des Dirichletschen Integrals der Potentialfunktion $u$ auf der Riemannschen Fläche.}
+
+Um das Verhalten der gefundenen Potentialfunktion $u$ in den unendlichfernen Punkten und in den Verzweigungspunkten der Riemannschen Fläche $F$ zu beurteilen, ist es zuvor nötig, zu zeigen, daß die Funktion $u$ das ins Auge gefaßte Dirichletsche Variationsproblem löst, daß der Wert des über die gesamte Riemannsche Fläche erstreckten Dirichletschen Integrals für diese Funktion wirklich gleich der in §~5 mit $d$ bezeichneten Grenze aller möglichen Werte der über $F$ erstreckten Dirichletschen Integrale wird.
+
+Beim Nachweise hierfür bedienen wir uns der folgenden Tatsache:
+
+Es sei $R$ irgend ein Rechteck auf unserer Riemannschen Fläche mit den Ecken
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+welches keinen Verzweigungspunkt und keinen Punkt der Kurve $C$ enthält und $f(x, y)$ sei eine in $R$ einschließlich der Seiten von $R$ reguläre analytische Funktion: wird dann zur Abkürzung
+\[
+\omega_h = u_h - u
+\]
+
+\origpage{182}
+gesetzt, so behaupte ich, daß stets die Gleichung gilt
+\[
+\begin{gathered}
+\underset{h=\infty}{L} \int_a^x \int_b^y f(x, y) \cdot \omega_h\,dx\,dy = 0. \\
+(a \leqq x \leqq a+l, \quad b \leqq y \leqq b+l')
+\end{gathered}
+\]
+und zwar konvergiert das Doppelintegral \emph{gleichmäßig} für alle in $R$ gelegenen Punkte $x$, $y$ gegen den Wert 0.
+
+Zum Beweise dieser Behauptung formen wir das Doppelintegral wie folgt um
+\[
+\begin{aligned}
+\int_a^x \int_b^y f \cdot \omega_h\,dx\,dy &= f \int_a^x \int_b^y \omega_h\,dx\,dy - \int_b^y \frac{\partial f}{\partial y} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dy \\
+&\quad - \int_a^x \frac{\partial f}{\partial x} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dx + \int_a^x \int_b^y \frac{\partial^2 f}{\partial x \partial y} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dx\,dy
+\end{aligned}
+\]
+und bedenken dann, daß das Doppelintegral
+\[
+\int_a^x \int_b^y \omega_h\,dx\,dy = \int_a^x \int_b^y u_h\,dx\,dy - \int_a^x \int_b^y u\,dx\,dy
+\]
+gleichmäßig für alle in $R$ gelegenen Punkte $x$, $y$ gegen den Wert 0 konvergiert.
+
+Wir wollen nun zeigen, daß das über die gesamte Riemannsche Fläche $F$ erstreckte Dirichletsche Integral für die Potentialfunktion $u$ einen \emph{endlichen} Wert besitzt, der gewiß nicht größer als $d$ ist. Im entgegengesetzten Falle nämlich müßte es gewiß auch möglich sein, auf der Riemannschen Fläche $F$ ein ganz im Endlichen gelegenes, von Verzweigungspunkten und Punkten der Kurve $C$ freies Gebiet $G$ abzugrenzen, so daß das über $G$ erstreckte Dirichletsche Integral für die Funktion $u$ größer als $d$ ausfällt und zwar nehmen wir an, es sei das über $G$ erstreckte Dirichletsche Integral $\geqq d+p$, wo $p$ eine gewisse positive Zahl bedeutet. Dann konstruieren wir einen Polygonzug $P$, der aus einer endlichen Anzahl geradliniger zur $x$-Achse oder zur $y$-Achse paralleler Stücke besteht derart, daß das Gebiet $G$ auf der Riemannschen Fläche ganz in das Innere des durch diesen Polygonzug $P$ begrenzten Polygones zu liegen kommt. Endlich wählen wir noch eine positive Größe $\delta$ so klein, daß das Gebiet $G$ auch innerhalb jedes solchen Polygonzuges $P_{\xi\eta}$ enthalten bleibt, der aus $P$ durch eine Parallelverschiebung:
+\[
+\begin{aligned}
+x' &= x + \xi, \quad 0 \leqq \xi \leqq \delta \\
+y' &= y + \eta, \quad 0 \leqq \eta \leqq \delta
+\end{aligned}
+\]
+
+\origpage{183}
+hervorgeht. Offenbar sind dann die über das Innere der Polygonzüge $P_{\xi\eta}$ erstreckten Dirichletschen Integrale für die Funktion $u$ ebenfalls sämtlich $\geqq d+p$; wir können daher aus der Identität
+\[
+\begin{aligned}
+&\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \\
+= &\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right\} dx\,dy + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy \\
+&\quad + \int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial \omega_h}{\partial x}\right)^2 + \left(\frac{\partial \omega_h}{\partial y}\right)^2 \right\} dx\,dy,
+\end{aligned}
+\]
+in der die Doppelintegrale über das Innere des Polygones $P_{\xi\eta}$ zu erstrecken sind, die Ungleichung entnehmen
+\[
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \geqq d + p + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy.
+\]
+
+Um so mehr ist
+\[
+\tag{13}
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \geqq d + p + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy
+\]
+wenn das Doppelintegral linker Hand über die ganze Riemannsche Fläche $F$ erstreckt wird. Andererseits gilt die Formel
+\[
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy = - \int_{(P_{\xi\eta})} \frac{\partial u}{\partial t} \omega_h\,ds - \int\!\!\int_{(P_{\xi\eta})} \Delta u\ \omega_h\,dx\,dy;
+\]
+hierin ist das erste Integral rechter Hand über den Polygonzug $P_{\xi\eta}$ zu erstrecken, wobei $s$, $t$ die Variabeln $x$, $\pm y$ bezüglich $y$, $\pm x$ bedeuten, jenachdem die betreffende Polygonseite zur $x$-Achse oder zur $y$-Achse parallel läuft. Wegen $\Delta u = 0$ gewinnen wir die Formel\ednote{Compositor omitted differential $dx\,dy$ on the left-hand side of equation (14).}
+\[
+\tag{14}
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} = - \int_{(P_{\xi\eta})} \frac{\partial u}{\partial t} \omega_h\,ds.
+\]
+
+Nun lehrt die am Anfang dieses Paragraphen erkannte Tatsache, daß, wenn wir das Integral rechter Hand in (14) nach $\xi$ und $\eta$ zwischen den Grenzen 0 und $\delta$ integrieren und dann zur Grenze $h = \infty$ übergehen,
+
+\origpage{184}
+sich Null ergibt und mithin gilt das gleiche für die linke Seite, d.~h. wir haben\ednote{Printed $k=\infty$ under the limit sign; an apparent compositor misprint for $h=\infty$.}
+\[
+\underset{k=\infty}{L} \int_0^\delta \int_0^\delta \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy \cdot d\xi\,d\eta = 0.
+\]
+
+Integrieren wir nun die Gleichung (13) nach $\xi$ und $\eta$ zwischen den Grenzen 0 und $\delta$ und gehen dann zur Grenze $h = \infty$ über, so erhalten wir
+\[
+\delta^2 d \geqq \delta^2 (d + p)
+\]
+und diese Ungleichung enthält wegen $p > 0$ einen Widerspruch. Unsere Annahme ist mithin unzulässig, d.~h. das über die gesamte Riemannsche Fläche $F$ erstreckte Integral für die Potentialfunktion $u$ besitzt einen endlichen Wert, der gewiß nicht größer als $d$ ist.
+
+Dieser Wert kann auch nicht kleiner als $d$ sein, da unserer anfänglichen Festsetzung zufolge $d$ die untere Grenze aller möglichen Werte der Dirichletschen Integrale für die in Betracht kommenden Funktionen bezeichnet. Das über $F$ erstreckte Dirichletsche Integral für die Funktion $u$ hat daher genau den Wert $d$ und mithin löst die Potentialfunktion $u$ das Dirichletsche Variationsproblem.
+
+\subsection*{§~10. Beweis für das reguläre Verhalten der Potentialfunktion $u$ in den unendlichfernen Punkten und in den Verzweigungspunkten der Riemannschen Fläche.}
+
+Um zu beweisen, daß die gefundene Funktion $u$ auch in den unendlichfernen Punkten und in den Verzweigungspunkten der Riemannschen Fläche $F$ in dem in §~1 festgesetzten Sinne sich regulär verhält, bedenken wir, daß bei der in §~1 angegebenen Transformation das vorgelegte Dirichletsche Integral wieder in ein Dirichletsches Integral übergeht und mithin das über die transformierte Riemannsche Fläche erstreckte Dirichletsche Integral den gleichen endlichen Wert besitzt, wie das über die ursprünglich vorgelegte Fläche $F$ erstreckte Integral. Bei der in §~1 angegebenen Transformation gehen die Verzweigungspunkte, bezw. die unendlichfernen Punkte der Riemannschen Fläche $F$ in gewöhnliche Punkte über und mithin haben wir nach der dort getroffenen Festsetzung nur nötig zu zeigen, daß die transformierte Potentialfunktion $u^*$ in einem gewöhnlichen Punkte $P$ sich regulär verhalten muß, falls sie in der Umgebung dieses Punktes $P$ eindeutig und regulär ist und ein endliches Dirichletsches Integral aufweist. Hierzu benutzen wir die aus
+
+\origpage{185}
+dem Laurentschen Satze leicht zu folgernde Tatsache, daß $u^*$ in der Umgebung von $P$ eine Reihenentwickelung von der Gestalt
+\[
+\begin{aligned}
+u^*(x, y) &= (a + \alpha l r) \\
+&\quad + \left(a_1 r + \frac{\alpha_1}{r}\right) \cos \varphi + \left(a_2 r^2 + \frac{\alpha_2}{r^2}\right) \cos 2\varphi + \left(a_3 r^3 + \frac{\alpha_3}{r^3}\right) \cos 3\varphi + \dots \\
+&\quad + \left(b_1 r + \frac{\beta_1}{r}\right) \sin \varphi + \left(b_2 r^2 + \frac{\beta_2}{r^2}\right) \sin 2\varphi + \left(b_3 r^3 + \frac{\beta_3}{r^3}\right) \sin 3\varphi + \dots
+\end{aligned}
+\]
+besitzen muß, wo $r$ die Entfernung des Punktes $x, y$ von $P$ und $\varphi$ den Winkel bezeichnet, den die Verbindungsgrade\ednote{Printed Verbindungsgrade; an apparent compositor misprint for Verbindungsgerade.} zwischen diesen Punkten mit der $x$-Achse einschließt und wo $a, \alpha, a_1, \alpha_1, a_2, \alpha_2, a_3, \alpha_3, \dots b_1, \beta_1, b_2, \beta_2, b_3, \beta_3, \dots$ Konstante bedeuten. Es mögen $r, r'>r$ zwei besondere Werte bezeichnen, für welche jene Reihenentwickelung konvergiert, die von den mit $r$ und $r'$ um $P$ geschlagenen Kreisen gebildet wird. Das über diesen Kreisring erstreckte Dirichletsche Integral für die Potentialfunktion $u^*$ ist bekanntlich nach dem Greenschen Satz durch die Integrale über die Peripherie jener beiden Kreise ansdrückbar\ednote{Printed ansdrückbar with n; an apparent compositor misprint for ausdrückbar.}; man erhält für dasselbe den Wert
+\[
+\int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,r\,d\varphi - \int_0^{2\pi} \left[ u^* \frac{\partial u^*}{\partial r} \right]_{r=r'} r'\,d\varphi.
+\]
+
+Da das Dirichletsche Integral über die gesamte Fläche erstreckt einen endlichen Wert $d$ haben soll, so muß auch
+\[
+\int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,r\,d\varphi
+\]
+bei abnehmendem $r$, absolut genommen, unterhalb einer endlichen Größe $A$ bleiben und daraus entnehmen wir, daß das Integral
+\[
+\int_r^{r'} \int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,d\varphi \cdot dr = \frac{1}{2} \int_0^{2\pi} u^{*2}\,d\varphi - \frac{1}{2} \int_0^{2\pi} \left[ u^{*2} \right]_{r=r'} d\varphi
+\]
+absolut genommen unterhalb der Grenze
+\[
+\int_r^{r'} \frac{A}{r}\,dr = A l \frac{r'}{r}
+\]
+bleibt, d.~h. das Integral
+\[
+\int_0^{2\pi} u^{*2}\,d\varphi
+\]
+
+\origpage{186}
+muß bei abnehmendem $r$ absolut genommen unterhalb einer Größe von der Form
+\[
+2 A l \frac{1}{r} + B
+\]
+bleiben, wo $B$ eine geeignet gewählte Konstante ist. Wegen
+\[
+\begin{aligned}
+\frac{1}{\pi} \int_0^{2\pi} u^{*2}\,d\varphi &= 2(a + \alpha l r)^2 + \left(a_1 r + \frac{\alpha_1}{r}\right)^2 + \left(a_2 r^2 + \frac{\alpha_2}{r^2}\right)^2 + \dots \\
+&\quad + \left(b_1 r + \frac{\beta_1}{r}\right)^2 + \left(b_2 r^2 + \frac{\beta_2}{r^2}\right)^2 + \dots
+\end{aligned}
+\]
+folgt aber hieraus, daß die Konstanten $\alpha, \alpha_1, \alpha_2, \dots \beta_1, \beta_2, \dots$ sämtlich gleich 0 sind, d.~h. die Potentialfunktion $u^*$ verhält sich auch im Punkte $P$ regulär.
+
+Göttingen, den 18.~September 1901.
+
+\end{document}
