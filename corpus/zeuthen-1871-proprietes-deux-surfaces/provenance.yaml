@@ -1,4 +1,6 @@
 changelog:
+  - date: "2026-09-22"
+    summary: Translation (en) added (AI draft); glossary.yaml added.
   - date: "2026-09-20"
     summary: Transcription added (AI draft).
 
@@ -14,3 +16,20 @@ transcription:
     flagged_pages: []
     date: "2026-09-20"
   uncertainty_flags: 0
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-22"
+    note: >-
+      Full English translation of Zeuthen's 1871 memoir "Études géométriques de quelques-unes des
+      propriétés de deux surfaces dont les points se correspondent un-à-un" (Mathematische
+      Annalen, Band 4, pp. 21–49). Made directly from our own transcription (original.tex).
+      All 29 pages translated with exact preservation of all formulas, equation tags, environments,
+      and \origpage markers verified by pipeline/texcompare.py and pipeline/houselint.py.
+      Terminology matches Cayley and Salmon classical algebraic geometry, recorded in glossary.yaml.

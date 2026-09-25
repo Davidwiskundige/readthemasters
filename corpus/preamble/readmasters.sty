@@ -14,6 +14,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{readmasters}[2026/07/18 ReadTheMasters house style]
 
+\RequirePackage[T1]{fontenc}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
@@ -36,6 +37,8 @@
 \newunicodechar{ˢ}{\textsuperscript{s}}
 \newunicodechar{ⁿ}{\textsuperscript{n}}
 \newunicodechar{ᵐ}{\textsuperscript{m}}
+\DeclareRobustCommand*{\no}{n\textsuperscript{o}\kern .2em\ignorespaces}
+\DeclareRobustCommand*{\nos}{n\textsuperscript{os}\kern .2em\ignorespaces}
 
 % ---------------------------------------------------------------------------
 % Scholarly apparatus macros — make transcription honesty machine-readable.
