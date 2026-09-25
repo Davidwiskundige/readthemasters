@@ -366,4 +366,180 @@ Durch die beigefügten Figuren soll eine bestimmte Triangulation dieser Flächen
 gegen 0 geht. Eine Triangulation (in zehn Elementardreiecke) wird durch Figur 4 angedeutet; dabei ergibt sich ohne weiteres, wie die einzelnen Dreiecke mit Hilfe der zu jedem von ihnen gehörigen projektiven Dreieckskoordinaten als „Dreiecke“ in unserm allgemeinen Sinne aufgefaßt werden können. Die projektive Ebene ist \emph{geschlossen}.
 
 4.\ Die \emph{Oberfläche des regulären Oktaëders} zerfällt auf natürliche Weise in acht Dreiecke, die, auf ihre Schwerpunktskoordinaten bezogen,
+
+\origpage{26}
+als Elementardreiecke einer Triangulation aufgefaßt werden können. Geschlossen.
+
+5.\ Durch Projektion des regulären Oktaëders von seinem Mittelpunkt aus auf die Oberfläche der umbeschriebenen Kugel erhält man die Kugel als eine in acht Elementardreiecke (die Oktanten) zerlegte Mannigfaltigkeit. Kugel und Oktaëder sind im Sinne der Analysis situs äquivalent.
+
+\rmfigure{figures/fig-4.png}{Fig.~4.}{Triangulation der projektiven Ebene}
+
+\rmfigure{figures/fig-5.png}{Fig.~5.}{Oktaëder}
+
+6.\ Das \emph{Möbiussche Band}.${}^{1)}$ Es entsteht aus einem langen schmalen Rechteck, wenn man dasselbe im dreidimensionalen Raum um $180^\circ$ tordiert und so zusammenbiegt, daß die Schmalseiten des Rechtecks in verkehrter Lage zur Deckung kommen. Diese Raumfläche läßt sich, auf rechtwinklige Koordinaten $xyz$ bezogen, mit Hilfe zweier reeller Parameter $\varrho$, $\varphi$ am einfachsten analytisch so zur Darstellung bringen${}^{2)}$:
+
+\rmfigure{figures/fig-6.png}{Fig.~6.}{Möbiussches Band}
+\[
+\left\{
+\begin{aligned}
+x &= (a - \varrho \sin \tfrac{1}{2}\varphi) \cos \varphi \\
+y &= (a - \varrho \sin \tfrac{1}{2}\varphi) \sin \varphi \\
+z &= \varrho \cos \tfrac{1}{2}\varphi.
+\end{aligned}
+\right.
+\]
+$\varphi$ ist unbeschränkt veränderlich, $\varrho$ an die Bedingung $|\varrho| < h$ geknüpft; $a$ und $h$ bedeuten positive Konstante, von denen $h$ die kleinere sein muß. Im Sinne der Analysis situs ist das Möbiussche Band offenbar mit der folgenden Mannigfaltigkeit $\mathfrak{B}$ identisch:
+
+In einer Euklidischen Ebene mit den rechtwinkligen Koordinaten $\varrho$, $\varphi$ betrachten wir den Streifen $|\varrho| < 1$ und die durch
+\[
+\varrho' = (-1)^n \varrho, \quad \varphi' = \varphi + 2n\pi \quad [n = 0, \pm 1, \pm 2, \cdots]
+\]
+definierte diskrete Gruppe $\varGamma$ von Paddelbewegungen${}^{3)}$ $(\varrho, \varphi) \to (\varrho'\,\varphi')$. Ein
+
+\textbf{1)} Möbius, Werke, Bd.\ 2, S.\ 484--485 und S.\ 519--521.
+
+\textbf{2)} Die durch diese Gleichungen dargestellte Fläche ist allerdings keine Developpable.
+
+\textbf{3)} Das (niederdeutschem Sprachgebrauch entlehnte) Wort „Paddelbewegung“ soll darauf hindeuten, daß die Gruppe erhalten wird, indem man die Ebene fortgesetzt um eine Achse umklappt, abwechselnd links herum und rechts herum, sie dabei aber gleichzeitig jedesmal (um das Stück $2\pi$) in Richtung jener Achse vorwärtsschiebt.
+
+\origpage{27}
+Punktsystem $S$ in dieser Ebene heißt ein \textbf{System hinsichtlich $\varGamma$ äquivalenter Punkte} (oder kürzer: ein \textbf{Punktsystem zu $\varGamma$}), wenn durch jede Bewegung der Gruppe $\varGamma$ die Punkte von $S$ ineinander übergehen, aber auch jeder Punkt von $S$ in jeden andern durch eine Bewegung dieser
+
+\rmfigure{figures/fig-7a.png}{Fig.~7\,a.}{Punkt auf B mit Umgebung und Winkel}
+
+Gruppe übergeführt werden kann. Ein dem Streifen $|\varrho| < 1$ angehöriges Punktsystem zu $\varGamma$ nennen wir einen „Punkt“ der zu definierenden Mannigfaltigkeit $\mathfrak{B}$. Ist $S_0$ ein solcher „Punkt“ von $\mathfrak{B}$ und schlägt man um die einzelnen (Euklidischen) Punkte des Punktsystems $S_0$ lauter kongruente Kreise (Fig.~7\,a), die ganz im Streifen liegen, so bilden diejenigen Punktsysteme $S$ zu $\varGamma$, die in jedem dieser Kreise durch einen Punkt vertreten sind, eine „Umgebung“ von $S_0$ auf $\mathfrak{B}$. Sagt man von einem gewöhnlichen Punkte, der dem Punktsystem $S$ zu $\varGamma$ angehört, er „\emph{liege über}“ dem „Punkte“ $S$ von $\mathfrak{B}$, so erscheint der Parallelstreifen als eine „\emph{Überlagerungsfläche}“ über $\mathfrak{B}$, welche $\mathfrak{B}$ unendlichviel-blättrig überzieht, ohne jedoch an irgend einer Stelle relativ zu $\mathfrak{B}$ \emph{verzweigt} zu sein. Im Parallelstreifen wenden wir die Euklidische Winkelmessung an; indem wir ihn als Überlagerungsfläche von $\mathfrak{B}$ auffassen, überträgt sich diese Winkelmessung ohne weiteres auf $\mathfrak{B}$. Dabei wird aber das Winkelmaß nicht bloß bis auf ganzzahlige Vielfache von $2\pi$, sondern auch seinem Vorzeichen nach unbestimmt (Fig.~7\,a). Dieser Umstand hängt mit einer Eigenschaft des Möbiusschen Bandes zusammen, die man als seine „\emph{Einseitigkeit}“ bezeichnet (ohne die Fläche zu verlassen und ohne über ihren Rand zu klettern, kann man von der einen Seite auf die andere kommen) und die wir hernach ihrer funktionentheoretischen Bedeutung wegen noch genauer ins Auge fassen werden. --- Eine Triangulation von $\mathfrak{B}$ und damit des Möbiusschen Bandes deutet Fig.~7\,b an.
+
+\rmfigure{figures/fig-7b.png}{Fig.~7\,b.}{Triangulation von B}
+
+\rmfigure{figures/fig-8.png}{Fig.~8.}{Konstruktion des Torus}
+
+7.\ Der \emph{Torus} entsteht (Fig.~8), wenn man einen Kreis vom Radius $r$ um eine in seiner Ebene gelegene Achse, die den Kreis nicht trifft, rotieren läßt; $R (> r)$ möge der senkrechte Abstand des Kreismittelpunktes von der Achse sein. Die rechtwinkligen Koordinaten $xyz$ der Punkte auf der Fläche lassen sich mit Hilfe zweier reeller Parameter $\sigma$, $\varphi$, deren geometrische Bedeutung evident ist, in der Form
+
+\origpage{28}
+\[
+\left\{
+\begin{aligned}
+x &= (R + r \cos \sigma) \cos \varphi, \\
+y &= (R + r \cos \sigma) \sin \varphi, \\
+z &= r \sin \sigma
+\end{aligned}
+\right.
+\]
+darstellen. Dem Torus kommt als einer Fläche im dreidimensionalen Euklidischen Raum eine natürliche (Euklidische) Winkelmessung zu. Ist eine Kurve auf dem Torus
+\[
+\varphi = \varphi(\lambda), \quad \sigma = \sigma(\lambda)
+\]
+gegeben, wobei $\frac{d\varphi}{d\lambda}, \frac{d\sigma}{d\lambda}$ stetig seien und durchweg $\left(\frac{d\varphi}{d\lambda}\right)^2 + \left(\frac{d\sigma}{d\lambda}\right)^2 \ne 0$, so berechnet sich der Differentialquotient der Bogenlänge $s = s(\lambda)$ dieser Kurve aus:
+\[
+\left(\frac{ds}{d\lambda}\right)^2 = (R + r \cos \sigma)^2 \left(\frac{d\varphi}{d\lambda}\right)^2 + r^2 \left(\frac{d\sigma}{d\lambda}\right)^2.
+\]
+Führt man statt $\sigma$ einen neuen Parameter $\psi$ ein:
+\[
+\psi = \int_0^\sigma \frac{d\sigma}{\frac{R}{r} + \cos \sigma}, \tag{8}
+\]
+so kann man statt dessen schreiben
+\[
+ds^2 = e(d\varphi^2 + d\psi^2), \text{ wo } e = (R + r \cos \sigma)^2. \tag{9}
+\]
+Durch (8) ist $\psi$ als eindeutige, stetig differentiierbare Funktion von $\sigma$, aber auch umgekehrt $\sigma$ als eine ebensolche Funktion von $\psi$ erklärt. Die Werte $(\varphi, \psi)$, die einem bestimmten Punkt auf dem Torus entsprechen, sind nur bis auf ganzzahlige Vielfache von
+\[
+2\pi, \text{ bzw. } \int_0^{2\pi} \frac{d\sigma}{\frac{R}{r} + \cos \sigma} = \frac{2\pi r}{\sqrt{R^2 - r^2}}
+\]
+bestimmt. Wir werden so dazu geführt, in einer Euklidischen Ebene mit den rechtwinkligen Koordinaten $\varphi, \psi$ die Translationsgruppe
+\[
+\left.
+\begin{gathered}
+\varphi' = \varphi + 2m\pi, \quad \psi' = \psi + \frac{2\pi r}{\sqrt{R^2 - r^2}}\,n \\
+\begin{pmatrix}
+m = 0, \pm 1, \pm 2, \cdots \\
+n = 0, \pm 1, \pm 2, \cdots
+\end{pmatrix}
+\end{gathered}
+\right\} \varGamma
+\]
+zu betrachten und ein System hinsichtlich $\varGamma$ äquivalenter Punkte, ein sog.\ \textbf{„Punktgitter“}, als „Punkt“ einer neuen Mannigfaltigkeit $\mathfrak{T}$ anzusprechen, über der sich dann die Ebene als unendlichviel-blättrige, aber nirgends verzweigte Überlagerungsfläche ausbreitet. Die Euklidische Winkelmessung der Ebene überträgt sich ohne weiteres auf die Mannigfaltigkeit $\mathfrak{T}$, und es resultiert daraus nicht (wie im Falle des Möbius-
+
+\origpage{29}
+schen Bandes) eine Unsicherheit hinsichtlich des Winkelvorzeichens. Auf diese Mannigfaltigkeit $\mathfrak{T}$ ist der Torus vermittels seiner Darstellung durch die Parameter $\varphi$, $\psi$ umkehrbar-eindeutig und -gebietsstetig abgebildet; aber nicht nur das: die Abbildung ist auch \emph{konform}. Die Gleichung (9) besagt nämlich, daß das Verhältnis eines Bogenelements $ds$ auf dem Torus zu dem Bildelement $(\sqrt{d\varphi^2 + d\psi^2})$ in der $\varphi\psi$-Ebene $= \sqrt{e} = R + r \cos \sigma$ ist, also nur von der Stelle, an der sich das Bogenelement befindet, nicht aber von dessen Richtung abhängt. Diese konforme Abbildung liefert die Grundlage für die Theorie der analytischen Funktionen auf dem Torus. --- Der Torus ist \emph{geschlossen}; eine Triangulation ist durch Fig.~2 gegeben, wenn das dort stark ausgezogene Rechteck, dessen Seiten den Koordinatenachsen parallel sind, die Seitenlängen $2\pi$ und $\frac{2\pi r}{\sqrt{R^2 - r^2}}$ besitzt. Auch ist in dieser Figur ein „Punkt“ von $\mathfrak{T}$ durch Nullkreise markiert.
+
+8.\ Die möglichen \emph{simultanen Stellungen zweier} auf einem Ziffernblatt spielender \emph{Zeiger} sind die Punkte einer Mannigfaltigkeit, auf der man eine stetige Kurve beschreibt, wenn man die beiden Zeiger irgendwie gleichzeitig in stetiger Weise bewegt. Diese Mannigfaltigkeit ist offenbar geschlossen und dem Torus äquivalent.
+
+9.\ Damit eine Fläche im Sinne der Analysis situs gegeben ist, genügt es, die Dreiecke, aus denen sie (nachdem sie in einer bestimmten Weise trianguliert ist) besteht, durch irgendwelche Symbole (z.\ B.\ Nummern) zu kennzeichnen und die Verknüpfung dieser Dreiecke anzugeben. Am einfachsten geschieht das in der Weise, daß man die Ecken numeriert und dann jedes Dreieck in der Form $(efg)$ [oder $(feg)$ oder $\cdots$] notiert, wenn $e, f, g$ die Nummern seiner Ecken sind.${}^{1)}$ Das so entstehende Schema wird der Bedingung genügen, daß jede Ecke $e_0$ nur in einem einzigen endlichen Zyklus von Dreieckssymbolen:
+\[
+(e_0 e_1 e_2), \quad (e_0 e_2 e_3), \quad \cdots, \quad (e_0 e_{h-1} e_h), \quad (e_0 e_h e_1)
+\]
+auftritt. Ferner wird man die Eckennummern in keiner Weise so in zwei Klassen teilen können, daß jedes Dreieckssymbol entweder drei Ecken aus der einen oder drei Ecken aus der andern Klasse aufweist. Jedes Schema von Symbolen $(efg)$, das diesen Bedingungen genügt, definiert auch eine bestimmte Fläche im Sinne der Analysis situs (samt einer bestimmten Triangulierung derselben). Diese abstrakte Art der Beschreibung eignet sich insbesondere für \emph{geschlossene} Flächen, da für diese das nur aus endlichvielen Symbolen bestehende Schema vollständig hingeschrieben werden kann. Die Aufstellung aller zulässigen endlichen Schemata ist eine rein kombinatorische Aufgabe. Es erhebt sich natür-
+
+\textbf{1)} Möbius, Werke Bd.\ II, S.\ 478\,f.
+
+\origpage{30}
+lich sogleich die Frage, wann zwei solche endlichen Schemata eine und dieselbe Fläche (in verschiedener Triangulierung) darstellen; die weiteren Entwicklungen über Analysis situs, die dieses Kapitel enthält, werden wichtige Beiträge zur Beantwortung dieser Frage liefern.
+
+Das Schema des \emph{Tetraeders} und damit der \emph{Kugel} lautet beispielsweise:
+\[
+(123) \quad (234) \quad (341) \quad (412).
+\]
+In anderer, oktaëdrischer Triangulierung [vgl.\ Fig.~5] kann die Kugel durch die Tabelle
+\[
+\begin{gathered}
+( \text{I}\,1\,2 ) \quad ( \text{I}\,2\,3 ) \quad ( \text{I}\,3\,4 ) \quad ( \text{I}\,4\,1 ) \\
+( \text{II}\,1\,2 ) \quad ( \text{II}\,2\,3 ) \quad ( \text{II}\,3\,4 ) \quad ( \text{II}\,4\,1 )
+\end{gathered}
+\]
+beschrieben werden. Die \emph{projektive Ebene} in der oben [Fig.~4] gezeichneten Triangulation besitzt das folgende Schema${}^{1)}$:
+\[
+\begin{gathered}
+( 1\ 2\ \text{I} ) \quad ( 2\ 3\ \text{II} ) \quad ( 3\ 1\ \text{III} ) \\
+( 1\ 2\ \text{II} ) \quad ( 2\ 3\ \text{III} ) \quad ( 3\ 1\ \text{I} ) \\
+( 1\ \text{II}\ \text{III} ) \quad ( 2\ \text{III}\ \text{I} ) \quad ( 3\ \text{I}\ \text{II} ) \\
+( \text{I}\ \text{II}\ \text{III} ).
+\end{gathered}
+\]
+
+10.\ Jedes \emph{analytische Gebilde} liefert ein Beispiel für eine „Fläche“ in unserm Sinne, wenn wir die dem analytischen Gebilde angehörigen Funktionselemente als „Punkte“ betrachten und den zur Definition der Fläche erforderlichen Begriff „Umgebung“ mit dem in § 2 behandelten Begriff „analytische Umgebung“ zusammenfallen lassen. Es ist zunächst klar, daß in dieser Deutung jedes analytische Gebilde zu einer zweidimensionalen Mannigfaltigkeit wird; nur bleibt noch zu beweisen, daß diese Mannigfaltigkeit stets auch einer bestimmten Triangulierung fähig ist.
+
+\subsection*{§ 6. Analytische Gebilde, als Flächen betrachtet.}
+
+Ein Dreieck $\Delta$ auf einer beliebigen zweidimensionalen Mannigfaltigkeit $\mathfrak{F}$ kann man derartig Punkt für Punkt durch ein Euklidisches Dreieck $D$ mit den Ecken 1, 2, 3 repräsentieren, daß man jedem Punkt von $\Delta$, der nach S.\ 21 ein bestimmtes Koordinatenverhältnis $\xi_1 : \xi_2 : \xi_3$ (in $\Delta$) besitzt, denjenigen Punkt von $D$ zuordnet, dessen homogene Schwerpunktskoordinaten in bezug auf die Ecken 1, 2, 3 den gleichen Wert $\xi_1 : \xi_2 : \xi_3$ besitzen. Und umgekehrt darf man eine Punktmenge $\Delta$ auf $\mathfrak{F}$, die umkehrbar eindeutig und stetig auf ein Euklidisches Dreieck $D$ abgebildet ist, auf Grund dieser Abbildung als ein Dreieck auf $\mathfrak{F}$ ansprechen. Jede in $D$ gelegene geradlinige Strecke ist dann Bild einer ganz in $\Delta$
+
+\textbf{1)} Die in den ersten beiden Zeilen stehenden Dreiecke ziehen sich durchs Unendliche.
+
+\origpage{31}
+verlaufenden Kurve auf $\mathfrak{F}$, die wir als \textbf{„Elementarstrecke“} in $\Delta$ bezeichnen, und jedes ganz in $D$ gelegene Euklidische Dreieck $D^*$ ist Bild eines Dreiecks $\Delta^*$ auf der Mannigfaltigkeit; $\Delta^*$ nennen wir ein \textbf{„Teildreieck“} von $\Delta$.
+
+$\mathfrak{F}$ sei in bestimmter Weise in Elementardreiecke zerlegt. Eine andere Zerlegung $\zeta'$ derselben Mannigfaltigkeit in Elementardreiecke nennen wir eine \textbf{Unterteilung} der ersten, $\zeta$, wenn jedes Elementardreieck der Zerlegung $\zeta'$ Teildreieck eines Elementardreiecks der Zerlegung $\zeta$ ist. Ist $\zeta$ eine gegebene Zerlegung in Elementardreiecke, so kann man sich sehr leicht eine solche Folge von Triangulationen $\zeta_1, \zeta_2, \zeta_3, \cdots$ verschaffen, daß 1) $\zeta_1 = \zeta$ ist, 2) jedes $\zeta_{n+1}$ eine Unterteilung des vorhergehenden $\zeta_n$ ist und 3) die Teilung $\zeta_n$ mit unbegrenzt wachsendem $n$ \emph{beliebig fein} wird. Das letzte soll besagen: Ist $\mathfrak{p}$ ein beliebiger Punkt von $\mathfrak{F}$, $\mathfrak{U}$ eine beliebige Umgebung von $\mathfrak{p}$ auf $\mathfrak{F}$, so gibt es immer einen Index $n$ derart, daß dasjenige Elementardreieck (oder ausnahmsweise: diejenigen Elementardreiecke) von $\zeta_n$, in welchem (welchen) $\mathfrak{p}$ liegt, selber ganz in $\mathfrak{U}$ enthalten ist (sind). Waren auf $\mathfrak{F}$ irgend abzählbar unendlichviele Punkte $\mathfrak{p}_2, \mathfrak{p}_3, \cdots$ gegeben, so können wir diese Folge von immer feiner werdenden Unterteilungen noch so einrichten, daß $\mathfrak{p}_2$ unter den bei der Teilung $\zeta_2$ auftretenden Eckpunkten enthalten ist, $\mathfrak{p}_3$ unter den Eckpunkten der Teilung $\zeta_3$ usw. Von dieser Bemerkung werden wir sogleich Gebrauch machen.
+
+Zunächst soll gezeigt werden, daß \emph{jedes Gebiet $\mathfrak{G}$ auf einer Fläche $\mathfrak{F}$ (das nach S.\ 21 selbst als eine zweidimensionale Mannigfaltigkeit aufgefaßt werden kann) einer Triangulation fähig ist, wenn dies für $\mathfrak{F}$ zutrifft.} Man gehe aus von einer Triangulation $\zeta = \zeta_1$ von $\mathfrak{F}$ und konstruiere dazu eine Folge von Unterteilungen $\zeta_2, \zeta_3, \dots$, deren Feinheitsgrad mit wachsendem Index unter jede Grenze herabsinkt. Es seien $\varGamma_1$ diejenigen Dreiecke von $\zeta_1$, die ganz innerhalb $\mathfrak{G}$ liegen; $\varGamma_2$ diejenigen Dreiecke von $\zeta_2$, die ganz in $\mathfrak{G}$ liegen, aber nicht Teile der $\varGamma_1$ sind; $\varGamma_3$ diejenigen Dreiecke von $\zeta_3$, die ganz in $\mathfrak{G}$ liegen, aber weder Teile von Dreiecken $\varGamma_1$ noch von $\varGamma_2$ sind; usw. Alle die Dreiecke $\varGamma_1, \varGamma_2, \varGamma_3, \dots$, die in ihren inneren Punkten durchweg verschieden sind, aber zusammen das ganze Gebiet $\mathfrak{G}$ erfüllen, mögen mit einem gemeinsamen Namen „die Dreiecke $\varGamma$“ heißen. \emph{Auf den Kanten eines Dreiecks $\varGamma$ liegen nur endlichviele Ecken von Dreiecken $\varGamma$.} Lägen daselbst nämlich unendlichviele, so hätten sie eine Verdichtungsstelle $\mathfrak{p}$. Zu $\mathfrak{p}$ gehört eine Umgebung $\mathfrak{U}$, die ganz in $\mathfrak{G}$ gelegen ist, und es findet sich ein Index $n$, so daß alle Dreiecke der Teilung $\zeta_n$, welche $\mathfrak{p}$ enthalten, ganz in $\mathfrak{U}$ und damit ganz in $\mathfrak{G}$ gelegen sind. Im Innern des Dreieckpaars (oder Dreiecksterns) von $\zeta_n$, welches $\mathfrak{p}$ enthält, kann aber, abgesehen vielleicht von $\mathfrak{p}$ selbst, kein Eckpunkt von Dreiecken $\varGamma$ liegen. Das ist ein Widerspruch. --- Unsere Konstruktion wird jetzt so fortgesetzt: Ein einzelnes Dreieck $\varGamma$, es heiße $\varGamma^0$, läßt sich so in
+
+\origpage{32}
+endlichviele Teildreiecke zerlegen, daß die Ecken dieser Teildreiecke genau alle die auf den Kanten von $\varGamma^0$ gelegenen Ecken der Dreiecke $\varGamma$ sind (Fig.~9). Führen wir diesen Teilungsprozeß nicht nur mit $\varGamma^0$, sondern mit jedem Dreieck $\varGamma$ aus, so gewinnen wir dadurch die gewünschte Zerlegung von $\mathfrak{G}$ in Elementardreiecke.
+
+\rmfigure{figures/fig-9.png}{Fig.~9.}{Zerlegung in Teildreiecke}
+
+Durch Überlegungen ganz analoger Art gelingt nun auch der am Schluß des vorigen Paragraphen angekündigte Nachweis, daß jedes analytische Gebilde $\mathbf{G}$, als zweidimensionale Mannigfaltigkeit aufgefaßt, in Elementardreiecke zerlegt werden kann. Wir operieren mit einer $z$-Kugel, deren Punkten wir in bekannter Weise (durch stereographische Projektion) die Werte der komplexen Veränderlichen $z$ einschließlich $\infty$ zugeordnet denken. Ein zu $\mathbf{G}$ gehöriges Funktionselement:
+\[
+u = \text{Potenzreihe in } \sqrt[\mu]{z - a}
+\]
+nennen wir einen „über dem Punkte $z = a$ der $z$-Kugel gelegenen“ Punkt von $\mathbf{G}$; schreitet $u$ nach Potenzen von $\frac{1}{\sqrt[\nu]{z}}$ fort, so liegt das betreffende Funktionselement über dem Punkt $\infty$ der $z$-Kugel. $\mathbf{G}$ erscheint dieser Ausdrucksweise gemäß als eine gewisse Überlagerungsfläche über der $z$-Kugel, als ein Gebilde von der Art, wie es Riemann in seiner berühmten Dissertation${}^{1)}$ zur Untersuchung mehrdeutiger analytischer Funktionen eingeführt hat, und das seitdem unter dem Namen \emph{„Riemannsche Fläche“} die Theorie dieser Funktionen beherrscht.
+
+Wir markieren auf der Kugel die abzählbarvielen Punkte $a_2, a_3, \dots$, über denen verzweigte Funktionselemente (\textbf{„Verzweigungspunkte“}) von $\mathbf{G}$ liegen. $\zeta_1$ bedeute die Zerlegung der Kugel in ihre acht Oktanten, die gemäß § 5, Beispiel 5) als Dreiecke auf der Kugel gelten sollen; $\zeta_1, \zeta_2, \zeta_3, \dots$ sei eine mit $\zeta_1$ beginnende Folge von Triangulationen der Kugel von der Beschaffenheit, daß immer $\zeta_{n+1}$ eine Unterteilung von $\zeta_n$ ist, $a_n$ als Eckpunkt der Teilung $\zeta_n$ auftritt, und $\zeta_n$ mit unbegrenzt wachsendem $n$ beliebig fein wird. Wir betrachten ein Dreieck $D$ auf der Kugel, das in irgendeiner dieser Einteilungen $\zeta_n$ auftritt. Eine Punktmenge $\Delta$ auf $\mathbf{G}$ wird als ein über $D$ gelegenes dreieckiges Stück von $\mathbf{G}$ zu bezeichnen sein, wenn die Beziehung
+\[
+\text{»}\emph{zu $\Delta$ gehöriger Punkt $\mathfrak{p} \to$ Kugelpunkt, über dem $\mathfrak{p}$ liegt}\text{«}
+\]
+eine umkehrbar eindeutige stetige Abbildung zwischen den Punkten von $\Delta$ und $D$ ist. $\Delta$ erscheint dann zufolge dieser Abbildung als ein auf $\mathbf{G}$ definiertes Dreieck.
+
+\textbf{1)} Werke, 2.\ Aufl., S.\ 7--9.
+
+\origpage{33}
+Wir suchen nun zunächst diejenigen Dreiecke $\Delta_1^*$ auf $\mathbf{G}$ auf, welche über einem sphärischen Dreieck der Teilung $\zeta_1$ liegen und keinen Verzweigungspunkt enthalten; solcher Dreiecke $\Delta_1^*$ wird es endlich- oder unendlichviele geben, vielleicht existiert aber auch gar keines. Darauf suchen wir diejenigen Dreiecke $\Delta_2^*$ auf $\mathbf{G}$, welche über einem Dreieck der Teilung $\zeta_2$ liegen, welche \emph{höchstens einen} und zwar einen über $a_2$ gelegenen Verzweigungspunkt besitzen und welche nicht Teile von Dreiecken $\Delta_1^*$ sind; darauf diejenigen Dreiecke $\Delta_3^*$ auf $\mathbf{G}$, welche folgende Eigenschaften besitzen: jedes $\Delta_3^*$ muß über einem Kugeldreieck der Teilung $\zeta_3$ liegen, darf höchstens einen einzigen Verzweigungspunkt enthalten und dieser muß dann über $a_2$ oder über $a_3$ liegen, und $\Delta_3^*$ darf nicht Teil eines Dreiecks $\Delta_1^*$ oder $\Delta_2^*$ sein; usw. Die Dreiecke $\Delta^*\,(\Delta_1^*, \Delta_2^*, \Delta_3^*, \dots)$, in ihren inneren Punkten durchweg verschieden, erfüllen zusammen die ganze Fläche $\mathbf{G}$. In der Tat: ist $\mathfrak{e}$ irgendein Element von $\mathbf{G}$, das über dem Punkte $a$ der $z$-Kugel liegt, und ist $k$ eine Kalotte um $a$, in der die Normaldarstellung von $\mathfrak{e}$ gültig ist, $n$ aber ein Index von der Art, daß alle Dreiecke $D_n$ der Teilung $\zeta_n$, welche $a$ enthalten, ganz in $k$ liegen, und $a$, falls es Verzweigungspunkt ist, mit einem der Punkte $a_2, a_3, \dots, a_n$ zusammenfällt: so liegt über jedem dieser Dreiecke $D_n$ mindestens ein Dreieck auf $\mathbf{G}$, welches $\mathfrak{e}$ enthält. Diese Dreiecke auf $\mathbf{G}$ sind Dreiecke $\Delta_n^*$, wenn sie nicht bereits als Teile in Dreiecken $\Delta_1^*$ oder $\Delta_2^*$ $\dots$ oder $\Delta_{n-1}^*$ enthalten waren.
+
+Ohne Einführung neuer Eckpunkte läßt sich jetzt mit jedem Dreieck $\Delta^*$ eine solche Einteilung in endlichviele Dreiecke vornehmen, daß die dadurch entstehenden Dreiecke $\Delta$ auch noch diese Eigenschaft bekommen: jeder Punkt, der für \emph{ein} $\Delta$ Eckpunkt ist, ist in allen (endlichvielen) Dreiecken $\Delta$, denen er angehört, gleichfalls ein Eckpunkt. Um einzusehen, daß wir damit eine Zerlegung von $\mathbf{G}$ in Elementardreiecke $\Delta$ gewonnen haben, beachte man folgende leicht zu beweisende Tatsachen:
+
+Zwei Dreiecke $\Delta$, die über einem und demselben Dreieck der $z$-Kugel liegen, haben entweder keinen Punkt gemein oder einen einzigen Eckpunkt, der dann ein Verzweigungspunkt ist.
+
+Zwei Dreiecke $\Delta$, die über zwei verschiedenen Dreiecken der $z$-Kugel mit gemeinsamer Kante liegen, haben entweder keinen Punkt gemein oder einen Eckpunkt, der dann ein Verzweigungspunkt ist, oder eine ganze Kante, die über der gemeinsamen Kante der beiden Kugeldreiecke liegt.
+
+Zwei Dreiecke $\Delta$, die über zwei Kugeldreiecken ohne gemeinsamen Punkt oder mit nur einem gemeinsamen Eckpunkt liegen, haben entweder keinen Punkt oder einen Eckpunkt gemein.
+
+Ist $\mathfrak{e}$ unverzweigter Eckpunkt eines Dreiecks $\Delta$, so machen die Dreiecke $\Delta$, welche $\mathfrak{e}$ enthalten, einen einzigen Zykel aus, der Dreieck für Dreieck über einem Stern der $z$-Kugel liegt. Ist $\mathfrak{e}$ ein Verzweigungspunkt $(\mu - 1)^{\text{ter}}$ Ordnung $(\mu \geqq 2)$, so ist er Eckpunkt für alle Dreiecke $\Delta$, die $\mathfrak{e}$ enthalten; diese gruppieren sich um $\mathfrak{e}$ in einem einzigen Zykel, und
 \end{document}
