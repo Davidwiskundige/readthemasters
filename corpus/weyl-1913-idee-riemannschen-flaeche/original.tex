@@ -1290,4 +1290,197 @@ Auch auf einer nicht geschlossenen Riemannschen Fläche läßt sich von einer st
 \subsection*{§ 13. Über das Poissonsche Integral.}
 
 Als Hilfsmittel für unsere Untersuchungen brauchen wir die Lösung der sog.\ \emph{ersten Randwertaufgabe der Potentialtheorie für den Kreis} mit Hilfe des \emph{Poissonschen Integrals}. Ist auf dem Einheitskreis der komplexen $z$-Ebene eine stetige Funktion gegeben, deren Wert an der Stelle $\zeta = e^{i\varphi}$ mit $u(\varphi)$ bezeichnet werden möge, so liefert die Gleichung
+
+\origpage{83}
+\[ 2\,\pi f(z) = \int_0^{2\pi} \frac{\zeta + z}{\zeta - z} u(\varphi)\,d\varphi \]
+eine für $|z| < 1$ regulär-analytische Funktion $f(z)$, deren Realteil am Rande die Werte $u(\varphi)$ annimmt; d.~h.\ diejenige Funktion $u$, welche im Innern des Einheitskreises $=$ dem Realteil von $f(z)$, für Werte $\zeta = e^{i\varphi}$ auf dem Einkeitskreise\ednote{Druckfehler im Original: Einkeitskreise statt Einheitskreise.} aber $= u(\varphi)$ gesetzt wird, ist eine in der ganzen abgeschlossenen Kreisfläche $|z| \leqq 1$ stetige Funktion.${}^{1)}$ Benutzen wir Polarkoordinaten $z = r e^{i\varphi}$, so können wir schreiben:
+\[ 2\,\pi u = \int_0^{2\pi} \frac{1 - r^2}{1 + r^2 - 2r \cos(\varphi - \vartheta)} u(\vartheta)\,d\vartheta. \tag{15} \]
+
+Es gibt außer $u$ nicht etwa noch eine andere im Innern des Einheitskreises reguläre Potentialfunktion $\bar{u}$, welche in dem erklärten Sinne am Rande des Kreises die Werte $u(\varphi)$ annimmt. Denn dann würde $\bar{u} - u$ eine in der abgeschlossenen Kreisfläche stetige Funktion sein, die im Innern als reguläre Potentialfunktion nirgends ein Maximum oder Minimum annehmen kann, und die am Rande $= 0$ ist. Demnach müßte sowohl das Maximum wie das Minimum von $\bar{u} - u$ (für $|z| \leqq 1$) $= 0$ sein, d.~h.\ $\bar{u} \equiv u$.
+
+Das Poissonsche Integral (15) liefert einen wichtigen Konvergenzsatz: \emph{Ist $u_1$, $u_2$, $u_3$, \dots\ eine Folge von Potentialfunktionen, die alle für $|z| < 1$ regulär sind und gleichmäßig für $|z| \leqq q$ gegen eine Grenzfunktion $u$ konvergieren, wenn $q$ irgendeine positive Zahl $< 1$ bedeutet, so ist die Grenzfunktion $u$ gleichfalls eine für $|z| < 1$ reguläre Potentialfunktion.} Unter den angegebenen Umständen muß nämlich zufolge des Poissonschen Integrals
+\[ 2\,\pi u_n(r e^{i\varphi}) = \int_0^{2\pi} \frac{q^2 - r^2}{q^2 + r^2 - 2qr \cos(\varphi - \vartheta)} u_n(q e^{i\vartheta})\,d\vartheta \]
+sein für $r < q$. Der Grenzübergang liefert
+\[ 2\,\pi u(r e^{i\varphi}) = \int_0^{2\pi} \frac{q^2 - r^2}{q^2 + r^2 - 2qr \cos(\varphi - \vartheta)} u(q e^{i\vartheta})\,d\vartheta, \]
+und hier steht auf der rechten Seite eine für $r < q$ reguläre Potentialfunktion. Ist $q_1$ eine positive Zahl $< 1$ und wähle ich $q > q_1$ und $< 1$, so erkennt man noch, daß in einem beliebigen konzentrischen Kreise, dessen Radius $< 1$ ist ($|z| \leqq q_1$) nicht nur $u_n$ gleichmäßig gegen $u$, sondern
+
+\textbf{1)} H. A. Schwarz, Gesammelte Abhandlungen, Bd.~II, S.~186--198. Den Beweis findet man in fast allen Lehrbüchern der Funktionentheorie dargestellt.
+
+\origpage{84}
+auch alle Ableitungen von $u_n$ beliebig hoher Ordnung gleichmäßig gegen die entsprechenden Ableitungen von $u$ konvergieren.
+
+\emph{Der Zusammenhang der Potentialtheorie mit dem Dirichletschen Integral geht aus folgendem Satz hervor:}
+
+\emph{Ist $v$ eine im Einheitskreis $\mathrm{K}\colon |z| \leqq 1$ stetige, im Innern desselben stetig differentiierbare Funktion mit endlichem Dirichletschen Integral}
+\[ \mathbf{D}(v) = \iint_{\mathrm{K}} \left[ \left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2 \right] dx\,dy \quad (z = x + iy) \]
+\emph{und $u$ diejenige für $|z| < 1$ reguläre Potentialfunktion, deren Randwerte auf $|z| = 1$ mit denen von $v$ übereinstimmen, so ist}
+\[ \mathbf{D}(u) \leqq \mathbf{D}(v). \tag{16} \]
+
+Dabei soll das Dirichletsche Integral hier als „uneigentliches“ Integral gemeint sein, nämlich als Limes des Integrals
+\[ \mathbf{D}_q(v) = \iint_{|z| \leqq q} \left[ \left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2 \right] dx\,dy \quad (q < 1) \]
+für $\lim q = 1$. Wir verwenden allgemein, wenn $0 \leqq q_1 < q_2 \leqq 1$ ist, die Bezeichnung
+\[ \mathbf{D}_{q_1}^{q_2}(v) = \iint_{q_1 \leqq |z| \leqq q_2} \left[ \left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2 \right] dx\,dy. \]
+
+Der gewöhnliche Beweis von (16) verläuft so: Man setzt $w = v - u$; partielle Integration (Greensche Formel) liefert:
+\[ \mathbf{D}(wu) = \int_0^{2\pi} \left( w \frac{\partial u}{\partial r} \right)_{r=1} d\varphi - \iint_{\mathrm{K}} w\,\Delta u\,dx\,dy \quad \left( \Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right), \]
+und da im Innern von $\mathrm{K}\colon \Delta u = 0$, am Rande $w = 0$ ist,
+\[ \mathbf{D}(wu) = 0; \]
+\[ \begin{aligned}
+\mathbf{D}(v) = \mathbf{D}(u + w) &= \mathbf{D}(u) + 2\,\mathbf{D}(wu) + \mathbf{D}(w) \\
+&= \mathbf{D}(u) + \mathbf{D}(w) \geqq \mathbf{D}(u).
+\end{aligned} \]
+
+Will man diesen Schluß streng machen, so darf man zunächst alle Dirichletschen Integrale nur über $|z| \leqq q\,(< 1)$ erstrecken und hat hernach $q$ gegen $1$ konvergieren zu lassen. Es kommt dann darauf an, einzusehen, daß
+\[ \mathbf{D}_q(wu) = q \int_0^{2\pi} \left( w \frac{\partial u}{\partial r} \right)_{r=q} d\varphi \]
+für $\lim q = 1$ gegen $0$ geht. Nun weiß man wohl, daß $w(q e^{i\varphi})$ mit gegen $1$ gehendem $q$ gleichmäßig in $\varphi$ zu $0$ konvergiert, aber es läßt sich keines-
+
+\origpage{85}
+wegs sagen, daß $\frac{\partial u}{\partial r}$ im ganzen Einheitskreise beschränkt bleibt; man kann nur behaupten, daß $(1 - r) \frac{\partial u}{\partial r}$ mit $\lim r = 1$ gleichmäßig in $\varphi$ gegen $0$ konvergiert, und das reicht natürlich nicht aus, um auf $\lim_{q=1} \mathbf{D}_q(wu) = 0$ zu schließen. Diese Schwierigkeiten wird man sich vor Augen halten müssen, um den folgenden, von Hadamard und Zaremba${}^{1)}$ herrührenden Beweis recht zu würdigen.
+
+Die Randwerte $v(e^{i\varphi})$ mögen kürzer $v(\varphi)$ genannt werden. Entwickelt man das Poissonsche Integral (15) nach Potenzen von $r$, so bekommt man
+\[ \begin{aligned}
+u &= \frac{a_0}{2} + a_1 r \cos\varphi + a_2 r^2 \cos 2\varphi + \cdots \\
+&\qquad + b_1 r \sin\varphi + b_2 r^2 \sin 2\varphi + \cdots
+\end{aligned} \]
+\[ a_n = \frac{1}{\pi} \int_0^{2\pi} v(\varphi) \cos n\varphi\,d\varphi, \quad b_n = \frac{1}{\pi} \int_0^{2\pi} v(\varphi) \sin n\varphi\,d\varphi. \]
+
+Diese Entwicklung entspricht im Gebiet der Potentialfunktionen der Potenzreihe in der Theorie der analytischen Funktionen. In der Tat sind $r^n \cos n\varphi$, $r^n \sin n\varphi$ nichts anderes als realer und imaginärer Teil von $z^n$. Die Potentialfunktionen
+\[ P_n = \frac{1}{\sqrt{\pi n}}\,r^n \cos n\varphi, \quad Q_n = \frac{1}{\sqrt{\pi n}}\,r^n \sin n\varphi \]
+besitzen die folgenden Eigenschaften:
+\[ \left\{
+\begin{gathered}
+\mathbf{D}_q(P_n, Q_m) = 0 \quad \text{ohne Ausnahme}, \\
+\mathbf{D}_q(P_n, P_m) = 0, \quad \mathbf{D}_q(Q_n, Q_m) = 0 \quad \text{außer für } n = m, \\
+\mathbf{D}_q(P_n) = \mathbf{D}_q(Q_n) = q^{2n},
+\end{gathered}
+\right. \tag{I} \]
+und wenn wir allgemein
+\[ \iint_{|z| \leqq q} u v\,dx\,dy = \mathbf{J}_q(uv) \]
+setzen, auch noch diese:
+\[ \left\{
+\begin{gathered}
+\mathbf{J}_q(P_n, Q_m) = 0 \quad \text{ohne Ausnahme}, \\
+\mathbf{J}_q(P_n, P_m) = \mathbf{J}_q(Q_n, Q_m) = 0 \quad \text{außer für } n = m, \\
+\mathbf{J}_q(P_n) = \mathbf{J}_q(Q_n) = \frac{q^{2n+2}}{2n(n+1)}.
+\end{gathered}
+\right. \tag{II} \]
+Die Entwicklung von $u$ können wir schreiben:
+
+\textbf{1)} Hadamard, Sur le principe de Dirichlet, Bulletin de la Société mathématique de France, Bd.~34 (1906), S.~135--139. Zaremba, Sur le principe du minimum, Bulletin de l'Académie des sciences de Cracovie, Juli 1909, S.~206\,ff.
+
+\origpage{86}
+\[ u - \frac{a_0}{2} = \sum_{n=1}^\infty [A_n P_n(xy) + B_n Q_n(xy)], \tag{17} \]
+wo $A_n = a_n \sqrt{\pi n}$, $B_n = b_n \sqrt{\pi n}$ Konstante sind, die sich als Flächenintegrale in der Form
+\[ A_n = \mathbf{D}(v, P_n), \quad B_n = \mathbf{D}(v, Q_n) \tag{18} \]
+darstellen lassen. Nach der Greenschen Formel ist nämlich z.\,B.
+\[ \mathbf{D}_q(v, P_n) = q \int_0^{2\pi} \left( v \frac{\partial P_n}{\partial r} \right)_{r=q} d\varphi = \sqrt{\frac{n}{\pi}}\,q^n \int_0^{2\pi} v(q e^{i\varphi}) \cos n\varphi\,d\varphi. \]
+Durch den Grenzübergang $\lim q = 1$ folgt daraus in der Tat
+\[ \mathbf{D}(v, P_n) = \sqrt{\frac{n}{\pi}} \int_0^{2\pi} v(\varphi) \cos n\varphi\,d\varphi = \sqrt{n\pi} \cdot a_n = A_n. \]
+
+Die Reihe (17) konvergiert für $|z| \leqq q\,(< 1)$ gleichmäßig und absolut samt allen ihren Ableitungen. Man kann daher $\mathbf{D}_q(u)$ aus ihr durch gliedweises Quadrieren und nachfolgendes gliedweises Integrieren berechnen. Die Formeln (I) ergeben dann:
+\[ \mathbf{D}_q(u) = \sum_{n=1}^\infty q^{2n}(A_n^2 + B_n^2). \tag{19} \]
+Anderseits folgt auf Grund der gleichen Formeln und der Ausdrücke (18)
+\[ \mathbf{D}\Big( v - \sum_{\nu=1}^n [A_\nu P_\nu + B_\nu Q_\nu] \Big) = \mathbf{D}(v) - \sum_{\nu=1}^n (A_\nu^2 + B_\nu^2). \]
+Es muß die Reihe
+\[ \sum_{n=1}^\infty (A_n^2 + B_n^2) \]
+demnach, wie weit man sie auch fortsetzt, immer $\leqq \mathbf{D}(v)$ bleiben; das hat ihre Konvergenz zur Folge. Verbinden wir damit die Gleichung (19), so haben wir
+\[ \mathbf{D}_q(u) \leqq \mathbf{D}(v), \]
+und durch den Grenzübergang $\lim q = 1$ folgt die Existenz von $\mathbf{D}(u)$, und daß
+\[ \mathbf{D}(u) \leqq \mathbf{D}(v) \tag{20} \]
+ist.
+
+\emph{Unter allen Funktionen, welche in den Randwerten mit $v$ übereinstimmen, erteilt also die Potentialfunktion dem Dirichletschen Integral seinen kleinsten Wert.} Setzen wir $v - u = w$, so muß zufolge dieses Satzes nicht nur für $\lambda = 1$, sondern jeden reellen konstanten Wert von $\lambda$
+
+\origpage{87}
+\[ \mathbf{D}(u) \leqq \mathbf{D}(u + \lambda w) \]
+sein, oder anders geschrieben:
+\[ 2\,\lambda\,\mathbf{D}(uw) + \lambda^2 \mathbf{D}(w) \geqq 0. \]
+Das hat die Gleichung
+\[ \mathbf{D}(uw) = 0 \]
+zur Folge, die uns in
+\[ \mathbf{D}(v) = \mathbf{D}(u) + \mathbf{D}(w) = \mathbf{D}(u) + \mathbf{D}(v - u), \]
+eine schärfere Aussage liefert, als die Ungleichung (20) enthielt. Insbesondere zeigt sich, daß in (20) nur dann das Gleichheitszeichen gelten kann, wenn $v - u = \mathrm{const.}$, oder da diese Differenz am Rande verschwindet, $v$ mit $u$ identisch ist.
+
+Aus (19) folgt durch den Grenzübergang $\lim q = 1$:
+\[ \mathbf{D}(u) = \sum_{n=1}^\infty (A_n^2 + B_n^2). \tag{21} \]
+Denn einerseits ist
+\[ \mathbf{D}_q(u) \leqq \sum_{n=1}^\infty (A_n^2 + B_n^2), \quad \text{also} \quad \mathbf{D}(u) \leqq \sum_{n=1}^\infty (A_n^2 + B_n^2), \]
+anderseits liefert
+\[ \mathbf{D}_q(u) \geqq \sum_{\nu=1}^n (A_\nu^2 + B_\nu^2)\,q^{2\nu} \]
+die für jedes $n$ gültige Ungleichung
+\[ \mathbf{D}(u) \geqq \sum_{\nu=1}^n (A_\nu^2 + B_\nu^2). \]
+
+$a_1 = \frac{A_1}{\sqrt{\pi}}$, $b_1 = \frac{B_1}{\sqrt{\pi}}$ sind die Werte von $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$ im Nullpunkt. Behalten wir in (21) rechts nur das erste Glied bei, so finden wir demnach
+\[ \left[ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right]_{z=0} \leqq \frac{1}{\pi}\,\mathbf{D}(u). \tag{22} \]
+Wenden wir diese Ungleichung, statt auf den Einheitskreis, auf den Kreis $\varkappa_z$ mit dem Mittelpunkt $z\;(\frac{1}{2} < |z| = r < 1)$ und dem Radius $1 - r$ an, so folgt:
+\[ \begin{aligned}
+\left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 &\leqq \frac{1}{\pi(1 - r)^2} \iint_{\varkappa_z} \left[ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right] dx\,dy \\
+&\leqq \frac{1}{\pi(1 - r)^2}\,\mathbf{D}_{2r-1}(u). \tag{23}
+\end{aligned} \]
+Der Kreis $\varkappa_z$ ist nämlich ganz in dem Kreisring $2r - 1 \leqq |z| \leqq 1$ ent-
+
+\origpage{88}
+halten. Da $\lim_{r=1} \mathbf{D}_{2r-1}(u) = 0$ ist, schließt diese Ungleichung eine Aussage über das Verhalten der Ableitungen $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$ am Rande des Einheitskreises in sich.
+
+Wie (21) auf dem Wege über (19) sich aus den Formeln (I) ergibt, erhalten wir mit Benutzung des Formelsystems (II):
+\[ \mathbf{J}\Big( u - \frac{a_0}{2} \Big) = \sum_{n=1}^\infty \frac{A_n^2 + B_n^2}{2\,n(n+1)}. \]
+In Verbindung mit (21) liefert das die Ungleichung
+\[ \mathbf{J}\Big( u - \frac{a_0}{2} \Big) \leqq \frac{1}{4}\,\mathbf{D}(u). \tag{24} \]
+
+Diese Ungleichung steht in engem Zusammenhang mit einem interessanten elementaren Problem der Analysis. Fragt man sich, wie gut man eine Funktion $v$ von zwei Argumenten $xy$ in einem Bereich $\mathfrak{G}$ durch eine Konstante annähern kann, so sagt darüber der erste Mittelwertsatz der Differentialrechnng\ednote{Druckfehler im Original: Differentialrechnng statt Differentialrechnung.} aus, daß sich, wenn ich als Annäherungskonstante den Wert von $v$ in einem festen Punkt $(x_0 y_0)$ nehme,
+\[ | v(xy) - v(x_0 y_0) | \leqq \underset{\mathfrak{G}}{\mathrm{Max.}}\, \sqrt{\left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2} \times \text{Entfernung } (xy;\,x_0 y_0) \]
+ergibt. Hier wird als Fehler das Maximum des absoluten Betrages der Differenz $|v - v_0|$ angesehen, und dessen Größe erweist sich als wesentlich bestimmt durch das $\underset{\mathfrak{G}}{\mathrm{Max.}}\,\sqrt{\left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2}$. Beurteilen wir aber den Fehler, wie es der Methode der kleinsten Quadrate entspricht, nach dem Quadratintegral $\displaystyle\iint_{\mathfrak{G}} (v - v_0)^2 dx\,dy$, so wird man erwarten dürfen, daß die durch geeignete Wahl der Konstanten $v_0$ erzielbare Annäherung bestimmt ist durch den Wert von
+\[ \iint_{\mathfrak{G}} \left[ \left(\frac{\partial v}{\partial x}\right)^2 + \left(\frac{\partial v}{\partial y}\right)^2 \right] dx\,dy. \]
+
+Diese Vermutung wird durch die obige Ungleichung bestätigt für den Fall, daß der Bereich $\mathfrak{G}$ der Einheitskreis und $v$ eine Potentialfunktion ist.
+
+Von der letzten Voraussetzung wollen wir uns befreien, indem wir, unter Verwendung der oben benutzten Bezeichnungen, allgemein beweisen:
+\[ \mathbf{J}\Big( v - \frac{a_0}{2} \Big) \leqq \frac{1}{2}\,\mathbf{D}(v). \tag{25} \]
+$\frac{a_0}{2}$ ist im allgemeinen nicht der Wert von $v$ im Mittelpunkt, sondern der Mittelwert von $v$ auf dem Rande des Kreises:
+
+\origpage{89}
+\[ \frac{a_0}{2} = \frac{1}{2\,\pi} \int_0^{2\pi} v(\varphi)\,d\varphi. \]
+Wir bedienen uns der Schwarzschen Ungleichung
+\[ \left( \int_0^1 fg\,dx \right)^2 \leqq \int_0^1 f^2 dx \cdot \int_0^1 g^2 dx, \]
+für die man auch schreiben kann
+\[ \sqrt{\int_0^1 (f \pm g)^2 dx} \leqq \sqrt{\int_0^1 f^2 dx} + \sqrt{\int_0^1 g^2 dx} \]
+[$f(x)$, $g(x)$ sind irgend zwei stetige Funktionen im Intervall $0 \leqq x \leqq 1$]. Sie ergibt sich daraus, daß die quadratische Form in $\lambda\mu$:
+\[ \int_0^1 (\lambda \cdot f(x) + \mu \cdot g(x))^2 dx = \mathrm{A}\,\lambda^2 + 2\,\mathrm{B}\lambda\,\mu + \mathrm{\Gamma}\,\mu^2 \]
+nicht negativ werden kann und also ihre Diskriminante
+\[ \mathrm{A}\mathrm{\Gamma} - \mathrm{B}^2 \geqq 0 \]
+sein muß.
+
+Für eine im abgeschlossenen Einheitskreis stetige, am Rande verschwindende, im Innern stetig differentiierbare Funktion, wie es $w = v - u$ ist, erhalten wir mittels der Schwarzschen Ungleichung
+\[ \begin{aligned}
+[w(r_2 e^{i\varphi}) - w(r_1 e^{i\varphi})]^2 &= \left( \int_{r_1}^{r_2} \frac{\partial w(r e^{i\varphi})}{\partial r}\,dr \right)^2 \\
+&\leqq \int_{r_1}^{r_2} \left(\frac{\partial w}{\partial r}\right)^2 r\,dr \cdot \int_{r_1}^{r_2} \frac{dr}{r} \qquad (0 < r_1 < r_2 < 1)
+\end{aligned} \]
+Integriert man diese Ungleichung nach $\varphi$ und läßt dann $r_2$ gegen $1$ konvergieren, so ergibt sich, da
+\[ \mathbf{D}_{r_1}^{r_2}(w) = \int_{r_1}^{r_2} \int_0^{2\pi} \left[ \left(\frac{\partial w}{\partial r}\right)^2 r + \left(\frac{\partial w}{\partial \varphi}\right)^2 \frac{1}{r} \right] d\varphi\,dr \]
+ist, die Beziehung
+\[ \int_0^{2\pi} [w(r e^{i\varphi})]^2 d\varphi \leqq \lg\frac{1}{r} \cdot \mathbf{D}_r^1(w). \tag{26} \]
+
+Von dieser Ungleichung werden wir sogleich noch eine wichtige Anwendung machen. Vorerst ersetzen wir rechts $\mathbf{D}_r^1(w)$ durch das größere $\mathbf{D}(w)$, multiplizieren mit $r\,dr$ und integrieren nach $r$ von $0$ bis $1$. Dann ergibt sich, da
+
+\origpage{90}
+\[ \int_0^1 r \lg\frac{1}{r}\,dr = \frac{1}{4}\colon \]
+\[ \mathbf{J}(w) \leqq \frac{1}{4}\,\mathbf{D}(w). \tag{27} \]
+Wir kombinieren (27) mit (24). Es ist
+\[ \mathbf{J}\Big( v - \frac{a_0}{2} \Big) \leqq 2 \Big[ \mathbf{J}\Big( u - \frac{a_0}{2} \Big) + \mathbf{J}(w) \Big] \]
+--- zufolge der Ungleichung $(\alpha + \beta)^2 \leqq 2\,[\alpha^2 + \beta^2]$ --- daher nach (24) und (27)
+\[ \leqq \frac{1}{2}\,[\mathbf{D}(u) + \mathbf{D}(w)] = \frac{1}{2}\,\mathbf{D}(v). \]
+
+Damit ist (25) bewiesen. Wir bemerken nochmals, daß sich in (25) der Faktor $\frac{1}{2}$ durch den kleineren $\frac{1}{4}$ ersetzen läßt, wenn $v$ eine Potentialfunktion ist oder am Rande verschwindet.
+
+Ist $v$ in einem Gebiet, das den Einheitskreis im Innern enthält, stetig differentiierbar, so wird dadurch, daß wir im Einheitskreise $v$ durch $u$ ersetzen, der Wert des Dirichlet-Integrals herabgedrückt. Da wir jedoch in den beabsichtigten Anwendungen nur stetig differentiierbare Funktionen gebrauchen können, die Funktion $\bar{v}$ aber, welche außerhalb des Einheitskreises mit $v$, innerhalb desselben mit $u$ übereinstimmt, im allgemeinen über den Rand des Einheitskreises hinüber diese Eigenschaft nicht besitzt, müssen wir dort den Funktionsverlauf von $\bar{v}$ so „glätten“, daß doch der Wert des Dirichletschen Integrals von $\bar{v}$ dabei sich so wenig ändert, als man nur will. Wir wollen also zeigen: es gibt eine stetig differentiierbare Funktion $\tilde{v}$, welche außerhalb des Einheitskreises mit $v$ übereinstimmt, und deren über den Einheitskreis erstrecktes Dirichletsches Integral $\mathbf{D}(\tilde{v})$ sich so wenig, wie man will, von $\mathbf{D}(\bar{v}) = \mathbf{D}(u)$ unterscheidet.
+
+Ich wähle $q > \frac{1}{2}$ und $< 1$ und bilde mit $\chi(r) = \left( \frac{r - q}{1 - q} \right)^2$ die Funktion${}^{1)}$
+\[ \tilde{v} = \begin{cases}
+u & \text{für } |z| \leqq q \\
+u + \chi(r)(v - u) & \text{für } q \leqq |z| = r \leqq 1.
+\end{cases} \]
+Da $\chi(r)$ bei $r = q$ von 2.\ Ordnung verschwindet, geht diese Funktion $\tilde{v}$ samt ihren ersten Differentialquotienten stetig über den Kreis $|z| = q$ hinüber. Gegen den Rand des Einheitskreises zu konvergiert $\tilde{v} - v$ mit seinen beiden ersten Differentialquotienten gleichmäßig gegen $0$. Wenn man $\tilde{v}$ außerhalb des Einheitskreises also mit $v$ zusammenfallen läßt, ist $\tilde{v}$ auch über den Rand des Einheitskreises stetig und stetig differentiierbar. Denn es ist beispielsweise
+\[ \frac{\partial}{\partial x}(\tilde{v} - v) = [\chi(r) - 1]\,\frac{\partial(v - u)}{\partial x} + (v - u)\,\frac{d\chi}{dr}\,\frac{x}{r} \quad (\text{für } q < r < 1). \]
+
+\textbf{1)} Nach S. Zaremba, Krakauer Berichte, Juli 1909, S.~246\,ff.
 \end{document}
