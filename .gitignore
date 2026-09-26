@@ -41,3 +41,7 @@ Thumbs.db
 
 # Local Claude Code settings (launch.json is shared, settings.local.json is per-user)
 .claude/settings.local.json
+
+# Scratch workspace
+scratch/
+

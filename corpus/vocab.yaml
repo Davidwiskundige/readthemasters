@@ -47,6 +47,7 @@ languages:
   la: Latin
   it: Italian
   ru: Russian
+  da: Danish
 
 # Publication venues. Normalize aggressively — one canonical key per venue.
 #

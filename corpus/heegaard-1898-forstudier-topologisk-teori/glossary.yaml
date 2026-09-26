@@ -1,0 +1,75 @@
+# Term renderings for heegaard-1898-forstudier-topologisk-teori, applied consistently across
+# the translation. Format: `terms: {Danish as printed: English}`.
+# Follows late 19th / early 20th century topology terminology (Betti, Poincaré, Listing, Veblen).
+
+terms:
+  # --- topological topology concepts ---
+  Sammenhæng: connectivity
+  Sammenhængstal: connectivity numbers
+  Mangfoldighed: manifold
+  Mangfoldigheder: manifolds
+  lukket Mangfoldighed: closed manifold
+  lukkede Mangfoldigheder: closed manifolds
+  aaben Mangfoldighed: open manifold
+  aabne Mangfoldigheder: open manifolds
+  Flade: surface
+  Flader: surfaces
+  Normalform: normal form
+  Normalformer: normal forms
+  Normalflade: normal surface
+  Normalflader: normal surfaces
+  Hank: handle
+  Hanke: handles
+  Hul: hole
+  Huller: holes
+  Traad: thread
+  Traade: threads
+  Hinde: membrane
+  Hinder: membranes
+  Bærerplan: carrier plane
+  Bærerplaner: carrier planes
+  Kotetal: coordinate levels
+  Kotetallene: the coordinate levels
+  Delingsflade: dividing surface
+  Delingsflader: dividing surfaces
+  Torsionstal: torsion coefficients
+
+  # --- cuts and boundaries ---
+  Snit: cut
+  Snittene: the cuts
+  Kredssnit: circular cut
+  Kredssnittene: the circular cuts
+  Randsnit: boundary cut
+  Randsnittene: the boundary cuts
+  Rand: boundary
+  Rande: boundaries
+  Randkurve: boundary curve
+  Randkurver: boundary curves
+  Omkreds: perimeter
+
+  # --- algebraic and geometric singularities ---
+  algebraisk Flade: algebraic surface
+  algebraiske Flader: algebraic surfaces
+  Mangefoldspunkt: multiple point
+  Mangefoldspunkter: multiple points
+  Dobbeltpunkt: double point
+  Dobbeltpunkter: double points
+  Dobbeltkurve: double curve
+  Dobbeltkurver: double curves
+  Dobbeltlinie: double line
+  Dobbeltlinier: double lines
+  Spidskurve: cuspidal curve
+  Spidskurver: cuspidal curves
+  Forgreningsflade: branch surface
+  Forgreningsflader: branch surfaces
+  Forgreningslinie: branch line
+  Forgreningslinier: branch lines
+  Forgreningspunkt: branch point
+  Forgreningspunkter: branch points
+
+  # --- orientation and deformation ---
+  kontinuert Deformation: continuous deformation
+  kontinuerte Deformationer: continuous deformations
+  eentydig: one-to-one
+  flertydig: multi-valued
+  omvendt eentydig: one-to-one and invertible

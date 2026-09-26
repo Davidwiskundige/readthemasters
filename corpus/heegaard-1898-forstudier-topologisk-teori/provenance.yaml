@@ -1,0 +1,35 @@
+﻿changelog:
+  - date: "2026-09-26"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-09-25"
+    summary: Complete transcription of 1898 dissertation added (all 100 pages, AI draft).
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-25"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-09-25"
+  uncertainty_flags: 0
+  note: >-
+    Complete faithful transcription of Poul Heegaard's 1898 doctoral dissertation
+    "Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng" (pp. 1–97 text,
+    p. 98 Trykfejl errata list, pp. 99–100 Teser 1–9), transcribed from the original
+    Copenhagen University dissertation print. Preserves 19th-century Danish orthography
+    (aa, capital substantives, archaic verb inflections ere/have/bleve/kunne) and formatting.
+    All 6 author errata from the Trykfejl list (p. 98) have been applied and marked in-text
+    with \ednote annotations conforming to HOUSESTYLE R4 and R18. All formulas are wrapped
+    according to HOUSESTYLE R16.
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-26"

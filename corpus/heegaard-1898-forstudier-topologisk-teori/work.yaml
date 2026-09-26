@@ -1,0 +1,113 @@
+﻿id: heegaard-1898-forstudier-topologisk-teori
+title: Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng.
+title_en: Preliminary Studies for a Topological Theory of the Connectivity of Algebraic Surfaces
+authors:
+- name: Poul Heegaard
+  wikidata_id: Q982561
+  birth_year: 1871
+  death_year: 1948
+  # https://mathshistory.st-andrews.ac.uk/Biographies/Heegaard/
+  mactutor: Heegaard
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Poul Heegaard
+    credit: >-
+      Photograph of Poul Heegaard, circa 1940, author unknown, from the collection
+      of the Oslo Museum (accession number OB.F05964b). Wikimedia Commons, CC BY-SA 4.0.
+    source: "https://commons.wikimedia.org/wiki/File:44154_Poul_Heegaard.jpg"
+publication:
+  year: 1898
+  venue: book
+  title_full: '"Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng",
+    Afhandling for den philosophiske Doctorgrad ved Kjøbenhavns Universitet (Kjøbenhavn:
+    Det Nordiske Forlag, Ernst Bojesen; Trykt hos J. Jørgensen & Co. (M. A. Hannover),
+    1898), 104 pp.'
+edition:
+  year: 1898
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the original 1898 doctoral dissertation edition:
+    "Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng" (Kjøbenhavn:
+    Det Nordiske Forlag, Ernst Bojesen, 1898). This is an original public-domain edition
+    with no modern critical apparatus, commentary, or re-typesetting.'
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: da
+type: book
+relations:
+- to: betti-1871-spazi-numero-qualunque-dimensioni
+  kind: builds-on
+  recommended: primary
+  note: Heegaard analyzes Betti's connectivity numbers for 3-manifolds and shows their limitations.
+- to: riemann-1857-abelsche-functionen
+  kind: builds-on
+  note: Riemann's crosscuts and topological dissection of surfaces provide the prototype for Heegaard's normal forms.
+source:
+  scan_url: https://books.google.com/books?id=p9hMAAAAYAAJ
+  scan_id: googlebooks:p9hMAAAAYAAJ
+sources:
+  death_date: >-
+    Poul Heegaard, 2 November 1871 – 7 February 1948 (wikidata:Q982561;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Heegaard/).
+  publication_date: googlebooks:p9hMAAAAYAAJ
+  edition: googlebooks:p9hMAAAAYAAJ
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1948
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1898
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-23'
+significance: >-
+  Poul Heegaard's 1898 doctoral dissertation is one of the foundational texts of modern
+  combinatorial topology and 3-manifold theory. Departing from the algebraic and analytic methods
+  of Riemann, Betti[1], and Picard, Heegaard extends Julius Petersen's puncture-and-deformation
+  technique to decompose a closed 3-manifold into two handlebodies meeting along a common boundary
+  surface—the dividing surface (*delingsflade*) now known as a *Heegaard surface*[note 1]. The system
+  of attaching curves on this surface forms a *Heegaard diagram*, which remains a standard method
+  for defining and classifying 3-manifolds. Most famously, Heegaard discovered the phenomenon of
+  topological torsion and constructed the celebrated counterexample to Henri Poincaré's 1895 claim
+  that Betti numbers satisfy $p_r = p_{n-r}$ for any closed manifold[2][note 2]. Heegaard's finding
+  demonstrated that Betti numbers alone are insufficient to classify 3-manifolds, directly prompting
+  Poincaré's 1899 *Complément à l'Analysis Situs*[3] and setting the stage for Heegaard and Max Dehn's
+  rigorous 1907 topological classification of 2-manifolds.
+significance_sources:
+- citation: >-
+    E. Betti, "Sugli spazii di un numero qualunque di dimensioni", Annali di Matematica (2) 4 (1871),
+    pp. 140–158; in this corpus as betti-1871-spazi-numero-qualunque-dimensioni.
+  url: "/works/betti-1871-spazi-numero-qualunque-dimensioni/"
+- citation: >-
+    H. Poincaré, "Analysis situs", Journal de l'École Polytechnique, 2e série, cahier 1 (1895),
+    pp. 1–121, where Poincaré stated the duality theorem $p_k = p_{n-k}$ for all closed manifolds.
+- citation: >-
+    H. Poincaré, "Complément à l'Analysis situs", Rendiconti del Circolo Matematico di Palermo 13 (1899),
+    pp. 285–343, written to address Heegaard's counterexample and introducing torsion coefficients into homology.
+significance_notes:
+- label: Heegaard splittings and diagrams
+  text: >-
+    A closed 3-manifold is partitioned along a closed 2-manifold (the dividing surface) into two
+    handlebodies of equal genus; the system of attaching curves on this surface constitutes a Heegaard
+    diagram specifying the manifold up to homeomorphism.
+- label: Counterexample to Poincaré duality
+  text: >-
+    In §12 and Thesis 1, Heegaard showed that for non-orientable 3-manifolds with 2-torsion, the
+    Betti numbers defined by submanifolds satisfy $p_1 \neq p_2$, proving that Betti numbers alone
+    do not determine the connectivity of manifolds in dimension 3 and above.
