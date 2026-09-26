@@ -999,4 +999,152 @@ Es heiße $\Delta^0$. Von $\Delta^0$ ausgehend, bilde ich in der durch die Figur
 Es sei $\mathfrak{p}_0$ ein Punkt einer Riemannschen Fläche, $t', t''$ zwei beliebige Ortsuniformisierende zu $\mathfrak{p}_0$, welche eine gewisse Umgebung von $\mathfrak{p}_0$ je auf ein ebenes Gebiet $\mathfrak{G}'$, bezw.\ $\mathfrak{G}''$ abbilden, wobei dem Punkte $\mathfrak{p}_0$ der Punkt $t' = 0$, bzw.\ $t'' = 0$ entspricht. Diese Abbildungen mögen $T', T''$ heißen. Die Abbildung $T'^{-1} T''$ von $\mathfrak{G}'$ auf $\mathfrak{G}''$ wird vermittelt durch eine Formel
 \[ t'' = \text{reguläre Funktion von } (t') \text{ in } \mathfrak{G}'. \]
 $\mathfrak{s}'$ sei derjenige Drehsinn im Nullpunkte der $t'$-Ebene, der die positive reelle Achse durch $90^\circ$ hindurch in die positive imaginäre Achse überführt. Entsprechend werde der Drehsinn $\mathfrak{s}''$ im Nullpunkte der $t''$-Ebene definiert. Ich behaupte: durch die Abbildung $T'^{-1} T''$ geht $\mathfrak{s}'$ in $\mathfrak{s}''$ über. Dieser Umstand erlaubt es, $\mathfrak{s}'$ und $\mathfrak{s}''$ als die durch die Ab-
+
+\origpage{67}
+bildungen $T', T''$ erzeugten Bilder eines bestimmten Drehsinnes $\mathfrak{s}$ in $\mathfrak{p}_0$ anzusehen, der dadurch in einer von der Wahl der Ortsuniformisierenden unabhängigen Weise festgelegt ist. Da der so zu jedem Punkte $\mathfrak{p}_0$ der Riemannschen Fläche bestimmte Drehsinn $\mathfrak{s}$ auch überall stetig ist --- daran ist dann nichts mehr zu beweisen ---, steht die Zweiseitigkeit der Riemannschen Flächen fest.
+
+Ich schlage um $t' = 0$ in $\mathfrak{G}'$ einen kleinen Kreis $\mathfrak{k}'$:
+\[ t' = a e^{i\varphi} \quad (0 \leqq \varphi \leqq 2\pi) \]
+[$a > 0$ ist der konstante Radius]. Das durch $T'^{-1} T''$ in $\mathfrak{G}''$ entworfene Bild von $\mathfrak{k}'$ heiße $\mathfrak{k}''$. Gemäß der Definition des Begriffes „Ordnung“ ist
+\[ 2\pi i \cdot \underset{\mathfrak{k}''}{\text{ord.}} (t'' = 0) = \int_{\mathfrak{k}''} \frac{dt''}{t''} \]
+Es gilt aber
+\[ \frac{dt''}{t''} = \left(\frac{1}{t'} + a_0 + a_1 t' + a_2 t'^2 + \dots \right) dt', \]
+wobei die Potenzreihe in einem Kreise der $t'$-Ebene, der $\mathfrak{k}'$ im Innern enthält, konvergiert. Also folgt
+\[ \int_{\mathfrak{k}''} \frac{dt''}{t''} = \int_{\mathfrak{k}'} \frac{dt'}{t'} = 2\pi i, \]
+und damit ist erwiesen, daß $\underset{\mathfrak{k}''}{\text{ord.}} (t'' = 0) = + 1$ und nicht $= - 1$ ist, oder daß $\mathfrak{s}'$ durch die Abbildung $T'^{-1} T''$ in $\mathfrak{s}''$ übergeht.
+
+Ist die Riemannsche Fläche $\mathfrak{F}$ irgendwie trianguliert, so induziert der eben festgelegte „positive“ Drehsinn $\mathfrak{s}$ in jedem Dreieck eine „positive“ Indikatrix. Ist $dz$ ein in allen Punkten eines Elementardreiecks der triangulierten Fläche einschließlich des Randes reguläres Differential, so ist das um den Rand des Dreiecks mit positiver Indikatrix erstreckte Integral von $dz$ gleich Null. Ist $dz$ in dem ganzen Dreieck einschließlich des Randes regulär, abgesehen von einem im Innern gelegenen Pol, so ist dieses Integral hingegen $= 2\pi i$ mal dem Residuum von $dz$ in jenem Pole.
+
+Ist $dz$ auf einer geschlossenen Riemannschen Fläche bis auf Pole regulär, so kann man $\mathfrak{F}$ derart in Elementardreiecke zerlegen, daß die Pole ins Innere der Dreiecke und niemals zwei oder mehr Pole ins Innere desselben Dreiecks fallen (S.~64). Integriert man $\displaystyle\int dz$ um alle Dreiecke mit positiver Indikatrix und addiert, so bekommt man $2\pi i$ mal der Summe aller Residuen von $dz$. Umläuft man aber alle Dreiecksumfänge mit positiver Indikatrix, so wird wegen der Kohärenz dabei jede Kante zweimal, aber im entgegengesetzten Sinne durchlaufen. Infolgedessen muß jene Integralsumme anderseits $= 0$ sein, und wir gewinnen den Satz:
+
+\emph{Die Summe der Residuen eines auf einer geschlossenen Riemannschen Fläche bis auf Pole regulären Differentials ist $0$.}
+
+\origpage{68}
+\subsection*{§ 11. Integralfunktionen. Geschlechtszahl. Kanonische Zerschneidung.}
+
+Der Prozeß der Integration von Differentialen auf einer Riemannschen Fläche kann für beliebige Flächen durch folgende Verallgemeinerung ersetzt werden.
+
+Eine \emph{Kurvenfunktion} $F$ ist auf einer Fläche $\mathfrak{F}$ definiert, wenn jeder Kurve $\gamma$ auf $\mathfrak{F}$ eine Zahl $F(\gamma)$ zugeordnet ist; $F(\gamma)$ wird dann als der \emph{Wert} von $F$ für die Kurve $\gamma$ bezeichnet. Fällt für zwei Kurven $\gamma', \gamma''$ der Endpunkt von $\gamma'$ mit dem Anfangspunkt von $\gamma''$ zusammen, so kann man aus ihnen eine einzige Kurve $\gamma = \gamma' + \gamma''$ zusammensetzen; ist stets
+\[ F(\gamma' + \gamma'') = F(\gamma') + F(\gamma''), \]
+so heißt die Kurvenfunktion \emph{linear}. Eine lineare Kurvenfunktion hat für eine geschlossene Kurve einen Wert, der sich nicht ändert, wenn man den Anfangspunkt der geschlossenen Kurve auf ihr verschiebt. Hat $F$ für jede geschlossene Kurve den Wert $0$, so schreiben wir $F \sim 0$ ($F$ \emph{homolog} $0$). Es gibt dann eine „Punktfunktion“ $f(\mathfrak{p})$ auf der Fläche, sodaß für jede Kurve
+\[ F(\gamma) = f(\mathfrak{p}_2) - f(\mathfrak{p}_1) \]
+ist, wenn $\mathfrak{p}_1, \mathfrak{p}_2$ Anfangs- und Endpunkt von $\gamma$ bedeuten. Wir betrachten nur solche lineare Kurvenfunktionen, welche „im Kleinen“ überall $\sim 0$ sind; diese mögen \emph{„Integralfunktionen“} heißen. Es soll also zu jedem Punkt der Fläche eine Umgebung von der Art geben, daß für jede in dieser Umgebung verlaufende geschlossene Kurve $\gamma_0\colon F(\gamma_0) = 0$ ist. Für eine Integralfunktion $F$ ist stets
+\[ F(-\gamma) = - F(\gamma), \]
+wenn $-\gamma$ den in entgegengesetztem Sinne durchlaufenen Weg $\gamma$ bedeutet:
+\[ \gamma\colon \mathfrak{p} = \mathfrak{p}(\lambda) \; [0 \leqq \lambda \leqq 1]; \quad -\gamma\colon \mathfrak{p} = \mathfrak{p}(1 - \lambda) \; [0 \leqq \lambda \leqq 1]. \]
+Auf einer einfach zusammenhängenden Fläche, insbesondere daher auf der universellen Überlagerungsfläche, ist jede Integralfunktion $\sim 0$.
+
+Integralfunktionen kann man mit konstanten Faktoren multiplizieren und addieren. Integralfunktionen $F_1, \dots, F_m$, zwischen denen eine Homologie
+\[ c_1 F_1 + \dots + c_m F_m \sim 0 \]
+mit konstanten nicht sämtlich verschwindenden Koeffizienten $c$ besteht, heißen \emph{linear abhängig}. Gibt es endlich viele, etwa $h$, linear unabhängige Integralfunktionen $F_1, \dots, F_h$ von der Art, daß jede Integralfunktion $F$ einer linearen Kombination dieser $h$ Integralfunktionen mit konstanten Koeffizienten homolog ist, so bilden $F_1, \dots, F_h$ eine \emph{„Basis“} der linearen Schar der inhomologen Integralfunktionen, und die Anzahl $h$ der Basisfunktionen (die offenbar für jede Basis die gleiche ist) wird als \emph{„Grad“} dieser Schar bezeichnet. Wir nennen sie auch den \emph{„Zu-}
+
+\origpage{69}
+\emph{sammenhangsgrad“}${}^{1)}$ der Fläche $\mathfrak{F}$, deren Integralfunktionen wir betrachten. Gibt es keine endliche Basis für die Integralfunktionen, so besitzt $\mathfrak{F}$ einen unendlich hohen Zusammenhangsgrad.
+
+Wir fassen insbesondere ein Polyeder $\mathfrak{P}$ ins Auge und gehen darauf aus, seinen Zusammenhangsgrad $h$ durch die Anzahl $d$ der Dreiecke von $\mathfrak{P}$, die Anzahlen $e, k$ seiner inneren Ecken und Kanten auszudrücken. In jedem der endlich vielen Dreiecke $\Delta$, aus denen $\mathfrak{P}$ zusammengesetzt ist, tragen wir den Schwerpunkt $(1 : 1 : 1)$ ein. Sind (wie in der folgenden Überlegung stets) $\Delta_1, \Delta_2$ irgend zwei dieser Dreiecke, die längs einer inneren Kante von $\mathfrak{P}$ aneinanderstoßen, $\mathfrak{s}_1, \mathfrak{s}_2$ ihre Schwerpunkte, so hat für jede innerhalb $\Delta_1 + \Delta_2$ verlaufende, von $\mathfrak{s}_1$ nach $\mathfrak{s}_2$ führende Kurve $\gamma$ die Integralfunktion $F(\gamma)$ denselben Wert, den wir mit $x_{\Delta_1 \Delta_2} [F]$ bezeichnen wollen. Dies liegt daran, daß nicht nur ein einzelnes Dreieck, sondern auch das Dreieckspaar $\Delta_1 + \Delta_2$ einfach zusammenhängend ist. Es ist immer $x_{\Delta_1 \Delta_2} = - x_{\Delta_2 \Delta_1}$. Ist $\mathfrak{e}$ ein innerhalb $\mathfrak{P}$ gelegener Eckpunkt, $\Delta_1, \Delta_2, \dots, \Delta_r$ die sich um $\mathfrak{e}$ gruppierenden Dreiecke in zyklischer Anordnung, so muß
+\[ x_{\Delta_1 \Delta_2} + x_{\Delta_2 \Delta_3} + \dots + x_{\Delta_r \Delta_1} = 0 \tag{\mathfrak{e}} \]
+sein, weil auch jeder Dreiecksstern einfach zusammenhängend ist. (Die linke Seite dieser Gleichung ändert ihr Vorzeichen, wenn wir die zyklische Anordnung der Dreiecke $\Delta_i$, d.~i. die Indikatrix im Dreiecksstern umkehren.) Geben wir das System der Zahlen $x_{\Delta_1 \Delta_2}$ irgendwie den ausgesprochenen Bedingungen gemäß vor, so erkennt man ohne Mühe, daß es immer eine Integralfunktion gibt, der diese $x_{\Delta_1 \Delta_2}$ in der angegebenen Weise zugehören${}^{2)}$. Eine Integralfunktion $F$ ist dann und nur dann
+
+\textbf{1)} Diese Zahl entspricht der \emph{„Zusammenhangszahl“} \emph{Riemanns}, ist aber für geschlossene Flächen um $1$ niedriger als diese. Vgl.\ \emph{Schläfli}, Crelles Journal Bd.\ 76, S.\ 152, Fußnote, und \emph{Klein}, Math.\ Ann., Bd.\ 7, S.\ 550, Fußnote.
+
+\textbf{2)} Z.~B.\ folgendermaßen: In einem einzelnen Dreiecksstern kann ich den Dreiecken $\Delta_1, \dots, \Delta_r (\Delta_{r+1} = \Delta_1)$ Zahlen $g_1, \dots, g_r (g_{r+1} = g_1)$ so zuordnen, daß
+\[ x_{\Delta_1 \Delta_2} = g_2 - g_1, \quad x_{\Delta_2 \Delta_3} = g_3 - g_2, \dots, \quad x_{\Delta_r \Delta_1} = g_1 - g_r \]
+ist. Ich definiere im Innern dieses Sterns eine Punktfunktion $f$, die im Innern des Dreiecks $\Delta_i\colon = g_i$ ist, auf der Kante, die $\Delta_i$ von $\Delta_{i+1}$ trennt, von den Endpunkten abgesehen, den konstanten Wert $\frac{1}{2} \{g_i + g_{i+1}\}$ besitzt, im gemeinsamen Eckpunkt der Dreiecke $\Delta_i$ dem arithmetischen Mittel der $r$ Zahlen $g_i$ gleich wird. Für eine innerhalb dieses Sternes verlaufende Kurve $\gamma = (\mathfrak{p}_1 \mathfrak{p}_2)$ definiere ich $F(\gamma) = f(\mathfrak{p}_2) - f(\mathfrak{p}_1)$. In der Wahl der $g_i$ steckt insofern eine Willkür, als ich sie alle um dieselbe Zahl vermehren kann; das ist aber auf $F(\gamma)$ ohne Einfluß. Liegt $\gamma$ im Innern zweier Dreieckssterne zugleich (die dann ein Dreieckspaar, in welchem $\gamma$ gelegen ist, gemein haben), so hängt der Wert von $F(\gamma)$ auch nicht davon ab, welchen der beiden Dreieckssterne ich in der angegebenen Weise zur Berechnung benutze. Ist $\gamma$ eine beliebige Kurve, so kann ich sie in endlich viele konsekutive Bögen $\gamma_1, \gamma_2, \dots, \gamma_n$ derart zerlegen, daß jedes $\gamma_i$ ganz im Innern eines Dreieckssterns liegt. Ich setze dann:
+\[ F(\gamma) = F(\gamma_1) + F(\gamma_2) + \dots + F(\gamma_n). \]
+Es kommt nach dieser Erklärung immer derselbe Wert heraus, welche Einteilung in Teilbögen $\gamma_j$ ich auch vornehme. Um die beiden für zwei verschiedene Teilungen sich ergebenden Werte zu vergleichen und ihre Übereinstimmung festzustellen, brauche ich nur beide Teilungen gleichzeitig anzubringen. $F(\gamma)$ ist eine Integralfunktion, wie wir sie wünschen.
+
+\origpage{70}
+$\sim 0$, wenn jedem Dreieck $\Delta$ von $\mathfrak{P}$ eine Zahl $g_\Delta$ entspricht, sodaß für alle Dreieckspaare $\Delta_1, \Delta_2$, die eine innere Kante von $\mathfrak{P}$ gemein haben,
+\[ x_{\Delta_1 \Delta_2} [F] = g_{\Delta_2} - g_{\Delta_1} \]
+ist.
+
+Wenn wir von je zwei entgegengesetzt gleichen Zahlen $x_{\Delta_1 \Delta_2}, x_{\Delta_2 \Delta_1}$ immer nur eine beibehalten und der gemeinsamen Kante der Dreiecke $\Delta_1, \Delta_2$ zuordnen, so haben wir $k$ „Unbekannte“ $x$; zwischen ihnen bestehen die $e$ linearen homogenen Gleichungen $(\mathfrak{e})$, die den einzelnen inneren Eckpunkten $\mathfrak{e}$ von $\mathfrak{P}$ entsprechen. Sind diese Gleichungen linear unabhängig voneinander? Angenommen, es bestünde zwischen ihren linken Seiten eine Identität mit den Koeffizienten $y_{\mathfrak{e}}$. Betrachten wir eine Kante $\mathfrak{e}\mathfrak{f}$, deren beide Eckpunkte $\mathfrak{e}, \mathfrak{f}$ im Innern von $\mathfrak{P}$ liegen. Die beiden zu den Ecken $\mathfrak{e}$ und $\mathfrak{f}$ gehörigen Gleichungen mögen in solcher Form geschrieben sein, daß sie zwei kohärenten Indikatrizen der beiden zu $\mathfrak{e}$ und $\mathfrak{f}$ gehörigen Dreieckssterne entsprechen:
+\[ \begin{aligned} (\mathfrak{e})\colon & \quad \Delta_1, \Delta_2, \Delta_3, \dots, \Delta_r \\ (\mathfrak{f})\colon & \quad \Delta'_1 = \Delta_2, \Delta'_2 = \Delta_1, \Delta'_3, \dots, \Delta'_s. \end{aligned} \]
+Die Unbekannte $x_{\Delta_1 \Delta_2}$ tritt dann nur in diesen beiden Gleichungen und zwar mit entgegengesetztem Vorzeichen auf, und es muß daher $y_{\mathfrak{e}} = y_{\mathfrak{f}}$ sein. Ist hingegen $\mathfrak{e}\bullet$ eine Kante, deren einer Eckpunkt $\mathfrak{e}$ im Innern, deren anderer $\bullet$ am Rande von $\mathfrak{P}$ liegt, so schließt man auf gleiche Weise $y_{\mathfrak{e}} = 0$. Ist $\mathfrak{P}$ offen, so kann man von jedem inneren Eckpunkt aus einen Kantenzug an den Rand legen $\mathfrak{e}\mathfrak{f}\dots\mathfrak{l}\bullet$ und findet
+\[ y_{\mathfrak{e}} = y_{\mathfrak{f}} = \dots = y_{\mathfrak{l}} = 0. \]
+Ist $\mathfrak{P}$ geschlossen, aber einseitig, so kann man von $\mathfrak{e}$ aus einen nach $\mathfrak{e}$ zurückkehrenden Kantenzug ziehen, auf dem sich die Indikatrix umkehrt: an diesem entlang von Eckpunkt zu Eckpunkt schließend, bekommt man $y_{\mathfrak{e}} = - y_{\mathfrak{e}}$, also gleichfalls $y_{\mathfrak{e}} = 0$. Ist $\mathfrak{P}$ geschlossen und zweiseitig, so versehe man alle Dreieckssterne auf $\mathfrak{P}$ mit Indikatrizen, die unter einander kohärent sind, und schreibe jede der Gleichungen $(\mathfrak{e})$ dieser Indikatrix entsprechend. Dann findet man, da man jede Ecke mit jeder durch einen Kantenzug verbinden kann, daß alle $y_{\mathfrak{e}}$ einander gleich sind, und es besteht dann wirklich zwischen den linken Seiten der Gleichungen $(\mathfrak{e})$ die Identität mit den Koeffizienten $y_{\mathfrak{e}} = 1$. Setzen wir $\varepsilon = 0$ für geschlossene zweiseitige Polyeder, sonst $\varepsilon = 1$, so haben die Gleichungen $(\mathfrak{e})$ also $k - e + 1 - \varepsilon$ linear unabhängige Lösungen.
+
+\origpage{71}
+Ordnet man willkürlich jedem Dreieck $\Delta$ von $\mathfrak{P}$ eine Zahl $g_\Delta$ zu, so erhält man durch die allgemeine Formel $x_{\Delta_1 \Delta_2} = g_{\Delta_2} - g_{\Delta_1}$ stets eine Lösung der in Frage stehenden Gleichungen; von den so entstehenden Lösungen werden wir sagen, daß sie $\sim 0$ sind. Die Zahlensysteme $\{g_\Delta\}$ bilden eine lineare Schar vom Grade $d$. Ein solches System liefert dann und nur dann für alle $g_{\Delta_2} - g_{\Delta_1}$ die $0$, wenn $g_\Delta$ für alle Dreiecke $\Delta$ denselben Wert hat (wir benutzen dabei, daß $\mathfrak{P}$ zusammenhängend ist). Die Lösungen von $(\mathfrak{e})$, welche $\sim 0$ sind, bilden also eine lineare Schar vom Grade $d - 1$. Der Überschuß
+\[ (k - e + 1 - \varepsilon) - (d - 1) = (k - e - d + 2) - \varepsilon \]
+gibt die gesuchte größte Anzahl $h$ der linear unabhängigen Integralfunktionen auf $\mathfrak{P}$. \emph{Es folgt aus der durch die obigen Betrachtungen aufgedeckten Bedeutung von $h$, daß diese Größe für geschlossene Flächen von der Art ihrer Triangulation völlig unabhängig ist}${}^{1)}$; außerdem muß stets $h \geqq 0$ sein.
+
+Daß zwischen $l$ geschlossenen Wegen $\gamma_1, \gamma_2, \dots, \gamma_l$ die \emph{Homologie}${}^{2)}$
+\[ c_1 \gamma_1 + c_2 \gamma_2 + \dots + c_l \gamma_l \sim 0 \]
+mit den Zahlen $c_i$ als Koeffizienten besteht, soll besagen, daß für jede Integralfunktion $F$ die Gleichung
+\[ c_1 F(\gamma_1) + c_2 F(\gamma_2) + \dots + c_l F(\gamma_l) = 0 \]
+statthat. Hat die Fläche, welche wir betrachten, den endlichen Zusammenhangsgrad $h$, so besteht zwischen $l > h$ geschlossenen Wegen stets eine solche Homologie mit nicht lauter verschwindenden Koeffizienten. Man braucht nämlich nur die $h$ homogenen linearen Gleichungen
+\[ c_1 F_i(\gamma_1) + c_2 F_i(\gamma_2) + \dots + c_l F_i(\gamma_l) = 0 \quad [i = 1, \dots, h] \]
+in der die $F_1, \dots, F_h$ eine Basis für die Integralfunktionen bilden, zu
+
+\textbf{1)} Gewöhnlich wird die \emph{Zusammenhangszahl} (nach \emph{Riemann}) mit Hilfe der Zerschneidung der gegebenen Fläche in eine einfach zusammenhängende erklärt, wobei man innerhalb der Analysis situs nicht umhin kann, als Zerschneidungslinien beliebige stetige Kurven zuzulassen; die Beweise dafür aber, daß die so definierte Zahl durch die Fläche allein bestimmt ist, sind nicht streng und scheinen sich auch nur schwer in strenge Form bringen zu lassen. Indem wir hier eine neue Definition zu Grunde legten, welche zu den funktionentheoretischen Anwendungen (Theorie der Abelschen Integrale) in engster Beziehung steht, ist dieser Übelstand vermieden worden. Man darf wohl sagen, daß unser Verfahren den eigentlichen Kern der von \emph{Weierstraß}, \emph{Hensel-Landsberg} u.~a. in der Theorie der algebraischen Funktionen angewendeten Methode, zunächst das Verhalten der \emph{Integrale} zu untersuchen und daraus Schlüsse über die \emph{Integrationswege} zu ziehen, in einer von allen funktionentheoretischen Zufälligkeiten befreiten Form vor Augen stellt. --- Die für geschlossene, zweiseitige, einfach zusammenhängende Polyeder gültige Gleichung $e + d - k = 2$ wird als die \emph{Eulersche Polyederformel} bezeichnet. S.~\emph{Euler}, Petrop.\ Novi Comm.\ 4 (1752---53), S.~109.
+
+\textbf{2)} Vgl.\ \emph{Poincaré}, Analysis situs, Journal de l'École polytechnique, Ser.\ 2, Bd.\ 1 (1895), S.~19.
+
+\origpage{72}
+lösen, um solche Koeffizienten zu ermitteln. Es muß demnach eine gewisse Anzahl $h' \; (\leqq h)$ von geschlossenen Wegen $\gamma_1, \dots, \gamma_{h'}$ geben, sodaß zwischen diesen keine Homologie (mit Koeffizienten, die nicht alle $0$ sind) besteht, wohl aber zwischen je $h' + 1$ geschlossenen Wegen. $\gamma_1, \dots, \gamma_{h'}$ bilden dann eine Basis für die Schar der inhomologen geschlossenen Wege, und $h'$ ist der Grad dieser Schar. In analoger Weise, wie oben $h' \leqq h$ gefunden wurde, beweist man $h \leqq h'$; demnach ist $h' = h$.
+
+\emph{Die besondere Natur der Objekte (geschlossenen Wege), aus denen unsere Schar besteht, bringt es mit sich, daß eine Basis $\gamma_1, \dots, \gamma_h$ so ausfindig gemacht werden kann, daß für jeden geschlossenen Weg eine Homologie}
+\[ \gamma \sim n_1 \gamma_1 + \dots + n_h \gamma_h \]
+\emph{mit ganzzahligen Koeffizienten $n_1, \dots, n_h$ stattfindet.} Es sei zunächst $\gamma'_1, \gamma'_2, \dots, \gamma'_h$ eine beliebige Basis der geschlossenen Kurven. Jeder geschlossenen Linie
+\[ \gamma \sim r_1 \gamma'_1 + r_2 \gamma'_2 + \dots + r_h \gamma'_h \]
+ordne man in einem Cartesischen $h$-dimensionalen Raum den Punkt mit den Koordinaten $(r_1, r_2, \dots, r_h)$ zu:
+\[ \gamma \sim (r_1, r_2, \dots, r_h). \]
+Das System $G$ der so den sämtlichen geschlossenen Kurven $\gamma$ entsprechenden Punkte bildet ein \emph{„Gitter“}; d.~h.\ mit jedem Punkt $(r_1, r_2, \dots, r_h)$ gehört auch $(-r_1, -r_2, \dots, -r_h)$ zu $G$, und wenn $(r'_1, r'_2, \dots, r'_h)$, $(r''_1, r''_2, \dots, r''_h)$ irgend zwei zu $G$ gehörige Punkte sind, so ist auch immer
+\[ (r'_1 + r''_1, r'_2 + r''_2, \dots, r'_h + r''_h) \]
+in $G$ enthalten. Denn aus zwei geschlossenen Wegen $\gamma', \gamma''$ kann man stets einen geschlossenen Weg
+\[ \gamma \sim \gamma' + \gamma'' \]
+dadurch erhalten, daß man $\gamma'$ von einem seiner Punkte $\mathfrak{p}'$ aus einmal umläuft, dann von $\mathfrak{p}'$ längs einer beliebigen Kurve $\sigma$ nach einem Punkte $\mathfrak{p}''$ von $\gamma''$ geht, $\gamma''$ von $\mathfrak{p}''$ aus umläuft und schließlich längs $\sigma$ in umgekehrter Richtung nach $\mathfrak{p}'$ zurückkehrt. Insbesondere gehören alle Punkte mit ganzzahligen Koordinaten zu $G$.
+
+Es liegen aber nicht in beliebiger Nähe des Nullpunktes $(0, 0, \dots, 0)$ Gitterpunkte, sondern es existiert eine ganze Zahl $N$ von der Beschaffenheit, daß die Koordinaten eines jeden zu $G$ gehörigen Punktes sich durch Multiplikation mit $N$ in ganze Zahlen verwandeln. Beweis: Da die Koeffizienten der Gleichungen $(\mathfrak{e})$ ganze Zahlen sind, kann man insbesondere $h$ \emph{ganzzahlige} Lösungen
+\[ \{ x_{\Delta_1 \Delta_2}^{(i)} \} \quad [i = 1, 2, \dots, h] \]
+angeben, aus denen sich alle andern im Sinne der Homologie linear zusammensetzen lassen. Diesen $h$ Lösungen entsprechen $h$ linear unabhängige Integralfunktionen $F_i$, \emph{deren Werte für jede geschlossene Kurve}
+
+\origpage{73}
+\emph{ganze Zahlen sind}${}^{1)}$. Setzen wir die von $0$ verschiedene Determinante
+\[ |F_i(\gamma'_j)|_{\substack{i = 1, 2, \dots, h \\ j = 1, 2, \dots, h}} = N, \]
+so ergibt sich unsere Behauptung in Anbetracht der Gleichungen
+\[ r_1 F_i(\gamma'_1) + r_2 F_i(\gamma'_2) + \dots + r_h F_i(\gamma'_h) = F_i(\gamma), \quad [i = 1, 2, \dots, h] \]
+auf deren rechten Seiten ganze Zahlen stehen.
+
+Unter allen (\emph{endlich vielen}) Gitterpunkten von der Form
+\[ (r_1, 0, \dots, 0) \quad [0 < r_1 \leqq 1] \]
+sei
+\[ \gamma_1 \sim (r_1^{(1)}, 0, \dots, 0) \]
+derjenige, für welchen $r_1$ seinen kleinsten Wert hat; unter den endlichvielen Gitterpunkten von der Form
+\[ (r_1, r_2, 0, \dots, 0) \quad [0 \leqq r_1 < r_1^{(1)}; \quad 0 < r_2 \leqq 1] \]
+--- deren es sicher welche gibt --- ferner
+\[ \gamma_2 \sim (r_1^{(2)}, r_2^{(2)}, 0, \dots, 0) \]
+derjenige, für welchen $r_2^{(2)}$ möglichst klein ist; unter allen Gitterpunkten
+\[ (r_1, r_2, r_3, 0, \dots, 0) \quad [0 \leqq r_1 < r_1^{(1)}, \quad 0 \leqq r_2 < r_2^{(2)}; \quad 0 < r_3 \leqq 1] \]
+\[ \gamma_3 \sim (r_1^{(3)}, r_2^{(3)}, r_3^{(3)}, 0, \dots, 0) \]
+derjenige, für den $r_3^{(3)}$ am kleinsten ausfällt; usw. Die geschlossenen Kurven $\gamma_1, \gamma_2, \gamma_3, \dots, \gamma_h$ bilden dann eine Basis, wie wir sie suchen${}^{2)}$. Denn ist $\gamma \sim (r_1, r_2, \dots, r_h)$ ein beliebiger zu $G$ gehöriger Punkt, so kann man der Reihe nach die ganzen Zahlen $n_h, n_{h-1}, \dots, n_1$ so bestimmen, daß
+\[ \begin{gathered} \gamma - (n_h \gamma_h + n_{h-1} \gamma_{h-1} + \dots + n_1 \gamma_1) \sim (\bar{r}_1, \bar{r}_2, \dots, \bar{r}_h) \\ 0 \leqq \bar{r}_i < r_i^{(i)} \quad (i = h, h - 1, \dots, 1) \end{gathered} \]
+wird. Dann aber schließt man aus der Bedeutung von $\gamma_h, \gamma_{h-1}, \dots, \gamma_1$ sukzessive
+\[ \bar{r}_h = 0, \quad \bar{r}_{h-1} = 0, \dots, \quad \bar{r}_1 = 0, \]
+und das Endergebnis ist das behauptete:
+\[ \gamma \sim n_h \gamma_h + \dots + n_2 \gamma_2 + n_1 \gamma_1. \]
+
+Nur eine Basis $\{\gamma_i\}$, durch die sich alle geschlossenen Kurven im
+
+\textbf{1)} Um den Wert $F(\gamma)$ einer Integralfunktion $F$ für einen geschlossenen Weg $\gamma$ zu berechnen, kann man $\gamma$ durch einen in hinreichender Nähe von $\gamma$ verlaufenden geschlossenen Streckenzug $\pi$ ersetzen (S.~49); wir nehmen ihn so an, daß er, ohne durch Ecken hindurchzugehen, die Kanten in allen Treffpunkten überkreuzt. Geht $\pi$ an einer beliebigen solchen Kreuzungsstelle aus dem Dreieck $\Delta_1$ in das Dreieck $\Delta_2$ hinüber, so ist $F(\gamma) = F(\pi)$ gleich der über alle Kreuzungsstellen zu erstreckenden Summe $\displaystyle\sum x_{\Delta_1 \Delta_2} [F]$.
+
+\textbf{2)} Dieses Schlußverfahren wird von \emph{Minkowski} als „Adaption eines Zahlengitters in bezug auf ein enthaltenes Gitter“ bezeichnet. Vgl.\ Diophantische Approximationen (Leipzig 1907), S.~90---95.
+
+\origpage{74}
+Sinne der Homologie linear-homogen und \emph{ganzzahlig} ausdrücken lassen, wollen wir von jetzt ab als eine wirkliche \emph{Basis} gelten lassen. Der Übergang von einer solchen wirklichen Basis zu einer andern wird vermittelt durch lineare Transformation mit ganzzahligen Koeffizienten, deren Determinante $= \pm 1$ sein muß.
+
+Über der geschlossenen Fläche $\mathfrak{F}$ vom Zusammenhangsgrad $h$ gibt es eine unverzweigte unbegrenzte (reguläre) Überlagerungsfläche $\hat{\mathfrak{F}}$, auf der eine Kurve, deren Spurkurve auf $\mathfrak{F}$ geschlossen ist, sich dann und nur dann schließt, falls jene Spurkurve $\sim 0$ ist. Alle Integralfunktionen auf $\mathfrak{F}$ werden, wenn man sie als Integralfunktionen auf $\hat{\mathfrak{F}}$ betrachtet, der $0$ homolog; daher nenne ich $\hat{\mathfrak{F}}$ die \emph{Überlagerungsfläche der Integralfunktionen}. Ist $\gamma_1, \dots, \gamma_h$ eine Basis für die geschlossenen Wege auf $\mathfrak{F}$ und bezeichnen wir allgemein mit $\hat{\mathfrak{p}} S_i$ denjenigen Punkt auf $\hat{\mathfrak{F}}$, zu dem man gelangt, wenn man, von dem beliebigen Punkt $\hat{\mathfrak{p}}$ auf $\hat{\mathfrak{F}}$ ausgehend, auf $\hat{\mathfrak{F}}$ einen Weg zurücklegt, dessen Spurlinie in $\mathfrak{F}$ geschlossen und $\sim \gamma_i$ ist, so bedeuten die $S_i$ Decktransformationen von $\hat{\mathfrak{F}}$ in sich und erzeugen zusammen die gesamte Gruppe dieser Decktransformationen, die eine kommutative (Abelsche) Gruppe ist:
+\[ S_1^{n_1} S_2^{n_2} \dots S_h^{n_h} \]
+[$n_1, n_2, \dots, n_h$ durchlaufen unabhängig voneinander alle ganzen Zahlen].
+
+Im Falle der geschlossenen zweiseitigen Flächen hat \emph{Riemann} für die im Kap.~II zu besprechenden funktionentheoretischen Anwendungen eine besondere Basis der geschlossenen Wege, die sog.\ \emph{kanonische Zerschneidung}, konstruiert.${}^{1)}$ Wir gründen diese Konstruktion auf die folgenden Überlegungen.
+
+Auf einem einfach zusammenhängenden Polyeder ist jede Integralfunktion $\sim 0$, also sein Zusammenhangsgrad $h = 0$. \emph{Von diesem Satz gilt auch die Umkehrung.} Würde z.~B.\ das offene Polyeder $\mathfrak{P}$, für welches $h = 0$ vorausgesetzt wird, nicht einfach zusammenhängend sein, so führe man einen (aus $n$ Kanten bestehenden) Querschnitt, der $\mathfrak{P}$ nicht zerlegt. Dadurch wird $\mathfrak{P}$ in ein Polyeder $\mathfrak{P}'$ verwandelt, dessen Anzahlen sich aus den Formeln
+\[ d' = d, \quad k' = k - n, \quad e' = e - (n - 1) \]
+berechnen, und für $\mathfrak{P}'$ ergäbe sich $h' = - 1$, was unmöglich ist.
+
+Es sei auf einer in bestimmter Triangulierung $\zeta$ vorliegenden geschlossenen zweiseitigen Fläche $\mathfrak{F}_\zeta$ ein $\mathfrak{F}$ nicht zerlegendes Polygon $\pi$ gegeben, das aus Kanten von $\zeta$ besteht. Es läßt sich dann, da $\pi$ die Fläche nicht zerlegt, ein Polygon $\pi'$ auf $\mathfrak{F}_\zeta$ zeichnen, das $\pi$ an einer einzigen Stelle überkreuzt, sonst aber keinen Punkt mit $\pi$ gemein hat. Mach-
+
+\textbf{1)} \emph{Riemann}, Theorie der Abelschen Funktionen, Werke, 2.~Aufl., S.~129---130.
 \end{document}
