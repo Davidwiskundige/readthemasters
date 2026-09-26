@@ -1147,4 +1147,147 @@ berechnen, und für $\mathfrak{P}'$ ergäbe sich $h' = - 1$, was unmöglich ist.
 Es sei auf einer in bestimmter Triangulierung $\zeta$ vorliegenden geschlossenen zweiseitigen Fläche $\mathfrak{F}_\zeta$ ein $\mathfrak{F}$ nicht zerlegendes Polygon $\pi$ gegeben, das aus Kanten von $\zeta$ besteht. Es läßt sich dann, da $\pi$ die Fläche nicht zerlegt, ein Polygon $\pi'$ auf $\mathfrak{F}_\zeta$ zeichnen, das $\pi$ an einer einzigen Stelle überkreuzt, sonst aber keinen Punkt mit $\pi$ gemein hat. Mach-
 
 \textbf{1)} \emph{Riemann}, Theorie der Abelschen Funktionen, Werke, 2.~Aufl., S.~129---130.
+
+\origpage{75}
+wir eine solche Unterteilung $\zeta^*$ von $\zeta$, daß auch $\pi'$ ganz aus Kanten besteht, so ist $\pi + \pi'$ eine abgeschlossene Punktmenge von solcher Art, daß sie nicht nur $\mathfrak{F}$ unzerlegt läßt, sondern überhaupt jedes Gebiet, dem sie angehört. Die Dreiecke von $\zeta^*$, welche Kanten auf $\pi + \pi'$ liegen haben, lassen sich nämlich in einer einzigen geschlossenen Kette so anordnen (wobei allerdings Dreiecke in der Kette mehrfach auftreten können), daß je zwei aufeinanderfolgende Dreiecke der Kette eine nicht zu $\pi + \pi'$ gehörige Kante gemein haben. Bei der Herstellung dieser Anordnung wird davon Gebrauch gemacht, daß $\pi$ sowohl als $\pi'$ getrennte Ufer besitzt. $\pi + \pi'$ nennen wir ein \textbf{Rückkehrschnittpaar}.
+
+\rmfigure{figures/fig-21.png}{Fig.~21.}{Rückkehrschnittpaar}
+
+Hat man auf $\mathfrak{F}_\zeta$ $q$ sich gegenseitig nicht treffende Rückkehrschnittpaare
+\[ \pi_1 + \pi'_1, \quad \pi_2 + \pi'_2, \quad \cdots, \quad \pi_q + \pi'_q, \]
+die $\mathfrak{F}_\zeta$ nicht zerlegen, so kann man einen willkürlichen Punkt $\mathfrak{p}_0$ auf der Fläche (der nicht auf diesen $q$ Rückkehrschnittpaaren liegt) durch einfache Streckenzüge $\sigma_1, \dots, \sigma_q$ mit den Kreuzungspunkten der Rückkehrschnittpaare verbinden. Die $\sigma$ können wir so wählen, daß sich je zwei von ihnen außer in $\mathfrak{p}_0$ nicht schneiden und daß $\sigma_i$ mit dem $i^{\text{ten}}$ Rückkehrschnittpaar den Kreuzungspunkt, sonst aber keinen Punkt gemein hat, die übrigen Rückkehrschnittpaare jedoch überhaupt nicht trifft: wir haben dann ein „Gespann“ von $q$ Rückkehrschnittpaaren, das durch die „Zügel“ $\sigma$ an den Punkt $\mathfrak{p}_0$ befestigt ist. Machen wir eine solche Unterteilung $\zeta^*$ von $\zeta$, daß das ganze Schnittsystem
+\[ \Sigma = \sum_{i=1}^q (\pi_i + \pi'_i + \sigma_i) \]
+aus Kanten besteht, so erkennen wir, daß es nicht nur $\mathfrak{F}$, sondern jedes Gebiet, das $\Sigma$ ganz enthält, unzerlegt läßt (Fig.~22). Indem wir die Verbindung der Dreiecke über die Kanten des Schnittsystems hinüber lösen, erhalten wir aus dem geschlossenen ein offenes Polyeder $\mathfrak{P}'$. Die Anzahl der Dreiecke $d$ ist bei dieser Operation dieselbe geblieben; die Anzahl $k - e$ ist um $2q - 1$ gesunken. Es muß also (wenn $h$ den Zusammenhangsgrad von $\mathfrak{F}$ bedeutet)
+\[ h - (2q - 1) \geqq 1 \quad \text{oder} \quad 2q \leqq h \]
+sein. Ist noch $2q < h$, so ist $\mathfrak{P}'$ nicht einfach zusammenhängend. Wir zeichnen dann in $\mathfrak{P}'$ einen Querschnitt $v$, der $\mathfrak{P}'$ nicht zerlegt, und verbinden zwei Punkte, die sich an den beiden Ufern einer zu $v$ gehörigen Kante gegenüberliegen, durch ein $v$ nicht treffendes Polygon $\pi'_{q+1}$ in $\mathfrak{P}'$. Wir lassen von $v$ am Anfang und Ende ein kleines Stück der ersten bezw.\ letzten Kante fort und verbinden Anfang und Ende des so verstümmelten
+
+\origpage{76}
+Querschnittes $v^-$ durch einen Streckenzug $\tau$ innerhalb $\mathfrak{P}'$, der in solcher Nähe des Schnittsystemes $\Sigma$ bleibt, daß er auch $\pi'_{q+1}$ nicht treffen kann. $v^- + \tau = \pi_{q+1}$ ist dann ein geschlossenes Polygon, das $\mathfrak{P}'$ nicht zerlegt, da $\pi'_{q+1}$ die beiden Ufer einer zu $\pi_{q+1}$ gehörigen Strecke ohne Überschreitung von $\pi_{q+1}$ innerhalb $\mathfrak{P}'$ verbindet. $\pi_{p+1} + \pi'_{q+1}$\ednote{Druckfehler im Original: $\pi_{p+1}$ statt $\pi_{q+1}$.} ist ein weiteres Rückkehrschnittpaar, das mit den vorigen keinen einzigen Punkt gemein hat und mit ihnen zusammen $\mathfrak{F}$ immer noch nicht zerlegt.
+
+\rmfigure{figures/fig-22.png}{Fig.~22.}{Kanonische Zerschneidung}
+
+Wenn die Zahl $h > 2q$ ist, muß sie folglich $\geqq 2q + 2$ sein. Dies zeigt, daß die Zahl $h$ für zweiseitige geschlossene Flächen nur gerade sein kann. Setzen wir $h = 2p$, so gibt es ein Gespann von $p$ Rückkehrschnittpaaren $\pi + \pi'$, die mit Hilfe von Zügeln $\sigma$ an einen Punkt $\mathfrak{p}_0$ der Fläche befestigt sind. $p$ heißt das \textbf{Geschlecht} von $\mathfrak{F}$. Wir können annehmen (indem wir eventuell von der ursprünglichen Triangulation $\zeta$ zu einer Unterteilung $\zeta^*$ übergehen), daß alle diese Linien $\pi$, $\pi'$, $\sigma$ aus Kanten bestehen; sie \emph{liefern die} \textbf{kanonische Zerschneidung} \emph{von $\mathfrak{F}_{\zeta^*}$ in ein einfach zusammenhängendes Polyeder} $\mathfrak{F}_*$.
+
+Jedes Dreieck von $\mathfrak{F}_{\zeta^*}$ sei dem Prinzip der Kohärenz gemäß mit einer Indikatrix versehen. Von zwei Elementardreiecken der Triangulation, die längs einer gerichteten Kante $\overrightarrow{12}$ aneinanderstoßen, nennen wir dasjenige, dessen $\text{Indikatrix} = (12*)$ ist, das \textbf{linke}, das andere das \textbf{rechte}. Den Zügeln $\sigma$ erteilen wir die Richtung von $\mathfrak{p}_0$ nach den Kreuzungspunkten, den $\pi$, $\pi'$ einen solchen Umlaufssinn, daß $\pi'$ die Linie $\pi$ von rechts nach links ($\pi$ also $\pi'$ von links nach rechts) überkreuzt.
+
+Wir betrachten eine Integralfunktion $F$ auf $\mathfrak{F}$. Es gibt auf $\mathfrak{F}_*$ eine Punktfunktion $f$, so daß für jede in $\mathfrak{F}_*$ verlaufende Kurve $\gamma$, deren Anfangs- und Endpunkt $\mathfrak{p}_1$, $\mathfrak{p}_2$ heißen sollen,
+\[ F(\gamma) = f(\mathfrak{p}_2) - f(\mathfrak{p}_1) \]
+ist. Es seien $\Delta'$, $\Delta''$ zwei Dreiecke, die eine dem kanonischen Schnittsystem gehörige Kante $\varkappa$ gemein haben ($\Delta'$ liege auf dem linken, $\Delta''$ auf dem rechten Ufer des betreffenden Schnittes); dann gibt es in $\Delta' + \Delta''$ eine Funktion $f_0$, so daß für jede in $\Delta' + \Delta''$ verlaufende Kurve $\gamma = (\mathfrak{p}_1 \mathfrak{p}_2)$
+\[ F(\gamma) = f_0(\mathfrak{p}_2) - f_0(\mathfrak{p}_1). \]
+Es muß dann
+\[ f = f_0 + c' \text{ in } \Delta', \quad f = f_0 + c'' \text{ in } \Delta'' \]
+
+\origpage{77}
+sein, wo $c'$, $c''$ Konstante sind. $c'' - c'$ nenne ich den \textbf{Sprung} von $F$ auf $\varkappa$. Betrachtet man einen Dreiecksstern, der sich um eine auf dem kanonischen Schnittsystem gelegene Ecke gruppiert, die mit keinem der Kreuzungspunkte zusammenfällt, so stellt sich heraus, daß der Sprung von $F$ für alle Kanten, die demselben der Schnitte $\pi$, $\pi'$, $\sigma$ angehören, den gleichen Wert besitzt. Er sei
+\[ = a_i \text{ für } \pi_i, \quad = a'_i \text{ für } \pi'_i, \quad = c_i \text{ für } \sigma_i. \]
+Betrachtet man den Dreiecksstern, der sich um den Kreuzungspunkt des $i^{\text{ten}}$ Rückkehrschnittpaares gruppiert, so ergibt sich $c_i = 0$. Die Zügel $\sigma_i$ können demnach fortgelassen werden. Die Zahlen $a_i$, $a'_i$ werden die \textbf{Perioden} der Integralfunktion an den Schnitten $\pi_i$, $\pi'_i$ genannt.
+
+Ist $\gamma$ eine beliebige geschlossene Kurve, so kann dieselbe zur Berechnung von $F(\gamma)$ ersetzt werden durch ein in hinreichender Nähe von $\gamma$ verlaufendes Polygon; dies werde so angenommen, daß es die Rückkehrschnittpaare an endlich vielen Stellen überkreuzt, die keine Eckpunkte der Triangulation sind. Ist $+ n_i$ die Anzahl von Malen, die jenes Polygon $\pi_i$ von links nach rechts überkreuzt, vermindert um die Anzahl von Malen, in der dasselbe von rechts nach links geschieht, und hat $- n'_i$ die analoge Bedeutung für $\pi'_i$, so ist offenbar
+\[ F(\gamma) = \sum_{i=1}^p n_i a_i - \sum_{i=1}^p n'_i a'_i; \]
+anderseits
+\[ a_i = F(\pi'_i), \quad - a'_i = F(\pi_i). \]
+Die $\pi_i$, $\pi'_i$ bilden also eine wirkliche Basis für die geschlossenen Wege.
+
+\emph{Das Geschlecht $p$ ist, wie Möbius und Jordan}${}^{1)}$ \emph{bewiesen haben, die einzige Analysis-situs-Invariante der geschlossenen zweiseitigen Flächen.} Der Satz nämlich, daß zwei geschlossene zweiseitige Flächen, welche im Sinne der Analysis-situs äquivalent sind, dasselbe $p$ besitzen müssen, läßt sich umkehren. Es verursacht keine große Mühe, den Jordanschen Beweis zu einem den in dieser Schrift angestellten Analysis-situs-Betrachtungen an Strenge ebenbürtigen umzumodeln; wir wollen jedoch darauf nicht eingehen. Welche einschneidende Bedeutung dem Geschlecht einer geschlossenen Riemannschen Fläche für die Theorie der Funktionen auf dieser Fläche zukommt, wird zur Genüge aus den funktionentheoretischen Sätzen des nächsten Kapitels hervorgehen.
+
+Es ist leicht, geschlossene zweiseitige Flächen im dreidimensionalen Euklidischen Raum von verhältnismäßig einfacher Natur anzugeben, deren Geschlechtszahl $p$ einen gegebenen Wert hat; z.~B.\ besitzt eine mit $p$ Henkeln versehene Kugel das Geschlecht $p$.
+
+\textbf{1)} Möbius, „Theorie der elementaren Verwandtschaft“ (1863), Werke Bd.~II, S.~435---471; C.~Jordan, Journal de mathématiques, Ser.~2, Bd.~11 (1866), S.~105. Ferner: W.~Dyck, Math.\ Ann.\ Bd.~32 (1888), S.~457.
+
+\origpage{78}
+\begin{center}
+{\large Zweites Kapitel.}
+
+\vspace{0.5em}
+{\Large\textbf{Funktionen auf Riemannschen Flächen.}}
+\end{center}
+
+\subsection*{§ 12. Das Dirichletsche Integral.}
+
+$\mathfrak{E}$ sei in der Euklidischen Ebene mit den rechtwinkligen Koordinaten $xy$ eine abgeschlossene, ganz im Endlichen gelegene Punktmenge. Man zeichne, um den Flächeninhalt von $\mathfrak{E}$ zu bestimmen, in der Ebene das Quadratnetz von der Seitenlänge $\varepsilon$, das durch die Parallelen
+\[ y = m\varepsilon \ (m \text{ beliebige ganze Zahl}) \]
+zur $x$-Achse und die Parallelen
+\[ x = n\varepsilon \ (n \text{ beliebige ganze Zahl}) \]
+zur $y$-Achse erzeugt wird. Ist dann $i_\varepsilon$ die Anzahl der ganz aus inneren Punkten von $\mathfrak{E}$ bestehenden Quadrate des Netzes, $a_\varepsilon\ (> i_\varepsilon)$ aber die Anzahl derjenigen Quadrate des Netzes, die überhaupt Punkte mit $\mathfrak{E}$ gemein haben, so existieren${}^{1)}$ die Grenzwerte
+\[ \lim_{\varepsilon=0} \varepsilon^2 i_\varepsilon = I, \quad \lim_{\varepsilon=0} \varepsilon^2 a_\varepsilon = A. \]
+
+Fällt $I = A$ aus, so nennt man diese Zahl den \textbf{Inhalt} von $\mathfrak{E}$. Diejenigen Punkte von $\mathfrak{E}$, in deren beliebiger Nähe nicht zu $\mathfrak{E}$ gehörige Punkte angetroffen werden, bilden die \textbf{Begrenzung} von $\mathfrak{E}$. Damit $\mathfrak{E}$ ein bestimmter Inhalt zukommt, ist offenbar notwendig und hinreichend, daß die Begrenzung von $\mathfrak{E}$ den Inhalt $0$ besitzt.
+
+Eine stetig differentiierbare Kurve, und umsomehr eine analytische oder stückweis analytische Kurve in der Ebene besitzt den Inhalt $0$. Die stetig differentiierbare Kurve $\gamma$ von der Länge $l$ kann man nämlich in $n + 1$ Teilbogen je von der Länge $\frac{l}{n + 1}$ teilen. Benutzen wir dann ein Quadratnetz von einer Kantenlänge $\varepsilon = \frac{l}{n}$, so kann ein solcher einzelner
+
+\textbf{1)} C.~Jordan, Cours d'analyse, 2.~Aufl., Bd.~1, S.~28.
+
+\origpage{79}
+Teilbogen offenbar mit höchstens vier Quadraten des Netzes Punkte gemein haben; im ganzen wird es also höchstens $4(n + 1)$ Quadrate des Netzes geben, die Punkte von $\gamma$ enthalten:
+\[ a_\varepsilon \cdot \varepsilon^2 \leqq 4(n + 1) \frac{l^2}{n^2}, \]
+woraus die Richtigkeit der Behauptung $\lim\limits_{\varepsilon=0} a_\varepsilon \cdot \varepsilon^2 = 0$ hervorgeht.${}^{1)}$
+
+Liegt die abgeschlossene Punktmenge $\mathfrak{E}$, von der wir jetzt ein für allemal annehmen, daß sie einen Inhalt $J$ besitzt, ganz in einem Gebiet $\mathfrak{G}$, in welchem eine stetige Funktion $f$ definiert ist, so hat das Integral $\displaystyle\iint\limits_{\mathfrak{E}} f\,dx\,dy$ einen klaren Sinn. Einen Näherungswert desselben berechnet man, wenn man den Inhalt $\varepsilon^2$ eines jeden zu $\mathfrak{E}$ gehörigen Quadrates des $\varepsilon$-Netzes mit dem Wert von $f$ im Mittelpunkt dieses Quadrates multipliziert und alle diese von den einzelnen Quadraten herrührenden Beiträge addiert. Die so ermittelte Zahl konvergiert gegen den Wert des Integrals, wenn man $\varepsilon$ gegen $0$ gehen läßt. Es ist dabei gleichgültig, ob man nur über die ganz innerhalb $\mathfrak{E}$ gelegenen Quadrate des Netzes summiert, oder außerdem auch einige oder alle an den Rand von $\mathfrak{E}$ stoßenden Quadrate mitberücksichtigt. Ist $\mathfrak{E}$ in endlichviele abgeschlossene Mengen $\mathfrak{E}_1, \mathfrak{E}_2, \cdots, \mathfrak{E}_n$ mit bestimmtem Inhalt zerlegt (so daß die $\mathfrak{E}_i$ in ihren inneren Punkten durchweg verschieden sind, jedes $\mathfrak{E}_i$ ein Teil von $\mathfrak{E}$ ist, aber auch jeder Punkt von $\mathfrak{E}$ in mindestens einem der $\mathfrak{E}_i$ enthalten ist), so ergibt sich aus der Definition ohne weiteres das Additionsgesetz
+\[ \iint_{\mathfrak{E}} f\,dx\,dy = \sum_{i=1}^n \iint_{\mathfrak{E}_i} f\,dx\,dy. \]
+
+Ist $\mathfrak{G}$ umkehrbar-eindeutig und -gebietsstetig auf ein Gebiet $\mathfrak{G}'$ der $x'y'$-Ebene abgebildet:
+\[ x' = x'(xy), \qquad y' = y'(xy) \tag{14} \]
+wobei die Differentialquotienten
+\[ \begin{Vmatrix} \dfrac{\partial x'}{\partial x} & \dfrac{\partial x'}{\partial y} \\[1ex] \dfrac{\partial y'}{\partial x} & \dfrac{\partial y'}{\partial y} \end{Vmatrix} \]
+stetige Funktionen von $xy$ sein sollen und ihre Determinante $d$ überall $\neq 0$, so gilt die Transformationsformel
+\[ \iint_{\mathfrak{E}} f\,dx\,dy = \iint_{\mathfrak{E}'} \frac{f}{d}\,dx'\,dy'. \]
+
+\textbf{1)} Der Beweis stammt von C.~Jordan (Cours d'analyse, 2.~Aufl., Bd.~1, S.~107).
+
+\origpage{80}
+Dabei ist $\mathfrak{E}'$ das Bild von $\mathfrak{E}$, und in dem Integral rechts ist $\frac{f}{d}$ vermöge der Transformationsformeln als Funktion von $x', y'$ auszudrücken.
+
+Ist $u$ eine stetig differentiierbare Funktion in $\mathfrak{G}$, so pflegt man (übrigens mit geringem historischen Recht)
+\[ \mathbf{D}_{\mathfrak{E}}(u) = \iint_{\mathfrak{E}} \left[ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right] dx\,dy \]
+als das \textbf{Dirichletsche Integral} zu bezeichnen. \emph{Es ist gegenüber konformer Abbildung invariant.} In der Tat: ist die Abbildung (14) konform ($d \neq 0$ ist dann eine Folge der vorausgesetzten Umkehrbar-Eindeutigkeit der Abbildung), so ist zufolge der Riemann-Cauchyschen Differentialgleichungen
+\[ \begin{gathered}
+\left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 = \left[ \left(\frac{\partial u}{\partial x'}\right)^2 + \left(\frac{\partial u}{\partial y'}\right)^2 \right] \left[ \left(\frac{\partial x'}{\partial x}\right)^2 + \left(\frac{\partial x'}{\partial y}\right)^2 \right], \\
+d = \left(\frac{\partial x'}{\partial x}\right)^2 + \left(\frac{\partial x'}{\partial y}\right)^2,
+\end{gathered} \]
+also
+\[ \iint_{\mathfrak{E}} \left[ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right] dx\,dy = \iint_{\mathfrak{E}'} \left[ \left(\frac{\partial u}{\partial x'}\right)^2 + \left(\frac{\partial u}{\partial y'}\right)^2 \right] dx'\,dy'. \]
+
+\emph{Dieses Invarianzgesetz ermöglicht es, das Dirichlet-Integral einer stetig differentiierbaren Funktion nicht nur in der Ebene, sondern auf einer beliebigen Riemannschen Fläche zu bilden.}
+
+Es sei also $\mathfrak{F}$ eine geschlossene Riemannsche Fläche, und $u$ eine stetig differentiierbare Funktion auf ihr; wir wollen erklären, was unter dem Dirichletschen Integral $\mathbf{D}(u)$ von $u$ auf $\mathfrak{F}$ zu verstehen ist. Ist $\mathfrak{p}$ ein Punkt auf $\mathfrak{F}$ und $z$ eine zu $\mathfrak{p}$ gehörige Ortsuniformisierende, die eine Umgebung von $\mathfrak{p}$ auf ein den Punkt $z = 0$ enthaltendes Gebiet der $z$-Ebene abbildet, so ist ein ganz diesem Gebiete angehöriger Kreis $|z| \leqq a$ Bild einer Punktmenge auf $\mathfrak{F}$, die wir einen $z$-\textbf{Kreis} um $\mathfrak{p}$ nennen. Die Punkte, für welche $|z| = a$ ist, bilden die Peripherie jenes Kreises. Ordnet man jedem Punkt $\mathfrak{p}$ willkürlich eine Ortsuniformisierende $z$ und einen $z$-Kreis $\mathrm{K}$ zu, so kann man unter diesen $\mathrm{K}$ eine endliche Anzahl $\mathrm{K}_l$ ($l = 1, 2, \cdots, n$; zu den Punkten $\mathfrak{p}_l$ mit den Ortsuniformisierenden $z_l$ gehörig) so auswählen (Heine-Borelsches Theorem), daß jeder Punkt der Fläche im Innern eines der $n$ Kreise $\mathrm{K}_l$ gelegen ist. (Das Heine-Borelsche Theorem für eine beliebige geschlossene Fläche ergibt sich, wenn man auf ihr eine Folge von Triangulationen bildet, von denen jede eine Unterteilung der vorhergehenden ist und die schließlich beliebig fein werden.) Die Peripherien $\varkappa_l$ der $\mathrm{K}_l$ sind geschlossene analytische Linien und schneiden sich daher nur in endlich vielen Punkten. Infolgedessen bestimmt die abgeschlossene Menge $\varkappa_1 + \varkappa_2 + \cdots + \varkappa_n$ auf $\mathfrak{F}$ nur endlich viele Gebiete, die wir, nachdem jedes von ihnen durch Hinzu-
+
+\origpage{81}
+fügung seiner Grenze zu einer abgeschlossenen Menge gemacht ist, mit $\mathfrak{E}_1, \mathfrak{E}_2, \dots, \mathfrak{E}_r$ bezeichnen. Die Begrenzung jedes $\mathfrak{E}_h$ besteht aus endlich vielen analytischen Kurvenstücken. Jedes $\mathfrak{E}_h$ liegt ganz in einem der Kreise $\mathrm{K}_l$, und $z_l$ ist dann eine \textbf{zu $\mathfrak{E}_h$ gehörige Uniformisierende}, d.~h.\ eine in allen Punkten eines gewissen, $\mathfrak{E}_h$ enthaltenden Gebietes reguläre Funktion, welche von diesem Gebiet ein umkehrbar-eindeutiges und -gebietsstetiges konformes Abbild in der $z_l$-Ebene entwirft. Wir denken uns jedem $\mathfrak{E}_h$ in bestimmter Weise eine zu $\mathfrak{E}_h$ gehörige Uniformisierende $z_h = x_h + i y_h$ zugeordnet und bilden dann
+\[ \mathbf{D}(u) = \sum_{h=1}^r \iint_{\mathfrak{E}_h} \left[ \left(\frac{\partial u}{\partial x_h}\right)^2 + \left(\frac{\partial u}{\partial y_h}\right)^2 \right] dx_h\,dy_h. \]
+
+Dabei ist $u$ in $\mathfrak{E}_h$ als Funktion von $x_h y_h$ ausgedrückt zu denken, und $\mathfrak{E}_h$ bezeichnet zugleich das durch $z_h$ von diesem Stück der Riemannschen Fläche entworfene ebene Bild. Die so ermittelte Zahl $\mathbf{D}(u)$ ist gemäß dem Invarianzgesetz unabhängig davon, \emph{welche Uniformisierende $z_h = x_h + i y_h$ in jedem Stück $\mathfrak{E}_h$ benutzt wird}. Sie ist aber auch \emph{unabhängig von der speziellen Art der verwendeten Zerschneidung in die uniformisierbaren Stücke $\mathfrak{E}_h$}. Wählen wir nämlich irgendwie anders Punkte $\mathfrak{p}'_1, \dots, \mathfrak{p}'_{n'}$, zugehörende Uniformisierende $z'$ und $z'_\nu$-Kreise $\mathrm{K}'_\nu$ mit den Peripherien $\varkappa'$, in solcher Weise, daß die $\mathrm{K}'_\nu$ die ganze Fläche bedecken! Die $\varkappa'_1, \dots, \varkappa'_{n'}$ mögen $\mathfrak{F}$ in die Stücke $\mathfrak{E}'_1, \dots, \mathfrak{E}'_{r'}$ zerlegen, und zu jedem $\mathfrak{E}'_{h'}$ sei $z'_{h'} = x'_{h'} + i y'_{h'}$ eine Uniformisierende. Wir bilden von neuem
+\[ \mathbf{D}'(u) = \sum_{h'=1}^{r'} \iint_{\mathfrak{E}'_{h'}} \left[ \left(\frac{\partial u}{\partial x'_{h'}}\right)^2 + \left(\frac{\partial u}{\partial y'_{h'}}\right)^2 \right] dx'_{h'}\,dy'_{h'}. \]
+
+Dann ist, wie ich behaupte,
+\[ \mathbf{D}(u) = \mathbf{D}'(u). \]
+
+Man bringe nämlich die Schnitte $\varkappa_l$, $\varkappa'_\nu$ gleichzeitig an. Da sich diese Linien untereinander nur in endlich vielen Punkten schneiden, zerlegen sie die Fläche in endlich viele Stücke
+\[ \mathfrak{E}_{hj} = \mathfrak{E}'_{h'j'} \left[ \begin{aligned} j &= 1, 2, \cdots, i_h; & h &= 1, 2, \cdots, r \\ j' &= 1, 2, \cdots, i'_{h'}; & h' &= 1, 2, \cdots, r' \end{aligned} \right]. \]
+In der ersten Bezeichnung ist jedes $\mathfrak{E}_{hj}$ ein Teil von $\mathfrak{E}_h$, in der zweiten jedes $\mathfrak{E}'_{h'j'}$ ein Teil von $\mathfrak{E}'_{h'}$. Nach dem Additionsgesetz ist
+\[ \mathbf{D}(u) = \sum_h \sum_j \iint_{\mathfrak{E}_{hj}} \left[ \left(\frac{\partial u}{\partial x_h}\right)^2 + \left(\frac{\partial u}{\partial y_h}\right)^2 \right] dx_h\,dy_h, \]
+
+\origpage{82}
+\[ \mathbf{D}'(u) = \sum_{h'} \sum_{j'} \iint_{\mathfrak{E}'_{h'j'}} \left[ \left(\frac{\partial u}{\partial x'_{h'}}\right)^2 + \left(\frac{\partial u}{\partial y'_{h'}}\right)^2 \right] dx'_{h'}\,dy'_{h'}, \]
+nach dem Invarianzgesetz
+\[ \iint_{\mathfrak{E}_{hj}} \left[ \left(\frac{\partial u}{\partial x_h}\right)^2 + \left(\frac{\partial u}{\partial y_h}\right)^2 \right] dx_h\,dy_h = \iint_{\mathfrak{E}'_{h'j'}} \left[ \left(\frac{\partial u}{\partial x'_{h'}}\right)^2 + \left(\frac{\partial u}{\partial y'_{h'}}\right)^2 \right] dx'_{h'}\,dy'_{h'}; \]
+daher
+\[ \mathbf{D}(u) = \mathbf{D}'(u). \]
+
+Zu jeder stetig differentiierbaren Funktion $u$ auf $\mathfrak{F}$ gibt es also eine Zahl $\mathbf{D}(u)$. Sie hat folgende Eigenschaften:
+
+1. Sie ändert sich nicht, wenn man $u$ durch $u + c$ ersetzt, wo $c$ eine Konstante ist; sie ist niemals negativ und nur dann $0$, wenn $u$ auf der ganzen Fläche konstant ist.
+
+2. Ist $\mathfrak{p}$ irgendein Punkt auf der Fläche, $z = x + iy$ eine zugehörige Ortsuniformisierende und $\mathrm{K}\colon |z| \leqq a$ ein $z$-Kreis, so gilt
+\[ \mathbf{D}(u) = \iint_{\mathrm{K}} \left[ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right] dx\,dy + R(u), \]
+wo $R(u) \geqq 0$ ist und sich nicht ändert, wenn man $u$ durch irgendeine stetig differentiierbare Funktion auf $\mathfrak{F}$ ersetzt, die für alle nicht in $\mathrm{K}$ liegenden Punkte mit $u$ übereinstimmt.
+
+3. $\mathbf{D}(u)$ trägt quadratischen Charakter. Das gibt sich darin kund: sind $u$, $v$ irgend zwei stetig differentiierbare Funktionen auf $\mathfrak{F}$ und bedeuten $\lambda$, $\mu$ willkürliche Konstante, so ist
+\[ \mathbf{D}(\lambda u + \mu v) = \lambda^2 \mathbf{D}(u) + 2\,\lambda\,\mu\,\mathbf{D}(uv) + \mu^2 \mathbf{D}(v) \]
+eine quadratische Form in $\lambda$, $\mu$.
+
+Auch auf einer nicht geschlossenen Riemannschen Fläche läßt sich von einer stetig differentiierbaren Funktion $u$ das Dirichletsche Integral bilden, das hier allerdings auch den Wert $\infty$ besitzen kann. Eine ungeschlossene Fläche wird man derartig durch Peripherien $\varkappa_l$ von abzählbar vielen „Kreisen“ $\mathrm{K}_l$ zerschneiden müssen, daß jeder Punkt nur endlich vielen, aber mindestens einem der Kreise $\mathrm{K}_l$ angehört.
+
+\subsection*{§ 13. Über das Poissonsche Integral.}
+
+Als Hilfsmittel für unsere Untersuchungen brauchen wir die Lösung der sog.\ \emph{ersten Randwertaufgabe der Potentialtheorie für den Kreis} mit Hilfe des \emph{Poissonschen Integrals}. Ist auf dem Einheitskreis der komplexen $z$-Ebene eine stetige Funktion gegeben, deren Wert an der Stelle $\zeta = e^{i\varphi}$ mit $u(\varphi)$ bezeichnet werden möge, so liefert die Gleichung
 \end{document}
