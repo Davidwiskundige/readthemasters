@@ -1,0 +1,87 @@
+id: dedekind-weber-1882-algebraische-functionen
+title: Theorie der algebraischen Functionen einer Veränderlichen.
+title_en: Theory of algebraic functions of one variable.
+authors:
+- name: Richard Dedekind
+  wikidata_id: Q76556
+  birth_year: 1831
+  death_year: 1916
+  mactutor: Dedekind  # https://mathshistory.st-andrews.ac.uk/Biographies/Dedekind/
+- name: Heinrich Weber
+  wikidata_id: Q77512
+  birth_year: 1842
+  death_year: 1913
+  mactutor: Weber_Heinrich  # https://mathshistory.st-andrews.ac.uk/Biographies/Weber_Heinrich/
+publication:
+  year: 1882
+  venue: crelle
+  volume: '92'
+  pages: 181–290
+  title_full: '"Theorie der algebraischen Functionen einer Veränderlichen", Journal
+    für die reine und angewandte Mathematik (Crelle''s Journal), Band 92 (Berlin:
+    G. Reimer, 1882), pp. 181–290.'
+edition:
+  year: 1882
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original first printing in Journal für die reine
+    und angewandte Mathematik (Crelle's Journal), Band 92 (Berlin, 1882), pp. 181–290
+    — an original edition with no modern critical apparatus, commentary, or re-typesetting.
+    Only the authors' own text (including their own footnotes) is transcribed; running
+    heads and signature marks are not. Neither the 1930 reprint in Dedekind's Gesammelte
+    mathematische Werke (with editorial notes) nor Stillwell's 2012 English translation
+    was used.
+discipline: mathematics
+tags:
+- algebra
+- geometry
+- number-theory
+language: de
+type: paper
+external_translations:
+- language: en
+  title: Theory of Algebraic Functions of One Variable
+  translator: John Stillwell
+  year: 2012
+  license: in-copyright
+  url: https://pubs.ams.org/ebooks/hmath/039
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN243919689_0092
+  scan_id: gdz:PPN243919689_0092 (Crelle's Journal, Band 92, 1882, pp. 181–290; scan
+    images 185–294). The same original printing is catalogued by EuDML as https://eudml.org/doc/148492
+    and by De Gruyter as doi:10.1515/crll.1882.92.181.
+sources:
+  death_date: Richard Dedekind, 6 October 1831 – 12 February 1916 (wikidata:Q76556;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Dedekind/).
+    Heinrich Weber, 5 March 1842 – 17 May 1913 (wikidata:Q77512; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Weber_Heinrich/).
+  publication_date: First published 1882 in Journal für die reine und angewandte Mathematik
+    (Crelle's Journal), Band 92, pp. 181–290 (doi:10.1515/crll.1882.92.181; EuDML
+    https://eudml.org/doc/148492; GDZ PPN243919689_0092).
+  edition: 'Original first printing, Journal für die reine und angewandte Mathematik,
+    Band 92 (Berlin: G. Reimer, 1882), pp. 181–290. Digitized by the Göttinger Digitalisierungszentrum
+    (GDZ), PPN243919689_0092, at 600 ppi.'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1916
+        - 1913
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1882
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-26'

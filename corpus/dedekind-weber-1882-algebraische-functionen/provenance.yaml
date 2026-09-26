@@ -1,0 +1,65 @@
+changelog:
+  - date: "2026-09-26"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-26"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: [188, 189, 195, 205, 206, 212, 216, 218, 219, 221, 227, 230, 231, 232, 233, 255, 265, 285]
+    date: "2026-09-26"
+  uncertainty_flags: 0
+  note: >-
+    Dedekind and Weber's "Theorie der algebraischen Functionen einer Veränderlichen", Crelle's
+    Journal 92 (1882), pp. 181-290 — the complete paper, 110 of 110 pages. Transcribed from the GDZ
+    scan (PPN243919689_0092, images 185-294, 600 ppi), one text-block crop per page (about
+    1070-1120px of text width after the 1568px long-edge cap, so no half-page crops were needed).
+    \origpage markers run 181-290 with no gaps; pipeline/houselint.py passes.
+
+    HOW THESE PAGES WERE PRODUCED. Nine batch subagents of 12-14 pages under the /transcribe skill
+    (181-192, 193-204, ..., 277-290), each given the pinned prompt, the house-style extract, its
+    page images and this work's notation.md as it stood. The orchestrating session read no scan
+    image. The assembled text was then proofread once WITHOUT the scans (27 findings: 2 defects and
+    6 inconsistencies fixed, 19 questions routed to the scan), and every page was re-read against
+    its scan by 28 concurrent 4-page verification subagents, which answered about 50 queued
+    questions and corrected three paragraph breaks and one silent correction (p. 196, below).
+    Magnification crops sometimes landed a line off; verifiers re-cropped where that happened.
+
+    HUMAN RULINGS (2026-09-26). The contributor settled the four readings verification could not:
+    p. 188, the mark over the second y in ζζ'η_h = Σ y'_{h,ι} y_{ι,ι'} η_{ι'} — set unprimed, with an
+    \ednote saying the print does not show whether it is a prime or ink; p. 216, "für 𝔞_1 u. s. f."
+    — a 1 whose flag has lost ink, not ι; p. 232, the end of the first line of (2.) — a comma with
+    loss of ink, not a semicolon; p. 233, the first dx_1 in the dF display — again a damaged 1.
+    The damaged-1-reads-as-ι pattern is recorded in notation.md. This is not a review of the whole
+    text, so the status stays ai-draft.
+
+    APPARENT PRINTER'S ERRORS reproduced faithfully (R4), each confirmed at magnification and
+    marked with an \ednote: p. 188 eq. (10.) b'_0 for b'_1; p. 189 item "10." following 5.; p. 195
+    α_p for α_m, and a period for a comma in the footnote determinant (restored after the
+    transcribing batch had silently written a comma); p. 205 a_{r r} without a comma; p. 206
+    b_{n,n} for b_{s,s}; p. 212 footnote c_k for c_n; p. 218 x' for x'_ι; p. 219 α_ι α_{ι'} with the
+    prime on the subscript; p. 221 (10.) θ^{n-1} for θ^{n-2}; p. 227 item "4." repeated; p. 230
+    N(𝔞)/N(𝔟) where N(𝔟)/N(𝔞) is expected; p. 231 ϱ^{-s+r} for ϱ^{-s+r-1}; p. 233 a period in the
+    determinant's last row; p. 255 "sämmmtlichen" and a circumflex-like mark over "Dêr"; p. 265
+    a^{n-1} with no subscript 0.
+
+    p. 285 cites "(§ 23, 10.)", but §23 has only articles 1.-9. and formulas (1.)-(9.): the
+    authors' own cross-reference is off. Kept as printed, with an \ednote (added at the
+    contributor's request) suggesting §23, 8. — the order of a differential quotient, after (7.) —
+    as the article meant.
+
+    FAITHFUL BUT NOTEWORTHY, left without a note: p. 283 "Classe PBW" where the surrounding text says BPW;
+    p. 211 "Primideal" with no 𝔭 after it; p. 232 "Hilfe" beside "Hülfe" elsewhere, and p. 281
+    "Insbesondere" beside "ins Besondere" elsewhere — both as printed, not modernised.
+
+    NOTATION. The work leans heavily on Fraktur: ideals (𝔬, 𝔞, 𝔭, 𝔨, 𝔷, ...), points 𝔓, polygons
+    (𝔄, 𝔅, ℜ, 𝔑, 𝔚, ℨ, ...), and the Nulleck 𝔒. Every ℜ/𝔑 and the ideal 𝔨 were checked against the
+    print by shape. Sums and products are the Sigma and Pi letters, not \sum/\prod; baseline and
+    centred multiplication dots are kept apart by their height. See notation.md.
+
+    STATUS ai-draft. The flagged pages are where a reviewer should start.
