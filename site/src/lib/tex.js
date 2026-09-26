@@ -46,6 +46,7 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
     .replace(/\\(?:emph|textit)\{([^}]*)\}/g, "<em>$1</em>")
     .replace(/\\textbf\{([^}]*)\}/g, "<strong>$1</strong>")
     .replace(/\\textsc\{([^}]*)\}/g, '<span style="font-variant: small-caps;">$1</span>')
+    .replace(/\\textsuperscript\{([^}]*)\}/g, "<sup>$1</sup>")
     .replace(/\\nos\b/g, "nᵒˢ ")
     .replace(/\\no\b/g, "nᵒ ")
     // LaTeX umlauts/accents in text mode (e.g. \"o or \"{o} -> ö)

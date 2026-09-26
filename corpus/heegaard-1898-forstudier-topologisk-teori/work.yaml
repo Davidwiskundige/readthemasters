@@ -1,0 +1,60 @@
+id: heegaard-1898-forstudier-topologisk-teori
+title: Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng.
+title_en: Preliminary Studies for a Topological Theory of the Connectivity of Algebraic
+  Surfaces
+authors:
+- name: Poul Heegaard
+  wikidata_id: Q982561
+  birth_year: 1871
+  death_year: 1948
+publication:
+  year: 1898
+  venue: book
+  title_full: '"Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng",
+    Afhandling for den philosophiske Doctorgrad ved Kjøbenhavns Universitet (Kjøbenhavn:
+    Det Nordiske Forlag, Ernst Bojesen; Trykt hos J. Jørgensen & Co. (M. A. Hannover),
+    1898), 104 pp.'
+edition:
+  year: 1898
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the original 1898 doctoral dissertation edition:
+    "Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng" (Kjøbenhavn:
+    Det Nordiske Forlag, Ernst Bojesen, 1898). This is an original public-domain edition
+    with no modern critical apparatus, commentary, or re-typesetting.'
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: da
+type: book
+source:
+  scan_url: https://books.google.com/books?id=p9hMAAAAYAAJ
+  scan_id: googlebooks:p9hMAAAAYAAJ
+sources:
+  death_date: wikidata:Q982561
+  publication_date: googlebooks:p9hMAAAAYAAJ
+  edition: googlebooks:p9hMAAAAYAAJ
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1948
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1898
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-23'

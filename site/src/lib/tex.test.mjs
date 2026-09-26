@@ -112,3 +112,10 @@ test("an unbalanced heading brace is left alone rather than swallowing the docum
   const html = render("\\subsection*{Never closed\n\nDer Text danach.");
   assert.match(html, /Der Text danach\./, "following text survives");
 });
+
+test("\\textsuperscript renders as <sup>...</sup>", () => {
+  const html = render("le 1\\textsuperscript{er} siècle et la 2\\textsuperscript{de} classe.");
+  assert.match(html, /1<sup>er<\/sup> siècle/);
+  assert.match(html, /2<sup>de<\/sup> classe/);
+  assert.ok(!html.includes("\\textsuperscript"), "no stray macro remains");
+});
