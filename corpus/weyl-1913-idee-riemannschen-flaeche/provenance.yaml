@@ -1,4 +1,6 @@
-﻿changelog:
+changelog:
+  - date: "2026-09-26"
+    summary: "Transcription draft extended to pp. 1-50 (§§ 1-8 complete, § 9 opening, Figures 1-12)."
   - date: "2026-09-23"
     summary: "Transcription draft extended to pp. 1-42 (§§ 1-7 complete, with Figures 1-9)."
 transcription:
@@ -7,9 +9,9 @@ transcription:
   effort: high
   prompt_version: transcribe-v1
   submitted_via: skill
-  produced: "2026-09-23"
+  produced: "2026-09-26"
   verification:
     model: gemini-3-8-flash
     flagged_pages: []
-    date: "2026-09-23"
+    date: "2026-09-26"
   uncertainty_flags: 0
