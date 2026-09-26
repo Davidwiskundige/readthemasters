@@ -1,0 +1,1347 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \tag{}, \origpage{N} marker, and \ednote is
+% reproduced unchanged; only the prose is translated — including the short prose set INSIDE math
+% via text inserts (HOUSESTYLE R21):
+%   * ordinal suffixes: "ten" / "ter" → "th" ($(p+1)^{\text{th}}$, $k^{\text{th}}$, $2p-2^{\text{th}}$,
+%     $7^{\text{th}}$, $n^{\text{th}}$)
+%   * condition labels in display equations and footnote displays (\text{at the place }, \text{for },
+%     \text{if at the same time }, \text{is not})
+%   * times: \text{-Mal} → \text{ times}
+% pipeline/texcompare.py ignores the CONTENT of such \text inserts while checking that each insert
+% is present, unmoved, and that all surrounding math is identical.
+%
+% TERMINOLOGY. Follows corpus/hurwitz-1893-algebraische-gebilde/glossary.yaml:
+%   * algebraische Gebilde = "algebraic configurations"
+%   * eindeutige Transformation in sich = "single-valued transformation into itself"
+%   * Riemann'sche Fläche = "Riemann surface"
+%   * Geschlecht = "genus"
+%   * Stelle, Stellen = "place, places"
+%   * Blatt, Blätter = "sheet, sheets"
+%   * Verzweigungszahl = "branch number"
+%   * Zerschneidung = "dissection"
+%   * Integrale / Differentiale erster Gattung = "integrals / differentials of the first kind"
+%   * überall endlich = "everywhere finite"
+%   * holoedrisch isomorph = "holohedrically isomorphic"
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+\origpage{403}
+\section*{On Algebraic Configurations with Single-Valued Transformations into Themselves.}
+
+By \emph{A. Hurwitz} in Königsberg i.~Pr.
+
+I have divided the present memoir into three sections, concerning whose contents I prefix here a brief overview.
+
+The first section provides first a new proof of the theorem according to which a Riemann surface (an irreducible algebraic configuration) can possess only a finite number of single-valued transformations into itself if the genus $p$ of the surface is greater than $1$. An essential point of support for this proof is formed by the closer investigation of those special places on a surface of genus $p$ at which a single-valued algebraic function becomes infinite of lower than the $(p+1)^{\text{th}}$ order without becoming discontinuous at any other places${}^{*)}$.
+
+The number of these special places is always $p(p^2 - 1)$. However, it is here assumed that each place is counted with a certain multiplicity. I now show that the number of those places, if one counts each place simply—thus understanding the word ``number'' in its original meaning—is always greater than $2p+2$. An exception is formed by the hyperelliptic case, in which the number is equal to $2p+2$.
+
+If one excludes the hyperelliptic case, the mentioned places on the curve of the $\varphi$ in space of $p-1$ dimensions are identical with those points at which a plane hyperosculates, i.e.\ has at least $p$-point contact. I briefly discuss the more general question regarding those points on the curve of the $\varphi$ at which a
+
+\textbf{*)} These places also play a role in the older proofs of the theorem. A compilation of the literature relating to the theorem I have given in No.~3 of my note: ``Ueber diejenigen algebraischen Gebilde, welche eindeutige Transformationen in sich zulassen''. Mathematische Annalen, Vol.~32 or Göttinger Nachrichten from the year 1887.
+
+\origpage{404}
+surface of the $k^{\text{th}}$ order, where $k > 1$, hyperosculates, i.e.\ has at least $(2k-1)(p-1)$-point contact. The number of these places is always equal to
+\[
+(2k-1)^2 \cdot p \cdot (p-1)^2,
+\]
+if one counts each place with a certain multiplicity, which I define precisely.
+
+The second section gives the construction of Riemann surfaces that possess a finite group of single-valued transformations into themselves from independent determining elements. One obtains the most general such surface if one takes an arbitrarily chosen surface $\Phi$ in $r$ copies, places these copies upon one another, and joins them with one another in a suitable manner into a single surface. The surfaces arising in this way are none other than the ``regular'' Riemann surfaces introduced by Mr.~\emph{Klein} and investigated in various directions by Mr.~\emph{Dyck}, which represent the branching of Galois resolvents${}^{*)}$.
+
+If a Riemann surface $F$ of genus $p$ is spread out $r$-sheeted over the surface $\Phi$ of genus $\pi$, there holds the equation
+\[
+2p - 2 = W + r(2\pi - 2),
+\]
+where $W$ denotes the total number of branchings of $F$ with respect to $\Phi$.
+
+From this equation I incidentally derive the relation established by Mr.~\emph{Zeuthen} between the genus numbers of two multiple-valuedly related algebraic configurations. This very equation leads to an essential supplement to the theorem proved in the first section. Namely, it turns out that a Riemann surface of genus $p > 1$ cannot possess more than $84(p-1)$ single-valued transformations into itself.
+
+The investigations of the third section relate to the integrals of the first kind of a Riemann surface ($p > 1$) which is assumed to possess a group of single-valued transformations into itself.
+
+To each single-valued transformation of the surface into itself there corresponds a linear transformation of the integrals of the first kind, which one can also put into the form of a homogeneous linear transformation of the differentials of the first kind. To the group of single-valued transformations of the surface into itself there corresponds a group of homogeneous linear transformations of the differentials of the first kind, and I first prove that both groups are related holohedrically isomorphically to each other.
+
+\textbf{*)} Compare the citations following below.
+
+\origpage{405}
+It is then further a matter of determining the roots of the characteristic equation for the individual homogeneous linear transformation of the differentials of the first kind. The determination takes place on the basis of the theory of certain systems of functions on a Riemann surface. The functions of such a system are essentially characterized by the property that upon closed paths they reproduce themselves up to multiplicative constants. The single-valued algebraic functions form a special case of such a system of functions. They correspond to the case in which those multiplicative constants are all equal to $1$. To the theory of general systems of functions, which appears of interest in itself, I hope to return in the near future.
+
+I further remark that the results of the third section permit manifold applications to the theory of elliptic modular functions devised by Mr.~\emph{Klein}. Indeed, it was through investigations on class number relations${}^{*)}$ based upon that theory that I was led to the more general questions treated here.
+
+Finally, concerning the general concept of a Riemann surface, I wish to refer to the following publications: \emph{F.~Klein}, ``Ueber Riemann's Theorie der algebraischen Functionen und ihrer Integrale'' (Leipzig 1882) and ``Neue Beiträge zur Riemann'schen Functionentheorie'', Mathematische Annalen, Vol.~21; \emph{R.~Dedekind} and \emph{H.~Weber}, ``Theorie der algebraischen Functionen einer Veränderlichen'', Crelle's Journal, Vol.~92.
+
+Insofar as only positional relations—thus paths and cuts on a surface—are concerned, I always conceive of it as a closed ring surface freely situated in space with $p$ openings.
+
+\section*{Section I.}
+
+\subsection*{1.}
+
+\emph{Let a Riemann surface of genus $p$ possess a single-valued transformation $S$ into itself. Then the number of distinct places $P$ of the surface which coincide with their corresponding place $P'$ is at most $2p+2$, unless $S$ is the identical transformation, i.e.\ every place $P$ coincides with its corresponding $P'$.}
+
+Indeed, suppose $S$ is not the identical transformation and $Q$ is any place that does not coincide with its corresponding $Q'$
+
+\textbf{*)} „Ueber die Classenzahlrelationen und Modularcorrespondenzen primzahliger Stufe“ Berichte der k.~sächsischen Gesellschaft der Wissenschaften vom 4.~Mai 1885.
+
+\origpage{406}
+coincide. We then consider a single-valued algebraic function of position on our surface which becomes infinite only at $Q$ and of an order $\mu \leqq p+1$. Such a function is known always to exist. If now $z$ and $z'$ are the values that this function assumes at the corresponding places $P$ and $P'$, we can view the difference $z' - z$ as a function of the place $P$. This function is a single-valued algebraic function of the surface which becomes infinite $2\mu$ times, namely $\mu$-fold at the place $Q$ and $\mu$-fold at the place $Q_1$ whose corresponding place is $Q$. Consequently, $z' - z$ also becomes zero $2\mu$ times. But now every place $P$ that coincides with its corresponding place $P'$ is a zero of $z' - z$. Consequently, the number of these places is at most $2\mu \leqq 2p+2$, q.~e.~d.
+
+\emph{If the Riemann surface is hyperelliptic, the number mentioned in the preceding theorem is at most $4$, unless the transformation $S$ is the identity, or that which associates to each other two places in which the two-valued function of the surface assumes the same value.}
+
+For if $z$ and $z'$ are the values of this function at two corresponding places $P$ and $P'$, then $z' - z$, regarded as a function of the place $P$, is a single-valued algebraic function which becomes infinite at most $4$ times. Consequently, $z' - z$ also becomes zero at most $4$ times, unless $z' - z$ is identically zero. From this the correctness of our theorem follows immediately.
+
+\emph{A Riemann surface whose genus $p$ is greater than $1$ can possess only a finite number of single-valued transformations into itself.}
+
+For abbreviation I shall make use of the expression ``the transformation $S$ replaces the point $P$ by the point $P'$'', when to the point $P$ by virtue of $S$ there corresponds the point $P'$. Furthermore, I shall, as usual, understand by $S^{-1}$ that transformation which replaces the point $P'$ by the point $P$. Finally, if $S$ replaces the point $P$ by $P'$ and $T$ replaces the point $P'$ by $P''$, let $ST$ be understood as that transformation which replaces the point $P$ by $P''$.
+
+This having been premised, I turn to the proof of the stated theorem and consider first the case where the Riemann surface is not hyperelliptic.
+
+In this case there always exists, as I shall show in the following number, a group of $r > 2p+2$ places $P_1, P_2, \dots P_r$ which under every single-valued transformation of the surface into itself can only be permuted among themselves. From this we conclude at once that the surface can possess a finite number, namely at most $r!$, of transformations into itself. For two transformations
+
+\origpage{407}
+$S$ and $S'$ that produce the same permutation of the places $P_1, P_2, \dots P_r$ are necessarily identical, since $S'S^{-1}$ leaves the $r$ places fixed and is thus, according to what was proved above, the identical transformation.
+
+If now, secondly, the Riemann surface is hyperelliptic, let $z$ be the two-valued function of the surface. Danu\ednote{Printed Danu instead of Dann; an apparent compositor misprint with inverted n.} the $2p+2$ places at which $dz$ vanishes of the second order must, under every single-valued transformation of the surface into itself, be permuted among themselves. If, therefore, $S$ and $S'$ are two such transformations that produce the same permutation of these places, then under the transformation $S'S^{-1}$ more than $4$, namely the mentioned $2p+2$ places, remain fixed. Consequently, $S'S^{-1}$ is either the identical transformation or that which associates to each other two places in which the two-valued function assumes the same value. From this it now follows at once that the surface can possess at most twice as many transformations into itself as the $2p+2$ places can be permuted among themselves, that is, at most $2(2p+2)!$.
+
+\subsection*{2.}
+
+Let $F$ be a Riemann surface of genus $p > 1$, and let $u_1, u_2, \dots u_p$ be associated linearly independent integrals of the first kind. If now $u$ denotes an arbitrary function of position on the surface $F$, the determinant
+\[
+\Delta_u =
+\begin{vmatrix}
+\frac{du_1}{du}, & \frac{du_2}{du}, & \dots & \frac{du_p}{du} \\
+\frac{d^2u_1}{du^2}, & \frac{d^2u_2}{du^2}, & \dots & \frac{d^2u_p}{du^2} \\
+\cdot & \cdot & \dots & \cdot \\
+\cdot & \cdot & \dots & \cdot \\
+\frac{d^p u_1}{du^p}, & \frac{d^p u_2}{du^p}, & \dots & \frac{d^p u_p}{du^p}
+\end{vmatrix}
+\tag{1}
+\]
+possesses the following properties. It does not vanish identically, since $u_1, u_2, \dots u_p$ are linearly independent. It is multiplied by a non-vanishing constant if $u_1, u_2, \dots u_p$ are replaced by any other system of $p$ everywhere finite integrals. Finally,
+\[
+\Delta_u = \Delta_t \cdot \left(\frac{dt}{du}\right)^{\frac{p(p+1)}{2}},
+\tag{2}
+\]
+if $t$ denotes any other function of position on the surface $F$.
+
+\origpage{408}
+We now wish to choose for $u$ in particular an everywhere finite integral. Then the determinant $\Delta_u$ represents a single-valued algebraic function of the surface $F$. In order to investigate this more closely, we consider a place $P$ of the surface and denote by $t$ a function of position which vanishes to the first order at $P$.
+
+Equation (2) now shows that $\Delta_u$ becomes infinite only at the $2p - 2$ zeros of $du$, and indeed at each to the order $\frac{p(p+1)}{2}$. The total order of becoming infinite therefore amounts to $(p-1)p(p+1)$, and the total order of vanishing is therefore equally great. But now $\frac{dt}{du}$ becomes zero at no place; hence it follows:
+
+„\emph{Es giebt stets eine endliche Zahl von Stellen $P$, an welchen die Determinante $\Delta_t$ verschwindet. Sind $P_1, P_2, \dots P_r$ diese Stellen und $m_1, m_2, \dots m_r$ die zugehörigen Ordnungszahlen des Verschwindens von $\Delta_t$, so ist}
+\[
+m_1 + m_2 + \dots + m_r = (p-1)p(p+1).
+\tag{3}
+\]
+It is now a question of a closer investigation of the numbers $m_1, m_2, \dots m_r$.
+
+To this end we consider an arbitrary place $P$ of the surface and choose the everywhere finite integrals so that their expansions at the place $P$ have the form
+\[
+\begin{aligned}
+u_1 &= t^{\varrho_1} + \dots, \\
+u_2 &= t^{\varrho_2} + \dots, \\
+\cdot & \cdot \dots \cdot \\
+u_p &= t^{\varrho_p} + \dots,
+\end{aligned}
+\]
+where the exponents of the initial terms satisfy the conditions
+\[
+0 < \varrho_1 < \varrho_2 < \dots < \varrho_p
+\tag{4}
+\]
+genügen. Diese Wahl der Integrale ist, wie leicht zu sehen, stets und nur auf eine Weise möglich. Die Entwicklung von $\Delta_t$ beginnt dann an der Stelle $P$ mit dem Gliede
+\[
+c \cdot t^{\varrho_1 + \varrho_2 + \dots + \varrho_p - \frac{p(p+1)}{2}} = c \cdot t^m,
+\]
+if we put for abbreviation
+\[
+m = \varrho_1 + \varrho_2 + \dots + \varrho_p - \frac{p(p+1)}{2}
+\tag{5}
+\]
+setzen. Die Zahlen $\varrho_1, \varrho_2, \dots, \varrho_p$ besitzen eine einfache Bedeutung. Man betrachte nämlich die eindeutigen algebraischen Functionen der Fläche, welche nur an der Stelle $P$ unendlich werden. Jede dieser Functionen wird an der Stelle $P$ von einer bestimmten Ordnung
+
+\origpage{409}
+unendlich. Nach einem Satze des Herrn \emph{Weierstrass} kommen nun alle möglichen Ordnungen
+\[
+1,\, 2,\, 3,\, 4,\, \dots
+\]
+wirklich vor mit Ausnahme von $p$ Ordnungen. Diese $p$ fehlenden Ordnungen sind nun gerade die Zahlen $\varrho_1, \varrho_2, \dots \varrho_p${}^{*)}.
+
+Für jede Stelle $P$, welche nicht mit einer der Stellen $P_1, P_2, \dots P_r$ zusammenfällt, ist $m = 0$ und folglich nach (4) und (5)
+\[
+\varrho_1 = 1,\, \varrho_2 = 2,\, \dots \varrho_p = p.
+\]
+Die niedrigste Ordnung, welche dann auftritt, ist also $p+1$. Umgekehrt, wenn $p+1$ die niedrigste auftretende Ordnung ist, so wird nothwendig $m = 0$.
+
+Die Stellen $P_1, P_2, \dots P_\varrho$\ednote{Printed $P_\varrho$ instead of $P_r$; an apparent compositor misprint confusing italic r with Greek rho.} (für welche $m$ bez. die Werthe $m_1, m_2, \dots m_r$ besitzt) sind also vollständig dadurch charakterisirt, dass für jede derselben eine Function existirt, welche nur in ihr und zwar von geringerer als der $(p+1)^{\text{th}}$ Ordnung unendlich wird. Hieraus erhellt, dass diese Stellen sich bei jeder eindeutigen Transformation der Fläche in sich nur unter einander vertauschen können${}^{**)}$.
+
+Wir müssen nun die Unregelmässigkeiten, welche die Zahlenreihe $\varrho_1, \varrho_2, \dots \varrho_p$ darbieten kann, wenn $P$ mit einer der Stellen $P_1, P_2, \dots P_r$ zusammenfällt, näher untersuchen. Zunächst bemerken wir, dass $\varrho_p$ stets kleiner als $2p$ ist, weil $\frac{du_p}{dt}$ höchstens von der Ordnung $2p-2$ an der Stelle $P$ verschwinden kann. Es ist also
+\[
+\varrho_1 < \varrho_2 < \dots < \varrho_p \leqq 2p - 1.
+\tag{6}
+\]
+Bezeichnen $z_\alpha$ und $z_\beta$ zwei Functionen, welche nur bei $P$ von den Ordnungen $\alpha$, bez. $\beta$ unendlich werden, so ist $z_\alpha z_\beta$ eine ähnliche Function mit der Ordnungszahl $\alpha + \beta$. Wenn daher $\alpha$ eine auftretende Ordnung, $\varrho$ eine fehlende bezeichnet, so muss auch $\varrho - \alpha$ eine fehlende Ordnung sein. Denn würde $\varrho - \alpha$ auftreten, so würde auch $(\varrho - \alpha) + \alpha = \varrho$ auftreten, gegen die Annahme.
+
+Dies vorausgeschickt, sei $\alpha$ die \emph{kleinste} auftretende Ordnung. Es treten dann auch alle durch $\alpha$ theilbaren Ordnungen auf, woraus folgt, dass $\alpha \geqq 2$ ist.
+
+Unter den Zahlen, welche $\equiv i \pmod \alpha$ sind, sei nun $r_i$ die grösste, welche unter den fehlenden Ordnungen vorkommt. Dann sind
+
+\textbf{*)} I omit here the proof, which moreover is easily carried out by constructing all those functions by means of the integrals of the second kind which become discontinuous at $P$. With regard to the theorem compare also \emph{Noether}'s memoir: ``Beweis und Erweiterung eines algebraisch-functionentheoretischen Satzes des Herrn Weierstrass'', Crelle's Journal, Vol.~97.
+
+\textbf{**)} The same already follows also from the second property of the determinant $\Delta_u$ stated above.
+
+\origpage{410}
+alle fehlenden Ordnungen $\varrho_1, \varrho_2, \dots \varrho_p$ in folgender Tabelle enthalten:
+\[
+\left\{
+\begin{aligned}
+&1, & &1 + \alpha, & &1 + 2\alpha, \dots r_1, \\
+&2, & &2 + \alpha, & &2 + 2\alpha, \dots r_2, \\
+&\cdot & &\cdot & &\cdot \\
+&\cdot & &\cdot & &\cdot \\
+&\alpha - 1, & &(\alpha - 1) + \alpha, & &(\alpha - 1) + 2\alpha, \dots r_{\alpha-1},
+\end{aligned}
+\right.
+\tag{7}
+\]
+where in the first horizontal row stand all missing orders that are $\equiv 1 \pmod \alpha$, etc.${}^{*)}$ Since the number of the numbers (7) is equal to $p$, one has
+\[
+p = \left(1 + \frac{r_1 - 1}{\alpha}\right) + \left(1 + \frac{r_2 - 2}{\alpha}\right) + \dots + \left(1 + \frac{r_{\alpha-1} - (\alpha - 1)}{\alpha}\right)
+\]
+or
+\[
+r_1 + r_2 + \dots + r_{\alpha-1} = \alpha p - \frac{\alpha(\alpha - 1)}{2}.
+\tag{8}
+\]
+Furthermore, the sum of the numbers (7) is equal to
+\[
+\frac{1}{2}(r_1 + 1)\frac{r_1 + \alpha - 1}{\alpha} + \frac{1}{2}(r_2 + 2)\frac{r_2 + \alpha - 2}{\alpha} + \dots,
+\]
+and therefore
+\[
+m = \frac{1}{2\alpha} \sum_1^{\alpha-1} (r_k + k)(r_k + \alpha - k) - \frac{1}{2} p(p+1).
+\tag{9}
+\]
+This expression now admits, with the aid of (8), the remarkable transformation:
+\[
+m = \frac{p(p-1)}{2} - \frac{1}{2\alpha} \sum_1^{\alpha-1} r_k(2p - 1 - r_k) - \frac{(\alpha-1)(\alpha-2)}{6}.
+\tag{10}
+\]
+If now $\alpha = 2$, it follows from (8) and (10) that
+\[
+m = \frac{p(p-1)}{2}.
+\]
+That is: ``If the surface is hyperelliptic, each of the points $P_1, \dots P_r$ has multiplicity $\frac{p(p-1)}{2}$, and therefore $r = 2p+2$.''
+
+These points are none other than the zeros of the second order of $dz$, where $z$ denotes the two-valued function of the surface.
+
+\textbf{*)} Since $(r_i + \alpha) + (r_k + \alpha) = (r_i + r_k + \alpha) + \alpha$ is an occurring order, necessarily $r_{i+k} \leqq r_i + r_k + \alpha$, where the indices are to be reduced (mod.~$\alpha$). These inequalities do not, however, come further into consideration. Concerning the setup of the missing orders, compare moreover Schottky: ``Ueber die conforme Abbildung mehrfach zusammenhängender ebener Flächen'', Crelle's Journal, Vol.~83, pp.~308, 318, 319.
+
+\origpage{411}
+If, however, the surface is not hyperelliptic, $\alpha$ is necessarily $> 2$ and equation (10) shows that
+\[
+m < \frac{p(p-1)}{2};
+\]
+for $r_1, r_2, \dots r_{\alpha-1}$ are positive and
+\[
+2p - 1 - r_1,\, 2p - 1 - r_2,\, \dots 2p - 1 - r_{\alpha-1},
+\]
+according to (6), non-negative. The multiplicities $m_1, m_2, \dots m_r$ are therefore all smaller than $\frac{p(p-1)}{2}$, hence their sum
+\[
+m_1 + m_2 + \dots + m_r = (p-1)p(p+1) < r \cdot \frac{p(p-1)}{2}
+\]
+and therefore
+\[
+r > 2p + 2.
+\]
+
+\emph{The number of places $P_1, P_2, \dots P_r$ on every non-hyperelliptic surface therefore always exceeds the number $2p+2$, whereby the assertion made in No.~1 is also justified.}
+
+The lower bound for the number $r$ can be increased considerably further by a more detailed discussion of formula (10). But I do not wish to enter into this more closely here. An exact investigation would, moreover, have to determine not only which values the number $r$ can assume, but also which systems of numbers $\varrho_1, \varrho_2, \dots \varrho_p$ are possible for the individual places. Let it only be remarked that in the case $p = 3$ the lower bound for the number $r$ is equal to $12$, a fact which can be expressed in the following manner:
+
+``\emph{A plane curve of the fourth order without multiple points possesses at least $12$ distinct inflection points.}''
+
+The example of the curve
+\[
+f \equiv x_1^4 + x_2^4 + x_3^4 = 0
+\]
+shows that the lower bound $12$ is actually attained. The Hessian form of $f$ is namely, apart from a numerical factor, equal to $x_1^2 x_2^2 x_3^2$, and the curve therefore has as inflection points only the $12$ points of intersection lying on the lines $x_1 = 0$, $x_2 = 0$, $x_3 = 0$.
+
+\subsection*{3.}
+
+The points $P_1, \dots P_r$ investigated in the preceding number form the simplest example of an ``invariant'' point group of a Riemann surface, that is, of a point group whose definition is independent of any particular form of representation of the surface. For the proof given in No.~1, every such point group is serviceable if only it contains more than $2p+2$ points.
+
+\origpage{412}
+The conjecture is now near at hand that on every surface whose genus $p > 1$ there always exist infinitely many invariant point groups, and that one can cover the entire surface with such point groups. If the surface is hyperelliptic, it is easy to confirm the conjecture. Indeed, let $y^2 = f(z)$ be the usually employed form of representation of the surface, which is based upon the introduction of the two-valued function $z$. Then the zeros of every covariant of $f(z)$ form an invariant point group, and one recognizes without difficulty that the entire surface can be coated with such groups.
+
+If the surface is not hyperelliptic, we represent it by a curve of the $2p-2^{\text{th}}$ order in space of $p-1$ dimensions by setting the homogeneous coordinates $\varphi_1 : \varphi_2 : \dots : \varphi_p$ proportional to the $p$ differentials of a complete system of integrals of the first kind${}^{*)}$. Every covariant surface of this curve intersects the latter in an invariant point group. But here the difficulty arises that certain covariant surfaces exist only when the $3p-3$ moduli do not satisfy special equations. It is therefore all the more remarkable that one can nevertheless specify infinitely many invariant point groups which always exist, that is, independently of the special values of the $3p-3$ moduli. I wish all the more gladly to enter into this, as the significance of the points $P_1, P_2, \dots P_r$ considered above emerges more clearly thereby.
+
+One seeks on the curve of the $2p-2^{\text{th}}$ order those points in which a surface of the $k^{\text{th}}$ order hyperosculates. If $k = 1$, so that it is a question of hyperosculating planes, the sought points are none other than the points $P_1, P_2, \dots P_r$, and the number of these points amounts, when each is counted with the associated multiplicity, to $(p-1)p(p+1)$. I now assert that also for every value of $k > 1$, the sought points are always present in finite number, as the following theorem states more precisely:
+
+``\emph{The number of points on the curve of the $2p-2^{\text{th}}$ order in which it is hyperosculated by a surface of the $k^{\text{th}}$ order\ednote{Printed Ordnugg instead of Ordnung; an apparent compositor misprint.} is always}
+\[
+(2k-1)^2 \cdot p(p-1)^2.\text{''}
+\]
+It is assumed that $k > 1$ and that each point is counted with its associated multiplicity, to be designated more closely below.
+
+The proof of this theorem rests upon an important theorem from
+
+\textbf{*)} Cf. \emph{Weber}: ``Ueber gewisse in der Theorie der Abel'schen Functionen auftretende Ausnahmefälle'', Mathem. Ann., Vol.~13; \emph{Noether}: ``Ueber die invariante Darstellung algebraischer Functionen'', ibid., Vol.~17.
+
+\origpage{413}
+the theory of algebraic functions, which Mr.~\emph{Noether} stated and proved${}^{*)}$.
+
+According to this theorem, namely, among the forms of the $k^{\text{th}}$ order in the quantities $\varphi_1, \varphi_2, \dots \varphi_p$ there exist exactly $\varkappa = (2k-1)(p-1)$ linearly independent ones. Denoting by $u$ an arbitrarily chosen integral of the first kind and assuming $\varphi_1 = \frac{du_1}{du}$, $\varphi_2 = \frac{du_2}{du}$, $\dots \varphi_p = \frac{du_p}{du}$, the $\varkappa$ linearly independent forms—let them be
+\[
+\psi_1,\, \psi_2,\, \dots \psi_\varkappa \text{ ---}
+\]
+pass over into functions of position on the Riemann surface. The points in which a surface of the $k^{\text{th}}$ order hyperosculates are now the zeros of the determinant:
+\[
+\Delta_\varkappa =
+\begin{vmatrix}
+\psi_1, & \psi_2, & \dots & \psi_\varkappa \\
+\frac{d\psi_1}{du}, & \frac{d\psi_2}{du}, & \dots & \frac{d\psi_\varkappa}{du} \\
+\cdot & \cdot & \dots & \cdot \\
+\cdot & \cdot & \dots & \cdot \\
+\frac{d^{\varkappa-1}\psi_1}{du^{\varkappa-1}}, & \frac{d^{\varkappa-1}\psi_2}{du^{\varkappa-1}}, & \dots & \frac{d^{\varkappa-1}\psi_\varkappa}{du^{\varkappa-1}}
+\end{vmatrix}
+\]
+This determinant does not vanish identically, because $\psi_1, \psi_2, \dots \psi_\varkappa$ are linearly independent. It represents a single-valued algebraic function of position which becomes infinite at the $2p - 2$ zeros of $du$, and indeed at each to the order $\frac{(2k-1+\varkappa)\varkappa}{2}$. Consequently $\Delta_\varkappa$ becomes zero in total
+\[
+(2p-2)(2k-1+\varkappa)\frac{\varkappa}{2} = (2k-1)^2 p(p-1)^2\text{ times}
+\]
+zero. Hereby our theorem is proved, and it is evident that the multiplicity of each individual point is indicated by the order of vanishing of $\Delta_\varkappa$.
+
+In the simplest case $p = 3$, our theorem states:
+
+``\emph{On a plane curve of the fourth order there are $12 \cdot (2k-1)^2$ points in which a curve of the $k^{\text{th}}$ order hyperosculates.}''
+
+For the lowest value of $k$, namely for $k = 2$, we obtain $12 \cdot 9 = 108$ points in which a curve of the second order hyperosculates. These points are the $24$ inflection points and the $84$ sextactic points.
+
+If $k, l, m, n$ denote four integers, $\Delta_\varkappa, \Delta_\lambda, \Delta_\mu, \Delta_\nu$ the associated determinants, one easily convinces oneself that the function
+\[
+\frac{\lambda \, d\lg\Delta_\varkappa - \varkappa \, d\lg\Delta_\lambda}{\mu \, d\lg\Delta_\nu - \nu \, d\lg\Delta_\mu}
+\]
+
+\textbf{*)} See the preceding citation.
+
+\origpage{414}
+is absolutely invariant, so that every point group in which this function assumes a given value is also an invariant group. With such groups the Riemann surface can therefore be completely covered. It remains, of course, to show that $k, l, m, n$ can always be chosen so that that quotient does not reduce to a constant. But I do not wish to carry out this proof here.
+
+\section*{Section II.}
+
+\subsection*{4.}
+
+In the further investigations I shall take as a basis a definite canonical dissection of the Riemann surfaces, which I wish to discuss briefly here. Following the example of \emph{Riemann}, one is accustomed to carry out the dissection by $p$ pairs of cuts and $p-1$ cuts connecting these pairs. Meanwhile it is more expedient to eliminate these latter $p-1$ cuts completely, since in most investigations they cause a wholly unnecessary complication. The $p-1$ cuts are dispensed with if we choose the following dissection (which, moreover, can also be derived by a limiting process from Riemann's dissection${}^{*)}$). We choose arbitrarily on the surface a point $O$ and draw $2p$ knotless cuts $A_1, B_1, \dots A_p, B_p$ beginning and ending at $O$, by which the surface $F$ passes over into a simply connected surface $F'$. The boundary of $F'$ is formed by the $4p$ banks of the cuts. Let the designation and succession of the cuts be fixed so that in a positive circuit about $O$ one encounters them in the sequence
+\[
+A_1^+ B_1^+ A_1^- B_1^- \dots A_p^+ B_p^+ A_p^- B_p^-
+\]
+This shall mean that one crosses first the cut $A_1$ from the negative to the positive bank, then likewise the cut $B_1$, then
+
+\rmfigure{figures/fig-1.png}{Fig.~1.}{Canonical dissection of a Riemann surface of genus $p = 2$ with cuts radiating from a single point $O$.}
+
+\textbf{*)} Cf. \emph{F.~Klein}: ``Neue Beiträge zur Riemann'schen Functionentheorie'', Mathem. Ann., Vol.~21, pp.~183\,ff. Compare also my work: ``Ueber Riemann'sche Flächen mit gegebenen Verzweigungspunkten'', Mathem. Annalen, Vol.~39, pp.~1\,ff.
+
+\origpage{415}
+again $A_1$ from the positive to the negative bank, etc. The surface therefore presents after the dissection at the point $O$ the appearance illustrated by Figure~1 (page~12). The figure relates to the case $p = 2$.
+
+Let now further $a_1, a_2, \dots a_w$ be any $w$ points of the surface $F'$. We then draw from $O$ through the interior of $F'$ knotless non-intersecting cuts $l_1, l_2, \dots l_w$ to the points $a_1, a_2, \dots a_w$. The surface arising hereby from $F'$ we call $F''$, and we assume the succession of the cuts $l$ and their
+
+\rmfigure{figures/fig-2.png}{Fig.~2.}{Canonical dissection of a Riemann surface of genus $p = 2$ with branch cuts radiating to points $a_1, a_2$.}
+
+position relative to the cuts $A, B$ such that a positive circuit about $O$ yields the sequence
+\[
+l_1^+ \, l_2^+ \, \dots \, l_w^+ \, A_1^+ \, B_1^+ \, A_1^- \, B_1^- \dots A_p^+ \, B_p^+ \, A_p^- \, B_p^-
+\]
+Compare Figure~2, which illustrates the case $w = 2$, $p = 2$${}^{*)}$).
+
+\subsection*{5.}
+
+One now conceives on the surface $F$ an analytic function $Z$ of position which possesses no natural boundaries and only the points $a_1, a_2, \dots a_w$ as branch points. The individual branch of the function $Z$ is then single-valued on the surface $F''$. If
+
+\textbf{*)} In the figures I have, following the example of C.~Neumann (Theorie der Abel'schen Functionen, Leipzig 1884), made the positive banks recognizable by more heavily drawn lines. The arrows indicate the positive direction of traversal for the boundary of the dissected surface.
+
+\origpage{416}
+in particular $Z$ is an algebraic function of position which possesses $n$ values at each individual place of the surface $F$, the entire range of values of the function $Z$ appears decomposed on the surface $F''$ into $n$ single-valued branches.
+
+We accordingly take $n$ nested copies of the surface $F''$, upon which we spread out the $n$ branches of the function $Z$, and now join the $n$ copies along the cuts $l, A, B$ into a single closed surface $\mathrm{F}$ upon which the function $Z$ is single-valuedly spread out. What is the genus $\mathrm{P}$ of the surface $\mathrm{F}$ arising in this way? We shall designate the $n$ copies $F''$ as the ``sheets'' of $\mathrm{F}$. If then at the place $a_i$ the sheets are connected in $c_i$ cycles of $v_1, v_2, \dots$ sheets respectively, let
+\[
+(v_1 - 1) + (v_2 - 1) + \dots = n - c_i,
+\]
+as usual, be called the multiplicity of $a_i$ as a branch point, and
+\[
+W = (n - c_1) + (n - c_2) + \dots + (n - c_w)
+\]
+the total number of branchings. The question raised is then answered by the following equation:
+\[
+2P - 2 = W + n(2p - 2).
+\tag{1}
+\]
+
+If $p = 0$, this equation passes over into the known formula which teaches how to calculate the genus of a surface spread out $n$-sheeted over the complex plane of numbers. If $p > 0$, the equation can be proved as follows. Let $u$ be an everywhere finite integral of the surface $F$, then $u$ is likewise such an integral for the surface $\mathrm{F}$. Therefore $du$ must vanish on the surface $\mathrm{F}$ of the second order exactly $2P - 2$ times. These zeros of $du$ can, however, be stated immediately. They are, first, the branch places, and indeed the branch place $a_i$ counts for $n - c_i$ zeros, so that corresponding to these places we obtain in total $W$ zeros. Then, secondly, $du$ vanishes on the surface $F$ at $2p - 2$ places of the second order, and these places yield on $\mathrm{F}$ in total $n(2p - 2)$ zeros, since every place of $F$ is found again in $n$ copies on the surface $\mathrm{F}$. It is therefore $2P - 2 = W + n(2p - 2)$, q.~e.~d.${}^{*)}$
+
+I wish here incidentally to draw a consequence from equation (1). Let two Riemann surfaces $F_1$ and $F_2$ of genus $p_1$ and $p_2$ respectively be algebraically related to each other in such a way that to each place of $F_1$ there correspond $n_1$ places of $F_2$ and conversely to each place of $F_2$ $n_2$ places of $F_1$. We can make this relation into a
+
+\textbf{*)} Another proof based upon considerations of analysis situs is found in my work ``Ueber Riemann'sche Flächen mit gegebenen Verzweigungspunkten.''
+
+\origpage{417}
+single-valued one by covering the surface $F_1$ $n_1$-fold and the surface $F_2$ $n_2$-fold. Since the surfaces arising in this way spread out over $F_1$ and $F_2$ must have the same genus $P$, according to (1)
+\[
+W_1 + n_1(2p_1 - 2) = W_2 + n_2(2p_2 - 2).
+\tag{2}
+\]
+Here $W_1$ denotes the number of places $P$ on $F_1$ to which there correspond coinciding places on $F_2$, and that in such a way that to a circuit about $P$ there corresponds a permutation of the corresponding places on $P_2$\ednote{Printed $P_2$ instead of $F_2$; an apparent compositor misprint.}. An analogous meaning is possessed by $W_2$. One recognizes in (2) the relation given by Mr.~\emph{Zeuthen} between the genus numbers of two multiple-valuedly related algebraic configurations.${}^{*)}$ Our derivation of the relation shows at the same time unambiguously with what multiplicities those points of the individual configuration are to be counted to which there correspond coinciding points on the other configuration.
+
+\subsection*{6.}
+
+I now turn back to our actual subject. Let $F$ be a Riemann surface of arbitrary genus. (The cases $p = 0$ and $p = 1$ are thus not excluded.) We assume that this surface possesses a group of $r$ single-valued transformations into itself, which we denote by
+\[
+S_1, S_2, \dots S_r
+\tag{1}
+\]
+The transformation composed of $S_i$ and $S_k$, $S_i S_k$, we shall also denote by $S_{ik}$, so that $ik$ again denotes one of the numbers $1, 2, \dots r$. Let $S_1$ be the identical transformation, thus $S_{1i} = S_{i1} = S_i$. The places of the surface now arrange themselves into groups of $r$ each, such as
+\[
+P_1, P_2, \dots P_r,
+\tag{2}
+\]
+which are obtained by grouping an arbitrarily chosen place $P_1$ together with those places that arise from it by the transformations (1). The group (2) will consist of $r$ distinct points if $P_1$ remains fixed under none of the transformations (1) other than the identity. If, however, $P_1$ remains fixed under $k$ transformations (1), these form a group by themselves, and one easily recognizes from this that in this case only $\frac{r}{k}$ distinct points arise from $P_1$, which each unite $k$ points in themselves.
+
+We now consider the class of single-valued\ednote{Printed eindeutiger instead of eindeutigen; an apparent compositor error.} algebraic functions of the surface $F$. If $z$ is one of these functions and
+
+\textbf{*)} Mathem. Ann. Bd.~3, p.~150.
+
+\origpage{418}
+$z_1, z_2, \dots z_r$ denote the values of $z$ at the places $P_1, P_2, \dots P_r$, we can view the sum
+\[
+Z = z_1 + z_2 + \dots + z_r
+\]
+as a function of the place $P_1$. As such, it has the properties, first, of being a single-valued algebraic function on $F$ (thus belonging to the class considered), and secondly, of satisfying the condition
+\[
+Z_1 = Z_2 = \dots = Z_r
+\]
+where $Z_1, Z_2, \dots Z_r$ denote the values of $Z$ at the points of any group. Since one can still dispose over the points of infinity of $z$, it is clear that there exist infinitely many functions $Z$ having these two properties. The totality of the functions $Z$ forms again a class of algebraic functions, since the sum, difference, product, and quotient of two functions $Z$ represents again such a function. Let the Riemann surface upon which the functions $Z$ form the totality of single-valued algebraic functions of position be called $\Phi$.${}^{*)}$
+
+The surface $\Phi$ is now related to the surface $F$ in such a way that to each place of $F$ there corresponds a single place of $\Phi$, whereas conversely to each place of $\Phi$ there correspond $r$ places of $F$, namely the $r$ places of a group (2). Those places of the surface $\Phi$ to which there correspond groups of fewer than $r$ (thus groups of $\frac{r}{k}$) places on the surface $F$ we shall denote by
+\[
+a_1, a_2, \dots a_w
+\tag{3}
+\]
+If we now set a place $P$ that does not belong to the places (3) in motion on the surface $\Phi$ and let it describe a closed path avoiding the places (3), the corresponding places $P_1, P_2, \dots P_r$ on the surface $F$ will move at the same time, and finally, when $P$ has reached its old position again, $P_1, P_2, \dots P_r$ can only have been permuted among themselves. If here $P_1$ passes into $P_i$, then $P_k$ necessarily passes into $P_{ik}$. For to trace the path of $P_k$, we need only apply the transformation $S_k$ to every point of the path of $P_1$; but by this transformation $P_i$ passes into $P_{ik}$. Thus the places $P_1, P_2, \dots P_r$, when $P$ describes a closed path, undergo a permutation of the form
+\[
+\begin{pmatrix}
+P_1, & P_2, & \dots & P_r \\
+P_{i1}, & P_{i2}, & \dots & P_{ir}
+\end{pmatrix}.
+\tag{4}
+\]
+
+\textbf{*)} If $Z_0$ is a definite one of the functions $Z$, one can take for $\Phi$, for example, that surface spread out over the $Z_0$-plane which represents the branching of the functions $Z$ with respect to $Z_0$.
+
+\origpage{419}
+This having been premised, let $\Phi$ now be dissected in the manner described above into the surface $\Phi''$. If $\pi$ is the genus of $\Phi$, the dissection is effected by $w + 2\pi$ cuts, which we denote (as above) by
+\[
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi
+\tag{5}
+\]
+We fix in the interior of $\Phi''$ a point $P'$ to which on the surface $F$ let the points $P_1', P_2', \dots P_r'$ correspond; furthermore, we assume $r$ superposed copies (sheets) $\Phi''$, designate them in any order with the same letters as the transformations (1), thus with
+\[
+S_1, \ S_2, \ \dots \ S_r
+\]
+and associate to the point $P'$ of the sheet $S_k$ the point $P_k'$ on the surface $F$. If $P'$ moves on the sheet $S_k$ to $P$, the point $P_k'$ on $F$ will move to $P_k$, and indeed the final position $P_k$ will be the same along whatever path $P'$ is guided to $P$. For every place $P$, the corresponding points $P_1, P_2, \dots P_r$ thus appear associated in a definite way to the $r$ sheets $S_1, S_2, \dots S_r$. If we now join the sheets $S_1, S_2, \dots S_r$ along the cuts (5) in a suitable manner, we obtain a surface spread out $r$-sheeted over $\Phi$ which is related birationally to $F$ and is thus identical with $F$ in the sense that it can just as well as $F$ be regarded as the bearer of the class of algebraic functions represented by $F$. As for the connection of the sheets, let it be observed that under a closed path described by $P$, $P_1, P_2, \dots P_r$ undergo a permutation of the form (4). The sheets must therefore, for example along $l_1$, be connected in such a way that upon passing from the negative to the positive bank of $l_1$ one arrives from the sheets
+\[
+S_1, \quad S_2, \quad \dots \quad S_r
+\]
+into the sheets
+\[
+S_i S_1, \quad S_i S_2, \quad \dots \quad S_i S_r
+\]
+respectively.
+
+To each of the cuts (5) there is thus associated a definite transformation $S_i$. If in succession for the cut
+\[
+\begin{gathered}
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi, \\
+S_i = T_1, \ T_2, \ \dots \ T_w, \ U_1, \ V_1, \ \dots \ U_\pi, \ V_\pi,
+\end{gathered}
+\]
+where the $T, U, V$ denote definite ones of the transformations (1), we can schematically characterize the surface $F$ spread out $r$-sheeted over $\Phi$ by
+\[
+F = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+T_1, & T_2, & \dots & T_w, & U_1, & V_1, & \dots & U_\pi, & V_\pi
+\end{pmatrix}
+\tag{6}
+\]
+
+\origpage{420}
+The transformations $T, U, V$ satisfy the following conditions:
+
+First,
+\[
+T_1 T_2 \dots T_w \, U_1 \, V_1 \, U_1^{-1} \, V_1^{-1} \dots U_\pi \, V_\pi \, U_\pi^{-1} \, V_\pi^{-1} = S_1 = 1.
+\tag{7}
+\]
+
+Secondly, the entire group $S_1, S_2, \dots S_r$ can be generated by combination of the $T, U, V$. The first condition (7) expresses nothing other than that the point $O$ from which the cuts $l, A, B$ radiate is not a branch point. The second condition expresses that the $r$-sheeted surface $F$ is connected in itself. This consideration now teaches that one obtains the most general Riemann surface possessing a group of single-valued transformations into itself in the following way:
+
+\emph{Let}
+\[
+S_1, \ S_2, \ \dots \ S_r
+\]
+\emph{denote any $r$ operations that form a group. Furthermore let}
+\[
+T_1, \ T_2, \ \dots \ T_w, \quad U_1, \ V_1, \ \dots \ U_\pi, \ V_\pi
+\]
+\emph{be any $w + 2\pi$ of these operations by which the entire group can be generated and which satisfy the condition}
+\[
+T_1 T_2 \dots T_w \, U_1 \, V_1 \, U_1^{-1} \, V_1^{-1} \dots U_\pi \, V_\pi \, U_\pi^{-1} \, V_\pi^{-1} = 1
+\]
+\emph{genügen. Take an arbitrary Riemann surface $\Phi$ of genus $\pi$, mark upon it any $w$ points $a_1, a_2, \dots a_w$, and dissect it in the manner described above (No.~4) by cuts $l_1, l_2, \dots l_w, A_1, B_1, \dots A_\pi, B_\pi$ into a simply connected surface $\Phi''$. Finally, superpose $r$ copies of the surface $\Phi''$, which one designates in any order with}
+\[
+S_1, \ S_2, \ \dots \ S_r
+\]
+\emph{(thus exactly as the given operations), and join them along the cuts $l, A, B$ into a single closed surface, as indicated by the schema}
+\[
+F = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+T_1, & T_2, & \dots & T_w, & U_1, & V_1, & \dots & U_\pi, & V_\pi
+\end{pmatrix}
+\]
+\emph{andeutet. The surfaces arising in this way encompass all Riemann surfaces that possess a group of single-valued transformations into themselves.}
+
+Here it is to be noted that the schema given for $F$ has the following meaning: at the cut $l_1$ the $r$ sheets $\Phi''$ are to be joined in such a way that upon passing from the negative to the positive side of the cut one arrives from the sheets
+\[
+S_1, \quad S_2, \quad \dots \quad S_r
+\]
+into the sheets
+\[
+T_1 S_1, \quad T_1 S_2, \quad \dots \quad T_1 S_r
+\]
+
+\origpage{421}
+respectively. Corresponding remarks apply to the cuts $l_2, \dots l_w, A_1, B_1, \dots A_\pi, B_\pi$. If now it is established that through the above construction all surfaces with a group of $r$ single-valued transformations into themselves are obtained, the question conversely arises whether also \emph{every} surface produced by the construction possesses a group of $r$ transformations into itself. That this question is to be answered in the affirmative results from the following consideration. On the $r$-sheeted surface $F$ produced according to the above prescription, fix any $r$ superposed points and designate them as the sheets in which they lie. If one now associates to the points
+\[
+S_1, \quad S_2, \quad \dots \quad S_r
+\]
+the points
+\[
+S_1 S_i, \quad S_2 S_i, \quad \dots \quad S_r S_i
+\]
+respectively, where $S_i$ denotes any one of the $r$ operations, a single-valued transformation of $F$ into itself is determined hereby. For upon continuation of this association a multiple-valuedness could arise only through crossing a cut. Such a multiple-valuedness does not actually arise, however, because upon crossing $l_1$, for example, the original association passes into
+\[
+\begin{gathered}
+T_1 S_1, \quad T_1 S_2, \quad \dots \quad T_1 S_r, \\
+T_1 S_1 S_i, \quad T_1 S_2 S_i, \quad \dots \quad T_1 S_r S_i
+\end{gathered}
+\]
+which is visibly identical with the original one. Corresponding to the $r$ operations $S_i$, the surface thus possesses $r$ single-valued transformations into itself. Since the group of the $r$ operations $S_1, S_2, \dots S_r$ just as the surface $\Phi$ can be assumed quite arbitrarily, and the operations $T, U, V$ can then still be chosen in manifold ways, there results incidentally the theorem:
+
+\emph{If a finite group is given, one can in manifold ways produce a Riemann surface that possesses a group of single-valued transformations into itself holohedrically isomorphic to the given group.}${}^{*)}$
+
+Our considerations show at the same time how to find the most general such surface.
+
+\subsection*{7.}
+
+We now consider a\ednote{Printed einc instead of eine; an apparent compositor misprint.} Riemann surface $F$ that according to the specifications of the preceding number is spread out $r$-sheeted over a surface $\Phi$
+
+\textbf{*)} The works of W.~Dyck (Math. Ann., Vols.~17 and 20) on regular Riemann surfaces, connecting with the investigations of F.~Klein (Math. Ann., Vols.~9--17), offer manifold points of contact with the above considerations. As regards the last-stated theorem, compare the theorem of Dyck, Math. Ann., Vol.~20, p.~30.
+
+\origpage{422}
+of genus $\pi$. We know that $F$ represents the most general surface with a group of $r$ single-valued transformations into itself. Let our next task be to calculate the genus of $F$. In a circulation about the point $a_1$, the sheet $S_i$ generally passes into the sheet $T_1 S_i$. If therefore $k_1$ is the order of the transformation $T_1$, the sheets are connected at $a_1$ in cycles of $k_1$ sheets each, such as
+\[
+(S_i, \ T_1 S_i, \ T_1^2 S_i, \ \dots \ T_1^{k_1-1} S_i).
+\]
+The point $a_1$ thus has as branch point the multiplicity
+\[
+r - \frac{r}{k_1} = r \Bigl(1 - \frac{1}{k_1}\Bigr)
+\]
+and likewise $a_2, a_3, \dots a_w$ have respectively the multiplicities
+\[
+r \Bigl(1 - \frac{1}{k_2}\Bigr), \quad r \Bigl(1 - \frac{1}{k_3}\Bigr), \quad \dots \quad r \Bigl(1 - \frac{1}{k_w}\Bigr),
+\]
+if $k_2, k_3, \dots k_w$ denote the orders of $T_2, T_3, \dots T_w$.
+
+According to No.~5, the genus $p$ of the surface $F$ is therefore to be calculated from the equation
+\[
+\frac{2p-2}{r} = 2\pi - 2 + \Bigl(1 - \frac{1}{k_1}\Bigr) + \Bigl(1 - \frac{1}{k_2}\Bigr) + \dots + \Bigl(1 - \frac{1}{k_w}\Bigr)
+\tag{1}
+\]
+We now wish to assume that the surface $F$ is of a genus $p > 1$, and under this assumption consider equation (1) more closely. We distinguish here three cases, according as $\pi \geqq 2$, $\pi = 1$, $\pi = 0$.
+
+In the first case $\pi \geqq 2$, equation (1) teaches that $\frac{2p-2}{r} \geqq 2$, hence
+\[
+r \leqq p - 1
+\tag{2}
+\]
+In the second case $\pi = 1$, $w$ cannot be $= 0$, because otherwise according to equation (1) $p = 1$ would also hold. It is therefore
+\[
+\frac{2p-2}{r} \geqq \Bigl(1 - \frac{1}{k_1}\Bigr) \geqq \frac{1}{2},
+\]
+because $k_1$ is at least equal to $2$. There now results
+\[
+r \leqq 4(p - 1).
+\tag{3}
+\]
+
+In the third case $\pi = 0$, we have according to (1)
+\[
+\begin{aligned}
+\frac{2p-2}{r} &= \Bigl(1 - \frac{1}{k_1}\Bigr) + \Bigl(1 - \frac{1}{k_2}\Bigr) + \dots + \Bigl(1 - \frac{1}{k_w}\Bigr) - 2 \\
+&= w - 2 - \frac{1}{k_1} - \frac{1}{k_2} - \dots - \frac{1}{k_w};
+\end{aligned}
+\tag{1'}
+\]
+$w$ must therefore be at least equal to $3$. We now distinguish three subcases. If, first, $w \geqq 5$, we obtain from ($1'$)
+
+\origpage{423}
+\[
+\frac{2p - 2}{r} \geqq \frac{w}{2} - 2 \geqq \frac{5}{2} - 2 = \frac{1}{2},
+\]
+hence
+\[
+r \leqq 4(p - 1).
+\tag{4}
+\]
+
+If, secondly, $w = 4$, so that
+\[
+\frac{2p - 2}{r} = 2 - \frac{1}{k_1} - \frac{1}{k_2} - \frac{1}{k_3} - \frac{1}{k_4},
+\]
+we have, assuming $k_1 \leqq k_2 \leqq k_3 \leqq k_4$, the following tabularly arranged possibilities:
+\[
+\begin{array}{c|c|c|c|c|c}
+\hline\hline
+k_1 & k_2 & k_3 & k_4 & \frac{2p - 2}{r} & \\
+\hline
+> 2 & > 2 & > 2 & > 2 & \geqq \frac{2}{3} & r \leqq 3(p - 1) \\
+\hline
+= 2 & > 2 & > 2 & > 2 & \geqq \frac{1}{2} & r \leqq 4(p - 1) \\
+\hline
+= 2 & = 2 & > 2 & > 2 & \geqq \frac{1}{3} & r \leqq 6(p - 1) \\
+\hline
+= 2 & = 2 & = 2 & > 2 & \geqq \frac{1}{6} & r \leqq 12(p - 1)
+\end{array}
+\tag{5}
+\]
+
+If, finally, thirdly, $w = 3$, so that
+\[
+\frac{2p - 2}{r} = 1 - \frac{1}{k_1} - \frac{1}{k_2} - \frac{1}{k_3},
+\]
+we have, assuming $k_1 \leqq k_2 \leqq k_3$, the following possibilities, again listed in tabular form:
+\[
+\begin{array}{c|c|c|c|c}
+\hline\hline
+k_1 & k_2 & k_3 & \frac{2p - 2}{r} & \\
+\hline
+> 3 & > 3 & > 3 & \geqq \frac{1}{4} & r \leqq 8(p - 1) \\
+\hline
+= 3 & > 3 & > 3 & \geqq \frac{1}{6} & r \leqq 12(p - 1) \\
+\hline
+= 3 & 3 & > 3 & \geqq \frac{1}{12} & r \leqq 24(p - 1) \\
+\hline
+= 2 & > 4 & > 4 & \geqq \frac{1}{10} & r \leqq 20(p - 1) \\
+\hline
+= 2 & = 4 & > 4 & \geqq \frac{1}{20} & r \leqq 40(p - 1) \\
+\hline
+= 2 & = 3 & > 6 & \geqq \frac{1}{42} & r \leqq 84(p - 1).
+\end{array}
+\tag{6}
+\]
+
+A glance at inequalities (2), (3), (4), (5), (6)\ednote{In Tabelle (6) druckte der Setzer in der dritten Zeile 3 statt = 3; in der sechsten Zeile ist die 6 mit Tinte über eine gedruckte 5 gebessert.} shows that $r$ cannot exceed the number $84(p - 1)$. In other words, there holds the theorem:
+
+\origpage{424}
+``\emph{The number of single-valued transformations into itself that a Riemann surface of genus $p > 1$ can possess is at most $84(p - 1)$.}''
+
+At the same time our discussion teaches that the maximum of $84(p - 1)$ transformations can occur only for surfaces spread out over a surface of genus zero or, what comes to the same thing, over the complex plane of numbers in such a way that the sheets are connected in a cycle at one place by 2s, at another place by 3s, and at a third place by 7s. (The last case of Table (6)). These surfaces visibly connect most closely with the theory of that Schwarzian $s$-function which maps the half-plane onto a circular triangle with angles $\frac{\pi}{2}$, $\frac{\pi}{3}$, $\frac{\pi}{7}$.*)
+
+For what values of $p$ the maximum $84(p - 1)$ is actually attained, I have not investigated. Let it only be remarked that for $p = 3$ a surface with $84(p - 1) = 168$ transformations into itself exists; it is the surface belonging to the Galois resolvent of the modular equation of the $7^{\text{th}}$ order, which was first considered and thoroughly investigated by Mr.~Klein.**)
+
+\subsection*{8.}
+
+By way of illustration of the general construction of surfaces with single-valued transformations into themselves given in No.~6, some examples may follow here. Let first
+\[
+S_1, \ S_2, \ \dots \ S_{60}
+\tag{1}
+\]
+be the system of even permutations of five things $x_1, x_2, x_3, x_4, x_5$. If from the system (1) we pick out the following permutations
+\[
+T_1 = (x_1 x_2)(x_3 x_4), \quad T_2 = (x_2 x_5 x_4), \quad T_3 = (x_1 x_2 x_3 x_4 x_5),
+\]
+the entire group (1) can be generated from these, and one has
+\[
+T_1 T_2 T_3 = 1.
+\]
+Let us now take a Riemann surface of genus zero, thus most simply the complex plane of numbers, in it three arbitrary points $a_1$, $a_2$, $a_3$, which we connect with a fourth point $O$ by the cuts $l_1$, $l_2$, $l_3$! Of the dissected plane we superpose 60 copies, which we designate in any order with
+
+\textbf{*)} Cf. Klein-Fricke: ``Vorlesungen über die Theorie der elliptischen Modulfunctionen'' (Leipzig, 1890), the figure on page~109.
+
+\textbf{**)} Mathematische Annalen, Vol.~14, page~428. See also Chapter~6 of the work cited in the preceding note.
+
+\origpage{425}
+$S_1, S_2, \dots S_{60}$, and join them into the surface
+\[
+F = \begin{pmatrix} l_1, & l_2, & l_3 \\ T_1, & T_2, & T_3 \end{pmatrix}.
+\]
+The connection takes place according to the rule that upon passing from the negative to the positive bank of the line $l_i$ one is to arrive from the sheets
+\[
+S_1, \quad S_2, \quad \dots \quad S_{60}
+\]
+into the sheets
+\[
+T_i S_1, \quad T_i S_2, \quad \dots \quad T_i S_{60}
+\]
+respectively. The surface $F$ arising in this way possesses a group of 60 single-valued transformations into itself which is holohedrically isomorphic to the group (1) of even permutations. The genus $p$ of $F$ results from equation (1) in No.~7 on setting
+\[
+r = 60, \quad \pi = 0, \quad k_1 = 2, \quad k_2 = 3, \quad k_3 = 5
+\]
+One obtains
+\[
+\frac{2p - 2}{60} = - 2 + \frac{1}{2} + \frac{2}{3} + \frac{4}{5} = - \frac{1}{30},
+\]
+hence $p = 0$, a result with which the theory of equations of the fifth degree given by Mr.~Klein can be connected.*)
+
+As another example we take the system
+\[
+S_1, \ S_2, \ \dots \ S_{n!}
+\tag{2}
+\]
+of all permutations of $n$ things $x_1, x_2, \dots x_n$. From (2) we choose
+\[
+T_1 = (x_1 x_2), \quad T_2 = (x_n x_{n-1} \dots x_2), \quad T_3 = (x_1 x_2 \dots x_n),
+\]
+which satisfy the condition $T_1 T_2 T_3 = 1$ and form a system of generating substitutions. Drawing in the complex plane of numbers from a point $O$ the cuts $l_1$, $l_2$, $l_3$ to any three points $a_1$, $a_2$, $a_3$, superposing $n!$ copies of the dissected plane, and finally uniting these copies into the surface
+\[
+F = \begin{pmatrix} l_1 & l_2 & l_3 \\ T_1 & T_2 & T_3 \end{pmatrix}
+\]
+we obtain a surface with $n!$ single-valued transformations into itself. The latter form a group isomorphic to the group of permutations of $n$ things. For the genus $p$ of the surface $F$ we find according to No.~7 (since $\pi = 0$, $k_1 = 2$, $k_2 = n - 1$, $k_3 = n$) the value
+
+\textbf{*)} F.~Klein: ``Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade'', Leipzig 1884.
+
+\origpage{426}
+\[
+p = 1 + \frac{1}{4}\,(n - 2)!\,(n^2 - 5n + 2)
+\tag{3}
+\]
+thus for $n = 3, 4, 5, 6 \dots$ respectively $p = 0, 0, 4, 49, \dots$.
+
+The surface $F$ admits a very simple analytical representation. Consider the equation
+\[
+s^n - \frac{n}{n - 1}\,s^{n-1} = z.
+\tag{4}
+\]
+The branching of $s$ with respect to $z$ is represented by a surface spread out $n$-sheeted over the $z$-plane. The sheets of the surface are connected in a cycle at $z = \infty$; at $z = 0$, $n - 1$ sheets are connected in a cycle, one runs isolated; finally at $z = \frac{-1}{n-1}$ a simple branching takes place. Evidently, therefore (for $a_1 = -\frac{1}{n-1}$, $a_2 = 0$, $a_3 = \infty$), our surface $F$ represents the branching of the Galois resolvent of (4), that is, the branching of the simultaneously considered roots $s_1, s_2, \dots s_n$ of (4) with respect to $z$. But now the individual place $P$ of the surface $F$ is, as one convinces oneself immediately, already fixed by the ratios of the quantities $s_1, s_2, \dots s_n$. If we therefore let $P$ traverse the surface $F$, the point
+\[
+y_1 : y_2 : \dots : y_n = \frac{1}{s_1} : \frac{1}{s_2} : \dots : \frac{1}{s_n}
+\]
+will describe a curve birationally related to the surface $F$, if we interpret $y_1, y_2, \dots y_n$ as homogeneous coordinates in a space of $n - 1$ dimensions. But from the form of equation (4) it follows that this curve can be defined by the following $n - 2$ equations:
+\[
+\left\{
+\begin{aligned}
+y_1^{\phantom{n-2}} + y_2^{\phantom{n-2}} + \dots + y_n^{\phantom{n-2}} &= 0, \\
+y_1^2 + y_2^2 + \dots + y_n^2 &= 0, \\
+\dots\dots\dots\dots\dots\dots & \\
+y_1^{n-2} + y_2^{n-2} + \dots + y_n^{n-2} &= 0.
+\end{aligned}
+\right.
+\tag{5}
+\]
+These equations therefore represent an irreducible curve whose genus $p$ is given by equation (3), and which possesses a group of $n!$ single-valued transformations into itself holohedrically isomorphic to the group of permutations of $n$ things. The latter is confirmed by the form of equations (5): the single-valued transformations of the curve are none other than the collineations of the space in which our curve lies defined by the permutations of $y_1, y_2, \dots y_n$.
+
+The example of the curve (5) I already mentioned in the last paragraph of my note on those algebraic configurations that admit single-valued transformations into themselves. In that same place I designated as the ``genus'' of a group the lowest genus
+
+\origpage{427}
+at which there exist algebraic configurations with a system of single-valued transformations holohedrically isomorphic to the group. I remark that the considerations of the preceding numbers permit in each case the determination of the genus of a given group. Indeed, let
+\[
+S_1, \ S_2, \ \dots \ S_r
+\tag{6}
+\]
+be the operations of the given group, $T_1$, $T_2$, $\dots T_{w-1}$ a part of the same sufficient to generate the entire group, and finally $T_w$ the operation satisfying the equation
+\[
+T_1 T_2 \dots T_{w-1} T_w = 1
+\]
+On the basis of the operations $T_1$, $T_2$, $\dots T_w$ one can now construct over the complex plane of numbers an $r$-sheeted Riemann surface that possesses a group of single-valued transformations into itself holohedrically isomorphic to (6). Let $P$ be the genus of this surface. In order now actually to determine the genus of the group (6), one has to seek all solutions of the Diophantine equation
+\[
+\frac{2p - 2}{r} = \Bigl(1 - \frac{1}{k_1}\Bigr) + \Bigl(1 - \frac{1}{k_2}\Bigr) + \dots + (2\pi - 2),
+\tag{7}
+\]
+satisfying the conditions $p < P$, $k_1 \geqq 2$, $k_2 \geqq 2$, $\dots$, $\pi \geqq 0$. The number of these solutions is evidently finite. Each individual solution is further to be investigated as to whether there corresponds to it a surface $F$ constructed on the basis of the operations (6) according to the prescriptions of No.~6. If this is the case for no solution, $P$ is the genus of the group. In the other case, that one of the surfaces $F$ which possesses the smallest genus gives at the same time the genus of the group. If one discusses in this manner, for example, the group of all permutations of five things, there results for the genus of this group the value $p = 4$.
+
+\section*{Section III.}
+
+\subsection*{9.}
+
+If a Riemann surface $F$ whose genus $p > 0$ possesses a single-valued transformation $S$ into itself, there always corresponds to it a linear transformation of the $p$ everywhere finite integrals $u_1, u_2, \dots u_p$. For if by virtue of $S$ the place $P'$ corresponds to the place $P$ and $u_1', u_2', \dots u_p'$ denote the values of the everywhere finite integrals at the place $P'$, we can also view these values as functions of the place $P$. As such, they are everywhere finite functions which upon a closed path traversed by $P$ increase by additive constants. Thus $u_1', u_2', \dots u_p'$ as functions
+
+\origpage{428}
+of the place $P$ represent everywhere finite integrals. There therefore hold equations of the form
+\[
+u_i' = \alpha_{i1} u_1 + \alpha_{i2} u_2 + \dots + \alpha_{ip} u_p + \alpha_i, \quad (i = 1, 2, \dots p),
+\tag{1}
+\]
+where $u_1, u_2, \dots u_p$ denote the values of the integrals at the place $P$ and the coefficients $\alpha$ denote quantities independent of the place $P$. It is convenient to write equations (1) in differential form:
+\[
+du_i' = \alpha_{i1} du_1 + \alpha_{i2} du_2 + \dots + \alpha_{ip} du_p, \quad (i = 1, 2, \dots p)
+\tag{2}
+\]
+and corresponding to this notation we say:
+``\emph{To each transformation $S$ of the surface $F$ into itself there corresponds a homogeneous linear transformation} (2) \emph{of the $p$ differentials of the first kind.}''
+
+To a group of $r$ single-valued transformations of the surface $F$ into itself there corresponds therefore a group of homogeneous linear transformations of the $p$ differentials of the first kind. And indeed, as soon as $p > 1$, both groups are holohedrically isomorphic. To prove this, it suffices to show that the transformation
+\[
+du_i' = du_i \quad (i = 1, 2, \dots p)
+\tag{3}
+\]
+can correspond only to the identical transformation of $F$. If now $S$ is a transformation of $F$ into itself to which the transformation (3) of the differentials of the first kind corresponds, then every differential of the first kind that vanishes of the second order at $P$ will, in consequence of (3), also become zero of the second order at $P'$. Therefore either $P$ must always coincide with $P'$, so that $S$ is the identical transformation, or the surface must be hyperelliptic and $S$ consist in the association to each other of two points $P, P'$ in which the two-valued function of the surface assumes the same value. The latter case is, however, excluded, since under this association $du_i' = - du_i$, whereas $du_i' = du_i$ was to hold.
+
+In the investigation of a group of linear transformations, it is a first fundamental task to determine the roots of the characteristic equation of the individual transformation. We wish to attempt to solve this task in the case present here. It is therefore a question of the following problem:
+``Given is a single-valued transformation $S$ (different from the identity) of the Riemann surface $F$ ($p > 1$) into itself. What are the roots of the characteristic equation for the corresponding homogeneous linear transformation (2) of the differentials of the first kind?'' This question is now first to be brought into another form more convenient for answering. As is well known, a linear homogeneous transformation of finite order or period $n$ can, by replacing the original variables with suitable linear combinations of the same, always be brought to such a form
+
+\origpage{429}
+that the transformation consists in the multiplication of the variables by $n^{\text{th}}$ roots of unity. These roots of unity are then the roots of the characteristic equation of the transformation. If therefore $S$ possesses the period $n$, we can choose the $p$ integrals $u_1, u_2, \dots u_p$ so that (2) assumes the form
+\[
+du_i' = \varepsilon_i\,du_i \quad (i = 1, 2, \dots p)
+\tag{4}
+\]
+where $\varepsilon_1, \varepsilon_2, \dots \varepsilon_p$ denote $n^{\text{th}}$ roots of unity. Our question can accordingly also be formulated thus:
+
+\emph{Given is a single-valued transformation $S$ of the Riemann surface $F(p > 1)$ into itself, which associates to each point $P$ of the surface $F$ a definite other point $P'$ and possesses the period $n$. Given further is an $n^{\text{th}}$ root of unity $\varepsilon$. How many linearly independent integrals of the first kind $u$ exist then on the surface $F$ that satisfy the condition}
+\[
+du' = \varepsilon\,du
+\]
+\emph{where $u, u'$ denote the values of the integral at the points $P, P'$?}
+
+The number of these linearly independent integrals evidently indicates how often the root of unity $\varepsilon$ appears as a root of the characteristic equation of the transformation (2).
+
+\subsection*{10.}
+
+We consider the group
+\[
+S^0 = S_1, \quad S^1 = S_2, \quad S^2 = S_3, \quad \dots \quad S^{n-1} = S_n
+\tag{1}
+\]
+of single-valued transformations of the surface $F$ into itself arising from $S$. By virtue of the transformations (1), the points of $F$ arrange themselves into groups of $n$ each,
+\[
+P_1, \ P_2, \ \dots \ P_n
+\tag{2}
+\]
+such that by virtue of $S$ each point of such a group corresponds to the preceding one, the first point to the last. The considerations of No.~6 find application here without further ado. Let $\Phi$ be the surface constructed according to the specifications of that number, which is related $1-n$-valuedly to $F$ in such a way that to each point of $\Phi$ there correspond the $n$ points of a definite group (2) on $F$. Let further $a_1, a_2, \dots a_w$ be the points on $\Phi$ whose associated group (2) consists of fewer than $n$ (thus of $\frac{n}{k}$, each to be counted $k$-fold) points; then we can spread out the surface $F$ $n$-sheeted over $\Phi$ and, retaining the earlier abbreviations, designate it by
+\[
+F = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+T_1, & T_2, & \dots & T_w, & U_1, & V_1, & \dots & U_\pi, & V_\pi
+\end{pmatrix}
+\tag{3}
+\]
+
+\origpage{430}
+Here the $T, U, V$ are all powers of $S$, say
+\[
+\begin{gathered}
+T_1 = S^{\mu_1}, \ \dots \ T_w = S^{\mu_w}, \quad U_1 = S^{\nu_1}, \quad V_1 = S^{\varrho_1}, \ \dots \ U_\pi = S^{\nu_\pi}, \\
+V_\pi = S^{\varrho_\pi}.
+\end{gathered}
+\tag{4}
+\]
+The relation (7) in No.~6 passes over into
+\[
+T_1 T_2 \dots T_w = 1,
+\]
+or, what means the same,
+\[
+\mu_1 + \mu_2 + \dots + \mu_w \equiv 0 \pmod n.
+\tag{5}
+\]
+Let us now investigate the everywhere finite integrals $u$ to be determined, by viewing them as functions of position on the surface $\Phi$! Evidently $u$ is single-valued on the surface $\Phi''$ (which arises from $\Phi$ by the cuts $l, A, B$), and upon passing from the negative to the positive side of the cuts
+\[
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi
+\]
+$du$ acquires respectively the factors
+\[
+\varepsilon^{\mu_1}, \ \varepsilon^{\mu_2}, \ \dots \ \varepsilon^{\mu_w}, \ \varepsilon^{\nu_1}, \ \varepsilon^{\varrho_1}, \ \dots \ \varepsilon^{\nu_\pi}, \ \varepsilon^{\varrho_\pi}.{}^{*)}
+\]
+Since these properties are completely characteristic for $u$, we recognize that our question reduces to the following:
+
+\emph{Given is a Riemann surface $\Phi$ dissected by the cuts $l, A, B$ into a simply connected surface $\Phi''$. How many linearly independent everywhere finite functions $u$ exist that are single-valued on $\Phi''$ and possess the property that upon passing from the negative to the positive side of the cuts}
+\[
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi
+\]
+\emph{the differential $du$ acquires respectively the given factors}
+\[
+\gamma_1, \ \gamma_2, \ \dots \ \gamma_w, \ \alpha_1, \ \beta_1, \ \dots \ \alpha_\pi, \ \beta_\pi
+\]
+\emph{erhalten?}
+
+The given factors are $n^{\text{th}}$ roots of unity between which (according to 5) there holds the relation
+\[
+\gamma_1 \gamma_2 \dots \gamma_w = 1
+\tag{6}
+\]
+besteht.
+
+\textbf{*)} That is: if $u^+$ and $u^-$ are the values that the function $u$, single-valuedly spread out on $\Phi''$, possesses at opposite points of the cut $l_1$, then along the entire cut $l_1$
+\[
+u^+ = \varepsilon^{\mu_1} \cdot u^- + \text{const.}
+\]
+Correspondingly for the other cuts.
+
+\origpage{431}
+\subsection*{11.}
+
+Our question therefore leads to the determination of such functions of position of a Riemann surface $\Phi$ as reproduce themselves up to a multiplicative constant upon describing a closed path. The theory of these functions and their integrals forms a generalization of the theory of algebraic functions and their integrals, the latter corresponding to the case in which the multiplicative constants are all equal to 1. A detailed investigation of the functions in question I intend to publish in the near future. Here I restrict myself to stating those theorems that are required for the present purpose. Beforehand I remark further that the special case in which the functions to be investigated are unbranched on the surface $\Phi$ has already been treated repeatedly. Already Riemann considered such functions in No.~26 of his ``Theorie der Abel'schen Functionen''.*) (The restriction introduced there that the multiplicative constants be roots of unity is unessential.) Then Mr.~Prym communicated without proof, in the 70th volume of Crelle's Journal, some theorems on the determination of these functions from their periodicity properties. Finally, the prize memoir ``Sur les intégrales de fonctions à multiplicateurs et leur application au développement des fonctions abéliennes en séries trigonométriques'' (Acta Mathematica, Vol.~13) by Mr.~Appell is to be mentioned, whose first and second parts relate to the same functions.**) I now wish first to define precisely the functions to be considered. Let $\Phi$ be a Riemann surface of genus $\pi$, furthermore
+\[
+a_1, \ a_2, \ \dots \ a_w
+\]
+arbitrarily assumed points on $\Phi$. We dissect $\Phi$ by the cuts
+\[
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi
+\]
+into the simply connected surface $\Phi''$. The functions $f$ of position on $\Phi$ that we wish to consider are then characterized by the following properties:
+1) Branch points of $f$ are found only among the points $a_1, a_2, \dots a_w$, so that the individual branches of $f$ are single-valued on the dissected surface $\Phi''$.
+
+\textbf{*)} See also the interesting remark (in small print) on page~364 of the collected works of Riemann.
+
+\textbf{**)} Appell's investigations can be simplified by introducing the system of cuts chosen above. All considerations relating to the cuts $c$ then drop away.
+
+\origpage{432}
+2) The function $f$ possesses, apart from the points $a_1, a_2, \dots a_w$, no singular points other than poles.
+
+3) In the neighborhood of the point $a_i$,
+\[
+t^{-\delta_i} \cdot f
+\]
+remains finite, single-valued, and different from zero, if $t$ denotes a function vanishing to the first order at the point $a_i$ and $\delta_i$ a suitably chosen constant.
+
+4) Every branch of the function $f$ single-valuedly spread out on $\Phi''$ acquires upon passing from the negative to the positive side of one of the cuts
+\[
+l_1, \ l_2, \ \dots \ l_w, \ A_1, \ B_1, \ \dots \ A_\pi, \ B_\pi
+\]
+respectively the given factors
+\[
+\gamma_1, \ \gamma_2, \ \dots \ \gamma_w, \ \alpha_1, \ \beta_1, \ \dots \ \alpha_\pi, \ \beta_\pi.
+\]
+The system of all functions $f$ satisfying these conditions we designate in the Riemannian manner by
+\[
+f = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\gamma_1, & \gamma_2, & \dots & \gamma_w, & \alpha_1, & \beta_1, & \dots & \alpha_\pi, & \beta_\pi
+\end{pmatrix}. \tag{1}
+\]
+Since in the neighborhood of the point $a_i$ the expansion of $f$ is to possess the form
+\[
+f = t^{\delta_i}(c_0 + c_1 t + c_2 t^2 + \dots) \tag{2}
+\]
+it is clear that one must have
+\[
+\gamma_1 = e^{2\pi i\delta_1}, \quad \gamma_2 = e^{2\pi i\delta_2}, \quad \dots \quad \gamma_w = e^{2\pi i\delta_w} \tag{3}
+\]
+If we now consider the integral
+\[
+\frac{1}{2\pi i}\int d\lg f,
+\]
+extended in the positive sense through the boundary of $\Phi''$, it is equal to $N - U$, where $N$ denotes the number of zeros and $U$ the number of infinities of $f$. On the other hand, that integral reduces to those partial integrals which lead around the points $a_1$, $a_2$, \dots $a_w$ in the negative sense. These latter partial integrals possess according to (2) the values $-\delta_1$, $-\delta_2$, \dots, $-\delta_w$. It is therefore
+\[
+U = N + \delta_1 + \delta_2 + \dots + \delta_w. \tag{4}
+\]
+From this it appears that $\delta_1 + \delta_2 + \dots + \delta_w$ is necessarily an integer, and consequently
+\[
+\gamma_1 \gamma_2 \dots \gamma_w = 1 \tag{5}
+\]
+is.*) The factors $\gamma, \alpha, \beta$ may therefore not be chosen completely arbitrarily,
+
+\textbf{*)} The same also follows by consideration of a circuit about the point $O$ from which the cuts $l$, $A$, $B$ emanate.
+
+\origpage{433}
+but must satisfy condition (5). In addition, of course, none of the factors may be equal to zero. But no further condition takes place for these factors. Indeed, there holds the theorem:
+
+\emph{To every system of factors}
+\[
+\gamma_1, \ \gamma_2, \ \dots \ \gamma_w, \ \alpha_1, \ \beta_1, \ \dots \ \alpha_\pi, \ \beta_\pi,
+\]
+\emph{which satisfies the conditions $\gamma_1 \gamma_2 \dots \gamma_w = 1$ and $\alpha_1 \beta_1 \dots \alpha_\pi \beta_\pi \neq 0$, but is otherwise chosen quite arbitrarily, there always belongs a system of functions}
+\[
+f = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\gamma_1, & \gamma_2, & \dots & \gamma_w, & \alpha_1, & \beta_1, & \dots & \alpha_\pi, & \beta_\pi
+\end{pmatrix}.
+\]
+
+Namely, one can always in manifold ways form a sum $\varSigma$ of Abelian integrals of the third kind such that
+\[
+f = e^{\varSigma} \tag{6}
+\]
+represents a function possessing all required properties. One also easily recognizes that by the expression (6) the most general function of the system is represented.*)
+
+\subsection*{12.}
+
+To every system of functions
+\[
+\begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\gamma_1, & \gamma_2, & \dots & \gamma_w, & \alpha_1, & \beta_1, & \dots & \alpha_\pi, & \beta_\pi
+\end{pmatrix} \tag{1}
+\]
+there belongs a system of integral functions formed by the integrals
+\[
+\int f\,dz
+\]
+Here $f$ denotes any function of the system (1) and $z$ a single-valued algebraic function or an Abelian integral of the surface $\Phi$.
+
+I wish here to consider more closely only the everywhere finite ones among these integral functions. It is above all a question (cf. No.~10) of determining the number of linearly independent ones of these functions. In doing so, I shall put the multipliers each into the following form:
+
+\textbf{*)} I remark here explicitly that the genus $\pi$ of the surface $\Phi$ is assumed arbitrarily. The case $\pi = 0$ is therefore not excluded. In this case only the cuts $A$, $B$ fall away. One may always assume the number $w$ to be positive, since one can always introduce arbitrarily many cuts $l$ to which one associates the factor $\gamma = 1$, without altering thereby the system of functions $f$.
+
+\origpage{434}
+\[
+\gamma_1 = e^{-2\pi i\varkappa_1}, \quad \gamma_2 = e^{-2\pi i\varkappa_2}, \quad \dots \quad \gamma_w = e^{-2\pi i\varkappa_w}, \tag{2}
+\]
+where the numbers $\varkappa_1, \varkappa_2, \dots \varkappa_w$ are unambiguously determined by the stipulation that their real parts shall lie between 0 and 1, the upper limit 1 excluded. Let now $v$ be one of the everywhere finite integral functions, furthermore $P$ a place of the surface $\Phi$ and $t$ a function vanishing to the first order at $P$. If $P$ does not belong to the places $a_1, a_2, \dots a_w$, the expansion of $v$ at the place $P$ reads
+\[
+v = c + c' t^r + c'' t^{r+1} + \dots \quad (c' \neq 0). \tag{3}
+\]
+We then say (exactly as for single-valued algebraic functions and their integrals) that the place $P$ is a zero of $dv$ to be counted $(r-1)$-fold.
+
+If, however, $P$ coincides with $a_i$, we have an expansion of the form\ednote{In the following display the typesetter omitted the factor $t$ after $c''$; the series in powers of $t$ should read $c' + c'' t + \dots$. Reproduced here as printed.}
+\[
+v = c + t^{-\varkappa_i + r}(c' + c'' + \dots) \quad (c' \neq 0) \tag{4}
+\]
+and we then wish to count $a_i$ as an $(r-1)$-fold zero of $dv$. The numbers $r$ in (3) and (4) are positive integers, because $v$ is to be everywhere finite. This being established, we first prove the theorem:
+
+``\emph{The total number of zeros of the differential $dv$ amounts to}
+\[
+2\pi - 2 + \varkappa_1 + \varkappa_2 + \dots + \varkappa_w\text{.''}
+\]
+Indeed, let $z$ be a single-valued algebraic function on $\Phi$ that becomes infinite $m$ times. Then $\frac{dv}{dz}$ is a function $f$ to which we can apply equation (4) of No.~1\ednote{Printed Nr. 1 instead of Nr. 11; equation (4) was established in §11.}. Now $\frac{dv}{dz}$ becomes infinite only at the zeros of $dz$, of which there are, as is well known, $2m+2\pi-2$. Furthermore, $\frac{dv}{dz}$ becomes zero at each of the $m$ places of infinity of $z$ of the second order, and at each zero of $dv$ different from the places $a_1, a_2, \dots a_w$ as often zero as it is to be counted according to our stipulation.
+
+At the place $a_i$, the expansion of $\frac{dv}{dz}$ reads
+\[
+\frac{dv}{dz} = t^{-\varkappa_i + (r-1)} (c_0' + \dots),
+\]
+if we assume, as is evidently permissible, that the places $a_i$ do not belong to the zeros of $dz$ nor to the places of infinity of $z$.
+
+Therefore equation (4) of No.~11 gives
+\[
+2m + 2\pi - 2 = 2m + \sum(r-1) - \varkappa_1 - \varkappa_2 - \dots - \varkappa_w,
+\]
+from which the correctness of our theorem follows. We draw from
+
+\origpage{435}
+this theorem a further consequence. Since the number of zeros of $dv$ cannot become negative, our theorem shows that in the cases
+\[
+\pi = 0, \quad \varkappa_1 + \varkappa_2 + \dots + \varkappa_w = 0
+\]
+and
+\[
+\pi = 0, \quad \varkappa_1 + \varkappa_2 + \dots + \varkappa_w = 1
+\]
+no everywhere finite integral function $v$ can exist.
+
+We now wish to show how one can determine all integral functions $v$ under the presupposition that one knows one of these functions.
+
+Let $v_0$ be this one integral function, which we assume as known. If then $v$ is an arbitrary one of the integral functions,
+\[
+\frac{dv}{dv_0} = Z \tag{5}
+\]
+will evidently be a single-valued algebraic function of the surface which can become infinite only at the $2\pi - 2 + \varkappa_1 + \varkappa_2 + \dots + \varkappa_w$ zeros of $dv_0$. If, conversely, $Z$ is such a function,
+\[
+v = \int Z\,dv_0 \tag{6}
+\]
+will be an integral function. But now according to the Riemann-Roch theorem there exist exactly
+\[
+2\pi - 2 + \varkappa_1 + \varkappa_2 + \dots + \varkappa_w - \pi + 1 = \varkappa_1 + \varkappa_2 + \dots + \varkappa_w + \pi - 1
+\]
+linearly independent functions $Z$, if we disregard an exceptional case to be considered more closely immediately. There must therefore exist just as many linearly independent integral functions $v$, all of which can be derived according to formula (6) from the single one $v_0$.
+
+The mentioned exceptional case occurs when the zeros of $dv_0$ are at the same time the zeros of a differential of the first kind $du$. This can take place only when
+\[
+\varkappa_1 + \varkappa_2 + \dots + \varkappa_w = 0,
+\]
+hence also the real parts of $\varkappa_1, \varkappa_2, \dots \varkappa_w$ are all zero and therefore the factors $\gamma_1, \gamma_2, \dots \gamma_w$ are all real. The number of linearly independent differentials of the first kind that vanish at the zeros of $dv_0$ can only be equal to 1, because the number of these places is $2\pi - 2$. The number stated above is then therefore to be replaced by
+\[
+\varkappa_1 + \varkappa_2 + \dots + \varkappa_w + \pi = \pi.
+\]
+In order to characterize this exceptional case still more closely, we consider the function $\frac{dv_0}{du}$. The same belongs to the system of functions $f$; it becomes nowhere zero or infinite, except perhaps at the places $a_1, \dots a_w$, where its behavior is indicated by the expansion
+
+\origpage{436}
+\[
+\frac{dv_0}{du} = t^{-\varkappa_i}(c_1 + \dots) \quad (\text{at the place } a_i),
+\]
+We conclude from this that $\log\frac{dv_0}{du}$ is an integral of the third kind which becomes discontinuous at the place $a_i$ like $-\varkappa_i\log t$. If we therefore denote by $\Pi_{a, a_i}$ an integral of the third kind which becomes discontinuous at the arbitrarily chosen place $a$ like $\log t$, and at the place $a_i$ like $-\log t$, then
+\[
+\log\frac{dv_0}{du} - \varkappa_1 \Pi_{a, a_1} - \varkappa_2 \Pi_{a, a_2} - \dots - \varkappa_w \Pi_{a, a_w} = u_1
+\]
+is an integral of the first kind (if we include a constant under the concept of an integral of the first kind). Hence there results
+\[
+\frac{dv_0}{du} = \mathrm{E}, \tag{7}
+\]
+understanding by $\mathrm{E}$ the expression
+\[
+\mathrm{E} = e^{\varkappa_1 \Pi_{a, a_1} + \varkappa_2 \Pi_{a, a_2} + \dots + \varkappa_w \Pi_{a, a_w} + u_1} \tag{8}
+\]
+Since conversely the $\pi$ linearly independent integral functions contained in the form $\displaystyle\int \mathrm{E}\,du$ are everywhere finite, we can state the following theorem:
+
+``\emph{The exceptional case occurs always and only when the system of factors $\gamma, \alpha, \beta$ agrees with the factors possessed by an expression $\mathrm{E}$ of the form} (8) \emph{in which $\varkappa_1, \varkappa_2, \dots \varkappa_w$ denote purely imaginary quantities.}''
+
+\subsection*{13.}
+
+It remains still to investigate in which cases at least one everywhere finite integral function $v$ exists. Let $f$ be any function of the system (1) (No.~12), $z$ a single-valued algebraic function of the surface $\Phi$. Under the assumption that $v$ is an everywhere finite integral function, we consider the quotient
+\[
+\frac{dv}{f\,dz} = Z. \tag{1}
+\]
+The same represents a single-valued algebraic function of the surface $\Phi$ which, apart from the places $a_1, a_2, \dots a_w$, can become discontinuous only
+
+1) at the $N$ zeros of $f$,
+
+2) at the $2m+2\pi-2$ zeros of $dz$.
+
+At the place $a_i$,
+\[
+f = t^{\delta_i}(c_0 + c_1 t + \dots),
+\]
+and we may assume that the integers $\delta_i + \varkappa_i$ are positive
+
+\origpage{437}
+since otherwise we can multiply $f$ by a single-valued algebraic function $z_1$ vanishing at the places $a_1, a_2, \dots a_w$, and thus put $z_1 \cdot f$ in place of $f$.
+
+Then $Z$ becomes
+
+3) infinite at the place $a_i$ at most to the order $\delta_i + \varkappa_i$.
+
+Furthermore $Z$ vanishes
+
+4) at each of the $m$ places of infinity of $z$ to the second order, and at the $U$ places of infinity of $f$.
+Conversely: If $Z$ is a single-valued algebraic function satisfying conditions 1), 2), 3), 4), then
+\[
+v = \int Z f\,dz
+\]
+will represent an everywhere finite integral function $v$.
+
+Now the functions $Z$ that satisfy conditions 1), 2), 3) contain, according to the Riemann-Roch theorem,
+\[
+N + 2m + 2\pi - 2 + (\delta_1 + \varkappa_1) + (\delta_2 + \varkappa_2) + \dots + (\delta_w + \varkappa_w) - \pi + 1
+\]
+arbitrary constants linearly and homogeneously. For these constants conditions 4) furnish $2m + U$ linear homogeneous conditional equations.
+
+Therefore the most general function $Z$ that satisfies all conditions 1)---4) contains at least still
+\[
+N + 2m + 2\pi - 2 + (\delta_1 + \varkappa_1) + \dots + (\delta_w + \varkappa_w) - \pi + 1 - (2m + U)
+\]
+arbitrary constants linearly and homogeneously. But this number reduces, according to equation (4) in No.~11, to
+\[
+\varkappa_1 + \varkappa_2 + \dots + \varkappa_w + \pi - 1 \tag{2}
+\]
+and just as many everywhere finite integral functions $v$ therefore exist \emph{at least}. As soon as the number (2) is greater than zero, the considerations of the preceding number come into effect. The only cases in which that number is not greater than zero are
+\[
+\begin{aligned}
+\pi &= 1, & \varkappa_1 + \varkappa_2 + \dots + \varkappa_w &= 0, \\
+\pi &= 0, & \varkappa_1 + \varkappa_2 + \dots + \varkappa_w &= 1, \\
+\pi &= 0, & \varkappa_1 + \varkappa_2 + \dots + \varkappa_w &= 0.
+\end{aligned}
+\]
+The first of these cases is subsumed under the exceptional case discussed on page~435. In the last two cases no everywhere finite integral function $v$ exists, as we have already remarked above. Taking this into account, we arrive at the following generally valid theorem, which teaches in all cases how to determine the number of everywhere finite integral functions belonging to a system of functions\ednote{In the following matrix the entry above $\beta_1$ is printed $\alpha_j$ with subscript $j$ instead of $1$; an apparent compositor misprint for $\alpha_1$. Reproduced here as printed.}
+\[
+f = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\gamma_1, & \gamma_2, & \dots & \gamma_w, & \alpha_j, & \beta_1, & \dots & \alpha_\pi, & \beta_\pi
+\end{pmatrix}
+\]
+belonging, teaches how to determine:
+
+\origpage{438}
+\emph{Put}
+\[
+\gamma_1 = e^{-2\pi i\varkappa_1}, \quad \gamma_2 = e^{-2\pi i\varkappa_2}, \quad \dots \quad \gamma_w = e^{-2\pi i\varkappa_w}, \tag{3}
+\]
+\emph{where the quantities $\varkappa_1, \varkappa_2, \dots \varkappa_w$ are uniquely determined by the requirement that their real parts shall be less than 1 and non-negative*).}
+
+\emph{Then the number of linearly independent everywhere finite integral functions $v$ is}
+\[
+\varkappa_1 + \varkappa_2 + \dots + \varkappa_w + \pi - 1. \tag{4}
+\]
+\emph{Excepted is only the single case in which the multipliers $\gamma$ are all real, thus $\varkappa_1, \varkappa_2, \dots \varkappa_w$ purely imaginary and}
+\[
+\varkappa_1 + \varkappa_2 + \dots + \varkappa_w = 0
+\]
+\emph{and at the same time the factors $\alpha, \beta, \gamma$ agree with the factors of an expression of the form}
+\[
+\mathrm{E} = e^{\varkappa_1 \Pi_{a, a_1} + \varkappa_2 \Pi_{a, a_2} + \dots + \varkappa_w \Pi_{a, a_w} + u}.
+\]
+\emph{In this case the number} (4) \emph{is to be replaced by the number}
+\[
+\pi. \tag{5}
+\]
+
+I remark further that $\Pi_{a, a_1}$ denotes an integral of the third kind which becomes discontinuous at $a$ like $\log t$, and at $a_1$ like $-\log t$. If $\Phi$ possesses genus $\pi = 0$ and $z$ denotes that function (determined up to a linear substitution) which assumes each value at only one place, one will therefore have $\Pi_{a, a_1} = \log\frac{z - z_a}{z - z_{a_1}} + \text{const.}$, where $z_a$, $z_{a_1}$ denote the values of $z$ at the places $a$ and $a_1$. The quantity $u$ appearing in the exponent of $e$ denotes an everywhere finite integral, a constant being however also to be regarded as such. In the case $\pi = 0$, $u$ will always be a constant.
+
+For the special case in which the factors $\gamma$ are all equal to 1, in which it is therefore a question of the system of functions
+\[
+f = \begin{pmatrix}
+A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\alpha_1, & \beta_1, & \dots & \alpha_\pi, & \beta_\pi
+\end{pmatrix}
+\]
+our theorem yields a result found by Mr.~Appell (loc.~cit., pp.~25, 26).
+
+\subsection*{14.}
+
+We have now all means to answer the question raised in No.~10. It was a question there of determining the number
+
+\textbf{*)} It can surely lead to no misunderstanding that in formulas (3) $\pi$ denotes the Ludolphian number, while on the other hand in formulas (4) and (5), as everywhere in these considerations, $\pi$ denotes the genus of the Riemann surface $\Phi$.
+
+\origpage{439}
+of linearly independent everywhere finite integral functions of the system
+\[
+f = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+\varepsilon^{\mu_1}, & \varepsilon^{\mu_2}, & \dots & \varepsilon^{\mu_w}, & \varepsilon^{\nu_1}, & \varepsilon^{\varrho_1}, & \dots & \varepsilon^{\nu_\pi}, & \varepsilon^{\varrho_\pi}
+\end{pmatrix},
+\]
+where $\varepsilon$ denotes an $n^{\text{th}}$ root of unity. We set
+\[
+\varepsilon = e^{-2\pi i \cdot \frac{k}{n}} \tag{1}
+\]
+where $k$ denotes a number of the series $0, 1, 2, \dots n-1$. Then
+\[
+\gamma_1 = e^{-2i\pi\frac{k\mu_1}{n}}, \quad \gamma_2 = e^{-2i\pi\frac{k\mu_2}{n}}, \quad \dots \quad \gamma_w = e^{-2i\pi\frac{k\mu_w}{n}}
+\]
+and hence there results
+\[
+\varkappa_1 = \frac{[k\mu_1]}{n}, \quad \varkappa_2 = \frac{[k\mu_2]}{n}, \quad \dots \quad \varkappa_w = \frac{[k\mu_w]}{n},
+\]
+if in general by $[k\mu_i]$ the smallest non-negative remainder of $k\mu_i\,(\text{mod. } n)$ is denoted. The number of linearly independent integral functions therefore amounts to
+\[
+A_k = \frac{[k\mu_1] + [k\mu_2] + \dots + [k\mu_w]}{n} + \pi - 1, \tag{2}
+\]
+if we disregard first the exceptional case.
+
+The exceptional case occurs only if
+
+1) the real parts of $\varkappa_1, \varkappa_2, \dots \varkappa_w$ vanish, thus since $\varkappa_1, \varkappa_2, \dots \varkappa_w$ are here real numbers, if $\varkappa_1 = \varkappa_2 = \dots = \varkappa_w = 0$, consequently $\gamma_1 = \gamma_2 = \dots = \gamma_w = 1$,
+
+and if
+
+2) the factors $\gamma, \alpha, \beta$ agree with the factors of an expression $e^u$, where $u$ denotes an everywhere finite integral of the surface $\Phi$. But since $\gamma, \alpha, \beta$ are $n^{\text{th}}$ roots of unity, this can take place only if $u$ is a constant. For $e^{nu}$ is an everywhere finite single-valued algebraic function of the surface $\Phi$. If, however, $e^u$ is a constant, the factors that $e^u$ assumes upon crossing a crosscut are all equal to 1. Consequently the exceptional case occurs only if the factors $\gamma, \alpha, \beta$ are all equal to 1, thus if it is a question of the everywhere finite integrals of the surface $\Phi$.
+For these integrals the root of unity is $\varepsilon = 1$, consequently $k = 0$, and formula (2) therefore undergoes a modification only in the case $k = 0$. It is then to be replaced by
+\[
+A_0 = \pi. \tag{3}
+\]
+
+\origpage{440}
+\subsection*{15.}
+
+We return now to the consideration of the surface $F$, denote as in No.~10 by $S$ the single-valued transformation of period $n$ admitted by the surface $F$, and by
+\[
+P_1, \ P_2, \ \dots \ P_n \tag{1}
+\]
+the group of $n$ points that arise from an arbitrarily chosen point $P_1$ of the surface $F$ by virtue of the transformation $S$.
+
+The point groups (1) are birationally related to the places of the surface $\Phi$, and the surface $F$ was accordingly representable in the form of a surface spread out $n$-sheeted over $\Phi$:
+\[
+F = \begin{pmatrix}
+l_1, & l_2, & \dots & l_w, & A_1, & B_1, & \dots & A_\pi, & B_\pi \\
+T_1, & T_2, & \dots & T_w, & U_1, & V_1, & \dots & U_\pi, & V_\pi
+\end{pmatrix}.
+\]
+The point $a_i$ of the surface $\Phi$, to which the cut $l_i$ runs, is one of those points to which on the surface $F$ there corresponds a group (1) of $\frac{n}{k_i}$ points, each to be counted $k_i$-fold. Corresponding to the substitution $T_i = S^{\mu_i}$, the sheets of the surface $F$ designated by $S_1, S_2, \dots S_n$ are now connected at the place $a_i$ in such a way that in a circuit about $a_i$, $S_k$ generally passes into $S_{k+\mu_i}$, where the indices are to be taken $(\text{mod. } n)$. If one determines according to this the number of sheets that are connected at $a_i$ in a cycle—a number which is evidently identical with $k_i$—one obtains the theorem:
+
+``\emph{The number $k_i$ is the smallest positive solution of the congruence}
+\[
+k_i\mu_i \equiv 0 \pmod n\text{.''}
+\]
+The number of linearly independent everywhere finite integrals $u$ of the surface $F$ satisfying the condition
+\[
+du' = \varepsilon\,du
+\]
+where $u, u'$ denote the values of the integral at the places $P_1, P_2$ and
+\[
+\varepsilon = e^{-2i\pi\frac{k}{n}}
+\]
+denotes a given $n^{\text{th}}$ root of unity, amounts now according to the preceding number to
+\[
+A_k = \frac{[k\mu_1] + [k\mu_2] + \dots + [k\mu_w]}{n} + \pi - 1, \tag{2}
+\]
+if $k$ possesses one of the values $1, 2, \dots n-1$, but to
+\[
+A_0 = \pi, \tag{3}
+\]
+if $k = 0$, thus $\varepsilon = 1$.
+
+The total number of integrals
+\[
+A_0 + A_1 + A_2 + \dots + A_{n-1}
+\]
+
+\origpage{441}
+must be equal to $p$, and we wish in conclusion to show that this fact is in accord with the values (2) and (3) found for the numbers $A$.
+
+The symbol $[r]$ that appears in (2) denoted the smallest non-negative remainder of the number $r$ to the modulus $n$. From this it follows immediately that
+\[
+[r] = [r'], \quad \text{for } r \equiv r' \pmod n, \tag{4}
+\]
+\[
+[r] = n - [r'], \quad \text{for } r \equiv -r' \pmod n, \text{ if at the same time } r \text{ is not} \equiv 0 \pmod n. \tag{5}
+\]
+If $r \equiv 0 \pmod n$, then by definition $[r] = 0$.
+
+This having been premised, we consider the sum
+\[
+\begin{aligned}
+A_k + A_{n-k} = 2(\pi - 1) &+ \frac{[k\mu_1] + \dots + [k\mu_w]}{n} \\
+&+ \frac{[(n-k)\mu_1] + \dots + [(n-k)\mu_w]}{n},
+\end{aligned} \tag{6}
+\]
+where $k$ denotes one of the numbers $1, 2, \dots n-1$. The part
+\[
+\frac{[k\mu_1] + [(n-k)\mu_1]}{n}
+\]
+of this sum is according to (5) equal to 1, except for the case where $k\mu$ is divisible by $n$, in which that part is equal to zero. But now
+\[
+k\mu_1 \equiv 0 \pmod n
+\]
+then and only then when $k$ is divisible by $k_1$, for according to what was remarked above $k_1$ is the smallest positive solution of the congruence $k_1\mu_1 \equiv 0 \pmod n$.
+
+Making the corresponding reflection for $\frac{[k\mu_i] + [(n-k)\mu_i]}{n}$, one recognizes that
+\[
+A_k + A_{n-k} = 2(\pi - 1) + w - D_k \tag{7}
+\]
+where $D_k$ indicates how many of the numbers
+\[
+k_1, \ k_2, \ \dots \ k_w
+\]
+divide the number $k$.*)
+
+\textbf{*)} If $n$ is a prime number, the numbers $k_1, k_2, \dots k_w$ are all equal to $n$, hence $D_k = 0$ and formula (7) passes over into $A_k + A_{n-k} = 2(\pi - 1) + w$. This latter equation I obtained in a completely different way in the work ``Ueber diejenigen algebraischen Gebilde, welche eindeutige Transformationen in sich zulassen'' (No.~6).
+
+\origpage{442}
+Now
+\[
+\begin{aligned}
+A_0 + A_1 + \dots + A_{n-1} &= A_0 + \frac{1}{2} \sum_1^{n-1} {}_k (A_k + A_{n-k}) \\
+&= \pi + \frac{1}{2} \sum_1^{n-1} {}_k [(2\pi - 2) + w - D_k] \\
+&= \pi + (n-1)(\pi-1) + \frac{1}{2}(n-1)w - \frac{1}{2} \sum_1^{n-1} {}_k D_k.
+\end{aligned} \tag{8}
+\]
+In accordance with the meaning of $D_k$, we find the value of $\displaystyle\sum D_k$ by determining in succession the number of terms in the sequence of numbers
+\[
+1, \ 2, \ 3, \ \dots \ n - 1 \tag{9}
+\]
+that are divisible by $k_1$, $k_2$ \dots $k_w$ respectively, and adding all these numbers. In the sequence (9), however, there are $\frac{n}{k_i} - 1$ numbers divisible by $k_i$, namely the numbers
+\[
+k_i, \ 2k_i, \ \dots \ \left(\frac{n}{k_i} - 1\right) k_i.
+\]
+Consequently
+\[
+\sum_1^{n-1} {}_k D_k = \frac{n}{k_1} + \frac{n}{k_2} + \dots + \frac{n}{k_w} - w.
+\]
+Substituting this value into (8), there results after an easy transformation
+\[
+\begin{aligned}
+A_0 + A_1 + \dots + A_{n-1} \\
+= 1 + n(\pi - 1) + \frac{1}{2} \left[ n\left(1 - \frac{1}{k_1}\right) + n\left(1 - \frac{1}{k_2}\right) + \dots + n\left(1 - \frac{1}{k_w}\right) \right],
+\end{aligned} \tag{10}
+\]
+and this expression proves in fact, according to formula (1) in No.~7, to be equal to the genus $p$ of the surface $F$.
+
+Königsberg i.~Pr., 10~February 1892.
+\end{document}
