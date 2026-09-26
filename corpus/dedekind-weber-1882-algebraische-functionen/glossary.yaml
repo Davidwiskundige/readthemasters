@@ -1,0 +1,102 @@
+# Term renderings for dedekind-weber-1882-algebraische-functionen, applied consistently across the
+# whole translation. Format: `terms: {German as printed: English}`.
+
+terms:
+  # --- fields, functions, arithmetic ---
+  Körper: field
+  Körper algebraischer Functionen: field of algebraic functions
+  Darstellungsweise: mode of representation
+  die vier Species: the four species
+  ganze Function: integral function
+  ganze rationale Function: integral rational function
+  gebrochene Function: fractional function
+  Basis: basis
+  complementäre Basis: complementary basis
+  complementärer Modul: complementary module
+  Normalbasis: normal basis
+  Exponent: exponent
+  Norm: norm
+  Spur: trace
+  Discriminante: discriminant
+  Hauptsatz: fundamental theorem
+  Lehrsatz: Theorem
+  Satz: theorem
+  Hülfssatz: Lemma
+  Beweis: Proof
+  w. z. b. w.: q. e. d.
+
+  # --- modules and ideals ---
+  Functionenmodul: function module
+  Modul: module
+  endlicher Modul: finite module
+  rational irreductibel: rationally irreducible
+  rational unabhängig: rationally independent
+  theilbar: divisible
+  Theiler: divisor
+  echter Theiler: proper divisor
+  Vielfaches: multiple
+  grösster gemeinschaftlicher Theiler: greatest common divisor
+  kleinstes gemeinschaftliches Vielfache: least common multiple
+  Congruenz: congruence
+  vollständiges Restsystem: complete system of residues
+  Ideal: ideal
+  Hauptideal: principal ideal
+  Primideal: prime ideal
+  relativ prim: relatively prime
+  Grad des Ideals: degree of the ideal
+  Verzweigungsideal: ramification ideal
+  Oberideal: upper ideal
+  Unterideal: lower ideal
+  Ideal der Doppelpunkte: ideal of the double points
+
+  # --- families ---
+  Schaar: family
+  Polygonschaar: polygon family
+  linear unabhängig: linearly independent
+  linear irreductibel: linearly irreducible
+  Dimension: dimension
+  $m$-fache Schaar: $m$-fold family
+
+  # --- points and polygons ---
+  Punkt der Riemannschen Fläche: point of the Riemann surface
+  Nullpunkt: zero point
+  Ergänzungspunkte: supplementary points
+  Ordnungszahl: order number
+  unendlich klein in der ersten Ordnung: infinitely small of the first order
+  Polygon: polygon
+  $n$-Eck: $n$-gon
+  Nulleck: zero-gon
+  Nullpolygon: zero polygon
+  Eckpunkte: vertices
+  Obereck: upper polygon
+  Untereck: lower polygon
+  Polygonquotient: quotient of polygons
+  äquivalent: equivalent
+  Polygonclasse: polygon class
+  isolirt: isolated
+  eigentlich / uneigentlich: proper / improper
+  Verzweigungs- oder Windungspolygon: ramification or winding polygon
+  Verzweigungs- oder Windungspunkt: ramification or winding point
+  Verzweigungspunkt: branch point
+  Verzweigungszahl / Windungszahl: ramification number / winding number
+  conjugirt: conjugate
+  Polygon der Doppelpunkte: polygon of the double points
+
+  # --- differentials and the genus ---
+  Differentialquotient: differential quotient
+  Differential: differential
+  eigentliches Differential: proper differential
+  uneigentliches oder Abelsches Differential: improper or Abelian differential
+  Differentiale erster / zweiter / dritter Gattung: differentials of the first / second / third kind
+  Polygon erster Gattung: polygon of the first kind
+  vollständiges Polygon erster Gattung: complete polygon of the first kind
+  Grundpolygon: fundamental polygon
+  Ergänzungspolygone: supplementary polygons
+  Ergänzungsclassen: supplementary classes
+  Hauptclasse: principal class
+  Geschlecht: genus
+  Normalform: normal form
+  Residuum: residue
+  Riemann-Rochscher Satz: Riemann-Roch theorem
+  Ueberschuss: excess
+  Defect: defect
