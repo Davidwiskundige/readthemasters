@@ -1,6 +1,8 @@
 changelog:
   - date: "2026-09-26"
     summary: Transcription added (AI draft).
+  - date: "2026-09-26"
+    summary: Translation (en) added (AI draft).
 
 transcription:
   status: ai-draft
@@ -63,3 +65,27 @@ transcription:
     centred multiplication dots are kept apart by their height. See notation.md.
 
     STATUS ai-draft. The flagged pages are where a reviewer should start.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5-5
+    effort: null
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-26"
+    glossary: glossary.yaml
+    uncertainty_flags: 0
+    note: >-
+      English translation of the whole paper (pp. 181-290), made from our own original.tex and
+      never from Stillwell's 2012 English version. Translated in twelve consecutive sections, each
+      checked with pipeline/texcompare.py as it was written; the assembled file passes texcompare
+      and houselint. Every \ednote of the transcription (printer's errors, R4, and the human
+      rulings of 2026-09-26) is carried over verbatim; no new translator's notes were added.
+      Prose inside 	ext{...} inserts (ordinals, connectives, the word tables of §16 and §32) is
+      translated per R21. Terminology follows glossary.yaml: Körper = field, ganze Function =
+      integral function, Schaar = family, Nulleck = zero-gon, Ober-/Untereck = upper/lower
+      polygon, Gattung = kind. p. 288 speaks of an "Integral dritter Gattung" where the
+      surrounding text says Differential; rendered faithfully as "integral of the third kind".
+      STATUS ai-draft; not yet read by a human.
