@@ -262,6 +262,18 @@ def prepare_page(path: str, out_path: str, max_edge: int, margin: float,
     }
 
 
+def reset_magnify_ledger(out_dir: str, pages) -> None:
+    """Clear magnify.py's cap ledger for the pages just prepared: a re-prepared page starts with a
+    fresh magnification budget. The directory is reused (makedirs exist_ok), so without this a re-run
+    would find the cap already spent."""
+    import magnify   # sibling module; contributor-only, like this one
+    path = magnify.ledger_path(out_dir)
+    if not os.path.isfile(path):
+        return
+    with magnify._LedgerLock(path):
+        magnify.save_ledger(path, magnify.ledger_clear(magnify.load_ledger(path), pages))
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--images", required=True, help="directory of scan pages")
@@ -334,6 +346,7 @@ def main(argv=None) -> int:
         with open(map_path, "w", encoding="utf-8") as fh:
             json.dump({"note": "source_x = offset_x + prepared_x / scale; same for y",
                        "pages": zoom_map}, fh, indent=2)
+        reset_magnify_ledger(args.out, pages)
         print(f"\n{len(pages)} page(s), ~{total_tokens} image tokens "
               f"({total_tokens // len(pages)} per page)")
         print(f"zoom mapping written to {map_path} — pass it to the batch subagent so it can "

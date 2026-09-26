@@ -47,21 +47,21 @@
 - [x] 6.3 Measure verification separately: `t`, tokens/page, and wall-clock round-trips against the serial baseline.
 - [x] 6.4 Confirm concurrent verification did not change what verification *finds* — compare the discrepancy list against what a serial pass produced on comparable pages, not just the time it took.
 - [x] 6.5 Count how many `needs scan` findings the proofread produced and how many the verifiers settled without a further subagent. This is what design D3 buys; if it is near zero on this work, say so rather than claiming the reorder paid.
-- [ ] 6.6 Measure the verification batch size rather than inheriting it: run one wave at the default N and one at N=1 or 2 on the same pages, and report reported tokens, tool calls and per-page cost for each. Design D2 gives two readings of the cost model that disagree by 3×; this is the measurement that separates them.
+- [x] 6.6 *Closed without the planned measurement (2026-09-26).* Superseded by `transcribe-cost-rebaseline`: with a price-weighted meter, verification cost per page was flat ($0.22–0.24) across the measured arms, and `transcribe-skill-rebaseline` fixes verification at 4 pages, concurrent, as a wall-clock decision. N=1/2 was not run. Original task: Measure the verification batch size rather than inheriting it: run one wave at the default N and one at N=1 or 2 on the same pages, and report reported tokens, tool calls and per-page cost for each. Design D2 gives two readings of the cost model that disagree by 3×; this is the measurement that separates them.
 - [x] 6.7 Re-measure the orchestrating session with `measure_session.py` — images must still be 0, and report whether several reports arriving together moved its mean context.
 - [x] 6.8 Write all of it to `measurements.md` in this change folder, following the archived change's format.
 
 ## 7. A/B the verification model tier
 
-- [ ] 7.1 Re-verify a fixed subset of the new run's pages on a lower model tier, in isolation, using the group-5 methodology from the archived change.
-- [ ] 7.2 Diff the two discrepancy lists. Kill criterion: if the lower tier misses any correction the higher tier found on those pages, the tier stays and the change adopts nothing here.
-- [ ] 7.3 Record the outcome either way in `measurements.md`, including the misses if there were any — a negative result is the point of running it.
-- [ ] 7.4 Only if the A/B passes: set the lower tier as the skill's default verification model and say so in the skill.
+- [x] 7.1 *Closed, adopting nothing (2026-09-26).* A lower **model tier** was not tested. A lower **effort** was (`transcribe-cost-rebaseline`, effort A/B on Opus 5.5): `low` failed this group's kill criterion — five substantive defects `medium` did not make, three introduced by `low`'s own verifiers — so verification stays on the transcription model at `medium`. A model-tier A/B remains possible later; nothing here supports one. Original task: Re-verify a fixed subset of the new run's pages on a lower model tier, in isolation, using the group-5 methodology from the archived change.
+- [x] 7.2 Diff the two discrepancy lists. Kill criterion: if the lower tier misses any correction the higher tier found on those pages, the tier stays and the change adopts nothing here.
+- [x] 7.3 Record the outcome either way in `measurements.md`, including the misses if there were any — a negative result is the point of running it.
+- [x] 7.4 Only if the A/B passes: set the lower tier as the skill's default verification model and say so in the skill.
 
 ## 8. Land it
 
 - [x] 8.1 Re-read the delta spec against what was actually built and correct the spec where the measurement contradicted the design, rather than the other way round.
 - [x] 8.2 `python pipeline/validate.py` and `python -m pytest pipeline/tests -q` pass; `openspec validate transcribe-turn-cost` passes.
-- [ ] 8.3 Show the contributor the measurement summary before pushing, per the human review checkpoint.
-- [ ] 8.4 Open the PR with a DCO sign-off; state the measured `t`, tokens/page, and wall-clock change, and whether the verification A/B was adopted.
-- [ ] 8.5 Sync the delta into `openspec/specs/transcription-pipeline/spec.md` and archive the change.
+- [x] 8.3 Show the contributor the measurement summary before pushing, per the human review checkpoint.
+- [x] 8.4 *Landed together with `transcribe-cost-rebaseline` and `transcribe-skill-rebaseline` in one PR, at the contributor's request.* Open the PR with a DCO sign-off; state the measured `t`, tokens/page, and wall-clock change, and whether the verification A/B was adopted.
+- [x] 8.5 Sync the delta into `openspec/specs/transcription-pipeline/spec.md` and archive the change.

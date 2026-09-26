@@ -218,7 +218,7 @@ def test_importing_the_helper_does_not_import_pillow():
 
 # --- the cap is PER PAGE, across invocations (found by the Picard measurement run) --- #
 def test_enforce_cap_counts_crops_already_written():
-    with pytest.raises(ValueError, match="already written"):
+    with pytest.raises(ValueError, match="already used"):
         magnify.enforce_cap([1], 3, 227, already=3)
 
 
@@ -227,7 +227,7 @@ def test_enforce_cap_allows_a_top_up_within_the_cap():
 
 
 def test_enforce_cap_error_says_a_second_call_does_not_help():
-    with pytest.raises(ValueError, match="second call does not buy more"):
+    with pytest.raises(ValueError, match="does not buy more regions"):
         magnify.enforce_cap([1, 2], 3, 227, already=2)
 
 
@@ -239,3 +239,83 @@ def test_existing_crops_counts_only_this_page(tmp_path):
 
 def test_existing_crops_on_missing_dir_is_empty(tmp_path):
     assert magnify.existing_crops(str(tmp_path / "nope"), 227) == []
+
+
+# --- the ledger: the cap cannot be reset by the caller (transcribe-skill-rebaseline) --- #
+# A verifier took 7 regions on one page by writing to fresh --out directories, and --cap let any
+# caller raise the limit. These run through main() with --dry-run, which enforces the cap exactly
+# as a real call does but needs no Pillow and no real scan.
+def _prepared(tmp_path, ledger=None):
+    import json
+    prepared = tmp_path / "prepared"
+    prepared.mkdir()
+    (prepared / "zoom-map.json").write_text(json.dumps({"pages": {"227": MAPPING}}),
+                                            encoding="utf-8")
+    scans = tmp_path / "scans"
+    scans.mkdir()
+    (scans / "227.jpg").write_bytes(b"not really a jpeg")
+    if ledger is not None:
+        (prepared / magnify.LEDGER_NAME).write_text(json.dumps(ledger), encoding="utf-8")
+    return prepared, scans
+
+
+def _run(prepared, scans, out, regions="1,1,99,99", *extra):
+    return magnify.main(["--prepared", str(prepared), "--scans", str(scans), "--page", "227",
+                         "--regions", regions, "--out", str(out), "--dry-run", *extra])
+
+
+SPENT = {"pages": {"227": {"transcribe": [[1, 1, 9, 9], [2, 2, 9, 9], [3, 3, 9, 9]]}}}
+
+
+def test_a_fresh_out_directory_does_not_reset_the_cap(tmp_path, capsys):
+    prepared, scans = _prepared(tmp_path, SPENT)
+    assert _run(prepared, scans, tmp_path / "vcrops2") == 1
+    err = capsys.readouterr().err
+    assert "3 already used" in err and magnify.LEDGER_NAME in err
+
+
+def test_verification_has_its_own_budget(tmp_path, capsys):
+    prepared, scans = _prepared(tmp_path, SPENT)
+    assert _run(prepared, scans, tmp_path / "vcrops", "1,1,99,99", "--pass", "verify") == 0
+    assert "p227-v1" in capsys.readouterr().out
+
+
+def test_numbering_continues_after_earlier_crops(tmp_path, capsys):
+    one = {"pages": {"227": {"transcribe": [[1, 1, 9, 9]]}}}
+    prepared, scans = _prepared(tmp_path, one)
+    assert _run(prepared, scans, tmp_path / "crops", "1,1,99,99; 2,2,99,99") == 0
+    out = capsys.readouterr().out
+    assert "p227-r2" in out and "p227-r3" in out and "p227-r1:" not in out
+
+
+def test_cap_cannot_be_raised(tmp_path, capsys):
+    prepared, scans = _prepared(tmp_path)
+    assert _run(prepared, scans, tmp_path / "crops", "1,1,99,99", "--cap", "5") == 1
+    assert "lowered, not raised" in capsys.readouterr().err
+
+
+def test_cap_can_be_lowered(tmp_path, capsys):
+    prepared, scans = _prepared(tmp_path)
+    assert _run(prepared, scans, tmp_path / "crops", "1,1,99,99; 2,2,99,99", "--cap", "1") == 1
+    assert _run(prepared, scans, tmp_path / "crops", "1,1,99,99", "--cap", "1") == 0
+
+
+def test_ledger_record_and_clear_are_per_page_and_pass():
+    ledger = magnify.ledger_record({}, 227, "verify", [(1, 2, 3, 4)])
+    ledger = magnify.ledger_record(ledger, 228, "transcribe", [(5, 6, 7, 8)])
+    assert magnify.ledger_used(ledger, 227, "verify") == [[1, 2, 3, 4]]
+    assert magnify.ledger_used(ledger, 227, "transcribe") == []
+    ledger = magnify.ledger_clear(ledger, [227])
+    assert magnify.ledger_used(ledger, 227, "verify") == []
+    assert magnify.ledger_used(ledger, 228, "transcribe") == [[5, 6, 7, 8]]
+
+
+def test_preparing_a_page_again_clears_its_ledger_entries(tmp_path):
+    import json
+    import prepare_pages
+    both = {"pages": {"227": {"transcribe": [[1, 1, 9, 9]]}, "228": {"verify": [[1, 1, 9, 9]]}}}
+    (tmp_path / magnify.LEDGER_NAME).write_text(json.dumps(both), encoding="utf-8")
+    prepare_pages.reset_magnify_ledger(str(tmp_path), [227])
+    left = json.loads((tmp_path / magnify.LEDGER_NAME).read_text(encoding="utf-8"))
+    assert "227" not in left["pages"] and "228" in left["pages"]
+    assert not (tmp_path / (magnify.LEDGER_NAME + ".lock")).exists()
