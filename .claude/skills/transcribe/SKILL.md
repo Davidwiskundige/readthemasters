@@ -44,25 +44,35 @@ one long session therefore costs more for each page than the page before it: mea
 long works, **4–6M tokens per page**, with page scans making up 47–63% of all context spent. The
 worst run peaked at 920k context and compacted mid-work, losing its early pages anyway.
 
-So page-level vision work happens in **subagents**, one per small batch. A subagent has a fresh
+So page-level vision work happens in **subagents**, one per batch. A subagent has a fresh
 context, reads only its own batch's images, writes fragments to disk, and returns a short report.
 The images never enter your context, so your context stays flat across a whole work, and the
 assembly, validation and PR phases run with nothing heavy resident.
 
-Measured cost model, if you need to reason about it: a subagent costs a fixed **~63k** plus about
-**7.3k per page**. Three quarters of the total is the fixed part being re-sent every turn, which is
-why **turns per page matter far more than batch size**.
+Measured cost model, if you need to reason about it — **priced**, as the plan meter weights usage,
+not as raw token volume (`transcribe-cost-rebaseline`, 2026-09-26, Opus 5.5): output is 35–47% of a
+run's cost and about half of that is thinking; cache writes (images, text, output re-cached on the
+next turn) 28–39%; cache reads — the re-sent fixed payload that earlier versions of this section
+optimized — only 14–32%, concentrated in a few long subagents. Transcription plus verification
+costs about **$0.37 per page** at list prices with 12-page batches. `python
+pipeline/measure_session.py <session> --pages N` reports a run the same way.
 
 The design that introduced batching assumed 2 turns per page — one image read, one write. Its
 Clebsch figure of **5.7** was computed as `tool calls + 1`, which is not a turn count: independent
 calls issued in one message cost one turn between them. `pipeline/magnify.py` (Phase 3) exists to
 make that distinction pay — a page's regions come out of one call and are read in one message.
 
-Measured on Picard 1885, a whole batch of four pages runs in **4 turns** when everything
-independent is batched, against 12 for an otherwise identical batch that wrote its fragments one
-per message. Budget **about one turn per page for a batch**, and account for anything beyond it.
-Count turns, not tool calls — the two diverge by 3× under this design, and only turns re-send the
-fixed payload.
+Measured on Picard 1885, a whole batch runs in **4–7 turns whatever its size** when everything
+independent is batched — 4 pages in 4–6, 12 pages in 7, 28 pages in 6 — against 12 for a 4-page
+batch that wrote its fragments one per message. Budget **about six turns per batch**, and account
+for anything beyond it. Count turns, not tool calls — the two diverge by 3× or more under this
+design, and only turns re-send the fixed payload.
+
+**Effort: run at `medium`.** A skill cannot set its session's effort, so check it before starting:
+`echo $CLAUDE_EFFORT` in a shell, or the `effort` field on any row of the session transcript. On
+Opus 5.5, adjudicated against the scan (Picard 1885 pp. 321–332), `medium` made no misreading where
+the Opus 5 `high` reference made two; `low` was 34% cheaper but made five substantive errors, three
+of them introduced by its own verifiers. Phase 6 records the effort actually used.
 
 ## Before you start
 
@@ -182,10 +192,29 @@ Read these so your output matches the house style exactly:
 
 **You do not read the page images.** For each batch of pages, dispatch one subagent.
 
-**Batch size: 4 by default.** The measured optimum is 2–4 and the curve is flat there; 4 keeps
-several adjacent pages visible to one agent, which is what lets it join text across page breaks and
-compare a doubtful glyph against a clearer instance nearby. Below about two batches' worth of pages,
-just transcribe inline yourself — one subagent's fixed cost exceeds the saving on a very short work.
+**Batch size: 12 pages by default.** If a chapter, part, or numbered-article boundary you know of
+(from earlier batches' reports or the glossary) falls within about three pages of the 12-page mark,
+end the batch there instead, so the batch join falls where the text itself breaks. Never go above
+about 15. The first batch has no reports to go on; make it 12.
+
+Why 12, measured on Picard 1885 pp. 321–332 with every difference adjudicated against the scan
+(`openspec/changes/transcribe-cost-rebaseline/measurements.md`):
+
+| batch | $/page (transcription + verification) | readings wrong | paragraph breaks wrong |
+|---|---|---|---|
+| 4 pages | 0.41 | 0 | 2 |
+| **12 pages** | **0.37** | **0** | **1** |
+| 28 pages | 0.32 | 1 | 8 |
+
+A batch costs about six turns whatever its size, so larger batches are cheaper; the limit is
+quality. The 28-page agent adopted a wrong paragraph convention on its first page and applied it to
+all 28 — one agent's habit reaches every page of its batch, and batch boundaries are what spread that
+risk. (The 2–4 optimum an earlier version of this skill cited was computed in raw token volume, which
+overweights the cheapest tokens.)
+
+**Below about 8 pages, just transcribe inline yourself** — one subagent's fixed cost exceeds the
+saving on a very short work. That threshold is absolute on purpose: tied to the batch size it would
+now mean 24 pages of scans in your own context.
 
 Give each batch subagent:
 
@@ -210,14 +239,18 @@ page's doubtful regions first and then issue **one** command:
 
 ```bash
 python pipeline/magnify.py --prepared <prepared> --scans <scans> --page <N> \
-    --regions "l,t,r,b; l,t,r,b" --out <scratch>
+    --regions "l,t,r,b; l,t,r,b" --out <scratch> --pass transcribe
 ```
 
 Regions are named in **prepared-image** coordinates — the space of the image the subagent can
-actually see. The helper converts them, crops from the source scan, enforces the 3-region cap **per
-page across all calls** (a second call for the same page does not buy more regions, and would
-overwrite the first call's crops), and refuses a box that lands off the page or collapses to less
-than a glyph rather than returning a plausible crop of blank paper.
+actually see. The helper converts them, crops from the source scan, and enforces the 3-region cap
+**per page and pass**, recorded in `<prepared>/magnify-ledger.json`: neither a second call nor a
+different `--out` buys more regions, `--cap` can lower the cap but not raise it, and crops are
+numbered on from earlier ones rather than overwriting them. (A verifier once took 7 regions on one
+page by writing to fresh directories; the ledger exists because of it.) It also refuses a box that
+lands off the page or collapses to less than a glyph rather than returning a plausible crop of blank
+paper. Crops often land somewhat above or below the intended line — the helper crops exactly where
+told, so name regions with some vertical margin.
 
 **Tell the subagent to batch everything independent into one message — not just the crop reads.**
 This is the instruction that actually decides the cost, and it is worth being explicit about,
@@ -235,7 +268,8 @@ Three times the cost for the same work, same scan, same helper. So spell out the
 1. one message reading the rules, the glossary and **all** the batch's page images together;
 2. one message with a **single Bash command chaining every page's `magnify.py` call**;
 3. one message reading **all** the crops together;
-4. one message issuing **all** the fragment `Write` calls together.
+4. one message issuing **all** the fragment `Write` calls together — or, if a 12-page batch's
+   fragments do not fit in one message, as few messages as they need.
 
 Fragments do not depend on each other, so writing them one per message is pure loss. Fold any grep
 or check into a Bash command already being sent.
@@ -381,14 +415,22 @@ sequential because `notation.md` accumulates one batch at a time and a batch tha
 previous batch's decisions will diverge from them.
 
 - Check every formula, equation number (`\tag{n}`), label, and `\origpage{N}` against the image.
+- **Check every paragraph break immediately before or after a display against the print.** An
+  indented next line is a new paragraph; a flush-left one continues the sentence and gets no blank
+  line. A new sentence after a display is not by itself a new paragraph. Correct the fragment and
+  list each changed break. This was the most frequent error in every measured run — the Opus 5
+  `high` reference included — and no other pass can see it: the proofread has no scan.
 - Settle each NEEDS SCAN question handed down from Phase 5, and say what the print showed.
 - Resolve each discrepancy or flag it with `\uncertain{}`.
+- Magnify with `--pass verify`, which has its own 3-region budget per page, separate from
+  transcription's.
 - Keep the list of flagged pages; it goes into provenance and the PR body.
 
-Batch size here is inherited from transcription rather than measured. Four adjacent pages let one
-verifier compare a doubtful glyph against a clearer instance nearby, which is what settles dot
-counts and subscript conventions; one page per subagent would lose that and may or may not cost
-more per page. If you are in a position to measure it, do.
+**Verification batches are 4 pages, whatever the transcription batch size** — a 12-page
+transcription batch gets three verifiers, all dispatched in the same message. Smaller verifiers run
+concurrently, so they shorten wall-clock; four adjacent pages still let a verifier compare a doubtful
+glyph against a clearer instance nearby, which is what settles dot counts and subscript conventions.
+Verification cost per page was flat across the measured batch sizes ($0.22–0.24).
 
 ## Phase 6 — Write provenance
 
@@ -401,7 +443,7 @@ changelog:                    # seeds the work page's revision history
 transcription:
   status: ai-draft            # machine output; a human has not yet checked it
   model: claude-opus-5        # the model you are actually running as
-  effort: high                # your thinking/effort level, or null if unknown
+  effort: medium              # the effort the session actually ran at (CLAUDE_EFFORT), or null if unknown
   prompt_version: transcribe-v1   # match prompts/transcribe-chat.md
   submitted_via: skill
   produced: "YYYY-MM-DD"      # today

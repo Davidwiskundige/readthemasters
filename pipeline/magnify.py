@@ -21,10 +21,13 @@ warning in a prompt.
 Usage:
     python pipeline/magnify.py --prepared ./prepared --scans ./scans --page 227 \
         --regions "120,340,520,382; 80,700,300,744" --out ./crops
-        [--target-edge 1400] [--cap 3] [--dry-run]
+        [--pass transcribe|verify] [--target-edge 1400] [--cap 3] [--dry-run]
 
 Regions are `left,top,right,bottom` in PREPARED-image pixels, separated by `;`. Output is
-<out>/p<page>-r<i>.png, one per region, plus a report line per crop on stdout.
+<out>/p<page>-r<i>.png (transcription) or -v<i>.png (verification), one per region, numbered on
+from any earlier crops for the page, plus a report line per crop on stdout. The per-page cap is kept
+in <prepared>/magnify-ledger.json per page and pass, so neither a second call nor a different --out
+buys more regions; --cap can lower it for a call, not raise it.
 
 Pillow is a contributor-only dependency, imported lazily, exactly like in prepare_pages.py.
 `pipeline/validate.py` and CI never import this module, so the copyright gate keeps its single
@@ -129,16 +132,102 @@ def check_source_box(box: tuple[int, int, int, int], size: tuple[int, int],
     return clamped
 
 
-def existing_crops(out_dir: str, page: int) -> list[str]:
-    """Crops already written for this page, so the cap counts across invocations."""
+def existing_crops(out_dir: str, page: int, tag: str = "r") -> list[str]:
+    """Crops already written for this page in `out_dir` (a floor under the ledger's count).
+    `tag` is the pass's file prefix: `r` for transcription, `v` for verification."""
     if not os.path.isdir(out_dir):
         return []
-    prefix = f"p{page}-r"
+    prefix = f"p{page}-{tag}"
     return sorted(n for n in os.listdir(out_dir)
                   if n.startswith(prefix) and n.endswith(".png"))
 
 
-def enforce_cap(regions: list, cap: int, page: int, already: int = 0) -> None:
+# --------------------------------------------------------------------------- #
+# The ledger: the cap per page and pass, whatever --out is
+# --------------------------------------------------------------------------- #
+# Counting crops in --out let a verifier take 7 regions on one page by writing to fresh directories
+# (measured, transcribe-cost-rebaseline). The ledger sits beside the prepared pages, which every
+# caller must name, and records regions per page and per pass. prepare_pages.py clears a page's
+# entries when it prepares that page again.
+LEDGER_NAME = "magnify-ledger.json"
+PASSES = ("transcribe", "verify")
+PASS_TAG = {"transcribe": "r", "verify": "v"}   # crop file prefix per pass
+
+
+def ledger_path(prepared: str) -> str:
+    return os.path.join(prepared, LEDGER_NAME)
+
+
+def ledger_used(ledger: dict, page: int, pass_: str) -> list:
+    """Regions already recorded for a page and pass."""
+    return ledger.get("pages", {}).get(str(page), {}).get(pass_, [])
+
+
+def ledger_record(ledger: dict, page: int, pass_: str, regions: list) -> dict:
+    """Return the ledger with `regions` appended for this page and pass."""
+    pages = ledger.setdefault("pages", {})
+    entry = pages.setdefault(str(page), {})
+    entry.setdefault(pass_, []).extend([list(r) for r in regions])
+    return ledger
+
+
+def ledger_clear(ledger: dict, pages) -> dict:
+    """Return the ledger with every entry for `pages` removed."""
+    for page in pages:
+        ledger.get("pages", {}).pop(str(page), None)
+    return ledger
+
+
+class _LedgerLock:
+    """An exclusive lock file beside the ledger. Concurrent verifiers share one ledger, and an
+    unlocked read-modify-write would drop one of two simultaneous updates."""
+
+    def __init__(self, path: str, timeout: float = 30.0):
+        self.lock = path + ".lock"
+        self.timeout = timeout
+
+    def __enter__(self):
+        import time
+        deadline = time.monotonic() + self.timeout
+        while True:
+            try:
+                self.fd = os.open(self.lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                return self
+            except FileExistsError:
+                if time.monotonic() > deadline:
+                    raise ValueError(f"ledger lock {self.lock} is held; if no magnify.py is "
+                                     f"running, delete it") from None
+                time.sleep(0.05)
+
+    def __exit__(self, *exc):
+        os.close(self.fd)
+        os.remove(self.lock)
+
+
+def load_ledger(path: str) -> dict:
+    if not os.path.isfile(path):
+        return {"pages": {}}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def save_ledger(path: str, ledger: dict) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(ledger, fh, indent=1, sort_keys=True)
+    os.replace(tmp, path)
+
+
+def check_cap_argument(cap: int) -> None:
+    """--cap may lower the cap for a call, never raise it: a caller-set ceiling is no ceiling."""
+    if cap > DEFAULT_CAP:
+        raise ValueError(f"--cap {cap} is above the per-page cap of {DEFAULT_CAP}; the cap can be "
+                         f"lowered, not raised.")
+    if cap < 1:
+        raise ValueError(f"--cap must be at least 1, got {cap}")
+
+
+def enforce_cap(regions: list, cap: int, page: int, already: int = 0, where: str = "") -> None:
     """Refuse more regions than the per-page cap allows, counting earlier calls for this page.
 
     The cap lives here rather than only in the skill's prose because this helper makes magnification
@@ -152,11 +241,11 @@ def enforce_cap(regions: list, cap: int, page: int, already: int = 0) -> None:
     """
     total = len(regions) + already
     if total > cap:
-        seen = f" ({already} already written for this page)" if already else ""
+        seen = f" ({already} already used for this page{where})" if already else ""
         raise ValueError(
             f"page {page}: {len(regions)} regions requested{seen}, cap is {cap} per page. Magnify "
             f"the {cap} that most need it and flag the rest with \\uncertain{{}} — that is the "
-            f"honest signal. A second call does not buy more regions.")
+            f"honest signal. A second call, or a different --out, does not buy more regions.")
 
 
 def scale_to_edge(width: int, height: int, target_edge: int) -> tuple[int, int]:
@@ -189,21 +278,26 @@ def _pillow():
 
 
 def magnify_page(scan_path: str, regions: list[tuple[int, int, int, int]], mapping: dict,
-                 out_dir: str, page: int, target_edge: int) -> list[dict]:
-    """Crop every region out of one source scan and write them. Returns a report per crop."""
+                 out_dir: str, page: int, target_edge: int, first_index: int = 1,
+                 tag: str = "r") -> list[dict]:
+    """Crop every region out of one source scan and write them. Returns a report per crop.
+
+    `first_index` continues the numbering after crops already made for the page, so a follow-up
+    call within the cap does not overwrite `r1`.
+    """
     Image = _pillow()
     reports: list[dict] = []
     with Image.open(scan_path) as image:
         image.load()
         size = image.size
-        for index, region in enumerate(regions, start=1):
+        for index, region in enumerate(regions, start=first_index):
             raw = to_source_box(region, mapping)
             box = check_source_box(raw, size, region)
             crop = image.crop(box)
             target = scale_to_edge(crop.width, crop.height, target_edge)
             if target != crop.size:
                 crop = crop.resize(target, Image.LANCZOS)
-            out_path = os.path.join(out_dir, f"p{page}-r{index}.png")
+            out_path = os.path.join(out_dir, f"p{page}-{tag}{index}.png")
             crop.convert("L").save(out_path, "PNG", optimize=True)
             reports.append({
                 "region": region,
@@ -229,7 +323,11 @@ def main(argv=None) -> int:
                         help=f"long edge of each crop in px (default {DEFAULT_TARGET_EDGE}, "
                              f"capped at {MAX_EDGE})")
     parser.add_argument("--cap", type=int, default=DEFAULT_CAP,
-                        help=f"maximum regions per page (default {DEFAULT_CAP})")
+                        help=f"maximum regions per page; may be lowered, not raised "
+                             f"(default {DEFAULT_CAP})")
+    parser.add_argument("--pass", dest="pass_", choices=PASSES, default="transcribe",
+                        help="which pass is magnifying; each has its own per-page cap "
+                             "(default transcribe)")
     parser.add_argument("--dry-run", action="store_true",
                         help="report the source boxes without writing files")
     args = parser.parse_args(argv)
@@ -241,28 +339,38 @@ def main(argv=None) -> int:
     try:
         with open(map_path, encoding="utf-8") as fh:
             zoom_map = json.load(fh)
+        check_cap_argument(args.cap)
         regions = parse_regions(args.regions)
-        already = existing_crops(args.out, args.page)
-        enforce_cap(regions, args.cap, args.page, len(already))
+        enforce_cap(regions, args.cap, args.page)      # a single call over the cap, before any I/O
         mapping = load_page_mapping(zoom_map, args.page)
     except (ValueError, json.JSONDecodeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+    tag = PASS_TAG[args.pass_]
 
     scan_path = os.path.join(args.scans, mapping["source"])
     if not os.path.isfile(scan_path):
         print(f"error: source scan not found: {scan_path}", file=sys.stderr)
         return 1
 
-    if args.dry_run:
-        for index, region in enumerate(regions, start=1):
-            print(f"p{args.page}-r{index}: {region} -> source {to_source_box(region, mapping)}")
-        return 0
-
-    os.makedirs(args.out, exist_ok=True)
+    ledger_file = ledger_path(args.prepared)
     try:
-        reports = magnify_page(scan_path, regions, mapping, args.out, args.page, args.target_edge)
-    except ValueError as exc:
+        with _LedgerLock(ledger_file):
+            ledger = load_ledger(ledger_file)
+            already = max(len(ledger_used(ledger, args.page, args.pass_)),
+                          len(existing_crops(args.out, args.page, tag)))
+            enforce_cap(regions, args.cap, args.page, already,
+                        where=f" in the {args.pass_} pass, per {ledger_file}")
+            if args.dry_run:
+                for index, region in enumerate(regions, start=already + 1):
+                    print(f"p{args.page}-{tag}{index}: {region} -> source "
+                          f"{to_source_box(region, mapping)}")
+                return 0
+            os.makedirs(args.out, exist_ok=True)
+            reports = magnify_page(scan_path, regions, mapping, args.out, args.page,
+                                   args.target_edge, first_index=already + 1, tag=tag)
+            save_ledger(ledger_file, ledger_record(ledger, args.page, args.pass_, regions))
+    except (ValueError, json.JSONDecodeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
 
