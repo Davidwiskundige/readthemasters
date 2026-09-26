@@ -1,0 +1,99 @@
+# Term renderings for hurwitz-1893-algebraische-gebilde, applied consistently across the whole
+# translation. Format: `terms: {German as printed: English}`.
+
+terms:
+  # --- the surface, cuts, and topology ---
+  Fläche: surface
+  Riemann'sche Fläche: Riemann surface
+  Blatt: sheet
+  Blätter: sheets
+  ausgebreitet: spread out
+  zusammenhängen: to be connected
+  einfach zusammenhängend: simply connected
+  Zerschneidung: dissection
+  zerschneiden: to dissect
+  canonische Zerschneidung: canonical dissection
+  Querschnitt: crosscut
+  Schnitt: cut
+  Ufer: bank
+  Begrenzung: boundary
+  Uebertritt: passage across
+  Ueberschreitung: crossing
+  Umlauf: circuit
+  Umkreisung: circulation
+  geschlossener Weg: closed path
+  Ringfläche: ring surface
+
+  # --- branching and covering ---
+  Verzweigung: branching
+  Verzweigungen: branchings
+  Verzweigungspunkt: branch point
+  Verzweigungsstelle: branch place
+  Verzweigungsart: mode of branching
+  Verzweigungszahl: branch number
+  Gesammtzahl der Verzweigungen: total number of branchings
+  Windungspunkt: winding point
+  Cyklus: cycle
+  Cyklen: cycles
+
+  # --- algebraic entities, functions, and transformations ---
+  algebraisches Gebilde: algebraic configuration
+  algebraische Gebilde: algebraic configurations
+  eindeutige Transformation: single-valued transformation
+  eindeutige Transformationen: single-valued transformations
+  eindeutige Transformation in sich: single-valued transformation into itself
+  eindeutige Transformationen in sich: single-valued transformations into themselves
+  eindeutige algebraische Function: single-valued algebraic function
+  eindeutig: single-valued
+  mehrdeutig: multiple-valued
+  eindeutig umkehrbar: birationally / one-to-one invertible
+  Geschlecht: genus
+  Stelle: place
+  Stellen: places
+  Punkt: point
+  Punkte: points
+  Punktgruppe: point group
+  invariante Punktgruppe: invariant point group
+  invariante Punktgruppen: invariant point groups
+  Multiplicität: multiplicity
+  Ordnung: order
+  Ordnungszahl: order of vanishing / order
+  Ordnungszahlen des Verschwindens: orders of vanishing
+  Unstetigkeit: discontinuity
+  Unstetigkeiten: discontinuities
+  unstetig: discontinuous
+  überall endlich: everywhere finite
+  überall endliches Integral: everywhere finite integral
+  überall endliche Function: everywhere finite function
+  Integral erster Gattung: integral of the first kind
+  Integrale erster Gattung: integrals of the first kind
+  Differential erster Gattung: differential of the first kind
+  Differentiale erster Gattung: differentials of the first kind
+  Integral dritter Gattung: integral of the third kind
+  Abel'sches Integral: Abelian integral
+  Abel'sche Integrale: Abelian integrals
+  Functionensystem: system of functions
+  Integralfunction: integral function
+  Multiplicator: multiplier
+  Multiplicatoren: multipliers
+  Factorensystem: system of factors
+
+  # --- algebra and groups ---
+  Operation: operation
+  Operationen: operations
+  Vertauschung: permutation
+  Vertauschungen: permutations
+  gerade Vertauschungen: even permutations
+  holoedrisch isomorph: holohedrically isomorphic
+  isomorph: isomorphic
+  Resolvente: resolvent
+  Galois'sche Resolvente: Galois resolvent
+  Moduln: moduli
+  Modulfunctionen: modular functions
+  Modulargleichung: modular equation
+  Classenzahlrelationen: class number relations
+  hyperelliptisch: hyperelliptic
+  hyperosculiren: to hyperosculate
+  hyperosculirt: hyperosculates
+  Collineation: collineation
+  Collineationen: collineations
