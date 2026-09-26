@@ -256,6 +256,20 @@ venues:
         url: "https://gdz.sub.uni-goettingen.de/volumes/id/PPN37721857X"
       - label: "EuDML"
         url: "https://eudml.org/journal/10148"
+  annales-ens:
+    name: "Annales scientifiques de l'École Normale Supérieure"
+    aka: "Ann. Sci. Éc. Norm. Supér."
+    founded: 1864
+    place: "Paris"
+    publisher: "Gauthier-Villars"
+    note: >-
+      Founded in 1864 by Louis Pasteur at the École Normale Supérieure; a leading French mathematical
+      journal.
+    archives:
+      - label: "NUMDAM"
+        url: "http://www.numdam.org/journals/ASENS/"
+      - label: "Gallica (BnF)"
+        url: "https://gallica.bnf.fr/ark:/12148/cb34348785c/date"
   book:
     name: "(published as a book / monograph)"
     kind: book

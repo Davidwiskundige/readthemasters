@@ -1,0 +1,1347 @@
+% Faithful transcription — original French. Transcribed from the original printing in the
+% Annales scientifiques de l'École Normale Supérieure, 3e série, tome 27 (1910), printed pages
+% 55–108: Henri Poincaré, "Sur les courbes tracées sur les surfaces algébriques". This is the
+% complete memoir.
+% Scan: NUMDAM (item ASENS_1910_3_27__55_0), digitized and catalogued by Mathdoc.
+%
+% \origpage uses the PRINTED page numbers (55–108). Apparatus is NOT transcribed: the running heads
+% ("H. POINCARÉ.", "SUR LES COURBES TRACÉES SUR LES SURFACES ALGÉBRIQUES."), the page numbers,
+% the signature lines ("Ann. Éc. Norm., (3), XXVII. — FÉVRIER 1910.", etc.).
+%
+% ORTHOGRAPHY & HOUSE STYLE. The author's spelling, printer's letterpress quirks, and mathematical
+% notation are preserved faithfully according to corpus/HOUSESTYLE.md and notation.md.
+% Cross-page renderings, abbreviations, and editorial notes are documented in notation.md and
+% provenance.yaml.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{55}
+\section*{Sur les courbes tracées sur les surfaces algébriques,}
+
+\begin{center}
+\emph{Par H.~Poincaré.}
+\end{center}
+
+\section*{I. --- Introduction.}
+
+On sait quelle est, pour la théorie des surfaces algébriques, l'importance d'un théorème récemment démontré par MM.~Enriques, Castelnuovo et Severi. D'après ce théorème, le nombre des intégrales de différentielles totales de première espèce dépend de l'irrégularité de la surface, c'est-à-dire des systèmes continus algébriques, non linéaires, de courbes algébriques qu'on peut tracer sur cette surface.
+
+Je me suis proposé de trouver une nouvelle démonstration de ce théorème en me plaçant à un point de vue purement transcendant. Ce qui fait l'intérêt de cette démonstration, c'est qu'elle montre la dépendance entre le nombre de ces intégrales de différentielles totales de première espèce, et le nombre et la distribution de certaines valeurs de $y$ que j'appelle \emph{critiques} et qui jouent un grand rôle dans l'analyse qui va suivre. Le nombre de ces intégrales de première espèce dépend également de la différence entre le genre $p$ des sections planes de la surface et le nombre des surfaces d'ordre $n - 3$ qui passent par la courbe double de la surface.
+
+Les mêmes considérations conduisent également à une classification des courbes algébriques tracées sur une surface.
+
+Bien que je ne fasse, la plupart du temps, que retrouver des résultats déjà connus, j'ai pensé qu'il n'était pas inutile de les aborder par une voie nouvelle et par conséquent sous un aspect nouveau.
+
+\origpage{56}
+\section*{II. --- Définition des fonctions $v_i$.}
+
+Soit $f(x, y, z) = 0$ l'équation d'une surface algébrique; coupons cette surface par un plan variable $y = \text{const.}$ et soit
+\[
+U = \int R \frac{dx}{\left(\frac{df}{dz}\right)} \tag{1}
+\]
+une intégrale abélienne de première ou de deuxième espèce relative à la courbe d'intersection
+\[
+f = 0, \quad y = \text{const.} \tag{2}
+\]
+
+Nous supposons que $R$ est une fonction rationelle de $x, y$ et $z$; toutes les intégrales de la forme (1) peuvent se mettre sous la forme suivante:
+\[
+U = \rho_{1} u_{1} + \rho_{2} u_{2} + \ldots + \rho_{2p} u_{2p} + \Pi, \tag{3}
+\]
+où $p$ est le genre de la courbe (2); $u_{1}, u_{2}, \ldots, u_{2p}$ sont $2p$ intégrales particulières de la forme (1); $\rho_{1}, \rho_{2}, \ldots, \rho_{2p}$ sont des fonctions rationnelles de $y$; $\Pi$ est une fonction rationnelle de $x, y, z$. Nous poserons
+\[
+u_{i} = \int R_{i} \frac{dx}{\left(\frac{df}{dz}\right)},
+\]
+que j'écrirai aussi
+\[
+u_{i} = \int R_{i} \frac{dx}{f'_{z}},
+\]
+pour définir les $2p$ intégrales abéliennes particulières $u_{1}, u_{2}, \ldots, u_{2p}$. Mais pour en achever la définition, il faut se donner les limites d'intégration. L'hypothèse la plus simple est que les deux limites d'intégration sont deux valeurs fixes de $x$, indépendantes de $y$ et que nous appellerons $x_{0}$ et $x_{1}$, et nous supposerons d'abord que le chemin d'intégration entre $x_{0}$ et $x_{1}$ est également indépendant de $y$. Dans ces conditions, l'intégrale (1) est une fonction de $y$, et la différentiation
+\origpage{57}sous le signe $\displaystyle\int$ nous donne
+\[
+\frac{dU}{dy} = \int \left[ \frac{d}{dy}\left(\frac{R}{f'_{z}}\right)\frac{df}{dz} - \frac{d}{dz}\left(\frac{R}{f'_{z}}\right)\frac{df}{dy} \right] \frac{dx}{f'_{z}}. \tag{4}
+\]
+
+Cette expression est encore une intégrale de première ou de deuxième espèce de la forme (1) et peut, par conséquent, se mettre sous la forme (3); mais comme nous avons maintenant affaire non plus à des intégrales indéfinies, mais à des intégrales définies, il faut, dans l'expression (3), remplacer $\Pi$ par $\Pi_{1} - \Pi_{0}$, $\Pi_{0}$ et $\Pi_{1}$ représentant les résultats de la substitution dans $\Pi$ de $x_{0}$ et de $x_{1}$ à la place de $x$. Pour obtenir $\displaystyle\frac{du_{i}}{dy}$, il suffit de remplacer $R$ par $R_{i}$ dans l'équation (4); nous obtiendrons ainsi
+\[
+\frac{du_{i}}{dy} = \rho_{1}^{i} u_{1} + \rho_{2}^{i} u_{2} + \ldots + \rho_{2p}^{i} u_{2p} + \Pi_{1}^{i} - \Pi_{0}^{i}; \tag{5}
+\]
+$\rho_{k}^{i}$ étant la valeur de $\rho_{k}$ et $\Pi^{i}$ celle de $\Pi$ qui correspond au cas de $R = R_{i}$.
+
+J'écrirai cette équation sous la forme
+\[
+\Delta u_{i} = \Pi_{1}^{i} - \Pi_{0}^{i}, \tag{5 a}
+\]
+en posant, pour abréger,
+\[
+\Delta u_{i} = \frac{du_{i}}{dy} - \sum \rho^{i} u = \frac{du_{i}}{dy} - \rho_{1}^{i} u_{1} - \ldots - \rho_{2p}^{i} u_{2p}.
+\]
+
+La même équation subsistera si les points $x_{0}$ et $x_{1}$ restant fixes, le chemin d'intégration $x_{0}x_{1}$, au lieu de demeurer invariable, se déforme d'une manière continue quand $y$ varie; cela ne change rien en effet à l'intégrale $u_{i}$. Supposons maintenant que $x_{0}$ se confonde avec $x_{1}$ et que le chemin d'intégration se réduise à un contour fermé; alors $u_{i}$ représente une des périodes de l'intégrale correspondante; et l'on a $\Pi_{1} = \Pi_{0}$ et
+\[
+\Delta u_{i} = 0. \tag{5 b}
+\]
+
+C'est là l'équation dont M.~Picard a si fréquemment fait usage dans ses recherches sur les surfaces algébriques.
+
+\origpage{58}
+Supposons maintenant que la limite supérieure $x_{1}$, au lieu d'être indépendante de $y$, varie avec $y$ de façon que le point $x_{1}, y, z_{1}$ décrive une certaine courbe algébrique $C$ située sur la surface. Soit $\displaystyle\frac{du_{i}}{dy}$ la dérivée de l'intégrale $u_{i}$ calculée en supposant que le point $x_{1}, y, z_{1}$ reste sur la courbe $C$; et $\displaystyle\frac{\partial u_{i}}{\partial y}$ la dérivée calculée en supposant que $x_{1}$ reste constant; on aura
+\[
+\frac{du_{i}}{dy} = \frac{\partial u_{i}}{\partial y} + \frac{\partial u_{i}}{\partial x_{1}} \frac{dx_{1}}{dy};
+\]
+$\displaystyle\frac{\partial u_{i}}{\partial y}$ nous sera donné par l'équation (5), c'est-à-dire qu'on aura
+\[
+\frac{\partial u_{i}}{\partial y} = \sum \rho^{i} u + \Pi_{1}^{i} - \Pi_{0}^{i}.
+\]
+
+D'autre part,
+\[
+\frac{\partial u_{i}}{\partial x} = \frac{R}{f'_{z}}
+\]
+est une fonction rationnelle de $x, y, z$ et, pour avoir $\displaystyle\frac{\partial u_{i}}{\partial x_{1}}$, il suffit d'y remplacer $x$ et $z$ par $x_{1}$ et $z_{1}$; si
+\[
+\varphi(x, y) = 0
+\]
+est l'équation de la projection de la courbe $C$ sur le plan des $xy$, on aura
+\[
+\frac{\partial x_{1}}{\partial y} = - \frac{\varphi'_{y}(x_{1}, y)}{\varphi'_{x}(x_{1}, y)},
+\]
+ce qui est encore une fonction rationnelle de $x_{1}$ et $y$, de sorte que
+\[
+\frac{\partial u_{i}}{\partial x_{1}} \frac{\partial x_{1}}{\partial y} = M^{i}(x_{1}, y, z_{1}) = M_{1}^{i}
+\]
+est une fonction rationnelle de $x_{1}, y, z_{1}$. Notre équation peut donc s'écrire
+\[
+\Delta u_{i} = M_{1}^{i} + \Pi_{1}^{i} - \Pi_{0}^{i}. \tag{5 c}
+\]
+
+Dans le second membre, nous avons donc la différence d'une fonction rationnelle de $x_{1}, y, z_{1}$ et d'une fonction rationnelle de $x_{0}, y, z_{0}$.
+
+\origpage{59}
+La courbe $C$ coupe le plan $y = \text{const.}$ en un certain nombre de points variables ($m$ points par exemple). Soient $x_{1}, y, z_{1}$; $x_{2}, y, z_{2}$; \ldots; $x_{m}, y, z_{m}$, ces $m$ points. Nous pouvons considérer $m$ valeurs de l'intégrale, en la prenant depuis la limite inférieure fixe $x_{0}$, jusqu'à l'un de ces $m$ points comme limite supérieure. Soient
+\[
+u_{i}^{1}, \quad u_{i}^{2}, \quad \ldots, \quad u_{i}^{m}
+\]
+ces $m$ valeurs; nous envisagerons leur moyenne arithmétique
+\[
+v_{i} = \frac{1}{m} (u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{m}).
+\]
+
+Il est clair qu'on aura
+\[
+\Delta v_{i} = H^{i} - \Pi_{0}^{i}, \tag{5 d}
+\]
+où $H_{i}$ désigne la moyenne arithmétique des $m$ expressions
+\[
+\begin{gathered}
+M^{i}(x_{1}, y, z_{1}) + \Pi^{i}(x_{1}, y, z_{1}), \\
+M^{i}(x_{2}, y, z_{2}) + \Pi^{i}(x_{2}, y, z_{2}), \\
+\dots\ldots\dots, \\
+M^{i}(x_{m}, y, z_{m}) + \Pi^{i}(x_{m}, y, z_{m}).
+\end{gathered}
+\]
+
+\emph{Nous remarquerons que $H^{i}$ est une fonction rationnelle de $y$.}
+
+Nous allons maintenant traiter la limite inférieure d'intégration comme nous avons traité la limite supérieure. Nous supposerons que le point $x_{0}, y, z_{0}$ qui sert de limite inférieure, au lieu d'être tel que $x_{0} = \text{const.}$, décrive une courbe algébrique $C_{0}$; on aura alors
+\[
+\Delta u_{i} = M_{1}^{i} + \Pi_{1}^{i} - M_{0}^{i} - \Pi_{0}^{i},
+\]
+$M_{0}^{i}$ étant formé avec la courbe $C_{0}$ et le point $x_{0}, y, z_{0}$ comme $M_{1}^{i}$ avec la courbe $C$ et le point $x_{1}, y, z_{1}$.
+
+Si la courbe $C_{0}$ coupe le plan $y = \text{const.}$ en $m_{0}$ points variables, nous désignerons par $v_{i}$ la moyenne arithmétique des $m m_{0}$ intégrales $u_{i}$ calculées en prenant pour limite inférieure l'un des $m_{0}$ points d'intersection du plan $y = \text{const.}$ avec la courbe $C_{0}$ et pour limite supérieure l'un des $m$ points d'intersection de ce même plan avec la courbe $C$; on aura, d'ailleurs,
+\[
+v_{i} = v'_{i} - v''_{i},
+\]
+\origpage{60}où $v'_{i}$ désigne la moyenne arithmétique des $m$ intégrales où la limite supérieure est l'un des $m$ points de $C$ et la limite inférieure une valeur fixe $X$, et où $v''_{i}$ désigne la moyenne arithmétique des $m_{0}$ intégrales où la limite supérieure est l'un des $m_{0}$ points de $C_{0}$ et la limite inférieure la même valeur fixe $X$.
+
+Nous voyons ainsi qu'on a
+\[
+\Delta v_{i} = \frac{1}{m} \sum (M_{1}^{i} + \Pi_{1}^{i}) - \frac{1}{m_{0}} \sum (M_{0}^{i} + \Pi_{0}^{i}),
+\]
+où $\displaystyle\sum (M_{1}^{i} + \Pi_{1}^{i})$ est la somme des $m$ fonctions analogues relatives aux $m$ points de $C$ et où $\displaystyle\sum (M_{0}^{i} + \Pi_{0}^{i})$ est la somme des $m_{0}$ fonctions analogues relatives aux $m_{0}$ points de $C_{0}$. Mais
+\[
+\frac{1}{m} \sum (M_{1}^{i} + \Pi_{1}^{i}) = H_{i}, \quad \frac{1}{m_{0}} \sum (M_{0}^{i} + \Pi_{0}^{i}) = H_{i}^{0}
+\]
+sont des fonctions rationnelles de $y$; nous arrivons donc à l'équation linéaire
+\[
+\Delta v_{i} = H_{i} - H_{i}^{0}, \tag{5 e}
+\]
+où le second membre est une fonction rationnelle de $y$.
+
+On peut remplacer la courbe $C_{0}$ par un ou plusieurs points fixes de la façon suivante:
+
+Revenons aux coordonnées homogènes, et soit
+\[
+f(x, y, z, t) = 0
+\]
+l'équation de la surface en coordonnées homogènes. Celle du plan $y = \text{const.}$ deviendra $\displaystyle\frac{y}{t} = \text{const.}$; cela posé, la droite $y = t = 0$ appartiendra à la fois à tous les plans $\displaystyle\frac{y}{t} = \text{const.}$; elle coupera la surface en un certain nombre de points, égal au degré de la surface et nous pourrons, sans restreindre essentiellement la généralité, supposer que tous ces points sont distincts. Prenons l'un de ces points pour limite inférieure; ce point sera un point à l'infini de la courbe (2), caractérisé par des valeurs infinies de $x_{0}$ et de $z_{0}$ et par une valeur finie du rapport
+\origpage{61}$\displaystyle\frac{z_{0}}{x_{0}}$; la variable $y$ restant finie, mais variant quand le plan $\displaystyle\frac{y}{t} = \text{const.}$ tourne autour de la droite $y = t = 0$. La limite inférieure correspond ainsi à une valeur fixe de $x_{0}$ et $H_{i}^{0}$ se réduit à un seul terme $M_{0}^{i} + \Pi_{0}^{i}$, qui se réduit lui-même à $\Pi_{0}^{i}$, parce que $M_{0}^{i} = 0$; si en effet on donne à $x_{0}$ et $z_{0}$ des valeurs infinies, dont le rapport est fini et donné, $\Pi_{i}(x_{0}, y, z_{0})$, est évidemment une fonction rationnelle de $y$.
+
+Nous pouvons encore prendre la moyenne arithmétique de $m_{0}$ intégrales dont la limite inférieure est l'un des points d'intersection de la surface avec $y = t = 0$. Supposons, par exemple, que la surface soit de degré 5, et que $A$, $B$, $C$, $D$, $E$ soient les cinq points d'intersection avec $y = t = 0$. Nous pourrons prendre, par exemple, $m_{0} = 10$, en admettant que quatre des limites inférieures se confondent avec $A$, 3 avec $B$, 2 avec $C$, 1 avec $D$, ou faire toute autre hypothèse analogue. On aura alors
+\[
+H_{i}^{0} = \frac{1}{m_{0}} \sum \Pi_{0}^{i}; \quad M_{0}^{i} = 0.
+\]
+
+Nous prendrons le plus souvent $m = m_{0}$, ce qui est toujours possible, en prenant, par exemple, pour la courbe $C_{0}$, $m$ fois l'un des points d'intersection de la surface avec la droite $y = t = 0$.
+
+\section*{III. --- Propriétés des fonctions $v_i$.}
+
+Reprenons les fonctions $v_{i}$ définies dans le paragraphe précédent; la courbe $C$ sera une courbe algébrique rencontrant les plans $y = \text{const.}$ en $m$ points variables; la courbe $C_{0}$ sera remplacée par un des points d'intersection de la surface avec la droite $y = i = 0$\ednote{Printed $y = i = 0$; an apparent misprint for $y = t = 0$ as established on page 60 and in the preceding paragraph.} pris $m$ fois; ce point, je l'appellerai $O$. Les expressions
+\[
+u_{1}, \quad u_{2}, \quad \ldots, \quad u_{p}
+\]
+seront des intégrales de première espèce; nous laisserons de côté les intégrales de deuxième espèce $u_{p+1}, u_{p+2}, \ldots, u_{2p}$ et les fonctions correspondantes $v_{p+1}, v_{p+2}, \ldots, v_{2p}$. Les fonctions
+\[
+R_{1}, \quad R_{2}, \quad \ldots, \quad R_{p}
+\]
+\origpage{62}seront des polynomes entiers en $x$ et $z$ de degré $n - 3$ si $n$ est le degré de la surface; ce seront des fonctions rationnelles de $y$; elles s'annuleront sur la courbe double de la surface.
+
+Si l'on élimine $v_{p+1}, v_{p+2}, \ldots, v_{2p}$ entre les équations (5 e) du paragraphe précédent, on obtiendra un système de $p$ équations du second ordre, linéaires, à coefficients rationnels et à second membre rationnel. Examinons de plus près les propriétés de ces fonctions $v_{1}, v_{2}, \ldots, v_{p}$.
+
+Quand $y$ décrit un contour fermé, ces fonctions se changent en
+\[
+v_{1} + \frac{1}{m} \Omega_{1}, \quad v_{2} + \frac{1}{m} \Omega_{2}, \quad \ldots, \quad v_{p} + \frac{1}{m} \Omega_{p},
+\]
+$\Omega_{1}$ étant l'une des périodes de l'intégrale $u_{1}$, et $\Omega_{i}$ la période correspondante de l'intégrale $u_{i}$. Si les $p$ équations du second ordre déduites des équations (5 e) par l'élimination de $v_{p+1}, \ldots, v_{2p}$ s'écrivent
+\[
+\mathrm{D}(v_{i}) = S_{i}, \tag{1}
+\]
+où $\mathrm{D}(v_{i})$ est une expression linéaire (à coefficients rationnels en $y$) par rapport aux $v_{i}$ et à leurs dérivées des deux premiers ordres, et où $S_{i}$ est rationnel en $y$, les $\Omega_{i}$ satisferont aux équations sans second membre
+\[
+\mathrm{D}(\Omega_{i}) = 0. \tag{2}
+\]
+
+Quelles seront les valeurs de $y$ qui serviront de points de ramification? Parmi les plans $y = \text{const.}$ il y en aura qui seront tangents à la surface; soit $y = y_{0}$ l'un de ces plans; il coupera la surface suivant une courbe qui aura un point double de plus que l'intersection de cette même surface avec le plan $y = y_{0} + \varepsilon$ et qui sera, par conséquent, seulement de genre $p - 1$. Ce sont les valeurs $y_{0}$ qui seront les points de ramification en question.
+
+Mais il convient d'examiner d'un peu plus près la nature des diverses singularités qui peuvent se présenter. Considérons nos $p$ intégrales abéliennes $u_{i}$ et les $2p$ périodes normales de la première et de la deuxième série. Soit $\alpha_{ik} + \sqrt{-1}\,\alpha'_{ik}$ la $k^{\text{ième}}$ période normale de la première série de $u_{i}$ et soit $\beta_{ik} + \sqrt{-1}\,\beta'_{ik}$ la $k^{\text{ième}}$ période normale de la
+\origpage{63}
+deuxième série de $u_{i}$. Considérons, d'autre part, les expressions
+\[
+\begin{aligned}
+a_{k} &= \sum (\mu_{i} \alpha_{ik} + \mu'_{i} \alpha'_{ik}); & b_{k} &= \sum (\mu_{i} \beta_{ik} + \mu'_{i} \beta'_{ik}), \\
+c_{k} &= \sum (\nu_{i} \alpha_{ik} + \nu'_{i} \alpha'_{ik}); & d_{k} &= \sum (\nu_{i} \beta_{ik} + \nu'_{i} \beta'_{ik});
+\end{aligned}
+\]
+la fonction
+\[
+\sum (a_{k} d_{k} - b_{k} c_{k}) = F(\mu, \mu', \nu, \nu')
+\]
+est une forme bilinéaire par rapport à $\mu, \mu'$ et à $\nu, \nu'$ qui s'annule~:
+
+$1^\circ$ Quand on a $\mu_{i} = \nu_{i}$, $\mu'_{i} = \nu'_{i}$~;
+
+$2^\circ$ Quand on a $\mu'_{i} = \sqrt{-1}\,\mu_{i}$, $\nu'_{i} = \sqrt{-1}\,\nu_{i}$~; car alors $a_{k}, b_{k}, c_{k}, d_{k}$ sont les périodes normales des deux intégrales abéliennes
+\[
+\sum \mu_{i} u_{i}, \quad \sum \nu_{i} u_{i}.
+\]
+
+$3^\circ$ Faisons maintenant
+\[
+\mu_{i} = \nu'_{i}, \quad \nu_{i} = -\mu'_{i},
+\]
+de sorte que
+\[
+F(\mu, -\nu, \nu, \mu) = \Phi(\mu, \nu)
+\]
+devienne une forme quadratique en $\mu$ et en $\nu$. Il est aisé de voir que dans ce cas
+\[
+a_{k} + \sqrt{-1}\,c_{k}, \quad b_{k} + \sqrt{-1}\,d_{k}
+\]
+sont les périodes normales de l'intégrale
+\[
+U = \sum (\mu_{i} + \sqrt{-1}\,\nu_{i}) u_{i}.
+\]
+
+Donc, en vertu d'un théorème connu, notre forme $\Phi$ est égale à l'intégrale double
+\[
+\iint \left| \frac{dU}{dx} \right|^{2} \,d\sigma, \tag{3}
+\]
+étendue à la surface de Riemann tout entière ($d\sigma$ représentant le produit de la partie réelle par la partie imaginaire de $dx$).
+
+Cela posé, nous pouvons avoir une singularité~:
+
+\origpage{64}
+$1^\circ$ Si l'une des périodes s'annule à la fois pour toutes les intégrales $u_{i}$, ou plus généralement si l'on peut trouver des entiers $m_{k}, m'_{k}$, tels que
+\[
+\left| \sum m_{k} (\alpha_{ik} + \sqrt{-1}\,\alpha'_{ik}) + \sum m'_{k} (\beta_{ik} + \sqrt{-1}\,\beta'_{ik}) \right|
+\]
+devienne plus petit que toute quantité donnée, et cela simultanément pour toutes les intégrales $u_{i}$. Cette condition peut s'énoncer autrement~; elle signifie que le déterminant à $2p$ lignes et $2p$ colonnes formé avec les $\alpha$ et les $\alpha'$, les $\beta$ et les $\beta'$ devient nul. \emph{Or, le discriminant de la forme} $\Phi$ \emph{est égal au carré de ce déterminant.} Ce discriminant doit donc s'annuler. Il existe donc des valeurs réelles de $\mu$ et de $\nu$, différentes de zéro, pour lesquelles la forme $\Phi$ est nulle, pour lesquelles par conséquent l'intégrale $U$ est telle que l'intégrale double (3) s'annule et comme tous les éléments en sont positifs, telle que $\frac{dU}{dx}$ soit identiquement nul. Donc, \emph{la condition nécessaire et suffisante pour que la circonstance en question se produise, c'est qu'il existe des nombres} $\lambda = \mu + \sqrt{-1}\,\nu$, \emph{tels qu'on ait identiquement}
+\[
+\frac{1}{\left(\frac{df}{dz}\right)} (\lambda_{1} R_{1} + \lambda_{2} R_{2} + \ldots + \lambda_{p} R_{p}) = 0.
+\]
+
+Les valeurs de $y$ pour lesquelles il en sera ainsi s'appelleront \emph{valeurs critiques} et nous dirons pour préciser que cette valeur critique appartient à l'intégrale $U = \displaystyle\sum \lambda_{i} u_{i}$.
+
+Le cas le plus simple est celui où la surface n'ayant pas de courbe double on a
+\[
+p = \frac{(n - 1)(n - 2)}{2}.
+\]
+
+Nous pouvons supposer alors qu'on a
+\[
+R_{i} = \rho_{i} M_{i},
+\]
+$\rho_{i}$ étant une fonction rationnelle de $y$ et $M_{i}$ un monome entier de degré
+\origpage{65}
+$n - 3$ au plus en $x$ et $z$. On devra avoir alors
+\[
+\frac{\lambda_{i} \rho_{i}}{\left(\frac{df}{dz}\right)} = 0.
+\]
+
+Si nous laissons d'abord de côté le cas où $y$ est infini, nous pouvons écrire cette équation sous la forme
+\[
+\lambda_{i} \rho_{i} = 0.
+\]
+
+Toutefois tous les $\lambda_{i}$ ne pourront pas être nuls à la fois~; il faut donc que l'un au moins des $\rho_{i}$ s'annule. \emph{Les valeurs critiques de $y$ sont celles qui annulent l'un des $\rho_{i}$.}
+
+De plus $y = \infty$ peut être valeur critique~; pour nous en rendre compte, passons aux quatre coordonnées homogènes $x, y, z, t$, et soit
+\[
+u_{i} = \int F(x, y, z) \,dx = \int \frac{\rho M \,dx}{\left(\frac{df}{dz}\right)};
+\]
+nous obtiendrons l'expression correspondante en coordonnées homogènes en écrivant
+\[
+u_{i} = \int F\left(\frac{x}{t}, \frac{y}{t}, \frac{z}{t}\right) \frac{dx}{dt} = \int \frac{\rho M \,dx}{\left(\frac{df}{dz}\right)},
+\]\ednote{Printed $\frac{dx}{dt}$; an apparent misprint for $d\frac{x}{t}$ or $\frac{dx}{t}$.}
+où $\rho M$ doit être homogène de degré $n - 2$, et, par conséquent, $\rho$ homogène de degré $n - 2 - q$ si le monome $M$ est de degré $q$. Ainsi $\rho$ sera une fonction rationnelle homogène de degré $n - 2 - q$ en $y$ et $t$~; si l'une des fonctions $\rho_{i}$ ainsi rendues homogènes s'annule pour $t = 0$, c'est que $y = \infty$ doit être regardée comme une valeur critique.
+
+Comme on a $q \leqq n - 3$, le degré de $\rho_{i}$ est toujours positif~; donc $\rho_{i}$ s'annulera toujours, soit pour $t = 0$, soit pour une valeur finie de $\frac{y}{t}$.
+
+Il y a donc toujours des valeurs critiques de $y$. En revanche, on peut toujours choisir les fonctions $\rho_{i}$, de telle sorte que ces valeurs critiques soient telles valeurs de $y$ qu'on voudra.
+
+\origpage{66}
+Plus généralement, prenons
+\[
+u_{k} = \int \frac{R_{k} \,dx}{f'_{z}},
+\]
+$f'_{z}$ sera homogène de degré $n - 1$ et $R_{k}$ de degré $n - 2$ en $x, y, z, t$, et l'on aura
+\[
+R_{k} = \sum \rho_{ik} M_{i},
+\]
+les $M_{i}$ étant les mêmes monomes en $x$ et $t$ et les $\rho_{ik}$ étant des fonctions rationnelles homogènes en $y$ et $t$. Les valeurs critiques de $y$ nous seront alors données en écrivant que le déterminant des $\rho_{ik}$ [qui a $p = \frac{(n - 1)(n - 2)}{2}$ lignes et autant de colonnes] s'annule. Comme ce déterminant est \emph{une fonction rationnelle homogène en $y$ et $t$ de degré positif}, il est certain qu'il y aura des valeurs critiques.
+
+Supposons maintenant que la surface ait une courbe double d'ordre $d$ de telle sorte que
+\[
+p = \frac{(n - 1)(n - 2)}{2} - d, \quad p < \frac{(n - 1)(n - 2)}{2};
+\]\ednote{In the first fraction the digit 2 in $(n - 2)$ has a defective or battered baseline in print.}
+le nombre des $R_{k}$ sera alors plus petit que celui des $M_{i}$~; les $\rho_{ik}$ doivent être choisis de façon que les $R_{k}$ s'annulent sur la courbe double. Pour avoir les valeurs critiques de $y$ il faut écrire que les déterminants contenus dans le Tableau $\rho_{ik}$ (Tableau où il y a plus de colonnes que de lignes) s'annulent tous à la fois. Il peut alors très bien se faire qu'il n'y ait pas de valeur critique, car il peut arriver que ces déterminants ne puissent s'annuler tous à la fois.
+
+Quelques exemples le feront mieux comprendre~: soit une surface du quatrième ordre avec une droite double ($p = 2$). Les surfaces $R_{k} = 0$ devront couper le plan $y = \text{const.}$ suivant des droites ($n - 3 = 1$) rencontrant la droite double. Elles seront d'ailleurs du second ordre~; or, par la droite double, on peut mener deux plans linéairement indépendants
+\[
+P_{1} = 0, \quad P_{2} = 0,
+\]
+ce qui nous permet d'écrire
+\[
+R_{1} = S_{1} P_{1}, \quad R_{2} = S_{2} P_{2}.
+\]
+\origpage{67}
+$S_{1}$ et $S_{2}$ étant deux polynomes du premier degré en $y$ et en $t$, on aura donc deux valeurs critiques pour $S_{1} = 0$, et pour $S_{2} = 0$.
+
+Supposons, au contraire, que notre surface du quatrième ordre ait deux droites doubles ne se rencontrant pas ($p = 1$)~; la surface $R_{k} = 0$ devra couper le plan $y = \text{const.}$ suivant des droites rencontrant les deux droites doubles, elle sera d'ailleurs du deuxième ordre, c'est donc un paraboloïde s'appuyant sur ces deux droites. Comme ce paraboloïde est indécomposable et comme par conséquent son équation ne peut pas être identiquement satisfaite pour une valeur constante de $y$, il n'y a pas de valeur critique.
+
+Comme troisième exemple, supposons une surface du sixième ordre admettant une biquadratique double et une droite double ne la rencontrant pas~; on a
+\[
+p = 5, \quad n - 2 = 4, \quad n - 3 = 3.
+\]
+
+Les surfaces $R_{k} = 0$ sont du quatrième ordre, elles doivent couper les plans $y = \text{const.}$ suivant des cubiques rencontrant les deux courbes doubles. Nous devons rechercher s'il existe des surfaces du troisième ordre passant par ces courbes doubles. Soient
+\[
+\Sigma_{1} = 0, \quad \Sigma_{2} = 0, \quad P_{1} = 0, \quad P_{2} = 0
+\]
+les équations de la biquadratique et de la droite doubles, les $\Sigma$ étant du deuxième ordre et les $P$ du premier. Cela nous fait quatre surfaces du troisième ordre distinctes passant par ces courbes
+\[
+\Sigma_{1} P_{1} = 0, \quad \Sigma_{1} P_{2} = 0, \quad \Sigma_{2} P_{1} = 0, \quad \Sigma_{2} P_{2} = 0~;
+\]
+nous pourrons prendre
+\[
+R_{1} = S_{1} \Sigma_{1} P_{1}, \quad R_{2} = S_{2} \Sigma_{1} P_{2}, \quad R_{3} = S_{3} \Sigma_{2} P_{1}, \quad R_{4} = S_{4} \Sigma_{2} P_{2}~;
+\]
+les $S$ étant des polynomes du premier degré en $y$ et $t$~; les valeurs critiques correspondantes seront les zéros des $S$. Mais cela ne fait que quatre $R_{k}$~; comme $p = 5$ il en existe une cinquième, indépendante des quatre autres et qui ne peut être mise sous cette forme. Il y a donc une intégrale abélienne pour laquelle il n'y a pas de valeur critique.
+
+On voit par là quelle relation il y a entre le nombre des valeurs
+\origpage{68}critiques d'une part, et, d'autre part, la différence entre le genre $p$ et le nombre des surfaces d'ordre $n - 3$ passant par les courbes doubles. Cela est d'autant plus important que ce nombre est lié, comme on le verra plus loin, à celui des intégrales de différentielles totales de première espèce. Mais cette discussion ne serait pas complète si nous ne parlions ici des valeurs critiques apparentes.
+
+Supposons, par exemple, que $f = 0$ soit un cône du troisième degré ayant son sommet à l'origine. On pourra écrire alors
+\[
+u = \int \frac{(\alpha y + \beta t) \,dx}{f'_{z}},
+\]
+la valeur critique est donnée par $\alpha y + \beta t = 0$~; nous pouvons la choisir arbitrairement, prenons donc $\alpha y + \beta t = y$,
+\[
+u = \int \frac{y \,dx}{f'_{z}} \cdot
+\]
+
+La valeur critique $y = 0$ devient alors \emph{apparente}. Nous avons démontré que, si l'une des périodes s'annulait (ou plus généralement si l'on peut former des périodes de module aussi petit qu'on veut), on a une valeur critique de $y$ annulant identiquement $u$~; mais nous n'avons pas démontré la réciproque. Ici l'intégrale est homogène de degré zéro en $x, y, z$~; les périodes $\omega$ ne dépendent pas de $y$, donc elles ne s'annulent pas quand $y$ prend la valeur zéro qui n'est qu'une valeur critique apparente.
+
+Supposons maintenant que la surface $f = 0$ admette, à l'origine, un point conique où le cône tangent soit de genre $p' > 0$ et de degré $h$. Considérons nos $p$ intégrales
+\[
+u_{k} = \int \frac{R_{k} \,dx}{f'_{z}} \cdot
+\]
+
+Nous supposerons que $R_{k}$ soit divisible par $y$ de façon que $y = 0$ soit une valeur critique apparente ou effective.
+
+Posons
+\[
+x = \xi y, \quad z = \zeta y~; \quad f = y^{h} \varphi, \quad R_{k} = y^{\mu} S_{k},
+\]
+et, en effet, après ce changement de variables, $f$ deviendra divisible
+\origpage{69}par $y^{h}$~; quant à\ednote{Printed ``quand à''.} $R_{k}$, qui était déjà divisible par $y$, nous supposerons qu'il devient divisible par $y^{\mu}$ après le changement de variables, et que $S_{k}$ n'est pas divisible par $y$~; il vient alors
+\[
+u_{k} = \int \frac{y^{\mu - h + 2} S_{k} \,d\xi}{\varphi'_{\zeta}} \cdot
+\]
+
+Si $\mu > h - 2$, la valeur $y = 0$ est une valeur critique effective pour notre intégrale~; si $\mu = h - 2$, ce n'est qu'une valeur critique apparente~; si $\mu < h - 2$, ce sera une de ces valeurs pour lesquelles $u_{k}$ devient infini et que nous appellerons bientôt \emph{valeurs critiques de la deuxième sorte}. Ces exemples suffiront pour faire comprendre ce que nous entendons par \emph{valeur critique apparente}.
+
+Je dis qu'on peut toujours choisir les $R_{i}$ de telle sorte qu'une valeur donnée $y_{0}$ ne soit pas critique. Écrivons, en effet,
+\[
+R_{i} = \frac{P_{i}}{Y},
+\]
+où $Y$ est un polynome homogène de degré $\nu$ en $y$ et en $t$, le même pour toutes les fonctions $R_{i}$, et où $P_{i} = 0$ est une surface de degré $n + \nu - 2$ passant par la courbe double. Supposons que $y_{0}$ soit critique d'ordre $h$, c'est-à-dire qu'il y ait $q$ combinaisons linéaires des $P_{i}$, $\displaystyle\sum \lambda_{i}^{(k)} P_{i}$, qui soient divisibles par $(y - y_{0})^{\alpha_{k}}$ et de telle sorte que $\displaystyle\sum \alpha_{k} = h$.
+
+Nous poserons alors
+\[
+\begin{aligned}
+\sum \lambda_{i}^{(k)} P_{i} &= \left(\frac{y - y_{0}}{y - y_{1}}\right)^{\alpha_{k}} \sum \lambda_{i}^{(k)} P'_{i} & (k &= 1, 2, \ldots, q), \\
+\sum \mu_{i}^{(k)} P_{i} &= \sum \mu_{i}^{(k)} P'_{i} & (k &= 1, 2, \ldots, p - q),
+\end{aligned}
+\]
+les $\mu$ étant des coefficients choisis de telle sorte que le déterminant des $\lambda$ et des $\mu$ ne soit pas nul. Nous formerons les $R'_{i}$, les $\rho'_{ik}$, les $u'_{i}$ avec les $P'_{i}$, comme les $R_{i}$, les $\rho_{ik}$ et les $u_{i}$ le sont avec les $P_{i}$.
+
+Comme $y_{0}$ est critique d'ordre $h$, tous les déterminants tirés du Tableau des $\rho_{ik}$ sont divisibles par $(y - y_{0})^{h}$ sans l'être par une puissance plus élevée. Les déterminants tirés du Tableau des $\rho'_{ik}$ s'obtiendront
+\origpage{70}en multipliant les déterminants correspondants du Tableau des $\rho_{ik}$ par le facteur
+\[
+\left(\frac{y - y_{1}}{y - y_{0}}\right)^{\sum \alpha_{k}} = \left(\frac{y - y_{1}}{y - y_{0}}\right)^{h} \cdot
+\]
+
+Ces déterminants ne sont donc pas tous divisibles par $y - y_{0}$, ce qui veut dire que $y_{0}$ n'est pas critique pour les $u'_{i}$.
+
+\hfill C.~Q.~F.~D.
+
+$2^\circ$ Nous appellerons \emph{valeurs critiques de la deuxième sorte} les valeurs de $y$ pour lesquelles l'une des expressions $R_{k}$ devient identiquement infinis\ednote{Printed ``infinis''; grammatically ``infinie''.}. Ce sont dans les cas où il n'y a pas de courbe double les infinis des $\rho_{i}$, et plus généralement ce sont les zéros du dénominateur $Y$~; ce dénominateur pouvant être choisi arbitrairement, les valeurs critiques de la deuxième sorte peuvent être choisies arbitrairement. Nous verrons au paragraphe~8 qu'on peut s'arranger pour qu'il n'y en ait aucune.
+
+$3^\circ$ Nous appellerons enfin \emph{valeurs singulières} des $y$ celles qui sont telles que le plan $y = \text{const.}$ soit tangent à la surface, ou plus généralement que la courbe $K_{y}$ intersection de la surface par ce plan, ait un genre plus petit que $p$. Il arrivera, en général, que ces valeurs singulières seront des points de ramification pour les périodes considérées comme fonctions de $y$. Cela ne peut avoir lieu que si une période devient nulle ou infinie~; si la valeur singulière n'est pas en même temps critique, il ne peut y avoir de période nulle, donc il doit y avoir une période infinie.
+
+Dans le cas d'un plan tangent ordinaire, on peut, en choisissant les périodes d'une façon convenable, les ranger dans l'ordre suivant~:
+\[
+\omega_{1}, \quad \omega_{2}, \quad \ldots, \quad \omega_{2p},
+\]
+qui se changent respectivement en
+\[
+\omega_{1} + \omega_{2}, \quad \omega_{2}, \quad \ldots, \quad \omega_{2p},
+\]
+quand $y$ tourne autour de la valeur singulière~; la première $\omega_{1}$ devenant seule infinie.
+
+\origpage{71}
+Les valeurs critiques pouvant être choisies arbitrairement, nous pouvons toujours supposer qu'aucune valeur n'est à la fois singulière et critique; toute valeur qui n'est ni singulière, ni critique sera ordinaire.
+
+Cela posé : $1^\circ$ dans le voisinage d'une valeur ordinaire, les fonctions $v$ et les périodes $\omega$ sont des fonctions holomorphes de $y$; $2^\circ$ dans le voisinage d'une valeur singulière, il peut arriver que
+\[
+v_{1}, \quad v_{2}, \quad \ldots, \quad v_{p}
+\]
+cessent d'être des fonctions holomorphes de $y$, mais on pourra trouver un système de périodes de nos $p$ intégrales $u_{i}$, à savoir :
+\[
+\Omega_{1}, \quad \Omega_{2}, \quad \ldots, \quad \Omega_{p},
+\]
+tel que
+\[
+v_{1} + \frac{1}{m} \Omega_{1}, \quad v_{2} + \frac{1}{m} \Omega_{2}, \quad \ldots, \quad v_{p} + \frac{1}{m} \Omega_{p}
+\]
+restent holomorphes. En effet, $v_{i}$ est la moyenne arithmétique des intégrales $u_{i}$ prises depuis un point de $C_{0}$ jusqu'au point correspondant de $C$, et le long de certains chemins d'intégration. Si, quand $y$ prend la valeur singulière, aucun de ces chemins d'intégration ne va passer par le nouveau point double (point de contact de la surface avec le plan $y = \text{const.}$) les fonctions $v_{i}$ resteront holomorphes. Si l'on remplace les chemins d'intégration par d'autres, les $v_{i}$ se changeront en
+\[
+v_{i} + \frac{1}{m} \Omega_{i},
+\]
+$\Omega_{i}$ étant une période. Or, on peut toujours trouver des chemins d'intégration qui ne passent pas par le nouveau point double. Donc on peut toujours trouver une période telle que les $v_{i} + \frac{1}{m} \Omega_{i}$ restent holomorphes.
+
+Ce raisonnement se trouverait en défaut dans deux cas : $1^\circ$ si la courbe $C$ allait passer par le nouveau point double, les chemins d'intégration devant aboutir à ce nouveau point double ne pourraient être tracés de façon à l'éviter; $2^\circ$ si la courbe $K_{y}$ se décompose et si l'un des points d'intersection de $K_{y}$ et de $C_{0}$ est sur l'une des composantes
+\origpage{72}pendant que le point d'intersection correspondant de $K_{y}$ et de $C$ est sur l'autre. Il ne serait pas alors possible d'aller de l'un à l'autre en restant sur la courbe $K_{y}$ et sans passer par l'une des intersections des deux composantes, c'est-à-dire par l'un des nouveaux points doubles. Il est aisé d'éviter ces deux cas exceptionnels. Car ils ne se présenteront, pour une même surface et pour une même courbe $C$, que pour un certain choix des axes des coordonnées, choix qu'il sera toujours possible d'éviter.
+
+Les différentes déterminations de la fonction $v_{i}$ sont, nous l'avons vu, toutes de la forme $v_{i} + \frac{1}{m} \Omega_{i}$; on remarquera cependant que je n'ai pas dit que l'une des déterminations des $v_{i}$ doit rester holomorphe, parce que je ne sais pas si toutes les expressions $v_{i} + \frac{1}{m} \Omega_{i}$ peuvent s'échanger entre elles, ni par conséquent si elles sont toutes des déterminations des $v_{i}$.
+
+$3^\circ$ Qu'arrive-t-il près d'une valeur critique $y_{0}$ de la première sorte que nous supposerons non linéaire. On pourra trouver entre les $R_{i}$ une relation linéaire
+\[
+\sum \alpha_{i} R_{i} = 0,
+\]
+où les $\alpha$ sont des coefficients constants et qui sera identiquement satisfaite pour $y = y_{0}$, quels que soient $x$ et $z$; en d'autres termes pour $y = y_{0}$, les $R_{i}$ cesseront d'être linéairement indépendants.
+
+Mais nous pouvons choisir des fonctions rationnelles $\sigma_{ik}(y)$ dont le déterminant ne soit pas nul pour $y = y_{0}$ et telles qu'en posant
+\[
+R'_{k} = \sum \sigma_{ik} R_{i},
+\]
+la valeur $y = y_{0}$ critique pour les $R_{i}$ ne le soit plus pour les $R'_{k}$; nous avons dit, en effet, qu'on peut choisir les $R$ de telle façon qu'une valeur déterminée de $y$ ne soit pas critique. Si alors on désigne par $u'_{k}$ les intégrales analogues aux $u_{i}$ et par $v'_{k}$ les fonctions analogues aux $v_{i}$ formées avec les $R'_{k}$, on aura
+\[
+u'_{k} = \sum \sigma_{ik} u_{i}, \qquad v'_{k} = \sum \sigma_{ik} v_{i}.
+\]
+
+\origpage{73}
+La valeur $y = y_{0}$ n'étant pas critique pour les $R'_{k}$, les $v'_{k}$ devront rester holomorphes pour $y = y_{0}$; on en conclut que non seulement les $v_{i}$ doivent rester holomorphes, mais que l'expression $\displaystyle\sum \alpha_{i} v_{i}$, correspondant à l'intégrale $\displaystyle\sum \alpha_{i} u_{i}$ à laquelle appartient spécialement la valeur critique, doit s'annuler pour $y = y_{0}$.
+
+$4^\circ$ Dans le voisinage d'une valeur critique de la deuxième sorte, les choses se passent de même; on peut trouver des fonctions rationnelles $\sigma_{ik}$ telles que la valeur ne soit plus critique pour les $\displaystyle R'_{k} = \sum \sigma_{ik} R_{i}$. Alors les $v'_{k}$ doivent rester holomorphes, mais les $v_{i}$ peuvent devenir infinies.
+
+En résumé, si $y_{0}$ est une valeur critique, de telle sorte que $\displaystyle\sum \alpha_{i} R_{i}$ soit divisible par $(y - y_{0})^{h}$, $\displaystyle\sum \alpha_{i} v_{i}$ devra être divisible par $(y - y_{0})^{h}$; si $y_{0}$ est une valeur critique de la deuxième sorte, les $v_{i}$ pourront devenir infinis du même ordre que les $R_{i}$. Nous dirons alors que les fonctions $v_{i}$ se comportent \emph{régulièrement}.
+
+Si, par exemple, la surface $f = 0$ est du troisième degré, on n'aura qu'une intégrale de première espèce que j'écrirai, par exemple,
+\[
+u = \int \frac{y(y-1)\,dx}{(y-2) f'_{z}};
+\]
+ses deux périodes seront $\omega$ et $\omega'$.
+
+Si on laisse de côté les valeurs singulières, pour toutes les valeurs de $y$ autres que $0$, $1$ ou $2$, $v$, $\omega$ et $\omega'$ restent finis; pour $y = 0$ ou $1$, $v$, $\omega$ et $\omega'$ s'annulent de façon que $\frac{v}{\omega}$ et $\frac{v}{\omega'}$ restent finis; pour $y = 2$, $v$, $\omega$ et $\omega'$ deviennent infinis de façon que $\frac{v}{\omega}$ et $\frac{v}{\omega'}$ restent finis.
+
+Il nous reste une dernière remarque à faire. Soient $y_{1}, y_{2}, \ldots, y_{q}$ les différentes valeurs singulières de $y$. Joignons-les à l'origine par des coupures $Q_{1}, Q_{2}, \ldots, Q_{q}$. Supposons que ces coupures ne se rencontrent pas mutuellement et qu'un mobile qui décrirait un cercle de rayon très grand les rencontre successivement dans l'ordre numérique des indices. Supposons que quand on franchit la coupure $Q_{k}$, $v_{i}$ se
+\origpage{74}change en $v_{i} + \frac{1}{m} \Omega_{i}$. Il arrivera nécessairement que, quand on franchira successivement toutes les coupures $Q_{1}, Q_{2}, \ldots, Q_{q}$, $v_{i}$ reviendra à sa valeur primitive.
+
+Supposons, pour simplifier, trois coupures seulement $Q_{1}, Q_{2}, Q_{3}$, et supprimons l'indice $i$. Quand on franchira $Q_{1}, Q_{2}$ ou $Q_{3}$, $v$ se changera respectivement en $v + \frac{1}{m} \Omega^{(1)}$, $v + \frac{1}{m} \Omega^{(2)}$, $v + \frac{1}{m} \Omega^{(3)}$; quand on franchira $Q_{2}$, $\Omega^{(1)}$ se changera en $\Omega'^{(2)}$\ednote{In the printed text $\Omega'^{(2)}$ is set for $\Omega'^{(1)}$; an apparent misprint, as the argument and equation (4) require $\Omega'^{(1)}$. Kept here as printed.}; quand on franchira $Q_{3}$, $\Omega^{(2)}$ se changera en $\Omega'^{(2)}$ et $\Omega'^{(1)}$ en $\Omega''^{(1)}$ et alors, quand on franchira successivement les trois coupures, $v$ se changera en
+\[
+v + \frac{1}{m} (\Omega''^{(1)} + \Omega'^{(2)} + \Omega^{(3)}),
+\]
+et l'on devra avoir
+\[
+\Omega''^{(1)} + \Omega'^{(2)} + \Omega^{(3)} = 0. \tag{4}
+\]
+
+Encore une remarque : M.~Picard a montré que par une transformation birationnelle on peut toujours ramener une surface à une autre ne possédant d'autre singularité qu'une courbe double avec des points triples et que les seules valeurs singulières de $y$ sont alors celles pour lesquelles le plan $y = \text{const.}$, est tangent à la surface. Nous pourrons toujours choisir les axes de coordonnée de telle sorte que ces plans tangents soient des plans tangents ordinaires. Alors la façon dont se comportent les périodes est particulièrement simple. Soit
+\[
+\omega_{i}, \quad \omega'_{i}, \quad \omega''_{i}, \quad \ldots
+\]
+les périodes de $u_{i}$; on pourra toujours choisir les périodes normales de telle sorte que $\omega_{i}, \omega''_{i}, \ldots$, ne change pas quand $y$ tourne autour de la valeur singulière tandis que $\omega'_{i}$ (qui devient infini logarithmiquement pour cette valeur), se change en $\omega'_{i} + \omega_{i}$. Quant à $u_{i}$ il se change en $u_{i} + \mu \omega_{i}$, où $\mu$ est un entier qui dépend de la détermination choisie pour $u_{i}$.
+
+Nous dirons que $y = y_{0}$ est pour $u_{i}$ une valeur critique du $n^{\text{ième}}$ ordre, si les diverses périodes $\Omega_{i}$ de l'intégrale $u_{i}$ y deviennent nulles ou infinies du $n^{\text{ième}}$ ordre au plus; il faut alors que $v_{i}$ y devienne nulle
+\origpage{75}ou infinie du $n^{\text{ième}}$ ordre au moins~; et c'est là une autre manière d'énoncer les conditions $3^\circ$ et $4^\circ$. Une valeur critique d'ordre $n > 1$ peut être regardée comme obtenue par la réunion de $n$ valeurs critiques du premier ordre par la même convention que pour les racines multiples des équations algébriques.
+
+Quand des fonctions $v_{i}$ satisferont aux conditions énoncées dans le présent paragraphe nous dirons qu'elles sont \emph{normales}.
+
+\section*{IV. --- Courbes correspondant aux fonctions $v_{i}$.}
+
+Réciproquement, je suppose qu'il existe un système de fonctions $v_{1}, v_{2}, \ldots, v_{p}$, qui soient \emph{normales}, c'est-à-dire qui satisfassent aux conditions suivantes~:
+
+$1^\circ$ Elles seront fonctions holomorphes de $y$ sauf pour les valeurs singulières ou critiques~;
+
+$2^\circ$ Dans le voisinage d'une valeur singulière, elles pourront devenir infinies ou cesser d'être uniformes~; mais il existera une période $\Omega_{i}$ telle que
+\[
+v_{i} + \frac{1}{m} \Omega_{i}
+\]
+reste holomorphe~;
+
+$3^\circ$ Dans le voisinage d'une valeur critique, les rapports $\frac{v_{i}}{\Omega_{i}}$ resteront holomorphes.
+
+Je dis qu'il existera une courbe algébrique $C$ correspondant à cette fonction.
+
+Nous pourrons d'abord toujours supposer $m = p$, puisque nous pourrions multiplier notre fonction par la constante $\frac{m}{p}$. Nous savons maintenant que si l'on considère une courbe algébrique de genre $p$ et si $u_{1}, u_{2}, \ldots, u_{p}$ sont les intégrales de première espèce correspondante, si $v_{1}, v_{2}, \ldots, v_{p}$ sont des constantes données, on pourra toujours définir les abscisses $x_{1}, x_{2}, \ldots, x_{p}$ de $p$ points de la courbe par les $p$ équations
+\[
+\int_{x_{1}^{0}}^{x_{1}} du_{i} + \int_{x_{2}^{0}}^{x_{2}} du_{i} + \ldots + \int_{x_{p}^{0}}^{x_{p}} du_{i} = p v_{i} \quad (i = 1, 2, \ldots, p). \tag{1}
+\]
+
+\origpage{76}
+Les limites inférieures d'intégration $x_{1}^{0}, \ldots, x_{p}^{0}$, sont choisies une fois pour toutes d'une façon arbitraire.
+
+$1^\circ$ Les équations (1) déterminent les inconnues $x_{1}, x_{2}, \ldots, x_{p}$ d'une façon univoque~;
+
+$2^\circ$ Il y a exception pour certains systèmes exceptionnels de valeurs des constantes $v_{i}$~; ces systèmes exceptionnels correspondent aux cas où les $p$ points $M_{1}, M_{2}, \ldots, M_{p}$ dont les abscisses sont $x_{1}, x_{2}, \ldots, x_{p}$ sont sur une même adjointe d'ordre $n - 3$~;
+
+$3^\circ$ Les solutions des équations ne changent pas quand les seconds membres $p v_{i}$ augmentent d'une période.
+
+Appliquons cette règle au cas qui nous occupe. Prenons d'abord, d'après notre convention,
+\[
+x_{1}^{0} = x_{2}^{0} = \ldots = x_{p}^{0},
+\]
+de telle façon que le point d'abscisse $x_{1}^{0}$ qui sert de limite inférieure soit l'un des points d'intersection de la surface avec la droite $y = t = 0$.
+
+Substituons ensuite aux $v_{i}$ les fonctions du système envisagé. Quand $y$ variera, les points $M_{1}, M_{2}, \ldots, M_{p}$ d'abscisses $x_{1}, x_{2}, \ldots, x_{p}$ vont se déplacer sur la surface et engendrer une certaine courbe que j'appelle $C$.
+
+Quand $y$ décrira un contour fermé autour d'une des valeurs singulières, il y aura d'après l'hypothèse des périodes $\Omega_{i}$ telles que les $v_{i} + \frac{1}{p} \Omega_{i}$ restent holomorphes~; mais quand $y$ tourne autour d'une valeur singulière, $\Omega_{i}$ se change en $\Omega_{i} - \Omega'_{i}$, $\Omega'_{i}$ étant une autre période. Alors $v_{i}$ devra se changer en $v_{i} + \frac{1}{p} \Omega'_{i}$, c'est-à-dire que les deuxièmes membres des équations (1) augmenteront d'une période. Donc, le système des points $M_{1}, M_{2}, \ldots, M_{p}$ reviendra à sa situation primitive.
+
+Il résulte de là que la courbe $C$ coupera le plan $y = \text{const.}$ en $p$ points mobiles seulement. Mais il ne s'ensuit pas nécessairement que la courbe $C$ soit une courbe algébrique et surtout une courbe algébrique de degré $p$. En effet, elle peut passer par les points qui appartiennent à tous les plans $y = \text{const.}$, c'est-à-dire par les points d'intersection de la surface $f = 0$ avec la droite $y = t = 0$. Soient $A_{1}, A_{2}, \ldots, A_{n}$
+\origpage{77}ces $n$ points d'intersection~; si le point $A_{k}$ est pour la courbe $C$ un point multiple d'ordre $\mu_{k}$, et que $\mu_{k}$ soit fini, la courbe $C$ sera algébrique d'ordre $p + \displaystyle\sum \mu_{k}$~; si l'un des $\mu_{k}$ est infini, la courbe $C$ sera transcendante. Comment déterminer $\mu_{k}$~; soient
+\[
+a_{1k}, \quad a_{2k}, \quad \ldots, \quad a_{pk}
+\]
+les valeurs des intégrales $u_{1}, u_{2}, \ldots, u_{p}$ qui correspondent au point $A_{k}$~; nous pouvons remarquer que pour l'un de ces points, $A_{1}$ par exemple, toutes les quantités $a_{ik}$ sont nulles puisque ce point a été, d'après notre convention, pris comme limite inférieure commune de toutes nos intégrales.
+
+Pour que la courbe $C$ passe en $A_{k}$, il faut que l'un des points $M$, $M_{p}$ par exemple, vienne se confondre avec $A_{k}$ pour une certaine valeur de $y$~; on a alors
+\[
+p v_{i} - a_{ik} = \int^{M_{1}} du_{i} + \int^{M_{2}} du_{i} + \ldots + \int^{M_{p-1}} du_{i} \cdot
+\]
+
+Rappelons-nous alors l'une des propriétés fondamentales de la fonction $\Theta$~; on peut choisir les limites inférieures d'intégration de telle façon qu'on ait identiquement (quelles que soient les limites supérieures $M_{1}, M_{2}, \ldots, M_{p-1}$),
+\[
+\Theta\left( \int^{M_{1}} du_{i} + \int^{M_{2}} du_{i} + \ldots + \int^{M_{p-1}} du_{i} \right) = 0.
+\]
+
+C'est là un théorème bien connu de Riemann. Mais je préfère l'énoncer de la manière suivante, de façon à conserver la convention que nous avons faite plus haut au sujet des limites inférieures de nos intégrales~: \emph{On peut trouver des quantités $h_{i}$ qui ne sont fonctions que de $y$ et pour lesquelles on ait identiquement}
+\[
+\Theta\left( \int^{M_{1}} du_{i} + \int^{M_{2}} du_{i} + \ldots + \int^{M_{p-1}} du_{i} - h_{i} \right) = 0
+\]
+ou
+\[
+\Theta(p v_{i} - a_{ik} - h_{i}) = 0. \tag{2}
+\]
+
+\origpage{78}
+Mais Riemann a démontré, en outre, que, si l'on considère les $2p - 2$ points d'intersection d'une courbe de genre $p$ avec une adjointe d'ordre $n - 3$, les points doubles étant laissés de côté, et qu'on fasse la somme
+\[
+\sum \int^{M} du_{i}, \tag{3}
+\]
+en étendant la sommation aux $2p - 2$ points $M$ en question, on aura
+\[
+\sum \int^{M} du_{i} = 2 h_{i}. \tag{3 bis}
+\]
+
+D'autre part, d'après le théorème d'Abel, si l'on reprend la somme (3) en l'étendant cette fois à tous les points d'intersection de la courbe donnée avec une courbe quelconque de degré $k$, on obtiendra une constante. Si, par exemple, $k = 1$, cette constante sera $\displaystyle\sum a_{ik}$, puisqu'on trouve cette valeur $\displaystyle\sum a_{ik}$ quand on considère, en particulier, la droite $y = t = 0$~; si $k = n - 3$, cette constante sera
+\[
+(n - 3) \sum a_{ik}.
+\]
+
+Telle sera donc la valeur de la somme (3) appliquée à toutes les intersections de notre adjointe d'ordre $n - 3$, \emph{points doubles compris}. Je puis donc écrire
+\[
+2 h_{i} + b_{i} = (n - 3) \sum a_{ik} \tag{4}
+\]
+où
+\[
+b_{i} = \sum \int^{M} du_{i},
+\]
+la sommation étant étendue aux points doubles~; chaque point double nous donne deux intégrales correspondant aux deux branches de courbe qui passent par ce point.
+
+Inutile d'ajouter que les équations (3~bis) et (4) et les équations analogues ne sont vraies qu'à un multiple près des périodes. L'équation
+\origpage{79}(2) devient alors
+\[
+\Theta\left( p v_{i} - a_{ik} + \frac{1}{2} b_{i} - \frac{n - 3}{2} \sum a_{ik} \right) = 0. \tag{5}
+\]
+
+Dans cette équation l'inconnue est $y$~; nous avons autant d'équations (5) que de points $A_{k}$, c'est-à-dire $n$. Si l'ensemble de ces équations (5) possède $q$ racines distinctes, la courbe $C$ est algébrique et de degré $p + q$~; si nous avons une infinité de racines, la courbe $C$ n'est pas algébrique.
+
+Comment pourrait-il se faire que nous eussions une infinité de racines~? Il faut que, dans le voisinage d'une valeur $y_{0}$ de $y$, ces racines soient infiniment condensées, de sorte que $y_{0}$ appartienne à l'ensemble dérivé de l'ensemble de ces racines. Il faut alors que le premier membre de l'une des équations (5) cesse d'être algébroïde pour $y = y_{0}$. Nous sommes ainsi conduits à examiner de plus près la forme analytique de ces premiers membres.
+
+Les fonctions $p v_{i}$, $a_{ik}$, $b_{i}$, $\displaystyle\sum a_{ik}$ sont \emph{normales}, c'est-à-dire qu'elles jouissent toutes de propriétés analogues à celles que nous avons énoncées au début de ce paragraphe~; seulement le nombre $m$ n'est pas le même pour toutes.
+
+La fonction $\Theta$ est comme on le sait de la forme suivante~:
+\[
+\sum e^{P_{1} + P_{2}},
+\]
+où
+\[
+P_{1} = \sum m_{i} w_{i}, \quad P_{2} = \frac{1}{2} \sum m_{i} m_{k} c_{ik}~;
+\]
+les $m$ sont des entiers, les $w$ et les $c$ des variables et des constantes que nous allons définir.
+
+$1^\circ$ Considérons nos intégrales $u_{i}$ et leurs périodes normales de première espèce~; soit $\omega_{ij}$ la $j^{\text{ième}}$ période normale de $u_{i}$~; nous introduirons des arguments correspondant à ces intégrales et que nous continuerons à appeler $u_{i}$ et nous poserons
+\[
+2 \pi \sqrt{-1} \, u_{i} = \sum \omega_{ij} w_{j}.
+\]
+
+\origpage{80}
+Nous devons remplacer ces arguments par les valeurs qui figurent dans l'équation (5), ce qui nous donne les équations
+\[
+2 \pi \sqrt{-1} \left( p v_{i} - a_{ik} + \frac{1}{2} b_{i} - \frac{n - 3}{2} \sum a_{ik} \right) = \sum \omega_{ij} w_{j}, \tag{6}
+\]
+qui définissent les $w$.
+
+$2^\circ$ Considérons maintenant les périodes normales de deuxième espèce et soit $\omega'_{ij}$ la $j^{\text{ième}}$ période normale de deuxième espèce de $u_{i}$~; on aura
+\[
+2 \pi \sqrt{-1} \, \omega'_{ik} = \sum \omega_{ij} c_{jk}, \tag{7}
+\]
+qui définissent les $c$.
+
+On voit que $\Theta$ est une fonction holomorphe des $w$ et des $c$, et ne cesse de l'être que si les $w$ deviennent infinis, ou si la partie réelle de $P_{2}$ cesse d'être une forme définie négative.
+
+Considérons d'abord une valeur ordinaire de $y$~; $p v_{i}$, $a_{ik}$, $b_{i}$ sont des fonctions holomorphes de $y$~; il en est de même des $\omega_{ij}$ et des $\omega'_{ij}$~; de plus le déterminant des $\omega_{ij}$ n'est pas nul, sans quoi nous aurions une valeur critique. Donc, en vertu des équations (6) et (7), $w$ et les $c$ sont des fonctions holomorphes de $y$~; la partie réelle de $P_{2}$ ne peut non plus cesser d'être définie négative, ce qui ne peut avoir lieu que pour des valeurs critiques. Donc $\Theta$ est une fonction holomorphe de $y$.
+
+Soit maintenant une valeur critique non singulière. Nous avons vu que les valeurs critiques sont arbitraires, c'est-à-dire qu'on peut remplacer les $u_{i}$ par d'autres intégrales
+\[
+u'_{i} = \sum \rho_{ik} u_{k}, \tag{8}
+\]
+où les $\rho_{ik}$ sont des fonctions rationnelles de $y$, et choisir cette transformation linéaire de telle sorte que la valeur considérée ne soit plus critique. Nous avons supposé au début, et \emph{ceci est essentiel}, que près d'une valeur critique les $v_{i}$ se comportent régulièrement~; il en est de même, d'après le paragraphe~3, des fonctions $a_{ik}, \ldots$. Si donc nous
+\origpage{81}posons, pour un instant,
+\[
+u_{i} = p v_{i} - a_{ik} + \frac{1}{2} b_{i} - \frac{n - 3}{2} \sum a_{ik}, \tag{9}
+\]
+les $u_{i}$ se comporteront régulièrement, et il en résulte que, si l'on considère les $u_{i}$ comme définis par les équations (9) et les $u'_{i}$ par les équations (8), les $u'_{i}$ seront finis.
+
+Mais la transformation linéaire (8) ne change pas les $w$, ni les $c$. Donc, même pour une valeur critique, $\Theta$ est fonction holomorphe de $y$.
+
+Considérons enfin une valeur singulière que je puis supposer non critique. Nous avons vu à la fin du paragraphe~3 qu'on peut supposer que cette valeur correspond à un plan tangent ordinaire, et qu'en tournant autour d'elles toutes les périodes normales reprennent la même valeur, à l'exception de l'une d'elles de deuxième espèce, $\omega'_{i1}$ par exemple, qui se change en $\omega'_{i1} + \omega_{i1}$~; quant à $p v_{i}$, d'après l'hypothèse faite au début de ce paragraphe, il se changera en $p v_{i} + k \omega_{i1}$, $k$ étant un entier. De même, en vertu des résultats du paragraphe précédent, $a_{ik}$ et $b_{i}$ se changent en $a_{ik} + k' \omega_{i1}$, $b_{i} + k'' \omega_{i1}$, $k'$ et $k''$ étant des entiers.
+
+Cela, il est vrai, suppose un choix particulier des périodes normales, et l'on peut concevoir une infinité de pareils choix à chacun desquels correspond une fonction $\Theta$. Peu importe, puisque le théorème est indépendant de ce choix et que les valeurs de $y$, pour lesquelles la courbe $C$ vient passer par l'un des points $A_{k}$, ne peuvent être infiniment condensées, dans le voisinage d'une valeur $y_{0}$, que si pour $y = y_{0}$ \emph{toutes} ces fonctions $\Theta$ cessent d'être holomorphes.
+
+Qu'arrive-t-il alors de
+\[
+p v_{i} - a_{ik} + \frac{1}{2} b_{i} - \frac{n - 3}{2} \sum a_{ik} \, ?
+\]
+
+Cette expression augmentera de
+\[
+\frac{K}{2} \omega_{i1},
+\]
+$K$ étant un entier. Il en résulte, grâce aux équations (6), que $w_{1}$ augmente
+\origpage{82}de $K \pi \sqrt{-1}$ et que les autres $w$ ne changent pas. Quant aux $c$, on voit par les équations (7) que $c_{1}$ augmente de $2 \pi \sqrt{-1}$ et que les autres $c$ ne changent pas. L'expression $P_{1} + P_{2}$ augmente donc de
+\[
+K m_{1} \sqrt{-1} + \frac{1}{2} m_{1}^{2} \sqrt{-1}.
+\]
+
+Si $K$ est impair, $e^{P_{1} + P_{2}}$ ne change pas, et $\Theta$ ne change pas~; si $K$ est pair, deux valeurs de $\Theta$ s'échangeront quand $y$ tournera autour de sa valeur singulière~; soient $\Theta_{1}$ et $\Theta_{2}$ ces deux valeurs~; il s'agit en somme de démontrer que les zéros du produit
+\[
+\Theta_{1} \Theta_{2}
+\]
+ne sont pas infiniment condensés dans le voisinage de la valeur singulière considérée.
+
+Le produit $\Theta_{1} \Theta_{2}$ et la somme $\Theta_{1} + \Theta_{2}$ sont des fonctions uniformes de $y$~; je dis que ces fonctions restent holomorphes~; et, en effet, $e^{2 w_{1}}$ et $e^{c_{1}}$ restent des fonctions holomorphes de $y$, bien que $w_{1}$ et $c_{1}$ deviennent logarithmiquement infinies~; or, dans le développement de $\Theta_{1} \Theta_{2}$ ou de $\Theta_{1} + \Theta_{2}$, $w_{1}$ et $c_{1}$ ne figurent que par les exponentielles $e^{2 w_{1}}$ et $e^{c_{1}}$. Donc, la fonction $\Theta$ est une fonction algébroïde de $y$, ce qui s'oppose à ce que ses zéros soient infiniment condensés.
+
+Ainsi, la courbe $C$, ne pouvant passer par les points $A_{k}$ qu'un nombre fini de fois, est algébrique.
+
+\hfill C.~Q.~F.~D.
+
+Il importe de remarquer le rôle d'une de nos hypothèses. Si pour une valeur critique $v_{i}$ restait fini, mais sans que les $v_{i}$ se comportent régulièrement, la courbe $C$ passerait par le point $A_{k}$ une infinité de fois dans le voisinage de cette valeur critique.
+
+Le théorème de Riemann, sur lequel nous nous sommes appuyés, suppose $p > 1$. Dans le cas de $p = 1$, il suffirait d'introduire la fonction $\sigma$ de Weierstrass et de remplacer l'équation $\Theta = 0$ par $\sigma = 0$~; rien ne serait d'ailleurs à changer au raisonnement.
+
+Nous devons, avant de quitter ce sujet, signaler quelques cas particuliers.
+
+\origpage{83}
+$1^\circ$ Il peut arriver que les $p$ points d'intersection de la courbe $C$ avec le plan $y = \text{const.}$ se réduisent à $p$ fois l'un des points $A_{k}$, la courbe $C$ se réduit alors à $p$ fois le point $A_{k}$. Elle pourrait aussi se réduire, par exemple, à $q$ fois le point $A_{k}$ et $p - q$ fois le point $A_{j}$. Il pourrait se faire aussi que, de nos $p$ points, $q$ restent constamment confondus avec $A_{k}$ et que les $p - q$ autres soient variables.
+
+$2^\circ$ Si nous considérons une période $\omega_{i}$, par exemple, comme fonction de $y$, elle satisfera aux conditions énoncées au début de ce paragraphe. La courbe $C$ correspondante se réduit évidemment à $p$ fois le point $A_{1}$ qui nous a servi d'origine~; en effet, en ce point les $u_{i}$ sont égaux à zéro ou à une période.
+
+$3^\circ$ Les équations (1) ne déterminent pas toujours les points $x_{i}$ d'une façon univoque~; pour certains systèmes exceptionnels de valeurs des $v_{i}$ ces points $x_{i}$ sont indéterminés. Si les $v_{i}$ ne prennent ces valeurs exceptionnelles que pour certaines valeurs particulières de $y$, il n'y a pas à nous en inquiéter~; il suffira de lever l'indétermination, en prenant les limites vers lesquelles tendent ces points $x_{i}$ quand $y$ tend vers une de ces valeurs particulières. Mais il n'en est plus de même si les $v_{i}$ prennent ces valeurs exceptionnelles quel que soit $y$. Ces valeurs exceptionnelles n'existent que pour $p > 1$~; pour $p > 2$, on peut satisfaire aux équations (1) en prenant $x_{1} = x_{1}^{0}$, les autres $x$ étant alors déterminés par les équations mêmes~; la courbe $C$ ne rencontre plus le plan $y = \text{const.}$ qu'en $p - 1$ points mobiles.
+
+\section*{V. --- Classification des courbes algébriques.}
+
+Maintenant se pose la question suivante~: Existe-t-il toujours des fonctions normales satisfaisant aux conditions énoncées au début du paragraphe précédent~? Si elles existent, comment les classer~? Comment classer par conséquent les courbes tracées sur la surface~?
+
+Envisageons le plan des $y$~:
+
+Soient $\eta_{1}, \eta_{2}, \ldots, \eta_{h}$ les différentes valeurs singulières~; joignons ces différents points à l'origine par des coupures que nous appellerons $Q_{1}, Q_{2}, \ldots, Q_{h}$. Comme nous supposons que chacune de ces valeurs singulières correspond à un plan tangent ordinaire, chaque
+\origpage{84}coupure sera caractérisée par le fait suivant~: quand $y$ franchira la coupure $Q_{k}$, l'une des périodes $\omega^{(k)}$ se changera en $\omega^{(k)} + \varpi^{(k)}$~; $\varpi^{(k)}$ étant une autre période, et il y aura $2p - 1$ autres périodes qui ne changeront pas. Alors, la fonction $v_{i}$ devant être normale, il y aura un nombre entier $\lambda_{k}$, tel que
+\[
+v_{i} - \frac{\lambda_{k}}{p} \omega_{i}^{(k)}
+\]
+reste holomorphe en $\eta_{k}$, c'est-à-dire tel que $v_{i}$ se change en $v_{i} + \frac{\lambda_{k}}{p} \varpi_{i}^{(k)}$ quand on franchit la coupure $Q_{k}$. Nous représentons par $\omega_{i}^{(k)}$ et $\varpi_{i}^{(k)}$ les périodes de $u_{i}$ qui correspondent à $\omega^{(k)}$ et $\varpi^{(k)}$.
+
+Remarquons que les nombres $\lambda_{k}$ ne peuvent pas être choisis d'une façon tout à fait arbitraire~; le choix doit être fait de façon à satisfaire à la condition (4) du paragraphe~3.
+
+Soient maintenant $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{\mu}$ les valeurs critiques de la première sorte~; soient $\beta_{1}, \beta_{2}, \ldots, \beta_{\nu}$ celles de la deuxième sorte~; nous pourrons toujours supposer que toutes ces valeurs critiques sont du premier ordre de multiplicité~; il demeure bien entendu que les valeurs critiques \emph{effectives} entrent seules en ligne de compte, les valeurs critiques apparentes étant laissées de côté. Les $v_{i}$ se comportent régulièrement aux points $\alpha$, et cette fonction peut devenir infinie aux points $\beta$. Donc $v_{i}$ devra être de la forme
+\[
+v_{i} = \frac{1}{2 \pi \sqrt{-1}} \sum \frac{\lambda_{k}}{p} \int_{Q_{k}} \frac{(\varpi_{i}^{(k)}) \,dY}{Y - y} + \sum \frac{A_{k}}{y - \beta_{k}} + C~; \tag{1}
+\]
+les $A_{k}$ et $C$ étant des constantes. Nous désignons par $Y$ la variable par rapport à laquelle on intègre~; l'intégration doit s'étendre à toute la coupure $Q_{k}$, et $(\varpi_{i}^{(k)})$ n'est autre chose que $\varpi_{i}^{(k)}$ où $y$ est remplacé par $Y$.
+
+On voit tout de suite que $v_{i}$ satisfait aux conditions relatives aux coupures $Q_{k}$~; il reste à voir si l'on peut disposer des constantes arbitraires $A_{k}$ et $C$ de telle façon que les $v_{i}$ se comportent régulièrement. Le nombre des paramètres arbitraires $A_{k}$ et $C$ est $\nu + 1$ ou $p(\nu + 1)$ pour les $p$ fonctions $v_{i}$~; celui des conditions à remplir est le même que celui des points $\alpha$, c'est-à-dire $\mu$~; comme ces conditions à remplir sont des équations linéaires en $A_{k}$ et $C$ et qu'il est aisé de voir que le
+\origpage{85}déterminant de ces équations linéaires ne peut s'annuler, on voit qu'on pourra toujours satisfaire aux conditions pourvu que
+\[
+\mu \leqq p(\nu + 1). \tag{2}
+\]
+
+Si l'inégalité (2) est satisfaite, il existera des fonctions normales et par conséquent des courbes $C$ correspondant aux différents systèmes possibles de valeurs des entiers $\lambda_{k}$~; mais ces systèmes de fonctions normales ne seront que des combinaisons linéaires à coefficients entiers d'un certain nombre d'entre elles, que nous pourrons nommer \emph{fonctions normales primitives}. Les courbes correspondantes pourront s'appeler \emph{courbes primitives} et nous verrons bientôt sur des exemples simples comment les courbes non primitives peuvent se déduire des courbes primitives. Ces courbes primitives ont été rencontrées par une autre voie par M.~Severi (\emph{Annales de l'École Normale}, t.~XXV, p.~449), qui les a rattachées à l'invariant $\rho$ de M.~Picard.
+
+Les différentes fonctions normales, primitives ou non, forment des systèmes discontinus, et l'on passe de l'un à l'autre en augmentant les $\lambda_{k}$ de nombres entiers. Mais on peut se demander s'il peut exister un \emph{système continu} de fonctions normales. Pour un pareil système, les nombres $\lambda_{k}$ doivent avoir des valeurs constantes, puisque ces nombres ne peuvent prendre que des valeurs entières. D'où il suit que la différence de deux fonctions normales appartenant à un même système continu doit être une fonction rationnelle de $y$. Cette différence est elle-même une fonction normale pour laquelle tous les entiers $\lambda_{k}$ sont nuls. Donc, \emph{l'existence d'un système continu de fonctions normales est liée à celle de fonctions normales rationnelles}.
+
+On peut déjà se rendre compte (et nous reviendrons plus loin sur ce point) que l'existence d'un \emph{système continu algébrique} (non linéaire) de courbes algébriques, tracées sur la surface, est liée à celle d'un système continu de fonctions normales et par conséquent à celle de \emph{fonctions normales rationnelles}.
+
+Supposons que notre système continu de fonctions normales soit $q$ fois infini. Alors nous pourrons écrire
+\[
+v_{i} = A_{1} \varphi_{i1} + A_{2} \varphi_{i2} + \ldots + A_{q} \varphi_{iq},
+\]
+$A_{1}, A_{2}, \ldots, A_{q}$ étant des constantes arbitraires et les $\varphi$ étant $pq$ fonctions
+\origpage{86}rationnelles. On pourra alors trouver $p^{2}$ fonctions rationnelles $\rho_{ik}$, telles que
+\[
+\sum v_{i} \rho_{ik} = A_{k},
+\]
+si $k \leqq q$ et que
+\[
+\sum v_{i} \rho_{ik} = 0,
+\]
+si $k > q$.
+
+Au lieu des intégrales fondamentales
+\[
+u_{1}, \quad u_{2}, \quad \ldots, \quad u_{p},
+\]
+nous pouvons prendre les suivantes~:
+\[
+U_{1}, \quad U_{2}, \quad \ldots, \quad U_{p}~;
+\]
+en posant
+\[
+U_{k} = \sum u_{i} \rho_{ik}.
+\]
+
+Alors le rôle de $v_{1}, v_{2}, \ldots, v_{p}$ sera joué par $V_{1}, V_{2}, \ldots, V_{p}$ où
+\[
+V_{k} = \sum v_{i} \rho_{ik},
+\]
+et les équations précédentes deviendront
+\[
+V_{k} = A_{k} \quad (k \leqq q), \quad V_{k} = 0 \quad (k > q).
+\]
+
+Avec ce nouveau choix des intégrales fondamentales, nos fonctions normales se réduisent donc à des constantes~; elles ne peuvent donc devenir ni nulles, ni infinies, ce qui veut dire \emph{qu'il n'y a pas de valeurs critiques} au moins de la première sorte.
+
+Nous devons donc conclure qu'il y a $q$ intégrales linéairement indépendantes
+\[
+U_{1}, \quad U_{2}, \quad \ldots, \quad U_{q},
+\]
+pour lesquelles il n'y a pas de valeurs critiques effectives.
+
+D'après le théorème de MM.~Enriques, Castelnuovo et Severi, dont nous allons donner une démonstration nouvelle dans le paragraphe suivant, l'existence d'un système continu algébrique de courbes algébriques
+\origpage{87}est liée à celle des intégrales de différentielles totales de première espèce.
+
+Nous terminerons en donnant quelques exemples, et nous commencerons par la surface générale du troisième degré. Le nombre des valeurs singulières, c'est-à-dire des plans tangents menés par la droite $y = t = 0$, est $3.2.2 = 12$. Le nombre $p$ est égal à $1$. L'intégrale unique $u_{1}$ est de la forme
+\[
+\int \frac{\rho \,dx}{f'_{z}},
+\]
+où $\rho$ est homogène de degré $1$ en $y$ et $t$~; nous pouvons donc supposer qu'il n'y a pas de valeur critique de deuxième sorte et une seule de première sorte~; l'inégalité (2) est donc satisfaite. Donc, à tous les systèmes possibles des entiers $\lambda_{k}$ correspondra une courbe $C$. Les entiers $\lambda_{k}$ qui sont au nombre de $12$ doivent être choisis de façon à satisfaire à la condition (4) du paragraphe~3. Cela leur impose deux conditions.
+
+En effet, d'après cette condition, nous devons avoir
+\[
+\sum \lambda_{k} \varpi'^{(k)}_{i} = 0, \tag{3}
+\]
+où $\varpi'^{(k)}_{i}$ a la signification suivante~: lorsqu'on franchit la coupure $Q_{k}$, $v_{i}$ se change en $v_{i} + \lambda_{k} \varpi_{i}^{(k)}$ et lorsqu'on franchit ensuite successivement les coupures $Q_{k+1}, Q_{k+2}, \ldots, Q_{h}$, $\varpi_{i}^{(k)}$ se change en une autre période $\varpi'^{(k)}_{i}$ de l'intégrale $u_{i}$. Ici nous n'avons qu'une seule intégrale $u_{1}$ qui n'a que deux périodes fondamentales $\varepsilon$ et $\varepsilon'$~; nous pouvons donc poser
+\[
+\varpi'^{(k)}_{i} = \mu_{k} \varepsilon + \mu'_{k} \varepsilon',
+\]
+les $\mu_{k}$ et les $\mu'_{k}$ étant des entiers, de sorte que la condition (3) se décompose en deux
+\[
+\sum \lambda_{k} \mu_{k} = \sum \lambda_{k} \mu'_{k} = 0. \tag{4}
+\]
+
+Cela ferait donc $12 - 2 = 10$ courbes primitives~; mais il y a encore des déductions à faire, car nous avons vu que certaines fonctions normales ne correspondent pas à des courbes proprement dites, mais
+\origpage{88}à des points. Nous avons d'abord les deux fonctions normales
+\[
+v_{1} = \varepsilon, \quad v_{1} = \varepsilon',
+\]
+qui sont des périodes et qui correspondent par conséquent au point $A_{1}$ qui nous a servi d'origine~; nous avons ensuite deux autres fonctions normales qui correspondent aux deux autres points $A_{2}$ et $A_{3}$ d'intersection de la surface avec la droite $y = t = 0$. Il faut donc déduire $4$ du nombre précédent et il reste $10 - 4 = 6$ courbes primitives.
+
+Il est aisé de voir quelles sont ces $6$ courbes primitives. Considérons les $27$ droites de la surface. Voici quelles sont les valeurs de $u_{1} = v_{1}$ pour ces $27$ droites~: soient
+\[
+\gamma_{1}, \quad \gamma_{2}, \quad \gamma_{3}, \quad \gamma_{4}, \quad \gamma_{5}, \quad \gamma_{6}, \quad \delta
+\]
+sept quantités liées par la relation $\displaystyle\sum \gamma = 0$. On aura pour $\frac{6.5}{2} = 15$ droites
+\[
+u_{1} = v_{1} = -\gamma_{i} - \gamma_{j},
+\]
+pour $6$ droites
+\[
+u_{1} = v_{1} = \delta + \gamma_{i},
+\]
+pour $6$ autres droites
+\[
+u_{1} = v_{1} = \gamma_{i} - \delta
+\]
+(en tout $15 + 6 + 6 = 27$ droites). Cela résulte des relations de position de ces droites. On voit que nous avons en tout $6$ arguments elliptiques linéairement indépendants puisque les $\gamma$ sont liés par une relation. Il n'y a donc que $6$ de ces droites qui soient primitives.
+
+Il est aisé de voir sur cet exemple simple comment on peut déduire les courbes non primitives des courbes primitives. Soient deux courbes $C$ et $C'$ correspondant respectivement aux fonctions normales $v_{1}$ et $v'_{1}$, il s'agit de construire la courbe $C''$ correspondant à la fonction normale $v_{1} + v'_{1}$~; pour cela je coupe par un plan $y = \text{const.}$ qui coupe $C$ et $C'$ en $M$ et en $M'$. La droite $M M'$ coupe la surface en un troisième point $N$~; je joins $N$ au point $A_{1}$ qui nous a servi d'origine, la droite $N A_{1}$ coupera la surface en un troisième point $M''$ qui appartiendra à $C''$ et qui engendrera cette courbe quand on fera varier $y$. Ce procédé se généraliserait aisément pour le cas plus compliqué où $n > 3$, $p > 1$.
+
+Considérons maintenant la surface générale du quatrième degré. Le nombre des valeurs singulières est $4.3.3 = 36$~; on a $p = 3$, et par
+\origpage{89}conséquent on a $6$ périodes. On aura donc $6$ relations analogues à (4) et il resterait ainsi $36 - 6 = 30$ courbes primitives. Nous devons encore en déduire $6$ pour les périodes, et $3$ pour les points d'intersection de la surface avec $y = t = 0$, le point origine étant laissé de côté~; il reste ainsi $30 - 6 - 3 = 21$ courbes primitives. Mais ce n'est là qu'un maximum, car la condition (2) n'étant pas remplie, il n'est pas certain qu'à tout système de valeur de $\lambda_{k}$ correspond une fonction normale.
+
+Quels sont en effet les nombres $\mu$ et $\nu$~? Nous pourrons prendre ici (pour les fonctions $R_{i}$ du paragraphe~2)
+\[
+R_{1} = \rho_{1} x, \quad R_{2} = \rho_{2} z, \quad R_{3} = \rho_{3}.
+\]
+
+Ces fonctions doivent être homogènes de degré $2$ en $x, y, z, t$~; donc $\rho_{1}$ et $\rho_{2}$ sont des fonctions homogènes de degré $1$ en $y$ et $t$, tandis que $\rho_{3}$ est de degré $2$. On aura donc
+\[
+\nu = 0, \quad \mu = 4
+\]
+puisque les $R$ ne peuvent devenir infinies, que $\rho_{1}$ et $\rho_{2}$ s'annulent chacun $1$ fois et $\rho_{3}$ deux fois, d'où
+\[
+\mu = 4 > 3 = p(\nu + 1)
+\]
+ce qui n'est pas conforme à la condition (2)~; d'où il résulte que nos $21$ courbes primitives n'existent pas en général. Ce résultat doit être rapproché d'un résultat démontré par Nöther et d'après lequel toute courbe tracée sur la surface la plus générale de degré $4$ ou au-dessus est une intersection complète.
+
+Supposons maintenant que notre surface du quatrième degré admette une droite double. Le nombre des valeurs singulières se réduit à $20$~; comme on a $2p = 4$, $n - 1 = 3$, en faisant les mêmes déductions que plus haut, on trouve~: $20 - 4 - 4 - 3 = 9$ courbes primitives. Ces courbes primitives existent effectivement car on peut prendre
+\[
+R_{1} = \rho_{1} P_{1}, \quad R_{2} = \rho_{2} P_{2},
+\]
+$P_{1} = 0$, $P_{2} = 0$ étant deux plans passant par la droite double tandis que $\rho_{1}$ et $\rho_{2}$ sont homogènes de degré $1$ en $y$ et $t$ de sorte qu'on a
+\[
+\mu = 2 = 2(0 + 1) = p(\nu + 1).
+\]
+
+\origpage{90}
+Supposons enfin une surface du quatrième degré avec deux droites doubles~; alors $p = 1$ et l'on peut prendre, pour $R_{1}$, le premier membre de l'équation d'un paraboloïde passant par les deux droites~; il n'y a donc pas de valeur critique, et il existe un système continu de courbes $C$. Il est aisé de voir ce que sont ces courbes, puisque la surface est réglée~; ce sont les génératrices.
+
+Mais je voudrais faire remarquer que, par suite de l'existence d'une intégrale de différentielles totales de première espèce, les règles pour la détermination du nombre des courbes primitives doivent être appliquées avec discernement, en tenant compte des circonstances suivantes~:
+
+$1^\circ$ Les valeurs singulières peuvent n'être qu'apparentes, parce que dans le voisinage d'une valeur de $y$ correspondant à un plan tangent, les périodes peuvent rester des fonctions holomorphes de $y$~; c'est ce qui arrive ici, les périodes étant constantes~;
+
+$2^\circ$ Les périodes $\omega$ étant constantes rentrent dans le système continu de fonctions normales et ne constituent pas des fonctions normales distinctes~;
+
+$3^\circ$ De même les valeurs de $v_{i}$ relatives aux points d'intersection de la surface avec $y = t = 0$ sont des constantes et ne constituent pas des fonctions normales distinctes.
+
+Remarquons, en terminant, que s'il existe un système continu de courbes algébriques, ce système sera forcément algébrique~; et, en effet, ce système étant continu, la courbe la plus générale du système sera forcément de degré ou de genre déterminé et rentrera dans un \emph{type} déterminé de la classification des courbes gauches de Halphen (ce sera par exemple une cubique gauche, ou une biquadratique gauche de genre $1$, ou une courbe gauche unicursale du quatrième degré, etc.).
+
+De plus, elle devra passer un nombre déterminé de fois par chacun des points $A_{i}$.
+
+Or, on pourra écrire l'équation générale des courbes gauches d'un type déterminé de Halphen, sous la forme de deux ou plusieurs relations algébriques entre les coordonnées et un certain nombre de paramètres arbitraires. En exprimant que la courbe est sur la surface, et
+\origpage{91}
+qu'elle passe un nombre déterminé de fois par chacun des points $A_{i}$, on obtiendra certaines relations entre ces paramètres et ces \emph{relations seront algébriques}. Le système est donc algébrique; cette remarque très simple nous sera utile dans le paragraphe suivant.
+
+\section*{VI. --- Intégrales de différentielles totales de première espèce.}
+
+Nous avons vu que s'il existe $q$ intégrales $u_{i}$ qui ne possèdent pas de valeurs critiques effectives, il existera un système continu $q$ fois infini de fonctions normales et par conséquent un système continu algébrique $q$ fois infini de courbes algébriques tracées sur la surface. Il nous reste à voir que c'est là également la condition nécessaire et suffisante pour qu'il existe $q$ intégrales de différentielles totales de première espèce, ce qui nous donnera la démonstration du théorème de MM.~Enriques, Castelnuovo et Severi.
+
+Supposons d'abord qu'il existe $q$ intégrales de différentielles totales de première espèce. Si dans chacune d'elles nous regardons $y$ comme un paramètre constant, nous voyons qu'elles se réduiront à $q$ de nos $p$ intégrales $u_{i}$, \emph{dont les périodes seront constantes}.
+
+Nous distinguerons donc, parmi les intégrales $u_{i}$, deux sortes d'intégrales~: les $q$ intégrales $U_{i}$ qui sont celles dont nous venons de parler, et les $p - q$ intégrales $V_{i}$ qui sont les autres.
+
+De même, nous distinguerons deux sortes de périodes~: d'abord celles que nous appellerons les $\alpha_{i}$ et qui sont nulles pour les intégrales $U$, puis les périodes $\beta_{i}$ dont nous pourrons toujours supposer qu'elles sont linéairement indépendantes en ce qui concerne les $U$, c'est-à-dire qu'il n'y a entre elles aucune relation linéaire à coefficients entiers, qui soit vraie pour toutes les intégrales $U$.
+
+$1^\circ$ Quand $y$ décrira un circuit fermé, $\alpha_{i}$ se changera en $\alpha_{i} + \gamma_{i}$ et $\beta_{i}$ en $\beta_{i} + \delta_{i}$, les $\gamma_{i}$ et les $\delta_{i}$ étant d'autres périodes. Mais pour les intégrales $U$, les périodes sont des constantes; donc les $\gamma_{i}$ et les $\delta$ doivent s'annuler pour les $U$; ce sont donc des combinaisons des $\alpha$.
+
+$2^\circ$ On sait qu'entre les périodes normales de deux intégrales abéliennes on a la relation bilinéaire
+\[
+\sum (\omega_{2i}\omega'_{2i+1} - \omega'_{2i}\omega_{2i+1}) = 0,
+\]
+\origpage{92}
+et si, comme nous le faisons ici, on prend un autre système de périodes que le système normal; il y aura une forme bilinéaire $F$ des périodes des deux intégrales qui devra être nulle. La relation
+\[
+F = 0
+\]
+peut s'écrire
+\[
+\sum \alpha_{i} \varepsilon'_{i} + \sum \beta_{i} \zeta'_{i} = 0.
+\]
+
+Les $\alpha_{i}$ et les $\beta_{i}$ sont des périodes de la première intégrale, les $\varepsilon_{i}$ et les $\zeta_{i}$ des combinaisons linéaires de ces périodes; les $\alpha'_{i}$, $\beta'_{i}$, $\varepsilon'_{i}$, $\zeta'_{i}$ sont les périodes correspondantes pour la deuxième intégrale.
+
+Quand $y$ décrit un contour fermé, $\alpha_{i}$ et $\beta_{i}$ se changent en $\alpha_{i} + \gamma_{i}$, $\beta_{i} + \delta_{i}$, et de même $\varepsilon_{i}$ et $\zeta_{i}$ en $\varepsilon_{i} + \theta_{i}$, $\zeta_{i} + \eta_{i}$; les $\gamma$, les $\delta$, les $\theta$ et les $\eta$ sont des combinaisons des $\alpha$. De même $\alpha'_{i}$, $\beta'_{i}$, $\varepsilon'_{i}$, $\zeta'_{i}$ se changent en $\alpha'_{i} + \gamma'_{i}$, $\beta'_{i} + \delta'_{i}$, $\varepsilon'_{i} + \theta'_{i}$, $\zeta'_{i} + \eta'_{i}$. La forme bilinéaire $F$ doit demeurer inaltérée, non seulement comme valeur numérique, mais comme forme algébrique. Or, elle devient
+\[
+\sum \alpha_{i} \varepsilon'_{i} + \sum \gamma_{i} \varepsilon'_{i} + \sum \alpha_{i} \theta'_{i} + \sum \gamma_{i} \theta'_{i} + \sum \beta_{i} \zeta'_{i} + \sum \delta_{i} \zeta'_{i} + \sum \beta_{i} \eta'_{i} + \sum \delta_{i} \eta'_{i}.
+\]
+
+Le coefficient de $\beta_{i}$ doit rester le même; or, les $\gamma$ et les $\delta$ ne dépendent que des $\alpha$ et pas des $\beta$; on a donc
+\[
+\zeta'_{i} = \zeta'_{i} + \eta'_{i},
+\]
+c'est-à-dire que $\eta'_{i}$ est identiquement nul; cela veut dire que les $\zeta_{i}$ sont des fonctions uniformes de $y$, et comme les périodes sont des fonctions normales, \emph{ce seront des fonctions rationnelles de $y$} et cela pour toutes les intégrales $U$ ou $V$.
+
+$3^\circ$ Je dis maintenant que pour une intégrale $U$ tous les $\zeta$ ne peuvent pas s'annuler à la fois. En effet, la forme $F$ doit prendre une valeur réelle positive, si l'on y remplace les variables de la première série linéaire par les périodes d'une intégrale abélienne et celles de la deuxième série par les imaginaires conjuguées des périodes de cette même intégrale. On aura donc
+\[
+\sum \alpha_{i} \varepsilon_{i}^{0} + \sum \beta_{i} \zeta_{i}^{0} > 0,
+\]
+\origpage{93}
+les $\varepsilon_{i}^{0}$ et les $\zeta_{i}^{0}$ étant les imaginaires conjuguées des $\varepsilon_{i}$ et des $\zeta_{i}$. Or, pour $U$ les $\alpha$ sont nuls; si donc tous les $\zeta_{i}$ et par conséquent tous les $\zeta_{i}^{0}$ s'annulaient, l'inégalité serait en défaut.
+
+$4^\circ$ Désignons par $\zeta_{ik}$ la période $\zeta_{i}$ de l'intégrale $u_{k}$ (où $u_{k}$ est une intégrale $U$ si $k \leqq q$, et une intégrale $V$ si $k > q$), et envisageons les systèmes de fonctions rationnelles de $y$
+\[
+\zeta_{i1}, \quad \zeta_{i2}, \quad \ldots, \quad \zeta_{ip}.
+\]
+
+Je dis qu'on peut toujours trouver au moins $q$ de ces systèmes qui soient linéairement indépendants (je leur attribuerai les indices $i = 1, 2, \ldots, q$). Je dis donc que l'on ne pourra avoir, quel que soit l'indice $k$, une relation de la forme
+\[
+\sum_{i=1}^{i=q} a_{i} \zeta_{ik} = 0, \tag{1}
+\]
+les $a_{i}$ étant $q$ coefficients. Sans cela on pourrait toujours trouver une combinaison des intégrales $U$ où toutes les périodes $\zeta$ seraient nulles. Nous pourrions, en effet, trouver des coefficients constants $b_{k}$ qui satisferaient aux équations
+\[
+\sum_{k=1}^{k=q} b_{k} \zeta_{ik} = 0 \quad (i = 1, 2, \ldots, q - 1). \tag{2}
+\]
+
+Si alors on avait une relation de la forme (1), la relation (2) serait encore vraie pour $i = q$ et pour les autres valeurs de $i$ et l'intégrale $\displaystyle\sum b_{k} U_{k}$ aurait toutes ses périodes $\zeta$ nulles.
+
+Il résulte de là que le système
+\[
+\sum \lambda_{i} \zeta_{ik},
+\]
+où les $\lambda$ sont des coefficients constants arbitraires, représente un système continu $q$ fois infini de fonctions normales; or, l'existence d'un pareil système est précisément ce que nous nous proposions d'établir.
+
+\origpage{94}
+La réciproque exige plus d'attention. Supposons qu'il existe un système continu algébrique $q$ fois infini de courbes algébriques. Nous pourrons définir ce système (puisqu'il est algébrique) par $q + 1$ paramètres
+\[
+\xi_{1}, \quad \xi_{2}, \quad \ldots, \quad \xi_{q+1},
+\]
+liés par une relation algébrique
+\[
+\psi(\xi_{1}, \xi_{2}, \ldots, \xi_{q+1}) = 0, \tag{1}
+\]
+de telle façon qu'à tout système de valeurs des $\xi$ satisfaisant à la relation (1) corresponde une courbe du système continu et une seule. Considérons maintenant le système continu de fonctions normales correspondant. Nous avons vu au paragraphe précédent qu'on peut choisir les intégrales
+\[
+u_{1}, \quad u_{2}, \quad \ldots, \quad u_{p},
+\]
+de façon que ce système de fonctions normales s'écrive
+\[
+v_{1} = \gamma_{1}, \quad v_{2} = \gamma_{2}, \quad \ldots, \quad v_{q} = \gamma_{q}, \quad v_{q+1} = v_{q+2} = \ldots = v_{p} = 0;
+\]
+les $\gamma$ étant des constantes arbitraires. Considérons les $\gamma$ comme fonctions des $\xi$~:
+
+$1^\circ$ Les $\gamma$ ne peuvent jamais devenir infinis, puisqu'il en est ainsi des $u_{i}$ qui sont des intégrales de première espèce et par conséquent des $v_{i}$;
+
+$2^\circ$ Quand les $\xi$ reviennent à leurs valeurs primitives, après un circuit quelconque, les $p\gamma_{i}$ se reproduisent à une période près;
+
+$3^\circ$ Par conséquent, les dérivées partielles des $\gamma$ par rapport aux $\xi$ sont des fonctions rationnelles des $\xi$; c'est-à-dire que les $\gamma$ sont des intégrales de différentielles totales de première espèce relatives à la variété (1);
+
+$4^\circ$ Les périodes de ces intégrales de différentielles totales sont des constantes indépendantes de $y$, puisque les $\gamma$ sont des constantes indépendantes de $y$;
+
+$5^\circ$ Si donc les $\xi$ décrivent un contour fermé quelconque, ou bien $p\gamma_{i}$ revient à sa valeur initiale, ou bien $p\gamma_{i}$ augmente de $\omega_{i}$, $\omega_{i}$ étant une période de $u_{i}$, période qui doit être une constante indépendante de $y$;
+
+\origpage{95}
+$6^\circ$ Les $p\gamma_{i}$ ont au moins $2q$ périodes effectives distinctes; en effet, représentons l'ensemble des systèmes de valeurs des $p\gamma_{i}$ qui sont \emph{entièrement distinctes} (deux systèmes n'étant pas entièrement distincts s'ils diffèrent d'une période). La représentation devra se faire dans l'espace à $2q$ dimensions, puisque nos coordonnées sont les $q$ parties réelles et les $q$ parties imaginaires des $\gamma$. La région de cet espace occupée par notre ensemble sera limitée par $2h$ variétés planes, parallèles deux à deux s'il y a $h$ périodes; mais elle ne peut s'étendre à l'infini, puisque les $\gamma$ ne peuvent devenir infinis; c'est donc un \emph{prismatoïde fermé}, qui doit être limité par $4q$ variétés planes, de sorte que nous avons $2q$ périodes.
+
+$7^\circ$ Supposons que les $\xi$ décrivent un circuit fermé, la courbe algébrique du système continu reviendra à sa position primitive. Si elle coupait le plan $y = \mathrm{const.}$ aux points
+\[
+M_{1}, \quad M_{2}, \quad \ldots, \quad M_{p},
+\]
+et si $u_{i}^{(1)}, u_{i}^{(2)}, \ldots, u_{i}^{(p)}$ étaient les valeurs correspondantes de $u_{i}$, on avait dans la position initiale
+\[
+p v_{i} = u_{i}^{(1)} + u_{i}^{(2)} + \ldots + u_{i}^{(p)}.
+\]
+
+Dans la position finale, les points $M$ se seront seulement échangés entre eux, de sorte que les $u_{i}^{(p)}$ se reproduiront à l'ordre près et à une période près. Donc $p v_{i}$ se changera en $p v_{i} + \omega_{i}$, $\omega_{i}$ étant une période. On remarquera que
+\[
+p v_{1}, \quad p v_{2}, \quad \ldots, \quad p v_{p}
+\]
+se changeront en
+\[
+p v_{1} + \omega_{1}, \quad p v_{2} + \omega_{2}, \quad \ldots, \quad p v_{p} + \omega_{p};
+\]
+$\omega_{1}, \omega_{2}, \ldots, \omega_{p}$ \emph{étant des périodes correspondantes}.
+
+Il peut arriver que toutes ces périodes soient nulles; il peut arriver aussi que
+\[
+\omega_{1}, \quad \omega_{2}, \quad \ldots, \quad \omega_{q}
+\]
+ne soient pas nulles, et d'après le théorème ci-dessus ($6^\circ$) cela arrive de $2q$ manières linéairement indépendantes. Dans ce cas, d'après $4^\circ$ et $5^\circ$,
+\[
+\omega_{1}, \quad \omega_{2}, \quad \ldots, \quad \omega_{q}
+\]
+\origpage{96}
+sont des constantes. D'autre part, comme $p v_{q+1}, p v_{q+2}, \ldots, p v_{p}$ sont constamment nuls, on aura
+\[
+\omega_{q+1} = \omega_{q+2} = \ldots = \omega_{p} = 0.
+\]
+
+Donc~: \emph{il existe au moins $2q$ periodes\ednote{Printed ``periodes''.} distinctes qui sont des constantes pour $u_{1}, u_{2}, \ldots, u_{q}$ et qui sont nulles pour $u_{q+1}, u_{q+2}, \ldots, u_{p}$}.
+
+$8^\circ$ Cela nous montre que nous nous trouvons dans un des cas de réduction des intégrales abéliennes. Les intégrales $u_{q+1}, u_{q+2}, \ldots, u_{p}$ sont réductibles puisqu'elles n'admettent que $2p - 2q$ périodes distinctes; il en résulte qu'il existe $q$ autres intégrales réductibles. Voici comment on peut les former~:
+
+Désignons par $\omega_{i}^{(h)}$ la $h^{\text{ième}}$ période de $u_{i}$; d'après ce qui précède $\omega_{i}^{(h)}$ est une constante si $i \leqq q$, $h < 2q$\ednote{Printed ``$h < 2q$''; the context implies $h \leqq 2q$.} et elle est nulle si $i > q$, $h \leqq 2q$; pour qu'il en soit ainsi, il faut choisir et ordonner convenablement les périodes fondamentales, \emph{sans s'astreindre à choisir des périodes normales}; nous aurons alors entre les périodes des relations de la forme
+\[
+F(\omega_{i}^{(1)}, \omega_{i}^{(2)}, \ldots, \omega_{i}^{(2p)}, \omega_{j}^{(1)}, \omega_{j}^{(2)}, \ldots, \omega_{j}^{(2p)}) = 0,
+\]
+$F$ étant une forme bilinéaire, d'une part par rapport aux $\omega_{i}$, d'autre part par rapport aux $\omega_{j}$; cette forme joue, par rapport à nos périodes non normales, le même rôle que la forme
+\[
+\sum (\omega_{i}^{(2h)} \omega_{j}^{(2h+1)} - \omega_{j}^{(2h)} \omega_{i}^{(2h+1)}),
+\]
+par rapport aux périodes normales.
+
+Soient
+\[
+U = \sum \lambda_{i} u_{i}
+\]
+une intégrale quelconque et $\Omega^{(h)} = \displaystyle\sum \lambda_{i} \omega_{i}^{(h)}$ ses périodes; nous devrons avoir
+\[
+F(\Omega^{(h)}, \omega_{j}^{(h)}) = 0.
+\]
+
+Nous prendrons $j > q$, de telle sorte que, pour $h \leqq 2q$, $\omega_{j}^{(h)}$ est nul; il n'y aura donc que $2p - 2q$ des $\omega_{j}^{(h)}$ qui soient différents de zéro;
+\origpage{97}
+écrivons
+\[
+F(\Omega^{(h)}, \omega_{j}^{(h)}) = \sum \omega_{j}^{(h)} \Pi^{(h)},
+\]
+$\Pi^{(h)}$ est un polynome linéaire à coefficients entiers par rapport aux $\Omega$; on obtiendra les intégrales réductibles, en écrivant
+\[
+\Pi^{(2q+1)} = \Pi^{(2q+2)} = \ldots = \Pi^{(2p)} = 0, \tag{2}
+\]
+c'est-à-dire en égalant à zéro les coefficients de tous les $\omega_{j}^{(h)}$ qui ne sont pas nuls. Cela fera $2p - 2q$ équations entre les $\Omega$, c'est-à-dire entre les $\lambda$. Ces équations admettront $2q$ solutions linéairement indépendantes. Pour particulariser ces solutions, nous supposerons que $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{q}$ sont tous nuls, sauf l'un d'entre eux qui est égal à $1$, les autres $\lambda$ se déduiront des équations (2). Nous obtiendrons de la sorte $q$ intégrales réductibles
+\[
+U_{1}, \quad U_{2}, \quad \ldots, \quad U_{q},
+\]
+$U_{k}$ étant caractérisée par ce fait que les $q$ premiers $\lambda$ sont nuls, sauf $\lambda_{k}$ qui est égal à $1$; on aura alors
+\[
+\Omega_{k}^{(h)} = \omega_{k}^{(h)} \quad (k \leqq q, h \leqq 2q),
+\]
+car sauf le terme $\lambda_{k} \omega_{k}^{(h)} = \omega_{k}^{(h)}$, tous les termes $\lambda_{i} \omega_{i}^{(h)}$ s'annulent parce que $\lambda_{i} = 0$ pour $i \leqq q$, et $\omega_{i}^{(h)} = 0$ pour $i > q$.
+
+Les autres périodes de $U_{k}$ sont liées aux périodes $\Omega_{k}^{(h)}$ par les relations (2) qui sont des relations linéaires à coefficients entiers. Donc, les $\Omega_{k}^{(h)}$ (ou leurs sous-multiples) sont les seules périodes distinctes de $U_{k}$. Donc, \emph{toutes les périodes de $U_{k}$ sont des constantes}.
+
+$9^\circ$ Alors $U_{k}$ est une fonction de $x, y, z$, qui ne peut devenir infinie, qui se reproduit à une période constante près quand $x, y, z$ décrit un circuit fermé quelconque.
+
+Donc, ses dérivées par rapport à $x$ ou $y$ sont des fonctions rationnelles de $x, y, z$.
+
+C'est donc une intégrale de différentielles totales de première espèce. Donc, notre surface possède $q$ intégrales de différentielles totales de première espèce.
+
+C.~Q.~F.~D.
+
+\origpage{98}
+\section*{VII. --- Systèmes linéaires.}
+
+Nous allons considérer, d'une façon plus générale, des courbes $C$ correspondant à une valeur quelconque du nombre $m$ (c'est-à-dire rencontrant le plan $y = \mathrm{const.}$ en $m$ points mobiles), sans nous astreindre à prendre $m = p$. Considérons deux courbes $C$ et $C'$ correspondant à une même valeur de $m$. Je suppose de plus que les différents points $A_{1}, A_{2}, \ldots, A_{n}$ d'intersection de la surface avec la droite $y = t = 0$ sont, pour les deux courbes $C$ et $C'$, des points multiples d'un même ordre de multiplicité.
+
+Si les deux courbes $C$ et $C'$ appartiennent à un même système linéaire, le théorème d'Abel nous montre immédiatement que les fonctions $v_{i}$ sont les mêmes pour les deux courbes. Et nous pouvons en conclure, en particulier, ce que nous avions admis jusqu'ici comme presque évident, que \emph{s'il existe un système continu de fonctions normales au sens des deux paragraphes précédents, le système continu de courbes algébriques correspondant n'est pas un système linéaire}.
+
+Soient maintenant $C$ et $C'$ deux courbes quelconques; soient
+\[
+m, \quad \mu_{1}, \quad \mu_{2}, \quad \ldots, \quad \mu_{n}
+\]
+les nombres des points d'intersection mobiles de la courbe $C$ avec $y = \mathrm{const.}$ et le degré de multiplicité pour cette courbe des points $A_{1}, A_{2}, \ldots, A_{n}$; soient
+\[
+m', \quad \mu'_{1}, \quad \mu'_{2}, \quad \ldots, \quad \mu'_{n}
+\]
+les nombres correspondants pour $C'$. Soient $v_{i}$ et $v'_{i}$ les fonctions $v_{i}$ pour $C$ et pour $C'$.
+
+Soit $a_{i}^{(k)}$ la valeur de $u_{i}$ au point $A_{k}$; si les deux courbes appartiennent à un même système linéaire, on aura
+\[
+\left\{
+\begin{aligned}
+m + \sum \mu_{k} &= m' + \sum \mu'_{k}, \\
+m v_{i} + \sum \mu_{k} a_{i}^{(k)} &= m' v'_{i} + \sum \mu'_{k} a_{i}^{(k)}.
+\end{aligned}
+\right. \tag{1}
+\]
+
+Il nous reste à montrer que réciproquement si ces conditions (1)
+\origpage{99}sont remplies, les deux courbes appartiennent à un système linéaire.
+Les deux courbes $C$ et $C'$ sont alors de même degré
+\[
+M = m + \sum \mu = m' + \sum \mu'.
+\]
+
+Nous avons, en outre, la surface donnée qui est de degré $n$ et sa courbe double qui est de degré $d$. Par la courbe $C$ et la courbe double je fais passer une surface de degré $q$ suffisamment élevée; soit
+\[
+F = 0
+\]
+l'équation de cette surface; son intersection avec la surface donnée sera de degré $qn$ et se composera de $C$, de la courbe double et d'une courbe $Q$ de degré
+\[
+qn - M - 2d.
+\]
+
+Soit $K$ la courbe d'intersection du plan $y = \text{const.}$ avec la surface donnée $f = 0$.
+
+La surface $F = 0$ coupe le plan $y = \text{const.}$ suivant une courbe de degré $q$ qui passe par les $d$ points doubles de $K$, par les $m$ points mobiles d'intersection de $C$, par les $qn - M - d$\ednote{Printed $qn - M - d$; an apparent misprint for $qn - M - 2d$, the degree of $Q$ established in the preceding display.} points d'intersection du plan avec $Q$, et qui au point $A_{k}$ a avec la courbe $K$ un contact d'ordre $\mu_{k} - 1$.
+
+En vertu du théorème d'Abel, la seconde équation (1) signifie qu'on peut trouver une courbe $S$ dans le plan de $K$ qui soit de degré $q$, qui passe par les $m'$ points d'intersection mobiles de $K$ et de $C'$, par les $d$ points doubles de $K$, par les $qn - M - d$\ednote{Printed $qn - M - d$; an apparent misprint for $qn - M - 2d$.} points d'intersection de $Q$ et de $K$, et qui au point $A_{k}$ ait avec $K$ un contact d'ordre $\mu'_{k} - 1$. Même si $q \geqq n$ on peut en trouver une infinité et l'on peut lui imposer
+\[
+\frac{(q - n + 1)(q - n + 2)}{2},
+\]
+conditions arbitraires. Nous achèverons de déterminer la courbe $S$ en l'assujettissant à rencontrer $\frac{(q - n + 1)(q - n + 2)}{2}$ droites données de l'espace.
+
+Quand on fera varier $y$, cette courbe $S$ engendrera une certaine surface $\Phi = 0$; cette surface sera algébrique, mais elle peut être de
+\origpage{100}degré supérieur à $q$, par exemple $q + h$; son intersection avec la surface donnée $f = 0$ se compose alors, outre la courbe $C'$, la courbe $Q$ et la courbe double, de $h$ courbes planes
+\[
+K_{1}, \quad K_{2}, \quad \ldots, \quad K_{h},
+\]
+ayant respectivement pour équations
+\[
+f = y - y_{1} = 0, \quad f = y - y_{2} = 0, \quad \ldots, \quad f = y - y_{h} = 0.
+\]
+
+Formons alors le système linéaire suivant de surfaces algébriques de degré $q + h$ :
+\[
+(y - y_{1})(y - y_{2}) \ldots (y - y_{h}) F + \lambda\Phi = 0,
+\]
+où $\lambda$ est un paramètre arbitraire.
+
+Ces surfaces coupent la surface donnée $f = 0$ en un certain nombre de courbes fixes, qui sont $Q$, $K_{1}$, $K_{2}$, \ldots, $K_{h}$ et la courbe double, et en une courbe mobile $C''$ de degré $M$ qui se réduit à $C$ pour $\lambda = 0$ et à $C'$ pour $\lambda$ très grand; de sorte que $C$ et $C'$ appartiennent à un même système linéaire. C.~Q.~F.~D.
+
+Indiquons, pour terminer, un procédé qui pourrait aider à l'étude de ces systèmes linéaires. Adjoignons aux $p$ intégrales de première espèce
+\[
+u_{1}, \quad u_{2}, \quad \ldots, \quad u_{p}
+\]
+$m - p$ intégrales quelconques de troisième espèce,
+\[
+u_{p+1}, \quad u_{p+2}, \quad \ldots, \quad u_{m}.
+\]
+
+Formons alors les $m$ fonctions $v_{1}, v_{2}, \ldots, v_{m}$ relatives à ces $m$ intégrales. Donnons pour un instant à $y$ une valeur constante; à tout système de valeurs des $m$ fonctions $v_{1}, v_{2}, \ldots, v_{m}$ correspond un système de $m$ points de la courbe $K$ intersection de $f = 0$ et de $y = \text{const.}$ et un seul; c'est là le résultat de l'analyse que Clebsch et Gordan appellent \emph{das erweiterte Umkerproblem}\ednote{Printed ``Umkerproblem'' without h; the standard German is ``Umkehrproblem''.}. Une courbe coupant $K$ en $m$ points mobiles sera donc définie par ces $m$ fonctions, et l'on conçoit qu'une étude des fonctions $v_{1}, v_{2}, \ldots, v_{m}$ analogue à celle que nous avons faite des fonctions $v_{1}, v_{2}, \ldots, v_{p}$ dans les paragraphes 3 et 4,
+\origpage{101}puisse nous renseigner sur ces systèmes linéaires. C'est ce que je me réserve de faire dans un Mémoire ultérieur.
+
+\section*{VIII. --- Nombre des valeurs critiques.}
+
+Commençons par observer que si la surface n'a pas de point conique, il n'y aura pas de valeurs critiques apparentes. En effet, si $y_{0}$ est une valeur critique apparente, il y aura une fonction $R_{i}$ qui sera divisible par $y - y_{0}$, tandis que l'intégrale correspondante
+\[
+u_{i} = \int \frac{R_{i}\,dx}{f'_{z}}
+\]
+n'aura pas toutes ses périodes nulles; il en résultera que l'intégrale $\displaystyle\int \frac{R_{i}\,dx}{(y - y_{0})f'_{z}}$ aura des périodes infinies; ce qui ne peut avoir lieu que si la courbe $K$, intersection de $f = 0$ et de $y = y_{0}$, dégénère; il faut donc que le plan $y = y_{0}$ passe par un point conique ou soit tangent à la surface. Dans le second cas, il suffira de changer un peu les axes pour que tous les plans tangents menés par $y = t = 0$ soient des plans tangents ordinaires, et dans ce cas nous avons vu comment les choses se passent et qu'on n'a pas une valeur critique apparente. Une semblable valeur ne peut donc exister que dans le cas d'un point conique. D'après un théorème bien connu de M.~Picard, nous pouvons toujours nous arranger pour que la surface n'ait d'autre singularité qu'une courbe double avec des points triples; par conséquent pas de points coniques; nous n'avons donc plus à nous occuper de cette question.
+
+Cela posé, soit
+\[
+R_{i} = \frac{P_{i}}{Y},
+\]
+$Y$ étant un polynome entier homogène de degré $\nu$ en $y$ et $t$, et $P_{i}$ un polynome homogène de degré $n + \nu - 2$ en $x$, $y$, $z$ et $t$, où $x$ et $z$ n'entrent qu'au degré $n - 3$. Les racines de $Y = 0$ sont les valeurs critiques de la deuxième sorte; pour trouver les valeurs critiques de la première sorte, il faut chercher les valeurs de $y$ pour lesquelles les $p$ polynomes $P_{i}$ ne sont pas linéairement indépendants.
+
+\origpage{102}
+Cherchons à former un système continu de fonctions normales comme aux paragraphes 5 et 6; nous aurons
+\[
+v_{i} = \frac{X_{i}}{Y}, \tag{1}
+\]
+où $X_{i}$ est un polynome homogène de degré $\nu$ en $y$ et en $t$. Nous avons dans la formule (1) $p$ polynomes $X_{i}$ de degré $\nu$; soit en tout $(\nu + 1)p$ coefficients; mais ces coefficients ne sont pas entièrement arbitraires. Si $y_{0}$ est une valeur critique de première sorte, telle que $\displaystyle\sum \alpha_{i} P_{i}$ soit divisible par $y - y_{0}$, on devra avoir pour $y = y_{0}$
+\[
+\sum \alpha_{i} v_{i} = 0, \tag{2}
+\]
+ce qui nous donnera entre les coefficients des $X_{i}$ autant de relations qu'il y a de valeurs critiques de la première sorte, soit $\mu$; il restera alors $q$ coefficients indépendants, ce qui nous donnera un système continu $q$ fois infini de fonctions normales, et l'on aura
+\[
+q \geqq (\nu + 1)p - \mu. \tag{3}
+\]
+J'écris $\geqq$ parce que les relations (2) peuvent n'être pas toutes distinctes.
+
+Ce système continu $q$ fois infini n'est pas tout à fait le même que celui que nous avons étudié au paragraphe 6 et où (par suite d'un choix particulier des intégrales $u_{i}$) toutes les fonctions normales se réduisaient à zéro ou à des constantes; cependant les raisonnements de ce paragraphe 6 (dans la démonstration de la réciproque) lui seront applicables à peu près sans changement.
+
+Soit
+\[
+v_{i} = \sum \gamma_{k}\varphi_{ik} \quad (i = 1, 2, \ldots, p; \ k = 1, 2, \ldots, q) \tag{4}
+\]
+notre système de fonctions normales; les $\gamma$ sont des coefficients arbitraires, les $\varphi$ des fonctions rationnelles de $y$; il y aura entre les $v_{i}$ au moins $p - q$ relations linéaires dont les coefficients seront des fonctions rationnelles de $y$; ces relations s'obtiendraient en éliminant les $\gamma$ entre les équations (4); soit $p - q'$ le nombre exact de ces relations,
+\origpage{103}on aura $q \geqq q'$. Soient
+\[
+\sum v_{i}\psi_{ik}(y) = 0 \tag{5}
+\]
+les $p - q'$ relations en question.
+
+Les $\gamma$ seront des fonctions des variables $\xi$ de la relation (1) du paragraphe 6. Pour déterminer ces fonctions, il suffisait au paragraphe 6 d'évaluer les valeurs de $v_{i}$ en donnant à $y$ une valeur déterminée. Pour faire cette détermination, il faudra ici évaluer les $v_{i}$ pour un certain nombre de valeurs déterminées de $y$, au plus $\nu + 1$; soient $y_{1}, y_{2}, \ldots$ ces valeurs.
+
+On verrait, comme au paragraphe 6, que les $\gamma$ ne peuvent devenir infinis, puisque les $v$ ne peuvent devenir infinis que pour les valeurs critiques de la deuxième sorte et que le choix des valeurs $y_{1}, y_{2}, \ldots$ étant arbitraire, nous pouvons toujours supposer que $y_{1}, y_{2}, \ldots$ ne sont pas des valeurs critiques. On verrait ensuite que les $\gamma$ sont des intégrales de différentielles totales de première espèce relatives à la variété (1) du paragraphe 6.
+
+Si les $\xi$ décrivent un contour fermé, $\gamma_{k}$ augmente de $\omega_{k}$ et $v_{i}$ de $\frac{1}{p}\Omega_{i}$ et l'on aura
+\[
+\frac{1}{p}\Omega_{i} = \sum \omega_{k}\varphi_{ik} \quad (\Omega_{i}\text{ étant une période de } u_{i}).
+\]
+
+Nous aurons, d'autre part, par les relations (5)
+\[
+\sum \Omega_{i}\psi_{ik}(y) = 0. \tag{6}
+\]
+
+On verrait, comme au paragraphe 6, que le nombre des périodes en question est au moins égal à $2q$. On aura donc $p - q'$ intégrales $\displaystyle\sum u_{i}\psi_{ik}(y)$ qui auront $2q$ périodes nulles. Il faut donc que $q = q'$, car si l'on avait $q > q'$, le déterminant à $2p$ lignes et $2p$ colonnes formé avec les parties réelles et imaginaires des $2p$ périodes de nos $p$ intégrales $u_{i}$ serait nul, et nous avons vu au paragraphe 6 que cela est impossible pour des intégrales abéliennes non dégénérées.
+
+Cela posé, considérons les diverses valeurs critiques de la première sorte; dire que $y = y_{k}$ est critique, c'est dire qu'il existe des coefficients
+\origpage{104}constants $\alpha_{ik}$ tels que
+\[
+\sum \alpha_{ik} P_{i}
+\]
+s'annule identiquement pour $y = y_{k}$; alors de deux choses l'une~:
+
+$1^\circ$ Ou bien parmi les expressions $\displaystyle\sum \alpha_{ik} P_{i}$ on en peut trouver $p$ qui sont linéairement indépendantes; nous pourrons alors poser
+\[
+\sum \alpha_{ik} u_{i} = u'_{k} \frac{y - y_{k}}{y - b} \quad (i, k = 1, 2, \ldots, p),
+\]
+$b$ étant l'une des valeurs critiques de la deuxième sorte; alors
+\[
+P'_{k} = (y - b) \frac{\sum \alpha_{ik} P_{i}}{y - y_{k}}
+\]
+sera un polynome entier puisque $\displaystyle\sum \alpha_{ik} P_{i}$ est divisible par $y - y_{k}$, et ce polynome sera divisible par $y - b$, de sorte que $b$ ne sera plus critique de la deuxième sorte pour le $u'_{k}$; on aura donc réduit d'une unité le nombre $\nu$ des valeurs critiques de la deuxième sorte;
+
+$2^\circ$ Ou bien parmi les expressions $\displaystyle\sum \alpha_{ik} P_{i}$ il n'y en aura que $p - h$ qui seront linéairement indépendantes; nous poserons alors
+\[
+\sum \alpha_{ik} u_{i} = u'_{k} \quad (i = 1, 2, \ldots, p; \ k = 1, 2, \ldots, p - h),
+\]
+les autre\ednote{Printed ``autre''.} $u'_{k}$ étant définis d'une manière quelconque. Cela revient à dire que nous pouvons toujours supposer que dans les expressions $\displaystyle\sum \alpha_{ik} u_{i}$ ne figurent que des $u_{i}$ où l'indice $i \leqq p - h$. Mais les coefficients des polynomes $X_{i}$ sont assujettis aux conditions
+\[
+\sum \alpha_{ik} X_{i} = 0 \quad \text{pour} \quad y = y_{k}.
+\]
+
+Dans ces conditions, les $h$ derniers polynomes $X$ ne figurent pas, c'est-à-dire que les $h(\nu + 1)$ coefficients de ces polynomes sont
+\origpage{105}arbitraires. Nous avons alors
+\[
+q = h(\nu + 1) + l
+\]
+coefficients $\gamma$ arbitraires, $l$ étant le nombre des coefficients arbitraires des $p - h$ premiers polynomes $X$. Si nous reprenons les équations (4), on verra figurer, dans les $p - h$ premières, $l$ coefficients $\gamma$ distincts et dans les $h$ dernières $h(\nu + 1)$ coefficients $\gamma$ tous distincts des précédents. En éliminant ces $l$ coefficients entre ces $p - h$ équations, il restera au moins $p - h - l$ relations entre les $v_{i}$ correspondants; c'est-à-dire qu'en reprenant le nombre appelé plus haut $q'$ on aura
+\[
+p - q' \geqq p - h - l;
+\]
+d'où
+\[
+q \geqq h\nu + q', \quad q > q',
+\]
+ce qui, nous l'avons vu, est impossible. Cette deuxième hypothèse doit donc être rejetée; on peut donc toujours réduire le nombre $\nu$ des valeurs critiques de la deuxième sorte; \emph{on peut donc toujours supposer que ce nombre est nul}.
+
+Soit donc $\nu = 0$; alors l'équation $P_{i} = 0$ sera celle d'une surface de degré $n - 2$ passant par la courbe double et par la droite $y = t = 0$. Soit d'autre part $\theta_{h}$ le nombre des surfaces d'ordre $h$ qui passent par la courbe double. Les polynomes $X_{i}$ se réduisent ici à des constantes, et il s'agit de savoir combien, parmi les relations
+\[
+\sum \alpha_{ik} X_{i} = 0, \tag{7}
+\]
+il y en a de distinctes; ce nombre ne sera autre que $p - q$. L'équation (7) signifie que $\displaystyle\sum \alpha_{ik} P_{i}$ est divisible par $y - y_{k}$, et alors l'équation
+\[
+S_{k} = \frac{\sum \alpha_{ik} P_{i}}{y - y_{k}} = 0
+\]
+est celle d'une surface d'ordre $n - 3$ passant par la courbe double. Si les équations (7) ne sont pas distinctes, c'est qu'on a entre les $\alpha_{ik}$
+\origpage{106}des relations de la forme
+\[
+\sum \lambda_{k}\alpha_{ik} = 0 \quad (i = 1, 2, \ldots, p), \tag{8}
+\]
+ce qui entraîne l'identité
+\[
+\sum \lambda_{k}\left(\sum \alpha_{ik} P_{i}\right) = \sum \lambda_{k}(y - y_{k}) S_{k} = 0. \tag{9}
+\]
+
+L'équation (8) étant une identité, l'expression $\displaystyle\sum \lambda_{k}(y_{0} - y_{k})S_{k}$ sera divisible par $y - y_{0}$ et l'équation
+\[
+\frac{\sum \lambda_{k}(y_{0} - y_{k})S_{k}}{y - y_{0}} = 0 \tag{10}
+\]
+sera celle d'une surface de degré $n - 4$ passant par la courbe double.
+
+Le nombre des relations (7) distinctes sera celui des surfaces $S_{k} = 0$, c'est-à-dire $\theta_{n-3}$, diminué du nombre des relations de la forme (8). Or, à toute relation de la forme (8) correspondra, comme nous venons de le voir, une surface adjacente\ednote{Printed ``adjacente''; the context implies ``adjointe''.} d'ordre $n - 4$.
+
+Le nombre des relations (8) est donc $\theta_{n-4}$, et l'on a
+\[
+q = p - \theta_{n-3} + \theta_{n-4}.
+\]
+
+Le nombre $\theta_{n-3} - \theta_{n-4}$ représente le nombre de courbes planes linéairement indépendantes qu'on peut regarder comme section du plan $y = \mathrm{const.}$ par une surface adjointe d'ordre $n - 3$.
+
+Le résultat précédent ne diffère donc pas de celui de M.~Picard (\emph{Fonctions algébriques}, t.~II, p.~438).
+
+Nous avons à revenir sur quelques points de détail.
+
+Il faut d'abord établir que toutes les adjointes d'ordre $n - 3$ sont des combinaisons des surfaces $S_{k} = 0$. Soit, en effet, $S = 0$ une pareille adjointe. L'intersection de cette adjointe par le plan $y = \mathrm{const.}$ sera une adjointe d'ordre $n - 3$ de la courbe $K$; on devra donc avoir pour cette valeur de $y$
+\[
+S = \sum \alpha_{i} P_{i},
+\]
+les $\alpha_{i}$ étant des coefficients finis, sauf pour les valeurs critiques. Ces
+\origpage{107}coefficients sont des fonctions de $y$ évidemment rationnelles qui ne pourront devenir infinies que pour les valeurs critiques. Si donc $\Pi$ est un polynome homogène d'ordre $\mu$ en $y$ et $t$ qui s'annule pour les valeurs critiques $y_{k}$ et pour elles seulement, on aura
+\[
+\Pi S = \sum \varphi_{i}(y) P_{i},
+\]
+les $\varphi_{i}$ étant des polynomes homogènes d'ordre $\mu - 1$ en $y$ et $t$; on devra avoir, pour $y = y_{k}$,
+\[
+\sum \varphi_{i}(y_{k}) P_{i} = 0,
+\]
+ce qui veut dire que $\varphi_{i}(y_{k}) = \varepsilon_{k}\alpha_{ik}$, $\varepsilon_{k}$ étant un coefficient constant; d'où l'identité
+\[
+\sum \varphi_{i}(y_{k}) P_{i} = \varepsilon_{k}(y - y_{k}) S_{k}.
+\]
+
+Or, $\varphi_{i}$ étant de degré moins élevé que $\Pi$, on a
+\[
+\frac{\varphi_{i}(y)}{\Pi} = \sum \frac{\varphi_{i}(y_{k})}{y - y_{k}},
+\]
+d'où
+\[
+S = \sum \varepsilon_{k} S_{k}.
+\]
+
+C.~Q.~F.~D.
+
+Il faut ensuite démontrer que toutes les adjointes d'ordre $n - 4$ peuvent se mettre sous la forme (10). Soit en effet $T = 0$ une semblable adjointe, et posons, en vertu du théorème précédent,
+\[
+tT = \sum \varepsilon_{k} S_{k}, \quad yT = \sum \varepsilon'_{k} S_{k};
+\]
+nous aurons l'identité
+\[
+\sum (\varepsilon_{k}y - \varepsilon'_{k}t) S_{k} = \sum \frac{\varepsilon_{k}y - \varepsilon'_{k}t}{y - y_{k}t}\left(\sum \alpha_{ik} P_{i}\right) = 0.
+\]
+
+Mais pour toutes les valeurs de $y$, sauf les valeurs critiques, les $P_{i}$ considérés comme fonctions de $x$ et de $z$ sont linéairement indépendants.
+\origpage{108}Tous les coefficients de la relation précédente doivent donc s'annuler, c'est-à-dire qu'on a (en faisant par exemple $t = 1$)
+\[
+\sum \alpha_{ik}\frac{\varepsilon_{k}y - \varepsilon'_{k}}{y - y_{k}} = 0,
+\]
+et ce doit être une identité quel que soit $y$. Cela ne peut avoir lieu que si $\frac{\varepsilon_{k}y - \varepsilon'_{k}}{y - y_{k}}$ se réduit à une constante $\lambda_{k}$ et l'on a alors
+\[
+\sum \lambda_{k}\alpha_{ik} = 0 \quad (i = 1, 2, \ldots, p),
+\]
+ce qui est une relation de la forme (8).
+
+C.~Q.~F.~D.
+
+Nous avons vu au paragraphe 5 qu'on pouvait déduire toutes les courbes tracées sur une surface d'un certain nombre de courbes primitives; nous avons donné le maximum du nombre de ces courbes et nous avons dit que ce maximum est effectivement atteint si une certaine relation (2) du paragraphe 5 se réduisait à une égalité
+\[
+\mu = p(\nu + 1). \tag{11}
+\]
+
+Dans le cas contraire, le maximum n'est pas atteint en général. D'après ce qui précède la condition (11) est équivalente à la suivante~:
+\[
+\theta_{n-4} = 0.
+\]
+
+Ainsi donc le maximum du nombre $\rho$ des courbes primitives sera atteint pour les surfaces de genre géométrique nul, il ne le sera pas en général pour les surfaces de genre géométrique plus grand que zéro.
+
+\end{document}

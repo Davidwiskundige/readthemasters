@@ -1,0 +1,111 @@
+id: poincare-1910-courbes-surfaces-algebriques
+title: Sur les courbes tracées sur les surfaces algébriques.
+title_en: On curves traced on algebraic surfaces.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Henri Poincaré
+    credit: Photograph of Poincaré from the 1880s, author unknown, held on Wikimedia
+      Commons. Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Henri_Poincar%C3%A9_in_1880s.jpg
+publication:
+  year: 1910
+  venue: annales-ens
+  volume: 3e série, tome 27
+  pages: 55–108
+  title_full: Annales scientifiques de l'École Normale Supérieure, 3e série, tome
+    27 (1910), pp. 55–108.
+edition:
+  year: 1910
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1910 printing in the Annales scientifiques
+    de l'École Normale Supérieure (3e série, tome 27, pp. 55–108), as digitized by
+    NUMDAM (ASENS_1910_3_27__55_0). A faithful photographic reproduction of a public-domain
+    edition carrying no modern critical apparatus, commentary, or re-typesetting,
+    and only the memoir itself is transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+relations:
+- to: castelnuovo-enriques-1897-surfaces-algebriques
+  kind: builds-on
+  recommended: primary
+  note: Poincaré addresses the theorem of Enriques, Castelnuovo, and Severi that the
+    irregularity $q = p_g - p_a$ equals the number of independent integrals of total
+    differentials of the first kind on an algebraic surface.
+- to: picard-1884-surfaces-algebriques
+  kind: builds-on
+  note: Picard's pioneering work on integrals of algebraic functions of two variables
+    provides the foundation for Poincaré's normal elementary integrals.
+source:
+  scan_url: http://www.numdam.org/item/ASENS_1910_3_27__55_0.pdf
+  scan_id: numdam:ASENS_1910_3_27__55_0
+sources:
+  death_date: wikidata:Q81082
+  publication_date: numdam:ASENS_1910_3_27__55_0 (doi:10.24033/asens.617)
+  edition: numdam:ASENS_1910_3_27__55_0 (Annales de l'É.N.S. 3e sér., t. 27, 1910,
+    pp. 55–108)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1910
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-23'
+significance: 'Poincaré''s culminating 1910 memoir provides a purely transcendental
+  demonstration of the celebrated theorem of Enriques, Castelnuovo, and Severi[1]:
+  that the irregularity $q = p_g - p_a$ of an algebraic surface equals the number
+  of independent integrals of total differentials of the first kind discovered by
+  Picard[2]. Where the Italian geometers relied on delicate dynamic limits of continuous
+  systems of curves, Poincaré cuts the surface by a pencil of planes and introduces
+  the abelian sums now called *Poincaré normal functions*[note 1]. Proving via Riemann
+  theta functions that these normal functions characterize actual algebraic curves,
+  he shows that non-linear continuous families exist if and only if the abelian differentials
+  extend to total differentials, establishing the formula $q = p_g - p_a$ with analytic
+  rigor. The memoir also classifies curves into primitive curves, founding Picard''s
+  invariant $\rho$, and directly inspired Solomon Lefschetz''s proof of the Lefschetz
+  $(1,1)$-theorem[3][note 2].'
+significance_sources:
+- citation: G. Castelnuovo and F. Enriques, "Sur quelques récents résultats dans la
+    théorie des surfaces algébriques", Mathematische Annalen 48 (1897), pp. 241–316;
+    in this corpus as castelnuovo-enriques-1897-surfaces-algebriques.
+  url: /works/castelnuovo-enriques-1897-surfaces-algebriques/
+- citation: 'É. Picard and G. Simart, Théorie des fonctions algébriques de deux variables
+    indépendantes, tomes I et II (Paris: Gauthier-Villars, 1897, 1906).'
+- citation: 'S. Lefschetz, L''Analysis situs et la géométrie algébrique (Paris: Gauthier-Villars,
+    1924).'
+significance_notes:
+- label: Poincaré normal functions
+  text: An abelian integral on a moving plane section, summed across its intersections
+    with an algebraic curve on the surface, defines an analytic function of the slicing
+    parameter whose monodromy and zeros determine whether the curve belongs to a continuous
+    system.
+- label: The Lefschetz (1,1)-theorem
+  text: Lefschetz used Poincaré's normal functions and vanishing cycles to prove that
+    every integral cohomology class in $H^2(S, \mathbb{Z}) \cap H^{1,1}(S)$ is the
+    fundamental class of an algebraic divisor.
