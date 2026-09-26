@@ -1,0 +1,870 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every math expression, symbol, \origpage{N} marker, \tag{}, and \ednote{} is
+% reproduced unchanged; only the prose is translated. Prose inside \text{...} inserts in
+% displayed formulas is translated in accordance with HOUSESTYLE R21.
+%
+% TERMINOLOGY:
+%   * Dirichletsches Prinzip = "Dirichlet principle"
+%   * Schlußweise = "mode of inference"
+%   * Minimalfunktion = "minimal function"
+%   * Randwertaufgabe = "boundary value problem"
+%   * Unzulässigkeit = "inadmissibility"
+%   * Variationsrechnung = "calculus of variations"
+%   * überall endliche Integrale = "everywhere finite integrals"
+%   * Riemannsche Fläche = "Riemann surface"
+%   * Verzweigungspunkt = "branch point"
+%   * Blatt = "sheet"
+%   * Polygonzug = "polygonal path"
+%   * reguläre Potentialfunktion = "regular potential function"
+%   * unendlichferner Punkt = "point at infinity"
+%   * Sprung 1 = "jump of 1"
+%   * Hilfssatz = "Lemma"
+%   * stückweise analytisch = "piecewise analytic"
+%   * gleichmäßige Konvergenz = "uniform convergence"
+%   * untere / obere Grenze = "lower / upper bound"
+%   * Reihe (of functions or rectangles) = "sequence"
+%   * partielle Integration = "integration by parts"
+%   * Kreisring = "annular domain" / "circular ring"
+%
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{161}
+
+\section*{On the Dirichlet Principle.${}^{*)}$}
+
+\subsection*{By \textsc{David Hilbert} in Göttingen.}
+
+\subsection*{Contents.}
+
+§~1. Statement of the Problem \dots\ 162
+
+§~2. Lemma on Dirichlet Integrals \dots\ 163
+
+§~3. General Lemma on Uniform Convergence \dots\ 165
+
+§~4. Lemma on the Vanishing of a Certain Double Integral under Arbitrary Choice of a Function Occurring under the Integral Sign \dots\ 166
+
+§~5. Construction of the Desired Potential Function on the Basis of the Dirichlet Principle \dots\ 169
+
+§~6. Proof of the Existence of the Function $v$ \dots\ 173
+
+§~7. Existence of the Function $u$ and Proof of its Potential Property \dots\ 175
+
+§~8. Proof of the Prescribed Discontinuity of the Function $u$ on the Curve $C$ \dots\ 180
+
+§~9. The Value of the Dirichlet Integral of the Potential Function $u$ on the Riemann Surface \dots\ 181
+
+§~10. Proof of the Regular Behavior of the Potential Function $u$ at the Points at Infinity and at the Branch Points of the Riemann Surface \dots\ 184
+
+By the Dirichlet principle we understand that mode of inference regarding the existence of a minimal function which Gauss (1839), Thomson (1847), Dirichlet (1856), and other mathematicians have applied to the solution of so-called boundary value problems, and whose inadmissibility was first recognized by Weierstrass. That this principle can nevertheless serve to find rigorous and simple existence proofs, I emphasized in a lecture${}^{**)}$ at the German Mathematical Society;
+
+\textbf{*)} Reprint from the Festschrift celebrating the 150th anniversary of the Royal Society of Sciences in Göttingen, 1901.
+
+\textbf{**)} Jahresbericht der Deutschen Mathematiker-Vereinigung, VIII, 1900.
+
+\origpage{162}
+my suggestions at that time have since been carried out by Ch.~A.~Noble${}^{*)}$ for simple definite integrals and by E.~R.~Hedrick${}^{**)}$ for certain cases of double integrals.
+
+In what follows, a method modeled after the Dirichlet principle shall be presented, in which we do not, as previously, assume the solution of the boundary value problem for any special domain. The new method therefore admits wide-ranging generalizations to the solution of boundary value problems for certain partial differential equations arising from variational problems or for systems of such differential equations. Above all, however, the following developments seem to me to offer a methodological interest, insofar as they show how the modern tools of analysis, and of the calculus of variations in particular, are capable of pursuing the fundamental idea of the Dirichlet principle—drawn from geometric and physical intuition—in exact accordance with its intuitive meaning, in such a way that from it there arises a rigorous mathematical proof for the existence of the minimal function.
+
+\subsection*{§~1. Statement of the Problem.}
+
+Through the Dirichlet principle, Riemann in particular sought to prove the existence of everywhere finite integrals on a given Riemann surface. In what follows, I make use of this classical example to set forth my rigorous method of proof.
+
+Let there be given in the plane of complex numbers a Riemann surface $F$ with a certain finite number of branch points and a certain finite number of sheets. Furthermore, let there be given on the Riemann surface $F$ a curve $C$ which runs in the finite region, meets no branch point, and returns into itself without dividing the surface $F$ into pieces. We assume this curve $C$ to be a polygonal path consisting of straight segments, partly parallel to the $x$-axis and partly to the $y$-axis.
+
+A function $u$ of the two variables $x$, $y$ that is continuous in an ordinary point of the Riemann surface together with all its derivatives, and satisfies the differential equation
+
+\textbf{*)} Eine neue Methode in der Variationsrechnung, Inaugural dissertation, Göttingen 1901.
+
+\textbf{**)} Über den analytischen Charakter der Lösungen von Differentialgleichungen, Inaugural dissertation, Göttingen 1901, Chapter~V.
+
+\origpage{163}
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = \Delta u = 0
+\]
+shall be called a regular potential function at this point.
+
+If $a$, $b$ are the coordinates of an $r$-fold branch point of the Riemann surface $F$, and the potential function $u$ behaves regularly everywhere in the neighborhood of this branch point, then let one substitute into $u$ in place of $x$, $y$ respectively the real part and the part multiplied by $i$ of the expression
+\[
+a + ib + (\xi + i\eta)^r;
+\]
+if $u$ then transforms into a potential function of $\xi$, $\eta$ that also behaves regularly at the point $\xi = 0$, $\eta = 0$, then the original potential function of $x$, $y$ is said to be regular at the branch point $a$, $b$.
+
+If a potential function $u$ behaves regularly in the neighborhood of a point at infinity of our Riemann surface and by the transformation
+\[
+x = \frac{\xi}{\xi^2 + \eta^2}, \qquad y = \frac{-\eta}{\xi^2 + \eta^2}
+\]
+transforms into a potential function of the variables $\xi$, $\eta$ that behaves regularly at the point $\xi = 0$, $\eta = 0$, then the original function $u$ of $x$, $y$ shall be called regular at that point at infinity.
+
+If finally a potential function $u$ is regular on both sides in the neighborhood of the points of the curve $C$, but on the curve $C$ behaves discontinuously in such a manner that the values of the potential function $u$ on the one side, increased by the constant 1, form precisely the regular continuation of the potential function $u$ on the other side of the curve $C$, then we say that the potential function $u$ undergoes a jump of 1 upon crossing from one side to the other.
+
+Our task shall now consist in demonstrating the existence of a potential function $u$ on the given Riemann surface $F$ which behaves regularly at all points of this surface $F$, including the points at infinity and the branch points, and moreover undergoes a jump of 1 upon crossing over the given curve of discontinuity $C$. With the solution of this problem, the proof of the existence of everywhere finite integrals on the Riemann surface $F$ is, as is well known, accomplished.
+
+\subsection*{§~2. Lemma on Dirichlet Integrals.}
+
+In this and the following two sections we discuss some simple lemmas. The first lemma treats certain inequalities
+
+\origpage{164}
+between definite integrals when the so-called Dirichlet integral for the function under consideration has a definite finite value. By the Dirichlet integral for a given function $U$, we shall always understand the double integral
+\[
+D = \int\!\!\int_{(G)} \left\{ \left(\frac{\partial U}{\partial x}\right)^2 + \left(\frac{\partial U}{\partial y}\right)^2 \right\} dx\,dy
+\]
+extended over a certain domain $G$ of the $xy$-plane.
+
+Hilfssatz 1. In the $xy$-plane let there be given a rectangle $R$ whose sides run parallel to the $x$-axis and the $y$-axis respectively and have lengths $l$ and $l'$ respectively; let the vertices of this rectangle have coordinates
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l'
+\]
+Furthermore, let $U(x, y)$ denote a function of the variables $x$, $y$ that is piecewise analytic in the interior and on the sides of the rectangle $R$, and let
+\[
+D = \int_a^{a+l} \int_b^{b+l'} \left\{ \left(\frac{\partial U}{\partial x}\right)^2 + \left(\frac{\partial U}{\partial y}\right)^2 \right\} dx\,dy
+\]
+be set: then the following three formulas hold:
+\[
+\int_a^{a+l} U(x, b)\,dx = \int_a^{a+l} U(x, b+l')\,dx + \vartheta \left(D + \frac{1}{4}\,l l'\right) \tag{I}
+\]
+\[
+\int_a^{a+l} \int_b^{b+l'} U(x, y)\,dx\,dy = l' \int_a^{a+l} U(x, b)\,dx + \vartheta' l' \left(D + \frac{1}{4}\,l l'\right) \tag{II}
+\]
+\[
+l \int_b^{b+l'} U(a, y)\,dy = l' \int_a^{a+l} U(x, b)\,dx + \vartheta'' (l + l') \left(D + \frac{1}{4}\,l l'\right); \tag{III}
+\]
+wherein $\vartheta$, $\vartheta'$, $\vartheta''$ denote certain numbers satisfying the inequalities
+\[
+-1 \leqq \vartheta \leqq +1, \quad -1 \leqq \vartheta' \leqq +1, \quad -1 \leqq \vartheta'' \leqq +1
+\]
+
+A continuous function shall be called ``piecewise analytic'' if it is composed of a finite number of analytic functions which border continuously on one another along piecewise analytic curves and behave regularly up to and including these boundary curves.
+
+Proof. From the inequality:
+\[
+\left|\frac{\partial U}{\partial y}\right|^2 - \left|\frac{\partial U}{\partial y}\right| + \frac{1}{4} \geqq 0
+\]
+
+\origpage{165}
+it follows by integration with respect to $y$ between the limits $b$, $b+l'$ that
+\[
+\int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dy \le \int_b^{b+l'} \left(\frac{\partial U}{\partial y}\right)^2 dy + \frac{1}{4}\,l'
+\]
+and from this by integration with respect to $x$ between the limits $a$, $a+l$:
+\[
+\int_a^{a+l} \int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dx\,dy \le D + \frac{1}{4}\,l l'.
+\]
+Using
+\[
+\left| \int_a^{a+l} \int_b^{b+l'} \frac{\partial U}{\partial y}\,dx\,dy \right| \leqq \int_a^{a+l} \int_b^{b+l'} \left|\frac{\partial U}{\partial y}\right| dx\,dy
+\]
+we obtain
+\[
+\left| \int_a^{a+l} U(x, b+l')\,dx - \int_a^{a+l} U(x, b)\,dx \right| \leqq D + \frac{1}{4}\,l l'
+\]
+and with this Formula I of Lemma 1 is proved.
+
+Formulas II and III are direct consequences of Formula I.
+
+\subsection*{§~3. General Lemma on Uniform Convergence.}
+
+In the construction of the desired potential function $u$ we shall make use of the following easily proved lemma, the essential content of which is known.${}^{*)}$
+
+Hilfssatz 2. Let $G$ be a domain of the $xy$-plane situated in the finite region, and let
+\[
+v_1, v_2, v_3, \dots
+\]
+be an infinite sequence of functions of $x$, $y$ with the following properties:
+
+1. each of the functions $v_h$ is continuous inside and on the boundary of the domain $G$ and differentiable once with respect to $x$ as well as with respect to $y$;
+
+2. the first derivatives of $v_h$ inside and on the boundary of $G$ lie in absolute value below a finite quantity $A$ that is independent of $x$, $y$ and of $h$:
+
+if then the functions
+\[
+v_1, v_2, v_3, \dots
+\]
+
+\textbf{*)} Bendixson, Öfversigt af Kongl.\ Vetenskaps-Akademiens Förhandlingar, Vol.~54, as well as Townsend, Begriff und Anwendung des Doppellimes, Inaugural dissertation, Göttingen 1900, p.~34.
+
+\origpage{166}
+converge toward a finite limit for every point of a point set that is dense everywhere in $G$, then they converge toward a finite limit for every arbitrary point in $G$ and on the boundary of $G$, and indeed uniformly for the domain $G$.
+
+The limit
+\[
+\underset{h=\infty}{L} v_h
+\]
+consequently represents a function of $x$, $y$ continuous in $G$ including the boundary.
+
+\subsection*{§~4. Lemma on the Vanishing of a Certain Double Integral under Arbitrary Choice of a Function Occurring under the Integral Sign.}
+
+Hilfssatz 3. In the $xy$-plane let there be given a rectangle $R$ whose sides run parallel to the $x$-axis and the $y$-axis respectively and have lengths $l$ and $l'$ respectively; let the vertices of this rectangle have coordinates\ednote{In the 1904 print the semicolon after $a, b$ is omitted; cf.\ Hilfssatz 1 on p.~164.}
+\[
+a, b \quad a+l, b; \quad a+l, b+l'; \quad a, b+l'
+\]
+Furthermore, let $\zeta$ be a function of $x$, $y$ satisfying the following conditions:
+
+1. the derivatives
+\[
+\frac{\partial^{m+n} \zeta}{\partial x^m \partial y^n}, \qquad (m, n = 0, 1, 2, 3)
+\]
+exist in the rectangle $R$ including its sides and are continuous there.
+
+2. for $x=a$ and $x=a+l$ identically for all values of $y$,
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial x} = 0, \quad \frac{\partial^2\zeta}{\partial x^2} = 0
+\]
+and for $y=b$, $y=b+l'$ identically for all values of $x$,
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial y} = 0, \quad \frac{\partial^2\zeta}{\partial y^2} = 0;
+\]
+if then $F(x, y)$ denotes a function of $x$, $y$ that runs continuously in $R$ including the sides, and if the integral extended over $R$
+\[
+\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3}\,F(x, y)\,dx\,dy
+\]
+vanishes for all functions $\zeta$ satisfying conditions 1.\ and 2., then the function $F$ necessarily has the form
+\[
+F = X + X'y + X''y^2 + Y + Y'x + Y''x^2,
+\]
+
+\origpage{167}
+where $X$, $X'$, $X''$ denote continuous functions of $x$ alone and $Y$, $Y'$, $Y''$ continuous functions of $y$ alone.
+
+Proof. Let $s$, $\sigma$, $\alpha$, $\alpha'$, $\alpha''$ be any numbers such that all the expressions
+\[
+(s + \varepsilon\sigma + e\alpha + e'\alpha' + e''\alpha'')
+\]
+\[
+(\varepsilon, e, e', e'' = 0, 1)
+\]
+represent values that are $\geqq a$ and $\leqq a+l$. Likewise let $t$, $\tau$, $\beta$, $\beta'$, $\beta''$ be any numbers such that all the expressions
+\[
+t + \varepsilon\tau + e\beta + e'\beta' + e''\beta''
+\]
+\[
+(\varepsilon, e, e', e'' = 0, 1)
+\]
+represent values that are $\geqq b$ and $\leqq b+l'$. We then define a function $\xi$ of $x$ alone and a function $\eta$ of $y$ alone by the equations
+\[
+\begin{aligned}
+\xi &= 0 & \text{for } & x \le s \\
+& & \text{and for } & x \geqq s + \sigma \\
+\xi &= (x-s)(s+\sigma-x) & \text{for } & s \leqq x \leqq s + \sigma \\
+\eta &= 0 & \text{for } & y \le t \\
+& & \text{and for } & y \geqq t + \tau \\
+\eta &= (y-t)(t+\tau-y) & \text{for } & t \leqq y \leqq t + \tau.
+\end{aligned}
+\]
+Finally, for abbreviation we introduce the following notations, wherein $A(x)$, $B(y)$ denote any expressions of the arguments $x$ and $y$ respectively:
+\[
+\begin{aligned}
+d_x^{(\alpha)} A &= A(x+\alpha) - A(x), \\
+d_x^{(\alpha')} A &= A(x+\alpha') - A(x), \\
+d_x^{(\alpha'')} A &= A(x+\alpha'') - A(x), \\
+d_y^{(\beta)} B &= B(y+\beta) - B(y), \\
+d_y^{(\beta')} B &= B(y+\beta') - B(y), \\
+d_y^{(\beta'')} B &= B(y+\beta'') - B(y).
+\end{aligned}
+\]
+The function
+\[
+\zeta = \int_a^x \int_a^x \int_a^x d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi\,dx\,dx\,dx \cdot \int_b^y \int_b^y \int_b^y d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta\,dy\,dy\,dy
+\]
+then evidently possesses all the properties prescribed above, and according to the hypothesis of the lemma to be proved, we therefore have
+\[
+\int_a^{a+l} \int_b^{b+l'} d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi \cdot d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot F(x, y)\,dx\,dy = 0.
+\]
+
+\origpage{168}
+Setting first\ednote{In the 1904 print this is set as $g(x)$, whereas capital $G(x)$ is used in the subsequent equations (2) and (3); a reader has corrected this to $G(x)$ by hand in the scanned copy.}
+\[
+\int_b^{b+l'} d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot F(x, y)\,dy = g(x), \tag{1}
+\]
+we have
+\[
+\int_a^{a+l} d_x^{(-\alpha)} d_x^{(-\alpha')} d_x^{(-\alpha'')} \xi \cdot G(x)\,dx = 0 \tag{2}
+\]
+or
+\[
+\int_a^{a+l} \xi \cdot d_x^{(\alpha)} d_x^{(\alpha')} d_x^{(\alpha'')} G(x)\,dx = 0
+\]
+and applying here to the integral on the left-hand side the mean value theorem for definite integrals, there follows, omitting the factor:
+\[
+\int_0^\sigma x(\sigma - x)\,dx:
+\]
+the equation
+\[
+d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} G(s + \vartheta\sigma) = 0, \qquad (0 \leqq \vartheta \leqq 1)
+\]
+Passing to the limit for $\sigma = 0$ leads us to the equation
+\[
+d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} G(s) = 0. \tag{3}
+\]
+Substituting in (1) the variable $s$ in place of $x$ and then applying the operation $d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')}$ to (1), there follows by virtue of (3) the equation
+\[
+\int_b^{b+l'} d_y^{(-\beta)} d_y^{(-\beta')} d_y^{(-\beta'')} \eta \cdot d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} F(s, y)\,dy = 0
+\]
+and exactly as earlier equation (3) followed from (2), we now obtain from (4)\ednote{The preceding displayed formula is referenced here as (4), but was left unnumbered by the compositor in the 1904 print.} the equation
+\[
+d_t^{(\beta)} d_t^{(\beta')} d_t^{(\beta'')} d_s^{(\alpha)} d_s^{(\alpha')} d_s^{(\alpha'')} F(s, t) = 0.
+\]
+This formula holds identically for all numbers $s$, $\alpha$, $\alpha'$, $\alpha''$, $t$, $\beta$, $\beta'$, $\beta''$, provided only that all the expressions
+\[
+s + e\alpha + e'\alpha' + e''\alpha'', \quad t + e\beta + e'\beta' + e''\beta''
+\]
+\[
+(e, e', e'' = 0, 1)
+\]
+still fall into the intervals $a$ to $a+l$ and $b$ to $b+l'$ respectively. From this circumstance it follows without difficulty that $F(x, y)$ must have the form asserted in Lemma 3.
+
+\origpage{169}
+
+\subsection*{§~5. Construction of the Desired Potential Function on the Basis of the Dirichlet Principle.}
+
+In accordance with the fundamental idea of the Dirichlet principle, we shall in what follows consider on our Riemann surface $F$ systems of piecewise analytic functions $U(x, y)$, each of which undergoes a jump of 1 on the curve $C$ and for which the Dirichlet integral extended over the entire Riemann surface $F$ has a finite value. In this connection, as in Lemma 1 in §~2, a function is termed ``piecewise analytic'' if it is composed of a finite number of analytic functions which border continuously on one another along piecewise analytic curves and behave regularly up to and including these boundary curves. That there certainly exist on our Riemann surface $F$ functions $U(x, y)$ of the required nature, we easily recognize in the following way. On the Riemann surface $F$, sufficiently close to $C$, we construct an also closed polygonal path $C^*$ not intersecting $C$, whose segments are respectively parallel to the straight segments of $C$, so that the annular domain bounded by $C$ and $C^*$ remains free of branch points and it becomes possible to compose piecewise from linear functions of $x$, $y$ a function which is continuous in the interior of this annular domain and takes the value 1 on $C$, the value 0 on $C^*$. If one sets $U$ in the domain situated between $C$ and $C^*$ equal to this piecewise linear function, and defines $U$ equal to 0 at all remaining points of the Riemann surface, then $U$ clearly satisfies the requirements posed.
+
+Now we denote by $d$ the lower bound of the values of the Dirichlet integrals of all possible functions $U(x, y)$, and then conceive of such an infinite sequence of functions $U(x, y)$ as being selected, say
+\[
+U_1, U_2, U_3, \dots, \tag{5}
+\]
+whose Dirichlet integrals converge toward $d$. Finally, let $D$ be a number that turns out to be greater than all values of the Dirichlet integrals of the functions (5).
+
+If we increase a function $U$ by any constant, the value of the Dirichlet integral is not thereby altered. Let $S$ on the Riemann surface denote any finite rectilinear segment parallel to the $x$-axis which contains no branch point and does not meet the curve $C$; then we conceive of each of the func-
+
+\origpage{170}
+tions (5) as being increased by such a constant that the integrals of the altered functions, extended over the segment $S$, all vanish. If we retain for the altered functions the original notation $U_h$, they satisfy the following conditions:\ednote{The closing parenthesis in $(h = 1, 2, 3, \dots$ is omitted in the 1904 print.}
+\[
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial U_h}{\partial x}\right)^2 + \left(\frac{\partial U_h}{\partial y}\right)^2 \right\} dx\,dy < D, \qquad (h = 1, 2, 3, \dots
+\]
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(F)} \left\{ \left(\frac{\partial U_h}{\partial x}\right)^2 + \left(\frac{\partial U_h}{\partial y}\right)^2 \right\} dx\,dy = d,
+\]
+\[
+\int_{(S)} U_h\,dx = 0, \qquad (h = 1, 2, 3, \dots).
+\]
+One could show that the values of our functions
+\[
+U_1, U_2, U_3, \dots \tag{6}
+\]
+do not necessarily converge toward a limit for every point of the Riemann surface, and that it is also in general not possible to select from this sequence of functions (6) such an infinite sequence whose values converge toward a limit for every point of the Riemann surface. On the other hand, it will be possible to select from the functions (6) an infinite sequence in such a way that the double integrals of these functions over certain rectangles situated on the Riemann surface always converge toward a limit, and these limits will then serve us for the construction of the desired potential function.
+
+In the various sheets of the Riemann surface we fix all such points whose coordinates are rational numbers. Then we consider all those rectangles $R$ situated on the Riemann surface whose vertices are such points and whose sides run parallel to the $x$-axis and $y$-axis, which moreover are so situated that in their interior or on their sides neither a branch point of the Riemann surface nor any point of the curve $C$ is contained. These rectangles $R$ form a countable set and let them be arranged in the infinite sequence
+\[
+R_1, R_2, R_3, \dots \tag{7}
+\]
+arranged.
+
+We now consider any one of the rectangles (7), say the rectangle $R_k$, and form on the Riemann surface a finite chain of rectangles whose first is a rectangle with side $S$ and whose last is the rectangle $R_k$, and in which each subsequent rectangle has a side in common with the preceding one. Since the integrals of the functions (6) over the segment $S$ all vanish, we conclude, by
+
+\origpage{171}
+applying Formulas I and III of Lemma 1 in §~2 to the rectangles of our chain and understanding by $D$ the upper bound of the Dirichlet integrals introduced above, that the integrals of the functions $U_h$ extended over the sides of $R_k$ in absolute value certainly remain below a finite bound which depends only on the shape and position of the rectangle $R_k$, but not on the index $h$, that is, not on the selection of the function $U_h$ from the sequence (6). If we then further apply Formula II of Lemma 1 in §~2 to the rectangle $R_k$, it follows that the double integral of the function $U_h$ extended over this rectangle, that is, the integral
+\[
+\int\!\!\int_{(R_k)} U_h\,dx\,dy
+\]
+must also lie in absolute value below a finite bound independent of the index $h$.
+
+This consideration puts us in a position to make the desired selection in the sequence of functions (6).
+
+We first consider the rectangle $R_1$. Since the double integrals extended over this rectangle
+\[
+\int\!\!\int_{(R_1)} U_h\,dx\,dy \qquad (h = 1, 2, 3, \dots)
+\]
+in absolute value all remain below a finite bound, it is easily possible to select an infinite number from the functions $U_h$ of the infinite sequence (6), say the functions
+\[
+U_1', U_2', U_3', \dots \tag{8}
+\]
+in such a way that the double integrals of these functions approach a definite finite limit, and therefore
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_1)} U_h'\,dx\,dy
+\]
+exists. Now from the sequence of functions (8) we extract such an infinite number of functions, say the functions
+\[
+U_1'', U_2'', U_3'', \dots \tag{9}
+\]
+in such a way that the double integrals of these functions extended over the rectangle $R_2$ approach a definite finite limit, and therefore\ednote{Printed $U_2''$ with subscript 2 instead of $h$; an apparent compositor misprint for $U_h''$.}
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_2)} U_2''\,dx\,dy
+\]
+exists. Correspondingly, from the sequence of functions (9) we select an infinite number of functions
+
+\origpage{172}
+\[
+U_1''', U_2''', U_3''', \dots
+\]
+in such a way that
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_3)} U_h'''\,dx\,dy
+\]
+exists, and so forth.
+
+If we now set
+\[
+u_1 = U_1', \quad u_2 = U_2'', \quad u_3 = U_3''', \dots
+\]
+then evidently the infinite sequence of functions
+\[
+u_1, u_2, u_3, \dots \tag{10}
+\]
+is such that for every rectangle $R_k$ from the infinite sequence (7)
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R_k)} u_h\,dx\,dy
+\]
+exists.
+
+The sequence of functions (10) will enable us to construct the desired potential function on the Riemann surface in the following way.
+
+Let there be given a rectangle $R$ on the Riemann surface whose sides run parallel to the coordinate axes and have lengths $l$ and $l'$ respectively, let the coordinates of the vertices of this rectangle be
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+and let $x$, $y$ be the coordinates of a point in the interior or on a side of this rectangle $R$. For abbreviation we set
+\[
+v_h = \int_a^x \int_b^y u_h\,dx\,dy
+\]
+and then prove the following facts.
+
+I. There always exists the limit
+\[
+v(x, y) = \underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy \tag{I}
+\]
+and indeed the functions $v_h$ converge uniformly for all points $x$, $y$ in the interior or on a side of the rectangle $R$ toward that limit; the function represented by that limit I is therefore a continuous function of $x$, $y$ in $R$.
+
+II. The function of $x$, $y$ represented by the limit I is arbitrarily often differentiable, and indeed
+\[
+u(x, y) = \frac{\partial^2 v}{\partial x \partial y} = \frac{\partial^2}{\partial x \partial y} \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} u_h\,dx\,dy \tag{II}
+\]
+defines in the rectangle $R$ the desired potential function on the Riemann surface $F$.
+
+\origpage{173}
+
+\subsection*{§~6. Proof of the Existence of the Function $v$.}
+
+The following developments serve to prove the assertions I and II set forth above.
+
+Let $R_k$ be a specifically selected rectangle in the infinite sequence (7) with vertices $a$, $b$; $a+l$, $b$; $a+l$, $b+l'$; $a$, $b+l'$ and let $x$, $y$ be the coordinates of a point in the interior or on the sides of this rectangle. We have recognized that the integrals of the functions $U_h$ extended over the sides of $R_k$ lie below a finite bound independent of $h$; we call this bound $G_k$. Since the functions $u_h$ are contained among the functions $U_h$, there consequently hold equations of the form
+\[
+\int_a^{a+l} u_h\,dx = \vartheta^* G_k,
+\]
+\[
+\int_b^{b+l'} u_h\,dy = \vartheta^{**} G_k,
+\]
+wherein $\vartheta^*$, $\vartheta^{**}$ are numbers satisfying the inequalities
+\[
+-1 \leqq \vartheta^* \leqq +1, \qquad -1 \leqq \vartheta^{**} \leqq +1
+\]
+If we now apply Formula III of Lemma 1 in §~2 to the rectangle with vertices
+\[
+a, b; \quad a+l, b; \quad a+l, y; \quad a, y
+\]
+we obtain
+\[
+\begin{aligned}
+l \int_b^y u_h(a, y)\,dy &= (y-b) \int_a^{a+l} u_h(x, b)\,dx + \vartheta''(l+y-b)\left(D + \frac{1}{4}\,l(y-b)\right), \\
+&= \vartheta l' \cdot \vartheta^* G_k + \vartheta''' (l+l') \left(D + \frac{1}{4}\,l l'\right),
+\end{aligned}
+\]
+\[
+(-1 \leqq \vartheta \leqq +1, \quad -1 \leqq \vartheta'' \leqq +1 - 1 \leqq \vartheta''' \leqq +1)
+\]
+\ednote{In the 1904 print a comma is missing between $+1$ and $-1$ in the preceding inequality list.}%
+and this equation shows that the absolute value of the simple integral\ednote{Printed with differential $dx$ instead of $dy$; an apparent compositor misprint.}
+\[
+\int_b^y u_h(a, y)\,dx
+\]
+lies below a certain finite bound that depends neither on $h$ nor on the ordinate of the point $x$, $y$ in $R_k$. From this it follows immediately, if we apply Formula I of Lemma 1 in §~2 to the rectangle with vertices
+\[
+a, b; \quad x, b; \quad x, y; \quad a, y
+\]
+
+\origpage{174}
+that the absolute value of the simple integral
+\[
+\int_b^y u_h(x, y)\,dy
+\]
+also lies below a certain finite bound that depends neither on $h$ nor on the position of the point $x$, $y$ in $R_k$.
+
+The same is shown in an analogous manner for the simple integral
+\[
+\int_a^x u_h(x, y)\,dx
+\]
+
+If the coordinates $x$, $y$ are rational numbers, then the rectangle formed by the vertices
+\[
+a, b; \quad x, b; \quad x, y; \quad a, y
+\]
+itself belongs to the rectangles (7); in this case there consequently exists, according to §~5, the limit
+\[
+\underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_a^x \int_b^y u_h\,dx\,dy.
+\]
+Since on the other hand, according to what has just been proved, the derivatives of $v_h$ with respect to $x$, $y$:
+\[
+\frac{\partial v_h}{\partial x} = \int_b^y u_h\,dy, \qquad \frac{\partial v_h}{\partial y} = \int_a^x u_h\,dx
+\]
+in absolute value all remain below a bound independent of $h$ and of $x$, $y$, the infinite sequence of functions
+\[
+v_1, v_2, v_3, \dots
+\]
+satisfies all conditions of Lemma 3 in §~3\ednote{Printed Hilfssatz 3 in § 3, though the lemma in § 3 was numbered Hilfssatz 2 on p.~165.}; according to this lemma, these functions therefore converge uniformly in $R_k$ toward a limit function:
+\[
+v(x, y) = \underset{h=\infty}{L} v_h;
+\]
+this equation consequently defines a continuous function of the variables $x$, $y$ in $R_k$. With this, Assertion I in §~5 is proved for the case where we take a rectangle $R_k$ from the sequence (7) as the basis of the consideration.
+
+If we now choose, instead of this rectangle $R_k$, an arbitrary rectangle whose sides run parallel to the $x$-axis and the $y$-axis and which contains no branch point and no point of the curve $C$, say the rectangle $R$ with vertices
+\[
+\alpha, \beta; \quad \alpha+\lambda, \beta; \quad \alpha+\lambda, \beta+\lambda'; \quad \alpha, \beta+\lambda'
+\]
+
+\origpage{175}
+and denote by $x$, $y$ a point situated in this rectangle $R$, then for the sequence of functions
+\[
+v_h = \int_\alpha^x \int_\beta^y u_h\,dx\,dy
+\]
+Assertion I in §~5 easily proves to be valid as well, if we choose a rectangle $R_k$ in the sequence (7) which contains the rectangle $R$ in its interior, and then apply to $R_k$ the Assertion I just proved.
+
+\subsection*{§~7. Existence of the Function $u$ and Proof of its Potential Property.}
+
+We now pass to the proof of Assertion II in §~5. For this purpose we first discuss the following property of our sequence of functions (10).
+
+Let $R$ be any rectangle on our Riemann surface with vertices
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+which contains no branch point and no point of the curve $C$. If then $\zeta$ denotes any piecewise analytic function of $x$, $y$ which together with its first derivatives with respect to $x$, $y$ is continuous inside the rectangle $R$ including its sides and vanishes on the sides of $R$, then there always holds the equation
+\[
+\underset{h=\infty}{L} \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy = 0, \tag{11}
+\]
+where the double integral is to be extended over the rectangle $R$.
+
+To prove this assertion, let us assume on the contrary that from our sequence of functions (10)
+\[
+u_1, u_2, u_3, \dots
+\]
+there could be extracted an infinite sequence
+\[
+u_1', u_2', u_3', \dots
+\]
+such that for all $h$
+\[
+\int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h'}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h'}{\partial y} \right\} dx\,dy \geqq \varrho \quad \text{or} \quad \leqq \varrho
+\]
+would hold, where $\varrho$ denotes in the first case a positive, in the second case a negative number independent of $h$. Then we set
+
+\origpage{176}
+\[
+\varkappa = \frac{\varrho}{\displaystyle\int\!\!\int_{(R)} \left\{ \left(\frac{\partial\zeta}{\partial x}\right)^2 + \left(\frac{\partial\zeta}{\partial y}\right)^2 \right\} dx\,dy}
+\]
+and define on our Riemann surface $F$ a continuous function $\zeta$ such that $\zeta$ in $R$ coincides with the given function $\zeta$ and outside everywhere has the value 0. The functions
+\[
+u_h' - \varkappa\zeta, \qquad (h = 1, 2, 3, \dots)
+\]
+are then piecewise analytic functions on $F$ which undergo a jump of 1 on $C$, and the Dirichlet integral extended over $F$ for this function receives the value
+\[
+\begin{aligned}
+& \int\!\!\int_{(F)} \left\{ \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial x}\right)^2 + \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial y}\right)^2 \right\} dx\,dy \\
+&= \int\!\!\int_{(F)} \left\{ \left(\frac{\partial u_h'}{\partial x}\right)^2 + \left(\frac{\partial u_h'}{\partial y}\right)^2 \right\} dx\,dy - 2\varkappa \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h'}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h'}{\partial y} \right\} dx\,dy + \varkappa\varrho
+\end{aligned}
+\]
+and consequently we would obtain for all $h$
+\[
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial x}\right)^2 + \left(\frac{\partial (u_h' - \varkappa\zeta)}{\partial y}\right)^2 \right\} dx\,dy \leqq d_h - \varkappa\varrho,
+\]
+where $d_h$ denotes the Dirichlet integral extended over $F$ for $u_h'$ and thus, by virtue of the stipulation in §~5, $d_h$ approaches the limit $d$ as $h$ increases. Since
+\[
+\varkappa\varrho = \frac{\varrho^2}{\displaystyle\int\!\!\int_{(R)} \left\{ \left(\frac{\partial\zeta}{\partial x}\right)^2 + \left(\frac{\partial\zeta}{\partial y}\right)^2 \right\} dx\,dy}
+\]
+becomes a positive number independent of $h$, $d$ would consequently certainly not be the lower bound of all possible values of Dirichlet integrals. This contradiction shows the inadmissibility of our assumption, and with this the proof of our assertion above is accomplished.
+
+The equation (11) just proved corresponds to the requirement of the vanishing of the first variation in the ordinary calculus of variations.
+
+In order now to be able to carry out the passage to the limit for $h=\infty$ under the integral sign in (11), we apply the tool of integration by parts, but not, as in the ordinary calculus of variations according to Lagrange, by removing the derivatives of the variation $\zeta$,
+
+\origpage{177}
+but on the contrary by removing the derivatives of $u_h$ and introducing in their stead multiple integrals of $u_h$.
+
+From now on let the variation $\zeta$ be a piecewise analytic function of $x$, $y$ satisfying the following conditions:
+
+1. The derivatives
+\[
+\frac{\partial^{m+n} \zeta}{\partial x^m \partial y^n}, \qquad (m, n = 0, 1, 2, 3)
+\]
+exist in the rectangle $R$ including its sides and are continuous there.
+
+2. For $x=a$ and $x=a+l$ identically for all values of $y$,
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial x} = 0, \quad \frac{\partial^2\zeta}{\partial x^2} = 0,
+\]
+For $y=b$ and $y=b+l'$ identically for all values of $x$,
+\[
+\zeta = 0, \quad \frac{\partial\zeta}{\partial y} = 0, \quad \frac{\partial^2\zeta}{\partial y^2} = 0.
+\]
+By then applying repeatedly the formula for integration by parts for integration with respect to $x$ and with respect to $y$, we arrive, understanding by $a^*$, $b^*$ any two numbers situated respectively between the limits $a$, $a+l$ and $b$, $b+l'$, at the following equations:
+\[
+\int_a^{a+l} \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x}\,dx = -\int_a^{a+l} \frac{\partial^2\zeta}{\partial x^2}\,u_h\,dx
+\]
+\[
+\int_a^{a+l} \frac{\partial^2\zeta}{\partial x^2}\,u_h\,dx = -\int_a^{a+l} \frac{\partial^3\zeta}{\partial x^3} \cdot \int_{a^*}^x u_h\,dx \cdot dx
+\]
+and further, if
+\[
+v_h = \int_{a^*}^x \int_{b^*}^y u_h\,dx\,dy
+\]
+is set:
+\[
+\int_b^{b+l'} \frac{\partial^3\zeta}{\partial x^3} \cdot \int_{a^*}^x u_h\,dx \cdot dy = -\int_b^{b+l'} \frac{\partial^4\zeta}{\partial x^3 \partial y}\,v_h\,dy
+\]
+\[
+\int_b^{b+l'} \frac{\partial^4\zeta}{\partial x^3 \partial y}\,v_h\,dy = -\int_b^{b+l'} \frac{\partial^5\zeta}{\partial x^3 \partial y^2} \cdot \int_b^y v_h\,dy \cdot dy
+\]
+\[
+\int_b^{b+l'} \frac{\partial^5\zeta}{\partial x^3 \partial y^2} \cdot \int_b^y v_h\,dy \cdot dy = -\int_b^{b+l'} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \int_b^y \int_b^y v_h\,dy\,dy \cdot dy.
+\]
+
+\origpage{178}
+Consequently
+\[
+\int\!\!\int_{(R)} \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x}\,dx\,dy = -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \cdot \int_b^y \int_b^y v_h\,dy\,dy \cdot dx\,dy.
+\]
+Likewise we find
+\[
+\int\!\!\int_{(R)} \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y}\,dx\,dy = -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \cdot \int_a^x \int_a^x v_h\,dx\,dx \cdot dx\,dy.
+\]
+The addition of the last two formulas yields
+\[
+\begin{aligned}
+& \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy \\
+&= -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v_h\,dy\,dy + \int_a^x \int_a^x v_h\,dx\,dx \right\} dx\,dy.
+\end{aligned}
+\]
+If we now apply Assertion I in §~5, which was already proved in §~6, to those four rectangles into which the rectangle $R$ is decomposed by the two straight lines
+\[
+x = a^*, \quad y = b^*
+\]
+we recognize that the sequence of functions
+\[
+v_1, v_2, v_3, \dots
+\]
+converges uniformly in the rectangle $R$ including its sides. The limit function\ednote{The closing parenthesis in $v(x, y)$ is omitted in the 1904 print.}
+\[
+v(x, y = \underset{h=\infty}{L} v_h = \underset{h=\infty}{L} \int_{a^*}^x \int_{b^*}^y u_h\,dx\,dy
+\]
+is consequently continuous in $R$, and since on account of the uniform convergence the order of the limit passage for $h=\infty$ and the processes of integration may be interchanged, we have
+\[
+\begin{aligned}
+& \underset{h=\infty}{L} \int\!\!\int_{(R)} \left\{ \frac{\partial\zeta}{\partial x} \frac{\partial u_h}{\partial x} + \frac{\partial\zeta}{\partial y} \frac{\partial u_h}{\partial y} \right\} dx\,dy \\
+&= -\underset{h=\infty}{L} \int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v_h\,dy\,dy + \int_a^x \int_a^x v_h\,dx\,dx \right\} dx\,dy \\
+&= -\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3} \left\{ \int_b^y \int_b^y v\,dy\,dy + \int_a^x \int_a^x v\,dx\,dx \right\} dx\,dy.
+\end{aligned}
+\]
+
+\origpage{179}
+Using this transformation and introducing the abbreviated notation
+\[
+w(x, y) = \int_a^x \int_a^x \int_b^y \int_b^y v\,dx\,dx\,dy\,dy
+\]
+the assertion expressed in formula (11) is expressed as follows.
+
+The function $w(x, y)$ is of such a kind that for any arbitrary function $\zeta$ satisfying conditions 1.\ and 2., the double integral extended over $R$
+\[
+\int\!\!\int_{(R)} \frac{\partial^6\zeta}{\partial x^3 \partial y^3}\,\Delta w\,dx\,dy
+\]
+always has the value 0.
+
+Since $\Delta w$ is a continuous function of $x$, $y$, it follows from this according to Lemma 3 in §~4 that $\Delta w$ necessarily has the form
+\[
+\Delta w = Xy^2 + X'y + X'' + Yx^2 + Y'x + Y'', \tag{12}
+\]
+where $X$, $X'$, $X''$ denote continuous functions of the variable $x$ alone and $Y$, $Y'$, $Y''$ continuous functions of the variable $y$ alone. If we set
+\[
+\begin{aligned}
+z = w &- \int_a^x \int_a^x \left\{ Xy^2 + X'y + X'' \right\} dx\,dx + 2 \int_a^x \int_a^x \int_a^x \int_a^x X\,dx\,dx\,dx\,dx \\
+&- \int_b^y \int_b^y \left\{ Yx^2 + Y'x + Y'' \right\} dy\,dy + 2 \int_b^y \int_b^y \int_b^y \int_b^y Y\,dy\,dy\,dy\,dy,
+\end{aligned}
+\]
+then equation (12) transforms into the equation
+\[
+\Delta z = 0
+\]
+and this shows that $z$ is a regular potential function inside $R$. Since a regular potential function can be differentiated arbitrarily often with respect to the two variables $x$, $y$ and all its derivatives are likewise regular potential functions, it follows that
+\[
+\frac{\partial^4 z}{\partial x^2 \partial y^2} = v - 2X - 2Y
+\]
+is also a regular potential function inside $R$.
+
+If in the expression $v - 2X - 2Y$ we substitute in particular $y = b^*$ and take into account that $v$ vanishes identically in $x$ for $y = b^*$, it follows that $X$ must necessarily be an analytic and therefore differentiable function with respect to $x$; likewise it follows by substituting $x = a^*$ into that expression that $Y$ must be an analytic and therefore differentiable function with respect to $y$. Consequently the function $v$ is analytic and therefore certainly differentiable with respect to $x$ and with respect to $y$: if we set
+
+\origpage{180}
+\[
+u(x, y) = \frac{\partial^6 z}{\partial x^3 \partial y^3} = \frac{\partial^2 v}{\partial x \partial y},
+\]
+it becomes evident that $u$ is likewise a regular potential function inside $R$.
+
+The formula to be inferred from this:
+\[
+u(x, y) = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} u_h\,dx\,dy
+\]
+shows that the value of the function $u$ is independent of the choice of the numbers $a^*$, $b^*$, and consequently this formula defines on the whole Riemann surface $F$ a potential function which certainly behaves regularly everywhere in the finite region, if one disregards the points of the curve $C$ and the branch points.
+
+In order to recognize that $u(x, y)$ is the desired potential function of the given Riemann surface $F$, it remains only to show that $u(x, y)$ undergoes a jump of 1 upon crossing the curve $C$ in the sense stipulated in §~1, and that $u$ also behaves regularly at the points at infinity and at the branch points of the Riemann surface $F$ in the sense stipulated in §~1.
+
+\subsection*{§~8. Proof of the Prescribed Discontinuity of the Potential Function $u$ on the Curve $C$.}
+
+The proof of the required discontinuous behavior on the curve $C$ can be carried out very simply. For this purpose we modify the curve $C$ on the Riemann surface $F$ in the manner in which we did this in §~5, by shifting the individual straight segments of the polygonal path $C$ parallel to themselves toward the side on which the increase of the function values by 1 occurs, and at the same time suitably lengthening or shortening each straight segment, so that the modified segments again form a closed polygonal path, which we call $C^*$. We arrange the modification in such a way that no branch point of the Riemann surface comes to lie in the annular domain situated between $C$ and $C^*$. Now we carry out our entire consideration for the polygonal path $C^*$ instead of, as earlier, for the polygonal path $C$. For brevity we denote a function which has the constant value 1 inside the annular domain bounded by $C$ and $C^*$ and vanishes everywhere else on the Riemann surface by $1^*$. From any arbitrary function $U$ which runs continuously on the Riemann surface $F$ and undergoes a jump of 1 only on $C$,
+
+\origpage{181}
+we then evidently obtain, by subtraction of the function $1^*$, a function which runs continuously on the Riemann surface $F$ and undergoes a jump of 1 only on $C^*$, and we can evidently take from the outset as the basis for the new consideration the sequence of functions
+\[
+u_1 - 1^*, \ u_2 - 1^*, \ u_3 - 1^*, \dots
+\]
+where $u_1, u_2, u_3, \dots$ denote the functions (10) obtained in the preceding developments and used for the construction of our potential function $u$. Our method then shows that from this sequence of functions it must be possible to make a selection
+\[
+u_1' - 1^*, \ u_2' - 1^*, \ u_3' - 1^*, \dots
+\]
+in such a way that the expression defined by the formula
+\[
+u^* = \underset{\substack{\varepsilon=0 \\ \eta=0}}{L} \ \underset{h=\infty}{L} \frac{1}{\varepsilon\eta} \int_x^{x+\varepsilon} \int_y^{y+\eta} (u_h' - 1^*)\,dx\,dy
+\]
+represents a potential function which is discontinuous only at the points of the polygonal path $C^*$. But now that expression $u^*$ is evidently equal to $u - 1^*$, and consequently $u - 1^*$ is a potential function regular on $C$, that is, $u$ undergoes a jump of 1 upon crossing over the curve $C$ in the sense stipulated in §~1.
+
+\subsection*{§~9. The Value of the Dirichlet Integral of the Potential Function $u$ on the Riemann Surface.}
+
+In order to judge the behavior of the found potential function $u$ at the points at infinity and at the branch points of the Riemann surface $F$, it is first necessary to show that the function $u$ solves the contemplated Dirichlet variational problem, that the value of the Dirichlet integral extended over the entire Riemann surface for this function really becomes equal to the bound, denoted in §~5 by $d$, of all possible values of the Dirichlet integrals extended over $F$.
+
+In demonstrating this we make use of the following fact:
+
+Let $R$ be any rectangle on our Riemann surface with vertices
+\[
+a, b; \quad a+l, b; \quad a+l, b+l'; \quad a, b+l',
+\]
+which contains no branch point and no point of the curve $C$, and let $f(x, y)$ be an analytic function regular in $R$ including the sides of $R$: if for abbreviation
+\[
+\omega_h = u_h - u
+\]
+
+\origpage{182}
+is set, then I assert that there always holds the equation
+\[
+\begin{gathered}
+\underset{h=\infty}{L} \int_a^x \int_b^y f(x, y) \cdot \omega_h\,dx\,dy = 0. \\
+(a \leqq x \leqq a+l, \quad b \leqq y \leqq b+l')
+\end{gathered}
+\]
+and indeed the double integral converges \emph{uniformly} toward the value 0 for all points $x$, $y$ situated in $R$.
+
+To prove this assertion, we transform the double integral as follows:
+\[
+\begin{aligned}
+\int_a^x \int_b^y f \cdot \omega_h\,dx\,dy &= f \int_a^x \int_b^y \omega_h\,dx\,dy - \int_b^y \frac{\partial f}{\partial y} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dy \\
+&\quad - \int_a^x \frac{\partial f}{\partial x} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dx + \int_a^x \int_b^y \frac{\partial^2 f}{\partial x \partial y} \cdot \int_a^x \int_b^y \omega_h\,dx\,dy \cdot dx\,dy
+\end{aligned}
+\]
+and then reflect that the double integral
+\[
+\int_a^x \int_b^y \omega_h\,dx\,dy = \int_a^x \int_b^y u_h\,dx\,dy - \int_a^x \int_b^y u\,dx\,dy
+\]
+converges uniformly toward the value 0 for all points $x$, $y$ situated in $R$.
+
+We now wish to show that the Dirichlet integral for the potential function $u$ extended over the entire Riemann surface $F$ possesses a \emph{finite} value, which is certainly not greater than $d$. In the opposite case, namely, it would certainly also have to be possible to demarcate on the Riemann surface $F$ a domain $G$ situated entirely in the finite region, free of branch points and points of the curve $C$, such that the Dirichlet integral for the function $u$ extended over $G$ turns out to be greater than $d$, and indeed we assume the Dirichlet integral extended over $G$ to be $\geqq d+p$, where $p$ denotes a certain positive number. Then we construct a polygonal path $P$ consisting of a finite number of straight segments parallel to the $x$-axis or the $y$-axis in such a way that the domain $G$ on the Riemann surface comes to lie entirely in the interior of the polygon bounded by this polygonal path $P$. Finally we choose a positive quantity $\delta$ so small that the domain $G$ also remains contained inside every such polygonal path $P_{\xi\eta}$ that arises from $P$ by a translation:
+\[
+\begin{aligned}
+x' &= x + \xi, \quad 0 \leqq \xi \leqq \delta \\
+y' &= y + \eta, \quad 0 \leqq \eta \leqq \delta
+\end{aligned}
+\]
+
+\origpage{183}
+Evidently the Dirichlet integrals for the function $u$ extended over the interior of the polygonal paths $P_{\xi\eta}$ are then also all $\geqq d+p$; from the identity
+\[
+\begin{aligned}
+&\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \\
+= &\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u}{\partial x}\right)^2 + \left(\frac{\partial u}{\partial y}\right)^2 \right\} dx\,dy + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy \\
+&\quad + \int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial \omega_h}{\partial x}\right)^2 + \left(\frac{\partial \omega_h}{\partial y}\right)^2 \right\} dx\,dy,
+\end{aligned}
+\]
+in which the double integrals are to be extended over the interior of the polygon $P_{\xi\eta}$, we can therefore extract the inequality
+\[
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \geqq d + p + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy.
+\]
+
+All the more is
+\[
+\tag{13}
+\int\!\!\int_{(F)} \left\{ \left(\frac{\partial u_h}{\partial x}\right)^2 + \left(\frac{\partial u_h}{\partial y}\right)^2 \right\} dx\,dy \geqq d + p + 2 \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy
+\]
+when the double integral on the left-hand side is extended over the whole Riemann surface $F$. On the other hand, there holds the formula
+\[
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy = - \int_{(P_{\xi\eta})} \frac{\partial u}{\partial t} \omega_h\,ds - \int\!\!\int_{(P_{\xi\eta})} \Delta u\ \omega_h\,dx\,dy;
+\]
+wherein the first integral on the right-hand side is to be extended over the polygonal path $P_{\xi\eta}$, with $s$, $t$ denoting the variables $x$, $\pm y$ and $y$, $\pm x$ respectively, according as the polygon side in question runs parallel to the $x$-axis or to the $y$-axis. On account of $\Delta u = 0$ we obtain the formula\ednote{Compositor omitted differential $dx\,dy$ on the left-hand side of equation (14).}
+\[
+\tag{14}
+\int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} = - \int_{(P_{\xi\eta})} \frac{\partial u}{\partial t} \omega_h\,ds.
+\]
+
+Now the fact recognized at the beginning of this section teaches that if we integrate the integral on the right-hand side in (14) with respect to $\xi$ and $\eta$ between the limits 0 and $\delta$, and then pass to the limit $h = \infty$,
+
+\origpage{184}
+zero results, and consequently the same holds for the left-hand side, that is, we have\ednote{Printed $k=\infty$ under the limit sign; an apparent compositor misprint for $h=\infty$.}
+\[
+\underset{k=\infty}{L} \int_0^\delta \int_0^\delta \int\!\!\int_{(P_{\xi\eta})} \left\{ \frac{\partial u}{\partial x} \frac{\partial \omega_h}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial \omega_h}{\partial y} \right\} dx\,dy \cdot d\xi\,d\eta = 0.
+\]
+
+If we now integrate the equation (13) with respect to $\xi$ and $\eta$ between the limits 0 and $\delta$, and then pass to the limit $h = \infty$, we obtain
+\[
+\delta^2 d \geqq \delta^2 (d + p)
+\]
+and this inequality contains, on account of $p > 0$, a contradiction. Our assumption is consequently inadmissible, that is, the integral extended over the entire Riemann surface $F$ for the potential function $u$ possesses a finite value which is certainly not greater than $d$.
+
+This value can also not be less than $d$, since according to our initial stipulation $d$ denotes the lower bound of all possible values of the Dirichlet integrals for the functions under consideration. The Dirichlet integral extended over $F$ for the function $u$ therefore has precisely the value $d$, and consequently the potential function $u$ solves the Dirichlet variational problem.
+
+\subsection*{§~10. Proof of the Regular Behavior of the Potential Function $u$ at the Points at Infinity and at the Branch Points of the Riemann Surface.}
+
+In order to prove that the found function $u$ also behaves regularly at the points at infinity and at the branch points of the Riemann surface $F$ in the sense stipulated in §~1, we reflect that under the transformation indicated in §~1 the given Dirichlet integral again transforms into a Dirichlet integral, and consequently the Dirichlet integral extended over the transformed Riemann surface possesses the same finite value as the integral extended over the originally given surface $F$. Under the transformation indicated in §~1, the branch points and the points at infinity of the Riemann surface $F$ respectively transform into ordinary points, and consequently, according to the stipulation made there, we only need to show that the transformed potential function $u^*$ must behave regularly at an ordinary point $P$ if it is single-valued and regular in the neighborhood of this point $P$ and exhibits a finite Dirichlet integral. For this purpose we make use of the fact,
+
+\origpage{185}
+easily deduced from Laurent's theorem, that $u^*$ in the neighborhood of $P$ must possess a series expansion of the form
+\[
+\begin{aligned}
+u^*(x, y) &= (a + \alpha l r) \\
+&\quad + \left(a_1 r + \frac{\alpha_1}{r}\right) \cos \varphi + \left(a_2 r^2 + \frac{\alpha_2}{r^2}\right) \cos 2\varphi + \left(a_3 r^3 + \frac{\alpha_3}{r^3}\right) \cos 3\varphi + \dots \\
+&\quad + \left(b_1 r + \frac{\beta_1}{r}\right) \sin \varphi + \left(b_2 r^2 + \frac{\beta_2}{r^2}\right) \sin 2\varphi + \left(b_3 r^3 + \frac{\beta_3}{r^3}\right) \sin 3\varphi + \dots
+\end{aligned}
+\]
+where $r$ denotes the distance of the point $x, y$ from $P$ and $\varphi$ the angle which the line connecting\ednote{Printed Verbindungsgrade; an apparent compositor misprint for Verbindungsgerade.} these points makes with the $x$-axis, and where $a, \alpha, a_1, \alpha_1, a_2, \alpha_2, a_3, \alpha_3, \dots b_1, \beta_1, b_2, \beta_2, b_3, \beta_3, \dots$ denote constants. Let $r, r'>r$ denote two particular values for which that series expansion converges, formed by the circles described about $P$ with $r$ and $r'$. The Dirichlet integral for the potential function $u^*$ extended over this circular ring is, as is well known, expressible\ednote{Printed ansdrückbar with n; an apparent compositor misprint for ausdrückbar.} by Green's theorem through the integrals over the periphery of those two circles; one obtains for the same the value
+\[
+\int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,r\,d\varphi - \int_0^{2\pi} \left[ u^* \frac{\partial u^*}{\partial r} \right]_{r=r'} r'\,d\varphi.
+\]
+
+Since the Dirichlet integral extended over the entire surface is to have a finite value $d$,
+\[
+\int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,r\,d\varphi
+\]
+must also, in absolute value, remain below a finite quantity $A$ as $r$ decreases, and from this we infer that the integral
+\[
+\int_r^{r'} \int_0^{2\pi} u^* \frac{\partial u^*}{\partial r}\,d\varphi \cdot dr = \frac{1}{2} \int_0^{2\pi} u^{*2}\,d\varphi - \frac{1}{2} \int_0^{2\pi} \left[ u^{*2} \right]_{r=r'} d\varphi
+\]
+remains in absolute value below the limit
+\[
+\int_r^{r'} \frac{A}{r}\,dr = A l \frac{r'}{r}
+\]
+that is, the integral
+\[
+\int_0^{2\pi} u^{*2}\,d\varphi
+\]
+
+\origpage{186}
+must, in absolute value, remain below a quantity of the form
+\[
+2 A l \frac{1}{r} + B
+\]
+as $r$ decreases, where $B$ is a suitably chosen constant. On account of
+\[
+\begin{aligned}
+\frac{1}{\pi} \int_0^{2\pi} u^{*2}\,d\varphi &= 2(a + \alpha l r)^2 + \left(a_1 r + \frac{\alpha_1}{r}\right)^2 + \left(a_2 r^2 + \frac{\alpha_2}{r^2}\right)^2 + \dots \\
+&\quad + \left(b_1 r + \frac{\beta_1}{r}\right)^2 + \left(b_2 r^2 + \frac{\beta_2}{r^2}\right)^2 + \dots
+\end{aligned}
+\]
+it follows from this, however, that the constants $\alpha, \alpha_1, \alpha_2, \dots \beta_1, \beta_2, \dots$ are all equal to 0, that is, the potential function $u^*$ behaves regularly at the point $P$ as well.
+
+Göttingen, 18~September 1901.
+
+\end{document}

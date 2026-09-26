@@ -1,0 +1,41 @@
+﻿# Term renderings for hilbert-1904-dirichletsche-prinzip, applied consistently across the whole
+# translation. Format: `terms: {German as printed: English}` — the shape pipeline/translate.py
+# reads with --glossary.
+
+terms:
+  # --- core concepts & variational terminology ---
+  Dirichletsches Prinzip: Dirichlet principle
+  Schlußweise: mode of inference
+  Minimalfunktion: minimal function
+  Randwertaufgabe: boundary value problem
+  Unzulässigkeit: inadmissibility
+  Variationsrechnung: calculus of variations
+  Variationsproblem: variational problem
+  erste Variation: first variation
+  Potentialeigenschaft: potential property
+  reguläre Potentialfunktion: regular potential function
+  überall endliche Integrale: everywhere finite integrals
+
+  # --- surfaces and geometric domains ---
+  Riemannsche Fläche: Riemann surface
+  Verzweigungspunkt: branch point
+  Blatt: sheet
+  Polygonzug: polygonal path
+  Unstetigkeitskurve: curve of discontinuity
+  unendlichferner Punkt: point at infinity
+  Sprung 1: jump of 1
+  Rechteck: rectangle
+  Kreisring: circular ring
+  ringförmiges Gebiet: annular domain
+
+  # --- analysis & convergence ---
+  Hilfssatz: Lemma
+  stückweise analytisch: piecewise analytic
+  gleichmäßige Konvergenz: uniform convergence
+  untere Grenze: lower bound
+  obere Grenze: upper bound
+  Grenzwert: limit
+  Grenzübergang: limit passage
+  Reihe: sequence
+  Funktionenreihe: sequence of functions
+  partielle Integration: integration by parts

@@ -1,0 +1,99 @@
+id: hilbert-1904-dirichletsche-prinzip
+title: Über das Dirichletsche Prinzip.
+title_en: On the Dirichlet Principle
+authors:
+- name: David Hilbert
+  wikidata_id: Q41585
+  birth_year: 1862
+  death_year: 1943
+  mactutor: Hilbert
+  portrait:
+    file: portrait.jpg
+    alt: "Photographic portrait of David Hilbert"
+    credit: >-
+      Photograph of David Hilbert taken in 1912 for faculty postcards at the University
+      of Göttingen, photographer unknown. Public domain (Commons: PD-US-expired).
+    source: "https://commons.wikimedia.org/wiki/File:David_Hilbert_postcard_retusche.jpg"
+publication:
+  year: 1904
+  venue: mathematische-annalen
+  volume: '59'
+  pages: 161–186
+  title_full: '"Über das Dirichletsche Prinzip", Mathematische Annalen, Band 59 (1904),
+    pp. 161–186.'
+edition:
+  year: 1904
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in Mathematische Annalen, Band
+    59 (1904), pp. 161–186, published by B. G. Teubner, Leipzig. An original edition
+    with no modern critical apparatus, commentary, or re-typesetting.
+discipline: mathematics
+tags:
+- analysis
+- foundations
+language: de
+type: paper
+source:
+  scan_url: https://eudml.org/doc/158152
+  scan_id: eudml:158152
+sources:
+  death_date: 'David Hilbert, 23 January 1862 – 14 February 1943 (wikidata:Q41585;
+    MacTutor: Hilbert).'
+  publication_date: 'First published 1904 in Mathematische Annalen, Band 59, pp. 161–186
+    (EuDML: https://eudml.org/doc/158152; DOI: 10.1007/BF01445143).'
+  edition: 'Mathematische Annalen, Band 59 (1904), pp. 161–186, B. G. Teubner, Leipzig.
+    EuDML: 158152.'
+relations:
+- to: riemann-1851-complexen-groesse
+  kind: builds-on
+  recommended: primary
+  note: Riemann's 1851 dissertation founded the geometric theory of functions and
+    Riemann surfaces upon the Dirichlet principle; Hilbert's 1904 paper provides the
+    rigorous direct variational proof that rehabilitates Riemann's foundational method.
+- to: weierstrass-1895-dirichletsche-princip
+  kind: builds-on
+  note: Weierstrass's 1870 critique demonstrated that the Dirichlet integral need
+    not attain its minimum without additional conditions; Hilbert directly addresses
+    and overcomes Weierstrass's objection using the direct method in the calculus
+    of variations.
+significance: In this landmark 1904 paper in the Mathematische Annalen, David Hilbert
+  provides the first rigorous justification of the Dirichlet principle, rehabilitating
+  the foundational method used by Bernhard Riemann in 1851 that had been called into
+  question by Karl Weierstrass in 1870.[1] Rather than seeking harmonic functions
+  via indirect boundary integral equations (such as Schwarz's alternating method or
+  Neumann's method), Hilbert created the "direct method in the calculus of variations."[2]
+  By constructing minimizing sequences of functions and proving their compactness
+  and convergence to a genuine harmonic minimizer, Hilbert not only rescued Riemann's
+  approach to function theory and conformal mapping, but also laid the cornerstone
+  for modern functional analysis, Sobolev spaces, and the direct methods of the calculus
+  of variations in the twentieth century.[1]
+significance_sources:
+- citation: David Hilbert, "Über das Dirichletsche Prinzip", Mathematische Annalen,
+    Band 59 (1904), pp. 161–186.
+  url: https://eudml.org/doc/158152
+- citation: 'Richard Courant, "Dirichlet''s Principle, Conformal Mapping, and Minimal
+    Surfaces" (Interscience Publishers, New York, 1950), Chapter 1: "Historical Remarks".'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1943
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1904
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-22'
