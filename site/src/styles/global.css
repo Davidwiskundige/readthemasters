@@ -8,6 +8,11 @@
   --accent-weak: #f0e7dd;
   --link: #6d3f1f;
   --cite: #356b63; /* muted teal/verdigris — the cites lines on the timeline (distinct from --accent) */
+  /* Header paper band: the warm tone the page fades down from, and a faint glow of --accent above
+     the header. The band is a fixed 16rem (see body), not a share of the document, so every page
+     looks alike at the top. Changing these? Re-check --muted on --band-top stays ≥ 4.5:1 (now ≈4.9). */
+  --band-top: #f5f0e8;
+  --band-glow: rgba(122, 75, 43, .05);
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -21,6 +26,8 @@
     --accent-weak: #2b2621;
     --link: #e0a877;
     --cite: #8ebfb3; /* lighter teal for dark-mode legibility */
+    --band-top: #231e18; /* --muted on it ≈ 6.1:1 */
+    --band-glow: rgba(214, 154, 106, .08);
   }
 }
 
@@ -36,15 +43,25 @@
 [hidden] { display: none !important; }
 body {
   margin: 0;
-  background: var(--bg);
+  /* Header paper band over the flat page: glow, then the fade into --bg, both 16rem tall and
+     unrepeated — sized to the band, not the document, and scrolling away with the page. */
+  background:
+    radial-gradient(ellipse 60rem 10rem at 50% -2.5rem, var(--band-glow), transparent 70%) no-repeat,
+    linear-gradient(to bottom, var(--band-top), var(--bg) 16rem) no-repeat,
+    var(--bg);
+  background-size: 100% 16rem, 100% 16rem, auto;
   color: var(--text);
   font: 16px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
 }
+@media print { body { background: none; } }
 a { color: var(--link); }
 header.site, footer.site {
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.25rem;
 }
+/* The band's tone change separates header from content; a hairline on top of it reads as a second
+   divider. Transparent rather than none, so the header keeps its height. */
+header.site { border-bottom-color: transparent; }
 footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
 header.site nav { display: flex; gap: 1rem 2rem; align-items: center; flex-wrap: wrap; }
 header.site .navlinks { display: flex; gap: 1.5rem; align-items: baseline; flex-wrap: wrap; }
