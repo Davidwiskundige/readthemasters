@@ -1,0 +1,1154 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation (in particular not from Frances Hardcastle's 1893 English version, "On Riemann's
+% Theory of Algebraic Functions and their Integrals"). Every math expression, symbol, \tag{},
+% \origpage{N} marker (roman iii–viii and arabic 1–82), \rmfigure image path and \ednote is
+% reproduced unchanged; only the prose is translated — including prose set INSIDE math via a text
+% insert, which is translated like any other prose (HOUSESTYLE R21).
+%
+% PIPELINE/TEXCOMPARE.PY ignores the content of \text{...} inserts while checking that each one is
+% present and that all surrounding math is identical. Those inserts are:
+%   * Ordinal suffixes: $n^{\text{te}}$, $m^{\text{te}}$, $(2n - 2)^{\text{ten}}$ become
+%     $n^{\text{th}}$, $m^{\text{th}}$, $(2n - 2)^{\text{th}}$.
+%   * \text{Const.} and \text{etc.} are the same abbreviations in English and are unchanged.
+%
+% TYPOGRAPHY & APPARATUS:
+%   * The \ednote annotations of original.tex (printer's errors, R4) are carried over verbatim.
+%     They quote the misprinted GERMAN word (Fächen, Wirbelpnncten, complexc, oontinuirliche, …);
+%     the English text gives the intended word, with the note at the corresponding place. The p. 72
+%     stray full stop and the p. 80 ".," are not reproduced in the English punctuation; the notes
+%     still record them. The p. 18 \uncertain{;} is kept exactly as transcribed.
+%   * Footnotes keep their ${}^{*)}$ marks and \textbf{*)} leads, placed as in original.tex.
+%   * Titles of works cited in German, French, Italian and English are left as printed; German
+%     „…“ quotation marks become English “…”. "Bd." becomes "vol.", "Hr./Herr" is kept.
+%   * The Inhalt keeps the transcription's " --- page" layout; "Seite" becomes "Page".
+%   * Figure captions: "Figur~N." becomes "Figure~N."; "Fig.~N." is unchanged. The alt texts were
+%     already English and are unchanged.
+%
+% TERMINOLOGY: Strömung = flow; stationär = steady; einförmig = uniform; Niveaucurve = level curve;
+% Strömungscurve = streamline; Geschwindigkeitspotential = velocity potential; Kreuzungspunct =
+% crossing point; Unendlichkeitspunct / -stelle = infinity point / place; Unstetigkeitspunct = point
+% of discontinuity; Quelle(npunct) = source (point); Ergiebigkeit = strength; Wirbelpunct = vortex
+% point; Residuum = residue; Periodicitätsmodul = modulus of periodicity; complexe Function des
+% Ortes = complex function of position; eindeutig / vieldeutig = single-valued / many-valued, and
+% eindeutig (of a correspondence or transformation) = one-to-one; überall endlich = everywhere
+% finite; Querschnitt = cross-cut; Rückkehrschnitt = retrosection; Meridiancurve / Breitencurve =
+% meridian curve / latitude curve; Handhabe = handle; Normalfläche = normal surface; Blatt /
+% mehrblättrig = sheet / many-sheeted; Verzweigungspunct / -schnitt = branch point / cut;
+% Uebergangscurve = transition curve; Umlegung der Winkel = reversal of the angles; berandete
+% Fläche = bounded surface; Doppelfläche = double surface; Moduln = moduli; Integral erster /
+% zweiter / dritter Gattung = integral of the first / second / third kind; Abschnitt = Section;
+% Paragraph (Klein's own word for a §) = paragraph.
+%
+% Machine output pending human review: status ai-draft (see provenance.yaml).
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{iii}
+
+\section*{Preface.}
+
+The little work which I herewith deliver to the public has grown out of lectures that I gave in the past year${}^{*)}$ and in which, besides other tasks, I had set myself the aim of an exposition of Riemann's theory of algebraic functions and their integrals${}^{**)}$. Higher mathematical lectures are a peculiar and difficult matter: with the best intentions of the lecturer they almost always attain only a very modest goal. Intended for the most part to give a \emph{systematic} development, they either confine themselves to the elements of the discipline to be presented or lose themselves in details. In my case I believed, as I have often done before, that I ought to adopt a reverse method. The usual treatments, as the textbooks give them of the elements of Riemann's theory, I presupposed as known. Moreover, as soon as details had to be dealt with at greater length, I referred to the relevant monographs. Instead, however, I devoted all care to the exposition of the \emph{actual train of thought}, and strove for a \emph{survey} of the scope and achievement of the method. I believe I have repeatedly attained good results in this way, though only with gifted listeners; may experience show whether a little work resting on the same foundations likewise proves useful!
+
+\textbf{*)} “Functionentheorie in geometrischer Behandlungsweise”, Part I, winter semester 1880/81, Part II, summer semester 1881.
+
+\textbf{**)} I so designate the body of investigations with which Riemann is occupied in the first division of his “Theorie der Abel'schen Functionen”. The theory of the $\Theta$-functions, as it is developed in the second division there, has at first, as is known, an essentially different character, and is to remain as excluded from the following presentation as it was from that lecture course.
+
+\origpage{iv}
+
+A presentation such as I strive for accordingly is necessarily a very subjective one, and in the case of Riemann's theory all the more so, since only very scanty material for it is found explicitly in Riemann's writings. I do not know whether I should ever have arrived at a self-contained overall conception, had not Herr \emph{Prym}, many years ago (1874), in an occasional conversation made me a communication which has become ever more essential to me the longer I have reflected on the subject. He told me \emph{that Riemann's surfaces are originally by no means necessarily many-sheeted surfaces over the plane, that one can rather study complex functions of position on arbitrarily given curved surfaces quite as well as on the surfaces over the plane}. The following exposition will show sufficiently how useful this remark has been to me. With it there combine of themselves certain physical considerations which have recently, though with restriction to simpler cases, been developed from various sides${}^{*)}$. I have had no hesitation in making these physical conceptions outright the starting point of my presentation. Instead of them Riemann uses in his writings, as is known, Dirichlet's principle. But I cannot doubt that he started from precisely those physical problems, and only afterwards, in order to support the physical evidence by a mathematical argument, substituted Dirichlet's principle for them. Whoever makes clear to himself the conditions under which Riemann worked in Göttingen, whoever has followed Riemann's speculations as they have come down to us, in part, in fragments${}^{**)}$, will, I think, share this opinion. --- Be that as it may: for my purposes the physical method appeared the right one. For, as is well known, Dirichlet's principle too is in no way sufficient for the actual proof of the theorems to be established; but the \emph{heuristic} element of the method, on whose development everything depended for me,
+
+\textbf{*)} Cf.\ C.\ \emph{Neumann} in the 10th~volume of the Mathematische Annalen, p.~569---71, \emph{Kirchhoff} in the Berliner Monatsberichte of 1875, p.~487---497, \emph{Töpler} in Poggendorff's Annalen, vol.~160, p.~375---388.
+
+\textbf{**)} Gesammelte Werke, p.~494~ff.
+
+\origpage{v}
+stands out much more clearly in the physical method. Precisely for this reason, in what follows, the constant drawing on intuitive considerations where a proof by formulae would not have been difficult and perhaps simpler; precisely for this reason, too, the repeated illustration of general results by examples and figures.
+
+In connection with this I must mention the essential restriction to which I have adhered in what follows. One knows the laborious and difficult considerations by which it has in recent times been possible to prove at least a part of the theorems of Riemann that come into consideration here by reliable methods${}^{*)}$. I have left these considerations entirely aside in what follows, and have thus renounced any other than an intuitive foundation for the theorems to be set forth. Indeed, one should in no way intermix such proofs with the development of ideas that I attempt in what follows; otherwise a presentation arises which satisfies in no direction. But one should, to be sure, give them afterwards, and I willingly entertain the thought of following the present work, in this sense, with a supplement on occasion.
+
+For the rest, the scope and limitation of my presentation may speak for themselves. That I have often and at length drawn upon my friends' and my own earlier publications relating to kindred subjects has its reason in a subsidiary purpose which was important to me for personal reasons: I wished to put into the hands of my listeners a kind of guide by means of which they could orient themselves independently on the mutual connection of those works and on their position relative to the general conception developed here. Into the settling of \emph{new} problems and questions, which present themselves in
+
+\textbf{*)} Compare in particular the relevant investigations of C.\ \emph{Neumann} and \emph{Schwarz}. Incidentally, the general case of \emph{closed} surfaces (which is the most important for us in what follows) has so far found explicit settlement nowhere. Herr \emph{Schwarz} contents himself in this respect with a few indications (Berliner Monatsberichte, 1870, p.~767~ff.), and Herr C.\ \emph{Neumann} has considered only such cases at all in which functions are to be determined by given boundary values.
+
+\origpage{vi}
+great number, I have entered in what follows only so far as seemed compatible with the overall plan of the little work. All the same, I should like to draw attention to the theorems which I have developed (in the last section) concerning the conformal mapping of arbitrary surfaces; I have pursued them all the more gladly as Riemann makes a remarkable statement bearing on this at the close of his dissertation.
+
+And now one more closing remark, intended to meet a misunderstanding that might otherwise arise from what has been said! In endeavouring, in the case of the algebraic functions and their integrals, to develop the original train of ideas that I presuppose in Riemann, I in no way span the totality of his function-theoretic intentions. For him the functions named were indeed only an example, in whose treatment, to be sure, he was particularly fortunate. Inasmuch as he wished to comprehend all possible functions of complex variables, he had in mind far more general modes of determining them than come into consideration in what follows: modes of determination in which the physical analogy, which we here take as our hodegetic principle, fails. Compare on this §.~19 of his dissertation, compare the paper on the hypergeometric series. --- In face of this I have to declare that I in no way wish to detract from these more general considerations by giving a separate presentation of the special, self-contained part. Rather, it is my innermost opinion that precisely they are called upon to play yet an important and prominent part in the development of modern function theory.
+
+\emph{Borkum}, 7th~October 1881.
+
+\origpage{vii}
+
+\section*{Contents.}
+
+Section I. Introductory considerations.
+
+Page
+
+§.~1. Steady flows in the plane as interpretation of the functions of $x + iy$ --- 1
+
+§.~2. Consideration of the infinity points of $w = f(z)$ --- 5
+
+§.~3. Rational functions and their integrals. Origin of higher infinity points from lower ones --- 9
+
+§.~4. Realisation of the flows considered by experimental means --- 12
+
+§.~5. Transition to the spherical surface, flows on arbitrary curved surfaces --- 16
+
+§.~6. Connection of the theory developed with the functions of a complex argument --- 20
+
+§.~7. Once more the flows on the sphere. Riemann's general formulation of the question --- 23
+
+Section II. Exposition of Riemann's theory.
+
+§.~8. Classification of closed surfaces according to the number $p$ --- 25
+
+§.~9. Preliminary determination of steady flows on arbitrary surfaces --- 28
+
+§.~10. The most general steady flow. Proof of the impossibility of other flows --- 32
+
+§.~11. Illustration of the flows by examples --- 35
+
+§.~12. On the composition of the most general complex function of position from single summands --- 40
+
+§.~13. On the many-valuedness of our functions. Special consideration of single-valued functions --- 43
+
+§.~14. The ordinary Riemann surfaces over the $x + iy$-plane --- 47
+
+§.~15. The ring $p = 1$ and the two-sheeted surface with four branch points over the plane --- 50
+
+§.~16. Functions of $x + iy$ which correspond to the flows investigated --- 55
+
+§.~17. Scope and significance of our considerations --- 59
+
+§.~18. Further developments of the theory --- 61
+
+\origpage{viii}
+
+Section III. Consequences.
+
+Page
+
+§.~19. On the moduli of algebraic equations --- 64
+
+§.~20. Conformal mapping of closed surfaces upon themselves --- 69
+
+§.~21. Special consideration of the symmetric surfaces --- 72
+
+§.~22. Conformal mapping of different closed surfaces upon one another --- 76
+
+§.~23. Bounded surfaces and double surfaces --- 78
+
+§.~24. Concluding remark --- 81
+
+\origpage{1}
+
+\section*{Section I. Introductory considerations.}
+
+\section*{§.~1. Steady flows in the plane as interpretation of the functions of $x + iy$.}
+
+The physical interpretation of the functions of $x + iy$ with which we shall have to work in what follows is well known in its foundations${}^{*)}$; only for the sake of completeness must the latter be briefly brought up.
+
+Let $w = u + iv$, $z = x + iy$, $w = f(z)$. Then one has above all:
+\[ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \tag{1} \]
+and from this:
+\[ \frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} = 0 \tag{2} \]
+as well as for $v$:
+\[ \frac{\partial^{2} v}{\partial x^{2}} + \frac{\partial^{2} v}{\partial y^{2}} = 0. \tag{3} \]
+
+Here one will now interpret $u$ as a \emph{velocity potential}, so that $\dfrac{\partial u}{\partial x}$, $\dfrac{\partial u}{\partial y}$ are the components of the velocity with which a fluid flows parallel to the $XY$-plane. We may think of this fluid as enclosed between two planes running parallel to the $XY$-plane, or else imagine that the fluid is spread out over the $XY$-plane as an infinitely thin, otherwise uniform membrane. Then equation (2) says --- and this is the core of our physical interpretation --- that our
+
+\textbf{*)} Reference may be made in particular to the account which \emph{Maxwell} has given in his Treatise on Electricity and Magnetisme\ednote{Printed ``Magnetisme''; Maxwell's title reads ``Magnetism''. Reproduced as printed.} (Cambridge 1873). As regards intuitive treatment, it corresponds exactly to the points of view which I too pursue in the text.
+
+\origpage{2}
+flow is a \emph{steady} one. The curves $u = \text{Const.}$ are called the \emph{level curves}, while the curves $v = \text{Const.}$, which by virtue of (1) meet the former everywhere at right angles, furnish the \emph{streamlines}.
+
+With this mode of conception it is at first, of course, completely indifferent how we wish to think of the nature of the flowing fluid. Meanwhile it will in the sequel frequently be expedient to identify it with the \emph{electric fluid}. For then $u$ becomes proportional to the electrostatic potential which produces the flow, and experimental physics puts manifold means into our hands for actually realising numerous states of flow that interest us.
+
+The flow itself, moreover, will remain unchanged if we increase $u$ throughout by a constant: it is only the differential quotients $\dfrac{\partial u}{\partial x}$, $\dfrac{\partial u}{\partial y}$ which come immediately into evidence. The analogous holds of $v$; so that the function $u + iv$ which we interpret physically is determined by this interpretation only up to an additive constant, which is to be carefully noted in what follows.
+
+Next one should further remark that the equations (1)---(3) remain unchanged if one replaces $u$ by $v$, $v$ by $-u$. Correspondingly we obtain a second state of flow, in which $v$ furnishes the velocity potential and the curves $u = \text{Const.}$ are the streamlines. In the sense explained above it represents the function $v - ui$. It is often expedient to consider this new flow alongside the original one, in which $u$ was the velocity potential; we shall then, for brevity, speak of \emph{conjugate} flows. The designation is, it is true, somewhat inexact, because $u$ is related to $v$ as $v$ is to $(-u)$; but it will suffice for later.
+
+This whole explanation, like the differential equations (1)---(3), refers in the first instance only to such an (otherwise arbitrary) \emph{part} of the plane in which $u + iv$ is single-valued and neither $u + iv$ nor any of its differential quotients becomes infinite. In order to survey the corresponding physical process clearly, one has therefore first to mark off such a region and, by suitable
+
+\origpage{3}
+devices at the boundary, to ensure that the steady state of motion set up in the interior of the region can continue unhindered.
+
+In a region so bounded, those points $z_{0}$ will draw our particular attention for which the differential quotient $\dfrac{dw}{dz}$ vanishes. For the sake of generality I will at once assume that $\dfrac{d^{2}w}{dz^{2}}$, $\dfrac{d^{3}w}{dz^{3}}$, $\cdot\cdot\cdot$ up to $\dfrac{d^{\alpha}w}{dz^{\alpha}}$ may also be equal to zero. In order to obtain information on the course of the level curves, or of the streamlines, in the neighbourhood of such a point, one expands $w$ in a series proceeding by powers of $(z - z_{0})$. After the constant term this series immediately brings a term with $(z - z_{0})^{\alpha + 1}$. By introducing polar coordinates one concludes from this: \emph{that at the point $z_{0}$ $(\alpha + 1)$ curves $u = \text{Const.}$ cross at respectively equal angles, while as many curves $v = \text{Const.}$ appear as the bisectors of the said angles.} I shall accordingly call such a point a \emph{crossing point}, and more precisely a \emph{crossing point of multiplicity $\alpha$}.
+
+The following (of course merely schematic) figure may illustrate this occurrence for $\alpha = 2$ and in particular make intelligible how a crossing point fits into the orthogonal system which is otherwise formed by the curves $u = \text{Const.}$, $v = \text{Const.}$:
+
+\rmfigure{figures/fig-1.png}{Figure~1.}{Schematic flow near a crossing point of multiplicity two: three solid streamlines pass through a central point, dividing the neighbourhood into six sectors, each filled with hyperbola-like solid streamlines bearing arrowheads that show fluid flowing in from three sides and out towards three sides; dashed level curves cross the streamlines at right angles.}
+
+The streamlines $v = \text{Const.}$ appear drawn solid in the figure, and the directions of flow on them are indicated by attached
+
+\origpage{4}
+arrowheads; the level curves are indicated by dotting. One sees how the fluid streams towards the crossing point from three sides, in order to stream away from it likewise towards three sides. This is possible only because the velocity of the flow becomes equal to zero at the crossing point (because the fluid is dammed up in it, as one might say by analogy with familiar occurrences). Indeed, the velocity is given by $\sqrt{\left(\dfrac{\partial u}{\partial x}\right)^{2} + \left(\dfrac{\partial u}{\partial y}\right)^{2}}$.
+
+It is further advantageous to conceive the crossing point of multiplicity $\alpha$ \emph{as a limiting case of $\alpha$ simple crossing points}. That this is admissible is shown by the analytic treatment. For at the $\alpha$-fold crossing point the equation $\dfrac{dw}{dz} = 0$ has an $\alpha$-fold root, and such a root arises, as is known, through the coalescence of $\alpha$ simple roots. For the rest, the following figures may illustrate this conception:
+
+\rmfigure{figures/fig-2.png}{Fig.~2.}{Streamlines only, near a crossing point of multiplicity two: three streamlines meet at one central point, with arrowed hyperbola-like streamlines in the six surrounding sectors, flowing in from three sides and out towards three sides.}
+\rmfigure{figures/fig-3.png}{Fig.~3.}{Streamlines only, for a flow with two simple crossing points close together: two pairs of streamlines cross at right angles at two nearby points, with arrowed hyperbola-like streamlines around them, a deformation of the pattern of Fig. 2.}
+
+For simplicity I have given only the streamlines in them. On the left one sees the same crossing point of multiplicity two to which Figure 1 refers. On the right there is a flow which exhibits two simple crossing points close to one another. One recognises how the one state of flow arises from the other by continuous change.
+
+In this explanation it was tacitly assumed that the region in which we consider the state of flow
+
+\origpage{5}
+does not extend to infinity. There is, to be sure, no difficulty of principle in taking the point $z = \infty$ into consideration just like any other point $z = z_{0}$. In place of the series expansion by powers of $z - z_{0}$ there must then, in the familiar way, come one by powers of $\dfrac{1}{z}$. One will speak of an $\alpha$-fold crossing point at $z = \infty$ if after the constant term this expansion at once brings a term with $\left(\dfrac{1}{z}\right)^{\alpha+1}$. But it seems superfluous to describe at greater length the geometrical relations which correspond to these occurrences in our flow. For we shall later come to know ways and means of removing, once for all, the exceptional position of the value $z = \infty$ as it confronts us here. For that very reason the point $z = \infty$ will be left aside in the next following paragraphs (§.~2---4), although there too, if one wished to be complete, it would have to be specially taken into consideration.
+
+\section*{§.~2. Consideration of the infinity points of $w = f(z)$.}
+
+We will now also take into our region such points $z_{0}$ at which $w = f(z)$ becomes infinitely great. In doing so we nevertheless considerably restrict the unbounded series of possibilities that present themselves in this direction, having regard to the special class of functions which alone we are to study. We will require \emph{that the differential quotient $\dfrac{dw}{dz}$ shall possess no essentially singular point}, or, what is the same thing, we will stipulate \emph{that $w$ may become infinite only in the manner of an expression of the following form:}
+\[ A \log (z - z_{0}) + \frac{A_{1}}{z - z_{0}} + \frac{A_{2}}{(z - z_{0})^{2}} + \cdot\cdot\cdot\cdot \quad \frac{A_{\nu}}{(z - z_{0})^{\nu}}, \]
+\emph{where $\nu$ is understood to be a definite finite number.}
+
+Corresponding to the various forms which this expression presents, we say that at $z = z_{0}$ various discontinuities are superposed: a \emph{logarithmic} infinity point, an \emph{algebraic} infinity point of multiplicity one, and so on. For the sake of simplicity we shall here
+
+\origpage{6}
+consider each of these occurrences by itself, after which it will be a useful exercise to make clear to oneself in individual cases the result of the superposition.
+
+Let $z = z_{0}$ first be a \emph{logarithmic} infinity point. We then have:
+\[ w = A \log (z - z_{0}) + C_{0} + C_{1} (z - z_{0}) + C_{2} (z - z_{0})^{2} + \cdot\cdot\cdot\cdot \]
+Here $A$ is that quantity which, multiplied by $2i\pi$, is designated after \emph{Cauchy} as the \emph{residue} of the logarithmic infinity point, a designation which will occasionally be employed in what follows. For the flow in the neighbourhood of the point of discontinuity it is of primary importance whether $A$ is real or purely imaginary, or finally complex. Evidently one can conceive the third case as a superposition of the first two. We will therefore leave it aside too, and thus have to concern ourselves only with two separate possibilities.
+
+1) If $A$ is real, let $C_{0} = a + ib$ be set. One then has in first approximation, for $w = u + iv$, $z - z_{0} = re^{i\varphi}$:
+\[ u = A \cdot \log r + a, \qquad v = A\varphi + b. \]
+
+The curves $u = \text{Const.}$ therefore surround the infinity point in the form of small circles; the curves $v = \text{Const.}$ run, corresponding to the changing values of $\varphi$, towards the infinity point from all directions. We have a motion in which $z = z_{0}$ \emph{represents a source of a certain positive or negative strength.} To calculate this strength, we multiply the arc element of a small circle described about the point of discontinuity with radius $r$ by the corresponding velocity and integrate the expression so obtained along the circumference of the circle. Since $\sqrt{\left(\dfrac{\partial u}{\partial x}\right)^{2} + \left(\dfrac{\partial u}{\partial y}\right)^{2}}$ coincides in first approximation with $\dfrac{\partial u}{\partial r}$, and this with $\dfrac{A}{r}$, there results:
+\[ \int_{0}^{2\pi} \frac{A}{r} \cdot r\,d\varphi = 2\,A\pi \]
+as the value of the strength. \emph{The strength is therefore equal to the residue divided by $i$; it is positive or negative according to the value of $A$.}
+
+\origpage{7}
+
+2) Let secondly $A$ be purely imaginary, equal to $i\mathsf{A}$. Then, retaining the other notations, there results in first approximation:
+\[ u = -\mathsf{A} \cdot \varphi + a, \qquad v = \mathsf{A} \cdot \log r + b. \]
+
+The roles of the curves $u = \text{Const.}$, $v = \text{Const.}$ are thus exactly interchanged. The level curves now run out from $z = z_{0}$ in all directions, while the streamlines surround the infinity point in small circles. The fluid \emph{whirls} round the point $z = z_{0}$ on the latter curves. I will accordingly designate the point as a \emph{vortex point}. The sense and intensity of the vortex are measured by $\mathsf{A}$. Since the velocity
+\[ \sqrt{\left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2}} \]
+becomes in first approximation equal to $\dfrac{\partial u}{\partial \varphi}$, \emph{the vortex motion takes place, for positive $\mathsf{A}$, in the sense of the hands of a clock, for negative $\mathsf{A}$ in the opposite sense.} We may set the intensity of the vortex equal to $2\mathsf{A}\pi$; it is then equal and opposite to the residue of the infinity point in question.
+
+Moreover, recalling the definition of conjugate flows as it was given in the preceding paragraph, with the indeterminacy attaching to it, we can say: \emph{If one of two conjugate flows has at $z = z_{0}$ a source of a certain strength, the other has there a vortex point of equal or equal and opposite intensity.}
+
+We next consider the \emph{algebraic} points of discontinuity. With them the course of the flow is, in its general character, independent of whether the first term of the series expansion has a real, imaginary or complex coefficient. Let first:
+\[ w = \frac{A_{1}}{z - z_{0}} + C_{0} + C_{1} (z - z_{0}) + \cdot\cdot\cdot\cdot\,, \]
+then in first approximation, for $z - z_{0} = re^{i\varphi}$, $A_{1} = \varrho e^{i\psi}$:
+\[ w - C_{0} = \frac{\varrho}{r} \left\{ \cos (\psi - \varphi) + i \sin (\psi - \varphi) \right\} \]
+
+\origpage{8}
+
+Let us consider first the real part on the right-hand side. When $r$ is very small, $\dfrac{\varrho}{r} \cos (\psi - \varphi)$ can nevertheless, by skilful choice of $\varphi$, still represent any arbitrarily prescribed value. \emph{The function $u$ therefore still takes every value in the immediate neighbourhood of the point of discontinuity.} For closer orientation let us for a moment think of $r$ and $\varphi$ as unrestricted variables, and so set
+\[ \frac{\varrho}{r} \cos (\psi - \varphi) = \text{Const.} \]
+
+We then obtain a pencil of circles which all touch the fixed direction $\varphi = \psi + \dfrac{\pi}{2}$. The circles are the smaller, the greater the absolute value of Const.\ is taken. \emph{In a similar way, therefore, the curves $u = \text{Const.}$ run in the neighbourhood of the point of discontinuity. In particular, for very great positive or negative values of Const.\ they have the form of small, closed, circle-like ovals.} --- For the imaginary part of the expression on the right, and so for the curves $v = \text{Const.}$, a similar discussion holds. The difference is only that now the direction $\varphi = \psi$ is touched by all the curves. Accordingly the following figure, in which the level curves are again dotted and the streamlines drawn solid, will be intelligible:
+
+\rmfigure{figures/fig-4.png}{Figure~4.}{Flow near a simple algebraic discontinuity point: solid arrowed streamlines and dotted level curves all pass through one central point, each family forming loops tangent to a common direction there, with small closed ovals around the point and larger curves radiating out in opposite directions, arrows pointing outward to the lower left and inward from the upper right.}
+
+The analogous discussion furnishes the requisite intuition of the $\nu$-fold algebraic point of discontinuity. I will here only state the result: \emph{Every curve $u = \text{Const.}$ runs $\nu$ times through the point of discontinuity, touching in succession $\nu$ fixed tangents equally inclined to one another. Analogously the curves $v = \text{Const.}$ For very great (positive or negative) values of the constant, both kinds of curves are closed in the}
+
+\origpage{9}
+\emph{immediate neighbourhood of the point of discontinuity.} For illustration I give a figure for $\nu = 2$:
+
+\rmfigure{figures/fig-5.png}{Figure~5.}{Flow near a twofold algebraic discontinuity point: horizontal and vertical arrowed axes and dotted diagonal lines cross at a central point; four large solid arrowed loops and four smaller solid loops, like petals of a flower, pass through the centre, interleaved with dotted loops of the level curves.}
+
+One will surmise that these higher occurrences may arise from the lower ones by passage to the limit. I defer the relevant explanation to the following paragraph, where a definite class of functions will convey the requisite intuitions to us with ease.
+
+\section*{§.~3. Rational functions and their integrals. Origin of higher infinity points from lower ones.}
+
+The theorems developed suffice to illustrate the total course of such functions as, being otherwise single-valued in the whole plane, exhibit no other infinity points than those just considered. These are, as is known, \emph{the rational functions and their integrals}. Without giving drawings in full, I here put together in concise form the theorems which one finds for them concerning the crossing points and infinity points. In doing so I restrict myself, for the reason given above, to such cases in which $z = \infty$ plays no distinguished role whatever. The restriction lying herein will afterwards, as already indicated, fall away of itself.
+
+1) The rational function which we have to consider presents itself in the form:
+\[ w = \frac{\varphi(z)}{\psi(z)}, \]
+where $\varphi$ and $\psi$ are integral functions of the same degree, which may be assumed to be without common divisor. If this degree is the $n^{\text{th}}$ and one counts each algebraic infinity point
+
+\origpage{10}
+as often as its multiplicity indicates, one obtains, corresponding to the roots of $\psi = 0$, $n$ algebraic points of discontinuity. The crossing points are given by $\psi\varphi' - \varphi\psi' = 0$, an equation of the $(2n - 2)^{\text{th}}$ degree. \emph{The total multiplicity of the crossing points is therefore $2n - 2$}, where one must however note that every $\nu$-fold root of $\psi = 0$ is a $(\nu - 1)$-fold root of $\psi' = 0$, and so every $\nu$-fold infinity point of the function counts for $(\nu - 1)$ crossing points.
+
+2) If the integral of a rational function
+\[ W = \int \frac{\Phi(z)}{\Psi(z)}\,dz \]
+is to remain finite for $z = \infty$, the degree of $\Phi$ must be two units less than the degree of $\Psi$. $\Phi$ and $\Psi$ are here to be assumed without common divisor. Then $\Phi = 0$ furnishes \emph{the free crossing points}, i.\ e.\ those crossing points which do not coincide with infinity points. The roots of $\Psi = 0$ give the infinity points of the integral. And indeed to a simple root of $\Psi = 0$ there corresponds a logarithmic infinity point, to a double root an infinity point which will in general be the superposition of a logarithmic point of discontinuity with a simple algebraic one, etc. \emph{If accordingly one counts each infinity point as often as the multiplicity of the corresponding factor in $\Psi$ amounts to, the total multiplicity of the crossing points is two units less than that of the infinity points.} Let us moreover recall the known theorem that the sum of the logarithmic residues of all the points of discontinuity is equal to zero. ---
+
+The foregoing gives us a twofold possibility of letting higher points of discontinuity arise from lower ones. We can, for one --- and this is for us the most important --- start from the integral of the rational function. With it a $\nu$-fold algebraic point of discontinuity arises when $\nu + 1$ factors of $\Psi$ become equal to one another, \emph{thus when $\nu + 1$ logarithmic points of discontinuity move together in a suitable way}. Here it is clear that the sum of the residues of the latter must be equal to zero if the resulting
+
+\origpage{11}
+infinity point is to be a purely algebraic one. The following two figures, in which only the streamlines are given, illustrate the passage to the limit in question for the simple algebraic point of discontinuity of Figure (4):
+
+\rmfigure{figures/fig-6.png}{Fig.~6.}{Streamlines of two nearby source points: arrowed curves run from a lower-left point to an upper-right point along a family of arcs, while further arrowed lines radiate outward from each point.}
+\rmfigure{figures/fig-7.png}{Fig.~7.}{Streamlines of two nearby vortex points: two pairs of concentric arrowed circles, one at upper left and one at lower right, with three arrowed curves running diagonally between them from upper right to lower left.}
+
+I have made the arrangement in a twofold way, so that on the left two source points, on the right two vortex points appear moved close to one another, and Figure 4 appears as the concordant result of the passage to the limit in both cases. The following two drawings stand in the same relation to Figure 5:
+
+\rmfigure{figures/fig-8.png}{Fig.~8.}{Streamlines of three source-like points on a horizontal axis: arrowed curves loop between a central point and two points to its left and right, with arrowed lines radiating outward along both axes and diagonally.}
+\rmfigure{figures/fig-9.png}{Fig.~9.}{Streamlines combining two vortex points, at upper right and lower left, with an elongated closed loop through the centre along the diagonal; arrowed curves wind around the vortices and run outward along the horizontal and vertical directions.}
+
+The second possibility for the origin of higher infinity places from lower ones is offered by the consideration of the rational function $\dfrac{\varphi}{\psi}$ itself. Logarithmic infinity places remain excluded here. \emph{The $\nu$-fold algebraic point of discontinuity now arises from $\nu$ simple algebraic points of discontinuity}, namely in that $\nu$ simple linear factors of $\psi$ must move together into a $\nu$-fold one. \emph{But at the same time there unite with them a number of crossing points whose total multiplicity amounts to $(\nu - 1)$.} For $\psi\varphi' - \varphi\psi' = 0$, as already remarked, receives at the same moment at which $\psi$ acquires the $\nu$-fold factor, a
+
+\origpage{12}
+$(\nu - 1)$-fold factor. The following figure illustrates in this sense the origin of the twofold algebraic infinity point derived in Figure 5:
+
+\rmfigure{figures/fig-10.png}{Fig.~10.}{Streamlines of two points on a horizontal axis, each surrounded by two small arrowed loops above and below it and by arrowed curves fanning outward, with a vertical axis between them along which arrowed curves converge from above and below.}
+
+It is of course easy to subsume these two kinds of passage to the limit together under a more general one. If one lets $\nu + \mu + 1$ logarithmic infinity points and $\mu$ crossing points coincide successively or simultaneously, a $\nu$-fold algebraic point of discontinuity will always arise. But this is not the place to carry these thoughts further.
+
+\section*{§.~4. Realisation of the flows considered by experimental means.}
+
+We will now give our consideration another turn, by asking ourselves how those forms of motion which we now know from the rational functions and their integrals may be physically realised. Here let us be permitted to make ample use of the principle of \emph{superposition}, so that it is only a matter of producing the very simplest forms of motion. From the theory of partial fractions it follows that one can compose each of the functions coming into consideration additively from single constituents which fall under one of the following two types:
+\[ A \cdot \log (z - z_{0}), \qquad \frac{A}{(z - z_{0})^{\nu}}. \]
+
+Since $\log (z - z_{0})$ has a point of discontinuity at $z = \infty$, which is an unnecessary peculiarity, we will replace the first type by the more general one:
+\[ A \cdot \log \frac{z - z_{0}}{z - z_{1}} \]
+
+\origpage{13}
+and split this again, in accordance with the explanations of §.~2, into two constituents, namely by setting $A$ equal to $\mathsf{A} + i\mathsf{B}$ and now considering $\mathsf{A} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ and $i\mathsf{B} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ separately. Accordingly we have in all three cases to keep apart.
+
+1) When it is a matter of the type $\mathsf{A} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$, we have to place at $z_{0}$ a source of strength $2\mathsf{A}\pi$, at $z_{1}$ one of strength $-2\mathsf{A}\pi$. For this purpose imagine the $XY$-plane covered with an infinitely thin, uniform, electrically conducting layer. Then the corresponding form of motion is evidently realised \emph{by placing at $z_{0}$ the one, at $z_{1}$ the other pole of a galvanic battery of suitably chosen strength}${}^{*)}$. --- One sees at the same time why the residue of $z_{0}$ must be equal and opposite to that of $z_{1}$: since the state of flow is to be steady, as much electricity must be supplied at the one place as flows away at the other. The same reason holds, as one at once recognises, for the corresponding theorem for arbitrarily many logarithmic infinity points, where to be sure there is at first question only of the purely imaginary parts of the residues concerned (which correspond to the source motions proceeding from the infinity points).
+
+2) In the second case (where $i\mathsf{B} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ is given) the experimental arrangement becomes somewhat more difficult. The simplest scheme is this, that one joins $z_{0}$ and $z_{1}$ by a curve that does not cut itself \emph{and now ensures that this curve is the seat of a constant electromotive force}. There then develops in the $XY$-plane a flow which exhibits vortex points at $z_{0}$ and $z_{1}$, which runs continuously everywhere else, and from which one finds by integration, as the associated velocity potential, a function that increases by a certain modulus of periodicity at each circuit of $z_{0}$ or $z_{1}$. From this velocity potential
+
+\textbf{*)} Compare the fundamental paper of \emph{Kirchhoff} in the 64th\ volume of Poggendorff's Annalen: Ueber den Durchgang eines elektrischen Stromes durch eine Ebene (1845).
+
+\origpage{14}
+the necessarily single-valued electrostatic potential is here to be carefully distinguished. The curve joining $z_{0}$ and $z_{1}$ is a curve of discontinuity for the latter, and it is precisely hereby that the single-valuedness of the electrostatic potential is made possible${}^{*)}$.
+
+\rmfigure{figures/fig-11.png}{Fig.~11.}{A lens-shaped region bounded by two curved arcs meeting at the points labelled z0 (upper left) and z1 (lower right); the region inside is labelled I and the areas outside both arcs are labelled II.}
+
+I do not know whether there is an experimental arrangement for realising this simplest scheme. It seems that one must go to work more circuitously. Let us first think, say, of \emph{thermoelectric} currents. We will cover the $XY$-plane partly with the material I, partly with the material II, and measure the thickness of the covering layers so that the specific conduction resistance is everywhere the same. If we then ensure that the two parts, separated from one another by $z_{0}$ and $z_{1}$, of the contour in which the two kinds of material meet are both kept at constant temperatures differing from each other, an electric flow such as we want will indeed arise. The electrostatic potential here, according to the conceptions on which the theory of thermoelectricity is based, exhibits discontinuities at \emph{both} parts of the said contour. --- It seems still more complicated to use electric currents such as the ordinary galvanic cells supply. One must then divide the plane into parts by at least three curves running from $z_{0}$ to $z_{1}$ and cover two of these parts with metallic coatings, the third with a moist conductor. Compare on this Figure 12.
+
+\textbf{*)} The assertions of the text are connected, as is known, most closely with the theory of the so-called double layers, concerning which one may compare \emph{Helmholtz} in Poggendorff's Annalen vol.~89, p.~224~ff.\ (Ueber einige Gesetze der Vertheilung elektrischer Ströme in körperlichen Leitern, 1853), as well as C.\ \emph{Neumann} in his book: Untersuchungen über das Logarithmische und Newton'sche Potential (Leipzig, Teubner, 1877).
+
+\origpage{15}
+
+\rmfigure{figures/fig-12.png}{Fig.~12.}{Three curved arcs running from the point labelled z0 (upper left) to the point labelled z1 (lower right), dividing the plane into three parts labelled I (between the upper and middle arcs), II (between the middle and lower arcs) and III (outside, below the lower arc).}
+
+Through all these arrangements it is evident from the outset that the two vortex points occurring at $z_{0}$ and $z_{1}$ must indeed have equal and opposite intensity. For similar reasons the total intensity of all the vortices, for arbitrarily many given vortex points\ednote{Printed Wirbelpnncten instead of Wirbelpuncten; an apparent misprint, the u set as n.}, will always be equal to zero, and thereby the theorem of the vanishing of the sum of all logarithmic residues, also as regards the real part of these residues, is traced back to physically evident grounds.
+
+3) The forms of motion which correspond to the algebraic types $\dfrac{A}{(z - z_{0})^{\nu}}$ may, according to the developments of §.~3, be obtained from those just considered by passage to the limit. This will of course only be possible with a certain approximation. Place, e.\ g., $(\nu + 1)$ wires, in which the poles of a galvanic battery terminate, \emph{close to one another} on the $XY$-plane. Then a flow arises which at some distance from the ends of the wires coincides appreciably with that which corresponds to an algebraic point of discontinuity of multiplicity $\nu$. At the same time a supplement to our account above results. One will have to take the galvanic battery \emph{very strong} if with the arrangement mentioned a moderate electric flow is still to come about. This corresponds to the theorem, well known from the analytic side, that the residues of logarithmic infinity points must themselves grow to infinity if on the coincidence of the logarithmic points an algebraic point of discontinuity is to arise. --- I go into no further detail here, since in what follows it matters only
+
+\origpage{16}
+that the general principle be understood on the basis of Figures 6---9.
+
+\section*{§~5. Transition to the spherical surface, flows on arbitrary curved surfaces.}
+
+In order to make the infinitely great values of $z$ accessible to the same geometrical mode of treatment as the finite ones, the textbooks now generally make use of the \emph{spherical surface}${}^{*)}$, related stereographically to the $XY$-plane. One knows the simple geometrical relations which occur in this mapping${}^{**)}$. One also knows sufficiently well that the infinitely distant part of the plane contracts into a definite point of the sphere, the point of projection, so that it is no longer a symbolic mode of expression when one speaks on the sphere of a point $z = \infty$. On the other hand it still seems to be less well known that in this mapping the functions of $x + iy$ acquire a meaning for the spherical surface which is exactly analogous to that which they had for the plane, \emph{that one can therefore use the sphere instead of the plane in the developments of the preceding paragraphs, whereby an exceptional position of the value}
+
+\textbf{*)} Following the example of C.\ \emph{Neumann}, Vorlesungen über Riemann's Theorie der Abel'schen Integrale, Leipzig, 1865. --- The introduction of the spherical surface runs, so to speak, parallel to the replacement of $z$ by the ratio $\dfrac{z_{1}}{z_{2}}$ of \emph{two} variables, whereby, as is known, the treatment of infinitely great values of $z$ is subsumed \emph{formally} too under that of the finite values.
+
+\textbf{**)} Understanding by $\xi$, $\eta$, $\zeta$ rectangular coordinates, let the equation of the sphere be $\xi^{2} + \eta^{2} + (\zeta - \frac{1}{2})^{2} = \frac{1}{4}$. Let the point of projection be $\xi = 0$, $\eta = 0$, $\zeta = 1$, the plane of projection ($XY$-plane) the opposite tangent plane (the $\xi\eta$-plane). Then it follows:
+\[ \xi = \frac{x}{x^{2} + y^{2} + 1}, \qquad \eta = \frac{y}{x^{2} + y^{2} + 1}, \qquad \zeta = \frac{1}{x^{2} + y^{2} + 1}. \]
+
+If one denotes by $ds$ the arc element of the plane, by $d\sigma$ the corresponding arc element of the sphere, there results:
+\[ d\sigma = \frac{ds}{x^{2} + y^{2} + 1}, \]
+a formula which is particularly important for what follows inasmuch as it characterises the mapping as a \emph{conformal} one.
+
+\origpage{17}
+\emph{$z = \infty$ is out of the question from the outset}${}^{*)}$: I here briefly develop those theorems of the theory of surfaces from which this assertion follows, and at once take my standpoint so generally that my account suffices for considerations to be undertaken later.
+
+In studying fluid motions parallel to the $XY$-plane we have already become accustomed to presuppose the fluid layer under consideration to be infinitely thin. In the same sense one can evidently consider fluid motions on arbitrarily given surfaces. The displacements within themselves of freely stretched fluid membranes, such as one can observe so beautifully in Plateau's experiments, give an intuitive example of this. --- We shall attempt to define motions of this kind too by a potential, and ask above all how matters then stand with the steady motions.
+
+The appropriate generalisation of the concept of potential presents itself immediately. Let $u$ be a function of position on the surface; then imagine the curves $u = \text{Const.}$ drawn on the latter. Next let it be stipulated that the fluid motion on the surface shall take place at every point \emph{perpendicular} to the curve $u = \text{Const.}$ passing through it, and indeed with a velocity which, understanding by $dn$ the arc element of the associated normal direction running on the surface, is equal to $\dfrac{du}{dn}$. We then call $u$, as in the plane, the \emph{velocity potential} belonging to the motion.
+
+The flow defined in this way is now to be a \emph{steady} one. In order to have a definite formula, we will assume a curvilinear coordinate system $p$, $q$ on our surface and think of the form as determined:
+
+\textbf{*)} Compare on this and on the following developments: \emph{Beltrami}, Delle variabili complesse sopra una superficie qualunque; Annali di Matematica, ser.~2, t.~I, p.~329~ff. --- The special remark that surface potentials remain such under conformal mapping is found in the writings of C.\ \emph{Neumann}, \emph{Kirchhoff} and \emph{Töpler} cited in the preface, and then also, e.\ g., in \emph{Haton de la Goupillière}: Méthodes de transformation en Géométrie et en Physique Mathématique, Journal de l'Ecole Polytechnique, t.~XXV, 1867 (p.~169~ff.).
+
+\origpage{18}
+\[ ds^{2} = E\,dp^{2} + 2F\,dp\,dq + G\,dq^{2}, \tag{1} \]
+which the arc element on the surface assumes by virtue of this coordinate system. Then a simple intermediate consideration, proceeding quite analogously to the one customary in the plane, gives that $u$, in order to give rise to a steady motion, must satisfy the following differential equation of the second order:
+\[ \frac{\partial \dfrac{F\dfrac{\partial u}{\partial q} - G\dfrac{\partial u}{\partial p}}{\sqrt{EG - F^{2}}}}{\partial p} + \frac{\partial \dfrac{F\dfrac{\partial u}{\partial p} - E\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}}{\partial q} = 0. \tag{2} \]
+
+To this differential equation there now attaches a short consideration which establishes the full analogy with the results relating to the plane.
+
+It follows namely from the form of (2)\uncertain{;} that alongside every $u$ which satisfies (2) one can introduce another function $v$ \emph{which stands to $u$ exactly in the familiar relation of reciprocity}. Indeed, by virtue of (2) the following two equations are compatible:
+\[ \left\{ \begin{aligned} \frac{\partial v}{\partial p} &= \frac{F\dfrac{\partial u}{\partial p} - E\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}, \\ \frac{\partial v}{\partial q} &= \frac{G\dfrac{\partial u}{\partial p} - F\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}; \end{aligned} \right. \tag{3} \]
+they define a $v$ up to a constant which necessarily remains undetermined. From them, however, there follows by solution:
+\[ \left\{ \begin{aligned} -\frac{\partial u}{\partial p} &= \frac{F\dfrac{\partial v}{\partial p} - E\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}}, \\ -\frac{\partial u}{\partial q} &= \frac{G\dfrac{\partial v}{\partial p} - F\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}} \end{aligned} \right. \tag{4} \]
+and from this:
+\[ \frac{\partial \dfrac{F\dfrac{\partial v}{\partial q} - G\dfrac{\partial v}{\partial p}}{\sqrt{EG - F^{2}}}}{\partial p} + \frac{\partial \dfrac{F\dfrac{\partial v}{\partial p} - E\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}}}{\partial q} = 0, \tag{5} \]
+so that on the one hand $u$ is related to $v$ as $v$ is to $-u$, and on the other hand $v$, just as well as $u$, satisfies the partial differential equation
+
+\origpage{19}
+(2). At the same time the equations (3), resp.~(4), have the geometrical meaning that the curves $u = \text{Const.}$ and $v = \text{Const.}$ in general cut one another at right angles.
+
+As regards now the assertion which I put forward at the beginning of this paragraph concerning the stereographic relation of the sphere to the plane, it is an immediate outflow of the circumstance \emph{that the equations (2)---(5) are homogeneous of dimension zero in $E$, $F$, $G$}${}^{*)}$. If two surfaces are conformally related to one another and one introduces corresponding curvilinear coordinates on them, the expression for the arc element on the one surface differs from that relating to the other surface only by a factor. But this factor, for the reason given, simply drops out of the equations (2)---(5). We thus have a general theorem which comprises the particular assertion stated above, relating to sphere and plane, as a special case. Forming from $u$, $v$ the combination $u + iv$ and designating this as a \emph{complex function of position on the surface}, I express it as follows:
+
+\emph{If a surface is conformally mapped upon a second, every complex function of position existing on it is transformed into a function of the same kind on the second surface.}
+
+Perhaps it is useful expressly to meet a misunderstanding which might arise here. To the same function $u + iv$ there corresponds a fluid motion on the one and on the other surface; one might think that the one motion arises from the other by virtue of the mapping. This is of course correct with regard to the course of the streamlines and the level curves, but by no means with regard to the velocity. Where the arc element of the one surface is greater than the arc element of the other surface, there the velocity of the flow is correspondingly \emph{smaller}. It is precisely in this that the reason lies why the value $z = \infty$ loses its
+
+\textbf{*)} It is moreover not difficult to convince oneself of the correctness of that assertion even without any formula; see the repeatedly cited works of C.\ \emph{Neumann} and \emph{Töpler}.
+
+\origpage{20}
+singular position on the sphere. For the infinity point of the plane the velocity of the flow proves, as one sees at once, in general to be infinitely small of the second order. Should the infinity point be singular, the velocity there is always two orders smaller than the velocity at a point in the finite region to be named in the same way. Now recall the formula communicated above (below the text):
+\[ d\sigma = \frac{ds}{x^{2} + y^{2} + 1}, \]
+which relates the arc element of the sphere to the arc element of the plane. Here $x^{2} + y^{2} + 1$ is likewise a quantity of the second order, and exact compensation therefore takes place on passing over to the sphere.
+
+\section*{§.~6. Connection of the theory developed with the functions of a complex argument.}
+
+Now that we have gained the sphere as the substratum of our considerations, we transfer to it what we have come to know in §§.~3 and 4 concerning rational functions and their integrals. We thereby gain that all the theorems set up earlier hold also for infinitely great $z$, and thus without exception. It becomes all the more interesting to consider on the sphere the course of definite rational functions and to reflect on the means of their physical realisability${}^{*)}$. But it is another
+
+\textbf{*)} A particularly perspicuous example, and yet not of too elementary a character, is given by the \emph{icosahedron equation} (see Mathematische Annalen, vol.~XII, p.~502~ff.). It reads, as is known:
+\[ w = \frac{(-(z^{20} + 1) + 228(z^{15} - z^{5}) - 494z^{10})^{3}}{1728z^{5}(z^{10} + 11z^{5} - 1)^{5}}, \]\ednote{In the denominator the print shows a long minus rule followed by a short stray rule before the 1, apparently a doubled or displaced sort; it is read as a single minus, as the formula requires.}
+and is thus (for $z$) an equation of the sixtieth degree. The infinity points of $w$ coincide in fives in 12 points, which are the vertices of an icosahedron inscribed in the sphere on which we interpret $z$. Corresponding to the 20 faces of this icosahedron the sphere is divided into 20 equilateral spherical triangles. The centres of these triangles are given by $w = o$ and represent as many crossing points of multiplicity two for the function $w$. Accordingly, of the $2 \cdot 60 - 2 = 118$ crossing points one already knows (counting in the infinity points) $4 \cdot 12 + 2 \cdot 20 = 88$. The 30 still missing are furnished by the midpoints of the 30 edges belonging to those 20 spherical triangles.
+
+\rmfigure{figures/fig-13.png}{Fig.~13.}{A spherical equilateral triangle drawn schematically with straight sides. Straight lines run from each vertex through the centre to the midpoint of the opposite side. Arrowed flow curves leave each vertex in looping bundles that return to it, and arrows run along the sides and the median lines.}
+
+The adjoining figure represents in schematic fashion one of those 20 triangles and on it the course of the streamlines; on the 19 remaining triangles the matter is exactly the same.
+
+\origpage{21}
+important question which forces itself upon us in such investigations. The various functions of position which we study on the spherical surface are at the same time functions of the \emph{argument} $x + iy$. Whence this connection?
+
+One should above all remark that $x + iy$ is itself a complex function of \emph{position} on our sphere; for $x$ and $y$, substituted for $u$ and $v$, satisfy the differential equations set up earlier (§.~1) for the latter. So long as one operates in the plane, one might think that this function had some essential advantage over the others; after the transition to the sphere there is no longer any occasion for this. And indeed the remark to which our question relates generalises at once. If $u_{1} + iv_{1}$ and $u + iv$ are functions of $x + iy$, then $u_{1} + iv_{1}$ is also a function of $u + iv$. We thus have for plane and spherical surface the general theorem: \emph{that of two complex functions of position each is, in the sense of the ordinary function-theoretic mode of expression, a function of the other.}
+
+Will this now be a special peculiarity of the surfaces named? It will certainly carry over to all such surfaces as can be related conformally to a part of the plane (or of the sphere). This follows from the last theorem of the preceding paragraph. But I say \emph{that the same peculiarity belongs to all surfaces whatever}, whereby it is implicitly asserted that one can transfer a part of an
+
+\origpage{22}
+\emph{arbitrary} surface conformally to the plane or the spherical surface.
+
+The proof takes shape at once if one introduces the constituents $x, y$ of any complex function of position existing on a surface, $x + iy$, as curvilinear coordinates on the surface itself. For then the coefficients $E$, $F$, $G$ in the expression of the arc element must be so constituted that identities arise when one introduces $x$ and $y$ into the equations (2)---(5) of the preceding paragraph for $p$ and $q$ and at the same time for $u$ and $v$ respectively. \emph{This requires, as one at once sees, that $F = o$, $E = G$.} But thereby those equations are transformed into the well-known ones:
+\[ \frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} = 0; \qquad \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}; \ \text{etc.} \]
+They thus pass over directly into those equations by which one is accustomed to define functions of the argument $(x + iy)$, so that $u + iv$ does indeed become a function of $x + iy$, which was to be proved.
+
+At the same time what was asserted concerning conformal mapping is settled. For from the form of the arc element
+\[ ds^{2} = E\,(dx^{2} + dy^{2}) \]
+it follows immediately that our surface is transferred conformally to the $XY$-plane by $x + iy$. I will state this result in a somewhat more general form, saying:
+
+\emph{If one knows two complex functions of position on two surfaces, and one relates the surfaces to one another so that corresponding points exhibit respectively equal values of the functions, the surfaces are conformally related to one another.}
+
+This is the converse of the similarly worded theorem set up at the close of the preceding paragraph.
+
+All these theorems, in so far as they relate to arbitrary surfaces, have for the present a clear meaning only if one restricts one's attention to small pieces of the surfaces within which the complex functions of position exhibit neither infinity points nor crossing points.
+
+\origpage{23}
+I have therefore occasionally spoken only of a \emph{part} of a surface. But it is natural to ask how matters stand when one uses closed surfaces \emph{in their whole extent}. This question is most intimately bound up with the further development of ideas that I have to give in what follows; to it in particular §§.~19---21 of what follows are devoted.
+
+\section*{§~7. Once more the flows on the sphere. Riemann's general formulation of the question.}
+
+We now have all the preconditions for conceiving the developments of the first paragraphs of this introduction in an essentially new way, and for rising, by virtue of this conception, to a great and general formulation of the question, which is \emph{Riemann's}, and whose precise statement and answer is to form the proper subject of the present work.
+
+The primary element in the presentation so far was the function of $x + iy$. We have interpreted it by a steady flow on the sphere, and have endeavoured to recognise properties of the function again in properties of the flow. In particular the rational functions and their integrals have made us acquainted with a simple kind of flows: they are the \emph{uniform} flows, those in which at each point of the sphere only \emph{one} flow takes place. And indeed, under the assumption that no other points of discontinuity occur than those defined in §.~2, they are the \emph{most general} uniform flows that there are on the sphere.
+
+It seems possible from the outset to reverse this whole development: \emph{to put the study of the flows first and only from it to develop the theory of certain analytic functions.} The question of the most general flow coming into consideration may then first be answered by physical considerations; for the experimental arrangements of §.~4 together with the principle of superposition give us the means of defining every such flow! The single flow then determines for us, apart from a constant of integration, a complex function of position, whose general course
+
+\origpage{24}
+we can follow intuitively. Every such function is an analytic function of every other. By putting together any two complex functions of position we are led to analytic dependences whose properties we survey from the outset and which only afterwards, in order to establish the connection with the considerations of analysis, we identify with dependences otherwise customary in analysis.
+
+All this is so clear that a more exact elaboration seems superfluous here, that we can rather proceed at once to the promised \emph{generalisation}. This too presents itself, on the basis of the developments so far, almost of necessity. We shall be able to raise in the same way all the questions which we have just formulated concerning the spherical surface, \emph{when instead of the spherical surface an arbitrary closed surface is given.} On it too we shall be able to determine uniform flows, and so complex functions of position, whose properties we grasp intuitively. The simultaneous consideration of different functions of position then transforms the results to be gained into as many theorems of ordinary analysis. --- The carrying out of this train of thought is \emph{Riemann's theory;} at the same time we have the main division which is to be laid at the foundation of the following exposition of it.
+
+\origpage{25}
+
+\section*{Section II. Exposition of Riemann's theory.}
+
+\section*{§.~8. Classification of closed surfaces according to the number $p$${}^{*)}$.}
+
+For our considerations, all those closed surfaces\ednote{Printed ``Fächen'' instead of ``Flächen''; an apparent misprint.} are of course to be regarded as equivalent which can be conformally mapped upon one another by a one-to-one correspondence. For every complex function of position on the one surface will be transformed by such a mapping into a function of the same kind on the other surface: the analytic relation, therefore, which is made sensible by the coexistence of two complex functions on the one surface, remains entirely unchanged on passing over to the second surface. If, therefore, one can (in consequence of known developments) relate, e.\ g., the ellipsoid conformally to the sphere in such a way that to each point of the former there corresponds one and only one point of the sphere, this means for us that the ellipsoid is just as suited to represent the rational functions and their integrals as the sphere.
+
+All the more important is it to become acquainted with an element which remains unchanged not only under conformal, but under any \emph{one-to-one} transformation of a surface whatever${}^{**)}$. \emph{This is Riemann's $p$:} the number of
+
+\textbf{*)} The account given in this paragraph departs from that given by Riemann himself chiefly in that surfaces with boundary curves are not taken into consideration at all for the present, and so, instead of the cross-cuts which run from one boundary point to a second, so-called \emph{retrosections} come to be used (cf.\ C.\ Neumann, Vorlesungen über Riemann's Theorie der Abel'schen Integrale, p.~291~ff.).
+
+\textbf{**)} Only transformation by \emph{continuous} functions is ever meant. Moreover, for the arbitrary surfaces of the text, certain special occurrences are to be excluded until further notice. It is best to think of them as without any singular points at all; only later do branch points, and with them self-intersections of the surface, come into consideration (§.~13). The surfaces must in any case not be \emph{double surfaces}, on which one can pass from one side of the surface to the other by continuous progress on the surface; compare, however, §.~23. Moreover it is presupposed --- as one always does when one thinks of a closed surface as given \emph{complete} --- that the surface can be divided into simply connected parts by a \emph{finite} number of cuts.
+
+\origpage{26}
+retrosections which one can draw on a surface without cutting it into pieces. The simplest examples suffice to practise this concept. For the sphere $p = 0$; for it falls, by every closed curve running on it, into two separate regions. For the ordinary ring $p = 1$; one can cut it along one, but also only along one, otherwise still very arbitrary, curve returning into itself, without its falling into pieces.
+
+That it is impossible to relate two surfaces of different $p$ one-to-one to each other seems evident${}^{*)}$. It is more complicated to prove the converse theorem, \emph{namely that equality of $p$ furnishes the sufficient condition for the possibility of a one-to-one relation of two surfaces.} As regards the proof of this important theorem, I must at this point restrict myself to mere citations below the text${}^{**)}$. On the ground of it one is entitled, in investigations of closed surfaces, so long as only general relations of position come into consideration, to lay down for each $p$ a type as simple as possible. In this sense we will speak of \emph{normal surfaces}. For quantitative determinations the normal surfaces of course no longer suffice in any way; but they offer a means of orientation for them too.
+
+\textbf{*)} This is by no means to say that this kind of geometrical evidence does not still require closer investigation. Compare the explanations of G.\ \emph{Cantor} in Borchardt's Journal, vol.~84, p.~242~ff. These investigations remain excluded, meanwhile, from the expositions of the text, since it is the principle of the latter to have recourse to intuitive relations as the ultimate foundation.
+
+\textbf{**)} See C.\ \emph{Jordan}: Sur la déformation des surfaces (in Liouville's Journal, ser.~2, vol.~11 (1866).\ednote{The parenthesis opened before ``in Liouville's Journal'' is never closed in the print; only the one after 1866 is printed.} Some points which seemed to me to need particular clarification are discussed in the Mathematische Annalen, vol.~VII, p.~529, and vol.~IX, p.~476.
+
+\origpage{27}
+
+Let the normal surface for $p = 0$ be the sphere, for $p = 1$ the ring. For higher $p$ one may think of a sphere provided with $p$ appendages (handles), as the following figure shows for $p = 3$:
+
+\rmfigure{figures/fig-14.png}{Fig.~14.}{Outline of a sphere-like closed surface with three handles, one at the top and one at each lower side, each drawn as a loop with an inner opening.}
+
+A similar normal surface is of course also admissible for $p = 1$, just as in general one must think of these surfaces not as given rigidly, but as capable of arbitrary distortions.
+
+On these normal surfaces certain \emph{cross-cuts}, of which we shall have to make use in what follows, may now be fixed. For $p = 0$ they do not yet come into consideration. On the ring $p = 1$ let a “meridian curve” $A$, combined with a “latitude curve” $B$, form the system of cross-cuts:
+
+\rmfigure{figures/fig-15.png}{Fig.~15.}{A ring seen from above as two concentric circles, with a third circle between them marked B running around the ring, and a short cross-section across the ring at lower left marked A, partly dashed where it passes behind.}
+
+In general we use $2p$ cross-cuts. It will, I think, be intelligible with regard to the following figure
+
+\origpage{28}
+when I speak, for the single handle of our normal surface, of a meridian curve and a latitude curve:
+
+\rmfigure{figures/fig-16.png}{Fig.~16.}{A single handle rising from the surface, with a small closed curve, partly dashed, drawn around the handle's tube near its top and a second curve running along the handle's length.}
+
+\emph{We choose the $2p$ cross-cuts in such a way that we lay a meridian curve and a latitude curve round each of the $p$ handles.} We will designate these cross-cuts in order by $A_{1}, A_{2}, \cdot\cdot\cdot A_{p}$, and $B_{1}, B_{2}, \cdot\cdot\cdot B_{p}$ respectively.
+
+\section*{§.~9. Preliminary determination of steady flows on arbitrary surfaces.}
+
+We now have to occupy ourselves with the task of defining, on arbitrary (closed) surfaces, the most general uniform, steady flows with velocity potential, always under the assumption that no other infinity points are to be admitted than those named in §.~2${}^{*)}$. For this purpose we direct our ideas to the normal surfaces of the preceding paragraph, and otherwise again make use of conceptions from the theory of electricity. We think of the given surface as provided with an infinitely thin uniform coating of a conducting substance, and apply first those experimental means which are known to us from §.~3.
+
+\textbf{*)} The definition of these infinity points referred at first only to the plane, resp.\ the sphere. But it is surely clear how it is to be transferred to arbitrary curved surfaces: the generalisation is to be made so that we come back to the old infinity points when we transfer the surface and the steady flows on it to the plane by conformal mapping. --- In this restriction with regard to the kind of infinity points it is also implied, as I cannot elaborate here, that only a \emph{finite} number of infinity points is possible for our flows. Likewise it follows from our premises, as may be emphasised in passing, that crossing points too occur in any case only in finite number for our flows.
+
+\origpage{29}
+
+We shall therefore first, say, place the two poles of a galvanic battery on our surface at two arbitrary places: there then arises a flow which possesses these two places as source points of equal and opposite strength. We shall next join two arbitrary points of the surface by one or more curves running side by side and not cutting themselves, which are to be the seat of constant electromotive forces, --- where one may recall all that was said in §.~4 concerning the experimental arrangement then becoming necessary. We then obtain a steady motion for which the two points are vortex points of equal and opposite intensity. --- We shall further superpose various such forms of motion and finally, if it seems necessary, let separate infinity points coincide by passage to the limit into higher infinity points. All this takes shape exactly as on the sphere, and we thus have in any case the following theorem:
+
+\emph{If one restricts the kind of infinity places according to the directions of §.~2, if one further holds fast to the requirement that the sum of all the logarithmic residues must always be equal to zero, then there exist on our surface complex\ednote{Printed complexc for complexe: a wrong sort, the final letter is a fully inked italic c with its ball terminal, not a damaged e.} functions of position which become infinite at arbitrarily given places in an otherwise arbitrarily given manner and run continuously everywhere else.}
+
+With the functions so determined, however, the matter is by no means yet exhausted, for $p > 0$. For we can make an experimental arrangement for which there was as yet no possibility at all on the sphere. There are now curves on the surface returning into themselves, by virtue of which the surface is by no means divided into separate regions. Nothing prevents the electricity from streaming over from the one side of such a curve through the surface to the other side of it. \emph{We shall be able to regard such a curve, or several curves of this kind running side by side, just as well as the seat of constant electromotive forces, as was done in §.~4 with trains of curves running from one end point to a second.}
+
+The flows which we then obtain have
+
+\origpage{30}
+no discontinuities at all. We shall be able to designate them as \emph{everywhere finite flows}, and the associated complex functions of position as \emph{everywhere finite functions}. These functions are necessarily infinitely many-valued. For they receive each time a real modulus of periodicity, proportional to the assumed electromotive force, as often as one crosses the given curve in the same sense${}^{*)}$.
+
+We ask how manifold the everywhere finite flows so defined may be. Evidently two curves running on the same surface, regarded as the seat of equally strong electromotive forces, are \emph{equivalent} for our purpose if they can be brought to coincide by continuous displacement over the surface. If one distorts a curve so that pieces of curve occur which are traversed twice in opposite directions, these may simply be omitted. In consequence of this one proves \emph{that every closed curve is equivalent to an integral combination of the cross-cuts $A_{i}$, $B_{i}$, as these were defined in the preceding paragraph.}
+
+\rmfigure{figures/fig-17.png}{Fig.~17.}{A ring surface seen from above as two concentric circles; a closed curve, solid on the visible side and dashed on the hidden side, winds three times around the tube while going once around the ring.}
+\rmfigure{figures/fig-18.png}{Fig.~18.}{The same ring surface as two concentric circles; a dashed curve runs once around the ring and, near the top, is joined by three parallel strokes, solid in front and dashed behind, crossing the tube.}
+
+Indeed, follow the path of a closed curve on our normal surface${}^{**)}$. For $p = 1$ the
+
+\textbf{*)} No disposition whatever is hereby to be made concerning the periodicity of the imaginary part of the function. Indeed, for given $u$, $v$ is completely determined by the differential equations (1) of p.~1 up to an additive constant, and so the moduli of periodicity which $v$ may possess at the cross-cuts $A_{i}$, $B_{i}$ are subject to no arbitrary stipulation whatever.
+
+\textbf{**)} For another proof see C.\ \emph{Jordan}: Des contours tracés sur les surfaces, in Liouville's Journal, ser.~2, vol.~11 (1866).
+
+\origpage{31}
+correctness of our assertion is then immediately evident. It suffices to consider an example such as is present in the foregoing figures.
+
+The curve running on the ring surface in Figure 17 can be brought to coincide by mere distortion with the other one, which is drawn on the right; it is therefore equivalent to a threefold traversal of the meridian curve $A$ (cf.\ Fig.~15) and a single traversal of the latitude curve $B$. --- Let further $p > 1$. Then, as often as our curve runs over one of the $p$ handles, one can separate off a piece of it which can be transformed by mere distortion into an integral combination of the meridian curve in question and the associated latitude curve. After all such constituents have been set apart there remains a closed curve which either can be contracted immediately into a single point of the surface and so in any case furnishes no contribution to the electric flow, or which completely encloses one or more handles, of which Figure 19 shows an example:
+
+\rmfigure{figures/fig-19.png}{Fig.~19.}{A surface with three holes, drawn as a rounded three-lobed outline enclosing three circles; a curve with arrows, solid on the visible side and dashed on the hidden side, runs from the outer rim between the upper and lower-left holes down to the rim between the two lower holes, enclosing the lower-left hole.}
+\rmfigure{figures/fig-20.png}{Fig.~20.}{The same three-holed surface; the curve has been deformed to run closely around the lower-left hole as a double line with a dashed middle, joined to the outer rim at the left by a short doubled stem, with arrows marking opposite directions of traversal.}
+
+Figure 20 illustrates how one can alter such a curve by deformation. By continuing the process hereby indicated, it is transformed into a train of curves which consists of the inner boundary curve of the handle in question and an associated meridian curve, both of whose pieces, however, are traversed twice in opposite directions. So such a curve too gives no contribution to the flow. One could moreover have seen this from the outset from the remark that the curve now under consideration, like one that can be contracted into a
+
+\origpage{32}
+point, divides the given surface into separate regions.
+
+We therefore achieve by drawing on arbitrary closed curves nothing \emph{more} than by suitable use of the $2p$ curves $A_{i}$, $B_{i}$. The most general everywhere finite flow which we can produce will arise when we make each of the $2p$ cross-cuts the carrier of an arbitrary constant electromotive force. Or, expressed otherwise:
+
+\emph{The most general everywhere finite function to be constructed by us is that whose real part exhibits arbitrarily prescribed moduli of periodicity at the $2p$ cross-cuts.}
+
+\section*{§.~10. The most general steady flow. Proof of the impossibility of other flows.}
+
+If we put together additively the various complex functions of position constructed in the preceding paragraph, we obtain a function whose arbitrariness we survey at once. Not mentioning separately the conditions prescribed once for all with regard to the infinity places, we can say: \emph{that our function becomes infinite at arbitrarily given places in an arbitrarily given manner, and moreover its real part exhibits arbitrarily given moduli of periodicity at the $2p$ cross-cuts.}
+
+I now say \emph{that this is indeed the most general function to which a uniform flow corresponds on our surface.} For the proof we may reduce this assertion to a simpler one. If any complex function of the kind coming into consideration is given on our surface, we have in the foregoing the means of constructing an associated function which becomes infinite at the same places in the same manner, and whose real part exhibits at the cross-cuts $A_{i}$, $B_{i}$ the same moduli of periodicity as the real part of the given function. The difference of the two functions is a new function which becomes infinite nowhere and whose real part possesses vanishing moduli of periodicity at the cross-cuts, and which moreover, as is self-evident, again defines a uniform flow. \emph{Evidently we have to prove that such a}
+
+\origpage{33}
+\emph{function does not exist, or rather, that it reduces to a constant.}
+
+And indeed this proof is not difficult. As regards carrying it out in rigorous form, I will restrict myself to remarking that it succeeds with the help of the generalised theorem of \emph{Green}${}^{*)}$. The following considerations are to demonstrate the same impossibility \emph{by intuitive means}. Even if, on account of the indefinite form which they possess, one should perhaps not consider them compelling${}^{**)}$, it nevertheless seems useful to pursue in this way too the grounds for the validity of that theorem.
+
+We may take the particular case $p = 0$ first, and so ask ourselves why a uniform, everywhere finite flow is impossible on the sphere. The most expedient seems to be to follow the course of the streamlines on the sphere. Since infinity points are not to occur, a streamline cannot break off suddenly, as happens at a source point or at an algebraic point of discontinuity. Moreover one should keep in view that streamlines running side by side necessarily have the same sense of flow. One then recognises that only two kinds of non-terminating streamlines are possible. Either the curve winds, ever more closely the longer it goes, round an asymptotic point --- then we again have an infinity point ---, or the curve is closed.\ednote{Printed ge-geschlossen across a line break, a doubled syllable; read geschlossen.} But if \emph{one} streamline is closed, so are the next following ones. They enclose in doing so a smaller and smaller part of the spherical surface. It cannot fail, therefore, that one is led to a vortex point, i.\ e.\ again to an infinity point. An everywhere finite flow is therefore indeed impossible. We have, to be sure, not thought of the possibility which lies in the occurrence of crossing points. These points, as emphasised above, are present in any case only in finite number. There will therefore be only a finite number of streamlines
+
+\textbf{*)} On this theorem see \emph{Beltrami}, l.\ c.\ p.~354.
+
+\textbf{**)} I will moreover recall that one can also found \emph{Green}'s theorem intuitively. Cf.\ \emph{Tait}, On Green's and allied other theorems, Edinburgh Transactions, 1869---70, p.~69~ff.
+
+\origpage{34}
+which run through them. Imagine the sphere divided into regions by these curves, and repeat within the single regions the considerations just made, whereupon the earlier result will follow anew.
+
+Let us now take $p > 0$ and again lay down the normal surfaces of §.~8 as foundation. That everywhere finite, uniform flows exist on these surfaces is due, by what has just been said, to the occurrence of the handles. A closed curve drawn on the normal surface which can be contracted into a point can, no more than a closed curve on the sphere, be a streamline for an everywhere finite flow. But a curve such as we considered in Figure (19) is also of no use. For to a first such streamline further ones must attach themselves in the manner of those represented in Figure (20), --- so that we finally arrive at a curve whose parts are traversed twice in opposite senses! The streamline must therefore necessarily \emph{wind round} one or another handle, whether this be a simple embracing of that handle or a repeated encircling of it in the sense of the meridian or of the latitude curves. In all cases a part can be separated off from the streamline which, in the sense of the preceding paragraph, is equivalent to an integral combination of the meridian curve in question and the associated latitude curve. Now $u$, the real part of the complex function defined by the flow, continually increases as one proceeds along a streamline. On the other hand two curves which are equivalent in the sense of the preceding paragraph necessarily furnish the same increments of $u$ when traversed. There is therefore a combination of at least one meridian curve and one latitude curve whose traversal brings about a non-vanishing increment of $u$. The same necessarily holds of the meridian curve in question or of the latitude curve itself. But the increment which $u$ gains on \emph{traversing} the meridian curve corresponds to \emph{crossing} the latitude curve, and conversely. Hence $u$ necessarily has a non-vanishing modulus of periodicity at at least one latitude curve or meridian curve, and an everywhere
+
+\origpage{35}
+finite, uniform flow, for which all these moduli of periodicity are equal to zero, is indeed impossible, q.\ e.\ d.
+
+\section*{§.~11. Illustration of the flows by examples.}
+
+It seems very useful to orient oneself by examples on the general course of the flows now defined, so that our theorems may not remain mere abstract formulations, but be combined with concrete conceptions${}^{*)}$. This succeeds fairly easily in the case in hand, so long as one restricts oneself to qualitative relations; the exact quantitative determination would of course require quite other aids. For the sake of simplicity I will here restrict myself to such surfaces as possess a plane of symmetry coinciding with the plane of the drawing, --- and on these surfaces consider only such flows for which the apparent outline of the surface (i.\ e.\ the section of the surface by the plane of the drawing) is either a streamline or a level curve. One then has the essential advantage that one needs to draw the streamlines only on the \emph{front} side of the surface;
+
+\rmfigure{figures/fig-21.png}{Fig.~21.}{A ring (annulus) bounded by two concentric circles, crossed by sixteen radial line segments running from the inner to the outer circle, each with an arrowhead pointing outward from the inner circle toward the outer circle, showing the flow on the front side of the ring surface.}
+
+for on the back side they run exactly the same way${}^{**)}$.
+
+Let us begin with everywhere finite flows on the
+
+\textbf{*)} Such an orientation is presumably of high value to the practical physicist as well.
+
+\textbf{**)} I gave drawings of this kind already in the paper: \emph{Ueber den Verlauf der Abel'schen Integrale bei den Curven vierten Grades}, Mathematische Annalen, vol.~X. There, to be sure, the Riemann surfaces have a somewhat different meaning, so that with them one can speak of a fluid motion only in a transferred sense; cf.\ the explanations given about this in §.~17 of what follows.
+
+\origpage{36}
+ring $p = 1$. We first regard a latitude curve (or several such curves) as the seat of the electromotive force. Then Figure 21 arises, in which all the streamlines are meridian curves and crossing points do not occur. The meridian curves are here represented by pieces of radially running straight lines. The arrowheads give the direction of flow on the front side; on the back side we have throughout the reverse sense of motion.
+
+In the conjugate flow the latitude curves play the analogous role to that just played by the meridian curves; it may be illustrated by the following drawing:
+
+\rmfigure{figures/fig-22.png}{Fig.~22.}{Four concentric circles in a ring, each carrying arrowheads showing circulation in the same rotational sense, anticlockwise: leftward at the top and rightward at the bottom.}
+
+The sense of motion in this case is the same on front and back.
+
+\rmfigure{figures/fig-23.png}{Fig.~23.}{An oval ring surface with a circular hole on the left and a crescent-shaped bulge on the right. Arrowed flow curves run from the inner circle outward to the outer contour; on the right they bend around the crescent, and a short double-headed arrow marks a segment between the crescent and the outer contour.}
+\rmfigure{figures/fig-24.png}{Fig.~24.}{The same oval ring with a circular hole and a crescent-shaped bulge, now with closed arrowed flow curves circulating around the hole; on the right they wind around the crescent, and two curves cross each other in a point between the crescent and the outer contour.}
+
+We will now alter the ring $p = 1$ by letting two protuberances grow out of it, say on the right-hand side of the figure,
+
+\origpage{37}
+which gradually bend together and finally fuse. \emph{Thus we have a surface $p = 2$ and on it a pair of conjugate flows, as Figures 23 and 24 illustrate.}
+
+On the right, as one recognises, two \emph{crossing points} have appeared (of which of course only one lies on the front side and is thus visible). Something analogous occurs every time one studies everywhere finite flows on a surface $p > 1$. Instead of further explanations I add two more figures with four crossing points each, which refer to $p = 3$:
+
+\rmfigure{figures/fig-25.png}{Fig.~25.}{A trefoil-shaped surface with three circular holes, one at the top and two at the bottom. Arrowed flow curves run between the holes and the outer contour; points a and b are marked on the outer contour at left and right where the upper lobe meets the lower ones, and point c lies on a vertical line between the two lower holes, where flow curves meet.}
+\rmfigure{figures/fig-26.png}{Fig.~26.}{The same trefoil-shaped surface with three circular holes, now with closed arrowed flow curves circulating around each hole; points a and b are marked at the junctions of the upper lobe with the lower ones, and two curves cross at point c between the two lower holes.}
+
+They arise when one lets electromotive forces act on all the “handles” of the surface, once in the latitude curves, the other time in the meridian curves. On the two lower handles they are oriented in the same sense, on the upper one in the opposite sense. Of the crossing points two lie at $a$ and $b$, the third at $c$, the fourth at the corresponding place on the back side. The crossing points at $a$ and $b$ in Figure (25) are hard to recognise only because at the edge of the figure, with the mode of representation chosen by us, a perspective foreshortening occurs, and hence both streamlines meeting in the crossing point seem to touch the edge. If one adds in thought the flows taking place (in the opposite direction) on the back side of the surface, there can surely be no obscurity about the nature of these points.
+
+Let us now go back to the ring $p = 1$ and let two logarithmic points of discontinuity be given on it! One obtains corresponding figures if one subjects the drawings
+
+\origpage{38}
+(23) and (24) to a process of deformation which is as interesting as it is useful in more general cases too. We will namely contract the portions on the left in the individual figures and expand those on the right, so that we first obtain, say, the following pictures:
+
+\rmfigure{figures/fig-27.png}{Fig.~27.}{An oval ring surface with a large circular hole on the right and a narrow crescent-shaped handle on the left. Arrowed flow curves run from the crescent across the surface to the hole and the outer contour; a horizontal line through the middle carries arrows pointing outward on both sides.}
+\rmfigure{figures/fig-28.png}{Fig.~28.}{The same oval ring with a circular hole on the right and a narrow crescent-shaped handle on the left, now with closed arrowed flow curves winding around the crescent and around the hole; a row of upward arrows crosses the curves beside the crescent, and on the right two curves cross between the hole and the outer contour.}
+
+and now contract the “handle” on the left, which has already become very narrow, completely into a curve, in order then to throw it away. \emph{Thus the everywhere finite flow on the surface $p = 2$ has become a flow with two logarithmic points of discontinuity on the surface $p = 1$.} The figures have namely assumed the following shape:
+
+\rmfigure{figures/fig-29.png}{Fig.~29.}{A circular ring with a concentric circular hole. Two points m and n on the left of the outer circle, one above and one below, are each encircled by small arrowed flow curves; other arrowed curves run from the left across the ring, and a horizontal line through the middle carries arrows.}
+\rmfigure{figures/fig-30.png}{Fig.~30.}{A circular ring with a concentric circular hole. From two points m and n on the left of the outer circle, arrowed flow curves fan out and run around the ring; a row of upward arrows crosses the curves on the left, and on the right two curves cross between the hole and the outer circle.}
+
+The two crossing points of (23), (24) have remained; $m$ and $n$ are the two logarithmic points of discontinuity. And indeed in the case of Figure 29 they are vortex points of equal and opposite intensity, in the case of Figure 30 source points of equal and opposite strength. Here it is again a consequence of the mode of projection chosen by us if in the second case all the streamlines, apart from a single one, seem to touch the edge at $m$ and $n$.
+
+\origpage{39}
+
+If finally we wish to let $m$ and $n$ move together, so that an algebraic point of discontinuity of simple multiplicity arises, the following drawings result, in which, as one may note, the crossing points have remained in their places as before:
+
+\rmfigure{figures/fig-31.png}{Fig.~31.}{A circular ring with a concentric circular hole. From a single point on the left of the outer circle a pencil of arrowed flow curves fans out across the ring, some ending on the hole and some on the outer circle; a horizontal line on the right carries arrows pointing both ways.}
+\rmfigure{figures/fig-32.png}{Fig.~32.}{A circular ring with a concentric circular hole. At a single point on the left of the outer circle, arrowed flow curves form small loops and then run around the ring; a row of upward arrows crosses the curves on the left, and on the right two curves cross between the hole and the outer circle.}
+
+I will not multiply these figures still further, since further examples after the manner of those now considered are easily formed. Only the one circumstance may still be emphasised. The number of crossing points of a flow evidently grows with the $p$ of the surface and with the number of infinity points. Let algebraic infinity points of multiplicity $r$ be counted as $(r + 1)$ logarithmic infinity points. Then on the sphere, with $\mu$ logarithmic infinity points, the number of proper crossing points is in general $\mu - 2$. On the other hand, according to our examples, an increase of $p$ by one unit is bound up with an increase of the number of crossing points by two units. \emph{Accordingly one will surmise that the number of crossing points will in general be $\mu + 2p - 2$.} A rigorous proof of this theorem on the basis of the intuitions developed so far has in any case no particular difficulty${}^{*)}$; but it would lead too far here. The only special case of our theorem which we shall use later is known on the basis of the ordinary investigations of analysis situs: it concerns
+
+\textbf{*)} For such a proof it seems above all necessary to become clear about the various possibilities that present themselves concerning the transformation of a given surface into the normal surface of §.~8.
+
+\origpage{40}
+(§.~14) such flows in which there are $m$ simple algebraic points of discontinuity, and in which therefore $2m + 2p - 2$ crossing points must occur.
+
+\section*{§.~12. On the composition of the most general complex function of position from single summands.}
+
+The course of proof of §.~10 puts us in a position to form a more concrete conception of the most general complex function of position existing on a surface, by composing it additively from single summands of the simplest possible property.
+
+Let us first consider \emph{everywhere finite} functions.
+
+Let $u_{1}, u_{2}, \cdot\cdot\cdot u_{\mu}$ be everywhere finite potentials. They may be called \emph{linearly dependent} if there exists between them a relation
+\[ a_{1}u_{1} + a_{2}u_{2} + \cdot\cdot\cdot\cdot a_{\mu}u_{\mu} = A \]
+with constant coefficients. Such a relation furnishes corresponding equations for the $2p$ series of $\mu$ moduli of periodicity which $u_{1}, u_{2}, \cdot\cdot\cdot\cdot, u_{\mu}$ possess at the $2p$ cross-cuts of the surface. Conversely, by the theorem proved in §.~10, the linear relation between the $u$ themselves would follow from such equations between the moduli of periodicity. It thus results \emph{that one can in the most manifold ways find $2p$ linearly independent everywhere finite potentials}
+\[ u_{1}, u_{2}, \cdot\cdot\cdot\cdot, u_{2p} \]
+\emph{but that every other everywhere finite potential is composed linearly from them:}
+\[ u = a_{1}u_{1} + a_{2}u_{2} + \cdot\cdot\cdot\cdot + a_{2p}u_{2p} + A. \]
+
+Indeed one can choose $u_{1}, u_{2}, \cdot\cdot\cdot u_{2p}$, e.\ g., in such a way that each possesses a non-vanishing modulus of periodicity at only one of the $2p$ cross-cuts (where of course to each cross-cut one and only one potential is to be assigned). Thereafter one can determine the constants $a_{i}$ in $\Sigma a_{i}u_{i}$ so that this expression exhibits at all the $2p$ cross-cuts the same moduli of periodicity as $u$. Then $u - \Sigma a_{i}u_{i}$ is a constant, and we thus have the above formula.
+
+In order now to pass from the potentials $u$ to the everywhere finite functions $u + iv$, I imagine, for the sake
+
+\origpage{41}
+of simplicity, such a coordinate system $x, y$ introduced on the surface (§.~6) that $u, v$ are connected by the equations:
+\[ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}. \]
+
+Now let $u_{1}$ be an arbitrary everywhere finite potential. We form the associated $v_{1}$ and have:
+
+\emph{$u_{1}$ and $v_{1}$ are in any case linearly independent.}
+
+For if there existed between $u_{1}, v_{1}$ an equation
+\[ a_{1}u_{1} + b_{1}v_{1} = \text{Const.} \]
+with constant coefficients, it would establish the following relations:
+\[ a_{1}\frac{\partial u_{1}}{\partial x} + b_{1}\frac{\partial v_{1}}{\partial x} = 0, \qquad a_{1}\frac{\partial u_{1}}{\partial y} + b_{1}\frac{\partial v_{1}}{\partial y} = 0, \]
+from which, by virtue of the relations stated, the absurd result
+\[ \frac{\partial u_{1}}{\partial x} = 0, \qquad \frac{\partial u_{1}}{\partial y} = 0 \]
+would follow.
+
+Now let further $u_{2}$ be linearly independent of $u_{1}$ and $v_{1}$. Then we take the associated $v_{2}$ and then have the more general theorem:
+
+\emph{The four functions $u_{1}, u_{2}, v_{1}, v_{2}$ are likewise linearly independent.}
+
+Indeed, from every linear relation:
+\[ a_{1}u_{1} + a_{2}u_{2} + b_{1}v_{1} + b_{2}v_{2} = \text{Const.} \]
+one could, by using the relations existing between the $u, v$, derive the following equations:
+\[ \begin{gathered} (a_{1}a_{2} + b_{1}b_{2})\frac{\partial u_{1}}{\partial x} - (a_{1}b_{2} - a_{2}b_{1})\frac{\partial v_{1}}{\partial x} + (a_{2}^{2} + b_{2}^{2})\frac{\partial u_{2}}{\partial x} = 0, \\ (a_{1}a_{2} + b_{1}b_{2})\frac{\partial u_{1}}{\partial y} - (a_{1}b_{2} - a_{2}b_{1})\frac{\partial v_{1}}{\partial y} + (a_{2}^{2} + b_{2}^{2})\frac{\partial u_{2}}{\partial y} = 0, \end{gathered} \]
+from which by integration a linear dependence between $u_{1}, v_{1}, u_{2}$ would follow. ---
+
+Reasoning forward in this way, one finally obtains $2p$ linearly independent potentials:
+\[ u_{1}, v_{1};\ u_{2}, v_{2};\ \cdot\cdot\cdot\cdot\cdot;\ u_{p}, v_{p}, \]
+where each $v$ belongs together with the $u$ of the same designation. We set $u_{\alpha} + iv_{\alpha} = w_{\alpha}$ and now call everywhere
+
+\origpage{42}
+finite functions $w_{1}, w_{2}, \cdot\cdot\cdot w_{\mu}$ linearly independent if there exists between them no relation whatever:
+\[ c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot\cdot c_{\mu}w_{\mu} = C \]
+understanding by $c_{1}, \cdot\cdot\cdot c_{\mu}, C$ arbitrary \emph{complex} constants. Then we have at once:
+
+\emph{The $p$ everywhere finite functions}
+\[ w_{1}, w_{2}, \cdot\cdot\cdot\cdot w_{p} \]
+\emph{are linearly independent.}
+
+For if a linear dependence existed, one could separate the real and the imaginary in it, and would thereby obtain linear relations between the $u$ and $v$.
+
+But further it follows: \emph{Every arbitrary everywhere finite function is composed from our $w_{1}, w_{2}, \cdot\cdot\cdot\cdot w_{p}$ in the form:}
+\[ w = c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot\cdot c_{p}w_{p} + C. \]
+
+Indeed, by suitable choice of the complex constants $c_{1}, c_{2}, \cdot\cdot\cdot c_{p}$, given the linear independence of the $u_{1}, \cdot\cdot\cdot u_{p}, v_{1}, \cdot\cdot\cdot v_{p}$, we can bring it about that a function $w$ defined by the above formula exhibits at the $2p$ cross-cuts arbitrarily prescribed quantities as moduli of periodicity of the real part.
+
+This is the theorem which we had to establish in the present paragraph concerning the representation of everywhere finite functions. The transition to \emph{functions with infinity places} is now very easily effected.
+
+Let $\xi_{1}, \xi_{2}, \cdot\cdot\cdot \xi_{\mu}$ be the points at which our function is to become infinite in some prescribed manner. We will then introduce an auxiliary point $\eta$ and construct a series of single functions
+\[ F_{1}, F_{2}, \cdot\cdot\cdot\cdot F_{\mu} \]
+each one of which is to become infinite only at one of the points $\xi$, and indeed in the manner prescribed for this point, and moreover may possess at $\eta$ a logarithmic point of discontinuity whose residue is equal and opposite to the logarithmic residue belonging to the $\xi$ in question. The sum
+\[ F_{1} + F_{2} + \cdot\cdot\cdot\cdot F_{\mu} \]
+then becomes continuous at $\eta$; for the sum of all the residues belonging to the points of discontinuity $\xi$ is, as we know,
+
+\origpage{43}
+equal to zero. Moreover it becomes infinite at the $\xi$ and only at the $\xi$, and there in the prescribed manner. It therefore differs from the function sought only by an everywhere finite function. \emph{The function sought is therefore representable in the shape:}
+\[ F_{1} + F_{2} + \cdot\cdot\cdot\cdot F_{\mu} + c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot c_{p}w_{p} + C, \]
+whereby we have also found the general theorem coming into consideration here.
+
+It evidently corresponds to the decomposition which we considered in §.~4 for the complex functions existing on the sphere, and which we then took, as one usually does, from the theory of the \emph{decomposition of rational functions into partial fractions}.
+
+\section*{§.~13. On the many-valuedness of our functions. Special consideration of single-valued functions.}
+
+The functions $u + iv$ which we study on our surfaces are in general infinitely many-valued: for on the one hand every logarithmic infinity point brings with it a modulus of periodicity; on the other hand we have the moduli of periodicity at the $2p$ cross-cuts $A_{i}, B_{i}$, whose real parts we could assume arbitrarily. I now say \emph{that with these data the many-valuedness of $u + iv$ is indeed exhausted.} For the proof we must go back to the concept of the equivalence of two curves on a given surface, which we introduced in §.~9 at first for another purpose. Since the differential quotients of $u$ and $v$ (or, what is the same thing, the components of the associated flow) are single-valued throughout on our surface, two equivalent closed curves which are not separated by any logarithmic point of discontinuity furnish on traversal the same increment of $u$, as of $v$. Now we found, however, that every closed curve is equivalent to an integral combination of the cross-cuts $A_{i}B_{i}$. We remarked further (§~10) that the traversal of $A_{i}$ furnishes that modulus of periodicity which corresponds to the crossing of $B_{i}$, and conversely. From this, however, the theorem stated follows in the familiar way.
+
+It will now interest us in particular to consider \emph{single-valued}
+
+\origpage{44}
+functions of position. According to what has been said, we shall obtain all such functions if we admit as discontinuities only purely \emph{algebraic} infinity points and then ensure that the $2p$ moduli of periodicity at the cross-cuts $A_{i}, B_{i}$ all vanish. Here it will be permitted, for ease of expression, to take into consideration only \emph{simple} algebraic points of discontinuity. For we know indeed from §~3 that the $\nu$-fold algebraic point of discontinuity can arise through the moving together of $\nu$ simple ones, whereby, moreover, as one must not forget, crossing points of total multiplicity $(\nu - 1)$ are absorbed. Let, then, $m$ points be given as simple algebraic infinity points of the function sought. We will first form any $m$ functions of position: $Z_{1}, Z_{2}, \cdot\cdot\cdot Z_{m}$, each of which is to become simply algebraically infinite at only one of the given places, but may otherwise be arbitrarily many-valued. From these $Z$ the most general complex function of position which possesses simple algebraic discontinuities at the given places is composed, according to the preceding paragraph, in the shape:
+\[ a_{1}Z_{1} + a_{2}Z_{2} + \cdot\cdot a_{m}Z_{m} + c_{1}w_{1} + \cdot\cdot\cdot\cdot c_{p}w_{p} + C, \]
+understanding by $a_{1}, a_{2}, \cdot\cdot\cdot a_{m}$ arbitrary constant coefficients. In order to have a single-valued function, we set the moduli of periodicity which this expression possesses at the $2p$ cross-cuts equal to zero. But these moduli of periodicity are composed linearly, by means of the $a, c$, from the moduli of periodicity of the $Z$, $w$. \emph{We thus find $2p$ linear homogeneous equations for the $m + p$ constants $a$ and $c$.} We will assume that these equations are linearly independent${}^{*)}$. Then there results the important theorem:
+
+\textbf{*)} If they are not, the immediate consequence is that the number of single-valued functions becoming infinite at $m$ points becomes \emph{greater} than that stated in the text. One knows the investigations which \emph{Roch} in particular has made on this possibility (Borchardt's Journal vol.~64; compare also, as regards the algebraic formulation: \emph{Brill} and \emph{Nöther}, über die algebraischen Functionen und ihre Verwendung in der Geometrie, Mathematische Annalen, vol.~7). I cannot follow these investigations in the text, although they can easily be attached to the presentation of \emph{Abel}'s theorem which Riemann gives in No.~14 of the Abel'schen Functionen, --- and will only point out, with regard to later developments of the text (cf.\ §.~19), \emph{that a linear dependence between the $2p$ equations in any case does not occur when $m$ exceeds the limit $2p - 2$.}
+
+\origpage{45}
+
+\emph{Under the said assumption there exist, for $m$ arbitrarily prescribed simple algebraic points of discontinuity, single-valued functions of position only when $m \geqq p + 1$, and these functions contain $(m - p + 1)$ arbitrary constants occurring linearly.}
+
+Now think of the $m$ infinity points as movable. Then $m$ new arbitrary elements enter into the consideration. Moreover it is clear that one can transform any $m$ points on the surface by continuous displacement into any $m$ others. We can therefore say, always remembering, for the rest, the assumption we have made:
+
+\emph{The totality of the single-valued functions with $m$ simple algebraic points of discontinuity which exist on a given surface forms a continuum of $(2m - p + 1)$ dimensions.}
+
+Now that we have come to know the existence and the manifoldness of the single-valued functions, we will develop, in the most intuitive way possible, yet another important property of them. The number $m$ of the infinity points of our function has namely a much more far-reaching significance for the latter. I say \emph{that our function $u + iv$ takes every arbitrarily prescribed value $u_{0} + iv_{0}$ at exactly $m$ places.}
+
+For the proof consider the course of the curves $u = u_{0}$, $v = v_{0}$ on our surface. By §.~2 it is clear that each of these curves sends a branch through each of the $m$ infinity points. On the other hand it follows from considerations such as we developed in §.~10 that every branch of a curve must contain at least one infinity point. Accordingly the correctness of our assertion is immediately clear for very great $u_{0}$, $v_{0}$. For the curves $u = u_{0}$, $v = v_{0}$ in question then pass over, in the neighbourhood of the single infinity point, by §.~2, into small circles running through the infinity point,
+
+\origpage{46}
+which necessarily have in common, besides the point of discontinuity (which does not come further into consideration here), \emph{one} further point of intersection each:
+
+\rmfigure{figures/fig-33.png}{Fig.~33.}{Two intersecting circles: the left one labelled u = u0, the right one labelled v = v0 (lettered upside down along its right edge). At the upper of their two intersection points a heavy dot is marked with the symbol infinity; the circles meet again in a second point below.}
+
+From this, however, the matter follows in general. \emph{For the curves $u = u_{0}$, $v = v_{0}$ can never lose a point of intersection under continuous change of $u_{0}$, $v_{0}$.} This could namely, by what has been said, only happen in such a way that several points of intersection moved together, in order then to separate again in smaller number. Now the curves $u$, $v$ form an orthogonal system. A moving together of real points of intersection is therefore possible only at the crossing points (at which it also actually happens). But the crossing points are present only in finite number, and so are not able to divide the surface into different regions. The eventuality of moving together is therefore not to be taken into consideration at all, and thus our assertion is proved.
+
+It is moreover useful for what follows to make clear to oneself the distribution of the values of $u + iv$ in the neighbourhood of a crossing point. For this an attentive observation of Figure 1 given above suffices. One recognises in particular that of the $m$ movable points of intersection of the curves $u = u_{0}$, $v = v_{0}$, $(\nu + 1)$ move together on approaching the $\nu$-fold crossing point. ---
+
+Analogous considerations to those we have hereby settled for single-valued functions have of course their place for many-valued functions too. I do not enter on them only because the delimitation of the material adhered to in what follows does not make it necessary. Also, a perspicuous result comes only in the very simplest cases. Let it be fleetingly recalled in this respect that a
+
+\origpage{47}
+complex function with more than two incommensurable moduli of periodicity can be brought infinitely near to every arbitrary value at every place.
+
+\section*{§.~14. The ordinary Riemann surfaces over the $x + iy$-plane.}
+
+Instead of considering the distribution of the function values $u + iv$ on the original surface, one can adopt a procedure which is, so to speak, the reverse. One interprets the function values --- which are accordingly now to be called $x + iy$ --- in the ordinary way in the plane (or else on the sphere${}^{*)}$) and studies the \emph{conformal mapping} which is thereby (by §.~5) made of our original surface. We again restrict ourselves here, for the sake of simplicity, to the case of single-valued functions, although it is of particular interest to take into consideration precisely the mapping by many-valued functions as well${}^{**)}$.
+
+A short consideration shows \emph{that we are thus led precisely to the many-sheeted surface provided with branch points\ednote{Printed ``Verzweigungsverzweigungspuncten'', with the word stem doubled; read ``Verzweigungspuncten''. An apparent misprint.}, spread out over the $XY$-plane, which is usually designated simply as the Riemann surface.}
+
+Indeed, let $m$ be the number of (simple) infinity points which $x + iy$ possesses on the original surface. Then $x + iy$, as we saw, takes \emph{every} value $m$ times on the given surface. \emph{Hence the conformal mapping of our surface upon the $x + iy$-plane covers the latter in general with $m$ sheets.} An exceptional position is taken only by those values of $x + iy$ for which some of the $m$ associated places on the original surface coincide, and to which therefore \emph{crossing points} correspond. To understand this, draw once more on Figure (1). It follows from it that one can divide the neighbourhood
+
+\textbf{*)} In what follows I speak throughout of the plane instead of the sphere, in order to keep as close as possible to the usual mode of conception.
+
+\textbf{**)} Compare on this what Riemann says in No.~12 of his Abel'schen Functionen about the mapping by everywhere finite functions.
+
+\origpage{48}
+of a $\nu$-fold crossing point into $(\nu + 1)$ sectors in such a way that $x + iy$ runs through the same stock of values within each sector. \emph{Hence above the corresponding place of the $(x + iy)$ plane $(\nu + 1)$ sheets of the conformal mapping will hang together in such a way that a circuit of the place leads from one sheet into a second, from this into a third, etc., and that a $(\nu + 1)$-fold circuit of it becomes necessary in order to get back to the starting point.} But this is exactly what one usually designates as a $\nu$-fold \emph{branch point}${}^{*)}$. At this point itself the mapping is of course no longer conformal; one proves easily that the angle which any two curves running on the original surface and cutting in the crossing point make with one another appears on the Riemann surface spread out over the $(x + iy)$-plane multiplied exactly by $(\nu + 1)$. ---
+
+\emph{But at the same time we recognise the significance which this many-sheeted surface can claim for our purposes.} All surfaces which arise from one another one-to-one by conformal mapping are equivalent for us (§.~8). We can therefore just as well lay the $m$-sheeted surface over the plane at the foundation as the surface used hitherto, which we imagined lying freely in space without any singular occurrence. The difficulty which one might see in the occurrence of the branch points falls away from the outset: for we shall take into consideration only such flows on the many-sheeted surface as behave in the neighbourhood of the branch points in such a way that, transferred back to the original surface lying in space, they present there no other singular occurrences than those permitted anyway. For this it is not even necessary that one know a corresponding surface lying in
+
+\textbf{*)} We stated above (§.~11), without a proof carried out, that the number of crossing points of $x + iy$ amounts to $(2m + 2p - 2)$. As one now sees, this assertion is a simple translation of the known relation which connects the number of branch points (or rather their total multiplicity) with the number of sheets $m$ and the $p$ of a many-sheeted surface [understanding by $p$ the maximum number\ednote{Printed ``Maximahlzahl''; read ``Maximalzahl''. An apparent misprint.} of retrosections which one can draw on this many-sheeted surface without cutting it into pieces].
+
+\origpage{49}
+space; for it is only a matter of relations in the immediate neighbourhood of the branch points, i.\ e.\ of differential relations which our flows must satisfy${}^{*)}$. Accordingly there is also no longer any purpose, when we speak of arbitrarily curved surfaces, in thinking of them as without singular points: \emph{they may themselves be covered with several sheets which hang together among themselves by branch points, or branch cuts respectively.} But whichever of the unboundedly many surfaces, thus of equal standing, we may wish to lay at the foundation of the consideration: we must distinguish between \emph{essential} properties, which are common to all surfaces of equal standing, and \emph{inessential} properties, which attach to the particular surface. To the former belongs the number $p$, and to them belong the “moduli”, of which there will be more detailed discussion in §.~18; to the latter, for many-sheeted surfaces, the kind and position of the branch points. If we think of an \emph{ideal} surface which is to possess only those essential properties, then to the branch points of the many-sheeted surface there correspond on it ordinary points which, generally speaking, have no advantage over the other points, and which become noteworthy only in that at them crossing points arise in the conformal mapping that leads over from the ideal surface to the particular one.
+
+The result is therefore this, \emph{that we have gained greater freedom of movement as regards the surfaces on which we may operate, and that at the same time we recognise the contingencies which the consideration of each single particular surface brings with it.} In particular we shall in what follows, as often as it seems useful, take into consideration many-sheeted surfaces over the $x + iy$-plane; but their use is in no way to impair the generality of the conception${}^{**)}$.
+
+\textbf{*)} For the explicit formulation of these relations compare the ordinary textbooks, and then in particular the work of C.\ \emph{Neumann}: Das Dirichlet'sche Princip in seiner Anwendung auf die Riemann'schen Flächen, Leipzig 1865.
+
+\textbf{**)} The interesting question arises here whether it is always possible to transform many-sheeted surfaces with arbitrary branch points conformally into such as possess no singular place at all. This question goes beyond the subjects to be treated in the text, but I have wished at any rate to mention it. If it does not succeed in the individual case, the preceding considerations of the text still have the significance that they have let the general ideas arise on the simplest example, and have thereby made possible the treatment of the more complicated occurrences as well.
+
+\origpage{50}
+
+\section*{§.~15. The ring $p = 1$ and the two-sheeted surface with four branch points over the plane${}^{*)}$.}
+
+I was able to be fairly brief in the preceding paragraph, since I regarded the ordinary Riemann surface over the plane with its branch points as known. All the same it will be useful if I illustrate what has been said by an example. We will consider a ring $p = 1$. On it there exist, by §.~13, $\infty^{4}$ single-valued functions with only two infinity points. Each of them possesses, by the general formula of §.~11, four crossing points. The ring can therefore be mapped in manifold ways upon a two-sheeted plane surface with four branch points. I will base the particular case in which I shall now consider this mapping on explicit formulae, so that the matter may be accessible also to those readers who are less practised in purely intuitive operations. To be sure, I thereby somewhat anticipate the developments which the following paragraph is first destined to bring.
+
+\rmfigure{figures/fig-34.png}{Fig.~34.}{Meridian section of the torus: a vertical axis labelled Z, a point O on it, a horizontal segment R from O to the centre of a circle of radius rho, with the polar angle alpha marked at the centre.}
+
+We will presuppose the ring surface to be an ordinary torus, which arises by rotation of a circle about an axis in its plane not cutting it. Let $\varrho$ be the radius of this circle, $R$ the distance of its centre from the axis, $\alpha$ a polar angle.
+
+We introduce the axis of rotation as $Z$-axis, the point $O$ of the figure as origin of a rectangular coordinate system, and distinguish the planes running through $OZ$ by the angle $\varphi$ which they make with the positive $X$-axis. Then one has for an arbitrary point of the ring surface:
+
+\textbf{*)} Cf.\ \emph{Kirchhoff}; Monatsberichte der Berliner Akademie of 1875, l.\ c.\ (where, however, only the relation between ring surface and plane rectangle is explicitly discussed).
+
+\origpage{51}
+\[ \begin{gathered} X = (R - \varrho \cos \alpha) \cos \varphi, \quad Y = (R - \varrho \cos \alpha) \sin \varphi, \\ Z = \varrho \sin \alpha. \end{gathered} \tag{1} \]
+
+Hence the arc element becomes:
+\[ ds = \sqrt{dX^{2} + dY^{2} + dZ^{2}} = \sqrt{(R - \varrho \cos \alpha)^{2} \cdot d\varphi^{2} + \varrho^{2} \cdot d\alpha^{2}} \tag{2} \]
+or:
+\[ ds = (R - \varrho \cos \alpha) \cdot \sqrt{d\xi^{2} + d\eta^{2}}, \tag{3} \]
+where
+\[ \xi = \varphi, \quad \eta = \int_{o}^{\alpha} \frac{\varrho\,d\alpha}{R - \varrho \cos \alpha} \tag{4} \]
+is to be set.
+
+By formula (3) we have a conformal mapping of the ring surface upon the $\xi\eta$-plane. The whole ring surface is evidently swept over once when $\varphi$ and $\alpha$ (in the formulae (1)) each run from $-\pi$ to $+\pi$. \emph{The conformal mapping of the ring surface therefore covers a rectangle of the plane, as represented by the following figure:}
+
+\rmfigure{figures/fig-35.png}{Fig.~35.}{A rectangle centred on dashed coordinate axes, divided into four quadrants numbered 1 (upper left), 2 (upper right), 3 (lower right) and 4 (lower left); the top edge is labelled eta = +p, the bottom edge eta = -p, the left edge xi = -pi and the right edge xi = +pi.}
+
+For brevity I have here written in the figure simply $p$ instead of $\displaystyle\int_{o}^{\pi} \frac{\varrho\,d\alpha}{R - \varrho \cos \alpha}$. --- If we wish to picture the relation between rectangle and ring surface quite intuitively, imagine the former made of extensible material and the opposite edges of the rectangle then bent together without torsion. Or else, imagine the ring of analogous constitution, cut
+
+\origpage{52}
+it along a latitude curve and a meridian curve, and then spread it out into the $\xi\eta$-plane. Instead of further explanation I add a figure which represents the vertical projection of the ring surface from the positive $Z$-axis onto the $XY$-plane, and in which the relation to the $\eta\xi$-plane is marked:
+
+\rmfigure{figures/fig-36.png}{Fig.~36.}{Vertical projection of the torus onto the XY-plane: an annulus about the origin O with dashed X and Y axes; a radial cut on the left separates xi = +pi (above) from xi = -pi (below), the positive X direction is marked xi = 0, the upper quadrants are numbered 2 and the lower ones 1, and the outer edge at top and bottom is labelled eta = +p.}
+
+Of course one sees only the upper side of the ring surface; the quadrants 3 and 4 mapped on the back side are hidden by 2 and 1 respectively.
+
+Now let, on the other hand, for real $\varkappa$ $(< 1)$, a two-sheeted surface over the plane with four branch points $Z = \pm 1, \pm \frac{1}{\varkappa}$ be given:
+
+\rmfigure{figures/fig-37.png}{Fig.~37.}{The real axis from minus infinity to plus infinity with the points -1/kappa, -1, 0, +1, +1/kappa marked; the segments from -1/kappa to -1 and from +1 to +1/kappa are drawn heavy as branch cuts, and the upper half-plane is hatched.}
+
+where I wish to think of the two half-sheets which overlie the positive half-plane;\ednote{Printed with a semicolon after ``überlagern''; a comma is expected. An apparent misprint.} as hatched (as is indicated in the figure). The branch cuts are to coincide with the rectilinear segments between $+ 1$ and $+ \frac{1}{\varkappa}$ on the one hand, and $- 1$ and $- \frac{1}{\varkappa}$ on the other.
+
+This two-sheeted surface represents, as is known, the branching of $w = \sqrt{1 - z^{2} \cdot 1 - \varkappa^{2} z^{2}}$, and indeed,
+
+\origpage{53}
+in view of the choice of the branch cuts, we can make the assignment such that on the upper sheet $w$ has a positive real part throughout. We now consider the integral
+\[ W = \int_{0}^{z} \frac{dz}{w}. \]
+
+It furnishes us, in the familiar way, with the mapping of our two-sheeted surface likewise upon a rectangle, whose more precise relation to the two-sheeted surface is given by the following figure, in which one finds again the hatchings and other distinctions of Figure (37):
+
+\rmfigure{figures/fig-38.png}{Fig.~38.}{A rectangle divided into four equal quarters by a horizontal and a vertical midline. The corners and the top and bottom midpoints of the vertical edges are labelled -1/kappa, +1/kappa, -1/kappa along the top and likewise along the bottom; the midpoints of the top and bottom edges of each half are marked infinity; the horizontal midline is labelled -1 at both ends and +1 at the centre, with 0 at the middle of each half. The upper-left and lower-right quarters are hatched, and the left, centre and right vertical lines are drawn heavy.}
+
+To the upper sheet of Figure (37) there corresponds the left side of this figure. Note above all how the mapping takes shape for the neighbourhood of the branch points of the two-sheeted surface. Perhaps it is simplest to picture the matter thus: that from (37) one first passes by stereographic projection to a doubly covered spherical surface which bears four branch points on a meridian, --- that one divides the surface so obtained, by a cut running along the meridian, into four hemispheres, each of which one transforms into a plane rectangle by suitable stretching and deformation in the neighbourhood of the four branch points, --- that one finally lays the four rectangles so arising side by side, in accordance with the relations between the four hemispheres, after the manner of Figure (38). One also sees clearly in this way that in Figure (38) \emph{two} (associated) boundary points always denote the same point of the original surface.
+
+\origpage{54}
+
+In order now to obtain the desired relation between the ring and the two-sheeted surface, we have only to ensure that the rectangle of Figure (38), by suitable choice of the modulus $\varkappa$, becomes \emph{similar} to the rectangle of Figure (35). A proportional enlargement of the one rectangle (which is also a conformal transformation) then brings it to coincidence with the other rectangle, and so brings about a one-to-one conformal mapping of the two-sheeted surface upon the ring surface (or of the latter upon the former). It will again suffice to characterise the state of affairs by a figure; it corresponds exactly to Figure (36) just given:
+
+\rmfigure{figures/fig-39.png}{Fig.~39.}{Two concentric circles forming an annulus. The outer circle is marked infinity at top and bottom, the inner circle 0 at top and bottom. A horizontal diameter line crosses the ring on the left from -1/kappa (outer) to -1 (inner) and on the right from +1 (inner) to +1/kappa (outer); these two segments are drawn heavy. The upper half of the ring is hatched.}
+
+The hatching is here to refer only to the front side of the ring surface; on the back side the lower half of the figure is to be thought of as hatched, the upper half to be left free. ---
+
+The conformal mapping which we desired is hereby actually accomplished. We will now determine backwards the flow on the ring surface by whose mediation, in the sense of §.~14, the mapping comes about. It must possess crossing points at the places designated by $\pm 1$, $\pm \varkappa^{2}$\ednote{Printed $\pm \varkappa^{2}$; from Figures 37 to 39 the remaining branch points are $\pm \frac{1}{\varkappa}$, which is apparently meant. An apparent misprint.}, and algebraic infinity points of simple multiplicity at the two places $\infty$. One finds the curves in question, the level curves as well as the streamlines, best by making use of the rectangle as an intermediate figure. Evidently the curves $x = \text{Const.}$, $y = \text{Const.}$ of the $z$-plane (Figure 37) are transferred to the rectangle of Figure (38) as Figures (40), (41) indicate.
+
+\origpage{55}
+I have added arrowheads only to the curves $y = \text{Const.}$, in order to characterise them, in contrast to the others, as streamlines.
+
+\rmfigure{figures/fig-40.png}{Fig.~40.}{The rectangle of Fig. 38 with the same boundary labels (-1/kappa, infinity, +1/kappa, infinity, -1/kappa along top and bottom; -1 at the ends of the midline and +1 at its centre), filled with the images of the curves x = Const.: families of curves fanning out from the four points marked infinity on the top and bottom edges, and two curves crossing at the centre point +1.}
+\rmfigure{figures/fig-41.png}{Fig.~41.}{The same rectangle with the images of the curves y = Const., drawn with arrowheads: in each quarter a pair of nested closed loops touching the top or bottom edge at the point marked infinity, the horizontal midline with arrows pointing towards the centre +1, and the vertical lines and the edges carrying arrows showing the direction of flow.}
+
+One has now simply to bend these drawings together in the same way as was described for Figure (35), in order to obtain the ring surface and on it the desired systems of curves. The result is the following:
+
+\rmfigure{figures/fig-42.png}{Fig.~42.}{Projection of the ring surface as two concentric circles, with the outer circle marked infinity at top and bottom, the inner circle 0 at top and bottom, -1 and +1 on the inner circle and -1/kappa and +1/kappa on the outer circle at left and right. Level curves fan out from the two points marked infinity and wrap around the inner circle, touching the outer contour at -1/kappa and +1/kappa.}
+\rmfigure{figures/fig-43.png}{Fig.~43.}{The same projection of the ring surface with the flow curves drawn with arrowheads: elongated closed loops in the upper and lower parts of the ring, curves circling around the inner circle, and horizontal segments from -1/kappa to -1 and from +1 to +1/kappa with arrows pointing to the right.}
+
+Here in Figure (42) the four crossing points of the flow appear, by virtue of the mode of projection chosen, as points of contact of the level curves with the apparent contour of the ring surface.
+
+\section*{§.~16. Functions of $x + iy$ which correspond to the flows investigated.}
+
+Let $x + iy$, as in §.~14, be a single-valued complex function of position on our surface with $m$ algebraic, simple infinity points. We transform our surface, according to the directions of that paragraph, into an $m$-sheeted surface
+
+\origpage{56}
+over the $x + iy$-plane${}^{*)}$ and now put to ourselves the question \emph{into what functions of the argument $x + iy$ the complex functions of position hitherto investigated may pass over}. One should here recall the developments of §.~6.
+
+Let first $w$ be a complex function of position which is, like $x + iy$, \emph{single-valued} on our surface. By virtue of the stipulations which have been made concerning the infinity points of our functions, and in particular of the single-valued functions, it follows at once that $w$, as a function of $x + iy = z$, has nowhere an \emph{essentially} singular point. Moreover $w$ is single-valued on the $m$-sheeted surface spread out over the $z$-plane, just as on the original surface. Hence it follows on the ground of known theorems: \emph{that $w$ is an algebraic function of $z$.}
+
+Here the possibility is not in itself to be excluded that the $m$ values of $w$ which correspond to the same $z$ may agree in sets of $\nu$ (where $\nu$ must of course be a divisor of $m$). But in any case we can select such single-valued functions $w$ for which this is not the case. We determined the single-valued functions above (§.~13) by assuming their infinity points arbitrarily. We therefore have it in our hands to avoid the occurrence mentioned in any case: we need only assume the infinity points of $w$ so that not every time $\nu$ of them exhibit the same $z$. Then there results:
+
+\emph{The irreducible equation which exists between $w$ and $z$:}
+\[ f(w, z) = 0 \]
+\emph{is of the $m^{\text{th}}$ order in $w$.}
+
+Just as well it will of course possess the $n^{\text{th}}$ order in $z$, if $n$ is the total multiplicity of the infinity points which $w$ exhibits.
+
+But the relation of this equation $f = 0$ to our surface is a still more intimate one than the mere agreement of the order with the number of sheets states. To each point of the surface there belongs only \emph{one} pair of values $w$, $z$ satisfying the equation, and conversely to each such pair of values there belongs
+
+\textbf{*)} This geometrical translation is of course by no means necessary; by it we only attain connection with the mode of presentation usually adhered to.
+
+\origpage{57}
+in general${}^{*)}$ only one point of the surface. \emph{Equation and surface are, so to speak, related one-to-one to each other.}
+
+Now let $w_{1}$ be a new single-valued function on our surface, and so in any case an algebraic function of $z$. Then one can characterise the kind of this algebraic function in two words, once the equation $f(w, z) = 0$ has been formed under the stated assumption. One shows namely \emph{that $w_{1}$ is a rational function of $w$ and $z$, and that conversely too every rational function of $w$ and $z$ furnishes a function of the character of $w_{1}$.} The latter is self-evident. For a rational function of $w$ and $z$ is single-valued on our surface; moreover, as an analytic function of $z$, it is a complex function of position on the surface. But the former too is easy to prove${}^{**)}$. Denote the $m$ values of $w$ which belong to an arbitrary value of $z$ by $w^{(1)}, w^{(2)}, \cdot\cdot\cdot\cdot w^{(m)}$ (in general $w^{(\alpha)}$), the corresponding values of $w_{1}$ (which need not necessarily all be different) by $w_{1}^{(1)}, w_{1}^{(2)}, \cdot\cdot\cdot w_{1}^{(m)}$. Then the sum:
+\[ w_{1}^{(1)} w^{(1)^{\nu}} + w_{1}^{(2)} w^{(2)^{\nu}} + \cdot\cdot\cdot\cdot\cdot\cdot w_{1}^{(m)} w^{(m)^{\nu}} \]
+(where $\nu$ is to mean an arbitrary positive or negative integer), as a symmetric function of the various values $w_{1}^{(\alpha)} w^{(\alpha)^{\nu}}$, is a single-valued function of $z$, and so, as an algebraic function, a \emph{rational} function of $z$. From any $m$ of the equations so arising one can calculate $w_{1}^{(1)}, w_{1}^{(2)}, \cdot\cdot\cdot w_{1}^{(m)}$ as unknowns occurring linearly, and an easy discussion then shows that the single $w_{1}^{(\alpha)}$ has indeed become a rational function of the associated $w^{(\alpha)}$ and of $z$. ---
+
+Starting from this theorem one now also determines at once the character of those functions of $z$ which are furnished by the \emph{many-valued} functions of position taken into consideration by us. Let $W$ be such a function. Then $W$ is in any case an analytic function of $z$; one
+
+\textbf{*)} In particular cases this may be otherwise. If one interprets $w$ and $z$ as parallel coordinates, and the equation existing between them by a curve, it is, as is known, the \emph{double points} of this curve which correspond to those particular occurrences.
+
+\textbf{**)} Cf.\ the detailed proof in \emph{Prym}, \emph{Borchardt}'s Journal, vol.~83, p.~251~ff.: Beweis eines Riemann'schen Satzes.
+
+\origpage{58}
+can therefore speak of a \emph{differential quotient} $\dfrac{dW}{dz}$ and interpret this again as a complex function of position on our surface. It is necessarily single-valued as a function of position. For the many-valuedness of $W$ refers indeed only to constant moduli of periodicity, which, taken in arbitrary multiplicity, can be added to the initial value. Hence $\dfrac{dW}{dz}$ is, by what has just been proved, a rational function of $w$ and $z$, \emph{and so $W$ presents itself as the integral of such a function:}
+\[ W = \int R(w, z)\,dz. \]
+
+The converse theorem, that every such integral furnishes a complex function of position on our surface which belongs to the class of functions considered by us, is self-evident on the ground of known developments. These developments refer on the one hand to the becoming infinite of the integrals, on the other hand to the changes of value which the integrals undergo through change of the path of integration. Going into this more closely seems unnecessary at this point. ---
+
+We have been led, as we see, to a well-delimited result. \emph{Once the algebraic equation is determined which defines the dependence between $z$ and the highly arbitrary $w$, the remaining functions of position are well known as to their kind; in their totality they coincide with the rational functions of $w$ and $z$, and with the integrals of such functions.}
+
+It will be well to illustrate this result by the case of the repeatedly considered ring surface $p = 1$. As functions $z$ and $w$ we shall take as foundation the same ones that were discussed in the preceding paragraph, of which the former is illustrated by Figures (42), (43). The equation existing between them reads simply, as we know:
+\[ w^{2} = 1 - z^{2} \cdot 1 - \varkappa^{2} z^{2} \]
+and so the integrals $\displaystyle\int R(w, z)\,dz$ are transformed into those which one is accustomed to designate as \emph{elliptic integrals}. Among them there is, by §.~12, one single “everywhere finite” integral. From the mapping given in Figure (38)
+
+\origpage{59}
+it follows that this is none other than the $\displaystyle\int \frac{dz}{w}$ considered there, the so-called \emph{integral of the first kind} as usually named. The associated level curves and streamlines are the same as those represented in Figure (21) and (22). But the functions to which Figures (29) and (30), resp.\ (31) and (32), correspond are also well known in ordinary analysis. We have in the one case a function with two logarithmic points of discontinuity, in the other a function with only one algebraic point of discontinuity. Regarded as functions of $z$ they furnish such elliptic integrals as one is accustomed to designate as \emph{integrals of the third kind} resp.\ \emph{of the second kind}.
+
+\section*{§.~17. Scope and significance of our considerations.}
+
+With the developments of the preceding paragraph the goal which we set ourselves with the general formulation of the question in §.~7 is actually reached. We have determined on an arbitrary surface the most general complex functions of position that come into consideration for us, and have now defined their analytic dependences on one another, by seeing how all are dependent, in the sense of ordinary analysis, on one single-valued function of position, chosen otherwise arbitrarily. It therefore only remains for us, in order to conclude our train of thought, to take a look round at all that may have been gained by our considerations. We have then gained, to be sure, by no means the full content, but yet the foundation of Riemann's theory, and for further elaborations reference may be made to Riemann's original work as well as to the other presentations of the theory.
+
+Let us first establish \emph{that it is indeed the totality of the algebraic functions and their integrals that is spanned by our investigation.} For if an arbitrary algebraic equation $f(w, z) = 0$ is given, we can construct in the ordinary way an associated many-sheeted Riemann surface over the $z$-plane and now study on it uniform flows and complex functions of position (cf.\ §.~15).
+
+We ask whether the study of these functions has indeed been furthered by
+
+\origpage{60}
+our considerations. Let us recall for this purpose that it was above all the \emph{many-valuedness} of the integrals which so long prevented progress in their theory. That integrals become many-valued through the occurrence of logarithmic points of discontinuity had already been recognised by \emph{Cauchy}. But only through the Riemann surface has the other kind of periodicity, which has its ground in the \emph{connectivity} of the surface and is measured at the cross-cuts of the surface, become fully clear to us. --- Another point is this. In the investigation of the integrals one has always made use of transformation by substitution, without, however, rising considerably above a merely empirical exploitation of it. In Riemann's theory an extensive class of substitutions is given of itself, and its effect is to be judged. The variables $w$ and $z$ are for us only any two single-valued functions of position independent of one another; we can just as well lay two others, $w_{1}$ and $z_{1}$, at the foundation instead, where $w_{1}$ and $z_{1}$ prove to be otherwise arbitrary rational functions of $w$ and $z$, and equally the latter prove to be rational functions of $w_{1}$ and $z_{1}$. The Riemann surface on which we operate is by no means necessarily affected by this change. Among the multitude of \emph{accidental} properties of our functions we thus recognise \emph{essential} ones, which remain unchanged under one-to-one transformation. And above all such an invariant element confronts us from the outset in the number $p$. --- Inasmuch as Riemann's theory clears aside the two difficulties hereby designated, which had hampered earlier workers, it arrives immediately at the theorem which we set up in §.~10 and which determines the arbitrariness of the functions to be taken into consideration. I mean the theorem \emph{that one may regard (under the repeatedly stated restrictions) the infinity points of the function and the moduli of periodicity of its real part at the cross-cuts as arbitrary and sufficient determining elements of it.} ---
+
+Thus, roughly, does the balance stand if one puts the function-theoretic interests first, as is customary among mathematicians. But let us not forget
+
+\origpage{61}
+that the reverse conception is at bottom just as justified. The study of uniform flows on given surfaces can be regarded as an end in itself all the more as it finds immediate application in numerous \emph{physical} problems. In the infinite manifold of these flows Riemann's theory orients us by pointing to the connection which exists between these flows and the algebraic functions of analysis.
+
+We can finally bring forward the \emph{geometrical} point of view, and regard Riemann's theory as a means of making the theory of the conformal mapping of closed surfaces upon one another accessible to analytic treatment. It is precisely this conception to which I endeavour to give expression in the following, third section of my presentation. It will not be necessary to go into this at greater length already at this point.
+
+\section*{§.~18. Further development of the theory.}
+
+In Riemann's own train of thought, as I have tried to describe it above, the Riemann surface does not merely illustrate the functions that come into consideration, but \emph{defines} them. It seems possible to separate these two things: to take the definition of the functions from another side, and to retain the surface only as a means of illustration. This is indeed what the majority of mathematicians have done, all the more gladly as Riemann's definition of the function brings considerable difficulties with it on closer investigation${}^{*)}$. One thus begins, say, with the algebraic equation and the conceptual determination of the integral, and only afterwards constructs an associated Riemann surface.
+
+But then a great generalisation of the original conception is given of itself. Hitherto two surfaces counted for us as of equal value only when the one arose from the other by one-to-one conformal mapping. Now there is no longer any reason to hold fast to the conformality of the mapping. \emph{Every surface which can be transformed by continuous mapping one-to-one}
+
+\textbf{*)} Cf.\ the relevant remarks of the preface.
+
+\origpage{62}
+\emph{into the given one, indeed every geometrical configuration whose elements can be related continuously and one-to-one to the original surface, can just as well be used to make sensible the functions to be taken into consideration.} I have given expression to this thought in earlier works, as I should like to set out on the present occasion, in two directions.
+
+On the one hand I operated with the concept of a \emph{normal surface} (cf.\ §.~8), as perspicuous as possible and otherwise modifiable in various ways, on which I endeavoured to illustrate the course of the functions coming into consideration by various graphical aids${}^{*)}$. Here belong also the \emph{polygon nets} which I have repeatedly used${}^{**)}$, thinking of the Riemann surface as suitably cut up and then spread out into the plane. Let it remain undiscussed at this point whether the figures so arising, which may at first be altered continuously in any way, should not afterwards, in the interest of further-reaching function-theoretic investigations, be given a regular shape by virtue of which a \emph{definition} of the functions to be illustrated by the figure becomes possible.
+
+On the other hand${}^{***)}$ I set myself the task of setting forth, in as intuitive a manner as possible, the connection between the mode of conception of function theory and that of ordinary analytic geometry, which latter interprets an equation between two variables as a \emph{curve}. Starting from the theorem that every imaginary straight line of the plane, and so also every imaginary tangent of a curve, possesses one and only one real point, I obtained a Riemann surface which clings most intimately to the course of the given curve. I have so far used this surface, as was my original purpose, only
+
+\textbf{*)} Cf.\ my papers on elliptic modular functions in volumes 14, 15, 17 of the Mathematische Annalen.
+
+\textbf{**)} See in particular the plate attached to the 14th\ volume of the Annalen (“Zur Transformation siebenter Ordnung der elliptischen Functionen”), as well as the paper of \emph{Dyck}, still to be named later, in the 17th\ volume there.
+
+\textbf{***)} “Ueber eine neue Art von Riemann'schen Flächen”, Mathematische Annalen vol.~7 and 10.
+
+\origpage{63}
+for the illustration of certain simple integrals${}^{*)}$. But a remark similar to that made above about the polygon nets has its place here. Inasmuch as the surface is regular, it too must be able to serve for the \emph{definition} of the functions existing on it. Indeed one can form for these functions a partial differential equation which is somewhat analogous to the differential equations of the second order that we consider in §§.~1 and 5: only that the differential expression to which this equation is attached is not immediately to be interpreted as the \emph{arc element} of a surface. ---
+
+These few remarks must suffice to point to considerations whose pursuit seems to me interesting.
+
+\textbf{*)} See: \emph{Harnack} (Ueber die Verwerthung der elliptischen Functionen für die Geometrie der Curven dritten Grades) in the 9th\ volume of the Mathematische Annalen; see further my paper already named above: “Ueber den Verlauf der Abel'schen Integrale bei den Curven vierten Grades” in the 10th\ volume there.
+
+\origpage{64}
+
+\section*{Section III. Consequences.}
+
+\section*{§.~19. On the moduli of algebraic equations.}
+
+There is an important point in which Riemann's theory of algebraic functions goes beyond the otherwise customary presentations of this theory not only in method but also in result. It states namely \emph{that for every many-sheeted surface spread out over the $z$-plane and given graphically, associated algebraic functions can be constructed}, --- where one may note that these functions, if they exist at all, are in high degree arbitrary, since $R(w, z)$ is in general branched exactly as $w$ is. --- The theorem named is all the more remarkable as it implies a statement about an interesting equation of higher degree. For if the branch points of an $m$-sheeted surface are given, there still exist a finite number of essentially different possibilities of arranging them into the $m$ sheets: one will be able to find this number by considerations belonging to pure analysis situs${}^{*)}$. But according to our theorem the same number has its algebraic meaning. Let one designate, as Riemann does, all such algebraic functions of $z$ as belonging to the same class as can be expressed rationally by one another with the use of $z$. \emph{Then our}${}^{**)}$ \emph{number is the number of the different}
+
+\textbf{*)} Such determinations were made, e.\ g., by Hr.\ \emph{Kasten} in his inaugural dissertation: Zur Theorie der dreiblättrigen Riemann'schen Fläche. Bremen 1876.
+
+\textbf{**)} If it is permitted here again to refer to my own works, let this be done first with regard to a passage in the 12th\ volume of the Mathematische Annalen (p.~173), where the conclusion is established that certain rational functions are completely determined by the number of their branchings, and then with regard to vol.~15, p.~533 there, where a detailed consideration teaches that there are \emph{ten} rational functions of the eleventh degree which possess certain branch places.
+
+\origpage{65}
+\emph{classes of algebraic functions which possess the given branch values with respect to $z$.}
+
+I wish in the present and the following paragraph to draw various consequences which can be obtained from the theorem put first, and first let the question of the \emph{moduli} of the algebraic functions be treated, i.\ e.\ the question of those constants which play the role of invariants under one-to-one transformation of the equations $f(w, z) = o$.
+
+For this purpose let $\varrho$ be a number, unknown for the present, which states how many times infinitely often a surface can be transformed one-to-one into itself, i.\ e.\ conformally mapped upon itself. Next recall the number of constants in the single-valued functions on a given surface (§.~13). There were in general $\infty^{2m - p + 1}$ single-valued functions with $m$ infinity points, and this number was in any case exactly right (as was stated without proof) when $m > 2p - 2$. Now each of these functions maps the given surface one-to-one upon an $m$-sheeted surface over the plane. \emph{Hence the totality of the $m$-sheeted surfaces upon which one can relate a given surface conformally and one-to-one, and so also of the $m$-sheeted surfaces which one can assign to an equation $f(w, z) = 0$ by one-to-one transformation, is $\infty^{2m - p + 1 - \varrho}$-fold.} For each time $\infty^{\varrho}$ mappings give the same $m$-sheeted surface, because by hypothesis every surface can be mapped upon itself $\infty^{\varrho}$ times.
+
+Now there are, however, in all $\infty^{w}$ $m$-sheeted surfaces, understanding by $w$ the number of branch points, i.\ e.\ $2m + 2p - 2$. For the surface is determined by the branch points, as remarked above, in a finite number of ways, and branch points of higher multiplicity arise by the moving together of simple branch points, as was already explained concerning the corresponding crossing points in §.~1 (cf.\ Figure (2) and (3) there). To each of these surfaces there belong, as we know, algebraic functions. \emph{The number of the moduli is therefore $w - (2m + 1 - p - \varrho) = 3p - 3 + \varrho$.}
+
+Let us remark on this that the totality of the $m$-sheeted
+
+\origpage{66}
+surfaces with $w$ branch points forms a \emph{continuum}${}^{*)}$, as the corresponding fact was already emphasised in §.~13 concerning the single-valued functions with $m$ infinity points existing on a given surface. We then conclude \emph{that the algebraic equations of a given $p$ likewise constitute a single connected manifold} (where we regard all equations that arise from one another by one-to-one transformation as one individual). Only hereby does the stated number of moduli gain its precise meaning: \emph{it is the number of dimensions of this connected manifold.}
+
+It now remains to determine the number $\varrho$. This is done by the following theorems:
+
+1. \emph{Every equation $p = o$ can be transformed one-to-one into itself $\infty^{3}$ times.} For on the associated Riemann surface there exist single-valued functions with only one infinity point each in threefold infinite number (§.~13), of which one has only to set any two as corresponding in order to have a one-to-one transformation of the surface into itself. --- More precisely the matter stands thus. If one of the functions named is called $z$, all the others are (by §.~16) algebraic single-valued, i.\ e.\ rational functions of $z$, and, since the relation must be reversible, \emph{linear} functions of $z$. Conversely every linear function of $z$ is also a single-valued function of position on our surface, with only one infinity point. Hence one will obtain the most general one-to-one transformation of the equation into itself if one assigns to each point $z$ of the Riemann surface another by the formula:
+\[ z_{1} = \frac{\alpha z + \beta}{\gamma z + \delta}, \]
+understanding by $\alpha : \beta : \gamma : \delta$ arbitrary constants.
+
+2) \emph{Every equation $p = 1$ can be transformed one-to-one into itself simply infinitely often.} For the proof consider the associated everywhere finite integral $W$ and in particular
+
+\textbf{*)} This follows, e.\ g., from the theorems of \emph{Lüroth} and \emph{Clebsch}, which one finds derived in volumes 4 and 6 of the Mathematische Annalen.
+
+\origpage{67}
+the mapping which is made in the $W$-plane of the suitably dissected Riemann surface. We have already done this in a particular case (§.~15, Figure (38)); an exact elaboration in the general case will be all the less necessary as it concerns considerations which are usually developed in detail in the theory of elliptic functions. The result is that to every value of $W$ there belongs \emph{one} point and only one point of the Riemann surface in question, while the infinitely many values of $W$ which correspond to the same point of the Riemann surface are composed from one of them in the form: $W + m_{1}\omega_{1} + m_{2}\omega_{2}$, understanding by $m_{1}$, $m_{2}$ arbitrary integers, by $\omega_{1}$, $\omega_{2}$ the two periods of the integral. Under one-to-one transformation a point $W_{1}$ will have to be assigned to each point $W$ in such a way that to every increase of $W$ by periods there corresponds one of $W_{1}$, and conversely. This does indeed succeed, but in general only in such a way that one sets
+\[ W_{1} = \pm W + C \]
+Only in the particular case (when the ratio of periods $\frac{\omega_{1}}{\omega_{2}}$ has definite number-theoretic properties) can $W_{1}$ also be set equal to $\pm iW + C$, or $\pm \varrho W + C$ (understanding by $\varrho$ a cube root of unity)${}^{*)}$. Be that as it may, we have in every case only one arbitrary constant in the transformation formulae, and so, corresponding to its changing values, indeed simply infinitely many transformations, as was asserted.
+
+3) \emph{Equations $p > 1$ can never be transformed one-to-one into themselves infinitely often.}${}^{**)}$
+
+As regards the analytic proof of this assertion, I refer to the presentations of \emph{Schwarz}
+
+\textbf{*)} I cite this result, which is well known from the theory of elliptic functions, in the text without proof.
+
+\textbf{**)} In this theorem a \emph{continuous}\ednote{Printed ``oontinuirliche'': the first letter is a clean italic o with an open counter, identical to the second o, i.e. a wrong sort for c; read continuirliche.} family of transformations, thus transformations with arbitrarily variable parameters, is meant. Whether a surface $p > 1$ may not under certain circumstances pass into itself by infinitely many \emph{discrete} transformations remains undiscussed in the text; yet this too seems in fact impossible for finite $p$.
+
+\origpage{68}
+(Borchardt's Journal vol.~87) and \emph{Hettner} (Göttinger Nachrichten, 1880, p.~386). By intuitive means one can make the correctness of the assertion intelligible as follows. Should there be infinitely many one-to-one transformations of the equation into itself, it would have to be possible to \emph{displace} the associated Riemann surface continuously over itself in such a way that every smallest figure remains similar to itself. The curves along which such a displacement took place would in any case have to cover the surface completely and at the same time simply. A \emph{crossing point} evidently could not be present in this system of curves. For one would have to regard such a point, so that no many-valuedness of the transformation occurs, as a point remaining fixed, and so set the velocity of the displacement equal to zero at it. But then a small figure which moves towards the crossing point in the displacement would necessarily be compressed in the sense of the motion and drawn apart perpendicular to it; it could therefore not remain similar to itself, as is nevertheless required by the concept of conformal mapping. --- On the other hand, however, crossing points must necessarily be present in every system of curves which covers a surface $p > 1$ completely and simply. This is the same theorem which we set up, in somewhat less general form, in §.~11. --- The whole displacement of the surface into itself is therefore impossible, which was to be proved.
+
+By these theorems $\varrho = 3$ for $p = o$, equal to 1 for $p = 1$, and equal to zero for all greater $p$. \emph{The number of the moduli is therefore equal to zero for $p = 0$, equal to one for $p = 1$, equal to $3p - 3$ for greater $p$.}
+
+It will be well to add the following remarks. In order to determine the point of a space of $(3p - 3)$ dimensions, one will in general not suffice with $(3p - 3)$ quantities: one will need more quantities, between which algebraic (or also transcendental) relations then exist. Besides this, however, it may also be that one expediently introduces determining elements of which different series each time denote the same point of the manifold. What relations obtain in this respect for the $(3p - 3)$ moduli which must exist for $p > 1$ has as yet been
+
+\origpage{69}
+only little explored. On the other hand the case $p = 1$ is exactly known from the theory of elliptic functions. I mention the results relating to it in order to be able to express myself precisely in what follows, for all my brevity. Let it above all be emphasised that for $p = 1$ the algebraic individual (to use once more this expression employed above) can indeed be characterised by one (and only one) quantity: \emph{the absolute invariant $J = \dfrac{g_{2}^{3}}{\Delta}$}${}^{*)}$. When it is said in what follows that for the transformability of two equations $p = 1$ into one another the equality of the modulus is not only sufficient but also necessary, the invariant $J$ is always meant. Instead of it one usually uses, as is known, \emph{Legendre}'s $\varkappa^{2}$, which is six-valued for given $J$, so that in the formulation of general theorems a certain clumsiness seems unavoidable. This is the case in a still higher degree when one introduces as modulus the ratio of periods $\dfrac{\omega_{1}}{\omega_{2}}$ of the elliptic integral of the first kind, as is in other respects often expedient. Infinitely many values of the modulus each time then denote the same algebraic individual.
+
+\section*{§.~20. Conformal mapping of closed surfaces upon themselves.}
+
+In the paragraphs that still follow, the principles developed may, as promised, be pursued on the geometrical side, in order to gain at least the outlines of a theory \emph{of the conformal mapping} of surfaces upon one another${}^{**)}$ and so to correspond to the indications with
+
+\textbf{*)} Cf.\ the account in the 14th\ volume of the Mathematische Annalen, p.~112~ff.
+
+\textbf{**)} The theorems to be set up in the text are for the most part not found explicitly in the literature. For the surfaces $p = 0$ compare the already cited paper of \emph{Schwarz} (Berliner Monatsberichte 1870). See further a work of \emph{Schottky}: \emph{Ueber die conforme Abbildung mehrfach zusammenhängender Flächen}, which appeared as a Berlin inaugural dissertation in 1875 and was later (1877) printed in revised form in Borchardts Journal vol.~83. It is concerned with such $p$-fold connected plane regions as are bounded by $(p + 1)$ boundary curves.
+
+\origpage{70}
+which Riemann, as already remarked in the preface, concluded his dissertation. In doing so I shall often have to restrict myself, as regards the cases $p = 0$ and $p = 1$, so as not to become too lengthy, to a mere statement of the results or an indication of their proof.
+
+In asking first about conformal mappings of a closed surface upon itself, we have to introduce a distinction of which there has so far been no question: \emph{the mapping can take place without reversal of the angles or with reversal of them.} We have a mapping of the one kind when we bring a sphere into coincidence with itself by rotation about the centre; we obtain the second kind when for the same purpose we use a reflection in a diametral plane. The analytic treatment, as we have used it hitherto, corresponds only to the mappings of the first kind. If $u + iv$ and $u_{1} + iv_{1}$ are two complex functions of position on the same surface, $u = u_{1}$, $v = v_{1}$ furnishes the most general mapping of the first kind (cf.\ §.~6). But it is easy to see how one has to make the extension so as to comprehend mappings of the second kind too. \emph{One has simply to set $u = u_{1}$, $v = - v_{1}$ in order to have a mapping of the second kind.}
+
+Let us first take from the developments of the preceding paragraph what relates to mapping of the first kind. Making use of as geometrical a mode of expression as possible, we formulate the following theorems:
+
+\emph{Surfaces $p = 0$ or $p = 1$ can always, surfaces $p > 1$ never, be carried over into themselves infinitely often by mapping of the first kind.}
+
+\emph{For the surfaces $p = 0$ the single mapping of the first kind is determined when one has assigned three arbitrary points of the surface to three arbitrary points of it.}
+
+\emph{If $p = 1$, one may assign an arbitrary point of the surface to a second at will, and then has, for the determination of the mapping of the first kind, in general a twofold, in the particular case a fourfold or sixfold possibility.}
+
+By these theorems it is of course not excluded that particular surfaces $p > 1$ may pass into themselves by \emph{separate} transformations of the first kind. If this occurs,
+
+\origpage{71}
+it forms a property invariant under any conformal alteration of the surface, according to whose presence and modality particularly interesting classes of surfaces can be singled out from the totality of the rest.${}^{*)}$ But we shall not pursue this point of view further here.
+
+Concerning the transformations of the second kind we may state first \emph{that every transformation of the second kind in combination with one of the first kind gives a new transformation of the second kind.} Now for the surfaces $p = 0$ and $p = 1$ we know the transformations of the first kind completely on the ground of the theorems stated. For them it will therefore suffice to investigate whether \emph{one} transformation of the second kind exists at all. \emph{For the surfaces $p = 0$ this is at once to be answered in the affirmative.} For it suffices to pick out an arbitrary one of the single-valued functions of position with only one infinity point, $x + iy$, and then to set $x_{1} = x$, $y_{1} = - y$. For the surfaces $p = 1$ the matter is otherwise. \emph{One finds that in general no transformation of the second kind exists.} For the proof it is simplest to take into consideration the values which the everywhere finite integral $W$ takes on the surface $p = 1$. Imagine the points $W = m_{1}\omega_{1} + m_{2}\omega_{2}$ marked in the $W$-plane, understanding by $m_{1}$, $m_{2}$, as above, arbitrary positive or negative integers. One then shows easily that a transformation of the second kind of the surface $p = 1$ into itself is possible only when this system of points possesses an axis of symmetry. This is precisely \emph{the} case in which the absolute invariant $J$ defined above exhibits a \emph{real} value. According as $J < 1$ or $> 1$, those points in the $W$-plane can then be regarded as the vertices of a \emph{rhombic} or of a \emph{rectangular} system.
+
+Now let $p > 1$. If for such a surface a transformation of the second kind exists, it will in general not be
+
+\textbf{*)} To such surfaces there correspond algebraic equations with a group of one-to-one transformations into themselves. The remarks of the text thus aim at such investigations as have recently been pursued by Hr.\ \emph{Dyck} (cf.\ the already cited paper in the 17th\ volume of the Mathematische Annalen: Aufstellung und Untersuchung von Gruppe und Irrationalität regulärer Riemann'scher Flächen).
+
+\origpage{72}
+accompanied by any further transformation of the same kind${}^{*)}$. For otherwise the repetition or combination of these transformations would furnish a transformation of the first kind different from the identity. The transformation must therefore necessarily be a \emph{symmetric} one, i.\ e.\ one which associates the points of the surface \emph{in pairs}. I will accordingly call the surface itself a \emph{symmetric} one.
+
+For the rest, let there afterwards be comprehended under this name all surfaces whatever which admit transformations of the second kind into themselves that, applied twice, lead back to the identity. To these belong, as one sees at once, the surfaces $p = 0$, as well as all surfaces $p = 1$ with real invariant.
+
+\section*{§.~21. Special consideration of the symmetric surfaces.}
+
+For the symmetric surfaces, to which we wish here to direct our particular attention, a classification at once results according to the number and kind of the \emph{transition curves} lying on them, i.\ e.\ of those curves whose points remain unchanged under the symmetric transformation coming into consideration.
+
+\emph{The number of these curves can in any case not be greater than $(p + 1)$.} For if one cuts a surface along all its transition curves with the exception of a single one, it still forms an undivided whole, since its symmetric halves still hang together in the one transition curve. If, therefore, more than $(p + 1)$ transition curves were present, more than $p$ retrosections not dividing the surface could be carried out on it, which is a contradiction to the definition of the number $p$.
+
+\emph{Below this limit, on the other hand, every number of transition curves is possible.} It may suffice here to discuss the cases $p = 0$ and $p = 1$ in this sense; for the higher $p$ obvious examples then arise of themselves\ednote{A full stop is printed after selbst, in the middle of the sentence; the sense requires none, an apparent misprint.}.
+
+\textbf{*)} There are of course again surfaces which admit, besides a number of transformations of the first kind, an equal number of transformations of the second kind; they correspond to the \emph{regular-symmetric} surfaces of Dyck's paper.
+
+\origpage{73}
+
+1) When we bring a sphere into coincidence with itself by reflection in a diametral plane, the great circle in which it is cut by the diametral plane forms a transition curve. We obtain an assignment of the other kind by setting as corresponding each two such points of the sphere as form the end points of a diameter. Both examples are easily generalised. The analytic representation is this. If a transition curve exists, there are single-valued functions of position with only one infinity point which take real values on the transition curve. If one of them is called $x + iy$, the transformation, as already given above as an example, is given by $x_{1} = x$, $y_{1} = - y$. --- In the second case one can choose a function $x + iy$ so that its values $\infty$ and $0$, as well as $+ 1$ and $- 1$, represent associated points. Then
+\[ x_{1} - iy_{1} = \frac{- 1}{x + iy} \]
+is the analytic formula of the transformation in question.
+
+2) In the case $p = 1$ we must, as we know, in any case take the invariant $J$ real. Let it first be $> 1$. Then we can normalise the associated everywhere finite integral $W$ (by adding a suitable constant factor) so that the one period becomes \emph{real}, equal to $a$, the other \emph{purely imaginary}, equal to $ib$. If we then set (for $W = U + iV$):
+\[ U_{1} = U,\ V_{1} = - V \]
+we have a symmetric transformation of the surface $p = 1$ with the \emph{two} transition curves:
+\[ V = o,\ V = \frac{b}{2}; \]
+if on the other hand we write:
+\[ U_{1} = U + \frac{a}{2},\ V_{1} = - V, \]
+which is again a symmetric transformation of our surface, we have the case in which \emph{no} transition curve arises. --- The case with only \emph{one} transition curve occurs when we take $J < 1$. We can then choose $W$ so that its two periods become conjugate complex.
+
+\origpage{74}
+We then again write
+\[ U_{1} = U,\ V_{1} = - V \]
+and have a symmetric transformation with the one transition curve $V = 0$.
+
+Beside the first distinction of the symmetric surfaces according to the \emph{number} of transition curves, hereby explained, there stands, however, yet a second. I will for a moment exclude the cases of $0$ or $(p + 1)$ transition curves. Then a twofold possibility presents itself from the outset. \emph{A cutting of the surface along all the transition curves may namely either bring about a falling apart of the surface, or not.} Let $\pi$ be the number of transition curves. One then shows easily that $p - \pi$ must be odd if a falling apart is to occur. No further restriction exists, as one proves by examples. We will accordingly distinguish symmetric surfaces \emph{of the one and of the other kind}, and reckon to the former (the falling-apart) surfaces the surface with $(p + 1)$ transition curves, to the latter the surface without transition curve.
+
+These theorems possess a certain analogy with the results which the investigation of the shape of curves of given $p$ has attained in analytic geometry.${}^{*)}$ And indeed it turns out that this analogy is a well-founded one. Analytic geometry occupies itself in those investigations (in the first instance) only with such equations
+\[ f(w, z) = 0, \]
+as possess real coefficients. Let us first note that every such equation does indeed determine a symmetric Riemann surface over the $z$-plane, inasmuch as the equation, and so also the surface, remains unchanged when one replaces $w$ and $z$ simultaneously by their conjugate values
+
+\textbf{*)} Cf.\ \emph{Harnack}: Ueber die Vieltheiligkeit der ebenen algebraischen Curven, in vol.~10 of the Mathematische Annalen, p.~189~ff.; compare further p.~415, 416 there, where I have given the division of those curves into two kinds. Perhaps it is expedient in these investigations to choose the theory of symmetric surfaces and Riemann's theory, as both are presented here in the text, outright as the starting point.
+
+\origpage{75}
+--- and that the transition curves on this surface correspond to the \emph{real} series of values of $w$ and $z$ which satisfy $f = 0$, i.\ e.\ exactly to the various branches which the curve $f = 0$ exhibits in the sense of analytic geometry.
+
+But the converse inference too is easily made. Let a symmetric surface, and on it an arbitrary complex function of position $u + iv$, be given. Under the symmetric transformation our surface undergoes \emph{a reversal of the angles.} If, therefore, one attributes to each point of the surface such values $u_{1}$, $v_{1}$ as its symmetric point exhibits under the designation $u$, $v$, then $u_{1} - iv_{1}$ will be a new complex function of position. Now form:
+\[ U + iV = (u + u_{1}) + i(v - v_{1}), \]
+and one has an expression which in general does not vanish identically; for this purpose it suffices to assume the infinity points of $u + iv$ in an unsymmetric manner. \emph{One thus has a complex function of position which exhibits at symmetrically situated points equal real, but equal and opposite imaginary values.} --- Of such $U + iV$ let any two, $W$ and $Z$, which are moreover to be \emph{single-valued} functions of position, now be picked out. The algebraic equation existing between them then has the property of remaining unchanged when one replaces $W$ and $Z$ simultaneously by their conjugate values. \emph{It is therefore an equation with real coefficients,} whereby the required proof is indeed furnished.
+
+To these considerations I attach some further remarks on the \emph{real} one-to-one transformations of \emph{real} equations $f(w, z) = 0$ into themselves, or, what is the same thing, on such conformal mappings of the first kind of symmetric surfaces upon themselves in which symmetric points pass over again into symmetric points. In infinite number such transformations can occur, by the general theorem of §.~19, only for $p = 0$ and $p = 1$; we therefore restrict ourselves to these cases. Let us first take $p = 1$. Then we see at once that among the transformations set up earlier only those
+\[ W_{1} = \pm W + C \]
+
+\origpage{76}
+come into consideration \emph{in which $C$ denotes a real constant.} Analogously in the first case $p = 0$. The relation $x_{1} = x$, $y_{1} = - y$ remains unchanged when one subjects $x + iy = z$ and $x_{1} + iy_{1} = z_{1}$ simultaneously to the same linear transformation:
+\[ z' = \frac{\alpha z + \beta}{\gamma z + \delta} \]
+\emph{where the ratios $\alpha : \beta : \gamma : \delta$ are real.} In the second case $p = 0$ the matter is somewhat more complicated. \emph{In it too linear transformations with three real parameters are possible.} But for the $z$ introduced above they take the following shape:
+\[ z' = \frac{(a + ib)z + (c + id)}{- (c - id)z + (a - ib)}, \]
+where $a : b : c : d$ represent the three real parameters. This result is implicitly contained in the investigations which relate to the analytic representation of the rotations of the $x + iy$-sphere about its centre.${}^{*)}$
+
+\section*{§~22. Conformal mapping of different surfaces upon one another.}
+
+When it is now a matter of mapping different closed surfaces upon one another, the preceding investigations on the conformal mapping of closed surfaces upon themselves furnish the necessary subsidiary determinations, which state how often such a mapping can be carried out, in so far as one is possible at all. Surfaces which can be conformally mapped upon one another possess in any case (as already emphasised) corresponding transformations into themselves. One therefore obtains all mappings of the one surface upon the second by combining an arbitrary mapping with all those which carry \emph{one} of the two surfaces over into itself. I shall not come back to this further.
+
+Let us now consider first general, i.\ e.\ non-symmetric surfaces. Then the enumerations of
+
+\textbf{*)} See in particular: \emph{Cayley}, on the correspondence between homographies and rotations, Mathematische Annalen, vol.~15, p.~238---240.
+
+\origpage{77}
+§.~19 concerning the moduli of algebraic equations come immediately into force. We have first:
+
+\emph{Surfaces $p = 0$ can always be conformally mapped upon one another;}
+and find moreover that the surfaces $p = 1$ possess \emph{one}, the surfaces $p > 1$ $(3p - 3)$ moduli indestructible under conformal mapping. Each such modulus is in general a \emph{complex} constant. Corresponding to the circumstance that for symmetric surfaces real parameters must be taken into consideration, we will think of it as split into its real and its imaginary constituent. Then we have:
+
+\emph{If two surfaces $p > 0$ are to be mappable upon one another, then in the case $p = 1$ two, in the case $p > 1$ $(6p - 6)$ equations between the real constants of the surfaces are to be satisfied.}
+
+In turning now to the \emph{symmetric} surfaces, we have yet to make a small intermediate consideration. First it is evident that two such surfaces can be related “symmetrically” to one another only when, besides the same $p$, they present the same number $\pi$ of transition curves and moreover both belong either to the first or to the second kind. For the rest, repeat specially for the symmetric surfaces the enumerations of §.~13 concerning the number of constants contained in single-valued functions, under the condition that only such functions are taken into consideration as exhibit conjugate imaginary values at symmetric places. With this then combine, after the pattern of §.~19, the number of such many-sheeted surfaces constructible over the $Z$-plane as are symmetric with respect to the axis of real numbers. In order to avoid the occurrence of infinitely many transformations into themselves, I will first assume that $p > 1$. The matter is then so simple that I need not carry it out specially. The difference is only that the constants coming into consideration, formerly unrestricted, are now compelled to be either \emph{individually real} or \emph{conjugate complex in pairs}. In consequence of this all the arbitrary elements are reduced to half. We may say as follows:
+
+\origpage{78}
+
+\emph{For the mappability of two symmetric surfaces $p > 1$ upon one another there is required, besides agreement in the attributes, the existence of $(3p - 3)$ equations between the real constants of the surface.}
+
+The cases $p = 0$ and $p = 1$, which were here excluded, are already implicitly settled in the preceding paragraph. Of course two symmetric surfaces $p = 1$ which are to be mappable upon one another must possess the same invariant $J$, which furnishes \emph{one} condition for the constants of the surfaces, inasmuch as $J$ is in any case real. For the rest, however, one finds at once that the mapping is always possible as soon as the symmetric surfaces agree, as must of course be demanded, \emph{in the number of transition curves}.
+
+\section*{§.~23. Bounded surfaces and double surfaces.}
+
+On the ground of the results now obtained we can bestow on the investigations so far on the mapping of \emph{closed} surfaces an apparently considerable generalisation, and it is precisely for this reason that I have considered the symmetric surfaces at such length. For we can now take into consideration \emph{bounded} surfaces and \emph{double surfaces} (whether the latter be bounded or not) and settle at one stroke the questions relating to them. For this it is required, as regards the introduction of the boundary curves, that we free ourselves from a certain restriction which we have presupposed hitherto, though only implicitly. We have so far thought of the surfaces on which we operated throughout as continuously curved, or at any rate affected with discontinuities only at single points (the branch points). But nothing prevents us from now admitting other discontinuities afterwards as well. We may, e.\ g., imagine that our surface is composed, polyhedron-fashion, of a finite number of different (in general themselves curved) pieces which meet at finite angles. For we can think of electric currents running on such a surface just as well as on a continuously curved one! Under these surfaces the bounded surfaces can now be subsumed.${}^{*)}$
+
+\origpage{79}
+\emph{Regard namely the two sides of the bounded surface as polyhedral surfaces which meet along the boundary curve (thus throughout at an angle of 360 degrees), and now treat, instead of the original bounded surface, the total surface composed of both sides.}${}^{**)}$ This total surface is then indeed a closed surface. But it is moreover a \emph{symmetric} surface. For if one interchanges the points of the two sides of the surface lying one above the other, the total surface undergoes a conformal mapping upon itself with reversal of the angles. The boundary curves are here the transition curves. \emph{But at the same time our division of the symmetric surfaces into two kinds gains an important and decisive significance.} The ordinary bounded surfaces, on which one can distinguish two sides of the surface, evidently correspond to the first kind. To the second kind, however, correspond the \emph{double surfaces}, on which one can pass from one side of the surface to the other by continuous progress over the surface. The case is also not to be excluded (as already indicated) that the double surface may possess no boundary curve at all. \emph{We then have before us a symmetric surface without transition curve.}
+
+I now consider in turn the various cases to be kept apart.
+
+1) \emph{Let first a simply bounded, simply connected surface be given.} Such a surface appears for us as a closed surface $p = 0$ which is symmetrically related to itself with the occurrence of one transition curve. We thus find \emph{that two such surfaces can always be related conformally}
+
+\textbf{*)} I owe this conception to an occasional conversation with Hr.\ \emph{Schwarz} (Easter 1881). Compare p.~320~ff.\ of the already named paper of \emph{Schottky} in the 83rd\ volume of Borchardt's Journal, as well as the original investigations of \emph{Schwarz} on the mapping of closed polyhedral surfaces upon the sphere (Berliner Monatsberichte 1865 p.~150~ff., Borchardt's Journal vol.~70, p.~121---136, vol.~75, p.~330.)
+
+\textbf{**)} For brevity I express myself in the text as if the original surface had been a two-sided surface, while it is nevertheless not to be excluded that it is a double surface.
+
+\origpage{80}
+\emph{to one another by mapping of the one or the other kind, and that in each of the two cases one still has three real constants at one's arbitrary disposal.} We can use the latter in particular to assign an arbitrary interior point of the one surface to a correspondingly situated point of the other surface, and moreover an arbitrary boundary point of the one surface to an arbitrary boundary point of the other. This mode of determination corresponds to the known theorem which Riemann gave concerning the conformal mapping of a simply bounded, simply connected, \emph{plane} surface upon the surface of a circle, and explained in detail in No.~21 of his dissertation as an example of the application of his theory to problems of conformal mapping.
+
+2) \emph{We consider further double surfaces $p = 0$ (without boundary curves).} From §§.~21, 22 it follows at once that two such surfaces can always be related conformally to one another, and that one still has, corresponding to the concluding formulae of §.~21, three real constants at one's free disposal.
+
+3) \emph{The various cases coming into consideration here which give a total surface $p = 1$,}\ednote{Printed with a stray period before the comma after ergeben; apparently a spurious mark.} \emph{we consider together.} To them belong first the \emph{doubly bounded, doubly connected} surfaces, that is, surfaces which in the simplest case we may imagine as closed \emph{bands}. To them belong further \emph{the familiar double surfaces with only one boundary curve}, which one obtains when one bends together the two narrow sides of a rectangular strip of paper after having twisted the strip through 180 degrees. To them belong finally \emph{certain unbounded double surfaces}. One can form a picture of them by, say, turning a piece of india-rubber tubing inside out and now letting it penetrate itself in such a way that, when the ends are bent together, the outer side comes together with the inner side. Concerning all these surfaces the earlier theorems state that the mappability of the single surface upon a second of the same kind presupposes the existence of \emph{one}, but only one, equation between the real constants of the surfaces, but that the mapping, if possible at all, can take place in infinitely many ways, since one has a double sign and a real constant at one's free disposal.
+
+\origpage{81}
+
+4) \emph{We now take the general case of a two-sided surface.} Let the surface possess $\pi$ boundary curves and moreover admit $p'$ retrosections not dividing it, where either $p' > 0$ or $\pi > 2$ must hold. Then the total surface formed from front and back sides will admit $2p' + \pi - 1$ retrosections not dividing it. For one can, firstly, now use doubly (on the front side as well as on the back side) the $p'$ retrosections possible by hypothesis on the single side of the surface; one can further make cuts along $(\pi - 1)$ of the boundary curves present, without the total surface ceasing to form a single connected piece of surface. We shall therefore set $p = 2p' + \pi - 1$ in the theorems of the preceding paragraph, and have:
+
+\emph{Two surfaces of the kind considered can be mapped upon one another, if at all, only in a finite number of ways. The mappability depends on $6p' + 3\pi - 6$ equations between the real constants of the surfaces.}
+
+5) \emph{We have finally the general case of the double surface} with $\pi$ boundary curves and $P$ retrosections possible, besides the boundary curves, on the surface thought of as doubled. Leaving aside the three possibilities considered under 2) and 3) ($P = 0$, $\pi = 0$ or 1, and $P = 1$, $\pi = 0$), we obtain the same theorem as under 4), only that everywhere instead of $2p' + \pi - 1$ the sum $P + \pi$ is to be written, where $P$ may be an even or odd number at will. \emph{In particular, the number of real constants of a double surface which remain unchanged under arbitrary conformal mapping amounts to $3P + 3\pi - 3$.} ---
+
+Under the results hereby obtained the general theorems and developments which Herr \emph{Schottky} has given in his repeatedly cited treatise are subsumed as special cases.
+
+\section*{§.~24. Concluding remark.}
+
+The developments of the last section of this work, now brought to an end, were, as has repeatedly been said, to correspond to the indications with which Riemann concluded his dissertation. To be sure, we have restricted ourselves to
+
+\origpage{82}
+\emph{one-to-one} relation of two surfaces by conformal mapping. Riemann, as he states, had in mind many-valued relation just as well. One would accordingly have to imagine each of the two surfaces being compared as covered with several sheets, and only then relate the many-sheeted surfaces so arising conformally and one-to-one. The branch points which these many-sheeted surfaces may possess would furnish as many new complex constants at our disposal. --- On this it is to be remarked that we have already taken into detailed consideration at least \emph{one} case of such a relation. By spreading out an arbitrary surface in many sheets over the plane (§.~15), we have established between surface and plane a relation which is many-valued on the one side. It is then further to be emphasised that precisely this special case also allows two arbitrary surfaces to be related many-valuedly to one another. For once the two surfaces are mapped upon the plane, they are, through the mediation of the plane, also related to one another. --- With these remarks the question of many-valued mapping is of course by no means exhausted. But a foundation for its treatment is nevertheless gained, in that it is shown how it fits into the other function-theoretic speculations of Riemann, of which we had here to give an account.
+
+\end{document}

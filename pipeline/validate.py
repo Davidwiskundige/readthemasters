@@ -399,6 +399,10 @@ def check_page_markers(work_dir: Path, issues: Issues) -> None:
     A missing page is reported as a gap rather than assumed fatal ordering: a work may legitimately
     transcribe a non-contiguous selection of pages, so only DUPLICATES and DESCENDING order are
     errors; a gap is a warning, since it is usually intentional and always worth stating.
+
+    Front matter carries its printed lower-case roman numbers (`\\origpage{iii}`). Roman and arabic
+    are two runs: every roman marker must precede the first arabic one, and each run is checked on
+    its own terms. Anything else in the braces (`III`, `3a`) is an error.
     """
     original = work_dir / "original.tex"
     if not original.exists():
@@ -408,17 +412,59 @@ def check_page_markers(work_dir: Path, issues: Issues) -> None:
     # explains why the display spanning pp. 400-401 is split around \origpage{401}), and counting
     # that as a real marker reports a duplicate that is not there.
     body = houselint.strip_comments(original.read_text(encoding="utf-8"))
-    pages = [int(n) for n in re.findall(r"\\origpage\{(\d+)\}", body)]
+    markers = re.findall(r"\\origpage\{([^}]*)\}", body)
+    if not markers:
+        return
+    roman, arabic, bad = [], [], []
+    for m in markers:
+        if m.isdigit():
+            arabic.append(int(m))
+        elif (value := roman_to_int(m)) is not None:
+            if arabic:
+                issues.error(rel, f"roman \\origpage{{{m}}} follows an arabic page marker "
+                                  "(front matter must come before the numbered text)")
+            roman.append((value, m))
+        else:
+            bad.append(m)
+    if bad:
+        issues.error(rel, "\\origpage marker(s) are neither an arabic number nor a lower-case "
+                          f"roman numeral: {', '.join(bad)}")
+    _check_page_run(rel, [v for v, _ in roman], issues, label=int_to_roman)
+    _check_page_run(rel, arabic, issues, label=str)
+
+
+def roman_to_int(s: str) -> int | None:
+    """Value of a lower-case roman numeral in canonical form (`iv`, not `iiii`), else None."""
+    if not s or not re.fullmatch(r"[ivxlcdm]+", s):
+        return None
+    vals = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+    total = 0
+    for a, b in zip(s, s[1:] + " "):
+        total += -vals[a] if b != " " and vals[b] > vals[a] else vals[a]
+    return total if 0 < total < 4000 and int_to_roman(total) == s else None
+
+
+def int_to_roman(n: int) -> str:
+    out = ""
+    for value, sym in ((1000, "m"), (900, "cm"), (500, "d"), (400, "cd"), (100, "c"), (90, "xc"),
+                       (50, "l"), (40, "xl"), (10, "x"), (9, "ix"), (5, "v"), (4, "iv"), (1, "i")):
+        while n >= value:
+            out, n = out + sym, n - value
+    return out
+
+
+def _check_page_run(rel: str, pages: list[int], issues: Issues, label) -> None:
+    """Duplicates and descending order are errors within one run of markers; a gap is a warning."""
     if not pages:
         return
     dupes = sorted({p for p in pages if pages.count(p) > 1})
     if dupes:
-        issues.error(rel, f"duplicate \\origpage marker(s): {', '.join(map(str, dupes))}")
+        issues.error(rel, f"duplicate \\origpage marker(s): {', '.join(map(label, dupes))}")
     if pages != sorted(pages):
         out_of_order = [b for a, b in zip(pages, pages[1:]) if b < a]
         issues.error(rel, "\\origpage markers are not in ascending order "
-                          f"(descends at: {', '.join(map(str, out_of_order))})")
-    gaps = [f"{a + 1}-{b - 1}" if b - a > 2 else str(a + 1)
+                          f"(descends at: {', '.join(map(label, out_of_order))})")
+    gaps = [f"{label(a + 1)}-{label(b - 1)}" if b - a > 2 else label(a + 1)
             for a, b in zip(pages, pages[1:]) if b - a > 1]
     if gaps and not dupes:
         issues.warn(rel, f"\\origpage markers skip page(s): {', '.join(gaps)} "

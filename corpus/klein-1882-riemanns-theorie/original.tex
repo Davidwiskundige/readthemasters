@@ -1,0 +1,1147 @@
+% Faithful transcription — original German. Transcribed from the first edition: Felix Klein,
+% "Ueber Riemann's Theorie der algebraischen Functionen und ihrer Integrale. Eine Ergänzung der
+% gewöhnlichen Darstellungen" (Leipzig: B. G. Teubner, 1882), pp. iii–viii and 1–82.
+% Scan: Internet Archive, archive.org/details/ueberriemannsthe00kleirich (University of
+% California Libraries copy, a photographic facsimile of the 1882 print made by Cornell University
+% Library; 500 ppi colour). Printed pp. iii–viii are scan leaves n10–n15, pp. 1–82 leaves n16–n97.
+%
+% SCOPE. The Vorrede (pp. iii–vi, dated Borkum, 7 October 1881), the Inhalt (pp. vii–viii) and the
+% whole text (pp. 1–82). The front matter carries its printed lower-case roman page numbers,
+% \origpage{iii} … \origpage{viii} (corpus-format, Roman page markers). The Inhalt is set as plain
+% paragraphs, not headings, with " --- " standing in for its dot leaders; its titles are copied as
+% the Inhalt prints them, which for §§. 18 and 22 differs from the headings in the text
+% ("Weiterbildungen" / "Weiterbildung"; "verschiedener geschlossener Flächen" / "verschiedener
+% Flächen") — both verified on the scan. The title page and the facsimile's production note are
+% not part of Klein's text and are not transcribed.
+%
+% \origpage uses the PRINTED page numbers. Apparatus is NOT transcribed: running heads, page
+% numbers, signature marks, and the ornamental rules closing Abschnitt I, Abschnitt II and the book.
+% Footnotes (marked *), **) on each page) are given as complete paragraphs at the end of the page
+% where they begin, led by \textbf{*)} (HOUSESTYLE R15). The figures (Figur 1–5, Fig. 6–43) are
+% cropped from the scan, never redrawn, and laid out as printed (HOUSESTYLE R30): each sits where
+% the print sets it, mid-paragraph where need be; figures printed side by side are adjacent
+% \rmfigure lines (no blank line between) and render as a row. The Fig. 13 printed at the foot of
+% p. 21 belongs to, and is given within, the footnote that begins on p. 20.
+%
+% TYPEFACE AND ORTHOGRAPHY. The prose is Antiqua. The print sets "ss", never ß (dass, heissen,
+% weiss, Diess), so this file contains no ß. Klein's spelling is kept (R12, R23), including the
+% print's own doublets: Punct beside Punkt, Gränze beside Grenze, Ueberdiess beside Ueberdies,
+% Factor beside Faktor. Emphasis — italic and letterspaced (Sperrung) alike — is \emph (R20, R24);
+% letterspaced names are \emph only where the print letterspaces them. Zero is sometimes printed
+% as an italic letter o (w = o, F = o, p = o) and sometimes as the digit 0; each is kept as
+% printed, and the letter form is the print's habit, not a misprint. All further cross-page
+% decisions are in notation.md.
+%
+% Machine output pending human review: status ai-draft (see provenance.yaml).
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{iii}
+
+\section*{Vorrede.}
+
+Die kleine Schrift, welche ich hiermit der Oeffentlichkeit übergebe, ist aus Vorlesungen erwachsen, die ich im verflossenen Jahre gehalten habe${}^{*)}$ und in denen ich mir neben anderen Aufgaben eine Darlegung von Riemann's Theorie der algebraischen Functionen und ihrer Integrale zum Zweck gesetzt hatte${}^{**)}$. Es ist um höhere mathematische Vorlesungen eine eigenthümliche und schwierige Sache: bei der besten Absicht des Docenten erreichen sie durchweg nur ein sehr bescheidenes Ziel. Zumeist bestimmt, eine \emph{systematische} Entwickelung zu bringen, beschränken sie sich entweder auf die Elemente der darzustellenden Disciplin oder verlieren sich in Einzelheiten. Ich glaubte in meinem Falle, wie ich es öfters schon that, eine umgekehrte Methode eintreten lassen zu sollen. Die gewöhnlichen Darstellungen, wie sie die Lehrbücher von den Elementen der Riemann'schen Theorie geben, setzte ich als bekannt voraus. Ueberdiess verwies ich, sobald Details ausführlicher zu erledigen waren, auf die einschlägigen Monographieen. Dafür aber verwandte ich alle Sorgfalt auf die Darlegung des \emph{eigentlichen Gedankenganges}, und strebte nach \emph{Ueberblick} über Umfang und Leistung der Methode. Ich meine auf solchem Wege wiederholt gute Erfolge errungen zu haben, allerdings nur bei begabten Zuhörern; möge die Erfahrung zeigen, ob eine auf gleichen Grundlagen ruhende kleine Schrift sich ebenfalls als nützlich erweist!
+
+\textbf{*)} „Functionentheorie in geometrischer Behandlungsweise“, Theil I, Wintersemester 1880/81, Theil II, Sommersemester 1881.
+
+\textbf{**)} Ich bezeichne so den Inbegriff der Untersuchungen, mit denen sich Riemann in der ersten Abtheilung seiner „Theorie der Abel'schen Functionen“ beschäftigt. Die Theorie der $\Theta$-Functionen, wie sie in der zweiten Abtheilung daselbst entwickelt wird, hat zunächst, wie man weiss, einen wesentlich anderen Charakter, und soll in der folgenden Darstellung ebenso ausgeschlossen bleiben, wie sie es in jener Vorlesung gewesen ist.
+
+\origpage{iv}
+
+Eine Darstellung, wie ich sie hiernach anstrebe, ist nothwendig eine sehr subjective, und bei Riemann's Theorie um so mehr, als sich für sie in Riemann's Schriften nur sehr dürftiges Material explicite vorfindet. Ich weiss nicht, ob ich je zu einer in sich abgeschlossenen Gesammtauffassung gekommen wäre, hätte mir nicht Herr \emph{Prym} vor längeren Jahren (1874) bei gelegentlicher Unterredung eine Mittheilung gemacht, die immer wesentlicher für mich geworden ist, je länger ich über den Gegenstand nachgedacht habe. Er erzählte mir, \emph{dass die Riemann'schen Flächen ursprünglich durchaus nicht nothwendig mehrblättrige Flächen über der Ebene sind, dass man vielmehr auf beliebig gegebenen krummen Flächen ganz ebenso complexe Functionen des Ortes studieren kann, wie auf den Flächen über der Ebene}. Die folgende Darlegung wird genugsam zeigen, wie nützlich mir diese Bemerkung gewesen ist. Mit ihr combiniren sich von selbst gewisse physikalische Ueberlegungen, die neuerdings, wenn auch unter Beschränkung auf einfachere Fälle, von verschiedenen Seiten her entwickelt worden sind${}^{*)}$. Ich habe kein Bedenken getragen, diese physikalischen Anschauungen geradezu zum Ausgangspuncte meiner Darstellung zu machen. Riemann verwendet statt ihrer, wie man weiss, in seinen Schriften das Dirichlet'sche Princip. Aber ich kann nicht zweifeln, dass er genau von jenen physikalischen Problemen ausgegangen ist, und ihnen nur hinterher, um die physikalische Evidenz durch einen mathematischen Schluss zu stützen, das Dirichlet'sche Princip substituirt hat. Wer sich die Bedingungen klar macht, unter denen Riemann in Göttingen arbeitete, wer die Speculationen Riemann's verfolgt hat, wie sie zum Theil in Fragmenten auf uns gekommen sind${}^{**)}$, wird, denke ich, diese Meinung theilen. --- Wie dem auch sei: für meine Zwecke erschien die physikalische Methode als die richtige. Denn zur eigentlichen Begründung der aufzustellenden Theoreme reicht auch das Dirichlet'sche Princip bekanntermassen in keiner Weise aus; das \emph{heuristische} Element der Methode aber, auf dessen Entwickelung mir Alles ankam,
+
+\textbf{*)} Vergl.\ C.\ \emph{Neumann} im 10.~Bande der Mathematischen Annalen, p.~569---71, \emph{Kirchhoff} in den Berliner Monatsberichten von 1875, p.~487---497, \emph{Töpler} in Poggendorff's Annalen, Bd.~160, p.~375---388.
+
+\textbf{**)} Gesammelte Werke, p.~494~ff.
+
+\origpage{v}
+tritt bei der physikalischen Methode viel klarer hervor. Eben darum im Folgenden durchweg das Heranziehen anschauungsmässiger Ueberlegungen, wo ein Beweis durch Formeln nicht schwierig und vielleicht einfacher gewesen wäre, eben darum auch die wiederholte Erläuterung allgemeiner Resultate durch Beispiele und Figuren.
+
+Im Zusammenhange hiermit muss ich der wesentlichen Beschränkung gedenken, an der ich im Folgenden festgehalten habe. Man kennt die umständlichen und schwierigen Ueberlegungen, durch welche es in neuerer Zeit gelungen ist, wenigstens einen Theil der hier in Betracht kommenden Riemann'schen Sätze durch zuverlässige Methoden zu beweisen${}^{*)}$. Ich habe diese Ueberlegungen im Folgenden durchaus bei Seite gelassen und also auf andere als anschauungsmässige Begründung der vorzutragenden Sätze verzichtet. In der That soll man solche Beweise mit der Gedankenentwickelung, wie ich sie im Folgenden versuche, in keiner Weise untermischen; es entsteht sonst eine Darstellung, die nach keiner Seite befriedigt. Aber freilich sollte man sie hinterher bringen, und ich gebe gern dem Gedanken Raum, in diesem Sinne der gegenwärtigen Schrift bei Gelegenheit eine Ergänzung folgen zu lassen.
+
+Im Uebrigen mag Umfang und Begränzung meiner Darstellung für sich selbst sprechen. Dass ich oft und ausführlich meiner Freunde und meine eigenen früheren, auf verwandte Gegenstände bezüglichen Publicationen herangezogen habe, hat in einer Nebenabsicht seinen Grund, die mir aus persönlichen Gründen wichtig war: ich wünschte meinen Zuhörern eine Art Leitfaden in die Hand zu geben, vermöge dessen sie sich über den wechselseitigen Zusammenhang jener Arbeiten und ihre Stellung zu der hier entwickelten allgemeinen Auffassung selbständig orientiren können. Auf Erledigung \emph{neuer} Probleme und Fragestellungen, die sich in
+
+\textbf{*)} Man vergleiche insbesondere die hierher gehörigen Untersuchungen von C.\ \emph{Neumann} und \emph{Schwarz}. Uebrigens findet der allgemeine Fall \emph{geschlossener} Flächen (der für uns im Folgenden der wichtigste ist) bisher nirgendwo explicite Erledigung. Herr \emph{Schwarz} begnügt sich in dieser Hinsicht mit einigen Andeutungen (Berliner Monatsberichte, 1870, p.~767~ff.), und Herr C.\ \emph{Neumann} hat überhaupt nur solche Fälle in Betracht gezogen, in denen Functionen durch gegebene Randwerthe zu bestimmen sind.
+
+\origpage{vi}
+grosser Anzahl bieten, habe ich mich im Folgenden nur so weit eingelassen, als mit der Gesammtanlage des Schriftchens verträglich schien. Immerhin möchte ich auf die Sätze aufmerksam machen, die ich (im letzten Abschnitte) betreffs conformer Abbildung beliebiger Flächen entwickelt habe; ich bin denselben um so lieber nachgegangen, als Riemann am Schlusse seiner Dissertation eine hierauf bezügliche merkwürdige Aeusserung macht.
+
+Und nun noch eine Schlussbemerkung, die einem Missverständnisse entgegentreten soll, das sonst aus dem Gesagten erwachsen könnte! Indem ich bemüht bin, im Falle der algebraischen Functionen und ihrer Integrale den ursprünglichen Ideengang zu entwickeln, den ich bei Riemann voraussetze, umspanne ich in keiner Weise die Gesammtheit seiner functionentheoretischen Intentionen. Für ihn waren die genannten Functionen ja nur ein Beispiel, in dessen Behandlung er freilich besonders glücklich war. Insofern er alle möglichen Functionen complexer Veränderlicher umfassen wollte, dachte er an viel allgemeinere Bestimmungsweisen derselben, als im Folgenden in Betracht kommen: Bestimmungsweisen, bei denen die physikalische Analogie, die wir hier zum hodegetischen Princip nehmen, versagt. Man vergleiche hierzu den §.~19 seiner Dissertation, man vergleiche die Arbeit über die hypergeometrische Reihe. --- Demgegenüber habe ich zu erklären, dass ich in keiner Weise von diesen allgemeineren Betrachtungen abziehen möchte, indem ich von dem speciellen, in sich geschlossenen Theile eine gesonderte Darstellung gebe. Vielmehr ist meine innerste Meinung, dass gerade sie berufen sind, in der Entwickelung der modernen Functionentheorie noch eine wichtige und hervorragende Rolle zu spielen.
+
+\emph{Borkum}, den 7.~Oktober 1881.
+
+\origpage{vii}
+
+\section*{Inhalt.}
+
+Abschnitt I. Einleitende Betrachtungen.
+
+Seite
+
+§.~1. Stationäre Strömungen in der Ebene als Deutung der Functionen von $x + iy$ --- 1
+
+§.~2. Berücksichtigung der Unendlichkeitspuncte von $w = f(z)$ --- 5
+
+§.~3. Rationale Functionen und ihre Integrale. Entstehung höherer Unendlichkeitspuncte aus niederen --- 9
+
+§.~4. Realisation der betrachteten Strömungen auf experimentellem Wege --- 12
+
+§.~5. Uebergang zur Kugelfläche, Strömungen auf beliebigen krummen Flächen --- 16
+
+§.~6. Zusammenhang der entwickelten Theorie mit den Functionen eines complexen Argumentes --- 20
+
+§.~7. Noch einmal die Strömungen auf der Kugel. Riemann's allgemeine Fragestellung --- 23
+
+Abschnitt II. Exposition der Riemann'schen Theorie.
+
+§.~8. Classification geschlossener Flächen nach der Zahl $p$ --- 25
+
+§.~9. Vorläufige Bestimmung stationärer Strömungen auf beliebigen Flächen --- 28
+
+§.~10. Die allgemeinste stationäre Strömung. Beweis für die Unmöglichkeit anderweitiger Strömungen --- 32
+
+§.~11. Erläuterung der Strömungen an Beispielen --- 35
+
+§.~12. Ueber die Zusammensetzung der allgemeinsten complexen Function des Ortes aus einzelnen Summanden --- 40
+
+§.~13. Ueber die Vieldeutigkeit unserer Functionen. Besondere Betrachtung eindeutiger Functionen --- 43
+
+§.~14. Die gewöhnlichen Riemann'schen Flächen über der $x + iy$-Ebene --- 47
+
+§.~15. Der Ring $p = 1$ und die zweiblättrige Fläche mit vier Verzweigungspuncten über der Ebene --- 50
+
+§.~16. Functionen von $x + iy$, welche den untersuchten Strömungen entsprechen --- 55
+
+§.~17. Tragweite und Bedeutung unserer Betrachtungen --- 59
+
+§.~18. Weiterbildungen der Theorie --- 61
+
+\origpage{viii}
+
+Abschnitt III. Folgerungen.
+
+Seite
+
+§.~19. Ueber die Moduln algebraischer Gleichungen --- 64
+
+§.~20. Conforme Abbildung geschlossener Flächen auf sich selbst --- 69
+
+§.~21. Besondere Betrachtung der symmetrischen Flächen --- 72
+
+§.~22. Conforme Abbildung verschiedener geschlossener Flächen auf einander --- 76
+
+§.~23. Berandete Flächen und Doppelflächen --- 78
+
+§.~24. Schlussbemerkung --- 81
+
+\origpage{1}
+
+\section*{Abschnitt I. Einleitende Betrachtungen.}
+
+\section*{§.~1. Stationäre Strömungen in der Ebene als Deutung der Functionen von $x + iy$.}
+
+Die physikalische Deutung der Functionen von $x + iy$, mit welcher wir im Folgenden zu arbeiten haben, ist in ihren Grundlagen wohlbekannt${}^{*)}$, nur der Vollständigkeit halber müssen letztere kurz zur Sprache gebracht werden.
+
+Sei $w = u + iv$, $z = x + iy$, $w = f(z)$. Dann hat man vor allen Dingen:
+\[ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \tag{1} \]
+und hieraus:
+\[ \frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} = 0 \tag{2} \]
+sowie für $v$:
+\[ \frac{\partial^{2} v}{\partial x^{2}} + \frac{\partial^{2} v}{\partial y^{2}} = 0. \tag{3} \]
+
+Hier wird man nun $u$ als \emph{Geschwindigkeitspotential} deuten, so dass $\dfrac{\partial u}{\partial x}$, $\dfrac{\partial u}{\partial y}$ die Componenten der Geschwindigkeit sind, mit der eine Flüssigkeit parallel zur $XY$-Ebene strömt. Wir mögen uns diese Flüssigkeit zwischen zwei Ebenen eingeschlossen denken, die parallel zur $XY$-Ebene verlaufen, oder auch uns vorstellen, dass die Flüssigkeit als unendlich dünne, übrigens gleichförmige Membran über der $XY$-Ebene ausgebreitet sei. Dann sagt die Gleichung (2) --- und dies ist der Kern unserer physikalischen Deutung ---, dass unsere
+
+\textbf{*)} Sei insbesondere auf die Darstellung verwiesen, welche \emph{Maxwell} in seinem Treatise on Electricity and Magnetisme\ednote{Printed ``Magnetisme''; Maxwell's title reads ``Magnetism''. Reproduced as printed.} (Cambridge 1873) gegeben hat. Dieselbe entspricht, was anschauungsmässige Behandlung angeht, genau den Gesichtspuncten, die auch ich im Texte verfolge.
+
+\origpage{2}
+Strömung eine \emph{stationäre} ist. Die Curven $u = \text{Const.}$ heissen die \emph{Niveaucurven}, während die Curven $v = \text{Const.}$, die vermöge (1) den ersteren überall rechtwinkelig begegnen, die \emph{Strömungscurven} abgeben.
+
+Bei dieser Vorstellungsweise ist es zunächst natürlich völlig gleichgültig, wie beschaffen wir uns die strömende Flüssigkeit denken wollen. Inzwischen wird es in der Folge vielfach zweckmässig sein, dieselbe mit dem \emph{elektrischen Fluidum} zu identificiren. Es wird dann nämlich $u$ mit dem elektrostatischen Potential, welches die Strömung hervorruft, proportional, und die experimentelle Physik gibt uns mannigfache Mittel an die Hand, um zahlreiche Strömungszustände, die uns interessiren, thatsächlich zu realisiren.
+
+Die Strömung selbst wird übrigens ungeändert bleiben, wenn wir $u$ durchweg um eine Constante vermehren: es sind nur die Differentialquotienten $\dfrac{\partial u}{\partial x}$, $\dfrac{\partial u}{\partial y}$, welche unmittelbar in Evidenz treten. Das Analoge gilt von $v$; so dass die Function $u + iv$, welche wir physikalisch deuten, durch diese Deutung nur bis auf eine additive Constante bestimmt ist, was im Folgenden wohl zu beachten ist.
+
+Sodann bemerke man noch, dass die Gleichungen (1)---(3) ungeändert bestehen bleiben, wenn man $u$ durch $v$, $v$ durch $-u$ ersetzt. Dementsprechend erhalten wir einen zweiten Strömungszustand, bei welchem $v$ das Geschwindigkeitspotential abgibt und die Curven $u = \text{Const.}$ die Strömungscurven sind. Derselbe repräsentirt in dem oben erläuterten Sinne die Function $v - ui$. Es ist häufig zweckmässig, diese neue Strömung neben der ursprünglichen zu betrachten, bei welcher $u$ das Geschwindigkeitspotential war; wir wollen dann der Kürze halber von \emph{conjugirten} Strömungen sprechen. Die Benennung ist zwar etwas ungenau, weil sich $u$ zu $v$ verhält, wie $v$ zu $(-u)$; sie wird aber für später ausreichen.
+
+Diese ganze Erläuterung bezieht sich, gleich den Differentialgleichungen (1)---(3), zuvörderst nur auf einen solchen (übrigens beliebigen) \emph{Theil} der Ebene, in welchem $u + iv$ eindeutig ist und weder $u + iv$, noch einer seiner Differentialquotienten unendlich wird. Um den entsprechenden physikalischen Vorgang deutlich zu übersehen, hat man sich also vorab einen solchen Bereich abzugränzen und durch geeignete
+
+\origpage{3}
+Vorrichtungen an der Gränze dafür zu sorgen, dass der im Inneren des Gebietes eingeleitete stationäre Bewegungszustand ungehindert fortdauern kann.
+
+In einem so umgränzten Gebiete werden diejenigen Puncte $z_{0}$ unsere besondere Aufmerksamkeit auf sich ziehen, für welche der Differentialquotient $\dfrac{dw}{dz}$ verschwindet. Ich will der Allgemeinheit wegen gleich annehmen, dass auch $\dfrac{d^{2}w}{dz^{2}}$, $\dfrac{d^{3}w}{dz^{3}}$, $\cdot\cdot\cdot$ bis hin zu $\dfrac{d^{\alpha}w}{dz^{\alpha}}$ gleich Null sein mögen. Um über den Verlauf der Niveaucurven, oder auch der Strömungscurven, in der Nähe eines solchen Punctes Aufschluss zu erhalten, entwickele man $w$ in eine nach Potenzen von $(z - z_{0})$ fortschreitende Reihe. Dieselbe bringt hinter dem constanten Gliede unmittelbar ein Glied mit $(z - z_{0})^{\alpha + 1}$. Durch Einführung von Polarcoordinaten schliesst man hieraus: \emph{dass sich im Puncte $z_{0}$ $(\alpha + 1)$ Curven $u = \text{Const.}$ unter resp.\ gleichen Winkeln kreuzen, während ebensoviele Curven $v = \text{Const.}$ als Halbirungslinien der genannten Winkel auftreten.} Ich werde einen solchen Punct dementsprechend einen \emph{Kreuzungspunct} nennen, und zwar einen \emph{Kreuzungspunct von der Multiplicität $\alpha$}.
+
+Die folgende (selbstverständlich nur schematische) Figur mag dieses Vorkommniss für $\alpha = 2$ erläutern und namentlich verständlich machen, wie sich ein Kreuzungspunct in das Orthogonalsystem einfügt, welches übrigens von den Curven $u = \text{Const.}$, $v = \text{Const.}$ gebildet wird:
+
+\rmfigure{figures/fig-1.png}{Figur~1.}{Schematic flow near a crossing point of multiplicity two: three solid streamlines pass through a central point, dividing the neighbourhood into six sectors, each filled with hyperbola-like solid streamlines bearing arrowheads that show fluid flowing in from three sides and out towards three sides; dashed level curves cross the streamlines at right angles.}
+
+Die Strömungscurven $v = \text{Const.}$ erscheinen in der Figur ausgezogen und die Strömungsrichtungen auf ihnen durch beigesetzte
+
+\origpage{4}
+Pfeilspitzen angegeben; die Niveaucurven sind durch Punctirung angedeutet. Man sieht, wie die Flüssigkeit von drei Seiten auf den Kreuzungspunct zuströmt, um ebenfalls nach drei Seiten von demselben abzuströmen. Diess wird nur dadurch möglich, dass die Geschwindigkeit der Strömung im Kreuzungspunkte gleich Null wird (dass sich die Flüssigkeit in demselben staut, wie man nach Analogie bekannter Vorkommnisse sagen könnte). In der That ist ja die Geschwindigkeit durch $\sqrt{\left(\dfrac{\partial u}{\partial x}\right)^{2} + \left(\dfrac{\partial u}{\partial y}\right)^{2}}$ gegeben.
+
+Es ist weiterhin vortheilhaft, den Kreuzungspunkt von der Multiplicität $\alpha$ \emph{als Gränzfall von $\alpha$ einfachen Kreuzungspuncten} aufzufassen. Dass diess zulässig ist, zeigt die analytische Behandlung. Denn im $\alpha$-fachen Kreuzungspunkte hat die Gleichung $\dfrac{dw}{dz} = 0$ eine $\alpha$-fache Wurzel, und eine solche entsteht, wie man weiss, durch Zusammenrücken von $\alpha$ einfachen Wurzeln. Im Uebrigen mögen folgende Figuren diese Auffassung erläutern:
+
+\rmfigure{figures/fig-2.png}{Fig.~2.}{Streamlines only, near a crossing point of multiplicity two: three streamlines meet at one central point, with arrowed hyperbola-like streamlines in the six surrounding sectors, flowing in from three sides and out towards three sides.}
+\rmfigure{figures/fig-3.png}{Fig.~3.}{Streamlines only, for a flow with two simple crossing points close together: two pairs of streamlines cross at right angles at two nearby points, with arrowed hyperbola-like streamlines around them, a deformation of the pattern of Fig. 2.}
+
+Ich habe in denselben der Einfachheit halber nur die Strömungscurven angegeben. Linker Hand erblickt man denselben Kreuzungspunct von der Multiplicität Zwei, auf den sich Figur 1 bezieht. Rechter Hand liegt eine Strömung vor, welche dicht bei einander zwei einfache Kreuzungspuncte aufweist. Man erkennt, wie der eine Strömungszustand aus dem anderen durch continuirliche Aenderung hervorgeht.
+
+Bei dieser Erläuterung wurde stillschweigend vorausgesetzt, dass das Gebiet, in welchem wir den Strömungszustand
+
+\origpage{5}
+betrachten, sich nicht in's Unendliche erstrecke. Es hat allerdings keinerlei principielle Schwierigkeit, den Punct $z = \infty$ ebenso in Betracht zu ziehen, wie irgend einen anderen Punct $z = z_{0}$. An Stelle der Reihenentwickelung nach Potenzen von $z - z_{0}$ hat dann in bekannter Weise eine solche nach Potenzen von $\dfrac{1}{z}$ zu treten. Man wird von einem $\alpha$-fachen Kreuzungspuncte bei $z = \infty$ sprechen, wenn diese Entwickelung hinter dem constanten Gliede sofort einen Term mit $\left(\dfrac{1}{z}\right)^{\alpha+1}$ bringt. Aber es scheint überflüssig, die geometrischen Verhältnisse, welche diesen Vorkommnissen bei unserer Strömung entsprechen, ausführlicher zu schildern. Denn wir werden später Mittel und Wege kennen lernen, um die Sonderstellung des Werthes $z = \infty$, wie sie uns hier entgegentritt, ein für allemal zu beseitigen. Ebendesshalb wird der Punct $z = \infty$ in den nächstfolgenden Paragraphen (§.~2---4) bei Seite gelassen, trotzdem er auch dort, wenn man vollständig sein wollte, besonders in Betracht gezogen werden müsste.
+
+\section*{§.~2. Berücksichtigung der Unendlichkeitspuncte von $w = f(z)$.}
+
+Wir wollen nunmehr auch solche Puncte $z_{0}$ in unser Gebiet hereinnehmen, in denen $w = f(z)$ unendlich gross wird. Dabei schränken wir indess die unbegränzte Reihe der Möglichkeiten, welche in dieser Richtung vorliegt, mit Rücksicht auf die specielle von uns allein zu studierende Functionsclasse bedeutend ein. Wir wollen verlangen, \emph{dass der Differentialquotient $\dfrac{dw}{dz}$ keine wesentlich singuläre Stelle besitzen soll}, oder, was dasselbe ist, wir wollen festsetzen, \emph{dass $w$ nur so unendlich werden darf, wie ein Ausdruck der folgenden Form:}
+\[ A \log (z - z_{0}) + \frac{A_{1}}{z - z_{0}} + \frac{A_{2}}{(z - z_{0})^{2}} + \cdot\cdot\cdot\cdot \quad \frac{A_{\nu}}{(z - z_{0})^{\nu}}, \]
+\emph{unter $\nu$ eine bestimmte endliche Zahl verstanden.}
+
+Entsprechend den verschiedenen Formen, die dieser Ausdruck darbietet, sagen wir, dass sich bei $z = z_{0}$ verschiedene Unstetigkeiten überlagern: ein \emph{logarithmischer} Unendlichkeitspunct, ein \emph{algebraischer} Unendlichkeitspunct von der Multiplicität Eins, u.\ s.\ f. Wir werden der Einfachheit halber hier
+
+\origpage{6}
+jedes dieser Vorkommnisse für sich betrachten, worauf es eine nützliche Uebung sein wird, sich in einzelnen Fällen das Resultat der Ueberlagerung deutlich zu machen.
+
+Sei $z = z_{0}$ zuvörderst ein \emph{logarithmischer} Unendlichkeitspunct. Wir haben dann:
+\[ w = A \log (z - z_{0}) + C_{0} + C_{1} (z - z_{0}) + C_{2} (z - z_{0})^{2} + \cdot\cdot\cdot\cdot \]
+Hier ist $A$ diejenige Grösse, welche man, mit $2i\pi$ multiplicirt, nach \emph{Cauchy} als \emph{Residuum} des logarithmischen Unendlichkeitspunctes bezeichnet, eine Benennung, die im Folgenden gelegentlich angewandt werden soll. Für die Strömung in der Nähe des Unstetigkeitspunctes ist es von primärer Wichtigkeit, ob $A$ reell ist oder rein imaginär, oder endlich complex. Offenbar kann man den dritten Fall als eine Ueberlagerung der beiden ersten auffassen. Wir wollen daher auch ihn bei Seite lassen und haben uns somit nur mit zwei getrennten Möglichkeiten zu beschäftigen.
+
+1) Wenn $A$ reell ist, so werde $C_{0} = a + ib$ gesetzt. Man hat dann in erster Annäherung für $w = u + iv$, $z - z_{0} = re^{i\varphi}$:
+\[ u = A \cdot \log r + a, \qquad v = A\varphi + b. \]
+
+Die Curven $u = \text{Const.}$ umgeben also den Unendlichkeitspunct in Gestalt kleiner Kreise; die Curven $v = \text{Const.}$ laufen, den wechselnden Werthen von $\varphi$ entsprechend, in allen Richtungen auf den Unendlichkeitspunct zu. Wir haben eine Bewegung, bei welcher $z = z_{0}$ \emph{eine Quelle von einer gewissen positiven oder negativen Ergiebigkeit vorstellt.} Um diese Ergiebigkeit zu berechnen, multipliciren wir das Bogenelement eines kleinen mit dem Radius $r$ um den Unstetigkeitspunct beschriebenen Kreises mit der zugehörigen Geschwindigkeit und integriren den so gewonnenen Ausdruck längs der Kreisperipherie. Da $\sqrt{\left(\dfrac{\partial u}{\partial x}\right)^{2} + \left(\dfrac{\partial u}{\partial y}\right)^{2}}$ in erster Annäherung mit $\dfrac{\partial u}{\partial r}$ und dieses mit $\dfrac{A}{r}$ zusammenfällt, so kommt:
+\[ \int_{0}^{2\pi} \frac{A}{r} \cdot r\,d\varphi = 2\,A\pi \]
+als Werth der Ergiebigkeit. \emph{Die Ergiebigkeit ist also gleich dem Residuum, getheilt durch $i$; sie ist positiv oder negativ je nach dem Werthe von $A$.}
+
+\origpage{7}
+
+2) Sei zweitens $A$ rein imaginär, gleich $i\mathsf{A}$. Dann kommt unter Beibehaltung der übrigen Bezeichnungen in erster Annäherung:
+\[ u = -\mathsf{A} \cdot \varphi + a, \qquad v = \mathsf{A} \cdot \log r + b. \]
+
+Die Rollen der Curven $u = \text{Const.}$, $v = \text{Const.}$ sind also geradezu vertauscht. Die Niveaucurven verlaufen jetzt nach allen Richtungen von $z = z_{0}$ aus, während die Strömungscurven den Unendlichkeitspunct in kleinen Kreisen umgeben. Die Flüssigkeit \emph{wirbelt} auf letzteren Curven um den Punct $z = z_{0}$ herum. Ich will den Punct dementsprechend als einen \emph{Wirbelpunct} bezeichnen. Sinn und Intensität des Wirbels werden durch $\mathsf{A}$ gemessen. Da die Geschwindigkeit
+\[ \sqrt{\left(\frac{\partial u}{\partial x}\right)^{2} + \left(\frac{\partial u}{\partial y}\right)^{2}} \]
+in erster Annäherung gleich $\dfrac{\partial u}{\partial \varphi}$ wird, \emph{so findet die Wirbelbewegung bei positivem $\mathsf{A}$ im Sinne des Uhrzeigers, bei negativem $\mathsf{A}$ in entgegengesetztem Sinne statt.} Wir mögen die Intensität des Wirbels gleich $2\mathsf{A}\pi$ setzen, sie ist dann dem Residuum des betreffenden Unendlichkeitspunctes negativ gleich.
+
+Uebrigens können wir sagen, indem wir uns der Definition conjugirter Strömungen, wie sie im vorigen Paragraphen gegeben wurde, mit der ihr anhaftenden Unbestimmtheit erinnern: \emph{Hat eine von zwei conjugirten Strömungen bei $z = z_{0}$ eine Quelle von einer gewissen Ergiebigkeit, so hat die andere dort einen Wirbelpunct von gleicher oder entgegengesetzt gleicher Intensität.}
+
+Wir betrachten ferner die \emph{algebraischen} Unstetigkeitspuncte. Bei ihnen ist der Verlauf der Strömung seinem allgemeinen Charakter nach davon unabhängig, ob das erste Glied der Reihenentwickelung einen reellen, imaginären oder complexen Coefficienten hat. Sei zuvörderst:
+\[ w = \frac{A_{1}}{z - z_{0}} + C_{0} + C_{1} (z - z_{0}) + \cdot\cdot\cdot\cdot\,, \]
+so wird in erster Annäherung für $z - z_{0} = re^{i\varphi}$, $A_{1} = \varrho e^{i\psi}$:
+\[ w - C_{0} = \frac{\varrho}{r} \left\{ \cos (\psi - \varphi) + i \sin (\psi - \varphi) \right\} \]
+
+\origpage{8}
+
+Betrachten wir zuvörderst den reellen Theil rechter Hand. Wenn $r$ sehr klein ist, so kann $\dfrac{\varrho}{r} \cos (\psi - \varphi)$ durch geschickte Wahl von $\varphi$ doch noch jeden beliebigen vorgegebenen Werth vorstellen. \emph{Die Function $u$ nimmt also in unmittelbarer Nähe der Unstetigkeitsstelle noch jeden Werth an.} Zur näheren Orientirung denken wir uns einen Augenblick $r$ und $\varphi$ als unbegränzte Veränderliche, setzen also
+\[ \frac{\varrho}{r} \cos (\psi - \varphi) = \text{Const.} \]
+
+Wir erhalten dann ein Büschel von Kreisen, welche alle die feste Richtung $\varphi = \psi + \dfrac{\pi}{2}$ berühren. Die Kreise sind um so kleiner, je grösser der absolute Betrag von Const.\ genommen wird. \emph{In ähnlicher Weise verlaufen daher die Curven $u = \text{Const.}$ in der Nähe der Unstetigkeitsstelle. Insbesondere haben sie für sehr grosse positive oder negative Werthe von Const.\ die Gestalt kleiner, geschlossener, kreisähnlicher Ovale.} --- Für den imaginären Theil des Ausdrucks rechter Hand und also die Curven $v = \text{Const.}$ gilt eine ähnliche Discussion. Der Unterschied ist nur der, dass jetzt die Richtung $\varphi = \psi$ von allen Curven berührt wird. Hiernach wird die folgende Figur, in welcher die Niveaucurven wieder punctirt, die Strömungscurven ausgezogen sind, verständlich sein:
+
+\rmfigure{figures/fig-4.png}{Figur~4.}{Flow near a simple algebraic discontinuity point: solid arrowed streamlines and dotted level curves all pass through one central point, each family forming loops tangent to a common direction there, with small closed ovals around the point and larger curves radiating out in opposite directions, arrows pointing outward to the lower left and inward from the upper right.}
+
+Die analoge Discussion liefert vom $\nu$-fachen algebraischen Unstetigkeitspuncte die erforderliche Anschauung. Ich will hier nur das Resultat anführen: \emph{Jede Curve $u = \text{Const.}$ läuft $\nu$-mal durch den Unstetigkeitspunct hindurch, indem sie der Reihe nach $\nu$ feste, gleich stark gegen einander geneigte Tangenten berührt. Analog die Curven $v = \text{Const.}$ Für sehr grosse (positive oder negative) Werthe der Constante sind beiderlei Curven in}
+
+\origpage{9}
+\emph{unmittelbarer Nähe der Unstetigkeitsstelle geschlossen.} Ich gebe zur Veranschaulichung eine Figur für $\nu = 2$:
+
+\rmfigure{figures/fig-5.png}{Figur~5.}{Flow near a twofold algebraic discontinuity point: horizontal and vertical arrowed axes and dotted diagonal lines cross at a central point; four large solid arrowed loops and four smaller solid loops, like petals of a flower, pass through the centre, interleaved with dotted loops of the level curves.}
+
+Man wird vermuthen, dass diese höheren Vorkommnisse aus den niederen durch Gränzübergang entstehen mögen. Ich verschiebe die betreffende Erläuterung bis zum folgenden Paragraphen, wo uns eine bestimmte Functionsclasse die erforderlichen Anschauungen mit Leichtigkeit vermitteln wird.
+
+\section*{§.~3. Rationale Functionen und ihre Integrale. Entstehung höherer Unendlichkeitspuncte aus niederen.}
+
+Die entwickelten Sätze genügen, um den Gesammtverlauf solcher Functionen zu veranschaulichen, die, übrigens in der ganzen Ebene eindeutig, keine anderen Unendlichkeitspuncte aufweisen, als die eben betrachteten. Es sind diess, wie man weiss, \emph{die rationalen Functionen und ihre Integrale}. Ohne ausgeführte Zeichnungen zu geben, stelle ich hier die Sätze, welche man bei ihnen betreffs der Kreuzungspuncte und Unendlichkeitspuncte findet, in knapper Form zusammen. Ich beschränke mich dabei, aus dem oben angegebenen Grunde, auf solche Fälle, in denen $z = \infty$ keinerlei ausgezeichnete Rolle spielt. Die hierin liegende Beschränkung wird hinterher, wie bereits angedeutet, von selbst in Wegfall kommen.
+
+1) Die rationale Function, welche wir zu betrachten haben, stellt sich in der Form dar:
+\[ w = \frac{\varphi(z)}{\psi(z)}, \]
+wo $\varphi$ und $\psi$ ganze Functionen desselben Grades sind, die ohne gemeinsamen Theiler angenommen werden können. Ist dieser Grad der $n^{\text{te}}$ und zählt man jeden algebraischen Unendlichkeitspunct
+
+\origpage{10}
+so oft, als seine Multiplicität anzeigt, so erhält man, den Wurzeln von $\psi = 0$ entsprechend, $n$ algebraische Unstetigkeitspuncte. Die Kreuzungspuncte sind durch $\psi\varphi' - \varphi\psi' = 0$, eine Gleichung $(2n - 2)^{\text{ten}}$ Grades, gegeben. \emph{Die Gesammtmultiplicität der Kreuzungspuncte ist also $2n - 2$}, wobei man aber beachten muss, dass jede $\nu$-fache Wurzel von $\psi = 0$ eine $(\nu - 1)$-fache Wurzel von $\psi' = 0$ ist und also jeder $\nu$-fache Unendlichkeitspunct der Function für $(\nu - 1)$ Kreuzungspuncte mitzählt.
+
+2) Soll das Integral einer rationalen Function
+\[ W = \int \frac{\Phi(z)}{\Psi(z)}\,dz \]
+für $z = \infty$ endlich bleiben, so muss der Grad von $\Phi$ um zwei Einheiten kleiner sein als der Grad von $\Psi$. $\Phi$ und $\Psi$ sollen dabei ohne gemeinsamen Theiler angenommen werden. Dann liefert $\Phi = 0$ \emph{die freien Kreuzungspuncte}, d.\ h.\ diejenigen Kreuzungspuncte, welche nicht mit Unendlichkeitspuncten zusammenfallen. Die Wurzeln von $\Psi = 0$ geben die Unendlichkeitspuncte des Integrals. Und zwar entspricht der einfachen Wurzel von $\Psi = 0$ ein logarithmischer Unendlichkeitspunct, der Doppelwurzel ein Unendlichkeitspunct, der im Allgemeinen die Ueberlagerung eines logarithmischen Unstetigkeitspunctes mit einem einfachen algebraischen sein wird, etc. \emph{Wenn man dementsprechend jeden Unendlichkeitspunct so oft zählt, als die Multiplicität des entsprechenden Factors in $\Psi$ beträgt, so ist die Gesammtmultiplicität der Kreuzungspuncte um zwei Einheiten geringer als die der Unendlichkeitspuncte.} Uebrigens sei noch an den bekannten Satz erinnert, dass die Summe der logarithmischen Residua sämmtlicher Unstetigkeitspuncte gleich Null ist. ---
+
+Das Vorstehende gibt uns eine zweifache Möglichkeit, um höhere Unstetigkeitspuncte aus niederen entstehen zu lassen. Wir können einmal --- und diess ist für uns das Wichtigste --- vom Integral der rationalen Function ausgehen. Bei ihm entsteht ein $\nu$-facher algebraischer Unstetigkeitspunct, wenn $\nu + 1$ Factoren von $\Psi$ einander gleich werden, \emph{wenn also $\nu + 1$ logarithmische Unstetigkeitspuncte in geeigneter Weise zusammenrücken}. Dabei ist deutlich, dass die Residuensumme der letzteren gleich Null sein muss, wenn der entstehende
+
+\origpage{11}
+Unendlichkeitspunct ein rein algebraischer sein soll. Die folgenden beiden Figuren, in denen nur die Strömungscurven angegeben sind, erläutern den betreffenden Gränzübergang für den einfachen algebraischen Unstetigkeitspunct der Figur (4):
+
+\rmfigure{figures/fig-6.png}{Fig.~6.}{Streamlines of two nearby source points: arrowed curves run from a lower-left point to an upper-right point along a family of arcs, while further arrowed lines radiate outward from each point.}
+\rmfigure{figures/fig-7.png}{Fig.~7.}{Streamlines of two nearby vortex points: two pairs of concentric arrowed circles, one at upper left and one at lower right, with three arrowed curves running diagonally between them from upper right to lower left.}
+
+Ich habe dabei die Anordnung in doppelter Weise getroffen, so dass linker Hand zwei Quellenpuncte, rechter Hand zwei Wirbelpuncte einander nahe gerückt scheinen und Figur 4 als übereinstimmendes Resultat des Gränzüberganges in beiden Fällen erscheint. In derselben Beziehung stehen die folgenden beiden Zeichnungen zu Figur 5:
+
+\rmfigure{figures/fig-8.png}{Fig.~8.}{Streamlines of three source-like points on a horizontal axis: arrowed curves loop between a central point and two points to its left and right, with arrowed lines radiating outward along both axes and diagonally.}
+\rmfigure{figures/fig-9.png}{Fig.~9.}{Streamlines combining two vortex points, at upper right and lower left, with an elongated closed loop through the centre along the diagonal; arrowed curves wind around the vortices and run outward along the horizontal and vertical directions.}
+
+Die zweite Möglichkeit für das Entstehen höherer Unendlichkeitsstellen aus niederen bietet die Betrachtung der rationalen Function $\dfrac{\varphi}{\psi}$ selbst. Logarithmische Unendlichkeitsstellen bleiben dabei ausgeschlossen. \emph{Der $\nu$-fache algebraische Unstetigkeitspunct entsteht jetzt aus $\nu$ einfachen algebraischen Unstetigkeitspuncten}, indem nämlich $\nu$ einfache lineare Factoren von $\psi$ zu einem $\nu$-fachen zusammenrücken müssen. \emph{Aber zugleich vereinigt sich mit ihnen eine Anzahl von Kreuzungspuncten, deren Gesammtmultiplicität $(\nu - 1)$ beträgt.} Denn $\psi\varphi' - \varphi\psi' = 0$ erhält, wie schon bemerkt, in demselben Augenblicke, wo $\psi$ den $\nu$-fachen Factor bekommt, einen
+
+\origpage{12}
+$(\nu - 1)$-fachen Factor. Die folgende Figur erläutert in diesem Sinne das Entstehen des in Figur 5 abgeleiteten zweifachen algebraischen Unendlichkeitspunctes:
+
+\rmfigure{figures/fig-10.png}{Fig.~10.}{Streamlines of two points on a horizontal axis, each surrounded by two small arrowed loops above and below it and by arrowed curves fanning outward, with a vertical axis between them along which arrowed curves converge from above and below.}
+
+Es ist natürlich leicht, diese beiden Arten des Gränzüberganges unter eine allgemeinere gemeinsam zu subsumiren. Wenn man $\nu + \mu + 1$ logarithmische Unendlichkeitspuncte und $\mu$ Kreuzungspuncte successive oder gleichzeitig zusammenfallen lässt, so wird allemal ein $\nu$-facher algebraischer Unstetigkeitspunct entstehen. Doch ist hier nicht der Ort, um diese Gedanken weiter auszuführen.
+
+\section*{§.~4. Realisation der betrachteten Strömungen auf experimentellem Wege.}
+
+Wir wollen unserer Betrachtung nunmehr eine andere Wendung geben, indem wir uns fragen, wie diejenigen Bewegungsformen, die wir jetzt von den rationalen Functionen und ihren Integralen kennen, physikalisch realisirt werden mögen. Dabei sei es gestattet, von dem Princip der \emph{Ueberlagerung} ausgiebigen Gebrauch zu machen, so dass es sich nur um Herstellung der allereinfachsten Bewegungsformen handelt. Aus der Theorie der Partialbrüche folgt, dass man jede der in Betracht kommenden Functionen aus einzelnen Bestandtheilen additiv zusammensetzen kann, welche sich unter einen der folgenden beiden Typen subsumiren:
+\[ A \cdot \log (z - z_{0}), \qquad \frac{A}{(z - z_{0})^{\nu}}. \]
+
+Da $\log (z - z_{0})$ bei $z = \infty$ einen Unstetigkeitspunct hat, was eine unnöthige Besonderheit ist, so wollen wir den ersten Typus durch den allgemeineren ersetzen:
+\[ A \cdot \log \frac{z - z_{0}}{z - z_{1}} \]
+
+\origpage{13}
+und diesen selbst wieder, entsprechend den Erläuterungen des §.~2, in zwei Bestandtheile zerspalten, indem wir nämlich $A$ gleich $\mathsf{A} + i\mathsf{B}$ setzen und nun $\mathsf{A} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ und $i\mathsf{B} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ gesondert betrachten. Hiernach haben wir im Ganzen drei Fälle auseinanderzuhalten.
+
+1) Wenn es sich um den Typus $\mathsf{A} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ handelt, so haben wir bei $z_{0}$ eine Quelle von der Ergiebigkeit $2\mathsf{A}\pi$, bei $z_{1}$ eine solche von der Ergiebigkeit $-2\mathsf{A}\pi$ anzubringen. Man denke sich zu dem Zwecke die $XY$-Ebene mit einer unendlich dünnen, gleichförmigen, elektricitätsleitenden Schicht überdeckt. Dann wird die entsprechende Bewegungsform offenbar realisirt, \emph{indem wir bei $z_{0}$ den einen, bei $z_{1}$ den anderen Pol einer galvanischen Batterie von zweckmässig gewählter Stärke aufsetzen}${}^{*)}$. --- Man sieht zugleich, wesshalb das Residuum von $z_{0}$ demjenigen von $z_{1}$ entgegengesetzt gleich sein muss: da der Strömungszustand stationär sein soll, muss an der einen Stelle ebenso viel Elektricität zugeführt werden, als an der anderen abströmt. Derselbe Grund gilt, wie man sofort erkennt, für den entsprechenden Satz bei beliebig vielen logarithmischen Unendlichkeitspuncten, wobei allerdings zunächst nur von den rein imaginären Theilen der betreffenden Residua die Rede ist (welche den von den Unendlichkeitspunkten ausgehenden Quellenbewegungen entsprechen).
+
+2) Im zweiten Falle (wo $i\mathsf{B} \cdot \log \dfrac{z - z_{0}}{z - z_{1}}$ gegeben ist) wird die experimentelle Anordnung etwas schwieriger. Das einfachste Schema ist dieses, dass man $z_{0}$ und $z_{1}$ durch eine sich selbst nicht schneidende Curve verbindet \emph{und nun dafür sorgt, dass diese Curve der Sitz einer constanten elektromotorischen Kraft sei}. Es entwickelt sich dann in der $XY$-Ebene eine Strömung, welche bei $z_{0}$ und $z_{1}$ Wirbelpunkte aufweist, welche überall sonst stetig verläuft, und aus der man durch Integration als zugehöriges Geschwindigkeitspotential eine Function findet, welche bei jeder Umkreisung von $z_{0}$ oder $z_{1}$ um einen gewissen Periodicitätsmodul wächst. Von diesem Geschwindigkeitspotential
+
+\textbf{*)} Man vergl.\ den grundlegenden Aufsatz von \emph{Kirchhoff} im 64.\ Bande von Poggendorff's Annalen: Ueber den Durchgang eines elektrischen Stromes durch eine Ebene (1845).
+
+\origpage{14}
+ist dabei das nothwendig eindeutige elektrostatische Potential wohl zu unterscheiden. Die Curve, welche $z_{0}$ und $z_{1}$ verbindet, ist für das letztere eine Unstetigkeitscurve, und wird eben hierdurch die Eindeutigkeit des elektrostatischen Potentials ermöglicht${}^{*)}$.
+
+\rmfigure{figures/fig-11.png}{Fig.~11.}{A lens-shaped region bounded by two curved arcs meeting at the points labelled z0 (upper left) and z1 (lower right); the region inside is labelled I and the areas outside both arcs are labelled II.}
+
+Ich weiss nicht, ob es eine experimentelle Anordnung giebt, um dieses einfachste Schema zu realisiren. Es scheint, dass man umständlicher zu Werke gehen muss. Denken wir zuvörderst etwa an \emph{thermoelektrische} Ströme. Wir wollen die $XY$-Ebene zum Theil mit dem Materiale I, zum Theil mit dem Materiale II überdecken und die Stärke der überdeckenden Schichten dabei so bemessen, dass der specifische Leitungswiderstand überall derselbe sei. Wenn wir dann dafür sorgen, dass die beiden durch $z_{0}$ und $z_{1}$ von einander getrennten Theile der Contour, in welcher die zweierlei Materialien zusammenstossen, beide auf constanten, unter sich verschiedenen Temperaturen gehalten werden, so wird in der That eine elektrische Strömung entstehen, wie wir sie haben wollen. Dabei weist das elektrostatische Potential, nach den Vorstellungen, die man der Lehre von der Thermoelektricität zu Grunde legt, an \emph{beiden} Theilen der genannten Contour Unstetigkeiten auf. --- Noch complicirter scheint es, elektrische Ströme zu benutzen, wie sie die gewöhnlichen galvanischen Elemente liefern. Man muss die Ebene dann durch mindestens drei Curven, welche von $z_{0}$ nach $z_{1}$ verlaufen, in Theile zerlegen und zwei dieser Theile mit metallischen Belegen, den dritten mit einem feuchten Leiter überdecken. Man vergleiche hierzu die Figur 12.
+
+\textbf{*)} Die Behauptungen des Textes hängen, wie man weiss, auf das Engste mit der Theorie der sogenannten Doppelbelegungen zusammen, wegen deren man \emph{Helmholtz} in Poggendorff's Annalen Bd.~89, p.~224~ff.\ (Ueber einige Gesetze der Vertheilung elektrischer Ströme in körperlichen Leitern, 1853) sowie C.\ \emph{Neumann} in dessen Buche: Untersuchungen über das Logarithmische und Newton'sche Potential (Leipzig, Teubner, 1877) vergleichen mag.
+
+\origpage{15}
+
+\rmfigure{figures/fig-12.png}{Fig.~12.}{Three curved arcs running from the point labelled z0 (upper left) to the point labelled z1 (lower right), dividing the plane into three parts labelled I (between the upper and middle arcs), II (between the middle and lower arcs) and III (outside, below the lower arc).}
+
+Durch alle diese Anordnungen hindurch ist von Vorne herein ersichtlich, dass die beiden bei $z_{0}$ und $z_{1}$ auftretenden Wirbelpuncte in der That entgegengesetzt gleiche Intensität haben müssen. Aus ähnlichen Gründen wird die Gesammtintensität sämmtlicher Wirbel bei beliebig vielen gegebenen Wirbelpnncten\ednote{Printed Wirbelpnncten instead of Wirbelpuncten; an apparent misprint, the u set as n.} immer gleich Null sein, und ist dadurch der Satz von dem Verschwinden der Summe aller logarithmischen Residuen, auch was den reellen Theil dieser Residuen angeht, auf physikalisch evidente Gründe zurückgeführt.
+
+3) Die Bewegungsformen, welche den algebraischen Typen $\dfrac{A}{(z - z_{0})^{\nu}}$ entsprechen, mögen den Entwickelungen des §.~3 zufolge aus den eben betrachteten durch Grenzübergang gewonnen werden. Es wird diess natürlich nur mit einer gewissen Annäherung geschehen können. Man setze z.\ B.\ $(\nu + 1)$ Drähte, in welche die Pole einer galvanischen Batterie auslaufen, \emph{dicht bei einander} auf die $XY$-Ebene auf. Dann entsteht eine Strömung, welche in einiger Entfernung von den Drahtenden mit derjenigen merklich zusammenfällt, welche einem algebraischen Unstetigkeitspunkte von der Multiplicität $\nu$ entspricht. Zugleich ergiebt sich eine Ergänzung unserer obigen Darstellung. Man wird die galvanische Batterie \emph{sehr stark} nehmen müssen, wenn bei der erwähnten Anordnung noch eine mittlere elektrische Strömung zu Stande kommen soll. Es entspricht diess dem von analytischer Seite wohlbekannten Satze, dass die Residua logarithmischer Unendlichkeitspuncte selbst in's Unendliche wachsen müssen, wenn beim Zusammenfallen der logarithmischen ein algebraischer Unstetigkeitspunkt entstehen soll. --- Ich gehe hier in kein weiteres Detail, da es im Folgenden allein darauf ankommt,
+
+\origpage{16}
+dass auf Grund der Figuren 6---9 das allgemeine Princip verstanden wird.
+
+\section*{§~5. Uebergang zur Kugelfläche, Strömungen auf beliebigen krummen Flächen.}
+
+Um die unendlich grossen Werthe von $z$ derselben geometrischen Behandlungsweise zugänglich zu machen, wie die endlichen, bedient man sich in den Lehrbüchern jetzt allgemein der \emph{Kugelfläche}${}^{*)}$, welche stereographisch auf die $XY$-Ebene bezogen ist. Man kennt die einfachen geometrischen Beziehungen, welche bei dieser Abbildung auftreten${}^{**)}$. Man weiss auch zur Genüge, dass das Unendlich-Weite der Ebene sich in einen bestimmten Punct der Kugel, den Projectionspunct, zusammenzieht, so dass es keine symbolische Ausdrucksweise mehr ist, wenn man auf der Kugel von einem Puncte $z = \infty$ spricht. Dagegen scheint es noch immer weniger bekannt zu sein, dass bei dieser Abbildung die Functionen von $x + iy$ eine Bedeutung für die Kugelfläche gewinnen, welche derjenigen, die sie für die Ebene hatten, genau analog ist, \emph{dass man also in den Entwickelungen der vorangehenden Paragraphen statt der Ebene die Kugel gebrauchen kann, wobei von einer Sonderstellung des Werthes}
+
+\textbf{*)} Nach dem Vorgange von C.\ \emph{Neumann}, Vorlesungen über Riemann's Theorie der Abel'schen Integrale, Leipzig, 1865. --- Die Einführung der Kugelfläche läuft sozusagen der Ersetzung von $z$ durch das Verhältniss $\dfrac{z_{1}}{z_{2}}$ \emph{zweier} Variabler parallel, wodurch, wie man weiss, die Behandlung unendlich grosser Werthe von $z$ auch \emph{formal} unter die der endlichen Werthe subsumirt wird.
+
+\textbf{**)} Unter $\xi$, $\eta$, $\zeta$ rechtwinklige Coordinaten verstanden, sei die Gleichung der Kugel $\xi^{2} + \eta^{2} + (\zeta - \frac{1}{2})^{2} = \frac{1}{4}$. Projectionspunct sei $\xi = 0$, $\eta = 0$, $\zeta = 1$, Projectionsebene ($XY$-Ebene) die gegenüberliegende Tangentialebene (die $\xi\eta$-Ebene). Dann folgt:
+\[ \xi = \frac{x}{x^{2} + y^{2} + 1}, \qquad \eta = \frac{y}{x^{2} + y^{2} + 1}, \qquad \zeta = \frac{1}{x^{2} + y^{2} + 1}. \]
+
+Bezeichnet man mit $ds$ das Bogenelement der Ebene, mit $d\sigma$ das entsprechende Bogenelement der Kugel, so kommt:
+\[ d\sigma = \frac{ds}{x^{2} + y^{2} + 1}, \]
+eine Formel, welche für das Folgende insofern besonders wichtig ist, als sie die Abbildung als eine \emph{conforme} charakterisirt.
+
+\origpage{17}
+\emph{$z = \infty$ von vorne herein keine Rede ist}${}^{*)}$: Ich entwickele hier kurz diejenigen Sätze der Flächentheorie, aus denen diese Behauptung folgt, und nehme meinen Standpunct dabei gleich so allgemein, dass meine Darstellung für später anzustellende Betrachtungen ausreicht.
+
+Indem wir Flüssigkeitsbewegungen parallel der $XY$-Ebene studirten, haben wir uns bereits gewöhnt, die Flüssigkeitsschicht, welche der Betrachtung unterliegt, als unendlich dünn vorauszusetzen. In demselben Sinne kann man Flüssigkeitsbewegungen offenbar auf beliebig gegebenen Flächen betrachten. Die Verschiebungen frei ausgespannter Flüssigkeitsmembranen in sich, wie man sie bei den Plateau'schen Versuchen so schön beobachten kann, geben ein anschauliches Beispiel dafür. --- Wir werden versuchen, auch derartige Bewegungen durch ein Potential zu definiren, und vor allen Dingen fragen, welche Bewandniss es dann mit den stationären Bewegungen hat.
+
+Die zweckmässige Verallgemeinerung des Potentialbegriffs bietet sich unmittelbar. Es sei $u$ eine Function des Ortes auf der Fläche, so denke man sich auf letzterer die Curven $u = \text{Const.}$ gezogen. Sodann werde festgesetzt, dass die Flüssigkeitsbewegung auf der Fläche in jedem Punkte \emph{senkrecht} gegen die hindurchgehende Curve $u = \text{Const.}$ stattfinden solle, und zwar mit einer Geschwindigkeit, die, unter $dn$ das Bogenelement der zugehörigen, auf der Fläche verlaufenden Normalrichtung verstanden, gleich $\dfrac{du}{dn}$ ist. Wir nennen dann $u$, wie in der Ebene, das zur Bewegung gehörige \emph{Geschwindigkeitspotential}.
+
+Die in solcher Weise definirte Strömung soll nun eine \emph{stationäre} sein. Um eine bestimmte Formel zu haben, wollen wir ein krummliniges Coordinatensystem $p$, $q$ auf unserer Fläche annehmen und uns die Form bestimmt denken:
+
+\textbf{*)} Man vergleiche hierzu und zu den folgenden Entwickelungen: \emph{Beltrami}, Delle variabili complesse sopra una superficie qualunque; Annali di Matematica, ser.~2, t.~I, p.~329~ff. --- Die besondere Bemerkung, dass Oberflächenpotentiale bei conformer Abbildung ebensolche bleiben, findet sich in den in der Vorrede citirten Schriften von C.\ \emph{Neumann}, \emph{Kirchhoff} und \emph{Töpler}, dann auch z.\ B.\ bei \emph{Haton de la Goupillière}: Méthodes de transformation en Géométrie et en Physique Mathématique, Journal de l'Ecole Polytechnique, t.~XXV, 1867 (p.~169~ff.).
+
+\origpage{18}
+\[ ds^{2} = E\,dp^{2} + 2F\,dp\,dq + G\,dq^{2}, \tag{1} \]
+welche vermöge dieses Coordinatensystems das Bogenelement auf der Fläche annimmt. Dann gibt eine einfache Zwischenbetrachtung, welche der in der Ebene üblichen durchaus analog verläuft, dass $u$, um eine stationäre Bewegung zu veranlassen, der folgenden Differentialgleichung zweiter Ordnung genügen muss:
+\[ \frac{\partial \dfrac{F\dfrac{\partial u}{\partial q} - G\dfrac{\partial u}{\partial p}}{\sqrt{EG - F^{2}}}}{\partial p} + \frac{\partial \dfrac{F\dfrac{\partial u}{\partial p} - E\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}}{\partial q} = 0. \tag{2} \]
+
+An diese Differentialgleichung knüpft nun eine kurze Ueberlegung, welche die volle Analogie mit den auf die Ebene bezüglichen Resultaten herstellt.
+
+Es ergiebt sich nämlich aus der Form von (2)\uncertain{;} dass man neben jedem $u$, welches (2) genügt, eine andere Function $v$ einführen kann, \emph{die zu $u$ genau in dem bekannten Reciprocitätsverhältnisse steht}. In der That, vermöge (2) sind die folgenden beiden Gleichungen verträglich:
+\[ \left\{ \begin{aligned} \frac{\partial v}{\partial p} &= \frac{F\dfrac{\partial u}{\partial p} - E\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}, \\ \frac{\partial v}{\partial q} &= \frac{G\dfrac{\partial u}{\partial p} - F\dfrac{\partial u}{\partial q}}{\sqrt{EG - F^{2}}}; \end{aligned} \right. \tag{3} \]
+sie definiren ein $v$ bis auf eine nothwendig unbestimmt bleibende Constante. Aus ihnen aber folgt durch Auflösung:
+\[ \left\{ \begin{aligned} -\frac{\partial u}{\partial p} &= \frac{F\dfrac{\partial v}{\partial p} - E\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}}, \\ -\frac{\partial u}{\partial q} &= \frac{G\dfrac{\partial v}{\partial p} - F\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}} \end{aligned} \right. \tag{4} \]
+und hieraus:
+\[ \frac{\partial \dfrac{F\dfrac{\partial v}{\partial q} - G\dfrac{\partial v}{\partial p}}{\sqrt{EG - F^{2}}}}{\partial p} + \frac{\partial \dfrac{F\dfrac{\partial v}{\partial p} - E\dfrac{\partial v}{\partial q}}{\sqrt{EG - F^{2}}}}{\partial q} = 0, \tag{5} \]
+so dass einmal $u$ sich zu $v$ verhält, wie $v$ zu $-u$, und andererseits $v$, so gut wie $u$, der partiellen Differentialgleichung
+
+\origpage{19}
+(2) genügt. Zugleich haben die Gleichungen (3), bez.~(4), die geometrische Bedeutung, dass die Curven $u = \text{Const.}$ und $v = \text{Const.}$ einander im Allgemeinen rechtwinkelig schneiden.
+
+Was nun die Behauptung betrifft, die ich hinsichtlich der stereographischen Beziehung der Kugel auf die Ebene zu Eingang dieses Paragraphen voranstellte, so ist sie ein unmittelbarer Ausfluss aus dem Umstande, \emph{dass die Gleichungen (2)---(5) in $E$, $F$, $G$ homogen von der nullten Dimension sind}${}^{*)}$. Wenn zwei Flächen conform auf einander bezogen sind und man führt auf ihnen entsprechende krummlinige Coordinaten ein, so unterscheidet sich der Ausdruck für das Bogenelement auf der einen Fläche von dem auf die andere Fläche bezüglichen nur durch einen Faktor. Dieser Factor aber fällt aus dem angegebenen Grunde aus den Gleichungen (2)---(5) einfach heraus. Wir haben also einen allgemeinen Satz, der die besondere auf Kugel und Ebene bezügliche, oben ausgesprochene Behauptung als speciellen Fall umfasst. Indem ich aus $u$, $v$ die Combination $u + iv$ bilde und diese als \emph{complexe Function des Ortes auf der Fläche} bezeichne, spricht sich derselbe folgendermassen aus:
+
+\emph{Wird eine Fläche conform auf eine zweite abgebildet, so verwandelt sich jede auf ihr existirende complexe Function des Ortes in eine Function derselben Art auf der zweiten Fläche.}
+
+Vielleicht ist es nützlich, ausdrücklich einem Missverständnisse entgegenzutreten, welches hierbei entstehen könnte. Derselben Function $u + iv$ entspricht eine Flüssigkeitsbewegung auf der einen und auf der anderen Fläche; man könnte meinen, dass die eine Bewegung vermöge der Abbildung aus der anderen hervorgehe. Dies ist natürlich richtig mit Bezug auf den Verlauf der Strömungscurven und der Niveaucurven, keineswegs aber in Bezug auf die Geschwindigkeit. Wo das Bogenelement der einen Fläche grösser ist, als das Bogenelement der anderen Fläche, da ist die Geschwindigkeit der Strömung entsprechend \emph{kleiner}. Hierin eben liegt es, dass der Werth $z = \infty$ auf der Kugel seine
+
+\textbf{*)} Es ist übrigens nicht schwer, sich auch ohne alle Formel von der Richtigkeit jener Behauptung Rechenschaft zu geben; man sehe die wiederholt citirten Arbeiten von C.\ \emph{Neumann} und \emph{Töpler}.
+
+\origpage{20}
+singuläre Stellung verliert. Für den Unendlichkeitspunct der Ebene erweist sich die Geschwindigkeit der Strömung, wie man sofort sieht, im Allgemeinen als unendlich klein von der zweiten Ordnung. Sollte der Unendlichkeitspunkt singulär sein, so wird die Geschwindigkeit dort allemal um zwei Ordnungen kleiner, als die Geschwindigkeit in einem gleichzubenennenden Punkt des Endlichen. Man erinnere sich nun der oben (unter dem Texte) mitgetheilten Formel:
+\[ d\sigma = \frac{ds}{x^{2} + y^{2} + 1}, \]
+welche das Bogenelement der Kugel zum Bogenelement der Ebene in Beziehung setzt. Hier ist $x^{2} + y^{2} + 1$ eben auch eine Grösse zweiter Ordnung, und es findet daher beim Uebergange zur Kugel genaue Compensation statt.
+
+\section*{§.~6. Zusammenhang der entwickelten Theorie mit den Functionen eines complexen Argumentes.}
+
+Nun wir die Kugel als Substrat unserer Betrachtungen gewonnen haben, übertragen wir auf sie, was wir in den §§.~3 und 4 betreffs rationaler Functionen und ihrer Integrale haben kennen lernen. Wir gewinnen dadurch, dass alle früher aufgestellten Sätze auch für unendlich grosses $z$ und somit ausnahmslos gelten. Um so interessanter wird es, sich auf der Kugel den Verlauf bestimmter rationaler Functionen zu überlegen und über die Mittel zu ihrer physikalischen Realisirbarkeit nachzudenken${}^{*)}$. Aber es ist eine
+
+\textbf{*)} Ein besonders übersichtliches Beispiel von doch nicht zu elementarem Charakter gibt die \emph{Ikosaedergleichung} (siehe Mathematische Annalen, Bd.~XII, p.~502~ff.). Dieselbe lautet, wie man weiss:
+\[ w = \frac{(-(z^{20} + 1) + 228(z^{15} - z^{5}) - 494z^{10})^{3}}{1728z^{5}(z^{10} + 11z^{5} - 1)^{5}}, \]\ednote{In the denominator the print shows a long minus rule followed by a short stray rule before the 1, apparently a doubled or displaced sort; it is read as a single minus, as the formula requires.}
+ist also (für $z$) eine Gleichung vom sechszigsten Grade. Die Unendlichkeitspunkte von $w$ fallen zu je 5 in 12 Punkte zusammen, welche die Ecken eines Ikosaeders sind, das der Kugel, auf welcher wir $z$ deuten, einbeschrieben ist. Den 20 Seitenflächen dieses Ikosaeders entsprechend zerlegt sich die Kugel in 20 gleichseitige sphärische Dreiecke. Die Mittelpunkte dieser Dreiecke sind durch $w = o$ gegeben und stellen ebensoviele Kreuzungspuncte von der Multiplicität Zwei für die Function $w$ dar. Hiernach kennt man (unter Einrechnung der Unendlichkeitspuncte) von den $2 \cdot 60 - 2 = 118$ Kreuzungspuncten bereits $4 \cdot 12 + 2 \cdot 20 = 88$. Die 30 noch fehlenden werden durch die Halbirungspuncte der 30 Kanten, die jenen 20 sphärischen Dreiecken angehören, geliefert.
+
+\rmfigure{figures/fig-13.png}{Fig.~13.}{A spherical equilateral triangle drawn schematically with straight sides. Straight lines run from each vertex through the centre to the midpoint of the opposite side. Arrowed flow curves leave each vertex in looping bundles that return to it, and arrows run along the sides and the median lines.}
+
+Die beistehende Figur repräsentirt in schematischer Weise eines jener 20 Dreiecke und auf ihm den Verlauf der Strömungscurven; auf den 19 übrigen Dreiecken ist die Sache genau ebenso.
+
+\origpage{21}
+andere wichtige Frage, welche sich bei solchen Untersuchungen aufdrängt. Die verschiedenen Functionen des Ortes, welche wir auf der Kugelfläche studiren, sind zugleich Functionen des \emph{Argumentes} $x + iy$. Woher dieser Zusammenhang?
+
+Man wolle vor allen Dingen bemerken, dass $x + iy$ selbst eine complexe Function des \emph{Ortes} auf unserer Kugel ist; genügen doch $x$ und $y$, für $u$ und $v$ eingesetzt, den früher (§.~1) für letztere aufgestellten Differentialgleichungen. So lange man in der Ebene operirt, könnte man denken, dass diese Function vor den übrigen etwas Wesentliches voraus habe; nach dem Uebergange zur Kugel ist hierzu keine Veranlassung mehr. Und in der That verallgemeinert sich die Bemerkung, auf die sich unsere Frage bezieht, sofort. Wenn $u_{1} + iv_{1}$ und $u + iv$ Functionen von $x + iy$ sind, so ist auch $u_{1} + iv_{1}$ eine Function von $u + iv$. Wir haben also für Ebene und Kugelfläche den allgemeinen Satz: \emph{dass von zwei complexen Functionen des Ortes im Sinne der gewöhnlichen functionentheoretischen Ausdrucksweise jede eine Function der anderen ist.}
+
+Wird dieses nun eine besondere Eigenthümlichkeit der genannten Flächen sein? Sicher wird sich dieselbe auf alle solche Flächen übertragen, die man auf einen Theil der Ebene (oder der Kugel) conform beziehen kann. Diess folgt aus dem letzten Satze des vorigen Paragraphen. Ich sage aber, \emph{dass dieselbe Eigenthümlichkeit überhaupt allen Flächen zukommt}, womit implicite behauptet wird, dass man einen Theil einer
+
+\origpage{22}
+\emph{beliebigen} Fläche auf die Ebene oder die Kugelfläche conform übertragen kann.
+
+Der Beweis gestaltet sich unmittelbar, wenn man die Bestandtheile $x, y$ irgend einer auf einer Fläche existirenden complexen Function des Ortes, $x + iy$, auf der Fläche selbst als krummlinige Coordinaten einführt. Dann müssen nämlich die Coëfficienten $E$, $F$, $G$ in dem Ausdrucke des Bogenelementes so beschaffen werden, dass Identitäten entstehen, wenn man in die Gleichungen (2)---(5) des vorigen Paragraphen für $p$ und $q$ und gleichzeitig für $u$ und $v$ bez.\ $x$ und $y$ einführt. \emph{Diess bedingt, wie man sofort ersieht, dass $F = o$, $E = G$ wird.} Hierdurch aber verwandeln sich jene Gleichungen in die wohlbekannten:
+\[ \frac{\partial^{2} u}{\partial x^{2}} + \frac{\partial^{2} u}{\partial y^{2}} = 0; \qquad \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}; \ \text{etc.} \]
+Sie gehen also direct in jene Gleichungen über, durch welche man Functionen des Argumentes $(x + iy)$ zu definiren pflegt, so dass $u + iv$ in der That eine Function von $x + iy$ wird, was zu beweisen war.
+
+Zugleich erledigt sich, was hinsichtlich conformer Abbildung behauptet wurde. Denn aus der Form des Bogenelementes
+\[ ds^{2} = E\,(dx^{2} + dy^{2}) \]
+folgt unmittelbar, dass unsere Fläche durch $x + iy$ auf die $XY$-Ebene conform übertragen wird. Ich will dieses Resultat in etwas allgemeinerer Form aussprechen, indem ich sage:
+
+\emph{Wenn man auf zwei Flächen zwei complexe Functionen des Ortes kennt, und man bezieht die Flächen so aufeinander, dass entsprechende Puncte respective gleiche Functionswerthe aufweisen, so sind die Flächen conform auf einander bezogen.}
+
+Es ist dies die Umkehr des ähnlich lautenden am Schlusse des vorigen Paragraphen aufgestellten Satzes.
+
+Alle diese Theoreme haben, soweit sie sich auf beliebige Flächen beziehen, für's Erste nur dann einen klaren Sinn, wenn man seine Aufmerksamkeit auf kleine Stücke der Flächen beschränkt, innerhalb deren die complexen Functionen des Ortes weder Unendlichkeitspuncte noch Kreuzungspuncte
+
+\origpage{23}
+aufweisen. Ich habe desshalb gelegentlich auch nur von einem Flächen\emph{theile} gesprochen. Aber es liegt nahe, zu fragen, wie sich die Verhältnisse gestalten, wenn man geschlossene Flächen \emph{in ihrer ganzen Ausdehnung} benutzt. Diese Frage ist mit der weiteren Ideenentwickelung, die ich im folgenden zu geben habe, auf das Innigste verknüpft; ihr speciell sind die §§.~19---21 des Folgenden gewidmet.
+
+\section*{§~7. Noch einmal die Strömungen auf der Kugel. Riemann's allgemeine Fragestellung.}
+
+Wir haben nunmehr alle Vorbedingungen, um die Entwickelungen der ersten Paragraphen dieser Einleitung in wesentlich neuer Weise aufzufassen und uns vermöge dieser Auffassung zu einer grossen und allgemeinen Fragestellung zu erheben, welche die \emph{Riemann'sche} ist, und deren Präcisirung und Beantwortung den eigentlichen Gegenstand der gegenwärtigen Schrift zu bilden hat.
+
+Das Primäre bei der bisherigen Darstellung bildete die Function von $x + iy$. Wir haben dieselbe durch eine stationäre Strömung auf der Kugel gedeutet, und uns bemüht, Eigenschaften der Function in solchen der Strömung wieder zu erkennen. Insbesondere haben uns die rationalen Functionen und ihre Integrale mit einer einfachen Art von Strömungen bekannt gemacht: es sind die \emph{einförmigen} Strömungen, diejenigen, bei denen in jedem Puncte der Kugel nur \emph{eine} Strömung statt hat. Und zwar sind es unter der Voraussetzung, dass keine anderen Unstetigkeitspuncte statt haben, als die in §.~2 definirten, die \emph{allgemeinsten} einförmigen Strömungen, welche es auf der Kugel gibt.
+
+Es scheint von Vorneherein möglich, diese ganze Entwickelung umzukehren: \emph{das Studium der Strömungen voranzustellen und aus ihm erst die Theorie gewisser analytischer Functionen zu entwickeln.} Die Frage nach der allgemeinsten in Betracht kommenden Strömung mag dann vorab durch physikalische Betrachtungen beantwortet werden; geben uns doch die experimentellen Anordnungen des §.~4 zusammen mit dem Princip der Ueberlagerung das Mittel, um jede derartige Strömung zu definiren! Die einzelne Strömung bestimmt uns sodann, von einer Integrationsconstante abgesehen, eine complexe Function des Ortes, deren allgemeinen Verlauf
+
+\origpage{24}
+wir anschauungsmässig verfolgen können. Jede solche Function ist eine analytische Function jeder anderen. Indem wir irgend zwei complexe Functionen des Ortes zusammenstellen, werden wir zu analytischen Abhängigkeiten hingeführt, deren Eigenschaften wir von Vorneherein übersehen und die wir erst hinterher, um den Zusammenhang mit den Betrachtungen der Analysis herzustellen, mit sonst in der Analysis üblichen Abhängigkeiten identificiren.
+
+Alles dieses ist so deutlich, dass eine genauere Ausführung hier überflüssig erscheint, dass wir vielmehr sofort zu der in Aussicht gestellten \emph{Verallgemeinerung} schreiten können. Auch diese bietet sich auf Grund der bisherigen Entwickelungen fast mit Nothwendigkeit. Wir werden alle die Fragen, welche wir gerade hinsichtlich der Kugelfläche formulirten, in gleicher Weise aufwerfen können, \emph{wenn statt der Kugelfläche eine beliebige geschlossene Fläche gegeben ist.} Auch auf ihr werden wir einförmige Strömungen und also complexe Functionen des Ortes bestimmen können, deren Eigenschaften wir anschauungsmässig erfassen. Die gleichzeitige Betrachtung verschiedener Functionen des Ortes verwandelt hernach die zu gewinnenden Ergebnisse in ebenso viele Lehrsätze der gewöhnlichen Analysis. --- Die Ausführung dieses Gedankenganges ist \emph{die Riemann'sche Theorie;} zugleich haben wir die Haupteintheilung, welche bei der folgenden Exposition derselben zu Grunde zu legen ist.
+
+\origpage{25}
+
+\section*{Abschnitt II. Exposition der Riemann'schen Theorie.}
+
+\section*{§.~8. Classification geschlossener Flächen nach der Zahl $p$${}^{*)}$.}
+
+Für unsere Betrachtungen sind selbstverständlich alle diejenigen geschlossenen Fächen\ednote{Printed ``Fächen'' instead of ``Flächen''; an apparent misprint.} als aequivalent aufzufassen, die sich durch eindeutige Zuordnung conform auf einander abbilden lassen. Denn jede complexe Function des Ortes auf der einen Fläche wird sich bei einer solchen Abbildung in eine ebensolche Function auf der anderen Fläche verwandeln: die analytische Beziehung also, welche durch das Zusammenbestehen zweier complexer Functionen auf der einen Fläche versinnlicht wird, bleibt beim Uebergange zur zweiten Fläche durchaus ungeändert. Wenn man also z.\ B.\ (zufolge bekannter Entwickelungen) das Ellipsoid derart conform auf die Kugel beziehen kann, dass jedem Puncte desselben ein und nur ein Kugelpunct entspricht, so heisst diess für uns, dass das Ellipsoid ebenso geeignet ist, die rationalen Functionen und ihre Integrale zu repräsentiren, wie die Kugel.
+
+Um so wichtiger ist es, ein Element kennen zu lernen, welches nicht nur bei conformer, sondern überhaupt bei \emph{eindeutiger} Umgestaltung einer Fläche ungeändert erhalten bleibt${}^{**)}$. \emph{Es ist diess das Riemann'sche $p$:} die Zahl der
+
+\textbf{*)} Die in diesem Paragraphen gegebene Darstellung weicht von der durch Riemann selbst gegebenen zumal dadurch ab, dass Flächen mit Randcurven vorab überhaupt nicht in Betracht gezogen werden und also statt der Querschnitte, die von einem Randpuncte zu einem zweiten laufen, sogenannte \emph{Rückkehrschnitte} zur Verwendung gelangen (vgl.\ C.\ Neumann, Vorlesungen über Riemann's Theorie der Abel'schen Integrale, p.~291~ff.).
+
+\textbf{**)} Es ist immer nur an Umformung durch \emph{stetige} Functionen gedacht. Ueberdies sollen bei den willkürlichen Flächen des Textes bis auf Weiteres gewisse besondere Vorkommnisse ausgeschlossen sein. Es ist am Besten, sich dieselben ohne alle singuläre Puncte zu denken; erst später kommen Verzweigungspuncte und damit Selbstdurchsetzungen der Fläche in Betracht (§.~13). Die Flächen dürfen jedenfalls keine \emph{Doppelflächen} sein, bei denen man von einer Flächenseite durch continuirliches Fortschreiten auf der Fläche zur anderen Flächenseite gelangen kann; man vergleiche indess §.~23. Ueberdiess wird vorausgesetzt --- wie man es immer thut, wenn man sich eine geschlossene Fläche als \emph{fertig} gegeben denkt --- dass die Fläche durch eine \emph{endliche} Zahl von Schnitten in einfach zusammenhängende Theile zerlegt werden kann.
+
+\origpage{26}
+Rückkehrschnitte, welche man auf einer Fläche ziehen kann, ohne sie zu zerstücken. Die einfachsten Beispiele genügen, um diesen Begriff einzuüben. Für die Kugel ist $p = 0$; denn sie zerfällt durch jede auf ihr verlaufende geschlossene Curve, in zwei getrennte Bereiche. Für den gewöhnlichen Ring ist $p = 1$, man kann ihn längs einer, aber auch nur längs einer, übrigens noch sehr willkürlichen, in sich zurücklaufenden Curve zerschneiden, ohne dass er in Stücke zerfällt.
+
+Dass es unmöglich ist, zwei Flächen von verschiedenem $p$ eindeutig auf einander zu beziehen, scheint evident${}^{*)}$. Complicirter ist es, den umgekehrten Satz zu beweisen, \emph{dass nämlich die Gleichheit des $p$ die hinreichende Bedingung für die Möglichkeit der eindeutigen Beziehung zweier Flächen abgibt.} Ich muss mich, was den Beweis dieses wichtigen Satzes angeht, an dieser Stelle auf blosse Citate unter dem Texte beschränken${}^{**)}$. Auf Grund desselben ist man berechtigt, bei Untersuchungen über geschlossene Flächen, so lange nur allgemeine Lagenverhältnisse in Betracht kommen, für jedes $p$ einen möglichst einfachen Typus zu Grunde zu legen. In diesem Sinne wollen wir von \emph{Normalflächen} sprechen. Für quantitative Bestimmungen reichen die Normalflächen natürlich in keiner Weise mehr aus; aber sie bieten auch für sie ein Mittel zur Orientirung.
+
+\textbf{*)} Damit soll keineswegs gesagt sein, dass diese Art geometrischer Evidenz nicht noch der näheren Untersuchung bedürftig sei. Man vergleiche die Erläuterungen von G.\ \emph{Cantor} in Borchardt's Journal, Bd.~84, p.~242~ff. Es bleiben inzwischen diese Untersuchungen von den Darlegungen des Textes ausgeschlossen, da es für letztere Princip ist, auf anschauungsmässige Verhältnisse als letzte Begründung zu recurriren.
+
+\textbf{**)} Man sehe C.\ \emph{Jordan}: Sur la déformation des surfaces (in Liouville's Journal, ser.~2, Bd.~11 (1866).\ednote{The parenthesis opened before ``in Liouville's Journal'' is never closed in the print; only the one after 1866 is printed.} Einige Puncte, die mir besonderer Aufklärung zu bedürfen schienen, sind in den mathematischen Annalen, Bd.~VII, p.~529, und Bd.~IX, p.~476, besprochen.
+
+\origpage{27}
+
+Die Normalfläche für $p = 0$ sei die Kugel, für $p = 1$ der Ring. Bei höherem $p$ mag man sich eine Kugel mit $p$ Anhängseln (Handhaben) versehen denken, wie folgende Figur für $p = 3$ aufweist:
+
+\rmfigure{figures/fig-14.png}{Fig.~14.}{Outline of a sphere-like closed surface with three handles, one at the top and one at each lower side, each drawn as a loop with an inner opening.}
+
+Eine ähnliche Normalfläche ist natürlich auch bei $p = 1$ statthaft, wie überhaupt man sich diese Flächen nicht als starr gegeben, sondern als beliebiger Verzerrungen fähig denken muss.
+
+Auf diesen Normalflächen mögen nun gewisse \emph{Querschnitte}, von denen wir im Folgenden Gebrauch zu machen haben, festgelegt werden. Bei $p = 0$ kommen dieselben noch nicht in Betracht. Auf dem Ringe $p = 1$ mag eine „Meridiancurve“ $A$, verbunden mit einer „Breitencurve“ $B$ das Querschnittsystem bilden:
+
+\rmfigure{figures/fig-15.png}{Fig.~15.}{A ring seen from above as two concentric circles, with a third circle between them marked B running around the ring, and a short cross-section across the ring at lower left marked A, partly dashed where it passes behind.}
+
+Allgemein gebrauchen wir $2p$ Querschnitte. Es wird, denke ich, mit Rücksicht auf die folgende Figur verständlich
+
+\origpage{28}
+sein, wenn ich bei der einzelnen Handhabe unserer Normalfläche von einer Meridiancurve und einer Breitencurve rede:
+
+\rmfigure{figures/fig-16.png}{Fig.~16.}{A single handle rising from the surface, with a small closed curve, partly dashed, drawn around the handle's tube near its top and a second curve running along the handle's length.}
+
+\emph{Wir wählen die $2p$ Querschnitte derart, dass wir um jede der $p$ Handhaben eine Meridiancurve und eine Breitencurve herumlegen.} Wir wollen diese Querschnitte der Reihe nach mit $A_{1}, A_{2}, \cdot\cdot\cdot A_{p}$, beziehungsweise $B_{1}, B_{2}, \cdot\cdot\cdot B_{p}$ bezeichnen.
+
+\section*{§.~9. Vorläufige Bestimmung stationärer Strömungen auf beliebigen Flächen.}
+
+Wir haben uns nun mit der Aufgabe zu beschäftigen, auf beliebigen (geschlossenen) Flächen die allgemeinsten einförmigen, stationären Strömungen mit Geschwindigkeitspotential zu definiren, immer unter der Voraussetzung, dass keine anderen Unendlichkeitspuncte zugelassen werden sollen, als die in §.~2 genannten${}^{*)}$. Zu dem Zwecke richten wir unsere Ideen auf die Normalflächen des vorigen Paragraphen und benutzen übrigens wieder Vorstellungen der Elektricitätslehre. Die gegebene Fläche denken wir uns mit einem unendlich dünnen gleichförmigen Ueberzuge einer leitenden Substanz versehen, und wenden zunächst diejenigen experimentellen Mittel an, die uns von §.~3 her bekannt sind.
+
+\textbf{*)} Die Definition dieser Unendlichkeitspuncte bezog sich zunächst nur auf die Ebene, bez.\ die Kugel. Aber es ist wohl klar, wie dieselbe auf beliebige krumme Flächen zu übertragen ist: die Verallgemeinerung ist so zu treffen, dass wir auf die alten Unendlichkeitspuncte zurückkommen, wenn wir die Fläche und die stationären Strömungen auf ihr durch conforme Abbildung auf die Ebene übertragen. --- In dieser Beschränkung hinsichtlich der Art der Unendlichkeitspuncte liegt auch, wie ich hier nicht ausführen kann, dass nur eine \emph{endliche} Zahl von Unendlichkeitspuncten bei unseren Strömungen möglich ist. Desgleichen folgt aus unseren Prämissen, wie beiläufig hervorgehoben sei, dass von Kreuzungspuncten bei unseren Strömungen jedenfalls auch nur eine endliche Zahl auftritt.
+
+\origpage{29}
+
+Wir werden also zuvörderst etwa die beiden Pole einer galvanischen Batterie auf unsere Fläche an zwei beliebigen Stellen aufsetzen: es entsteht dann eine Strömung, welche diese beiden Stellen als Quellenpuncte von entgegengesetzt gleicher Ergiebigkeit besitzt. Wir werden sodann zwei beliebige Puncte der Fläche durch eine oder mehrere, neben einander herlaufende, sich selbst nicht schneidende Curven verbinden, welche der Sitz constanter elektromotorischer Kräfte sein sollen, --- wobei man sich alles Dessen erinnern mag, was in §.~4 betreffs der dann nothwendig werdenden experimentellen Anordnung gesagt wurde. Wir erhalten dann eine stationäre Bewegung, für welche die beiden Puncte Wirbelpuncte von entgegengesetzt gleicher Intensität sind. --- Wir werden ferner verschiedene solche Bewegungsformen überlagern und endlich, wenn es nöthig scheint, getrennte Unendlichkeitspuncte durch Gränzübergang zu höheren Unendlichkeitspuncten zusammenfallen lassen. Alles das gestaltet sich genau so, wie auf der Kugel, und wir haben also jedenfalls den folgenden Satz:
+
+\emph{Wenn man die Art der Unendlichkeitsstellen nach Anleitung des §.~2 beschränkt, wenn man ferner daran festhält, dass die Summe sämmtlicher logarithmischer Residua allemal gleich Null sein muss, so existiren auf unserer Fläche complexc\ednote{Printed complexc for complexe: a wrong sort, the final letter is a fully inked italic c with its ball terminal, not a damaged e.} Functionen des Ortes, welche an beliebig gegebenen Stellen in übrigens beliebig gegebener Weise unendlich werden und überall sonst stetig verlaufen.}
+
+Mit den so bestimmten Functionen ist nun aber, für $p > 0$, die Sache noch keineswegs erschöpft. Wir können nämlich eine experimentelle Anordnung treffen, für welche auf der Kugel noch keinerlei Möglichkeit gegeben war. Es gibt jetzt auf der Fläche in sich zurücklaufende Curven, vermöge deren die Fläche keineswegs in getrennte Bereiche zerlegt wird. Nichts steht im Wege, dass die Elektricität von der einen Seite einer solchen Curve durch die Fläche hindurch zur anderen Seite derselben hinüberströmt. \emph{Wir werden eine solche Curve, oder auch mehrere neben einander herlaufende Curven dieser Art ebensogut als Sitz constanter elektromotorischer Kräfte betrachten können, wie diess in §.~4 mit Curvenzügen geschah, die von einem Endpuncte zu einem zweiten hinlaufen.}
+
+Die Strömungen, welche wir dann erhalten, haben überhaupt
+
+\origpage{30}
+keine Unstetigkeiten. Wir werden sie als \emph{überall endliche Strömungen} und die zugehörigen complexen Functionen des Ortes als \emph{überall endliche Functionen} bezeichnen können. Diese Functionen sind nothwendig unendlich vieldeutig. Denn sie erhalten jeweils einen reellen, der angenommenen elektromotorischen Kraft proportionalen Periodicitätsmodul, so oft man die gegebene Curve in demselben Sinne überschreitet${}^{*)}$.
+
+Wir fragen, wie mannigfach die so definirten überall endlichen Strömungen sein mögen. Offenbar sind zwei auf derselben Fläche verlaufende Curven, als Sitz gleich starker elektromotorischer Kräfte betrachtet, für unseren Zweck \emph{aequivalent}, wenn sie sich durch stetige Verschiebung über die Fläche hin zur Deckung bringen lassen. Verzerrt man eine Curve so, dass Curvenstücke auftreten, welche zweimal in entgegengesetzter Richtung durchlaufen werden, so dürfen dieselben einfach weggelassen werden. In Folge dessen beweist man, \emph{dass eine jede geschlossene Curve einer ganzzahligen Combination der Querschnitte $A_{i}$, $B_{i}$, wie diese im vorigen Paragraphen definirt wurden, aequivalent ist.}
+
+\rmfigure{figures/fig-17.png}{Fig.~17.}{A ring surface seen from above as two concentric circles; a closed curve, solid on the visible side and dashed on the hidden side, winds three times around the tube while going once around the ring.}
+\rmfigure{figures/fig-18.png}{Fig.~18.}{The same ring surface as two concentric circles; a dashed curve runs once around the ring and, near the top, is joined by three parallel strokes, solid in front and dashed behind, crossing the tube.}
+
+In der That, man verfolge den Weg einer geschlossenen Curve auf unserer Normalfläche${}^{**)}$. Für $p = 1$ wird die
+
+\textbf{*)} Ueber die Periodicität des imaginären Theil's der Function soll hiermit keinerlei Verfügung getroffen sein. In der That ist $v$ bei gegebenem $u$ durch die Differentialgleichungen (1) der pag.~1 bis auf eine additive Constante vollständig bestimmt und es unterliegen also die Periodicitätsmoduln, welche $v$ an den Querschnitten $A_{i}$, $B_{i}$ besitzen mag, keinerlei willkürlicher Festsetzung.
+
+\textbf{**)} Einen anderen Beweis siehe bei C.\ \emph{Jordan}: Des contours tracés sur les surfaces, in Liouville's Journal, ser.~2, Bd.~11 (1866).
+
+\origpage{31}
+Richtigkeit unserer Behauptung dann unmittelbar evident. Es genügt, ein Beispiel zu betrachten, wie es in den vorstehenden Figuren vorliegt.
+
+Die in Figur 17 auf der Ringfläche verlaufende Curve ist mit der anderen, welche rechter Hand gezeichnet ist, durch blosse Verzerrung zur Deckung zu bringen, sie ist also mit einer dreifachen Durchlaufung der Meridiancurve $A$ (vergl.\ Fig.~15) und einer einfachen Durchlaufung der Breitencurve $B$ aequivalent. --- Sei ferner $p > 1$. So oft dann unsere Curve über eine der $p$ Handhaben verläuft, kann man ein Stück von ihr abtrennen, das sich durch blosse Verzerrung in eine ganzzahlige Verbindung der betreffenden Meridiancurve und der zugehörigen Breitencurve verwandeln lässt. Nach Absonderung aller solcher Bestandtheile bleibt eine geschlossene Curve übrig, die sich entweder unmittelbar in einen einzelnen Punct der Fläche zusammenziehen lässt und also jedenfalls keinen Beitrag zur elektrischen Strömung liefert, oder die eine oder mehrere Handhaben völlig umschliesst, wovon Figur 19 ein Beispiel aufweist:
+
+\rmfigure{figures/fig-19.png}{Fig.~19.}{A surface with three holes, drawn as a rounded three-lobed outline enclosing three circles; a curve with arrows, solid on the visible side and dashed on the hidden side, runs from the outer rim between the upper and lower-left holes down to the rim between the two lower holes, enclosing the lower-left hole.}
+\rmfigure{figures/fig-20.png}{Fig.~20.}{The same three-holed surface; the curve has been deformed to run closely around the lower-left hole as a double line with a dashed middle, joined to the outer rim at the left by a short doubled stem, with arrows marking opposite directions of traversal.}
+
+Die Figur 20 erläutert, wie man eine solche Curve durch Deformation verändern kann. Durch Fortsetzung des hierdurch angedeuteten Processes verwandelt sie sich in einen Curvenzug, der aus der inneren Randcurve der betreffenden Handhabe und einer zugehörigen Meridiancurve besteht, dessen Stücke aber beide, zweimal in entgegengesetzter Richtung durchlaufen werden. Also auch eine solche Curve gibt keinen Beitrag zur Strömung. Man hätte dieses übrigens auch von Vorneherein aus der Bemerkung ersehen können, dass die jetzt betrachtete Curve, gleich einer solchen, die sich in einen
+
+\origpage{32}
+Punct zusammenziehen lässt, die gegebene Fläche in getrennte Gebiete zerlegt.
+
+Wir erzielen daher durch Heranziehen beliebiger geschlossener Curven nicht \emph{mehr}, als durch geeignete Benutzung der $2p$ Curven $A_{i}$, $B_{i}$. Die allgemeinste überall endliche Strömung, welche wir hervorrufen können, wird entstehen, wenn wir jeden der $2p$ Querschnitte zum Träger einer beliebigen constanten elektromotorischen Kraft machen. Oder anders ausgedrückt:
+
+\emph{Die allgemeinste von uns zu construirende überall endliche Function ist diejenige, deren reeller Theil an den $2p$ Querschnitten beliebig vorgegebene Periodicitätsmoduln aufweist.}
+
+\section*{§.~10. Die allgemeinste stationäre Strömung. Beweis für die Unmöglichkeit anderweitiger Strömungen.}
+
+Wenn wir die verschiedenen im vorigen Paragraphen construirten complexen Functionen des Ortes additiv zusammenfügen, so erhalten wir eine Function, deren Willkürlichkeit wir sofort übersehen. Indem wir die Bedingungen, die hinsichtlich der Unendlichkeitsstellen ein für allemal vorgeschrieben sind, nicht noch besonders erwähnen, können wir sagen: \emph{dass unsere Function an beliebig gegebenen Stellen in beliebig gegebener Weise unendlich wird und überdiess ihr reeller Theil an den $2p$ Querschnitten beliebig gegebene Periodicitätsmoduln aufweist.}
+
+Ich sage nun, \emph{dass diess in der That die allgemeinste Function ist, der auf unserer Fläche eine einförmige Strömung entspricht.} Zum Beweise mögen wir diese Behauptung auf eine einfachere reduciren. Ist irgend eine complexe Function der in Betracht kommenden Art auf unserer Fläche gegeben, so haben wir im Vorhergehenden das Mittel, eine zugehörige Function zu construiren, welche an denselben Stellen in derselben Weise unendlich wird, und deren reeller Theil an den Querschnitten $A_{i}$, $B_{i}$ dieselben Periodicitätsmoduln aufweist, wie der reelle Theil der gegebenen Function. Die Differenz der beiden Functionen ist eine neue Function, welche nirgendwo unendlich wird und deren reeller Theil an den Querschnitten verschwindende Periodicitätsmoduln besitzt, welche überdiess, wie selbstverständlich, wiederum eine einförmige Strömung definirt. \emph{Offenbar haben wir zu beweisen, dass eine}
+
+\origpage{33}
+\emph{solche Function nicht existirt, oder vielmehr, dass sie sich auf eine Constante reducirt.}
+
+Und in der That ist dieser Beweis nicht schwierig. Was eine Durchführung desselben in strenger Form betrifft, so will ich mich darauf beschränken, zu bemerken, dass dieselbe mit Hülfe des verallgemeinerten \emph{Green}'schen Satzes gelingt${}^{*)}$. Die folgenden Betrachtungen sollen auf \emph{anschauungsmässigem Wege} dieselbe Unmöglichkeit darthun. Mag man dieselben wegen der unbestimmten Form, die sie besitzen, vielleicht auch nicht als zwingend erachten${}^{**)}$, so scheint es doch nützlich, auch in dieser Weise den Gründen für das Bestehen jenes Theoremes nachzugehen.
+
+Wir mögen den besonderen Fall $p = 0$ vorweg nehmen und uns also fragen, wesshalb auf der Kugel eine einförmige, überall endliche Strömung unmöglich ist. Das Zweckmässigste scheint es zu sein, den Verlauf der Strömungscurven auf der Kugel zu verfolgen. Da Unendlichkeitspuncte nicht auftreten sollen, so kann eine Strömungscurve nicht plötzlich abbrechen, wie es in einem Quellenpuncte, oder in einem algebraischen Unstetigkeitspuncte geschieht. Ueberdiess halte man vor Augen, dass neben einander herlaufende Strömungscurven nothwendig gleichen Strömungssinn haben. Man erkennt dann, dass nur zweierlei Arten von nicht abbrechenden Strömungscurven möglich sind. Entweder die Curve windet sich, je länger um so enger, um einen asymptotischen Punct --- dann haben wir wieder einen Unendlichkeitspunct ---, oder die Curve ist gegeschlossen.\ednote{Printed ge-geschlossen across a line break, a doubled syllable; read geschlossen.} Ist aber \emph{eine} Strömungscurve geschlossen, so sind es die nächstfolgenden auch. Dabei schliessen sie einen kleineren und kleineren Theil der Kugelfläche ein. Es kann also nicht fehlen, dass man zu einem Wirbelpuncte, d.\ h.\ abermals zu einem Unendlichkeitspuncte geführt wird. Eine überall endliche Strömung ist also in der That unmöglich. Allerdings haben wir der Möglichkeit nicht gedacht, die in dem Auftreten von Kreuzungspuncten liegt. Diese Puncte sind jedenfalls nur, wie oben hervorgehoben, in endlicher Zahl vorhanden. Es wird also nur eine endliche Zahl von Strömungscurven
+
+\textbf{*)} Wegen dieses Satzes siehe \emph{Beltrami}, l.\ c.\ p.~354.
+
+\textbf{**)} Ich will übrigens daran erinnern, dass man auch den \emph{Green}'schen Satz anschauungsmässig begründen kann. Vgl.\ \emph{Tait}, On Green's and allied other theorems, Edinburgh Transactions, 1869---70, p.~69~ff.
+
+\origpage{34}
+geben, welche durch sie hindurchlaufen. Man denke sich die Kugel durch diese Curven in Gebiete zerlegt und wiederhole innerhalb der einzelnen Gebiete die gerade angestellten Betrachtungen, wobei sich das frühere Resultat von Neuem ergeben wird.
+
+Nehmen wir nun $p > 0$ und legen wieder die Normalflächen des §.~8 zu Grunde. Dass auf diesen Flächen überall endliche, einförmige Strömungen existiren, liegt nach dem gerade Gesagten an dem Auftreten der Handhaben. Eine auf der Normalfläche gezogene geschlossene Curve, die sich in einen Punct zusammenziehen lässt, kann ebensowenig, wie eine geschlossene Curve auf der Kugel, Strömungscurve für eine überall endliche Strömung sein. Aber auch eine Curve, wie wir sie in Figur (19) betrachteten, ist nicht zu brauchen. Denn an eine erste solche Strömungscurve müssen sich weitere schliessen nach Art der in Figur (20) dargestellten, --- so dass wir zuletzt zu einer Curve gelangen, deren Theile zweimal in entgegengesetztem Sinne durchlaufen werden! Die Strömungscurve muss also nothwendig sich um die eine oder andere Handhabe \emph{herumwinden}, mag diess ein einfaches Umfassen jener Handhabe sein, oder ein wiederholtes Umkreisen derselben im Sinne der Meridian- oder der Breitencurven. In allen Fällen lässt sich von der Strömungscurve ein Theil abtrennen, der im Sinne des vorigen Paragraphen mit einer ganzzahligen Combination der betreffenden Meridiancurve und der zugehörigen Breitencurve aequivalent ist. Nun wächst $u$, der reelle Theil der durch die Strömung definirten complexen Function, fortwährend, wenn man längs einer Strömungscurve fortschreitet. Andererseits liefern zwei Curven, welche im Sinne des vorigen Paragraphen aequivalent sind, bei Durchlaufung nothwendig dieselben Incremente von $u$. Es gibt also eine Combination wenigstens einer Meridiancurve und einer Breitencurve, deren Durchlaufung einen nicht verschwindenden Zuwachs von $u$ herbeiführt. Das Gleiche gilt nothwendig von der betreffenden Meridiancurve oder der Breitencurve selbst. Der Zuwachs aber, den $u$ beim \emph{Durchlaufen} der Meridiancurve gewinnt, entspricht dem \emph{Ueberschreiten} der Breitencurve, und umgekehrt. Daher hat $u$ nothwendig wenigstens an einer Breitencurve oder Meridiancurve einen nicht verschwindenden Periodicitätsmodul, und eine überall
+
+\origpage{35}
+endliche, einförmige Strömung, bei der alle diese Periodicitätsmoduln gleich Null sind, ist in der That unmöglich, w.\ z.\ b.\ w.
+
+\section*{§.~11. Erläuterung der Strömungen an Beispielen.}
+
+Es scheint sehr nützlich, sich über den allgemeinen Verlauf der nunmehr definirten Strömungen an Beispielen zu orientiren, damit nämlich unsere Sätze nicht blosse abstracte Formulirungen bleiben, sondern mit concreten Vorstellungen verbunden werden${}^{*)}$. Es gelingt diess im gegebenen Falle ziemlich leicht, so lange man sich auf qualitative Verhältnisse beschränkt; die genaue quantitative Bestimmung würde selbstverständlich ganz andere Hülfsmittel erfordern. Ich will mich dabei der Einfachheit halber auf solche Flächen beschränken, bei denen eine Symmetrieebene existirt, die mit der Ebene der Zeichnung zusammenfällt, --- und auf diesen Flächen nur solche Strömungen in Betracht ziehen, bei denen der scheinbare Umriss der Fläche (d.\ h.\ der Schnitt der Fläche mit der Zeichnungsebene) entweder Strömungscurve oder Niveaucurve ist. Man hat dann den wesentlichen Vortheil, dass man die Strömungscurven nur auf der \emph{Vorderseite} der Fläche zu
+
+\rmfigure{figures/fig-21.png}{Fig.~21.}{A ring (annulus) bounded by two concentric circles, crossed by sixteen radial line segments running from the inner to the outer circle, each with an arrowhead pointing outward from the inner circle toward the outer circle, showing the flow on the front side of the ring surface.}
+
+zeichnen braucht; denn auf der Rückseite verlaufen sie genau gerade so${}^{**)}$.
+
+Beginnen wir mit überall endlichen Strömungen auf dem
+
+\textbf{*)} Eine solche Orientirung ist vermuthlich auch für den praktischen Physiker von hohem Werthe.
+
+\textbf{**)} Derartige Zeichnungen gab ich bereits in dem Aufsatze: \emph{Ueber den Verlauf der Abel'schen Integrale bei den Curven vierten Grades}, Mathematische Annalen, Bd.~X. Allerdings haben die Riemann'schen Flächen daselbst eine etwas andere Bedeutung, so dass bei ihnen nur in übertragenem Sinne von einer Flüssigkeitsbewegung die Rede sein kann; vergl.\ die Erläuterungen, welche darüber in §.~17 des Nachfolgenden gegeben werden.
+
+\origpage{36}
+Ringe $p = 1$. Wir betrachten zunächst eine Breitencurve (oder mehrere solche Curven) als Sitz der elektromotorischen Kraft. Dann entsteht die Figur 21, in der alle Strömungscurven Meridiancurven sind und Kreuzungspuncte nicht auftreten. Die Meridiancurven sind dabei durch Stücke radial verlaufender gerader Linien vorgestellt. Die Pfeilspitzen geben die Strömungsrichtung auf der Vorderseite, auf der Rückseite haben wir durchweg den umgekehrten Bewegungssinn.
+
+Bei der conjugirten Strömung spielen die Breitencurven die analoge Rolle, wie soeben die Meridiancurven; dieselbe mag durch folgende Zeichnung erläutert sein:
+
+\rmfigure{figures/fig-22.png}{Fig.~22.}{Four concentric circles in a ring, each carrying arrowheads showing circulation in the same rotational sense, anticlockwise: leftward at the top and rightward at the bottom.}
+
+Der Bewegungssinn ist in diesem Falle auf Vorder- und Rückseite derselbe.
+
+\rmfigure{figures/fig-23.png}{Fig.~23.}{An oval ring surface with a circular hole on the left and a crescent-shaped bulge on the right. Arrowed flow curves run from the inner circle outward to the outer contour; on the right they bend around the crescent, and a short double-headed arrow marks a segment between the crescent and the outer contour.}
+\rmfigure{figures/fig-24.png}{Fig.~24.}{The same oval ring with a circular hole and a crescent-shaped bulge, now with closed arrowed flow curves circulating around the hole; on the right they wind around the crescent, and two curves cross each other in a point between the crescent and the outer contour.}
+
+Wir wollen nun den Ring $p = 1$ dadurch umändern, dass wir, etwa auf der rechten Seite der Figur, zwei Ausstülpungen
+
+\origpage{37}
+aus ihm hervorwachsen lassen, die sich allmählich zusammenbiegen und schliesslich verschmelzen. \emph{So haben wir eine Fläche $p = 2$ und auf ihr ein Paar conjugirter Strömungen, wie es die Figuren 23 und 24 erläutern.}
+
+Es haben sich, wie man erkennt, rechter Hand zwei \emph{Kreuzungspuncte} eingestellt (von denen natürlich nur einer auf der Vorderseite gelegen und also sichtbar ist). Etwas Analoges tritt jedesmal ein, wenn man überall endliche Strömungen auf einer Fläche $p > 1$ studirt. Ich setze statt weiterer Erläuterungen noch zwei Figuren mit je vier Kreuzungspuncten her, die sich auf $p = 3$ beziehen:
+
+\rmfigure{figures/fig-25.png}{Fig.~25.}{A trefoil-shaped surface with three circular holes, one at the top and two at the bottom. Arrowed flow curves run between the holes and the outer contour; points a and b are marked on the outer contour at left and right where the upper lobe meets the lower ones, and point c lies on a vertical line between the two lower holes, where flow curves meet.}
+\rmfigure{figures/fig-26.png}{Fig.~26.}{The same trefoil-shaped surface with three circular holes, now with closed arrowed flow curves circulating around each hole; points a and b are marked at the junctions of the upper lobe with the lower ones, and two curves cross at point c between the two lower holes.}
+
+Dieselben entstehen, wenn man auf sämmtlichen „Handhaben“ der Fläche einmal in den Breitencurven, das andere Mal in den Meridiancurven elektromotorische Kräfte wirken lässt. Auf den beiden unteren Handhaben sind dieselben in gleichem Sinne orientirt, bei der oberen im entgegengesetzten. Von den Kreuzungspuncten liegen zwei bei $a$ und $b$, der dritte bei $c$, der vierte an der entsprechenden Stelle der Rückseite. Es sind die Kreuzungspuncte bei $a$ und $b$ in Figur (25) nur desshalb schwer zu erkennen, weil am Rande der Figur bei der von uns gewählten Darstellungsweise eine perspectivische Verkürzung eintritt und daher beide im Kreuzungspuncte zusammentreffende Strömungscurven den Rand zu berühren scheinen. Denkt man sich die (in entgegengesetzter Richtung) stattfindenden Strömungen auf der Rückseite der Fläche hinzu, so kann über die Natur dieser Puncte wohl keine Unklarheit bestehen.
+
+Gehen wir nun zum Ringe $p = 1$ zurück und lassen bei ihm zwei logarithmische Unstetigkeitspuncte gegeben sein! Man erhält zugehörige Figuren, wenn man die Zeichnungen
+
+\origpage{38}
+(23) und (24) einem Deformationsprocesse unterwirft, der auch in allgemeineren Fällen ebenso interessant als nützlich ist. Wir wollen nämlich die Partieen linker Hand in den einzelnen Figuren zusammenziehen, die rechter Hand ausdehnen, so dass wir zunächst etwa folgende Bilder erhalten:
+
+\rmfigure{figures/fig-27.png}{Fig.~27.}{An oval ring surface with a large circular hole on the right and a narrow crescent-shaped handle on the left. Arrowed flow curves run from the crescent across the surface to the hole and the outer contour; a horizontal line through the middle carries arrows pointing outward on both sides.}
+\rmfigure{figures/fig-28.png}{Fig.~28.}{The same oval ring with a circular hole on the right and a narrow crescent-shaped handle on the left, now with closed arrowed flow curves winding around the crescent and around the hole; a row of upward arrows crosses the curves beside the crescent, and on the right two curves cross between the hole and the outer contour.}
+
+und nun die linker Hand bereits sehr schmal gewordene „Handhabe“ vollends zur Curve zusammenziehen, um sie dann wegzuwerfen. \emph{So ist aus der überall endlichen Strömung auf der Fläche $p = 2$ eine Strömung mit zwei logarithmischen Unstetigkeitspunkten auf der Fläche $p = 1$ geworden.} Die Figuren haben nämlich folgende Gestalt angenommen:
+
+\rmfigure{figures/fig-29.png}{Fig.~29.}{A circular ring with a concentric circular hole. Two points m and n on the left of the outer circle, one above and one below, are each encircled by small arrowed flow curves; other arrowed curves run from the left across the ring, and a horizontal line through the middle carries arrows.}
+\rmfigure{figures/fig-30.png}{Fig.~30.}{A circular ring with a concentric circular hole. From two points m and n on the left of the outer circle, arrowed flow curves fan out and run around the ring; a row of upward arrows crosses the curves on the left, and on the right two curves cross between the hole and the outer circle.}
+
+Die beiden Kreuzungspuncte von (23), (24) sind geblieben; $m$ und $n$ sind die beiden logarithmischen Unstetigkeitspuncte. Und zwar sind dieselben im Falle der Figur 29 Wirbelpuncte von entgegengesetzt gleicher Intensität, im Falle der Figur 30 Quellenpuncte von entgegengesetzt gleicher Ergiebigkeit. Dabei ist es wieder eine Folge der von uns gewählten Projectionsart, wenn im zweiten Falle sämmtliche Strömungscurven, von einer einzigen abgesehen, in $m$ und $n$ den Rand zu berühren scheinen.
+
+\origpage{39}
+
+Wollen wir endlich $m$ und $n$ zusammenrücken lassen, so dass ein algebraischer Unstetigkeitspunct von einfacher Multiplicität entsteht, so kommen folgende Zeichnungen, bei denen, wie man beachten mag, die Kreuzungspuncte nach wie vor an ihrer Stelle geblieben sind:
+
+\rmfigure{figures/fig-31.png}{Fig.~31.}{A circular ring with a concentric circular hole. From a single point on the left of the outer circle a pencil of arrowed flow curves fans out across the ring, some ending on the hole and some on the outer circle; a horizontal line on the right carries arrows pointing both ways.}
+\rmfigure{figures/fig-32.png}{Fig.~32.}{A circular ring with a concentric circular hole. At a single point on the left of the outer circle, arrowed flow curves form small loops and then run around the ring; a row of upward arrows crosses the curves on the left, and on the right two curves cross between the hole and the outer circle.}
+
+Ich will diese Figuren nicht noch mehr vervielfältigen, da weitere Beispiele nach Art der nunmehr betrachteten leicht zu bilden sind. Nur der eine Umstand werde noch hervorgehoben. Die Zahl der Kreuzungspunkte einer Strömung wächst offenbar mit dem $p$ der Fläche und mit der Zahl der Unendlichkeitspunkte. Algebraische Unendlichkeitspuncte von der Multiplicität $r$ mögen als $(r + 1)$ logarithmische Unendlichkeitspuncte gezählt werden. Dann ist auf der Kugel bei $\mu$ logarithmischen Unendlichkeitspunkten die Anzahl der eigentlichen Kreuzungspunkte allgemein $\mu - 2$. Andererseits ist mit der Zunahme von $p$ um eine Einheit nach unseren Beispielen eine Zunahme der Zahl der Kreuzungspunkte um zwei Einheiten verbunden. \emph{Hiernach wird man vermuthen, dass die Zahl der Kreuzungspuncte überhaupt $\mu + 2p - 2$ sein wird.} Ein strenger Beweis dieses Satzes auf Grund der bisher entwickelten Anschauungen hat jedenfalls keine besondere Schwierigkeit${}^{*)}$; er würde hier aber zu weit führen. Der einzige Specialfall unseres Satzes, den wir später gebrauchen werden, ist auf Grund der gewöhnlichen Untersuchungen der Analysis situs bekannt: es handelt sich bei
+
+\textbf{*)} Zu einem solchen Beweise scheint vor allen Dingen nothwendig, sich über die verschiedenen Möglichkeiten klar zu werden, die betreffs der Ueberführung einer gegebenen Fläche in die Normalfläche des §.~8 vorliegen.
+
+\origpage{40}
+ihm (§.~14) um solche Strömungen, bei denen $m$ einfache algebraische Unstetigkeitspuncte vorhanden sind, bei denen also $2m + 2p - 2$ Kreuzungspuncte auftreten müssen.
+
+\section*{§.~12. Ueber die Zusammensetzung der allgemeinsten complexen Function des Ortes aus einzelnen Summanden.}
+
+Der Beweisgang des §.~10 setzt uns in den Stand, von der allgemeinsten auf einer Fläche existirenden complexen Function des Ortes uns dadurch eine concretere Vorstellung zu machen, dass wir dieselbe aus einzelnen Summanden von möglichst einfacher Eigenschaft additiv zusammensetzen.
+
+Betrachten wir zuvörderst \emph{überall endliche} Functionen.
+
+Es seien $u_{1}, u_{2}, \cdot\cdot\cdot u_{\mu}$ überall endliche Potentiale. Dieselben mögen \emph{linear abhängig} heissen, wenn zwischen ihnen eine Relation
+\[ a_{1}u_{1} + a_{2}u_{2} + \cdot\cdot\cdot\cdot a_{\mu}u_{\mu} = A \]
+mit constanten Coëfficienten besteht. Eine solche Beziehung liefert entsprechende Gleichungen für die $2p$ Serien von $\mu$ Periodicitätsmoduln, welche $u_{1}, u_{2}, \cdot\cdot\cdot\cdot, u_{\mu}$ an den $2p$ Querschnitten der Fläche besitzen. Umgekehrt würde, nach dem in §.~10 bewiesenen Satze, aus solchen Gleichungen zwischen den Periodicitätsmoduln die lineare Relation zwischen den $u$ selbst hervorgehen. Es ergiebt sich so, \emph{dass man auf mannigfachste Weise $2p$ linear unabhängige überall endliche Potentiale}
+\[ u_{1}, u_{2}, \cdot\cdot\cdot\cdot, u_{2p} \]
+\emph{finden kann, dass sich aber aus ihnen jedes andere überall endliche Potential linear zusammensetzt:}
+\[ u = a_{1}u_{1} + a_{2}u_{2} + \cdot\cdot\cdot\cdot + a_{2p}u_{2p} + A. \]
+
+In der That kann man $u_{1}, u_{2}, \cdot\cdot\cdot u_{2p}$ z.\ B.\ derart wählen, dass jedes nur an einem der $2p$ Querschnitte einen nicht verschwindenden Periodicitätsmodul besitzt (wobei natürlich jedem Querschnitte ein und nur ein Potential zugewiesen werden soll). Hernach kann man in $\Sigma a_{i}u_{i}$ die Constanten $a_{i}$ so bestimmen, dass dieser Ausdruck an sämmtlichen $2p$ Querschnitten dieselben Periodicitätsmoduln aufweist, wie $u$. Dann ist $u - \Sigma a_{i}u_{i}$ eine Constante, und wir haben also die vorstehende Formel.
+
+Um nun von den Potentialen $u$ zu den überall endlichen Functionen $u + iv$ überzugehen, denke ich mir der Einfachheit
+
+\origpage{41}
+halber ein solches Coordinatensystem $x, y$ auf der Fläche eingeführt (§.~6), dass $u, v$ durch die Gleichungen verknüpft sind:
+\[ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}. \]
+
+Sei jetzt $u_{1}$ ein beliebiges überall endliches Potential. Wir bilden das zugehörige $v_{1}$ und haben:
+
+\emph{$u_{1}$ und $v_{1}$ sind jedenfalls linear unabhängig.}
+
+Denn wenn zwischen $u_{1}, v_{1}$ eine Gleichung
+\[ a_{1}u_{1} + b_{1}v_{1} = \text{Const.} \]
+mit constanten Coëfficienten bestünde, so würde dieselbe die folgenden Relationen begründen:
+\[ a_{1}\frac{\partial u_{1}}{\partial x} + b_{1}\frac{\partial v_{1}}{\partial x} = 0, \qquad a_{1}\frac{\partial u_{1}}{\partial y} + b_{1}\frac{\partial v_{1}}{\partial y} = 0, \]
+aus denen vermöge der angegebenen Beziehungen das widersinnige Resultat
+\[ \frac{\partial u_{1}}{\partial x} = 0, \qquad \frac{\partial u_{1}}{\partial y} = 0 \]
+folgen würde.
+
+Es sei nun ferner $u_{2}$ von $u_{1}$ und $v_{1}$ linear unabhängig. Dann nehmen wir das zugehörige $v_{2}$ und haben dann den allgemeineren Satz:
+
+\emph{Die vier Functionen $u_{1}, u_{2}, v_{1}, v_{2}$ sind ebenfalls linear unabhängig.}
+
+In der That könnte man aus jeder linearen Relation:
+\[ a_{1}u_{1} + a_{2}u_{2} + b_{1}v_{1} + b_{2}v_{2} = \text{Const.} \]
+durch Benutzung der zwischen den $u, v$ bestehenden Beziehungen die folgenden Gleichungen ableiten:
+\[ \begin{gathered} (a_{1}a_{2} + b_{1}b_{2})\frac{\partial u_{1}}{\partial x} - (a_{1}b_{2} - a_{2}b_{1})\frac{\partial v_{1}}{\partial x} + (a_{2}^{2} + b_{2}^{2})\frac{\partial u_{2}}{\partial x} = 0, \\ (a_{1}a_{2} + b_{1}b_{2})\frac{\partial u_{1}}{\partial y} - (a_{1}b_{2} - a_{2}b_{1})\frac{\partial v_{1}}{\partial y} + (a_{2}^{2} + b_{2}^{2})\frac{\partial u_{2}}{\partial y} = 0, \end{gathered} \]
+aus denen durch Integration eine lineare Abhängigkeit zwischen $u_{1}, v_{1}, u_{2}$ folgen würde. ---
+
+So vorwärts schliessend bekommt man endlich $2p$ linear unabhängige Potentiale:
+\[ u_{1}, v_{1};\ u_{2}, v_{2};\ \cdot\cdot\cdot\cdot\cdot;\ u_{p}, v_{p}, \]
+wo jedes $v$ mit dem gleichbezeichneten $u$ zusammengehört. Wir setzen $u_{\alpha} + iv_{\alpha} = w_{\alpha}$ und nennen nunmehr überall
+
+\origpage{42}
+endliche Functionen $w_{1}, w_{2}, \cdot\cdot\cdot w_{\mu}$ linear unabhängig, wenn zwischen ihnen keinerlei Relation:
+\[ c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot\cdot c_{\mu}w_{\mu} = C \]
+besteht, unter $c_{1}, \cdot\cdot\cdot c_{\mu}, C$ beliebige \emph{complexe} Constanten verstanden. Dann haben wir sofort:
+
+\emph{Die $p$ überall endlichen Functionen}
+\[ w_{1}, w_{2}, \cdot\cdot\cdot\cdot w_{p} \]
+\emph{sind linear unabhängig.}
+
+Wenn nämlich eine lineare Abhängigkeit bestünde, so könnte man in ihr das Reelle und Imaginäre sondern und erhielte dadurch lineare Beziehungen zwischen den $u$ und $v$.
+
+Des Weiteren aber folgt: \emph{Jede beliebige überall endliche Function setzt sich aus unseren $w_{1}, w_{2}, \cdot\cdot\cdot\cdot w_{p}$ in der Form zusammen:}
+\[ w = c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot\cdot c_{p}w_{p} + C. \]
+
+In der That können wir durch geeignete Wahl der complexen Constanten $c_{1}, c_{2}, \cdot\cdot\cdot c_{p}$ bei der linearen Unabhängigkeit der $u_{1}, \cdot\cdot\cdot u_{p}, v_{1}, \cdot\cdot\cdot v_{p}$ erreichen, dass eine durch vorstehende Formel definirte Function $w$ an den $2p$ Querschnitten beliebig vorgegebene Grössen als Periodicitätsmoduln des reellen Theils aufweist.
+
+Diess ist das Theorem, welches wir hinsichtlich der Darstellung überall endlicher Functionen im gegenwärtigen Paragraphen aufzustellen hatten. Der Uebergang zu \emph{Functionen mit Unendlichkeitsstellen} ist nun sehr leicht zu bewerkstelligen.
+
+Es seien $\xi_{1}, \xi_{2}, \cdot\cdot\cdot \xi_{\mu}$ die Punkte, in denen unsere Function in irgendwie vorgeschriebener Weise unendlich werden soll. Wir wollen dann einen Hülfspunct $\eta$ einführen und eine Reihe von einzelnen Functionen
+\[ F_{1}, F_{2}, \cdot\cdot\cdot\cdot F_{\mu} \]
+construiren, von denen jede einzelne nur in einem der Puncte $\xi$, und zwar in der für diesen Punct vorgeschriebenen Weise, unendlich werden soll und überdies in $\eta$ einen logarithmischen Unstetigkeitspunct besitzen mag, dessen Residuum dem, zu dem betreffenden $\xi$ gehörigen, logarithmischen Residuum entgegengesetzt gleich kommt. Die Summe
+\[ F_{1} + F_{2} + \cdot\cdot\cdot\cdot F_{\mu} \]
+wird dann in $\eta$ stetig; denn die Summe aller zu den Unstetigkeitspuncten $\xi$ gehörigen Residua ist, wie wir wissen,
+
+\origpage{43}
+gleich Null. Ueberdiess wird sie in den $\xi$ und nur in den $\xi$, dabei in der vorgeschriebenen Weise unendlich. Sie unterscheidet sich also von der gesuchten Function nur um eine überall endliche Function. \emph{Die gesuchte Function ist also in der Gestalt darstellbar:}
+\[ F_{1} + F_{2} + \cdot\cdot\cdot\cdot F_{\mu} + c_{1}w_{1} + c_{2}w_{2} + \cdot\cdot\cdot c_{p}w_{p} + C, \]
+womit wir auch das allgemeine hier in Betracht kommende Theorem gefunden haben.
+
+Dasselbe entspricht offenbar der Zerlegung, welche wir in §.~4 für die auf der Kugel existirenden complexen Functionen betrachteten, und die wir damals, wie man es gewöhnlich thut, der Lehre von der \emph{Partialbruchzerlegung rationaler Functionen} entnahmen.
+
+\section*{§.~13. Ueber die Vieldeutigkeit unserer Functionen. Besondere Betrachtung eindeutiger Functionen.}
+
+Die Functionen $u + iv$, welche wir auf unseren Flächen studieren, sind im Allgemeinen unendlich vieldeutig: denn einmal bringt jeder logarithmische Unendlichkeitspunct einen Periodicitätsmodul mit sich, andererseits haben wir die Periodicitätsmoduln an den $2p$ Querschnitten $A_{i}, B_{i}$, deren reelle Theile wir willkürlich annehmen konnten. Ich sage nun, \emph{dass mit diesen Angaben die Vieldeutigkeit von $u + iv$ in der That erschöpft ist.} Zum Beweise müssen wir auf den Begriff der Aequivalenz zweier Curven auf gegebener Fläche zurückgreifen, den wir in §.~9 zunächst zu anderem Zwecke einführten. Da die Differentialquotienten von $u$ und $v$ (oder, was dasselbe ist, die Componenten der zugehörigen Strömung) auf unserer Fläche durchweg eindeutig sind, so liefern zwei aequivalente geschlossene Curven, welche durch keinen logarithmischen Unstetigkeitspunkt getrennt sind, bei Durchlaufung denselben Zuwachs von $u$, wie von $v$. Nun fanden wir aber, dass jede geschlossene Curve mit einer ganzzahligen Combination der Querschnitte $A_{i}B_{i}$ aequivalent ist. Wir bemerkten ferner (§~10), dass die Durchlaufung von $A_{i}$ denjenigen Periodicitätsmodul liefert, welcher der Ueberschreitung von $B_{i}$ entspricht, und umgekehrt. Hieraus aber folgt das ausgesprochene Theorem in bekannter Weise.
+
+Es wird uns nun insbesondere interessiren, \emph{eindeutige}
+
+\origpage{44}
+Functionen des Ortes zu betrachten. Dem Gesagten zufolge werden wir alle solche Functionen erhalten, wenn wir als Unstetigkeiten nur rein \emph{algebraische} Unendlichkeitspuncte zulassen und dann dafür sorgen, dass die $2p$ Periodicitätsmoduln an den Querschnitten $A_{i}, B_{i}$ sämmtlich verschwinden. Dabei wird es der leichteren Ausdrucksweise wegen gestattet sein, nur \emph{einfache} algebraische Unstetigkeitspuncte in Betracht zu ziehen. Denn wir wissen ja aus §~3, dass der $\nu$-fache algebraische Unstetigkeitspunct durch Zusammenrücken von $\nu$ einfachen entstehen kann, wobei übrigens, wie man nicht vergessen darf, Kreuzungspuncte in der Gesammtmultiplicität $(\nu - 1)$ absorbirt werden. Seien also $m$ Puncte als einfache algebraische Unendlichkeitspuncte der gesuchten Function gegeben. So wollen wir zuerst irgend $m$ Functionen des Ortes bilden: $Z_{1}, Z_{2}, \cdot\cdot\cdot Z_{m}$, von denen jede nur an einer der gegebenen Stellen einfach algebraisch unendlich werden soll aber übrigens beliebig vieldeutig sein mag. Aus diesen $Z$ setzt sich die allgemeinste complexe Function des Ortes, welche an den gegebenen Stellen einfache algebraische Unstetigkeiten besitzt, dem vorigen Paragraphen zufolge in der Gestalt zusammen:
+\[ a_{1}Z_{1} + a_{2}Z_{2} + \cdot\cdot a_{m}Z_{m} + c_{1}w_{1} + \cdot\cdot\cdot\cdot c_{p}w_{p} + C, \]
+unter $a_{1}, a_{2}, \cdot\cdot\cdot a_{m}$ beliebige constante Coëfficienten verstanden. Um eine eindeutige Function zu haben, setzen wir die Periodicitätsmoduln, welche dieser Ausdruck an den $2p$ Querschnitten besitzt, gleich Null. Aber diese Periodicitätsmoduln setzen sich vermöge der $a, c$ aus den Periodicitätsmoduln der $Z$, $w$ linear zusammen. \emph{Wir finden also $2p$ lineare homogene Gleichungen für die $m + p$ Constanten $a$ und $c$.} Wir wollen annehmen, dass diese Gleichungen linear unabhängig sind${}^{*)}$. Dann kommt der wichtige Satz:
+
+\textbf{*)} Sind sie es nicht, so ist die nächste Folge, dass die Zahl der in $m$ Puncten unendlich werdenden eindeutigen Functionen \emph{grösser} wird als die im Texte angegebene. Man kennt die Untersuchungen, welche zumal \emph{Roch} über diese Möglichkeit angestellt hat (Borchardt's Journal Bd.~64; vergl.\ auch, was die algebraische Formulirung betrifft: \emph{Brill} und \emph{Nöther}, über die algebraischen Functionen und ihre Verwendung in der Geometrie, Mathematische Annalen, Bd.~7). Ich kann diesen Untersuchungen im Texte nicht folgen, obgleich sie sich mit Leichtigkeit an die Darstellung des \emph{Abel}'schen Theorems anschliessen lassen, wie sie Riemann in Nr.~14 der Abel'schen Functionen giebt, --- und will nur, mit Rücksicht auf spätere Entwickelungen des Textes (cf.\ §.~19), darauf hinweisen, \emph{dass eine lineare Abhängigkeit zwischen den $2p$ Gleichungen jedenfalls nicht eintritt, wenn $m$ die Gränze $2p - 2$ überschreitet.}
+
+\origpage{45}
+
+\emph{Unter der genannten Voraussetzung giebt es bei $m$ beliebig vorgeschriebenen einfachen algebraischen Unstetigkeitspuncten nur dann eindeutige Functionen des Ortes, wenn $m \geqq p + 1$ ist, und zwar enthalten diese Functionen $(m - p + 1)$ linear vorkommende willkürliche Constante.}
+
+Man denke sich jetzt die $m$ Unendlichkeitspuncte als beweglich. So treten $m$ neue Willkürlichkeiten in die Betrachtung ein. Ueberdies ist klar, dass man beliebige $m$ Puncte auf der Fläche durch continuirliche Verschiebung in beliebige $m$ andere verwandeln kann. Wir können also sagen, indem wir uns übrigens immer der Voraussetzung erinnern, die wir gemacht haben:
+
+\emph{Die Gesammtheit der eindeutigen Functionen mit $m$ einfachen algebraischen Unstetigkeitspuncten, die auf gegebener Fläche existiren, bildet ein Continuum von $(2m - p + 1)$ Abmessungen.}
+
+Nun wir die Existenz und die Mannigfaltigkeit der eindeutigen Functionen haben kennen lernen, wollen wir auf möglichst anschauungsmässigem Wege noch eine andere wichtige Eigenschaft derselben entwickeln. Die Zahl $m$ der Unendlichkeitspuncte unserer Function hat nämlich für letztere eine noch viel weiter gehende Bedeutung. Ich sage, \emph{dass unsere Function $u + iv$ jeden beliebig vorgegebenen Werth $u_{0} + iv_{0}$ genau an $m$ Stellen annimmt.}
+
+Zum Beweise betrachte man den Verlauf der Curven $u = u_{0}$, $v = v_{0}$ auf unserer Fläche. Nach §.~2 ist klar, dass jede dieser Curven einen Ast durch jeden der $m$ Unendlichkeitspuncte hindurchschickt. Andererseits folgt aus Betrachtungen, wie wir sie in §.~10 entwickelten, dass jeder Curvenast mindestens einen Unendlichkeitspunct enthalten muss. Hiernach ist für sehr grosse $u_{0}$, $v_{0}$ die Richtigkeit unserer Behauptung unmittelbar klar. Denn die betreffenden Curven $u = u_{0}$, $v = v_{0}$ gehen dann in der Nähe des einzelnen Unendlichkeitspunctes nach §.~2 in kleine durch den Unendlichkeitspunct
+
+\origpage{46}
+hindurchlaufende Kreise über, welche nothwendig neben dem (hier nicht weiter in Betracht kommenden) Unstetigkeitspuncte noch je \emph{einen} Schnittpunct gemein haben:
+
+\rmfigure{figures/fig-33.png}{Fig.~33.}{Two intersecting circles: the left one labelled u = u0, the right one labelled v = v0 (lettered upside down along its right edge). At the upper of their two intersection points a heavy dot is marked with the symbol infinity; the circles meet again in a second point below.}
+
+Hieraus aber folgt die Sache allgemein. \emph{Denn die Curven $u = u_{0}$, $v = v_{0}$ können bei continuirlicher Aenderung von $u_{0}$, $v_{0}$ niemals einen Schnittpunct verlieren.} Es könnte diess nämlich nach dem Gesagten nur so geschehen, dass mehrere Schnittpuncte zusammenrückten, um dann in geringerer Zahl wieder aus einander zu treten. Nun bilden die Curven $u$, $v$ ein Orthogonalsystem. Ein Zusammenrücken reeller Schnittpuncte ist also nur in den Kreuzungspuncten möglich (in denen es auch wirklich geschieht). Die Kreuzungspuncte aber sind nur in endlicher Zahl vorhanden, und also nicht im Stande, die Fläche in verschiedene Gebiete zu zerlegen. Die Eventualität des Zusammenrückens ist also überhaupt nicht in Betracht zu ziehen, und somit unsere Behauptung bewiesen.
+
+Es ist übrigens für das Folgende nützlich, sich die Vertheilung der Werthe von $u + iv$ in der Nähe eines Kreuzungspunctes deutlich zu machen. Hierzu genügt eine aufmerksame Beobachtung der oben gegebenen Figur 1. Man erkennt zumal, dass von den $m$ beweglichen Schnittpuncten der Curven $u = u_{0}$, $v = v_{0}$ bei Annäherung an den $\nu$-fachen Kreuzungspunct $(\nu + 1)$ zusammenrücken. ---
+
+Analoge Betrachtungen, wie wir sie hiermit für eindeutige Functionen erledigt haben, finden natürlich auch bei vieldeutigen Functionen ihre Stelle. Ich gehe auf sie nur desshalb nicht ein, weil es die im Folgenden festgehaltene Umgränzung des Stoffes nicht nöthig macht. Auch kommt nur in den allereinfachsten Fällen ein übersichtliches Resultat. Sei in dieser Beziehung daran flüchtig erinnert, dass eine
+
+\origpage{47}
+complexe Function mit mehr als zwei incommensurabeln Periodicitätsmoduln an jeder Stelle jedem beliebigen Werthe unendlich nahe gebracht werden kann.
+
+\section*{§.~14. Die gewöhnlichen Riemann'schen Flächen über der $x + iy$-Ebene.}
+
+Statt die Vertheilung der Functionswerthe $u + iv$ auf der ursprünglichen Fläche zu betrachten, kann man ein sozusagen umgekehrtes Verfahren einschlagen. Man deute nämlich die Functionswerthe --- welche dementsprechend jetzt $x + iy$ genannt werden sollen --- in gewöhnlicher Weise in der Ebene (oder auch auf der Kugel${}^{*)}$) und studiere die \emph{conforme Abbildung}, welche demzufolge (nach §.~5) von unserer ursprünglichen Fläche entworfen wird. Wir beschränken uns dabei wieder, der Einfachheit halber, auf den Fall der eindeutigen Functionen, trotzdem es besonderes Interesse hat, gerade auch die Abbildung durch mehrdeutige Functionen in Betracht zu ziehen${}^{**)}$.
+
+Eine kurze Ueberlegung zeigt, \emph{dass wir so gerade zu der mehrblättrigen, mit Verzweigungsverzweigungspuncten\ednote{Printed ``Verzweigungsverzweigungspuncten'', with the word stem doubled; read ``Verzweigungspuncten''. An apparent misprint.} versehenen, über der $XY$-Ebene ausgebreiteten Fläche geführt werden, welche man gewöhnlich als Riemann'sche Fläche schlechthin bezeichnet.}
+
+In der That, sei $m$ die Zahl der (einfachen) Unendlichkeitspuncte, welche $x + iy$ auf der ursprünglichen Fläche besitzt. Es nimmt dann $x + iy$, wie wir sahen, \emph{jeden} Werth auf der gegebenen Fläche $m$-mal an. \emph{Daher überdeckt die conforme Abbildung unserer Fläche auf die $x + iy$-Ebene die letztere im Allgemeinen mit $m$ Blättern.} Eine Ausnahmestellung nehmen nur diejenigen Werthe von $x + iy$ ein, für welche einige der $m$ auf der ursprünglichen Fläche zugehörigen Stellen zusammenfallen, denen also \emph{Kreuzungspuncte} entsprechen. Man ziehe zum Verständnisse noch einmal die Figur (1) heran. Es folgt aus derselben, dass man die Umgebung
+
+\textbf{*)} Ich spreche im Folgenden durchweg von der Ebene, statt von der Kugel, um mich möglichst an die gewöhnliche Auffassungsweise anzuschliessen.
+
+\textbf{**)} Man vergleiche hierzu, was Riemann in Nr.~12 seiner Abel'schen Functionen über die Abbildung durch überall endliche Functionen sagt.
+
+\origpage{48}
+eines $\nu$-fachen Kreuzungspunctes derart in $(\nu + 1)$ Sectoren zerlegen kann, dass $x + iy$ innerhalb jedes Sectors denselben Werthvorrath durchläuft. \emph{Daher werden oberhalb der betreffenden Stelle der $(x + iy)$ Ebene $(\nu + 1)$ Blätter der conformen Abbildung derart zusammenhängen, dass eine Umlaufung der Stelle von einem Blatte in ein zweites, von diesem in ein drittes führt etc., und dass eine $(\nu + 1)$-malige Umlaufung derselben nöthig wird, um zum Anfangspuncte zurückzugelangen.} Diess ist aber genau, was man gewöhnlich als einen $\nu$-fachen \emph{Verzweigungspunct} bezeichnet${}^{*)}$. Dabei ist die Abbildung in diesem Puncte selbst natürlich keine conforme mehr; man beweist leicht, dass der Winkel, den irgend zwei auf der ursprünglichen Fläche verlaufende sich im Kreuzungspuncte schneidende Curven mit einander bilden, auf der über der $(x + iy)$-Ebene ausgebreiteten Riemann'schen Fläche genau mit $(\nu + 1)$ multiplicirt erscheint. ---
+
+\emph{Aber zugleich erkennen wir die Bedeutung, welche diese mehrblättrige Fläche für unsere Zwecke beanspruchen kann.} Alle Flächen, welche durch conforme Abbildung eindeutig aus einander hervorgehen, sind für uns gleichbedeutend (§.~8). Wir können also die $m$-blättrige Fläche über der Ebene ebensogut zu Grunde legen, wie die bisher benutzte Fläche, die wir uns ohne jedes singuläre Vorkommniss frei im Raume gelegen vorstellten. Dabei kommt die Schwierigkeit, die man in dem Auftreten der Verzweigungspuncte erblicken könnte, von vorneherein in Wegfall: denn wir werden nur solche Strömungen auf der mehrblättrigen Fläche in Betracht ziehen, welche sich in der Umgebung der Verzweigungspuncte derart verhalten, dass sie rückwärts auf die im Raume gelegene ursprüngliche Fläche übertragen dort keine anderen singulären Vorkommnisse darbieten, als die ohnehin gestatteten. Hierzu ist nicht einmal nöthig, dass man eine entsprechende im
+
+\textbf{*)} Wir haben oben (§.~11) ohne ausgeführten Beweis angegeben, dass die Zahl der Kreuzungspuncte von $x + iy$ $(2m + 2p - 2)$ beträgt. Wie man jetzt sieht, ist diese Behauptung eine einfache Umsetzung der bekannten Relation, welche die Zahl der Verzweigungspuncte (oder vielmehr die Gesammtmultiplicität derselben) mit der Blätterzahl $m$ und dem $p$ einer mehrblättrigen Fläche verknüpft [unter $p$ die Maximahlzahl\ednote{Printed ``Maximahlzahl''; read ``Maximalzahl''. An apparent misprint.} der Rückkehrschnitte verstanden, die man auf dieser mehrblättrigen Fläche ziehen kann, ohne sie zu zerstücken].
+
+\origpage{49}
+Raume gelegene Fläche kennt; handelt es sich doch nur um Verhältnisse in der nächsten Umgebung der Verzweigungspuncte, d.\ h.\ um differentielle Relationen, denen unsere Strömungen genügen müssen${}^{*)}$. Es hat hiernach auch keinen Zweck mehr, wenn wir von beliebig gekrümmten Flächen sprechen, uns diese ohne singuläre Puncte zu denken: \emph{sie mögen selbst mit mehreren Blättern überdeckt sein, die unter sich durch Verzweigungspuncte, beziehungsweise Verzweigungsschnitte zusammenhängen.} Aber welche unter den unbegränzt vielen, sonach gleichberechtigten Flächen wir auch der Betrachtung zu Grunde legen wollen: wir müssen zwischen \emph{wesentlichen} Eigenschaften unterscheiden, welche allen gleichberechtigten Flächen gemeinsam sind, und \emph{unwesentlichen} Eigenschaften, die der particulären Fläche anhaften. Zu ersteren gehört die Zahl $p$, es gehören dahin die „Moduln“, von denen in §.~18 ausführlicher die Rede sein soll; zu letzteren bei mehrblättrigen Flächen die Art und Lage der Verzweigungspuncte. Wenn wir uns eine \emph{ideale} Fläche denken, die nur jene wesentlichen Eigenschaften besitzen soll, so entsprechen auf ihr den Verzweigungspuncten der mehrblättrigen Fläche gewöhnliche Puncte, die, allgemein zu reden, vor den übrigen Puncten Nichts voraus haben, und die erst dadurch beachtenswerth werden, dass bei der conformen Abbildung, die von der idealen Fläche zur particulären hinüberführt, in ihnen Kreuzungspuncte entstehen.
+
+Das Resultat ist also dieses, \emph{dass wir betreffs der Flächen, auf denen wir operiren dürfen, eine grössere Beweglichkeit gewonnen haben, und dass wir zugleich die Zufälligkeiten erkennen, welche die Betrachtung jeder einzelnen besonderen Fläche mit sich bringt.} Insbesondere werden wir im Folgenden, so oft es nützlich scheint, mehrblättrige Flächen über der $x + iy$-Ebene in Betracht ziehen; ihre Verwendung soll aber in keiner Weise die Allgemeinheit der Auffassung beeinträchtigen${}^{**)}$.
+
+\textbf{*)} Wegen der expliciten Formulirung dieser Relationen vergleiche man die gewöhnlichen Lehrbücher, sodann insbesondere die Schrift von C.\ \emph{Neumann}: Das Dirichlet'sche Princip in seiner Anwendung auf die Riemann'schen Flächen, Leipzig 1865.
+
+\textbf{**)} Es entsteht hier die interessante Frage, ob es immer möglich ist, mehrblättrige Flächen mit beliebigen Verzweigungspuncten conform in solche zu verwandeln, die durchaus keine singuläre Stelle besitzen. Diese Frage greift über die im Texte zu behandelnden Gegenstände hinaus, aber ich habe sie immerhin anführen wollen. Gelingt es im einzelnen Falle nicht, so haben die vorgängigen Betrachtungen des Textes doch noch die Bedeutung, dass sie am einfachsten Beispiele die allgemeinen Ideen haben entstehen lassen und dadurch die Behandlung auch der complicirteren Vorkommnisse ermöglicht haben.
+
+\origpage{50}
+
+\section*{§.~15. Der Ring $p = 1$ und die zweiblättrige Fläche mit vier Verzweigungspuncten über der Ebene${}^{*)}$.}
+
+Ich habe mich im vorigen Paragraphen ziemlich kurz fassen können, da ich die gewöhnliche Riemann'sche Fläche über der Ebene mit ihren Verzweigungspuncten als bekannt ansah. Immerhin wird es nützlich sein, wenn ich das Gesagte an einem Beispiele erläutere. Wir wollen einen Ring $p = 1$ betrachten. Auf ihm existiren nach §.~13 $\infty^{4}$ eindeutige Functionen mit nur zwei Unendlichkeitspuncten. Eine jede derselben besitzt nach der allgemeinen Formel des §.~11 vier Kreuzungspuncte. Der Ring ist also auf mannigfache Weise auf eine zweiblättrige ebene Fläche mit vier Verzweigungspuncten abzubilden. Ich will den besonderen Fall, in welchem ich diese Abbildung nunmehr betrachten werde, auf explicite Formeln stützen, damit auch denjenigen Lesern, die in rein anschauungsmässigen Operationen minder geübt sind, die Sache zugänglich sei. Allerdings greife ich damit in etwas den Entwickelungen vor, welche erst der folgende Paragraph zu bringen bestimmt ist.
+
+\rmfigure{figures/fig-34.png}{Fig.~34.}{Meridian section of the torus: a vertical axis labelled Z, a point O on it, a horizontal segment R from O to the centre of a circle of radius rho, with the polar angle alpha marked at the centre.}
+
+Wir wollen die Ringfläche als gewöhnlichen Torus voraussetzen, der durch Rotation eines Kreises um eine denselben nicht schneidende Axe seiner Ebene entsteht. Sei $\varrho$ der Radius dieses Kreises, $R$ der Abstand seines Mittelpunctes von der Axe, $\alpha$ ein Polarwinkel.
+
+Wir führen die Rotationsaxe als $Z$-Axe, den Punct $O$ der Figur als Anfangspunct eines rechtwinkligen Coordinatensystems ein und unterscheiden die durch $OZ$ hindurchlaufenden Ebenen nach dem Winkel $\varphi$, den sie mit der positiven $X$-Axe bilden. Dann hat man für einen beliebigen Punct der Ringfläche:
+
+\textbf{*)} Vergl.\ \emph{Kirchhoff}; Monatsberichte der Berliner Akademie von 1875, l.\ c.\ (wo übrigens explicite nur die Beziehung zwischen Ringfläche und ebenem Rechtecke besprochen wird).
+
+\origpage{51}
+\[ \begin{gathered} X = (R - \varrho \cos \alpha) \cos \varphi, \quad Y = (R - \varrho \cos \alpha) \sin \varphi, \\ Z = \varrho \sin \alpha. \end{gathered} \tag{1} \]
+
+Daher wird das Bogenelement:
+\[ ds = \sqrt{dX^{2} + dY^{2} + dZ^{2}} = \sqrt{(R - \varrho \cos \alpha)^{2} \cdot d\varphi^{2} + \varrho^{2} \cdot d\alpha^{2}} \tag{2} \]
+oder:
+\[ ds = (R - \varrho \cos \alpha) \cdot \sqrt{d\xi^{2} + d\eta^{2}}, \tag{3} \]
+wo
+\[ \xi = \varphi, \quad \eta = \int_{o}^{\alpha} \frac{\varrho\,d\alpha}{R - \varrho \cos \alpha} \tag{4} \]
+gesetzt sein soll.
+
+Nach Formel (3) haben wir eine conforme Abbildung der Ringfläche auf die $\xi\eta$-Ebene. Die ganze Ringfläche wird offenbar einmal überstrichen, wenn $\varphi$ und $\alpha$ (in den Formeln (1)) jedes von $-\pi$ bis $+\pi$ läuft. \emph{Die conforme Abbildung der Ringfläche überdeckt daher ein Rechteck der Ebene, wie es durch folgende Figur vorgestellt wird:}
+
+\rmfigure{figures/fig-35.png}{Fig.~35.}{A rectangle centred on dashed coordinate axes, divided into four quadrants numbered 1 (upper left), 2 (upper right), 3 (lower right) and 4 (lower left); the top edge is labelled eta = +p, the bottom edge eta = -p, the left edge xi = -pi and the right edge xi = +pi.}
+
+Ich habe dabei in der Figur der Kürze halber statt $\displaystyle\int_{o}^{\pi} \frac{\varrho\,d\alpha}{R - \varrho \cos \alpha}$ einfach $p$ geschrieben. --- Wollen wir uns die Beziehung zwischen Rechteck und Ringfläche recht anschaulich vorstellen, so denke man sich ersteres aus dehnsamem Materiale verfertigt und nun die gegenüberstehenden Kanten des Rechtecks ohne Torsion zusammengebogen. Oder auch, man denke sich den Ring von analoger Beschaffenheit, zerschneide
+
+\origpage{52}
+ihn längs einer Breitencurve und einer Meridiancurve und breite ihn dann in die $\xi\eta$-Ebene aus. Ich setze statt weiterer Erläuterung eine Figur her, welche die Verticalprojection der Ringfläche von der positiven $Z$-Axe aus auf die $XY$-Ebene vorstellt und bei der die Beziehung zur $\eta\xi$-Ebene markirt ist:
+
+\rmfigure{figures/fig-36.png}{Fig.~36.}{Vertical projection of the torus onto the XY-plane: an annulus about the origin O with dashed X and Y axes; a radial cut on the left separates xi = +pi (above) from xi = -pi (below), the positive X direction is marked xi = 0, the upper quadrants are numbered 2 and the lower ones 1, and the outer edge at top and bottom is labelled eta = +p.}
+
+Natürlich erblickt man nur die Oberseite der Ringfläche, die auf der Rückseite abgebildeten Quadranten 3 und 4 werden beziehungsweise von 2 und 1 verdeckt.
+
+Sei nun andererseits bei reellem $\varkappa$ $(< 1)$ über der Ebene eine zweiblättrige Fläche mit vier Verzweigungspuncten $Z = \pm 1, \pm \frac{1}{\varkappa}$ gegeben:
+
+\rmfigure{figures/fig-37.png}{Fig.~37.}{The real axis from minus infinity to plus infinity with the points -1/kappa, -1, 0, +1, +1/kappa marked; the segments from -1/kappa to -1 and from +1 to +1/kappa are drawn heavy as branch cuts, and the upper half-plane is hatched.}
+
+wobei ich mir (wie es in der Figur angedeutet ist) die beiden Halbblätter, welche die positive Halbebene überlagern;\ednote{Printed with a semicolon after ``überlagern''; a comma is expected. An apparent misprint.} schraffirt denken will. Dabei sollen die Verzweigungsschnitte mit den geradlinigen Strecken zwischen $+ 1$ und $+ \frac{1}{\varkappa}$ einerseits, und $- 1$ und $- \frac{1}{\varkappa}$ andererseits zusammenfallen.
+
+Diese zweiblättrige Fläche repräsentirt, wie man weiss, die Verzweigung von $w = \sqrt{1 - z^{2} \cdot 1 - \varkappa^{2} z^{2}}$, und zwar
+
+\origpage{53}
+können wir, in Anbetracht der Wahl der Verzweigungsschnitte, die Zuordnung so treffen, dass auf dem oberen Blatte $w$ durchweg einen positiven reellen Theil besitzt. Wir betrachten nun das Integral
+\[ W = \int_{0}^{z} \frac{dz}{w}. \]
+
+Dasselbe liefert uns in bekannter Weise die Abbildung unserer zweiblättrigen Fläche ebenfalls auf ein Rechteck, dessen nähere Beziehung zur zweiblättrigen Fläche durch folgende Figur gegeben ist, auf welcher man die Schraffirungen und sonstigen Unterscheidungen der Figur (37) wiederfindet:
+
+\rmfigure{figures/fig-38.png}{Fig.~38.}{A rectangle divided into four equal quarters by a horizontal and a vertical midline. The corners and the top and bottom midpoints of the vertical edges are labelled -1/kappa, +1/kappa, -1/kappa along the top and likewise along the bottom; the midpoints of the top and bottom edges of each half are marked infinity; the horizontal midline is labelled -1 at both ends and +1 at the centre, with 0 at the middle of each half. The upper-left and lower-right quarters are hatched, and the left, centre and right vertical lines are drawn heavy.}
+
+Dem oberen Blatte von Figur (37) entspricht die linke Seite dieser Figur. Man beachte vor Allem, wie sich die Abbildung für die Umgebung der Verzweigungspuncte der zweiblättrigen Fläche gestaltet. Vielleicht ist es am einfachsten, die Sache sich so vorzustellen, dass man von (37) zunächst durch stereographische Projection zu einer zweimal überdeckten Kugelfläche übergeht, welche auf einem Meridian vier Verzweigungspuncte trägt, --- dass man die so erhaltene Fläche durch einen längs des Meridians verlaufenden Schnitt in vier Halbkugeln zerlegt, deren einzelne man durch geeignete Dehnung und Deformirung in der Nähe der vier Verzweigungspuncte in ein ebenes Rechteck verwandelt, --- dass man endlich die so entstehenden vier Rechtecke entsprechend den Beziehungen zwischen den vier Halbkugeln nach Art von Figur (38) neben einander legt. Man sieht auf diese Art auch deutlich, dass in Figur (38) immer \emph{zwei} (zusammengehörige) Randpuncte denselben Punct der ursprünglichen Fläche bezeichnen.
+
+\origpage{54}
+
+Um nun zwischen dem Ringe und der zweiblättrigen Fläche die gewünschte Beziehung zu erzielen, haben wir nur dafür zu sorgen, dass das Rechteck der Figur (38) durch passende Wahl des Moduls $\varkappa$ mit dem Rechtecke der Figur (35) \emph{ähnlich} wird. Eine proportionale Vergrösserung des einen Rechtecks (welches auch eine conforme Umgestaltung ist) bringt dasselbe sodann mit dem anderen Rechteck zur Deckung und vermittelt so eine eindeutig-conforme Abbildung der zweiblättrigen Fläche auf die Ringfläche (oder der letzteren auf die erstere). Es wird wiederum genügen, das Sachverhältniss durch eine Figur zu kennzeichnen, dieselbe entspricht genau der eben gegebenen Figur (36):
+
+\rmfigure{figures/fig-39.png}{Fig.~39.}{Two concentric circles forming an annulus. The outer circle is marked infinity at top and bottom, the inner circle 0 at top and bottom. A horizontal diameter line crosses the ring on the left from -1/kappa (outer) to -1 (inner) and on the right from +1 (inner) to +1/kappa (outer); these two segments are drawn heavy. The upper half of the ring is hatched.}
+
+Die Schraffirung soll sich dabei nur auf die Vorderseite der Ringfläche beziehen; auf der Rückseite ist die untere Hälfte der Figur schraffirt zu denken, die obere frei zu lassen. ---
+
+Die conforme Abbildung, welche wir wünschten, ist hiermit thatsächlich geleistet. Wir wollen jetzt rückwärts die Strömung auf der Ringfläche bestimmen, durch deren Vermittelung im Sinne des §.~14 die Abbildung zu Stande kommt. Dieselbe wird an den mit $\pm 1$, $\pm \varkappa^{2}$\ednote{Printed $\pm \varkappa^{2}$; from Figures 37 to 39 the remaining branch points are $\pm \frac{1}{\varkappa}$, which is apparently meant. An apparent misprint.} bezeichneten Stellen Kreuzungspuncte besitzen müssen, an den beiden Stellen $\infty$ algebraische Unendlichkeitspuncte von einfacher Multiplicität. Man findet die betreffenden Curven, die Niveaucurven sowohl wie die Strömungscurven, am besten, wenn man sich des Rechtecks als Zwischenfigur bedient. Offenbar übertragen sich die Curven $x = \text{Const.}$, $y = \text{Const.}$ der $z$-Ebene (Figur 37) auf das Rechteck der Figur (38), wie die Figuren (40), (41) angeben.
+
+\origpage{55}
+Ich habe dabei allein den Curven $y = \text{Const.}$ Pfeilspitzen zugesetzt, um sie im Gegensatze zu den anderen als Strömungscurven zu charakterisiren.
+
+\rmfigure{figures/fig-40.png}{Fig.~40.}{The rectangle of Fig. 38 with the same boundary labels (-1/kappa, infinity, +1/kappa, infinity, -1/kappa along top and bottom; -1 at the ends of the midline and +1 at its centre), filled with the images of the curves x = Const.: families of curves fanning out from the four points marked infinity on the top and bottom edges, and two curves crossing at the centre point +1.}
+\rmfigure{figures/fig-41.png}{Fig.~41.}{The same rectangle with the images of the curves y = Const., drawn with arrowheads: in each quarter a pair of nested closed loops touching the top or bottom edge at the point marked infinity, the horizontal midline with arrows pointing towards the centre +1, and the vertical lines and the edges carrying arrows showing the direction of flow.}
+
+Man hat nun einfach diese Zeichnungen in derselben Weise zusammenzubiegen, wie es bei Figur (35) geschildert wurde, um die Ringfläche und auf ihr die gewünschten Curvensysteme zu erhalten. Das Resultat ist das folgende:
+
+\rmfigure{figures/fig-42.png}{Fig.~42.}{Projection of the ring surface as two concentric circles, with the outer circle marked infinity at top and bottom, the inner circle 0 at top and bottom, -1 and +1 on the inner circle and -1/kappa and +1/kappa on the outer circle at left and right. Level curves fan out from the two points marked infinity and wrap around the inner circle, touching the outer contour at -1/kappa and +1/kappa.}
+\rmfigure{figures/fig-43.png}{Fig.~43.}{The same projection of the ring surface with the flow curves drawn with arrowheads: elongated closed loops in the upper and lower parts of the ring, curves circling around the inner circle, and horizontal segments from -1/kappa to -1 and from +1 to +1/kappa with arrows pointing to the right.}
+
+Dabei erscheinen in Figur (42) die vier Kreuzungspuncte der Strömung vermöge der gewählten Projectionsart als Berührungspuncte der Niveaucurven mit der scheinbaren Contour der Ringfläche.
+
+\section*{§.~16. Functionen von $x + iy$, welche den untersuchten Strömungen entsprechen.}
+
+Sei $x + iy$, wie in §.~14, eine eindeutige complexe Function des Ortes auf unserer Fläche mit $m$ algebraischen, einfachen Unendlichkeitspuncten. Wir verwandeln unsere Fläche nach Anleitung jenes Paragraphen in eine $m$-blättrige Fläche
+
+\origpage{56}
+über der $x + iy$-Ebene${}^{*)}$ und legen uns nun die Frage vor, \emph{in welche Functionen des Argumentes $x + iy$ die bisher untersuchten complexen Functionen des Ortes übergehen mögen}. Man erinnere sich dabei der Entwickelungen des §.~6.
+
+Sei zunächst $w$ eine complexe Function des Ortes, welche auf unserer Fläche, ebenso wie $x + iy$, \emph{eindeutig} ist. Vermöge der Festsetzungen, die hinsichtlich der Unendlichkeitspuncte unserer Functionen und insbesondere der eindeutigen Functionen getroffen worden sind, ergibt sich sofort, dass $w$ als Function von $x + iy = z$ nirgendwo einen \emph{wesentlich} singulären Punct hat. Ueberdiess ist $w$ auf der $m$-blättrigen über der $z$-Ebene ausgebreiteten Fläche, so gut wie auf der ursprünglichen Fläche, eindeutig. Daher folgt auf Grund bekannter Sätze: \emph{dass $w$ eine algebraische Function von $z$ ist.}
+
+Dabei ist die Möglichkeit an sich nicht auszuschliessen, dass die $m$ Werthe von $w$, welche demselben $z$ entsprechen, zu je $\nu$ übereinstimmen mögen (wobei $\nu$ natürlich ein Theiler von $m$ sein muss). Aber jedenfalls können wir solche eindeutige Functionen $w$ auswählen, bei denen dieses nicht der Fall ist. Wir bestimmten oben (§.~13) die eindeutigen Functionen, indem wir ihre Unendlichkeitspuncte willkürlich annahmen. Wir haben es daher in der Hand, das erwähnte Vorkommniss jedenfalls zu vermeiden: wir brauchen nur die Unendlichkeitspuncte von $w$ so anzunehmen, dass nicht jedesmal $\nu$ von ihnen dasselbe $z$ aufweisen. Dann kommt:
+
+\emph{Die irreducibele Gleichung, welche zwischen $w$ und $z$ besteht:}
+\[ f(w, z) = 0 \]
+\emph{hat in $w$ die $m^{\text{te}}$ Ordnung.}
+
+Ebensogut wird sie in $z$ natürlich die $n^{\text{te}}$ Ordnung besitzen, wenn $n$ die Gesammtmultiplicität der Unendlichkeitspuncte ist, die $w$ aufweist.
+
+Aber die Beziehung dieser Gleichung $f = 0$ zu unserer Fläche ist noch eine innigere, als die blosse Uebereinstimmung der Ordnung mit der Blätterzahl aussagt. Zu jedem Puncte der Fläche gehört nur \emph{ein} Werthepaar $w$, $z$, das der Gleichung genügt, und umgekehrt gehört zu jedem solchen Werthepaare
+
+\textbf{*)} Diese geometrische Umsetzung ist natürlich keineswegs nothwendig; wir erreichen durch dieselbe nur den Anschluss an die gewöhnlich eingehaltene Darstellungsweise.
+
+\origpage{57}
+im Allgemeinen${}^{*)}$ nur ein Punct der Fläche. \emph{Gleichung und Fläche sind sozusagen eindeutig auf einander bezogen.}
+
+Es sei jetzt $w_{1}$ eine neue eindeutige Function auf unserer Fläche, also jedenfalls eine algebraische Function von $z$. Dann kann man die Art dieser algebraischen Function, nachdem einmal die Gleichung $f(w, z) = 0$ unter der angegebenen Voraussetzung gebildet ist, mit zwei Worten kennzeichnen. Man zeigt nämlich, \emph{dass $w_{1}$ eine rationale Function von $w$ und $z$ ist, und dass auch umgekehrt jede rationale Function von $w$ und $z$ eine Function vom Charakter des $w_{1}$ abgibt.} Das Letztere ist selbstverständlich. Denn eine rationale Function von $w$ und $z$ ist in unserer Fläche eindeutig; überdiess als analytische Function von $z$ eine complexe Function des Ortes in der Fläche. Aber auch das Erstere ist leicht zu beweisen${}^{**)}$. Man bezeichne die $m$ Werthe von $w$, die zu einem beliebigen Werthe von $z$ gehören, mit $w^{(1)}, w^{(2)}, \cdot\cdot\cdot\cdot w^{(m)}$ (allgemein $w^{(\alpha)}$), die entsprechenden Werthe von $w_{1}$ (die nicht nothwendig alle verschieden zu sein brauchen) mit $w_{1}^{(1)}, w_{1}^{(2)}, \cdot\cdot\cdot w_{1}^{(m)}$. Dann ist die Summe:
+\[ w_{1}^{(1)} w^{(1)^{\nu}} + w_{1}^{(2)} w^{(2)^{\nu}} + \cdot\cdot\cdot\cdot\cdot\cdot w_{1}^{(m)} w^{(m)^{\nu}} \]
+(wo $\nu$ eine beliebige, positive oder negative ganze Zahl bedeuten soll) als symmetrische Function der verschiedenen Werthe $w_{1}^{(\alpha)} w^{(\alpha)^{\nu}}$ eine eindeutige Function von $z$, und also, als algebraische Function, eine \emph{rationale} Function von $z$. Aus $m$ beliebigen der so entstehenden Gleichungen kann man $w_{1}^{(1)}, w_{1}^{(2)}, \cdot\cdot\cdot w_{1}^{(m)}$ als linear vorkommende Unbekannte berechnen, und es zeigt dann eine leichte Discussion, dass in der That das einzelne $w_{1}^{(\alpha)}$ eine rationale Function des zugehörigen $w^{(\alpha)}$ und des $z$ geworden ist. ---
+
+Von diesem Satze ausgehend bestimmt man nun auch sofort den Charakter derjenigen Functionen von $z$, welche durch die von uns in Betracht gezogenen \emph{mehrdeutigen} Functionen des Ortes geliefert werden. Sei $W$ eine solche Function. Dann ist $W$ jedenfalls eine analytische Function von $z$; man
+
+\textbf{*)} Im Besonderen kann diess anders sein. Wenn man $w$ und $z$ als Parallel-Coordinaten, die zwischen ihnen bestehende Gleichung durch eine Curve deutet, so sind es, wie man weiss, die \emph{Doppelpuncte} dieser Curve, welche jenen besonderen Vorkommnissen entsprechen.
+
+\textbf{**)} Vergl.\ die eingehende Beweisführung bei \emph{Prym}, \emph{Borchardt}'s Journal, Bd.~83, p.~251~ff.: Beweis eines Riemann'schen Satzes.
+
+\origpage{58}
+kann also von einem \emph{Differentialquotienten} $\dfrac{dW}{dz}$ sprechen und diesen selbst wieder als complexe Function des Ortes auf unserer Fläche deuten. Derselbe ist nothwendig als Function des Ortes eindeutig. Denn die Vieldeutigkeit von $W$ bezieht sich ja nur auf constante Periodicitätsmoduln, welche, in beliebiger Vielfachheit genommen, dem Anfangswerthe additiv hinzutreten können. Daher ist $\dfrac{dW}{dz}$ nach dem eben Bewiesenen eine rationale Function von $w$ und $z$, \emph{und es stellt sich also $W$ als Integral einer solchen Function dar:}
+\[ W = \int R(w, z)\,dz. \]
+
+Der umgekehrte Satz, dass jedes solche Integral eine complexe Function des Ortes in unserer Fläche abgibt, welche zu der von uns betrachteten Functionsclasse gehört, ist auf Grund bekannter Entwickelungen selbstverständlich. Diese Entwickelungen beziehen sich einmal auf das Unendlichwerden der Integrale, andererseits auf die Werthänderungen, welche die Integrale durch Wechsel des Integrationsweges erleiden. Ein näheres Eingehen hierauf scheint an dieser Stelle unnöthig. ---
+
+Wir sind, wie wir sehen, zu einem wohlumgränzten Resultate geführt worden. \emph{Ist erst einmal die algebraische Gleichung bestimmt, welche die Abhängigkeit zwischen $z$ und dem in hohem Maasse willkürlichen $w$ definirt, so sind die übrigen Functionen des Ortes der Art nach wohlbekannt; sie decken sich in ihrer Gesammtheit mit den rationalen Functionen von $w$ und $z$, und mit den Integralen solcher Functionen.}
+
+Es wird gut sein, dieses Resultat am Falle der wiederholt betrachteten Ringfläche $p = 1$ zu erläutern. Als Functionen $z$ und $w$ werden wir dieselben zu Grunde legen, die im vorigen Paragraphen besprochen wurden, und von denen die erstere durch die Figuren (42), (43) erläutert wird. Die zwischen ihnen bestehende Gleichung lautet einfach, wie wir wissen:
+\[ w^{2} = 1 - z^{2} \cdot 1 - \varkappa^{2} z^{2} \]
+und es verwandeln sich also die Integrale $\displaystyle\int R(w, z)\,dz$ in diejenigen, die man als \emph{elliptische Integrale} zu bezeichnen pflegt. Unter ihnen gibt es, nach §.~12, ein einziges „überall endliches“ Integral. Aus der in Figur (38) gegebenen Abbildung
+
+\origpage{59}
+folgt, dass dieses kein anderes ist, als das dort betrachtete $\displaystyle\int \frac{dz}{w}$, das gewöhnlich sogenannte \emph{Integral erster Gattung}. Die zugehörigen Niveaucurven und Strömungscurven sind dieselben, welche in Figur (21) und (22) dargestellt sind. Aber auch diejenigen Functionen, denen die Figuren (29) und (30), bez.\ (31) und (32) entsprechen, sind in der gewöhnlichen Analysis wohlbekannt. Wir haben das einemal eine Function mit zwei logarithmischen Unstetigkeitspuncten, das andere Mal eine solche mit nur einem algebraischen Unstetigkeitspuncte. Als Functionen von $z$ betrachtet geben dieselben solche elliptische Integrale ab, welche man als \emph{Integrale dritter Gattung} bez.\ \emph{zweiter Gattung} zu bezeichnen pflegt.
+
+\section*{§.~17. Tragweite und Bedeutung unserer Betrachtungen.}
+
+Mit den Entwickelungen des vorigen Paragraphen ist der Zielpunct, den wir uns mit der allgemeinen Fragestellung des §.~7 gesteckt haben, thatsächlich erreicht. Wir haben auf beliebiger Fläche die allgemeinsten für uns in Betracht kommenden complexen Functionen des Ortes bestimmt und nun die analytischen Abhängigkeiten derselben von einander definirt, indem wir zusahen, wie alle von einer, übrigens beliebig gewählten, eindeutigen Function des Ortes im Sinne der gewöhnlichen Analysis abhängig sind. Es bleibt uns also, um unseren Gedankengang abzuschliessen, nur noch ein Umblick zu halten, was Alles durch unsere Betrachtungen gewonnen sein mag. Wir haben dann allerdings keineswegs den vollen Inhalt aber doch die Grundlage der Riemann'schen Theorie gewonnen, und es kann wegen weiterer Ausführungen auf Riemann's Originalarbeit sowie die sonstigen Darstellungen der Theorie verwiesen werden.
+
+Constatiren wir zunächst, \emph{dass es in der That die Gesammtheit der algebraischen Functionen und ihrer Integrale ist, welche durch unsere Untersuchung umspannt wird.} Denn wenn eine beliebige algebraische Gleichung $f(w, z) = 0$ gegeben ist, so können wir in der gewöhnlichen Weise über der $z$-Ebene eine zugehörige mehrblättrige Riemann'sche Fläche construiren und nun auf dieser einförmige Strömungen und complexe Functionen des Ortes studieren (vergl.\ §.~15).
+
+Wir fragen, ob das Studium dieser Functionen durch
+
+\origpage{60}
+unsere Betrachtungen in der That gefördert sei. Erinnern wir uns zu dem Zwecke, dass es vor allen Dingen die \emph{Vieldeutigkeit} der Integrale war, welche so lange einen Fortschritt in ihrer Theorie verhindert hat. Dass Integrale durch das Auftreten logarithmischer Unstetigkeitspuncte vieldeutig werden, hatte schon \emph{Cauchy} erkannt. Aber erst durch die Riemann'sche Fläche ist die andere Art von Periodicität, welche in dem \emph{Zusammenhange} der Fläche ihren Grund hat und an den Querschnitten der Fläche gemessen wird, uns völlig deutlich geworden. --- Ein anderer Punct ist dieser. Man hat sich von je bei der Untersuchung der Integrale der Umformung durch Substitution bedient, ohne sich indess über eine bloss empirische Verwerthung derselben beträchtlich zu erheben. Bei Riemann's Theorie ist eine umfangreiche Classe von Substitutionen von selbst gegeben und in ihrer Wirkung zu beurtheilen. Die Variabelen $w$ und $z$ sind für uns nur irgend zwei, von einander unabhängige, eindeutige Functionen des Ortes; wir können statt ihrer ebensogut zwei andere, $w_{1}$ und $z_{1}$, zu Grunde legen, wobei sich $w_{1}$ und $z_{1}$ als übrigens beliebige rationale Functionen von $w$ und $z$ und ebensowohl letztere als rationale Functionen von $w_{1}$ und $z_{1}$ erweisen. Die Riemann'sche Fläche, auf der wir operiren, wird von dieser Umänderung durchaus nicht nothwendig betroffen. Unter der Menge der \emph{zufälligen} Eigenschaften unserer Functionen erkennen wir also \emph{wesentliche}, welche bei eindeutiger Umformung ungeändert bleiben. Und vor Allem tritt uns in der Zahl $p$ von vorneherein ein solches invariantes Element entgegen. --- Indem die Riemann'sche Theorie die beiden hiermit bezeichneten Schwierigkeiten, welche frühere Bearbeiter gehemmt hatten, bei Seite räumt, gelangt sie unmittelbar zu dem Satze, den wir in §.~10 aufstellten, und der die Willkürlichkeit der in Betracht zu ziehenden Functionen bestimmt. Ich meine den Satz, \emph{dass man (unter den wiederholt angegebenen Beschränkungen) die Unendlichkeitspuncte der Function und die Periodicitätsmoduln ihres reellen Theiles an den Querschnitten als willkürliche und hinreichende Bestimmungsstücke derselben erachten darf.} ---
+
+So etwa stellt sich die Bilanz, wenn man die functionentheoretischen Interessen, wie es unter Mathematikern zu geschehen pflegt, voranstellt. Aber vergessen wir nicht,
+
+\origpage{61}
+dass die umgekehrte Auffassung im Grunde ebenso berechtigt ist. Das Studium einförmiger Strömungen auf gegebenen Flächen kann umsomehr als Selbstzweck betrachtet werden, als es bei zahlreichen \emph{physikalischen} Problemen unmittelbar zu Verwerthung gelangt. In der unendlichen Mannigfaltigkeit dieser Strömungen orientirt uns die Riemann'sche Theorie, indem sie auf den Zusammenhang hinweist, der zwischen diesen Strömungen und den algebraischen Functionen der Analysis statt hat.
+
+Wir können endlich den \emph{geometrischen} Gesichtspunct hervorkehren, und die Riemann'sche Theorie als ein Mittel betrachten, um die Lehre von der conformen Abbildung geschlossener Flächen auf einander der analytischen Behandlung zugänglich zu machen. Eben diese Auffassung ist es, der ich im folgenden, dritten Abschnitte meiner Darstellung Ausdruck zu geben bemüht bin. Es wird nicht nöthig sein, schon an dieser Stelle ausführlicher hierauf einzugehen.
+
+\section*{§.~18. Weiterbildung der Theorie.}
+
+In Riemann's eigenem Gedankengange, wie ich ihn vorstehend zu schildern versuchte, veranschaulicht die Riemann'sche Fläche nicht nur die in Betracht kommenden Functionen, sondern sie \emph{definirt} dieselben. Es scheint möglich, diese beiden Dinge zu trennen: die Definition der Functionen von anderer Seite zu nehmen und die Fläche nur als Mittel der Veranschaulichung beizubehalten. Das ist es in der That, was von der Mehrzahl der Mathematiker um so lieber geschehen ist, als Riemann's Definition der Function bei genauerer Untersuchung beträchtliche Schwierigkeiten mit sich bringt${}^{*)}$. Man beginnt also etwa mit der algebraischen Gleichung und der Begriffsbestimmung des Integrals, und construirt erst hinterher eine zugehörige Riemann'sche Fläche.
+
+Dann aber ist von selbst eine grosse Verallgemeinerung der ursprünglichen Auffassung gegeben. Bislang galten uns zwei Flächen nur dann als gleichwerthig, wenn die eine aus der anderen durch eindeutige conforme Abbildung entstand. Jetzt ist kein Grund mehr, an der Conformität der Abbildung festzuhalten. \emph{Jede Fläche, welche durch stetige Abbildung eindeutig}
+
+\textbf{*)} Vergl.\ die betreffenden Bemerkungen der Vorrede.
+
+\origpage{62}
+\emph{in die gegebene verwandelt werden kann, überhaupt jedes geometrische Gebilde, dessen Elemente sich stetig eindeutig auf die ursprüngliche Fläche beziehen lassen, kann ebensowohl zur Versinnlichung der in Betracht zu ziehenden Functionen gebraucht werden.} Ich habe diesem Gedanken, wie ich bei gegenwärtiger Gelegenheit ausführen möchte, in früheren Arbeiten nach zwei Richtungen hin Ausdruck gegeben.
+
+Einmal operirte ich mit dem Begriffe einer möglichst übersichtlichen, übrigens verschiedentlich modificirbaren \emph{Normalfläche} (vergl.\ §.~8), auf welcher ich den Verlauf der in Betracht kommenden Functionen durch verschiedene graphische Hülfsmittel zu illustriren bemüht war${}^{*)}$. Hierher gehören auch die \emph{Polygonnetze}, deren ich mich wiederholt bediente${}^{**)}$, indem ich mir die Riemann'sche Fläche in geeigneter Weise zerschnitten und dann in die Ebene ausgebreitet dachte. Es bleibe dabei an dieser Stelle unerörtert, ob nicht den so entstehenden Figuren, die zunächst beliebig stetig verändert werden dürfen, im Interesse weitergehender functionentheoretischer Untersuchungen hinterher doch eine gesetzmässige Gestalt ertheilt werden soll, vermöge deren sich eine \emph{Definition} der durch die Figur zu veranschaulichenden Functionen ermöglicht.
+
+Das andere Mal${}^{***)}$ stellte ich mir die Aufgabe, in möglichst anschaulicher Weise den Zusammenhang darzulegen zwischen der Auffassungsweise der Functionentheorie und derjenigen der gewöhnlichen analytischen Geometrie, welch' letztere eine Gleichung zwischen zwei Variabelen als \emph{Curve} deutet. Indem ich von dem Satze ausging, dass jede imaginäre Gerade der Ebene und also auch jede imaginäre Tangente einer Curve einen und nur einen reellen Punct besitzt, erhielt ich eine Riemann'sche Fläche, die sich an den Verlauf der gegebenen Curve auf das Innigste anschmiegt. Ich habe diese Fläche, wie es mein ursprünglicher Zweck war, bisher nur
+
+\textbf{*)} Vergl.\ meine Arbeiten über elliptische Modulfunctionen in den Bänden 14, 15, 17 der mathematischen Annalen.
+
+\textbf{**)} Man sehe insbesondere die dem 14.\ Annalenbande beigegebene Tafel („Zur Transformation siebenter Ordnung der elliptischen Functionen“) sowie die später noch zu nennende Arbeit von \emph{Dyck} im 17.\ Bande daselbst.
+
+\textbf{***)} „Ueber eine neue Art von Riemann'schen Flächen“, mathematische Annalen Bd.~7 und 10.
+
+\origpage{63}
+zur Veranschaulichung gewisser einfacher Integrale gebraucht${}^{*)}$. Aber es findet eine ähnliche Bemerkung ihre Stelle, wie oben bei den Polygonnetzen. Insofern die Fläche gesetzmässig ist, muss auch sie zur \emph{Definition} der auf ihr existirenden Functionen dienen können. In der That kann man für diese Functionen eine partielle Differentialgleichung bilden, welche den Differentialgleichungen zweiter Ordnung, die wir in §§.~1 und 5 betrachten, in etwa analog ist: nur dass der Differentialausdruck, an den diese Gleichung anknüpft, nicht unmittelbar als \emph{Bogenelement} einer Fläche zu deuten ist. ---
+
+Diese wenigen Bemerkungen müssen genügen, um auf Betrachtungen hinzuweisen, deren Verfolg mir interessant scheint.
+
+\textbf{*)} Siehe: \emph{Harnack} (Ueber die Verwerthung der elliptischen Functionen für die Geometrie der Curven dritten Grades) im 9.\ Bande der mathematischen Annalen, siehe ferner meinen schon oben genannten Aufsatz: „Ueber den Verlauf der Abel'schen Integrale bei den Curven vierten Grades“ im 10.\ Bande daselbst.
+
+\origpage{64}
+
+\section*{Abschnitt III. Folgerungen.}
+
+\section*{§.~19. Ueber die Moduln algebraischer Gleichungen.}
+
+Es gibt einen wichtigen Punct, in welchem die Riemann'sche Theorie der algebraischen Functionen nicht nur der Methode sondern auch dem Resultate nach über die sonst üblichen Darstellungen dieser Theorie hinausgreift. Sie besagt nämlich \emph{dass zu jeder über der $z$-Ebene ausgebreiteten, graphisch gegebenen mehrblättrigen Fläche zugehörige algebraische Functionen construirt werden können}, --- wobei man beachten mag, dass diese Functionen, sofern sie überhaupt existiren, in hohem Maasse willkürlich sind, da $R(w, z)$ im Allgemeinen gerade so verzweigt ist, wie $w$. --- Der genannte Satz ist um so merkwürdiger, als er eine Angabe über eine interessante Gleichung höheren Grades implicirt. Sind nämlich die Verzweigungspuncte einer $m$-blättrigen Fläche gegeben, so existiren noch eine endliche Zahl von wesentlich verschiedenen Möglichkeiten, dieselben in die $m$-Blätter einzuordnen: man wird diese Zahl durch Betrachtungen auffinden können, die der reinen Analysis situs angehören${}^{*)}$. Aber dieselbe Zahl hat unserem Satze zufolge ihre algebraische Bedeutung. Man bezeichne, wie es Riemann thut, alle solche algebraischen Functionen von $z$ als derselben Classe angehörig, die sich, unter Benutzung von $z$, rational durch einander ausdrücken lassen. \emph{Dann ist unsere}${}^{**)}$ \emph{Zahl die Anzahl der verschiedenen}
+
+\textbf{*)} Solche Bestimmungen machte z.\ B.\ Hr.\ \emph{Kasten} in seiner Inauguraldissertation: Zur Theorie der dreiblättrigen Riemann'schen Fläche. Bremen 1876.
+
+\textbf{**)} Wenn es hier wieder gestattet ist auf eigene Arbeiten zu verweisen, so geschehe diess zunächst mit Bezug auf eine Stelle im 12.\ Bande der mathematischen Annalen (p.~173), wo der Schluss begründet wird, dass gewisse rationale Functionen durch die Zahl ihrer Verzweigungen völlig bestimmt sind, sodann in Bezug auf Bd.~15, p.~533 ebenda, wo eine ausführliche Betrachtung lehrt, dass es \emph{zehn} rationale Functionen elften Grades gibt, die gewisse Verzweigungsstellen besitzen.
+
+\origpage{65}
+\emph{Classen algebraischer Functionen, welche in Bezug auf $z$ die gegebenen Verzweigungswerthe besitzen.}
+
+Ich wünsche im gegenwärtigen und im folgenden Paragraphen verschiedene Folgerungen zu ziehen, die sich aus dem vorausgeschickten Satze gewinnen lassen, und zwar mag zunächst die Frage nach den \emph{Moduln} der algebraischen Functionen behandelt werden, d.\ h.\ die Frage nach denjenigen Constanten, welche bei eindeutiger Transformation der Gleichungen $f(w, z) = o$ die Rolle der Invarianten spielen.
+
+Sei zu diesem Zwecke $\varrho$ eine zunächst unbekannte Zahl, welche angibt, wie vielfach unendlich oft eine Fläche sich eindeutig in sich transformiren, d.\ h.\ conform auf sich selber abbilden lässt. Sodann erinnere man sich an die Anzahl der Constanten in den eindeutigen Functionen auf gegebener Fläche (§.~13). Es gab im Allgemeinen $\infty^{2m - p + 1}$ eindeutige Functionen mit $m$ Unendlichkeitspuncten, und diese Zahl war jedenfalls genau richtig (wie ohne Beweis angegeben wurde), wenn $m > 2p - 2$ war. Nun bildet jede dieser Functionen die gegebene Fläche auf eine $m$-blättrige Fläche über der Ebene eindeutig ab. \emph{Daher ist die Gesammtheit der $m$-blättrigen Flächen, auf welche man eine gegebene Fläche conform eindeutig beziehen kann, und also auch der $m$-blättrigen Flächen, die man einer Gleichung $f(w, z) = 0$ durch eindeutige Transformation zuordnen kann, $\infty^{2m - p + 1 - \varrho}$ fach.} Denn jedesmal $\infty^{\varrho}$ Abbildungen ergeben dieselbe $m$-blättrige Fläche, weil jede Fläche der Voraussetzung nach $\infty^{\varrho}$mal auf sich selber abgebildet werden kann.
+
+Nun gibt es aber überhaupt $\infty^{w}$ $m$-blättrige Flächen, unter $w$ die Zahl der Verzweigungspuncte, d.\ h.\ $2m + 2p - 2$ verstanden. Denn durch die Verzweigungspuncte wird die Fläche, wie oben bemerkt, endlich-deutig bestimmt, und Verzweigungspunkte höherer Multiplicität entstehen durch Zusammenrücken einfacher Verzweigungspuncte, wie dieses betreffs der entsprechenden Kreuzungspuncte bereits in §.~1 erläutert wurde (vergl.\ Figur (2) und (3) daselbst). Zu jeder dieser Flächen gehören, wie wir wissen, algebraische Functionen. \emph{Die Anzahl der Moduln ist daher $w - (2m + 1 - p - \varrho) = 3p - 3 + \varrho$.}
+
+Bemerken wir hierzu, dass die Gesammtheit der $m$-blättrigen
+
+\origpage{66}
+Flächen mit $w$ Verzweigungspuncten ein \emph{Continuum} bildet${}^{*)}$, wie das Entsprechende betreffs der auf gegebener Fläche existirenden eindeutigen Functionen mit $m$ Unendlichkeitspuncten bereits in §.~13 hervorgehoben wurde. Wir schliessen dann, \emph{dass die algebraischen Gleichungen eines gegebenen $p$ ebenfalls eine einzige zusammenhängende Mannigfaltigkeit constituiren} (wobei wir alle Gleichungen, die aus einander durch eindeutige Transformation hervorgehen, als ein Individuum erachten). Hierdurch erst gewinnt die angegebene Zahl der Moduln ihre präcise Bedeutung: \emph{sie ist die Zahl der Dimensionen dieser zusammenhängenden Mannigfaltigkeit.}
+
+Es kommt jetzt noch darauf an, die Zahl $\varrho$ zu bestimmen. Diess geschieht durch folgende Sätze:
+
+1. \emph{Jede Gleichung $p = o$ kann $\infty^{3}$ mal eindeutig in sich selbst transformirt werden.} Denn auf der zugehörigen Riemann'schen Fläche existiren eindeutige Functionen mit nur je einem Unendlichkeitspunct in dreifach unendlicher Zahl (§.~13), von denen man, um eine eindeutige Transformation der Fläche in sich zu haben, nur irgend zwei entsprechend zu setzen hat. --- Des Näheren stellt sich die Sache so. Heisst eine der genannten Functionen $z$, so sind alle anderen (nach §.~16) algebraische eindeutige, d.\ h.\ rationale Functionen von $z$, und, da das Verhältniss umkehrbar sein muss, \emph{lineare} Functionen von $z$. Umgekehrt ist auch jede lineare Function von $z$ eine eindeutige Function des Ortes in unserer Fläche, mit nur einem Unendlichkeitspuncte. Daher wird man die allgemeinste eindeutige Transformation der Gleichung in sich bekommen, wenn man jedem Puncte $z$ der Riemann'schen Fläche einen anderen durch die Formel zuordnet:
+\[ z_{1} = \frac{\alpha z + \beta}{\gamma z + \delta}, \]
+unter $\alpha : \beta : \gamma : \delta$ beliebige Constante verstanden.
+
+2) \emph{Jede Gleichung $p = 1$ kann einfach unendlich oft eindeutig in sich transformirt werden.} Zum Beweise betrachte man das zugehörige überall endliche Integral $W$ und insbesondere
+
+\textbf{*)} Es folgt diess z.\ B.\ aus den Sätzen von \emph{Lüroth} und \emph{Clebsch}, die man in den Bänden 4 und 6 der mathematischen Annalen abgeleitet findet.
+
+\origpage{67}
+die Abbildung, welche von der zweckmässig zerschnittenen Riemann'schen Fläche in der Ebene $W$ entworfen wird. Wir haben dies in einem besonderen Falle bereits gethan (§.~15, Figur (38)); eine genaue Ausführung im allgemeinen Falle wird um so weniger nöthig sein, als es sich um Betrachtungen handelt, die in der Theorie der elliptischen Functionen ausführlich entwickelt zu werden pflegen. Das Resultat ist, dass zu jedem Werthe von $W$ \emph{ein} Punct und nur ein Punct der betreffenden Riemann'schen Fläche gehört, während sich die unendlich vielen Werthe von $W$, die demselben Punkte der Riemann'schen Fläche entsprechen, aus einem derselben in der Form zusammensetzen: $W + m_{1}\omega_{1} + m_{2}\omega_{2}$, unter $m_{1}$, $m_{2}$ beliebige ganze Zahlen, unter $\omega_{1}$, $\omega_{2}$ die beiden Perioden des Integrals verstanden. Bei eindeutiger Umformung wird jedem Puncte $W$ ein Punct $W_{1}$ in der Weise zugeordnet werden müssen, dass jeder Vermehrung von $W$ um Perioden eine solche von $W_{1}$ entspricht, und umgekehrt. Diess gelingt in der That, aber im Allgemeinen nur in der Weise, dass man
+\[ W_{1} = \pm W + C \]
+setzt. Nur im besonderen Falle (wenn das Periodenverhältniss $\frac{\omega_{1}}{\omega_{2}}$ bestimmte zahlentheoretische Eigenschaften hat) kann $W_{1}$ auch gleich $\pm iW + C$, oder $\pm \varrho W + C$ gesetzt werden (unter $\varrho$ eine dritte Einheitswurzel verstanden)${}^{*)}$. Wie dem auch sei, wir haben in jedem Falle in den Transformationsformeln nur eine willkürliche Constante und also den wechselnden Werthen derselben entsprechend in der That einfach unendlich viele Transformationen, wie behauptet wurde.
+
+3) \emph{Gleichungen $p > 1$ können niemals unendlich oft eindeutig in sich transformirt werden.}${}^{**)}$
+
+Ich verweise, was den analytischen Beweis dieser Behauptung angeht, auf die Darstellungen von \emph{Schwarz}
+
+\textbf{*)} Ich führe dieses Resultat, welches aus der Theorie der elliptischen Functionen wohlbekannt ist, im Texte ohne Beweis an.
+
+\textbf{**)} Es ist bei diesem Satze an eine \emph{oontinuirliche}\ednote{Printed ``oontinuirliche'': the first letter is a clean italic o with an open counter, identical to the second o, i.e. a wrong sort for c; read continuirliche.} Schaar von Transformationen, also an Transformationen mit willkürlich veränderlichen Parametern gedacht. Ob eine Fläche $p > 1$ unter Umständen nicht durch unendlich viele \emph{discrete} Transformationen in sich übergehen kann, bleibt im Texte unerörtert; doch scheint diess bei endlichem $p$ in der That auch unmöglich.
+
+\origpage{68}
+(Borchardt's Journal Bd.~87) und \emph{Hettner} (Göttinger Nachrichten, 1880, p.~386). Auf anschauungsmässigem Wege kann man sich die Richtigkeit der Behauptung folgendermassen verständlich machen. Sollte es unendlich viele eindeutige Transformationen der Gleichung in sich geben, so müsste es möglich sein, die zugehörige Riemann'sche Fläche derart continuirlich über sich hin zu \emph{verschieben}, dass jede kleinste Figur mit sich selbst ähnlich bleibt. Die Curven, längs deren eine solche Verschiebung vor sich ginge, müssten die Fläche jedenfalls vollständig und zugleich einfach überdecken. Ein \emph{Kreuzungspunct} dürfte in diesem Curvensysteme offenbar nicht vorhanden sein. Man müsste einen solchen Punct nämlich, damit keine Vieldeutigkeit der Transformation eintritt, als festbleibenden Punct betrachten und also die Geschwindigkeit der Verschiebung in ihm gleich Null setzen. Dann aber würde eine kleine Figur, welche bei der Verschiebung auf den Kreuzungspunct zu rückt, im Sinne der Bewegung nothwendig zusammengedrückt, senkrecht dazu auseinandergezogen werden; sie könnte also nicht mit sich selbst ähnlich bleiben, wie es doch durch den Begriff der conformen Abbildung verlangt wird. --- Andererseits müssen aber in jedem Curvensysteme, das eine Fläche $p > 1$ vollständig und einfach überdeckt, nothwendig Kreuzungspuncte vorhanden sein. Diess ist derselbe Satz, den wir, in etwas weniger allgemeiner Form, in §.~11 aufgestellt haben. --- Die ganze Verschiebung der Fläche in sich ist also unmöglich, was zu beweisen war.
+
+Nach diesen Sätzen ist $\varrho = 3$ für $p = o$, gleich 1 für $p = 1$, und gleich Null für alle grösseren $p$. \emph{Die Zahl der Moduln ist also für $p = 0$ gleich Null, für $p = 1$ gleich Eins, für grössere $p$ gleich $3p - 3$.}
+
+Es wird gut sein, noch folgende Bemerkungen hinzuzufügen. Um den Punct eines Raumes von $(3p - 3)$ Dimensionen zu bestimmen, wird man im Allgemeinen mit $(3p - 3)$ Grössen nicht ausreichen: man wird mehr Grössen benöthigen, zwischen denen dann algebraische (oder auch transcendente) Relationen bestehen. Ausserdem mag es aber auch sein, dass man zweckmässigerweise Bestimmungsstücke einführt, von denen jedesmal verschiedene Serien denselben Punct der Mannigfaltigkeit bezeichnen. Welche Verhältnisse bei den $(3p - 3)$ Moduln, die bei $p > 1$ existiren müssen, in dieser Hinsicht vorliegen, ist nur
+
+\origpage{69}
+erst wenig erforscht. Dagegen ist der Fall $p = 1$ aus der Theorie der elliptischen Functionen genau bekannt. Ich erwähne die auf ihn bezüglichen Resultate, um mich im Folgenden bei aller Kürze doch präcise ausdrücken zu können. Sei vor allen Dingen hervorgehoben, dass für $p = 1$ das algebraische Individuum (um diesen oben gebrauchten Ausdruck noch einmal zu verwenden) in der That durch eine (und nur eine) Grösse charakterisirt werden kann: \emph{die absolute Invariante $J = \dfrac{g_{2}^{3}}{\Delta}$}${}^{*)}$. Wenn im Folgenden gesagt wird, dass zur Ueberführbarkeit zweier Gleichungen $p = 1$ in einander die Gleichheit des Moduls nicht nur hinreichend, sondern auch erforderlich sei, so ist stets an die Invariante $J$ gedacht. Statt ihrer verwendet man, wie bekannt, gewöhnlich das \emph{Legendre}'sche $\varkappa^{2}$, welches bei gegebenem $J$ sechswerthig ist, so dass bei der Formulirung allgemeiner Sätze eine gewisse Schwerfälligkeit unvermeidbar scheint. In noch höherem Maasse ist dies der Fall, wenn man das Periodenverhältniss $\dfrac{\omega_{1}}{\omega_{2}}$ des elliptischen Integrals erster Gattung, wie dies in anderer Beziehung vielfach zweckmässig ist, als Modul einführt. Jedesmal unendlich viele Werthe des Moduls bezeichnen dann dasselbe algebraische Individuum.
+
+\section*{§.~20. Conforme Abbildung geschlossener Flächen auf sich selbst.}
+
+In den nun noch folgenden Paragraphen mögen die entwickelten Principien, wie in Aussicht gestellt, nach der geometrischen Seite verfolgt werden, um wenigstens die Grundzüge für eine Theorie \emph{der conformen Abbildung} von Flächen auf einander zu gewinnen${}^{**)}$ und so den Andeutungen zu
+
+\textbf{*)} Vergl.\ die Darstellung im 14.\ Bande der mathematischen Annalen, p.~112~ff.
+
+\textbf{**)} Die im Texte aufzustellenden Sätze finden sich explicite grösstentheils in der Literatur nicht vor. Wegen der Flächen $p = 0$ vergleiche man den bereits citirten Aufsatz von \emph{Schwarz} (Berliner Monatsberichte 1870). Man sehe ferner eine Arbeit von \emph{Schottky}: \emph{Ueber die conforme Abbildung mehrfach zusammenhängender Flächen}, die als Berliner Inaugural-Dissertation 1875 erschien und später (1877) in umgearbeiteter Form in Borchardts Journal Bd.~83 abgedruckt wurde. Es handelt sich in derselben um solche $p$-fach zusammenhängende ebene Bereiche, welche von $(p + 1)$ Randcurven begränzt werden.
+
+\origpage{70}
+entsprechen, mit denen Riemann, wie bereits in der Vorrede bemerkt, seine Dissertation abschloss. Ich werde mich dabei, was die Fälle $p = 0$ und $p = 1$ angeht, um nicht zu weitläufig zu werden, vielfach auf eine blosse Angabe der Resultate oder eine Andeutung ihres Beweises beschränken müssen.
+
+Indem wir uns zuvörderst nach conformen Abbildungen einer geschlossenen Fläche auf sich selbst fragen, haben wir eine Unterscheidung einzuführen, von der bislang noch nicht die Rede war: \emph{die Abbildung kann ohne Umlegung der Winkel geschehen oder mit Umlegung derselben.} Wir haben eine Abbildung der einen Art, wenn wir eine Kugel durch Drehung um den Mittelpunct mit sich selbst zur Deckung bringen; wir bekommen die zweite Art, wenn wir zu demselben Zwecke eine Spiegelung an einer Diametralebene verwenden. Die analytische Behandlung, wie wir sie bisher benutzten, entspricht nur den Abbildungen der ersten Art. Sind $u + iv$ und $u_{1} + iv_{1}$ zwei complexe Functionen des Ortes auf derselben Fläche, so liefert $u = u_{1}$, $v = v_{1}$ die allgemeinste Abbildung erster Art (vergl.\ §.~6). Aber es ist leicht zu sehen, wie man die Erweiterung zu treffen hat, um auch Abbildungen zweiter Art zu umfassen. \emph{Man hat einfach $u = u_{1}$, $v = - v_{1}$ zu setzen, um eine Abbildung zweiter Art zu haben.}
+
+Entnehmen wir zunächst den Entwickelungen des vorigen Paragraphen, was sich auf Abbildung der ersten Art bezieht. Indem wir uns möglichst geometrischer Ausdrucksweise bedienen, formuliren wir die folgenden Theoreme:
+
+\emph{Flächen $p = 0$ oder $p = 1$ können immer, Flächen $p > 1$ niemals unendlich oft durch Abbildung der ersten Art in sich übergeführt werden.}
+
+\emph{Bei den Flächen $p = 0$ ist die einzelne Abbildung der ersten Art bestimmt, wenn man drei beliebige Puncte der Fläche drei beliebigen Puncten derselben zugeordnet hat.}
+
+\emph{Ist $p = 1$, so darf man einen beliebigen Punct der Fläche einem zweiten nach Willkür zuweisen, und hat dann noch zur Bestimmung der Abbildung erster Art im Allgemeinen eine zweifache, im besonderen Falle eine vierfache oder sechsfache Möglichkeit.}
+
+Mit diesen Sätzen ist natürlich nicht ausgeschlossen, dass besondere Flächen $p > 1$ durch \emph{getrennte} Transformationen der ersten Art in sich übergehen mögen. Tritt diess ein,
+
+\origpage{71}
+so bildet es eine bei beliebiger conformen Umänderung der Fläche invariante Eigenschaft, nach deren Vorhandensein und Modalität besonders interessante Flächenclassen aus der Gesammtheit der übrigen herausgehoben werden können.${}^{*)}$ Doch verfolgen wir hier diesen Gesichtspunct nicht weiter.
+
+Betreffs der Transformationen zweiter Art mögen wir voranstellen, \emph{dass jede Transformation der zweiten Art in Verbindung mit einer solchen der ersten Art eine neue Transformation der zweiten Art ergibt.} Nun kennen wir bei den Flächen $p = 0$ und $p = 1$ die Transformationen erster Art auf Grund der angegebenen Sätze vollständig. Es wird bei ihnen also genügen, zu untersuchen, ob überhaupt \emph{eine} Transformation der zweiten Art existirt. \emph{Bei den Flächen $p = 0$ ist diess sofort zu bejahen.} Denn es genügt, eine beliebige der eindeutigen Functionen des Ortes mit nur einem Unendlichkeitspuncte, $x + iy$, herauszugreifen, und dann $x_{1} = x$, $y_{1} = - y$ zu setzen. Bei den Flächen $p = 1$ ist die Sache anders. \emph{Man findet, dass im Allgemeinen keine Transformation der zweiten Art existirt.} Zum Beweise ist es am einfachsten, die Werthe in Betracht zu ziehen, welche das überall endliche Integral $W$ auf der Fläche $p = 1$ annimmt. Man denke sich in der Ebene $W$ die Puncte $W = m_{1}\omega_{1} + m_{2}\omega_{2}$ markirt, unter $m_{1}$, $m_{2}$ wie oben beliebige positive oder negative ganze Zahlen verstanden. Man zeigt dann leicht, dass eine Transformation der zweiten Art der Fläche $p = 1$ in sich nur dann möglich ist, wenn dieses Punctsystem eine Symmetrieaxe besitzt. Es ist diess gerade \emph{der} Fall, in welchem die oben definirte absolute Invariante $J$ einen \emph{reellen} Werth aufweist. Je nachdem dabei $J < 1$ oder $> 1$, können jene Puncte in der $W$-Ebene als die Ecken eines \emph{rhombischen} oder eines \emph{rechteckigen} Systems betrachtet werden.
+
+Sei nun $p > 1$. Wenn für eine solche Fläche eine Transformation der zweiten Art existirt, so wird dieselbe im Allgemeinen von keiner weiteren Transformation derselben Art
+
+\textbf{*)} Solchen Flächen entsprechen algebraische Gleichungen mit einer Gruppe eindeutiger Transformationen in sich. Die Bemerkungen des Textes zielen also auf solche Untersuchungen ab, wie sie in neuerer Zeit von Hrn.\ \emph{Dyck} verfolgt worden sind (cf.\ die bereits citirte Arbeit im 17.\ Bande der Mathematischen Annalen: Aufstellung und Untersuchung von Gruppe und Irrationalität regulärer Riemann'scher Flächen).
+
+\origpage{72}
+begleitet sein${}^{*)}$. Denn sonst würde die Wiederholung oder Combination dieser Transformationen eine von der Identität verschiedene Transformation der ersten Art liefern. Die Transformation muss daher nothwendig eine \emph{symmetrische} sein, d.\ h.\ eine solche, welche die Puncte der Fläche \emph{paarweise} zusammenordnet. Ich will dementsprechend die Fläche selbst eine \emph{symmetrische} nennen.
+
+Uebrigens mögen hinterher unter diesem Namen überhaupt alle Flächen mit einbegriffen sein, welche Transformationen zweiter Art in sich zulassen, die zweimal angewandt zur Identität zurückführen. Es gehören dahin, wie man sofort sieht, die Flächen $p = 0$, sowie auch sämmtliche Flächen $p = 1$ mit reeller Invariante.
+
+\section*{§.~21. Besondere Betrachtung der symmetrischen Flächen.}
+
+Für die symmetrischen Flächen, auf die wir hier unser besonderes Augenmerk richten wollen, ergibt sich sofort eine Eintheilung nach der Zahl und Art der auf ihr befindlichen \emph{Uebergangscurven}, d.\ h.\ derjenigen Curven, deren Puncte bei der in Betracht kommenden symmetrischen Umformung ungeändert bleiben.
+
+\emph{Die Zahl dieser Curven kann jedenfalls nicht grösser sein, als $(p + 1)$.} Denn wenn man eine Fläche längs aller ihrer Uebergangscurven mit Ausnahme einer einzigen zerschneidet, so bildet sie, indem ihre symmetrischen Hälften noch immer in der einen Uebergangscurve zusammenhängen, nach wie vor ein ungetrenntes Ganze. Es würden sich also, wenn mehr als $(p + 1)$ Uebergangscurven vorhanden wären, auf der Fläche mehr als $p$ nicht zerstückende Rückkehrschnitte ausführen lassen, was ein Widerspruch gegen die Definition der Zahl $p$ ist.
+
+\emph{Dagegen ist unterhalb dieser Gränze jede Zahl von Uebergangscurven möglich.} Es mag hier genügen, in diesem Sinne die Fälle $p = 0$ und $p = 1$ zu discutiren; für die höheren $p$ ergeben sich dann von selbst.\ednote{A full stop is printed after selbst, in the middle of the sentence; the sense requires none, an apparent misprint.} naheliegende Beispiele.
+
+\textbf{*)} Es gibt natürlich wieder Flächen, welche neben einer Anzahl von Transformationen erster Art eine gleiche Anzahl von Transformationen zweiter Art zulassen; dieselben entsprechen den \emph{regulär-symmetrischen} Flächen der Dyck'schen Arbeit.
+
+\origpage{73}
+
+1) Wenn wir eine Kugel durch Spiegelung an einer Diametralebene mit sich zur Deckung bringen, so bildet der grösste Kreis, in welchem sie von der Diametralebene geschnitten wird, eine Uebergangscurve. Wir erhalten eine Zuordnung der anderen Art indem wir je zwei solche Puncte der Kugel entsprechend setzen, welche die Endpuncte eines Durchmessers bilden. Beide Beispiele sind leicht zu generalisiren. Die analytische Darstellung ist diese. Wenn eine Uebergangscurve existirt, so gibt es eindeutige Functionen des Ortes mit nur einem Unendlichkeitspuncte, die auf der Uebergangscurve reelle Werthe annehmen. Heisst eine derselben $x + iy$, so ist die Umformung, wie oben schon als Beispiel angegeben, durch $x_{1} = x$, $y_{1} = - y$ gegeben. --- Im zweiten Falle kann man eine Function $x + iy$ so wählen, dass ihre Werthe $\infty$ und $0$, sowie $+ 1$ und $- 1$ zusammengeordnete Puncte vorstellen. Dann ist
+\[ x_{1} - iy_{1} = \frac{- 1}{x + iy} \]
+die analytische Formel der betreffenden Umänderung.
+
+2) Im Falle $p = 1$ müssen wir die Invariante $J$, wie wir wissen, jedenfalls reell nehmen. Sei dieselbe zunächst $> 1$. Dann können wir das zugehörige überall endliche Integral $W$ (durch Zufügung eines geeigneten constanten Factors) so normiren, dass die eine Periode \emph{reell}, gleich $a$, die andere \emph{rein imaginär}, gleich $ib$, wird. Setzen wir dann (für $W = U + iV$):
+\[ U_{1} = U,\ V_{1} = - V \]
+so haben wir eine symmetrische Umformung der Fläche $p = 1$ mit den \emph{zwei} Uebergangscurven:
+\[ V = o,\ V = \frac{b}{2}; \]
+schreiben wir dagegen:
+\[ U_{1} = U + \frac{a}{2},\ V_{1} = - V, \]
+was wieder eine symmetrische Umformung unserer Fläche ist, so haben wir den Fall, in welchem \emph{keine} Uebergangscurve entsteht. --- Der Fall mit nur \emph{einer} Uebergangscurve tritt ein, wenn wir $J < 1$ nehmen. Wir können dann $W$ so wählen, dass seine beiden Perioden conjugirt complex werden.
+
+\origpage{74}
+Wir schreiben dann wieder
+\[ U_{1} = U,\ V_{1} = - V \]
+und haben eine symmetrische Umformung mit der einen Uebergangscurve $V = 0$.
+
+Neben die hiermit erläuterte erste Unterscheidung der symmetrischen Flächen nach der \emph{Zahl} der Uebergangscurven stellt sich aber noch eine zweite. Ich will die Fälle von $0$ oder $(p + 1)$ Uebergangscurven einen Augenblick ausschliessen. Dann bietet sich von vorneherein eine doppelte Möglichkeit. \emph{Eine Zerschneidung der Fläche längs sämmtlicher Uebergangscurven mag nämlich entweder ein Zerfallen der Fläche herbeiführen, oder nicht.} Es sei $\pi$ die Zahl der Uebergangscurven. Man zeigt dann leicht, dass $p - \pi$ ungerade sein muss, wenn ein Zerfallen eintreten soll. Eine weitere Beschränkung existirt nicht, wie man an Beispielen beweist. Wir wollen dementsprechend symmetrische Flächen \emph{der einen und der andern Art} unterscheiden und den ersteren (den zerfallenden) Flächen die Fläche mit $(p + 1)$ Uebergangscurven, den letzteren die Fläche ohne Uebergangscurve zurechnen.
+
+Diese Sätze besitzen eine gewisse Analogie mit den Resultaten, welche in der analytischen Geometrie die gestaltliche Untersuchung der Curven von gegebenen $p$ erzielt hat.${}^{*)}$ Und in der That zeigt sich, dass diese Analogie eine begründete ist. Die analytische Geometrie beschäftigt sich bei jenen Untersuchungen (zunächst) nur mit solchen Gleichungen
+\[ f(w, z) = 0, \]
+welche reelle Coefficienten besitzen. Beachten wir zunächst, dass jede solche Gleichung über der $z$-Ebene in der That eine symmetrische Riemann'sche Fläche bestimmt, insofern ja die Gleichung und also auch die Fläche ungeändert bestehen bleibt, wenn man $w$ und $z$ gleichzeitig durch ihre conjugirten Werthe
+
+\textbf{*)} Vergl.\ \emph{Harnack}: Ueber die Vieltheiligkeit der ebenen algebraischen Curven, in Bd.~10 der Mathematischen Annalen, p.~189~ff.; vergleiche ferner p.~415, 416 daselbst, wo ich die Eintheilung jener Curven in zweierlei Arten gegeben habe. Vielleicht ist es zweckmässig, bei diesen Untersuchungen die Lehre von den symmetrischen Flächen und die Riemann'sche Theorie, so wie beide hier im Texte dargestellt werden, geradezu als Ausgangspunct zu wählen.
+
+\origpage{75}
+ersetzt --- und dass die Uebergangscurven auf dieser Fläche den \emph{reellen} Werthereihen von $w$ und $z$ entsprechen, welche $f = 0$ befriedigen, d.\ h.\ genau den verschiedenen Zügen, welche die Curve $f = 0$ im Sinne der analytischen Geometrie aufweist.
+
+Aber auch der Rückschluss ist leicht zu machen. Sei eine symmetrische Fläche und auf ihr eine beliebige complexe Function des Ortes, $u + iv$, gegeben. Bei der symmetrischen Umformung erfährt unsere Fläche \emph{eine Umlegung der Winkel.} Wenn man also jedem Puncte der Fläche solche Werthe $u_{1}$, $v_{1}$ beilegt, wie sie, unter der Benennung $u$, $v$, sein symmetrischer Punct aufweist, so wird $u_{1} - iv_{1}$ eine neue complexe Function des Ortes sein. Man bilde nun:
+\[ U + iV = (u + u_{1}) + i(v - v_{1}), \]
+so hat man einen Ausdruck, der im allgemeinen nicht identisch verschwindet; es genügt zu dem Zwecke, die Unendlichkeitspuncte von $u + iv$ in unsymmetrischer Weise anzunehmen. \emph{Man hat also eine complexe Function des Ortes, welche in symmetrisch gelegenen Puncten gleiche reelle aber entgegengesetzt gleiche imaginäre Werthe aufweist.} --- Solcher $U + iV$ mögen nun irgend zwei: $W$ und $Z$, die überdiess \emph{eindeutige} Functionen des Ortes sein sollen, herausgegriffen werden. Die zwischen diesen bestehende algebraische Gleichung hat dann die Eigenschaft, ungeändert zu bleiben, wenn man $W$ und $Z$ gleichzeitig durch ihre conjugirten Werthe ersetzt. \emph{Sie ist also eine Gleichung mit reellen Coefficienten,} womit der geforderte Beweis in der That erbracht ist.
+
+Ich knüpfe an diese Ueberlegungen noch Bemerkungen über die \emph{reellen} eindeutigen Transformationen \emph{reeller} Gleichungen $f(w, z) = 0$ in sich, oder, was dasselbe ist, über solche conforme Abbildungen erster Art symmetrischer Flächen auf sich selbst, bei denen symmetrische Puncte wieder in symmetrische Puncte übergehen. In unendlicher Zahl können solche Transformationen nach dem allgemeinen Satze des §.~19 nur für $p = 0$ und $p = 1$ auftreten; wir beschränken uns also auf diese Fälle. Nehmen wir zuvörderst $p = 1$. Dann sehen wir sofort, dass unter den früher aufgestellten Transformationen nur noch diejenigen
+\[ W_{1} = \pm W + C \]
+
+\origpage{76}
+in Betracht kommen, \emph{bei denen $C$ eine reelle Constante bedeutet.} Analog in dem ersten Falle $p = 0$. Die Beziehung $x_{1} = x$, $y_{1} = - y$ bleibt ungeändert, wenn man $x + iy = z$ und $x_{1} + iy_{1} = z_{1}$ gleichzeitig derselben linearen Transformation:
+\[ z' = \frac{\alpha z + \beta}{\gamma z + \delta} \]
+unterwirft, \emph{wo die Verhältnissgrössen $\alpha : \beta : \gamma : \delta$ reell sind.} In dem zweiten Falle $p = 0$ ist die Sache etwas complicirter. \emph{Auch bei ihm sind lineare Transformationen mit drei reellen Parametern möglich.} Dieselben nehmen aber für das oben eingeführte $z$ die folgende Gestalt an:
+\[ z' = \frac{(a + ib)z + (c + id)}{- (c - id)z + (a - ib)}, \]
+wo $a : b : c : d$ die drei reellen Parameter vorstellen. Dieses Resultat ist implicite in den Untersuchungen enthalten, die sich auf die analytische Repräsentation der Drehungen der $x + iy$-Kugel um ihren Mittelpunct beziehen.${}^{*)}$
+
+\section*{§~22. Conforme Abbildung verschiedener Flächen auf einander.}
+
+Wenn es sich jetzt darum handelt, verschiedene geschlossene Flächen auf einander abzubilden, so liefern die vorausgeschickten Untersuchungen über die conforme Abbildung geschlossener Flächen auf sich selbst die nöthigen Nebenbestimmungen, welche angeben, wie oft sich eine solche Abbildung gestaltet, sofern eine solche überhaupt möglich ist. Flächen, welche sich conform aufeinander abbilden lassen, besitzen jedenfalls (wie schon hervorgehoben) übereinstimmende Transformationen in sich selbst. Man erhält also alle Abbildungen der einen Fläche auf die zweite, wenn man eine beliebige Abbildung mit allen solchen verbindet, welche \emph{eine} der beiden Flächen in sich selbst überführen. Ich werde hierauf nicht weiter zurückkommen.
+
+Betrachten wir nun zuvörderst allgemeine, d.\ h.\ nicht symmetrische Flächen. Dann treten die Abzählungen des
+
+\textbf{*)} Siehe zumal: \emph{Cayley}, on the correspondence between homographies and rotations, Mathematische Annalen, Bd.~15, p.~238---240.
+
+\origpage{77}
+§.~19 betreffs der Moduln algebraischer Gleichungen unmittelbar in Geltung. Wir haben zunächst:
+
+\emph{Flächen $p = 0$ lassen sich immer conform auf einander abbilden;}
+und finden übrigens, dass die Flächen $p = 1$ \emph{einen}, die Flächen $p > 1$ $(3p - 3)$ bei conformer Abbildung unzerstörbare Moduln besitzen. Jeder solche Modul ist im Allgemeinen eine \emph{complexe} Constante. Dem Umstande entsprechend, dass bei symmetrischen Flächen reelle Parameter in Betracht gezogen werden müssen, wollen wir ihn in seinen reellen und seinen imaginären Bestandtheil zerlegt denken. Dann haben wir:
+
+\emph{Sollen zwei Flächen $p > 0$ auf einander abbildbar sein, so sind im Falle $p = 1$ zwei, im Falle $p > 1$ $(6p - 6)$ Gleichungen zwischen den reellen Constanten der Flächen zu erfüllen.}
+
+Indem wir uns jetzt zu den \emph{symmetrischen} Flächen wenden, haben wir noch eine kleine Zwischenbetrachtung zu machen. Zunächst ist ersichtlich, dass zwei solche Flächen nur dann „symmetrisch“ auf einander bezogen werden können, wenn sie neben dem gleichen $p$ dieselbe Zahl $\pi$ der Uebergangscurven darbieten und überdiess beide entweder der ersten oder der zweiten Art angehören. Im Uebrigen wiederhole man speciell für die symmetrischen Flächen die Abzählungen des §.~13 betreffs der Zahl der in eindeutigen Functionen enthaltenen Constanten unter der Bedingung, dass nur solche Functionen in Betracht gezogen werden, welche an symmetrischen Stellen conjugirt imaginäre Werthe aufweisen. Hiermit combinire man sodann nach dem Muster des §.~19 die Zahl solcher über der $Z$-Ebene construirbarer mehrblättriger Flächen, welche in Bezug auf die Axe der reellen Zahlen symmetrisch sind. Ich will dabei, um das Auftreten unendlich vieler Transformationen in sich zu vermeiden, zuvörderst annehmen, dass $p > 1$ sei. Die Sache ist dann so einfach, dass ich sie nicht speciell durchzuführen brauche. Der Unterschied ist nur, dass die in Betracht kommenden, früher unbeschränkten Constanten nunmehr gezwungen sind, entweder \emph{einzeln reell} oder \emph{paarweise conjugirt complex} zu sein. In Folge dessen reduciren sich alle Willkürlichkeiten auf die Hälfte. Wir mögen folgendermassen sagen:
+
+\origpage{78}
+
+\emph{Zur Abbildbarkeit zweier symmetrischer Flächen $p > 1$ auf einander ist neben der Uebereinstimmung in den Attributen das Bestehen von $(3p - 3)$ Gleichungen zwischen den reellen Constanten der Fläche erforderlich.}
+
+Die Fälle $p = 0$ und $p = 1$, welche hierbei ausgeschlossen wurden, sind implicite bereits im vorigen Paragraphen erledigt. Selbstverständlich müssen zwei symmetrische Flächen $p = 1$, die sich auf einander sollen abbilden lassen, die gleiche Invariante $J$ besitzen, was \emph{eine} Bedingung für die Constanten der Flächen abgibt, insofern $J$ jedenfalls reell ist. Im Uebrigen aber findet man sofort, dass die Abbildung sich allemal ermöglicht, sobald die symmetrischen Flächen, wie dies selbstverständlich verlangt werden muss, \emph{in der Zahl der Uebergangscurven} übereinstimmen.
+
+\section*{§.~23. Berandete Flächen und Doppelflächen.}
+
+Auf Grund der nunmehr gewonnenen Resultate können wir den bisherigen Untersuchungen über die Abbildung \emph{geschlossener} Flächen eine scheinbar bedeutende Verallgemeinerung zu Theil werden lassen, und habe ich eben desshalb die symmetrischen Flächen so ausführlich betrachtet. Wir können jetzt nämlich \emph{berandete} Flächen und \emph{Doppelflächen} in Betracht ziehen (mögen nun letztere berandet sein, oder nicht) und mit einem Schlage die auf sie bezüglichen Fragen erledigen. Hierzu gehört, was die Einführung der Randcurven angeht, dass wir uns von einer gewissen Beschränkung befreien, welche wir bisher, allerdings nur implicite, vorausgesetzt haben. Wir dachten uns die Flächen, auf denen wir operirten, bislang durchweg als stetig gekrümmt, oder doch nur in einzelnen Puncten (den Verzweigungspuncten) mit Unstetigkeiten behaftet. Aber nichts hindert uns, jetzt hinterher auch andere Unstetigkeiten zuzulassen. Wir werden uns z.\ B.\ vorstellen dürfen, dass unsere Fläche aus einer endlichen Anzahl verschiedener (im Allgemeinen selbst gekrümmter) Stücke, welche unter endlichen Winkeln zusammenstossen, polyederartig zusammengesetzt sei. Können wir uns doch auf einer solchen Fläche ebensogut elektrische Ströme verlaufend denken, wie auf einer stetig gekrümmten! Unter diese Flächen nun lassen sich die berandeten Flächen subsumiren.${}^{*)}$
+
+\origpage{79}
+\emph{Man fasse nämlich die beiden Seiten der berandeten Fläche als Polyederflächen auf, welche längs der Randcurve (also durchweg unter einem Winkel von 360 Grad) zusammenstossen und behandele nunmehr statt der ursprünglichen berandeten Fläche die aus beiden Seiten zusammengesetzte Gesammtfläche.}${}^{**)}$ Diese Gesammtfläche ist dann in der That eine geschlossene Fläche. Sie ist aber überdiess eine \emph{symmetrische} Fläche. Denn wenn man die übereinanderliegenden Puncte der beiden Flächenseiten vertauscht, so erfährt die Gesammtfläche eine conforme Abbildung auf sich selbst mit Umlegung der Winkel. Die Randcurven sind dabei die Uebergangscurven. \emph{Zugleich aber gewinnt unsere Eintheilung der symmetrischen Flächen in zweierlei Arten eine wichtige und durchschlagende Bedeutung.} Die gewöhnlichen berandeten Flächen, bei denen man zwei Flächenseiten unterscheiden kann, entsprechen offenbar der ersten Art. Der zweiten Art aber correspondiren die \emph{Doppelflächen}, bei denen man von einer Flächenseite durch continuirliches Fortschreiten über die Fläche hin zur anderen gelangen kann. Auch der Fall ist nicht auszuschliessen (wie bereits angedeutet), dass die Doppelfläche überhaupt keine Randcurve besitzen mag. \emph{Wir haben dann eine symmetrische Fläche ohne Uebergangscurve vor uns.}
+
+Ich betrachte nunmehr der Reihe nach die verschiedenen auseinanderzuhaltenden Fälle.
+
+1) \emph{Sei zuvörderst eine einfach berandete, einfach zusammenhängende Fläche gegeben.} Eine solche Fläche erscheint für uns als eine geschlossene Fläche $p = 0$, welche unter Auftreten einer Uebergangscurve symmetrisch auf sich selbst bezogen ist. Wir finden also, \emph{dass zwei solche Flächen sich allemal durch Abbildung der einen oder der anderen Art conform}
+
+\textbf{*)} Ich verdanke diese Auffassung einer gelegentlichen Unterredung mit Hrn.\ \emph{Schwarz} (Ostern 1881). Man vergl.\ p.~320~ff.\ der bereits genannten Arbeit von \emph{Schottky} im 83.\ Bande von Borchardt's Journal, sowie die Originaluntersuchungen von \emph{Schwarz} über die Abbildung geschlossener Polyederflächen auf die Kugel (Berliner Monatsberichte 1865 p.~150~ff., Borchardt's Journal Bd.~70, p.~121---136, Bd.~75, p.~330.)
+
+\textbf{**)} Ich drücke mich im Texte der Kürze halber so aus, als wenn die ursprüngliche Fläche eine zweiseitige Fläche gewesen wäre, während doch nicht ausgeschlossen sein soll, dass sie eine Doppelfläche ist.
+
+\origpage{80}
+\emph{auf einander beziehen lassen, und dass man dabei in jedem der beiden Fälle noch drei reelle Constanten zur willkürlichen Verfügung hat.} Wir können die letzteren insbesondere dazu benutzen, um einen beliebigen inneren Punct der einen Fläche einem entsprechend gelegenen Puncte der anderen Fläche zuzuweisen und überdiess einen beliebigen Randpunct der einen Fläche einem beliebigen Randpuncte der anderen. Diese Bestimmungsweise entspricht dem bekannten Satze, den Riemann betreffs der conformen Abbildung einer einfach berandeten, einfach zusammenhängenden, \emph{ebenen} Fläche auf die Fläche eines Kreises gegeben und in Nro.~21 seiner Dissertation als Beispiel für die Anwendung seiner Theorie auf Probleme der conformen Abbildung ausführlich erläutert hat.
+
+2) \emph{Wir betrachten ferner Doppelflächen $p = 0$ (ohne Randcurven).} Aus §§.~21, 22 folgt sofort, dass zwei solche Flächen allemal conform auf einander bezogen werden können, und man dabei, den Schlussformeln des §.~21 entsprechend, noch drei reelle Constanten zu beliebiger Verfügung hat.
+
+3) \emph{Die verschiedenen hier in Betracht kommenden Fälle, welche eine Gesammtfläche $p = 1$ ergeben.,}\ednote{Printed with a stray period before the comma after ergeben; apparently a spurious mark.} \emph{betrachten wir gemeinsam.} Es gehören dahin zunächst die \emph{zweifach berandeten, zweifach zusammenhängenden} Flächen, also Flächen, die wir uns im einfachsten Falle als geschlossene \emph{Bänder} vorstellen dürfen. Es gehören dahin ferner \emph{die bekannten Doppelflächen mit nur einer Randcurve}, die man erhält, wenn man die beiden schmalen Seiten eines rechteckigen Papierstreifens zusammenbiegt, nachdem man den Streifen um 180 Grad tordirt hat. Es gehören endlich dahin \emph{gewisse unberandete Doppelflächen}. Man kann sich von denselben ein Bild machen, indem man etwa ein Stück eines Kautschukschlauches umstülpt und nun so sich selbst durchdringen lässt, dass bei Zusammenbiegung der Enden die Aussenseite mit der Innenseite zusammenkommt. Bezüglich aller dieser Flächen besagen die früheren Sätze, dass die Abbildbarkeit der einzelnen Fläche auf eine zweite derselben Art das Bestehen \emph{einer} aber nur einer Gleichung zwischen den reellen Constanten der Flächen voraussetzt, dass aber die Abbildung, wenn überhaupt, in unendlich vielen Weisen geschehen kann, indem man ein doppeltes Vorzeichen und eine reelle Constante zu beliebiger Verfügung hat.
+
+\origpage{81}
+
+4) \emph{Wir nehmen nunmehr den allgemeinen Fall einer zweiseitigen Fläche.} Die Fläche soll $\pi$ Randcurven besitzen und überdiess $p'$ nicht zerstückende Rückkehrschnitte zulassen, wobei entweder $p' > 0$ sein muss oder $\pi > 2$. Dann wird die aus Vorder- und Rückseite gebildete Gesammtfläche $2p' + \pi - 1$ nicht zerstückende Rückkehrschnitte zulassen. Denn man kann erstens die $p'$ nach Voraussetzung auf der einfachen Flächenseite möglichen Rückkehrschnitte jetzt doppelt benutzen (sowohl auf der Vorderseite, als der Rückseite), man kann ferner noch längs $(\pi - 1)$ der vorhandenen Randcurven Schnitte anbringen, ohne dass die Gesammtfläche aufhörte, ein einziges zusammenhängendes Flächenstück zu bilden. Wir werden also in den Sätzen des vorigen Paragraphen $p = 2p' + \pi - 1$ setzen und haben:
+
+\emph{Zwei Flächen der betrachteten Art lassen sich, wenn überhaupt, nur auf eine endliche Anzahl von Weisen auf einander abbilden. Die Abbildbarkeit hängt von $6p' + 3\pi - 6$ Gleichungen zwischen den reellen Constanten der Flächen ab.}
+
+5) \emph{Wir haben endlich den allgemeinen Fall der Doppelfläche} mit $\pi$ Randcurven und $P$ auf der doppelt gedachten Fläche neben den Randcurven möglichen Rückkehrschnitten. Indem wir die drei unter 2) und 3) betrachteten Möglichkeiten ($P = 0$, $\pi = 0$ oder 1, und $P = 1$, $\pi = 0$) bei Seite lassen, erhalten wir denselben Satz, wie unter 4), nur dass überall statt $2p' + \pi - 1$ die Summe $P + \pi$ zu schreiben ist, wo $P$ nach Belieben eine gerade oder ungerade Zahl sein kann. \emph{Insbesondere beträgt die Zahl der reellen Constanten einer Doppelfläche, die bei beliebiger conformer Abbildung ungeändert bleiben, $3P + 3\pi - 3$.} ---
+
+Unter die hiermit gewonnenen Resultate subsumiren sich die allgemeinen Theoreme und Entwickelungen, welche Herr \emph{Schottky} in seiner wiederholt citirten Abhandlung gegeben hat, als specielle Fälle.
+
+\section*{§.~24. Schlussbemerkung.}
+
+Die Entwickelungen des nunmehr zu Ende geführten letzten Abschnitt's dieser Schrift sollten, wie wiederholt gesagt, den Andeutungen entsprechen, mit denen Riemann seine Dissertation abschloss. Allerdings haben wir uns auf
+
+\origpage{82}
+\emph{eindeutige} Beziehung zweier Flächen durch conforme Abbildung beschränkt. Riemann hat, wie er ausspricht, ebensowohl an mehrdeutige Beziehung gedacht. Man würde sich dementsprechend jede der beiden in Vergleich kommenden Flächen mit mehreren Blättern überdeckt vorstellen müssen und erst die so entstehenden mehrblättrigen Flächen conform eindeutig zu beziehen haben. Die Verzweigungspuncte, welche diese mehrblättrigen Flächen besitzen mögen, würden ebensoviele neue, zur Disposition stehende complexe Constante abgeben. --- Hierzu ist zu bemerken, dass wir wenigstens \emph{einen} Fall einer solchen Beziehung bereits ausführlich in Betracht gezogen haben. Indem wir eine beliebige Fläche mehrblättrig über die Ebene ausbreiteten (§.~15), haben wir zwischen Fläche und Ebene eine Beziehung hergestellt, die von der einen Seite mehrdeutig ist. Es ist dann weiter hervorzuheben, dass eben dieser specielle Fall auch zwei beliebige Flächen mehrdeutig auf einander beziehen lässt. Denn sind erst die beiden Flächen auf die Ebene abgebildet, so sind sie, durch Vermittelung der Ebene, auch auf einander bezogen. --- Mit diesen Bemerkungen ist die Frage nach der mehrdeutigen Abbildung natürlich keineswegs erschöpft. Aber es ist doch eine Grundlage zu ihrer Behandlung gewonnen, indem gezeigt ist, wie sie sich in die übrigen functionentheoretischen Speculationen Riemann's, von denen wir hier Rechenschaft zu geben hatten, einfügt.
+
+\end{document}

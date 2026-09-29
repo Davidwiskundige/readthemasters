@@ -13,7 +13,8 @@ function documentBody(tex) {
 
 // Scan in source order for page markers and math spans; a formula's page is the last \origpage
 // seen before it. Display: `\[ … \]`. Inline: `$ … $` (an escaped \$ is not a delimiter).
-const SCANNER = /\\origpage\{(\d+)\}|\\\[([\s\S]*?)\\\]|(?<!\\)\$((?:\\.|[^$])*?)\$/g;
+// A page is arabic (kept as a number) or front matter's lower-case roman (kept as printed, "iii").
+const SCANNER = /\\origpage\{(\d+|[ivxlcdm]+)\}|\\\[([\s\S]*?)\\\]|(?<!\\)\$((?:\\.|[^$])*?)\$/g;
 
 export function extractFormulas(tex) {
   if (!tex) return [];
@@ -23,7 +24,7 @@ export function extractFormulas(tex) {
   let m;
   SCANNER.lastIndex = 0;
   while ((m = SCANNER.exec(body))) {
-    if (m[1] !== undefined) { page = Number(m[1]); continue; }
+    if (m[1] !== undefined) { page = /^\d+$/.test(m[1]) ? Number(m[1]) : m[1]; continue; }
     const display = m[2] !== undefined;
     const raw = (display ? m[2] : m[3]).trim();
     if (!raw) continue;

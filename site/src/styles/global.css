@@ -348,6 +348,10 @@ ul.jwork-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35
 .rmfig { margin: 1.5rem auto; text-align: center; max-width: 30rem; }
 .rmfig img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; background: #fff; padding: .4rem; }
 .rmfig figcaption { font-size: .85rem; color: var(--muted); margin-top: .4rem; }
+/* Figures printed side by side (HOUSESTYLE R30): one row, bottom-aligned like the print; below
+   about 31rem each figure would be too small to read, so the row wraps into a column. */
+.rmfig-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 1rem; margin: 1.5rem auto; }
+.rmfig-row .rmfig { margin: 0; flex: 1 1 15rem; max-width: 30rem; }
 .significance { border-left: 3px solid var(--accent); background: var(--accent-weak); border-radius: 0 8px 8px 0; padding: .7rem 1rem; margin: 1.25rem 0; }
 .significance h2 { font-size: .95rem; margin: 0 0 .35rem; color: var(--accent); letter-spacing: .02em; }
 .significance p { margin: 0; font-size: .95rem; }

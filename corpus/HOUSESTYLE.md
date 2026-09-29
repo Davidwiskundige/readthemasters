@@ -48,6 +48,30 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
 
 Newest first. Each ruling names the layer it belongs to and the reasoning, so it isn't reopened.
 
+### R30 — Figures printed side by side are written as adjacent `\rmfigure` lines and render as a
+### row; a figure printed between lines of text is placed exactly there (presentation)
+*2026-09-28.* Klein's 1882 *Riemann's Theorie* prints many of its 43 figures in side-by-side pairs,
+and the text depends on it: on p. 4 "Linker Hand erblickt man … Rechter Hand liegt …" refers to
+the left and right figure of a pair. Stacking every figure full-width broke that reference and the
+comparison the pairs exist for (a flow and its conjugate, a surface before and after deformation).
+
+**Layout rule.** Figures the print sets side by side (two, three or more) are written as
+**adjacent `\rmfigure` lines with no blank line between them**; the site renders such a run as one
+row, bottom-aligned like the print, which wraps into a single column on a narrow screen (below about
+31rem each figure would be too small to read). Figures printed one above the other stay separated
+by a blank line, as before, and render stacked; a printed grid is several rows separated by blank
+lines. Grouping is opt-in and is read off the scan: never group figures the print does not set
+side by side. Two things are **not** rows: a figure printed beside running text (text wrapped
+around it) is a single figure, and a figure made of several drawings under one label is one crop
+and one `\rmfigure`. The PDF build is unchanged (each `\rmfigure` is a float).
+
+**Placement rule.** A figure printed between lines of the text column is placed **at that point**,
+even where this splits a paragraph or a sentence (the print's "…die sich auf $p = 3$ beziehen:
+[Figs. 25, 26] Dieselben entstehen, …" reads as printed only with the figures after the colon). A
+figure printed beside the text goes before the paragraph it stands beside. This refines R6/R8's
+"at first reference" for prints that place figures in the running text. An earlier Klein-only
+convention that moved mid-paragraph figures to the paragraph's end was withdrawn by this ruling.
+
 ### R29 — A mark that appears once on an otherwise-plain symbol is damage to the neighbouring
 ### glyph until proven otherwise (notation)
 *2026-09-02.* Noether's 1869 Göttingen note (`noether-1869-algebraische-functionen-mehrerer-variablen`)

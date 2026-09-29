@@ -113,6 +113,33 @@ test("an unbalanced heading brace is left alone rather than swallowing the docum
   assert.match(html, /Der Text danach\./, "following text survives");
 });
 
+test("a roman front-matter page marker renders like an arabic one", () => {
+  const html = render("\\origpage{iii}\n\\section*{Vorrede.}\n\nDie kleine Schrift.\n\n\\origpage{1}\nText.");
+  assert.match(html, /<span class="origpage" id="p-iii">page iii<\/span>/);
+  assert.match(html, /<span class="origpage" id="p-1">page 1<\/span>/);
+  assert.ok(!html.includes("\\origpage"), "no marker leaks as literal TeX");
+});
+
+test("adjacent \\rmfigure lines render as one row; a blank line keeps them stacked", () => {
+  const row = render("Text:\n\n\\rmfigure{figures/fig-2.png}{Fig.~2.}{a}\n" +
+    "\\rmfigure{figures/fig-3.png}{Fig.~3.}{b}\n\nMore text.");
+  assert.match(row, /<div class="rmfig-row"><figure class="rmfig">[\s\S]*fig-2\.png[\s\S]*<\/figure><figure class="rmfig">[\s\S]*fig-3\.png[\s\S]*<\/figure><\/div>/);
+  assert.match(row, /<p>Text:<\/p>/);
+  assert.match(row, /<p>More text\.<\/p>/);
+
+  const stacked = render("\\rmfigure{figures/fig-2.png}{Fig.~2.}{a}\n\n" +
+    "\\rmfigure{figures/fig-3.png}{Fig.~3.}{b}");
+  assert.ok(!stacked.includes("rmfig-row"), "separated figures are not grouped");
+  assert.equal((stacked.match(/<figure class="rmfig">/g) || []).length, 2);
+});
+
+test("a single figure written directly under a text line is still its own block", () => {
+  const html = render("Man sieht:\n\\rmfigure{figures/fig-1.png}{Figur~1.}{a}\nund weiter.");
+  assert.match(html, /<p>Man sieht:<\/p>\n<figure class="rmfig">/);
+  assert.ok(!html.includes("rmfig-row"));
+  assert.match(html, /<p>und weiter\.<\/p>/);
+});
+
 test("\\textsuperscript renders as <sup>...</sup>", () => {
   const html = render("le 1\\textsuperscript{er} siècle et la 2\\textsuperscript{de} classe.");
   assert.match(html, /1<sup>er<\/sup> siècle/);

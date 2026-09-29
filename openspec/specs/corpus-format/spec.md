@@ -300,3 +300,68 @@ affect the copyright gate's verdicts.
 - **WHEN** a `venues` object omits `name`, sets `kind` outside the allowed set, or gives an `archives` entry whose `url` is not an absolute http(s) URL
 - **THEN** `pipeline/validate.py` reports an error and the build fails
 
+### Requirement: Roman page markers
+
+An `\origpage{…}` marker SHALL accept either an arabic page number (`\origpage{12}`) or a
+lower-case roman numeral (`\origpage{iii}`), copied as the page is printed. A roman marker MUST
+render in the reader as `page iii` with the anchor `p-iii` (`<lang>-p-iii` in a translation
+panel), MUST be kept as printed by the formula index and the search page, and MUST pass the gate on
+the same terms as an arabic marker. Roman markers MUST all precede the first arabic marker; within
+the roman run and within the arabic run, markers MUST ascend without duplicates, and a skipped page
+is a warning, not an error.
+
+#### Scenario: A roman marker renders as a page anchor
+
+- **WHEN** a transcription contains `\origpage{iii}`
+- **THEN** the reader shows `page iii` with the anchor `p-iii`, not the literal macro
+
+#### Scenario: A formula on a roman page is indexed under that page
+
+- **WHEN** a formula follows `\origpage{vii}` and precedes the next marker
+- **THEN** the formula index records its page as `vii` and links it to `#p-vii`
+
+#### Scenario: Front matter followed by the text passes the gate
+
+- **WHEN** a work's markers run `iii, iv, v, vi, vii, viii, 1, 2, …, 82`
+- **THEN** the page-marker check reports no error
+
+#### Scenario: A roman marker after the arabic run fails the gate
+
+- **WHEN** a work's markers run `1, 2, iii`
+- **THEN** the page-marker check reports an ordering error
+
+#### Scenario: A duplicated roman marker fails the gate
+
+- **WHEN** a work's markers contain `\origpage{iv}` twice
+- **THEN** the page-marker check reports a duplicate
+
+### Requirement: Figure rows
+
+Figures that the print sets side by side SHALL be written as adjacent `\rmfigure` lines with no
+blank line between them, and the reader MUST render such a run as one row of figures that wraps
+into a single column on a narrow screen. Figures separated by a blank line MUST render stacked, as
+single figures. A figure printed between lines of the text column MUST be placed at that point in
+the transcription, even where this splits a paragraph; a figure printed beside the text is placed
+before the paragraph it stands beside. Grouping MUST follow the print and is never applied to
+figures the print does not set side by side (HOUSESTYLE R30).
+
+#### Scenario: Side-by-side figures render as a row
+
+- **WHEN** a transcription has `\rmfigure{figures/fig-27.png}{Fig.~27.}{…}` on one line and `\rmfigure{figures/fig-28.png}{Fig.~28.}{…}` on the next, with no blank line between them
+- **THEN** the reader renders both figures inside one row container
+
+#### Scenario: Separated figures stay stacked
+
+- **WHEN** two `\rmfigure` lines are separated by a blank line
+- **THEN** the reader renders two separate figure blocks and no row container
+
+#### Scenario: A row wraps on a narrow screen
+
+- **WHEN** a row of two figures is displayed at phone width
+- **THEN** the figures are shown one above the other, each at the width of the text column
+
+#### Scenario: A figure printed mid-paragraph keeps its printed position
+
+- **WHEN** the print sets a figure between two lines of one paragraph
+- **THEN** the transcription places the `\rmfigure` between the text of those two lines
+
