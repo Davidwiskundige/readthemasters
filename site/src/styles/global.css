@@ -8,6 +8,13 @@
   --accent-weak: #f0e7dd;
   --link: #6d3f1f;
   --cite: #356b63; /* muted teal/verdigris — the cites lines on the timeline (distinct from --accent) */
+  /* Header paper band (see body::before): the warm tone the band fades out from, a faint glow of
+     --accent above the header, and the band's height — fixed, not a share of the document, so every
+     page looks alike at the top. Changing these? Re-check --muted on --band-top stays ≥ 4.5:1 (now
+     ≈4.9), and keep the theme-color tags in Base.astro equal to every --band-top here. */
+  --band-top: #f5f0e8;
+  --band-glow: rgba(122, 75, 43, .05);
+  --band-h: 16rem;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -21,6 +28,24 @@
     --accent-weak: #2b2621;
     --link: #e0a877;
     --cite: #8ebfb3; /* lighter teal for dark-mode legibility */
+    --band-top: #231e18; /* --muted on it ≈ 6.1:1 */
+    --band-glow: rgba(214, 154, 106, .08);
+  }
+}
+/* A phone shows the band far more strongly than a laptop — an OLED screen keeps the small steps
+   between dark tones a laptop's backlight washes out, and 16rem is a bigger share of a small
+   screen — so narrow screens get a quieter, shorter band. Values chosen on a real phone. */
+@media (max-width: 40rem) {
+  :root {
+    --band-top: #f8f5ef; /* --muted on it ≈ 5.1:1 */
+    --band-glow: rgba(122, 75, 43, .03);
+    --band-h: 12rem;
+  }
+}
+@media (max-width: 40rem) and (prefers-color-scheme: dark) {
+  :root {
+    --band-top: #1a1815; /* --muted on it ≈ 6.6:1 */
+    --band-glow: rgba(214, 154, 106, .03);
   }
 }
 
@@ -40,11 +65,32 @@ body {
   color: var(--text);
   font: 16px/1.6 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
 }
+/* Header paper band, on its own layer at the top of the document, behind all content and never
+   taking a click. Not a body background: that is moved onto the whole canvas, and Samsung Internet
+   drew the sized gradient there as a near-solid block with a hard edge. It fades to transparent,
+   not to --bg, so its end can't show an edge whatever colour a browser paints the page. The glow is
+   a share of the width (37.5% = the old 60rem on a 1280px laptop) so a phone isn't under its full
+   strength edge to edge. See the site-catalog spec, "Header paper band". */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: var(--band-h);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 37.5% 10rem at 50% -2.5rem, var(--band-glow), transparent 70%),
+    linear-gradient(to bottom, var(--band-top), transparent);
+}
+@media print { body { background: none; } body::before { display: none; } }
 a { color: var(--link); }
 header.site, footer.site {
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.25rem;
 }
+/* The band's tone change separates header from content; a hairline on top of it reads as a second
+   divider. Transparent rather than none, so the header keeps its height. */
+header.site { border-bottom-color: transparent; }
 footer.site { border-top: 1px solid var(--border); border-bottom: none; color: var(--muted); font-size: .85rem; }
 header.site nav { display: flex; gap: 1rem 2rem; align-items: center; flex-wrap: wrap; }
 header.site .navlinks { display: flex; gap: 1.5rem; align-items: baseline; flex-wrap: wrap; }
