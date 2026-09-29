@@ -12,6 +12,13 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Toolbar tint = the header band's top colour, so the browser bar doesn't cut against it.
+        Must equal every --band-top in global.css (a meta tag can't read a CSS variable). The
+        first tag whose media matches wins, so the narrow-screen pair comes first. */}
+    <meta name="theme-color" content="#1a1815" media="(max-width: 40rem) and (prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8f5ef" media="(max-width: 40rem)" />
+    <meta name="theme-color" content="#231e18" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f0e8" />
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonical} />

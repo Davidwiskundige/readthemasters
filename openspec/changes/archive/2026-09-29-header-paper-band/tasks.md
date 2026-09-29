@@ -17,4 +17,4 @@
 
 ## 3. Spec
 
-- [ ] 3.1 On shipping, fold the ADDED "Header paper band" requirement into `openspec/specs/site-catalog/spec.md` and archive the change
+- [x] 3.1 On shipping, fold the ADDED "Header paper band" requirement into `openspec/specs/site-catalog/spec.md` and archive the change
