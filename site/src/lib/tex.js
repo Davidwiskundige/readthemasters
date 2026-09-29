@@ -82,7 +82,12 @@ function inlineText(html, ctx = { ednoteCount: 0 }) {
   return html.replace(/(\d+)/g, (_, i) => math[+i]);
 }
 
-const RMFIGURE = /^\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\s*$/;
+const RMFIGURE_ONE = String.raw`\\rmfigure\{[^}]*\}\{[^}]*\}\{[^}]*\}`;
+const RMFIGURE_ALL = /\\rmfigure\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}/g;
+// Figures printed side by side are written as adjacent \rmfigure lines with no blank line between
+// them (HOUSESTYLE R30); such a run is one block and renders as a row. A blank line separates
+// figures that are printed one above the other.
+const RMFIGURE_RUN = new RegExp(`${RMFIGURE_ONE}(?:[ \\t]*\\n[ \\t]*${RMFIGURE_ONE})*`, "g");
 
 // Math stays as LaTeX source in the HTML (KaTeX renders it in the browser), which means the
 // search index would otherwise be full of `frac`, `cdot`, `sqrt` and excerpts would show TeX.
@@ -176,24 +181,25 @@ export function texToHtml(tex, opts = {}) {
   // Promote block-level markers to their own paragraphs so they render even when they share a
   // source line/paragraph with surrounding text (e.g. \origpage{n} immediately before \section).
   body = promoteHeadings(body)
-    .replace(/\\rmfigure\{[^}]*\}\{[^}]*\}\{[^}]*\}/g, (m) => `\n\n${m}\n\n`)
-    .replace(/\\origpage\{\d+\}/g, (m) => `\n\n${m}\n\n`);
+    .replace(RMFIGURE_RUN, (m) => `\n\n${m}\n\n`)
+    .replace(/\\origpage\{(?:\d+|[ivxlcdm]+)\}/g, (m) => `\n\n${m}\n\n`);
 
   const paras = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   const out = [];
 
   for (let para of paras) {
-    // Figure: \rmfigure{path}{caption}{alt} — the crop from the scan (PLAN §4.5).
-    const fig = para.match(RMFIGURE);
-    if (fig) {
-      const file = fig[1].split("/").pop();
-      const src = `${figureBase}${file}`;
-      const caption = wrapMath(inlineText(escapeHtml(fig[2]), ctx));
-      const alt = escapeHtml(fig[3]).replace(/~/g, " ").replace(/"/g, "&quot;");
-      out.push(
-        `<figure class="rmfig"><img src="${src}" alt="${alt}" loading="lazy" />` +
-        `<figcaption>${caption}</figcaption></figure>`
-      );
+    // Figure: \rmfigure{path}{caption}{alt} — the crop from the scan (PLAN §4.5). A block of
+    // several adjacent figures is a row of figures printed side by side.
+    if (para.replace(RMFIGURE_ALL, "").trim() === "" && para.startsWith("\\rmfigure")) {
+      const figs = [...para.matchAll(RMFIGURE_ALL)].map((fig) => {
+        const file = fig[1].split("/").pop();
+        const src = `${figureBase}${file}`;
+        const caption = wrapMath(inlineText(escapeHtml(fig[2]), ctx));
+        const alt = escapeHtml(fig[3]).replace(/~/g, " ").replace(/"/g, "&quot;");
+        return `<figure class="rmfig"><img src="${src}" alt="${alt}" loading="lazy" />` +
+          `<figcaption>${caption}</figcaption></figure>`;
+      });
+      out.push(figs.length > 1 ? `<div class="rmfig-row">${figs.join("")}</div>` : figs[0]);
       continue;
     }
 
@@ -214,7 +220,8 @@ export function texToHtml(tex, opts = {}) {
     }
 
     const html = wrapMath(inlineText(escapeHtml(para), ctx))
-      .replace(/\\origpage\{(\d+)\}/g,
+      // Front matter keeps its printed lower-case roman page numbers: \origpage{iii} -> p-iii.
+      .replace(/\\origpage\{(\d+|[ivxlcdm]+)\}/g,
         (_, n) => `<span class="origpage" id="${idPrefix}p-${n}">page ${n}</span>`);
 
     out.push(`${heading}<p>${html}</p>`);

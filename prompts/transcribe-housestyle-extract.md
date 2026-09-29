@@ -140,6 +140,12 @@ notation, keep it faithful. If it only changes how it looks → presentation, fo
   the original's own label ("Fig. 24"); any description of what the figure shows goes in the alt
   text. A richer visible caption is an editorial addition, never allowed in an `ai-draft`.
   (R6, R7, R8)
+- **Figure layout follows the print.** Figures printed side by side are adjacent `\rmfigure` lines
+  with **no blank line** between them (they render as a row that wraps on phones); figures printed
+  one above the other are separated by a blank line. A figure printed between lines of the text
+  column goes exactly there, even mid-paragraph or mid-sentence; one printed beside the text goes
+  before the paragraph it stands beside. Never group figures the print does not set side by side.
+  (R30)
 - **A figure reference whose plate cannot be located** gets an inline `\ednote{...}` immediately
   after the citation, stating plainly that the plate is not in the available scans and is not
   reproduced. Never reconstruct or infer the figure. (R10)
