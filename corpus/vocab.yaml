@@ -271,6 +271,19 @@ venues:
         url: "http://www.numdam.org/journals/ASENS/"
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb34348785c/date"
+  journal-ecole-polytechnique:
+    name: "Journal de l'École Polytechnique"
+    aka: "J. Éc. Polytech."
+    founded: 1795
+    place: "Paris"
+    publisher: "Conseil d'instruction de l'École polytechnique"
+    note: >-
+      Published by the École polytechnique from 1795, its cahiers carried memoirs by the school's
+      teachers and former pupils, Lagrange, Cauchy and Poisson among them. A second series began
+      in 1895, opening with Poincaré's Analysis situs.
+    archives:
+      - label: "Gallica (BnF)"
+        url: "https://gallica.bnf.fr/ark:/12148/cb34378280v/date"
   book:
     name: "(published as a book / monograph)"
     kind: book
