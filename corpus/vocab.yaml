@@ -284,6 +284,18 @@ venues:
     archives:
       - label: "Internet Archive"
         url: "https://archive.org/search?query=Rendiconti+del+Circolo+matematico+di+Palermo"
+  proc-lms:
+    name: "Proceedings of the London Mathematical Society"
+    aka: "Proc. London Math. Soc."
+    founded: 1865
+    place: "London"
+    publisher: "London Mathematical Society"
+    note: >-
+      The journal of the London Mathematical Society, founded in 1865, which printed the papers
+      read at the Society's meetings together with the minutes of those meetings.
+    archives:
+      - label: "Internet Archive"
+        url: "https://archive.org/search?query=Proceedings+of+the+London+Mathematical+Society"
   journal-ecole-polytechnique:
     name: "Journal de l'École Polytechnique"
     aka: "J. Éc. Polytech."

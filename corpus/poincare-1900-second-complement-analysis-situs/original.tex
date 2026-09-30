@@ -1,0 +1,892 @@
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{277}
+
+\section*{Second Complément à l'Analysis Situs.}
+
+Par H.~\textsc{Poincaré}.
+
+Read at request of the President, June 14th, 1900, and received June 30th, 1900.
+
+\subsection*{Introduction.}
+
+J'ai publié dans le \emph{Journal de l'Ecole Polytechnique} (Tome \textsc{c}, N°~1) un travail intitulé “Analysis Situs”; je me suis occupé une seconde fois du même problème dans un mémoire portant pour titre “Complément à l'Analysis Situs,” et qui a été imprimé dans les \emph{Rendiconti del Circolo Matematico di Palermo} (Tome \textsc{xiii}, 1899).
+
+Cependant la question est loin d'être épuisée, et je serai sans doute forcé d'y revenir à plusieurs reprises. Pour cette fois, je me bornerai à certaines considérations qui sont de nature à simplifier, à éclaircir et à compléter les résultats précédemment acquis.
+
+Les renvois portant simplement une indication de paragraphe ou de page se rapporteront au premier mémoire, celui du \emph{Journal de l'Ecole Polytechnique}; les renvois où ces indications seront précédées de la lettre \textsc{c} se rapporteront au mémoire des \emph{Rendiconti}.
+\origpage{278}
+
+Quant aux renvois aux paragraphes du présent mémoire, je les ferai précéder des lettres 2~\textsc{c}.
+
+\subsection*{1. Rappel des principales définitions.}
+
+Considérons une variété fermée à $p$ dimensions. Nous supposerons que cette variété a été subdivisée de manière à former un polyèdre $P$ à $p$ dimensions. Les éléments de ce polyèdre s'appelleront les $a^{p}_{i}$; ils seront séparés les uns des autres par des variétés à $p-1$ dimensions qui s'appelleront les $a^{p-1}_{i}$; celles-ci seront séparées les unes des autres par des variétés à $p-2$ dimensions qui s'appelleront les $a^{p-2}_{i}$; et ainsi de suite jusqu'à ce qu'on arrive aux sommets du polyèdre qui s'appelleront les $a^{0}_{i}$.
+
+Toutes ces variétés seront simplement connexes, c'est-à-dire homéomorphes à l'hypersphère.
+
+Si une variété $a^{q}_{i}$ a pour frontière complète les $a^{q-1}_{j}$, j'écrirai la congruence
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j}, \tag{1} \]
+où les $\varepsilon$ sont égaux à 0, $+1$ ou $-1$ (\textsc{c}, \S~2, p.\ 7).
+
+Nous écrirons d'autre part l'homologie
+\[ \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j} \backsim 0. \tag{2} \]
+Nous combinerons les congruences (1) et les homologies (2) par addition, soustraction, multiplication, et quelquefois par division.
+
+Parmi les congruences entre $a^{q}_{i}$ et $a^{q-1}_{i}$ obtenues par la combinaison des congruences (1), nous distinguerons celles qui ne contiennent que des $a^{q}_{i}$, et d'où les $a^{q-1}_{j}$ ont disparu.
+
+Nous désignerons quelquefois les $a^{0}_{i}$ sous le nom de \emph{sommets}, les $a^{1}_{i}$ sous celui d'\emph{arêtes}, les $a^{2}_{i}$ sous celui de \emph{faces}, les $a^{3}_{i}$ sous celui de \emph{cases}, les $a^{4}_{i}$ sous celui d'\emph{hypercases}.
+
+Au polyèdre $P$ correspond un polyèdre réciproque $P'$ (\textsc{c}, \S~7), dont j'appellerai les éléments $b^{p}_{i}$ au lieu de $a^{p}_{i}$, $b^{p-1}_{i}$ au lieu de $a^{p-1}_{i}$, \ldots, et enfin $b^{0}_{i}$ au lieu de $a^{0}_{i}$.
+
+Entre les deux polyèdres, il y a une correspondance telle que $b^{p-q}_{i}$ correspond à $a^{q}_{i}$. Les deux polyèdres proviennent de la subdivision d'une même variété $V$.
+
+Entre les éléments de $P'$, nous avons les congruences
+\[ b^{q}_{i} = \Sigma \varepsilon^{p-q+1}_{ji} b^{q-1}_{j} \tag{1 \textit{bis}} \]
+\origpage{279}
+analogues aux congruences (1); nous pouvons l'écrire également
+\[ b^{q}_{i} = \Sigma \varepsilon'^{q}_{ij} b^{q-1}_{j}, \]
+en posant
+\[ \varepsilon^{p-q+1}_{ji} = \varepsilon'^{q}_{ij}. \]
+
+Entre les éléments de $P$ et ceux de $P'$, nous avons encore une autre relation.
+
+Rappelons la notation $N(V, V')$ (\S~9, p.\ 38). Nous aurons alors
+\[ N(a^{q}_{k}, b^{p-q}_{i}) = 0, \]
+si $i$ n'est pas égal à $k$, et
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = \pm 1. \]
+
+Il reste à voir si l'on doit prendre le signe $+$ ou le signe $-$.
+
+Pour nous en rendre compte, considérons deux éléments correspondants de $P$ et de $P'$ que j'appellerai $a^{q}_{i}$ et $b^{p-q}_{i}$; considérons d'autre part deux éléments correspondants $a^{q-1}_{j}$ et $b^{p-q+1}_{j}$ de telle façon que $a^{q-1}_{j}$ appartienne à $a^{q}_{i}$, et $b^{p-q}_{i}$ à $b^{p-q+1}_{j}$.
+
+Je pourrai toujours choisir mes coordonnées de telle façon que les équations de $a^{q}_{i}$ soient
+\[ F_{1} = F_{2} = \ldots = F_{p-q} = 0, \tag{3} \]
+les $F$ étant des fonctions de coordonnées $y_{1}, y_{2}, \ldots, y_{p}$ qui définiront la position d'un point sur la variété $V$.
+
+Soient de même
+\[ \varphi_{1} = \varphi_{2} = \ldots = \varphi_{q-1} = 0 \tag{4} \]
+les équations de $b^{p-q+1}_{j}$; je pourrai alors supposer que les équations de $a^{q-1}_{j}$ s'obtiennent en adjoignant aux équations (1)\ednote{The equations of $a^{q}_{i}$ and of $b^{p-q+1}_{j}$ are (3) and (4); here and in the next paragraph the print refers to them as (1) and (2).} l'équation $\psi = 0$, et que celles de $b^{p-q}_{i}$ s'obtiennent en adjoignant aux équations (2) l'équation $\psi = 1$. Je pourrai m'arranger pour que \emph{la même} fonction $\psi$ figure au premier membre de ces deux équations.
+
+Alors parmi les inégalités, qui avec les égalités (1) complètent la définition de $a^{q}_{i}$, devra figurer l'inégalité
+\[ \psi > 0. \]
+De même parmi les inégalités, qui avec les égalités (2) complètent la définition de $b^{p-q+1}_{j}$, devra figurer l'inégalité
+\[ \psi < 1. \]
+
+Si nous voulons que $\varepsilon^{q}_{ij}$ soit égal à $+1$, il faut d'après nos conventions que les équations de $a^{q-1}_{j}$ se mettent dans l'ordre suivant~:---
+\[ F_{1} = F_{2} = \ldots = F_{p-q} = \psi = 0; \]
+\origpage{280}
+et si nous voulons en même temps que $\varepsilon'^{p-q+1}_{ji} = +1$, il faut que les équations de $b^{p-q}_{i}$ se mettent dans l'ordre suivant~:---
+\[ \varphi_{1} = \varphi_{2} = \ldots = \varphi_{q-1} = 1 - \psi = 0. \]
+
+Le nombre $N(a^{q}_{i}, b^{p-q}_{i})$ dépend du signe du déterminant fonctionnel de
+\[ F_{1}, F_{2}, \ldots, F_{p-q}, \varphi_{1}, \varphi_{2}, \ldots, \varphi_{q-1}, 1 - \psi. \]
+De même le nombre $N(a^{q-1}_{j}, b^{p-q+1}_{j})$ dépend du signe du déterminant fonctionnel de
+\[ F_{1}, F_{2}, \ldots, F_{p-q}, \psi, \varphi_{1}, \varphi_{2}, \ldots, \varphi_{q-1}. \]
+
+Nous pouvons toujours supposer que les fonctions $F, \varphi$ et $\psi$ aient été choisies de telle sorte que ces déterminants ne s'annulent pas dans le domaine considéré.
+
+Nous voyons alors que les deux déterminants sont de même signe si $q$ est pair, et de signe contraire si $q$ est impair.
+
+Nous aurons dans le premier cas
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = N(a^{q-1}, b^{p-q+1}_{j}), \]\ednote{Printed $a^{q-1}$ without the subscript $j$; $a^{q-1}_{j}$ is meant, as in the second case.}
+et dans le second cas
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = -N(a^{q-1}_{j}, b^{p-q+1}_{j}). \]
+
+Comme nous pourrons toujours supposer
+\[ N(a^{0}_{i}, b^{p}_{i}) = +1, \]
+nous trouverons successivement
+\[ \begin{gathered} N(a^{1}_{i}, b^{p-1}_{i}) = -1, \qquad N(a^{2}_{i}, b^{p-2}_{i}) = -1, \qquad N(a^{3}_{i}, b^{p-3}_{i}) = +1, \\ N(a^{4}_{i}, b^{p-4}_{i}) = +1, \qquad \ldots. \end{gathered} \]
+
+La seule chose à retenir, c'est que le nombre $N(a^{q}_{i}, b^{p-q}_{i})$ ne dépend que de $q$.
+
+Cela posé, on peut former avec les nombres $\varepsilon^{q}_{ij}$ un tableau que j'appellerai $T_{q}$, et où le nombre $\varepsilon^{q}_{ij}$ occupera la $i^{\text{e}}$ ligne et la $j^{\text{e}}$ colonne. Dans ce tableau $T_{q}$ il y aura donc autant de lignes que de $a^{q}_{i}$ et de colonnes que de $a^{q-1}_{j}$.
+
+J'ai appelé $\alpha_{q}$ le nombre des $a^{q}_{i}$ de sorte que le tableau $T_{q}$ aura $\alpha_{q}$ lignes et $\alpha_{q-1}$ colonnes. En particulier, le tableau $T_{1}$ nous donnera la relation entre les arêtes et les sommets, le tableau $T_{2}$ entre les faces et les arêtes, etc.
+
+J'appellerai $T'_{q}$ le tableau qui est formé avec $P'$, comme $T_{q}$ avec $P$. Nous voyons que le tableau $T'_{q}$ s'obtient en partant du tableau $T_{p-q+1}$, permutant les lignes avec les colonnes, et réciproquement.
+\origpage{281}
+
+Nous avons désigné (\textsc{c}, \S~3, p.\ 14) par $\alpha_{q} - \alpha'_{q}$ le nombre des homologies distinctes entre les $a^{q}_{i}$, et par $\alpha_{q} - \alpha''_{q}$ le nombre des congruences distinctes entre les $a^{q}_{i}$ (les $a^{q-1}_{j}$ étant éliminés); par
+\[ P_{q} = \alpha'_{q} - \alpha''_{q} + 1 \]
+le nombre de Betti correspondant aux $a^{q}_{i}$.
+
+Nous avons appelé $\beta_{q}, \beta'_{q}$ et $\beta''_{q}$ les nombres analogues à $\alpha_{q}, \alpha'_{q}$ et $\alpha''$\ednote{Printed $\alpha''$ without the subscript $q$; $\alpha''_{q}$ is meant.}, et se rapportant au polyèdre $P'$, de telle sorte que
+\[ \beta_{q} = \alpha_{p-q}. \]
+
+\subsection*{2. Réduction des tableaux.}
+
+Considérons un tableau $T$ formé de nombres entiers rangés en un certain nombre de lignes et de colonnes. Tels sont nos tableaux $T_{q}$.
+
+Supposons que l'on puisse faire sur ce tableau les opérations suivantes~:---
+
+1° Ajouter une colonne à une autre ou l'en retrancher;
+
+2° Permuter deux colonnes et changer le signe de l'une d'elles;
+
+3° Faire les mêmes opérations sur les lignes.
+
+En combinant ces opérations, on pourra faire subir aux colonnes une substitution linéaire quelconque pourvu que les coëfficients soient entiers et le déterminant égal à 1. De même pour les lignes.
+
+Quel est, par le moyen de ces opérations, le plus grand degré de simplicité auquel on puisse réduire un tableau?---C'est ce que nous allons examiner.
+
+Supposons d'abord, pour fixer les idées, que le tableau $T$ n'ait pas plus de lignes que de colonnes.
+
+\emph{Lemme I.}---Soit
+\[ \begin{vmatrix} a_{1} & a_{2} & a_{3} & a_{4} & a_{5} \\[1ex] b_{1} & b_{2} & b_{3} & b_{4} & b_{5} \\[1ex] c_{1} & c_{2} & c_{3} & c_{4} & c_{5} \end{vmatrix} \]
+un tableau $T$ que je suppose, pour fixer les idées, de trois lignes et de cinq colonnes.
+
+Je suppose que les quinze nombres $a, b, c$ soient premiers entre eux; je dis qu'on pourra toujours trouver trois nombres $\alpha_{1}, \beta_{1}, \gamma_{1}$, tels que les cinq nombres
+\[ h_{1i} = \alpha_{1} a_{i} + \beta_{1} b_{i} + \gamma_{1} c_{i} \qquad (i = 1, 2, 3, 4, 5) \]
+soient premiers entre eux.
+
+Pour cela les nombres $\alpha_{1}, \beta_{1}, \gamma_{1}$ doivent d'abord remplir une première
+\origpage{282}
+condition~: ils doivent être premiers entre eux. Si cette condition est remplie, on pourra trouver six autres nombres
+\[ \alpha_{2}, \beta_{2}, \gamma_{2}; \alpha_{3}, \beta_{3}, \gamma_{3}, \]
+tels que le déterminant
+\[ \begin{vmatrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3} \end{vmatrix} = 1. \]
+
+Posons alors
+\[ h_{ki} = \alpha_{k} a_{i} + \beta_{k} b_{i} + \gamma_{k} c_{i} \qquad (i = 1, 2, 3, 4, 5; k = 1, 2, 3). \]
+
+Soit
+\[ \Delta = \begin{vmatrix} a_{1} & b_{1} & c_{1} \\[1ex] a_{2} & b_{2} & c_{2} \\[1ex] a_{3} & b_{3} & c_{3} \end{vmatrix}; \]
+la règle de la multiplication des déterminants nous donnera
+\[ \begin{vmatrix} h_{11} & h_{12} & h_{13} \\[1ex] h_{21} & h_{22} & h_{23} \\[1ex] h_{31} & h_{32} & h_{33} \end{vmatrix} = \begin{vmatrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3} \end{vmatrix} \begin{vmatrix} a_{1} & b_{1} & c_{1} \\[1ex] a_{2} & b_{2} & c_{2} \\[1ex] a_{3} & b_{3} & c_{3} \end{vmatrix} = \Delta. \]
+Ce qui montre que le plus grand commun diviseur des trois nombres $h_{11}, h_{12}, h_{13}$, et par conséquent celui des cinq nombres $h_{1i}$, divise $\Delta$. Il doit diviser de même tous les déterminants obtenus en supprimant deux colonnes dans le tableau, et par conséquent le plus grand commun diviseur, $M$, de tous ces déterminants.
+
+Soit $p$ un facteur premier quelconque de $M$. Comme nos quinze nombres $a, b, c$ sont premiers entre eux, l'un d'eux au moins, par exemple $c_{5}$, ne sera pas divisible par $p$.
+
+Si nous prenons alors
+\[ \alpha_{1} \equiv 0, \qquad \beta_{1} \equiv 0, \qquad \gamma_{1} \equiv c^{p-2}_{5} \qquad (\text{mod}\ p), \tag{1} \]
+il viendra
+\[ h_{15} \equiv c^{p-1}_{5} \equiv 1 \qquad (\text{mod}\ p), \]
+de sorte que le plus grand commun diviseur des cinq nombres $h_{1i}$ ne sera pas divisible par $p$.
+
+Nous obtiendrons un système de congruences analogues à (1) pour chacun des facteurs premiers de $M$. On pourra satisfaire à la fois à toutes ces congruences puisqu'elles ont lieu par rapport à des modules premiers différents.
+
+Alors le plus grand commun diviseur des cinq nombres $h_{1i}$ ne sera
+\origpage{283}
+divisible par aucun des facteurs premiers de $M$; et, comme il doit diviser $M$, il sera égal à 1.
+
+1\textsuperscript{er} \emph{Corollaire.}---Si l'on fait subir aux lignes du tableau la substitution linéaire
+\[ \begin{matrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3}, \end{matrix} \]
+il est clair que les éléments de la $i^{\text{e}}$ colonne qui étaient
+\[ a_{i}, \qquad b_{i}, \qquad c_{i} \]
+deviendront
+\[ h_{1i}, \qquad h_{2i}, \qquad h_{3i}, \]
+d'où cette conséquence~:
+
+Si les éléments du tableau sont premiers entre eux, on peut réduire le tableau de telle sorte que les éléments de la première ligne soient premiers entre eux.
+
+2\textsuperscript{e} \emph{Corollaire.}---Si les éléments du tableau ont pour plus grand commun diviseur $\delta$, on peut réduire le tableau de telle sorte que les éléments de la première ligne aient pour plus grand commun diviseur $\delta$.
+
+\emph{Théorème.}---Soit $m$ le nombre des colonnes et $n$ celui des lignes $(m \geqq n)$; soit $M_{0}$ le plus grand commun diviseur de tous les déterminants obtenus en supprimant dans le tableau $m-n$ colonnes quelconques; soit $M_{1}$ le plus grand commun diviseur de tous les déterminants obtenus en supprimant dans le tableau $m-n+1$ colonnes et une ligne; soit $M_{2}$ celui des déterminants obtenus en supprimant $m-n+2$ colonnes et deux lignes, etc.; soit enfin $M_{n-1}$ celui des déterminants obtenus en supprimant $m-1$ colonnes et $n-1$ lignes, c'est-à-dire en d'autres termes celui de tous les éléments.
+
+Ces nombres $M_{0}, M_{1}, \ldots, M_{n-1}$ ne seront pas altérés par les opérations faites soit sur les lignes, soit sur les colonnes.
+
+Il va sans dire que le nombre $M_{k}$ devrait être considéré comme nul si tous les déterminants correspondants étaient nuls.
+
+Nous pourrons alors énoncer notre corollaire sous la forme suivante~:---
+
+3\textsuperscript{e} \emph{Corollaire.}---On peut réduire le tableau de telle sorte que le plus grand commun diviseur des éléments de la première ligne soit $M_{n-1}$.
+
+\emph{Lemme II.}---On peut, par une transformation entre les colonnes, réduire le tableau de telle sorte que le premier élément de la première
+\origpage{284}
+ligne devienne $M_{n-1}$, et que tous les autres éléments de la première ligne deviennent nuls.
+
+Nous allons faire subir, en effet, aux colonnes (supposées comme plus haut au nombre de $m = 5$) la substitution linéaire
+\[ \begin{vmatrix} \alpha_{1} & \alpha_{2} & \alpha_{3} & \alpha_{4} & \alpha_{5} \\[1ex] \beta_{1} & \ldots & & \ldots & \beta_{5} \\[1ex] \gamma_{1} & \ldots & & \ldots & \gamma_{5} \\[1ex] \delta_{1} & \ldots & & \ldots & \delta_{5} \\[1ex] \zeta_{1} & \ldots & & \ldots & \zeta_{5} \end{vmatrix}, \tag{2} \]
+dont le déterminant doit être égal à 1. Soient
+\[ a_{1}, \qquad a_{2}, \qquad a_{3}, \qquad a_{4}, \qquad a_{5} \]
+les éléments de la première ligne. Après les réductions que le tableau a déjà subies, le plus grand commun diviseur de ces cinq nombres est devenu $M_{n-1}$. Nous pouvons alors choisir la substitution (2) de telle sorte que l'on ait
+\[ \Sigma \alpha_{i} a_{i} = M_{n-1}, \qquad \Sigma \beta_{i} a_{i} = \Sigma \gamma_{i} a_{i} = \Sigma \delta_{i} a_{i} = \Sigma \zeta_{i} a_{i} = 0. \]
+Alors, après la transformation, les éléments de la première ligne seront
+\[ M_{n-1}, \qquad 0, \qquad 0, \qquad 0, \qquad 0. \]
+
+\emph{Lemme III.}---Je dis maintenant qu'on peut, par une transformation entre les lignes, réduire à zéro tous les éléments de la première colonne, sauf le premier qui reste égal à $M_{n-1}$.
+
+En effet, après les réductions déjà faites, les éléments de la première colonne (supposés au nombre de $n = 3$) sont
+\[ M_{n-1}, q_{2} M_{n-1}, q_{3} M_{n-1}, \]
+$q_{2}$ et $q_{3}$ étant des entiers; et en effet, d'après nos hypothèses, tous nos éléments sont divisibles par $M_{n-1}$.
+
+Si alors nous retranchons de la seconde ligne la première ligne multipliée par $q_{2}$, et de la troisième ligne la première ligne multipliée par $q_{3}$, la première colonne devient
+\[ M_{n-1}, \qquad 0, \qquad 0. \]
+D'ailleurs la première ligne ne change pas.
+
+Si l'on supprimait maintenant la première ligne et la première colonne du tableau $T$, il resterait un tableau $T'$ de $m-1$ colonnes et de $n-1$ lignes, par rapport auquel les nombres
+\[ \frac{M_{0}}{M_{n-1}}, \qquad \frac{M_{1}}{M_{n-1}}, \qquad \ldots \]
+\origpage{285}
+joueraient le même rôle que les nombres $M_{0}, M_{1}, \ldots$ par rapport au tableau $T$.
+
+En particulier,
+\[ \text{le plus grand commun diviseur des éléments de } T' \text{ est } \frac{M_{n-2}}{M_{n-1}}. \]
+
+Nous pouvons maintenant continuer la réduction, mais en opérant seulement sur les $m-1$ dernières colonnes et sur les $n-1$ dernières lignes. La première ligne ne changera plus puisque ses $m-1$ derniers éléments sont nuls, ni la première colonne non plus puisque ses $n-1$ derniers éléments sont nuls.
+
+On pourra opérer sur le tableau $T'$ comme nous avons opéré sur le tableau $T$. Après cette nouvelle réduction~:
+
+1° Tous les éléments de la première ligne et ceux de la première colonne sont restés nuls, sauf le premier élément de la première ligne et de la première colonne qui est resté égal à $M_{n-1}$.
+
+2° Tous les éléments de la seconde ligne et ceux de la seconde colonne sont devenus nuls, sauf le second élément de la seconde ligne et de la seconde colonne qui est devenu $\dfrac{M_{n-2}}{M_{n-1}}$.
+
+3° Si on supprime les deux premières lignes et les deux premières colonnes, on obtient un tableau $T''$ de $m-2$ colonnes et de $n-2$ lignes, par rapport auquel les nombres
+\[ \frac{M_{0}}{M_{n-2}}, \qquad \frac{M_{1}}{M_{n-2}}, \qquad \ldots, \qquad \frac{M_{n-3}}{M_{n-2}} \]
+jouent le même rôle que les nombres $M_{0}, M_{1}, \ldots, M_{n-1}$ par rapport au tableau $T$. Et ainsi de suite.
+
+A la fin de la réduction, l'élément qui appartient à la $i^{\text{e}}$ ligne et à la $j^{\text{e}}$ colonne est nul si $i$ n'est pas égal à $j$; l'élément qui appartient à la $i^{\text{e}}$ ligne et à la $i^{\text{e}}$ colonne est égal à $\dfrac{M_{n-i}}{M_{n-i+1}}$.
+
+Les $n$ nombres
+\[ M_{n-1}, \qquad \frac{M_{n-2}}{M_{n-1}}, \qquad \frac{M_{n-3}}{M_{n-2}}, \qquad \ldots, \qquad \frac{M_{1}}{M_{2}}, \qquad \frac{M_{0}}{M_{1}} \tag{3} \]
+peuvent s'appeler les \emph{invariants} du tableau $T$.
+
+On peut remarquer~:
+
+1° Que chacun de ces invariants divise le suivant;
+
+2° Que quelques-uns de ces invariants peuvent être nuls, mais que, si l'un d'eux l'est, tous ceux qui le suivent le sont également.
+
+Si le tableau $T$ avait plus de lignes que de colonnes, la réduction se ferait de la même manière, seulement il faudrait intervertir le rôle des lignes et des colonnes.
+\origpage{286}
+
+On aurait alors $m<n$; le nombre $M_{0}$ serait le plus grand commun diviseur des déterminants obtenus en supprimant $n-m$ lignes; en général, $M_{i}$ serait le plus grand commun diviseur des déterminants obtenus en supprimant $n-m+i$ lignes et $i$ colonnes quelconques. Enfin, le plus grand commun diviseur des éléments du tableau $T$ serait $M_{m-1}$.
+
+En général, le nombre des invariants serait le plus petit des deux nombres $n$ et $m$.
+
+\subsection*{3. Comparaison des tableaux $T_{q}$ et $T'_{q}$.}
+
+Le tableau $T_{q}$ nous fait connaître les relations entre les $a^{q}_{i}$ et les $a^{q-1}_{j}$ dans le polyèdre $P$. A chaque ligne de ce tableau correspond un $a^{q}_{i}$ et à chaque colonne un $a^{q-1}_{j}$. A chaque ligne de ce tableau correspond également une congruence
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j} \tag{1} \]
+entre les $a^{q}_{i}$ et les $a^{q-1}_{j}$ et une homologie
+\[ \Sigma \varepsilon^{q}_{ij} a^{q-1} \backsim 0 \tag{2} \]\ednote{Printed $a^{q-1}$ without the subscript $j$; $a^{q-1}_{j}$ is meant, as in the homology (2) of p. 278.}
+entre les $a^{q-1}_{j}$.
+
+Qu'arrivera-t-il maintenant si, par les opérations du paragraphe précédent, on réduit le tableau $T_{q}$?---A chaque ligne du tableau réduit correspondra une combinaison linéaire des $a^{q}_{i}$, à chaque colonne une combinaison linéaire des $a^{q-1}_{j}$. J'ai expliqué (\textsc{c}, \S~8, p.\ 41) d'après quelles règles ces combinaisons linéaires doivent être formées. Voici comment ces règles peuvent être résumées.
+
+Supposons que, pour passer du tableau $T_{q}$ au tableau réduit, on applique aux lignes de $T_{q}$ une certaine substitution linéaire $S$, et aux colonnes une autre substitution linéaire $\sigma$. Soit $\sigma'$ la substitution contragrédiente de $\sigma$ (je veux dire que, si l'on a deux séries de $\alpha_{q-1}$ variables $x_{i}$ et $y_{i}$, et qu'on applique la substitution $\sigma$ à la première série et la substitution $\sigma'$ à la seconde, la forme $\Sigma x_{i} y_{i}$ ne devra pas être altérée).
+
+Supposons alors que $S$ change $a^{q}_{i}$ en
+\[ c^{q}_{i} = \sum_{j=1}^{\alpha_{q}} \lambda_{ij} a^{q}_{j}, \]
+et que $\sigma'$ change $a^{q-1}_{i}$ en
+\[ d^{q-1}_{i} = \sum_{i=1}^{\alpha_{q-1}} \mu_{ij} a^{q-1}_{j}. \]\ednote{The summation index is printed $i=1$; the sum runs over $j$, so $j=1$ is meant.}
+\origpage{287}
+Nous ferons correspondre à la $i^{\text{e}}$ ligne du tableau réduit la combinaison linéaire $c^{q}_{i}$, et à la $i^{\text{e}}$ colonne la combinaison linéaire $d^{q-1}_{i}$.
+
+Dans notre tableau réduit, tous les éléments sont nuls, sauf ceux de la $i^{\text{e}}$ ligne et de la $i^{\text{e}}$ colonne, qui sont donnés d'après le paragraphe précédent par la formule
+\[ \frac{M_{n-i}}{M_{n-i-1}}. \]\ednote{Printed $M_{n-i-1}$ in the denominator; p. 285 gives $M_{n-i+1}$. The sign shows no trace of a lost vertical stroke.}
+Je désignerai, pour abréger, par $\omega^{q}_{i}$ cet élément de la $i^{\text{e}}$ ligne et de la $i^{\text{e}}$ colonne; et je conviendrai que $\omega^{q}_{i}$ doit être regardé comme nul, si $i$ est plus grand que le plus petit des deux nombres $\alpha_{q}$ et $\alpha_{q-1}$ (nombre des lignes et nombre des colonnes).
+
+A la $i^{\text{e}}$ ligne du tableau réduit correspondra alors la congruence
+\[ c^{q}_{i} \equiv \omega^{q}_{i} d^{q-1}_{i} \tag{1 \textit{bis}} \]
+et l'homologie
+\[ \omega^{q}_{i} d^{q-1}_{i} \backsim 0. \tag{2 \textit{bis}} \]
+
+Les congruences et les homologies (1~\emph{bis}) et (2~\emph{bis}) peuvent se déduire des congruences et homologies (1) et (2) par addition, soustraction, multiplication, \emph{mais sans division}, et réciproquement.
+
+Si $\alpha_{q-1} > \alpha_{q}$, et si $i > \alpha_{q}$, $\omega^{q}_{i}$ est nul, de sorte que la congruence et l'homologie (1~\emph{bis}) et (2~\emph{bis}) se réduisent à
+\[ c^{q}_{i} \equiv 0 \qquad \text{et} \qquad 0 \backsim 0. \]
+
+Les nombres $\omega^{q}_{i}$ sont ce que j'ai appelé dans le paragraphe précédent les \emph{invariants} du tableau $T_{q}$. Supposons que \emph{parmi ces invariants il y en ait $\gamma_{q}$ qui ne soient pas nuls}; on aura, bien entendu,
+\[ \gamma_{q} \leqq \alpha_{q}, \qquad \gamma_{q} \leqq \alpha_{q-1}. \]
+
+Parmi les congruences (1~\emph{bis}), les $\gamma_{q}$ premières contiendront à la fois $c^{q}_{i}$ et $d^{q-1}_{i}$ puisque $\omega^{q}_{i}$ ne sera pas nul. Au contraire, les $\alpha_{q} - \gamma_{q}$ dernières s'écriront
+\[ c^{q}_{i} \equiv 0, \]
+et ne contiendront plus les $a^{q-1}_{i}$; il est clair que toutes ces congruences sont distinctes, et qu'on obtient ainsi toutes les congruences entre les $a^{q}_{i}$ d'où les $a^{q-1}_{j}$ sont éliminés. On aura donc
+\[ \alpha_{q} - \alpha''_{q} = \alpha_{q} - \gamma_{q}, \qquad \alpha''_{q} = \gamma_{q}. \]
+
+Maintenant, parmi les homologies (2~\emph{bis}), les $\alpha_{q} - \gamma_{q}$ dernières se réduisent à des identités, mais les $\gamma_{q}$ premières sont distinctes; on a donc
+\[ \alpha_{q-1} - \alpha'_{q-1} = \gamma_{q}, \]
+\origpage{288}
+d'où pour le nombre de Betti
+\[ P_{q} = \alpha_{q} - \gamma_{q+1} - \gamma_{q} + 1. \]
+
+Comparons maintenant le tableau $T_{q}$ au tableau correspondant $T'_{p-q+1}$ relatif au polyèdre réciproque $P'$. Ce tableau, qui se déduit de $T_{q}$ en permutant les lignes avec les colonnes, a $\beta_{p-q+1} = \alpha_{q-1}$ lignes et $\beta_{p-q} = \alpha_{q}$ colonnes. Le nombre $\gamma_{q}$ est le même pour les deux tableaux, de sorte qu'il vient
+\[ \begin{gathered} \beta''_{p-q+1} = \gamma_{q} = \alpha''_{q}, \qquad \beta_{p-q} - \beta'_{p-q} = \gamma_{q}, \\ \beta'_{p=q} = \beta_{p-q} - \gamma_{q} = \alpha_{q} - \alpha''_{q}; \end{gathered} \]\ednote{The index of $\beta'$ in the second line is printed $p=q$; $p-q$ is meant.}
+d'où
+\[ \beta'_{p-q+1} = \alpha_{q-1} - \gamma_{q-1}, \]
+et pour le nombre de Betti $P'_{p-q+1}$ relatif au polyèdre $P'$
+\[ P'_{p-q+1} = \beta'_{p-q+1} - \beta''_{p-q+1} + 1 = \alpha_{q-1} - \gamma_{q-1} - \gamma_{q} + 1. \]
+
+Nous déduisons de là
+\[ P'_{p-q} = P_{q}, \]
+ce qui, si l'on se rappelle que les nombres de Betti relatifs aux deux polyèdres réciproques $P$ et $P'$ sont les mêmes, montre que les nombres de Betti également distants des extrêmes sont égaux.
+
+Revenons aux homologies (2~\emph{bis}). Si l'on admet que l'on a le droit de diviser les homologies par un entier différent de zéro, les $\gamma_{q}$ premières homologies nous donneront
+\[ d^{q-1}_{i} \backsim 0 \qquad (i = 1, 2, \ldots, \gamma_{q}), \]
+et la plus générale des homologies entre les $a^{q-1}_{j}$ s'écrira
+\[ \sum_{i=1}^{\gamma_{q}} \lambda_{i} d^{q-1}_{i} \backsim 0, \tag{3} \]
+les $\lambda_{i}$ étant des entiers quelconques. Si, au contraire, on n'admet pas que l'on ait le droit de diviser les homologies, l'homologie la plus générale s'écrira
+\[ \sum_{i=1}^{\gamma_{q}} \lambda_{i} \omega^{q}_{i} d^{q-1}_{i} \backsim 0, \tag{4} \]
+les $\lambda_{i}$ étant des entiers. Pour que les deux définitions des nombres de Betti (\textsc{c}, \S~1, p.\ 2) coincident, il faut, et il suffit, que les deux formules (3) et (4) concordent, c'est-à-dire que tous les invariants $\omega^{q}_{i}$ qui ne sont pas nuls soient égaux à 1 (\textsc{c}, \S~9, p.\ 48).
+
+Envisageons maintenant les combinaisons linéaires des $a^{q-1}_{j}$ qui seraient homologues à zéro en vertu des homologies (3), et demandons-nous quelles sont parmi ces combinaisons celles qui restent distinctes,
+\origpage{289}
+si, abandonnant les homologies (3), on se borne aux homologies (4) sans admettre le droit de diviser les homologies.
+
+Nous verrons tout de suite que le nombre de ces expressions qui sont ainsi distinctes est précisément le produit
+\[ \omega^{q}_{1} \omega^{q}_{2} \ldots \omega^{q}_{\gamma_{q}}. \]
+Or, en se reportant aux notations du paragraphe précédent, on voit que ce produit n'est autre chose que l'un des nombres de la suite
+\[ M_{0}, M_{1}, M_{2}, \ldots, \]
+et précisément le premier nombre de cette suite qui n'est pas nul (\textsc{c}, \S~9, p.\ 48).
+
+Ce qui précède montre combien il importe de distinguer deux sortes de variétés.
+
+Celles de la première sorte, que j'appellerai \emph{variétés sans torsion}, seront celles pour lesquelles les invariants de tous les tableaux $T_{q}$ sont tous égaux à 0 ou à 1; pour lesquelles, par conséquent, les deux formules (3) et (4) concordent et les deux définitions des nombres de Betti sont d'accord.
+
+Celles de la seconde sorte, que j'appellerai \emph{variétés à torsion}, seront celles pour lesquelles certains de ces invariants ne sont égaux ni à 0, ni à 1, et pour lesquelles, par conséquent, les deux définitions des nombres de Betti ne sont pas d'accord. Dans ce cas nous adopterons toujours, sauf avis contraire, la seconde définition (\textsc{c}, \S~1).
+
+Cette dénomination se justifie parce que la présence d'invariants plus grands que 1 est due, comme nous le verrons plus loin, à une circonstance assimilable à une véritable torsion de la variété sur elle-même.
+
+\subsection*{4. Application à quelques exemples.}
+
+Désireux d'appliquer ce qui précède aux exemples signalés dans l'“Analysis Situs” (p.\ 49, sqq.), je dois d'abord faire une distinction entre plusieurs sortes de polyèdres.
+
+Les polyèdres ordinaires ou de la première sorte seront ceux dont tous les $a^{q}_{i}$ sont des polyèdres simplement connexes (homéomorphes à des hypersphères) et tels que tous les éléments de ces $a^{q}_{i}$ soient distincts; par exemple, dans l'espace ordinaire, le tétraèdre sera un polyèdre de la première sorte parce qu'il admet quatre faces qui sont des triangles et, par conséquent, des polygones simplement connexes (homéomorphes à des cercles), et que chacun de ces triangles a ses trois côtés distincts de même que ses trois sommets.
+\origpage{290}
+
+Les polyèdres de la seconde sorte seront ceux dont tous les $a^{q}_{i}$ seront des polyèdres simplement connexes, mais tels que tous les éléments de ces $a^{q}_{i}$ ne soient pas distincts. Soit, par exemple, dans l'espace ordinaire un tore; par un point $A$ de la surface de ce tore menons un méridien et un parallèle. Ces deux coupures ne diviseront pas la surface du tore en deux régions, mais elles la rendront simplement connexe. Cette surface ainsi rendue simplement connexe sera homéomorphe à un rectangle, dont deux côtés opposés correspondraient aux deux lèvres de la coupure méridienne et les deux autres côtés aux deux lèvres de la coupure parallèle. Le tore forme ainsi une espèce de polyèdre qui n'a qu'une seule face; cette face est un quadrilatère; elle est donc simplement connexe; mais les quatre côtés de ce quadrilatère ne sont pas distincts, deux se confondent avec la coupure méridienne et deux avec la coupure parallèle; de même les quatre sommets ne sont pas distincts puisqu'ils se confondent tous les quatre avec le point $A$. Le polyèdre ainsi défini est donc un polyèdre de la seconde sorte.
+
+Enfin, les polyèdres de la troisième sorte seront ceux dont tous les $a^{q}_{i}$ ne sont pas simplement connexes.
+
+Les propriétés des polyèdres de la première sorte s'étendent pour la plupart à ceux de la seconde sorte. Observons toutefois une différence. Dans un polyèdre de la première sorte, toute $a^{p-1}_{j}$ sépare l'une de l'autre deux $a^{p}_{i}$, et n'appartient à aucun autre $a^{p}_{i}$. Par conséquent, dans chaque colonne du tableau $T_{p}$ il y aura un des nombres $\varepsilon^{p}_{ij}$ qui sera égal à $+1$, un autre à $-1$, et tous les autres à 0.
+
+Il n'en est plus de même avec les polyèdres de la seconde sorte. Il peut arriver que deux des $a^{p-1}_{j}$ d'une même $a^{p}_{i}$ ne soient pas distinctes. Dans ce cas, après avoir franchi cette $a^{p-1}_{j}$, on se retrouvera dans cette même $a^{p}_{i}$ où l'on était déjà avant de l'avoir passée. Ainsi pour reprendre notre tore de tout à l'heure, qui était un polyèdre à une seule face~: après avoir passé la coupure méridienne, par exemple, on se retrouvera toujours dans cette même et unique face où l'on était avant le passage. Il arrive alors que cette $a^{p-1}_{j}$ n'a de relation qu'avec cette $a^{p}_{i}$; et de plus, elle est deux fois en relation avec cette même $a^{p}_{i}$, une fois en relation directe, une autre fois en relation inverse, de sorte que les deux relations se compensant, le nombre $\varepsilon^{p}_{ij}$ correspondant est égal à zéro. Dans ce cas, tous les nombres $\varepsilon^{p}_{ij}$ qui figurent dans la colonne correspondante du tableau $T_{p}$ sont nuls.
+
+Dans les exemples en question (p.\ 49 sqq.), les variétés fermées à
+\origpage{291}
+trois dimensions que l'on envisage peuvent être regardées comme des polyèdres de la seconde sorte. Chacun de ces polyèdres a une seule case (qui dans les premier, troisième et quatrième exemples est un cube, et dans le cinquième un octaèdre), mais les faces de cette case se confondent deux à deux.
+
+1\textsuperscript{er} \emph{Exemple.}---
+
+1\textsuperscript{ère} face $ABDC = A'B'D'C'$, 1\textsuperscript{ère} arête $AB = CD = A'B' = C'D'$;
+
+2\textsuperscript{e} ,, $ACC'A' = BDD'A'$\ednote{Printed $BDD'A'$; the face of the cube opposite $ACC'A'$ is $BDD'B'$, as in the 4e exemple.}, 2\textsuperscript{e} ,, $AC = BD = A'C' = B'D'$;
+
+3\textsuperscript{e} ,, $CDD'C' = ABB'A'$, 3\textsuperscript{e} ,, $AA' = BB' = CC' = DD'$;
+
+Une case unique, un sommet unique.
+
+Les trois tableaux $T_{1}, T_{2}$ et $T_{3}$ se composent uniquement de zéros. Tous leurs invariants sont donc nuls.
+
+3\textsuperscript{e} \emph{Exemple.}---
+
+1\textsuperscript{ère} face $ABDC = B'D'C'A'$, 1\textsuperscript{ère} arête $AB = B'D' = C'C$;
+
+2\textsuperscript{e} ,, $ABB'A' = C'CDD'$, 2\textsuperscript{e} ,, $AC = DD' = B'A'$;
+
+3\textsuperscript{e} ,, $ACC'A' = DD'B'B$, 3\textsuperscript{e} ,, $AA' = C'D' = DB$;
+
+4\textsuperscript{e} ,, $CD = BB' = A'C'$;
+
+1\textsuperscript{er} sommet $A = B' = C' = D$, 2\textsuperscript{e} sommet $B = D' = A' = C$.
+\[ \begin{gathered} \text{Tableau } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{2}. \\ \begin{vmatrix} +1 & -1 & -1 & -1 \\[1ex] +1 & +1 & -1 & +1 \\[1ex] -1 & +1 & -1 & -1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{1}. \\ \begin{vmatrix} +1 & -1 \\[1ex] +1 & -1 \\[1ex] +1 & -1 \\[1ex] -1 & +1 \end{vmatrix}. \end{gathered} \]
+
+Le tableau $T_{3}$ n'a qu'un invariant qui est nul; le tableau $T_{1}$ en a deux qui sont 0 et 1; le tableau $T_{2}$ en a trois qui sont
+\[ 1, 2 \text{ et } 2. \]
+
+4\textsuperscript{e} \emph{Exemple.}---
+
+1\textsuperscript{ère} face $ABDC = B'D'C'A'$, 1\textsuperscript{ère} arête $AA' = CC' = BB' = DD'$;
+
+2\textsuperscript{e} ,, $ABB'A' = CDD'C'$, 2\textsuperscript{e} ,, $AB = CD = B'D' = A'C'$;
+
+3\textsuperscript{e} ,, $ACC'A' = BDD'B'$, 3\textsuperscript{e} ,, $AC = BD = D'C' = B'A'$;
+
+Une case unique, un sommet unique.
+\origpage{292}
+\[ \begin{gathered} \text{Tableau } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{2}. \\ \begin{vmatrix} 0 & 0 & 0 \\[1ex] 0 & +1 & +1 \\[1ex] 0 & +1 & -1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{1}. \\ \begin{vmatrix} 0 \\[1ex] 0 \\[1ex] 0 \end{vmatrix}. \end{gathered} \]
+
+Les tableaux $T_{1}$ et $T_{3}$ n'ont qu'un invariant qui est 0; le tableau $T_{2}$ en a trois qui sont
+\[ 1, 2 \text{ et } 0. \]
+
+5\textsuperscript{e} \emph{Exemple.}---
+
+1\textsuperscript{ère} face $ABC = FED$, 1\textsuperscript{ère} arête $AB = FE$, 1\textsuperscript{er} sommet $A = F$;
+
+2\textsuperscript{e} ,, $ACE = FDB$, 2\textsuperscript{e} ,, $AC = FD$, 2\textsuperscript{e} ,, $B = E$;
+
+3\textsuperscript{e} ,, $AED = FBC$, 3\textsuperscript{e} ,, $AE = FB$, 3\textsuperscript{e} ,, $C = D$;
+
+4\textsuperscript{e} ,, $ADB = FCE$, 4\textsuperscript{e} ,, $AD = FC$;
+
+5\textsuperscript{e} ,, $BC = ED$;
+
+6\textsuperscript{e} ,, $CE = DB$.
+\[ \begin{gathered} \text{Tableau } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{2}. \\ \begin{vmatrix} +1 & -1 & 0 & 0 & +1 & 0 \\[1ex] 0 & +1 & -1 & 0 & 0 & +1 \\[1ex] 0 & 0 & +1 & -1 & +1 & 0 \\[1ex] -1 & 0 & 0 & +1 & 0 & +1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Tableau } T_{1}. \\ \begin{vmatrix} +1 & -1 & 0 \\[1ex] +1 & 0 & -1 \\[1ex] +1 & -1 & 0 \\[1ex] +1 & -1 & 0 \\[1ex] 0 & +1 & -1 \\[1ex] 0 & -1 & +1 \end{vmatrix}. \end{gathered} \]\ednote{The fourth row of $T_{1}$ is printed $+1,\ -1,\ 0$; the 4e arête $AD = FC$ joins the 1er sommet $A = F$ to the 3e sommet $C = D$, which would give $+1,\ 0,\ -1$.}
+
+Les invariants sont~:
+\[ 0 \text{ pour } T_{3}; \qquad 2, 1, 1 \text{ et } 1 \text{ pour } T_{2}; \qquad 0, 1 \text{ et } 1 \text{ pour } T_{1}. \]
+
+Passons maintenant au sixième exemple (p.\ 57).
+
+Ainsi qu'on l'a vu (\S~14, p.\ 71), les équivalences fondamentales s'écrivent
+\[ \begin{aligned} &C_{1} + C_{2} \equiv C_{2} + C_{1},\\ &C_{1} + C_{3} \equiv C_{3} + \alpha C_{1} + \gamma C_{2},\\ &C_{2} + C_{3} \equiv C_{3} + \beta C_{1} + \delta C_{2}. \end{aligned} \]
+
+Pour écrire les homologies qui peuvent se déduire des homologies fondamentales par addition et multiplication, \emph{mais sans division}, il suffit de se donner le droit d'intervertir l'ordre des termes dans les deux membres de ces équivalences fondamentales; on trouve ainsi
+\[ 0 \backsim 0; \qquad (\alpha-1) C_{1} + \gamma C_{2} \backsim 0; \qquad \beta C_{1} + (\delta-1) C_{2} \backsim 0. \]
+\origpage{293}
+Le déterminant
+\[ (\alpha-1)(\delta-1) - \beta\gamma \]
+est égal à
+\[ 2 - \alpha - \delta. \]
+
+Soit, d'autre part, $\mu$ le plus grand commun diviseur des quatre nombres
+\[ \alpha-1, \delta-1, \beta, \gamma; \]
+l'examen des homologies que nous venons d'écrire montre que les deux invariants du tableau $T_{2}$ qui ne sont pas égaux à 0 ou à 1 sont égaux à
+\[ \mu \text{ et } \frac{2-\alpha-\delta}{\mu}. \]
+(Le nombre $\mu$ peut d'ailleurs être égal à 1.)
+
+Quant aux invariants des tableaux $T_{1}$ et $T_{2}$\ednote{Printed $T_{2}$, whose invariants were just given as $\mu$ and $(2-\alpha-\delta)/\mu$; $T_{3}$ appears to be meant.}, ils sont toujours tous, comme nous le verrons plus loin, égaux à 0 ou à 1.
+
+Soit, par exemple,
+\[ \alpha = -1, \beta = 1, \gamma = -1, \delta = 0. \]
+On a
+\[ \mu = 1, \qquad 2-\alpha-\delta = 3, \]
+de sorte que l'un de nos invariants est égal à 3 et l'autre à 1.
+
+Cela peut d'ailleurs se vérifier en formant le tableau $T_{2}$. Soient
+\[ \begin{gathered} (x+1, y, z),\\ (x, y+1, z),\\ (-x+y, -x, z+1) \end{gathered} \]
+les trois substitutions du groupe $G$, que j'appellerai $S_{1}, S_{2}$ et $S_{3}$, et qui correspondront aux trois contours fondamentaux $C_{1}, C_{2}, C_{3}$ (\S~13, p.\ 68).
+
+La variété étudiée peut être regardée comme engendrée par le cube $ABCDA'B'C'D'$ (\S~10, p.\ 49). Seulement la face $ABCD$ devra être considérée comme décomposée en deux triangles $ABD$ et $ACD$, de même que la face $A'B'C'D'$ en deux triangles $D'A'B'$ et $C'D'A'$.
+
+Il est aisé de voir que la face $ABB'A'$ est changée en $CDD'C'$ par la substitution $S_{2}$, la face $ACC'A'$ en $BDD'B'$ par la substitution $S_{1}$, la face $ABD$ en $D'A'B'$ par la substitution $S_{3} S_{1} S_{2}$, la face $ACD$ en $C'D'A'$ par la substitution $S_{3} S_{2}$.
+
+Notre polyèdre a donc~:
+
+1° Une seule case;
+
+2° Quatre faces, à savoir~:
+
+1\textsuperscript{ère} face $ABB'A' = CDD'C'$,
+
+2\textsuperscript{e} ,, $ACC'A' = BDD'B'$,
+
+3\textsuperscript{e} ,, $ABD = D'A'B'$,
+
+4\textsuperscript{e} ,, $ACD = C'D'A'$;
+\origpage{294}
+
+3° Quatre arêtes, à savoir~:
+
+1\textsuperscript{ère} arête $AA' = BB' = CC' = DD'$,
+
+2\textsuperscript{e} ,, $AB = CD = D'A'$,
+
+3\textsuperscript{e} ,, $AC = BD = C'D' = A'B'$,
+
+4\textsuperscript{e} ,, $AD = C'A' = D'B'$;
+
+4° Un seul sommet.
+
+Les tableaux $T_{1}$ et $T_{3}$ sont entièrement composés de zéros.
+
+Voici le tableau $T_{2}$~:
+\[ \begin{vmatrix} 0 & +1 & -1 & 0 \\[1ex] 0 & 0 & +1 & +1 \\[1ex] 0 & +1 & +1 & -1 \\[1ex] 0 & +1 & +1 & -1 \end{vmatrix}. \]
+On voit que les invariants de ce tableau sont
+\[ 1, 1, 3, 0. \]
+
+Passons maintenant à l'exemple de M.~Heegaard. Soient $x_{1}, x_{2}, y_{1}, y_{2}, z_{1}, z_{2}$ les coordonnées d'un point dans l'espace à six dimensions; soit
+\[ \begin{aligned} x &= x_{1} + x\sqrt{-1} = |x| e^{\xi\sqrt{-1}},\\ y &= y_{1} + y_{2}\sqrt{-1} = |y| e^{\eta\sqrt{-1}},\\ z &= z_{1} + z_{2}\sqrt{-1} = |z| e^{\zeta\sqrt{-1}}. \end{aligned} \]\ednote{The first line is printed $x = x_{1} + x\sqrt{-1}$; $x_{2}\sqrt{-1}$ is meant, as in the lines for $y$ and $z$.}
+
+Notre variété aura pour équations
+\[ z^{2} = xy, \qquad x^{2}_{1} + x^{2}_{2} + y^{2}_{1} + y^{2}_{2} = 1, \]
+d'où
+\[ |z^{2}| = |xy|, \qquad \zeta = \frac{\xi+\eta}{2}, \qquad |x^{2}| + |y^{2}| = 1. \]
+
+Pour obtenir la variété tout entière, il faut que nous fassions varier
+
+1° $|x|$ de 0 à 1, ce qui fait varier en même temps $|y|$ de 1 à 0;
+
+2° $\eta$ de 0 à $2\pi$;
+
+3° $\xi+\eta$ de 0 à $4\pi$.
+
+Le polyèdre ainsi obtenu a une seule case définie par les inégalités
+\[ 0 < |x| < 1, \qquad 0 < \eta < 2\pi, \qquad 0 < \xi+\eta < 4\pi. \]
+Il a deux faces définies par les relations suivantes~:---
+
+1\textsuperscript{ère} face
+\[ \eta = 0, \qquad 0 < |x| < 1, \qquad 0 < \xi < 4\pi; \]
+cette face est identique à la suivante~:---
+\[ \eta = 2\pi, \qquad 0 < |x| < 1, \qquad -2\pi < \xi < 2\pi. \]
+\origpage{295}
+
+2\textsuperscript{e} face
+\[ \xi+\eta = 0, \qquad 0 < |x| < 1, \qquad 0 < \eta < 2\pi; \]
+cette face est identique à la suivante~:---
+\[ \xi+\eta = 4\pi, \qquad 0 < |x| < 1, \qquad 0 < \eta < 2\pi. \]
+
+Il a trois arêtes définies par les relations suivantes~:---
+
+1\textsuperscript{ère} arête
+\[ \xi = \eta = 0, \qquad 0 < |x| < 1; \]
+cette arête est identique aux trois suivantes~:---
+\[ \begin{aligned} &\xi = 0, \qquad \eta = 2\pi, \qquad 0 < |x| < 1;\\ &\xi = -2\pi, \qquad \eta = 2\pi, \qquad 0 < |x| < 1;\\ &\xi = \eta = 2\pi, \qquad 0 < |x| < 1; \end{aligned} \]
+
+2\textsuperscript{e} arête $x_{1} = x_{2} = 0, \qquad 0 < \eta < 2\pi$;
+
+3\textsuperscript{e} ,, $y_{1} = y_{2} = 0, \qquad-2\pi < \xi < 0$, identique aux deux suivantes~:---
+\[ \begin{aligned} &y_{1} = y_{2} = 0, \qquad 0 < \xi < 2\pi;\\ &y_{1} = y_{2} = 0, \qquad 2\pi < \xi < 4\pi. \end{aligned} \]
+
+Il a enfin deux sommets, à savoir~:
+
+1\textsuperscript{er} sommet $x_{1} = x_{2} = 0, \qquad\eta = 0$, identique au suivant~:---
+\[ x_{1} = x_{2} = 0, \qquad \eta = 2\pi; \]
+
+2\textsuperscript{e} ,, $y_{1} = y_{2} = 0, \qquad\xi = -2\pi$, identique aux trois suivants~:---
+\[ \begin{aligned} &y_{1} = y_{2} = 0, \qquad \xi = 0;\\ &y_{1} = y_{2} = 0, \qquad \xi = 2\pi;\\ &y_{1} = y_{2} = 0, \qquad \xi = 4\pi. \end{aligned} \]
+
+Le tableau $T_{3}$ est entièrement composé de zéros; quant aux tableaux $T_{1}$ et $T_{2}$, ils s'écrivent
+\[ T_{2} = \begin{vmatrix} 0 & 0 & +2 \\[1ex] 0 & 1 & 1 \end{vmatrix}; \qquad T_{1} = \begin{vmatrix} +0 & -1 \\[1ex] 0 & 0 \\[1ex] 0 & 0 \end{vmatrix}. \]
+On voit que les invariants sont 0, 2 et 1 pour $T_{2}$, 0 et 1 pour $T_{1}$.
+
+\subsection*{5. Extension au cas général d'un théorème du premier Complément.}
+
+Je voudrais revenir sur l'une des questions traitées dans un des mémoires antérieurs (\textsc{c}, \S~10). Je n'ai envisagé dans l'endroit cité que le cas de $p = 3$, et je voudrais faire voir comment on peut étendre les mêmes raisonnements au cas général. Voici de quoi il s'agit~:
+\origpage{296}
+
+Soient deux polyèdres réciproques $P$ et $P'$; considérons d'une part les éléments $a^{q}_{i}$ de $P$, et d'autre part les éléments $b^{q}_{i}$ de $P'$. Je suppose que l'on ait trouvé une congruence
+\[ \Sigma \lambda_{i} a^{q}_{i} \equiv 0 \tag{1} \]
+entre les $a^{q}_{i}$; je dis qu'on pourra faire correspondre à cette congruence une autre congruence entre les $b^{q}_{i}$
+\[ \Sigma \mu_{i} b^{q}_{i} \equiv 0, \tag{2} \]
+et cela de telle sorte que l'on ait l'homologie
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim \Sigma \mu_{i} b^{q}_{i}. \tag{3} \]
+
+Réciproquement à toute congruence de la forme (2) on pourra faire correspondre une congruence de la forme (1), et cela de telle sorte que les premiers membres de ces deux congruences soient liés par l'homologie (3).
+
+Tel est le théorème qu'il s'agit de démontrer. J'en ai donné une démonstration simple dans le cas de $p = 3$, et il s'agit d'étendre cette démonstration au cas général. Je ferai d'abord une première remarque.
+
+Considérons les congruences
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j}. \tag{4} \]
+Nous savons qu'en les combinant linéairement, on peut en éliminer les $a^{q-1}_{j}$ et obtenir des congruences de la forme
+\[ \Sigma \zeta_{i} a^{q}_{i} \equiv 0. \tag{5} \]
+
+Le nombre des congruences distinctes de la forme (5) est celui que nous avons appelé $\alpha_{q} - \alpha''_{q}$.
+
+Supposons maintenant que nous considérions les différents éléments $a^{h}_{i}$ du polyèdre $P$, où le nombre $h$ des dimensions doit être plus grand que $q$, mais peut être égal à $q+1, q+2, \ldots, p-1$ ou $p$. Nous donnons une fois pour toutes à ce nombre $h$ une valeur déterminée.
+
+Nous répartirons alors les congruences (4) en groupes, en mettant dans le même groupe deux de ces congruences si les deux $a^{q}_{i}$ correspondants appartiennent à un même $a^{h}_{i}$; il est clair qu'il y aura autant de groupes que de $a^{h}_{i}$, et qu'une même congruence pourra se retrouver dans plusieurs groupes, puisque un $a^{q}_{i}$ fait partie de plusieurs $a^{h}_{i}$.
+
+En combinant linéairement les congruences (4) \emph{d'un même groupe}, on pourra alors éliminer les $a^{q-1}_{j}$ et obtenir des congruences de la forme
+\[ \Sigma \zeta'_{i} a^{q}_{i} \equiv 0. \tag{5 \textit{bis}} \]
+\origpage{297}
+
+Les congruences (5~\emph{bis}) font évidemment partie du système des congruences (5), puisque ce dernier système est celui de \emph{toutes} les congruences distinctes de cette forme que l'on peut obtenir par la combinaison des congruences (4). En revanche, il peut y avoir dans le système (5) des congruences qui ne font pas partie du système (5~\emph{bis}); et en effet nous avons obtenu ce dernier système en imposant des restrictions à notre faculté de combiner les congruences (4) puisque nous ne pouvions combiner que celles d'un même groupe.
+
+Je dis d'abord que la congruence (5~\emph{bis}) entraîne l'homologie
+\[ \Sigma \zeta'_{i} a^{q}_{i} \backsim 0. \tag{6} \]
+
+En effet, la congruence (5~\emph{bis}) est une congruence entre les éléments du polyèdre $a^{h}_{i}$, et, \emph{comme par hypothèse ce polyèdre est simplement connexe}, cette congruence doit entraîner l'homologie correspondante.
+
+Réciproquement, si l'homologie (6) a lieu, la congruence correspondante fera partie du système (5~\emph{bis}). En effet, l'homologie (6) ayant lieu entre les éléments du polyèdre $a^{h}_{i}$, doit entraîner la congruence correspondante, et cette congruence doit pouvoir se déduire des congruences fondamentales de la forme (4) \emph{relatives au polyèdre $a^{h}_{i}$}, c'est-à-dire appartenant à un même groupe.
+
+Il résulte de là que le nombre des congruences distinctes du système (5~\emph{bis}) est $\alpha_{q} - \alpha'_{q}$.
+
+Le système (5~\emph{bis}) reste donc toujours le même quelle que soit la valeur attribuée au nombre $h$.
+
+Nous voyons en même temps que cette considération permettrait de trouver le nombre de Betti $P_{q}$ en considérant seulement le tableau $T_{q}$, pourvu que l'on sût en outre si deux congruences (4) appartiennent ou non à un même groupe.
+
+Introduisons maintenant une notion qui peut être considérée comme la généralisation de la notion de pyramide. Soit $a_{q}$ un domaine appartenant à un espace plan $P_{q}$ à $q$ dimensions; soit $b_{m}$ un domaine appartenant à un autre espace plan $P'_{m}$ à $m$ dimensions. Je supposerai que ces deux espaces plans n'ont aucun point commun. Je pourrai alors par ces deux espaces faire passer un espace plan $\Pi$ à $q+m+1$ dimensions, et un seul.
+
+Cela posé, joignons par des droites chacun des points du domaine $a_{q}$ à chacun des points du domaine $b_{m}$. L'ensemble de ces droites engendrera un certain domaine appartenant à l'espace plan $\Pi$, ayant $q+m+1$ dimensions que je désignerai par la notation $a_{q} b_{m}$, et que je pourrai appeler pyramide généralisée rectiligne.
+
+Si, en effet, le domaine $a_{q}$ se réduisait à un polygone plan ($q = 2$),
+\origpage{298}
+et le domaine $b_{m}$ à un point ($m = 0$), le domaine $a_{q} b_{m}$ se réduirait à une pyramide ordinaire ayant $a_{q}$ pour base et $b_{m}$ pour sommet.
+
+Toute figure homéomorphe à une pyramide généralisée rectiligne pourra s'appeler pyramide généralisée.
+
+Cela posé, envisageons un élément $a^{q}_{i}$ du polyèdre $P$ et un élément $b^{m}_{j}$ du polyèdre réciproque $P'$; cet élément $b^{m}_{j}$ correspond à un élément $a^{p-m}_{j}$ du polyèdre $P$. Je suppose que l'élément $a^{q}_{i}$ fasse partie de l'élément $a^{p-m}_{j}$; nous aurons donc
+\[ q < p-m; \qquad p \geqq q+m+1. \]
+
+Je remarque de plus que tout point de $b^{m}_{j}$ fera partie de l'un des $a^{p}_{k}$ dont fait partie $a^{p-m}_{j}$, et par conséquent de l'un des $a^{p}_{k}$ dont fait partie $a^{q}_{i}$. Il suffit de le montrer pour les sommets de $b^{m}_{j}$; or, si $b^{0}_{k}$ est l'un de ces sommets, il sera à l'intérieur de $a^{p}_{k}$, et comme $b^{0}_{k}$ appartient à $b^{m}_{j}$, en vertu de la définition même des polyèdres réciproques, $a^{p-m}_{j}$ appartiendra à $a^{p}_{k}$.
+
+Cela posé, nous pouvons à l'intérieur de chacun des $a^{p}_{k}$ définir un système de lignes $L$, tel que par deux points quelconques intérieurs à cet $a^{p}_{k}$ on puisse mener une ligne $L$, et une seule. Le système des lignes $L$ jouit donc des mêmes propriétés qualitatives que le système des lignes droites. Cela tient à ce que $a^{p}_{k}$ est supposé simplement connexe.
+
+Joignons maintenant chacun des points de $b^{m}_{j}$ à chacun des points de $a^{q}_{i}$ par une ligne $L$ située dans celui des $a^{p}_{k}$ auquel appartient à la fois $a^{q}_{i}$ et le point considéré de $b^{m}_{j}$.
+
+L'ensemble de ces lignes $L$ engendrera une figure que j'appellerai $a^{q}_{i} b^{m}_{j}$, qui sera homéomorphe à une pyramide généralisée rectiligne et qui aura $q+m+1 \leqq p$ dimensions.
+
+Quelle sera la frontière de cette variété $a^{q}_{i} b^{m}_{j}$? Supposons que l'on ait les congruences
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h}; \qquad b^{m}_{j} \equiv \Sigma \varepsilon'^{m}_{jk} b^{m-1}. \]\ednote{The last term is printed $b^{m-1}$ without a lower index; $b^{m-1}_{k}$ is meant, as in (7).}
+
+La frontière se composera des pyramides généralisées $a^{q-1}_{h} b^{m}_{i}$\ednote{Printed $b^{m}_{i}$, possibly a $j$ whose descender did not print; the index $j$ is meant, as in (7).} et $a^{q}_{i} b^{m-1}_{k}$, et l'on aura
+\[ a^{q}_{i} b^{m}_{j} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} + \Sigma \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}. \tag{7} \]
+
+Cela ne serait plus vrai si l'on avait $m = 0$. Dans ce cas, en effet, la variété $a^{q}_{i}$ aurait $q = (q+m+1)-1$ dimensions; elle devrait donc
+\origpage{299}
+faire partie de la frontière complète de $a^{q}_{i} b^{m}_{j}$, et la congruence (7) deviendrait
+\[ a^{q}_{i} b^{0}_{j} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{0}_{j} - a^{q}_{i} \tag{7 \textit{bis}} \]
+(les termes en $\varepsilon'$ disparaissant); de même pour $q = 0$ on aurait
+\[ a^{0}_{i} b^{m}_{j} \equiv \Sigma \varepsilon'^{m}_{jk} a^{0}_{i} b^{m-1}_{k} + b^{m}_{j}. \tag{7 \textit{ter}} \]
+
+Des congruences (7), (7~\emph{bis}) et (7~\emph{ter}) se déduisent les homologies
+\[ \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}, \tag{8} \]
+\[ a^{q}_{i} \backsim \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{0}_{j}, \tag{8 \textit{bis}} \]
+\[ b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{0}_{i} b^{m-1}_{k}. \tag{8 \textit{ter}} \]
+
+La congruence (8~\emph{bis}) suppose que $a^{q}_{i}$ fasse partie de $a^{p}_{j}$; c'est celle que nous avons envisagée ailleurs (\textsc{c}, \S~\textsc{x}., p.\ 49, éq.~2).
+
+Supposons maintenant que nous ayons trouvé une congruence de la forme
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \equiv 0. \tag{9} \]
+Je dis que nous pourrons trouver une congruence de la même forme, mais où le nombre $q$ a augmenté d'une unité et le nombre $m$ diminué d'une unité, et cela de telle sorte que les premiers membres des deux congruences soient homologues.
+
+En effet, nous avons identiquement en vertu de (7)
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \equiv \Sigma \lambda_{ij} \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} + \Sigma \lambda_{ij} \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}. \]
+On doit donc avoir (en annulant dans le second membre le coëfficient de $a^{q-1}_{h} b^{m}_{j}$)
+\[ \Sigma_{i} \lambda_{ij} \varepsilon^{q}_{ih} = 0. \]
+On en déduit la congruence
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \equiv \Sigma_{i} \lambda_{ij} \varepsilon^{q}_{ih} a^{q-1}_{h} \equiv 0. \tag{10} \]
+
+Tous les éléments $a^{q}_{i}$ qui figurent dans le premier membre de (10) appartiennent à $a^{p-m}_{j}$; or $a^{p-m}_{j}$ par hypothèse \emph{est simplement connexe}; toute congruence entre ses éléments entraîne donc l'homologie correspondante de sorte que l'on a
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \backsim 0, \]
+d'où
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \equiv \Sigma_{\rho} \mu_{\rho j} a^{q+1}_{\rho}, \]
+les $\mu$ étant des coëfficients entiers et les $a^{q+1}_{\rho}$ étant des éléments appartenant à $a^{p-m}_{j}$.
+
+Or
+\[ \Sigma_{\rho} \mu_{\rho j} a^{q+1}_{\rho} \equiv \Sigma_{\rho i} \mu_{\rho j} \varepsilon^{q+1}_{\rho i} a^{q}_{i}. \]
+On a donc
+\[ \lambda_{i} = \Sigma_{\rho} \mu_{\rho j} \varepsilon^{q+1}_{\rho i}. \]\ednote{Printed $\lambda_{i}$; elsewhere in this argument the coefficients carry two indices, $\lambda_{ij}$.}
+\origpage{300}
+
+La congruence (9) peut alors s'écrire
+\[ \Sigma \mu_{\rho j} \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{m}_{j} \equiv 0 \]
+(la sommation s'étend aux trois indices $\rho, i, j$).
+
+Or nous pouvons former l'homologie suivante qui n'est autre que l'une des homologies (8)~:---
+\[ \Sigma \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{q+1}_{\rho} b^{m-1}_{k}. \tag{11} \]
+On a alors
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \backsim -\Sigma \mu_{\rho j} \varepsilon'^{m}_{jk} a^{q+1}_{\rho} b^{m-1}_{k}, \]
+ce qui démontre le théorème énoncé.
+
+Le cas de $m = 0$ est, bien entendu, laissé de côté et doit être traité à part. Dans ce cas l'homologie (11) doit être remplacée par la suivante qui est l'une des homologies (8~\emph{bis})~:---
+\[ \Sigma \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{0}_{j} \backsim a^{q+1}_{\rho}, \tag{11 \textit{bis}} \]
+d'où
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{0}_{j} \backsim \Sigma \mu_{\rho j} a^{q+1}_{\rho}. \]
+
+Donc à la congruence
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{0}_{j} \equiv 0 \tag{9 \textit{bis}} \]
+correspondra la congruence
+\[ \Sigma \mu_{\rho j} a^{q+1}_{\rho} \equiv 0 \]
+qui est de la forme (1), et les premiers membres de ces deux congruences seront homologues.
+
+Soit maintenant
+\[ \Sigma \lambda_{j} b^{q}_{j} \equiv 0 \tag{2} \]
+une congruence de la forme (2); on aura par une homologie analogue à (8~\emph{ter})
+\[ b^{q}_{j} \backsim -\Sigma \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k}, \]
+si $b^{p-1}_{i}$ est l'un des éléments de $P'$ auquel appartient $b^{q}_{i}$.\ednote{Printed $b^{p-1}_{i}$ and $b^{q}_{i}$; the display above has $b^{q}_{j}$, and the element of $P'$ corresponding to the vertex $a^{0}_{i}$ is $p$-dimensional.}
+
+Nous avons donc l'homologie
+\[ \Sigma \lambda_{j} b^{q}_{j} \backsim -\Sigma \lambda_{j} \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k}, \]
+de sorte qu'à notre congruence (2) correspondra une congruence
+\[ -\Sigma \lambda_{j} \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k} \equiv 0 \tag{12} \]
+dont le premier membre est homologue à celui de (2).
+
+Si donc nous avons une congruence de la forme (2), nous en déduirons la congruence (12), qui est une congruence de la forme (9), où les nombres que nous appelions plus haut $q$ et $m$ ont respectivement pour valeurs 0 et $q-1$. Nous en déduirons ensuite une autre
+\origpage{301}
+congruence également de la forme (9), mais où ces deux nombres auront pour valeurs 1 et $q-2$, et ainsi de suite; on finira par arriver à une congruence de la forme (9~\emph{bis}), c'est-à-dire à une congruence où ces deux nombres auront pour valeurs $q-1$ et 0; et nous en déduirons alors finalement une congruence de la forme (1).
+
+Les premiers membres de toutes ces congruences seront homologues entre eux.
+
+Le théorème énoncé au début de ce paragraphe se trouve ainsi démontré.
+
+Pour en tirer toutes les conséquences qu'il comporte, nous devons remarquer ceci~: Nous devons distinguer plusieurs sortes d'homologies. Soit $v_{q}$ une variété quelconque à $q$ dimensions faisant partie de notre variété $v$, et $v_{q-1}$ sa frontière complète, ce qui s'exprime par la congruence
+\[ v_{q} \equiv v_{q-1}. \]
+Nous en déduisons l'homologie
+\[ v_{q-1} \backsim 0. \]
+Les homologies ainsi obtenues sont les homologies fondamentales.
+
+En combinant les homologies fondamentales par addition, soustraction et multiplication, on en obtient d'autres qui sont les \emph{homologies sans division}. Enfin, en les combinant par addition, multiplication et division, on en obtient encore d'autres qui sont les \emph{homologies par division}.
+
+Eh bien, \emph{toutes les homologies que nous avons rencontrées dans ce paragraphe sont des homologies sans division}.
+
+Cela posé, revenons à nos tableaux $T_{q}$ et $T'_{q}$ et à leurs invariants, et en particulier à ceux de ces invariants qui ne sont égaux ni à 0, ni à 1, et que nous appellerons \emph{coëfficients de torsion}.
+
+Supposons que nous ayons l'homologie suivante~:---
+\[ \Sigma k \lambda_{i} a^{q}_{i} \backsim 0, \tag{13} \]
+où les $\lambda_{i}$ sont des entiers premiers entre eux; que (13) soit une homologie sans division, mais que l'homologie
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim 0 \tag{14} \]
+ne puisse être obtenue que par division. D'après ce que nous avons vu dans l'un des paragraphes précédents, cela voudra dire que $k$ est l'un des coëfficients de torsion du tableau $T_{q}$.
+
+Nous aurons la congruence
+\[ \Sigma \lambda_{i} a^{q}_{i} \equiv 0. \tag{14 \textit{bis}} \]
+\origpage{302}
+
+De (14~\emph{bis}) nous pourrons, par le procédé de ce paragraphe, déduire une congruence entre les $b^{q}_{i}$ que j'écrirai
+\[ \Sigma \mu_{i} b^{q}_{i} \equiv 0. \tag{14 \textit{ter}} \]
+
+On aurait d'ailleurs, d'après le théorème que nous venons d'établir,
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim \Sigma \mu_{i} b^{q}_{i}. \]
+C'est là une homologie sans division, et on en déduirait immédiatement, également sans division,
+\[ \Sigma k \lambda_{i} a^{q}_{i} \backsim \Sigma k \mu_{i} b^{q}_{i}. \]
+De là on déduit que l'on a, sans division,
+\[ \Sigma k \mu_{i} b^{q}_{i} \backsim 0, \]
+et que l'on n'a pas, sans division,
+\[ \Sigma \mu_{i} b^{q}_{i} \backsim 0, \]
+sans quoi l'on aurait, sans division,
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim 0, \]
+ce qui est contraire à l'hypothèse.
+
+Cela veut dire que $k$ est un coëfficient de torsion du tableau $T'_{q}$.
+
+Ainsi les coëfficients de torsion des deux tableaux $T_{q}$ et $T'_{q}$ sont égaux (la démonstration est aisée à compléter), et, si l'on observe que les deux tableaux $T'_{q}$ et $T_{p-q}$\ednote{Printed $T_{p-q}$. On p.\ 280 the tableau $T'_{q}$ is obtained from $T_{p-q+1}$ by exchanging rows and columns, which would give $T_{p-q+1}$ here.} ont mêmes invariants, on conclura que \emph{les tableaux également distants des extrêmes ont mêmes coëfficients de torsion}.
+
+On pourrait arriver au même résultat par une autre voie.
+
+Nous avons vu dans un des mémoires antérieurs (\S~16) définir l'opération que nous avons appelée l'annexion; je suppose que deux éléments d'un polyèdre, par exemple $a^{q}_{i}$ et $a^{q}_{j}$, soient séparés l'un de l'autre par un élément $a^{q-1}_{k}$, que ce soit le seul élément à $q-1$ dimensions commun à $a^{q}_{i}$ et à $a^{q}_{j}$, et enfin que $a^{q-1}_{k}$ n'appartienne à aucun élément à $q$ dimensions en dehors de $a^{q}_{i}$ et de $a^{q}_{j}$; on aura donc $\varepsilon^{q}_{ik} = 1$, $\varepsilon^{q}_{jk} = -1$; tous les autres $\varepsilon^{q}_{hk}$ seront nuls quel que soit l'indice $h$, de même que tous les produits $\varepsilon^{q}_{ih} \varepsilon^{q}_{jh}$.
+
+Dans ces conditions, on peut annexer l'un à l'autre les deux éléments $a^{q}_{i}$ et $a^{q}_{j}$ en supprimant l'élément $a^{q-1}_{k}$. Quel est l'effet de cette opération sur nos tableaux $T_{q}$? Le tableau $T_{q}$ perd une ligne et une colonne; le tableau $T_{q-1}$ perd une ligne. L'un des invariants égaux à 1 de $T_{q}$ disparaît; quant au tableau $T_{q-1}$, il perd un invariant s'il n'a
+\origpage{303}
+pas plus de lignes que de colonnes; dans ce cas, l'invariant qu'il perd est égal à zéro. Tous les autres invariants des deux tableaux ne changent pas; ces deux tableaux conservent donc leurs coëfficients de torsion.
+
+Or il est aisé de former un polyèdre dérivé à la fois de $P$ et de $P'$; on pourrait ensuite remonter de ce polyèdre soit à $P$, soit à $P'$, par des annexions régulières. Comme ces annexions n'altèrent pas les coëfficients de torsion, les tableaux $T_{q}$ et $T'_{q}$ doivent avoir mêmes coëfficients de torsion.
+
+\subsection*{6. Torsion intérieure des variétés.}
+
+Considérons l'un de nos tableaux $T_{q}$. Nous dirons qu'une suite d'éléments, tous distincts, de ce tableau, rangés dans un certain ordre forme une \emph{chaîne}, si chaque élément de rang impair appartient à la même ligne que l'élément suivant et à la même colonne que l'élément précédent. La chaîne sera \emph{fermée} si le dernier élément est identique au premier. Il est clair qu'une chaîne fermée contiendra toujours un nombre impair d'éléments et un nombre pair d'éléments \emph{distincts}. Par exemple, les éléments
+\[ \varepsilon^{q}_{11}, \varepsilon^{q}_{12}, \varepsilon^{q}_{22}, \varepsilon^{q}_{23}, \varepsilon^{q}_{33}, \varepsilon^{q}_{31}, \varepsilon^{q}_{11} \tag{1} \]
+formeront une chaîne fermée.
+
+Comme tous les éléments du tableau $T_{q}$ sont égaux à 0, $+1$ ou $-1$, le produit des éléments distincts d'une chaîne fermée sera toujours 0, $+1$ ou $-1$.
+
+Supposons que les éléments de la chaîne (1) aient les valeurs suivantes~:---
+\[ \varepsilon^{q}_{12} = \varepsilon^{q}_{23} = \varepsilon^{q}_{31} = 1, \qquad \varepsilon^{q}_{11} = \varepsilon^{q}_{22} = \varepsilon^{q}_{33} = -1; \]
+le produit des éléments de la chaîne sera $-1$; considérons alors les trois variétés $a^{q}_{1}, a^{q}_{2}, a^{q}_{3}$, et les trois variétés $a^{q-1}_{1}, a^{q-1}_{2}, a^{q-1}_{3}$; en supprimant les variétés $a^{q-1}_{1}, a^{q-1}_{2}$ et $a^{q-1}_{3}$, on annexe les unes aux autres les trois variétés $a^{q}_{1}, a^{q}_{2}$ et $a^{q}_{3}$, et la variété ainsi obtenue
+\[ a^{q}_{1} + a^{q}_{2} + a^{q}_{3} \]
+\emph{est une variété bilatère}.
+
+Si, au contraire, nous avons
+\[ \varepsilon^{q}_{12} = \varepsilon^{q}_{23} = \varepsilon^{q}_{31} = 1, \qquad \varepsilon^{q}_{22} = \varepsilon^{q}_{33} = -1, \qquad \varepsilon^{q}_{11} = 1, \]
+on pourra encore supprimer $a^{q-1}_{1}, a^{q-1}_{2}$ et $a^{q-1}_{3}$ et obtenir par annexion la variété $a^{q}_{1} + a^{q}_{2} + a^{q}_{3}$; mais \emph{cette variété sera unilatère}.
+
+Plus généralement, si tous les éléments de la chaîne (1) sont égaux
+\origpage{304}
+à $+1$ et à $-1$, nous supprimerons d'abord $a^{q-1}_{2}$ et $a^{q-1}_{3}$; nous obtiendrons ainsi par annexion la variété
+\[ a^{q}_{1} - \varepsilon^{q}_{12} \varepsilon^{q}_{22} a^{q}_{2} + \varepsilon^{q}_{12} \varepsilon^{q}_{22} \varepsilon^{q}_{13} \varepsilon^{q}_{23} a^{q}_{3}. \tag{2} \]\ednote{Printed $\varepsilon^{q}_{13} \varepsilon^{q}_{23}$ in the last term. The elements of the chain (1) that join $a^{q}_{2}$ to $a^{q}_{3}$ through $a^{q-1}_{3}$ are $\varepsilon^{q}_{23}$ and $\varepsilon^{q}_{33}$, and the annexion requires the coefficient $\varepsilon^{q}_{12} \varepsilon^{q}_{22} \varepsilon^{q}_{23} \varepsilon^{q}_{33}$; apparently a misprint.}
+Supprimant ensuite $a^{q-1}_{1}$, nous voyons que la variété (2) est désormais formée d'une chaîne fermée de $a^{q}_{i}$ au sens du paragraphe 8 (p.\ 26) de l'“Analysis Situs,” et que cette chaîne est bilatère ou unilatère selon que le produit des éléments distincts de la chaîne (1) est égal à $-1$ ou à $+1$.
+
+Nous dirons dans le premier cas que la chaine (1) est bilatère, dans le second cas qu'elle est unilatère.
+
+Nous sommes donc conduits à distinguer trois catégories parmi les chaînes fermées formées à l'aide d'éléments des tableaux $T_{q}$~:
+
+1° Les chaînes \emph{nulles}, c'est-à-dire celles dont le produit des éléments est nul.
+
+2° Les chaînes \emph{bilatères}.
+
+Il est aisé de voir que ce sont celles dont le produit des éléments est $+1$ si le nombre des éléments est multiple de 4, ou celles où ce produit est $-1$ si le nombre des éléments est multiple de 4 plus 2.
+
+3° Les chaînes \emph{unilatères}.
+
+Ce sont celles où ce produit est $-1$ si le nombre des éléments est multiple de 4, ou $+1$ si ce nombre est multiple de 4 plus 2.
+
+Cela posé, nous dirons que le tableau $T_{q}$ (ou plus généralement tout tableau ou tout déterminant dont tous les éléments sont 0, $+1$ ou $-1$) est \emph{bilatère} s'il ne contient que des chaînes nulles ou bilatères.
+
+Il résulte de cette définition~:
+
+1° Qu'un tableau bilatère reste bilatère si l'on change tous les signes d'une colonne, ou tous les signes d'une ligne; ou encore si l'on permute deux colonnes ou deux lignes.
+
+\emph{Théorème.}---Un déterminant bilatère ne peut être égal qu'à 0, $+1$ ou $-1$.
+
+En effet, on peut toujours, en changeant au besoin tous les signes de certaines colonnes, s'arranger de façon que tous les éléments de la première ligne soient 0 ou $+1$.
+
+Supposons, par exemple, que les deux premiers éléments de la première ligne soient égaux à $+1$, et que je retranche la première colonne de la seconde, la valeur du déterminant ne sera pas changée; je dis que le déterminant restera bilatère.
+
+Considérons, en effet, dans le déterminant primitif une chaîne dont le premier et le dernier élément appartiennent à la deuxième colonne
+\origpage{305}
+et tous les autres éléments à d'autres colonnes. Soient $a$ et $c$ ce premier et ce dernier élément; soit $\xi$ le produit de tous les autres éléments de la chaîne; soient $b$ et $d$ les éléments de la première colonne qui sont respectivement dans la même ligne que $a$ et $c$.
+
+Le produit des éléments de notre chaîne que j'appellerai la chaîne (1) sera $ac\xi$, et nous aurons
+\[ \begin{aligned} &ac\xi = 0 \text{ ou } 1 \qquad \text{si le nombre des éléments} \equiv 0 \qquad (\text{mod}\ 4),\\ &ac\xi = 0 \text{ ou } -1 \qquad \text{,,} \qquad \text{,,} \qquad \text{,,} \qquad \equiv 2 \qquad (\text{mod}\ 4). \end{aligned} \]
+
+Le produit des éléments de la chaîne que j'appellerai (2) et qui est formée avec les éléments correspondants du déterminant nouveau sera
+\[ (a-b)(c-d)\xi, \]
+et, en effet, les éléments de notre chaîne ne changent pas, excepté les éléments $a$ et $c$ qui deviennent $a-b$ et $c-d$.
+
+La chaîne formée dans le déterminant primitif par les deux éléments de la première ligne et par les éléments $a$ et $b$ doit être bilatère, de sorte qu'on doit avoir
+\[ a-b = 0 \qquad \text{ou} \qquad a = 0 \qquad \text{ou} \qquad b = 0. \]
+
+On doit avoir de même
+\[ c-d = 0 \qquad \text{ou} \qquad c = 0 \qquad \text{ou} \qquad d = 0. \]
+
+Si $(a-b)$ ou $(c-d)$ est nul, le théorème est démontré puisque le produit $(a-b)(c-d)\xi = 0$.
+
+Si $b = d = 0$, on a
+\[ (a-b)(c-d)\xi = ac\xi, \]
+et le théorème est démontré puisque les deux produits des chaînes (1) et (2) sont les mêmes, que le nombre des éléments est le même et que (1) est bilatère ou nulle.
+
+Si $a = c = 0$, on a
+\[ (a-b)(c-d)\xi = bd\xi. \]
+
+La chaîne (3) qui appartient au déterminant primitif, et qui a mêmes éléments que la chaîne (1), sauf que $a$ et $c$ sont remplacés par $b$ et $d$---cette chaîne (3), dis-je, est bilatère ou nulle; elle a même nombre d'éléments que (2) et son produit est $bd\xi$, égal dans ce cas au produit de (2). Donc, dans ce cas encore, la chaîne (2) est bilatère ou nulle.
+
+Si $a = d = 0$, on a
+\[ (a-b)(c-d)\xi = -bc\xi. \]
+
+Il faut cette fois considérer dans le déterminant primitif une
+\origpage{306}
+chaîne (4) dont les éléments seront les deux éléments de la première ligne, les éléments $b$ et $c$ et les éléments de la chaîne (1), sauf $a$ et $c$. Cette chaîne (4) doit être bilatère ou nulle.
+
+Elle contient deux éléments de plus que la chaîne (2).
+
+Son produit est égal à $bc\xi$ et, par conséquent, égal et de signe contraire au produit de (2).
+
+Donc (2) est bilatère ou nulle.
+
+Si, enfin, $b = c = 0$, on a
+\[ (a-b)(c-d)\xi = -ad\xi, \]
+et on démontrerait, tout à fait comme dans le cas précédent, que la chaîne (2) est bilatère ou nulle.
+
+Nous venons de traiter le cas des chaînes dont deux éléments appartiennent à la seconde colonne. Le résultat est le même quel que soit le nombre des éléments appartenant à la seconde colonne, nombre qui d'ailleurs doit être toujours pair.
+
+Si ce nombre est nul, le théorème est évident, car la chaîne du déterminant nouveau ne diffère pas de celle du déterminant primitif.
+
+Supposons que ce nombre soit 4, pour fixer les idées. Soient $a, c, e, g$ quatre éléments de la seconde colonne, et imaginons que l'on rencontre successivement l'élément $a$, divers éléments $\xi$ appartenant à d'autres colonnes, les éléments $c$ et $e$, divers éléments $\eta$ appartenant à d'autres colonnes, et enfin $g$. Notre chaîne sera fermée.
+\[ a\xi ce\eta ge \]\ednote{Printed $a\xi ce\eta ge$. A closed chain ends on its first element, and the chain is decomposed below into $a\xi ca$ and $e\eta ge$, which would suggest $a\xi ce\eta ga$; apparently a misprint.}
+peut se décomposer en deux chaînes fermées
+\[ a\xi ca, \qquad e\eta ge, \]
+et, pour qu'elle soit bilatère, il suffit que les deux composantes le soient. On est donc ramené au cas des chaînes n'ayant que deux éléments dans la seconde colonne.
+
+J'ajouterai que tous les éléments du déterminant nouveau sont 0, $+1$ ou $-1$. En effet, comme on a
+\[ a-b = 0 \qquad \text{ou} \qquad a = 0 \qquad \text{ou} \qquad b = 0, \]\ednote{The middle of the minus in $a-b$ did not print; it shows as two short dashes.}
+on aura
+\[ a-b = 0, \qquad a \qquad \text{ou} \qquad -b, \]
+d'où
+\[ a-b = 0, \qquad 1 \qquad \text{ou} \qquad -1. \]
+
+Cela posé, retranchons de cette façon la première colonne de toutes les colonnes dont le premier élément est $+1$. Le déterminant conservera sa valeur; il restera bilatère; mais tous les éléments de la première ligne seront nuls, sauf le premier qui sera $+1$.
+\origpage{307}
+
+Ce raisonnement est applicable dans tous les cas, sauf si tous les éléments de la première ligne sont nuls; mais alors le déterminant est nul et le théorème est évident.
+
+Si maintenant on supprime la première ligne et la première colonne, on obtiendra un déterminant nouveau qui sera égal au premier et, comme lui, bilatère. Sur ce déterminant nouveau, qui a une ligne et une colonne de moins que le premier, on opérera de la même façon, et on finira par arriver à un déterminant qui n'aura plus qu'un seul élément, lequel devra être 0, $+1$ ou $-1$.
+
+Notre déterminant est donc égal à 0, $+1$ ou $-1$.
+
+1\textsuperscript{er} \emph{Corollaire.}---Si un tableau $T_{q}$ est bilatère, ses invariants sont tous 0 ou 1.
+
+2\textsuperscript{e} \emph{Corollaire.}---Si un polyèdre a tous ses tableaux $T_{q}$ bilatères, c'est-à-dire si on ne peut pas composer avec ses éléments $a^{q}_{i}$ une variété unilatère, ce polyèdre n'a pas de coëfficients de torsion.
+
+On voit que l'existence des coëfficients de torsion (qui nécessite la distinction entre les deux définitions des nombres de Betti, ou entre les homologies par division ou sans division) est due à ce fait que les éléments du polyèdre peuvent engendrer des variétés unilatères, c'est-à-dire que le polyèdre est pour ainsi dire tordu sur lui-même.
+
+C'est ce qui justifie l'expression de coëfficients de torsion, ou celle de variétés avec ou sans torsion.
+
+Si la variété $V$ formée par l'ensemble des éléments $a^{p}_{i}$ du polyèdre $P$ n'est pas elle-même unilatère, les deux tableaux $T_{1}$ et $T_{p}$ sont bilatères.
+
+En effet, chaque ligne pour l'un, chaque colonne pour l'autre a tous ses éléments nuls, sauf deux qui sont égaux à $+1$ et $-1$. Si donc une chaîne n'est pas nulle, ses éléments sont deux à deux égaux et de signe contraire; elle est donc bilatère.
+
+Il résulte de là que les tableaux extrêmes $T_{1}$ et $T_{p}$ ont tous leurs invariants égaux à 0 ou à 1. C'est ce qui explique pourquoi l'on ne rencontre pas les coëfficients de torsion avec les polyèdres de l'espace ordinaire; ces polyèdres ne comportent en effet que deux tableaux $T_{1}$ et $T_{2}$.
+
+Cela ne serait plus vrai si la variété $V$ était unilatère. Ainsi la variété considérée au septième exemple (\S~15, p.\ 87) peut être subdivisée en polyèdre, et, suivant la manière dont la subdivision se fait, on trouve pour le tableau $T_{2}$
+\[ \begin{vmatrix} 2 \end{vmatrix}, \qquad \begin{vmatrix} +1 & +1 \\[1ex] +1 & -1 \end{vmatrix}, \qquad \ldots \]
+\origpage{308}
+
+Pour ne pas trop allonger ce travail, je me bornerai à énoncer le théorème suivant dont la démonstration demanderait quelques développements~:---
+
+\emph{Tout polyèdre qui a tous ses nombres de Betti égaux à 1 et tous ses tableaux $T_{q}$ bilatères est simplement connexe, c'est-à-dire homéomorphe à l'hypersphère}.
+
+\end{document}

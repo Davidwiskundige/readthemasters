@@ -1,0 +1,85 @@
+id: poincare-1900-second-complement-analysis-situs
+title: Second Complément à l'Analysis Situs.
+title_en: Second supplement to Analysis situs.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare  # https://mathshistory.st-andrews.ac.uk/Biographies/Poincare/
+publication:
+  year: 1900
+  venue: proc-lms
+  volume: '32'
+  pages: 277–308
+  title_full: '"Second Complément à l''Analysis Situs", Proceedings of the London
+    Mathematical Society, vol. XXXII (January 1900 to June 1900), pp. 277–308 (read
+    June 14th, 1900).'
+edition:
+  year: 1900
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original printing in the Proceedings of the London
+    Mathematical Society, vol. XXXII, pp. 277–308, as digitized on the Internet Archive
+    (london-mathematical-society-proceedings_1901_32, leaves 285–316). A faithful
+    photographic reproduction of a public-domain edition, carrying no modern critical
+    apparatus, commentary, or re-typesetting. Only Poincaré's own text is transcribed;
+    running heads, and the end of the preceding paper and the start of the following
+    one on the shared pages, are not.
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: fr
+type: paper
+relations:
+- to: poincare-1899-complement-analysis-situs
+  kind: builds-on
+  recommended: primary
+  note: The Second complément continues the first, whose polyhedral schéma, reduced
+    Betti numbers and tableaux it takes up.
+- to: poincare-1895-analysis-situs
+  kind: builds-on
+  note: The memoir of 1895 that both complements correct and complete.
+external_translations:
+- language: en
+  title: 'Second supplement to Analysis situs (in Papers on Topology: Analysis Situs
+    and Its Five Supplements)'
+  translator: John Stillwell
+  year: 2010
+  license: in-copyright
+  url: https://bookstore.ams.org/hmath-37
+source:
+  scan_url: https://archive.org/details/london-mathematical-society-proceedings_1901_32/page/n284/mode/2up
+  scan_id: archive.org:london-mathematical-society-proceedings_1901_32 (Proc. London
+    Math. Soc. vol. XXXII, pp. 277–308)
+sources:
+  death_date: wikidata:Q81082
+  publication_date: archive.org:london-mathematical-society-proceedings_1901_32 (title
+    page "January, 1900, to June, 1900", volume issued 1901; running head of pp. 278–306
+    "[June 14, 1900", the meeting at which the paper was read)
+  edition: archive.org:london-mathematical-society-proceedings_1901_32 (Proc. London
+    Math. Soc. vol. XXXII, pp. 277–308)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1900
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-30'
