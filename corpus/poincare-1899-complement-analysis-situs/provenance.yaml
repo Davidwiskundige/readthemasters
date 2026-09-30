@@ -1,0 +1,75 @@
+changelog:
+  - date: "2026-09-30"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-30"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-09-30"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Complément à l'Analysis situs", Rendiconti del Circolo Matematico di Palermo,
+    tomo XIII (1899), pp. 285–343. COMPLETE: every printed page is transcribed; \origpage markers
+    run 285–343 with no gaps or duplicates; pipeline/houselint.py and the site's KaTeX math lint
+    (site/scripts/lint-math.mjs) pass. The paper has no figures.
+
+
+    HOW THIS WAS PRODUCED. Scans are Google's digitization of the volume on the Internet Archive
+    (rendicontidelci05palegoog), taken from the item's full-resolution TIFF set, leaves 294–352
+    (about 3400x5580 per page, bilevel). The scan is tall (aspect 1:1.65): at one prepared image
+    per page the 1568px cap left 688–1062px of text width and prepare_pages.py warned on 49 of
+    the 59 pages, so every page was split instead into OVERLAPPING LANDSCAPE HALF-PAGE CROPS
+    (top/bottom, ~140px of shared lines), each at the full 1568px width, with its own zoom map so
+    pipeline/magnify.py still worked on either half. Read the flag count in that light: it records
+    legibility bought by the split and by magnification. Transcription ran in five sequential
+    batch subagents (12/12/12/12/11 pages) sharing notation.md, which was seeded from
+    poincare-1895-analysis-situs, since the Complément continues that memoir's notation. The
+    assembled text was then proofread as text (no scans), and its questions were handed to fifteen
+    concurrent 4-page scan verifiers, which corrected the fragments in place.
+
+
+    SCAN DEFECTS, ALL IN THE SOURCE, NOT THE CROPS. (1) Pages 292, 294, 296 and 318 are, in
+    Google's scan, small greyscale images of about 1021x1585 (text width ~780–870px) and slightly
+    clipped at the right edge; magnification cannot add resolution there. (2) Several pages are
+    clipped at the gutter or outer edge (e.g. 301, 304, 314, 316, 343); a clipped word was
+    restored only where context made it certain, else flagged. (3) Binarization dropout destroys
+    the foot of p. 319 and much of p. 332, and fades the last lines of p. 326.
+
+
+    COLLATED WITH THE OFFPRINT FOR THE DAMAGED PAGES. After verification 14 \uncertain spans
+    remained, all on pp. 304, 319, 326 and 332. These were settled against a second copy: the
+    author's offprint ("Estratto dal t. XIII (1899) dei Rendiconti del Circolo Matematico di
+    Palermo", Wellesley College Library copy, Internet Archive complmentlanalys00poin, 400 ppi
+    greyscale), printed from the same type and repaginated from 1 (journal p. N = offprint p.
+    N − 284). pp. 319 and 332 were re-read against it in full. The collation cleared all 14 flags
+    and corrected readings that the damaged journal scan had led astray: on p. 332 "$H_{i}$" is
+    $\zeta^{2}_{i,i}$, "Nous aurons néanmoins" is "Dans ce cas, on aura néanmoins", and two
+    punctuation marks changed; on p. 304 a comma after "(1)". It also exposed three new points
+    now carrying an \ednote: p. 319 prints a prime-like mark where $b^{1}_{i}$ is required (possibly
+    a broken 1), p. 326 prints $N_{2}$ once where $N'_{2}$ is required, and p. 332's rule deletes
+    "$p$ lignes et $N_{2} - N_{3} + p$ colonnes", the reverse of the preceding prose (stated
+    neutrally). The transcribed edition remains the journal; the offprint served only to read
+    what the journal scan could not show.
+
+
+    PRINTER'S ERRORS are reproduced and marked with \ednote (R4/R29), 31 notes in all. Among them:
+    Heegaard's title is cited as printed ("…teori för de algebraiske Sammenhäng", without
+    "Fladers"); p. 288 v_{q+3} for v_{q+2} in the footnote erratum; p. 292, the index of the face
+    in the text (a^{p-1}_i) and in the display (ε^p_{i,1}) disagree, noted neutrally; p. 300
+    α'_0 = 0 for 1; p. 312–313 the portions of S and S' are both named S_1; p. 318 a^3_p for
+    a^3_q; p. 320 d_{k-1}; p. 329 ε^3_{i,j} for ε^3_{j,i}; p. 331 ξ for ζ; p. 336 − for + before
+    β^p_2; p. 340 "rayon" for "région". Readings that are odd but not evidently wrong are kept
+    without a note (e.g. p. 341 "variété à p − 1 dimensions", p. 342 "cela en seraient"). Spellings of the edition are kept (connaitre,
+    separées, élements, contigües, 1ème).
+
+
+    FOOTNOTES follow R15 (in-text call ${}^{(*)}$, note at the end of its page led by
+    \textbf{(*)}); the note on p. 329, a page ending mid-sentence, sits at that page's last
+    paragraph break so that no sentence is split (recorded in notation.md).
