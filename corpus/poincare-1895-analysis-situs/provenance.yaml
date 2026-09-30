@@ -1,0 +1,71 @@
+changelog:
+  - date: "2026-09-30"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-30"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-09-30"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Analysis situs", Journal de l'École Polytechnique, 2e série, 1er cahier
+    (1895), pp. 1–121. COMPLETE: every printed page of the memoir is transcribed. \origpage
+    markers run 1–121 with no gaps or duplicates; pipeline/houselint.py passes; the mechanical
+    checks (display pairing, environment pairing, \left/\right pairing, $ parity, brace balance
+    per page and whole-file, no hyphen before a page break) pass; and every math span parses
+    under the site's own KaTeX build (site/scripts/lint-math.mjs). The memoir has no figures.
+
+
+    HOW THIS WAS PRODUCED. Scans are the Gallica facsimile (ark:/12148/bpt6k4337198, views
+    f7–f127), downloaded as the native IIIF JPEGs, 1749x2481 per page. One prepared image per page
+    (pipeline/prepare_pages.py): at aspect 1:1.42 the 1568px cap left roughly 1050–1150px of text
+    width, above the 1000px warning line, so half-page crops were not used. Thirty batch subagents
+    transcribed pp. 1–121 sequentially, four pages each (five for pp. 117–121), each reading only
+    its own pages' images plus this work's notation.md and the previous page's fragment; the
+    orchestrating session read no page image. The batch for pp. 5–8 could not magnify (the zoom map
+    had not yet been written); its readings were rechecked with magnification in verification.
+    A scan-free proofread of the assembled file followed, then 30 scan verifiers of four pages
+    each, which settled the proofread's NEEDS SCAN questions against the print and corrected the
+    page fragments in place.
+
+
+    THE SCAN LOSES HAIRLINES. At 1749px the thin minus of an index (p-1, q-2, n-p) and the period
+    of a double index (\beta_{\lambda.p}) drop out systematically — 15 times on pp. 101–104
+    alone. Where a gap stands in their place and the index sequence requires them they are written
+    in without a note (notation.md). Full-size signs that lost strokes (=, \equiv, -, \pm) are
+    written as the sign with an \ednote. The page crop cut off one short last line, at the foot of
+    p. 12 ("…inéga-/lités."); a crop-edge check over all 121 pages found it and one other
+    (p. 50, already correct), and it was read from the raw scan.
+
+
+    UNCERTAINTY FLAGS: 0. Verification left two, both settled by the contributor at review: p. 18
+    "(q ≦ p)", where the print shows < with one short stroke under it, is written \leqq like the
+    three clear ≦ on p. 45; p. 77 "C'_{1} et C_{2}" prints no prime on C_2 where the context needs
+    C'_2, so it is kept as printed with an \ednote.
+
+
+    PRINTER'S ERRORS. About 75 apparent misprints are reproduced as printed, each with a hedged
+    \ednote at the place ("Printed …; apparently for …"), and every one was confirmed against the
+    print under magnification in verification. Among them: p. 28 "restera unilatère" (apparently
+    bilatère); p. 51, system (3) repeats (2) letter for letter; pp. 49, 59 BDD'A' (apparently
+    BDD'B'); p. 68 C_1 + βC_1 (apparently C_3 + βC_1); p. 84 2n/n (apparently 2π/n); pp. 105–106
+    the face-count formulas for the simplex and cube, which disagree with their own printed
+    special cases; p. 96 "distincts des extrêmes" (apparently distants); p. 107 "pair ou impair"
+    reversed; p. 121 a + where the alternating sum needs −. Kept as printed with no note, as not
+    clear-cut: p. 68 "holomorphe", p. 69 "ne sont pas distinctes", p. 89 "cette droite" of a
+    circle, and the repeated sentence on p. 105.
+
+
+    CONVENTIONS. Poincaré's homology sign is the reversed tilde, written \backsim; face and contour
+    identifications are \equiv; the stacked >/< sign is \gtrless, as printed. Orthography is the
+    edition's (unaccented capital A for À in running text, both "Équivalences" and "Equivalences");
+    headings set in capitals are normalized to sentence case with their accents restored. Emphasis
+    was identified by eye, a best-effort pass. The full set of cross-page decisions is in
+    notation.md.
