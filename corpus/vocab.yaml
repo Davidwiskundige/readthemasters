@@ -296,6 +296,18 @@ venues:
     archives:
       - label: "Internet Archive"
         url: "https://archive.org/search?query=Proceedings+of+the+London+Mathematical+Society"
+  bull-smf:
+    name: "Bulletin de la Société Mathématique de France"
+    aka: "Bull. Soc. Math. France"
+    founded: 1872
+    place: "Paris"
+    publisher: "Société Mathématique de France"
+    note: >-
+      The journal of the Société Mathématique de France, founded in 1872, which printed the
+      memoirs and communications presented at the Society's sessions.
+    archives:
+      - label: "NUMDAM"
+        url: "https://www.numdam.org/journals/BSMF/"
   journal-ecole-polytechnique:
     name: "Journal de l'École Polytechnique"
     aka: "J. Éc. Polytech."

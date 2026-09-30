@@ -1,0 +1,66 @@
+changelog:
+  - date: "2026-09-30"
+    summary: Transcription added (AI draft).
+  - date: "2026-09-30"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5-5
+    effort: low
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-30"
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-30"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-09-30"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Sur certaines surfaces algébriques. Troisième complément à l'Analysis sitûs",
+    Bulletin de la Société Mathématique de France, tome 30 (1902), pp. 49–70. COMPLETE: every
+    printed page of the paper is transcribed; \origpage markers run 49–70 with no gaps or
+    duplicates. The journal's section rubric "MÉMOIRES." above the title, running heads, page
+    numbers and signature marks are not transcribed. Two figures (Fig. 1, p. 63; Fig. 2, p. 66) are
+    cropped from the scan, without their printed labels, as figures/fig-01.png and fig-02.png.
+    pipeline/houselint.py and the site's KaTeX math lint pass.
+
+
+    HOW THIS WAS PRODUCED. Scans are NUMDAM's 600 dpi bilevel digitization
+    (doi:10.24033/bsmf.657), extracted losslessly from the PDF. The pages are tall (aspect about
+    1:1.53 after cropping): at one prepared image per page the 1568px cap left 929–1034px of text
+    width and prepare_pages.py warned on 21 of 22 pages, so every page was split instead into
+    OVERLAPPING LANDSCAPE HALF-PAGE CROPS (top/bottom, ~140 source px of shared lines) at 1568px
+    width, each half with its own zoom map so pipeline/magnify.py worked on either half. Read the
+    zero flag count in that light: it records legibility bought by the split, with little
+    magnification needed (9 regions at transcription, 2 at verification; on p. 55 a verifier whose
+    magnify regions missed their lines settled three readings from upscaled crops of the prepared
+    half-image instead). Transcription ran in two sequential batch subagents (12/10 pages) sharing
+    notation.md, which was seeded from the first two Compléments. The assembled text was proofread
+    as text (no scans), and its questions were handed to six concurrent 4-page scan verifiers,
+    which corrected the fragments in place (prose lists merged into one math span, aligned rows,
+    a control space after "fig."); no reading or paragraph break needed correcting.
+
+
+    PRINTER'S ERRORS are reproduced and marked with \ednote (R4/R29), 7 notes in all: p. 51
+    "équivalent à P" for R; p. 55 "le point ζ, η" for ξ, η; p. 55 "ét" for "et"; p. 55 "genre O"
+    set as a lining capital where the zero is meant; p. 63 "dispositoin". Two notes state a
+    conflict without asserting a correction: p. 61 S″ ≡ S‴, where from p. 65 on the relation is
+    S′ ≡ S″; and p. 65 "la surface z = F(x, y)" against the z = √F(x, y) of (1), which may be the
+    author's own shorthand — a judgement call for the reviewer. Readings that are odd but clearly
+    printed are kept without a note: p. 52 "βξ + αη" (inversion would give −βξ + αη); p. 53 "les
+    2p + 1 substitutions qui changent ξ et η en φ_k, ψ_k, ζ"; p. 62 "x_0, …, x_6" for the singular
+    points; p. 63 "autour de OA_i"; p. 64 "Om′a" (twice) beside the prose's "On′a"; p. 61
+    z² = y² − x² beside p. 67 z² = x² − y²; the equation numbers restart at (1) on p. 64; display
+    (6) on p. 66 carries no final punctuation. Spellings of the edition are kept ("sitûs",
+    "polynome", "A" without accent where so printed beside "À" on p. 60).
