@@ -1,6 +1,18 @@
 changelog:
   - date: "2026-09-30"
     summary: Transcription added (AI draft).
+  - date: "2026-09-30"
+    summary: Translation (en) added (AI draft).
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5-5
+    effort: low
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-30"
 
 transcription:
   status: ai-draft

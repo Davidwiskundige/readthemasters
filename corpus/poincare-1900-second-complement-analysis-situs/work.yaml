@@ -41,6 +41,40 @@ relations:
 - to: poincare-1895-analysis-situs
   kind: builds-on
   note: The memoir of 1895 that both complements correct and complete.
+significance: >-
+  The second of Poincaré's five complements to Analysis situs[1], and the paper that names
+  torsion. The first complement[2] had made homology combinatorial by recording, for a polyhedral
+  subdivision of a manifold, the incidence numbers $\varepsilon^{q}_{ij}$ between its cells in
+  tables $T_{q}$. Here Poincaré asks how far such an integer table can be simplified by adding,
+  subtracting and exchanging its rows and columns, and shows (§ 2) that it can be brought to
+  diagonal form, each diagonal entry dividing the next, these "invariants" being quotients of the
+  greatest common divisors $M_{k}$ of its minors: the normal form now named after H. J. S. Smith.
+  In these terms (§ 3) the Betti number becomes $P_{q} = \alpha_{q} - \gamma_{q+1} - \gamma_{q} +
+  1$, duality follows because the table of the reciprocal polyhedron is the transposed table, and
+  the two definitions of the Betti numbers that the first complement had separated agree exactly
+  when every invariant that is not zero equals 1. Manifolds where some invariant exceeds 1 he calls
+  manifolds with torsion, and those invariants, torsion coefficients. He computes them for the
+  examples of 1895 (§ 4): the third example has invariants 1, 2 and 2, the sixth a 3, Heegaard's
+  a 2. He then proves in every dimension a theorem the first complement had shown only for three,
+  so that tables equally distant from the extremes have the same torsion coefficients (§ 5), and
+  explains the name (§ 6): a table without one-sided chains has only the invariants 0 and 1, so
+  torsion arises only where cells can be assembled into a one-sided manifold, which is why
+  polyhedra in ordinary space never show it. The paper closes by stating without proof that a
+  polyhedron with all its Betti numbers equal to 1 and all its tables two-sided is homeomorphic to
+  the hypersphere, a claim Poincaré himself overturned in the fifth complement[3] with a manifold
+  that has the homology of the sphere and is not simply connected.
+significance_sources:
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique (2) 1 (1895), pp. 1–121, in
+      this corpus.
+    url: "/works/poincare-1895-analysis-situs/"
+  - citation: >-
+      H. Poincaré, "Complément à l'Analysis situs", Rendiconti del Circolo Matematico di Palermo 13
+      (1899), pp. 285–343, in this corpus.
+    url: "/works/poincare-1899-complement-analysis-situs/"
+  - citation: >-
+      H. Poincaré, "Cinquième complément à l'Analysis situs", Rendiconti del Circolo Matematico di
+      Palermo 18 (1904), pp. 45–110.
 external_translations:
 - language: en
   title: 'Second supplement to Analysis situs (in Papers on Topology: Analysis Situs
