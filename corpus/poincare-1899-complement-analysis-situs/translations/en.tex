@@ -1,0 +1,1374 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose (and the prose inside
+% \text{...} inserts, R21) is translated. The editorial notes (\ednote) of the transcription are
+% carried over unchanged, since they are already in English and some carry mathematics.
+%
+% TERMINOLOGY. Poincaré's own terms are rendered literally and consistently, following the
+% English translation of poincare-1895-analysis-situs, which this paper continues:
+%   * variété = "manifold"; variété à p dimensions = "manifold of p dimensions"
+%   * frontière (complète) = "(complete) boundary"; fermée = "closed"; limitée = "limited"
+%   * homologie / congruence / équivalence = "homology" / "congruence" / "equivalence";
+%     nombres de Betti (réduits) = "(reduced) numbers of Betti" / "(reduced) Betti numbers",
+%     following the print's own two word orders
+%   * schéma d'un polyèdre = "scheme of a polyhedron"; polyèdre réciproque = "reciprocal
+%     polyhedron"; polyèdre dérivé = "derived polyhedron"; aster = "aster" (Poincaré's word)
+%   * case / face / arête / sommet = "cell" / "face" / "edge" / "vertex"
+%   * tétraèdre généralisé (rectiligne) = "(rectilinear) generalized tetrahedron"; tronc de
+%     tétraèdre = "trunk of a tetrahedron"; rayon vecteur = "radius vector" (pl. "radii vectores")
+%   * relation directe / inverse = "direct / inverse relation"; variété opposée = "opposite manifold"
+%   * tableau = "table"; its lignes / colonnes = "rows" / "columns"; transformations arithmétiques /
+%     algébriques = "arithmetic / algebraic transformations"; sorte = "sort"
+%   * premier / second membre = "first / second member"; d'un seul tenant = "all of one piece";
+%     limitrophe = "adjacent"; contigu = "contiguous"; bilatère = "two-sided"
+%   * C. Q. F. D. = "Q. E. D."; "M.~X" before a name = "Mr.~X"; "pag." and "loc.\ cit." kept
+%   * the French space before a colon (~:) is set tight, as in English
+%   * Heegaard's Danish, quoted by Poincaré, and the journal's Italian session line are kept
+%     untranslated, as they are quoted in a language other than the author's
+%
+% PRINTER'S ERRORS. The transcription's hedged \ednote on each apparent misprint is carried over
+% verbatim. Where a misprint is a misspelt word whose literal rendering would be meaningless in
+% English (p. 292 "tout" for "tous", p. 303 "identique", p. 310 "cetain", p. 316 "le" for "les",
+% p. 320 "parte", p. 330 "signes" for "lignes", p. 341 "e" for "et", p. 341 "d'autres part"), the
+% intended word is translated and the note records what is printed. Misprints that still make
+% sense in English (p. 340 "rayon" for "région", rendered "ray") are translated as printed, and
+% all misprints inside formulae are, of course, reproduced as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{285}
+\section*{Supplement to Analysis situs;}
+
+By Mr.~H.~Poincaré, in Paris.
+
+\emph{Adunanza del 26 marzo 1899.}
+
+\subsection*{\S~I. Introduction.}
+
+In the Journal de l'École Polytechnique (the volume for the centenary of the founding of the School, 1894) I published a memoir entitled \emph{Analysis situs}, in which I study the manifolds of space of more than three dimensions and the properties of the numbers of \emph{Betti}. It is to this memoir that the references I shall frequently be led to make in what follows will relate, mentioning only the title \emph{Analysis situs}.
+
+In that memoir the following theorem is stated: \emph{For every closed manifold, the Betti numbers equally distant from the extremes are equal}.
+
+The same theorem was stated by Mr.~\emph{Picard} in his \emph{Théorie des fonctions algébriques de deux variables}.
+
+Mr.~\emph{Heegaard} has just returned to this same problem in a very remarkable work, published in the Danish language, under the title «~\emph{Forstudier til en topologisk teori för de algebraiske Sammenhäng}~» (Copenhagen, det Nordiske Forlag Ernst Bojesen, 1898). According to him, the theorem in question is inexact and the proofs are without value.
+
+\origpage{286}
+
+Before examining Mr.~\emph{Heegaard}'s objections, it is proper to make a distinction. There are two ways of defining the numbers of \emph{Betti}.
+
+Let us consider a manifold $V$, which I shall suppose, for example, closed; let $v_{1}, v_{2}, \ldots, v_{n}$ be $n$ manifolds of $p$ dimensions forming part of $V$. I suppose that one cannot find a manifold of $p+1$ dimensions forming part of $V$ of which $v_{1}, v_{2}, \ldots, v_{n}$ constitute the complete boundary; but that, if one adjoins to them an $(n+1)^{\text{th}}$ manifold of $p$ dimensions, which I shall call $v_{n+1}$ and which will form part of $V$, one can find a manifold of $p+1$ dimensions forming part of $V$ of which $v_{1}, v_{2}, \ldots, v_{n}, v_{n+1}$ constitute the complete boundary, \emph{and this in whatever way the $(n+1)^{\text{th}}$ manifold $v_{n+1}$ has been chosen}. In this case, one says that the number of \emph{Betti} is equal to $n+1$ for the manifolds of $p$ dimensions.
+
+This is the definition adopted by \emph{Betti}.
+
+But one can give a second definition.
+
+Let us suppose that one can find in $V$ a manifold of $p+1$ dimensions of which $v_{1}, v_{2}, \ldots, v_{n}$ constitute the complete boundary; I shall express this fact by the following relation:
+\[ v_{1} + v_{2} + \ldots + v_{n} \backsim 0, \]
+which I shall call a \emph{homology}.
+
+It may happen that on the complete boundary of our manifold of $p+1$ dimensions one and the same manifold $v_{1}$ occurs several times; in that case, it will figure in the first member of the homology with a coefficient, which must be an integer.
+
+According to this definition, one can add homologies, subtract them from one another, and multiply them by an integer.
+
+We shall \emph{agree} likewise that it is permitted to divide a homology by an integer when all the coefficients are divisible by that integer. Consequently, if there is a manifold of $p+1$ dimensions whose complete boundary is constituted by 4 times the manifold $v_{1}$, we shall agree that one may write not only the homology:
+\[ 4v_{1} \backsim 0, \]
+\origpage{287}
+but also the homology:
+\[ v_{1} \backsim 0; \]
+so that this homology signifies that there are manifolds of $p+1$ dimensions which admit as complete boundary the manifold $v_{1}$ or a certain number of times this manifold.
+
+The homology
+\[ 2v_{1} + 3v_{2} \backsim 0 \]
+signifies that there are manifolds of $p+1$ dimensions which have as complete boundary 2 times $v_{1}$ and 3 times $v_{2}$, or 4 times $v_{1}$ and 6 times $v_{2}$, or 6 times $v_{1}$ and 9 times $v_{2}$, etc.
+
+Such are the conventions that I adopted in the \emph{Analysis situs}, page 19.
+
+I shall say that several manifolds are independent if they are not connected by any homology with integer coefficients.
+
+If then there are $n$ independent manifolds of $p$ dimensions, the number of \emph{Betti}, according to the second definition, is equal to $n+1$.
+
+This second definition, which is the one I adopted in the \emph{Analysis situs}, does not agree with the first.
+
+The theorem stated above, and criticized by Mr.~\emph{Heegaard}, is true for the numbers of \emph{Betti} defined in the second way, and false for the numbers of \emph{Betti} defined in the first way.
+
+This is what the example cited by Mr.~\emph{Heegaard}, page 86, proves.
+
+If one adopts the first definition, one has:
+\[ P_{1} = 2, \qquad P_{2} = 1 \]
+and consequently
+\[ P_{2} < P_{1}. \]
+
+If one adopts, on the contrary, the second definition, one finds:
+\[ P_{1} = 1, \qquad P_{2} = 1, \]
+and consequently
+\[ P_{2} = P_{1}, \]
+in conformity with the theorem stated.
+
+\origpage{288}
+
+This is what an example that I myself cited in the \emph{Analysis situs} proved as well. It is the 3\textsuperscript{rd} example, page 51. But in referring to this example and to this page of the \emph{Analysis situs}, I must point out a misprint which could trouble the reader${}^{(*)}$.
+
+Instead of
+\[ ABB'A' \equiv DD'C'C, \]
+one must read
+\[ ABB'A' \equiv C'CDD'; \]
+instead of
+\[ AB \equiv B'D' \equiv C'A', \]
+one must read
+\[ AB \equiv B'D' \equiv C'C. \]
+
+We formed (page 66) the fundamental equivalences, which are written in the following way:
+\[ 2C_{1} \equiv 2C_{2} \equiv 2C_{3} \equiv 0, \qquad 4C_{1} \equiv 0; \]
+we can deduce from them the homologies:
+\[ 4C_{1} \backsim 4C_{2} \backsim 4C_{3} \backsim 0. \]
+
+Since, according to our convention, one can divide these homologies by 4, we arrive at the following system of fundamental homologies:
+\[ C_{1} \backsim C_{2} \backsim C_{3} \backsim 0. \]
+
+If then $P_{1}$ and $P_{2}$ are the numbers of \emph{Betti}, \emph{defined in the second way}, one finds
+\[ P_{1} = P_{2} = 1. \]
+
+\textbf{(*)} I take the opportunity to point out another erratum of the \emph{Analysis situs}. At the foot of page 102, one must read: «~or more precisely the two $v_{q+1}$, to which $v_{q}$ will belong, will belong to the same $v_{q+1}$\ednote{Printed $v_{q+1}$; the sequence $v_{q+1}$, $v_{q+3}$, \ldots, $v_{p}$ requires $v_{q+2}$ here, an apparent misprint.}, to the same $v_{q+3}$, \ldots, to the same $v_{p}$; in such a way that the suppression of $v_{q}$ and the mutual annexation of the two $v_{q+1}$ will change nothing in the $v_{q+2}$, the $v_{q+3}$, \ldots, the $v_{p}$~».
+
+\origpage{289}
+
+But the equality between the numbers $P_{1}$ and $P_{2}$ would not subsist if one had adopted the first definition, which is that of \emph{Betti}; we should still have $P_{2} = 1$, but we should no longer have $P_{1} = 1$:
+
+Indeed, there is no manifold of two dimensions which has as complete boundary the closed line $C_{1}$, otherwise we should have the equivalence $C_{1} \equiv 0$.
+
+What alone is true is that there is a manifold of two dimensions admitting as boundary 4 times the line $C_{1}$. Hence $P_{1}$ is not equal to 1.
+
+Let us return to the theorem according to which the numbers of \emph{Betti} equally distant from the extremes are equal.
+
+The proof that I gave of it in the \emph{Analysis situs} seems to apply equally well to the two definitions of the numbers of \emph{Betti}; it must therefore have a weak point, since the preceding examples show sufficiently that the theorem is not true for the first definition.
+
+Mr.~\emph{Heegaard} was well aware of this; but I do not believe that his first objection is well founded.
+
+After citing the way in which I define the manifolds $V_{1}, V_{2}, \ldots, V_{p}$ (\emph{Analysis situs}, page 43), by the equations $\Phi = 0$, $F''_{i} = 0$, he adds (page 70) «~\emph{Enhver af Mangfoldighederne $V$ skulde altsaa kunne være den fulstaendige Skoering mellem $p$ Mangfoldigheder af $h - 1$ Dimensioner i $U$}~». This is not exact for, besides my equalities, I have a certain number of inequalities, which I introduced at the beginning of the memoir and which I neglected to write again in what follows; my manifolds are therefore not complete intersections.
+
+The second objection is, on the contrary, well founded. «~\emph{Naar omvendt}, says Mr.~\emph{Heegaard}, \emph{Homologien $\displaystyle\sum V_{i} \backsim 0$ ikke finder Sted, saa i $U'$ kan legges en lukket Kurve $V'$, saa at}
+\[ \sum N(V', V_{i}) \neq 0 \]
+\emph{men det er ikke sikkert, at denne Kurve kan udskæres af nogen Mangfoldighed $V$}~». That is, indeed, the true weak point of the proof.
+
+\origpage{290}
+
+It is therefore necessary to return to the question, and that is the object of the present work.
+
+Often, to simplify the proofs, I considered only the case of closed manifolds of 3 dimensions, contained in space of 4 dimensions. One could easily extend them to the general case.
+
+I consider, then, in what follows, a closed manifold $V$, but in order to calculate its numbers of \emph{Betti}, I suppose it divided into smaller manifolds, so as to form a polyhedron, in the sense given to that word on page 100 of the \emph{Analysis situs}.
+
+\subsection*{\S~II. Scheme of a polyhedron.}
+
+Let us consider, then, as on page 100 of the \emph{Analysis situs}, a polyhedron of $p$ dimensions, that is to say a manifold $V$ of $p$ dimensions, divided into manifolds $v_{p}$; the boundaries of the $v_{p}$ will be the $v_{p-1}$, those of the $v_{p-1}$ will be the $v_{p-2}$, \ldots, those of the $v_{1}$ (edges) will be the $v_{0}$ (vertices).
+
+I shall call $\alpha_{i}$ the number of the $v_{i}$.
+
+Let $a^{q}_{1}, a^{q}_{2}, \ldots, a^{q}_{\alpha_{q}}$ be the different $v_{q}$.
+
+Let $a^{q}_{1}$ be one of the manifolds $v_{q}$ and $a^{q-1}_{1}$ one of the manifolds $v_{q-1}$ which serves it as boundary. Let us study the relations of $a^{q}_{1}$ and of $a^{q-1}_{1}$.
+
+Let
+\[ F_{1} = F_{2} = \ldots = F_{n-q} = F_{n-q+1} = 0, \qquad \varphi_{\gamma} > 0 \tag{1} \]
+be the equalities and the inequalities which define $a^{q-1}_{1}$, according to the first definition of manifolds (\emph{Analysis situs}, page 4).
+
+The relations which define $a^{q}_{1}$ can be put in the form:
+\[ F_{1} = F_{2} = \ldots = F_{n-q} = 0, \qquad F_{n-q+1} > 0, \qquad \varphi_{\gamma} > 0. \tag{2} \]
+
+In this case, we shall say that the relation of $a^{q}_{1}$ and of $a^{q-1}_{1}$ is \emph{direct}.
+
+This relation would become \emph{inverse} if one of these two manifolds were replaced by the opposite manifold; it would become direct again if each of the two manifolds were replaced by the opposite manifold.
+
+\origpage{291}
+
+We know that a manifold is replaced by the \emph{opposite manifold} (\emph{Analysis situs}, page 15) when one permutes two of the functions $F$ (which, set equal to zero, give the equations that define the manifold), or when one changes the sign of one of them.
+
+Thus the two manifolds
+\[ \begin{aligned} &F_{1} = F_{2} = F_{3} = 0; \qquad F_{1} = F_{2} = 0, \qquad F_{3} > 0;\\ &F_{1} = F_{2} = F_{3} = 0; \qquad F_{1} = F_{3} = 0, \qquad F_{2} < 0;\\ &F_{1} = F_{2} = F_{3} = 0; \qquad F_{2} = F_{3} = 0, \qquad F_{1} > 0; \end{aligned} \]
+are in direct relation; whereas the two manifolds
+\[ \begin{aligned} &F_{1} = F_{2} = F_{3} = 0; \qquad F_{1} = F_{2} = 0, \qquad F_{3} < 0;\\ &F_{1} = F_{2} = F_{3} = 0; \qquad F_{1} = F_{3} = 0, \qquad F_{2} > 0; \end{aligned} \]
+are in inverse relation.
+
+This posed, let $\varepsilon^{q}_{i,j}$ be a number which will be equal to 0 if $a^{q-1}_{j}$ is not a boundary of $a^{q}_{i}$; to $+1$ if $a^{q-1}_{j}$ is a boundary of $a^{q}_{i}$ and in direct relation with $a^{q}_{i}$; and, finally, to $-1$ if $a^{q-1}_{j}$ is a boundary of $a^{q}_{i}$, but in inverse relation with $a^{q}_{i}$.
+
+We shall agree to write the \emph{congruence}
+\[ a^{q}_{i} \equiv \sum_{j} \varepsilon^{q}_{i,j} a^{q-1}_{j}, \tag{3} \]
+which makes known to us the boundaries of $a^{q}_{i}$.
+
+The set of the congruences (3), relative to the different $v_{p}, v_{p-1}, \ldots, v_{0}$ of $V$, constitutes what may be called the \emph{scheme of a polyhedron}.
+
+One may ask two questions:
+
+1° A scheme being given, will there always exist a polyhedron corresponding to it?
+
+2° Are two polyhedra which have the same scheme homeomorphic?
+
+Without taking up these two questions for the moment, let us look for
+\origpage{292}
+some of the conditions which a scheme must satisfy in order that a polyhedron may correspond to it.
+
+Let us consider one of the $v_{p-1}$, $a^{p-1}_{i}$ for example; this manifold must separate two of the $v_{p}$ from each other, and two only; so that, among the numbers
+\[ \varepsilon^{p}_{i,1}, \]\ednote{The indices do not agree as printed: the text names the face $a^{p-1}_{i}$, while this display and the sum $\displaystyle\sum_{i} \varepsilon^{p}_{i,1}$ on p.~293 treat the face as $a^{p-1}_{1}$. Either the text's index or the display's is a misprint.}
+there will be one which will be equal to $+1$, one which will be equal to $-1$, and all the others will be equal to 0.
+
+That is not all; let us consider any one of the $v_{q}$, $a^{q}_{i}$ for example, and any one of the $v_{q-2}$, $a^{q-2}_{k}$ for example.
+
+One of two things: either $a^{q-2}_{k}$ will not belong to $a^{q}_{i}$, and in that case all\ednote{Printed ``tout''; read ``tous''.} the products
+\[ \varepsilon^{q}_{i,j} \varepsilon^{q-1}_{j,k} \tag{4} \]
+will be null, for if $a^{q-1}_{j}$ does not belong to $a^{q}_{i}$, the first factor is null; if, on the contrary, $a^{q-1}_{j}$ belongs to $a^{q}_{i}$, the manifold $a^{q-2}_{k}$ cannot belong to $a^{q-1}_{j}$ (otherwise it would belong to $a^{q}_{i}$, contrary to the hypothesis), and the second factor must be null.
+
+Or else $a^{q-2}_{k}$ will belong to $a^{q}_{i}$; but then we can reason on the manifold $a^{q}_{i}$ as we reasoned just now on the manifold $V$, and we shall conclude that $a^{q-2}_{k}$ must separate from each other two of the manifolds $v_{q-1}$ which belong to $a^{q}_{i}$, and two only: let them be $a^{q-1}_{1}$ and $a^{q-1}_{2}$.
+
+Among the products (4) there will be only two which are not null, namely
+\[ \varepsilon^{q}_{i,1} \varepsilon^{q-1}_{1,k}, \qquad \varepsilon^{q}_{i,2} \varepsilon^{q-1}_{2,k}. \]
+
+For all the others, indeed, either $a^{q-1}_{j}$ will not belong to $a^{q}_{i}$, or $a^{q-2}_{k}$ will not belong to $a^{q-1}_{j}$.
+
+These two products are moreover equal: the one to $+1$, the other to $-1$.
+
+We shall therefore have in all cases:
+\[ \sum_{j} \varepsilon^{q}_{i,j} \varepsilon^{q-1}_{j,k} = 0. \tag{5} \]
+
+\origpage{293}
+
+We have likewise
+\[ \sum_{i} \varepsilon^{p}_{i,1} = 0, \]
+and, more generally, whatever $k$ may be:
+\[ \sum_{i} \varepsilon^{p}_{i,k} = 0. \tag{5 \textit{bis}} \]
+
+The relation (5~\emph{bis}) may be regarded, from a certain point of view, as a particular case of the relation (5).
+
+Let $P$ be the portion of space of $p+1$ dimensions bounded by the polyhedron $V$; then the complete boundary of $P$ will be composed of the various manifolds $v_{p}$ which, taken together, form $V$; we may therefore write, in the sense of the congruence (3),
+\[ P \equiv \sum_{i} a^{p}_{i}, \tag{3 \textit{bis}} \]
+or again
+\[ P \equiv \sum_{i} \varepsilon^{p+1}_{0,i} a^{p}_{i}, \]
+where the numbers $\varepsilon^{p+1}_{0,i}$ will all be, by definition, equal to 1.
+
+On this reckoning, the relation (5~\emph{bis}), which may be written
+\[ \sum_{i} \varepsilon^{p+1}_{0,i} \varepsilon^{p}_{i,k} = 0, \]
+is no more than a particular case of the relation (5).
+
+We have, next, each $v_{1}$ having as limits two $v_{0}$, and two only, which gives us congruences (3) of the form:
+\[ a^{1}_{i} \equiv a^{0}_{j} - a^{0}_{k}, \]
+and a relation analogous to (5) and (5~\emph{bis}):
+\[ \sum_{j} \varepsilon^{1}_{i,j} = 0, \]
+which would again come under the form (5), on agreeing to make all the $\varepsilon^{0}$ equal to $+1$.
+
+\origpage{294}
+
+On the other hand, let us consider one of the $a^{q}_{i}$, all the $a^{q+1}_{j}$ to which it serves as boundary; all the $a^{q+2}_{k}$ to which these $a^{q+1}_{j}$ serve as boundaries, and so on. The set of all these manifolds will constitute what we have called an \emph{aster} (\emph{Analysis situs}, page 106).
+
+We saw (loc.\ cit., page 107) that the polyhedron which corresponds to an aster must be simply connected. Thus one condition for a polyhedron to be able to correspond to a given scheme is that the polyhedra which correspond to the different asters, according to the convention of page 107 of the \emph{Analysis situs}, be all simply connected.
+
+Let us now consider one of the $a^{q}_{i}$, all the $a^{q-1}_{j}$ which serve it as boundaries, the $a^{q-2}_{k}$ which serve as boundaries to these $a^{q-1}_{j}$, and so on. This set of manifolds will constitute a polyhedron of $q$ dimensions; we shall suppose that this polyhedron is simply connected.
+
+This is no longer a necessary condition for a polyhedron to be able to correspond to the scheme; it is simply a condition which, unless notice is given to the contrary, we shall suppose fulfilled.
+
+To illustrate these definitions by some examples, let us see first what the scheme is of the generalized tetrahedron defined on page 105 (\emph{Analysis situs}).
+
+The faces of this tetrahedron will be defined by the $n+1$ equations:
+\[ \begin{aligned} &x_{1} = 0, \qquad x_{2} = 0, \qquad \ldots, \qquad x_{n} = 0\\ &x_{1} + x_{2} + \ldots + x_{n} = 1. \end{aligned} \tag{6} \]
+
+One will obtain the $a^{q}_{i}$ by suppressing $q+1$ of these equations; to define the sense of the manifold $a^{q}_{i}$, we shall suppose that one suppresses these $q+1$ equations, but without changing the order of the $n-q$ remaining equations.
+
+This posed, let us consider the relation of $a^{q}_{i}$ and of $a^{q-1}_{j}$ and seek to determine the number $\varepsilon^{q}_{i,j}$.
+
+First, in order that $a^{q-1}_{j}$ belong to $a^{q}_{i}$, it is necessary that $a^{q-1}_{j}$ be defined by the $n-q$ equations which define $a^{q}_{i}$, to which one must adjoin an $(n-q+1)^{\text{th}}$ equation, taken from among the equations (6). If this is not so, the number $\varepsilon^{q}_{i,j}$ will be null.
+
+\origpage{295}
+
+Let us suppose, then, that $a^{q-1}_{j}$ is obtained by suppressing the $q$ equations which occupy the
+\[ \alpha_{1}, \qquad \alpha_{2}, \qquad \ldots, \qquad \alpha_{q} \]
+ranks.
+
+Let us suppose that $a^{q}_{i}$ is obtained by suppressing, \emph{in addition}, the $\beta^{\text{th}}$ equation; then the number $\varepsilon^{q}_{i,j}$, whose absolute value will always be equal to 1, will have the same sign as the product:
+\[ (\beta - \alpha_{1})(\beta - \alpha_{2}) \ldots (\beta - \alpha_{q}). \]
+
+It is then easy to verify that the relation (5) holds.
+
+Let us consider, indeed, the manifold $a^{q-2}_{k}$, obtained by suppressing the equations of rank $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{q-1}$, and the manifold $a^{q}_{i}$, obtained by suppressing, in addition, the equations of rank $\beta$ and $\gamma$. (It is clear that if $a^{q}_{i}$ were not obtained by suppressing the same equations as for $a^{q-2}_{k}$, plus two others, all the products $\varepsilon^{q}_{i,j} \varepsilon^{q-1}_{j,k}$ would be null).
+
+In this case, all these products will again be null, except two:
+\[ \varepsilon^{q}_{i,1} \varepsilon^{q-1}_{1,k} \qquad \text{and} \qquad \varepsilon^{q}_{i,2} \varepsilon^{q-1}_{2,k}, \]
+which will correspond to the two manifolds $a^{q-1}_{1}$ and $a^{q-2}_{2}$\ednote{Printed $a^{q-2}_{2}$; the context requires $a^{q-1}_{2}$, an apparent misprint.}, obtained respectively by suppressing the equations of rank $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{q-1}, \beta$ and those of rank $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{q-1}, \gamma$.
+
+Then the four numbers
+\[ \varepsilon^{q}_{i,1}, \qquad \varepsilon^{q-1}_{1,k}, \qquad \varepsilon^{q}_{i,2}, \qquad \varepsilon^{q-1}_{2,k} \]
+will have respectively the same sign as:
+\[ \begin{aligned} (\gamma - \beta)(\gamma - \alpha_{1})(\gamma - \alpha_{2}) \ldots (\gamma - \alpha_{q-1})&,\\ (\beta - \alpha_{1})(\beta - \alpha_{2}) \ldots (\beta - \alpha_{q-1})&,\\ (\beta - \gamma)(\beta - \alpha_{1})(\beta - \alpha_{2}) \ldots (\beta - \alpha_{q-1})&,\\ (\gamma - \alpha_{1})(\gamma - \alpha_{2}) \ldots (\gamma - \alpha_{q-1})&. \end{aligned} \]
+
+\origpage{296}
+
+One thus verifies that the two products which are not null are equal and of contrary sign. Q.~E.~D.${}^{(*)}$
+
+\subsection*{\S~III. Reduced Betti numbers.}
+
+I am now going to look for the numbers of \emph{Betti} relative to a polyhedron, but in order to avoid the ambiguity whose possibility I pointed out above, I shall agree to define these numbers \emph{in the second way}, that is to say that $P_{q} - 1$ will be the number of closed manifolds of $q$ dimensions that can be traced on our polyhedron $V$ and that are \emph{linearly independent}, I mean, that are connected by no homology with integer coefficients, in the sense of the \emph{Analysis situs}, page 18.
+
+But I shall first set myself to determine the number $P'_{q} - 1$ of manifolds of $q$ dimensions, closed and linearly independent, that can be traced on our polyhedron $V$, but \emph{restricting ourselves to those which are combinations of the manifolds $v_{q}$}.
+
+The number $P'_{q}$ will then be what I shall call the \emph{reduced Betti number}.
+
+The manifolds of $q$ dimensions which are combinations of the $v_{q}$ can evidently be represented by:
+\[ \sum_{i} \lambda_{i} a^{q}_{i}, \]
+the $\lambda_{i}$ being integer coefficients and the letters $a^{q}_{i}$ continuing to denote the different manifolds $v_{q}$.
+
+What, first, is the condition for the manifold $\displaystyle\sum_{i} \lambda_{i} a^{q}_{i}$ to be closed?
+
+For that, let us look for the manifolds $v_{q-1}$ which form the boundaries of this manifold. To find them, it evidently suffices to replace $a^{q}_{i}$ by its value given by the congruence (3).
+
+\textbf{(*)} The polyhedron thus defined, as well as every polyhedron of $n$ dimensions bounded by $n+1$ plane manifolds, will be called a \emph{rectilinear generalized tetrahedron}. I shall call a \emph{generalized tetrahedron} every manifold homeomorphic to a rectilinear generalized tetrahedron.
+
+\origpage{297}
+
+This set of boundary manifolds will therefore be given by the formula:
+\[ \sum_{i} \sum_{j} \lambda_{i} \varepsilon^{q}_{i,j} a^{q-1}_{j}. \]
+
+For the manifold $\displaystyle\sum_{i} \lambda_{i} a^{q}_{i}$ to be closed, it suffices, then, that one have identically:
+\[ \sum_{i} \sum_{j} \lambda_{i} \varepsilon^{q}_{i,j} a^{q-1}_{j} = 0, \]
+that is to say that, whatever $j$ may be, one have:
+\[ \sum_{i} \lambda_{i} \varepsilon^{q}_{i,j} = 0. \]
+
+In other words, the manifold $\displaystyle\sum_{i} \lambda_{i} a^{q}_{i}$ will be closed if one has:
+\[ \sum_{i} \lambda_{i} a^{q}_{i} \equiv 0, \tag{7, $q$} \]
+by virtue of the congruences (3, $q$); I so call those of the congruences (3) which connect the $a^{q}_{i}$ to the $a^{q-1}_{j}$.
+
+Let us now look for the homologies which can exist between the manifolds $a^{q}_{i}$. One will obtain all these homologies by combining those that can be obtained in the following way.
+
+Let us consider the congruence:
+\[ a^{q+1}_{k} \equiv \sum_{i} \varepsilon^{q+1}_{k,i} a^{q}_{i}, \tag{8} \]
+which, according to the convention we have just made,.\ednote{A stray point follows the comma in the print.} is a congruence (3, $q + 1$); let us replace the sign $\equiv$ by $\backsim$, and the first member by zero; there will come:
+\[ \sum_{i} \varepsilon^{q+1}_{k,i} a^{q}_{i} \backsim 0. \tag{9, $q$} \]
+
+This homology will evidently hold since, by definition, it expresses, like the congruence (8), that the $a^{q}_{i}$ form the complete boundary of $a^{q+1}_{k}$.
+
+\origpage{298}
+
+We shall prove further on (\S~6) that there are no others.
+
+I denote this homology by (9, $q$) to mark that it holds between the $a^{q}_{i}$.
+
+I say that if the homology (9, $q$) holds, the congruence
+\[ \sum_{i} \varepsilon^{q+1}_{k,i} a^{q}_{i} \equiv 0 \tag{10, $q$} \]
+will be a consequence of the congruences (3, $q$).
+
+Let us replace, indeed, the $a^{q}_{i}$ by their values, given by these congruences (3, $q$); there will come:
+\[ \sum_{i} \varepsilon^{q+1}_{k,i} a^{q}_{i} \equiv \sum_{i} \sum_{j} \varepsilon^{q+1}_{k,i} \varepsilon^{q}_{i,j} a^{q-1}_{j}. \]
+The second member is identically null by virtue of the relations (5).
+
+This posed, let $\alpha_{q}$ be the number of the manifolds $a^{q}_{i}$; let $\alpha'_{q}$ be the number of these manifolds which remain distinct if one does not regard as distinct manifolds connected by a homology of the form (9, $q$); let $\alpha''_{q}$ be the number of these manifolds which remain distinct if one does not regard as distinct manifolds connected by a congruence of the form (7, $q$).
+
+It results from these definitions:
+
+1° that there are $\alpha_{q} - \alpha'_{q}$ distinct homologies of the form (9, $q$);
+
+2° that there are $\alpha_{q} - \alpha''_{q}$ distinct congruences of the form (7, $q$);
+
+3° that
+\[ \alpha'_{q} \geqq \alpha''_{q}; \]
+for if several $a^{q}_{i}$ are connected by a homology of the form (9, $q$), they will likewise be connected by the corresponding congruence (10, $q$).
+
+Finally the number sought, $P'_{q} - 1$, is equal to
+\[ \alpha'_{q} - \alpha''_{q}, \]
+for the closed manifolds of the form $\displaystyle\sum_{i} \lambda_{i} a^{q}_{i}$ that are really distinct are equal in number to the congruences (7, $q$), that is to say to the number $\alpha_{q} - \alpha''_{q}$.
+
+The number $P'_{q} - 1$ is the number of those manifolds which remain
+\origpage{299}
+distinct when one does not regard as distinct those which are connected by a homology (9, $q$). Now the number of these homologies is $\alpha_{q} - \alpha'_{q}$; we have therefore:
+\[ P'_{q} - 1 = (\alpha_{q} - \alpha''_{q}) - (\alpha_{q} - \alpha'_{q}) = \alpha'_{q} - \alpha''_{q} \qquad \text{Q.~E.~D.} \]
+Let $a^{q}_{1}, a^{q}_{2}, \ldots, a^{q}_{i}$ be manifolds $v_{q}$, $i$ in number, and
+\[ \begin{aligned} a^{q}_{1} &\equiv \sum \varepsilon^{q}_{1,j} a^{q-1}_{j}, \\ a^{q}_{2} &\equiv \sum \varepsilon^{q}_{2,j} a^{q-1}_{j}, \\ &\ldots\ldots\ldots\ldots \\ a^{q}_{i} &\equiv \sum \varepsilon^{q}_{i,j} a^{q-1}_{j} \end{aligned} \]
+the corresponding congruences (3). Let us form the corresponding homologies:
+\[ \sum \varepsilon^{q}_{1,j} a^{q-1}_{j} \backsim 0, \qquad \sum \varepsilon^{q}_{2,j} a^{q-1}_{j} \backsim 0, \qquad \ldots, \qquad \sum \varepsilon^{q}_{i,j} a^{q-1}_{j} \backsim 0. \]
+The necessary and sufficient condition for these homologies to be distinct is that there be between the $i$ manifolds $a^{q}_{1}, a^{q}_{2}, \ldots, a^{q}_{i}$ no congruence of the form:
+\[ \lambda_{1} a^{q}_{1} + \lambda_{2} a^{q}_{2} + \ldots + \lambda_{i} a^{q}_{i} \equiv 0. \]
+
+The number of distinct homologies is therefore equal to the number of distinct $a^{q}_{i}$, taking account of the congruences (7, $q$). Hence:
+\[ \alpha_{q-1} - \alpha'_{q-1} = \alpha''_{q}, \]
+or
+\[ \alpha_{q-1} = \alpha'_{q-1} + \alpha''_{q}. \]
+We shall have on the other hand
+\[ \alpha'_{0} = 1. \]
+If, indeed, one can go from any vertex $a^{0}_{1}$ to any other
+\origpage{300}
+vertex $a^{0}_{i}$ by following edges (that is to say if the polyhedron is all of one piece), one will have the homology:
+\[ a^{0}_{1} \backsim a^{0}_{i}, \]
+that is to say that there will be only one distinct vertex, taking account of the homologies.
+
+Let us now consider the congruence (3~\emph{bis})
+\[ P \equiv \sum a^{p}_{i}; \]
+the corresponding homology is written:
+\[ \sum a^{p}_{i} \backsim 0, \]
+and there is no other homology (9, $p$). Hence
+\[ \alpha_{p} = \alpha'_{p} + 1. \]
+Moreover, the polyhedron being all of one piece, only one of the combinations $\displaystyle\sum \lambda_{i} a^{p}_{i}$ can be closed; it is the polyhedron itself in its entirety, represented by the formula $\displaystyle\sum a^{p}_{i}$.
+
+We shall therefore have a single congruence of the form (7, $p$):
+\[ \sum a^{p}_{i} \equiv 0. \]
+Hence
+\[ \alpha_{p} = \alpha''_{p} + 1, \qquad \alpha'_{p} = \alpha''_{p}. \]
+We have therefore the series of equations:
+\[ \begin{aligned} &\alpha'_{0} = 0, \\ &\alpha_{0} = \alpha'_{0} + \alpha''_{1}, &&\qquad \alpha'_{1} - \alpha''_{1} = P'_{1} - 1, \\ &\alpha_{1} = \alpha'_{1} + \alpha''_{2}, &&\qquad \alpha'_{2} - \alpha''_{2} = P'_{2} - 1, \\ &\ldots\ldots\ldots &&\qquad \ldots\ldots\ldots\ldots \\ &\alpha_{p-1} = \alpha'_{p-1} + \alpha''_{p}, &&\qquad \alpha'_{p-1} - \alpha''_{p-1} = P'_{p-1} - 1, \\ &\alpha_{p} = \alpha'_{p} + 1, &&\qquad \alpha'_{p} - \alpha''_{p} = 0, \end{aligned} \]
+\ednote{The first row is printed $\alpha'_{0} = 0$; page 299 gives $\alpha'_{0} = 1$, which the final $\mp 1$ of the formula on page 301 requires; an apparent misprint.}
+\origpage{301}
+from which one easily draws:
+\[ \begin{aligned} &\alpha_{p} - \alpha_{p-1} + \alpha_{p-2} - \ldots \pm \alpha_{1} \mp \alpha_{0} = 1 - (P'_{p-1} - 1) + \ldots \\ &\qquad \ldots \mp (P'_{2} - 1) \pm (P'_{1} - 1) \mp 1, \end{aligned} \]
+entirely analogous to the formula:
+\[ \begin{aligned} &\alpha_{p} - \alpha_{p-1} + \alpha_{p-2} - \ldots \pm \alpha_{1} \mp \alpha_{0} = 1 - (P_{p-1} - 1) + \ldots \\ &\qquad \ldots \mp (P_{2} - 1) \pm (P_{1} - 1) \mp 1, \end{aligned} \]
+which we found in the \emph{Analysis situs}, page 121.
+
+\subsection*{\S~IV. Subdivision of polyhedra.}
+
+Let us consider a polyhedron $V$ of $p$ dimensions, with its various manifolds:
+\[ a^{p}_{i}, \qquad a^{p-1}_{i}, \qquad \ldots, \qquad a^{1}_{i}, \qquad a^{0}_{i}. \]
+
+Let us suppose that one subdivides each of the manifolds $a^{p}_{i}$ into several others, which I shall call the $b^{p}_{i}$; let next $b^{p-1}_{i}$ be the manifolds of $p - 1$ dimensions which serve as boundary to the $b^{p}_{i}$; let $b^{p-2}_{i}$ be the manifolds of $p - 2$ dimensions which serve as boundaries to the $b^{p-1}_{i}$; \ldots\ and, finally, $b^{0}_{i}$ the manifolds of 0 dimensions (vertices) which serve as boundaries to the $b^{1}_{i}$ (edges).
+
+One will thus have a new polyhedron $V'$, which will be derived from the polyhedron $V$, in the sense that I attached to that word on page 101 of the \emph{Analysis situs}.
+
+One may suppose, moreover, that if a manifold $v_{q-1}$, simply or multiply connected, serves as boundary to two manifolds $b^{q}_{j}$ and $b^{q}_{k}$, it does not necessarily form a single one of the manifolds $b^{q-1}_{i}$, but may itself be subdivided into several manifolds $b^{q-1}_{i}$. In this case, to take up again the terminology of pages 102 and 103 of the \emph{Analysis situs}, these manifolds $b^{q-1}_{i}$ will be \emph{irregular} and the manifolds $b^{q-2}_{i}$ which separate them from one another will be \emph{singular}.
+
+\origpage{302}
+
+This posed, let us seek a classification of the manifolds $b^{q}_{i}$.
+
+If a manifold $b^{q}_{i}$ does not form part of one of the manifolds $a^{q}_{j}$, it will form part of one of the manifolds $a^{q+1}_{j}$, or of one of the manifolds $a^{q+2}_{j}$, \ldots, or, at the least, of one of the manifolds $a^{p}_{j}$.
+
+Can it form part at once of two manifolds $a^{m}_{j}$ and $a^{m}_{k}$?
+
+Given the way in which the subdivision has been supposed made, always adding new boundaries without ever suppressing any, this can happen only if these two manifolds $a^{m}_{j}$ and $a^{m}_{k}$ are contiguous and have a common boundary $a^{m-1}_{h}$, and if $b^{q}_{i}$ forms part of this boundary $a^{m-1}_{h}$.
+
+I suppose then that $b^{q}_{i}$ forms part of $a^{h}_{j}$, and forms part of no manifold $a^{m}_{k}$ where $m < h$. The manifold $a^{h}_{j}$ always exists and one has $h \geqq q$; moreover, the manifold $a^{h}_{j}$ is unique, that is to say that $b^{q}_{i}$ cannot form part at once of two different manifolds $a^{h}_{j}$ and $a^{h}_{k}$.
+
+If therefore I agree to place in one and the same class all the manifolds $b^{q}_{i}$ which form part of the manifold $a^{h}_{j}$ without forming part of any of the manifolds $a^{m}_{k}$ where $m < h$, every manifold $b^{q}_{i}$ will form part of one class and of one only.
+
+I can then represent $b^{q}_{i}$ by a notation with four indices
+\[ b^{q}_{i} = B(q, h, j, k); \]
+the index $q$ indicates the number of dimensions of $b^{q}_{i}$; the indices $h$ and $j$ indicate that $b^{q}_{i}$ forms part of the class $a^{h}_{j}$; and the index $k$ serves to distinguish from one another the different manifolds of one and the same class. One has $h \geqq q$.
+
+We shall then have, to define the polyhedron $V$ and its subdivision:
+
+1° The congruences (3, $q$), relative to the polyhedron $V$, which I shall write:
+\[ a^{q}_{i} \equiv \sum_{j} \varepsilon^{q}_{i,j} a^{q-1}_{j}. \tag{3, $q$, $i$} \]
+
+2° The equations which give the subdivision of the manifold $a^{q}_{i}$:
+\[ a^{q}_{i} = \sum_{k} B(q, q, i, k). \tag{1, $q$, $i$} \]
+
+3° The congruences analogous to the congruences (3), but relative
+\origpage{303}
+to the polyhedron $V'$; I shall write them:
+\[ B(q, h, j, k) \equiv \sum \zeta B(q - 1, h', j', k'). \tag{2, $q$, $h$, $j$, $k$} \]
+
+The $\zeta$ are numbers equal to $\pm 1$, or to 0; they depend on the seven indices $q$, $h$, $j$, $k$, $h'$, $j'$, $k'$, so that I shall write them, when that is necessary, in the form:
+\[ \zeta(q, h, j, k, h', j', k'). \]
+
+Under the sign $\displaystyle\sum$, the indices $h'$, $j'$, $k'$ can take all values. Let us observe, however, that the $B(q - 1)$ which serve as boundary to $B(q, h, j, k)$ must, like $B(q, h, j, k)$, form part of $a^{h}_{j}$; but they may form part of other manifolds $a^{h'}_{j'}$, of a smaller number of dimensions, but forming part of $a^{h}_{j}$. One will therefore have
+\[ h' \leqq h, \qquad h' \geqq q - 1. \]
+
+Moreover, if $h' = h$, one will have $j' = j$.
+
+In order that the relations (1), (2), (3) may define a true subdivision, they must satisfy certain conditions.
+
+The relations (1, $q$, $i$), (3, $q$, $i$) give
+\[ \sum_{k} B(q, q, i, k) \equiv \sum \varepsilon^{q}_{i,j} a^{q-1}_{j}. \tag{$\alpha$} \]
+
+If in the first member I replace $B(q, q, i, k)$ by its value, drawn from (2, $q$, $q$, $i$, $k$), and $a^{q-1}_{j}$ by its value drawn from (1, $q - 1$, $j$), the two members must become identical\ednote{Printed identique; the agreement with membres requires identiques.}; that is a first condition, which is evident; it is not, however, sufficient.
+
+\subsection*{\S~V. Influence of subdivision on the reduced Betti numbers.}
+
+Let $\displaystyle\sum \alpha B(q, h, j, k)$ be a combination of the manifolds $b^{q}_{i}$ which represents a closed manifold of $q$ dimensions, in such a way that one
+\origpage{304}
+has, with our notations,
+\[ \sum \alpha B(q, h, j, k) \equiv 0, \qquad (h \geqq q) \tag{1} \]
+
+Among the manifolds $b^{q}_{i}$ which figure in the first member of (1), let us gather together those which belong to one and the same class. Let
+\[ S \alpha B(q, h, j, k) \]
+be the set of those which belong to the class $a^{h}_{j}$; the summation sign $S$ signifies, then, that one takes only the manifolds of one and the same class, whereas the sign $\displaystyle\sum$ signifies that one takes them all.
+
+One will then have:
+\[ S \alpha B(q, h, j, k) \equiv \sum \beta B(q - 1, h', j', k'), \tag{2} \]
+that is to say that the manifold of $q - 1$ dimensions $\displaystyle\sum \beta B(q - 1, h', j', k')$ forms the complete boundary of the manifold of $q$ dimensions
+\[ S \alpha B(q, h, j, k). \]
+
+The manifolds $a^{h'}_{j'}$ must belong to the boundary of $a^{h}_{j}$, or coincide with $a^{h}_{j}$; indeed, $B(q - 1, h', j', k')$ belongs to $a^{h'}_{j'}$ and, on the other hand, to one of the $B(q, h, j, k)$, which itself forms part of $a^{h}_{j}$; if therefore $a^{h'}_{j'}$ did not form part of $a^{h}_{j}$, $B(q - 1, h', j', k')$ would form part of a manifold $a^{m}_{k}$, a part common to $a^{h}_{j}$ and $a^{h'}_{j'}$, and which would have fewer than $h'$ dimensions. This is contrary to the definition that we have given of the classes.
+
+On the other hand $a^{h'}_{j'}$ cannot coincide with $a^{h}_{j}$.
+
+Let, indeed,
+\[ S_{1} \alpha_{1} B(q, h_{1}, j_{1}, k_{1}) = \sum \alpha B(q, h, j, k) - S \alpha B(q, h, j, k) \]
+be the set of the manifolds which figure in the first member of (1) and which do not belong to the class $a^{h}_{j}$; one will evidently have:
+\[ S_{1} \alpha_{1} B(q, h_{1}, j_{1}, k_{1}) \equiv - \sum \beta B(q - 1, h', j', k'). \]
+
+\origpage{305}
+
+Hence $B(q - 1, h', j', k')$ must form part at once of $a^{h'}_{j'}$ and of one of the $B(q, h_{1}, j_{1}, k_{1})$, and consequently of one of the $a^{h_{1}}_{j_{1}}$, \emph{different from $a^{h}_{j}$}. If therefore $a^{h'}_{j'}$ coincided with $a^{h}_{j}$,
+\[ B(q - 1, h', j', k') = B(q - 1, h, j, k) \]
+would have to belong to a manifold $a^{m}_{k}$, a part common to $a^{h}_{j}$ and $a^{h_{1}}_{j_{1}}$. One of two things: either $a^{h}_{j}$ would not form part of $a^{h_{1}}_{j_{1}}$, and then one would again have $m < h$, which would again be contrary to the definition of the classes; or $a^{h}_{j}$ would form part of $a^{h_{1}}_{j_{1}}$, and then one would have $h_{1} > h$. Let us suppose that I have chosen the class $a^{h}_{j}$ which corresponds to the greatest number $h$. Then one cannot have $h_{1} > h$, and $a^{h'}_{j'}$ must belong to the boundary of $a^{h}_{j}$.
+
+The congruence (2) entails the homology
+\[ \sum \beta B(q - 1, h', j', k') \backsim 0; \tag{3} \]
+since, on the other hand, $a^{h}_{j}$ \emph{is simply connected} and all the manifolds $B(q - 1, h', j', k')$ are situated on the boundary of $a^{h}_{j}$, the first member of (3), representing a closed manifold of $q - 1$ dimensions situated on this boundary, will form the complete boundary of a manifold of $q$ dimensions
+\[ \sum \gamma B(q, h'', j'', k''), \]
+likewise situated on the boundary of $a^{h}_{j}$. (There would be an exception if one had $h = q$). So that one will have the congruence
+\[ \sum \beta B(q - 1, h', j', k') \equiv \sum \gamma B(q, h'', j'', k''). \tag{4} \]
+
+Moreover, since $B(q, h'', j'', k'')$ is on the boundary of $a^{h}_{j}$, the same will hold for $a^{h''}_{j''}$; for if $B(q, h'', j'', k'')$ forms part at once of $a^{h''}_{j''}$ and of a manifold $a^{h'}_{j'}$ forming part of the boundary of $a^{h}_{j}$; either $a^{h''}_{j''}$ does not form part of $a^{h'}_{j'}$, and then $B$ would have to form part of $a^{m}_{k}$, where $m < h''$, and we have seen that this was impossible.
+
+\origpage{306}
+
+One has therefore
+\[ h'' < h. \]
+
+The congruences (2) and (4) give
+\[ S \alpha B(q, h, j, k) \equiv \sum \gamma B(q, h'', j'', k''), \]
+and, since all the manifolds which figure in this congruence form part of $a^{h}_{j}$ or of its boundary, and since, on the other hand, $a^{h}_{j}$ is simply connected, one will have the homology
+\[ S \alpha B(q, h, j, k) \backsim \sum \gamma B(q, h'', j'', k''). \]
+
+One can, then, replace, in the first member of (1), the set of the terms $S \alpha B(q, h, j, k)$ by the set of the terms
+\[ \sum \gamma B(q, h'', j'', k''). \]
+
+If one operates in the same way for all the classes corresponding to one and the same value of $h$, the greatest of all, one will have replaced the first member of (1) by
+\[ \sum \alpha_{2} B(q, h_{2}, j_{2}, k_{2}), \]
+where the greatest value of $h_{2}$ will be smaller than the greatest value of $h$. One will have, moreover, the homology
+\[ \sum \alpha B(q, h, j, k) \backsim \sum \alpha_{2} B(q, h_{2}, j_{2}, k_{2}). \]
+
+Continuing in this way, one can diminish the greatest value of $h$ further still. One will be stopped only when one has $h = q$ everywhere.
+
+One can therefore, finally, replace the first member of (1) by:
+\[ \sum \alpha_{0} B(q, q, j_{0}, k_{0}), \]
+\origpage{307}
+and one will have moreover:
+\[ \sum \alpha B(q, h, j, k) \backsim \sum \alpha_{0} B(q, q, j_{0}, k_{0}) \tag{5} \]
+\[ \sum \alpha_{0} B(q, q, j_{0}, k_{0}) \equiv 0. \tag{6} \]
+
+This posed, in the first member of (6) let us take the congruences which belong to a determinate class $a^{h}_{j_{0}}$; let it be:
+\[ S \alpha_{0} B(q, q, j_{0}, k_{0}). \]
+
+We shall have:
+\[ S \alpha_{0} B(q, q, j_{0}, k_{0}) \equiv \sum \beta_{0} B(q - 1, h'_{0}, j'_{0}, k'_{0}). \tag{7} \]
+
+We should see, as above, that $a^{h'_{0}}_{j'_{0}}$ must form part of the boundary of $a^{q}_{j_{0}}$, whence $h'_{0} < q$ (and, since $h'_{0} \geqq q - 1$, one will have $h'_{0} = q - 1$).
+
+Let then:
+\[ a^{q}_{j_{0}} = \sum B(q, q, j_{0}, k_{0}) \tag{8} \]
+be the equation (1, $q$, $j_{0}$) which defines the subdivision of the manifold $a^{q}_{j_{0}}$, and let $B(q, q, j_{0}, 1)$ and $B(q, q, j_{0}, 2)$ be two manifolds figuring in the second member of (8); I say that they must figure in the first member of (6) with the same coefficient $\alpha_{0}$.
+
+Let us suppose, first, that these two manifolds are adjacent; among the manifolds of $q - 1$ dimensions which will serve them as common boundary, there will be at least one which will not belong to the boundary of $a^{q}_{j_{0}}$, and which will consequently form part of the class $a^{q}_{j_{0}}$.
+
+Let $B(q - 1, q, j_{0}, 1)$ be this manifold: it will not belong to any other of the manifolds $B(q, q, j_{0}, k)$.
+
+Let then
+\[ \begin{aligned} B(q, q, j_{0}, 1) &\equiv \varepsilon b^{q-1}_{i} \\ B(q, q, j_{0}, 2) &\equiv \varepsilon b^{q-1}_{i} \\ B(q, q, j_{0}, k) &\equiv \varepsilon b^{q-1}_{i} \qquad (k > 2) \end{aligned} \tag{9} \]
+\origpage{308}
+be the congruences (2, $q$, $q$, $j_{0}$, 1), (2, $q$, $q$, $j_{0}$, 2), (2, $q$, $q$, $j_{0}$, $k$), which make known to us the boundaries of the manifolds $B(q, q, j_{0})$. Let us see with what coefficient $\varepsilon$ the manifold $B(q - 1, q, j_{0}, 1)$ will figure in these congruences.
+
+From what we have just seen, it will be with the coefficient $+1$ in the first, with the coefficient $-1$ in the second, with the coefficient 0 in the others.
+
+Let then $\alpha_{1}$ and $\alpha_{2}$ be the values of the coefficients $\alpha_{0}$ corresponding to the two manifolds $B(q, q, j_{0}, 1)$ and $B(q, q, j_{0}, 2)$.
+
+The combination of the congruences (9) will furnish us a congruence
+\[ S \alpha_{0} B(q, q, j_{0}, k_{0}) \equiv \varepsilon b^{q-1}_{i}, \tag{10} \]
+which must be identical with (7), and the coefficient $\varepsilon$ with which $B(q - 1, q, j_{0}, 1)$ will figure in the second member of (10) will evidently be $\alpha_{1} - \alpha_{2}$. But $B(q - 1, q, j_{0}, 1)$ cannot figure in the second member of (7), since we have seen that in this second member one must have $h'_{0} = q - 1$. Hence one must have $\alpha_{1} - \alpha_{2} = 0$.
+
+Thus the two manifolds $B(q, q, j_{0}, 1)$ and $B(q, q, j_{0}, 2)$ must have the same coefficient $\alpha_{0}$ if they are adjacent. This will still be true if they are not, because, $a^{q}_{j_{0}}$ being all of one piece, one can pass from one of these manifolds to the other by a sequence of other analogous manifolds, each of them adjacent to the one which precedes it.
+
+Hence the coefficient $\alpha_{0}$ is the same for all our manifolds. Whence:
+\[ S \alpha_{0} B(q, q, j_{0}, k_{0}) = \alpha_{0} \sum B(q, q, j_{0}, k_{0}) = \alpha_{0} a^{q}_{j_{0}}. \]
+
+The congruence (6) and the homology (5) can therefore be written:
+\[ \sum \alpha B(q, h, j, k) \backsim \sum \alpha_{0} a^{q}_{j_{0}} \tag{5 \textit{bis}} \]
+\[ \sum \alpha_{0} a^{q}_{j_{0}} \equiv 0. \tag{6 \textit{bis}} \]
+
+If any number of congruences of the form (1) are distinct, that is to say if no linear combination of their first
+\origpage{309}
+members is homologous to 0, I say that the congruences (6~\emph{bis}) will likewise be distinct, and conversely.
+
+Indeed the comparison of the relations (1), (5~\emph{bis}) and (6~\emph{bis}) shows that if one has
+\[ \sum \alpha B(q, h, j, k) \backsim 0, \]
+one will likewise have
+\[ \sum \alpha_{0} a^{q}_{j_{0}} \backsim 0, \]
+and conversely.
+
+It follows from this that if the $a^{q}_{i}$ and the $b^{q}_{i}$ are simply connected, the reduced numbers of \emph{Betti} are the same for the two polyhedra $V$ and $V'$.
+
+Let now $W$ be any closed manifold of $q$ dimensions situated on $V$. One can always construct a polyhedron $V'$, derived from $V$ in the sense of page 101 of the \emph{Analysis situs}, and such that $W$ is a combination of the $b^{q}_{i}$.
+
+We must therefore conclude that: if the $a^{q}_{i}$ are simply connected, the reduced numbers of \emph{Betti} relative to the polyhedron $V$ are identical with the numbers of \emph{Betti} properly so called, \emph{defined in the second way}.
+
+\subsection*{\S~VI. Return to the proofs of \S~III.}
+
+We have to return here to an essential point of the preceding reasoning. I said above that there was no homology other than the homologies (9, $q$) obtained in \S~3. That is not evident; it would not even always be true if we did not suppose the $a^{q}_{i}$ simply connected.
+
+Let us prove it first for a polyhedron $P$ in space of 4 dimensions.
+
+Let us consider a certain number of manifolds $v_{2}$ or $a^{2}_{i}$ belonging to this polyhedron; I shall call them its faces, just as the $a^{3}_{i}$, the $a^{1}_{i}$ and the $a^{0}_{i}$ of this polyhedron $P$ may be called its cells, its edges and its vertices.
+
+\origpage{310}
+
+Let us suppose that one has between these faces $a^{2}_{i}$ a homology
+\[ \sum a^{2}_{i} \backsim 0. \]
+
+This homology signifies that there exists a manifold of 3 dimensions, $V$, forming part of $P$ and admitting $\displaystyle\sum a^{2}_{i}$ as complete boundary.
+
+I say that \emph{$V$ is composed of a certain number of cells of $P$}.
+
+If, indeed, a point of a cell belongs to $V$, the same will hold for every other point of this cell, for one can go from the first point to the second without meeting any face and, consequently, without meeting the boundary of $V$ and without leaving $V$.
+
+The theorem is therefore evident as regards the polyhedra of space of 4 dimensions and the homologies between the faces.
+
+Let there now be a homology between the edges:
+\[ \sum b_{1} \backsim 0, \]
+the $b_{1}$ being a certain\ednote{Printed ``cetain'' for ``certain''; an apparent misprint.} number of edges $a^{1}_{i}$. That means that there exists a manifold of 2 dimensions, $V$, of which $\displaystyle\sum b_{1}$ is the complete boundary.
+
+I shall denote by $V(a^{k}_{i})$ the set of points common to $V$ and to $a^{k}_{i}$.
+
+The $V(a^{3}_{i})$ will be manifolds of 2 dimensions, whose boundary will be formed either by some of the edges $b_{1}$, or by the $V(a^{2}_{j})$, the $a^{2}_{j}$ being the faces which serve as boundary to the cell $a^{3}_{i}$. One can, indeed, leave $V(a^{3}_{i})$ only by leaving $V$ through its boundary, that is to say by crossing one of the $b_{1}$, or by leaving $a^{3}_{i}$ through its boundary, that is to say by crossing a face $a^{2}_{j}$, and, since one stays on $V$, by crossing one of the lines $V(a^{2}_{j})$.
+
+The total manifold $V$ is formed of the set of the $V(a^{3}_{i})$.
+
+Let us now consider $V(a^{2}_{i})$; we must distinguish two cases:
+
+1° either none of the edges $b_{1}$ belongs to $a^{2}_{i}$. We can then leave $V(a^{2}_{i})$ only by leaving $a^{2}_{i}$, that is to say by crossing one of the edges $a^{1}_{j}$; the boundary of $V(a^{2}_{i})$ is therefore formed by the $V(a^{1}_{j})$.
+
+\origpage{311}
+
+2° or one (or several) edge $b_{1}$ forms part of $a^{2}_{i}$; in this case it will likewise form part of $V(a^{2}_{i})$; but it may happen that $V(a^{2}_{i})$ is composed, besides the edge $b_{1}$, of other lines; these lines will have as boundaries points $V(a^{1}_{j})$, or points situated on $b_{1}$. These points situated on $b_{1}$, where the other lines of which $V(a^{2}_{i})$ is composed come to end on the edge $b_{1}$, will be what I shall call \emph{nodal points}.
+
+In all cases $V(a^{2}_{i})$ will be a line or a set of lines; if, indeed, $V(a^{2}_{i})$ were a surface, it would be because $a^{2}_{i}$, or a portion of this face, formed part of $V$. But I have the right to deform $V$, provided that I do not change its boundary $\displaystyle\sum b_{1}$; I can always, by an infinitely small deformation, prevent a region of $a^{2}_{i}$ from forming part of $V$.
+
+For the same reason I can always suppose that $V(a^{1}_{i})$ reduces to one or several points, except if $a^{1}_{i}$ is one of the edges $b_{1}$, in which case $V(a^{1}_{i})$ will be that edge itself.
+
+This posed, I can deform $V$:
+
+1° in such a manner that all the $V(a^{1}_{i})$ [other than $V(b_{1})$] are vertices. Let $a^{0}_{j}$ be a vertex of $a^{1}_{i}$. Let $M$ be one of the points of which $V(a^{1}_{i})$ is composed; around the point $M$ and on $V$ let us describe a small closed curve $C$. Let $K$ be the infinitely small area cut out on $V$ by this curve $C$. Let us construct a sort of sleeve, infinitely slender, surrounding the edge $a^{1}_{i}$ and passing through $C$. Through the vertex $a^{0}_{j}$ I draw any surface $S$; it will cut out on the sleeve a very small closed curve $C'$. Let $K'$ be the portion of the surface $S$ bounded by $C$\ednote{Printed $C$; since $K'$ is the portion of $S$ cut out by the small curve $C'$, $C'$ appears to be intended.}; let $H$ be the surface of the sleeve comprised between $C$ and $C'$. One will thus figure a sort of drum, of which $H$ will be the lateral surface, $K$ and $K'$ the two bases.
+
+Let us then consider the manifold
+\[ V' = V - K + H + K'. \]
+
+This manifold will have the same boundary as $V$; but it will no longer cut $a^{1}_{i}$ at $M$, since the portion $K$ of $V$, where this point $M$ was found, has been suppressed. On the other hand, $H$ will not cut the edge $a^{1}_{i}$, and $K'$ will cut this edge at $a^{0}_{j}$.
+
+\origpage{312}
+
+By operating in the same way on all the points of intersection of $V$ and of $a^{1}_{i}$, one would bring all these points to coincide with $a^{0}_{j}$.
+
+2° in such a manner that all the nodal points are vertices.
+
+Let, indeed, $a^{2}_{i}$ be a face passing through the edge $b_{1}$; the intersection of $V$ and $a^{2}_{i}$ will comprise, besides $b_{1}$, other lines; let $c$ be one of these lines, coming to end on $b_{1}$ at a nodal point $D$. Let $a^{0}_{j}$ and $a^{0}_{k}$ be the two vertices of $b_{1}$. Through $b_{1}$ I pass a surface $S$, forming part of $P$ and not cutting $a^{2}_{i}$. Since $a^{0}_{j}$ and $a^{0}_{k}$ are on the boundary of $V$, I join these two points by a line $L$, situated on $V$ and departing little from $b_{1}$. This line departing little from $b_{1}$, I can draw through $L$ another surface $S'$, which will not pass through $b_{1}$, but which will cut $S$ along a line $L'$, very little different from $b_{1}$. These three lines $L$, $b_{1}$ and $L'$ will have the same extremities $a^{0}_{j}$ and $a^{0}_{k}$.
+
+Let $V_{1}$ be the portion of $V$ comprised between $L$ and $b_{1}$; let $S_{1}$ be the portion of $S$ comprised between $L'$ and $b_{1}$, and $S_{1}$\ednote{Printed $S_{1}$ here and in the display below, the same letter as the portion of $S$; a distinct name such as $S'_{1}$ for the portion of $S'$ appears to be intended.} the portion of $S'$ comprised between $L$ and $L'$.
+
+I replace $V$ by
+\[ V' = V - V_{1} + S_{1} + S_{1}. \]
+$V'$ has the same boundaries as $V$, but $V'(a^{2}_{i})$ no longer presents nodal points apart from $a^{0}_{j}$ and $a^{0}_{k}$; for if a line analogous to $c$ came to end at a nodal point situated between $a^{0}_{j}$ and $a^{0}_{k}$, the portion of this line $c$ neighbouring this nodal point would have to be found on $S_{1}$, which is impossible, since $S$ does not cut $a^{2}_{i}$.
+
+In summary: we can always suppose that the $V(a^{2}_{i})$ are lines whose extremities are vertices of $a^{2}_{i}$.
+
+Let then $L$ be one of the lines of which $V(a^{2}_{i})$ is composed, having as extremities two vertices $a^{0}_{j}$ and $a^{0}_{k}$ of $a^{2}_{i}$. One can go from $a^{0}_{j}$ to $a^{0}_{k}$ by following the perimeter of $a^{2}_{i}$; let $\displaystyle\sum a^{1}_{m}$ be the set of the edges of $a^{2}_{i}$ comprised between $a^{0}_{j}$ and $a^{0}_{k}$. Since the face $a^{2}_{i}$ is supposed simply connected, the line $L$ will divide it into two parts. Let $Q$ be one of these parts, comprised between $L$ and $\displaystyle\sum a^{1}_{m}$.
+
+Let $a^{3}_{p}$ and $a^{3}_{q}$ be the two cells separated by $a^{2}_{i}$. Through the edges $\displaystyle\sum a^{1}_{m}$ I pass a surface $S$, little different from the face $a^{2}_{i}$ and situated entirely in the cell $a^{3}_{p}$; through the same edges I pass a second
+\origpage{313}
+surface $S'$, little different from $a^{2}_{i}$ and situated in the cell $a^{3}_{q}$; these two surfaces $S$ and $S'$ will cut $V$ along two lines $L_{1}$ and $L'_{1}$, little different from $L$, and having as extremities $a^{0}_{j}$ and $a^{0}_{k}$. Let $S_{1}$ be the portion of $S$ comprised between $\displaystyle\sum a^{1}_{m}$ and $L_{1}$; let $S_{1}$\ednote{Printed $S_{1}$ here and in the display below, the same letter as the portion of $S$; $S'_{1}$, the portion of $S'$, appears to be intended.} be the portion of $S'$ comprised between $\displaystyle\sum a^{1}_{m}$ and $L'_{1}$; let $V_{1}$ be the portion of $V$ comprised between $L_{1}$ and $L'_{1}$; it is on $V_{1}$ that $L$ will be found.
+
+Let now
+\[ V' = V - V_{1} + S_{1} + S_{1}. \]
+$V'$ has the same boundaries as $V$; $V'$ no longer passes through $L$, but on the other hand passes through the edges $\displaystyle\sum a^{1}_{m}$.
+
+By operating in the same manner for all the lines such as $L$, one sees that one can always suppose that all the $V(a^{2}_{i})$ reduce to combinations of edges.
+
+Since the boundaries of $V(a^{3}_{i})$ are either $b_{1}$ or $V(a^{2}_{j})$, one sees that the boundaries of the $V(a^{3}_{i})$ are combinations of edges of $P$, and, of course, all these edges must belong to $a^{3}_{i}$. Thus, then, $V(a^{3}_{i})$ is a simply or multiply connected surface, bounded by one or several closed lines which are themselves combinations of edges of $a^{3}_{i}$.
+
+Since the cell $a^{3}_{i}$ is simply connected, these closed lines will subdivide the surface of this cell into a certain number of regions, and since these closed lines are combinations of edges of $a^{3}_{i}$, these regions will be combinations of the faces of $a^{3}_{i}$.
+
+One can always find a combination of these regions which will have the same boundaries as $V(a^{3}_{i})$. Let us suppose, for example, that the boundary of $V(a^{3}_{i})$ is composed of three closed lines $L, L_{1}, L_{2}$; the line $L$ will divide the surface of $a^{3}_{i}$ into two regions $R$ and $R'$; the lines $L_{1}$ and $L_{2}$ will likewise divide this surface into two regions $R_{1}$ and $R'_{1}$, or $R_{2}$ and $R'_{2}$. I suppose that, in traversing $L$ in a certain sense, one has $V(a^{3}_{i})$ on one's left, and $R$ and $R'$ on one's right; I suppose likewise that, in traversing $L_{1}$ and $L_{2}$ in a suitable sense, one has on one's left $V(a^{3}_{i})$ and $R_{1}$, or $V(a^{3}_{i})$ and $R_{2}$.
+
+Then the manifold $R + R_{1} + R_{2}$ will have the same boundary as $V(a^{3}_{i})$; one can therefore replace $V(a^{3}_{i})$ by $R + R_{1} + R_{2}$.
+
+\origpage{314}
+
+By operating in the same manner on all the $V(a^{3}_{i})$, one will have replaced $V$ by another manifold, which will have the same boundary $\displaystyle\sum b_{1}$, and which will be a combination of faces of $P$.
+
+The theorem is therefore proved as regards the polyhedra of space of 4 dimensions and the homologies between the edges.
+
+One would prove it in the same way for any polyhedron.
+
+\subsection*{\S~VII. Reciprocal polyhedron.}
+
+Let $P$ be a polyhedron in space of 4 dimensions; this polyhedron will be subdivided into a certain number of manifolds $v_{3}$, which I shall call its \emph{cells}, and which I shall denote by $a^{3}_{i}$. These cells will be separated from one another by manifolds $v_{2}$ or $a^{2}_{i}$, which I shall call the \emph{faces}; these faces will have as boundaries manifolds $v_{1}$, or $a^{1}_{i}$, which I shall call the \emph{edges}, and the extremities of the edges will be points $v_{0}$ or $a^{0}_{i}$, which I shall call the \emph{vertices}.
+
+I shall suppose, of course, that the cells and the faces are simply connected.
+
+Let us mark, in the interior of each cell $a^{3}_{i}$, a point $P(a^{3}_{i})$; in the interior of each face $a^{2}_{i}$, a point $P(a^{2}_{i})$; on each edge $a^{1}_{i}$, a point $P(a^{1}_{i})$; each edge will thus be divided into two parts by the point $P(a^{1}_{i})$.
+
+Let us join by lines the point $P(a^{2}_{i})$ to each of the vertices of the face $a^{2}_{i}$ and to each of the points $P(a^{1}_{j})$ corresponding to the various edges $a^{1}_{j}$ of the face $a^{2}_{i}$. All these lines must be traced on the face $a^{2}_{i}$. This face will thus be divided into triangles, and the number of these triangles will be double the number of the edges of $a^{2}_{i}$. We shall do the same for all the other faces.
+
+Let us now consider a cell $a^{3}_{i}$; let us decompose into triangles $T$ all the faces $a^{2}_{j}$ of this cell, as we have just said. Let us construct curvilinear triangles having as common vertex the point $P(a^{3}_{i})$ and as bases the different sides of the different triangles $T$. The cell $a^{3}_{i}$ will thus be decomposed into tetrahedra having $P(a^{3}_{i})$ as common vertex and as bases the different triangles $T$.
+
+\origpage{315}
+
+We shall distinguish six sorts of lines (which will be the edges of our tetrahedra):
+
+those of the 1\textsuperscript{st} sort will join a vertex $a^{0}_{i}$ to a point $P(a^{1}_{j})$; each edge will thus be formed of two lines of the 1\textsuperscript{st} sort;
+
+those of the 2\textsuperscript{nd} sort will join a point $P(a^{3}_{i})$ to a point $P(a^{2}_{j})$;
+
+» » 3\textsuperscript{rd} » » » $P(a^{2}_{i})$ » vertex $a^{0}_{j}$;
+
+» » 4\textsuperscript{th} » » » $P(a^{1}_{i})$ » point $P(a^{2}_{j})$;
+
+» » 5\textsuperscript{th} » » » $P(a^{3}_{i})$ » » $P(a^{1}_{j})$;
+
+» » 6\textsuperscript{th} » » » » » vertex $a^{0}_{j}$.
+
+The lines of the 2\textsuperscript{nd} sort can be coupled two by two in two ways:
+
+1° What I shall call the line $b^{1}_{i}$ will be formed of two lines of the 2\textsuperscript{nd} sort, joining one and the same point $P(a^{2}_{i})$ to two points $P(a^{3}_{j})$ and $P(a^{3}_{k})$, corresponding to the two cells $a^{3}_{j}$ and $a^{3}_{k}$ separated by the face $a^{2}_{i}$. There will therefore be as many lines $b^{1}_{i}$ as faces $a^{2}_{i}$.
+
+2° What I shall call a line $c$ will be formed of two lines of the 2\textsuperscript{nd} sort, joining one and the same point $P(a^{3}_{i})$ to two points $P(a^{2}_{j})$ and $P(a^{2}_{k})$, corresponding to two faces $a^{2}_{j}$ and $a^{2}_{k}$ of the cell $a^{3}_{i}$.
+
+We must define surfaces which I shall call the surfaces $b^{2}_{i}$.
+
+Let there be any edge $a^{1}_{i}$ and the point $P(a^{1}_{i})$. Let us suppose that the faces which pass through $a^{1}_{i}$ are successively:
+\[ a^{2}_{1}, \qquad a^{2}_{2}, \qquad \ldots, \qquad a^{2}_{q}, \]
+and that the cells to which $a^{1}_{i}$ belongs are successively:
+\[ a^{3}_{1}, \qquad a^{3}_{2}, \qquad \ldots, \qquad a^{3}_{q}, \]
+in such a way that $a^{2}_{1}$ separates $a^{3}_{1}$ from $a^{3}_{2}$, $a^{2}_{2}$ separates $a^{3}_{2}$ from $a^{3}_{3}$, \ldots, and that, finally, $a^{2}_{q}$ separates $a^{3}_{q}$ from $a^{3}_{1}$. Let us agree, for greater symmetry, to denote the cell $a^{3}_{1}$ indifferently by $a^{3}_{1}$ or $a^{3}_{q+1}$.
+
+Let us decompose each cell into tetrahedra, and consider in particular the tetrahedra which admit as vertex the point $P(a^{1}_{i})$. Let us consider the $2q$ curvilinear triangles:
+\[ P(a^{1}_{i}) P(a^{3}_{k}) P(a^{2}_{k}), \qquad P(a^{1}_{i}) P(a^{3}_{k+1}) P(a^{2}_{k}). \qquad (k = 1, 2, \ldots, q) \]
+
+\origpage{316}
+
+The set of these $2q$ triangles will form a certain polygon which I shall call $b^{2}_{i}$, and which will have as boundary the set of the lines
+\[ b^{1}_{1}, \qquad b^{1}_{2}, \qquad \ldots, \qquad b^{1}_{q}. \]
+
+Let us now define the volumes $b^{3}_{i}$; the volume $b^{3}_{i}$ will be the set of the tetrahedra which admit as vertex the point $a^{0}_{i}$; this volume will be a simply connected polyhedron of 3 dimensions, which will have as boundary the set of the surfaces $b^{2}_{k}$ corresponding to the edges $a^{1}_{k}$ which end at the point $a^{0}_{i}$.
+
+The juxtaposition of the volumes $b^{3}_{i}$ will constitute a new polyhedron $P'$, which I shall call the \emph{reciprocal polyhedron of $P$}, and which will have as cells the\ednote{Printed ``le'' for ``les''; an apparent misprint.} $b^{3}_{i}$, as faces the $b^{2}_{i}$, as edges the $b^{1}_{i}$, as vertices the points $b^{0}_{i} = P(a^{3}_{i})$.
+
+To each cell $b^{3}_{i}$ of $P'$ will correspond a vertex $a^{0}_{i}$ of $P$,
+
+» » face $b^{2}_{i}$ » » » an edge $a^{1}_{i}$ » »
+
+» » edge $b^{1}_{i}$ » » » a face $a^{2}_{i}$ » »
+
+» » vertex $b^{0}_{i}$ » » » a cell $a^{3}_{i}$ » ».
+
+Moreover, in the sense of \S~II, there will be the same relation, for example, between the edge $b^{1}_{i}$ and the face $b^{2}_{j}$ as between the face $a^{2}_{i}$ and the edge $a^{1}_{j}$.
+
+If therefore the characteristic congruences of the polyhedron $P$ are written:
+\[ a^{3}_{i} \equiv \sum_{j} \varepsilon^{3}_{i,j} a^{2}_{i}, \qquad a^{2}_{i} \equiv \sum_{j} \varepsilon^{2}_{i,j} a^{1}_{i}, \qquad a^{1}_{i} \equiv \sum_{j} \varepsilon^{1}_{i,j} a^{0}_{j}, \]
+\ednote{The first two sums are printed with $a^{2}_{i}$ and $a^{1}_{i}$ under the sum over $j$; $a^{2}_{j}$ and $a^{1}_{j}$, as in the third, appear to be intended.}
+those of the polyhedron $P'$ will be written:
+\[ b^{3}_{i} \equiv \sum_{j} \varepsilon^{1}_{i,j} b^{2}_{j}, \qquad b^{2}_{i} \equiv \sum_{j} \varepsilon^{2}_{i,j} b^{1}_{j}, \qquad b^{1}_{i} \equiv \sum_{j} \varepsilon^{3}_{i,j} b^{0}_{j}. \]
+
+Let us now consider a line $c$, formed of two lines of the second sort, joining one and the same point $P(a^{3}_{i})$ to two points $P(a^{2}_{j})$ and $P(a^{2}_{k})$.
+
+Let $a^{0}_{m}$ and $a^{0}_{p}$ be two vertices, belonging respectively both to the cell $a^{3}_{i}$. Let $d$ and $d'$ be the two lines of the 3\textsuperscript{rd} sort which join respectively $P(a^{2}_{j})$ to $a^{0}_{m}$ and $P(a^{2}_{k})$ to $a^{0}_{p}$.
+
+Since $a^{0}_{m}$ and $a^{0}_{p}$ belong to one and the same cell $a^{3}_{i}$, one can go from one of these vertices to the other by following a broken line formed of edges $a^{1}_{q}$ belonging to $a^{3}_{i}$.
+
+\origpage{317}
+
+Let $\displaystyle\sum a^{1}_{q}$ be this broken line, whose extremities are $a^{0}_{m}$ and $a^{0}_{p}$; the set of the lines $c - d - \displaystyle\sum a^{1}_{q} + d'$ will be a closed line, which I shall express by the congruence:
+\[ c \equiv d + \sum a^{1}_{q} - d'. \]
+
+Since $a^{3}_{i}$ is simply connected, this closed line will be the boundary of a manifold of 2 dimensions interior to $a^{3}_{i}$, which I shall express by the homology:
+\[ c \backsim d + \sum a^{1}_{q} - d'. \]
+
+Conversely: let $\displaystyle\sum a^{1}_{q}$ be a broken line formed of edges all belonging to $a^{3}_{i}$, and whose extremities are the vertices $a^{0}_{m}$ and $a^{0}_{p}$; these two vertices will belong respectively to two faces $a^{2}_{j}$ and $a^{2}_{k}$, both forming part of $a^{3}_{i}$. Let there be the three lines:
+\[ c = P(a^{2}_{j}) P(a^{3}_{i}) + P(a^{3}_{i}) P(a^{2}_{k}), \qquad d = P(a^{2}_{j}) a^{0}_{m}, \qquad d' = P(a^{2}_{k}) a^{0}_{p}. \]
+
+One will again have
+\[ c \backsim d + \sum a^{1}_{q} - d'. \]
+
+Let now $a^{0}_{i}$ be a vertex belonging to two faces $a^{2}_{j}$ and $a^{2}_{k}$. Let there be the two lines of the 3\textsuperscript{rd} sort:
+\[ d_{j} = P(a^{2}_{j}) a^{0}_{i}, \qquad d_{k} = P(a^{2}_{k}) a^{0}_{i}. \]
+
+We can trace a line $L$, departing infinitely little from the vertex $a^{0}_{i}$, and going from a point of $a^{2}_{j}$ to a point of $a^{2}_{k}$.
+
+Let us suppose, to fix ideas, that this line crosses three cells and that it meets successively the face $a^{2}_{j}$, the cell $a^{3}_{j}$, the face $a^{2}_{m}$, the cell $a^{3}_{m}$, the face $a^{2}_{p}$, the cell $a^{3}_{p}$, and finally the face $a^{2}_{k}$.
+
+Let us construct the three lines $c$:
+\[ \begin{aligned} c_{j} &= P(a^{2}_{j}) P(a^{3}_{j}) + P(a^{3}_{j}) P(a^{2}_{m}), \\ c_{m} &= P(a^{2}_{m}) P(a^{3}_{m}) + P(a^{3}_{m}) P(a^{2}_{p}), \\ c_{p} &= P(a^{2}_{p}) P(a^{3}_{p}) + P(a^{3}_{p}) P(a^{2}_{k}), \end{aligned} \]
+\origpage{318}
+and the two lines of the 3\textsuperscript{rd} sort:
+\[ d_{m} = P(a^{2}_{m}) a^{0}_{i}, \qquad d_{p} = P(a^{2}_{p}) a^{0}_{i}. \]
+
+One will have:
+\[ c_{j} \equiv d_{j} - d_{m}, \qquad c_{m} \equiv d_{m} - d_{p}, \qquad c_{p} \equiv d_{p} - d_{k}; \]
+and since the three cells $a^{3}_{j}, a^{3}_{m}, a^{3}_{p}$ are simply connected:
+\[ c_{j} \backsim d_{j} - d_{m}, \qquad c_{m} \backsim d_{m} - d_{p}, \qquad c_{p} \backsim d_{p} - d_{k}, \]
+and finally:
+\[ c_{j} + c_{m} + c_{p} \backsim d_{j} - d_{k}. \]
+
+One can therefore always find a broken line, formed of lines $c$ and homologous to $d_{j} - d_{k}$, $d_{j}$ and $d_{k}$ being lines of the 3\textsuperscript{rd} sort ending at one and the same vertex.
+
+This posed, let
+\[ \sum b^{1}_{i} \equiv 0 \tag{1} \]
+be a congruence between the edges $b^{1}_{i}$ of the polyhedron $P'$.
+
+The broken line $\displaystyle\sum b^{1}_{i}$ is evidently formed of an even number of lines of the 2\textsuperscript{nd} sort, and in traversing this broken line one will meet successively $q$ faces
+\[ a^{2}_{1}, \qquad a^{2}_{2}, \qquad \ldots, \qquad a^{2}_{q}, \]
+returning to the face $a^{2}_{1}$, which I shall denote also by $a^{2}_{q+1}$; and one will meet $q$ cells
+\[ a^{3}_{1}, \qquad a^{3}_{2}, \qquad \ldots, \qquad a^{3}_{p}, \] \ednote{Printed $a^{3}_{p}$ as the last term; $a^{3}_{q}$ is intended, as the text speaks of $q$ cases and continues with $a^{3}_{q+1}$.}
+returning to the cell $a^{3}_{1}$, which I shall denote also by $a^{3}_{q+1}$, so that the face $a^{2}_{k}$ will separate the cell $a^{3}_{k}$ from the cell $a^{3}_{k+1}$.
+
+Our congruence is then written:
+\[ \sum [P(a^{3}_{k}) P(a^{2}_{k}) + P(a^{2}_{k}) P(a^{3}_{k+1})] \equiv 0, \]
+\origpage{319}
+or, what comes to the same thing,
+\[ \sum [P(a^{2}_{k-1}) P(a^{3}_{k}) + P(a^{3}_{k}) P(a^{2}_{k})] = 0. \]
+
+Let then $a^{0}_{k}$ be a vertex of the face $a^{2}_{k}$, belonging, consequently, at once to the cells $a^{3}_{k}$ and $a^{3}_{k+1}$.
+
+Let $d_{k}$ be the line of the 3\textsuperscript{rd} sort $P(a^{2}_{k}) a^{0}_{k}$; we have just seen that there exists a broken line $A_{k}$, formed of edges belonging to the cell $a^{3}_{k}$, and such that one has the homology:
+\[ P(a^{2}_{k-1}) P(a^{3}_{k}) + P(a^{3}_{k}) P(a^{2}_{k}) \backsim d_{k-1} + A_{k} - d_{k}. \]
+
+On adding all these homologies, the first member reduces to:
+\[ \sum [P(a^{2}_{k-1}) P(a^{3}_{k}) + P(a^{3}_{k}) P(a^{2}_{k})] = \sum b^{1}_{i}; \]
+the lines of the 3\textsuperscript{rd} sort $d_{k}$ disappear, and there remains:
+\[ \sum b^{1}_{i} \backsim \sum A_{k}, \]
+and consequently
+\[ \sum b^{1}_{i} \equiv \sum A_{k} \equiv 0. \]
+
+Hence, to every congruence $\displaystyle\sum b^{1}_{i} \equiv 0$ between the edges of $P'$ there corresponds a congruence $\displaystyle\sum A_{k} \equiv 0$ between the edges of $P$, and such that one has:
+\[ \sum b^{1}_{i} \backsim \sum A_{k}. \]
+If therefore one has $\displaystyle\sum b'_{i} \backsim 0$\ednote{Printed with a prime-like mark in place of the superscript 1, as $b'_{i}$; the context requires $b^{1}_{i}$.}, one will have $\displaystyle\sum A_{k} \backsim 0$, and conversely.
+
+Let now
+\[ \sum A_{k} \equiv 0 \tag{2} \]
+be a congruence between the edges of $P$; let us suppose that $A_{k}$ is a broken line formed of edges belonging to the cell $a^{3}_{k}$.
+
+The first member of the congruence (2) will be composed of $q$
+\origpage{320}
+such broken lines:
+\[ A_{1}, \qquad A_{2}, \qquad \ldots, \qquad A_{q}, \]
+and I shall denote $A_{1}$ indifferently by $A_{1}$ or $A_{q+1}$, and $A_{q}$ by $A_{0}$ or $A_{q}$.
+
+Let $a^{0}_{k-1}$ and $a^{0}_{k}$ be the two extremities of the line $A_{k}$; the vertex $a^{0}_{k}$ will belong at once to the cells $a^{3}_{k}$ and $a^{3}_{k+1}$; let $a'^{2}_{k}$ be the face of $a^{3}_{k}$, and $a^{2}_{k+1}$ the face of $a^{3}_{k+1}$, to which $a^{0}_{k}$ belongs.
+
+Let there be the lines of the 3\textsuperscript{rd} sort
+\[ d'_{k} = P(a'^{2}_{k}) a^{0}_{k}, \qquad d_{k+1} = P(a^{2}_{k+1}) a^{0}_{k}, \]
+and on the other hand\ednote{Printed ``parte'' for ``part''; an apparent misprint.}:
+\[ c_{k} = P(a^{2}_{k}) P(a^{3}_{k}) + P(a^{3}_{k}) P(a'^{2}_{k}). \]
+
+We have seen that
+\[ A_{k} \backsim - d_{k} + c_{k} + d'_{k}. \]
+
+On the other hand, the lines $d_{k+1}$ and $d'_{k}$ end at one and the same vertex $a^{0}_{k}$; we have likewise seen that one can find a combination $C_{k}$ of lines $c$ such that one has
+\[ C_{k} \backsim d'_{k} - d_{k-1}. \] \ednote{Printed $d_{k-1}$; the preceding sentence names $d_{k+1}$ and $d'_{k}$ as the lines ending at $a^{0}_{k}$, so $d_{k+1}$ may be intended.}
+
+On adding all these homologies, I find:
+\[ \sum A_{k} \backsim \sum c_{k} + \sum C_{k}, \]
+and consequently:
+\[ \sum c_{k} + \sum C_{k} \equiv 0. \]
+
+The first member of this last congruence is a combination of lines $c$, or, what comes to the same thing, a combination of edges $b^{1}_{i}$ of the polyhedron $P'$, so that I can put:
+\[ \sum c_{k} + \sum C_{k} = \sum b^{1}_{i}, \]
+\origpage{321}
+whence
+\[ \sum A_{k} \backsim \sum b^{1}_{i}. \]
+
+In summary: to every congruence between the edges of $P$ there corresponds a congruence between those of $P'$, and conversely, and the necessary and sufficient condition for the first member of one of the congruences to be homologous to zero is that the other be so.
+
+In other words, the number of distinct congruences between the edges is the same for $P$ and $P'$, not regarding congruences as distinct when a linear combination of the first members of these congruences is homologous to zero.
+
+In other words again, the reduced number of \emph{Betti} relative to the edges of $P$ is equal to the reduced number of \emph{Betti} relative to the edges of $P'$.
+
+One could arrive at the same result by remarking that one can construct a polyhedron which would be at once derived from the polyhedron $P$ and derived from the reciprocal polyhedron $P'$, and by applying the theorem of \S~5.
+
+We shall see further on, in \S~10, that this proposition can be presented in another form.
+
+On the other hand, this can make it possible to prove, more simply than in \S~5, that the reduced numbers of \emph{Betti} are equal to the numbers of \emph{Betti} properly so called.
+
+Indeed the definition of the polyhedron $P'$ involves a certain arbitrariness: its vertices $b^{0}_{i}$ are subject only to being interior to the cells $a^{3}_{i}$ of $P$. Under these conditions, one can evidently always choose the polyhedron $P'$ in such a way that \emph{any} closed line is a combination of the $b^{1}_{i}$.
+
+\subsection*{\S~VIII. Proof of the fundamental theorem.}
+
+Let $N_{1}$ be the number of the edges of our polyhedron $P$, $N_{2}$ the number of the faces, $N_{3}$ that of the cells. Let us form a table according to the following rules.
+
+\origpage{322}
+
+The table will have $N_{2} + N_{3}$ columns, $N_{2}$ said to be of the 1\textsuperscript{st} sort and $N_{3}$ of the 2\textsuperscript{nd}; it will have $N_{2} + N_{1}$ rows, $N_{2}$ of the 1\textsuperscript{st} and $N_{1}$ of the 2\textsuperscript{nd} sort. Here is what the elements of the table will be:
+
+1° For the element of the $i^{\text{th}}$ row of the 1\textsuperscript{st} sort and the $j^{\text{th}}$ column of the 1\textsuperscript{st} sort, I shall write 1 if $i = j$, and 0 if $i \neq j$.
+
+2° The elements belonging to a row of the 2\textsuperscript{nd} sort and to a column of the 2\textsuperscript{nd} sort will all be null.
+
+3° The element of the $i^{\text{th}}$ column of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ row of the 2\textsuperscript{nd} sort will be $\varepsilon^{2}_{i,j}$, $\varepsilon^{2}_{i,j}$ being the number which makes known to us the relation between the face $a^{2}_{i}$ and the edge $a^{1}_{j}$.
+
+4° The element of the $i^{\text{th}}$ row of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ column of the 2\textsuperscript{nd} sort will be $\varepsilon^{3}_{i,j}$, that is to say the number which makes known the relation between the cell $a^{3}_{j}$ and the face $a^{2}_{i}$.
+
+Our table, if there are for example two cells, four faces and three edges, will present an aspect such as this:
+\[ \begin{matrix} 1 & 0 & 0 & 0 & \varepsilon & \varepsilon \\[1ex] 0 & 1 & 0 & 0 & \varepsilon & \varepsilon \\[1ex] 0 & 0 & 1 & 0 & \varepsilon & \varepsilon \\[1ex] 0 & 0 & 0 & 1 & \varepsilon & \varepsilon \\[1ex] \varepsilon & \varepsilon & \varepsilon & \varepsilon & 0 & 0 \\[1ex] \varepsilon & \varepsilon & \varepsilon & \varepsilon & 0 & 0 \\[1ex] \varepsilon & \varepsilon & \varepsilon & \varepsilon & 0 & 0 \end{matrix} \tag{1} \]
+
+I have not written the indices of the numbers $\varepsilon$, for simplicity.
+
+Here now are the operations that I regard as permitted on this table.
+
+1° To add a column to another \emph{of the same sort}, or to subtract it from it.
+
+2° To add a row to another \emph{of the same sort}, or to subtract it from it.
+
+3° To permute two columns of the same sort, changing all the signs of one of them.
+
+\origpage{323}
+
+4° To permute two rows of the same sort, changing all the signs of one of them.
+
+All these transformations, under which the elements of the table remain integers, will be called the \emph{arithmetic transformations} of the table.
+
+One can use them to simplify the part of the table which belongs to the columns of the 1\textsuperscript{st} sort and to the rows of the 2\textsuperscript{nd} sort, and that which belongs to the columns of the 2\textsuperscript{nd} sort and to the rows of the 1\textsuperscript{st} sort.
+
+Here is how far the simplification can be pushed, according to well-known theorems of arithmetic; when the reduction is finished:
+
+The element of the $i^{\text{th}}$ column of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ row of the 2\textsuperscript{nd} sort:
+
+1° Will be null if $i > j$.
+
+2° Will be equal to an integer $H_{i}$, which may be null, if $i = j$.
+
+3° Will again be null if $i < j$ and if $H_{i}$ is prime to $H_{j}$.
+
+4° Finally, will be null if $j > N_{2}$.
+
+The same will hold for the element of the $i^{\text{th}}$ row of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ column of the 2\textsuperscript{nd} sort.
+
+The reduction can be pushed still further if one authorizes a fifth operation: to multiply all the elements of a row or of a column by one and the same number, integer or not, different from zero.
+
+The corresponding transformations will be called the \emph{algebraic transformations} of the table.
+
+One can then suppose that the element of the $i^{\text{th}}$ column of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ row of the 2\textsuperscript{nd} sort (as also the element of the $i^{\text{th}}$ row of the 1\textsuperscript{st} sort and of the $j^{\text{th}}$ column of the 2\textsuperscript{nd} sort) is null if $i \neq j$. If $i = j$, it may be equal to 0 or to 1. If this is so, I shall say that the table is \emph{reduced}.
+
+After the fifth operation, the elements which belong to the rows and to the columns of the 1\textsuperscript{st} sort may not remain integers; moreover, the determinant formed by these rows and these columns may not remain equal to 1, but it will remain different from zero.
+
+The table (1) is relative to the faces of the polyhedron $P$ and to their relations with the cells and the edges. We could draw up one entirely similar, relative to the edges of the polyhedron $P$ and to their relations with the faces and the vertices.
+
+\origpage{324}
+
+We could likewise consider the polyhedron $P'$ defined above, and construct two tables, relative the one to the faces of $P'$, the other to its edges.
+
+Let us compare the table (1), relative to the faces of $P$, with the table (1~\emph{bis}) relative to the edges of $P'$.
+
+It results from what precedes that these two tables can be deduced from each other by replacing the rows by the columns and inversely.
+
+This posed, let us consider the table (1), relative to the faces of $P$, and examine how one can deduce from this table the number of \emph{Betti} $P_{2}$ of the polyhedron $P$.
+
+\emph{How, first, can one deduce from it the congruences between the faces and the edges}?
+
+Let us consider any column of the 1\textsuperscript{st} sort; for example the $i^{\text{th}}$ column. Let us multiply the elements of this column and of the $k^{\text{th}}$ row of the 1\textsuperscript{st} sort by $a^{2}_{k}$ and add; then let us set this equal to the sum obtained by multiplying the elements of this same column and of the $j^{\text{th}}$ row of the 2\textsuperscript{nd} sort by $a^{1}_{j}$; we shall obtain the congruence
+\[ a^{2}_{i} \equiv \sum \varepsilon^{2}_{i,j} a^{1}_{j}, \]
+which is indeed one of the congruences (3) of \S~II. All the other congruences are only combinations of them.
+
+\emph{How can one now find the homologies between the faces}?
+
+For that, let us consider for example the $i^{\text{th}}$ column of the 2\textsuperscript{nd} sort; let us multiply the elements of the $k^{\text{th}}$ row and of this column by $a^{2}_{k}$, add, and set equal to zero; we shall find:
+\[ \sum \varepsilon^{3}_{i,k} a^{2}_{k} \backsim 0, \]
+which is indeed one of the homologies (5) of \S~II, of which all the others are only combinations.
+
+\emph{What will happen, now, if one applies to our table} (1) \emph{any algebraic transformation}?
+
+Before the transformation, each column of the 1\textsuperscript{st} sort corresponds
+\origpage{325}
+to a face, each column of the 2\textsuperscript{nd} sort to a cell, each row of the 1\textsuperscript{st} sort to a face, each row of the 2\textsuperscript{nd} sort to an edge.
+
+One obtains, as we have seen, as many congruences and homologies as columns, by multiplying the elements of each row of the 1\textsuperscript{st} sort by the corresponding face, those of each row of the 2\textsuperscript{nd} sort by the corresponding edge, and adding.
+
+Let us now suppose that one performs the second operation, that is to say that one transforms by adding the row of the 1\textsuperscript{st} sort which corresponds to $a^{2}_{i}$ to that of the 1\textsuperscript{st} sort which corresponds to $a^{2}_{k}$. We agree to say that to the new $k^{\text{th}}$ row (the one to which the $i^{\text{th}}$ row has been added) there still corresponds the manifold $a^{2}_{k}$; but that to the new $i^{\text{th}}$ row (which, moreover, has not changed) there corresponds the manifold $a^{2}_{i} - a^{2}_{k}$.
+
+If one performs the fifth operation on the $k^{\text{th}}$ row of the 1\textsuperscript{st} sort, multiplying its elements by a constant $m$, we shall agree to say that to the new $k^{\text{th}}$ row there corresponds the manifold $\dfrac{1}{m} a^{2}_{k}$ (a notation which has only a symbolic value, unless $\dfrac{1}{m}$ is an integer).
+
+As for the fourth operation, it is only a combination of several operations analogous to the second.
+
+We have thus defined the manifold which corresponds to each of the rows of the 1\textsuperscript{st} sort of the table, after any combination of the 2\textsuperscript{nd}, 4\textsuperscript{th} and 5\textsuperscript{th} operations has been applied to these rows.
+
+We should define in the same way the manifolds which correspond to the different rows of the 2\textsuperscript{nd} sort, after a combination of the 2\textsuperscript{nd}, 4\textsuperscript{th} and 5\textsuperscript{th} operations had been applied to these rows.
+
+Thanks to these conventions, it will still suffice, in order to obtain the congruences and the homologies, to add and set equal to zero, after having multiplied the elements of each row by the corresponding manifold, and having changed the sign of the products thus obtained as regards the rows of the 2\textsuperscript{nd} sort.
+
+Now, if one applies to the columns of the table the 1\textsuperscript{st}, 3\textsuperscript{rd} and 5\textsuperscript{th} operations, one will only combine the congruences with one another, and the homologies with one another; or multiply a congruence and a homology by a constant factor.
+
+Whence the following result:
+
+\origpage{326}
+
+\emph{To deduce the congruences from the transformed table, here is what must be done}: multiply each row of the 1\textsuperscript{st} sort by the manifold which corresponds to it by virtue of the convention we have just made, and add; do the same for the rows of the 2\textsuperscript{nd} sort; set the two results thus obtained equal; one will thus have as many congruences as columns of the 1\textsuperscript{st} sort; all the other possible congruences will be only combinations of them.
+
+\emph{To deduce the homologies in the same way, one must}: multiply each row of the 1\textsuperscript{st} sort by the corresponding manifold, add, and set equal to zero; one will thus have as many homologies as columns of the 2\textsuperscript{nd} sort; all the other possible homologies will be only combinations of them.
+
+It is important to remark that the congruences and homologies thus obtained may have only a symbolic value, because the coefficients may be fractional.
+
+And, indeed, on the one hand the elements of the transformed table may no longer be integers; on the other hand, the manifold which corresponds to a row may, as I said above, itself have only a symbolic value.
+
+But since the coefficients, integer or not, are always commensurable, it will suffice to multiply our congruence or our homology by a suitable integer in order to deduce from it a congruence or a homology with integer coefficients, which will have a meaning in itself.
+
+\emph{Let us suppose, now, that the table has been reduced, as I said above}.
+
+How many distinct homologies will there be?
+
+Among our $N_{3}$ columns of the 2\textsuperscript{nd} sort, there will be $N_{3} - N'_{2}$ all of whose elements will be null, and $N_{2}$\ednote{Printed $N_{2}$; the context requires $N'_{2}$, an apparent misprint.} one of whose elements will be equal to 1 and all the others null. The first $N_{3} - N'_{2}$ will give us no homology; each of the $N'_{2}$ others will give us one, and these $N'_{2}$ homologies will evidently all be distinct.
+
+There are therefore $N'_{2}$ distinct homologies.
+
+How many distinct congruences are there between the faces and the edges?
+
+There are evidently $N_{2}$ of them, corresponding to the $N_{2}$ columns of the
+\origpage{327}
+1\textsuperscript{st} sort, and these congruences are distinct, because the determinant formed with the rows and the columns of the 1\textsuperscript{st} sort is not null.
+
+Let us now consider in our reduced table the $N_{1}$ rows of the 2\textsuperscript{nd} sort; among them there will be $N_{1} - N''_{2}$ all of whose elements are null, and $N''_{2}$ one of whose elements is equal to 1 and all the others null. Among our $N_{2}$ congruences there will therefore be $N''_{2}$ which will contain an edge, and $N_{2} - N'_{2}$\ednote{Printed $N'_{2}$ with a single accent; the congruences containing no edge number $N_{2} - N''_{2}$, as the next sentence states, so a misprint or a lost second accent.} which will contain no edge. There are therefore $N_{2} - N''_{2}$ congruences \emph{between the faces only}, and these congruences are all distinct.
+
+There will therefore be, \emph{between the faces only}, $N_{2} - N'_{2} - N''_{2}$ congruences which will remain distinct if one no longer regards as distinct those which can be deduced from one another by means of the homologies.
+
+\emph{The number of Betti relative to the faces of $P$ is therefore}:
+\[ N_{2} - N'_{2} - N''_{2} + 1. \]
+
+Let us now look for the number of \emph{Betti} relative to the edges of $P$.
+
+One will evidently find it by operating as we have just done on the table (1~\emph{bis}), relative to the edges of $P'$.
+
+But one passes from one table to the other by replacing the rows by the columns, and conversely. The numbers which will play, with respect to (1~\emph{bis}), the same role as
+\[ N_{2}, \qquad N'_{2}, \qquad N''_{2} \]
+play with respect to (1), will therefore be respectively:
+\[ N_{2}, \qquad N''_{2}, \qquad N'_{2}. \]
+
+Hence the number of \emph{Betti} relative to the edges of $P'$ is again:
+\[ N_{2} - N'_{2} - N''_{2} + 1. \]
+
+Thus the numbers of \emph{Betti} relative, the one to the faces of $P$, the other to the edges of $P'$, are equal.
+
+\origpage{328}
+
+Now we have seen above that the numbers of \emph{Betti} relative to the edges of $P$ and to those of $P'$ are equal, as are the numbers of \emph{Betti} relative to the faces of $P$ and to those of $P'$.
+
+\emph{Hence the number of Betti relative to the faces of $P$ is equal to the number of Betti relative to the edges of $P$}.
+
+Our fundamental theorem is therefore proved as regards the polyhedron $P$, that is to say, as regards the polyhedra of space of four dimensions.
+
+The proof could, without any doubt, be extended to any polyhedron.
+
+\subsection*{\S~IX. Various remarks.}
+
+The fundamental theorem is thus established by a proof which differs essentially from that of page 43 of the \emph{Analysis situs}.
+
+But that cannot suffice us. We must strive to recover the intermediate propositions and, in particular, this one:
+
+The necessary and sufficient condition for one to be able to find a manifold $V$ such that $\displaystyle\sum N(V, V_{i}) \neq 0$ is that one does not have the homology $\displaystyle\sum V_{i} \backsim 0$.
+
+Let us consider two manifolds, the first $V_{1}$, of one dimension, composed of edges of $P'$, the second $V_{2}$, of two dimensions, composed of faces of $P$, in such a way that one will have:
+\[ V_{1} = \sum \alpha_{i} b^{1}_{i}, \qquad V_{2} = \sum \alpha'_{i} a^{2}_{i}, \]
+the edge $b^{1}_{i}$ being the one which corresponds to the face $a^{2}_{i}$, according to the conventions of \S~7.
+
+The edge $b^{1}_{i}$ cuts the face $a^{2}_{i}$, and cuts no other, in such a way that if we take up again the notation of the \emph{Analysis situs}, pag.\ 38, we shall have:
+\[ N(V_{1}, V_{2}) = \sum \alpha_{i} \alpha'_{i}. \]
+
+We shall suppose in what follows that the manifolds $V_{1}$ and
+\origpage{329}
+$V_{2}$ are closed, which is expressed by the congruences:
+\[ \sum \alpha_{i} b^{1}_{i} \equiv 0, \qquad \sum \alpha'_{i} a^{2}_{i} \equiv 0. \tag{1} \]
+
+Let us verify first that one will have
+\[ \sum \alpha_{i} \alpha'_{i} = 0, \]
+provided that one has one of the two homologies${}^{(*)}$:
+\[ \sum \alpha_{i} b^{1}_{i} \backsim 0, \qquad \sum \alpha'_{i} a^{2}_{i} \backsim 0. \tag{2} \]
+
+If indeed we have, for example, the second homology (2), it is because one will have:
+\[ \alpha'_{i} = \sum_{j=1}^{j=N_{3}} \zeta_{j} \varepsilon^{3}_{i,j}, \]\ednote{Printed $\varepsilon^{3}_{i,j}$; the argument that follows and (4) use $\varepsilon^{3}_{j,i}$, an apparent misprint.}
+$\zeta_{j}$ being a coefficient depending only on $j$.
+
+On the other hand, the first of the congruences (1) can be deduced from the following ones:
+\[ b^{1}_{i} \equiv \sum b^{0}_{j} \varepsilon^{3}_{j,i}, \tag{3} \]
+whence
+\[ \sum \alpha_{i} b^{1}_{i} \equiv \sum \sum \alpha_{i} b^{0}_{j} \varepsilon^{3}_{j,i}. \]
+
+On setting the coefficient of $b^{0}_{j}$ equal to zero, there comes successively:
+\[ \sum \alpha_{i} \varepsilon^{3}_{j,i} = 0, \qquad \sum \sum \alpha_{i} \zeta_{j} \varepsilon^{3}_{j,i} = 0, \qquad \sum \alpha_{i} \alpha'_{i} = 0, \qquad \text{Q.~E.~D.} \]
+
+One would reason in the same way if one had the first homology (2).
+
+I say now that if the second homology (2) does not hold, one can choose the $\alpha_{i}$ in such a way that $V_{1}$ remains closed and yet that.\ednote{Printed ``que.'' with a stray point.} $\displaystyle\sum \alpha_{i} \alpha'_{i}$ is not null.
+
+\textbf{(*)} Cf.\ \emph{Analysis situs}, pag.\ 42.
+
+Indeed, to say that the second homology (2) does not hold is
+\origpage{330}
+to say that one cannot find numbers $\zeta_{j}$ such that one has:
+\[ \alpha'_{i} = \sum \zeta_{j} \varepsilon^{3}_{j,i}. \tag{4} \]
+
+To say that $V_{1}$ remains closed is to say that the $\alpha_{i}$ are subject to the conditions:
+\[ \sum \alpha_{i} \varepsilon^{3}_{j,i} = 0. \tag{5} \]
+
+Now it is clear that if the $\alpha'_{i}$ do not satisfy equalities of the form (4), the linear equation $\displaystyle\sum \alpha_{i} \alpha'_{i} = 0$ will be distinct from the equations (5); one can therefore always find numbers $\alpha_{i}$ which satisfy the equations (5) without satisfying $\displaystyle\sum \alpha_{i} \alpha'_{i} = 0$.
+
+Let us remark moreover that we have not restricted the generality by supposing that our manifolds $V_{1}$ and $V_{2}$ were combinations of the $b^{1}_{i}$ and of the $a^{2}_{i}$, whatever the manifold $V$ may be whose subdivision forms the polyhedra $P$ and $P'$. Whatever the manifolds $V_{1}$ and $V_{2}$ may be, we can always subdivide $V$ so as to form two reciprocal polyhedra $P$ and $P'$ such that $V_{1}$ is a combination of the edges of the second, and $V_{2}$ a combination of the faces of the first.
+
+It would be necessary to see how the table (1) of \S~8 and the analogous tables can enable us to determine the numbers of \emph{Betti} such as \emph{Betti} himself defines them, and no longer the numbers of \emph{Betti} defined in the second way, that is to say those which we have considered up to now.
+
+Let us consider, for example, a table analogous to the table (1), but relative to the edges of the polyhedron $P$ and to their relations with the faces and the vertices. Let us consider, in particular, the columns of the 2\textsuperscript{nd} sort and the rows\ednote{Printed ``signes'' for ``lignes''; an apparent misprint.} of the 1\textsuperscript{st} sort, in which the numbers $\varepsilon^{2}_{i,j}$ figure. Let $T$ be the partial table thus obtained. With the aid of this table one can form the congruences
+\[ a^{2}_{i} \equiv \sum \varepsilon^{2}_{i,j} a^{1}_{j}, \]
+from which one deduces the homologies
+\[ \sum \varepsilon^{2}_{i,j} a^{1}_{j} \backsim 0. \tag{6} \]
+
+Then, to recognize whether several closed lines formed of
+\origpage{331}
+combinations of the edges $a^{1}_{j}$ are distinct \emph{in the sense of the 1\textsuperscript{st} definition}, that is to say, \emph{in the sense of Betti}, one must know whether they are connected by a homology obtained by combining the homologies (6) by addition, subtraction or multiplication, but \emph{without division}.
+
+Let us suppose that one has applied to our table a series of those transformations which I called arithmetic in \S~8.
+
+Let $\zeta^{2}_{i,j}$ be the number which, in the transformed table, figures in the $j^{\text{th}}$ row of the 1\textsuperscript{st} sort and the $i^{\text{th}}$ column of the 2\textsuperscript{nd} sort. Let $c_{j}$ be the manifold which corresponds to the $j^{\text{th}}$ row of the 1\textsuperscript{st} sort of our transformed table by virtue of the conventions of \S~8. According to what we saw in that \S~8, this manifold is only a combination of the edges $a^{1}_{j}$. We shall then have the homologies
+\[ \sum \zeta^{2}_{i,j} c_{j} \backsim 0. \tag{6 \textit{bis}} \]
+
+These homologies are only combinations of the homologies (6) which can be obtained \emph{without division}, and conversely one can draw the homologies (6) from the homologies (6~\emph{bis}) \emph{without division}; that is a consequence of the arithmetic character of the transformations.
+
+One can therefore, when one wishes to make sure whether two closed lines are distinct in the sense of \emph{Betti}, make use of the homologies (6~\emph{bis}) instead of the homologies (6).
+
+We may suppose that the arithmetic transformations have been used to reduce the table, as I explained in \S~8, and consequently that $\xi^{2}_{i,j}$\ednote{Printed $\xi$; the number defined above is $\zeta^{2}_{i,j}$, an apparent misprint.} is null: 1° if $i > j$; 2° if $j > N_{2}$.
+
+The table reduced to the columns of the 2\textsuperscript{nd} sort and the rows of the 1\textsuperscript{st} sort will take, for example, the following form:
+\[ \begin{matrix} a & 0 & 0 & 0 & 0 \\[1ex] e & b & 0 & 0 & 0 \\[1ex] f & g & c & 0 & 0 \\[1ex] h & k & l & d & 0 \\[1ex] 0 & 0 & 0 & 0 & 0 \\[1ex] 0 & 0 & 0 & 0 & 0. \end{matrix} \]
+
+\origpage{332}
+
+I have supposed 6 rows and 5 columns; I have supposed that one of the numbers $\zeta^{2}_{i,i}$ is equal to zero, so that one of the columns of the transformed table is entirely composed of zeros. I add that if $d$ were equal to 1, the numbers $h$, $k$, $l$, which figure in the same row, would be null.
+
+This posed, if $d$ is not equal to 1, the two definitions of the numbers of \emph{Betti} do not coincide, because one has the homology $dc_{4} \backsim 0$, from which one could deduce the homology $c_{4} \backsim 0$ only by division. If $d = 1$, one has $h = k = l = 0$, and if $c$ is not equal to 1, one will have the homology $cc_{3} \backsim 0$, and the two definitions will not agree; and so on.
+
+In summary, for the two definitions to agree, it is necessary and sufficient that the product $abcd$ be equal to 1.
+
+To interpret this result, let us return to the untransformed table. The product $abcd$ will be the greatest common divisor of all the determinants obtained by suppressing $N_{2} - N_{3}$ rows in the table $T$, provided that these determinants are not all null (in which case there would not be in the transformed table any column composed exclusively of zeros). If the determinants are all null, one will form others by suppressing in the table $T$ one column and $N_{2} - N_{3} + 1$ rows; the product $abcd$ will be the greatest common divisor of all these determinants, if they are not all null; and so on.
+
+We thus arrive at the following rule.
+
+Let $\Delta_{p}$ be the greatest common divisor of the determinants obtained by starting from the table $T$ and suppressing in it $p$ rows and $N_{2} - N_{3} + p$ columns.\ednote{The rule deletes $p$ lignes and $N_{2} - N_{3} + p$ colonnes, while the preceding paragraph deletes $N_{2} - N_{3}$ lignes, then one colonne and $N_{2} - N_{3} + 1$ lignes; the two do not agree as printed.} The necessary and sufficient condition for the two definitions of the numbers of \emph{Betti} to coincide is that the first of the $\Delta_{p}$ which does not vanish be equal to 1 (the greatest common divisor of several numbers equal to zero being zero by definition).
+
+Let us suppose that the manifold $V_{1} = \displaystyle\sum \alpha_{i} b^{1}_{i}$, considered at the beginning of this paragraph, cannot be the boundary of a manifold of two dimensions, but satisfies the homology $V_{1} \backsim 0$. In other words, the homology $V_{1} \backsim 0$ can be deduced from the homologies (6) by division, but not without division. In this case, one will nevertheless have:
+\[ N(V_{1}, V_{2}) = \sum \alpha_{i} \alpha'_{i} = 0. \]
+
+\origpage{333}
+
+\subsection*{\S~X. Arithmetic proof of one of the theorems of \S~VII.}
+
+Here is a way of forming the homologies which may be useful to know.
+
+Let $b^{0}_{i}$ be a vertex of the polyhedron $P'$, situated in the interior of a cell $a^{3}_{i}$ of the polyhedron $P$. Let, on the other hand, $a^{0}_{k}$ be a vertex of $P$ belonging to the cell $a^{3}_{i}$. Let us join $b^{0}_{i}$ to $a^{0}_{k}$ by a line which I shall call simply $b^{0}_{i} a^{0}_{k}$.
+
+Let now $b^{1}_{i}$ be an edge of $P'$ whose two extremities are $b^{0}_{j}$ and $b^{0}_{h}$, in such a way that one of the congruences (3) (cf.\ \S~2) relative to $P'$ is:
+\[ b^{1}_{i} \equiv b^{0}_{j} - b^{0}_{h}. \]
+
+Let, on the other hand, $a^{2}_{i}$ be the face of $P$ which corresponds to the edge $b^{1}_{i}$ of $P'$, and $a^{0}_{k}$ one of the vertices of $a^{2}_{i}$; we shall have the homology:
+\[ b^{1}_{i} \backsim a^{0}_{k} b^{0}_{j} - a^{0}_{k} b^{0}_{h}. \tag{1} \]
+
+Let $a^{1}_{i}$ be an edge of $P$ whose two extremities are $a^{0}_{j}$ and $a^{0}_{h}$, so that one of the congruences (3) relative to $P$ is:
+\[ a^{1}_{i} \equiv a^{0}_{j} - a^{0}_{h}. \]
+
+Let $a^{3}_{k}$ be one of the cells of $P$ to which $a^{1}_{i}$ belongs, and $b^{0}_{k}$ the corresponding vertex of $P'$; one will have the homology:
+\[ a^{1}_{i} \backsim b^{0}_{k} a^{0}_{j} - b^{0}_{k} a^{0}_{h}. \tag{2} \]
+
+I say now that all the homologies between the $a^{1}_{i}$ can be deduced from the homologies (2).
+
+Indeed, let $a^{2}_{i}$ be any face of $P$, and let:
+\[ a^{2}_{i} \equiv \sum \varepsilon^{2}_{i,j} a^{1}_{j} \]
+\origpage{334}
+be the congruence of the form (3) which corresponds to it; one deduces from it the homology:
+\[ \sum \varepsilon^{2}_{i,j} a^{1}_{j} \backsim 0, \tag{3} \]
+and we have seen in \S~6 that all the homologies between the edges of $P$ are combinations of those which are obtained in this way.
+
+Let then $a^{1}_{j}$ be one of the edges of $P$ which figure in the homology (3), and let:
+\[ a^{1}_{i} \equiv a^{0}_{h} - a^{0}_{l}. \]
+\ednote{Printed $a^{1}_{i}$ on the left; the edge just introduced, and the homology (2 bis) below, call it $a^{1}_{j}$, so $a^{1}_{j}$ appears to be meant.}
+
+Let moreover $a^{3}_{k}$ be one of the cells of which $a^{2}_{i}$ forms part. We shall have the homology:
+\[ a^{1}_{j} \backsim b^{0}_{k} a^{0}_{h} - b^{0}_{k} a^{0}_{l}. \tag{2 \textit{bis}} \]
+
+If we add the homologies (2~\emph{bis}), which are of the form (2), after having multiplied them by $\varepsilon^{2}_{i,j}$, all the terms of the second member will disappear by virtue of the relations (5) of \S~2; one would therefore recover the homology (3). Q.~E.~D.
+
+One would prove in the same way that all the homologies between the $b^{1}_{i}$ can be deduced from the homologies (1).
+
+We saw above, in \S~7, that if one has a congruence:
+\[ \sum a^{1}_{i} \equiv 0, \]
+one can find another congruence between the edges of $P'$:
+\[ \sum b^{1}_{j} \equiv 0, \]
+and in such a way that one has the homology:
+\[ \sum a^{1}_{i} \backsim \sum b^{1}_{j}. \tag{4} \]
+
+I say now that this homology (4) can be deduced from the homologies (1) and (2).
+
+Let us cut up, indeed, the first member of our congruence $\displaystyle\sum a^{1}_{i} \equiv 0$ into a certain number of groups, in such a way that the
+\origpage{335}
+edges of one and the same group belong to one and the same cell $a^{3}_{k}$. Let $\displaystyle\sum a^{1}_{j}$ be one of these groups; we shall have the congruence:
+\[ \sum a^{1}_{j} \equiv a^{0}_{m} - a^{0}_{p}, \tag{5} \]
+$a^{0}_{m}$ and $a^{0}_{p}$ being the two extremities of the line formed by the set of the edges of this group. I suppose that all these edges belong to the cell $a^{3}_{k}$. Let
+\[ a^{1}_{j} \equiv a^{0}_{h} - a^{0}_{l} \]
+be one of these edges; we shall have the homology:
+\[ a^{1}_{j} \equiv b^{0}_{k} a^{0}_{h} - b^{0}_{k} a^{0}_{l}, \tag{2 \textit{ter}} \]
+\ednote{The print sets the congruence sign $\equiv$ here, though the text calls this an homology and it is of the form (2); the homology sign $\backsim$ appears to be meant.}
+and on adding all these homologies, one would find:
+\[ \sum a^{1}_{j} \backsim b^{0}_{k} a^{0}_{m} - b^{0}_{k} a^{0}_{p}. \tag{6} \]
+
+Let us add on the one hand all the homologies (6), on the other hand all the congruences (5), which correspond to the different groups. The addition of the congruences (5) must give us the congruence $\displaystyle\sum a^{1}_{i} \equiv 0$; it follows that if a vertex $a^{0}_{m}$ figures in one of the congruences (5) with the sign $+$, it must figure in another with the sign $-$. The addition of the homologies (6) will therefore give us:
+\[ \sum a^{1}_{j} \backsim \sum (b^{0}_{k} a^{0}_{m} - b^{0}_{q} a^{0}_{m}). \tag{7} \]
+
+In writing this relation I suppose that $a^{0}_{m}$ figures in two of the congruences (5), once with the sign $+$ in the congruence which corresponds to the cell $a^{3}_{k}$, and once with the sign $-$ in the congruence which corresponds to the cell $a^{3}_{q}$.
+
+Let us observe now that $b^{0}_{k}$ and $b^{0}_{q}$ are two vertices of $P'$, and that these two vertices both belong to the cell $b^{3}_{m}$. One can then find a line formed of edges of $P'$, belonging to this cell $b^{3}_{m}$, and going from $b^{0}_{k}$ to $b^{0}_{q}$. Let $\displaystyle\sum b^{1}_{s}$ be this line; one will have
+\[ \sum b^{1}_{s} \equiv b^{0}_{k} - b^{0}_{q}. \tag{5 \textit{bis}} \]
+
+\origpage{336}
+
+Just as from the congruence (5) and from homologies (2~\emph{ter}), which are of the form (2), we have deduced the homology (6), so from the congruence (5~\emph{bis}) and from homologies of the form (1) we can deduce the homology:
+\[ \sum b^{1}_{s} \backsim a^{0}_{m} b^{0}_{k} - a^{0}_{m} b^{0}_{q}. \tag{6 \textit{bis}} \]
+
+To each term of the second member of (7) there corresponds a homology (6~\emph{bis}). On adding them, one will find:
+\[ \sum \sum b^{1}_{s} \backsim \sum (a^{0}_{m} b^{0}_{k} - a^{0}_{m} b^{0}_{q}), \tag{7 \textit{bis}} \]
+whence:
+\[ \sum a^{1}_{j} + \sum \sum b^{1}_{s} \backsim 0, \tag{8} \]
+a homology of the form (4), which is deduced, as one sees, from the homologies (1) and (2). Q.~E.~D.
+
+One may ask why I judged it necessary to return to a theorem already proved in \S~7. One will understand it on taking account of the geometric nature, so to speak, of the proof of \S~7. The present proof has, on the contrary, an arithmetic character; it invokes only properties of the schemes defined in \S~2 and of the tables constructed in \S~8; and it would keep its value even if no polyhedron corresponded to these schemes and these tables.
+
+What have we supposed, in fact? It is that if $\alpha^{p}_{0}, \alpha^{p}_{1}, \alpha^{p}_{2}$ are the numbers of the vertices, of the edges and of the faces belonging to one and the same cell, and if $\beta^{p}_{0}, \beta^{p}_{1}, \beta^{p}_{2}$ are the numbers of the cells, of the faces and of the edges to which one and the same vertex belongs, one has:
+\[ \alpha^{p}_{0} - \alpha^{p}_{1} + \alpha^{p}_{2} = \beta^{p}_{0} - \beta^{p}_{1} - \beta^{p}_{2} = 2; \]
+\ednote{The print sets a minus before $\beta^{p}_{2}$; the Euler relation for the cells around a vertex, parallel to the left-hand member, requires $\beta^{p}_{0} - \beta^{p}_{1} + \beta^{p}_{2}$. The dash shows no trace of a lost vertical stroke, so this is reproduced as an apparent misprint.}
+and moreover that any two vertices $a^{0}_{i}$ and $a^{0}_{k}$ are connected by the homology:
+\[ a^{0}_{i} \backsim a^{0}_{k}. \tag{9} \]
+
+Now one can recognize whether a vertex belongs to a face, for
+\origpage{337}
+example, by applying to the table of \S~8 purely arithmetic rules, and one can in the same way recognize whether a homology such as (9) holds.
+
+\subsection*{\S~XI. Possibility of the subdivision.}
+
+All that precedes supposes that any manifold can be subdivided into simply connected manifolds so as to form a polyhedron $P$ of $p$ dimensions for which the manifolds $a^{p}_{i}, a^{p-1}_{i}, \ldots, a^{2}_{i}, a^{1}_{i}, a^{0}_{i}$ are all simply connected. For example, every manifold of three dimensions can be subdivided into simply connected cells, separated from one another by simply connected faces.
+
+That is what remains for us to prove, and it is this proof that I am going to give. I state it more precisely: I am going to show that every manifold of $p$ dimensions can be subdivided so as to form a polyhedron $P$ all of whose manifolds $a^{p}_{i}, a^{p-1}_{i}, \ldots, a^{2}_{i}, a^{1}_{i}, a^{0}_{i}$ are generalized tetrahedra.
+
+I shall suppose that the theorem has been proved for a manifold of $p - 1$ dimensions, and I propose to extend it to a manifold of $p$ dimensions.
+
+We shall present the definition of our manifold in the following form, which will comprise the two definitions given in the \emph{Analysis situs}.
+
+We shall have the equations and the inequalities
+\[ \begin{aligned} &x_{i} = \theta_{i}(y_{1}, y_{2}, \ldots, y_{q}), \qquad (i = 1, 2, \ldots, n)\\ &f_{k}(y_{1}, y_{2}, \ldots, y_{q}) = 0, \qquad (k = 1, 2, \ldots, q - p)\\ &\varphi_{h}(y_{1}, y_{2}, \ldots, y_{q}) > 0. \end{aligned} \tag{1} \]
+
+These equations and these inequalities will define a manifold $v$ which will be limited and, in general, not closed; one will have different analogous systems of equations and inequalities, defining as many partial manifolds, which I shall call $v_{1}, v_{2}, \ldots, v_{m}$.
+
+\origpage{338}
+
+Two of these manifolds will be called contiguous if they have a common part, and I may suppose that one can pass from any point of one of these manifolds to any point of any other of them without leaving the set of these manifolds. This set will constitute the manifold which I shall call $V$, and which it was a question of defining.
+
+I shall suppose that this manifold $V$ is two-sided.
+
+That is evidently the most general possible way of defining a manifold.
+
+Let us consider the partial manifold $v_{1}$, defined by the equations (1).
+
+By the theorem of implicit functions, one can satisfy the equations
+\[ f_{k} = 0, \]
+by making
+\[ y_{j} = \psi_{j}(z_{1}, z_{2}, \ldots, z_{p}), \]
+the $\psi$ being holomorphic functions of the $z$; but the series $\psi$ may not converge for all the points of the manifold $v_{1}$.
+
+The conditions of convergence will be certain inequalities:
+\[ \eta_{k}(z_{1}, z_{2}, \ldots, z_{p}) > 0. \]
+
+When one replaces the $y$ by functions of the $z$, the relations:
+\[ x_{i} = \theta_{i}, \qquad \varphi_{h} > 0 \]
+will become:
+\[ \begin{aligned} &x_{i} = \theta'_{i}(z_{1}, z_{2}, \ldots, z_{p})\\ &\varphi'_{h}(z_{1}, z_{2}, \ldots, z_{p}) > 0. \end{aligned} \]
+
+Then the set of relations
+\[ x_{i} = \theta'_{i}, \qquad \varphi'_{h} > 0, \qquad \eta_{k} > 0 \tag{1 \textit{bis}} \]
+will define a certain manifold $v'_{1}$, in such a way that the set of the manifolds analogous to $v'_{1}$ will reproduce the manifold $v_{1}$.
+
+\origpage{339}
+
+We are thus brought back to the second definition of the \emph{Analysis situs}.
+
+This posed, let $v''_{1}$ be another manifold $v'_{1}$ satisfying the following conditions: it will be entirely contained in $v'_{1}$; it will comprise all the points of $v'_{1}$ which it does not have in common with one of the contiguous manifolds; consequently the complete boundary of $v''_{1}$ will lie entirely in the part common to $v'_{1}$ and to the contiguous manifolds.
+
+To each of the manifolds
+\[ v'_{1}, \qquad v'_{2}, \qquad \ldots, \]
+whose set constitutes $V$, there will thus correspond a manifold
+\[ v''_{1}, \qquad v''_{2}, \qquad \ldots, \]
+satisfying the conditions I have just stated; and it is clear that one can arrange matters in such a way that every point of $V$ belongs to one of the manifolds $v''$, and to one only, unless it is on the boundary of one of the manifolds $v''$, in which case it must belong, in addition, to the boundary of at least one other manifold $v''$.
+
+The manifold $V$, thus subdivided into manifolds $v''$, constitutes a polyhedron $P$, in the sense given to that word in \S~2. But this polyhedron does not yet suit the question, for we cannot know whether the manifolds $v''$ are generalized tetrahedra, or even are simply connected.
+
+Let us consider the manifold $v''_{1}$, and let:
+\[ z_{1} = 0, \qquad z_{2} = 0, \qquad \ldots, \qquad z_{p} = 0 \]
+be a point \emph{interior to this manifold}; let us consider the manifold of one dimension:
+\[ z_{1} = \alpha_{1} t, \qquad z_{2} = \alpha_{2} t, \qquad \ldots, \qquad z_{p} = \alpha_{p} t, \]
+where the $\alpha$ are constants, and where we shall make $t$ vary from 0 to $+\infty$. This is what I shall call a \emph{radius vector}.
+
+Each radius vector will meet the complete boundary of $v''_{1}$ in an odd number of points; indeed, when one follows this radius, making
+\origpage{340}
+$t$ vary from 0 to $+\infty$, one will leave the manifold $v''_{1}$; one may re-enter it afterwards and leave it several times, but one will always end by leaving it never to re-enter.
+
+It may happen that a radius vector meets the boundary of $v''_{1}$ in two coincident points. The radii vectores which satisfy this condition will be called the \emph{remarkable radii}.
+
+The set of the remarkable radii will form one or several manifolds of $p - 1$ dimensions, which I shall call the \emph{remarkable cones}.
+
+The intersections of the remarkable cones with the boundary of $v''_{1}$ will form one or several manifolds of $p - 2$ dimensions, which I shall call $U$, and these manifolds $U$ will divide the boundary of $v''_{1}$ into regions which I shall call $R$.
+
+A region $R$ cannot be met by a radius vector in more than one point; but according to what we have just seen, two cases can present themselves: when one follows this radius vector, making $t$ increase from 0 to $\infty$, one may, at the moment when one meets $R$, leave $v''_{1}$ or re-enter it. If the first case, for example, presents itself for one of the vectors which meet $R$, it will present itself for all the vectors which meet $R$.
+
+Whence the distinction of the regions $R$ into regions of the 1\textsuperscript{st} sort, which the radii vectores meet on leaving $v''_{1}$, and regions of the 2\textsuperscript{nd} sort, which the radii vectores meet on re-entering $v''_{1}$.
+
+The regions $R$, being manifolds of $p - 1$ dimensions, can, according to the hypothesis made at the beginning, be subdivided into generalized tetrahedra.
+
+Let us suppose, to fix ideas, that a radius vector meets the boundary of $v''_{1}$ three times, that it meets successively the regions $R_{1}, R_{2}, R_{3}$; $R_{1}$ and $R_{3}$ will be of the 1\textsuperscript{st} sort, $R_{2}$ will be of the 2\textsuperscript{nd} sort.
+
+Let us subdivide $R_{1}$ and $R_{3}$ into generalized tetrahedra of $p - 1$ dimensions.
+
+If $T_{1}$ is one of the subdivisions of $R_{1}$, let us draw all the radii vectores which pass through the different points of $T_{1}$, and keep the part of these radii vectores which is comprised between the point $z_{i} = 0$ and the ray\ednote{Sic in the print. $R_{1}$ is a region of the frontier of $v''_{1}$, not a ray; ``la région'' is presumably meant.} $R_{1}$ (a part which is interior to $v''_{1}$); the set of these vectors will form a generalized tetrahedron of $p$ dimensions, having as vertex the point $z_{i} = 0$, and as base the generalized tetrahedron of $p - 1$ dimensions $T_{1}$.
+
+\origpage{341}
+
+Let now $T_{3}$ be one of the subdivisions of $R_{3}$; let us again draw all the radii vectores which pass through the different points of $T_{3}$ and keep the part of these radii vectores which is comprised between $R_{2}$ and\ednote{Printed ``e'', apparently a misprint for ``et''.} $R_{3}$ (a part which is interior to $v''_{1}$). This set forms a manifold of $p - 1$ dimensions which one could call a \emph{trunk of a generalized tetrahedron}, whose two bases are $T_{3}$ and a generalized tetrahedron of $p - 1$ dimensions, which I shall call $T_{2}$ and which will form part of $R_{2}$. It is, in other words, the difference of two generalized tetrahedra having as common vertex the point $z_{i} = 0$ and as bases the one $T_{3}$, the other $T_{2}$.
+
+This trunk of a generalized tetrahedron can in its turn be divided into $p$ generalized tetrahedra, just as, in the classical theorem, the trunk of a triangular pyramid is divided into three triangular pyramids.
+
+Finally $v''_{1}$ will be divided into generalized tetrahedra.
+
+A difficulty remains, however; one can subdivide the other analogous manifolds $v''_{2}, v''_{3}, \ldots$ like $v''_{1}$; let us consider the subdivision of $v''_{1}$ into generalized tetrahedra $T_{1}$ and that of $v''_{2}$ into generalized tetrahedra $T_{2}$. The common boundary of $v''_{1}$ and $v''_{2}$ will be found subdivided on the one hand into generalized tetrahedra of $p - 1$ dimensions $\tau_{1}$, which will be the faces of the $T_{1}$, and on the other hand\ednote{Printed ``d'autres part'', a misprint for ``d'autre part''.} into generalized tetrahedra of $p - 1$ dimensions $\tau_{2}$, which will be the faces of the $T_{2}$; \emph{but it is not evident that these two subdivisions coincide}.
+
+Let us then consider the part common to one of the $\tau_{1}$ and to one of the $\tau_{2}$; I can, according to the hypothesis made at the beginning, subdivide it into generalized tetrahedra of $p - 1$ dimensions $\sigma$. Thus each of the tetrahedra $\tau_{1}$ and each of the tetrahedra $\tau_{2}$ will be subdivided into tetrahedra $\sigma$.
+
+Let now $\tau'_{1}$ be one of the manifolds of $q$ dimensions \emph{belonging} to $\tau_{1}$ (I use the word belong here in the same sense as when I say that the faces, the edges and the vertices of an ordinary tetrahedron belong to that tetrahedron, or when I said in \S~2 that the manifolds $a^{q}_{i}$ belonged to the polyhedron $P$). Let likewise $\tau'_{2}$ be one of the manifolds of $q$ dimensions belonging to $\tau_{2}$. These two manifolds $\tau'_{1}$ and $\tau'_{2}$ will be generalized tetrahedra since, according to the definition of the generalized tetrahedron, every manifold which \emph{belongs} to a generalized tetrahedron is itself a generalized tetrahedron. Then $\tau'_{1}$ and $\tau'_{2}$ will be found subdivided into generalized
+\origpage{342}
+tetrahedra of $q$ dimensions $\sigma$\ednote{Printed $\sigma$; the text below refers to these tetrahedra as ``ceux que j'ai appelés $\sigma'$'', so $\sigma'$ appears to be meant.}, which will \emph{belong} to the tetrahedra of $p - 1$ dimensions $\sigma$.
+
+This, strictly speaking, could suffice us; our manifolds $v''_{1}$, etc., would be divided into generalized tetrahedra of $p$ dimensions $T^{p}$, their boundaries into tetrahedra of $p - 1$ dimensions $T^{p-1}$, etc.; only these tetrahedra $T^{p-1}$ would not be those which belong to the tetrahedra $T^{p}$; they would be only subdivisions of them.
+
+But we can go further.
+
+Let us consider one of the tetrahedra of $p$ dimensions $T^{p}$ into which $v''_{1}$ is subdivided. I recall that they were obtained by subdividing the trunks of generalized tetrahedra discussed above. Consequently $T^{p}$ has all its vertices on the boundary of $v''_{1}$ (there would be an exception for the tetrahedra one of whose vertices is at the point $z_{i} = 0$, but for those there is no difficulty).
+
+Let us suppose, for example, that the points common to $T^{p}$ and to the region which I called above $R_{3}$ form a generalized tetrahedron of $q$ dimensions $T^{q}$ \emph{belonging} to $T^{p}$, and that the points common to $T^{p}$ and to the region $R_{2}$ form a tetrahedron of $p - q - 1$ dimensions $T^{p-q-1}$ belonging to $T^{p}$.
+
+The tetrahedra $T^{q}$ and $T^{p-q-1}$ are analogous to the tetrahedra $\tau'_{1}$ treated above; they can therefore be subdivided into tetrahedra analogous to those which I called $\sigma'$; let $S^{q}_{1}, S^{q}_{2} \ldots$ be the tetrahedra analogous to $\sigma'$ which are subdivisions of $T^{q}$; let $S^{p-q-1}_{1}, S^{p-q-1}_{2}, \ldots$ be the tetrahedra analogous to $\sigma'$ which are subdivisions of $T^{p-q-1}$. I say that one can subdivide $T^{p}_{k}$ into tetrahedra of $p$ dimensions in such a way that the manifolds $S^{q}_{1}, S^{q}_{2}, \ldots, S^{p-q-1}_{1}, S^{p-q-1}_{2}, \ldots$ belong to $T^{p}$.
+
+To prove it I suppose first that $T^{p}$ is a \emph{rectilinear tetrahedron} (cf.\ \S~2 in fine). We know that a rectilinear tetrahedron is entirely defined when one knows its $p + 1$ vertices. Then $T^{p}$ is the rectilinear tetrahedron which has as vertices those of $T^{q}$ and of $T^{p-q-1}$.
+
+Let us suppose that $T^{q}$ is decomposed into $g$ partial tetrahedra:
+\[ S^{q}_{1}, \qquad S^{q}_{2}, \qquad \ldots, \qquad S^{q}_{g}, \]
+and $T^{p-q-1}$ into $h$ partial tetrahedra:
+\[ S^{p-q-1}_{1}, \qquad S^{p-q-1}_{2}, \qquad \ldots, \qquad S^{p-q-1}_{h}. \]
+
+\origpage{343}
+
+One will then verify that $T^{p}$ is decomposed into $gh$ partial tetrahedra, which are those whose vertices are those of
+\[ S^{q}_{i} \text{ and } S^{p-q-1}_{k} \qquad (i = 1, 2, \ldots, g;\ k = 1, 2, \ldots, h). \]
+
+If the tetrahedron $T^{p}$ is not rectilinear, the result subsists, since any tetrahedron is homeomorphic to a rectilinear tetrahedron.
+
+Thus our manifold is decomposed into tetrahedra of $p$ dimensions so as to form a polyhedron such that every manifold belonging to this polyhedron belongs to one of these tetrahedra.
+
+We are thus rid of the last doubts which could remain on the subject of the possibility of subdividing a manifold $V$ so as to form a polyhedron $P$ for which all the $a^{q}_{i}$ are simply connected.
+
+Paris, March 1899.
+
+H.~Poincaré.
+
+\end{document}
