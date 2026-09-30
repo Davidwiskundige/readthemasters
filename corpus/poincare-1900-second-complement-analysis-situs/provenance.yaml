@@ -1,0 +1,52 @@
+changelog:
+  - date: "2026-09-30"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-30"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-09-30"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Second Complément à l'Analysis Situs", Proceedings of the London Mathematical
+    Society, vol. XXXII (1900), pp. 277–308, read June 14th, 1900. COMPLETE: every printed page of
+    the paper is transcribed; \origpage markers run 277–308 with no gaps or duplicates; the end of
+    the preceding paper on p. 277 and the start of Stringham's paper on p. 308 are not transcribed.
+    pipeline/houselint.py and the site's KaTeX math lint pass. The paper has no figures.
+
+
+    HOW THIS WAS PRODUCED. Scans are the Internet Archive's digitization of the volume
+    (london-mathematical-society-proceedings_1901_32), taken from the item's native JP2 files,
+    leaves 285–316 (about 1750x2900 per page). The pages are tall (aspect about 1:1.75): at one
+    prepared image per page the 1568px cap left 886–900px of text width and prepare_pages.py warned
+    on all 32 pages, so every page was split instead into OVERLAPPING LANDSCAPE HALF-PAGE CROPS
+    (top/bottom, ~140 source px of shared lines) at up to 1568px width, each half with its own zoom
+    map so pipeline/magnify.py worked on either half. Read the zero flag count in that light: it
+    records legibility bought by the split and by magnification (about 20 magnified regions at
+    transcription and 25 at verification across the work). Transcription ran in three sequential
+    batch subagents (12/12/8 pages) sharing notation.md, which was seeded from
+    poincare-1899-complement-analysis-situs. The assembled text was proofread as text (no scans),
+    and its questions were handed to eight concurrent 4-page scan verifiers, which corrected the
+    fragments in place.
+
+
+    PRINTER'S ERRORS are reproduced and marked with \ednote (R4/R29), 19 notes in all. Among them:
+    p. 279, the equations numbered (3) and (4) are referred to as "(1)" and "(2)"; missing indices
+    on pp. 280, 281, 286, 298; p. 286 summation index i=1 for j=1; p. 287 M_{n-i-1} against p. 285's
+    M_{n-i+1}; p. 288 β'_{p=q}; p. 291 face BDD'A' for BDD'B'; p. 292 row 4 of T_1; p. 293 T_2 for
+    T_3; p. 294 x for x_2; p. 304 the last term of display (2); p. 306 the chain aξceηge and a minus
+    whose middle did not print. Two notes state a conflict neutrally without asserting a
+    correction: p. 300, the indices of b^{p-1}_i and b^q_i, and p. 302, T_{p-q} where p. 280 gives
+    T_{p-q+1}. Readings that are odd but not evidently wrong are kept without a note (p. 287 "Si
+    α_{q-1} > α_q, et si i > α_q"; p. 295 "ξ = 0, η = 2π" and the "+0" entry of Heegaard's T_1; the
+    examples jump from "1er Exemple" to "3e Exemple"). On p. 288 the transcription pass read a
+    Greek α^{q-1}_j (wrong fount); the verifier, magnifying, read an italic a whose bowl lost ink,
+    and set a^{q-1}_j without a note — a judgement call for the reviewer. Spellings of the edition
+    are kept (coëfficients, coincident, Ecole, chaine on p. 304 beside chaîne elsewhere).
