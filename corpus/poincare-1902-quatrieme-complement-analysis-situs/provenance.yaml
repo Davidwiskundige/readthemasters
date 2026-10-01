@@ -1,0 +1,60 @@
+changelog:
+  - date: "2026-10-01"
+    summary: Transcription added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-01"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-10-01"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Sur les cycles des surfaces algébriques; quatrième complément à l'Analysis
+    Sitûs", Journal de Mathématiques Pures et Appliquées, 5e série, tome 8 (1902), pp. 169–214.
+    COMPLETE: every printed page of the paper is transcribed; \origpage markers run 169–214 with no
+    gaps or duplicates. Running heads, page numbers and the signature line at the foot of p. 207
+    are not transcribed. Two figures (Fig. 1, p. 209; Fig. 2, p. 212) are cropped from the scan,
+    without their printed captions, as figures/fig-01.png and fig-02.png. pipeline/houselint.py and
+    the site's KaTeX math lint pass.
+
+
+    HOW THIS WAS PRODUCED. Scans are NUMDAM's 400 dpi bilevel digitization
+    (JMPA_1902_5_8__169_0), extracted losslessly from the PDF. At one prepared image per page the
+    1568px cap left 969–1031px of text width (prepare_pages.py warned on 10 of 46 pages), so every
+    page was split instead into OVERLAPPING LANDSCAPE HALF-PAGE CROPS (top/bottom, ~140 source px
+    of shared lines) at 1568px width, each half with its own zoom map so pipeline/magnify.py worked
+    on either half. Read the zero flag count in that light: it records legibility bought by the
+    split plus magnification (42 regions at transcription, 36 at verification, concentrated on
+    worn subscripts and congruence signs). Transcription ran in four sequential batch subagents
+    (12/12/12/10 pages) sharing notation.md, which was seeded from the first three Compléments.
+    The assembled text was proofread as text (no scans); its questions went to twelve concurrent
+    scan verifiers (4 pages each), which corrected the fragments in place: p. 201 a prime the
+    transcription had missed (C'_k); p. 211 the one \uncertain was settled as a printed P_1; notes
+    added on pp. 179, 192, 193, 194, 204. No paragraph break needed correcting.
+
+
+    PRINTER'S ERRORS AND CONFLICTS are reproduced and marked with \ednote (R4/R29), 30 notes in
+    all; most record lost strokes of ≡ in this worn print (pp. 192, 193, 196, 201) or a misprinted
+    letter or index (p. 171 R for H, H for Q, α_iβ_k; p. 181 MP'_k; p. 184 U_1 for U'_1; p. 188
+    "infinies peu"; p. 194 ζ'α P'_k; p. 198 K' without subscript; p. 199 m_{1,2} without ω_2 and
+    "p − 2p + r + 1"; p. 201 α'C'_k; p. 204 ω_3ω_4 without prime; p. 211 ζ_1 for ζ_2/ζ_4, B'_3G
+    for B'_1G, P_1 for P; p. 179 a capital O for the zero). Neutral notes state a conflict without
+    asserting a correction: p. 180 the missing index of α; p. 189 "= 0" for a congruence; p. 193
+    S(M) with a gap where the index i belongs; p. 194 S(K_i) against p. 195 nS(A_i); p. 200 the
+    count 2 + (μ + 2p + 1) − (n − 2p); p. 204 the printed values ω'_3 = m_4, ω'_4 = −m_3 against the
+    form Φ; p. 212 Ω_i − Ω'_i ≡ Σθ'MF' against the sign of (5) in § 2. Readings that are odd but
+    clearly printed are kept without a note: p. 177 a display closing with a period before "et";
+    p. 183 display (5) with M where the next line has M_0; p. 184 "se fondra"; p. 186 "déduire 5
+    de 4", "affectés", "la surface de S(M)"; p. 189 "des catégories de β et αβ"; p. 190
+    "catégorie (1)"; p. 192 ΣβF''_k without index on β; p. 195 "nous posons" without "si"; p. 197
+    "m ≷ 0"; p. 201 "identité (2);"; p. 202 "M_i = α_i"; p. 214 "(α), (γ), (δ) disparaissent"
+    where p. 213 names four faces including (β); equation numbers restart in each section and
+    repeat as printed. Two points for the reviewer: p. 213 speaks of five faces (α)…(ε) while
+    Fig. 2 labels four; p. 205 "ordinaires" may be italic in the print (kept roman). Spellings of
+    the edition are kept ("Analysis Sitûs", "A" without accent where so printed).
