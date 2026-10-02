@@ -2101,4 +2101,144 @@ Wir haben gesehen: ein Multiplum von $\frac{1}{\mathfrak{p}_1 \, \mathfrak{p}_2 
 eine komplexe Basis für die Differentiale 1.\ Gattung, so müssen sich also
 
 \textbf{1)} Vgl.\ die angeführten Stellen bei Klein und Hensel-Landsberg. E.~Ritter schließt a.~a.~O.\ so: Ist $f_0 = \frac{\mathfrak{d}'}{\mathfrak{d}}$ eine Funktion, welche ein Multiplum von $\frac{1}{\mathfrak{d}}$ ist ($\mathfrak{d}'$ ganz), so erhalte ich alle solchen Funktionen $f$ aus: $f = f_0 \cdot f'$, $f'$ Multiplum von $\frac{1}{\mathfrak{d}'}$, und komme dadurch auf den Fall eines ganzen Divisors $\mathfrak{d}'$ zurück. Hier fehlt aber der Nachweis, daß [wenn $B + (m + 1 - p) > 0$ ist] überhaupt ein $f_0$ existiert.
+
+\origpage{123}nicht sämtlich verschwindende komplexe Zahlen $c_1^*, \, c_2^*, \, \dots, \, c_p^*$ so ermitteln lassen, daß
+\[ c_1^* dw_1^* + c_2^* dw_2^* + \dots + c_p^* dw_p^* \]
+in jenen $p$ Punkten Nullstellen besitzt. Wir wählen irgend $p$ voneinander verschiedene Punkte $\mathfrak{p}_1^0$, $\mathfrak{p}_2^0$, \dots, $\mathfrak{p}_p^0$, zugehörige Ortsuniformisierende $z_h$ und zu jedem $\mathfrak{p}_h^0$ derart einen $z_h$-Kreis $\mathrm{K}_h$: $|z_h| \leqq a_h$ ($h = 1, \, 2, \, \dots, \, p$), daß diese Kreise gegenseitig nicht ineinander eindringen. Würde bei jeder Lage der Punkte $\mathfrak{p}_h$ innerhalb $\mathrm{K}_h$ eine\ednote{Druckfehler im Original: eine statt ein.} Differential 1.\ Gattung existieren, das an den Stellen $\mathfrak{p}_h$ simultan verschwindet, so müßte identisch in $z_1$, $z_2$, \dots, $z_p$ ($|z_h| \leqq a_h$)
+\[ \Delta \equiv \begin{vmatrix}
+\dfrac{dw_1^*(z_1)}{dz_1}, & \dots, & \dfrac{dw_p^*(z_1)}{dz_1} \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\
+\dfrac{dw_1^*(z_p)}{dz_p}, & \dots, & \dfrac{dw_p^*(z_p)}{dz_p}
+\end{vmatrix} = 0 \]
+sein. Das steht aber im Widerstreit zu der linearen Unabhängigkeit der Differentiale $dw_h^*$. Denn denken wir uns $z_1$ in $\Delta = 0$ variabel, aber $z_2, \, \dots, \, z_p$ einen Moment lang festgehalten, so haben wir eine homogene lineare Beziehung zwischen den Differentialen $dw_h^*(z_1)$ vor uns, die identisch in $z_1$ erfüllt ist; es müssen also die Koeffizienten dieser Beziehung, d.~h.\ die aus den $p - 1$ letzten Zeilen von $\Delta$ gebildeten Unterdeterminanten sämtlich einzeln verschwinden, und zwar identisch in $z_2, \, \dots, \, z_p$. Wiederholen wir diesen Schluß, indem wir ihn jetzt, statt auf $\Delta$, auf eine jede der erwähnten $(p - 1)$-reihigen Unterdeterminanten anwenden, und fahren so Schritt für Schritt fort, so versteigen wir uns schließlich bis zu der unsinnigen Behauptung, daß die Elemente der letzten Zeile, d.~h.\ die Differentiale $dw_h^*$ selber identisch $= 0$ sind.
+
+Zu jedem Punkte $\mathfrak{p}$ erhalten wir durch die Formel
+\[ d\tau_{\mathfrak{p}} - i d\tau'_{\mathfrak{p}} = dw_{\mathfrak{p}} \]
+ein Differential 1.\ Gattung.${}^{1)}$ Dies ist eine sehr naheliegende Methode zur Erzeugung solcher Differentiale aus denen der 2.\ Gattung; es fragt sich nur, ob sie umfassend genug ist, um eine volle Basis für die Differentiale 1.\ Gattung zu liefern. Diese Frage können wir jetzt bejahend beantworten. Wähle ich nämlich $p$ Punkte $\mathfrak{p}_1, \, \mathfrak{p}_2, \, \dots, \, \mathfrak{p}_p$ so, daß keine eindeutige Funktion $\neq \mathrm{const.}$ auf $\mathfrak{F}$ existiert, die ein Multiplum von $\frac{1}{\mathfrak{p}_1 \, \mathfrak{p}_2 \dots \mathfrak{p}_p}$ ist, so bilden die zugehörigen $dw_{\mathfrak{p}_1}, \, dw_{\mathfrak{p}_2}, \, \dots, \, dw_{\mathfrak{p}_p}$ eine kom-
+
+\textbf{1)} Veränderte Wahl der Ortsuniformisierenden zu $\mathfrak{p}$ bewirkt nur eine Multiplikation desselben mit einem konstanten Faktor, so daß wir es als wesentlich durch $\mathfrak{p}$ allein bestimmt ansehen können.
+
+\origpage{124}plexe Basis der Differentiale 1.\ Gattung. Bestände nämlich eine Relation
+\[ C_1 dw_{\mathfrak{p}_1} + C_2 dw_{\mathfrak{p}_2} + \dots + C_p dw_{\mathfrak{p}_p} = 0, \]
+so wäre für jeden geschlossenen Weg $\alpha$ auf $\mathfrak{F}$:
+\[ \sum_{h=1}^p C_h \left( \int_\alpha d\tau_{\mathfrak{p}_h} - i \int_\alpha d\tau'_{\mathfrak{p}_h} \right) = 0. \]
+Behalten wir von dieser Gleichung etwa nur den Imaginärteil bei ($c_h = \Re C_h$, $c'_h = \Im C_h$):
+\[ \sum_{h=1}^p \left( c_h \int_\alpha d\tau_{\mathfrak{p}_h} + c'_h \int_\alpha d\tau'_{\mathfrak{p}_h} \right) = 0, \]
+so zeigt sich, daß
+\[ \sum_{h=1}^p (c_h \tau_{\mathfrak{p}_h} + c'_h \tau'_{\mathfrak{p}_h}) \]
+eine eindeutige Funktion auf der Fläche sein müßte.
+
+Zur Gewinnung von Funktionen auf der Fläche stehen uns zwei Wege offen: entweder additive Funktionen mit solchen Konstanten linear zu kombinieren, daß die Perioden zum Verschwinden gebracht werden, --- oder zwei Differentiale durcheinander zu dividieren.${}^{1)}$ Indem man beide Möglichkeiten kombiniert, kann man zu wichtigen Sätzen gelangen. Vorab bemerken wir: da der Quotient zweier Differentiale eine Funktion auf $\mathfrak{F}$ ist, wird
+
+1) jedes Differential durch den repräsentierenden Divisor, in dessen Zähler die Nullstellen des Differentials in ihrer Multiplizität verzeichnet stehen und dessen Nenner die Pole enthält, bis auf einen konstanten Faktor eindeutig bestimmt --- und
+
+2) ist die Gesamtordnung $d$ dieses repräsentierenden Divisors für alle Differentiale die gleiche; $d$ ist die Anzahl der Nullstellen eines jeden Differentials 1.\ Gattung und also für $p > 0$ gewiß $\geqq 0$. Wir werden beweisen, daß diese wichtige Invariante einer jeden Riemannschen Fläche allein von der Geschlechtszahl $p$ abhängt, und zwar nach der einfachen Gleichung:
+\[ d = 2p - 2. \]
+
+Es seien $\mathfrak{d}$, $\mathfrak{e}$ zwei Divisoren von der Gesamtordnung $m$ bzw.\ $n$, deren Produkt $\mathfrak{d}\mathfrak{e}$ Repräsentant eines Differentials $dv$ auf $\mathfrak{F}$ ist: $m + n = d$. Es gebe genau $M$ linear unabhängige Differentiale, welche Multipla von
+
+\textbf{1)} Diese letzte Methode ist auch auf offene Riemannsche Flächen anwendbar und liefert hier sofort den Existenznachweis für Funktionen auf der Fläche, die sich nicht auf bloße Konstante reduzieren. Vgl.\ auch Koebe, Crelles Journal Bd.~139, 1911, S.~291\,f.
+
+\origpage{125}
+$\mathfrak{d}$, und $N$ solche Differentiale, welche Multipla von $\mathfrak{e}$ sind. Wir fassen unter den eindeutigen Funktionen auf $\mathfrak{F}$ alle Multipla $f$ von $\frac{1}{\mathfrak{d}}$ ins Auge. Erzeugen wir sie durch Zusammensetzung von additiven Funktionen, so liefert der Riemann-Rochsche Satz das Resultat, daß die Anzahl der linear unabhängigen $f$
+\[ = m + 1 - p + M \]
+ist. Für jedes $f$ ist das Differential $f\,dv$ ein Multiplum von $\mathfrak{e}$; d.~h.\ auf eine zweite Art erhalten wir die sämtlichen Funktionen $f$ dadurch, daß wir alle Differentiale, welche Multipla von $\mathfrak{e}$ sind, durch $dv$ dividieren. Achten wir nur auf die Anzahlen, so liefert das die Relation
+\[ N = m + 1 - p + M. \]
+Analog
+\[ M = n + 1 - p + N. \]
+Addition dieser beiden Gleichungen ergibt
+\[ d = 2p - 2, \]
+Subtraktion den \emph{Brill-Noetherschen Reziprozitätssatz}:${}^{1)}$
+\[ M - N = n - m. \]\ednote{Druckfehler im Original: Aus den beiden Gleichungen folgt $2(M - N) = n - m$; im Original fehlt der Faktor 2.}
+
+Doch genug mit diesen Betrachtungen, die sich alle wie von selber an die „Partialbruchzerlegung“ (40) anknüpfen! Wir wenden uns zur „Produktdarstellung“ (41). Um den zu $S$ gehörigen Multiplikator $\mu_S$ von
+\[ \Theta = \frac{\mathfrak{p}_1 \, \mathfrak{p}_2 \dots \mathfrak{p}_r}{\mathfrak{q}_1 \, \mathfrak{q}_2 \dots \mathfrak{q}_r} \]
+zu berechnen, legen wir eine geschlossene Kurve $\alpha$ auf $\mathfrak{F}$, die nicht durch die $\mathfrak{p}_h$, $\mathfrak{q}_h$ hindurchgeht und auf $\hat{\mathfrak{F}}$ von einem Punkte $\hat{\mathfrak{p}}$ zum Punkte $\hat{\mathfrak{p}}S$ hinführt, und ziehen Integrationswege $\mathfrak{p}_h\mathfrak{q}_h$, die $\alpha$ nicht treffen. Dann ist nach ($\mathrm{III}_0$), §~16:
+\[ \mu_S = \prod_{h=1}^r e^{\int\limits_\alpha d\omega_{\mathfrak{p}_h \mathfrak{q}_h}} = \prod_{h=1}^r e^{-2\pi i \cdot \Re \int\limits_{\mathfrak{q}_h}^{\mathfrak{p}_h} dw_\alpha} = \prod_{h=1}^r \frac{\chi_S(\mathfrak{p}_h)}{\chi_S(\mathfrak{q}_h)}. \tag{44} \]
+Es liegt nahe, als \textbf{Integralcharaktere} eines beliebigen Divisors
+\[ \mathfrak{d} = \mathfrak{p}_1^{m_1} \, \mathfrak{p}_2^{m_2} \dots \mathfrak{p}_r^{m_r} \]
+die Größen
+\[ \chi_S(\mathfrak{d}) = \chi_S(\mathfrak{p}_1)^{m_1} \cdot \chi_S(\mathfrak{p}_2)^{m_2} \dots \chi_S(\mathfrak{p}_r)^{m_r} \]
+einzuführen. Dann lautet die Gleichung (44) in Worten${}^{2)}$:
+
+\emph{Die Multiplikatoren einer Funktion $\Theta$ stimmen überein mit den Integralcharakteren des repräsentierenden Divisors.}
+
+\textbf{1)} A.~Brill und M.~Nöther, Mathematische Annalen Bd.~7 (1874), S.~283.
+
+\textbf{2)} Vgl.\ Appell, Acta Mathematica Bd.~13 (1890), S.~13--14 der Preisschrift.
+
+\origpage{126}
+Insbesondere ($\mu_S = 1$):
+
+\emph{Vorgegebene Punkte $\mathfrak{p}_h$, $\mathfrak{q}_h$ ($h = 1, \, 2, \, \dots, \, r$) sind dann und nur dann die sämtlichen Nullstellen bzw.\ Pole einer auf $\mathfrak{F}$ eindeutigen Funktion, wenn das Produkt der Integralcharaktere der Nullstellen gleich ist dem Produkt der Integralcharaktere der Pole:}
+\[ \prod_{h=1}^r \chi_S(\mathfrak{p}_h) = \prod_{h=1}^r \chi_S(\mathfrak{q}_h). \]
+
+Gehen wir auf die Bedeutung der Integralcharaktere zurück und benutzen eine bestimmte kanonische Zerschneidung $\alpha_h$ samt einer zugehörigen reellen Basis $dw_{\alpha_h} = dw_h$ der Integrale 1.\ Gattung, so können wir diese Forderung durch die folgenden $2p$ Gleichungen ersetzen:
+\[ \begin{gathered}
+\sum_{l=1}^r \Re \int\limits_{\mathfrak{p}_0}^{\mathfrak{p}_l} dw_h - \sum_{l=1}^r \Re \int\limits_{\mathfrak{q}_0}^{\mathfrak{q}_l} dw_h = n_h \qquad (n_h = \text{ganze Zahl}) \\
+[h = 1, \, 2, \, \dots, \, 2p].
+\end{gathered} \]
+Die Integrationswege $\mathfrak{p}_0 \mathfrak{p}_l$, $\mathfrak{q}_0 \mathfrak{q}_l$ sind dabei zunächst beliebig. Verlagern wir aber einen dieser Integrationswege, etwa $\mathfrak{p}_0 \mathfrak{p}_1$, nachträglich so, daß seine alte und seine neue Lage zusammen eine geschlossene Linie bilden, welche homolog
+\[ (n_1 \alpha_2 - n_2 \alpha_1) + \dots + (n_{2p-1} \alpha_{2p} - n_{2p} \alpha_{2p-1}) \]
+ist, so werden dadurch die ganzen Zahlen $n_h$ auf der rechten Seite der letzten Gleichung zu $0$ gemacht. Es ergibt sich dann:
+
+(\emph{Abelsches Theorem.})${}^{1)}$ \emph{Die Punkte $\mathfrak{p}_h$, $\mathfrak{q}_h$ [$h = 1, \, 2, \, \dots, \, r$] sind dann und nur dann die sämtlichen Nullstellen bzw.\ Pole einer Funktion auf $\mathfrak{F}$, wenn --- bei geeigneter, von $w$ unabhängiger Wahl der nach}
+
+\textbf{1)} Der Name, wie ich ihn hier gebrauche, ist nicht ganz zutreffend. Von Abel rührt nur der Satz her, daß die ausgesprochene Bedingung \emph{notwendig} ist; anderseits aber ist der von Abel aufgestellte Satz [in großartiger Einfachheit von ihm entwickelt in der kurzen Note „Démonstration d'une propriété générale d'une certaine classe de fonctions transcendantes“, Crelles Journal Bd.~4 (1829), S.~200---201 = Œuvres complètes, Nouvelle édition (1881), Bd.~I, S.~515---517] allgemeiner, sofern er nicht nur die Integrale 1.\ Gattung betrifft. Vgl.\ S.~136 dieser Schrift. Eine von Abel im Jahre 1826 der Pariser Akademie eingereichte Arbeit „Mémoire sur une propriété générale d'une classe très-étendue de fonctions transcendantes“ über diesen Gegenstand ist durch die Schuld Cauchys lange verloren gewesen und erst nach Abels Tod veröffentlicht worden: Mémoires présentés par divers savants, Bd.~VII (1841) = Abel, Œuvres complètes, Nouvelle édition (1881) Bd.~I, S.~145---241. Ferner ist das Theorem enthalten in Abels nachgelassenem Manuskript „Sur la comparaison des fonctions transcendantes“, Œuvres complètes, Bd.~II, S.~55---66. Die Umkehrung des Abelschen Theorems für die Integrale 1.\ Gattung steht bei Riemann zwischen den Zeilen, wurde explizit aber erst durch Clebsch (ohne völlig zureichenden Beweis) ausgesprochen (Crelles Journal Bd.~63, 1864, S.~198), und von ihm in der Theorie der algebraischen Kurven aufs ausgiebigste verwertet.
+
+\origpage{127}$\mathfrak{p}_h$, $\mathfrak{q}_h$ hinführenden Integrationswege --- für jedes Integral 1.\ Gattung $w$ die Beziehung
+\[ \sum_{h=1}^r w(\mathfrak{p}_h) = \sum_{h=1}^r w(\mathfrak{q}_h) \]
+statthat.
+
+Sind $dv_1$, $dv_2$ irgend zwei bis auf Pole reguläre Differentiale auf $\mathfrak{F}$, $\mathfrak{d}_1$, $\mathfrak{d}_2$ die sie repräsentierenden Divisoren, so ist, da $\frac{dv_1}{dv_2} = \frac{\mathfrak{d}_1}{\mathfrak{d}_2}$ eine Funktion auf $\mathfrak{F}$ ist, nach dem Abelschen Theorem
+\[ \chi_S\left( \frac{\mathfrak{d}_1}{\mathfrak{d}_2} \right) = \frac{\chi_S(\mathfrak{d}_1)}{\chi_S(\mathfrak{d}_2)} = 1 \quad\text{oder}\quad \chi_S(\mathfrak{d}_1) = \chi_S(\mathfrak{d}_2). \]
+Wir haben also dieses Korollar des Abelschen Theorems:
+
+\emph{Für alle Differentiale auf $\mathfrak{F}$ bzw.\ deren repräsentierende Divisoren haben die Integralcharaktere die gleichen Werte $\chi_S^0$. Ein Divisor $\mathfrak{d}$ von der Gesamtordnung $2p - 2$ ist dann und nur dann Repräsentant eines Differentials, wenn das System seiner Integralcharaktere mit dem Charakterensystem $\chi_S^0$ übereinstimmt.}
+
+Wir machen von dem Abelschen Theorem sogleich eine Anwendung auf den Fall $p = 1$. Hier existiert bis auf einen konstanten Faktor nur ein einziges Differential 1.\ Gattung $dw$. Die den verschiedenen Integrationswegen entsprechenden Werte, welche $w(\mathfrak{p})$ an einer Stelle $\mathfrak{p}$ anzunehmen vermag, bilden in der komplexen $w$-Ebene ein parallelogrammatisches Punktgitter. Alle Gitter, welche so den einzelnen Punkten $\mathfrak{p}$ von $\mathfrak{F}$ zugeordnet erscheinen, gehen auseinander durch Parallelverschiebung hervor, oder haben, wie wir sagen wollen, dieselbe „Lage und Gestalt“ $\Lambda$. Dadurch, daß wir jedes Gitter von dieser Lage und Gestalt als einen „Punkt“ auffassen, verwandelt sich die $w$-Ebene in eine geschlossene Riemannsche Fläche $\mathfrak{F}_\Lambda$ (vgl.\ S.~28). Würde zwei verschiedenen Punkten $\mathfrak{p}$, $\mathfrak{q}$ von $\mathfrak{F}$ jemals das gleiche Gitter entsprechen, so gäbe es nach dem Abelschen Theorem eine Funktion auf $\mathfrak{F}$, die nur in $\mathfrak{p}$ einen Pol 1.\ Ordnung besäße (und in $\mathfrak{q}$ Null würde); diese Funktion müßte die Fläche umkehrbar eindeutig und konform auf die Kugel abbilden, was mit $p = 1$ unverträglich ist. Verschiedenen Punkten $\mathfrak{p}$ entsprechen also immer verschiedene Gitter $w = w(\mathfrak{p})$. Deshalb kann $dw$ nirgends $0$ sein, wie auch aus unserer allgemeinen Formel $d = 2p - 2$ für $p = 1$ folgt. $\mathfrak{F}$ ist somit umkehrbar eindeutig und umkehrbar gebietsstetig (außerdem konform) abgebildet auf ein Gebiet $\mathfrak{G}$ der Mannigfaltigkeit $\mathfrak{F}_\Lambda$. Da $\mathfrak{F}$ geschlossen ist, muß auch $\mathfrak{G}$ geschlossen und folglich mit ganz $\mathfrak{F}_\Lambda$ identisch sein: $\mathfrak{F}_\Lambda$ \emph{ist der gegebenen Riemannschen Fläche konform-äquivalent und kann als Normalform der Riemannschen Flächen vom Geschlechte $1$ angesprochen werden.} Die $w$-Ebene ist für $\mathfrak{F}_\Lambda$ „Über-
+
+\origpage{128}lagerungsfläche der Integralfunktionen“ (denn $w$ ist selber eine Integralfunktion), zugleich aber, da die Ebene einfach zusammenhängend ist, die „universelle“ Überlagerungsfläche. $w$ ist für die Funktionen auf der Grundfläche $\mathfrak{F}$ eine \emph{uniformisierende Variable}, d.~h.\ alle diese Funktionen stellen sich dar als eindeutige Funktionen der in der schlichten Ebene variierenden komplexen Veränderlichen $w$, und zwar geschieht die Darstellung hier --- dem Umstande entsprechend, daß zu allen Punkten $w$ eines $\Lambda$-Gitters vermöge $w = w(\mathfrak{p})$ derselbe Punkt $\mathfrak{p}$ gehört ---, durch \emph{doppeltperiodische}, sog.\ \emph{elliptische Funktionen}. Zwei Riemannsche Flächen vom Geschlechte 1 sind in ihrer Normalform $\mathfrak{F}_{\Lambda'}$, $\mathfrak{F}_{\Lambda''}$ dann und nur dann konform-äquivalent, wenn die Gitter von der Gestalt $\Lambda'$ und $\Lambda''$ Euklidisch-ähnlich sind.
+
+Das im Falle $p = 1$ durch die elliptischen Funktionen gelöste \emph{„Umkehrproblem“} besteht für eine Fläche $\mathfrak{F}$ von beliebigem Geschlecht $p$ in folgendem: Ist $w_h^* [h = 1, \, 2, \, \dots, \, p]$ eine komplexe Basis der Differentiale 1.\ Gattung auf $\mathfrak{F}$, so sollen zu beliebig vorgegebenen Zahlen $\mathfrak{f}_1, \, \dots, \, \mathfrak{f}_p$ Punkte $\mathfrak{p}_1, \, \dots, \, \mathfrak{p}_p$ auf $\mathfrak{F}$ so gefunden werden, daß (bei geeigneter Wahl der Integrationswege)
+\[ \sum_{l=1}^p w_h^*(\mathfrak{p}_l) = \mathfrak{f}_h \quad [h = 1, \, 2, \, \dots, \, p] \tag{45} \]
+wird. Dieses Umkehrproblem ist im Anschluß an das Abelsche Theorem von Jacobi aufgestellt worden und fand nach wichtigen Vorarbeiten von Göpel und Rosenhain allgemein durch Riemann und Weierstraß mit Hilfe der $\vartheta$-Funktionen, gewissen ganzen transzendenten Funktionen der $p$ Argumente $\mathfrak{f}_h$, seine Erledigung.${}^{1)}$ Das Problem kann offenbar auch so formuliert werden: Zu einem vorgegebenen Charakterensystem $\chi_S$ sollen Punkte $\mathfrak{p}_1, \, \mathfrak{p}_2, \, \dots, \, \mathfrak{p}_p$ bestimmt werden, für die
+\[ \chi_S(\mathfrak{p}_1) \cdot \chi_S(\mathfrak{p}_2) \dots \chi_S(\mathfrak{p}_p) = \chi_S \tag{46} \]
+wird; und es ist dann nach dem Abelschen Theorem der Aufgabe äquivalent, eine Funktion
+\[ \Theta = \frac{\mathfrak{p}_1 \, \mathfrak{p}_2 \dots \mathfrak{p}_p}{\mathfrak{p}_0^p} \]
+
+\textbf{1)} Riemann, Theorie der Abelschen Funktionen, Crelles Journal, Bd.~54 (1857) = Werke, 2.~Aufl., S.~88---142; Über das Verschwinden der Theta-Funktionen, Crelles Journal, Bd.~65 (1865) = Werke, S.~212---224. Weierstraß, Vorlesungen über die Theorie der Abelschen Transzendenten, Werke, Bd.~4. Stahl, Theorie der Abelschen Funktionen, Leipzig 1896. Prym und Rost, Theorie der Prymschen Funktionen erster Ordnung, Leipzig 1911, 2.~Teil, 7.~Abschnitt. Krazer, Lehrbuch der Thetafunktionen, Leipzig 1903. --- Die große Bedeutung des Umkehrproblems liegt für uns Heutige nicht nur (und wohl nicht einmal überwiegend) in seinem Wert an sich als in den großartigen Gedankenreihen, zu deren Schöpfung Riemann und Weierstraß durch die Bemühungen um seine Lösung getrieben wurden.
+
+\origpage{129}mit vorgegebenen Multiplikatoren $\chi_S$ zu finden, die nur an der Stelle $\mathfrak{p}_0$ einen Pol von höchstens $p^{\text{ter}}$ Ordnung besitzt. Es ordnet sich dadurch naturgemäß der folgenden allgemeinen Fragestellung unter:
+
+\emph{Die Funktionen $\Theta$ mit vorgegebenem Multiplikatorsystem $\chi_S$ bilden eine lineare Schar $G_\chi$, d.~h.\ man verläßt den Bereich dieser Funktionen nicht, wenn man beliebige von ihnen linear mit konstanten Koeffizienten kombiniert. Ist $\mathfrak{d}$ irgend ein Divisor von der Gesamtordnung $m$, so wird gefragt nach sämtlichen Funktionen aus $G_\chi$, welche Multipla von $\frac{1}{\mathfrak{d}}$ sind, und insbesondere nach der Anzahl $A$ der linear unabhängigen unter ihnen.}
+
+Es ist das für das allgemeine Charakterensystem $\chi_S$ die gleiche Frage, welche wir auf S.~120---122 für den \textbf{„Hauptcharakter“} $\chi_S = 1$ behandelt haben. Die dort gewonnenen Resultate lassen sich vollständig übertragen; zunächst die Ungleichung
+\[ A \geqq m + 1 - p, \]
+\emph{in der insbesondere ($\mathfrak{d} = \mathfrak{p}_0^p$, $m = p$) die Lösbarkeit des Umkehrproblems ausgesprochen liegt.} Ist nämlich $\Theta_0 = \mathfrak{d}_0$ irgend eine Funktion aus $G_\chi$ --- daß solche existieren, ist ein Hilfssatz, dessen Beweis wir sogleich nachholen werden ---, so entstehen die in $G_\chi$ liegenden Multipla von $\frac{1}{\mathfrak{d}}$ dadurch, daß man alle unter den eindeutigen Funktionen auf $\mathfrak{F}$ existierenden Multipla von $\frac{1}{\mathfrak{d}\mathfrak{d}_0}$ mit $\Theta_0$ multipliziert. Die Anzahl der linear unabhängigen unter den letzteren aber ist, da $\mathfrak{d}\mathfrak{d}_0$ wie $\mathfrak{d}$ die Gesamtordnung $m$ besitzt (s.\ S.~120), $\geqq m + 1 - p$.
+
+Aber auch die Formel des vollständigen Riemann-Rochschen Satzes läßt sich sofort übertragen. Dazu müssen wir neben den multiplikativen Funktionen die von Herrn Prym${}^{1)}$ in die Theorie eingeführten multiplikativen Differentiale mit heranziehen. Ein solches \textbf{multiplikatives} oder \textbf{Prymsches Differential} $dT$ ist auf $\hat{\mathfrak{F}}$ eindeutig, analytisch, frei von wesentlichen Singularitäten und verhält sich den Decktransformationen $S$ von $\hat{\mathfrak{F}}$ gegenüber gemäß der Gleichung
+\[ dT(\hat{\mathfrak{p}}S) = \chi_S \cdot dT(\hat{\mathfrak{p}}), \]
+wo die $\chi_S$ konstante Multiplikatoren vom absoluten Betrage 1 sind. Jedes Prymsche Differential kann durch einen Divisor $\mathfrak{t}$ repräsentiert werden, in dessen Zähler diejenigen Punkte mit der richtigen Multipli-
+
+\textbf{1)} Crelles Journal Bd.~70 (1869), S.~354---262\ednote{Druckfehler im Original: 354---262 statt 354---362.}; Bd.~71 (1870), S.~223---236 und S.~305---315. Vgl.\ die auf S.~118 zitierten Arbeiten von Appell, ferner: Prym u.\ Rost, Theorie der Prymschen Funktionen erster Ordnung, Leipzig 1911; R.~König, Berichte der kgl.\ Sächsischen Gesellschaft der Wissenschaften (mathematisch-physikalische Klasse), Bd.~63 (1911), S.~348---368.
+
+\origpage{130}zität verzeichnet stehen, über denen die Nullstellen von $dT$ liegen und dessen Nenner die Pole von $dT$ enthält. Aus dem Umstande, daß der Quotient aus einem Prymschen und einem beliebigen Abelschen (d.~i.\ auf $\mathfrak{F}$ eindeutigen) Differential eine Funktion $\Theta$ von den gleichen Multiplikatoren wie das Prymsche Differential ist, folgt, daß durch den repräsentierenden Divisor $\mathfrak{t}$ --- der beliebig vorgegeben werden kann, wenn nur seine Gesamtordnung $2p - 2$ beträgt, --- ein Prymsches Differential $dT$ eindeutig bis auf einen konstanten Faktor bestimmt wird; die Multiplikatoren von $dT$ sind $= \chi_S(\mathfrak{t}) : \chi_S^0$. Verstehen wir nun unter $B$ die Anzahl der linear unabhängigen Prymschen Differentiale mit den Multiplikatoren $\chi_S^{-1}$, welche Multipla von $\mathfrak{d}$ sind, so gilt der \emph{verallgemeinerte Riemann-Rochsche Satz}${}^{1)}$:
+\[ A = B + (m + 1 - p). \]
+Denn $B$ ist identisch mit der Anzahl der unter den Abelschen Differentialen befindlichen linear unabhängigen Multipla von $\mathfrak{d}\mathfrak{d}_0$ (aus denen die in Rede stehenden Prymschen Differentiale mittels Division durch $\Theta_0$ hervorgehen). Schreiben wir $\chi_S^{-1}$ statt $\chi_S$, so besteht diese Relation also zwischen
+
+\begin{quote}
+der Anzahl $B$ derjenigen linear unabhängigen \emph{Differentiale}, welche Multipla von $\mathfrak{d}$ sind und das Multiplikatorsystem $\chi_S$ besitzen, einerseits,
+
+der Anzahl $A$ derjenigen linear unabhängigen \emph{Funktionen}, welche Multipla des reziproken Divisors $\frac{1}{\mathfrak{d}}$ sind und das reziproke Multiplikatorsystem $\frac{1}{\chi_S}$ besitzen, anderseits.
+\end{quote}
+
+Um wenigstens einen konkreten Sonderfall dieses Satzes anzugeben, nehmen wir für $\mathfrak{d}$ den keinen einzigen Punkt mit einem von 0 verschiedenen Exponenten enthaltenden Divisor „1“; dann ist, da es außer der Konstanten keine Funktion $\Theta$ ohne Pole gibt, $A = 0$ zu setzen, und nur im Falle des Hauptcharakters $A = 1$. Mithin: \emph{die Prymschen Differentiale 1.\ Gattung mit vorgegebenen Multiplikatoren bilden eine lineare Schar vom Grade $p - 1$ (nur im Falle des Hauptcharakters vom Grade $p$).}
+
+Wir hatten uns bei diesen Überlegungen zu stützen auf den
+
+\emph{Hilfssatz: Ist $\chi_S$ ein vorgegebenes Charakterensystem, so existieren stets Funktionen $\Theta$, deren Multiplikatoren $= \chi_S$ sind.}
+
+\textbf{1)} Zuerst formuliert von E.~Ritter, Math.\ Ann.\ Bd.~44, S.~314. Vgl.\ jedoch die Fußnote auf S.~122. Ritter verwendet statt der Divisorensymbolik die von Klein begründete Formentheorie auf Riemannschen Flächen, welche eine rcale\ednote{Druckfehler im Original: rcale statt reale.} Darstellung der Divisoren mit Hilfe mnltiplikativer\ednote{Druckfehler im Original: mnltiplikativer statt multiplikativer.} Formen ermöglicht, und verallgemeinert in Math.\ Ann.\ Bd.~47 (1896), S.~157---221, von den durch Riemann in die Theorie der linearen Differentialgleichungen eingeführten Grundsätzen geleitet, seine Untersuchungen auf Systeme von $n$ Formen, die sich bei Ausübung einer Decktransformation $S$ homogen-linear transformieren.
 \end{document}
