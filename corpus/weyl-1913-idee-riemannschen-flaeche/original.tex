@@ -1629,4 +1629,166 @@ bilden, erhalten wir ein \emph{überall ohne Ausnahme} reguläres Differential $
 Die kanonische Zerschneidung dient dazu, nachzuweisen, daß durch lineare Zusammensetzung aus den Differentialen $d\omega_\alpha$ jedes beliebige Differential 1.\ Gattung erzeugt werden kann. Sind nämlich
 \[ \alpha_1 + \alpha_2, \, \alpha_3 + \alpha_4, \, \dots, \, \alpha_{2p-1} + \alpha_{2p} \]
 die Rückkehrschnittpaare einer kanonischen Zerschneidung und schreiben wir zur Abkürzung $d\omega_{\alpha_h} = d\omega_h$, so gilt
+
+\origpage{99}
+\[ \Re \int_{\alpha_{2l}} d\omega_{2l-1} = 1, \quad \Re \int_{\alpha_{2l-1}} d\omega_{2l} = -1 \quad [l = 1, \dots, p], \]
+und alle andern Ausdrücke von der Form $\Re \displaystyle\int_{\alpha_h} d\omega_i$ sind $= 0$. Ist nun der Realteil von $\displaystyle\int_{\alpha_h} d\omega$ gleich $c_h$, so wird
+\[ \Re \int \bigl[ d\omega - (c_2\,d\omega_1 - c_1\,d\omega_2) - (c_4\,d\omega_3 - c_3\,d\omega_4) - \dots \bigr] \tag{29} \]
+bei Integration über eine jede geschlossene Kurve $= 0$, da diese „Integralfunktion“ für die $2p$ Kurven $\alpha_h$ verschwindet, die eine Basis der geschlossenen Wege bilden. Infolgedessen ist (29), von einem festen Anfangspunkt nach einem variablen Endpunkt integriert, eine eindeutige und zwar regulär-harmonische Funktion dieses Endpunktes; da aber eine solche außer der Konstanten nicht existiert, ergibt sich die Identität:
+\[ dw = (c_2\,d\omega_1 - c_1\,d\omega_2) + (c_4\,d\omega_3 - c_3\,d\omega_4) + \dots, \]
+d.~h.\ \emph{aus den $2p$ Differentialen $d\omega_h$ läßt sich jedes Differential 1.~Gattung auf eine und nur eine Weise mit Hilfe konstanter reeller Faktoren zusammensetzen: die $d\omega_h$ bilden eine „reelle“ Basis der Differentiale 1.~Gattung.} --- Der Übergang von \emph{einer} reellen Basis der Differentiale 1.~Gattung zu einer anderen wird vermittelt durch lineare Transformation mit beliebigen reellen Koeffizienten und einer von $0$ verschiedenen Determinante. Aus den $2p$ Differentialen $d\omega_h$ einer reellen Basis kann man sich solche (etwa $d\omega_1, \dots, d\omega_q$) auswählen, daß zwischen diesen keine lineare Beziehung mit beliebigen konstanten \emph{komplexen} Koeffizienten besteht, wohl aber zwischen je $q+1$ Differentialen der Basis. Da dann
+\[ d\omega_1, \dots, d\omega_q; \; i\,d\omega_1, \dots, i\,d\omega_q \tag{30} \]
+in reellen Sinne linear unabhängig sind, muß $2q \leqq 2p$ sein. Da aber jedes Differential der Basis und damit jedes Differential 1.~Gattung überhaupt sich linear mit komplexen Koeffizienten aus $d\omega_1, \dots, d\omega_q$, also linear mit reellen Koeffizienten aus den Differentialen (30) zusammensetzen läßt, muß $2q \geqq 2p$, folglich $q=p$ sein. Aus den Differentialen einer reellen Basis kann man demnach eine aus $p$ Differentialen bestehende „komplexe“ Basis $d\omega_1, \dots, d\omega_p$ herauslösen. Jedes Differential 1.~Gattung $dw$ gestattet eine und nur eine Darstellung der Form
+\[ dw = C_1\,d\omega_1 + \dots + C_p\,d\omega_p \]
+mit komplexen Konstanten $C_1, \dots, C_p$.
+
+Lautet die Potenzentwicklung eines beliebigen Differentials $dv$ an einer Stelle $\mathfrak{p}_1$, zu dem die Ortsuniformisierende $z_1$ gehört,
+\[ dv = \left( \frac{A_{-m}}{z_1^m} + \dots + \frac{A_{-1}}{z_1} + A_0 + A_1 z_1 + \dots \right) dz_1 \]
+
+\origpage{100}
+so nennen wir
+\[ \left( \frac{A_{-m}}{z_1^m} + \dots + \frac{A_{-1}}{z_1} \right) dz_1 \]
+den \textbf{Hauptteil} von $dv$ an der Stelle $\mathfrak{p}_1$. Gibt man auf einer geschlossenen Riemannschen Fläche von einem Differential $dv$ die Pole und die Hauptteile an diesen beliebig vor, doch so, daß die Summe der Residuen $= 0$ ist, und außerdem den Realteil von $\displaystyle\int_\gamma dv$ für $2p$ linear unabhängige geschlossene Wege $\gamma$, so gibt es ein und nur ein Differential $dv$, das den gestellten Anforderungen genügt; es kann durch additive Zusammensetzung aus den oben von uns mit Hilfe des Dirichletschen Prinzipes konstruierten \textbf{Elementardifferentialen} gewonnen werden.
+
+\subsection*{§ 15. Beweis des Dirichletschen Prinzips.${}^{1)}$}
+
+Die Konkurrenzbedingungen für die Funktion $v$ seien wie im vorigen Paragraphen festgelegt, aus dem wir auch alle anderen Bezeichnungen herübernehmen. Es ist zunächst zu bemerken, daß es überhaupt Konkurrenzfunktionen gibt (auch im Falle nicht-geschlossener Flächen), z.~B.\ solche, die außer in den Punkten von $\mathrm{K}_0$ überall $= 0$ sind. $d$ sei die untere Grenze des Dirichletschen Integrals $\mathbf{D}(v)$ für alle Konkurrenzfunktionen; dann wird stets $\mathbf{D}(v) \geqq d$ sein, aber, wenn $\varepsilon$ eine beliebig kleine positive Größe ist, werden immer noch Konkurrenzfunktionen $v$ existieren, für welche $\mathbf{D}(v) < d + \varepsilon$ ausfällt. Ist $v$ eine Konkurrenzfunktion, so ist auch immer $v + a$, wo $a$ eine willkürliche reelle Konstante ist, eine solche, die übrigens dem Dirichletschen Integral denselben Wert wie $v$ erteilt. Wir können infolgedessen die Konkurrenzbedingungen noch durch die Forderung einschränken, daß das Randintegral von $v^*$ um den Kreis $\mathrm{K}_0$
+\[ \int_0^{2\pi} v^*_{r_0 = a_0} \cdot d\varphi_0 = 0 \]
+sein soll. Ist jeder Konkurrenzfunktion $v$ irgendwie eine Zahl $\vartheta(v)$ zugeordnet, so wird eine Limesgleichung wie
+\[ \lim_v \vartheta(v) = \vartheta_0 \]
+
+\textbf{1)} Bei der Durchführung des Beweises ist hauptsächlich die S.~94 zitierte Arbeit von Zaremba zugrunde gelegt worden. Diese bezieht sich jedoch nur auf ebene Bereiche (und zwar auf die Lösung der ersten Randwertaufgabe der Potentialtheorie für solche Bereiche). Wie das Dirichletsche Prinzip für beliebige Riemannsche Flächen zu begründen ist, zeigt \emph{R.~König}, Konforme Abbildung der Oberfläche einer räumlichen Ecke, Leipziger Habilitationsschrift 1911, abgedruckt in Math.\ Ann.\ Bd.~71, S.~184---205. \emph{Unser}, von dem Riemann-Hilbertschen abweichender Ansatz bringt weitgehende Vereinfachungen mit sich.
+
+\origpage{101}
+bedeuten, daß zu jeder positiven Zahl $\varepsilon$ eine positive Zahl $\delta$ derart angegeben werden kann, daß für alle Konkurrenzfunktionen $v$, für welche $\mathbf{D}(v) < d + \delta$ ist, der Unterschied $|\vartheta(v) - \vartheta_0| < \varepsilon$ wird. Die notwendige und hinreichende Bedingung dafür, daß ein $\lim_v \vartheta(v)$ in diesem Sinne existiert, ist die, daß zu jedem positiven $\varepsilon$ ein positives $\delta$ gefunden werden kann derart, daß für irgend zwei Konkurrenzfunktionen $v_1, v_2$, welche dem Dirichletschen Integral Werte $< d + \delta$ erteilen,
+\[ |\vartheta(v_1) - \vartheta(v_2)| < \varepsilon \]
+wird.
+
+Der Satz, den wir zu beweisen haben, lautet: \emph{Es gibt eine Konkurrenzfunktion $u$ mit der Eigenschaft $\mathbf{D}(u) = d$.}
+
+Wir beginnen diesen Nachweis mit der \emph{B.~Levischen Ungleichung}${}^{1)}$, welche aussagt, daß zwei Konkurrenzfunktionen $v_1, v_2$, deren Dirichletsches Integral der unteren Grenze $d$ nahekommt, eine Differenz $v_1 - v_2$ besitzen, deren Dirichlet-Integral sehr klein ist:
+\[ \sqrt{\mathbf{D}(v_1 - v_2)} \leqq \sqrt{\mathbf{D}(v_1) - d} + \sqrt{\mathbf{D}(v_2) - d}. \]
+Sind nämlich $\lambda_1, \lambda_2$ irgend zwei Konstante, $\lambda_1 + \lambda_2 \neq 0$, so ist mit $v_1, v_2$ auch
+\[ \frac{\lambda_1 v_1 + \lambda_2 v_2}{\lambda_1 + \lambda_2} \]
+eine Konkurrenzfunktion, und daher
+\[ \mathbf{D}(\lambda_1 v_1 + \lambda_2 v_2) \geqq d \cdot (\lambda_1 + \lambda_2)^2. \]
+Diese Ungleichung verliert ihre Gültigkeit für $\lambda_1 + \lambda_2 = 0$ nicht. Die quadratische Form von $\lambda_1, \lambda_2$:
+\[ \lambda_1^2 [\mathbf{D}(v_1) - d] + 2\lambda_1 \lambda_2 [\mathbf{D}(v_1 v_2) - d] + \lambda_2^2 [\mathbf{D}(v_2) - d] \]
+ist also stets $\geqq 0$, und darum muß
+\[ [\mathbf{D}(v_1) - d][\mathbf{D}(v_2) - d] \geqq [\mathbf{D}(v_1 v_2) - d]^2 \]
+sein. Es ist aber
+\[ \begin{aligned}
+0 \leqq \mathbf{D}(v_1 - v_2) &= \mathbf{D}(v_1) - 2\,\mathbf{D}(v_1 v_2) + \mathbf{D}(v_2) \\
+&= [\mathbf{D}(v_1) - d] + [\mathbf{D}(v_2) - d] - 2\,[\mathbf{D}(v_1 v_2) - d] \\
+&\leqq [\mathbf{D}(v_1) - d] + [\mathbf{D}(v_2) - d] + 2\sqrt{[\mathbf{D}(v_1) - d][\mathbf{D}(v_2) - d]} \\
+&= \bigl\{ \sqrt{\mathbf{D}(v_1) - d} + \sqrt{\mathbf{D}(v_2) - d} \bigr\}^2.
+\end{aligned} \]
+Aus der Levischen Ungleichung kann man bereits etwas ähnliches schließen wie, daß $v$ selber, wenn man es so variiert, daß $\mathbf{D}(v)$ seiner unteren Grenze $d$ entgegengetrieben wird, gegen eine Grenzfunktion konvergiert, die dann die gesuchte Minimalfunktion sein wird. Ist näm-
+
+\textbf{1)} B.~Levi, Sul principio di Dirichlet, Rendiconti del Circolo Matematico di Palermo, Bd.~22 (1906), S.~293---360, §~7.
+
+\origpage{102}
+lich $\mathfrak{p}$ irgendein Punkt auf der Fläche, $z = x + iy$ eine Ortsuniformisierende zu $\mathfrak{p}$, $\mathrm{K} : |z| \leqq a$ ein $z$-Kreis und $\mathfrak{E}$ eine beliebige abgeschlossene Menge in $\mathrm{K}$, die in der $z$-Ebene einen bestimmten Inhalt besitzt, so liefert die \emph{Schwarzsche} Ungleichung, angewandt auf $\frac{\partial(v_1 - v_2)}{\partial x}$ und $1$:
+\[ \left| \iint_{\mathfrak{E}} \left\{ \frac{\partial v_1}{\partial x} - \frac{\partial v_2}{\partial x} \right\} dx\,dy \right| \leqq a\sqrt{\pi} \cdot \sqrt{\mathbf{D}(v_1 - v_2)}. \]
+Es existieren also gleichmäßig für alle in $\mathrm{K}$ gelegenen Bereiche $\mathfrak{E}$ die Grenzwerte
+\[ \lim_v \iint_{\mathfrak{E}} \frac{\partial v}{\partial x}\,dx\,dy, \qquad \lim_v \iint_{\mathfrak{E}} \frac{\partial v}{\partial y}\,dx\,dy. \]
+D.~h.: ich kann zwar nicht von den Differentialquotienten $\frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ selber schließen, daß sie konvergieren, wohl aber gilt dies von den \emph{flächenhaft integrierten} Differentialquotienten. Es ist bequemer, statt der Differentialquotienten auf die Funktion $v$ selbst zurückzukommen; wir werden dann sehen, daß in demselben Sinne
+\[ \lim_v \iint_{\mathfrak{E}} v\,dx\,dy \]
+existiert. Wenn die \textbf{Minimalfunktion} $u$ vorhanden ist, muß dieser Limes außerdem $=\iint_{\mathfrak{E}} u\,dx\,dy$ sein. Nehmen wir für $\mathfrak{E}$ den Kreis $\mathrm{K}$ selbst und beachten, daß $u$ eine Potentialfunktion sein wird, daß also (jedenfalls, wenn $\mathrm{K}$ ganz in der gelochten Fläche liegt)
+\[ \begin{aligned}
+\frac{\iint\limits_{\mathrm{K}} u\,dx\,dy}{\pi a^2} &= \text{Mittelwert von } u \text{ in } \mathrm{K} \\
+&= u(\mathfrak{p})
+\end{aligned} \]
+ist, so wird man darauf geführt, den gewünschten Existenzbeweis so zu erbringen, daß man den Wert
+\[ \lim_v \frac{1}{\pi a^2} \iint_{\mathrm{K}} v\,dx\,dy \]
+dem Mittelpunkt des Kreises als Funktionswert $u$ zuordnet und dann zeigt, daß die dadurch erhaltene Funktion wirklich die Minimalfunktion ist: Weil die Grenzfunktion $u$ eine Potentialfunktion sein wird, ist die vorgenommene konvergenzerzeugende Integration über Kreise im Limes einflußlos.
+
+Zur Ausführung dieses Gedankenganges schreitend, müssen wir zunächst das Dirichlet-Integral von $v_1 - v_2$ durch das Quadratintegral von $v_1 - v_2$ ersetzen. Zu dem Zweck zeigen wir: Ist $\mathfrak{p}$ ein Punkt, $z$ eine zu-
+
+\origpage{103}
+gehörige Ortsuniformisierende, $\mathrm{K} : |z| \leqq a$ ein $z$-Kreis, so gibt es eine Zahl $C$ von der Art, daß für jede stetig differentiierbare Funktion $w$ auf der Fläche, deren Randintegral $\displaystyle\int_0^{2\pi} w\,d\varphi_0$ um $\mathrm{K}_0$ den Wert $0$ hat,
+\[ \iint_{\mathrm{K}} w^2 dx\,dy \leqq C \cdot \mathbf{D}(w) \]
+ist.
+
+Wir bilden eine Kette von Punkten $\mathfrak{p}_0 = O$, $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_n = \mathfrak{p}$ mit zugehörigen Ortsuniformisierenden $z_0, z_1, z_2, \dots, z_n = z$ und schlagen um jeden Punkt $\mathfrak{p}_i$ einen $z_i$-Kreis $\mathrm{K}_i : |z_i| \leqq a_i$ (um $\mathfrak{p}_0$ den Kreis $\mathrm{K}_0$, um $\mathfrak{p} = \mathfrak{p}_n$ den Kreis $\mathrm{K} = \mathrm{K}_n$); es ist dafür Sorge getragen, daß immer $\mathrm{K}_{i+1}$ über $\mathrm{K}_i$ greift (d.~h.\ $\mathrm{K}_i$ und $\mathrm{K}_{i+1}$ innere Punkte gemein haben). Dann wird zunächst nach §~13
+\[ \iint_{\mathrm{K}_0} w^2 dx_0\,dy_0 \leqq \frac{a_0^2}{2} \iint_{\mathrm{K}_0} \left[ \left(\frac{\partial w}{\partial x_0}\right)^2 + \left(\frac{\partial w}{\partial y_0}\right)^2 \right] dx_0\,dy_0 \leqq \frac{a_0^2}{2}\,\mathbf{D}(w). \]
+Für $\mathrm{K}_0$ trifft also unsere Behauptung zu; wir werden daraus schließen, daß sie für $\mathrm{K}_1$ gleichfalls gültig ist. Nach dem eben benutzten Satz gibt es jedenfalls eine Konstante $c$, sodaß
+\[ \iint_{\mathrm{K}_1} (w - c)^2 dx_1\,dy_1 \leqq \frac{a_1^2}{2}\,\mathbf{D}(w) \]
+ist. Bezeichnet $\mathfrak{E}_{01}$ die aus den sowohl in $\mathrm{K}_0$ als $\mathrm{K}_1$ gelegenen Punkten gebildete Punktmenge, so hängen in $\mathfrak{E}_{01}$ die Variablen $z_1 = x_1 + i y_1$, $z_0 = x_0 + i y_0$ durch eine Transformation zusammen, die auch über die Grenze von $\mathfrak{E}_{01}$ hinaus noch regulär analytisch ist. Die Funktionaldeterminante
+\[ \frac{\partial(x_1, y_1)}{\partial(x_0, y_0)} = \left| \frac{dz_1}{dz_0} \right|^2 \]
+hat daher in $\mathfrak{E}_{01}$ eine obere Grenze $M_{01}$, und es ist:
+\[ \begin{aligned}
+\iint_{\mathfrak{E}_{01}} w^2 dx_1\,dy_1 &= \iint_{\mathfrak{E}_{01}} w^2\,\frac{\partial(x_1, y_1)}{\partial(x_0, y_0)}\,dx_0\,dy_0 \\
+&\leqq M_{01} \iint_{\mathfrak{E}_{01}} w^2 dx_0\,dy_0 \leqq M_{01} \iint_{\mathrm{K}_0} w^2 dx_0\,dy_0 \leqq M_{01} \frac{a_0^2}{2}\,\mathbf{D}(w),
+\end{aligned} \tag{31} \]
+anderseits
+\[ \iint_{\mathfrak{E}_{01}} (w - c)^2 dx_1\,dy_1 \leqq \frac{a_1^2}{2}\,\mathbf{D}(w). \tag{32} \]
+Bedeutet $J_{01}$ den Inhalt der Bildmenge von $\mathfrak{E}_{01}$ in der $z_1$-Ebene:
+
+\origpage{104}
+\[ J_{01} = \iint_{\mathfrak{E}_{01}} dx_1\,dy_1 > 0, \]
+so liefert die Addition von (31), (32) wegen
+\[ c^2 \leqq 2\,[w^2 + (c - w)^2]\colon \]
+\[ c^2 \cdot J_{01} \leqq (a_0^2\,M_{01} + a_1^2)\,\mathbf{D}(w) \]
+und dann
+\[ \begin{aligned}
+\iint_{\mathrm{K}_1} w^2 dx_1\,dy_1 &\leqq 2 \left[ \iint_{\mathrm{K}_1} (w - c)^2 dx_1\,dy_1 + c^2 a_1^2\pi \right] \\
+&\leqq a_1^2 \left( 1 + \frac{2\,\pi(a_1^2 + a_0^2\,M_{01})}{J_{01}} \right) \cdot \mathbf{D}(w).
+\end{aligned} \]
+Damit ist der Beweis für $\mathrm{K}_1$ erbracht. Von $\mathrm{K}_1$ schließen wir jetzt auf $\mathrm{K}_2$ usf.\ und kommen schließlich bei $\mathrm{K}_n = \mathrm{K}$ an. Wenden wir das Ergebnis auf die Differenz zweier Konkurrenzfunktionen $v_1, v_2$ an, so haben wir
+\[ \iint_{\mathrm{K}} (v_1 - v_2)^2 dx\,dy \leqq C \bigl\{ \sqrt{\mathbf{D}(v_1) - d} + \sqrt{\mathbf{D}(v_2) - d} \bigr\}^2. \tag{33} \]
+Den Mittelwert
+\[ \frac{1}{\pi a^2} \iint_{\mathrm{K}} f dx\,dy \]
+einer in $\mathrm{K}$ stetigen Funktion bezeichne ich allgemein mit $\underset{\mathrm{K},\,z}{\mathbf{M}} f$. Die Punkte auf der gelochten Fläche und die Punkte im Deckel betrachte ich gesondert. Liegt $\mathfrak{p}$ auf der gelochten Fläche, so werde $\mathrm{K}$ so genommen, daß auch $\mathrm{K}$ ganz in der gelochten Fläche liegt. Es existiert dann gemäß der letzten Ungleichung
+\[ \lim_v \underset{\mathrm{K},\,z}{\mathbf{M}} v = u. \]
+Ist $\mathfrak{p}$ ein Punkt im Deckel, $z_0(\mathfrak{p}) = c_0$, so möge $z_0 - c_0$ als Ortsuniformisierende $z$ angenommen werden, und der $z$-Kreis $\mathrm{K}$ liege ganz im Deckel. Es existiert
+\[ \lim_v \underset{\mathrm{K},\,z}{\mathbf{M}} v^* = u^*. \]
+\emph{Wir behaupten: $u, u^*$ hängen nur von $\mathfrak{p}$ ab, nicht aber von der Wahl der Ortsuniformisierenden $z$ und von dem $z$-Kreise $\mathrm{K}$.}
+
+Ich führe den Beweis für die Punkte $\mathfrak{p}$ in der gelochten Fläche durch. Sei also $z' = x' + iy'$ eine andere Ortsuniformisierende zu $\mathfrak{p}$, $\mathrm{K}' : |z'| \leqq a'$ ein $z'$-Kreis. Ich nehme zunächst an, daß $\mathrm{K}'$ ganz in $\mathrm{K}$ gelegen ist. $\bar{v}$ sei diejenige Potentialfunktion in $\mathrm{K}$, die am Rande mit $v$ übereinstimmt. Es ist $\mathbf{D}_{\mathrm{K}}(\bar{v}) \leqq \mathbf{D}_{\mathrm{K}}(v)$, und es gibt eine Konkurrenzfunktion $\tilde{v}$, die außer in $\mathrm{K}$ mit $v$ übereinstimmt und für welche
+
+\origpage{105}
+\[ \mathbf{D}_{\mathrm{K}}(\tilde{v} - \bar{v}) = \mathbf{D}_{\mathrm{K}}(\tilde{v}) - \mathbf{D}_{\mathrm{K}}(\bar{v}) \]
+so klein ist, wie man will. Es gilt
+\[ \mathbf{D}_{\mathrm{K}}(\tilde{v} - v) = \mathbf{D}(\tilde{v} - v) \leqq \bigl( \sqrt{\mathbf{D}(v) - d} + \sqrt{\mathbf{D}(\tilde{v}) - d} \bigr)^2; \]
+infolgedessen muß
+\[ \mathbf{D}_{\mathrm{K}}(\bar{v} - v) = \mathbf{D}_{\mathrm{K}}(v) - \mathbf{D}_{\mathrm{K}}(\bar{v}) \leqq 4\,[\mathbf{D}(v) - d] \]
+sein. Da $\bar{v} - v$ am Rande des Kreises $\mathrm{K}$ verschwindet, folgt daraus
+\[ \iint_{\mathrm{K}} (\bar{v} - v)^2 dx\,dy \leqq a^2 [\mathbf{D}(v) - d] \]
+und mittels der \emph{Schwarzschen} Ungleichung
+\[ \left| \underset{\mathrm{K},\,z}{\mathbf{M}} v - \underset{\mathrm{K},\,z}{\mathbf{M}} \bar{v} \right| \leqq \frac{1}{\sqrt{\pi}} \sqrt{\mathbf{D}(v) - d}. \]
+Da $\bar{v}$ Potentialfunktion ist, ist $\underset{\mathrm{K},\,z}{\mathbf{M}} \bar{v} = \bar{v}(\mathfrak{p})$, also haben wir:
+\[ \lim_v \underset{\mathrm{K},\,z}{\mathbf{M}} v = \lim_v \bar{v}(\mathfrak{p}), \qquad \lim_v \bar{v}(\mathfrak{p}) = u. \]
+In $\mathrm{K}'$ hängen $z$ und $z'$ durch eine auch über die Grenzen von $\mathrm{K}'$ hinaus analytische Transformation zusammen; ist $M$ eine obere Grenze für $\left|\frac{dz'}{dz}\right|^2$ in $\mathrm{K}'$, gilt
+\[ \iint_{\mathrm{K}'} (\bar{v} - v)^2 dx'\,dy' \leqq a^2 M [\mathbf{D}(v) - d]\colon \]
+\[ \lim_v \underset{\mathrm{K}',\,z'}{\mathbf{M}} \bar{v} = \lim_v \underset{\mathrm{K}',\,z'}{\mathbf{M}} v. \]
+Da aber $\bar{v}$ auch in den Variablen $x', y'$ Potentialfunktion ist, muß $\underset{\mathrm{K}',\,z'}{\mathbf{M}} \bar{v} = \bar{v}(\mathfrak{p})$ sein; daher
+\[ \lim_v \underset{\mathrm{K}',\,z'}{\mathbf{M}} v = \lim_v \bar{v}(\mathfrak{p}) = \lim_v \underset{\mathrm{K},\,z}{\mathbf{M}} v. \]
+
+Wenn $\mathrm{K}'$ nicht in $\mathrm{K}$ liegt, benutzen wir als Zwischenglied einen $z'$-Kreis $\mathrm{K}'_*$, der sowohl in $\mathrm{K}'$ als in $\mathrm{K}$ liegt. Dann liefert unsere Schlußweise:
+\[ \text{1)}\ \lim_v \underset{\mathrm{K},\,z}{\mathbf{M}} v = \lim_v \underset{\mathrm{K}'_*,\,z'}{\mathbf{M}} v; \qquad \text{2)}\ \lim_v \underset{\mathrm{K}',\,z'}{\mathbf{M}} v = \lim_v \underset{\mathrm{K}'_*,\,z'}{\mathbf{M}} v, \]
+woraus sich auch\ednote{Druckfehler im Original: K, z und K', z' stehen im Druck unter lim statt unter M; das Variablensymbol v unter lim fehlt.}
+\[ \lim_{\mathrm{K},\,z} \mathbf{M} v = \lim_{\mathrm{K}',\,z'} \mathbf{M} v \]
+in diesem Falle ergibt. Wenn man die analogen Schlüsse für die Punkte des Deckels durchführen will, hat man in dem Fall, daß $\mathrm{K}$ über den Lochrand hinübergreift, die aus den Ausführungen auf S.~95 sich ergebende Beziehung
+
+\origpage{106}
+\[ \mathbf{D}_{\mathrm{K}}(v) - \mathbf{D}_{\mathrm{K}}(\tilde{v}) = \mathbf{D}_{\mathrm{K}}(v^*) - \mathbf{D}_{\mathrm{K}}(\tilde{v}^*) \]
+zu beachten, durch welche die Gleichung $\left(\frac{\partial\Phi}{\partial r_0}\right)_{r_0 = a_0} = 0$ ausgenutzt wird.
+
+Die Zahl $u$, bzw.\ $u^*$ ordnen wir als Funktionswert dem Punkte $\mathfrak{p}$ zu; wir haben dann eine in der gelochten Fläche definierte Funktion $u(\mathfrak{p})$ und eine Funktion $u^*(\mathfrak{p})$ im Deckel. Zur Untersuchung der Funktion $u(\mathfrak{p})$ in der gelochten Fläche betrachte ich alle Punkte $\mathfrak{q}$, welche in dem $z$-Kreis $\mathrm{K}$ um $\mathfrak{p}$ liegen, und führe die folgenden Überlegungen an dem Bilde von $\mathrm{K}$ in der $z$-Ebene (in welchem $\mathfrak{p}$ der Nullpunkt ist) aus. Um $\mathfrak{q}$ schlage ich (in der $z$-Ebene) den Kreis $\mathrm{K}_\mathfrak{q}$, der $\mathrm{K}$ von innen berührt; sein Radius ist $q = a - |z(\mathfrak{q})|$. Es gilt, wenn $v_1$ neben $v$ eine zweite Konkurrenzfunktion ist und $\bar{v}$ die alte Bedeutung hat, nach Formel (33), in der wir $v_2$ durch $\bar{v}$ ersetzen,
+\[ \iint_{\mathrm{K}_\mathfrak{q}} (\bar{v} - v_1)^2 dx\,dy \leqq C \bigl( \sqrt{\mathbf{D}(v) - d} + \sqrt{\mathbf{D}(v_1) - d} \bigr)^2, \]
+also
+\[ \left| \bar{v}(\mathfrak{q}) - \underset{\mathrm{K}_\mathfrak{q}}{\mathbf{M}} v_1 \right| \leqq \frac{\sqrt{C}}{q\sqrt{\pi}} \bigl( \sqrt{\mathbf{D}(v) - d} + \sqrt{\mathbf{D}(v_1) - d} \bigr). \]
+Hierin führe ich mit $v_1$ den Grenzübergang $\lim\mathbf{D}(v_1) = d$ aus:
+\[ |u(\mathfrak{q}) - \bar{v}(\mathfrak{q})| \leqq \frac{\sqrt{C}}{q\sqrt{\pi}} \sqrt{\mathbf{D}(v) - d}. \]
+$\bar{v}(\mathfrak{q})$ konvergiert mithin \emph{gleichmäßig gegen $u(\mathfrak{q})$ in einem beliebigen konzentrischen Kreise, der ganz innerhalb $\mathrm{K}$ liegt}. $u$ ist demnach in $\mathfrak{p}$ eine Potentialfunktion (S.~83), und auch die ersten Abteilungen\ednote{Druckfehler im Original: Abteilungen statt Ableitungen.} von $\bar{v}$ konvergieren in demselben Sinne gleichmäßig gegen die betreffenden Ableitungen von $u$.
+
+Ebenso ist $u^*$ im Deckel eine reguläre Potentialfunktion. Bedeutet $\mathfrak{p}$ einen Punkt innerhalb des Verschlußringes und schlagen wir in der $z_0$-Ebene um $\mathfrak{p}$ einen Kreis $\mathrm{K}$, der \emph{ganz im Verschlußring} liegt, so haben wir
+\[ \begin{gathered}
+u(\mathfrak{p}) = \lim_v \underset{\mathrm{K}}{\mathbf{M}} v; \\
+u^*(\mathfrak{p}) = \lim_v \underset{\mathrm{K}}{\mathbf{M}} v^* = \lim_v \underset{\mathrm{K}}{\mathbf{M}} v - \underset{\mathrm{K}}{\mathbf{M}} \Phi.
+\end{gathered} \]
+Da $\Phi$ im Verschlußring eine reguläre Potentialfunktion ist, besteht die Gleichung $\underset{\mathrm{K}}{\mathbf{M}} \Phi = \Phi(\mathfrak{p})$; so schließen wir
+\[ u(\mathfrak{p}) = u^*(\mathfrak{p}) + \Phi(\mathfrak{p}). \]
+\emph{Es ist uns also die Konstruktion einer in der gelochten Fläche regulär-harmonischen Funktion $u$ und einer im Deckel regulär-harmonischen Funktion $u^*$ gelungen, welche im Verschlußring zueinander in der Beziehung $u = u^* + \Phi$ stehen.} Wir haben noch nachzuweisen, daß diejenige Funk-
 \end{document}
