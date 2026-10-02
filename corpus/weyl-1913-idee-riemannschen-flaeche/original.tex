@@ -1791,4 +1791,169 @@ u^*(\mathfrak{p}) = \lim_v \underset{\mathrm{K}}{\mathbf{M}} v^* = \lim_v \under
 Da $\Phi$ im Verschlußring eine reguläre Potentialfunktion ist, besteht die Gleichung $\underset{\mathrm{K}}{\mathbf{M}} \Phi = \Phi(\mathfrak{p})$; so schließen wir
 \[ u(\mathfrak{p}) = u^*(\mathfrak{p}) + \Phi(\mathfrak{p}). \]
 \emph{Es ist uns also die Konstruktion einer in der gelochten Fläche regulär-harmonischen Funktion $u$ und einer im Deckel regulär-harmonischen Funktion $u^*$ gelungen, welche im Verschlußring zueinander in der Beziehung $u = u^* + \Phi$ stehen.} Wir haben noch nachzuweisen, daß diejenige Funk-
+
+\origpage{107}
+tion $u$, welche in der gelochten Fläche $= u(\mathfrak{p})$, im Loch $= u^*(\mathfrak{p})$ ist, die Minimalgleichung $\mathbf{D}(u) = d$ befriedigt --- obwohl für die Anwendungen auf die Theorie der \emph{geschlossenen} Riemannschen Flächen die bisher festgestellten Eigenschaften von $u$, $u^*$ offenbar genügen würden. Für die Uniformisierungstheorie, von der die letzten Abschnitte dieser Schrift handeln sollen, ist aber die Minimaleigenschaft wesentlich.
+
+Die zur Berechnung des Dirichletschen Integrals nötige Zerschneidung der Fläche durch die Peripherien $\varkappa_l$ von Kreisen $\mathrm{K}_l$ kann so eingerichtet werden, daß jeder Kreis $\mathrm{K}_l$ entweder ganz in der gelochten Fläche liegt oder ganz dem Deckel angehört (und dann in der $z_0$-Ebene als Kreis erscheint). Es sei $\mathfrak{E}_h$ eines der Stücke, in die die Fläche dabei zerschnitten wird und welches zu einem Kreis $\mathrm{K}_l$ der ersten Art gehört. Wir benutzen die Uniformisierende $z_l = z = x + iy$, mit bezug auf welche $\mathrm{K}_l$ ein Kreis ist, zur Uniformisierung von $\mathfrak{E}_h$. $\mathrm{K}'_l$ sei ein $z_l$-Kreis, der etwas größer ist als $\mathrm{K}_l$, aber auch noch ganz in der gelochten Fläche liegt, $\bar{v}$ zu jeder Konkurrenzfunktion $v$ diejenige Potentialfunktion in $\mathrm{K}'_l$, die am Rande von $\mathrm{K}'_l$ mit $v$ übereinstimmt. Dann konvergieren $\frac{\partial\bar{v}}{\partial x}$, $\frac{\partial\bar{v}}{\partial y}$ in $\mathrm{K}_l$ gleichmäßig gegen $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$; also
+\[ \lim_v \mathbf{D}_{\mathrm{K}_l}(\bar{v} - u) = 0. \]
+
+Anderseits
+\[ \mathbf{D}_{\mathrm{K}_l}(v - \bar{v}) \leqq \mathbf{D}_{\mathrm{K}'_l}(v - \bar{v}) \leqq 4[\mathbf{D}(v) - d], \]
+daher
+\[ \begin{gathered}
+\lim_v \mathbf{D}_{\mathrm{K}_l}(v - u) = 0, \\
+\lim_v \mathbf{D}_{\mathfrak{E}_h}(v - u) = 0, \\
+\mathbf{D}_{\mathfrak{E}_h}(u) = \lim_v \mathbf{D}_{\mathfrak{E}_h}(v).
+\end{gathered} \]
+
+Das Gleiche beweist man für ein Stück $\mathfrak{E}_h$, das einem Kreis der zweiten Art angehört [zunächst in der Form
+\[ \lim_v \mathbf{D}_{\mathfrak{E}_h}(v^* - u^*) = 0]. \]
+
+Bildet man $\displaystyle\sum\mathbf{D}_{\mathfrak{E}_h}(u)$ über irgendeine endliche Anzahl von Stücken $\mathfrak{E}_h$, so ist diese Summe
+\[ = \lim_v \sum\mathbf{D}_{\mathfrak{E}_h}(v) \leqq \lim_v \mathbf{D}(v) = d. \]
+Daher ist $\mathbf{D}(u)$ endlich und $\leqq d$. Da es nicht $< d$ sein kann, muß $\mathbf{D}(u) = d$ sein, q.~e.~d.
+
+\origpage{108}
+\subsection*{§ 16. Zusammenhänge zwischen den Differentialen auf einer geschlossenen Riemannschen Fläche.}
+
+Statt die Elementardifferentiale 2.\ und 3.\ Gattung unabhängig voneinander mit Hilfe des Dirichletschen Prinzips wie in § 14 aufzustellen, kann man auch alle bis auf Pole regulären Differentiale, die zu einer gegebenen geschlossenen Riemannschen Fläche $\mathfrak{F}$ gehören, aus dem einfachsten der in § 14 mit $d\tau$ bezeichneten herleiten${}^{1)}$ und gewinnt auf diesem Wege zugleich einen sehr vollständigen Überblick über die zwischen den einzelnen Differentialen bestehenden Zusammenhänge.
+
+Es sei $q$ ein Punkt auf $\mathfrak{F}$, und $\zeta = \xi + i\eta$ eine zu $q$ gehörige Ortsuniformisierende. Die Potentialfunktion, welche nur in $q$ unendlich wird wie
+\[ \Re \frac{1}{\zeta} = \frac{\xi}{\xi^2 + \eta^2}, \]
+bezeichnen wir --- als Realteil des erst auf der Überlagerungsfläche $\tilde{\mathfrak{F}}$ eindeutigen, in $q$ einen Pol 1.\ Ordnung besitzenden Abelschen Integrals 2.\ Gattung $\tau_q$ --- mit $\Re\tau_q$. Die Bedeutung dieses Funktionszeichens hängt danach nicht nur vom Punkte $q$, sondern auch von der Wahl der zu $q$ gehörigen Ortsuniformisierenden $\zeta$ ab; wo dies hervorgehoben werden soll, schreiben wir $q\,\zeta$ statt des Index $q$ allein. Benutzen wir $i\zeta$ an Stelle von $\zeta$ als Ortsuniformisierende, so bekommen wir diejenige Potentialfunktion
+\[ \Re\tau'_q = \Re\tau'_{q\,\zeta} = \Re\tau_{q,\,i\zeta}, \]
+die nur im Punkte $q$ und zwar wie $\frac{-\eta}{\xi^2 + \eta^2}$ unendlich wird.
+
+Um die Abhängigkeit dieser Funktionen von dem Unendlichkeitspunkte $q$ zu untersuchen, verfahren wir so: Wir grenzen um $q$ einen $\zeta$-Kreis $\mathrm{K}\colon |\zeta| \leqq \alpha$ ab, bezeichnen mit $q^*$ einen in $\mathrm{K}$ variablen Punkt und verstehen unter
+\[ \Re\tau_{q^*}, \quad \Re\tau'_{q^*} \]
+diejenigen in $q^*$ unendlich werdenden Potentialfunktionen, welche der Ortsuniformisierenden $\zeta - \zeta(q^*)$ in $q^*$ entsprechen. Wir werden sogleich zeigen, daß diese Funktionen --- bei zweckmäßiger Normierung der für jede Lage von $q^*$ noch zur Verfügung stehenden additiven Konstanten --- stetig in bezug auf $q^*$ sind; für Punkte $\mathfrak{p}$, die in der Umgebung $\mathrm{K}$ von $q$ liegen, wird
+\[ \Re\tau_{q^*}(\mathfrak{p}) = \Re \frac{1}{\zeta(\mathfrak{p}) - \zeta(q^*)} + R_{q^*}(\mathfrak{p}), \quad \Re\tau'_{q^*}(\mathfrak{p}) = \Re \frac{-i}{\zeta(\mathfrak{p}) - \zeta(q^*)} + R'_{q^*}(\mathfrak{p}) \tag{34} \]
+sein, wo $R$, $R'$, solange $q^*$ und $\mathfrak{p}$ in $\mathrm{K}$ liegen, stetige Funktionen von $q^*$ und durchaus reguläre Potentialfunktionen in $\mathfrak{p}$ sind. $q_1$, $q_2$ seien zwei Punkte innerhalb $\mathrm{K}$, die durch einen rektifizierbaren Integrationsweg $\gamma$
+
+\textbf{1)} Vgl.\ Klein-Fricke, \emph{Theorie der elliptischen Modulfunktionen} Bd.~I, S.~518\,ff.
+
+\origpage{109}
+innerhalb $\mathrm{K}$ verbunden seien. Durch \emph{longitudinale} Aneinanderreihung von Doppelquellen längs $\gamma$, d.~h. durch Aneinanderreihung von Doppelquellen konstanten Moments, deren Richtung mit der Richtung von $\gamma$ zusammenfällt, erhalten wir in
+\[ \int\limits_{q_1}^{q_2} \{ \Re\tau_{q^*}(\mathfrak{p})\,d\xi_{q^*} - \Re\tau'_{q^*}(\mathfrak{p})\,d\eta_{q^*} \} = \Re\omega_{q_1 q_2}(\mathfrak{p}) \quad [\xi_{q^*} + i\eta_{q^*} = \zeta(q^*)] \tag{35} \]
+eine Potentialfunktion, die in $q_1$, $q_2$ je eine Senke, bzw.\ Quelle, d.~h. je eine logarithmische Singularität mit den Residuen $+1$ bzw.\ $-1$ besitzt [Entstehung eines Magneten aus Elementarmagneten!], und damit also das Abelsche Integral 3.\ Gattung $\omega_{q_1 q_2}$. Denn für Punkte $\mathfrak{p}$, die nicht in $\mathrm{K}$ liegen, ist offenbar die linke Seite von (35) eine reguläre Potentialfunktion; liegt aber $\mathfrak{p}$ in $\mathrm{K}$, so ist sie nach (34) bis auf eine additiv hinzutretende reguläre Potentialfunktion $= \lg r_1 - \lg r_2$, wo $r_1, r_2$ die geradlinigen Entfernungen von $q_1, q_2$ nach $\mathfrak{p}$ in der $\zeta$-Ebene bedeuten. --- Durch \emph{transversale} Aneinanderreihung der Doppelquellen erhalten wir in
+\[ \int\limits_{q_1}^{q_2} \{ \Re\tau_{q^*}(\mathfrak{p})\,d\eta_{q^*} + \Re\tau'_{q^*}(\mathfrak{p})\,d\xi_{q^*} \} = \Re\omega'_{q_1 q_2}(\mathfrak{p}) \tag{35'} \]
+eine Potentialfunktion, die in $q_1, q_2$ zwei Wirbelpunkte mit entgegengesetztem Drehsinn hat [Äquivalenz einer magnetischen Doppelschicht mit einem elektrischen Strom!], die nämlich für Punkte $\mathfrak{p}$ innerhalb $\mathrm{K}$ bis auf eine additive reguläre Potentialfunktion gleich dem Winkel ist, den die geraden Verbindungslinien $q_1\mathfrak{p}$, $q_2\mathfrak{p}$ in der $\zeta$-Ebene miteinander bilden. Die Funktion $\Re\omega'_{q_1 q_2}$ ist nur auf der längs des Integrationsweges $\gamma$ aufgeschnittenen Fläche $\mathfrak{F}$ eindeutig.
+
+Zur vollständigen Begründung dieser Herleitung ist die für die Möglichkeit der in (35), (35') vollzogenen Integrationen wesentliche Stetigkeit von $\Re\tau_{q^*}$, $\Re\tau'_{q^*}$ inbezug auf den „Parameter“ $q^*$ noch zu beweisen. Dazu müssen wir auf die Konstruktion dieser Potentialfunktionen zurückgreifen. Wir bilden, indem wir unter $\bar{\zeta}(q^*)$ den Spiegelpunkt von $\zeta(q^*)$ in der $\zeta$-Ebene inbezug auf den Kreis $\mathrm{K}$ verstehen,
+\[ \Phi_{q^*}(\zeta) = \Re \left[ \frac{1}{\zeta - \zeta(q^*)} - \left( \frac{\bar{\zeta}(q^*)}{\alpha} \right)^2 \left( \frac{1}{\zeta - \bar{\zeta}(q^*)} + \frac{1}{\bar{\zeta}(q^*)} \right) \right] \]
+und setzen
+\[ u_{q^*} = \begin{cases}
+\Re\tau_{q^*} \text{ außerhalb } \mathrm{K} \\
+\Re\tau_{q^*} - \Phi_{q^*} \text{ innerhalb } \mathrm{K}.
+\end{cases} \]
+Da $\Phi_{q^*}$ am Rande von $\mathrm{K}$ die normale Ableitung $0$ hat, erteilt $u_{q^*} - u_q$ unter allen Funktionen $v$, welche am Rande von $\mathrm{K}$ den Sprung $\Phi_{q^*} - \Phi_q$ haben, sonst aber stetig sind, dem über ganz $\mathfrak{F}$ erstreckten Dirichletschen Integral $\mathbf{D}(v)$ seinen kleinsten Wert. Als Vergleichsfunktion kann
+
+\origpage{110}
+insbesondere diejenige Funktion $v$ dienen, welche außerhalb $\mathrm{K}$ gleich $0$, innerhalb $\mathrm{K}$ aber als die in ihren Randwerten mit $\Phi_q - \Phi_{q^*}$ übereinstimmende reguläre Potentialfunktion erklärt ist:
+\[ -v = \frac{2}{\alpha^2} \, \Re \left[ \frac{\bar{\zeta}^2(q^*)}{\bar{\zeta}(q^*) - \zeta} - \zeta - \bar{\zeta}(q^*) \right]\colon \]
+\[ \mathbf{D}(u_{q^*} - u_q) \leqq \mathbf{D}(v) = \frac{4\pi}{\alpha^2} \frac{q^2(2 - q^2)}{(1 - q^2)^2} \left( q = \frac{|\zeta(q^*)|}{\alpha} \right). \tag{36} \]
+
+Das Dirichletsche Integral von $u_{q^*} - u_q$ konvergiert also gegen $0$, wenn $q^*$ gegen $q$ geht; daraus ergibt sich die behauptete Stetigkeit. Ist $\mathfrak{p} \neq q$, so nehmen wir $\mathrm{K}$ so klein, daß $\mathfrak{p}$ außerhalb $\mathrm{K}$ zu liegen kommt, und wählen eine Ortsuniformisierende $z$ zu $\mathfrak{p}$ und einen Kreis $K\colon |z| \leqq a$ um $\mathfrak{p}$, der keinen Punkt mit $\mathrm{K}$ gemein hat. Ist $\mathfrak{p}^*$ ein in $K$ variabler Punkt, $z(\mathfrak{p}^*) = x + iy$, $\frac{1}{a}\,|z(\mathfrak{p}^*)| = r$, dann folgt aus (36) und (22):
+\[ \left( \frac{\partial u_{q^*}}{\partial x} - \frac{\partial u_q}{\partial x} \right)^2 + \left( \frac{\partial u_{q^*}}{\partial y} - \frac{\partial u_q}{\partial y} \right)^2 < 8 \left[ \frac{q}{a\alpha(1 - q^2)(1 - r)} \right]^2, \]
+d.~i.
+\[ \left| \frac{d\tau_{q^*}}{dz} - \frac{d\tau_q}{dz} \right| < 2\sqrt{2} \, \frac{q}{a\alpha(1 - q^2)(1 - r)}, \]
+daher
+\[ \lim_{q^* = q} \frac{d\tau_{q^*}}{dz} = \frac{d\tau_q}{dz} \tag{37} \]
+gleichmäßig inbezug auf $\mathfrak{p}^*$, wenn $\mathfrak{p}^*$ auf einen etwas kleineren konzentrischen Kreis als $K$ beschränkt wird ($r \leqq r_0 < 1$). --- Liegt $\mathfrak{p}$ in $\mathrm{K}$, so folgt aus (36):
+\[ \left( \frac{\partial u_{q^*}(\zeta)}{d\xi} - \frac{\partial u_q(\zeta)}{\partial\xi} \right)^2 + \left( \frac{\partial u_{q^*}(\zeta)}{\partial\eta} - \frac{\partial u_q(\zeta)}{\partial\eta} \right)^2 < 8 \left[ \frac{q}{\alpha^2(1 - q^2)(1 - r)} \right]^2, \quad \left( r = \frac{|\zeta|}{\alpha} \right), \]
+somit\ednote{Druckfehler im Original: $d\xi$ statt $\partial\xi$ im Nenner des ersten Summanden der obigen Formel.} gleichmäßig für $|\zeta| \leqq r_0\alpha$ ($r_0$ eine feste Zahl $< 1$):
+\[ \lim_{q^* = q} \frac{\partial u_{q^*}(\zeta)}{\partial\xi}, \, \frac{\partial u_{q^*}(\zeta)}{\partial\eta} = \frac{\partial u_q(\zeta)}{\partial\xi}, \, \frac{\partial u_q(\zeta)}{\partial\eta}. \]
+
+Nehmen wir die Normierung der additiven Konstanten durch die Gleichung $R_{q^*}(q^*) = 0$ vor, so ergibt sich hieraus durch Integration:
+
+1) $\lim\limits_{q^* = q} R_{q^*}(\mathfrak{p}) = R_q(\mathfrak{p})$ gleichmäßig für alle $\mathfrak{p}$ in einer gewissen Umgebung von $q$;
+
+2) $\lim\limits_{q^* = q} \Re\tau_{q^*}(\mathfrak{p}) = \Re\tau_q(\mathfrak{p})$ gleichmäßig für alle $\mathfrak{p}$ auf $\mathfrak{F}$, wenn man eine beliebig kleine Umgebung der Stelle $q$ ausscheidet.
+
+Damit sind die behaupteten Stetigkeitseigenschaften für die (beliebige) Stelle $q^* = q$ erwiesen.
+
+(35), (35') fassen wir in die eine Gleichung zusammen
+
+\origpage{111}
+\[ \int\limits_{q_1}^{q_2} \{ \Re\tau_{q^*}(\mathfrak{p}) + i\,\Re\tau'_{q^*}(\mathfrak{p}) \} \, d\zeta(q^*) = \Re\omega_{q_1 q_2}(\mathfrak{p}) + i\,\Re\omega'_{q_1 q_2}(\mathfrak{p}). \tag{38} \]
+
+$\mathfrak{p}$ liege außerhalb $\mathrm{K}$, und wir benutzen die Zeichen $K$, $\mathfrak{p}^*$ und $z = z(\mathfrak{p}^*) = x + iy$ wie oben. Ist $f(z)$ eine analytische Funktion der komplexen Variablen $z$, so ist
+\[ \frac{\partial}{\partial x}\,\Re f(z) = \Re \frac{df}{dz}, \quad \frac{\partial}{\partial y}\,\Re f(z) = -\,\Im \frac{df}{dz}. \]
+
+Differentiieren wir also die Gleichung (38), in der zunächst $\mathfrak{p}$ durch den variablen Punkt $\mathfrak{p}^*$ ersetzt werde, nach $x$ und $y$, so erhalten wir:
+\[ \int\limits_{q_1}^{q_2} \left\{ \Re \frac{d\tau_{q^*}(z)}{dz} + i\,\Re \frac{d\tau'_{q^*}(z)}{dz} \right\} d\zeta(q^*) = \Re \frac{d\omega_{q_1 q_2}(z)}{dz} + i\,\Re \frac{d\omega'_{q_1 q_2}(z)}{dz}, \tag{39} \]
+\[ \int\limits_{q_1}^{q_2} \left\{ \Im \frac{d\tau_{q^*}(z)}{dz} + i\,\Im \frac{d\tau'_{q^*}(z)}{dz} \right\} d\zeta(q^*) = \Im \frac{d\omega_{q_1 q_2}(z)}{dz} + i\,\Im \frac{d\omega'_{q_1 q_2}(z)}{dz}. \tag{39\,i} \]
+
+Daß die Differentiation unter dem Integralzeichen vorgenommen werden darf, folgt daraus, daß $\frac{d\tau_{q^*}(z)}{dz}$, $\frac{d\tau'_{q^*}(z)}{dz}$ gemäß (37) stetig von $q^*$ abhängen.
+
+Jetzt vollziehen wir den wesentlichen Schluß dieser Untersuchung: aus (39) geht hervor: der Integrand
+\[ \Re \frac{d\tau_{q^*}(z)}{dz} + i\,\Re \frac{d\tau'_{q^*}(z)}{dz} \]
+ist in $\mathrm{K}$ eine solche Funktion von $\zeta = \zeta(q^*)$, daß sein Integral nach $\zeta$ vom Wege unabhängig ist, d.~h. \emph{ist eine reguläre analytische Funktion von $\zeta$}. Anstelle von $\frac{d}{dz}$ schreibe ich auch wohl $\frac{d}{d\mathfrak{p}^*}$. Von der zu $q$ gehörigen Ortsuniformisierenden $\zeta$ ist, wie man direkt einsieht oder aus (39) schließt,
+\[ \Re \frac{d\tau_{q\,\zeta}(z)}{dz} + i\,\Re \frac{d\tau'_{q\,\zeta}(z)}{dz} \]
+in der Weise abhängig, wie der Wert eines Differentials an einer Stelle von der benutzten Ortsuniformisierenden abhängt. Es gibt also ein für alle $q$ auf $\mathfrak{F}$ außer für $q = \mathfrak{p}^*$ regulär-analytisches Differential $dv_{\mathfrak{p}^*}(q)$, so daß
+\[ \Re \frac{d\tau_{q^*}(z)}{dz} + i\,\Re \frac{d\tau'_{q^*}(z)}{dz} = \frac{dv_{\mathfrak{p}^*}(\zeta)}{d\zeta} \left( = \frac{dv_{\mathfrak{p}^*}(q^*)}{dq^*} \right) \]
+ist. (39) schreibt sich jetzt so:
+
+\origpage{112}
+\[ \int\limits_{q^* = q_1}^{q_2} dv_{\mathfrak{p}^*}(q^*) = \Re \frac{d\omega_{q_1 q_2}(\mathfrak{p}^*)}{d\mathfrak{p}^*} + i\,\Re \frac{d\omega'_{q_1 q_2}(\mathfrak{p}^*)}{d\mathfrak{p}^*}. \]
+
+Diese Formel gilt für einen beliebig ausgedehnten Integrationsweg $\gamma = (q_1\,q_2)$, der jetzt nicht länger auf die Umgebung $\mathrm{K}$ von $q$ beschränkt zu werden braucht; nur muß unter $d\omega'_{q_1 q_2}$ dasjenige Differential 3.\ Gattung verstanden werden, welches auf die in § 14 geschilderte Weise durch Zwischenschalten von Punkten und Summation längs $\gamma$ hervorgeht. Hingegen ist $d\omega_{q_1 q_2}$ von der Art der Zwischenschaltung und darum $\Re \displaystyle\int\limits_{q_1}^{q_2} dv_{\mathfrak{p}^*}$ vom Integrationswege unabhängig oder $\Re v_{\mathfrak{p}^*}$ eine eindeutige Potentialfunktion auf $\mathfrak{F}$, die nur im Punkte $\mathfrak{p}^*$ singulär wird. Das Verhalten im Punkte $\mathfrak{p}^*$ überblickt man, wenn man für Punkte $q^*$, die in dem Kreise $K$ um $\mathfrak{p}$ gelegen sind, $z - z(q^*)$ als Ortsuniformisierende benutzt:
+\[ \Re\tau_{q^*}(z) = \Re \frac{1}{z - z(q^*)} + R_{q^*}(z), \]
+wo $R_{q^*}(z)$, $\frac{\partial R_{q^*}(z)}{\partial x}$, $\frac{\partial R_{q^*}(z)}{\partial y}$ stetige Funktionen von $q^*$, auch an der Stelle $z$ sind; darum ist bis auf ein additives Glied, das bei Annäherung von $q^*$ an $\mathfrak{p}^*$ zwischen festen Grenzen bleibt und mithin auch für $q^* = \mathfrak{p}^*$ eine reguläre Funktion von $q^*$ ist,
+\[ \Re \frac{d\tau_{q^*}(\mathfrak{p}^*)}{d\mathfrak{p}^*} + i\,\Re \frac{d\tau'_{q^*}(\mathfrak{p}^*)}{d\mathfrak{p}^*} \sim \frac{-1}{[z(\mathfrak{p}^*) - z(q^*)]^2} \]
+d.~h. $dv_{\mathfrak{p}^*}(q^*)$ ist ein Differential 2.\ Gattung, dessen Hauptteil an der Stelle $\mathfrak{p}^*$ durch
+\[ \frac{-\,dz(q^*)}{[z(q^*) - z(\mathfrak{p}^*)]^2} \]
+geliefert wird und dessen Integral einen eindeutigen Realteil auf $\mathfrak{F}$ besitzt:
+\[ dv_{\mathfrak{p}^*} = d\tau_{\mathfrak{p}^*} = d\tau_{\mathfrak{p}^* z}. \]
+
+Wir fassen die gewonnenen Ergebnisse zusammen. \emph{Es seien $\mathfrak{p}$, $q$ zwei verschiedene Punkte auf $\mathfrak{F}$, $z$ eine Ortsuniformisierende zu $\mathfrak{p}$, $\zeta$ eine solche zu $q$; diese Ortsuniformisierenden dienen zur eindeutigen Festlegung der Funktionszeichen $\tau_\mathfrak{p}$, $\tau_q$ und der Differentiationszeichen $\frac{d}{d\mathfrak{p}}$, $\frac{d}{dq}$. Dann gelten die fundamentalen Reziprozitätsgesetze:}
+\[ \left\{ \begin{aligned}
+\Re \frac{d\tau_q(\mathfrak{p})}{d\mathfrak{p}} &= \Re \frac{d\tau_\mathfrak{p}(q)}{dq}, & \Re \frac{d\tau'_q(\mathfrak{p})}{d\mathfrak{p}} &= \Im \frac{d\tau_\mathfrak{p}(q)}{dq}, \\
+\Im \frac{d\tau_q(\mathfrak{p})}{d\mathfrak{p}} &= \Re \frac{d\tau'_\mathfrak{p}(q)}{dq}, & \Im \frac{d\tau'_q(\mathfrak{p})}{d\mathfrak{p}} &= \Im \frac{d\tau'_\mathfrak{p}(q)}{dq}.
+\end{aligned} \right. \tag{I} \]
+
+\origpage{113}
+\emph{Die Differentiale 3.\ Gattung entstehen aus denen 2.\ Gattung nach den Formeln:}
+\[ \left\{ \begin{aligned}
+\Re \int\limits_{q_1}^{q_2} d\tau_\mathfrak{p} &= \Re \frac{d\omega_{q_1 q_2}(\mathfrak{p})}{d\mathfrak{p}}, & \Im \int\limits_{q_1}^{q_2} d\tau_\mathfrak{p} &= \Re \frac{d\omega'_{q_1 q_2}(\mathfrak{p})}{d\mathfrak{p}}, \\
+\Re \int\limits_{q_1}^{q_2} d\tau'_\mathfrak{p} &= \Im \frac{d\omega_{q_1 q_2}(\mathfrak{p})}{d\mathfrak{p}}, & \Im \int\limits_{q_1}^{q_2} d\tau'_\mathfrak{p} &= \Im \frac{d\omega'_{q_1 q_2}(\mathfrak{p})}{d\mathfrak{p}}.
+\end{aligned} \right. \tag{II} \]
+
+Einen Sonderfall der in der zweiten Kolonne stehenden Gleichungen erhalten wir, wenn wir $(q_1\,q_2)$ sich zu einem geschlossenen Wege $\alpha$ auswachsen lassen:
+\[ \int\limits_\alpha d\tau_\mathfrak{p} = 2\,\pi i\,\Re \frac{dw_\alpha(\mathfrak{p})}{d\mathfrak{p}}, \quad \int\limits_\alpha d\tau'_\mathfrak{p} = 2\,\pi i\,\Im \frac{dw_\alpha(\mathfrak{p})}{d\mathfrak{p}}. \tag{$\mathrm{II}_0$} \]
+
+\emph{Sie zeigen, daß die Differentiale 1.\ Gattung die Perioden der Elementarintegrale 2.\ Gattung sind.}
+
+Wir lesen ferner aus ihnen folgende drei Tatsachen ab ($\alpha$, $\beta$, $\gamma$ bedeuten geschlossene Kurven auf $\mathfrak{F}$):
+\[ \begin{aligned}
+&1. & &\text{ist } \alpha \sim 0, & &\text{so ist } dw_\alpha \text{ identisch } = 0; \\
+&2. & &\text{ist } \alpha \sim \beta, & &\text{so ist } dw_\alpha = dw_\beta; \\
+&3. & &\text{ist } \alpha + \beta \sim \gamma, & &\text{so ist } dw_\alpha + dw_\beta = dw_\gamma.
+\end{aligned} \]
+
+Jeder Decktransformation $S$ der Überlagerungsfläche $\hat{\mathfrak{F}}$ der Integralfunktionen in sich entspricht eine Klasse untereinander homologer geschlossener Wege $\alpha$ auf $\mathfrak{F}$: sie sind Spurlinien aller Kurven auf $\hat{\mathfrak{F}}$, die von irgendeinem Punkte $\hat{\mathfrak{p}}$ zu dem darüber gelegenen Punkte $\hat{\mathfrak{p}}S$ hinführen. Allen diesen $\alpha$ gehört nach der 2.\ der eben bemerkten Tatsachen dasselbe Differential $dw_\alpha$ zu, das wir füglich, da es durch $S$ eindeutig bestimmt ist, auch mit $dw_S$ bezeichnen werden. Erstrecken wir die vorzunehmenden Integrationen von einem einfürallemal festgewählten Anfangspunkt $\mathfrak{p}_0$ aus, so ist
+\[ -\,\Re \int\limits_{\mathfrak{p}_0}^\mathfrak{p} dw_S = u_S(\mathfrak{p}) \]
+nur insofern vom benutzten Integrationswege abhängig, als eine Änderung dieses Weges (bei festgehaltenem Endpunkt $\mathfrak{p}$) $u_S$ um eine ganze Zahl vermehren oder vermindern kann. (Und durch diese Eigenschaft sind auch die Integrale $w_S$ in der Gesamtheit aller Integrale 1.\ Gattung ausgezeichnet.) Die Größe
+\[ \chi_S(\mathfrak{p}) = e^{2\pi i u_S(\mathfrak{p})} \]
+
+\origpage{114}
+vom absoluten Betrage 1 ist somit eine eindeutige Funktion von $\mathfrak{p}$. Sind $S$, $T$ irgend zwei Decktransformationen von $\hat{\mathfrak{F}}$ in sich, so gilt
+\[ \chi_S(\mathfrak{p}) \cdot \chi_T(\mathfrak{p}) = \chi_{S\,T}(\mathfrak{p}). \]
+
+Allgemein: ist auf irgend eine Weise jeder Decktransformation $S$ von $\hat{\mathfrak{F}}$ eine Zahl $\chi_S$ vom absoluten Betrag 1 so zugeordnet, daß die Multiplikationsregel
+\[ \chi_S \cdot \chi_T = \chi_{S\,T} \]
+zutrifft, so sagt man, es sei ein \textbf{Charakterensystem} (der kommutativen Gruppe aller Decktransformationen von $\hat{\mathfrak{F}}$ in sich) definiert. Dementsprechend wollen wir die den verschiedenen Transformationen $S$ entsprechenden Größen $\chi_S(\mathfrak{p})$ das System der \textbf{Integralcharaktere} von $\mathfrak{p}$ nennen. \emph{Die sämtlichen Integralcharaktere von $\mathfrak{p}$ geben, heißt soviel als: simultan die Werte aller Integrale 1.\ Gattung an der Stelle $\mathfrak{p}$ angeben --- oder genauer: das angeben, was an diesem simultanen Wertsystem gegenüber Verlagerung des Integrationsweges invariant ist.} --- Für eine spätere Anwendung bemerken wir noch, daß, wenn man ein Charakterensystem als ein Individuum, einen „Punkt“ betrachtet, die Gesamtheit aller möglichen Charakterensysteme eine geschlossene $2p$-dimensonale\ednote{Druckfehler im Original: dimensonale statt dimensionale.} Mannigfaltigkeit bildet. Denn ist
+\[ S_1, \, S_2, \, \dots, \, S_{2p} \]
+eine Basis für die Gruppe der Decktransformationen von $\hat{\mathfrak{F}}$ (vergl.\ S.~74), so erhält man alle Charakterensysteme einmal und nur einmal, wenn man
+\[ \chi_{S_1}, \, \chi_{S_2}, \, \dots, \, \chi_{S_{2p}} \]
+unabhängig voneinander in einer $\chi$-Ebene die Peripherie des Einheitskreises $|\chi| = 1$ durchlaufen läßt.
+
+\emph{Mit Hilfe der Formeln \textup{(II)} läßt sich das Reziprozitätsgesetz \textup{(I)} von den Differentialen 2.\ Gattung auf die Integrale 3.\ Gattung übertragen:}
+\[ \left\{ \begin{aligned}
+\Re [\omega_{q_1 q_2}]_{\mathfrak{p}_1}^{\mathfrak{p}_2} &= \Re [\omega_{\mathfrak{p}_1 \mathfrak{p}_2}]_{q_1}^{q_2}, & \Im [\omega_{q_1 q_2}]_{\mathfrak{p}_1}^{\mathfrak{p}_2} &= \Re [\omega'_{\mathfrak{p}_1 \mathfrak{p}_2}]_{q_1}^{q_2}, \\
+\Re [\omega'_{q_1 q_2}]_{\mathfrak{p}_1}^{\mathfrak{p}_2} &= \Im [\omega_{\mathfrak{p}_1 \mathfrak{p}_2}]_{q_1}^{q_2}, & \Im [\omega'_{q_1 q_2}]_{\mathfrak{p}_1}^{\mathfrak{p}_2} &= \Im [\omega'_{\mathfrak{p}_1 \mathfrak{p}_2}]_{q_1}^{q_2}.
+\end{aligned} \right. \tag{III} \]
+
+Diese Gleichungen, die als der \emph{Satz von der Vertauschung von Argument und Parameter} bezeichnet zu werden pflegen, sind gültig, wenn die benutzten Wege $\mathfrak{p}_1\,\mathfrak{p}_2$, $q_1\,q_2$ sich nicht überkreuzen. Zum Beweise setzen wir voraus, das\ednote{Druckfehler im Original: das statt daß.} der Weg $\mathfrak{p}_1\,\mathfrak{p}_2$ ganz in dem $z$-Kreise $K$ um $\mathfrak{p}$, $q_1\,q_2$ ganz in dem $\zeta$-Kreise $\mathrm{K}$ um $q$ liegt. Wir können annehmen (was ev.\ erst durch Drehung des Koordinatenkreuzes erreicht werden muß, die aber auf die Bedeutung der Differentiale $d\omega_{\mathfrak{p}_1 \mathfrak{p}_2}$, $d\omega_{q_1 q_2}$ ohne Einfluß ist) daß die geradlinige Strecke $s = (\mathfrak{p}_1\,\mathfrak{p}_2)$ in der $z$-Ebene parallel zur reellen ($x$-) Achse, die Strecke $\sigma = (q_1\,q_2)$ in der $\zeta$-Ebene zur reellen ($\xi$-) Achse parallel ist. Ersetzen wir nunmehr in der 1.\ Gleichung (I) $\mathfrak{p}$, $q$ durch die innerhalb
 \end{document}
