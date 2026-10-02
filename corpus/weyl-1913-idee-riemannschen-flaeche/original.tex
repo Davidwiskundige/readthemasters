@@ -1483,4 +1483,150 @@ Da $\chi(r)$ bei $r = q$ von 2.\ Ordnung verschwindet, geht diese Funktion $\til
 \[ \frac{\partial}{\partial x}(\tilde{v} - v) = [\chi(r) - 1]\,\frac{\partial(v - u)}{\partial x} + (v - u)\,\frac{d\chi}{dr}\,\frac{x}{r} \quad (\text{für } q < r < 1). \]
 
 \textbf{1)} Nach S. Zaremba, Krakauer Berichte, Juli 1909, S.~246\,ff.
+
+\origpage{91}
+$\chi(r) - 1$ wird bei $r = 1$ von 1.\ Ordnung Null, und aus der Ungleichung (23) geht daher hervor, daß der erste auf der rechten Seite stehende Summand bei Annäherung an die Peripherie des Einheitskreises vom Innern aus gleichmäßig gegen $0$ geht; daß der zweite Summand dasselbe tut, bedarf kaum der Erwähnung.
+
+Wir schätzen jetzt das über den Einheitskreis zu erstreckende Dirichlet-Integral
+\[ \mathbf{D}(\tilde{v} - u) = \mathbf{D}_q^1 [\chi(r)\,(v - u)] \]
+ab. Da
+\[ \frac{\partial}{\partial x}[\chi(r)\,(v - u)] = \chi(r)\,\frac{\partial(v - u)}{\partial x} + (v - u)\,\frac{2(r - q)}{(1 - q)^2}\,\frac{x}{r} \]
+ist, so erhält man für dieses Integral einen Wert $\leqq$ dem doppelten von
+\[ \iint_{q \leqq |z| \leqq 1} \chi^2(r) \left[ \left(\frac{\partial w}{\partial x}\right)^2 + \left(\frac{\partial w}{\partial y}\right)^2 \right] dx\,dy + \frac{4}{(1 - q)^4} \int_0^{2\pi} \int_q^1 w^2(r - q)^2 r\,dr\,d\varphi. \]
+Der erste Summand hier ist wegen $\chi^2 \leqq 1$:
+\[ \leqq \mathbf{D}_q^1(w) \]
+der zweite, da nach (26)
+\[ \int_0^{2\pi} w^2\,d\varphi \leqq \left(\frac{1}{r} - 1\right) \mathbf{D}_q^1(w) \quad (q < r < 1)\text{ ist:} \]
+\[ \leqq \frac{4}{(1 - q)^4} \cdot \mathbf{D}_q^1(w) \cdot \int_q^1 (1 - r)(r - q)^2 dr = \frac{1}{3}\,\mathbf{D}_q^1(w). \]
+Im ganzen kommt also
+\[ \mathbf{D}(\tilde{v}) - \mathbf{D}(u) = \mathbf{D}(\tilde{v} - u) \leqq \frac{8}{3}\,\mathbf{D}_q^1(w), \]
+und das kann durch geeignete Wahl von $q$ so klein gemacht werden wie man will.
+
+\subsection*{§ 14. Ansatz zum Beweis der Existenztheoreme. Aufstellung der Elementardifferentiale.}
+
+Statt eine analytische Funktion auf der vorgegebenen geschlossenen Riemannschen Fläche $\mathfrak{F}$ zu konstruieren, suchen wir zunächst nur den Realteil einer solchen, d.~i. eine reelle auf der Fläche harmonische Funktion. Eine überall reguläre Potentialfunktion auf der Fläche existiert aber (wenn man von der Konstanten absieht) nicht. Wir werden daher für die harmonische Funktion an einer Stelle eine Singularität zulassen, und zwar die einfachste, welche es gibt: sie soll sich dort verhalten wie der Realteil einer analytischen Funktion, die einen Pol 1.\ Ordnung besitzt. Wir gehen also darauf aus, folgendes Existenztheorem zu beweisen:
+
+\emph{Ist $O$ mit der Ortsuniformisierenden $z_0 = x_0 + i y_0$ ein willkürlicher}
+
+\origpage{92}
+\emph{Punkt auf $\mathfrak{F}$, so gibt es eine in allen von $O$ verschiedenen Punkten reguläre Potentialfunktion $U$ auf $\mathfrak{F}$, die in der Umgebung von $O$ sich von $\frac{x_0}{x_0^2 + y_0^2}$ um eine in $O$ reguläre Potentialfunktion unterscheidet.}
+
+$U$ ist offenbar bis auf eine additive Konstante durch diese Eigenschaften eindeutig bestimmt. Mag auch $\mathfrak{F}$ keine wirkliche Fläche im Raum sein, sondern eine Riemannsche Fläche in dem abstrakten Sinne, wie er in Kap.~I eingeführt ist, es wird trotzdem erlaubt sein, $U$ als Potential einer inkompressiblen, stationären, wirbelfreien Flüssigkeitsströmung auf $\mathfrak{F}$ zu betrachten, einer Strömung, die überall, abgesehen von dem einen Punkte $O$, auch quellenfrei ist; im Punkte $O$ aber sitzt eine „Doppelquelle“ vom Momente $2\pi$, deren Richtung mit der positiven $x_0$-Achse übereinstimmt. Es gehört allerdings einige Kühnheit dazu, aus dieser hydrodynamischen Deutung auf die Existenz von $U$ zu schließen.${}^{1)}$
+
+Würde sich von $U$ das Dirichletsche Integral bilden lassen, so hätten wir dieses als die Energie der Flüssigkeitsströmung anzusprechen. Leider wird das Integral aber wegen des Verhaltens von $U$ an der Stelle $O$ unendlich. Wir verfahren deshalb so. Wir schlagen um $O$ einen $z_0$-Kreis $\mathrm{K}_0\colon |z_0| \leqq a_0$ und bilden in ihm die Funktion
+\[ \Phi = \frac{x_0}{x_0^2 + y_0^2} + \frac{x_0}{a_0^2}. \]
+Sie hat die Eigenschaft, auf der Peripherie von $\mathrm{K}_0$ die normale Ableitung $0$ zu besitzen. Benutzen wir nämlich Polarkoordinaten $z_0 = r_0 e^{i\varphi_0}$, so ist
+\[ \Phi = \frac{\cos\varphi_0}{r_0} + \frac{r_0 \cos\varphi_0}{a_0^2}, \]
+\[ \frac{\partial\Phi}{\partial r_0} = -\,\frac{\cos\varphi_0}{r_0^2} + \frac{\cos\varphi_0}{a_0^2}, \quad \text{für } r_0 = a_0\colon \frac{\partial\Phi}{\partial r_0} = 0. \]
+Wir betrachten jetzt
+\[ u = \begin{cases}
+U \text{ überall auf } \mathfrak{F}\text{, außer in } \mathrm{K}_0 \\
+U - \Phi \text{ in } \mathrm{K}_0.
+\end{cases} \]
+Diese Funktion hat längs der Peripherie $\varkappa_0$ von $\mathrm{K}_0$ einen Sprung, ist aber sonst stetig differentiierbar. Auch läßt sich der außerhalb $\mathrm{K}_0$ herrschende Wertverlauf von $u$ noch ein Stück über $\varkappa_0$ nach innen hinein als stetig differentiierbare (sogar als reguläre Potential-) Funktion fortsetzen ($U$); ebenso läßt sich das innerhalb $\mathrm{K}_0$ herrschende $u$ ein Stück über $\varkappa_0$ hinaus als stetig differentiierbare (sogar als reguläre Potential-) Funktion ($U - \Phi$) fortsetzen. Infolgedessen kann man das Dirichletsche Integral $\mathbf{D}(u)$ in der oben auseinandergesetzten Weise bilden, wenn man unter die Kreis-
+
+\textbf{1)} Auf diese und ähnliche physikalische Anschauungen stützt sich die Darstellung in der erwähnten Kleinschen Schrift vom Jahre 1882; vgl.\ die dort gezeichneten, sehr instruktiven Strömungsbilder.
+
+\origpage{93}
+peripherien $\varkappa_l$, längs denen $\mathfrak{F}$ in die Stücke $\mathfrak{E}_h$ zerschnitten wurde, immer auch den Kreis $\varkappa_0$ aufnimmt.
+
+\emph{Unter allen Funktionen $v$, welche längs $\varkappa_0$ denselben Sprung besitzen wie $u$, die sonst aber stetig differentiierbar sind, erteilt $u$ dem Dirichletschen Integral $\mathbf{D}(v)$ seinen kleinsten Wert.} Die hier zum Vergleich mit $u$ herangezogenen Funktionen $v$ wollen wir noch etwas genauer charakterisieren. Ich schlage dazu um $O$ einen $z_0$-Kreis $\mathrm{K}_0^*\colon |z_0| \leqq b_0$, von etwas größerem Radius $b_0$ als $a_0$. $\mathfrak{F} - \mathrm{K}_0$ nenne ich die „\emph{gelochte}“ \emph{Fläche}, $\mathrm{K}_0$ das „\emph{Loch}“, $\mathrm{K}_0^*$ den „\emph{Deckel}“, den Kreisring $a_0 < |z_0| < b_0$, in dem der Deckel über die gelochte Fläche hinübergreift, den „\emph{Verschlußring}“. Zur Konkurrenz zugelassen wird eine Funktion $v$ dann, wenn sie in der gelochten Fläche stetig differentiierbar ist und im Loch mit einer im ganzen Deckel stetig differentiierbaren Funktion $v^*$ übereinstimmt, zu der sie im Verschlußring in der Beziehung $v = v^* + \Phi$ steht. Ist $v$ das Zeichen für irgendeine Konkurrenzfunktion, so soll allemal $v^*$ die hier charakterisierte stetig differentiierbare Funktion im Deckel bedeuten. Die Differenz zweier Konkurrenzfunktionen ist auf ganz $\mathfrak{F}$ stetig differentiierbar.
+
+Um nun den Existenzbeweis von $U$ oder $u$ zu führen, stellen wir uns das \emph{Minimalproblem}, unter allen Konkurrenzfunktionen $v$ diejenige $u$ herauszufinden, für welche das Dirichletsche Integral $\mathbf{D}(v)$ den kleinsten Wert erhält. Das Thomson-Dirichletsche Prinzip behauptet, daß eine solche Minimalfunktion $u$ existiert.${}^{1)}$ Auf dieses Prinzip hat Riemann seine Existenzbeweise gegründet, doch stimmt sein Ansatz nicht völlig mit dem unseren überein.${}^{2)}$ Die Weierstraßsche Kritik zeigte, daß die Evidenz, welche dem Dirichletschen Prinzip inne zu wohnen scheint, nur vorgetäuscht ist.${}^{3)}$ Man suchte deshalb durch andere Methoden die Riemannschen Existenzsätze sicherzustellen, und dies war zuerst Schwarz und C.~Neumann, namentlich mit Hilfe des sog.\ alternierenden Verfahrens, in glänzender Weise gelungen.${}^{4)}$ Später ist jedoch das Dirichletsche Prinzip von Hilbert streng bewiesen worden.${}^{5)}$ An seinen Beweis knüpft eine größere Reihe von Arbeiten anderer Autoren an, durch die der Be-
+
+\textbf{1)} Seit 1847 von W.~Thomson (Lord Kelvin) in verschiedenen Arbeiten angewandt. Der Name „Dirichletsches Prinzip“ rührt von Riemann her, der diese Schlußweise aus Dirichlets Vorlesungen kannte.
+
+\textbf{2)} Die hier zugrunde gelegte Form des Ansatzes wurde vom Verf.\ (außer in der Vorlesung, aus der die vorliegende Schrift entstanden ist) in der Sitzung vom 16.\ Jan.\ 1912 der Göttinger Mathematischen Gesellschaft vorgetragen.
+
+\textbf{3)} Über das sog.\ Dirichletsche Prinzip, (1870), Weierstraß\ednote{Druckfehler im Original: Weierstraß ohne Apostroph.} Werke, Bd.~2, S.~49--54.
+
+\textbf{4)} H.~A.~Schwarz, Berliner Berichte 1870 (Ges.\ Abhandlungen II, S.~133--171). C.~Neumann, sächsische Berichte 1870; ders., Vorlesungen über Riemanns Theorie der Abelschen Integrale, 2.\ Aufl., Leipzig 1884, S.~388--471.
+
+\textbf{5)} Hilbert, „Über das Dirichletsche Prinzip“, Festschrift zur Feier des 150jährigen Bestehens der K.~Gesellschaft der Wissenschaften zu Göttingen, 1901, abgedruckt in Math.\ Ann.\ Bd.~59, S.~161--186; „Zur Theorie der konformen Abbildung“, Göttinger Nachrichten, 1909, S.~314--323.
+
+\origpage{94}
+weis zwar nicht dem Grundgedanken nach, aber in manchen Einzelheiten vereinfacht wurde.${}^{1)}$ Das Dirichletsche Prinzip gehört seit diesen Untersuchungen wieder zu den mächtigsten Hilfsmitteln der Analysis.
+
+Zur Rechtfertigung des Ansatzes unseres Problems als einer Minimalaufgabe soll zunächst gezeigt werden, daß die Minimalfunktion $u$, falls sie existiert (sie ist dann selbst eine zur Konkurrenz zugelassene Funktion), die gewünschten Eigenschaften besitzt, d.~h.\ $u$ ist in jedem Punkt der gelochten Fläche, das zugehörige $u^*$ in jedem inneren Punkte des Deckels regulär-harmonisch.
+
+1.\ Ist $\mathfrak{p}$ ein Punkt der gelochten Fläche, $z$ eine zugehörige Ortsuniformisierende, $\mathrm{K}$ ein $z$-Kreis um $\mathfrak{p}$, der ganz in der gelochten Fläche liegt, so kann ich $u$, falls es in $\mathrm{K}$ nicht harmonisch ist, durch diejenige Potentialfunktion $\bar{u}$ in $\mathrm{K}$ ersetzen, welche am Rande von $\mathrm{K}$ mit $u$ übereinstimmt. Für diese ist dann das über $\mathrm{K}$ erstreckte Dirichletsche Integral $\mathbf{D}_{\mathrm{K}}(\bar{u}) < \mathbf{D}_{\mathrm{K}}(u)$. Durch das am Schluß von §~13 geschilderte Glättungsverfahren bekomme ich eine über den Rand von $\mathrm{K}$ hinüber stetig differentiierbare Funktion $\tilde{u}$, welche, außer in $\mathrm{K}$, mit $u$ übereinstimmt, deren über $\mathrm{K}$ erstrecktes Dirichletsches Integral aber so wenig von $\mathbf{D}_{\mathrm{K}}(\bar{u})$ abweicht, wie ich nur will. Insbesondere kann ich demnach erzielen, daß auch $\mathbf{D}_{\mathrm{K}}(\tilde{u})$ noch $< \mathbf{D}_{\mathrm{K}}(u)$ ist. $\tilde{u}$ ist eine Konkurrenzfunktion, für welche das über ganz $\mathfrak{F}$ erstreckte Integral $\mathbf{D}(\tilde{u})$ einen kleineren Wert besitzt als für $u$. Dieser Widerspruch zeigt, daß $u$ in $\mathrm{K}$ eine reguläre Potentialfunktion sein muß.
+
+\rmfigure{figures/fig-23.png}{Fig.~23.}{Kreis $\mathrm{K}$ um $\mathfrak{p}$ mit Zerlegung in $\mathrm{K}'$ und $\mathrm{K}''$ durch den Lochrand $\varkappa_0$}
+
+2.\ Es sei $\mathfrak{p}$ ein innerer Punkt des Deckels und $\mathrm{K}$ in der $z_0$-Ebene ein ganz dem Deckel angehöriger Kreis um $\mathfrak{p}$. Ist $u^*$ nicht harmonisch in $\mathfrak{p}$, so kann man $u^*$ durch eine im ganzen Deckel stetig differentiierbare Funktion $\widetilde{u^*}$ ersetzen, die außerhalb $\mathrm{K}$ mit $u^*$ übereinstimmt und für welche $\mathbf{D}_{\mathrm{K}}(\widetilde{u^*}) < \mathbf{D}_{\mathrm{K}}(u^*)$ ist. Es gibt dann eine einzige Konkurrenzfunktion $\tilde{u}$, die, außer in $\mathrm{K}$, $= u$ ist und deren zugehöriges $(\tilde{u})^*$ im Deckel mit $\widetilde{u^*}$ übereinstimmt. Für diese ist, wie ich jetzt zeigen will, das über die ganze Fläche erstreckte Integral $\mathbf{D}(\tilde{u}) < \mathbf{D}(u)$, und die Annahme, daß $u^*$ in $\mathfrak{p}$ keine regulär-harmonische Funktion war, ist damit widerlegt. Beim Beweise nehmen wir der Allgemeinheit wegen an, daß $\mathrm{K}$ den
+
+\textbf{1)} Ich nenne insbesondere die in den Rendiconti del Circolo matematico di Palermo, Bd.~22--24 (1906--07) erschienenen Abhandlungen: B.~Levi, Sul principio di Dirichlet; Fubini, Il principio di minimo e i teoremi di esistenza per i problemi al contorno relativi alle equazione alle derivate parziali di ordini pari; Lebesgue, Sur le problème de Dirichlet; die Arbeit von S.~Zaremba, Sur le principe du minimum, in den Krakauer Berichten, Juli 1909, und die von R.~Courant, Über die Methode des Dirichletschen Prinzips, in Bd.~72 der Math.\ Ann.\ (1912).
+
+\origpage{95}
+Lochrand $\varkappa_0$ schneidet. Es zerfällt dann (Fig.~23) $\mathrm{K}$ durch $\varkappa_0$ in zwei Teile $\mathrm{K}'$, $\mathrm{K}''$, von denen $\mathrm{K}'$ zu $\mathrm{K}_0$ gehöre. Die zu beweisende Gleichung
+\[ \mathbf{D}(u) - \mathbf{D}(\tilde{u}) = \mathbf{D}_{\mathrm{K}}(u^*) - \mathbf{D}_{\mathrm{K}}(\widetilde{u^*}) \quad (> 0) \]
+ist mit der folgenden identisch:
+\[ \mathbf{D}_{\mathrm{K}''}(u^* + \Phi) - \mathbf{D}_{\mathrm{K}''}(\widetilde{u^*} + \Phi) = \mathbf{D}_{\mathrm{K}''}(u^*) - \mathbf{D}_{\mathrm{K}''}(\widetilde{u^*}). \tag{28} \]
+Da $\Phi$ in $\mathrm{K}''$ und auch noch über den Rand von $\mathrm{K}''$ hinaus eine reguläre Potentialfunktion ist, gilt z.~B.
+\[ \mathbf{D}_{\mathrm{K}''}(u^* + \Phi) = \mathbf{D}_{\mathrm{K}''}(u^*) + \mathbf{D}_{\mathrm{K}''}(\Phi) - 2 \int u^* \frac{\partial\Phi}{\partial n}\,ds, \]
+wobei das letzte Integral über den Rand von $\mathrm{K}''$ zu erstrecken ist ($ds$ bedeutet das Bogenelement dieses Randes, und die Randnormale $n$ weist ins Innere von $\mathrm{K}''$). Da aber $\frac{\partial\Phi}{\partial n}$ auf $\varkappa_0$ gleich $0$ ist, braucht jenes Integral nur über denjenigen Teil $\varkappa''$ der Peripherie von $\mathrm{K}$ erstreckt zu werden, der außerhalb $\mathrm{K}_0$ verläuft. Unsere Behauptung reduziert sich danach auf
+\[ \int_{\varkappa''} (\widetilde{u^*} - u^*)\,\frac{\partial\Phi}{\partial n}\,ds = 0. \]
+In dieser Form ist sie selbstverständlich, da längs der Peripherie von $\mathrm{K}\colon \widetilde{u^*} = u^*$ ist. Man sieht hieraus, daß es für die Richtigkeit unseres Ansatzes entscheidend war, dem singulären Bestandteil $\frac{x_0}{x_0^2 + y_0^2}$ das Glied $\frac{x_0}{a_0^2}$ hinzuzufügen, welches bewirkte, daß auf dem Lochrande die normale Ableitung von $\Phi$ gleich $0$ wurde.
+
+Da wir die Gültigkeit des Dirichletschen Prinzips auch für ungeschlossene Riemannsche Flächen erweisen werden, können wir auf einer solchen gleichfalls $u$, $u^*$ und $U$ bilden. Die Konkurrenzbedingungen für die Funktionen $v$ sind dann noch durch die weitere Forderung, daß $\mathbf{D}(v)$ endlich sein soll, einzuschränken. Die Potentialfunktion $U$ kann auf einer ungeschlossenen Fläche nicht mehr vollständig durch ihre Singularität an der Stelle $O$ charakterisiert werden. Sie ist aber eindeutig bis auf eine additive Konstante bestimmt, wenn wir in ihre Beschreibung außer der Angabe der charakteristischen Singularität in $O$ noch diese Tatsache aufnehmen: Für jede stetig differentiierbare Funktion $w$, die $= 0$ ist für alle Punkte in einer (wenn auch noch so kleinen) Umgebung von $O$ und welche ein endliches Dirichletsches Integral besitzt, gilt
+\[ \mathbf{D}(U, w) = 0. \]
+Schlagen wir nämlich um $O$ einen in $\mathrm{K}_0$ gelegenen $z_0$-Kreis $\mathrm{K}_0^{**}\colon |z_0| \leqq c_0$,
+
+\origpage{96}
+so klein, daß überall in $\mathrm{K}_0^{**}$ die Funktion $w = 0$ ist, dann folgt zunächst aus der für jedes konstante $\lambda$ gültigen Ungleichung
+\[ \mathbf{D}(u) \leqq \mathbf{D}(u + \lambda w) \]
+die Beziehung $\mathbf{D}(u, w) = 0$. Der Unterschied
+\[ \mathbf{D}(U, w) - \mathbf{D}(u, w) \]
+ist aber
+\[ \begin{aligned}
+&\iint_{c_0 \leqq |z_0| \leqq a_0} \left( \frac{\partial\Phi}{\partial x_0}\,\frac{\partial w}{\partial x_0} + \frac{\partial\Phi}{\partial y_0}\,\frac{\partial w}{\partial y_0} \right) dx_0\,dy_0 \\
+&\qquad = \int_0^{2\pi} \left[ r_0 w\,\frac{\partial\Phi}{\partial r_0} \right]_{r_0 = c_0}^{r_0 = a_0} d\varphi_0.
+\end{aligned} \]
+Auf $\mathrm{K}_0$ ist $\frac{\partial\Phi}{\partial r_0} = 0$, auf $\mathrm{K}_0^{**}\colon w = 0$; folglich
+\[ \mathbf{D}(U, w) = \mathbf{D}(u, w) = 0. \]
+
+Die weiterhin noch in diesem Paragraphen zu besprechenden Erweiterungen der Methode des Dirichletschen Prinzipes nehmen wir nur für geschlossene Flächen vor.
+
+Statt $\frac{\cos\varphi_0}{r_0}$ kann ich als Singularität in $O$ auch
+\[ \frac{\sin\varphi_0}{r_0} = \frac{y_0}{x_0^2 + y_0^2} \]
+oder allgemeiner
+\[ \frac{\cos n\varphi_0}{r_0^n}, \quad \frac{\sin n\varphi_0}{r_0^n} \]
+(Pol $n^{\text{ter}}$ Ordnung; $n$ ganz und positiv) vorschreiben. Für $\Phi$ habe ich dann den Ansatz
+\[ \Phi = \frac{\substack{\cos\\\sin} n\varphi_0}{r_0^n} + r_0^n \cdot \frac{\substack{\cos\\\sin} n\varphi_0}{a_0^{2n}} \]
+zu machen; in allen Fällen ist $\left(\frac{\partial\Phi}{\partial r_0}\right)_{r_0 = a_0} = 0$. Jede der so gewonnenen Potentialfunktionen gibt zu einem Differential $d\tau$ Veranlassung (vgl.\ S.~55). Dasselbe ist außer in $O$ überall regulär und wird in $O$ unendlich wie
+\[ -\,\frac{n\,dz_0}{z_0^{n+1}}, \quad \text{bzw.} -\; i\,\frac{n\,dz_0}{z_0^{n+1}}, \]
+während der Realteil${}^{1)}$ des über irgend eine geschlossene Kurve erstreckten Integrales $\displaystyle\int d\tau$ stets $0$ ist. Die gefundenen Differentiale sind von der \textbf{2.\ Gattung}, d.~h.\ sie haben nirgends ein von $0$ verschiedenes Residuum. Als \textbf{Differentiale 3.\ Gattung} werden solche bezeichnet, die von $0$ ver-
+
+\textbf{1)} Für den Real- und Imaginärteil einer komplexen Größe $c = a + ib$ werden wir die Zeichen $a = \Re c$, $b = \Im c$ verwenden.
+
+\origpage{97}
+schiedene Residuen besitzen; ein Differential heißt aber von der \textbf{1.\ Gattung}, wenn es nirgendwo einen Pol, geschweige denn ein von $0$ verschiedenes Residuum, besitzt.
+
+Es seien $1$ und $2$ zwei Punkte innerhalb $\mathrm{K}_0$, $1', 2'$ ihre in der $z_0$-Ebene durch die Methode der reziproken Radien konstruierten Spiegelbilder${}^{1)}$ in bezug auf $\varkappa_0$. $r_1, r_2; r'_1, r'_2$ seien die Längen der Radienvektoren von den Punkten $1, 2; 1', 2'$ nach einem variablen Punkt der $z_0$-Ebene, $\varphi_1, \varphi_2, \varphi'_1, \varphi'_2$ die zugehörigen (nur bis auf ganzzahlige Vielfache von $2\pi$ bestimmten) Azimuts (Winkel mit der Richtung der positiven $x_0$-Achse). Wenn wir eine Potentialfunktion finden wollen, die außer in $1$ und $2$ regulär ist, in $1$ aber unendlich wird wie $\lg r_1$, in $2$ wie $-\lg r_2$, so nehmen wir
+\[ \Phi = (\lg r_1 - \lg r_2) + (\lg r'_1 - \lg r'_2). \]
+Die normale Ableitung von $\Phi$ auf $\varkappa_0$ ist $0$. Der Verschlußring ist so schmal zu nehmen, daß die Punkte $1', 2'$ nicht in den Deckel zu liegen kommen. Das entstehende Potential $U$ gibt zu einem Differential $d\omega_{12}$ Veranlassung, das in $1$ und $2$ je einen Pol 1.\ Ordnung mit dem Residuum $+ 1$, bzw.\ $- 1$ besitzt. Sind $\mathfrak{p}, \mathfrak{q}$ irgend zwei Punkte auf $\mathfrak{F}$, so kann man längs einer $\mathfrak{p}$ mit $\mathfrak{q}$ verbindenden Kurve solche Punkte $\mathfrak{p} = 1, 2, 3, \dots, \mathfrak{q} = n$ zwischenschalten, daß nach unserer Methode
+\[ d\omega_{12}, \, d\omega_{23}, \, \dots, \, d\omega_{n-1, n} \]
+gebildet werden können.
+\[ d\omega_{\mathfrak{p}\,\mathfrak{q}} = d\omega_{12} + d\omega_{23} + \dots + d\omega_{n-1, n} \]
+ist dann ein Differential, das nur bei $\mathfrak{p}, \mathfrak{q}$ je einen Pol 1.\ Ordnung von den Residuen $+ 1$ bzw.\ $- 1$ besitzt. Sind $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_n$; $\mathfrak{p}_0$ irgend $n + 1$ verschiedene Punkte auf der Fläche und $A_1, A_2, \dots, A_n$ beliebige komplexe Zahlen mit der Summe $0$, so ist
+\[ \sum_{l=1}^n A_l\,d\omega_{\mathfrak{p}_l\,\mathfrak{p}_0} \]
+ein Differential, das an den Stellen $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_n$ je einen Pol 1.\ Ordnung mit den Residuen $A_1, A_2, \dots, A_n$ besitzt, während es sich an allen übrigen Stellen (auch in $\mathfrak{p}_0$) regulär verhält. Man sieht, daß man die Residuen eines bis auf Pole regulären Differentials unter der Bedingung, daß ihre Summe gleich $0$ sein muß, beliebig vorschreiben kann.
+
+Kehren wir zu dem Kreis $\mathrm{K}_0$ mit den beiden in ihm exzentrisch gelegenen Punkten $1, 2$ zurück.
+\[ \Phi = (\varphi_1 - \varphi_2) - (\varphi'_1 - \varphi'_2) \]
+
+\textbf{1)} Wir können $\mathrm{K}_0$ so annehmen, daß weder $1$ noch $2$ im Mittelpunkt dieses Kreises liegt.
+
+\origpage{98}
+ist im Verschlußringe (und noch etwas über seine Grenzen hinaus) eine eindeutige reguläre Potentialfunktion. Nach dem Dirichletschen Prinzip existiert daher eine reguläre Potentialfunktion $u$ in der gelochten Fläche und eine reguläre Potentialfunktion $u^*$ im Deckel, die im Verschlußringe in der Beziehung $u = u^* + \Phi$ zueinander stehen. Das zugehörige $U$ ist nicht eindeutig, sondern bekommt in $1$ und $2$ Windungspunkte unendlich hoher Ordnung. Schneiden wir aber die Fläche in irgend einer stetigen, innerhalb $\mathrm{K}_0$ von $1$ nach $2$ führenden Kurve $\sigma_0$ auf, so ist $U$ in der zerschnittenen Fläche eindeutig. Dies ergibt sich ohne weiteres aus dem Umstande, daß inbezug auf eine geschlossene, in dem Deckel liegende Kurve $\gamma$, welche $\sigma_0$ nicht schneidet, in der $z_0$-Ebene die Punkte $1$ und $2$ dieselbe „Ordnung“ haben (vgl.\ S.~56). $U$ gibt trotz seiner Mehrdeutigkeit zu einem in der unzerschnittenen Fläche eindeutigen Differential $d\omega'_{12}$ Veranlassung, das nur bei $1$ und $2$ Pole 1.\ Ordnung mit den Residuen $\mp i$ besitzt. Ist die Linie $\sigma_0$ eine Elementarstrecke auf der triangulierten Fläche $\mathfrak{F}$, so wird $\Re \displaystyle\int_\gamma d\omega'_{12} = 0$ sein für jede geschlossene Kurve $\gamma$, welche diese Strecke nicht trifft, für ein Polygon $\beta$ aber, das $\sigma_0$ an einer einzigen Stelle von rechts nach links überkreuzt, wird
+\[ \Re \int_\beta d\omega'_{12} = 2\pi. \]
+
+Ist $\alpha$ eine geschlossene Kurve auf $\mathfrak{F}$, so können wir so dicht Punkte $1, 2, 3, \dots, n$ auf $\alpha$ verteilen, daß jede einzelne der Teilkurven $12, 23, \dots, n\,1$, in die $\alpha$ dadurch zerlegt wird, ganz innerhalb eines Kreises wie $\mathrm{K}_0$ zu liegen kommt. Indem wir dann
+\[ d\omega_\alpha = \frac{1}{2\pi}\,(d\omega'_{12} + d\omega'_{23} + \dots + d\omega'_{n1}) \]
+bilden, erhalten wir ein \emph{überall ohne Ausnahme} reguläres Differential $d\omega_\alpha$; es hat die Eigenschaft, daß für jede geschlossene Kurve $\gamma$, die $\alpha$ nicht trifft, der Realteil von $\displaystyle\int_\gamma d\omega_\alpha = 0$ ist. War aber $\alpha$ ein Polygon und ist $\beta$ ein solches Polygon, das $\alpha$ an einer einzigen Stelle von rechts nach links überkreuzt, so wird
+\[ \Re \int_\beta d\omega_\alpha = 1. \]
+
+Die kanonische Zerschneidung dient dazu, nachzuweisen, daß durch lineare Zusammensetzung aus den Differentialen $d\omega_\alpha$ jedes beliebige Differential 1.\ Gattung erzeugt werden kann. Sind nämlich
+\[ \alpha_1 + \alpha_2, \, \alpha_3 + \alpha_4, \, \dots, \, \alpha_{2p-1} + \alpha_{2p} \]
+die Rückkehrschnittpaare einer kanonischen Zerschneidung und schreiben wir zur Abkürzung $d\omega_{\alpha_h} = d\omega_h$, so gilt
 \end{document}
