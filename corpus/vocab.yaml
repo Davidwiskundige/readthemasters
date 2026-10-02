@@ -271,6 +271,7 @@ venues:
         url: "http://www.numdam.org/journals/ASENS/"
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb34348785c/date"
+<<<<<<< Updated upstream
   rendiconti-palermo:
     name: "Rendiconti del Circolo Matematico di Palermo"
     aka: "Rend. Circ. Mat. Palermo"
@@ -321,6 +322,18 @@ venues:
     archives:
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb34378280v/date"
+  sitzungsberichte-berliner-mathematische-gesellschaft:
+    name: "Sitzungsberichte der Berliner Mathematischen Gesellschaft"
+    aka: "Berliner Sitzungsberichte"
+    founded: 1902
+    place: "Leipzig / Berlin"
+    publisher: "B. G. Teubner, for the Berliner Mathematische Gesellschaft"
+    note: >-
+      Proceedings of the Berlin Mathematical Society (founded 1901), published from 1902 to 1938
+      as a regular supplement to the Archiv der Mathematik und Physik (3. Reihe).
+    archives:
+      - label: "HathiTrust"
+        url: "https://catalog.hathitrust.org/Record/009324539"
   book:
     name: "(published as a book / monograph)"
     kind: book

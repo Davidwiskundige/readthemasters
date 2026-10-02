@@ -1,0 +1,24 @@
+﻿changelog:
+  - date: '2026-09-27'
+    summary: Complete transcription of Henri Poincaré (1911) memoir across all 39 pages (pp. 140–178).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: '2026-09-27'
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: '2026-09-27'
+  uncertainty_flags: 0
+  note: >-
+    Full French text of Henri Poincaré's memoir "Sur les courbes tracées sur une surface algébrique",
+    originally published in Sitzungsberichte der Berliner Mathematischen Gesellschaft, 10. Jahrgang
+    (1911), pp. 28–55 (supplement to Archiv der Mathematik und Physik, 3. Reihe, Band 18, 1911),
+    and republished in Œuvres de Henri Poincaré, tome VI (1953), pp. 140–178.
+    Transcribed across all 39 pages (pp. 140–178).
+    Editorial commentary and notes added in 1953 by editor René Garnier (pp. 178–179) are strictly
+    omitted per house style to preserve a faithful public-domain edition of Poincaré's own text.
