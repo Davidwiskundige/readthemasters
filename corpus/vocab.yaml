@@ -271,7 +271,6 @@ venues:
         url: "http://www.numdam.org/journals/ASENS/"
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb34348785c/date"
-<<<<<<< Updated upstream
   rendiconti-palermo:
     name: "Rendiconti del Circolo Matematico di Palermo"
     aka: "Rend. Circ. Mat. Palermo"

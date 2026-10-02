@@ -1,0 +1,885 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose is translated.
+%
+% TERMINOLOGY. Classical period English mathematical terminology:
+%   * intégrale de différentielles totales de première espèce = "integral of total differentials of the first kind"
+%   * intégrale abélienne = "abelian integral"
+%   * intégrale réductible = "reducible integral"
+%   * surface algébrique = "algebraic surface"
+%   * courbe algébrique = "algebraic curve"
+%   * courbe double = "double curve"
+%   * sections planes = "plane sections"
+%   * valeurs critiques = "critical values"
+%   * valeurs critiques de la première / seconde sorte = "critical values of the first / second kind"
+%   * valeurs critiques apparentes = "apparent critical values"
+%   * valeurs singulières = "singular values"
+%   * fonctions normales = "normal functions"
+%   * fonctions intermédiaires = "intermediate functions"
+%   * fonction uniforme = "single-valued function"
+%   * fonction multiforme = "multi-valued function"
+%   * point conique = "conical point"
+%   * cône tangent = "tangent cone"
+%   * coupure = "cut"
+%   * premier membre / second membre = "left-hand side / right-hand side"
+%   * prismatoïde = "prismatoid"
+%
+% See notation.md for full notation decisions.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{140}
+\section*{On Curves Traced on an Algebraic Surface.}
+
+\begin{center}
+\emph{Sitzungsberichte der Berliner Mathematischen Gesellschaft (Meeting of October 12, 1910);}\\
+\emph{Vol.~10, 1911, 28--55 (published as a supplement to the Archiv der Mathematik, Vol.~18, 1911).}
+\end{center}
+
+I published in the \emph{Annales scientifiques de l'École Normale Supérieure} a Memoir bearing the same title; I should like to return here to several points which in that Memoir could not be treated with sufficient detail.
+
+\section*{1. --- Critical Values.}
+
+Let $F(x, y, z, t) = 0$ be an algebraic surface of order $n$ whose equation is expressed in homogeneous coordinates; this is the surface $S$; we shall cut it by the variable plane $\frac{y}{t} = \text{const.}$, which will cut it along the curve $K_{y}$. The straight line $y = t = 0$ will cut the surface $S$ in $n$ points $A_{1}, A_{2}, \ldots, A_{n}$, which will belong to all the curves $K_{y}$. Let $p$ be the genus of the curve $K_{y}$; we can form $p$ abelian integrals of the first kind relative to this curve
+\[
+u_{i} = \int \frac{P_{i}\,dx}{Q F'_{z}} \quad (i = 1, 2, \ldots, p),
+\]
+where $F'_{z}$ is the partial derivative of $F$ with respect to $z$, where $Q$ is a homogeneous polynomial of degree $\nu$ in $y$ and $t$ (the same for all the integrals $u_{i}$), and finally where the $P_{i}$ are entire polynomials, homogeneous of degree $n + \nu - 2$ in $x, y,$
+\origpage{141}$z, t$, non-homogeneous and of degree $n - 3$ in $x$ and $z$. The polynomial $P_{i}$ must vanish at all the double points of the curve $K_{y}$, except at the supplementary double points that this curve might acquire for certain values of $y$ for which its genus would decrease. In other words, the surface $P_{i} = 0$ must pass through the double curve of the surface $S$.
+
+The integral is to be taken by varying $x$ and $z$ in such a way that $F = 0$ and that $y$ and $t$ are constants; the lower limit is the point $A_{1}$; the upper limit is a variable point $M$ of the curve $K_{y}$. The integral $u_{i}$ is then a function of the coordinates $x, y, z, t$ of a variable point $M$ of the surface $S$, and this function is determined up to a period. We shall reserve the right, whenever this can be done without inconvenience, to abandon homogeneous coordinates by setting $t = 1$.
+
+We shall call critical values of the second kind the values of $y$ $\left(\text{or of } \frac{y}{t}\right)$ that vanish the denominator $Q$. Critical values of the first kind are those for which one can find $p$ coefficients $\alpha_{1}, \alpha_{2}, \ldots, \alpha_{p}$ such that
+\[
+\alpha_{1} P_{1} + \alpha_{2} P_{2} + \ldots + \alpha_{p} P_{p}
+\]
+vanishes identically whatever $x$ and $z$ may be.
+
+I shall call \emph{singular values} of $y$ those for which the genus of the curve $K_{y}$ decreases; they correspond to the planes $\frac{y}{t} = \text{const.}$ that are tangent to $S$ or that pass through a conical point of this surface.
+
+For a value of $y$ $\left(\text{or of } \frac{y}{t}\right)$ that is neither singular nor critical of the second kind, the function $u_{i}$ (as well as the periods of the integral $u_{i}$) is always finite. If the value is singular, but not critical, the integral $u_{i}$ will become infinite only if the path of integration passes through the new double point. If the value is critical of the second kind, it is in general infinite for all points $M$ of the curve $K_{y}$.
+
+Suppose that a value of $y$ is critical of the first kind, without being singular or critical of the second kind; the combination
+\[
+\alpha_{1} u_{1} + \alpha_{2} u_{2} + \ldots + \alpha_{p} u_{p}
+\]
+will then vanish for this value of $y$, and that for all points $M$ of the curve $K_{y}$.
+
+It is easy to see what happens if a value is at once critical of the first
+\origpage{142}and of the second kind. Let $y_{0}$ be such a value; then, for $y = y_{0} t$, the denominator $Q$, as well as $\displaystyle\sum \alpha_{i} P_{i}$, vanishes identically; it evidently follows that the integrals $u_{i}$ become in general infinite, but that the combination $\displaystyle\sum \alpha_{i} u_{i}$ remains finite.
+
+Let us now examine the case of a singular value that is not critical. It subdivides; we shall speak only of the following special cases~:
+
+$1^{\circ}$ The plane $\frac{y}{t} = \text{const.}$ corresponding to the singular value is an ordinary tangent plane. Let then $\omega_{1i}, \omega_{2i}, \omega_{3i}, \ldots$ be the periods of the integral $u_{i}$; we may suppose that these periods have been chosen in such a way that all of them, with the exception of $\omega_{1i}$, are holomorphic functions of $y$ in the neighborhood of the singular value $y_{0}$ under consideration, not vanishing moreover for $y = y_{0}$ (I set $t = 1$ to abbreviate the notation). As for $\omega_{1i}$, it can be put in the form
+\[
+\omega_{1i} = \varphi(y) - \frac{\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0})
+\]
+$\varphi(y)$ being holomorphic for $y = y_{0}$. One of the determinations of $u_{i}$, which I shall call $u_{i}^{*}$, remains holomorphic for $y = y_{0}$, and the most general determination is written
+\[
+u_{i} = u_{i}^{*} + \displaystyle\sum m_{k} \omega_{ki} = \psi(y) - \frac{m_{1}\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+the $m$ are integers; $\psi(y)$ is holomorphic for $y = y_{0}$. Thus this most general determination becomes logarithmically infinite at the point $y = y_{0}$. It changes into $u_{i} + m_{1} \omega_{2i}$ when $y$ turns around the singular value $y_{0}$.
+
+$2^{\circ}$ The plane $\frac{y}{t} = \text{const.}$ passes through a conical point of $S$, and this conical point admits a tangent cone of the second order, without any other singularity.
+
+The result is still the same; one only has
+\[
+\begin{aligned}
+\omega_{1i} &= \varphi(y) - \frac{2\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}), \\
+u_{i} &= \psi(y) - \frac{2m_{1}\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\end{aligned}
+\]
+so that $\omega_{1i}$ and $u_{i}$ change into $\omega_{1i} + 2\omega_{2i}$ and $u_{i} + 2m_{1} \omega_{2i}$, and no longer into $\omega_{1i} + \omega_{2i}$ and $u_{i} + m_{1} \omega_{2i}$ when $y$ turns around $y_{0}$.
+
+Consider the points of contact of the curve $K_{y}$ with tangents parallel to a given direction; in the two cases we have just examined, two of these points, $A$ and $B$, coincide in a single point for $y = y_{0}$; but, in the
+\origpage{143}first case, $A$ and $B$ interchange with each other when $y$ turns around $y_{0}$; in the second case, $A$ and $B$ return to their initial positions, but after having turned around each other.
+
+$3^{\circ}$ The plane $\frac{y}{t} = \text{const.}$ passes through a conical point of $S$, and this conical point admits a tangent cone of the third order without any other singularity.
+
+Then six of the points of contact of which we have just spoken coincide in a single point for $y = y_{0}$; four of the periods $\omega_{ki}$ (namely those obtained by integrating along paths deviating very little from these six points of contact) remain single-valued functions of $y$ in the neighborhood of $y = y_{0}$; but they can become infinite of the first order for $y = y_{0}$; the other periods may cease to be single-valued functions.
+
+We shall distinguish three kinds of periods; those of which we have just spoken and whose paths deviate very little from our six points of contact; those whose paths always remain very far from these six points; those whose paths pass very close to these six points and between these points and then deviate greatly from them.
+
+Similarly, we shall distinguish three kinds of integrals; those where $P_{i}$ vanishes at the conical point; those where $P_{i}$ is independent of $x$ and of $z$; those which satisfy neither of these two conditions. If the surface $S$ presents no other singularity than the conical point, the integrals of the third kind are merely combinations of those of the first two.
+
+This being established, the periods of the second kind behave regularly;
+
+\origpage{144}
+we have just seen that those of the first kind behave like $\frac{1}{y - y_{0}}$; this is what occurs for the integrals of the second or of the third kind; for the integrals of the first kind, these periods remain holomorphic functions of $y$.
+
+As regards the periods of the third kind, we see that they behave like $\frac{1}{y - y_{0}}$ for the integrals of the second kind; that they become logarithmically infinite for those of the first kind; for those of the third kind, their two singularities are combined, that is to say the expansion contains terms $\frac{1}{y - y_{0}}$, $(y - y_{0})^{m}$, $L(y - y_{0})$, $(y - y_{0})^{m} L(y - y_{0})$.
+
+How do the integrals $u_{i}$ themselves now behave? That depends on whether the point $M$ coincides with the conical point or not; in the second case, one of the determinations, which I call $u_{i}^{*}$, behaves regularly; the most general determination
+\[
+u_{i} = u_{i}^{*} + \sum m_{k} \omega_{ki}
+\]
+behaves like the periods; when $y$ turns around $y_{0}$, $u_{i}$ increases by a period.
+
+What happens now if, as $y$ tends to $y_{0}$, the point $M$ approaches indefinitely close to the conical point? The integrals of the first kind will become logarithmically infinite; those of the second kind will behave like $\frac{1}{y - y_{0}}$; those of the third kind will present the combination of the two singularities.
+
+Let us return again to the first two cases, in order to explain how $u_{i}$ behaves when the point $M$ tends toward the new double point.
+
+Let, for example, $x = y = z = 0$ be the new double point that the curve $K_{y}$ acquires when $y$ vanishes. In the first case (ordinary tangent plane), we shall suppose that the point $M$ approaches the new double point in such a way that $\frac{x}{\sqrt{y}}, \frac{z}{\sqrt{y}}$ tend toward finite limits. Then $u_{i}$ will be of the form
+\[
+\psi(y) + \mu \frac{\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}) \quad (\text{here } y_{0} = 0),
+\]
+$\psi$ being holomorphic and $\mu$ being half of an odd integer. In the second case (conical point of the second order), we shall suppose that $\frac{x}{y}$ and $\frac{z}{y}$ tend toward
+\origpage{145}finite limits, and $u_{i}$ will still have the same form, $\mu$ designating this time an odd integer.
+
+What we have just said concerning singular values will help us understand what concerns \emph{apparent critical values}.
+
+Let
+\[
+u_{i} = \int \frac{P_{i}\,dx}{Q F'_{z}}.
+\]
+
+I suppose that $P_{i}$ is divisible by $y$, in such a way that $y$ is a critical value of the first kind; I suppose that the point $x = y = z = 0$ is a conical point of the third order of the surface $S$, so that $y = 0$ is \emph{at the same time} a singular value corresponding to the third case considered above. Furthermore, $P_{i}$ is independent of $x$ and of $z$, so that our integral will be of the second kind. Finally, $Q$ does not vanish for $y = 0$. Under these conditions, the integral $\frac{t u_{i}}{y}$ remains finite for $y = 0$ if the point $M$ does not coincide with the conical point, and it becomes infinite like $\frac{1}{y}$ in the contrary case. Therefore the integral $u_{i}$ will vanish for $y = 0$ if the point $M$ does not come to the conical point, but it will remain finite in the contrary case. The value $y = 0$ is therefore only an apparent critical value, since the integral $u_{i}$ is not constrained to vanish for $y = 0$.
+
+This difficulty is not to be feared in the two other cases examined above, which are those of the ordinary tangent plane and of the conical point of the second order. Indeed, $\frac{t u_{i}}{y}$ becomes infinite only logarithmically, from which it follows that $u_{i}$ is zero.
+
+Mr.~Picard has proved that, by a birational transformation, one can change any surface into a surface $S$ having no other singularity than a double curve and certain triple points with separate tangent planes that are triple points of this double curve. We can therefore always suppose that the surface $S$ has no conical point; on the other hand, the choice of axes being arbitrary, we can always suppose that the straight line $y = t = 0$ does not touch the surface and lies on no singular tangent plane to this surface, nor on the planes that touch this surface in two or more points. \emph{The only singular values that we shall have to consider will therefore correspond to ordinary tangent planes.}
+\origpage{146}
+This being established, we may still choose the integrals $u_{i}$ in a rather arbitrary manner. If, indeed, we set
+\[
+X_{k} = \sum_{i=1}^{i=p} \rho_{ik} \frac{P_{i}}{Q} \quad (k = 1, 2, \ldots, p), \tag{2}
+\]
+the $\rho_{ik}$ being $p^{2}$ homogeneous rational functions of degree zero in $y$ and $t$, we shall have $X_{k} = \frac{P'_{k}}{Q'}$, $Q'$ being a homogeneous polynomial of degree $\nu'$ in $y$ and $t$, $P'_{k}$ a homogeneous polynomial of degree $n + \nu' - 2$ in $x, y, z, t$, containing $x$ and $z$ at most to degree $n - 3$. In other words, the integrals
+\[
+u'_{k} = \int \frac{P'_{k}\,dx}{Q' F'_{z}} = \sum \rho_{ik} u_{i}
+\]
+will be able to play the same role as the integrals $u_{i}$.
+
+What simplifications can we obtain by the use of transformation (2)? In the first place, we can take $\rho_{ik} = \frac{Q}{Q'}$, $Q'$ being a polynomial of the same form and the same degree as $Q$; then the $\nu$ critical values of the second kind that were given by $Q = 0$ will be given by $Q' = 0$; the polynomial $Q'$ being arbitrary, the $\nu$ critical values of the second kind may be chosen arbitrarily; we may therefore always suppose that they coincide neither with the critical values of the third kind, nor with the singular values, and that they are moreover all distinct and correspond to simple poles.
+
+In the second place, we may suppose that the critical values of the first kind also do not coincide with the singular values. Let indeed $y = y_{0} t$ be a singular value and suppose that it is also a critical value of the first kind. This may be a critical value of higher order. If, for example, among the combinations $\displaystyle\sum \alpha_{i} P_{i}$, there are $\mu_{3}$ that are divisible by $(y - y_{0} t)^{3}$, $\mu_{2}$ divisible by $(y - y_{0} t)^{2}$, and finally $\mu_{1}$ divisible by $y - y_{0} t$, it will be a critical value of order $3\mu_{3} + 2\mu_{2} + \mu_{1}$. It will suffice to take a particular case; let us suppose then, to fix ideas, that the only combination divisible by $(y - y_{0} t)^{2}$ is $\displaystyle\sum \beta_{i} P_{i}$, that $\displaystyle\sum \gamma_{i} P_{i}$ is divisible by $y - y_{0} t$, and that every combination divisible by $y - y_{0} t$ is of the form $B\displaystyle\sum \beta_{i} P_{i} - C\displaystyle\sum \gamma_{i} P_{i}$. We shall then set, by a first transformation,
+\[
+P'_{1} = \sum \beta_{i} P_{i}, \quad P'_{2} = \sum \gamma_{i} P_{i}, \quad P'_{3} = \sum \delta_{i} P_{i}, \quad \ldots, \quad P'_{p} = \sum \theta_{i} P_{i}
+\]
+in such a way that the determinant of the constant coefficients $\beta, \gamma, \delta, \ldots, \theta$ is not
+\origpage{147}zero. Then $P'_{1}$ will be divisible by $(y - y_{0} t)^{2}$ and $P'_{2}$ by $y - y_{0} t$. We shall next make a second transformation by setting
+\[
+P''_{1} = \frac{(y - y_{1} t)(y - y_{2} t)}{(y - y_{0} t)^{2}} P'_{1}, \quad P''_{2} = \frac{y - y_{3} t}{y - y_{0} t} P'_{2}, \quad P''_{k} = P'_{k} \quad (k > 2).
+\]
+For the polynomials $P''$, the triple critical value $y_{0}$ has disappeared to be replaced by the three simple critical values $y_{1}, y_{2}, y_{3}$, chosen arbitrarily. We may therefore always suppose that all the critical values are simple, distinct from one another, and distinct from the singular values.
+
+We can also take advantage of transformation (2) to eliminate all the critical values of the second kind; but this is a point that we shall only be able to prove completely later on, and which requires some explanations.
+
+Let
+\[
+y = y_{1} t, \quad y = y_{2} t, \quad \ldots, \quad y = y_{h} t
+\]
+be the various critical values of the first kind. Let
+\[
+\sum \alpha_{i}^{1} P_{i}, \quad \sum \alpha_{i}^{2} P_{i}, \quad \ldots, \quad \sum \alpha_{i}^{h} P_{i} \tag{3}
+\]
+be the linear combinations of the $P_{i}$ that vanish at these various critical values. The combinations (3) can be expressed linearly by means of $h$ among them, $h$ being at most equal to $p$. If $h = p$, our theorem is easy to prove; let indeed $y = y_{0} t$ be one of the critical values of the second kind; we shall set first, assuming that the first $p$ combinations (3) are linearly independent,
+\[
+P'_{1} = \sum \alpha_{i}^{1} P_{i}, \quad P'_{2} = \sum \alpha_{i}^{2} P_{i}, \quad \ldots, \quad P'_{p} = \sum \alpha_{i}^{p} P_{i}.
+\]
+Then $P'_{k}$ being divisible by $y - y_{k} t$, we shall set
+\[
+P''_{k} = \frac{y - y_{0} t}{y - y_{k} t} P'_{k}
+\]
+the critical value $y = y_{0} t$ will have disappeared, and we shall thus be able to eliminate them all, one after the other.
+
+If $h < p$, among our polynomials $P_{k}$ there will be some that are not linear combinations of the combinations (3). When this is so, we shall sometimes say to abbreviate that the corresponding integrals $u_{k}$ have no critical value of the first kind. We shall show later that \emph{this circumstance cannot present itself so long as there exist critical values of}
+
+\origpage{148}
+the second kind; we shall thus have finished establishing the possibility of eliminating all critical values of the second kind.
+
+\section*{2. --- The Functions $v_{i}$.}
+
+Let $C$ be an algebraic curve traced on the surface $S$; the plane $\frac{y}{t} = \text{const.}$ will cut this curve in $m$ moving points, $M_{1}, M_{2}, \ldots, M_{m}$; let $u_{i}^{1}, u_{i}^{2}, \ldots, u_{i}^{m}$ be the corresponding values of the integral $u_{i}$; I shall set
+\[
+v_{i} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{m}; \tag{1}
+\]
+it will be remarked that this notation is not quite the same as the one I had employed in the cited Memoir of the \emph{Annales de l'École Normale}; I had set
+\[
+m v_{i} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{m};
+\]
+the new notation is more convenient. We shall then see~:
+
+$1^{\circ}$ That for an ordinary value of $y$, $v_{i}$ is a holomorphic function of $y$; it is a holomorphic function of $\frac{1}{y}$ for $y = \infty$;
+
+$2^{\circ}$ That the functions $v_{i}$ can become infinite of the first order for the critical values of the second kind (assumed to be all simple);
+
+$3^{\circ}$ That for a critical value of the first kind, for which $\displaystyle\sum \alpha_{i} P_{i}$ vanishes, one must have $\displaystyle\sum \alpha_{i} v_{i} = 0$;
+
+$4^{\circ}$ That for a singular value, the $v_{i}$ can become logarithmically infinite; when $y$ turns around a singular value, $v_{i}$ increases by a period. I make this precise; suppose that $u_{i}^{*}$ is the determination of $u_{i}$ that remains a holomorphic function of $y$ and that one considers the determination
+\[
+u_{i} = u_{i}^{*} + \sum m_{k} \omega_{ki}
+\]
+one will have (cf.~the preceding section)
+\[
+u_{i} = \psi(y) + \frac{m_{1}\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}) \tag{2}
+\]
+and $u_{i}$ will change into $u_{i} + m_{1}\omega_{2i}$, and, in general, $v_{i}$ into $v_{i} + \displaystyle\sum m_{1}\omega_{2i}$, $\displaystyle\sum m_{1}$ being the sum of the values of $m_{1}$ relative to the various integrals $u_{i}^{1}, u_{i}^{2}, \ldots, u_{i}^{m}$. One sees then that $v_{1}$, for example, increases by a period, while $v_{2}, v_{3}, \ldots, v_{p}$ increase by the \emph{corresponding} period.
+\origpage{149}
+It is interesting to distinguish several cases. Suppose first that the curve $C$ does not pass through the point of contact; then all the functions $u_{i}^{k}$ will be of the form (2) and one will have
+\[
+v_{i} = \psi(y) - \sum m_{1} \frac{\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+$\psi(y)$ being holomorphic and $\displaystyle\sum m_{1}$ being an integer.
+
+Suppose now that the curve $C$ passes through the point of contact; it will then touch the plane $\frac{y}{t} = \text{const.}$ there, so that two of the points $M_{k}$ (for example $M_{1}$ and $M_{2}$) will coincide with the point of contact. Then all the integrals $u_{i}^{k}$ will be of the form (2), with the exception of the integrals $u_{i}^{1}$ and $u_{i}^{2}$, for which one will have
+\[
+u_{i}^{1} \text{ or } u_{i}^{2} = \psi(y) + \mu \frac{\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+$\mu$ being half of an odd integer. One will still have
+\[
+v_{i} = \psi(y) + K \frac{\omega_{2i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+$K$ being an integer.
+
+It may happen also that the curve $K_{y}$ decomposes for the singular value of $y$; the preceding results will still hold.
+
+It will be observed that to each singular value is attached a period that plays a particular role; all the periods are functions of $y$ that increase by a multiple of this particular period when $y$ turns around this singular value. It is this particular period that we designated above by $\omega_{2i}$. One can then make condition $4^{\circ}$ precise by saying that when $y$ turns around a singular value, all the functions $v_{i}$ increase by a multiple of the particular period attached to it.
+
+Every system of functions $v_{i}$ satisfying conditions $1^{\circ}, 2^{\circ}, 3^{\circ}, 4^{\circ}$ will be called a system of \emph{normal functions}. To every curve $C$ corresponds a system of normal functions; but one can find other systems of normal functions~:
+
+$1^{\circ}$ The periods form a system of normal functions;
+
+$2^{\circ}$ Let $A_{1}, A_{2}, \ldots, A_{n}$ be the points of intersection of $S$ with the straight line $y = t = 0$; these points belong to all the curves $K_{y}$; if $a_{i}^{k}$ is the value of the integral $u_{i}$ at the point $A_{k}$, the $a_{i}^{k}$ form a system of normal functions. In particular, the $a_{i}^{1}$ are zero, since $A_{1}$ serves as the lower limit of integration.
+\origpage{150}
+\section*{3. --- Formation of Normal Functions.}
+
+The periods $\omega_{ki}$ satisfy linear differential equations with rational coefficients.
+
+We shall have
+\[
+\Delta_{i}(\omega) = 0, \tag{1}
+\]
+$\Delta$ is a differential expression that is the same for
+\[
+\omega_{1i}, \quad \omega_{2i}, \quad \ldots, \quad \omega_{2p,i},
+\]
+but which depends on the index $i$. This expression is of order $2p$, that is to say it contains derivatives of $\omega$ up to order $2p$ inclusively. The coefficients are entire polynomials in $y$; the coefficient of the highest-order term can vanish only for singular values; moreover, since only one of the periods ceases to be holomorphic at each singular value (namely that which we designated by $\omega_{1}$, \S~1), each of these values is a simple root, so that the coefficient of $\frac{d^{2p}\omega}{dy^{2p}}$ will be written~:
+\[
+(y - a_{1})(y - a_{2})\ldots(y - a_{h}),
+\]
+$a_{1}, a_{2}, \ldots, a_{h}$ being the different singular values. It is therefore a polynomial of degree $h$, $h$ being the number of singular values. Furthermore, since the integrals of equation (1) must behave regularly for $y = \infty$, the degrees of the coefficients of this equation must decrease, in such a way that the coefficient of $\frac{d^{k}\omega}{dy^{k}}$ is of degree $h - 2p + k$ and the coefficient of $\omega$ of degree $h - 2p - 1$ (and not $h - 2p$).
+
+We have $p$ equations (1) since the index $i$ can take $p$ different values; but these equations are closely related; one will pass for example from the equation $\Delta_{1}(\omega) = 0$ to the equation $\Delta_{i}(\omega) = 0$ by a simple transformation; if one sets
+\[
+\omega^{*} = R_{0}\omega + R_{1}\frac{d\omega}{dy} + R_{2}\frac{d^{2}\omega}{dy^{2}} + \ldots + R_{2p-1}\frac{d^{2p-1}\omega}{dy^{2p-1}},
+\]
+the $R$ being suitably chosen rational functions of $y$, and if $\omega$
+\origpage{151}satisfies $\Delta_{1}(\omega) = 0$, $\omega^{*}$ will satisfy $\Delta_{i}(\omega^{*}) = 0$. Equation (1) is what is called \emph{Picard's equation}.
+
+This being established, let us consider in the $y$-plane the various singular values $a_{k}$; let us join them to infinity by cuts $Q_{k}$ that do not cross one another. To each of these values will be attached a period playing a particular role (the one that had been designated by $\omega_{2i}$, \S~1). This period will be respectively designated for the integrals $u_{1}, u_{2}, \ldots, u_{p}$ by $\varpi_{k1}, \varpi_{k2}, \ldots, \varpi_{kp}$.
+
+It is a matter of constructing a system of normal functions $v_{i}$; I must therefore suppose that the functions $v_{i}$ remain single-valued as long as one does not cross the cuts, and that when one crosses the cut $Q_{k}$ in the direct sense, $v_{i}$ changes into
+\[
+v_{i} + \lambda_{k} \varpi_{ki}
+\]
+$\lambda_{k}$ being an integer that depends on $k$, but not on $i$. Let then $b_{1}, b_{2}, \ldots, b_{\nu}$ be the critical values of the second kind. We shall satisfy the conditions by setting
+\[
+v_{i} = \sum \frac{\lambda_{k}}{2\pi\sqrt{-1}} \int_{Q_{k}} \frac{\varpi'_{ki}\,dY}{Y - y} + \sum \frac{A_{ji}}{y - b_{j}} + C_{i}. \tag{2}
+\]
+$Y$ is the variable with respect to which one integrates; $\varpi'_{ki}$ is what $\varpi_{ki}$ becomes when $y$ is replaced in it by $Y$; the $A$ and $C$ are arbitrary coefficients. We see that the expression (2) satisfies the stated conditions; since $\varpi'_{ki}$ is a holomorphic function of $Y$ for $Y = a_{k}$, that is to say at the endpoint of the cut $Q_{k}$ (let us recall, indeed, what we said of $\omega_{2i}$, \S~1), $v_{i}$ will become logarithmically infinite for $y = a_{k}$; it will be infinite of the first order at the critical values of the second kind and will behave regularly for all other values.
+
+It remains to see what happens for $y = \infty$. Let us remark that the integers $\lambda$ cannot be chosen arbitrarily; it is necessary that, when one describes a circle of very large radius by crossing all the cuts, $v_{i}$ returns to its initial value. If the periods of $u_{i}$ are $\omega_{1i}, \omega_{2i}, \ldots, \omega_{2p,i}$, we shall have
+\[
+\varpi_{ki} = \sum \mu_{kj} \omega_{ji},
+\]
+the $\mu_{kj}$ being integers. Moreover, $\omega_{ji}$ will change into $\omega_{ji} + \nu_{kj} \varpi_{kj}$ when one crosses the cut $Q_{k}$ in the direct sense, the $\nu_{kj}$ being integers. When one crosses successively in the direct sense the cuts $Q_{1}, Q_{2}, \ldots, Q_{h}$, these
+\origpage{152}
+cuts succeeding one another in the order in which a circle of very large radius encounters them, $v_{i}$ will change into
+\[
+v_{i} + \sum \rho_{hj} \omega_{ji}
+\]
+the $\rho$ being integers that are to be studied; in the first place, one will have
+\[
+\rho_{1j} = \lambda_{1} \mu_{1j}.
+\]
+One will have next
+\[
+\rho_{kj} - \rho_{k-1, j} = \mu_{kj} \biggl( \lambda_{k} + \sum \rho_{k-1, l} \nu_{kl} \biggr);
+\]
+by these equations, the $\rho$ depend on the indeterminate integers $\lambda$ and on the determinate integers $\mu$ and $\nu$; they are linear and homogeneous functions of the integers $\lambda$. But since $v_{i}$ must return to its initial value when the $h$ cuts have been crossed, one must have
+\[
+\rho_{h1} = \rho_{h2} = \ldots = \rho_{h, 2p} = 0. \tag{3}
+\]
+These are $2p$ linear equations that the $\lambda$ must satisfy.
+
+If this condition is fulfilled, $v_{i}$ is a single-valued function of $y$ in the neighborhood of $y = \infty$; moreover, this function remains finite; indeed, each of the terms of (2) remains finite except the integrals, and these integrals can become only logarithmically infinite, since $\varpi'_{ki}$ remains finite for $Y = \infty$. The logarithmic terms, which alone could become infinite, must cancel each other out, since $v_{i}$ is single-valued; therefore $v_{i}$ is finite.
+
+The conditions (3) are not the only ones that we must impose upon ourselves. Let $c_{1}, c_{2}, \ldots, c_{\mu}$ be the critical values of the first kind and suppose that for $y = c_{k}$ one has $\displaystyle\sum \alpha_{ik} P_{i} = 0$, the $\alpha_{ik}$ being constant coefficients; one must have for $y = c_{k}$
+\[
+\sum \alpha_{ik} v_{i} = 0. \tag{4}
+\]
+Suppose that the $\lambda$ are integers satisfying conditions (3); the relations (4) will be relations between the $A$ and $C$.
+
+If the number of critical values of the first kind is less than $p(\nu + 1)$, the number of distinct relations (4) will be \emph{a fortiori} less than $p(\nu + 1)$ [I say \emph{a fortiori} because the relations (4) may not all be distinct]. One can then satisfy these conditions in an infinity of ways, since the indeterminates $A$ and $C$ are $p(\nu + 1)$ in number. One will then obtain a \emph{continuous} infinity of systems of normal functions, corresponding, as we shall soon see, to a continuous infinity of algebraic curves not constituting a linear system.
+\origpage{153}
+If, in particular, we set all the $\lambda$ equal to zero, the $v_{i}$ will be single-valued functions of $y$, able to become infinite only of the first order at the critical values of the second kind; they will therefore be rational; we thus have an \emph{infinity of systems of rational normal functions}.
+
+If the number of critical values of the first kind is equal to $p(\nu + 1)$, the relations (4) will, in general, be distinct; the number of indeterminates is then equal to that of the conditions; and we shall have for each system of values of the $\lambda$ satisfying conditions (3) a single system of normal functions. As we can vary the $\lambda$, we shall have an infinity of systems of normal functions, but this infinity will be discrete. In particular, if all the $\lambda$ are zero, all the $v_{i}$ will be zero.
+
+It may then happen that, the number of relations (4) being equal to $p(\nu + 1)$, these relations are not all distinct. Let us examine, in particular, the case where there is no critical value of the second kind, a case to which we shall see later that all the others reduce. If the relations (4) are not all distinct, there exists for every system of values of the $\lambda$ an infinity of systems of normal functions; taking the difference of any two of these systems, one will obtain systems of normal functions for which all the $\lambda$ will be zero; one will then have
+\[
+v_{i} = \sum \frac{A_{ji}}{y - b_{j}} + C_{i};
+\]
+since there is no critical value of the second kind, one will simply have $v_{i} = C_{i}$, that is to say that our normal functions will reduce to constants. The relations (4) will then be written $\displaystyle\sum \alpha_{ik} C_{i} = 0$, and they will, by hypothesis, be $p$ in number, since $\nu = 0$. If they were all distinct, all the $C_{i}$ would be zero; if they are not all distinct, some of the $C_{i}$ can be chosen arbitrarily; among the $C_{i}$, there then exist some that are not linear combinations of the left-hand sides of the relations (4); the corresponding integrals $u_{i}$, to use the terminology of the end of Section~1, have no critical values of the first kind. There also exist integrals that have no critical values of the first kind if the number of relations (4) is less than $p(\nu + 1)$. \emph{The existence of a system of rational normal functions is thus connected to the existence of integrals}
+\origpage{154}
+\emph{devoid of critical values of the first kind, in the sense of the end of Section~1.}
+
+If finally the number of critical values of the first kind is greater than $p(\nu + 1)$, it will in general be impossible to satisfy the relations (4). The normal functions corresponding to given values of the integers $\lambda$ will not exist in general, and one will be able to form them only for certain particular surfaces satisfying, so to speak, arithmetic conditions.
+
+Let us now consider the expressions $\Delta_{i}(v_{i})$; I say that they are single-valued functions of $y$. Indeed, when $y$ describes any closed contour, $v_{i}$ changes into $v_{i} + \Omega_{i}$, $\Omega_{i}$ being a period of $u_{i}$; $\Delta_{i}(v_{i})$ changes into $\Delta_{i}(v_{i}) + \Delta_{i}(\Omega_{i})$. But, by virtue of equation (1), $\Delta_{i}(\Omega_{i}) = 0$; therefore $\Delta_{i}(v_{i})$ does not change. \hfill\textsc{q.~e.~d.}
+
+$\Delta_{i}(v_{i})$ remains finite for ordinary values of $y$ as well as for critical values of the first kind. In the neighborhood of a singular value, we have
+\[
+v_{i} = v_{i}^{*} + \sum m_{k} \omega_{ki},
+\]
+$v_{i}^{*}$ being holomorphic and the $m_{k}$ being integers. Then $\Delta_{i}(v_{i}^{*})$ is holomorphic; $\Delta_{i}(\omega_{ki})$ is zero by virtue of equations (1); therefore $\Delta_{i}(v_{i})$ is holomorphic.
+
+At a critical value of the second kind, $v_{i}$ becomes infinite of order 1; its derivative of order $q$ becomes infinite of order $q+1$ and $\Delta_{i}(v_{i})$ becomes infinite of order $2p+1$.
+
+For $y = \infty$, $v_{i}$ remains finite, its derivative of order $q$ becomes zero of order $q+1$; on the other hand, in $\Delta_{i}(v_{i})$ the coefficient of $v_{i}$ becomes infinite of order $h - 2p - 1$, that of its $q^{\text{th}}$ derivative becomes infinite of order $h - 2p + q$; we conclude that $\Delta_{i}(v_{i})$ becomes infinite of order $h - 2p - 1$.
+
+In summary, $\Delta_{i}(v_{i})$ is a rational function of $y$ and one can write
+\[
+\Delta_{i}(v_{i}) = \frac{N_{i}}{Q^{2p+1}}, \tag{5}
+\]
+where
+\[
+Q = (y - b_{1})(y - b_{2})\ldots (y - b_{\nu})
+\]
+and where $N_{i}$ is an entire polynomial in $y$ of degree $h + (2p+1)(\nu - 1)$.
+
+Such is the differential equation satisfied by the normal functions $v_{i}$.
+
+\section*{4. --- Introduction of Abelian Functions.}
+
+To make clearly understood the nature of the problem that I now wish to address, I shall first restrict myself to a particular case, that where $p = 1$ and where,
+\origpage{155}
+consequently, the abelian functions we shall have to consider reduce to elliptic functions. We then have only a single integral $u$, and a ``system'' of normal functions reduces to a single function which I shall call $v$, omitting the index that has become unnecessary. We shall have only two periods $\omega_{1}$ and $\omega_{2}$, which will be functions of $y$ defined by Picard's equation
+\[
+\Delta(\omega) = 0 \tag{1}
+\]
+[equation (1) of the preceding section], while the normal function $v$ will satisfy
+\[
+\Delta(v) = \frac{N}{Q^{2p+1}} \tag{2}
+\]
+[equation (5) of the preceding section].
+
+This being established, let us consider Weierstrass's function $p(u)$; it depends not only on the argument $u$, but on the two periods $\omega_{1}$ and $\omega_{2}$; if we replace in it the argument by the \emph{normal} function $v$ defined by equation (2) and the periods $2\omega_{1}$ and $2\omega_{2}$ defined as functions of $y$ by equation (1), the Weierstrass function will become a function of $y$
+\[
+p(v,\, \omega_{1}, \omega_{2}) = G(y)
+\]
+and it is this function that is to be studied.
+
+When $y$ turns around a singular value, the periods change into other periods and $v$ increases by a period. Under these conditions, the Weierstrass function does not change. \emph{Therefore $G$ is a single-valued function of $y$.}
+
+For an ordinary point and if $v$ is not equal to a period, $G$ is evidently holomorphic, and, similarly, it is a holomorphic function of $\frac{1}{y}$ in the neighborhood of $y = \infty$.
+
+If $y = b$ is a critical value of the second kind, we see that $v$, $\omega_{1}$, and $\omega_{2}$ become infinite, but $v(y - b)$, $\omega_{1}(y - b)$, $\omega_{2}(y - b)$ remain holomorphic; therefore
+\[
+p(v,\, \omega_{1}, \omega_{2}) = (y - b)^{2} p\bigl[ v(y - b),\, \omega_{1}(y - b),\, \omega_{2}(y - b) \bigr]
+\]
+is holomorphic for $y = b$ and even vanishes; let us recall, indeed, that the Weierstrass function is homogeneous of degree $-2$ in $v, \omega_{1}, \omega_{2}$.
+
+If $y = c$ is a critical value of the first kind, it happens that $v, \omega_{1}$, and $\omega_{2}$
+\origpage{156}
+vanish for $y = c$, but $\frac{v}{y - c}$, $\frac{\omega_{1}}{y - c}$, $\frac{\omega_{2}}{y - c}$ remain finite, and since one has
+\[
+p(v,\, \omega_{1}, \omega_{2}) = \frac{1}{(y - c)^{2}} p\biggl( \frac{v}{y - c},\, \frac{\omega_{1}}{y - c},\, \frac{\omega_{2}}{y - c} \biggr),
+\]
+$G$ remains a \emph{meromorphic} function of $y$.
+
+If $v$ were equal to a period, the Weierstrass function would no longer be a holomorphic function of $v, \omega_{1}$, and $\omega_{2}$, but a meromorphic function, becoming infinite of order 2.
+
+Therefore $G$ will still remain a meromorphic function of $y$, whether the value considered be moreover ordinary or critical.
+
+It remains for us to investigate what happens at singular values. The Weierstrass function not depending on the choice of periods, we may suppose that $2\omega_{1}$ and $2\omega_{2}$ are precisely the periods which in the neighborhood of the considered singular value $y - y_{0}$ are of the form
+\[
+\theta_{1}(y) + \frac{\theta(y)}{2\pi\sqrt{-1}} L(y - y_{0}), \quad \theta(y),
+\]
+$\theta_{1}(y)$ and $\theta(y)$ remaining holomorphic [without $\theta(y)$ vanishing]; on the other hand, $v$ will be of the form
+\[
+v^{*} - \lambda \frac{\theta(y)}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+$v^{*}$ remaining holomorphic and $\lambda$ being an integer. If we set, with Weierstrass (\emph{cf.~Formules et propositions pour l'emploi des fonctions elliptiques})~:
+\[
+h = e^{\pi\sqrt{-1} \frac{\omega_{1}}{\omega_{2}}}, \quad z = e^{\frac{\pi\sqrt{-1} v}{2\omega_{2}}},
+\]
+we see that $h(y - y_{0})^{-\frac{1}{2}}$, $z(y - y_{0})^{-\frac{\lambda}{2}}$ remain holomorphic and do not vanish for $y = y_{0}$. We see, on the other hand (\emph{loc.~cit.}, French edition, p.~41), that
+\[
+\sigma(v) = e^{2\eta_{2} \omega_{2} w^{2}} \mathrm{K} \mathfrak{S}(v), \quad \mathfrak{S}(v) = \frac{1}{\sqrt{-1}} \sum (-1)^{m} h^{\frac{(2m+1)^{2}}{4}} z^{2m+1},
+\]
+\origpage{157}
+$\mathrm{K}$ being a constant factor, whence
+\[
+p(v) = \frac{\sigma'^{2} - \sigma\sigma''}{\sigma^{2}} = - \frac{\eta_{2}}{\omega_{2}} + \frac{\mathfrak{S}'^{2} - \mathfrak{S}\mathfrak{S}''}{\mathfrak{S}^{2}}
+\]
+(I write $v$ instead of $u$, to preserve the notation adopted up to now, and I designate by $w$ the $v$ of Weierstrass, that is to say $\frac{v}{2\omega_{2}}$). Moreover, one has
+\[
+\begin{gathered}
+\frac{2\omega_{2}}{\pi\sqrt{-1}} \mathfrak{S}'(v) = \frac{1}{\pi\sqrt{-1}} \sum (-1)^{m} (2m+1) h^{\frac{(2m+1)^{2}}{4}} z^{2m+1}, \\
+\biggl( \frac{2\omega_{2}}{\pi\sqrt{-1}} \biggr)^{2} \mathfrak{S}''(v) = \frac{1}{\sqrt{-1}} \sum (-1)^{m} (2m+1)^{2} h^{\frac{(2m+1)^{2}}{4}} z^{2m+1}.
+\end{gathered}
+\]
+I say that
+\[
+\mathfrak{S}(v) = (y - y_{0})^{\frac{1}{8} - \frac{\lambda}{2}} \mathrm{H}(y),
+\]
+$\mathrm{H}$ being holomorphic, or at least meromorphic. Indeed, one has
+\[
+h^{\frac{(2m+1)^{2}}{4}} z^{2m+1} = (y - y_{0})^{\frac{(2m+1)^{2}}{8} - \frac{\lambda}{2}(2m+1)} \mathrm{M}(y),
+\]
+$\mathrm{M}$ being holomorphic; the exponent of $y - y_{0}$ is equal to $\frac{1}{8} - \frac{\lambda}{2} + \bigl[ \frac{m^{2} + m}{2} - \lambda m \bigr]$; the expression in brackets is an integer; and, whatever the sign and value of $\lambda$ may be, this integer is positive, provided $m$ is sufficiently large in absolute value.
+
+If therefore we set aside the factor $(y - y_{0})^{\frac{1}{8} - \frac{\lambda}{2}}$, we see that all the terms of the series $\mathfrak{S}(v)$ are holomorphic, except a finite number that are meromorphic. Therefore $\mathrm{H}(y)$ is meromorphic. One would prove similarly that
+\[
+\frac{2\omega_{2}}{\pi\sqrt{-1}} \mathfrak{S}'(v), \quad \biggl( \frac{2\omega_{2}}{\pi\sqrt{-1}} \biggr)^{2} \mathfrak{S}''(v)
+\]
+are of the form
+\[
+(y - y_{0})^{\frac{1}{8} - \frac{\lambda}{2}} \mathrm{H}(y),
+\]
+$\mathrm{H}$ being meromorphic; as $2\omega_{2} = \theta(y)$ is holomorphic and does not vanish, the expression $\frac{\mathfrak{S}'^{2} - \mathfrak{S}\mathfrak{S}''}{\mathfrak{S}^{2}}$ is meromorphic. On the other hand, $\eta_{2}\omega_{2}$ according to Weierstrass [\emph{loc.~cit.}, \S~6, p.~8, form.~(10)] is a holomorphic function of $h^{2}$ (for $h = 0$) and, consequently, of $y$ for $y = y_{0}$. We must therefore conclude that for this value, $p(v)$ is a meromorphic function of $y$.
+
+Thus $G$ remains a meromorphic function of $y$, even for singular values. It is therefore meromorphic in the entire plane and even at infinity; \emph{it is therefore a rational function of $y$}.
+\origpage{158}
+The partial derivative $\frac{dp}{dv}$ is also a doubly periodic function of $v$ which does not change when the system of periods is replaced by an equivalent system. One would prove in the same manner that it is a rational function of $y$.
+
+Let us now consider the three partial derivatives
+\[
+\frac{dp}{dv}, \quad \frac{dp}{d\omega_{1}}, \quad \frac{dp}{d\omega_{2}}.
+\]
+When $v$ increases by a period, or when one replaces the system of periods by an equivalent system, these three derivatives will undergo a linear transformation, and that in such a way that
+\[
+\begin{gathered}
+v \frac{dp}{dv} + \omega_{1} \frac{dp}{d\omega_{1}} + \omega_{2} \frac{dp}{d\omega_{2}}, \\
+\frac{dv}{dy} \frac{dp}{dv} + \frac{d\omega_{1}}{dy} \frac{dp}{d\omega_{1}} + \frac{d\omega_{2}}{dy} \frac{dp}{d\omega_{2}}, \\
+\frac{d^{2}v}{dy^{2}} \frac{dp}{dv} + \frac{d^{2}\omega_{1}}{dy^{2}} \frac{dp}{d\omega_{1}} + \frac{d^{2}\omega_{2}}{dy^{2}} \frac{dp}{d\omega_{2}}, \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots
+\end{gathered} \tag{3}
+\]
+remain invariant~${}^{(1)}$. One concludes (by reasoning entirely similar to the preceding) that all these expressions are rational functions of $y$. For the second of them, this is moreover evident, since it is the total derivative of $p$ with respect to $y$ and since $p$ is a rational function of $y$.
+
+Combining these expressions, one finds that
+\[
+\Delta v \frac{dp}{dv} + \Delta\omega_{1} \frac{dp}{d\omega_{1}} + \Delta\omega_{2} \frac{dp}{d\omega_{2}}
+\]
+is a rational function of $y$. But $\Delta\omega_{1}$ and $\Delta\omega_{2}$ are zero; by virtue of equation (1), this expression therefore reduces to $\Delta v \frac{dp}{dv}$.
+
+We already knew that the two factors $\Delta v$ [by virtue of equation (2)] and $\frac{dp}{dv}$ are rational functions of $y$.
+
+Let us pass now to the general case where the genus $p$ of the curves $K_{y}$ is greater than 1.
+
+\textbf{(1)} To establish this, one will use the double series expansion of $p(v)$, an expansion that converges uniformly in any bounded region of the $v$-plane and for $\mathfrak{R}\bigl(\frac{\omega_{2}}{i\omega_{1}}\bigr) > 0$, as well as the expansions of its partial derivatives, calculated term by term, with respect to $v$, to $\omega_{1}$ and to $\omega_{2}$; one will use, in addition, the absolute convergence of the expansions. The first of the three invariance relations results moreover from the homogeneity formula.
+\origpage{159}
+We shall make use of the properties of intermediate functions (Frobenius functions) and we shall use, in particular, some of those that I proved in the \emph{American Journal of Mathematics} (Vol.~8, 1886, p.~289). Let $\omega_{ki}$ be the $k^{\text{th}}$ period of the $i^{\text{th}}$ integral. There will exist between the periods of any two integrals a bilinear relation
+\[
+\Phi(\omega_{ki},\, \omega_{kj}) = 0 \tag{4}
+\]
+such that the first member $\Phi$, linear and homogeneous both with respect to
+\[
+\omega_{1i}, \quad \omega_{2i}, \quad \ldots, \quad \omega_{2p, i}
+\]
+and with respect to
+\[
+\omega_{1j}, \quad \omega_{2j}, \quad \ldots, \quad \omega_{2p, j},
+\]
+changes sign when one interchanges $\omega_{ki}$ with $\omega_{kj}$. If one takes, in particular, the normal periods, this function $\Phi$ takes a particularly simple form. We shall have
+\[
+\Phi = \sum_{k=1}^{k=p} (\omega_{ki} \omega_{k+p, j} - \omega_{kj} \omega_{k+p, i}) = 0. \tag{4~bis}
+\]
+Let us then consider an intermediate function; it is an entire function $\mathrm{H}$ of $v_{1}, v_{2}, \ldots, v_{p}$ which is multiplied by an exponential when the variables increase by a period, so that
+\[
+\mathrm{H}(v_{i} + \omega_{ki}) = e^{P_{k}} \mathrm{H}(v_{i}); \qquad P_{k} = \sum \alpha_{ki} v_{i} + \gamma_{k}.
+\]
+We shall set, on the other hand,
+\[
+\delta_{k} = \gamma_{k} - \frac{1}{2} \sum \alpha_{ki} \omega_{ki}.
+\]
+The quantities $\gamma_{k}$ and $\delta_{k}$ are evidently determined only up to a multiple of $2\pi\sqrt{-1}$. We shall next consider the combinations
+\[
+\Phi(\alpha_{ki},\, \omega_{kj}) = \Phi_{ij}.
+\]
+We shall suppose
+\[
+\Phi_{ii} = 2m\pi\sqrt{-1}, \qquad \Phi_{ij} = 0 \quad (i \gtrless j); \tag{5}
+\]
+the intermediate function will then be said to be of order $m$; an intermediate function of the first order is determined up to a constant factor when its
+\origpage{160}
+multipliers $e^{P_{k}}$ are known. An intermediate function of the first order is even or odd when all the $\delta_{k}$ are equal to 0 or to $\pi\sqrt{-1}$. For given values of the coefficients $\alpha_{ki}$, there are therefore $2^{2p}$ even or odd intermediate functions of the first order.
+
+If we multiply the intermediate function $\mathrm{H}$ by an exponential $e^{Q}$, where $Q$ is a homogeneous polynomial of the second degree with respect to the $v_{i}$, we shall have a new intermediate function $\mathrm{H}'$ for which the $\Phi_{ij}$ and the $\delta_{k}$ will be the same. One can dispose of the polynomial $Q$ in such a way that the $\alpha_{ki}$ vanish for all periods of the first series, that is to say for $k \le p$. The function $\mathrm{H}'$ is then a $\Theta$-function, but we shall restrict ourselves to even or odd functions, which are $2^{2p}$ in number. Among these $\Theta$-functions, there is one that is the $\Theta$-function properly so called, and which we shall designate by $\Theta_{0}$ to distinguish it from the others; it is the one for which all the $\delta_{k}$ are zero.
+
+We shall now consider the functions $\Pi$ which are the third-order partial derivatives (with respect to the $v$) of the logarithm of one of the even or odd $\Theta$-functions of the first order. These functions $\Pi$ are therefore $\frac{p(p+1)(p+2)}{6} 2^{2p}$ in number, since there are $2^{2p}$ functions $\mathrm{L}\,\Theta$ and each of them has $\frac{p(p+1)(p+2)}{6}$ third-order derivatives.
+
+$1^{\circ}$ A third-order partial derivative of the logarithm of an even or odd intermediate function of the first order $\mathrm{H}$ is equal to one of the functions $\Pi$. One has, indeed,
+\[
+\log\Theta = \log\mathrm{H} - Q,
+\]
+$Q$ being a polynomial of the second degree and every third derivative of $Q$ being zero.
+
+$2^{\circ}$ When one increases the $v$ by a period, the $\Pi$ do not change; for $\log\Theta$ increases by $P_{k}$, whose third derivatives are zero.
+
+$3^{\circ}$ What happens now when one replaces the periods by an equivalent system of normal periods? First, the $\Phi_{ij}$ do not change (\emph{loc.~cit.}, p.~323); moreover, if the intermediate function was even or odd, it will retain this character; if the old $\delta_{k}$ were all equal to zero or to $\pi\sqrt{-1}$, the same will hold for the new $\delta_{k}$; but there is no necessity
+\origpage{161}
+that each new $\delta_{k}$ be equal to the corresponding old $\delta_{k}$. We conclude from this that the different functions $\Pi$ simply interchange among themselves, a third-order derivative of the logarithm of $\Theta$ changing into the corresponding partial derivative of the logarithm of another $\Theta$.
+
+$4^{\circ}$ If we subject the $v_{i}$ to a linear substitution, and at the same time the periods $\omega_{ki}$ to the corresponding linear substitution, and the $\alpha_{ki}$ to the contragredient substitution, in such a way that $\displaystyle\sum \alpha_{ki} v_{i}$ does not change, the intermediate function $\mathrm{H}$ defined by the $v$, the $\omega$, the $\alpha$, and the $\delta$ will not change; the same will hold for its logarithm; the partial derivatives of this logarithm (and, in particular, the corresponding $\Pi$) will undergo a linear transformation (contragredient to that undergone by products of three factors equal to $v_{i}$, distinct or not).
+
+If, for example, $v_{i}$ is multiplied by $c$, the $\omega_{ki}$ multiplied by $c$, the $\alpha_{ki}$ divided by $c$, the functions $\Pi$ represented by
+\[
+\frac{d^{3}}{dv_{1}^{3}} \log\Theta, \quad \frac{d^{3}}{dv_{1}^{2}\,dv_{2}} \log\Theta, \quad \frac{d^{3}}{dv_{1}\,dv_{2}^{2}} \log\Theta, \quad \frac{d^{3}}{dv_{2}^{3}} \log\Theta, \quad \ldots
+\]
+will be respectively multiplied by
+\[
+\frac{1}{c^{3}}, \quad \frac{1}{c^{3}}, \quad \frac{1}{c^{3}}, \quad \frac{1}{c^{3}}, \quad \ldots
+\]
+
+This being established, I suppose that one replaces the $\omega_{ki}$ by their values as functions of $y$ and the $v_{i}$ by a system of normal functions of $y$; a function $\Pi$ will become a function $G(y)$ that is to be studied.
+
+$1^{\circ}$ When $y$ describes a closed contour, the $v$ increase by a period; the system of periods is replaced by an equivalent system. Under these conditions, the functions $G$ can only interchange among themselves. I make this precise; let us agree, to abbreviate the language, to say that two functions $G = \Pi$ belong to the same \emph{system} when they are derived from several different $\log\Theta$ by the same mode of differentiation; and that they belong to the same \emph{group} when they are the various partial derivatives of the same $\log\Theta$. Then the functions $G$ of the same system will interchange among themselves. Therefore \emph{every symmetric function of the various functions $G$ of the same system is a single-valued function of $y$}.
+
+For an ordinary value of $y$, the $G$ are meromorphic functions of $y$.
+\origpage{162}
+For a critical value of the second kind $y = b$, the products $v_{i}(y - b)$, $\omega_{ki}(y - b)$ remain holomorphic; therefore
+\[
+\Pi(v_{i},\, \omega_{ki}) = (y - b)^{3} \Pi\bigl[ v_{i}(y - b),\, \omega_{ki}(y - b) \bigr]
+\]
+remains meromorphic.
+
+For a critical value of the first kind $y = c$, such that $\displaystyle\sum \alpha_{i} v_{i} = 0$, one will make a linear change of variables, in such a way that $v'_{1} = \displaystyle\sum \alpha_{i} v_{i}$ and that the other $v'_{i}$ are arbitrary linear functions of the $v$. We shall make, of course, the same change of variables on the $\omega_{ki}$; in such a way that, for example, $\omega'_{k1} = \displaystyle\sum \alpha_{i} \omega_{ki}$.
+
+Then the $\Pi(v'_{i},\, \omega'_{ki})$ will be linear functions of the $\Pi(v_{i},\, \omega_{ki})$ and conversely. I shall bring $v'_{1}$ and $\omega'_{k}$ into evidence by writing
+\[
+\Pi(v'_{1},\, v'_{i};\, \omega'_{k1},\, \omega'_{ki}),
+\]
+the index $i$ taking the values $2, 3, \ldots, p$; in this case, $v'_{1}$ and $\omega'_{k}$ vanish for $y = c$, but $\frac{v'_{1}}{y - c}$ and $\frac{\omega'_{k1}}{y - c}$ remain finite. Then~:
+\[
+\Pi(v'_{1},\, v'_{i};\, \omega'_{k1},\, \omega'_{ki}) = \frac{1}{(y - c)^{\lambda}} \Pi\biggl( \frac{v'_{1}}{y - c},\, v'_{i};\, \frac{\omega'_{k1}}{y - c},\, \omega'_{ki} \biggr)
+\]
+($\lambda = 0, 1, 2, 3$, according to the system of functions $\Pi$ under consideration) still remains meromorphic. The same therefore holds for the $\Pi$.
+
+It remains for us to examine the case of singular values. Let $y = y_{0}$ be one of these values; in the neighborhood of this value, one has
+\[
+v_{i} = \psi_{i}(y) + \frac{\lambda \varpi_{i}}{2\pi\sqrt{-1}} L(y - y_{0}), \qquad \omega_{ki} = \psi_{ki}(y) + \frac{\lambda_{k} \varpi_{i}}{2\pi\sqrt{-1}} L(y - y_{0}),
+\]
+the $\psi$ being holomorphic, $\varpi_{i}$ being the period attached to the singular value in the sense of Section~2 and being a holomorphic function of $y$, the $\lambda$ and the $\lambda_{k}$ being integers. As we have seen that our functions $G$ of the same system simply permute among themselves when the periods are replaced by an equivalent system of normal periods, we may adopt any one of these equivalent systems, and it will always be possible to choose it
+\origpage{163}
+in such a way that $\varpi_{i} = \omega_{1i}$; under these conditions, all the $\lambda_{k}$ are zero, with the exception of $\lambda_{p+1}$ which is equal to 1. Indeed, the form
+\[
+\sum_{k} (\omega_{ki} \omega_{k+p, j} - \omega_{k+p, i} \omega_{kj})
+\]
+must not be altered when $\omega_{ki}$ changes into $\omega_{ki} + \lambda_{k} \omega_{1i}$ and $\omega_{kj}$ into $\omega_{kj} + \lambda_{k} \omega_{1j}$, which happens when $y$ turns around $y_{0}$; and that requires that all the $\lambda_{k}$ be zero with the exception of $\lambda_{p+1}$. We see next that, when the singular value $y_{0}$ corresponds to an ordinary tangent plane, which we assume, there always exists a period (linear combination of the $\omega_{ki}$) which increases by $\varpi_{i}$, which requires $\lambda_{p+1} = \pm 1$. Finally, we shall suppose $\lambda_{p+1} = 1$, for if $\lambda_{p+1}$ were negative, it would suffice to change $\varpi_{i}$ into $-\varpi_{i}$.
+
+We shall now effect a linear change of variables by setting
+\[
+v'_{i} = \sum \alpha_{ij} v_{j}, \qquad \omega'_{ki} = \sum \alpha_{ij} \omega_{kj}. \tag{6}
+\]
+Under these conditions, the $\Pi' = \Pi(v'_{i},\, \omega'_{ki})$ will be linear functions of the $\Pi(v_{i},\, \omega_{ki})$ and the coefficients of these linear functions will be meromorphic functions of $y$, if the coefficients $\alpha_{ij}$ are themselves meromorphic functions of $y$.
+
+This being established, we can choose the change of variables (6) in such a way that
+\[
+\omega'_{k1} = 0 \quad (k \le p,\, k \gtrless 1), \qquad \omega'_{11} = 2\pi\sqrt{-1} \quad (k \le p);
+\]
+the coefficients $\alpha_{ij}$ will be meromorphic functions of $y$, since all the $\omega_{k1}$ where $k \le p$, and indeed generally all the $\omega_{ki}$, except $\omega_{p+1, i}$, are holomorphic functions of $y$. We shall then write~:
+\[
+\Theta = \sum e^{P_{1} + P_{2} + P_{3}},
+\]
+where
+\[
+P_{1} = \sum m_{i} v'_{i}, \qquad P_{2} = \sum m_{i} z_{i}, \qquad P_{3} = \frac{1}{2} \sum m_{i} m_{k} a_{ik}
+\]
+and where~:
+
+$1^{\circ}$ $2m_{1}, 2m_{2}, \ldots, 2m_{p}$ are integers: $2m_{k}$ being either always even or always odd, according to the value of the $\delta_{k}$, that is to say according to which of the $2^{2p}$ functions $\Theta$ is considered;
+\origpage{164}
+$2^{\circ}$ The $\varepsilon_{i}$ are equal to $0$ or to $\pi\sqrt{-1}$ according to which of the $2^{2p}$ functions $\Theta$ is considered.
+
+$3^{\circ}$ One has
+\[
+a_{ik} = a_{ki} = \omega'_{k, p+i} = \omega'_{i+p, k}.
+\]
+All the $\omega'_{ki}$ are holomorphic functions of $y$ except perhaps the $\omega'_{p+1, i}$; moreover, $\omega'_{p+1, i}$ is equal to a holomorphic function of $y$, plus
+\[
+\frac{\omega'_{1i}}{2\pi\sqrt{-1}}\mathrm{L}(y - y_{0}).
+\]
+But $\omega'_{1i} = 0$ for $i \gtrless 1$; therefore all the $a_{ik}$ are holomorphic functions of $y$, except $a_{11}$; but $e^{a_{11}}$ is a holomorphic function of $y$ that vanishes for $y = y_{0}$.
+
+Similarly,
+\[
+v'_{i} - \psi'_{i}(y) + \frac{\lambda \omega'_{1i}}{2\pi\sqrt{-1}}\mathrm{L}(y - y_{0})
+\]
+is holomorphic in $y$ if $i \gtrless 1$; and the exponential $e^{v'_{1}}$ is holomorphic or meromorphic in $y$, divisible by $(y - y_{0})^{\lambda}$. Each of the terms of $\Theta$ is therefore equal to the product of a holomorphic function of $y$, not vanishing for $y = y_{0}$, by the factor
+\[
+(y - y_{0})^{m_{1}\lambda + \frac{1}{2}m_{1}^{2}}.
+\]
+The exponent $m_{1}\lambda + \frac{1}{2}m_{1}^{2}$ can be negative only for a finite number of values of $m_{1}$; moreover, if one changes $m_{1}$ into $m_{1} + 1$, it increases by $\lambda + m_{1} + \frac{1}{2}$.
+
+If therefore $2m_{1}$ is even, it increases by an integer plus $\frac{1}{2}$; if $2m_{1}$ is odd, it increases by an integer. If $2m_{1}$ is odd, all the terms are therefore equal to a holomorphic or meromorphic function multiplied by $(y - y_{0})^{\frac{\lambda}{2} + \frac{1}{8}}$. If $2m_{1}$ is even, they are equal to a holomorphic or meromorphic function multiplied by $(y - y_{0})^{\frac{1}{2}}$ or $(y - y_{0})^{0}$. Therefore, when $y$ turns around $y_{0}$, in the first case the function $\Theta$ is simply multiplied by a constant factor; in the second case, two of the functions $\Theta$ interchange between themselves, namely those that differ from one another by the change of value of $\varepsilon_{1}$. They are in any case algebroid functions.
+
+The same reasonings would apply to the partial derivatives of the different orders of the functions $\Theta$ taken with respect to the $v'_{i}$; each term is deduced, indeed, from the corresponding term of the function $\Theta$ by multiplying it by a
+\origpage{165}
+constant factor depending only on the integers $m$. It results from this that the $\Pi'$ are algebroid functions of $y$ for $y = y_{0}$ and that, when $y$ turns around $y_{0}$, the functions of the same system simply interchange among themselves. This is therefore still true for the $\Pi$, which are linear functions of the $\Pi'$ with meromorphic coefficients. In summary, we see that, for any value of $y$, the $\Pi$ are algebroid functions of $y$, liable only to interchange among functions of the same system. Every symmetric function of the functions $\Pi = \mathrm{G}$ of the same system is therefore a meromorphic function for all finite or infinite values of $y$. It is therefore a rational function of $y$. \emph{Any one of the functions $\mathrm{G}$ is therefore an algebraic function of $y$.}
+
+We can extend this result to the case where one replaces $v_{i}$, no longer by a normal function of $y$, but by half of a normal function. There will, indeed, be nothing changed in the preceding analysis, except that $\lambda$, instead of being an integer, may be half of an integer. If then $m_{1}$ changes into $m_{1} + 1$, the exponent $m_{1}\lambda + \frac{1}{2}m_{1}^{2}$ increases by $\lambda + m_{1} + \frac{1}{2}$; if then $\lambda$ is half of an odd number, it is when $2m_{1}$ is even that our exponent increases by an integer and that the function $\Theta$ reproduces itself up to a constant factor; and it is when $2m_{1}$ is odd that this exponent increases by an integer plus $\frac{1}{2}$ and that the function $\Theta$ interchanges with another.
+
+It may happen that a function $\mathrm{G}$ is not only algebraic, but rational in $y$; this is what occurs, for example, if $v_{i}$ is half of a normal function for which all the $\lambda$ are odd and if $\mathrm{G}$ is derived from a function $\Theta$ for which all the $2m_{i}$ are even.
+
+It will be observed that the fact that the system of normal functions $v_{i}$ satisfies the condition $\displaystyle\sum \alpha_{i} v_{i} = 0$ for a critical value of the first kind plays an essential role. The theorem would no longer be true if one were to replace in the $\Pi$ the $v_{i}$ by a system of functions satisfying the same conditions as a system of normal functions, \emph{that one excepted}.
+
+\section*{5. --- Classification of Curves.}
+
+Let us consider a system of normal functions $v_{i}$, formed by the procedures of Section~3. Will there always correspond to this system algebraic curves? There will always exist on each curve $\mathrm{K}_{y}$ a group of $p$ points and only one~: $\mathrm{M}_{1}, \mathrm{M}_{2}, \ldots, \mathrm{M}_{p}$, such that one has
+\[
+v_{i} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{p},
+\]
+\origpage{166}
+$v_{i}$ being the normal function under consideration and $u_{i}^{k}$ the value of the integral $u_{i}$ at the point $\mathrm{M}_{k}$. When one varies $y$, the set of these points will generate a curve $\mathrm{C}$; let us take again the points $\mathrm{A}_{1}, \mathrm{A}_{2}, \ldots, \mathrm{A}_{n}$ of intersection of $\mathrm{S}$ with the straight line $y = t = 0$, and let $a_{i}^{k}$ be the value of $u_{i}$ at the point $\mathrm{A}_{k}$. Let us recall that, according to our conventions, $a_{i}^{1}$ is zero.
+
+I propose to investigate how many times the curve $\mathrm{C}$ passes through $\mathrm{A}_{k}$, that is to say for how many values of $y$ one of the points $\mathrm{M}_{k}$ arrives at $\mathrm{A}_{k}$. To this end, I recall Riemann's theorem; according to this theorem, one has
+\[
+\Theta_{0}(u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{p-1} - h_{i}) = 0, \tag{1}
+\]
+$\Theta_{0}$ being the function $\Theta$ all of whose $\delta$ are zero, the $u_{i}^{k}$ being the values of $u_{i}$ at $p - 1$ arbitrary points of $\mathrm{K}_{y}$ and the $h_{i}$ being constants (able to depend only on $y$). Moreover, one has
+\[
+u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{2p-2} = 2h_{i}, \tag{2}
+\]
+the $u_{i}^{k}$ representing this time the values of $u_{i}$ at the $2p - 2$ points of intersection of $\mathrm{K}_{y}$ with an arbitrary adjoint of order $n - 3$, the double points being left aside.
+
+At each of the double points, one has two values of $u_{i}$, corresponding to the two branches of $\mathrm{K}_{y}$ that intersect at the double point. I shall designate by $d_{i}$ the sum of all these values of $u_{i}$, whose number is double that of the double points. We shall observe that the $d_{i}$ form a system of normal functions. Indeed, we saw in Section~2 that to every algebraic curve traced on the surface there corresponds a system of normal functions; it suffices to apply this result to the double curve of the surface $\mathrm{S}$.
+
+By virtue of Abel's theorem, the sum of the $u_{i}^{k}$ is a constant for the points of intersection of $\mathrm{K}_{y}$ with an arbitrary curve of order $m$. Let us apply this to two curves of order $n - 3$, namely an adjoint on the one hand, and on the other hand $n - 3$ times the straight line $y = t = 0$. This will give us
+\[
+u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{2p-2} + d_{i} = (n - 3)(a_{i}^{1} + a_{i}^{2} + \ldots + a_{i}^{n}),
+\]
+the $u_{i}^{k}$ being those that appear in the first member of (2); one will therefore have
+\[
+2h_{i} = (n - 3)\sum a_{i}^{k} - d_{i}.
+\]
+Since the $a_{i}^{k}$ and the $d_{i}$ are normal functions, the same will hold for the $2h_{i}$.
+\origpage{167}
+In order that the point $\mathrm{M}_{p}$, for example, arrive at $\mathrm{A}_{k}$, it is necessary that
+\[
+v_{i} - a_{i}^{k} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{p-1},
+\]
+whence
+\[
+\Theta_{0}(v_{i} - a_{i}^{k} - h_{i}) = 0.
+\]
+Now $v_{i} - a_{i}^{k} - h_{i}$ is half of a normal function. But the function $\Theta_{0}$ cannot vanish without its logarithm becoming infinite, nor, consequently, without at least one of the third-order partial derivatives of this logarithm becoming infinite. It is therefore necessary that one of the functions $\mathrm{G}$ become infinite; now the $\mathrm{G}$ are algebraic functions of $y$; they will therefore be able to become infinite only a finite number of times. The curve $\mathrm{C}$ will therefore be able to pass through $\mathrm{A}_{k}$ only a finite number of times, say $q_{k}$ times. It will then be an algebraic curve of degree
+\[
+p + q_{1} + q_{2} + \ldots + q_{n}.
+\]
+The algebraic curve $\mathrm{C}$ always exists; it may in certain cases reduce to a certain number of times the points $\mathrm{A}_{k}$, or else to periods. I refer to the cited Memoir of the \emph{Annales de l'École Normale} for the study of the exceptional case where the curve $\mathrm{C}$ meets the plane $\frac{y}{t} = \mathrm{const.}$ only in $p - 1$ moving points (\emph{loc.~cit.}, p.~83).
+
+The curve $\mathrm{C}$ as we have just defined it is entirely determined; but to the same system of normal functions there correspond an infinity of algebraic curves meeting the plane $\frac{y}{t} = \mathrm{const.}$ in more than $p$ moving points (whereas $\mathrm{C}$ met this plane in $p$ moving points only).
+
+We shall say that all these curves belong to the same \emph{family}.
+
+But this classification into families is not a natural classification. Suppose, indeed, that one changes coordinate axes in such a way that the straight line $y = t = 0$ is replaced by another straight line $\mathrm{D}$. The function $v_{i}$ is the sum of the $u_{i}$ for all the \emph{moving} points of intersection of the curve $\mathrm{C}$ with a plane passing through $y = t = 0$. The fixed points of intersection, that is to say the points $\mathrm{A}_{k}$, do not enter into account. But if one replaces the line $y = t = 0$, which met the curve $\mathrm{C}$ a certain number of times $q_{k}$ at $\mathrm{A}_{k}$, by an arbitrary line $\mathrm{D}$, this line will not meet $\mathrm{C}$ in general. Let then $v_{i}$ be the normal functions corresponding to $\mathrm{C}$ and to the line $y = t = 0$;
+\origpage{168}
+let $v'_{i}$ be the normal functions corresponding to $\mathrm{C}$ and to the line $\mathrm{D}$. When $\mathrm{D}$ is infinitely close to $y = t = 0$, $v'_{i}$ will not be infinitely close to $v_{i}$, but indeed to $\displaystyle v_{i} + \sum q_{j} a_{i}^{j}$.
+
+On the other hand $v_{i}$ is determined only up to a period, so that the two systems of normal functions $v_{i}$ and $v_{i} + \omega_{ji}$ correspond to the same curve $\mathrm{C}$. This leads us to substitute for the classification into families a classification into \emph{classes}, which will this time be a natural classification.
+
+A system of normal functions is characterized by the set of integers $\lambda_{k}$ which correspond, according to Section~3, to the different singular values $y = y_{k}$; among normal functions, we shall distinguish the periods $\omega_{ji}$ and the functions $a_{i}^{j}$ which correspond to the points $\mathrm{A}_{j}$; let then $\mu_{jk}$ and $\mu'_{jk}$ be the integers $\lambda_{k}$ relative respectively to $\omega_{ji}$ and to $a_{i}^{j}$. Let two systems of normal functions be characterized respectively by the integers $\lambda_{k}$ and by the integers $\lambda'_{k}$. The two systems and the two corresponding curves $\mathrm{C}$ will belong to the same family if one has
+\[
+\lambda_{k} = \lambda'_{k};
+\]
+they will belong to the same class if
+\[
+\lambda_{k} = \lambda'_{k} + \sum m_{j} \mu_{jk} + \sum m'_{j} \mu'_{jk},
+\]
+the $m$ and the $m'$ being integers. For other details on the classification of algebraic curves, the number of primitive curves, and the manner of deducing all curves from primitive curves, I shall refer to the cited Memoir.
+
+One may ask what happens when one varies the line $\mathrm{D}$ in a continuous manner. Singular values correspond to tangent planes drawn from $\mathrm{D}$ to $\mathrm{S}$. Two of these values interchange when $\mathrm{D}$ turns around a position where it is tangent to the surface $\mathrm{S}$. At the same time, two of the points $\mathrm{A}_{j}$ and, consequently, two of the functions $a_{i}^{j}$ interchange as well.
+
+What happens then? The integer $\lambda_{k}$ which according to Section~3 is attached to each of the singular values $y_{k}$ depends on two things~: $1^{\circ}$ on that of the determinations of $v_{i}$ which is considered; $2^{\circ}$ on the shape or rather on the relative arrangement of the cuts $\mathrm{Q}_{k}$ which in Section~3 we drew from $y_{k}$ to infinity in the $y$-plane. When the line $\mathrm{D}$ moves in a continuous manner, the number $\lambda_{k}$ will remain constant; but at the same time our cuts will deform and their relative arrangement may change. Suppose,
+\origpage{169}
+for example, that in the initial situation the cuts $\mathrm{Q}_{k}$ are rectilinear, and directed along the extension of the radius vector going from the origin to $y_{k}$; in a subsequent position, the cuts $\mathrm{Q}_{k}$ will have ceased to be rectilinear, and if one replaces them by new rectilinear cuts $\mathrm{Q}'_{k}$ going from the new singular values to infinity along the extension of the radius vector coming from the origin, it may happen that the new cuts $\mathrm{Q}'_{k}$ are not equivalent to the old cuts $\mathrm{Q}_{k}$ and that the integers $\lambda'_{k}$ relative to the $\mathrm{Q}'_{k}$ are not equal to the $\lambda_{k}$.
+
+Let $\mathrm{D}_{0}$ be a singular position of the line $\mathrm{D}$, that is to say a position such that $\mathrm{D}_{0}$ touches $\mathrm{S}$; we shall suppose that $\mathrm{D}$ turns around $\mathrm{D}_{0}$ while deviating very little from it; then two singular values $y_{1}$ and $y_{2}$ will remain very little different from each other and will interchange between themselves. The cuts $\mathrm{Q}_{1}$ and $\mathrm{Q}_{2}$, initially rectilinear, will deform in a continuous manner and will be replaced by curvilinear cuts terminating, the first at $y_{2}$, the second at $y_{1}$, since these two singular values have interchanged. Examination of this deformation would show that the integers $\lambda_{1}$ and $\lambda_{2}$ have interchanged, and as the curve $\mathrm{C}$ must not have changed, one must conclude that $\lambda_{1} = \lambda_{2}$. As, in general, by varying $\mathrm{D}$ in a continuous manner so as to bring this line back to its initial position, one can pass from one singular value to any other singular value, one might be tempted to conclude that all the $\lambda_{k}$ are equal to one another. That would be an error; the integers $\lambda$ relative to two rectilinear cuts terminating at two singular values on the point of interchanging are equal; but in varying $\mathrm{D}$, it happens that one of these values, $y_{2}$ for example, is on the point of interchanging with a third singular value $y_{3}$; the cuts $\mathrm{Q}_{k}$ will not have remained rectilinear, and if we replace them by new rectilinear cuts $\mathrm{Q}'_{k}$, the values of the integers $\lambda$ will be modified. If then $\lambda_{2}$ and $\lambda_{3}$ are the integers relative to $\mathrm{Q}_{2}$ and to $\mathrm{Q}_{3}$, and $\lambda'_{2}$ and $\lambda'_{3}$ the integers relative to $\mathrm{Q}'_{2}$ and to $\mathrm{Q}'_{3}$, one will have, not $\lambda_{2} = \lambda_{3}$, but $\lambda'_{2} = \lambda'_{3}$. A more detailed study of the variations of these integers might present some interest.
+
+\section*{6. --- Equations of Curves $\mathrm{C}$.}
+
+To form the equation of the curve $\mathrm{C}$ which corresponds to a given system $v_{i}$ of normal functions and which cuts $\mathrm{K}_{y}$ in $p$ variable points, one can employ the following procedure.
+
+Let $\mathrm{P} = 0$, $\mathrm{Q} = 0$ be the equations of two arbitrary planes; let $\mathrm{M}_{1}$,
+\origpage{170}
+$\mathrm{M}_{2}, \ldots, \mathrm{M}_{p}$ be the $p$ moving points of intersection of $\mathrm{C}$ and $\mathrm{K}_{y}$; let $\mathrm{P}_{i}$ and $\mathrm{Q}_{i}$ be the results of substituting the coordinates of $\mathrm{M}_{i}$ into $\mathrm{P}$ and into $\mathrm{Q}$; we shall consider the following product~:
+\[
+\frac{\mathrm{P}_{1}\mathrm{P}_{2}\ldots\mathrm{P}_{p}}{\mathrm{Q}_{1}\mathrm{Q}_{2}\ldots\mathrm{Q}_{p}} = \mathrm{H}(y,\, \mathrm{C}).
+\]
+It is a symmetric function of the coordinates of $\mathrm{M}_{1}, \mathrm{M}_{2}, \ldots, \mathrm{M}_{p}$, and as the coefficients of the two polynomials $\mathrm{P}$ and $\mathrm{Q}$ are arbitrary, all the other symmetric functions can be deduced from it. This product $\mathrm{H}(y,\, \mathrm{C})$ is evidently a function of $y$, and it depends also on the curve $\mathrm{C}$.
+
+Let $\mathrm{B}_{1}, \mathrm{B}_{2}, \ldots, \mathrm{B}_{n}$ be the points of intersection of $\mathrm{P} = 0$ with $\mathrm{K}_{y}$; let $\mathrm{C}_{1}, \mathrm{C}_{2}, \ldots, \mathrm{C}_{n}$ be those of $\mathrm{Q} = 0$ with $\mathrm{K}_{y}$. Let $b_{i}^{k}$ and $c_{i}^{k}$ be the values of the integral $u_{i}$ at the point $\mathrm{B}_{k}$ and at the point $\mathrm{C}_{k}$; one will have by virtue of Abel's theorem
+\[
+\sum b_{i}^{k} = \sum c_{i}^{k} = \sum a_{i}^{k}. \tag{3}
+\]
+
+Let us consider the expression
+\[
+\frac{\prod \Theta_{0}(v_{i} - b_{i}^{k} - h_{i})}{\prod \Theta_{0}(v_{i} - c_{i}^{k} - h_{i})} = \mathrm{G}(y,\, \mathrm{C}).
+\]
+One has, of course, $v_{i} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{p}$ and the product indicated by the sign $\Pi$ must be extended to all the $b_{i}^{k}$ for the numerator, and to all the $c_{i}^{k}$ for the denominator. If one considers for a moment $y$ as given, and varies the curve $\mathrm{C}$, that is to say the points $\mathrm{M}_{1}, \mathrm{M}_{2}, \ldots, \mathrm{M}_{p}$ on the curve $\mathrm{K}_{y}$, one sees what the condition is for $\mathrm{G}$ to vanish or become infinite; it will vanish when~:
+\[
+v_{i} - b_{i}^{k} = u_{i}^{1} + u_{i}^{2} + \ldots + u_{i}^{p-1},
+\]
+that is to say when the point $\mathrm{M}_{p}$ comes to $\mathrm{B}_{k}$, that is to say when one of the points $\mathrm{M}$ coincides with one of the points $\mathrm{B}$, that is to say when one of the $\mathrm{P}_{i}$ vanishes. Similarly, $\mathrm{G}$ will become infinite when one of the $\mathrm{Q}_{i}$ vanishes. Therefore $\mathrm{G}$
+\origpage{171}
+and $\mathrm{H}$ become zero or infinite at the same time; therefore they differ only by a constant factor. One has therefore
+\[
+\frac{\mathrm{H}(y,\, \mathrm{C})}{\mathrm{G}(y,\, \mathrm{C})} = \frac{\mathrm{H}(y,\, \mathrm{C}_{0})}{\mathrm{G}(y,\, \mathrm{C}_{0})},
+\]
+$\mathrm{C}_{0}$ being another curve; we shall take a curve reducing to $p$ times the point $\mathrm{A}_{1}$, so that one will have for $\mathrm{C}_{0}$
+\[
+v_{i} = p a_{i}^{1} = 0,
+\]
+\[
+\mathrm{G}(y,\, \mathrm{C}_{0}) = \frac{\prod \Theta_{0}(- b_{i}^{k} - h_{i})}{\prod \Theta_{0}(- c_{i}^{k} - h_{i})}, \qquad \mathrm{H}(y,\, \mathrm{C}_{0}) = \left(\frac{\mathrm{P}_{0}}{\mathrm{Q}_{0}}\right)^{p},
+\]
+$\mathrm{P}_{0}$ and $\mathrm{Q}_{0}$ being the results of substituting the coordinates of $\mathrm{A}_{1}$ into $\mathrm{P}$ and $\mathrm{Q}$. I propose to show that if the $v_{i}$ are normal functions, the ratio
+\[
+\frac{\mathrm{H}(y,\, \mathrm{C})}{\mathrm{H}(y,\, \mathrm{C}_{0})} = \frac{\mathrm{G}(y,\, \mathrm{C})}{\mathrm{G}(y,\, \mathrm{C}_{0})}
+\]
+is a rational function of $y$; I say first that it is a single-valued function of $y$; this is what one sees immediately, on recalling that it is equal to
+\[
+\frac{\mathrm{P}_{1}\mathrm{P}_{2}\ldots\mathrm{P}_{p}}{\mathrm{Q}_{1}\mathrm{Q}_{2}\ldots\mathrm{Q}_{p}}\left(\frac{\mathrm{Q}_{0}}{\mathrm{P}_{0}}\right)^{p}.
+\]
+It is moreover an algebroid function of $y$~: indeed, it is equal to
+\[
+\frac{\prod \Theta_{0}(v_{i} - b_{i}^{k} - h_{i})\,\Theta_{0}(- c_{i}^{k} - h_{i})}{\prod \Theta_{0}(v_{i} - c_{i}^{k} - h_{i})\,\Theta_{0}(- b_{i}^{k} - h_{i})}.
+\]
+For ordinary values of $y$, as well as for critical values of both kinds, one would see as in Section~3 that it is a meromorphic function; one must also consider separately the values for which two of the $b_{i}^{k}$ (or of the $c_{i}^{k}$) interchange with each other; for these values, the $b_{i}^{k}$ are algebroid functions of $y$, and since our expression is symmetric with respect to the $b_{i}^{k}$, it remains meromorphic in $y$.
+
+There remain singular values; we have seen that the $\omega_{ki}$, the $v_{i}$, the $b_{i}^{k}$, the $h_{i}$ become logarithmically infinite for a singular value, and it was concluded in Section~3 that the $\Theta_{0}$ remain algebroid. When $y$ turns around a singular value, the arguments of the $\Theta_{0}$ may increase by a half-period, and at the same time the periods may be replaced by an equivalent system.
+
+Each of the $\Theta_{0}$ changes into $e^{\mathrm{P}}\Theta$, $\mathrm{P}$ being a polynomial of the first degree, and
+\origpage{172}
+$\Theta$ one of the $2^{2p}$ functions $\Theta$; the exponentials cancel and our product becomes
+\[
+\frac{\prod \Theta(v_{i} - b_{i}^{k} - h_{i})\,\Theta(- c_{i}^{k} - h_{i})}{\prod \Theta(v_{i} - c_{i}^{k} - h_{i})\,\Theta(- b_{i}^{k} - h_{i})}.
+\]
+As it must be a single-valued function of $y$, the function $\Theta$ must not differ from $\Theta_{0}$. We saw at the end of Section~4 the condition for this to be so. This proves therefore that $2h_{i}$ is a normal function for which all the integers $\lambda$ are odd.
+
+In summary, our ratio is a function of $y$ that is single-valued and algebroid. It is therefore meromorphic for all finite values of $y$. \emph{It is therefore rational.}
+
+These procedures may well show that the curve $\mathrm{C}$ is algebraic, but not make its degree known; I think it necessary therefore also to indicate another analysis, similar to that of Section~II of the cited Memoir. Let
+\[
+u_{i} = \int \frac{\mathrm{P}_{i} dx}{\mathrm{Q}\mathrm{F}'_{z}}
+\]
+which is an integral of the first kind; we shall set
+\[
+\mathrm{U}_{i} = \frac{\partial u_{i}}{\partial y} = \int \left[ \frac{\partial}{\partial y}\left(\frac{\mathrm{P}_{i}}{\mathrm{Q}\mathrm{F}'_{z}}\right)\mathrm{F}'_{z} - \frac{\partial}{\partial z}\left(\frac{\mathrm{P}_{i}}{\mathrm{Q}\mathrm{F}'_{z}}\right)\mathrm{F}'_{y} \right] \frac{dx}{\mathrm{F}'_{z}}.
+\]
+I write $\frac{\partial u_{i}}{\partial y}$ with round $\partial$ to express that I have differentiated with respect
+\origpage{173}
+to $y$, $x$ being assumed constant and $z$ connected to $y$ and $x$ by the equation of the surface (one assumes moreover $t = 1$). One sees that $\mathrm{U}_{i}$ is an abelian integral of the second kind. Similarly, the partial derivative $\frac{\partial \mathrm{U}_{i}}{\partial y}$ is an abelian integral of the second kind; now any abelian integral of the second or first kind can be expressed by a linear function of $2p$ among them, plus a rational function; we shall therefore have
+\[
+\frac{\partial \mathrm{U}_{i}}{\partial y} = \sum \rho_{ik} u_{k} + \sum \rho'_{ik} \mathrm{U}_{k} + \mathrm{H},
+\]
+$\mathrm{H}$ being a rational function of $x, y, z$ and the $\rho$ and $\rho'$ rational functions of $y$. Suppose now that the point $(x, y, z)$, the upper limit of our integral, instead of moving in such a way that $x = \mathrm{const.}$, moves on the curve $\mathrm{C}$; we shall have
+\[
+\frac{du_{i}}{dy} = \frac{\partial u_{i}}{\partial y} + \frac{\partial u_{i}}{\partial x}\frac{dx}{dy}, \qquad \frac{d\mathrm{U}_{i}}{dy} = \frac{\partial \mathrm{U}_{i}}{\partial y} + \frac{\partial \mathrm{U}_{i}}{\partial x}\frac{dx}{dy}.
+\]
+It will be remarked that $\frac{\partial u_{i}}{\partial x}$ and $\frac{\partial \mathrm{U}_{i}}{\partial x}$ are rational functions of $x, y, z$; they are the quantities under the sign $\displaystyle\int$ of the abelian integrals $u_{i}$ and $\mathrm{U}_{i}$. We find, similarly,
+\[
+\frac{d^{2}u_{i}}{dy^{2}} = \frac{\partial^{2}u_{i}}{\partial y^{2}} + 2 \frac{\partial^{2}u_{i}}{\partial x \partial y}\frac{dx}{dy} + \frac{\partial^{2}u_{i}}{\partial x^{2}}\left(\frac{dx}{dy}\right)^{2} + \frac{\partial u_{i}}{\partial x}\frac{d^{2}x}{dy^{2}}.
+\]
+The partial derivatives $\frac{\partial^{2}u_{i}}{\partial x^{2}}$, $\frac{\partial^{2}u_{i}}{\partial x \partial y}$ are likewise rational functions of $x, y, z$. From this one deduces
+\[
+\frac{d^{2}u_{i}}{dy^{2}} - \sum \rho_{ik} u_{k} - \sum \rho'_{ik}\frac{du_{k}}{dy} = \frac{dx}{dy}\left[ 2 \frac{\partial^{2}u_{i}}{\partial x \partial y} - \sum \rho'_{ik}\frac{\partial u_{k}}{\partial x} \right] + \frac{\partial^{2}u_{i}}{\partial x^{2}}\left(\frac{dx}{dy}\right)^{2} + \frac{\partial u_{i}}{\partial x}\frac{d^{2}x}{dy^{2}} + \mathrm{H}. \tag{4}
+\]
+The first member of (4) may be called $\Delta_{i}(u_{i})$, the symbol $\Delta_{i}$ having thus a meaning different from that which we have attributed to it up to here. As for the second member, which we shall write $\Phi_{i}\left(x,\, y,\, z,\, \frac{dx}{dy},\, \frac{d^{2}x}{dy^{2}}\right)$, it is a rational function of the arguments on which it depends; $z$ is moreover connected to $x$ and $y$ by the equation of the surface.
+
+One will then have for our curve $\mathrm{C}$
+\[
+\Delta_{i}(v_{i}) = \Phi_{i}^{1} + \Phi_{i}^{2} + \ldots + \Phi_{i}^{p},
+\]
+where $\Phi_{i}^{k}$ is the result of substituting in $\Phi$ the coordinates of the point $\mathrm{M}_{k}$
+\origpage{174}
+in place of $x, y, z$, as well as the corresponding values of the derivatives $\frac{dx}{dy}$ and $\frac{d^{2}x}{dy^{2}}$.
+
+One has, moreover,
+\[
+\Delta_{i}(\omega_{ki}) = 0
+\]
+and this is one form of the differential equations that define the periods. When $y$ describes a closed contour, $v_{i}$ increases by a period, say $\omega_{ki}$; then $\Delta_{i}(v_{i})$ changes into $\Delta_{i}(v_{i}) + \Delta_{i}(\omega_{ki})$, that is to say it does not change. Therefore $\Delta_{i}(v_{i})$ is a single-valued function of $y$; we would see as in Section~3 that it is a rational function of $y$ of bounded degree; let $\mathrm{R}_{i}(y)$ be this rational function; we shall then have
+\[
+\sum \Phi_{i}^{k} = \mathrm{R}_{i}(y). \tag{5}
+\]
+These are differential equations that define the $x$ as functions of $y$, that is to say which define the equation of the curve $\mathrm{C}$. These equations are $p$ in number, since the index $i$ can take $p$ values; and the same holds for the unknowns $x_{1}, x_{2}, \ldots, x_{p}$.
+
+Knowing that these differential equations have an algebraic integral, it would not be difficult to determine its degree.
+
+\section*{7. --- Elimination of Critical Values of the Second Kind.}
+
+The existence of \emph{rational} normal functions entails, on the one hand, the existence of an algebraic and non-linear system of algebraic curves, and on the other hand, that of abelian integrals of total differentials of the first kind. This is the theorem of Castelnuovo, Enriques, and Severi. I do not have to reproduce here the proof that I gave of it in the cited Memoir. I confine myself to recalling the result. In this case, the curve $\mathrm{K}_{y}$ possesses $q$ \emph{reducible} abelian integrals of the first kind, that is to say possessing only $2q$ distinct periods. Let $u_{1}, u_{2}, \ldots, u_{q}$ be these integrals; it is known that if a curve of genus $p$ admits $q$ reducible integrals, it will admit $p - q$ others, possessing only $2p - 2q$ distinct periods. I call these $p - q$ integrals~: $u_{q+1}, u_{q+2}, \ldots, u_{p}$. This corresponds to a particular choice of the integrals $u_{i}$; I assume another choice of these integrals, without subjecting myself to any condition, and I then call $u'_{1}, u'_{2}, \ldots, u'_{p}$ my $p$ integrals of the first kind; if there exists a $q$-fold infinite system of rational normal functions, $v'_{i}$, we shall have between them $p - q$ linear relations of the form
+\[
+\sum \alpha_{ki} v'_{i} = 0 \qquad (k = q + 1,\, q + 2,\, \ldots,\, p),
+\]
+\origpage{175}
+the $\alpha_{ki}$ being rational functions of $y$. Then the integrals
+\[
+u_{k} = \sum \alpha_{ki} u'_{i} \qquad (k = q + 1,\, q + 2,\, \ldots,\, p),
+\]
+will be $p - q$ reducible integrals. This entails the existence of an algebraic $q$-fold infinite system of algebraic curves corresponding to our system of rational normal functions and, on the other hand, the existence of $q$ other reducible integrals $u_{k} = \displaystyle\sum \alpha_{ki} u'_{i}$ ($k = 1, 2, \ldots, q$), the $\alpha_{ki}$ being still rational functions of $y$. We can choose these new functions $\alpha_{ki}$ in such a way that the normal functions $\displaystyle\sum \alpha_{ki} v'_{i}$ reduce to constants. \emph{In this case the integrals $u_{k}$ are integrals of total differentials of the first kind.}
+
+There is another point to which I should like to return in greater detail. I stated at the end of Section~1, and I should now like to prove, a theorem according to which it is impossible that there exist integrals devoid of critical values of the first kind, in the sense of the end of Section~1, so long as there exist critical values of the second kind. Let indeed $y_{1}, y_{2}, \ldots, y_{\nu}$ be the critical values of the second kind and
+\[
+\mathrm{Q} = (y - y_{1})(y - y_{2})\ldots(y - y_{\nu}).
+\]
+Let $u_{1}, u_{2}, \ldots, u_{q}$ be $q$ integrals devoid of critical values of the first kind, in the sense of the end of Section~1, so that for any critical value of the first kind one has a linear relation
+\[
+\alpha_{q+1} v_{q+1} + \alpha_{q+2} v_{q+2} + \ldots + \alpha_{p} v_{p} = 0,
+\]
+where there appear only the functions $v$ of index greater than $q$. The functions $v$ of index less than or equal to $q$ are therefore subject to no condition relating to critical values of the first kind. We shall therefore obtain a system of normal functions by writing
+\[
+v_{q+1} = v_{q+2} = \ldots = v_{p} = 0, \qquad v_{i} = \frac{\mathrm{X}_{i}}{\mathrm{Q}} \qquad (i = 1,\, 2,\, \ldots,\, q),
+\]
+$\mathrm{X}_{i}$ being an arbitrary polynomial of degree $\nu$ in $y$; I shall call $\gamma$ the coefficients of these polynomials $\mathrm{X}$. These coefficients are $q(\nu + 1)$ in number; our system of normal functions is therefore $q(\nu + 1)$-fold infinite.
+
+Let now $a_{1}, a_{2}, \ldots, a_{\nu+1}$ be $\nu + 1$ values of $y$, ordinary, but otherwise arbitrary. Let $\mathrm{C}$ be the curve corresponding to determinate values
+\origpage{176}
+of the coefficients $\gamma$; let $\mathrm{M}_{k1}$, $\mathrm{M}_{k2}$, \dots, $\mathrm{M}_{kp}$ be the $p$ moving points of intersection of $\mathrm{C}$ with the plane $y = a_{k}$. Let $\xi_{1ki}, \xi_{2ki}, \xi_{3ki}$ be the three coordinates of the points $\mathrm{M}_{ki}$. The $\xi$ are $3p(\nu+1)$ in number. If we consider them as the coordinates of a point $\mathrm{N}$ in $3p(\nu+1)$-dimensional space and if we vary the $\gamma$, this point will remain on an algebraic variety $\mathrm{V}$ of $q(\nu+1)$ dimensions.
+
+Instead of the $\xi$ we may consider a system of symmetric functions of
+\[
+\xi_{hk1}, \quad \xi_{hk2}, \quad \dots, \quad \xi_{hkp}.
+\]
+Let $\eta$ be these symmetric functions, which I shall take to be $3p(\nu+1)$ in number; if we consider the $\eta$ as the coordinates of a point $\mathrm{N}'$ in $3p(\nu+1)$-dimensional space, when the $\eta$ vary, this point will describe an algebraic variety $\mathrm{V}'$ of $q(\nu+1)$ dimensions. To every point of $\mathrm{V}'$ there will correspond a system of values of the $\eta$, and conversely. When the point $\mathrm{N}'$ describes a closed curve on $\mathrm{V}'$, the $\gamma$ will reproduce themselves up to a period; I make this precise~:
+
+If the point $\mathrm{N}'$ is given, the points $\mathrm{M}_{ki}$ are determined~: this determines \emph{up to a period} the values of the $v_{i}$ for
+\[
+y = a_{1}, \qquad y = a_{2}, \qquad \dots, \qquad y = a_{\nu+1};
+\]
+when the $v_{i}$ are known, one has linear equations, whose determinant is not zero, and which completely determine the coefficients $\gamma$. When the point $\mathrm{N}'$ describes a closed contour, the values of the $v_{i}$ for $y = a_{j}$, for example, increase by a quantity $\Omega_{ji}$ which is equal to a period of the abelian integral $u_{i}$ for $y = a_{j}$. The $\gamma$ increase by $\varepsilon$ and the normal functions $\frac{\mathrm{X}_{i}}{\mathrm{Q}}$ change into $\frac{\mathrm{X}_{i}}{\mathrm{Q}} + \frac{\mathrm{X}'_{i}}{\mathrm{Q}}$, where the polynomial $\mathrm{X}'_{i}$ differs from the polynomial $\mathrm{X}_{i}$ by the substitution of the coefficients $\varepsilon$ for the coefficients $\gamma$; the coefficients $\varepsilon$ will then be determined by the equations
+\[
+\frac{\mathrm{X}'_{i}}{\mathrm{Q}} = \Omega_{ji} \qquad \text{for } y = a_{j}.
+\]
+
+These $\varepsilon$ are the \emph{periods} of the $\gamma$, since they are the quantities by which the $\gamma$ increase when $\mathrm{N}'$ describes a closed contour.
+
+I say now that $\frac{\mathrm{X}'_{i}}{\mathrm{Q}}$ is, \emph{whatever $y$ may be, a period of $u_{i}$}. Indeed, the system of curves $\mathrm{C}$, defined by our rational normal functions, is an algebraic system. Therefore, either a point $\mathrm{N}'$ defines a finite number of
+\origpage{177}
+curves $\mathrm{C}$, or else a \emph{continuous} infinity of curves $\mathrm{C}$; this latter hypothesis must be rejected; we have seen, indeed, that the point $\mathrm{N}'$ defines the $v$ up to a period; it defines therefore a discrete infinity of systems of values of the $\gamma$ and, consequently, a \emph{discrete} multiplicity, finite or infinite, of curves $\mathrm{C}$. Now, one can change $\frac{\mathrm{X}_{i}}{\mathrm{Q}}$ into $\frac{\mathrm{X}_{i}}{\mathrm{Q}} - \lambda \frac{\mathrm{X}'_{i}}{\mathrm{Q}}$, $\lambda$ being any integer; we must find in this way only a finite number of curves $\mathrm{C}$; that is possible only if, whatever $y$ may be moreover, the expression $\frac{\mathrm{X}'_{i}}{\mathrm{Q}}$ is equal to a submultiple of a period, say $\frac{h}{h'}\varpi_{ki}$, $h$ and $h'$ being integers. When one varies $y$ in a continuous manner, the integers $h$ and $h'$, which could vary only by abrupt jumps, will remain constant. But for $y = a_{j}$, $\frac{h}{h'}$ is an integer; therefore this is true for every value of $y$; therefore $\frac{\mathrm{X}'_{i}}{\mathrm{Q}}$ is a period, whatever the value of $y$ may be. \hfill \textsc{q.~e.~d.}
+
+For $i = q+1, q+2, \dots, p$, one can still set $v_{i} = \frac{\mathrm{X}_{i}}{\mathrm{Q}}$, but this time all the coefficients of $\mathrm{X}_{i}$ will be constrained to be zero. Therefore the corresponding $\varepsilon$ will be zero as well. \emph{Therefore to each period of the $\gamma$ corresponds a period of the $u_{i}$, which is a rational function of $y$ for $i \le q$, and which is zero for $i > q$}.
+
+If now we are given the $\gamma$, the $\eta$ will be manifestly determined; they are therefore single-valued functions of the $\gamma$. On the other hand, the $v_{i}$ and, consequently, the $\gamma$ are always finite.
+
+If we represent the real and imaginary parts of the $q(\nu+1)$ coefficients $\gamma$ in $2q(\nu+1)$-dimensional space, we can construct the \emph{prismatoid} of periods. This prismatoid must be bounded, since the $\gamma$ cannot become infinite; therefore there are $2q(\nu+1)$ distinct periods.
+
+There would therefore be $2q(\nu+1)$ periods of the $p$ abelian integrals $u_{i}$ that would be zero for $p-q$ of these integrals (those where $i > q$).
+
+Let us form the determinant of the real and imaginary parts of the $2p$ periods of our $p$ integrals. In the last $2p - 2q$ rows of this determinant, the elements of the last $2q(\nu+1)$ columns will be zero. The determinant will therefore be zero if
+\[
+(2p - 2q) + 2q(\nu+1) > 2p
+\]
+\origpage{178}
+that is to say if $\nu$ is not zero. Now we know that such a determinant cannot vanish for a non-degenerate curve of genus $p$; it is therefore necessary that $\nu = 0$, that is to say that there be no critical value of the second kind. This is what we wished to establish.
+
+Applying the reasoning of Section~1, we see therefore that it will always be possible to eliminate the critical values of the second kind.
+
+This is what we can express by saying that one can always make pass through the double curve $p$ distinct surfaces of order $n-2$, not considering as distinct the surfaces $f_{1}=0$, $f_{2}=0$, \dots, $f_{p}=0$ if there is between the left-hand sides an identical linear relation whose coefficients are homogeneous entire polynomials in $y$ and $t$.
+\end{document}
