@@ -2241,4 +2241,132 @@ Wir hatten uns bei diesen Überlegungen zu stützen auf den
 \emph{Hilfssatz: Ist $\chi_S$ ein vorgegebenes Charakterensystem, so existieren stets Funktionen $\Theta$, deren Multiplikatoren $= \chi_S$ sind.}
 
 \textbf{1)} Zuerst formuliert von E.~Ritter, Math.\ Ann.\ Bd.~44, S.~314. Vgl.\ jedoch die Fußnote auf S.~122. Ritter verwendet statt der Divisorensymbolik die von Klein begründete Formentheorie auf Riemannschen Flächen, welche eine rcale\ednote{Druckfehler im Original: rcale statt reale.} Darstellung der Divisoren mit Hilfe mnltiplikativer\ednote{Druckfehler im Original: mnltiplikativer statt multiplikativer.} Formen ermöglicht, und verallgemeinert in Math.\ Ann.\ Bd.~47 (1896), S.~157---221, von den durch Riemann in die Theorie der linearen Differentialgleichungen eingeführten Grundsätzen geleitet, seine Untersuchungen auf Systeme von $n$ Formen, die sich bei Ausübung einer Decktransformation $S$ homogen-linear transformieren.
+
+\origpage{131}Nach dem Abelschen Theorem kommt die Auffindung einer solchen Funktion
+\[ \Theta_0 = \frac{q_1 q_2 \dots q_n}{q_1^0 q_2^0 \dots q_n^0} \]
+darauf hinaus, Punkte $q_l, q_l^0 [l = 1, 2, \dots, n]$ so zu finden, daß
+\[ \sum_{l=1}^n \{ w_h^*(q_l) - w_h^*(q_l^0) \} = \text{vorgegebenen Werten } \mathfrak{F}_h \quad [h = 1, 2, \dots, p] \tag{47} \]
+wird. $q_1^0, \dots q_p^0$ seien $p$ voneinander verschiedene Punkte, welche so gelegen sind, daß kein Differential 1.\ Gattung an diesen $p$ Stellen gleichzeitig verschwindet (S.~123), $z_l$ zugehörige Ortsuniformisierende, $\mathrm{K}_l$ solche $z_l$-Kreise um $q_l^0$, welche sich gegenseitig nirgendwo überdecken. Die Gleichungen
+\[ \sum_{l=1}^p \int\limits_{q_l^0}^{q_l} dw_h^* = \mathfrak{F}_h \quad [h = 1, 2, \dots, p] \tag{48} \]
+für die Unbekannten $q_l$ haben, wenn die vorgegebenen Werte $\mathfrak{F}_h$ hinreichend klein sind, eine und nur eine Lösung, bei welcher $q_l$ (samt dem Integrationswege $q_l^0 q_l$) innerhalb $\mathrm{K}_l$ zu liegen kommt, da die Funktionaldeterminante
+\[ \left| \frac{dw_h^*(z_l)}{dz_l} \right|_{z_1 = 0, \dots, z_p = 0} \neq 0. \]
+Sind aber $\mathfrak{F}_h$ beliebige Werte, so wähle man zunächst eine ganze positive Zahl $N$ so groß, daß eine solche Auflösung $q_l [l = 1, 2, \dots, p]$ der Gleichungen (48) möglich ist, wenn man rechts $\mathfrak{F}_h$ durch $\frac{\mathfrak{F}_h}{N}$ ersetzt. Dann liegt auch eine Lösung der (unveränderten) Gleichungen (47) vor, bei der $n = Np$ ist und in der Reihe $q_1 q_2 \dots q_n$ jeder der Punkte $q_1 \dots q_p$, in der Reihe $q_1^0 q_2^0 \dots q_n^0$ jeder der Punkte $q_1^0 \dots q_p^0$ im ganzen $N$-mal auftritt.
+
+Das \emph{Umkehrproblem} (46) \emph{ist stets lösbar}, wie wir oben sahen; \emph{es besitzt aber im allgemeinen auch nur eine Lösung}. Die Lösung ist nach dem verallgemeinerten Riemann-Rochschen Satz nämlich nur dann mehrdeutig (unendlich-vieldeutig), wenn ein Prymsches Differential
+\[ dT = \mathfrak{p}_0^p \cdot (q_1 q_2 \dots q_{p-2}) = \mathfrak{t} \]
+mit den Multiplikatoren $\chi_S^{-1}$ existiert, das an der Stelle $\mathfrak{p}_0$ von mindestens $p^{\text{ter}}$ Ordnung verschwindet; dann aber ist
+\[ \chi_S = \frac{\chi_S^0}{\chi_S(\mathfrak{t})} = \chi_S^0 : \prod_{i=1}^{p-2} \chi_S(q_i). \]
+Innerhalb der $2p$-dimensionalen Mannigfaltigkeit aller möglichen Charakterensysteme bilden diejenigen, welche man aus dieser Formel erhält, wenn $q_1, \dots, q_{p-2}$ unabhängig voneinander die Fläche $\mathfrak{F}$ durchlaufen,
+
+\origpage{132}eine nur $(2p - 4)$-dimensionale Mannigfaltigkeit $\mathrm{X}$, die für das Umkehrproblem die Rolle eines \emph{singulären Gebildes} übernimmt.${}^{1)}$
+
+Ist $\chi_S$ ein beliebiges vom Hauptcharakter verschiedenes Charakterensystem, so kann man die Punkte $q_1, q_2, \dots, q_{p-2}$ so annehmen, daß (bis auf einen konstanten Faktor) nur ein einziges Prymsches Differential 1.\ Gattung
+\[ dT = (q_1 \dots q_{p-2}) \cdot (p_1 p_2 \dots p_p) \]
+mit den Multiplikatoren $\chi_S$ existiert, das in jenen Punkten verschwindet, --- gemäß dem Satz, daß die Prymschen Differentiale 1.\ Gattung eine $(p - 1)$-dimensionale Schar bilden. Diese Wahl hat zur Folge, daß die Gleichung
+\[ \prod_{l=1}^p \chi_S(p_l) = \chi_S \cdot \left( \chi_S^0 : \prod_{i=1}^{p-2} \chi_S(q_i) \right) \]
+nur eine einzige Lösung $p_1 p_2 \dots p_p$ besitzt, oder: daß das auf der linken Seite dieser Gleichung stehende Charakterensystem \emph{nicht singulär} ist. Hingegen gehört der rechts in Klammern gesetzte Bruch zu $\mathrm{X}$. Daß es nur $p - 1$ Prymsche Differentiale 1.\ Gattung gibt, ist demnach, wenn wir uns der Sprache des Umkehrproblems bedienen, dem Satze äquivalent:
+
+\emph{Das singuläre Gebilde $\mathrm{X}$ geht niemals dadurch, daß man alle zu ihm gehörigen Charakterensysteme der Multiplikation mit einem festen Charakterensystem $\chi_S$ unterwirft, in sich über} (vom trivialen Falle $\chi_S = 1$ natürlich abgesehen).
+
+Dies mag genügen, um den Zusammenhang des Umkehrproblems mit der Theorie der multiplikativen Funktionen und Differentiale deutlich zu machen. \emph{Analytisch} wird man die Auflösung des Jacobischen Problems in der Weise angreifen, daß man eine willkürliche, auf $\mathfrak{F}$ eindeutige, bis auf Pole reguläre Funktion $f(\mathfrak{p})$ zu Hilfe nimmt und dann statt der Punkte $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_p$ selbst die Werte der Funktion $f$ an den Stellen $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_p$ aus (45) in ihrer Abhängigkeit von $\mathcal{F}_1, \mathcal{F}_2, \dots, \mathcal{F}_p$ zu ermitteln sucht. Da diese Größen $f(\mathfrak{p}_1), f(\mathfrak{p}_2), \dots, f(\mathfrak{p}_p)$ aber nur bis auf ihre Reihenfolge bestimmt sind, ersetzt man sie richtiger durch ihre \emph{elementar-symmetrischen} Funktionen, d.~h.\ durch die Koeffizienten derjenigen Gleichung $p^{\text{ten}}$ Grades
+\[ \lambda^p + A_1 \lambda^{p-1} + \dots + A_p = 0, \]
+deren Wurzeln die Zahlen
+\[ \lambda = f(\mathfrak{p}_1), f(\mathfrak{p}_2), \dots, f(\mathfrak{p}_p) \]
+sind. Diese Koeffizienten $A_h$, ausgedrückt in $\mathcal{F}_1, \mathcal{F}_2, \dots, \mathcal{F}_p$, sind das, was man nach Jacobis Vorschlag \textbf{Abelsche Funktionen} nennt. Außer
+
+\textbf{1)} Im Falle $p = 1$ ist $\mathrm{X}$ überhaupt nicht vorhanden (S.~127), im Falle $p = 2$ besteht es aus dem einzigen Charakterensystem $\chi_S^0$.
+
+\origpage{133}für singuläre Wertsysteme $(\mathcal{F}) = (\mathcal{F}_1, \mathcal{F}_2, \dots, \mathcal{F}_p)$, die im gesamten $2p$-dimensionalen $\mathcal{F}$-Raum nur ein Gebilde von $(2p - 4)$ Dimensionen ausmachen, sind die Abelschen Funktionen \emph{eindeutig und regulär-analytisch}. Sie sind ferner \emph{$(2p)$-fach periodisch}. Ist nämlich $\alpha_l [l = 1, 2, \dots, 2p]$ eine Basis der geschlossenen Wege auf $\mathfrak{F}$ und
+\[ a_h^l = \int\limits_{\alpha_l} dw_h^*, \]
+so bilden die Zahlen $a_1^l, a_2^l, \dots, a_p^l$ für jeden Wert des Index $l$ ein Periodensystem der Abelschen Funktionen $A((\mathcal{F}))$:
+\[ A((\mathcal{F} + a^l)) = A((\mathcal{F})) \text{ identisch in } \mathcal{F}_1, \mathcal{F}_2, \dots, \mathcal{F}_p, \]
+und diese $2p$ Periodensysteme sind in dem Sinne linear unabhängig, daß die Determinante, deren $l^{\text{te}}$ Zeile $=$
+\[ \Re a_1^l, \, \dots, \, \Re a_p^l, \, \Im a_1^l, \, \dots, \, \Im a_p^l \]
+ist, von 0 verschieden ausfällt. Führt man den Beweis, der hier für die Lösbarkeit des Umkehrproblems angegeben wurde, explizit durch, so gelangt man zu dem Resultat, daß sich eine Abelsche Funktion $A((\mathcal{F}))$ \emph{in jedem endlichen Stück des $\mathcal{F}$-Raumes}
+\[ |\mathcal{F}_1| < M, \quad |\mathcal{F}_2| < M, \, \dots, \quad |\mathcal{F}_p| < M \]
+als Quotient zweier Funktionen darstellen läßt, die in diesem endlichen Stück durchaus regulär-analytisch sind.${}^{1)}$ Die Unbestimmtheit für die singulären Wertsysteme $(\mathcal{F})$ kommt dadurch zustande, daß für diese Zähler und Nenner der erwähnten Darstellung beide verschwinden. Die von den Unbestimmtheitsstellen gebildete Punktmenge gestattet keine Verschiebungen in sich außer denjenigen, welche die Periodizität der Abelschen Funktionen als selbstverständlich mit sich bringt. --- Darüber hinaus ist von Riemann und Weierstraß durch eine viel eindringendere Analyse gezeigt worden, daß die Abelschen Funktionen, auch ohne Einschränkung auf ein endliches Gebiet, sich als Quotienten von ganzen transzendenten Funktionen, eben der $\vartheta$-Funktionen, darstellen lassen, und sie haben für die $\vartheta$-Funktion einen expliziten analytischen Ausdruck in Form einer stark konvergenten unendlichen Reihe angegeben. Diese $\vartheta$-Funktion reicht auch aus, um die allgemeine Theorie der $2p$-fach periodischen Funktionen von $p$ unabhängigen komplexen Argumenten zu begründen, von der die Theorie der Abelschen Funktionen nur ein Sonderfall ist.${}^{2)}$ ---
+
+Halten wir Rückschau auf die in diesem langen Paragraphen gewonnenen Erkenntnisse, so können wir uns vor allem der \emph{Überzeugung}
+
+\textbf{1)} Vgl.\ Weierstraß, Werke Bd.~4, S.~451---456.
+
+\textbf{2)} Vgl.\ das vierte Kapitel in Krazers Lehrbuch der Thetafunktionen (Leipzig 1903), woselbst sich auch die weitere Literatur angegeben findet.
+
+\origpage{134}von der \emph{hohen funktionentheoretischen Bedeutung der Zahl $p$} nicht verschließen; dennoch ist und bleibt diese Zahl ihrer Wurzel und ihrem Wesen nach eine \emph{Analysis-situs-Größe}. Die überall durchschimmernden einfachen Grundlinien, von denen die in ihren Details verwickelte und nicht ganz leicht zu übersehende Rechtsordnung des funktionentheoretischen Staatswesens beherrscht wird, weisen eben alle wie auf eine unsichtbare, über der funktionentheoretischen Wirklichkeit schwebende „göttliche Gesetzgeberin“ auf die Analysis situs zurück.
+
+Was aber das eigentlich Funktionentheoretische angeht, so hatten wir es mit \emph{zwei Gedankenkreisen} zu tun, die etwa durch die Schlagworte
+\begin{quote}
+additive Funktion, Partialbruchzerlegung, Riemann-Rochscher Satz ---
+
+multiplikative Funktion, Produktdarstellung, Abelsches Theorem
+\end{quote}
+nochmals einander gegenübergestellt werden mögen. Diese beiden Gedankenkreise durchdringen sich in der \emph{Theorie der eindeutigen Funktionen auf $\mathfrak{F}$}, deren Aufbau sich von hier aus mittels der in §~16 gewonnenen Reziprozitätsgesetze mühelos vollzieht. Die \emph{Bedeutung} des so errichteten Gebäudes wird aber erst ins rechte Licht gesetzt, wenn wir das System der singularitätenfreien eindeutigen Funktionen auf einer geschlossenen Riemannschen Fläche, wie es im nächsten Paragraphen geschehen soll, noch von einem dritten Gesichtspunkte aus als \emph{algebraischen Funktionenkörper} kennen lernen; denn erst auf diesem Standpunkt erscheinen jene Funktionen mit unsern sonstigen Interessen, den \emph{algebraischen} und den \emph{geometrischen} --- soweit diese sich auf die Theorie der algebraischen Kurven in der Ebene und in höher dimensionierten Räumen beziehen --- aufs engste verknüpft.
+
+\section*{§ 18. Der algebraische Funktionenkörper.}
+
+$z$ sei auf der gegebenen geschlossenen Riemannschen Fläche $\mathfrak{F}$ eine Funktion, welche sich nicht auf eine Konstante reduziert, sondern jeden Wert $n$-mal annimmt. Man kann $\mathfrak{F}$ dadurch zu einer sich $n$-blättrig über der $z$-Kugel ausbreitenden Überlagerungsfläche machen, daß man von einem Punkte $\mathfrak{p}$ auf $\mathfrak{F}$, in welchem $z$ den Wert $a$ besitzt, sagt, er liege über dem Punkte $z = a$ der $z$-Kugel. Über denjenigen endlich vielen Werten $a$, für welche die $n$ Punkte $\mathfrak{p}$, in denen $z$ den Wert $a$ annimmt, nicht alle voneinander verschieden sind, liegen allerdings weniger als $n$ Punkte der Überlagerungsfläche. Nimmt an einer Stelle $\mathfrak{p}_0$ die Funktion $z$ den endlichen Wert $a$ $r$-mal an, so ist $\sqrt[r]{z - a}$ eine Ortsuniformisierende zu $\mathfrak{p}_0$, der über $a$ gelegene Punkt $\mathfrak{p}_0$ ist ein Verzweigungspunkt von der Ordnung $r - 1$. Ist $\mathfrak{U}$ irgendeine Umgebung von $\mathfrak{p}_0$, so gibt es einen Kreis $|z - a| \leqq \varepsilon$ auf der $z$-Kugel, so daß über jedem Punkt dieses Kreises (außer über dem Mittelpunkt) genau $r$ der Umgebung $\mathfrak{U}$ angehörige Punkte von $\mathfrak{F}$ liegen. $dz$ hat in $\mathfrak{p}_0$ eine Nullstelle der $(r - 1)$ten Ord-
+
+\origpage{135}nung. Nimmt $z$ an der Stelle $\mathfrak{p}_0$ $s$-mal den Wert $\infty$ an, so ist $\sqrt[s]{\frac{1}{z}}$ eine Ortsuniformisierende zu $\mathfrak{p}_0$, und wir haben einen Verzweigungspunkt der $(s - 1)$ten Ordnung; $dz$ besitzt in $\mathfrak{p}_0$ einen Pol der Ordnung $(s + 1)$. Wir bezeichnen die Summe der Ordnungen aller Verzweigungspunkte auf der Fläche, ihre „\textbf{Verzweigungszahl}“, mit $V$. Es ist
+\[ \text{\emph{Anzahl der Nullstellen}} - \text{\emph{Anzahl der Pole von }} dz = \Sigma(r - 1) - \Sigma(s + 1), \]
+wo die erste Summe rechts sich auf alle Punkte der Fläche bezieht, außer auf diejenigen, welche über $z = \infty$ liegen, während die zweite Summe gerade diese Punkte betrifft. Die rechte Seite der Gleichung ist
+\[ = \Sigma(r - 1) + \sum_\infty (s - 1) - 2 \cdot \sum_\infty s = V - 2n, \]
+die linke Seite $= 2p - 2$, wir finden mithin:
+\[ V = 2(p + n - 1). \]
+
+Diese Formel, welche zeigt, daß $V$ stets gerade ist, und das Geschlecht der Fläche aus Blätteranzahl und Verzweigungszahl zu berechnen gestattet, kann auch rein analysis-situs-mäßig so bewiesen werden. Man trianguliert die $z$-Kugel in der Weise, daß $z = \infty$ und diejenigen Punkte, über denen Verzweigungspunkte liegen, sämtlich als Eckpunkte auftreten und auch immer nur über höchstens einem der drei Eckpunkte eines Dreieckes ein Verzweigungspunkt liegt. Durch Überlegungen ähnlicher Art wie in §~6 erkennt man, daß diese Triangulation sich auf die Fläche $\mathfrak{F}$, aufgefaßt als Überlagerungsfläche der $z$-Kugel, überträgt. Über jedem Elementardreieck der triangulierten Kugel liegen $n$ Dreiecke von $\mathfrak{F}$, über jeder Kante der Kugel $n$ Kanten von $\mathfrak{F}$. Für die Gesamtzahl $D$ und $K$ der Dreiecke und Kanten von $\mathfrak{F}$ haben wir demnach
+\[ D = n D_0, \quad K = n K_0, \]
+wenn $D_0, K_0, E_0$ die Anzahlen der Dreiecke, Kanten und Ecken der triangulierten Kugel bedeuten. Liegen über einem Eckpunkt $z = a$ der Kugel $h$ Punkte mit den Verzweigungsordnungen $r_1 - 1, \dots, r_h - 1$, so gibt das
+\[ h = n - [(r_1 - 1) + \dots + (r_h - 1)] \]
+Eckpunkte auf $\mathfrak{F}$. Die Gesamtzahl der Eckpunkte auf $\mathfrak{F}$ beträgt mithin $E = n E_0 - V$. Da die Kugel einfach zusammenhängend ist, gilt nach der Eulerschen Polyederformel:
+\[ E_0 + D_0 - K_0 = 2. \]
+Daher ist
+\[ K - E - D = n(K_0 - E_0 - D_0) + V = V - 2n, \]
+und da
+\[ K - E - D + 2 = 2p \]
+wird (§~12), wie oben:
+
+\origpage{136}\[ V = 2(p + n - 1). \]
+Hieraus kann nun (umgekehrt, wie es im vorigen Absatz geschah), geschlossen werden, daß die Gesamtordnung von $dz$ (und damit eines jeden Differentials auf der Fläche) $= V - 2n = 2p - 2$ ist.
+
+Die Darstellung einer gegebenen Riemannschen Fläche $\mathfrak{F}$ als Überlagerungsfläche über der $z$-Kugel kann auch dazu dienen, den einen Teil des \emph{Abelschen Theorems}, welcher aussagt, daß die Bedingung
+\[ \sum_{k=1}^n w(\mathfrak{p}_k^0) = \sum_{k=1}^n w(\mathfrak{q}_k^0) \]
+notwendig ist, damit
+\[ \frac{\mathfrak{p}_1^0 \mathfrak{p}_2^0 \dots \mathfrak{p}_n^0}{\mathfrak{q}_1^0 \mathfrak{q}_2^0 \dots \mathfrak{q}_n^0} \]
+eine Funktion $z$ auf der Fläche ist, sehr einfach zu beweisen. Sind nämlich allgemein $\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_n$ die nach dieser Auffassung über dem Punkt $z$ der $z$-Kugel gelegenen Punkte von $\mathfrak{F}$, so ist, wenn $dw$ ein beliebiges Differential 1.\ Gattung auf $\mathfrak{F}$ ist, durch
+\[ \frac{dW}{dz} = \frac{dw(\mathfrak{p}_1)}{dz} + \frac{dw(\mathfrak{p}_2)}{dz} + \dots + \frac{dw(\mathfrak{p}_n)}{dz} \]
+ein überall reguläres Differential $dW$ auf der $z$-Kugel gegeben, und ein solches ist nicht vorhanden außer: $dW \text{ identisch} = 0$. Ziehen wir auf der $z$-Kugel irgendeine Kurve, z.~B.\ einen Meridian, der vom Südpol $z = 0$ zum Nordpol $z = \infty$ führt, so bilden die darüberliegenden Punkte von $\mathfrak{F}$ (sich unter Umständen in Verzweigungspunkten treffende) Kurven $\gamma_1, \dots, \gamma_n$, und es folgt durch Integration von $dW = 0$:
+\[ \int\limits_{\gamma_1} dw + \dots + \int\limits_{\gamma_n} dw = 0. \tag{49} \]
+Diese Gleichung ist mit der im Abelschen Theorem ausgesprochenen notwendigen Bedingung gleichbedeutend. Zu der Einsicht, daß diese Bedingung hinreichend ist, gelangt man jedoch auf diesem Wege nicht; wohl aber hindert uns nichts, mit Abel das Differential 1.\ Gattung $dw$ durch irgendein mit Polen versehenes, sonst aber reguläres Differential auf der Fläche zu ersetzen und für ein solches eine ähnliche Relation wie (49) abzuleiten. Wir gehen darauf jedoch nicht näher ein. ---
+
+\emph{$z$ sei wiederum eine Funktion auf der Fläche $\mathfrak{F}$, welche jeden Wert $n$\,mal annimmt. Ist dann $f$ irgendeine Funktion auf der Fläche, so genügt $f$ identisch einer Gleichung $n^{\text{ten}}$ Grades}
+\[ f^n + r_1(z) f^{n-1} + \dots + r_{n-1}(z) f + r_n(z) = 0, \tag{50} \]
+\emph{in der die $r_i(z)$ rationale Funktion von $z$ sind.} Das bedeutet: Ist $\mathfrak{p}_0$ irgendein Punkt auf $\mathfrak{F}$, $t$ eine zugehörige Ortsuniformisierende und sind $z = z(t)$, $f = f(t)$ die nach ganzen Potenzen fortschreitenden Entwicklungen von $z$ und $f$ in der Umgebung von $\mathfrak{p}_0$, so geht die linke Seite von (50) iden-
+
+\origpage{137}tisch in 0 über, wenn man für $z$ die Potenzreihe $z(t)$, für $f$ die Potenzreihe $f(t)$ einsetzt. Um diese Gleichung (50) zu beweisen, schließen wir auf der $z$-Kugel zunächst den Punkt $z = \infty$ aus und diejenigen Punkte, über denen Verzweigungspunkte liegen oder Pole der Funktion $f$. Für jeden anderen $z$-Wert bilden wir die Zahl
+\[ r_1(z) = f(\mathfrak{p}_1) + f(\mathfrak{p}_2) + \dots + f(\mathfrak{p}_n), \]
+wo die Summe rechts sich auf die $n$ über $z$ gelegenen Punkte erstreckt. Von der Reihenfolge ihrer Numerierung ist sie unabhängig. Da wir diese Numerierung so einrichten können, daß in der Umgebung eines nicht ausgeschlossenen Punktes
+\[ z_0 \colon \mathfrak{p}_1^0, \, \mathfrak{p}_2^0, \, \dots, \, \mathfrak{p}_n^0 \]
+$f(\mathfrak{p}_1), f(\mathfrak{p}_2), \dots, f(\mathfrak{p}_n)$ Potenzreihen in $z - z_0$ werden, ist $r_1(z)$ eine in allen nicht ausgeschlossenen Punkten regulär-analytische Funktion. In den ausgeschlossenen Punkten kann diese Funktion keine wesentlich singulären Stellen, mithin nur Pole besitzen; daher ist sie eine rationale Funktion von $z$. Ebenso erkennt man, daß die übrigen elementarsymmetrischen Funktionen von $f(\mathfrak{p}_1), \dots, f(\mathfrak{p}_n)$ sich rational durch $z$ ausdrücken.
+
+Liegen über $z_0$ die $n$ verschiedenen Punkte $\mathfrak{p}_1^0, \dots, \mathfrak{p}_n^0$, so können wir die Funktion $f$ so wählen, daß sie an diesen $n$ Stellen voneinander verschiedene Werte besitzt. Ist $d\tau_k (k = 1, \dots, n)$ ein Differential, das nur an der Stelle $\mathfrak{p}_k^0$ einen Pol und dort den Hauptteil $-\frac{dz}{(z - z_0)^2}$ besitzt, so kann man z.~B.
+\[ f = (z - z_0)^2 \left( C_1 \frac{d\tau_1}{dz} + \dots + C_n \frac{d\tau_n}{dz} \right) \]
+setzen, indem man für $C_1, \dots, C_n$ irgend $n$ verschiedene Konstante wählt. Die Gleichung $n$\,ten Grades für $f$ ist dann \textbf{irreduzibel}; d.~h.\ ihre linke Seite, das Polynom $n$\,ten Grades der Variabeln $u$
+\[ F_z(u) \equiv u^n + r_1(z) u^{n-1} + \dots + r_n(z) \]
+läßt sich nicht in zwei Polynome $F_z^{(1)}(u) \cdot F_z^{(2)}(u)$, deren Koeffizienten gleichfalls rationale Funktionen von $z$ sind, zerspalten. Angenommen nämlich, dies wäre möglich; $f$ läßt sich in der Umgebung von $\mathfrak{p}_1^0$ in eine Potenzreihe nach der zu $\mathfrak{p}_1^0$ gehörigen Ortsuniformisierenden $z - z_0$ entwickeln. Diese Potenzreihe möge, für $u$ gesetzt, der Gleichung $F_z^{(1)}(u) = 0$ Genüge leisten. Verbinden wir $\mathfrak{p}_1^0$ mit irgendeinem der Punkte $\mathfrak{p}_k^0$ durch eine Kurve auf $\mathfrak{F}$, deren Spur auf der $z$-Kugel durch keinen der ausgeschlossenen Punkte hindurchgeht, so muß für alle Funktionselemente $(z, f)$ längs dieser Kurve die Gleichung $F_z^{(1)}(u) = 0$ bestehen bleiben. Infolgedessen ist auch $f(\mathfrak{p}_k^0)$ eine Wurzel der Gleichung $F_{z_0}^{(1)}(u) = 0$; diese hat also $n$ verschiedene Wurzeln und muß folglich vom Grade $n$
+
+\origpage{138}sein; $F_z^{(2)}(u)$ kann demnach in $u$ nur vom 0ten Grade sein; und eine wirkliche Zerlegung von der vorausgesetzten Art kommt nicht zustande.
+
+Zu jedem Punkte $\mathfrak{p}$ von $\mathfrak{F}$ gehört ein Funktionselement $(z, f)$, das der Gleichung $F_z(u) = 0$ Genüge leistet. Für zwei verschiedene Punkte sind diese beiden Funktionselemente stets verschieden, und die zu allen Punkten $\mathfrak{p}$ gehörigen Elemente erschöpfen die Gesamtheit derjenigen, welche jene Gleichung befriedigen. Mit andern Worten: \emph{Die Gesamtheit derjenigen Funktionselemente, welche der irreduziblen algebraischen Gleichung $F_z(u) = 0$ genügen, macht ein einziges analytisches Gebilde im Weierstraßschen Sinne aus. Dieses analytische Gebilde, als Riemannsche Fläche aufgefaßt, ist der gegebenen Riemannschen Fläche konform-äquivalent; die gegebene Fläche ist die zu dem durch die Gleichung $F_z(u) = 0$ definierten algebraischen Gebilde gehörige Riemannsche Fläche.}${}^{1)}$
+
+Jede bis auf Pole reguläre Funktion $f^*$ auf der Fläche läßt sich rational durch $f$ ausdrücken mit Koeffizienten, die rationale Funktionen von $z$ sind:
+\[ f^* = R_0(z) + R_1(z) f + \dots + R_{n-1}(z) f^{n-1}, \]
+und jede rational aus $z$ und $f$ gebildete Funktion ist auf der Fläche bis auf Pole regulär. Wenn man $z$ als unabhängige Variable auffaßt, $f$ als die durch die Gleichung $F_z(u) = 0$ definierte algebraische Funktion von $z$, so bilden diejenigen Funktionen, welche sich rational durch $f$ ausdrücken lassen mit in $z$ rationalen Koeffizienten, einen \textbf{algebraischen Funktionenkörper}. Unsere Behauptung läßt sich daher so aussprechen: \emph{Faßt man die sämtlichen bis auf Pole regulären Funktionen auf einer geschlossenen Riemannschen Fläche als Funktionen einer beliebigen unter ihnen (die nur keine bloße Konstante sein darf) auf, so bilden sie einen algebraischen Funktionenkörper.}
+
+Zum Beweise setzen wir (\emph{Lagrangesche Interpolationsformel})
+\[ \frac{G_z(u)}{F_z(u)} = \frac{f^*(\mathfrak{p}_1)}{u - f(\mathfrak{p}_1)} + \frac{f^*(\mathfrak{p}_2)}{u - f(\mathfrak{p}_2)} + \dots + \frac{f^*(\mathfrak{p}_n)}{u - f(\mathfrak{p}_n)}. \]
+$\mathfrak{p}_1, \mathfrak{p}_2, \dots, \mathfrak{p}_n$ bedeuten wieder die $n$ über dem Punkte $z$ der $z$-Kugel gelegenen Punkte von $\mathfrak{F}$. Durch die gleiche Schlußweise wie oben findet man, daß die Koeffizienten des Polynoms $(n - 1)^{\text{ten}}$ Grades $G_z(u)$ rationale Funktionen von $z$ sind. Für alle Werte $z$, für welche $f(\mathfrak{p}_1), \dots, f(\mathfrak{p}_n)$ von einander verschieden sind, folgt
+\[ f^*(\mathfrak{p}_1) = \left[ \frac{G_z(u)}{F_z'(u)} \right]_{u = f(\mathfrak{p}_1)} \quad \left[ F_z'(u) = \frac{dF_z(u)}{du} \right]. \]
+Man kann (etwa durch Anwendung des „Euklidischen Teilerverfahrens“;
+
+\textbf{1)} Die Verallgemeinerung dieses Satzes auf beliebige (ungeschlossene) Flächen ist von P.~Koebe, Comptes Rendus, 1.~Juli 1909, bewiesen worden. Vgl.\ E.~Freundlich, Funktionen mit vorgeschriebenem unendlichblättrigen Existenzbereich, Göttinger Dissertation 1910.
 \end{document}
