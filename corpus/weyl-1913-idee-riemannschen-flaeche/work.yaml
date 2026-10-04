@@ -9,17 +9,19 @@ authors:
 publication:
   year: 1913
   venue: book
-  title_full: '"Die Idee der Riemannschen Fläche", Mathematische Vorlesungen an der
-    Universität Göttingen: V (Leipzig und Berlin: Druck und Verlag von B. G. Teubner,
-    1913), V + 169 pp.'
+  pages: x + 169
+  title_full: 'Hermann Weyl, "Die Idee der Riemannschen Fläche", Mathematische Vorlesungen
+    an der Universität Göttingen: V (Leipzig und Berlin: Druck und Verlag von B. G.
+    Teubner, 1913), x + 169 pp.'
 edition:
   year: 1913
   is_transcribed_edition: true
   rights_cleared: true
   rights_note: 'First edition: "Die Idee der Riemannschen Fläche" (Leipzig und Berlin:
-    B. G. Teubner, 1913). This is the original 1913 public-domain edition with no
-    modern critical apparatus, commentary, or modern re-typesetting. Only Weyl''s
-    original text and footnotes are transcribed.'
+    B. G. Teubner, 1913), pp. v–x (Vorwort und Einleitung, Inhaltsverzeichnis) and 1–169.
+    This is the original 1913 public-domain edition with no modern critical apparatus,
+    commentary, or modern re-typesetting. Only Weyl''s original text and footnotes are
+    transcribed.'
 discipline: mathematics
 tags:
 - analysis
