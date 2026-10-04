@@ -1,5 +1,7 @@
 changelog:
   - date: "2026-10-04"
+    summary: "Complete transcription of weyl-1913-idee-riemannschen-flaeche (pp. 1-169, §§ 1-21 complete, Figures 1-27, Verzeichnis der Begriffsnamen)."
+  - date: "2026-10-04"
     summary: "Transcription draft extended to pp. 1-162 (§§ 1-20 complete, § 21 in progress, Figures 1-27)."
   - date: "2026-10-04"
     summary: "Transcription draft extended to pp. 1-154 (§§ 1-19 complete, § 20 in progress, Figures 1-27)."
@@ -37,9 +39,9 @@ transcription:
   effort: high
   prompt_version: transcribe-v1
   submitted_via: skill
-  produced: "2026-09-26"
+  produced: "2026-10-04"
   verification:
     model: gemini-3-8-flash
     flagged_pages: []
-    date: "2026-09-26"
+    date: "2026-10-04"
   uncertainty_flags: 0
