@@ -47,6 +47,7 @@ languages:
   la: Latin
   it: Italian
   ru: Russian
+  da: Danish
 
 # Publication venues. Normalize aggressively — one canonical key per venue.
 #
@@ -270,6 +271,68 @@ venues:
         url: "http://www.numdam.org/journals/ASENS/"
       - label: "Gallica (BnF)"
         url: "https://gallica.bnf.fr/ark:/12148/cb34348785c/date"
+  rendiconti-palermo:
+    name: "Rendiconti del Circolo Matematico di Palermo"
+    aka: "Rend. Circ. Mat. Palermo"
+    founded: 1887
+    place: "Palermo"
+    publisher: "Circolo Matematico di Palermo"
+    note: >-
+      Founded by Giovanni Battista Guccia in 1884, the Circolo Matematico di Palermo published its
+      Rendiconti from 1887 and, with an international membership, made them one of the leading
+      mathematics journals of the years before the First World War.
+    archives:
+      - label: "Internet Archive"
+        url: "https://archive.org/search?query=Rendiconti+del+Circolo+matematico+di+Palermo"
+  proc-lms:
+    name: "Proceedings of the London Mathematical Society"
+    aka: "Proc. London Math. Soc."
+    founded: 1865
+    place: "London"
+    publisher: "London Mathematical Society"
+    note: >-
+      The journal of the London Mathematical Society, founded in 1865, which printed the papers
+      read at the Society's meetings together with the minutes of those meetings.
+    archives:
+      - label: "Internet Archive"
+        url: "https://archive.org/search?query=Proceedings+of+the+London+Mathematical+Society"
+  bull-smf:
+    name: "Bulletin de la Société Mathématique de France"
+    aka: "Bull. Soc. Math. France"
+    founded: 1872
+    place: "Paris"
+    publisher: "Société Mathématique de France"
+    note: >-
+      The journal of the Société Mathématique de France, founded in 1872, which printed the
+      memoirs and communications presented at the Society's sessions.
+    archives:
+      - label: "NUMDAM"
+        url: "https://www.numdam.org/journals/BSMF/"
+  journal-ecole-polytechnique:
+    name: "Journal de l'École Polytechnique"
+    aka: "J. Éc. Polytech."
+    founded: 1795
+    place: "Paris"
+    publisher: "Conseil d'instruction de l'École polytechnique"
+    note: >-
+      Published by the École polytechnique from 1795, its cahiers carried memoirs by the school's
+      teachers and former pupils, Lagrange, Cauchy and Poisson among them. A second series began
+      in 1895, opening with Poincaré's Analysis situs.
+    archives:
+      - label: "Gallica (BnF)"
+        url: "https://gallica.bnf.fr/ark:/12148/cb34378280v/date"
+  sitzungsberichte-berliner-mathematische-gesellschaft:
+    name: "Sitzungsberichte der Berliner Mathematischen Gesellschaft"
+    aka: "Berliner Sitzungsberichte"
+    founded: 1902
+    place: "Leipzig / Berlin"
+    publisher: "B. G. Teubner, for the Berliner Mathematische Gesellschaft"
+    note: >-
+      Proceedings of the Berlin Mathematical Society (founded 1901), published from 1902 to 1938
+      as a regular supplement to the Archiv der Mathematik und Physik (3. Reihe).
+    archives:
+      - label: "HathiTrust"
+        url: "https://catalog.hathitrust.org/Record/009324539"
   book:
     name: "(published as a book / monograph)"
     kind: book

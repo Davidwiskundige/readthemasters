@@ -1,0 +1,112 @@
+id: poincare-1902-troisieme-complement-analysis-situs
+title: Sur certaines surfaces algébriques. — Troisième complément à l'Analysis sitûs.
+title_en: On certain algebraic surfaces. Third supplement to Analysis situs.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare  # https://mathshistory.st-andrews.ac.uk/Biographies/Poincare/
+publication:
+  year: 1902
+  venue: bull-smf
+  volume: '30'
+  pages: 49–70
+  title_full: '"Sur certaines surfaces algébriques. Troisième complément à l''Analysis
+    sitûs", Bulletin de la Société Mathématique de France, tome 30 (1902), pp. 49–70.'
+edition:
+  year: 1902
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1902 printing in the Bulletin de la Société
+    Mathématique de France, tome 30, pp. 49–70, as digitized by NUMDAM (doi:10.24033/bsmf.657).
+    A faithful photographic reproduction of a public-domain edition, carrying no modern
+    critical apparatus, commentary, or re-typesetting. Only Poincaré's own text is
+    transcribed; running heads, page numbers and signature marks are not.
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: fr
+type: paper
+relations:
+- to: poincare-1900-second-complement-analysis-situs
+  kind: builds-on
+  recommended: primary
+  note: The Troisième complément applies the Betti numbers and homologies of the first
+    two complements to the surfaces z² = F(x, y).
+- to: poincare-1895-analysis-situs
+  kind: builds-on
+  note: The memoir of 1895 that the complements correct and complete.
+significance: >-
+  The third of Poincaré's five complements to Analysis situs[1] applies the fundamental group of
+  1895 to an algebraic surface, the double plane $z = \sqrt{F(x, y)}$. Its target is a gap in
+  Picard's work[2]: Picard had shown that every linear cycle on the most general surface of its
+  degree is homologous to zero, but a trivial fundamental group needs every cycle to be equivalent
+  to zero. Following the branch points $a, \ldots, f$ of the curves $y = \text{const.}$ as $y$
+  circles the singular values, Poincaré finds that branch points exchanged there become
+  equivalent; so if $F$ is indecomposable the fundamental group reduces to the identity, and if
+  $F$ has $n$ factors it has at most $2^{n-1}$ elements. At a conical point that may not be
+  crossed only $(ad)^{2} \equiv 1$ holds, which he recognizes as the torsion of Heegaard's
+  manifold[3][4]. Zariski[5] and van Kampen[6] later used the same procedure for plane curves.
+significance_sources:
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique (2) 1 (1895), pp. 1–121, in
+      this corpus.
+    url: "/works/poincare-1895-analysis-situs/"
+  - citation: >-
+      É. Picard and G. Simart, Théorie des fonctions algébriques de deux variables indépendantes,
+      t. I (Paris, Gauthier-Villars, 1897), pp. 85 ff., cited by Poincaré on p. 61.
+  - citation: >-
+      P. Heegaard, Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng
+      (Copenhagen, 1898), in this corpus.
+    url: "/works/heegaard-1898-forstudier-topologisk-teori/"
+  - citation: >-
+      H. Poincaré, "Complément à l'Analysis situs", Rendiconti del Circolo Matematico di Palermo 13
+      (1899), pp. 285–343, in this corpus.
+    url: "/works/poincare-1899-complement-analysis-situs/"
+  - citation: >-
+      O. Zariski, "On the problem of existence of algebraic functions of two variables possessing
+      a given branch curve", American Journal of Mathematics 51 (1929), pp. 305–328.
+  - citation: >-
+      E. R. van Kampen, "On the fundamental group of an algebraic curve", American Journal of
+      Mathematics 55 (1933), pp. 255–260.
+external_translations:
+- language: en
+  title: 'Third supplement to Analysis situs (in Papers on Topology: Analysis Situs
+    and Its Five Supplements)'
+  translator: John Stillwell
+  year: 2010
+  license: in-copyright
+  url: https://bookstore.ams.org/hmath-37
+source:
+  scan_url: https://www.numdam.org/item/BSMF_1902__30__49_0
+  scan_id: numdam:BSMF_1902__30__49_0
+sources:
+  death_date: wikidata:Q81082
+  publication_date: numdam:BSMF_1902__30__49_0 (doi:10.24033/bsmf.657; Bulletin de
+    la S. M. F., tome 30 (1902), p. 49-70)
+  edition: numdam:BSMF_1902__30__49_0 (doi:10.24033/bsmf.657)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1902
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-30'

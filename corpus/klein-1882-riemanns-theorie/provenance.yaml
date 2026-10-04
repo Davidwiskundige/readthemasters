@@ -1,0 +1,125 @@
+changelog:
+  - date: "2026-09-28"
+    summary: Transcription added (AI draft), Vorrede, Inhalt and text (pp. iii–viii, 1–82) from the 1882 Teubner first edition.
+  - date: "2026-09-29"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: null
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-09-28"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: [18]
+    date: "2026-09-28"
+  uncertainty_flags: 1
+  note: >-
+    Felix Klein, "Ueber Riemann's Theorie der algebraischen Functionen und ihrer Integrale"
+    (Leipzig: Teubner, 1882), pp. iii–viii and 1–82 — the whole book except the title page.
+    Read from archive.org:ueberriemannsthe00kleirich, the University of California copy, which is
+    a photographic facsimile of the 1882 print made by Cornell University Library (500 ppi colour
+    JPEGs; printed pp. 1–82 are leaves n16–n97). That scan was chosen over the Google/Oxford scan
+    of the same edition (ueberriemannsth00kleigoog) after a side-by-side comparison of p. 5: the
+    Google images are already binarized and break the subscripts and numerators of formulas,
+    while the Cornell facsimile keeps grey levels and shows only faint show-through. The
+    Project Gutenberg #20313 page images and the Deutsches Textarchiv edition (which reuses them)
+    are 1584 px bitonal and were not used; their text was not consulted.
+
+
+    FRONT MATTER. The Vorrede (pp. iii–vi, dated Borkum, 7 October 1881) and Inhalt (pp. vii–viii)
+    carry their printed roman page numbers, \origpage{iii} … \origpage{viii}; the site and gate
+    gained roman page-marker support for this in the same change (OpenSpec roman-page-markers).
+    Because prepare_pages.py and magnify.py take integer pages, their scans (leaves n10–n15) were
+    prepared under proxy numbers 903–908 in the scratch directory only. They were transcribed in
+    one batch and verified in one more, with no corrections and one magnified region. The Inhalt is
+    set as plain paragraphs with " --- " for the dot leaders (the site cannot set \dotfill), and its
+    titles are copied as it prints them: for §. 18 ("Weiterbildungen") and §. 22 ("verschiedener
+    geschlossener Flächen") the Inhalt and the headings in the text genuinely differ, and both
+    sides were checked on the scan. All 24 Inhalt page numbers match the pages the headings fall on.
+
+
+    HOW THE PAGES WERE READ. prepare_pages.py warned that 73 of 82 pages came out under 1000 px of
+    text width at the 1568 px long-edge cap (narrowest 806 px). Following the skill's advice for
+    narrow scans, each page was instead split into two overlapping halves (6% overlap), each cut
+    from the source scan at about 1566 px wide, with its own zoom-map.json so magnify.py could still
+    map half-image coordinates back onto the source. Transcription ran in 21 batch subagents of 4
+    pages (the last of 2), sequentially, with notation.md accumulating between batches. 63 regions
+    were magnified in the text pages (25 in transcription, 38 in verification), the large majority for
+    dot counts, sub- and superscripts and footnote punctuation. One transcription batch (p. 8) had
+    all three of its crops land on the wrong lines; its readings were rechecked in verification.
+
+
+    CHECKING. A text-only proofread of the assembled file (no scans) came first, and its findings
+    were either fixed mechanically (control spaces after abbreviations, tie spaces, a footnote
+    mark inside \emph, an alt text containing math) or handed as questions to the scan verifiers.
+    Then 21 verification subagents, one per transcription batch, each re-read its pages' images
+    line by line and corrected the fragments in place. They made corrections on 16 pages: three
+    paragraphs split around a mid-paragraph figure were rejoined and the figures moved to the
+    paragraph end (pp. 37, 38, 52, likewise Figs. 11, 12, 22 on pp. 14, 15, 36); two spurious
+    paragraph breaks removed (p. 55, the Fig. 13 note on p. 20); four dot counts corrected (pp. 3,
+    57); two integral lower limits corrected from 0 to the printed italic o (p. 51); author
+    initials normalized to C.\ \emph{Neumann} form where only the surname is letterspaced
+    (pp. 14, 16, 17, 19, 25, 26, 30, 49); Tait marked as letterspaced (p. 33); an uncertain stop on
+    p. 31 settled as a comma; and a note added on p. 26 for a parenthesis the print never closes.
+
+
+    THE ONE REMAINING FLAG is p. 18, "aus der Form von (2)\uncertain{;} dass": the mark looks like a
+    semicolon where a comma is expected, and the upper dot may be a speck.
+
+
+    PRINTER'S ERRORS, reproduced as printed with an \ednote at each (HOUSESTYLE R4): p. 1
+    "Magnetisme" in Maxwell's title; p. 15 "Wirbelpnncten"; p. 20 a doubled minus rule in the
+    icosahedron equation's denominator, read as one minus; p. 25 "Fächen"; p. 26 the unclosed
+    parenthesis; p. 29 "complexc" (confirmed a wrong sort, not a broken e); p. 33 "gegeschlossen"
+    across a line break; p. 47 "Verzweigungsverzweigungspuncten"; p. 48 "Maximahlzahl"; p. 52 a
+    semicolon for a comma; p. 54 "± κ²" where the figures give ±1/κ; p. 67 "oontinuirliche"
+    (confirmed a wrong sort); p. 72 a stray full stop mid-sentence; p. 80 "ergeben.,".
+
+
+    NOT ERRORS, deliberately without notes: zero is printed sometimes as an italic letter o
+    (w = o, F = o, p = o, integral limits) and sometimes as the digit 0; this recurs throughout, so
+    it is the print's habit and each is kept as printed (notation.md). Likewise the doublets Punct
+    / Punkt, Gränze / Grenze, ξη- / ηξ-Ebene, the missing hyphen in the italic "(x + iy) Ebene"
+    on p. 48, the two-dot run on p. 44 and "Borchardts" without apostrophe on p. 69 are all
+    confirmed on the scan and kept (R23). Broken type (p. 22 "hinsicbtlich", p. 58 "unu",
+    p. 81 "Zakl", "Dic") is read as the intended letters under R29.
+
+
+    FIGURES. All 43 (Figur 1–5, Fig. 6–43) are cropped from the source scan with a helper that
+    maps half-image boxes to source coordinates, never redrawn. Their layout follows the print
+    under HOUSESTYLE R30, introduced with this work: a final scan pass placed every figure where
+    it is printed (mid-paragraph where the print sets it there, e.g. Figs. 25/26 after
+    "…beziehen:"; Figs. 11, 12 and 34, printed beside the text, before their paragraphs), and
+    wrote the 12 side-by-side pairs (2|3, 6|7, 8|9, 17|18, 19|20, 23|24, 25|26, 27|28, 29|30,
+    31|32, 40|41, 42|43) as rows. Fig. 13 is printed at the foot of p. 21 inside the continuation
+    of p. 20's footnote, and is given at its printed position within that note on p. 20 (R15).
+    The p. 78/79 footnote: the mark belongs to "subsumiren", which is hyphenated from p. 78 and
+    joined there, while its note is printed at the foot of p. 79 and is transcribed there.
+
+
+    effort is null because the page work was done by subagents whose effort level was not
+    recorded.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-opus-5-5
+    effort: null
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-09-29"
+    uncertainty_flags: 1
+    note: >-
+      English translation of the whole book (Vorrede, Inhalt, pp. iii–viii and 1–82), made from our
+      own original.tex and not from Frances Hardcastle's 1893 English translation, which was not
+      consulted. Every formula, \tag, \origpage marker, \rmfigure path and \ednote is carried over
+      unchanged (texcompare and houselint pass); ordinal \text inserts are translated (R21). The one
+      \uncertain is the transcription's own p. 18 flag, kept as is. The terminology is listed in the
+      header of translations/en.tex (e.g. Kreuzungspunct = crossing point, Rückkehrschnitt =
+      retrosection, Querschnitt = cross-cut, Uebergangscurve = transition curve, eindeutig =
+      single-valued, or one-to-one for correspondences and transformations). effort is null because
+      the session's effort level was not recorded.

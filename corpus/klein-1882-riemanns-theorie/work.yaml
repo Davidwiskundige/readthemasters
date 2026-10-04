@@ -1,0 +1,110 @@
+id: klein-1882-riemanns-theorie
+title: Ueber Riemann's Theorie der algebraischen Functionen und ihrer Integrale. Eine
+  Ergänzung der gewöhnlichen Darstellungen.
+title_en: On Riemann's theory of algebraic functions and their integrals. A supplement
+  to the usual treatments.
+authors:
+- name: Felix Klein
+  wikidata_id: Q76641
+  birth_year: 1849
+  death_year: 1925
+  mactutor: Klein  # https://mathshistory.st-andrews.ac.uk/Biographies/Klein/
+  portrait:
+    file: portrait.jpg
+    alt: "Photographic portrait of Felix Klein"
+    credit: >-
+      Photograph of Klein, photographer and date unknown, taken from the MacTutor archive's
+      picture of him. Public domain (PD-old).
+    source: "https://commons.wikimedia.org/wiki/File:Felix_Klein.jpeg"
+publication:
+  year: 1882
+  venue: book
+  pages: viii + 82
+  title_full: 'Felix Klein, Ueber Riemann''s Theorie der algebraischen Functionen
+    und ihrer Integrale. Eine Ergänzung der gewöhnlichen Darstellungen (Leipzig: B.
+    G. Teubner, 1882), viii + 82 pp.'
+edition:
+  year: 1882
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the first edition (Leipzig: B. G. Teubner, 1882),
+    pp. iii–viii (Vorrede, Inhalt) and 1–82. The scan is of the University of California, Berkeley copy, which
+    is a photographic facsimile of the 1882 print produced by Cornell University Library
+    to replace a deteriorated original; the facsimile reproduces the Teubner pages
+    without re-typesetting, and its production note is not transcribed. Only Klein''s
+    own text, footnotes and figure labels are transcribed; running heads, page numbers
+    and signature marks are not. No modern critical apparatus or commentary is involved.'
+discipline: mathematics
+tags:
+- analysis
+- geometry
+- topology
+language: de
+type: book
+significance: >-
+  Klein wrote this little book out of his lectures of 1880/81 to recover what he took to be
+  Riemann's original train of thought, which Riemann's own papers[1] leave almost unstated. He puts
+  physics first: a complex function is read as a steady flow of electricity over a surface, and
+  where Riemann had relied on the Dirichlet principle, whose inference Weierstrass had shown to be
+  unsound[2], Klein appeals openly to physical intuition and claims no rigorous proof. Following a
+  remark of Prym's, he lets the flows run on an arbitrary closed surface in space rather than on
+  sheets spread over the plane. A sphere with $p$ handles carries $2p$ independent everywhere finite
+  flows, driven by electromotive forces along curves round the handles, and the familiar
+  many-sheeted Riemann surface reappears only as the conformal image of such a surface under a
+  single-valued function. The last section turns the theory to conformal mapping. It counts $3p - 3$
+  moduli for $p > 1$ and extends the count to symmetric surfaces, to surfaces with boundary and to
+  one-sided "double surfaces" such as a paper strip twisted before its ends are joined, as a gloss
+  on the closing remarks of Riemann's dissertation[3]. The idea of a Riemann surface as a surface
+  in its own right, prior to any function, was given a rigorous form by Hermann Weyl in Die Idee
+  der Riemannschen Fläche (1913).
+significance_sources:
+  - citation: >-
+      Riemann's "Theory of Abelian functions" (1857), whose first division is the theory Klein sets
+      out to expound, in this corpus.
+    url: "/works/riemann-1857-abelsche-functionen/"
+  - citation: >-
+      Weierstrass, "On the so-called Dirichlet principle", read to the Berlin Academy in 1870, in
+      this corpus.
+    url: "/works/weierstrass-1895-dirichletsche-princip/"
+  - citation: >-
+      Riemann's inaugural dissertation (1851), whose closing sections on conformal mapping Klein
+      takes up in Section III, in this corpus.
+    url: "/works/riemann-1851-complexen-groesse/"
+source:
+  scan_url: https://archive.org/details/ueberriemannsthe00kleirich
+  scan_id: archive.org:ueberriemannsthe00kleirich (University of California Libraries
+    copy, Cornell facsimile of the 1882 Teubner edition; 500 ppi colour). Printed
+    pp. iii–viii are scan leaves n10–n15, pp. 1–82 leaves n16–n97.
+sources:
+  death_date: Felix Christian Klein, 25 April 1849 – 22 June 1925 (wikidata:Q76641;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Klein/).
+  publication_date: Title page of the scanned copy, "Leipzig, Druck und Verlag von
+    B. G. Teubner. 1882" (archive.org:ueberriemannsthe00kleirich, leaf n8); Internet
+    Archive record date 1882, publisher "Leipzig, B. G. Teubner", extent "viii, 82
+    p. 23 cm".
+  edition: 'First edition, Leipzig: B. G. Teubner, 1882 (archive.org:ueberriemannsthe00kleirich;
+    also Project Gutenberg eBook #20313 and Deutsches Textarchiv klein_riemann_1882,
+    from the same edition).'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1925
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1882
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-27'

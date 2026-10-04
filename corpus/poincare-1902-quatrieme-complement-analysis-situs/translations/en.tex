@@ -1,0 +1,997 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose (and the prose inside
+% \text{...} inserts, R21) is translated. The editorial notes (\ednote) of the transcription are
+% carried over unchanged, since they are already in English and some carry mathematics.
+%
+% TERMINOLOGY. Poincaré's own terms are rendered literally and consistently, following the
+% English translations of poincare-1895-analysis-situs and its first three Compléments, which this
+% paper continues:
+%   * variété = "manifold"; variété à q dimensions = "manifold of q dimensions"; variétés
+%     partielles = "partial manifolds"; frontière complète = "complete boundary"; fermée =
+%     "closed"; homéomorphe = "homeomorphic"
+%   * homologie / congruence = "homology" / "congruence"; homologue / congru à zéro = "homologous /
+%     congruent to zero"; premier / second membre = "first / second member"; nombres de Betti =
+%     "Betti numbers"
+%   * hypercase / case / face / arête / sommet = "hypercell" / "cell" / "face" / "edge" / "vertex",
+%     also inside the \text{} of the Table on p. 173; cases / faces partielles = "partial cells /
+%     faces"; polygone partiel = "partial polygon"; catégorie = "category"; sorte = "sort"
+%   * surface de Riemann = "Riemann surface"; feuillet = "sheet"; coupure = "cut"; lèvre = "lip";
+%     lacet = "loop"; tronçon (terminal) = "(terminal) segment"; en trait plein / pointillé =
+%     "drawn solid / dotted"; plan des y = "y-plane"
+%   * cycle invariant = "invariant cycle"; cycle évanouissant = "vanishing cycle" (Poincaré's term,
+%     emphasized at its definition); cycles subsistants = "subsisting cycles"; groupe de Picard =
+%     "Picard group"; cycles fondamentaux = "fundamental cycles"; forme bilinéaire = "bilinear form"
+%   * Tableau = "Table"; its lignes / colonnes = "rows" / "columns"
+%   * C. Q. F. D. = "Q. E. D." (also inside \text{}); "M.~X" before a name = "Mr.~X"; t. (tome) =
+%     "vol."; \emph{vide infra}, \emph{supra} kept in Latin; \emph{Analysis Sitûs} is kept in Latin
+%     with this print's spelling; titles of periodicals are cited as printed
+%   * the ditto marks » of the Table (p. 173) are kept as printed; the numbered items 1°, 2°, ...
+%     are kept; the French space before a colon (~:) is set tight, as in English
+%
+% PRINTER'S ERRORS. The transcription's hedged \ednote on each apparent misprint is carried over
+% verbatim. Where a misprint is a word whose literal rendering would be meaningless in English
+% (p. 188 "infinies peu"), the intended words are translated and the note records what is printed.
+% Readings that still make sense in English are rendered as printed (p. 184 "se fondra" = "will
+% merge", p. 186 "the surface of S(M)", p. 213 "five" faces), and all misprints inside formulae
+% are, of course, reproduced as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{169}
+
+\section*{On the cycles of algebraic surfaces;}
+
+By Mr.~H.~\textsc{Poincaré}.
+
+Fourth supplement to the \emph{Analysis Sitûs}.
+
+\subsection*{\S~1. --- Introduction.}
+
+The fine works of Mr.~Picard on \emph{Algebraic surfaces} have long since brought to light the importance of the notion of cycles of one, two or three dimensions. I thought that one might apply to this question the principles that I set out in the \emph{Analysis Sitûs} and its first two supplements (\emph{Journal de l'École Polytechnique}, Centenary volume; \emph{Rendiconti del Circolo mathematico di Palermo}, vol.\ XIII; \emph{Proceedings of the London mathematical Society}, Vol.\ XXXII), and I have thus obtained certain partial results, which I have already stated in a Note in the \emph{Comptes rendus} and which come to complete, on certain points, those of Mr.~Picard.
+
+I recall that, a closed manifold $V$ of $p$ dimensions being given, I draw on this manifold other manifolds, closed or not, of a smaller number of dimensions; I denote by $W_{q}$ a manifold of $q$ dimensions drawn in this way on $V$.
+
+If $\Sigma W_{q}$ is a set of manifolds of $q$ dimensions and $\Sigma W_{q-1}$ a
+
+\origpage{170}
+set of manifolds of $q - 1$ dimensions, the congruence
+\[ \Sigma W_{q} \equiv \Sigma W_{q-1} \]
+signifies (by definition) that $\Sigma W_{q-1}$ forms the complete boundary of the set of manifolds $\Sigma W_{q}$. I express the same fact, without bringing $\Sigma W_{q}$ into evidence, by writing the relation
+\[ \Sigma W_{q-1} \backsim 0 \]
+which I call \emph{a homology}.
+
+Then the congruence
+\[ \Sigma W_{q} \equiv 0 \]
+will signify that the manifold $\Sigma W_{q}$ is closed.
+
+If one has $\Sigma W_{q} \equiv 0$ without having $\Sigma W_{q} \backsim 0$ (or $n\Sigma W_{q} \backsim 0$, $n$ being an integer), I shall say that the manifold $\Sigma W_{q}$ constitutes a cycle of $q$ dimensions.
+
+Let
+\[ f(x, y, z) = 0 \tag{1} \]
+be the equation of any algebraic surface, which will define a manifold $V$ of four dimensions. To each value of $y$ there will correspond a Riemann surface, which will in general be of genus $p$. I shall suppose that the genus is lowered neither for $y = 0$ nor for $y = \infty$, but that it is lowered for $q$ singular points.
+\[ y = A_{1}, \qquad y = A_{2}, \qquad \ldots, \qquad y = A_{q}. \]
+
+In the $y$-plane I shall draw $q$ cuts $OA_{1}, OA_{2}, \ldots, OA_{q}$. Let $S$ be one of the Riemann surfaces; when $y$ varies \emph{without crossing the cuts}, the surface $S$ will vary, but while remaining homeomorphic to itself, in such a way that the various Riemann surfaces correspond to one another point by point, in a one-to-one and continuous manner.
+
+Any one $S$ of these surfaces can be subdivided into a polyhedron $P$; let $F$ be the faces, $B$ the edges, $C$ the vertices of this
+
+\origpage{171}
+polyhedron. Another surface $S'$, corresponding point by point to the surface $S$, will likewise be found subdivided into a polyhedron $P'$, whose faces, edges and vertices will correspond to the faces, the edges and the vertices of the polyhedron $P$.
+
+Let us now suppose that $y$, starting from a point situated infinitely near one of the cuts, describes an almost closed contour and ends at another point situated infinitely near the initial point, \emph{but on the other side of the cut}. The surface $S$ will have been transformed into an infinitely little different surface; but to a point of the first surface there will correspond, in general, a point of the second surface which will differ from it greatly.
+
+The polyhedron $P$ will thus have been transformed into a very different polyhedron $P'$.
+
+On the other hand, to the different points of the $y$-plane cut up by our cuts, we can make correspond the points of a polygon $Q$ of $2q$ sides $\alpha_{i}\beta_{i}$ and $\alpha_{i}\beta_{i+1}$, the sides $\alpha_{i}\beta_{i}$ and $\alpha_{i}\beta_{i+1}$ corresponding to the two lips of the cut $OA_{i}$, the point $\alpha_{i}$ to $A_{i}$, the points $\beta_{i}$ and $\beta_{i+1}$ to $O$. Needless to add that I shall write indifferently $\beta_{1}$ or $\beta_{q+1}$, $\beta_{2}$ or $\beta_{q+2}$, etc., so as to preserve the symmetry of the notations.
+
+From this we are going to derive a subdivision of the manifold $V$ into a polyhedron $H$ of four dimensions.
+
+To each face $F_{i}$ of $P$ there will correspond a hypercell of $R$\ednote{Printed $R$; the polyhedron being built is $H$, so $H$ is expected; an apparent misprint.} which I shall also call $F_{i}$. To each edge $B_{i}$ of $P$ there will correspond a cell $B_{i}$ of $H$; likewise, to each of the sides $\alpha_{i}\beta_{i}$ or $\alpha_{i}\beta_{i+1}$ of $Q$, combined with each of the faces $F_{k}$ of $P$, there will correspond a cell $\alpha_{i}\beta_{i}F_{k}$ or $\alpha_{i}\beta_{i+1}F_{k}$ of $H$.
+
+To each vertex $C_{i}$ of $P$ there corresponds a face $C_{i}$ of $H$. To each vertex $\alpha_{i}$ or $\beta_{i}$ of $Q$, combined with each of the faces $F_{k}$ of $P$, there will correspond a face $\alpha_{i}F_{k}$ or $\beta_{i}F_{k}$ of $H$. To each side $\alpha_{i}\beta_{i}$ or $\alpha_{i}\beta_{i+1}$ of $Q$, combined with each of the edges $B_{k}$ of $P$, there will correspond a face $\alpha_{i}\beta_{i}$ or $\alpha_{i}\beta_{i+1}B_{k}$ of $H$.
+
+To each vertex $C_{k}$ of $P$, combined with each of the sides $\alpha_{i}\beta_{i}$ or $\alpha_{i}\beta_{i+1}$ of $H$\ednote{Printed $H$; the sides $\alpha_{i}\beta_{i}$ and $\alpha_{i}\beta_{i+1}$ belong to the polygon $Q$, so $Q$ is expected; an apparent misprint.}, there will correspond an edge $\alpha_{i}\beta_{i}C_{k}$ or $\alpha_{i}\beta_{i+1}C_{k}$ of $H$. To each vertex $\alpha_{i}$ or $\beta_{i}$ of $Q$, combined with each of the edges $B_{k}$ of $P$, there will correspond an edge $\alpha_{i}\beta_{k}$\ednote{Printed $\alpha_{i}\beta_{k}$; by the pattern of the sentence and of the Tableau on p. 173, $\alpha_{i}B_{k}$ is expected; an apparent misprint.} or $\beta_{i}B_{k}$ of $H$.
+
+Finally, to each vertex $\alpha_{i}$ or $\beta_{i}$ of $Q$, combined with each of the vertices $C_{k}$ of $P$, there will correspond a vertex $\alpha_{i}C_{k}$ or $\beta_{i}C_{k}$ of $H$.
+
+\origpage{172}
+
+But several observations are in order. First, for $y = A_{i}$ the polyhedron $P$ degenerates in such a way that some of its faces disappear; if, for example, the face $F_{k}$ disappears for $y = A_{i}$, the corresponding face $\alpha_{i}F_{k}$ of the polyhedron $H$ will not exist.
+
+Likewise, although this can be avoided, one could conceive that an edge $B_{k}$ should disappear for $y = A_{i}$; in that case, the edge $\alpha_{i}B_{k}$ would not exist.
+
+On the other hand, let us give $i$ a determinate value and make the index $k$ take all possible values; let us then consider, on the one hand, the set of the cells $\alpha_{i}\beta_{i}F_{k}$ and, on the other hand, the set of the cells $\alpha_{i}\beta_{i+1}F_{k}$.
+
+These two sets will be identical, although in general the cell $\alpha_{i}\beta_{i}F_{k}$, considered separately, is not identical to the cell $\alpha_{i}\beta_{i+1}F_{k}$, nor even to another cell $\alpha_{i}\beta_{i+1}F_{l}$.
+
+It may also happen that some of the faces $\alpha_{i}\beta_{i}B$ are identical to some of the faces $\alpha_{i}\beta_{i+1}B$, or some of the edges $\alpha_{i}\beta_{i}C$ to some of the edges $\alpha_{i}\beta_{i+1}C$.
+
+On the other hand, let us compare the different faces $\beta_{i}F_{k}$; the Riemann surface $S_{0}$ which corresponds to the point $O$ will be found subdivided into a polyhedron in $q$ different ways, according as one regards the point $O$ as corresponding to the vertex $\beta_{1}$, or to $\beta_{2}$, \ldots, or to $\beta_{q}$. It is these $q$ modes of subdivision which generate the faces $\beta F$. If, then, $m$ is the number of the faces of $P$, one will have the identities
+\[ \begin{gathered} \beta_{i}F_{1} + \beta_{i}F_{2} + \ldots + \beta_{i}F_{m} = \beta_{j}F_{1} + \beta_{j}F_{2} + \ldots + \beta_{j}F_{m} \\ (i, j = 1, 2, \ldots, q). \end{gathered} \tag{2} \]
+
+It may happen that some of the faces $\beta F$ are identical to one another. But this will not always happen. It may likewise happen that some of the edges $\beta B$, or some of the vertices $\beta C$, are identical.
+
+Finally, in consequence of the degeneration of $P$ for $y = A_{i}$, it may happen that some of the faces $\alpha_{i}F$, or of the edges $\alpha_{i}B$, or of the vertices $\alpha_{i}C$ are identical.
+
+In summary, our partial manifolds, hypercells, cells, edges or
+
+\origpage{173}
+vertices can be distributed into four categories in accordance with the following Table:
+\[ \begin{matrix} \text{Nature of the manifold.} & & \text{Category} & & \\[1ex] & 1. & \alpha\beta. & \alpha. & \beta. \\[1ex] \text{Hypercells}\ldots & F_{k} & \text{»} & \text{»} & \text{»} \\[1ex] \text{Cells}\ldots & B_{k} & \alpha_{i}\beta_{i}F_{k},\ \alpha_{i}\beta_{i+1}F_{k} & \text{»} & \text{»} \\[1ex] \text{Faces}\ldots & C_{k} & \alpha_{i}\beta_{i}B_{k},\ \alpha_{i}\beta_{i+1}B_{k} & \alpha_{i}F_{k} & \beta_{i}F_{k} \\[1ex] \text{Edges}\ldots & \text{»} & \alpha_{i}\beta_{i}C_{k},\ \alpha_{i}\beta_{i+1}C_{k} & \alpha_{i}B_{k} & \beta_{i}B_{k} \\[1ex] \text{Vertices}\ldots & \text{»} & \text{»} & \alpha_{i}C_{k} & \beta_{i}C_{k} \end{matrix} \]
+
+There can be no identity between two manifolds of different category. Two manifolds of category 1 are always distinct.
+
+Between two manifolds of category $\alpha\beta$ there can be identity only if the index $i$ of $\alpha$ is the same (otherwise the corresponding values of $y$ would lie on two different cuts $OA_{i}, OA_{j}$); the index of $\beta$ must, on the contrary, be different; there can be identity, for example, between $\alpha_{i}\beta_{i}F_{k}$ and $\alpha_{i}\beta_{i+1}F_{h}$, but not between $\alpha_{i}\beta_{i}F_{k}$ and $\alpha_{i}\beta_{i}F_{h}$. Two manifolds of category $\alpha$ can be identical only if the index of $\alpha$ is the same.
+
+Before going further, we are going to modify our conventions a little, in order to avoid the inconveniences which might result from identities such as (2), which hold between two sums of faces although the faces taken individually are not identical two by two.
+
+Let $M$ be any point of the cut $OA_{i}$; the corresponding Riemann surface $S$ can be decomposed into a polyhedron in two ways, according as one regards the point $M$ as belonging to the one or to the other of the two lips of the cut. Let us superpose the two modes of subdivision, considering at once the edges arising from the one and from the other mode. We shall thus obtain a certain polyhedron, which I shall call $P'$; one can arrange for it to remain homeomorphic to itself when the point $M$ describes the whole cut $OA_{i}$ (\emph{vide infra}, \S~5).
+
+I shall call $F'_{k}, B'_{k}, C'_{k}$ the faces, edges and vertices of $P'$. Each of the faces $F$ of the first mode of subdivision will decompose into a certain number of faces $F'$, and the same will hold for each of the
+
+\origpage{174}
+faces $F$ of the second mode; so that each face $F'$ will belong to one of the faces $F$ of the first mode, and to one only, and to one of the faces $F$ of the second mode, and to one only.
+
+Each of the edges $B$ of each of the two modes of subdivision will decompose into a certain number of edges $B'$. Each edge $B'$ will belong to at least one of the edges $B$ of one of the two modes, and perhaps to one edge of each mode; but in no case will it belong to two different edges of the same mode.
+
+Finally, the vertices $C'$ will be the vertices $C$ of the two modes, to which one must adjoin the points of intersection of the edges of the first mode with those of the second.
+
+Likewise, we have seen that the surface $S_{0}$ which corresponds to the point $O$ is decomposed into a polyhedron in $q$ different ways. Let us superpose the $q$ modes of subdivision; we shall obtain a polyhedron $P''$ whose faces, edges and vertices will be called $F''_{k}, B''_{k}, C''_{k}$. Each of the faces $F$ corresponding to one of the $q$ modes, as well as each of the faces $F'$ corresponding to the polyhedron $P'_{i}$, which one obtains by regarding the point $O$ as belonging to the cut $OA_{i}$, will be found decomposed into a certain number of faces $F''$. Each face $F''$ will belong to one of the faces $F'$ of the polyhedron $P'_{i}$, and to one only; to one of the faces $F$ of each of the $q$ modes of subdivision, and to one only.
+
+Each of the edges $B$ of the $q$ modes, and each of the edges $B'$ of the various polyhedra $P'_{i}$, will decompose into a certain number of edges $B''$. Each edge $B''$ will belong to one of the edges $B$ of one of the $q$ modes, and to one of the edges $B'$ of one of the polyhedra $P'_{i}$; it may belong at once to two edges of two different modes, or to two edges $B'$ of two different polyhedra $P'$, but not to two edges $B$ of the same mode or to two edges $B'$ of the same polyhedron.
+
+The vertices $C''$ will consist of the vertices of the $q$ modes, to which one must adjoin the points of intersection of the edges $B$ belonging to different modes.
+
+Nothing is to be changed as regards the manifolds of category 1; let us pass to category $\alpha\beta$. Each of the cells $\alpha_{i}\beta_{i}F_{k}$ or $\alpha_{i}\beta_{i+1}F_{k}$ is going to be found decomposed into partial cells $\alpha_{i}\beta_{i}F'_{k}, \alpha_{i}\beta_{i+1}F'_{k}$; likewise, each of the faces $\alpha\beta B$ will be decomposed into faces $\alpha\beta B'$. To the edges $\alpha\beta C$
+
+\origpage{175}
+there will be adjoined other edges corresponding, as we have seen above, to the intersections of two edges $B$ belonging to different modes. The set of these edges will constitute what I shall call the edges $\alpha\beta C'$.
+
+One sees that the cells $\alpha_{i}\beta_{i}F'_{k}$ are identical to the cells $\alpha_{i}\beta_{i+1}F'_{k}$; likewise for the faces $\alpha_{i}\beta_{i}B'_{k}$ and $\alpha_{i}\beta_{i+1}B'_{k}$ and for the edges $\alpha_{i}\beta_{i}C'_{k}$ and $\alpha_{i}\beta_{i+1}C'_{k}$. But it is important to remark that the cell $\alpha_{i}\beta_{i}F_{k}$ decomposes into partial cells $\alpha_{i}\beta_{i}F'$ which are not, in general, the same as the partial cells into which the cell $\alpha_{i}\beta_{i+1}F_{k}$ decomposes. The same observation applies to the faces $\alpha_{i}\beta_{i}B_{k}$ and $\alpha_{i}\beta_{i+1}B_{k}$.
+
+Let us pass to category $\alpha$. When the point $M$ comes to $A_{i}$, the two modes of decomposition of the surface $S$ into a polyhedron $P$ coincide; on the other hand, this polyhedron degenerates, as I have said, so that some of the manifolds $\alpha_{i}F'_{k}, \alpha_{i}B'_{k}, \alpha_{i}C'_{k}$ may disappear and some may coincide.
+
+Let us pass to category $\beta$. We are going to have partial manifolds $\beta_{i}F''_{k}, \beta_{i}B''_{k}, \beta_{i}C''_{k}$.
+
+The faces $\beta_{1}F''_{k}, \beta_{2}F''_{k}, \ldots, \beta_{q}F''_{k}$ will be identical; but the face $\beta_{1}F_{k}$ decomposes into partial faces $\beta F''$ which are not, in general, the same as those into which the face $\beta_{2}F_{k}$, or the face $\beta_{3}F_{k}$, etc., decompose. The same observation for the edges.
+
+This being posed, I first make the following remark:
+
+A manifold of category $\alpha$ will always be homologous to a sum of manifolds belonging to other categories.
+
+Take, for example, the face $\alpha_{i}F'_{k}$; it belongs to the cell $\alpha_{i}\beta_{i}F'_{k}$, which admits in addition the face $\beta_{i}F'_{k}$ and those of the faces $\alpha_{i}\beta_{i}B'_{h}$ which correspond to edges $B'_{h}$ belonging to the face $F'_{k}$ of the polyhedron $P'$. If, then, one has the congruence (for this polyhedron $P'$)
+\[ F'_{k} \equiv \Sigma \varepsilon_{q} B'_{q}, \]
+the $\varepsilon_{q}$ being numbers equal to $+1$, $-1$ or 0, one will have the congruence
+\[ \alpha_{i}\beta_{i}F'_{k} \equiv \alpha_{i}F'_{k} - \beta_{i}F'_{k} + \Sigma \varepsilon_{q} \alpha_{i}\beta_{i}B'_{q} \]
+
+\origpage{176}
+and, consequently, the homology
+\[ \alpha_{i}F'_{k} \backsim \beta_{i}F'_{k} - \Sigma \varepsilon_{q} \alpha_{i}\beta_{i}B'_{q}. \]
+
+The manifolds which figure in the second member of this homology belonging to the categories $\beta$ and $\alpha\beta$, the theorem is proved, and one would establish it in the same way for $\alpha_{i}B'_{k}$ and $\alpha_{i}C'_{k}$.
+
+\subsection*{\S~2. --- Cycles of three dimensions.}
+
+I pass to the search for the homologies and congruences between these manifolds. I begin with the following remark:
+
+\emph{We can always suppose that our congruences contain no manifold of category $\alpha$}.
+
+Let, indeed,
+\[ \Sigma \alpha_{i}A + H \equiv 0 \]
+be a congruence in which the $\alpha_{i}A$ are manifolds of $p$ dimensions of category $\alpha$ (corresponding to a manifold $A$ of the polyhedron $P$ or $P'$), and $H$ a combination of manifolds of $p$ dimensions of the other categories.
+
+We shall then have, on our polyhedron $P$ or $P'$, the congruence
+\[ A \equiv \Sigma \varepsilon a, \]
+where the $\varepsilon$ are integers and the $a$ manifolds having one dimension fewer than $A$. One will then have the congruence
+\[ \alpha_{i}\beta_{i}A \equiv \alpha_{i}A - \beta_{i}A + \Sigma \varepsilon \alpha_{i}\beta_{i}a, \]
+whence the homology
+\[ \alpha_{i}A \backsim \beta_{i}A - \Sigma \varepsilon \alpha_{i}\beta_{i}a. \]
+Combining this homology with the congruence
+\[ \Sigma \alpha_{i}A + H \equiv 0, \]
+
+\origpage{177}
+we find the congruence
+\[ \Sigma \beta_{i}A - \Sigma \Sigma \varepsilon \alpha_{i}\beta_{i}a + H \equiv 0, \]
+which no longer contains any manifold of category $\alpha$. Q.~E.~D.
+
+To obtain the homologies between the cells, it suffices to consider those which are deduced from the hypercells.
+
+Let us suppose that on the polyhedron $P$ one has the congruence
+\[ F_{k} \equiv \Sigma \varepsilon_{q} B_{q}, \]
+the $\varepsilon$ being equal to $+1$, $-1$ or 0; one will have, for the polyhedron of four dimensions, the congruence
+\[ F_{k} \equiv \Sigma \varepsilon_{q} B_{q} + \Sigma \alpha_{i}\beta_{i}F_{k} - \Sigma \alpha_{i}\beta_{i+1}F_{k}. \]
+and, consequently, the homology
+\[ \Sigma \varepsilon_{q} B_{q} \backsim \Sigma \alpha_{i}\beta_{i+1}F_{k} - \Sigma \alpha_{i}\beta_{i}F_{k}. \tag{1} \]
+
+We shall recall, moreover, that $\alpha_{i}\beta_{i}F_{k}$, as well as $\alpha_{i}\beta_{i+1}F_{k}$, can be replaced by the sum of several partial cells $\alpha_{i}\beta_{i}F'$.
+
+Whence a first consequence; let $\Sigma \zeta_{q} B_{q}$ be any combination of the cells $B_{q}$, the $\zeta$ being integers. I suppose that on the polyhedron $P$ one has, between the corresponding edges $B_{q}$, the homology
+\[ \Sigma \zeta_{q} B_{q} \backsim 0, \]
+that is to say, that the set of these edges (each affected with the coefficient $\zeta_{q}$) forms on the surface $S$ a closed cycle capable of being reduced to a point by continuous deformation.
+
+Then one will have on the polyhedron $P$ the congruence
+\[ \Sigma \zeta_{q} B_{q} \equiv \Sigma \theta_{k} F_{k}, \]
+the $\theta$ being integers; one will then have on the polyhedron of four dimensions
+
+\origpage{178}
+the congruence
+\[ \Sigma \theta_{k} F_{k} \equiv \Sigma \zeta_{q} B_{q} + \Sigma \theta_{k} \alpha_{i}\beta_{i}F_{k} - \Sigma \theta_{k} \alpha_{i}\beta_{i+1}F_{k}, \]
+whence the homology
+\[ \Sigma \zeta_{q} B_{q} \backsim \Sigma \theta_{k} \alpha_{i}\beta_{i+1}F_{k} - \Sigma \theta_{k} \alpha_{i}\beta_{i}F_{k}. \]
+
+\emph{If, then, a combination of edges $B$ is homologous to zero on $P$, the corresponding combination of cells $B$ will be homologous to a combination of cells of category $\alpha\beta$}.
+
+Let us now look for the congruences between the cells.
+
+These congruences are of the form
+\[ \Sigma \zeta_{q} B_{q} + \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv 0, \tag{2} \]
+the $\zeta$ and the $\theta'$ being integers. \emph{I say first that one will have on the polyhedron $P$}:
+\[ \Sigma \zeta_{q} B_{q} \equiv 0, \]
+\emph{that is to say, that the set of the edges} (affected with the coefficients $\zeta$) \emph{must form one or several cycles on the surface $S$}.
+
+Let there be, indeed, on $P$ the congruence
+\[ B_{q} \equiv \Sigma \varepsilon_{h} C_{h}. \]
+
+We shall have on our polyhedron of four dimensions the congruence
+\[ B_{q} \equiv \Sigma \varepsilon_{h} C_{h} + H, \]
+$H$ denoting a combination of faces not belonging to category 1. One will have, on the other hand,
+\[ \alpha_{i}\beta_{i}F'_{k} \equiv H, \]
+
+\origpage{179}
+$H$ still having the same signification; one deduces from this
+\[ \Sigma \zeta_{q} B_{q} + \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \zeta_{q} \varepsilon_{h} C_{h} + H, \]
+$H$ still having the same signification.
+
+As the second member must be identically null, one must have identically
+\[ \Sigma \zeta_{q} \varepsilon_{h} C_{h} = 0. \]
+
+One will therefore have on the polyhedron $P$
+\[ \Sigma \zeta_{q} B_{q} \equiv \Sigma \zeta_{q} \varepsilon_{h} C_{h} = 0. \qquad \text{Q.~E.~D.} \tag{3} \]
+
+One must therefore have, by virtue of (2),
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} = \Sigma \zeta_{q} \alpha_{i}\beta_{i+1}B_{q} - \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q}. \tag{4} \]
+
+Let $S(M)$ be what the Riemann surface $S$ becomes when the point $y$ comes to $M$ on the cut $OA_{i}$. Let $MF'_{k}$ be the face $F'_{k}$ of the polyhedron $P'$ corresponding to this position of the point $M$; let $MP$ be the limit towards which the polyhedron $P$ tends when the point $y$ approaches $M$ from the side $\alpha_{i}\beta_{i}$ of the cut. Let $(MP)$ be the limit towards which this same polyhedron tends when the point $y$ tends towards $M$ from the side $\alpha_{i}\beta_{i+1}$ of the cut. Let $MB_{q}$ and $(MB_{q})$ be the edges $B_{q}$ of the two polyhedra $MP$ and $(MP)$.
+
+If we then take up again the congruence (4) and, in each of the manifolds which figure in it, keep only the points which belong at the same time to $S(M)$, we shall have a new congruence
+\[ \Sigma \theta' MF'_{k} \equiv \Sigma \zeta_{q} (MB_{q}) - \Sigma \zeta_{q} MB_{q}. \tag{5} \]
+
+The expressions $\Sigma \zeta_{q} (MB_{q})$ and $\Sigma \zeta_{q} MB_{q}$ represent two cycles drawn on the surface $S(M)$; let $\Omega'_{i}$ and $\Omega_{i}$ be these two cycles. From the congruence (5) one can derive the homology
+\[ \Omega'_{i} - \Omega_{i} \backsim O, \tag{6} \]\ednote{The print sets a capital $O$ here in place of the zero; $0$ is meant.}
+which must hold on the surface $S(M)$.
+
+\origpage{180}
+
+Let us suppose that $y$, starting from the point $M$ on the side $\alpha_{i}\beta_{i}$ of the cut, turns round the singular point $A_{i}$ and returns to the point $M$ on the other side of the cut. The cycle $\Sigma \zeta_{q} B_{q}$, being deformed in a continuous manner, will have as initial position $\Sigma \zeta_{q} MB_{q} = \Omega_{i}$ and as final position $\Sigma \zeta_{q} (MB_{q}) = \Omega'_{i}$.
+
+The homology therefore expresses that $\Omega_{i}$ is homologous to its transform $\Omega'_{i}$ (by the transformation which the cycles of $S$ undergo when $y$ turns round the singular point $A_{i}$). The cycle $\Sigma \zeta_{q} B_{q}$ therefore remains homologous to itself as a result of this transformation, and also as a result of the analogous transformations corresponding to the other singular points. The cycles which enjoy this property may be called \emph{invariant cycles}. We shall return to this notion further on. We see that to every congruence of the form (2) there corresponds an invariant cycle. \emph{I say that, conversely, to every invariant cycle there corresponds a congruence of the form} (2).
+
+Let, indeed, $\Sigma \zeta_{q} B_{q}$ be an invariant cycle. One will have on $S(M)$
+\[ \Sigma \zeta_{q} (MB_{q}) \backsim \Sigma \zeta_{q} MB_{q} \tag{6} \]
+and, consequently, one can find integers $\theta'$ such that
+\[ \Sigma \theta'_{k} MF'_{k} \equiv \Sigma \zeta_{q} (MB_{q}) - \Sigma \zeta_{q} MB_{q}. \tag{5} \]
+
+One deduces from this the congruence
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \zeta_{q} \alpha_{i}\beta_{i+1}B_{q} - \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q} + \Sigma \theta'_{k} \alpha_{i}F'_{k} - \Sigma \theta'_{k} \beta_{i}F'_{k}. \]
+
+The sign $\Sigma$ refers here to the index $k$, the index $i$ being constant; but from this we can deduce
+\[ \Sigma \zeta_{q} B_{q} + \Sigma \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \Sigma \theta'_{k} \alpha_{i}F'_{k} - \Sigma \Sigma \theta'_{k} \beta_{i}F'_{k}, \]
+the double sign $\Sigma$ then referring to the two indices $i$ and $k$, for one evidently has
+\[ \Sigma \zeta_{q} B_{q} \equiv \Sigma \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q} - \Sigma \Sigma \zeta_{q} \alpha \beta_{i+1}B_{q}. \]\ednote{The index of $\alpha$ in the last term did not print; $\alpha_{i}$ is expected, as in the preceding term.}
+
+\origpage{181}
+
+It remains for us to prove that one must have
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0, \qquad \Sigma \Sigma \theta'_{k} \beta_{i}F'_{k} = 0. \]
+
+Let us first see what concerns the first of these equalities.
+
+Let us take up again the congruence (5) and make the point $M$ tend towards $A_{i}$; in the limit $MF'_{k}$ will reduce to $\alpha_{i}F'_{k}$, and $\Omega_{i}$ will coincide with $\Omega'_{i}$ and with $\Sigma \zeta_{q} \alpha_{i}B_{q}$; the congruence (5) will therefore become
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} \equiv 0. \tag{7} \]
+
+Let us examine the signification of this congruence. Let us first suppose that for $y = A_{i}$ the surface $S$ does not decompose, that is to say, that the curve
+\[ f(x, A_{i}, z) = 0 \]
+is indecomposable. Then the congruence can hold only under two hypotheses: either one has the identity
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0, \]
+I mean that in the first member there can figure (with a coefficient $\theta'$ different from zero) only the faces $\alpha_{i}F'_{k}$ which disappear in consequence of the degeneration of the polyhedron $P'_{i}$, as I explained above.
+
+Or else the combination $\Sigma \theta'_{k} \alpha_{i}F'_{k}$ will represent (once or several times) the entire Riemann surface; so that
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = nS. \]
+
+But for the surface $S$ corresponding to the point $M$ we can write
+\[ S = \Sigma MF'_{k}, \]
+since the set of the faces $F'_{k}$ of the polyhedron $P'_{i}$ must cover the entire surface $S$.
+
+One has, moreover,
+\[ \Sigma MP'_{k} \equiv 0. \]\ednote{Printed $MP'_{k}$; $MF'_{k}$ is expected, as in the preceding display; an apparent misprint.}
+
+\origpage{182}
+
+We shall therefore have the congruence
+\[ \Sigma (\theta'_{k} - n) MF'_{k} \equiv \Omega'_{i} - \Omega_{i}, \tag{5 \textit{bis}} \]
+and, on the other hand, when $M$ comes to $A_{i}$,
+\[ \Sigma \alpha_{i}F'_{k} = S, \]
+and consequently
+\[ \Sigma (\theta'_{k} - n) \alpha_{i}F'_{k} = 0. \]
+
+The second hypothesis is thus brought back to the first; for this it suffices to change $\theta'_{k}$ into $\theta'_{k} - n$, which is permitted, since the congruence (5) is thereby replaced by a congruence (5~\emph{bis}) of the same form.
+
+Let us now suppose that the curve $F(x, A_{i}, z)$ decomposes and, for example, that the corresponding Riemann surface decomposes into two partial surfaces $S_{1}$ and $S_{2}$.
+
+Then our congruence (7) could hold provided that one had
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = n_{1}S_{1} + n_{2}S_{2}, \]
+$n_{1}$ and $n_{2}$ being integers. That at least is what one might fear, but one can see in several ways that it will not be so.
+
+The simplest is to reason as follows:
+
+Let us start from the Riemann surface $S_{0}$ which corresponds to the point $O$; let us make $y$ vary in a continuous fashion from $O$ to $A_{i}$ following the cut $OA_{i}$; the Riemann surface $S$ will be deformed in a continuous manner while remaining homeomorphic to itself. Let $S(M)$ be the surface $S$ corresponding to the point $M$. To each point of $S(M)$ one can make correspond a point of $S_{0}$, since one can pass from $S(M)$ to $S_{0}$ by continuous deformation. Let us consider on $S(M)$ the two cycles $\Omega_{i}$ and $\Omega'_{i}$; to these two cycles there will correspond on $S_{0}$ two closed cycles, which I shall call $U_{i}$ and $U'_{i}$.
+
+When the point $M$ traverses $OA_{i}$ with a continuous motion, the two cycles $U_{i}$ and $U'_{i}$ will move with a continuous motion on the surface $S_{0}$. When $M$ is very near $A_{i}$, the two cycles $\Omega_{i}$ and $\Omega'_{i}$ and,
+
+\origpage{183}
+consequently, the two cycles $U_{i}$ and $U'_{i}$ are very near each other. When the point $M$ comes to $O$, the two cycles $\Omega_{i}$ and $U_{i}$ become identical and reduce to
+\[ \Sigma \zeta_{q} \beta_{i}B_{q} = \Omega^{0}_{i}; \]
+the two cycles $\Omega'_{i}$ and $U'_{i}$ become identical and reduce to
+\[ \Sigma \zeta_{q} \beta_{i+1}B_{q} = \Omega^{0}_{i+1}. \]
+
+Let us suppose that the point $M$ varies from $A_{i}$ up to a certain point $M_{0}$ of the cut $OA_{i}$; the two cycles $U_{i}$ and $U'_{i}$, at first coincident, will separate and sweep out a certain region $R$ of $S_{0}$; to this region there will correspond on $S(M_{0})$ a certain region which will be formed of a certain number of faces of a corresponding polyhedron $P'_{i}$, since it is bounded by the two cycles $\Omega_{i}$ and $\Omega'_{i}$, which are formed of edges of this polyhedron. We can write the congruence
+\[ \Sigma \theta'_{k} MF'_{k} \equiv \Omega'_{i} - \Omega_{i}, \tag{5} \]
+where $\Sigma \theta'_{k} M_{0}F'_{k}$ will represent precisely the region we have just defined.
+
+This region reducing to zero when $M$ comes to $A_{i}$, we shall have, in all cases,
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0. \tag{8} \]
+
+We are now going to show that
+\[ \Sigma \Sigma \theta'_{k} \beta_{i}F'_{k} = 0, \]
+and for this we are going to study the sum
+\[ \Sigma \theta'_{k} \beta_{i}F'_{k}. \]
+
+From what precedes, it is nothing other than the region swept out on the surface $S_{0}$ by the two cycles $U_{i}$ and $U'_{i}$ when the point $M$ varies from $A_{i}$ to $O$; it is bounded by the two cycles $\Omega^{0}_{i}$ and $\Omega^{0}_{i+1}$.
+
+\origpage{184}
+
+One sees that we shall have
+\[ \begin{aligned} &\Sigma \theta'_{k} \beta_{1}F'_{k} \equiv \Omega^{0}_{2} - \Omega^{0}_{1},\\ &\Sigma \theta'_{k} \beta_{2}F'_{k} \equiv \Omega^{0}_{3} - \Omega^{0}_{2},\\ &\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots,\\ &\Sigma \theta'_{k} \beta_{q}F'_{k} \equiv \Omega^{0}_{1} - \Omega^{0}_{q}, \end{aligned} \]
+whence, by adding,
+\[ \Sigma \Sigma \theta'_{k} \beta_{i}F'_{k} \equiv 0. \]
+
+This congruence shows us that the combination $\Sigma \Sigma \theta'_{k} \beta_{i}F'_{k}$ reduces to zero or to a certain number of times the surface $S_{0}$.
+
+Let us see whether this latter hypothesis can present itself. Let us suppose that $y$ describes a closed contour while remaining infinitely near the cuts $OA_{i}$, describing first one of the lips of $OA_{1}$, then the other lip, then the two lips of $OA_{2}$, and so on, then finally the two lips of $OA_{q}$. Let us consider a cycle on the corresponding Riemann surface; this cycle will at first coincide with $\Omega^{0}_{1}$ when $y$ is at $O$ on the first lip of $OA_{1}$; when $y$ describes the first lip of $OA_{1}$, this cycle will be deformed in a continuous manner, it will be our cycle $\Omega_{1}$, and the corresponding points on $S_{0}$ will form the cycle $U_{1}$; when the point $y$ returns from $A_{1}$ to $O$ by the second lip, this cycle will be nothing other than our cycle $\Omega'_{1}$, and the corresponding points on $S_{0}$ will form the cycle $U_{1}$\ednote{Printed $U_{1}$; $U'_{1}$ is expected, the image of $\Omega'_{1}$; an apparent misprint.}; when $y$ has returned to $O$, this cycle will coincide with $\Omega^{0}_{2}$; when $y$ describes the two lips of $OA_{2}$, the cycle will merge first with $\Omega_{2}$ and then with $\Omega'_{2}$, and the corresponding points on $S_{0}$ will form the cycle $U_{2}$, then the cycle $U'_{2}$, and so on. The question is to know whether this moving cycle, which coincides successively with $U_{1}$, with $U'_{1}, U_{2}, U'_{2}, \ldots, U_{q}, U'_{q}$ and, in its initial as in its final position, coincides with $\Omega^{0}_{1}$, has described the entire surface $S_{0}$.
+
+To account for this, we must see why these cycles are deformed.
+
+Let us consider the equation
+\[ f(x, y, z) = 0, \]
+
+\origpage{185}
+where $y$ will be regarded as a constant; the singular points of $z$, regarded as a function of $x$, will be given by the equation
+\[ \frac{df}{dz} = 0. \]
+
+Let us consider a cycle drawn on the Riemann surface. To this cycle there will correspond in the $x$-plane a certain contour which will enclose a certain number of these singular points. When $y$ varies, these singular points will move, and if we do not want the cycle to pass through one of these singular points, we shall have to deform it so as to make it flee before these moving singular points. Whatever the displacements of these singular points, provided that two of them do not come to coincide, it will always be possible to deform the cycle continuously in such a way that it never passes through any of these points; one can even choose a certain number of fixed points and deform the cycle in such a way that it never passes through any of these singular points nor through any of the fixed points, provided that these singular points never coincide either with one another or with the fixed points.
+
+When $y$ varies, the singular points will move, and the corresponding points on $S_{0}$ will move likewise. They could coincide only if $y$ came to one of the points $A_{i}$; but we make $y$ turn round these points, approaching them very closely but without reaching them. On the other hand, these points are going to describe lines, and we can find on $S_{0}$ a region $\rho$ which will be crossed by none of these lines. It is the points of this region $\rho$ that will play the role of the fixed points of which I was speaking just now. Then we can deform our cycle in such a way that, without ever passing through one of the singular points, it never enters the region $\rho$. It cannot, therefore, generate the entire surface $S_{0}$. The hypothesis in question must be rejected, so that one will always have the identity
+\[ \Sigma \Sigma \theta'_{k} \beta_{i}F'_{k} = 0. \tag{9} \]
+
+To finish, we must remark that \emph{there can be no congruences between cells of category $\alpha\beta$ alone}. Let, indeed,
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv 0 \]
+
+\origpage{186}
+be such a congruence; we shall first find
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \theta'_{k} \varepsilon'_{h} \alpha_{i}\beta_{i}B'_{h} + \Sigma \theta'_{k} \alpha_{i}F'_{k} - \Sigma \theta'_{k} \beta_{i}F'_{k}; \]
+so that one will have
+\[ \Sigma \theta'_{k} \varepsilon'_{h} \alpha_{i}\beta_{i}B'_{h} = 0, \qquad \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0, \qquad \Sigma \theta'_{k} \beta_{i}F'_{k} = 0, \]
+and, consequently, on the polyhedron $P'_{i}$ (reasoning as we did to deduce 5 from 4),
+\[ \Sigma \theta'_{k} MF'_{k} \equiv 0. \]
+
+The set of the faces $MF'_{k}$ (affected with the numerical coefficients $\theta'_{k}$) of the polyhedron $P'_{i}$ must therefore be congruent to zero, that is to say, form a closed surface, which can only be the entire surface of $S(M)$. The set $\Sigma \theta'_{k} \alpha_{i}F'_{k}$ will then represent the entire surface $S(A_{i})$; one cannot, therefore, have
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0. \]
+
+Therefore \emph{our congruence is impossible}.
+
+We know that, to obtain all the cycles of three dimensions, it suffices to look for the combinations of cells which are congruent to zero without being homologous to zero.
+
+First, such a combination must contain cells of category 1, as we have just seen; let $\Sigma \zeta_{q} B_{q}$ be the set of these cells; the set of the corresponding edges must form a cycle on the surface $S$ (it is the cycle $\Omega_{i}$). This cycle must not be homologous to zero. If, indeed, this cycle were homologous to zero, the combination $\Sigma \zeta_{q} B_{q}$ would be homologous to a combination of cells of category $\alpha\beta$; one could therefore replace $\Sigma \zeta_{q} B_{q}$ by this combination in the first member of our congruence; this first member would then contain only cells of category $\alpha\beta$, which is impossible according to what we have just seen.
+
+Finally, our cycle $\Omega_{i}$ must be \emph{invariant}, that is to say, it must
+
+\origpage{187}
+change into a homologous cycle $\Omega'_{i}$ when $y$ turns round $A_{i}$. But when $y$ turns round one of the singular points $A_{i}$, the cycles of the Riemann surface undergo one of the substitutions of the \emph{Picard group}. The cycle $\Omega_{i}$ must therefore be invariant for the Picard group.
+
+Thus, to every cycle of three dimensions of $V$ there corresponds a cycle of the surface $S$ invariant for the Picard group.
+
+Conversely, let us consider a cycle invariant for the Picard group. If $\Omega_{i}$ is a position of this cycle on the polyhedron $P'_{i}$, and if $\Omega'_{i}$ is what $\Omega_{i}$ becomes when $y$ has turned round $A_{i}$, one will have
+\[ \Omega_{i} \backsim \Omega'_{i}. \]
+
+One can find integers $\theta'$ so as to satisfy the congruence (5). The congruence (4) will likewise hold. But we have just seen that under these conditions the identities (8) and (9) hold, so that the congruence (4) can be written
+\[ \Sigma \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \zeta_{q} \alpha_{i}\beta_{i+1}B_{q} - \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q}, \]
+whence
+\[ \Sigma \zeta_{q} B_{q} + \Sigma \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv 0. \]
+
+The first member of this congruence represents a cycle of three dimensions.
+
+\emph{In summary, as many distinct invariant cycles as the Picard group admits, so many distinct cycles of three dimensions will the manifold $V$ admit}.
+
+The best way to picture these cycles of three dimensions is to suppose that one has not merely
+\[ \Omega_{i} \backsim \Omega'_{i}, \]
+but identically
+\[ \Omega_{i} = \Omega'_{i}; \]
+this is a supposition which we can always make, because of the
+
+\origpage{188}
+arbitrary fashion in which one can make our Riemann surfaces correspond point by point.
+
+Under these conditions, one will give $y$ all possible values.
+
+To each value there will correspond a position of the cycle $\Omega_{i}$, and, because of the invariance of this cycle, \emph{to two infinitely near points situated on either side of one of the cuts there will correspond two infinitely}\ednote{Printed ``infinies peu''; ``infiniment peu'' is expected; an apparent misprint.} \emph{little different positions of the cycle $\Omega_{i}$}.
+
+The various positions of this cycle will therefore generate a closed cycle of three dimensions.
+
+\subsection*{\S~3. --- Cycles of two dimensions.}
+
+To find all the cycles of two dimensions, it suffices to look for all the combinations of faces which are congruent to zero without being homologous to zero.
+
+We can first suppose that this combination contains no face of category $\alpha$; for, according to what we established at the beginning of the preceding section, every face of category $\alpha$ is homologous to faces of the categories $\alpha\beta$ and $\beta$.
+
+The question now is whether these combinations can contain faces of category 1. I first observe this: let $C_{1}$ and $C_{2}$ be any two vertices of the polyhedron $P$; one can always pass from the one to the other by following certain edges of this polyhedron, so that we shall have on this polyhedron the congruence
+\[ C_{1} - C_{2} \equiv \Sigma \zeta_{q} B_{q}, \]
+the second member representing the set of the edges by which one passes from $C_{1}$ to $C_{2}$; more generally, one can find integers $\zeta$ such that
+\[ \Sigma \varepsilon_{k} C_{k} \equiv \Sigma \zeta_{q} B_{q}, \tag{1} \]
+provided that the $\varepsilon$ are integers such that
+\[ \Sigma \varepsilon_{k} = 0; \]
+
+\origpage{189}
+for then $\Sigma \varepsilon_{k} C_{k}$ can be regarded as a sum of differences such as $C_{1} - C_{2}$.
+
+Let us then consider on the manifold $V$ the combination of faces $\Sigma \varepsilon_{k} C_{k}$, and let us suppose $\Sigma \varepsilon_{k} = 0$. We can then find integers $\zeta$ satisfying the congruence (1); there will then result on the manifold $V$
+\[ \Sigma \zeta_{q} B_{q} \equiv \Sigma \varepsilon_{k} C_{k} + \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q} - \Sigma \zeta_{q} \alpha_{i}\beta_{i+1}B_{q}, \]
+and, consequently,
+\[ \Sigma \varepsilon_{k} C_{k} \backsim \Sigma \zeta_{q} \alpha_{i}\beta_{i+1}B_{q} - \Sigma \zeta_{q} \alpha_{i}\beta_{i}B_{q}, \]
+which shows that the combination $\Sigma \varepsilon_{k} C_{k}$ is homologous to a combination of faces of category $\alpha\beta$.
+
+Let us now suppose that one has a congruence of the form
+\[ \Sigma \varepsilon_{k} C_{k} + H = 0, \]\ednote{Printed $=$ with two strokes; the text calls this relation a congruence and restates it below with $\equiv$.}
+$H$ representing a combination of faces of the categories $\alpha\beta$ and $\beta$. If one has $\Sigma \varepsilon_{k} = 0$, one can replace $\Sigma \varepsilon_{k} C_{k}$ in the first member by the combination of faces of the categories of $\beta$ and $\alpha\beta$ which is homologous to it; and then this first member no longer contains faces of category 1.
+
+If now we had two congruences of the same form
+\[ \Sigma \varepsilon_{k} C_{k} + H \equiv 0, \qquad \Sigma \varepsilon'_{k} C_{k} + H' \equiv 0, \]
+we could find two integers $n$ and $n'$ such that
+\[ n\Sigma \varepsilon_{k} + n'\Sigma \varepsilon'_{k} = 0, \]
+and then the congruence
+\[ \Sigma (n\varepsilon_{k} + n'\varepsilon'_{k}) C_{k} + nH + n'H' \equiv 0, \]
+which is a combination of the two preceding ones, could be brought back so as no longer to contain faces of category 1.
+
+\origpage{190}
+
+\emph{In summary, if there are congruences containing faces of category} (1), \emph{there cannot be two distinct ones}.
+
+Let us therefore consider specially the congruences in which only faces of the categories $\beta$ and $\alpha\beta$ figure. Let
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k} \equiv 0 \tag{2} \]
+be one of these congruences.
+
+Let us consider the points common to the manifolds which figure in this congruence and to the surface $S(M)$; let us reduce each of these manifolds to these common points; there will result
+\[ \Sigma \theta'_{k} MB'_{k} \equiv 0. \tag{3} \]
+
+Indeed, the point $M$ being a point of the cut $OA_{i}$ different from $O$, the surface $S(M)$ has no point in common with the faces of category $\beta$, for which $y$ can take only the value $O$. Likewise, the surface $S(M)$ will have no point in common with the faces $\alpha_{j}\beta_{j}B'_{k}$ in which the index $j$ is different from $i$, since for these faces $y$ would have to be on the cut $OA_{j}$, whereas $M$ is on the cut $OA_{i}$.
+
+The congruence (3) signifies that, on the surface $S(M)$, the set of the edges $B'_{k}$ of the polyhedron $P'_{i}$ (affected with the coefficients $\theta'$) must form a closed cycle; let $K_{i}$ be this cycle.
+
+But let us observe that
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} \equiv \Sigma \theta'_{k} \alpha_{i}B'_{k} + H, \]
+$H$ being a set of edges of the categories $\beta$ and $\alpha\beta$. Likewise
+\[ \Sigma \theta''_{k} \beta_{i}F''_{k} \equiv H', \]
+$H'$ being a combination of edges of category $\beta$.
+
+One therefore has
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k} \equiv \Sigma \theta'_{k} \alpha_{i}B'_{k} + H + H', \]
+
+\origpage{191}
+so that the congruence (2) can hold only if one has identically
+\[ \Sigma \theta'_{k} \alpha_{i}B'_{k} = 0. \tag{4} \]
+
+As there is no relation between the edges $\theta'_{k} \alpha_{i}B'_{k}$ belonging to different indices $i$, the identity (4) must hold when one gives the index $i$ a determinate value and extends the summation only over the different values of the index $k$.
+
+The identity (4) then signifies that, when the point $M$ tends towards $A_{i}$, the cycle $K_{i}$ tends to reduce to zero.
+
+Indeed, when $M$ reduces to $A_{i}$, the surface $S(M)$ degenerates and its genus diminishes; certain of its cycles therefore disappear. Let us see how this fact is connected with the study of the Picard group. Let $S_{i}$ be the substitution of this group which corresponds to the singular point $A_{i}$; it will change the cycle $\omega_{h}$, for example, into
+\[ \omega'_{h} = m_{1}\omega_{1} + m_{2}\omega_{2} + \ldots + m_{2p}\omega_{2p}. \]
+
+Therefore, for $M = A_{i}$, one will have
+\[ \omega_{h} = \omega'_{h}; \]
+which means that, for $M = A_{i}$, the cycle $\omega'_{h} - \omega_{h}$ disappears.
+
+Shall we obtain in this way all the cycles which disappear for $M = A_{i}$, which I shall call \emph{vanishing cycles}?
+
+Mr.~Picard has shown (vol.\ I, p.\ 82) that every algebraic surface can be brought by a birational transformation to have only ordinary singularities, that is to say, a double curve with triple points.
+
+He then showed (p.\ 95) how one determines, for such a surface, the singular points $A_{i}$ and the substitutions of the Picard group which correspond to each of them.
+
+One thus sees that in this case there is only one vanishing cycle, which is generated precisely in the fashion I have just described.
+
+If one wished to consider surfaces possessing more
+
+\origpage{192}
+complicated singularities (for example, conical points), it might happen that there were others.
+
+Let us suppose, for example, an ordinary surface admitting two singular points corresponding to the same substitution of the Picard group; if one makes this surface vary, and in the limit these two singular points coincide, the limiting surface will then admit a vanishing cycle not admitting this mode of generation.
+
+If we then consider any vanishing cycle $\Sigma \theta'_{k} MB'_{k}$, we shall have the congruence
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} \equiv -\Sigma \theta'_{k} \beta_{i}B'_{k}. \tag{5} \]
+
+To each singular point $A_{i}$ let us make correspond in this way a vanishing cycle $K_{i}$, and consequently a congruence of the form (5). Let us add all these congruences; there will result
+\[ \Sigma \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} \equiv -\Sigma \Sigma \theta'_{k} \beta_{i}B'_{k}. \]\ednote{Strokes of the congruence sign did not print; $\equiv$ is expected, since this is the sum of the congruences (5).}
+
+Let us suppose that the set of the cycles $K_{i}$ is homologous to zero, so that one has on the surface $S$
+\[ \Sigma K_{i} \backsim 0, \]
+one will have on $S_{0}$
+\[ \Sigma \Sigma \theta'_{k} \beta_{i}B'_{k} \backsim 0, \]
+that is to say, that one can find coefficients $\theta''$ such that
+\[ \Sigma \Sigma \theta'_{k} \beta_{i}B'_{k} \equiv -\Sigma \theta''_{k} \beta_{i}F''_{k}: \]\ednote{Strokes of the congruence sign did not print; $\equiv$ is expected, as in the congruences (5) and (2) of this page.}
+one will then have
+\[ \Sigma \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k} \equiv 0. \tag{2} \]
+
+\emph{Thus, to each combination of vanishing cycles $K_{i}$ such that $\Sigma K_{i} \backsim 0$ there will correspond a congruence of the form} (2).
+
+To the congruences thus obtained it is fitting to adjoin the following:
+\[ \Sigma \beta F''_{k} \equiv 0, \]
+
+\origpage{193}
+which represents a cycle of two dimensions formed of the entire surface $S_{0}$. All the congruences of the form (2) will manifestly be combinations of those we have just obtained.
+
+What, now, is the condition for two congruences of the form (2) to be distinct? or, in other words, which are the congruences of this form whose first member is homologous to zero?
+
+To have all the homologies of the form
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k} \backsim 0, \]
+one must look for all the congruences between cells and faces of the form
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k} \equiv \Sigma \varepsilon_{k} B_{k} + \Sigma \zeta'_{k} \alpha_{i}\beta_{i}F'_{k}. \tag{6} \]
+
+If we reduce all the manifolds which figure in the congruence (6) to their points in common with a surface $S$ corresponding to a value of $y$ not situated on one of the cuts, there results
+\[ \Sigma \varepsilon_{k} B_{k} \equiv 0, \]
+which signifies that the set of edges $\Sigma \varepsilon_{k} B_{k}$ constitutes a closed cycle on the polyhedron $P$. Let $K(y)$ be this cycle.
+
+Let $K(M_{i})$ [or $K'(M_{i})$] be the limit towards which this cycle tends when the point $y$ approaches a point $M_{i}$ belonging to the cut $OA_{i}$ by the first lip of this cut (or by the second lip), so that $K(M_{i})$ [or $K'(M_{i})$] represents the set of the points common to the surface $S(M_{i})$\ednote{The subscript $i$ did not print; a gap stands after $M$ where it belongs, as in $S(M_{i})$ on p. 194.} and to $\Sigma \varepsilon_{k} \alpha_{i}\beta_{i}B_{k}$ (or to $\Sigma \varepsilon_{k} \alpha_{i}\beta_{i+1}B_{k}$).
+
+One will then have (since $\Sigma \varepsilon_{k} B_{k}$ represents a closed cycle on the polyhedron $P$)
+\[ \Sigma \varepsilon_{k} B_{k} \equiv \Sigma \varepsilon_{k} \alpha_{i}\beta_{i}B_{k} - \Sigma \varepsilon_{k} \alpha_{i}\beta_{i+1}B_{k}; \tag{7} \]\ednote{Strokes of the congruence sign did not print fully; $\equiv$ is expected, as the text below calls (7) a congruence.}
+whence
+\[ \Sigma \zeta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \varepsilon_{k} \alpha_{i}\beta_{i+1}B_{k} - \Sigma \varepsilon_{k} \alpha_{i}\beta_{i}B_{k} + \Sigma \theta''_{k} \beta_{i}F''_{k}, \tag{8} \]\ednote{Strokes of the congruence sign did not print fully; $\equiv$ is expected, as p. 195 calls (8) a congruence.}
+
+\origpage{194}
+or, reducing all the manifolds to their points in common with the surface $S(M_{i})$,
+\[ \Sigma \zeta'_{k} M_{i}F'_{k} \equiv \Sigma \theta'_{k} M_{i}B'_{k} + K'(M_{i}) - K(M_{i}); \tag{9} \]
+that is to say, that one must have, on the polyhedron $P'_{i}$,
+\[ K_{i} \backsim K(M_{i}) - K'(M_{i}), \tag{10} \]
+for $\Sigma \theta'_{k} M_{i}B'_{k}$ is nothing other than the cycle we called $K_{i}$ above.
+
+If, moreover, the condition (10) is fulfilled, one can find numbers $\zeta'$ so as to satisfy the congruence (9); one will then have, making $M_{i}$ tend towards $A_{i}$,
+\[ \Sigma \zeta'_{k} \alpha_{i}F'_{k} \equiv \Sigma \theta'_{k} \alpha_{i}B'_{k} + K'(A_{i}) - K(A_{i}). \]
+
+Now, by hypothesis, $K_{i}$ is a vanishing cycle for the singular point $A_{i}$; so that
+\[ \Sigma \theta'_{k} \alpha_{i}B'_{k} = 0. \]
+
+Moreover,
+\[ K'(A_{i}) = K(A_{i}) = \Sigma \varepsilon_{k} \alpha_{i}B_{k}. \]
+
+Therefore
+\[ \Sigma \zeta'_{k} \alpha_{i}F'_{k} \equiv 0; \]
+which signifies that the set of the faces $\Sigma \zeta'_{k} \alpha_{i}P'_{k}$\ednote{Printed $P'_{k}$; the faces $F'_{k}$ are expected, as in the congruence just above; an apparent misprint.} forms a closed surface; this can happen only if
+\[ \Sigma \zeta'_{k} \alpha_{i}F'_{k} = 0 \tag{11} \]
+or if $\Sigma \zeta'_{k} \alpha_{i}F'_{k}$ represents the entire surface $S(K_{i})$\ednote{Printed $S(K_{i})$; the next page writes $nS(A_{i})$ for this surface.} or one of the components of this surface, in the case where this surface is decomposable (see \emph{supra}, p.\ 182).
+
+If we leave aside this last case, which will not present itself with the surfaces admitting only ordinary singularities, to which Mr.~Picard brings back all the others, and which could, moreover, be
+
+\origpage{195}
+treated as above (p.\ 182), one sees that one can always suppose
+\[ \Sigma \zeta'_{k} \alpha_{i}F'_{k} = nS(A_{i}), \]
+$n$ being an integer; or
+\[ \Sigma(\zeta'_{k} - n)\alpha_{i}F'_{k} = 0. \]
+
+Now, in the congruence (9), one can replace $\zeta'_{k}$ by $\zeta'_{k} - n$ without the congruence ceasing to hold, for, the surface $S(M_{i})$ being closed, one has
+\[ \Sigma M_{i}F'_{k} \equiv 0. \]
+
+We can therefore always suppose that the identity (11) holds. There then results
+\[ \Sigma \zeta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv \Sigma \zeta'_{k} \alpha_{i}F'_{k} + \Sigma \theta'_{k} \alpha_{i}\beta_{i}B'_{k} + \Sigma \varepsilon_{k} \alpha_{i}\beta_{i+1}B_{k} - \Sigma \varepsilon_{k} \alpha_{i}\beta_{i}B_{k} - \Sigma \zeta'_{k} \beta_{i}F'_{k}. \]
+
+Now, if we take account of the identity (11) and if we decompose the faces $F'$ into faces $F''$, we put
+\[ -\Sigma \zeta'_{k} \beta_{i}F'_{k} = \Sigma \theta''_{k} \beta_{i}F''_{k}; \]
+we shall recover the congruence (8) and, by adding the congruence (7), we shall finally have the congruence (6).
+
+Thus, to each system of homologies such as (10) there corresponds a homology between the faces, and there are no others.
+
+We verify likewise that the combination
+\[ \Sigma \beta_{i}F''_{k}, \]
+which represents the entire Riemann surface $S_{0}$ and which, consequently, is congruent to zero, is not homologous to zero.
+
+If, indeed, one had a congruence of the form (6), all the $\theta'$ being null, one would have to have a homology of the form (10), the cycles $K_{i}$ being null; which means that the cycle $K(y)$ would be invariant for all the substitutions of the Picard group.
+
+The cycles $K'(M_{i})$ and $K(M_{i})$ will then be nothing other than what
+
+\origpage{196}
+we called $\Omega'_{i}$ and $\Omega_{i}$ in the preceding section; we shall then recover the homology (5) of the preceding section, which will differ only in notation from the homology (9) of the present section; it suffices, indeed, in order to pass from the one to the other, to annul the $\theta'$, to change $K'(M_{i})$ into $\Omega'_{i}$, $K(M_{i})$ into $\Omega_{i}$, and to write $\theta'_{k}$ instead of $\zeta'_{k}$. To adopt the notations of the preceding section, one must finally write $\zeta_{q}B_{q}$ instead of $\varepsilon_{k}B_{k}$.
+
+In this case we shall have between our cells the congruence (2) of the preceding section, which is written
+\[ \Sigma \zeta_{q} B_{q} + \Sigma \theta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv 0, \]
+or, returning to the notations of the present section,
+\[ \Sigma \varepsilon_{k} B_{k} + \Sigma \zeta'_{k} \alpha_{i}\beta_{i}F'_{k} \equiv 0. \]
+
+This shows that the first member of (6) must be identically null, that is to say, that not only the $\theta'$ but also the $\theta''$ must be null.
+
+Thus every homology between the faces $\beta F''$ reduces to an identity, and, in particular, one does not have
+\[ \Sigma \beta_{i}F''_{k} \backsim 0. \qquad \text{Q.~E.~D.} \]
+
+Before concluding, I must still examine the congruences into which cells of category 1 enter. We have just seen that there cannot be more than one such congruence, or rather that, if there were two such congruences, they would not be distinct, and one could pass from the one to the other by adding a homology.
+
+Let us see whether such a congruence exists,
+\[ \Sigma \varepsilon_{k} C_{k} + H \equiv 0, \tag{12} \]\ednote{Strokes of the congruence sign did not print; $\equiv$ is expected, as the text calls (12) a congruence.}
+where $H$ is a combination of faces of the categories $\alpha\beta$ and $\beta$. First, we must suppose that $\Sigma \varepsilon_{k}$ is not null, otherwise one could bring it back to one of the congruences studied above.
+
+\origpage{197}
+
+I add that, if there exists a congruence of this form (12) in which $\Sigma \varepsilon_{k}$ is not null, this congruence is certainly distinct from the preceding ones, for there cannot be a homology of the form
+\[ \Sigma \varepsilon_{k} C_{k} + H \backsim 0 \tag{13} \]
+without $\Sigma \varepsilon_{k}$ being null.
+
+Does there, then, exist a congruence of the form (12)? To prove it without exposing myself to a discussion which would be rather long without being difficult, I shall suppose that among the vertices of the polyhedron $P$ there figure $m$ (which I shall call $C_{1}, C_{2}, \ldots, C_{m}$), if $m$ is the degree in $z$ of the equation $f(x, y, z) = 0$, and which correspond to a given value of $x$, for example $x = x_{0}$ (see \emph{infra}, \S~5).
+
+Then the combination $C_{1} + C_{2} + \ldots + C_{m}$, which I shall write for short as $\Sigma C_{k}$, is nothing other than the Riemann surface represented by the equation between $y$ and $z$
+\[ f(x_{0}, y, z) = 0. \]
+
+One then has
+\[ \Sigma C_{k} \equiv \Sigma C_{k} \alpha_{i}\beta_{i} - \Sigma C_{k} \alpha_{i}\beta_{i+1}: \]
+the $m$ vertices $C_{1}, C_{2}, \ldots, C_{m}$ merely being interchanged when one passes from one of the lips of $OA_{i}$ to the other by turning round $A_{i}$, we shall have
+\[ \Sigma C_{k} \alpha_{i}\beta_{i} = \Sigma C_{k} \alpha_{i}\beta_{i+1} \]
+and, consequently,
+\[ \Sigma C_{k} \equiv 0. \]
+
+This congruence is indeed of the form (12), and
+\[ \Sigma \varepsilon_{k} = m \gtrless 0. \]
+
+We therefore have, first, two singular cycles of two dimensions, which are the two Riemann surfaces corresponding, the one to $y = 0$ and the other to $x = x_{0}$.
+
+To form the other cycles of two dimensions, it suffices to consider
+
+\origpage{198}
+$q$ cycles
+\[ K_{1}, \qquad K_{2}, \qquad \ldots, \qquad K_{q}, \]
+corresponding to the $q$ singular points
+\[ A_{1}, \qquad A_{2}, \qquad \ldots, \qquad A_{q}, \]
+each of them being vanishing with respect to the singular point which corresponds to it; these cycles must, moreover, satisfy, on the polyhedron $P$, the condition
+\[ \Sigma K_{i} \backsim 0. \]
+
+Two systems of cycles
+\[ \begin{matrix} K_{1}, & K_{2}, & \ldots, & K_{q}, \\[1ex] K'_{1}, & K'_{2}, & \ldots, & K' \end{matrix} \]\ednote{The subscript of the last entry did not print; $K'_{q}$ is expected.}
+will give us two distinct cycles of two dimensions, unless one has (on $P$)
+\[ K'_{i} - K_{i} \backsim K'(M_{i}) - K(M_{i}), \]
+$K(y)$ being any cycle of the polyhedron $P$.
+
+If we denote by $U_{i}$ and $U'_{i}$ what the cycles $K_{i}$ and $K'_{i}$ become when the point $M_{i}$ comes to $O$, and by $\Omega_{i}$ what the cycle $K(y)$ becomes when the point $y$ tends towards $O$ in the angle $A_{i-1}OA_{i}$, then this signifies that we must have on $S_{0}$
+\[ \Sigma U_{i} \backsim 0, \qquad \Sigma U'_{i} \backsim 0, \]
+and that we must not have, if we want two distinct cycles,
+\[ U'_{i} - U_{i} \backsim \Omega_{i+1} - \Omega_{i}. \]
+
+Let us see how many distinct cycles we shall obtain in this way, and for that how many distinct congruences of the indicated form we shall obtain; and from this we shall subtract the number of distinct homologies.
+
+\origpage{199}
+
+Let us form the Table of the vanishing cycles relative to the different singular points $A_{i}$. We shall distinguish two sorts of them:
+
+1° Those which are of the form $\Omega' - \Omega$, $\Omega'$ being the transform of the cycle $\Omega$ by the substitution of the Picard group which corresponds to $A_{i}$. These are the only ones which exist in general.
+
+2° The vanishing cycles of the second sort will be those which are neither of this form nor a combination of cycles of this form.
+
+Evidently, for each of the singular points, we must reduce the number of these vanishing cycles as far as possible; we must therefore enter in our Table only linearly independent cycles. If, then, these cycles are
+\[ \begin{aligned} &m_{1,1}\omega_{1} + m_{1,2} + \ldots + m_{1,2p}\omega_{2p},\\ &\ldots\ldots,\\ &m_{k,1}\omega_{1} + m_{k,2} + \ldots + m_{k,2p}\omega_{2p}, \end{aligned} \]\ednote{The factor $\omega_{2}$ after $m_{1,2}$ and after $m_{k,2}$ is missing in the print; $m_{1,2}\omega_{2}$ and $m_{k,2}\omega_{2}$ are expected.}
+the Table of the integer coefficients $m$ will have $2p$ columns and $k$ rows ($k < 2p$), and the determinants formed by suppressing in our Table any $2p - k$ columns must not all be null at once.
+
+Let us now unite the Tables relative to the $q$ singular points; the total Table will have $2p$ columns and $\Sigma k = \mu$ rows. If the determinants formed by suppressing in this Table $\mu - 2p + r$ rows and $r$ columns are all null, but the determinants formed by suppressing $p - 2p + r + 1$\ednote{Printed $p - 2p + r + 1$; $\mu - 2p + r + 1$ is expected, matching the $\mu - 2p + r$ lines of the preceding clause; an apparent misprint.} rows and $r + 1$ columns are not all null, the required number of distinct congruences will be $\mu - 2p + r + 1$ (or $\mu - 2p$ if the determinants formed by suppressing $\mu - 2p$ rows are not all null).
+
+To have the number of distinct homologies, one must look for the number of combinations of cycles $U_{1}, U_{2}, \ldots, U_{q}$ such that one has
+\[ U_{i} \backsim \Omega_{i+1} - \Omega_{i}. \]
+
+Each cycle $\Omega$ will evidently give rise to such a combination; but if two cycles $\Omega$ and $\Omega'$ differ only by a cycle
+
+\origpage{200}
+invariant with respect to the Picard group, they will give rise to the same combination. The number of homologies is therefore equal to the total number of cycles, namely $2p$, less the number of distinct invariant cycles, which I call $n$.
+
+The number of distinct cycles of two dimensions (\emph{including the two singular cycles}) will therefore be
+\[ 2 + (\mu + 2p + 1) - (n - 2p). \]\ednote{As printed. The text gives $\mu - 2p + r + 1$ distinct congruences on p. 199 and $2p$ minus $n$ homologies above; the signs in this count do not match those expressions.}
+
+Let us see how these non-singular cycles of two dimensions can be generated, restricting ourselves to the most general case, that is to say, to the one in which there is no vanishing cycle of the second sort. In this case one has
+\[ K_{i} = \Gamma'_{i} - \Gamma_{i}, \]
+$\Gamma_{i}$ being a cycle and $\Gamma'_{i}$ its transform by the substitution which corresponds to $A_{i}$.
+
+Let us therefore describe in the $y$-plane loops $L_{1}, L_{2}, \ldots, L_{q}$, starting from the point $O$ and ending there, and enclosing respectively the singular points $A_{1}, A_{2}, \ldots, A_{q}$.
+
+Let $\Gamma_{i}$ be a cycle of the surface $S_{0}$; when $y$, starting from the point $O$, describes the loop $L_{i}$, the surface $S$ and the cycle will be deformed; when $y$ returns to the point $O$, this cycle will have become the cycle $\Gamma'_{i}$ of $S_{0}$; in its motion it will have generated a surface $\sigma_{i}$ bounded by the two closed curves $\Gamma_{i}$ and $\Gamma'_{i}$.
+
+If, then, one has
+\[ \Gamma_{1} + \Gamma_{2} + \ldots + \Gamma_{q} = \Gamma'_{1} + \Gamma'_{2} + \ldots + \Gamma'_{q}, \]
+the set of the surfaces $\sigma_{1} + \sigma_{2} + \ldots + \sigma_{q}$ will form a closed surface. This will be our cycle of two dimensions.
+
+\subsection*{\S~4. --- Cycles of one dimension.}
+
+The problem of the cycles of one dimension has been entirely solved by Mr.~Picard; I shall therefore only have to translate Mr.~Picard's reasoning into our notations.
+
+\origpage{201}
+
+Let us look for the congruences between the edges. As we saw at the beginning of section 2, we can always suppose that such a congruence contains no edges of category $\alpha$. Our congruence must therefore be of the form
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}C'_{k} + \Sigma \theta''_{k} \beta_{i}B''_{k} \equiv 0. \tag{1} \]\ednote{Strokes of the congruence sign did not print fully; $\equiv$ is expected, as the text calls (1) a congruence.}
+
+Let us observe that
+\[ \begin{aligned} &\Sigma \theta'_{k} \alpha_{i}\beta_{i}C'_{k} \equiv \Sigma \theta'_{k} \alpha_{i}C'_{k} + H,\\ &\Sigma \theta''_{k} \beta_{i}B''_{k} \equiv H' \end{aligned} \]\ednote{In the second line the strokes of the congruence sign did not print; $\equiv$ is expected, as in the first line.}
+$H$ and $H'$ being a set of vertices of category $\beta$. There therefore results
+\[ \Sigma \theta'_{k} \alpha_{i}C'_{k} + H + H' = 0, \]
+and, as the vertices $\alpha'C'_{k}$\ednote{Printed $\alpha'C'_{k}$; $\alpha_{i}C'_{k}$ is expected, as in the relations around it.} can cancel neither with the vertices of category $\beta$ nor with those of category $\alpha$ in which the index of $\alpha$ is different from $i$, one must have
+\[ \Sigma \theta'_{k} \alpha_{i}C'_{k} = 0, \tag{2} \]
+the summation being extended to all the vertices $\alpha_{i}C'_{k}$ belonging to one and the same index $i$, but to the various indices $k$.
+
+What does this identity (2) signify? When, $y$ coming to $A_{i}$, the polyhedron $P'_{i}$ degenerates, several vertices may coincide, but none can disappear (whereas there may be disappearance of edges or of faces). The algebraic sum of all the coefficients $\theta'_{k}$ relative to the various vertices $\alpha_{i}C'_{k}$ which coincide in a single one must therefore be null; therefore the sum of all the $\theta'_{k}$ is null:
+\[ \Sigma \theta'_{k} = 0. \tag{3} \]
+
+Because of the relation (3), we can find on the polyhedron $P'_{i}$ a combination of edges $\Sigma \zeta'_{k} B'_{k}$ such that
+\[ \Sigma \zeta'_{k} B'_{k} \equiv \Sigma \theta'_{k} C'_{k}. \tag{4} \]
+
+\origpage{202}
+
+One will then have
+\[ \Sigma \zeta'_{k} \alpha_{i}\beta_{i}B'_{k} \equiv \Sigma \zeta'_{k} \alpha_{i}B'_{k} - \Sigma \zeta'_{k} \beta_{i}B'_{k} + \Sigma \theta'_{k} \alpha_{i}\beta_{i}C'_{k}. \tag{5} \]
+
+Moreover, when $y$ comes to $A_{i}$, the edges and the vertices $B'_{k}$ and $C'_{k}$ of the polyhedron $P'_{i}$ become the edges and the vertices $\alpha_{i}B'_{k}$ and $\alpha_{i}C'_{k}$; we therefore have the congruence
+\[ \Sigma \zeta'_{k} \alpha_{i}B'_{k} \equiv \Sigma \theta'_{k} \alpha_{i}C'_{k} \]
+or, because of (2),
+\[ \Sigma \zeta'_{k} \alpha_{i}B'_{k} \equiv 0. \]
+
+This congruence signifies that the combination $\Sigma \zeta'_{k} \alpha_{i}B'_{k}$ forms a closed cycle on the Riemann surface $S(A_{i})$. But when, $y$ coming to $A_{i}$, the Riemann surface degenerates, cycles may disappear, but it never happens that new cycles appear. Therefore, to the cycle $\Sigma \zeta'_{k} \alpha_{i}B'_{k}$ there will correspond on the surface $S(M_{i})$ at least one closed cycle $\Sigma \varepsilon'_{k} M_{i}B'_{k}$, reducing to $\Sigma \zeta'_{k} \alpha_{i}B'_{k}$ for $M_{i} = \alpha_{i}$, so that one has
+\[ \begin{aligned} &\Sigma \varepsilon'_{k} M_{i}B'_{k} \equiv 0,\\ &\Sigma \varepsilon'_{k} \alpha_{i}B'_{k} = \Sigma \zeta'_{k} \alpha_{i}B'_{k}. \end{aligned} \tag{6} \]
+
+If we then replace $\zeta'_{k}$ by $\zeta'_{k} - \varepsilon'_{k}$, the congruence (4) will still subsist because of (6); the congruence (5) will likewise still be true, and one will have
+\[ \Sigma(\zeta'_{k} - \varepsilon'_{k})\alpha_{i}B'_{k} = 0. \]
+
+We can therefore always suppose that the $\zeta'_{k}$ have been chosen in such a way that
+\[ \Sigma \zeta'_{k} \alpha_{i}B'_{k} = 0. \tag{7} \]
+
+If we bring the congruence (5) together with the identity (7), we shall have the homology
+\[ \Sigma \theta'_{k} \alpha_{i}\beta_{i}C'_{k} \backsim \Sigma \zeta'_{k} \beta_{i}B'_{k} \tag{8} \]
+
+\origpage{203}
+and, adding this homology to (1), there results
+\[ \Sigma \zeta'_{k} \beta_{i}B'_{k} + \Sigma \theta''_{k} \beta_{i}B''_{k} \equiv 0, \]
+in which only edges of category $\beta$ now figure.
+
+We can therefore always suppose that our congruence (1) contains only edges of category $\beta$. This is Picard's theorem, according to which a cycle of one dimension can always be brought into a position such that $y$ is constant all along this cycle.
+
+To each of the closed cycles of the surface $S_{0}$ there therefore corresponds a congruence of the form (1), but all these congruences are not distinct. This is what Mr.~Picard has shown. Let $\omega_{1}, \omega_{2}, \ldots, \omega_{2p}$ be the $2p$ cycles of $S_{0}$, and let us suppose that a substitution $S_{h}$ of the Picard group changes $\omega_{i}$ into
+\[ m_{1}\omega_{1} + m_{2}\omega_{2} + \ldots + m_{2p}\omega_{2p}, \]
+one will have the homology
+\[ \omega_{i} \backsim m_{1}\omega_{1} + m_{2}\omega_{2} + \ldots + m_{2p}\omega_{2p}. \tag{9} \]
+
+These homologies reduce the number of the cycles of one dimension, and Mr.~Picard has even shown that, for the most general algebraic surface, this number reduces to zero.
+
+Let us call \emph{subsisting cycles} those which are not a linear combination of various cycles vanishing with respect to various singular points $A_{i}$. They are those which remain distinct when one takes account of the homologies (9). And, indeed, the homology (9) expresses that the cycle
+\[ \omega_{i} - \Sigma m_{k}\omega_{k} \]
+is vanishing with respect to the singular point which corresponds to the substitution $S_{h}$ of the Picard group.
+
+There are therefore as many cycles of one dimension as subsisting cycles. We have seen, on the other hand, that there are as many cycles of three dimensions as invariant cycles.
+
+\origpage{204}
+
+Now, according to the fundamental theorem on the Betti numbers, there must be as many cycles of one dimension as cycles of three dimensions.
+
+There must therefore be as many subsisting cycles as invariant cycles.
+
+This is what we are going to verify.
+
+This verification is easy if there are no vanishing cycles of the second sort.
+
+Let us recall, indeed, that the Picard group is of a particular form.
+
+Let $\omega_{1}, \omega_{2}, \ldots, \omega_{2p}$ be the fundamental cycles, and let us consider the bilinear form
+\[ \Phi = \omega'_{2}\omega_{1} - \omega'_{1}\omega_{2} + \omega'_{4}\omega_{3} - \omega_{3}\omega_{4} + \ldots + \omega'_{2p}\omega_{2p-1} - \omega'_{2p-1}\omega_{2p}. \]\ednote{The prime on the fourth term did not print; $\omega'_{3}\omega_{4}$ is expected from the pattern of the form.}
+
+Provided that the fundamental cycles have been suitably chosen, if one subjects the $\omega$ to one of the linear substitutions of the Picard group, and at the same time subjects the $\omega'$ to this same linear substitution, the form $\Phi$ remains unaltered. On the other hand, the number of the subsisting cycles will be the same as that of the distinct solutions of the system ($A$) of linear equations obtained by equating each fundamental cycle to its transform by each of the Picard substitutions.
+
+Let, then, $\Sigma m_{i}\omega_{i}$ be an invariant cycle; as the expression $\Sigma m_{i}\omega_{i}$ can be assimilated to the linear form $\Phi$ by putting
+\[ \omega'_{2} = m_{1}, \qquad \omega'_{1} = -m_{2}, \qquad \omega'_{3} = m_{4}, \qquad \omega'_{4} = -m_{3}, \qquad \ldots; \]\ednote{As printed, these values for $\omega'_{3}$ and $\omega'_{4}$, and the list of values below, do not agree with the form $\Phi$ above, whose terms $\omega'_{4}\omega_{3} - \omega'_{3}\omega_{4}$ would give $\omega'_{4} = m_{3}$, $\omega'_{3} = -m_{4}$.}
+as, on the other hand, $\Sigma m_{i}\omega_{i}$ changes into $\Sigma m_{i}\omega_{i}$ when the $\omega$ undergo one of the linear substitutions of the Picard group, we must conclude that the system of values
+\[ -m_{2}, \qquad m_{1}, \qquad -m_{3}, \qquad m_{4}, \qquad \ldots \]
+is its own transform by this linear substitution. It is therefore a solution of the system ($A$) of which we have just spoken.
+
+One sees, moreover, that to two or several linearly
+
+\origpage{205}
+independent invariant cycles there will thus correspond two or several linearly independent solutions of the system ($A$), and conversely.
+
+There will therefore be as many subsisting cycles as invariant cycles. Q.~E.~D.
+
+What will happen, now, if there are vanishing cycles of the second sort?
+
+I have already said that this case cannot present itself for those surfaces with ordinary singularities to which Mr.~Picard has brought back all the others (vol.\ I, p.\ 85). It is true that it could occur for other surfaces if one wished to study them without first subjecting them to Mr.~Picard's transformation; but these surfaces would present a singular point of a special nature, and the manifold $V$ of four dimensions generated by this surface would itself present a singular point.
+
+Now, the general theorems which occupy us, and which we proved in the \emph{Analysis Sitûs} and its supplements, are not applicable to manifolds $V$ presenting singular points; they would cease, in general, to be true for these manifolds, unless one made special conventions.
+
+The very question whether a vanishing cycle of the second sort is to be regarded as homologous to zero depends, moreover, on the equally legitimate conventions that one can make. It is true that such a cycle serves as the complete boundary of a manifold of two dimensions forming part of $V$; but on this manifold there lies a singular point of $V$.
+
+To make the resulting difficulty understood, let us take a much simpler example; let us imagine in ordinary space a surface presenting a conical point, or, more simply still, a cone of revolution with its prolongation. Let $S$ be the vertex of the cone, $C$ one of the circles of this cone. In one sense, the circle $C$ is the complete boundary of a region of this cone, the one comprised between the circle $C$ and the vertex $S$. But, on the other hand, a line drawn on the cone can leave this region without crossing $C$ if, in passing through the vertex $S$, it passes from one nappe of the cone to the other.
+
+Under these conditions, it will seem preferable to leave aside these
+
+\origpage{206}
+singular cases and to confine ourselves to those surfaces with ordinary singularities to which all the others can be brought back.
+
+\subsection*{\S~5. --- Various remarks.}
+
+In the course of the proofs, we have been led to make various hypotheses on the subject of our polyhedra. Let us recall them summarily:
+
+1° We supposed (\emph{see} p.\ 174) that the polyhedron which we called $P'$ remained homeomorphic to itself when $y$ followed the cut $OA_{i}$ from $A_{i}$ to $O$.
+
+2° We compared (\emph{see} p.\ 182) the Riemann surface $S_{0}$, which corresponds to the point $O$, with the Riemann surface $S(M)$, which corresponds to the point $M$, and we said that one could make these two surfaces correspond point by point. We made use of this correspondence to define the cycles $U_{i}$ and $U'_{i}$ which correspond on $S_{0}$ to $\Omega_{i}$ and $\Omega'_{i}$.
+
+3° We then admitted (p.\ 183) that, when the point $M$ varies from $A_{i}$ to $M_{0}$, the two cycles $U_{i}$ and $U'_{i}$, at first coincident, sweep out a certain region $R$ of $S_{0}$, to which there corresponds on $S(M_{0})$ the region $\Sigma \theta'_{k} M_{0}F'_{k}$.
+
+4° We admitted that, when the point $M$ describes successively the two lips of the cut $OA_{1}$, then the two lips of $OA_{2}, \ldots$, and finally the two lips of the cut $OA_{q}$, the moving cycle $U_{i}$ (which returns to its initial situation $\Omega^{0}_{1}$ after having occupied a continuous series of successive situations) does not sweep out the entire surface $S_{0}$.
+
+5° We said (p.\ 191) that, if the surface $f(x, y, z) = 0$ has been brought, by Mr.~Picard's procedures, to possess only ordinary singularities, to each singular point $A_{i}$ there corresponds a single vanishing cycle.
+
+6° We supposed (p.\ 197) that among the vertices of $P$ there figure $m$ which correspond to a constant value of $x$, for example $x = 0$.
+
+The legitimacy of these hypotheses being almost evident, I did not wish to interrupt the reasoning of the preceding sections
+
+\origpage{207}
+in order to give an explicit proof of them. I could, moreover, have done so only by particularizing the polyhedron $P$, that is to say, by making particular hypotheses about the manner in which the Riemann surface $S$ is subdivided into a polyhedron.
+
+I now think it useful to return to these different points and to give the proof, adopting any one of these particular hypotheses on $P$.
+
+One could, for example, construct the polyhedron $P$ in the following fashion:
+
+Let us begin by reducing the surface $f = 0$ to have only ordinary singularities.
+
+Let us give $y$ any value, and consider the corresponding Riemann surface $S$. This surface will be composed of $m$ sheets laid on the $x$-plane (if the equation $f = 0$ is of degree $m$ in $z$).
+
+Let us mark on the $x$-plane the origin $O$ and the singular points corresponding to the equations
+\[ f = 0, \qquad \frac{df}{dz} = 0. \]
+
+Let $n$ be the number of these singular points; let $B_{1}, B_{2}, \ldots, B_{n}$ be these singular points. Let us join the point $O$ to the $n$ singular points $B_{1}, B_{2}, \ldots, B_{n}$ by $n$ cuts $OB_{1}, OB_{2}, \ldots, OB_{n}$ which do not cut one another and which follow one another round the point $O$ in the order indicated above.
+
+One will obtain the Riemann surface in the ordinary fashion by joining the first lip of one of the cuts on one of the sheets to the second lip of this same cut on another sheet. By the drawing of these cuts, the Riemann surface will thus be subdivided into a polyhedron, which will be our polyhedron $P$.
+
+One sees that this polyhedron has $m$ faces (which are the $F_{k}$) and that each of these faces is a polygon of $2n$ sides.
+
+What happens now when one makes $y$ vary? The singular points $B$ are going to move; the cuts $OB$ will be deformed, and we shall suppose that they are deformed in such a way as never to cut one another and always to follow one another in the same order round $O$. When $y$ describes a small closed contour, this deformation can be made in such a way
+
+\origpage{208}
+that the cuts return to their original positions, unless there is a singular point inside the contour.
+
+The possible singular points are of two sorts:
+
+1° First, those which correspond to the cases in which two of the singular points $B$ are interchanged (a reasoning of Mr.~Picard shows that, if the surface $f = 0$ has only ordinary singularities, this can happen only if the plane $y = \text{const.}$ is tangent to the surface $f = 0$);
+
+2° Then those which correspond to the cases in which one of the singular points $B$ comes to $O$.
+
+The singular points of the second sort are not essential, and I could have made them disappear had I not thought it more advantageous to keep them.
+
+I denote all these singular points by $A_{1}, A_{2}, \ldots, A_{q}$, and I draw in the $y$-plane the cuts $OA_{1}, OA_{2}, \ldots, OA_{q}$.
+
+As long as $y$ does not cross these cuts $OA$, the cuts $OB$ can be deformed in such a way as never to cut one another, and consequently in such a way that $P$ remains homeomorphic to itself, and at the same time in such a way that, if $y$ describes a closed contour, these cuts $OB$ return to their initial positions.
+
+Let us now compare the configurations of the cuts $OB$ when $y$ is at two infinitely near points on the two lips of a cut $OA_{i}$.
+
+Let us first suppose that $A_{i}$ is a singular point of the first sort. If one supposes that the surface $f = 0$ has only ordinary singularities and that, consequently, the plane $y = A_{i}$ is tangent to $f = 0$ at an ordinary point, one sees that, when $y$ turns round $A_{i}$, two of the singular points, for example $B_{1}$ and $B_{3}$, are interchanged. Moreover, if the point $B_{1}$ permutes two of the sheets of the Riemann surface, the point $B_{3}$ which is interchanged with it will permute the same two sheets of this surface. I shall call these two sheets \emph{the first and the second sheets of the surface}.
+
+When $y$, having turned round $A_{i}$, returns infinitely near its original position, but on the other lip of the cut, one can suppose that the cuts $OB$ have returned to their original situation, with the exception of the cuts $OB_{1}$ and $OB_{3}$. These last two cuts,
+
+\origpage{209}
+which originally occupied the lines $OB_{1}$ and $OB_{3}$ drawn solid in the figure, will finally occupy the lines $OB_{3}$ and $OB_{1}$ drawn dotted in the figure.
+
+One sees that the Riemann surface can be subdivided in two
+\rmfigure{figures/fig-01.png}{Fig.~1.}{Five straight solid cuts radiate from the point O to the singular points B1 (upper right), B2 (above), B3 (left), B4 (lower left) and B5 (lower right). Two dotted curves leave O: a small loop ending at B1 and a larger loop passing over the top and ending at B3. The partial faces are labelled (alpha) to the left of O, (beta) between the two dotted loops at the top, and (gamma) inside the small loop.}
+ways into a polyhedron $P$; the two modes of subdivision differ from each other in that the solid lines $OB_{1}$ and $OB_{3}$ are replaced by the dotted lines $OB_{3}$ and $OB_{1}$.
+
+If one superposes the two modes of subdivision, one will have the polyhedron which I have called $P'$. One sees that two of the $m$ faces of $P$, those which correspond to the first two sheets, have been subdivided into three partial faces, designated in the figure by the letters ($\alpha$), ($\beta$), ($\gamma$).
+
+When $y$ describes the cut $OA_{i}$, the points $B$ will move in a continuous manner, without ever coinciding either with one another or with the point $O$ (except, of course, when $y$ comes to $A_{i}$). It follows that one can deform all our cuts $OB$ (those drawn solid as well as those drawn dotted) while preventing them from ever cutting one another. This means that the polyhedron $P'$ will remain constantly homeomorphic to itself. To say that $P'$ remains homeomorphic to itself is to say that one can make the surface $S(M)$ correspond point by point to another surface $S(M')$ corresponding to another position $M'$ of $y$ on $OA_{i}$, and in particular to $S_{0}$. It will be remarked that the correspondence can be made in such a way that to a point at infinity on $S(M)$ there corresponds a point at infinity on $S(M')$.
+
+\origpage{210}
+
+When $y$ comes to $A_{i}$, the polyhedron $P$ degenerates: the two points $B_{1}$ and $B_{3}$ coincide. The same holds for the solid cut $OB_{1}$ with the dotted $OB_{3}$, as well as for the dotted $OB_{1}$ with the solid $OB_{3}$. The partial polygon marked ($\beta$) in the figure then disappears.
+
+To go further, let us remark that there are two cuts which project along the solid line $OB_{1}$; when one follows the first (which we shall call $B_{1}G$) from $O$ to $B_{1}$, one has the first sheet on the left and the second on the right; when one follows the second (which we shall call $B_{1}D$), one has the first sheet on the right and the second on the left. We shall define $B_{3}G$ and $B_{3}D$ in the same way. If, instead of the solid line $OB_{1}$, we consider the dotted line $OB_{1}$, we shall likewise obtain two cuts, which I shall call $B'_{1}G$ and $B'_{1}D$; and I shall again define in the same way $B'_{3}G$ and $B'_{3}D$.
+
+We see at once that, when $y$ turns round $A_{i}$, the cuts $B_{1}G$ and $B'_{3}G$, $B_{1}D$ and $B'_{3}D$, $B_{3}G$ and $B'_{1}G$, $B_{3}D$ and $B'_{1}D$ are permuted; and that, for $y = A_{i}$, $B_{1}G$ and $B'_{3}G, \ldots$ coincide.
+
+I shall denote by $\beta_{1}$ that one of the partial polygons $\beta$ which belongs to the first sheet if one adopts the first subdivision, the one which corresponds to the solid lines; the other polygon $\beta$ will be called $\beta_{2}$.
+
+One then has the congruences
+\[ \begin{aligned} &\beta_{1} \equiv B'_{1}D - B_{1}D + B'_{3}D - B_{3}D,\\ &\beta_{2} \equiv B'_{1}G - B_{1}G + B'_{3}G - B_{3}G, \end{aligned} \]
+which tell us which of our cuts serve as boundaries to $\beta_{1}$ and to $\beta_{2}$.
+
+Let us consider the combination
+\[ \omega = B_{3}D - B'_{1}D - B_{3}G + B'_{1}G. \]
+It is a cycle of our Riemann surface; when $y$ turns round $A_{i}$, it changes into
+\[ B'_{1}D - B_{3}D - B'_{1}G + B_{3}G, \]
+that is to say, into $-\omega$. It is therefore a vanishing cycle. It is easy to see that there is no other.
+
+\origpage{211}
+
+Let us now take up again the cycles which we called $\Omega_{i}$ \emph{and} $\Omega'_{i}$ in section 2. Let
+\[ \Omega_{i} = \zeta_{1} B_{1}D + \zeta_{1} B_{1}G + \zeta_{3} B_{3}D + \zeta_{1} B_{3}G + H, \]\ednote{The second and fourth coefficients are printed $\zeta_{1}$; the condition $\zeta_{1} + \zeta_{2} = \zeta_{3} + \zeta_{4} = 0$ below and the display for $\Omega'_{i}$ require $\zeta_{2}$ and $\zeta_{4}$; apparent misprints, the fourth possibly a worn 4.}
+the $\zeta$ being integer coefficients and $H$ a combination of other edges of $P_{1}$\ednote{Printed $P_{1}$, a symbol defined nowhere in the paper; the polyhedron is $P$, as in ``les arêtes de $P$'' a few lines below; an apparent misprint.}. As the cycle $\Omega_{i}$ must be closed, one must have
+\[ \zeta_{1} + \zeta_{2} = \zeta_{3} + \zeta_{4} = 0, \]
+since the vertex $B_{1}$, for example, belongs only to the two edges $B_{1}D$ and $B_{1}G$. We shall then have
+\[ \Omega'_{i} = \zeta_{1} B'_{3}D + \zeta_{2} B'_{3}G + \zeta_{3} B'_{1}D + \zeta_{4} B'_{3}G + H. \]\ednote{The last edge is printed $B'_{3}G$; $B'_{1}G$ is expected, the image of $B_{3}G$ as in the permutation stated on p. 210 and in the next display; an apparent misprint.}
+For the edges of $P$ other than $B_{1}D, B_{1}G, B_{3}D, B_{3}G$ are not altered when $y$ turns round $A_{i}$, that is to say, $H$ is not altered. One will therefore have
+\[ \begin{aligned} \Omega_{i} - \Omega'_{i} = {}&\zeta_{1}(B_{1}D - B_{1}G - B'_{3}D + B'_{3}G)\\ &+ \zeta_{3}(B_{3}D - B_{3}G - B'_{1}D + B'_{1}G). \end{aligned} \]
+
+Now, one has
+\[ \begin{aligned} (B_{1}D - B_{1}G - B'_{3}D + B'_{3}G) = {}&(B'_{1}G - B_{1}G + B'_{3}G - B_{3}G)\\ &- (B'_{1}D - B_{1}D + B'_{3}D - B_{3}D)\\ &- (B_{3}D - B'_{1}D - B_{3}G + B'_{1}G) \end{aligned} \]
+or
+\[ (B_{1}D - B_{1}G - B'_{3}D + B'_{3}G) + \omega \equiv \beta_{2} - \beta_{1}; \]
+whence
+\[ \begin{gathered} \Omega_{i} - \Omega'_{i} + (\zeta_{1} - \zeta_{3})\omega \equiv \zeta_{1}(\beta_{2} - \beta_{1}),\\ \Omega_{i} - \Omega'_{i} \backsim (\zeta_{3} - \zeta_{1})\omega. \end{gathered} \]
+
+Now, we have supposed that the cycle $\Omega_{i}$ is invariant, that is to say, that
+\[ \Omega_{i} \backsim \Omega'_{i}, \]
+
+\origpage{212}
+which requires $\zeta_{1} = \zeta_{3}$. Under these conditions, let us take up again the congruence (5) of section 2, which can be written
+\[ \Omega_{i} - \Omega'_{i} \equiv \Sigma \theta'_{k} MF'_{k}. \]\ednote{Congruence (5) of § 2 reads $\Sigma \theta'_{k} MF'_{k} \equiv \Omega'_{i} - \Omega_{i}$, with the opposite sign; the print does not show which form is intended.}
+
+Bringing it together with the preceding congruence, we find
+\[ \Sigma \theta'_{k} MF'_{k} = \zeta_{1}(\beta_{2} - \beta_{1}). \]
+
+When $y$ (or $M$) comes to $A_{i}$, the partial polygons $\beta_{1}$ and $\beta_{2}$ disappear, so that the second member of this equality disappears; the first reduces to $\Sigma \theta'_{k} \alpha_{i}F'_{k}$, whence one derives
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0. \]
+
+Thus what we said on pages 181 and following is justified.
+
+Let us now suppose that $A_{i}$ is a singular point of the second sort, and that for $y = A_{i}$ the singular point $B_{1}$ comes to $O$.
+
+We can then make a figure analogous to figure 1; to simplify, I shall represent only three singular points, $B_{1}, B_{2}$ and $B_{3}$.
+
+When $y$ turns round $A_{i}$, the cut $OB_{1}$ resumes its original
+\rmfigure{figures/fig-02.png}{Fig.~2.}{Three straight solid cuts radiate from the point O to the singular points B1 (right), B2 (upper left) and B3 (below). Two dotted curves leave O: one rises above O, loops round B1 on the right, passes beneath O and climbs on the left to end at B2; the other leaves O to the left, crosses the solid cut OB2, sweeps over the top and down the right-hand side, and ends at B3. Four partial faces are labelled: (alpha) inside the first dotted loop, below OB1; (beta) at the right between the two dotted curves; (gamma) at the lower left; and (delta) in the small region between the solid cut OB2 and the start of the second dotted curve. No fifth face is labelled.}
+situation, but the cuts $OB_{2}$ and $OB_{3}$ (drawn solid) are transformed into the cuts $OB_{2}$ and $OB_{3}$ (drawn dotted).
+
+\origpage{213}
+
+We have two modes of subdivision and, by superposing them, one has the polyhedron $P'$.
+
+Each face of $P$ (that is to say, each sheet of $S$) is found subdivided into a certain number of partial faces. In the case of figure 2, there are five of them, designated in the figure by ($\alpha$), ($\beta$), ($\gamma$), ($\delta$), ($\varepsilon$).
+
+It is clear that, when $y$ describes the cut $OA_{i}$, one can arrange for the preceding figure (and consequently the polyhedron $P'$) to remain constantly homeomorphic to itself.
+
+I shall denote by $OB_{2}$ and $OB_{3}$ the cuts drawn solid, and by $OB'_{2}$ and $OB'_{3}$ the corresponding cuts drawn dotted. I see that, these cuts cutting one another, each of the segments of these cuts will form one of the edges of $P'$. I shall distinguish on each of these cuts the \emph{terminal segment}, that is to say, the one which ends at the point $B_{2}$ or $B_{3}$.
+
+When $y$ comes to $A_{i}$, the polyhedron $P'$ degenerates; several of its edges reduce to zero, namely the edge $OB_{1}$ and all the segments of $OB_{2}, OB_{3}, OB'_{2}, OB'_{3}$, \emph{the terminal segments excepted}. Moreover, the terminal segment of $OB_{2}$ coincides with that of $OB'_{2}$, and that of $OB_{3}$ with that of $OB'_{3}$. It follows that the four partial faces ($\alpha$), ($\beta$), ($\gamma$), ($\delta$) disappear.
+
+There is no vanishing cycle here, the singular point $A_{i}$ not being essential.
+
+We have in the figure
+\[ \begin{aligned} &OB_{2} - OB'_{2} \equiv (\alpha) + (\gamma) + (\delta),\\ &OB_{3} - OB'_{3} \equiv (\alpha) + (\beta) + (\delta). \end{aligned} \]
+
+Let us return to our cycle $\Omega_{i}$; we shall have
+\[ \Omega_{i} = \Sigma \zeta_{1} OB_{1} + \Sigma \zeta_{2} OB_{2} + \Sigma \zeta_{3} OB_{3}. \]
+
+I put the sign $\Sigma$ because there are several cuts (belonging to different sheets of the Riemann surface) which project along $OB_{1}$. One will then have
+\[ \Omega'_{i} = \Sigma \zeta_{1} OB_{1} + \Sigma \zeta_{2} OB'_{2} + \Sigma \zeta_{3} OB'_{3}; \]
+
+\origpage{214}
+whence
+\[ \begin{aligned} &\Omega_{i} - \Omega'_{i} = \Sigma \zeta_{2}(OB_{2} - OB'_{2}) + \Sigma \zeta_{3}(OB_{3} - OB'_{3}),\\ &\Omega_{i} - \Omega'_{i} \equiv \Sigma \zeta_{2}[(\alpha) + (\gamma) + (\delta)] + \Sigma \zeta_{3}[(\alpha) + (\beta) + (\delta)], \end{aligned} \]
+and, comparing with the congruence (5) of section 2,
+\[ \Sigma \theta'_{k} MF'_{k} = \Sigma \zeta_{2}[(\alpha) + (\gamma) + (\delta)] + \Sigma \zeta_{3}[(\alpha) + (\beta) + (\delta)]. \]
+
+When $y$ comes to $A_{i}$, ($\alpha$), ($\gamma$), ($\delta$) disappear, so that there remains
+\[ \Sigma \theta'_{k} \alpha_{i}F'_{k} = 0, \]
+which justifies here too what we said on page 181.
+
+Let us suppose that the point $y$ describes the different cuts $OA_{1}, OA_{2}, \ldots, OA_{q}$; the singular points $B$ will describe certain lines; we can suppose that none of these lines recedes indefinitely. Indeed, if this were not so, we should always find in the $x$-plane a small circle which would be cut by none of these lines, and then, by a simple linear change of variables, we could throw the centre of this circle to infinity.
+
+Therefore, when the point $y$ describes successively the two lips of $OA_{1}$, the two lips of $OA_{2}$, etc., and finally those of $OA_{q}$, the singular points $B$ will remain at a finite distance. We can therefore direct the deformation of the cuts $OB$ in such a way that these cuts remain at a finite distance. The cycle $\Omega_{i}$, which is formed by a combination of these cuts, will therefore always remain at a finite distance; and the same will hold for the cycle $U_{i}$ which corresponds to it on $S_{0}$ [for we can choose the correspondence of $S(M)$ with $S_{0}$ in such a way that to a point at infinity on $S(M)$ there corresponds a point at infinity on $S_{0}$]. This cycle cannot, therefore, sweep out the entire surface $S_{0}$, which justifies what we said on page 185.
+
+It will be remarked, finally, that among the vertices of $P$ we have $m$ which correspond to $x = 0$.
+
+All our hypotheses are therefore justified.
+
+\end{document}

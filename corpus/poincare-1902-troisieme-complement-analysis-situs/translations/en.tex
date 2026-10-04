@@ -1,0 +1,489 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose (and the prose inside
+% \text{...} inserts, R21) is translated. The editorial notes (\ednote) of the transcription are
+% carried over unchanged, since they are already in English and some carry mathematics.
+%
+% TERMINOLOGY. Poincaré's own terms are rendered literally and consistently, following the
+% English translations of poincare-1895-analysis-situs and its first two Compléments, which this
+% paper continues:
+%   * variété = "manifold"; variété à n dimensions = "manifold of n dimensions"; frontière
+%     complète = "complete boundary"; fermée = "closed"; simplement connexe = "simply connected";
+%     homéomorphe = "homeomorphic"
+%   * groupe fondamental = "fundamental group"; homologue / équivalent à zéro = "homologous /
+%     equivalent to zero"; homologies / équivalences = "homologies / equivalences"; isomorphisme
+%     holoédrique / mériédrique = "holohedral / merihedral isomorphism"; sous-groupe invariant =
+%     "invariant subgroup"; permutable = "permutable"; substitution identique = "identical
+%     substitution"
+%   * coupure = "cut"; lèvres = "lips"; contour fermé = "closed contour"; cycle = "cycle"; cercle de
+%     garde = "guard circle" (Poincaré's coinage, emphasized at its definition); en trait plein /
+%     pointillé = "drawn solid / dotted"
+%   * fonction fuchsienne / groupe / polygone fuchsien = "Fuchsian function / group / polygon";
+%     cercle fondamental = "fundamental circle"; droite non-euclidienne = "non-Euclidean straight
+%     line"; transformation par rayons vecteurs réciproques = "transformation by reciprocal radii
+%     vectores"; polygone de la deuxième famille = "polygon of the second family"; genre = "genus"
+%   * fonctions bi-uniformes = "bi-uniform functions"; point conique = "conical point"; polynome
+%     (indécomposable) = "(indecomposable) polynomial"; transformation homographique =
+%     "homographic transformation"
+%   * C. Q. F. D. = "Q. E. D." (also inside \text{}); "M.~X" before a name = "Mr.~X"; ordinals follow
+%     English usage (6\textsuperscript{th}, $i^{\text{th}}$); \emph{Analysis sitûs} is kept in
+%     Latin with this print's spelling; "mod" inside \text{} is kept
+%   * the ditto marks » of the lists of cuts (pp. 64, 66) are kept as printed, each standing for
+%     the words of the first row; the French space before a colon (~:) is set tight, as in English
+%
+% PRINTER'S ERRORS. The transcription's hedged \ednote on each apparent misprint is carried over
+% verbatim. Where a misprint is a misspelt word whose literal rendering would be meaningless in
+% English (p. 55 "ét", p. 63 "dispositoin"), the intended word is translated and the note records
+% what is printed. Misprints that still make sense in English (p. 51 "equivalent to $P$", p. 55
+% "genus O") are rendered as printed, and all misprints inside formulae are, of course,
+% reproduced as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{49}
+
+\section*{On certain algebraic surfaces. --- Third supplement to the “Analysis sitûs.”}
+
+By Mr.~H.~\textsc{Poincaré}.
+
+Let us propose to study, from the point of view of \emph{Analysis sitûs}, the surface
+\[ z = \sqrt{F(x, y)}, \tag{1} \]
+where $F(x, y)$ is a polynomial. We shall suppose that the curve
+\[ F(x, y) = 0 \]
+presents only ordinary points where $\dfrac{dF}{dx}$ is not zero, or else where $\dfrac{dF}{dx} = 0$, but without either $\dfrac{d^{2}F}{dx^{2}}$ or $\dfrac{dF}{dy}$ vanishing, or ordinary double points where $\dfrac{dF}{dx} = \dfrac{dF}{dy} = 0$, but without either $\dfrac{d^{2}F}{dx^{2}}$ or $\dfrac{d^{2}F}{dx^{2}}\,\dfrac{d^{2}F}{dy^{2}} - \left(\dfrac{d^{2}F}{dx\,dy}\right)^{2}$ vanishing.
+
+Let us first consider $y$ as a constant. Then equation (1) will represent an algebraic curve, and the coordinates $x$ and $z$ of a point of this curve can be expressed, as is known, as Fuchsian functions of one and the same auxiliary variable $u$. Let us consider the corresponding Fuchsian group and the Fuchsian polygon which generates it. In general, the Fuchsian polygon which corresponds to a curve of genus $p$ is a polygon of $4p$ sides, and one may suppose either that the sides of rank $4q + 1$ and $4q + 3$, like the sides of rank $4q + 2$ and $4q + 4$, are conjugate (which corresponds to the so-called \emph{normal} periods of the Abelian functions), or that the opposite sides are conjugate.
+
+It is this latter hypothesis that we shall adopt.
+
+I recall, moreover, that the sum of the angles of the polygon must be equal to $2\pi$. But, in the particular case of the curve (1), we are in the so-called \emph{hyperelliptic} case, that is to say, the corresponding Abelian functions reduce to hyperelliptic functions.
+
+\origpage{50}
+
+In this case, it is known that our Fuchsian polygon admits a centre of symmetry and decomposes into two polygons of $2p + 1$ sides, symmetric to each other with respect to this centre.
+
+Before going further, I make precise what I mean by this word \emph{symmetry}. We place ourselves at this moment at the point of view of non-Euclidean geometry; I mean that we regard as non-Euclidean straight lines the circles which cut the fundamental circle orthogonally; we say that two figures are symmetric with respect to a non-Euclidean straight line when one can pass from the one to the other by an inversion (transformation by reciprocal radii vectores) which does not alter this non-Euclidean straight line; we say that two figures are equal when they are symmetric to one and the same third figure with respect to two non-Euclidean straight lines, or again when they are equal to one and the same third figure; we say, finally, that two figures are symmetric with respect to a centre when they are symmetric to one and the same third figure with respect to two rectangular non-Euclidean straight lines passing through this centre.
+
+This being laid down, our polygon $R$ of $4p$ sides decomposes into two polygons $R'$ and $R''$ of $2p + 1$ sides, symmetric to each other with respect to a centre.
+
+We may suppose that the polynomial $F(x, y)$ is divisible by no square. Under these conditions, the equation in $x$
+\[ F(x, y) = 0 \]
+will have no double root, except for certain singular values of $y$. It will have $2p + 2$ simple roots, which I shall call
+\[ x_{0}, \qquad x_{1}, \qquad x_{2}, \qquad \ldots, \qquad x_{2p+1}. \]
+Then $x_{0}$ will correspond to the $2p + 1$ vertices of the polygon $R'$, while $x_{1}, x_{2}, \ldots, x_{2p+1}$ will correspond to the midpoints (always from the non-Euclidean point of view) of the $2p + 1$ sides.
+
+In the plane of the $x$, we can draw $2p + 1$ cuts
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p+1} \]
+going from the point $x_{0}$ to the points $x_{1}, x_{2}, \ldots, x_{2p+1}$, and in such a way that to the two lips of the cut $C_{i}$ there correspond on the polygon $R'$ the two halves of the $i^{\text{th}}$ side.
+
+\origpage{51}
+
+In the case of $p = 1$ (that is to say, if the equation $F = 0$ is of the fourth degree in $x$), the polygon $R$ reduces to a parallelogram, the polygons $R'$ and $R''$ to two rectilinear triangles, and the Fuchsian functions to elliptic functions.
+
+What will happen now if, $y$ being made to vary in a continuous manner, this variable returns to its initial value?
+
+Our Fuchsian group will vary in a continuous manner, as will $x_{0}, x_{1}, \ldots, x_{2p+1}$ and the Fuchsian polygon $R$. When $y$ has made a complete turn, the Fuchsian group will have become the same again; the points $x_{i}$ will in general have been permuted among themselves, and the polygon $R$ will have become another polygon $R_{1}$, equivalent to $P$\ednote{Printed $P$ instead of $R$; an apparent misprint.}, I mean capable of generating the same Fuchsian group.
+
+Let us take, for example, the case of $p = 1$; the polygon $R$ is a parallelogram whose sides $\omega$ and $\omega'$ will represent in magnitude and direction the two periods of an elliptic function. When $y$ has described a complete turn, our parallelogram will have become $R_{1}$, whose sides will still represent in magnitude and direction two periods of the same elliptic function; only these periods will no longer be, in general, $\omega$ and $\omega'$, but two equivalent periods
+\[ \alpha\omega + \beta\omega', \qquad \gamma\omega + \delta\omega', \]
+where $\alpha, \beta, \gamma, \delta$ are four integers such that $\alpha\delta - \beta\gamma = 1$.
+
+This leads us to a first connection with \emph{Analysis sitûs}. Let us suppose that $p = 1$; let us suppose that we agree to give to $y$ any one of the values situated on a certain closed contour $K$, to $x$ any complex value, and that $z$ is defined by equation (1). The set of these points $x, y, z$ will constitute a certain closed manifold $V$ of three dimensions. What are the properties of this manifold from the point of view of \emph{Analysis sitûs}?
+
+To each point of this manifold I shall make correspond three real variables $\xi, \eta, \zeta$ defined as follows: $\zeta$ will be a function of $y$ alone and will increase by 1 when $y$ has described its complete contour. As for $\xi$ and $\eta$, they will be linear functions of the real and imaginary parts of the elliptic integral $u$ defined by equation (1). These linear functions will be such that $\xi$ and $\eta$ change into $\xi + 1, \eta$ when this elliptic integral increases by $\omega$, and into $\xi, \eta + 1$ when it increases by $\omega'$ (in such a way that
+\origpage{52}
+$u = \xi\omega + \eta\omega'$). Under these conditions, we shall fall back on one and the same point of the manifold $V$ when $\xi, \eta, \zeta$ change into
+\[ \xi + 1, \qquad \eta, \qquad \zeta \]
+or into
+\[ \xi, \qquad \eta + 1, \qquad \zeta \]
+or into
+\[ \delta\xi - \gamma\eta, \qquad \beta\xi + \alpha\eta, \qquad \zeta + 1, \]
+for if $\xi_{1}$ and $\eta_{1}$ are what $\xi$ and $\eta$ become when $\zeta$ is changed into $\zeta + 1$, we shall have
+\[ u = \xi\omega + \eta\omega', \]
+and on the other hand
+\[ u = \xi_{1}(\alpha\omega + \beta\omega') + \eta_{1}(\gamma\omega + \delta\omega'), \]
+or more generally when $\xi, \eta, \zeta$ undergo any transformation of the group $G$ generated by these three transformations.
+
+We recognize here the group considered in \emph{Analysis sitûs}, page 57, 6\textsuperscript{th} example. The manifold $V$ is therefore homeomorphic to the manifold considered in this 6\textsuperscript{th} example, and it admits $G$ as its \emph{fundamental group} (cf.\ \emph{Analysis sitûs}, p.\ 60).
+
+Let us still define the manifold $V$ in the same manner, but no longer suppose $p = 1$. Then $R$ is a curvilinear Fuchsian polygon. We shall again introduce three variables $\xi, \eta, \zeta$; the last of them, $\zeta$, will be defined as above. As for $\xi$ and $\eta$, they will be bi-uniform functions of $\zeta$ and of the real and imaginary parts of the variable $u$; in such a way that to every complex value of $u$ there corresponds one system of values of $\xi$ and $\eta$, and only one, and conversely. To each value of $\zeta$ will correspond a Fuchsian group and the Fuchsian polygon $R$ relative to this group. This Fuchsian group will be generated by $2p$ substitutions
+\[ S_{1}, \qquad S_{2}, \qquad \ldots, \qquad S_{2p}. \]
+The substitution $S_{k}$ will change $\xi$ and $\eta$ into
+\[ \varphi_{k}(\xi, \eta, \zeta), \qquad \psi_{k}(\xi, \eta, \zeta), \]
+so that we shall fall back on one and the same point of the manifold $V$ when we change $\xi, \eta, \zeta$ into
+\[ \varphi_{k}(\xi, \eta, \zeta), \qquad \psi_{k}(\xi, \eta, \zeta), \qquad \zeta. \]
+
+\origpage{53}
+
+We can, moreover, define the functions $\xi$ and $\eta$ in such a way that $\varphi_{k}$ and $\psi_{k}$ do not depend on $\zeta$.
+
+Indeed, let us consider the figure formed by the Fuchsian polygon $R = R' + R''$ and by its transforms under the various substitutions of the Fuchsian group. This polygon and its transforms fill the surface of the fundamental circle. The figure thus formed will be deformed in a continuous manner when $\zeta$ is made to vary in a continuous manner, but it will remain homeomorphic to itself. We can therefore make correspond to every point $M_{0}$ of this figure in its initial position one point $M$, and only one, of the same figure in any one of its consecutive positions, and this in such a way:
+
+1° That the point $M$ moves in a continuous manner when $\zeta$ varies in a continuous manner;
+
+2° That, if $M_{0}$ is a vertex of $R$, $M$ remains a vertex of $R$; that, if $M_{0}$ is on a side of $R$, $M$ remains on a side of $R$;
+
+3° That, if two points $M_{0}$ and $M'_{0}$ are congruent (that is to say, transforms of each other under one of the substitutions of the Fuchsian group), the points $M$ and $M'$ are likewise congruent.
+
+I shall then suppose that the values of the two auxiliary variables $\xi$ and $\eta$ are the same for the point $M_{0}$ and for the point $M$; I shall suppose, for example, that they are the coordinates of the point $M_{0}$.
+
+Under these conditions, $\varphi_{k}$ and $\psi_{k}$ do not depend on $\zeta$.
+
+When, $y$ having made a complete turn, $\zeta$ has increased by 1; the polygon $R$, by being successively deformed, will have become a polygon $R_{1}$, equivalent to $R$.
+
+The point $M$ will have come to a point $M_{1}$ whose coordinates will be
+\[ \theta(\xi, \eta), \qquad \theta_{1}(\xi, \eta). \]
+
+We see that we fall back on one and the same point of $V$ when $\xi, \eta, \zeta$ change into
+\[ \theta(\xi, \eta), \qquad \theta_{1}(\xi, \eta), \qquad \zeta + 1, \]
+or, more generally, when $\xi, \eta, \zeta$ undergo one of the substitutions of the group $G$ generated by the $2p + 1$ substitutions which change $\xi$ and $\eta$ into
+\[ \varphi_{k}, \qquad \psi_{k}, \qquad \zeta \qquad (k = 1, 2, \ldots, 2p) \]
+\origpage{54}
+or into
+\[ \theta, \qquad \theta_{1}, \qquad \zeta + 1. \]
+This group $G$ will therefore be the fundamental group of the manifold $V$.
+
+We shall remark first that this group is not simple. We may call $G'$ the group generated by the $2p$ substitutions $(\varphi_{k}, \psi_{k}, \zeta)$ and $\Sigma$ the substitution $(\theta, \theta_{1}, \zeta + 1)$. I say that $G'$ is an invariant subgroup of $G$; it suffices to show that $G'$ is permutable with $\Sigma$. Indeed, $\Sigma$, changing the polygon $R$ into an equivalent polygon, does not alter the Fuchsian group. Now, the Fuchsian group is nothing other than the group generated by the $2p$ substitutions $(\xi, \eta; \varphi_{k}, \psi_{k})$; we see that this group is permutable with the substitution $(\xi, \eta; \theta, \theta_{1})$, and the theorem stated follows immediately.
+
+Let us now consider a manifold $V$ defined as follows:
+
+Let us represent the variable $y$ on a sphere. Let us distinguish on this sphere the ordinary points, for which the equation $F(x, y)$ has no multiple roots, and the singular points, for which this equation has multiple roots.
+
+Let $O$ be an ordinary point and $A_{1}, A_{2}, \ldots, A_{q}$ the singular points. Let us join $O$ to each of these points by cuts $OA_{1}, OA_{2}, \ldots, OA_{q}$ which do not cut one another.
+
+On the other hand, let us draw around each of the singular points a circle of very small radius, which we shall call a \emph{guard circle}.
+
+To form the manifold $V$, we shall give to $y$ any value not comprised in one of the guard circles; to $x$ any complex value, to $z$ one of the two values defined by equation (1).
+
+To each value of $y$ will correspond a Fuchsian polygon $R$, and this polygon is perfectly determined if $y$ is constrained to vary without crossing the cuts $OA$; for it is only when $y$ makes a complete turn around one of the singular points $A$ that the polygon $R$ can be exchanged for an equivalent polygon.
+
+The polygon $R$ and its transforms under the Fuchsian group form a figure which, when $y$ varies in a continuous manner, is also deformed in a continuous manner, but always remaining homeomorphic to itself. Let then $y_{0}$ be an initial value of $y$, $R_{0}$ the corresponding polygon $R$, $M_{0}$ a point of the plane of $R_{0}$; we can make correspond to the point $M_{0}$ a point $M$ of the plane
+\origpage{55}
+of $R$, in such a way that the coordinates of $M$ are continuous and bi-uniform functions of those of $M_{0}$; that $M$ is at a vertex or on a side of $R$ if $M_{0}$ is at a vertex or on a side of $R_{0}$; that $M$ and $M'$ are congruent if $M_{0}$ and $M'_{0}$ are congruent.
+
+We can then make correspond to the point $M$ two auxiliary variables $\xi$ and $\eta$, which will be nothing other than the coordinates of $M_{0}$. Under these conditions, the Fuchsian group will be derived from $2p$ substitutions
+\[ S_{1}, \qquad S_{2}, \qquad \ldots, \qquad S_{2p}, \]
+such that $S_{k}$ changes $\xi$ and $\eta$ into $\varphi_{k}(\xi, \eta), \psi_{k}(\xi, \eta)$, \emph{the functions} $\varphi_{k}$ \emph{and} $\psi_{k}$ \emph{being independent of} $y$.
+
+When $y$ turns around the singular point $A_{i}$, $R$ changes into an equivalent polygon $R_{1}$; it follows that $\xi$ and $\eta$ change into
+\[ \theta_{i}(\xi, \eta), \qquad \theta'_{i}(\xi, \eta), \]
+$\theta_{i}$ and $\theta'_{i}$ being bi-uniform and continuous functions of $\xi$ and $\eta$, such that, when the point $\zeta, \eta$\ednote{Printed $\zeta, \eta$ instead of $\xi, \eta$; an apparent misprint.} is at a vertex or on a side of $R_{0}$, the point $\theta_{i}, \theta'_{i}$ is at a vertex or on a side of the polygon $R^{0}_{1}$, analogous to $R_{1}$ and\ednote{Printed ``ét'' instead of ``et''; an apparent misprint.} equivalent to $R_{0}$.
+
+Let us now consider a second Fuchsian group, which I shall call $\Gamma$, in such a way that $y$ is a Fuchsian function of the auxiliary variable $\zeta + i\zeta'$ admitting this group $\Gamma$. The corresponding Fuchsian polygon $P$ will be of the second family (that is to say, it will have all its vertices on the fundamental circle and all its angles zero) and of genus O\ednote{Printed as a lining capital O, not the old-style zero used elsewhere in this print; genre 0 is meant.}. Its different vertices will correspond to the values $A_{1}, A_{2}, \ldots, A_{q}$ of the variable $y$.
+
+To the $q$ singular points $A_{1}, A_{2}, \ldots, A_{q}$ will correspond the $q$ substitutions
+\[ \Sigma_{1}, \qquad \Sigma_{2}, \qquad \ldots, \qquad \Sigma_{q}, \]
+which will generate the group $\Gamma$; and the substitution $\Sigma_{i}$ will change $\zeta$ and $\zeta'$ into
+\[ \chi_{i}(\zeta, \zeta'), \qquad \chi'_{i}(\zeta, \zeta'). \]
+
+It follows from this that we shall fall back on the same point of the manifold $V$ when the four variables $\xi, \eta, \zeta, \zeta'$ undergo one of the substitutions of the group $G$ generated by the $2p + q$ substitutions
+\origpage{56}
+which change these variables into
+\[ \begin{aligned} &\varphi_{k}(\xi, \eta), \qquad \psi_{k}(\xi, \eta), \qquad \zeta, \qquad \zeta' \qquad (k = 1, 2, \ldots, 2p).\\ &\theta_{i}(\xi, \eta), \qquad \theta'_{i}(\xi, \eta), \qquad \chi_{i}(\zeta, \zeta'), \qquad \chi'_{i}(\zeta, \zeta') \qquad (i = 1, 2, \ldots, q). \end{aligned} \]
+
+The first $2p$ of these substitutions generate a group $G'$ (which will be nothing other than the Fuchsian group applied to $\xi$ and $\eta$, the two variables $\zeta$ and $\zeta'$ remaining unaltered). This Fuchsian group being permutable with the substitutions $\Sigma_{i}$, one would conclude, as above, that $G'$ is an invariant subgroup of $G$.
+
+This group $G$ may be regarded as the fundamental group of the manifold $V$, provided one supposes, as we have done, that $y$ is constrained not to penetrate into the guard circles.
+
+Indeed, let $N$ be the point of space of four dimensions whose coordinates are $\xi, \eta, \zeta, \zeta'$. To each point $N$ will correspond a point of $V$, but to each point of $V$ will correspond an infinity of points $N$; I shall say that these points are congruent to one another.
+
+According to the definitions given in \emph{Analysis sitûs} (\emph{cf}.\ p.\ 61), to each substitution of the fundamental group of $V$ will correspond a closed contour $K$ drawn on $V$, the initial point of the contour being a certain fixed point chosen once and for all on $V$ (it is the point that I called $M_{0}$ in \emph{Analysis sitûs}). Let $N_{0}$ be one of the points $N$ corresponding to this fixed point of $V$; to our closed contour $K$ will correspond in the space $(\xi, \eta, \zeta, \zeta')$ a line $N_{0}BN'_{0}$ going from the point $N_{0}$ to a congruent point $N'_{0}$.
+
+It is clear next that two lines $N_{0}BN'_{0}$, $N_{0}CN'_{0}$ having the same extremities will lead to one and the same substitution of the fundamental group. For this it suffices to show that the closed contour $N_{0}BN'_{0}CN_{0}$ bounds an area, for then the corresponding closed contour on $V$ will also bound an area and can be reduced to a point by continuous deformation.
+
+It suffices, therefore, to show that the region of space of four dimensions in which the point $N$ can move is simply connected. What is this region? First, the point $\xi, \eta$ can traverse the whole fundamental circle, which is a simply connected area. As for the point $\zeta, \zeta'$, it can traverse the polygon $P$ and its transforms under the Fuchsian group $\Gamma$. It could therefore also traverse the entire fundamental circle, were there no occasion to take
+\origpage{57}
+account of the existence of the guard circles. As $y$ cannot penetrate into these guard circles, one must cut away from the polygon $P$ small regions in the neighbourhood of each vertex, and likewise for its transforms. One must therefore cut away from the fundamental circle an infinity of small circles, all exterior to one another and all tangent to the fundamental circle. The remaining area being none the less simply connected, the region in which the point $(\xi, \eta, \zeta, \zeta')$, that is to say the point $N$, can move is indeed simply connected. Q.~E.~D.
+
+Thus, to a point $N'_{0}$ (or, if one prefers, to the substitution of the group $G$ which changes $N_{0}$ into $N'_{0}$) there corresponds one substitution of the fundamental group, and only one. It follows from this that the fundamental group is isomorphic to $G$, but we do not yet know whether the isomorphism is not merihedral.
+
+This is what would happen if there were points $N'_{0}$ (other than $N_{0}$) such that the corresponding substitution of the fundamental group reduces to the identical substitution, that is to say, such that the closed contour drawn on $V$ and corresponding to the line $N_{0}BN'_{0}$ bounds an area and can be reduced to a point by continuous deformation.
+
+We must therefore inquire whether, when an infinitely small closed contour is described on $V$, it can happen that the point $N$ undergoes a substitution of $G$ which does not reduce to the identical substitution. When an infinitely small contour is described on $V$, the variable $y$ will also describe in its plane an infinitely small contour. This contour cannot surround one of the singular points $A_{i}$, since each of these singular points is protected by a guard circle, very small but finite, into which $y$ cannot penetrate. We can then, by subjecting our closed contour to an infinitely small deformation, arrange that, $y$ remaining constant all along the contour, the variable $x$ describes in its plane an infinitely small closed contour. If this contour surrounds none of the singular points $x_{k}$, the point $N$ whose coordinates are $\xi, \eta, \zeta, \zeta'$ returns to its original value, and it has not undergone a substitution of $G$ other than the identical substitution. If the contour surrounds one singular point, and only one, the variable $z$ changes sign and the cycle is not closed on $V$. Finally, it cannot happen that the contour surrounds two singular points, since it is infinitely small, since two singular points can be infinitely near each other
+\origpage{58}
+only when $y$ is near one of the points $A_{i}$, and since we cannot approach these points $A_{i}$ because of the guard circles.
+
+In sum, when a closed cycle is described on $V$, the substitution undergone by $N$ will always reduce to the identical substitution. Hence the isomorphism of $G$ and the fundamental group is holohedral. In other words, since the fundamental group is defined only by its form, the group is nothing other than $G$.
+
+We see what role the guard circles play in the preceding reasoning. Let us now suppress these guard circles and suppose that $x$ and $y$ can take any complex values, and that $V$ is, consequently, the manifold defined by equation (1).
+
+First, the fundamental group will still be isomorphic to $G$; I have nothing to change in this part of the reasoning. But it remains to be known whether this isomorphism is not merihedral, and, to recognize this, I shall, as above, examine what happens when an infinitely small closed cycle is described on $V$.
+
+If, when this cycle is described, $y$ does not turn around a singular point $A_{i}$ or does not remain infinitely near $A_{i}$, the preceding reasonings will still apply, and the substitution undergone by $N$ will reduce to the identical substitution. Let us now suppose that $y$ describes a very small closed circle around $A_{i}$. Then $\zeta$ and $\zeta'$ will change into $\chi_{i}$ and $\chi'_{i}$, and $N$ will undergo either the substitution $(\theta_{i}, \theta'_{i}, \chi_{i}, \chi'_{i})$, which I shall call, for brevity, $T_{i}$, or this same substitution followed by a substitution of the group $G'$.
+
+Let us be more precise. When the cycle is described, the point $x$ describes in its plane an infinitely small closed contour. At the same time, the points
+\[ x_{0}, \qquad x_{1}, \qquad x_{2}, \qquad \ldots, \qquad x_{2p+1}, \]
+as a result of the variations of $y$, will describe very small curves. Two of these points, which I shall call $x_{a}$ and $x_{b}$, are very near each other when $y$ is near $A_{i}$. The other points $x_{k}$ will describe closed contours when $y$ turns around $A_{i}$. As for $x_{a}$ and $x_{b}$, it may happen that they are exchanged, and then they will each describe a very small arc, the two arcs together constituting a small closed curve. Or else they will not be exchanged, so that each of them will describe a closed curve.
+
+\origpage{59}
+
+If $x$ turns around none of the singular points $x_{k}$, the point $N$ will undergo the substitution $T_{i}$, to which, consequently, the identical substitution must correspond in the fundamental group.
+
+If $x$ turns around a point $x_{k}$ other than $x_{a}$ and $x_{b}$, $z$ changes sign and the cycle is not closed; this case must therefore be excluded.
+
+If $x$ turns around the points $x_{a}$ and $x_{b}$, the sum of the arguments of $x - x_{a}$ and $x - x_{b}$ increases by $2\pi$ or by $4\pi$. The first case must be excluded because $z$ would change sign; let us examine the second.
+
+Let us take up again the Fuchsian polygon $R$ and the two partial polygons $R'$ and $R''$. To the point $x_{a}$ will correspond on $R'$ a certain point $u_{a}$, which will be the midpoint of one of the sides (from the non-Euclidean point of view). Let $s_{a}$ be the substitution which changes a point $u$ of the plane of $R$ into a point symmetric to $u$ with respect to $u_{a}$ (from the non-Euclidean point of view).
+
+Let $u'_{a}$ be a point congruent to $u_{a}$, the transform of $u_{a}$ under a substitution $S$ of the Fuchsian group; and let $s'_{a}$ be a substitution which changes a point into its symmetric with respect to $u'_{a}$. We shall evidently have
+\[ s'_{a} = S^{-1} s_{a} S. \]
+
+Let us now consider the different points of the plane of $R$ which correspond to $x_{b}$; among these points, I shall distinguish the one which tends towards $u_{a}$ when $y$ tends towards $A_{i}$ without crossing the cuts $OA$; I shall call it $u_{b}$. I shall denote by $u'_{b}$ the transform of $u_{b}$ under $S$. I shall define $s_{b}$ and $s'_{b}$ with respect to $u_{b}$ and $u'_{b}$ as $s_{a}$ and $s'_{a}$ are defined with respect to $u_{a}$ and $u'_{a}$.
+
+It is clear that
+\[ s^{2}_{a} = s^{2}_{b} = s'^{2}_{a} = s'^{2}_{b} = 1, \]
+that $s_{a}s_{b}$ and $s_{b}s_{a}$ belong to the Fuchsian group, that
+\[ s'_{b} = S^{-1} s_{b} S. \]
+
+Moreover, $s_{a}s_{b}$ and $s_{b}s_{a}$ are inverse to each other.
+
+This being laid down, when $x$ has described its contour around $x_{a}$ and $x_{b}$, the point $\xi, \eta$ will have undergone the substitution $s_{a}s_{b}$ (or the substitution $s_{b}s_{a}$, according to the sense in which the contour has been described) or, more generally, one of the substitutions of the Fuchsian group.
+
+The point $N$ will therefore have undergone the substitution $T_{i}$ followed by one of the
+\origpage{60}
+substitutions $S'$ of $G'$, or, what comes to the same thing, by a substitution $S''$ of $G'$ followed by $T_{i}$.
+
+To the substitution $T_{i}S' = S''T_{i}$ of the group $G$ there will again correspond in the fundamental group the identical substitution.
+
+As we have just seen that to $T_{i}$ there already corresponded the identical substitution, we must conclude that to $S'$ and $S''$ there will likewise correspond the identical substitution.
+
+It may further happen that, when the closed cycle is described on $V$, $y$ does not turn around $A_{i}$ but remains very near $A_{i}$; in this case, $\zeta$ and $\zeta'$ will return to their original values; at the same time, $x$ will describe in its plane a closed contour; we may suppose that this contour surrounds the two singular points $x_{a}$ and $x_{b}$, since, when $y$ is near $A_{i}$, these two points $x_{a}$ and $x_{b}$ are near each other. Then the point $u$ undergoes a substitution of the Fuchsian group, and the point $N$ undergoes a substitution $S'''$ of $G'$, to which the identical substitution must again correspond in the fundamental group.
+
+Thus, if we take up again our group $G$, which is derived from the subgroup $G'$ and from the substitutions $T_{i}$, we see that to all the substitutions $T_{i}$ and to certain substitutions of $G'$ there corresponds the identical substitution. Hence the fundamental group will be isomorphic to $G'$ (and, consequently, to the Fuchsian group), since to all the $T_{i}$ there corresponds the identical substitution, and this isomorphism will in general be merihedral, because to certain substitutions of $G'$ there will in general correspond the identical substitution.
+
+Before going further, a distinction is necessary. It may happen that the singular points $x_{a}$ and $x_{b}$ are exchanged when $y$ turns around $A_{i}$, or else that they are not exchanged. In the first case there is no difficulty: the part of the manifold (1) near the point $y = A_{i}$, $x = x_{a} = x_{b}$ can be likened to the part of the manifold
+\[ z^{2} = y - x^{2} \]
+near the origin, and every closed cycle which remains very near this point is reducible to a point, in such a way that the corresponding substitution of the fundamental group can only be the identical substitution. In this case, to $T_{i}$, to $S'$, to $S''$ there will correspond the identical substitution, as we have just explained.
+
+\origpage{61}
+
+In the second case, the surface (1) presents a conical point, and the portion of the manifold (1) near $y = A_{i}$, $x = x_{a} = x_{b}$ can be likened to the part of the manifold
+\[ z^{2} = y^{2} - x^{2} \]
+near the origin.
+
+Then two equally legitimate conventions can be made: Let us suppose that a closed contour drawn on $V$ can be reduced to a point, \emph{but by crossing the conical point}, and cannot be otherwise. We may admit that the corresponding substitution of the fundamental group is still the identical substitution, or, in other words, we may treat the conical point as an ordinary point of the manifold. In this case, again, to $T_{i}$, $S'$ and $S''$ there will correspond the identical substitution.
+
+Or else we may make the contrary convention and treat the conical point as a singular point which it is forbidden to cross. In this case, to $T_{i}$ there will still correspond the identical substitution, but it will no longer be the same for $S'''$. We shall, moreover, always have $S'' \equiv S'''$.\ednote{Printed $S'' \equiv S'''$; from p.\ 65 on the relation is written $S' \equiv S''$.}
+
+Here now is the question which arises. Mr.~Picard has proved (cf.\ \emph{Théorie des fonctions algébriques de deux variables}, t.\ I, p.\ 85 et seq.) that, if an algebraic surface is the most general of its degree, the linear cycles can be reduced to points, in such a way that the Betti number $p_{1}$ is equal to 1.
+
+It does not follow immediately that the fundamental group reduces to the identical substitution. Indeed, Mr.~Picard has proved that every linear cycle is \emph{homologous} to zero, and, to prove that the fundamental group reduces to the identical substitution, one would have to show that every linear cycle is \emph{equivalent} to zero. For the difference between homologies and equivalences, see \emph{Analysis sitûs}, p.\ 63.
+
+It is therefore necessary to return to the question from this new point of view. Let us first see the case where $p = 1$, that is to say, where our Fuchsian polygon $R$ reduces to a parallelogram. Then all the substitutions of $G'$, and consequently all those of the fundamental group, are permutable with one another.
+
+The group $G'$ derives from two substitutions which I call $s$ and $s_{1}$. Let there then be any cycle; to this cycle will correspond a substitution
+\origpage{62}
+of $G'$ which could be written, for example,
+\[ s^{\alpha} s^{\alpha_{1}}_{1} s^{\beta} s^{\beta_{1}}_{1} s^{\gamma} s^{\gamma_{1}}_{1}. \]
+The substitutions of $G'$ being permutable, it could equally be written
+\[ s^{\alpha+\beta+\gamma} s^{\alpha_{1}+\beta_{1}+\gamma_{1}}_{1}. \]
+
+If, as Mr.~Picard has proved, every cycle is homologous to zero, this means that, among the possible cycles, there are two corresponding to the substitutions of $G'$:
+\[ s^{a} s^{b}_{1}, \qquad s^{c} s^{d}_{1} \]
+(where $a, b, c, d$ are four integers whose determinant is not zero) and which are capable of being reduced to a point. It would then happen that to $s^{a} s^{b}_{1}$ and to $s^{c} s^{d}_{1}$ there would correspond in the fundamental group the identical substitution, which I shall write:
+\[ s^{a} s^{b}_{1} \equiv 1, \qquad s^{c} s^{d}_{1} \equiv 1. \]
+We shall conclude from this, recalling that $s$ and $s_{1}$ are permutable,
+\[ s^{\varepsilon} \equiv 1, \qquad s^{\varepsilon}_{1} \equiv 1, \qquad \varepsilon = ad - bc. \]
+
+We see that the fundamental group could in any case comprise only a finite number of substitutions, at most $\varepsilon^{2}$.
+
+But we can go further, even in the case of $p > 1$.
+
+Let us suppose, to fix ideas, that $p = 2$, and let us call, for brevity,
+\[ a, \qquad b, \qquad c, \qquad d, \qquad e, \qquad f \]
+the six singular points of the plane of the $x$ which we have so far called $x_{0}, \ldots, x_{6}$.
+
+Let first $y = 0$; let us join the point $x = 0$ to the points $a, b, c, d, e, f$ by rectilinear cuts, in such a way that, turning around the point $O$, one meets these cuts in the order
+\[ Oa, \qquad Ob, \qquad Oc, \qquad Od, \qquad Oe, \qquad Of. \]
+
+Let us now make $y$ vary in a continuous manner, but without crossing any of the cuts $OA_{i}$; at the same time the points $a$,
+\origpage{63}
+$b$, etc., will move in a continuous manner, but without being exchanged or turning around one another; the cuts $Oa$, etc., will move and will even cease to be rectilinear, but one will always meet them in the same order in turning around $O$.
+
+When one crosses the cut $Oa$, the variable $u$ (the argument of the Fuchsian functions) will undergo a transformation which I shall call $a$, and which will be a sort of symmetry analogous to the substitution $s_{a}$ defined above, page 59 (symmetry with respect to $u_{a}$).
+
+I shall define in the same way the transformations $b, c, d, e, f$; it is clear that we shall have
+\[ \begin{aligned} &a^{2} = b^{2} = c^{2} = d^{2} = e^{2} = f^{2} = 1,\\ &abcdef = 1, \end{aligned} \]
+and that these are the only relations there are between them. The Fuchsian group will be formed of all the possible combinations of these transformations \emph{taken in even number}.
+
+When $y$ tends towards $A_{i}$, two of the singular points, $a$ and $d$, for example, approach each other; when $y$ turns around $A_{i}$, these two points will be exchanged (in the general case where the point $x = a$, $y = A_{i}$ is not a double point of the surface, a general case which we shall examine first).
+
+When the point $y$ is near $A_{i}$ (but without having crossed the
+\rmfigure{figures/fig-01.png}{Fig.~1.}{Diagram of the cuts in the x-plane radiating from the point O. Straight cuts run from O to b and c above and to f and e below. Solid curves run from O through m to a and from O through n to d; dashed curves run from O through m' to d and from O through n' to a, showing the cuts after y has turned around A sub i.}
+cut $OA_{i}$), the four cuts $Oa, Ob, Oc, Od$ present the arrangement\ednote{Printed ``dispositoin'' instead of ``disposition''; an apparent misprint.} represented by solid lines in figure 1; after the point $y$ has described a contour around $OA_{i}$, the cuts $Oa$ and $Od$ have been deformed and have taken the form represented by dotted
+\origpage{64}
+lines in the figure. They have, moreover, been permuted in such a way that the solid cut $Oma$ has become the dotted cut $Om'd$, while the cut $Ond$ has become $On'a$.
+
+Let us now draw in the plane any closed contour, starting from any fixed point $M_{0}$ of the plane; if this contour cuts successively the cuts $Oa, Oc, Oa, Ob, Of, Oe$, for example, it will be equivalent to the substitution $acabfe$.
+
+This being laid down, let us consider a closed contour cutting one of the cuts
+\[ Oma, \qquad Ob, \qquad Oc, \qquad Ond, \qquad Oe, \qquad Of, \tag{1} \]
+and only one; when $y$ has turned around $A_{i}$, it will be transformed into a contour cutting one of the cuts
+\[ Om'd, \qquad Ob, \qquad Oc, \qquad Om'a, \qquad Oe, \qquad Of, \tag{2} \]
+and only one.
+
+Now, it is easy to see on the figure that a contour cutting one of the cuts (2) will cut, in a certain order, certain of the cuts (1), and will therefore be equivalent to a certain combination of the substitutions $a$, $b$ and $c$.
+
+Let us suppose, for example, $M_{0}$ exterior to the contour $Om'dna$. The cycle which cuts:
+
+$Om'd$ will cut $Ond$ and will be equivalent to $d$,
+
+$Ob$ » $Ond, Oma, Ob, Oma$ and $Ond$ » $dabad$,
+
+$Oc$ » $Ond, Oma, Oc, Oma$ and $Ond$ » $dacad$,
+
+$Om'a$ » $Ond, Oma$ and $Ond$ » $dad$,
+
+$Oe$ » $Oe$ » $e$,
+
+$Of$ » $Of$ » $f$.
+
+Consequently, the transformation $T_{i}$ will change the substitutions
+\[ a, \qquad b, \qquad c, \qquad d, \qquad e, \qquad f \tag{3} \]
+respectively into
+\[ d, \qquad dabad, \qquad dacad, \qquad dad, \qquad e, \qquad f. \tag{4} \]
+
+\origpage{65}
+
+We have written above the relation
+\[ T_{i}S' = S''T_{i}, \]
+and shown that to the two substitutions $S'$ and $S''$ of $G'$ there must correspond the same substitution of the fundamental group, which we shall write:
+\[ S' \equiv S''. \tag{5} \]
+
+As $S'$ is a certain combination of the substitutions (3) in even number, and $S''$ is the corresponding combination of the substitutions (4), it suffices, for the equivalence (5) to hold, that we have
+\[ a \equiv d, \qquad b \equiv dabad, \qquad c \equiv dacad, \qquad d \equiv dad. \]
+Now, all these equivalences reduce to
+\[ ad \equiv 1, \]
+or, what comes to the same thing, to $a \equiv d$.
+
+We have seen next that to the substitution $S'''$ of $G'$ there must correspond the identical substitution of the fundamental group, which I write:
+\[ S''' \equiv 1. \]
+
+We see here that $S'''$ is nothing other than $ad$, so that we always fall back on the same equivalence
+\[ ad \equiv 1 \]
+which is (together with $T_{i} \equiv 1$) the only one that can be deduced from the consideration of the singular point $A_{i}$.
+
+It remains for us to examine the case where the point
+\[ x = a, \qquad y = A_{i} \]
+is a conical point of the surface $z = F(x, y)$\ednote{Printed $z = F(x, y)$; the surface (1) is $z = \sqrt{F(x, y)}$, apparently meant here.}. Let us make again a figure analogous to figure 1. When the point $y$ turns around $A_{i}$, the solid cuts $Oma$ and $Ond$ will change into the dotted cuts $Om'a$ and $On'd$ (\emph{fig}.\ 2). Reasoning
+\origpage{66}
+as just now and considering the different cycles
+\rmfigure{figures/fig-02.png}{Fig.~2.}{Diagram of the cuts in the x-plane radiating from the point O for the case of a conical point. Straight cuts run from O to b and c above and to f and e below. Solid curves run from O through m to a and from O through n to d; dashed curves run from O through m' and from O through n', winding around a and d, showing the cuts after y has turned around A sub i.}
+which start from the point $M_{0}$ and which cut one of the cuts, and only one, we see that the cycle which cuts
+
+$Om'a$ will cut $Ond, Oma$ and $Ond$,
+
+$Ob$ » $Ond, Oma, Ond, Oma, Ob, Oma, Ond, Oma, Ond$,
+
+$Oc$ » $Ond, Oma, Ond, Oma, Oc, Oma, Ond, Oma, Ond$,
+
+$On'd$ » $Ond, Oma, Ond, Oma, Ond$,
+
+$Oe$ » $Oe$,
+
+$Of$ » $Of$.
+
+These cycles will therefore be equivalent respectively to the combinations
+\[ dad, \qquad da\,da\,ba\,dad, \qquad da\,da\,ca\,dad, \qquad da\,dad, \qquad e, \qquad f, \]
+that is to say, $T_{i}$ will transform the substitutions
+\[ a, \qquad b, \qquad c, \qquad d, \qquad e, \qquad f \]
+into the substitutions
+\[ dad, \qquad da\,da\,ba\,dad, \qquad da\,da\,ca\,dad, \qquad da\,dad, \qquad e, \qquad f. \]
+
+If the conical point is treated as an ordinary point of the manifold, we shall again have
+\[ S' \equiv S'', \qquad S''' \equiv 1. \]
+
+The first condition entails
+\[ a \equiv dad, \qquad b \equiv da\,da\,ba\,dad, \qquad c \equiv da\,da\,ca\,dad, \qquad d \equiv da\,dad \tag{6} \]
+\origpage{67}
+The second gives us simply
+\[ ad \equiv 1, \]
+which, moreover, entails the conditions (6).
+
+Let us now consider the conical point as a point which it is forbidden to cross. Then we shall still have $S' \equiv S''$ and, consequently, the conditions (6), but we shall no longer have $S''' \equiv 1$, that is to say $ad \equiv 1$.
+
+The conditions (6) reduce to a single one:
+\[ (ad)^{2} \equiv 1. \]
+
+Thus, if we forbid ourselves to cross the conical point, we shall not have $ad \equiv 1$, but we shall have $(ad)^{2} \equiv 1$.
+
+Thus the cycle which turns around the two points $a$ and $d$ is not the boundary of a manifold of two dimensions forming part of $V$, while this cycle taken twice constitutes the boundary of a manifold of two dimensions forming part of $V$, at least if one supposes that all these manifolds of one or of two dimensions do not depart far from the conical point.
+
+It is easy to connect this with a known fact. We have already remarked that the portion of $V$ near the conical point is homeomorphic to the portion of the manifold $z^{2} = x^{2} - y^{2}$ or of the manifold $z^{2} = xy$ near the origin.
+
+Let us therefore call $W$ the manifold of four dimensions $z^{2} = xy$, from which one supposes that \emph{the origin, which is a conical point, has been excluded}. What precedes teaches us that there is on $W$ a closed cycle $C$ of one dimension such that we do not have the equivalence
+\[ C \equiv 0, \]
+but that we do have the equivalence
+\[ 2C \equiv 0. \]
+
+Now, let us consider the manifold of three dimensions
+\[ z^{2} = xy, \qquad |x^{2}| + |y^{2}| = 1 \]
+which I call $W'$. It is the manifold considered by Mr.~Heegaard [\emph{cf}.\ First Supplement to the \emph{Analysis sitûs} (\emph{Rendiconti del Circolo matematico di Palermo}, t.\ XIII, 1899)].
+
+\origpage{68}
+
+To every point $x, y, z$ of $W$ there corresponds a point
+\[ \frac{x}{\sqrt{|x^{2}| + |y^{2}|}}, \qquad \frac{y}{\sqrt{|x^{2}| + |y^{2}|}}, \qquad \frac{z}{\sqrt{|x^{2}| + |y^{2}|}}. \]
+
+If the point of $W$ describes a cycle $C$, the corresponding point of $W'$ will describe a cycle $C'$. Now, it is evident that if on $W$ we have $C \equiv 0$, on $W'$ we shall have $C' \equiv 0$, and conversely. (I recall that the equivalence $C \equiv 0$ signifies that there exists on $W$ a manifold of two dimensions of which $C$ is the complete boundary.)
+
+If, therefore, on $W$ we have $2C \equiv 0$ without having $C \equiv 0$, there will be on $W'$ a cycle $C'$ such that $2C' \equiv 0$ without $C' \equiv 0$.
+
+Now, we recall that the existence of such a cycle $C'$ is one of the characteristic properties of Mr.~Heegaard's manifold.
+
+Nothing is easier now than to determine the fundamental group. This group is merihedrally isomorphic to the Fuchsian group, which derives from all the combinations \emph{in even number} of the substitutions $a, b, c, d, e, f$, which are supposed bound by the relations
+\[ a^{2} = b^{2} = c^{2} = d^{2} = e^{2} = f^{2} = 1, \qquad abcdef = 1. \]
+
+But if the two points $a$ and $d$ can be exchanged when $y$ turns around $A_{i}$, we shall have $ad \equiv 1$, whence
+\[ a \equiv d. \]
+
+I say that the same relation will subsist if $a$ changes into $d$ when $y$ describes any closed cycle, enclosing, for example, no longer a single singular point, but two singular points $A_{i}$ and $A_{k}$. If, indeed, for example, $a$ is exchanged with $b$ when $y$ turns around $A_{i}$, and $b$ with $d$ when $y$ turns around $A_{k}$ (in such a way that $a$ changes into $d$ when $y$ describes the contour which encloses both of these singular points at once), we shall have
+\[ a \equiv b, \qquad b \equiv d \]
+and, consequently,
+\[ a \equiv d. \qquad \text{Q.~E.~D.} \]
+
+If, therefore, the singular points $a, b, c, d$ are capable of being exchanged among themselves, we shall have
+\[ a \equiv b \equiv c \equiv d. \]
+
+\origpage{69}
+
+If the polynomial $F(x, y)$ is indecomposable, the roots of the equation
+\[ F(x, y) = 0 \]
+(considered as an equation in $x$) will all be capable of being exchanged among themselves when $y$ is made to vary in any manner.
+
+Our $2p + 2$ singular points (which are six in number, $a, b, c, d, e, f$, if $p = 2$) will therefore all be exchanged with one another, and we shall have
+\[ a \equiv b \equiv c \equiv d \equiv e \equiv f. \]
+
+Any substitution of the fundamental group, reducing to a combination in even number of $a, b, c, d, e, f$, will reduce to an even power of $a$, that is to say, to the identical substitution.
+
+\emph{Thus, if the polynomial} $F$ \emph{is indecomposable, the fundamental group reduces to a single substitution, which is the identical substitution}.
+
+If the polynomial $F$ decomposes into two factors $F = F_{1}F_{2}$, we shall have to distinguish two sorts of singular points: those which satisfy the equation $F_{1} = 0$ and those which satisfy $F_{2} = 0$; let us suppose, for example, that $a, b, c, d$ satisfy $F_{1} = 0$, and $e$ and $f$ satisfy $F_{2} = 0$; we shall then have
+\[ a \equiv b \equiv c \equiv d, \qquad e \equiv f. \]
+We shall not have $a \equiv e$ (if the conical points are not regarded as ordinary points), but we shall have $(ae)^{2} \equiv 1$, so that the fundamental group will comprise only two substitutions
+\[ 1, \qquad ae. \]
+
+It remains to be seen whether this number is not reduced by consideration of the relation
+\[ abcdef = 1. \tag{7} \]
+
+Let us observe that one must always reduce the degree of $F$ to being even (if need be by a homographic transformation), since the number of singular points is $2p + 2$. We must then distinguish the case where $F_{1}$ and $F_{2}$ are both of even degree: then
+\origpage{70}
+the relation (7) reduces to an identity and the fundamental group is not reduced; and the case where $F_{1}$ and $F_{2}$ are both of odd degree: then the relation (7) reduces to $ae \equiv 1$ and the fundamental group comprises no more than one substitution.
+
+If $F$ decomposes into three factors $F = F_{1}F_{2}F_{3}$, and $a$ is one of the roots of $F_{1} = 0$, $b$ one of those of $F_{2} = 0$, $c$ one of those of $F_{3} = 0$, we shall have
+\[ a^{2} \equiv b^{2} \equiv c^{2} \equiv 1, \qquad (ab)^{2} \equiv (bc)^{2} \equiv (ac)^{2} \equiv 1, \]
+which shows that the fundamental group reduces to four substitutions
+\[ 1, \qquad ab, \qquad bc, \qquad ac, \]
+this number being capable of further reduction, because of the relation (7), if two of the factors are of odd degree.
+
+If, finally, $F$ decomposes into $n$ factors $F = F_{1}F_{2}\ldots F_{n}$; if $a_{i}$ is one of the roots of $F_{i} = 0$; we shall have
+\[ a^{2}_{i} \equiv 1, \qquad (a_{i}a_{k})^{2} \equiv 1 \qquad (i, k = 1, 2, \ldots, n). \tag{8} \]
+Let then $S$ be any substitution of the fundamental group; it will be the product of an even number of the substitutions $a_{i}$. But from the relations (8) one can deduce
+\[ a_{i}a_{k} \equiv a_{k}a_{i}. \]
+We can therefore permute the factors of $S$ and write it in the form
+\[ a^{\varepsilon_{1}}_{1} a^{\varepsilon_{2}}_{2} \ldots a^{\varepsilon_{n}}_{n} \qquad (\varepsilon_{1} + \varepsilon_{2} + \ldots + \varepsilon_{n} \equiv 0, \text{ mod}\ 2). \]
+
+We can then, by means of the relations (8), reduce the exponents $\varepsilon$ to 0 or to 1, so that $S$ will reduce to a product of $k$ factors $a_{1}, a_{2}, \ldots, a_{n}$, the $k$ factors being different and $k$ being even, the order of the factors being, moreover, regarded as immaterial. There are $2^{n-1}$ possible combinations; the fundamental group therefore comprises $2^{n-1}$ substitutions; but this number can be reduced by half by means of the relation (7), if two or more of the factors are of odd degree.
+
+\end{document}

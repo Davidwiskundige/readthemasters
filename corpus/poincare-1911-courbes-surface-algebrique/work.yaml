@@ -1,0 +1,87 @@
+id: poincare-1911-courbes-surface-algebrique
+title: Sur les courbes tracées sur une surface algébrique.
+title_en: On curves traced on an algebraic surface.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Henri Poincaré
+    credit: Photograph of Poincaré from the 1880s, author unknown, held on Wikimedia
+      Commons. Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Henri_Poincar%C3%A9_in_1880s.jpg
+publication:
+  year: 1911
+  venue: sitzungsberichte-berliner-mathematische-gesellschaft
+  volume: 10. Jahrgang
+  pages: 28–55
+  title_full: Sitzungsberichte der Berliner Mathematischen Gesellschaft, 10. Jahrgang
+    (1911), pp. 28–55 (supplement to Archiv der Mathematik und Physik, 3. Reihe, Band
+    18, 1911).
+edition:
+  year: 1911
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1911 printing in the Sitzungsberichte
+    der Berliner Mathematischen Gesellschaft (10. Jahrgang, pp. 28–55; supplement
+    to Archiv der Mathematik und Physik, 3. Reihe, Bd. 18). A faithful photographic
+    reproduction of a public-domain edition carrying no modern critical apparatus,
+    commentary, or re-typesetting, and only the paper itself is transcribed.
+discipline: mathematics
+tags:
+- geometry
+- analysis
+language: fr
+type: paper
+relations:
+- to: poincare-1910-courbes-surfaces-algebriques
+  kind: builds-on
+  recommended: primary
+  note: Continuation and further development of Poincaré's 1910 memoir on curves traced
+    on algebraic surfaces and normal functions.
+source:
+  scan_url: https://babel.hathitrust.org/cgi/pt?id=njp.32101043973393
+  scan_id: hathitrust:njp.32101043973393
+sources:
+  death_date: wikidata:Q81082
+  publication_date: hathitrust:009324539 (Sitzungsberichte der Berliner Mathematischen
+    Gesellschaft, Jg. 10, 1911, pp. 28–55)
+  edition: hathitrust:njp.32101043973393 (pp. 28–55)
+significance: In this 1911 memoir published in the Sitzungsberichte der Berliner Mathematischen
+  Gesellschaft[1], Poincaré extends and refines his celebrated 1910 theory of curves
+  traced on algebraic surfaces. Presenting his transcendental methods to the Berlin
+  Mathematical Society, Poincaré synthesizes the theory of normal functions and abelian
+  integrals on moving plane sections, exploring the algebraic relations between curves,
+  the rank of continuous systems, and the topological invariant $\rho$ of Picard that
+  would form the basis for Solomon Lefschetz's topological theory of algebraic surfaces[2].
+significance_sources:
+- citation: H. Poincaré, "Sur les courbes tracées sur une surface algébrique", Sitzungsberichte
+    der Berliner Mathematischen Gesellschaft 10 (1911), pp. 28–55.
+- citation: 'S. Lefschetz, L''Analysis situs et la géométrie algébrique (Paris: Gauthier-Villars,
+    1924).'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1911
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-26'

@@ -69,7 +69,7 @@ import Base from "../layouts/Base.astro";
     function pageIndex(anchors) {
       return (anchors ?? [])
         .map((a) => {
-          const m = /^(?:[a-z]{2}-)?p-(\d+)$/.exec(a.id || "");
+          const m = /^(?:[a-z]{2}-)?p-(\d+|[ivxlcdm]+)$/.exec(a.id || "");
           return m ? { location: a.location, page: m[1], id: a.id } : null;
         })
         .filter(Boolean)

@@ -1,0 +1,102 @@
+id: poincare-1902-quatrieme-complement-analysis-situs
+title: Sur les cycles des surfaces algébriques. — Quatrième complément à l'Analysis
+  Sitûs.
+title_en: On the cycles of algebraic surfaces; fourth supplement to Analysis situs.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare  # https://mathshistory.st-andrews.ac.uk/Biographies/Poincare/
+publication:
+  year: 1902
+  venue: journal-de-mathematiques-pures-et-appliquees
+  volume: '8'
+  pages: 169–214
+  title_full: '"Sur les cycles des surfaces algébriques; quatrième complément à l''Analysis
+    situs", Journal de Mathématiques Pures et Appliquées, 5e série, tome 8 (1902),
+    pp. 169–214.'
+edition:
+  year: 1902
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1902 printing in the Journal de Mathématiques
+    Pures et Appliquées, 5e série, tome 8, pp. 169–214, as digitized by NUMDAM (JMPA_1902_5_8__169_0).
+    A faithful photographic reproduction of a public-domain edition, carrying no modern
+    critical apparatus, commentary, or re-typesetting. Only Poincaré's own text is
+    transcribed; running heads, page numbers and signature marks are not.
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: fr
+type: paper
+relations:
+- to: poincare-1902-troisieme-complement-analysis-situs
+  kind: builds-on
+  recommended: primary
+  note: The Quatrième complément follows the Troisième in studying the topology of
+    algebraic surfaces through their sections y = const.
+- to: poincare-1895-analysis-situs
+  kind: builds-on
+  note: The memoir of 1895 that the complements correct and complete.
+significance: >-
+  The fourth of Poincaré's five complements to Analysis situs[1] turns the homology of the first
+  two complements on the cycles that Picard had made central to the study of algebraic
+  surfaces[2]. Poincaré treats the surface, a real four-dimensional variety, as fibred by the
+  Riemann surfaces of its sections $y = \text{const.}$, and follows their cycles as $y$ circles the
+  singular values $A_{i}$, where they undergo the substitutions of Picard's group. Its
+  three-dimensional cycles correspond to the cycles invariant under that group; for the two-dimensional
+  cycles he introduces the cycles évanouissants, those that disappear as the section degenerates
+  at $A_{i}$; the one-dimensional cycles are again traced to invariants of Picard's group. This
+  method of sections and vanishing cycles is the one Lefschetz developed into his topological
+  theory of algebraic varieties[3].
+significance_sources:
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique (2) 1 (1895), pp. 1–121, in
+      this corpus.
+    url: "/works/poincare-1895-analysis-situs/"
+  - citation: >-
+      É. Picard and G. Simart, Théorie des fonctions algébriques de deux variables indépendantes,
+      t. I (Paris, Gauthier-Villars, 1897), cited by Poincaré on p. 191.
+  - citation: >-
+      S. Lefschetz, L'analysis situs et la géométrie algébrique (Paris, Gauthier-Villars, 1924).
+external_translations:
+- language: en
+  title: 'Fourth supplement to Analysis situs (in Papers on Topology: Analysis Situs
+    and Its Five Supplements)'
+  translator: John Stillwell
+  year: 2010
+  license: in-copyright
+  url: https://bookstore.ams.org/hmath-37
+source:
+  scan_url: https://www.numdam.org/item/JMPA_1902_5_8__169_0/
+  scan_id: numdam:JMPA_1902_5_8__169_0
+sources:
+  death_date: wikidata:Q81082
+  publication_date: numdam:JMPA_1902_5_8__169_0 (Journal de Mathématiques Pures et
+    Appliquées, 5e série, tome 8 (1902), p. 169-214)
+  edition: numdam:JMPA_1902_5_8__169_0
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1902
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-30'

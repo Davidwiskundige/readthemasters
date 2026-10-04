@@ -1,0 +1,930 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose (and the prose inside
+% \text{...} inserts, R21) is translated. The editorial notes (\ednote) of the transcription are
+% carried over unchanged, since they are already in English and some carry mathematics.
+%
+% TERMINOLOGY. Poincaré's own terms are rendered literally and consistently, following the
+% English translation of poincare-1899-complement-analysis-situs, which this paper continues:
+%   * variété = "manifold"; variété à p dimensions = "manifold of p dimensions"
+%   * frontière complète = "complete boundary"; fermée = "closed"; simplement connexe = "simply
+%     connected"; homéomorphe = "homeomorphic"
+%   * homologie / congruence / équivalence = "homology" / "congruence" / "equivalence";
+%     homologies sans division / par division = "homologies without division / by division";
+%     homologies fondamentales = "fundamental homologies"; nombre de Betti = "Betti number"
+%   * polyèdre réciproque = "reciprocal polyhedron"; polyèdre dérivé = "derived polyhedron";
+%     polyèdre de la première / seconde / troisième sorte = "polyhedron of the first / second /
+%     third sort"; annexion, annexer = "annexation", "annex"
+%   * case / hypercase / face / arête / sommet = "cell" / "hypercell" / "face" / "edge" / "vertex"
+%   * tableau = "table" (also inside \text{Tableau ...}); its lignes / colonnes = "rows" /
+%     "columns"; invariants = "invariants"; substitution contragrédiente = "contragredient
+%     substitution"; déterminant fonctionnel = "functional determinant"; premiers entre eux =
+%     "relatively prime"
+%   * variétés sans torsion / à torsion = "manifolds without torsion / with torsion"; coëfficients
+%     de torsion = "torsion coefficients"; torsion intérieure = "interior torsion"
+%   * chaîne (fermée, nulle) = "(closed, null) chain"; bilatère / unilatère = "two-sided" /
+%     "one-sided"
+%   * pyramide généralisée (rectiligne) = "(rectilinear) generalized pyramid"; espace plan =
+%     "plane space"
+%   * premier / second membre = "first / second member"; Lemme / Corollaire / Théorème / Exemple =
+%     "Lemma" / "Corollary" / "Theorem" / "Example"; "M.~X" before a name = "Mr.~X"
+%   * the siglum \textsc{c} (the first Complément) and 2~\textsc{c} (this paper) are kept; titles
+%     of periodicals and of Poincaré's earlier papers are cited as printed
+%   * ordinals follow English usage (1\textsuperscript{st}, $i^{\text{th}}$); the print's ditto
+%     mark ",," is kept as printed; the French space before a colon (~:) is set tight
+%   * the journal's English session line on p. 277 is kept as printed
+%
+% PRINTER'S ERRORS. The transcription's \ednote on each apparent misprint is carried over
+% verbatim; all misprints inside formulae are, of course, reproduced as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{277}
+
+\section*{Second Supplement to Analysis Situs.}
+
+By H.~\textsc{Poincaré}.
+
+Read at request of the President, June 14th, 1900, and received June 30th, 1900.
+
+\subsection*{Introduction.}
+
+I published in the \emph{Journal de l'Ecole Polytechnique} (Vol.\ \textsc{c}, No.~1) a work entitled “Analysis Situs”; I occupied myself a second time with the same problem in a memoir bearing the title “Complément à l'Analysis Situs,” which was printed in the \emph{Rendiconti del Circolo Matematico di Palermo} (Vol.\ \textsc{xiii}, 1899).
+
+The question is nevertheless far from exhausted, and I shall no doubt be obliged to return to it several times. For this time, I shall confine myself to certain considerations which are of a nature to simplify, to clarify, and to complete the results previously obtained.
+
+References bearing simply an indication of section or of page will relate to the first memoir, that of the \emph{Journal de l'Ecole Polytechnique}; references in which these indications are preceded by the letter \textsc{c} will relate to the memoir of the \emph{Rendiconti}.
+\origpage{278}
+
+As for references to the sections of the present memoir, I shall precede them by the letters 2~\textsc{c}.
+
+\subsection*{1. Recapitulation of the principal definitions.}
+
+Let us consider a closed manifold of $p$ dimensions. We shall suppose that this manifold has been subdivided so as to form a polyhedron $P$ of $p$ dimensions. The elements of this polyhedron will be called the $a^{p}_{i}$; they will be separated from one another by manifolds of $p-1$ dimensions which will be called the $a^{p-1}_{i}$; these will be separated from one another by manifolds of $p-2$ dimensions which will be called the $a^{p-2}_{i}$; and so on until one arrives at the vertices of the polyhedron, which will be called the $a^{0}_{i}$.
+
+All these manifolds will be simply connected, that is to say homeomorphic to the hypersphere.
+
+If a manifold $a^{q}_{i}$ has for complete boundary the $a^{q-1}_{j}$, I shall write the congruence
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j}, \tag{1} \]
+where the $\varepsilon$ are equal to 0, $+1$ or $-1$ (\textsc{c}, \S~2, p.\ 7).
+
+We shall write, on the other hand, the homology
+\[ \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j} \backsim 0. \tag{2} \]
+We shall combine the congruences (1) and the homologies (2) by addition, subtraction, multiplication, and sometimes by division.
+
+Among the congruences between $a^{q}_{i}$ and $a^{q-1}_{i}$ obtained by the combination of the congruences (1), we shall distinguish those which contain only $a^{q}_{i}$, and from which the $a^{q-1}_{j}$ have disappeared.
+
+We shall sometimes designate the $a^{0}_{i}$ by the name of \emph{vertices}, the $a^{1}_{i}$ by that of \emph{edges}, the $a^{2}_{i}$ by that of \emph{faces}, the $a^{3}_{i}$ by that of \emph{cells}, the $a^{4}_{i}$ by that of \emph{hypercells}.
+
+To the polyhedron $P$ there corresponds a reciprocal polyhedron $P'$ (\textsc{c}, \S~7), whose elements I shall call $b^{p}_{i}$ instead of $a^{p}_{i}$, $b^{p-1}_{i}$ instead of $a^{p-1}_{i}$, \ldots, and finally $b^{0}_{i}$ instead of $a^{0}_{i}$.
+
+Between the two polyhedra there is a correspondence such that $b^{p-q}_{i}$ corresponds to $a^{q}_{i}$. The two polyhedra arise from the subdivision of one and the same manifold $V$.
+
+Between the elements of $P'$ we have the congruences
+\[ b^{q}_{i} = \Sigma \varepsilon^{p-q+1}_{ji} b^{q-1}_{j} \tag{1 \textit{bis}} \]
+\origpage{279}
+analogous to the congruences (1); we may also write it
+\[ b^{q}_{i} = \Sigma \varepsilon'^{q}_{ij} b^{q-1}_{j}, \]
+by putting
+\[ \varepsilon^{p-q+1}_{ji} = \varepsilon'^{q}_{ij}. \]
+
+Between the elements of $P$ and those of $P'$ we have yet another relation.
+
+Let us recall the notation $N(V, V')$ (\S~9, p.\ 38). We shall then have
+\[ N(a^{q}_{k}, b^{p-q}_{i}) = 0, \]
+if $i$ is not equal to $k$, and
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = \pm 1. \]
+
+It remains to see whether one must take the sign $+$ or the sign $-$.
+
+To account for this, let us consider two corresponding elements of $P$ and of $P'$, which I shall call $a^{q}_{i}$ and $b^{p-q}_{i}$; let us consider, on the other hand, two corresponding elements $a^{q-1}_{j}$ and $b^{p-q+1}_{j}$ in such a way that $a^{q-1}_{j}$ belongs to $a^{q}_{i}$, and $b^{p-q}_{i}$ to $b^{p-q+1}_{j}$.
+
+I can always choose my coordinates in such a way that the equations of $a^{q}_{i}$ are
+\[ F_{1} = F_{2} = \ldots = F_{p-q} = 0, \tag{3} \]
+the $F$ being functions of coordinates $y_{1}, y_{2}, \ldots, y_{p}$ which will define the position of a point on the manifold $V$.
+
+Let likewise
+\[ \varphi_{1} = \varphi_{2} = \ldots = \varphi_{q-1} = 0 \tag{4} \]
+be the equations of $b^{p-q+1}_{j}$; I can then suppose that the equations of $a^{q-1}_{j}$ are obtained by adjoining to the equations (1)\ednote{The equations of $a^{q}_{i}$ and of $b^{p-q+1}_{j}$ are (3) and (4); here and in the next paragraph the print refers to them as (1) and (2).} the equation $\psi = 0$, and that those of $b^{p-q}_{i}$ are obtained by adjoining to the equations (2) the equation $\psi = 1$. I can arrange that \emph{the same} function $\psi$ appears in the first member of these two equations.
+
+Then among the inequalities which, with the equalities (1), complete the definition of $a^{q}_{i}$, there must appear the inequality
+\[ \psi > 0. \]
+Likewise among the inequalities which, with the equalities (2), complete the definition of $b^{p-q+1}_{j}$, there must appear the inequality
+\[ \psi < 1. \]
+
+If we wish $\varepsilon^{q}_{ij}$ to be equal to $+1$, it is necessary, according to our conventions, that the equations of $a^{q-1}_{j}$ be put in the following order:---
+\[ F_{1} = F_{2} = \ldots = F_{p-q} = \psi = 0; \]
+\origpage{280}
+and if we wish at the same time that $\varepsilon'^{p-q+1}_{ji} = +1$, it is necessary that the equations of $b^{p-q}_{i}$ be put in the following order:---
+\[ \varphi_{1} = \varphi_{2} = \ldots = \varphi_{q-1} = 1 - \psi = 0. \]
+
+The number $N(a^{q}_{i}, b^{p-q}_{i})$ depends on the sign of the functional determinant of
+\[ F_{1}, F_{2}, \ldots, F_{p-q}, \varphi_{1}, \varphi_{2}, \ldots, \varphi_{q-1}, 1 - \psi. \]
+Likewise the number $N(a^{q-1}_{j}, b^{p-q+1}_{j})$ depends on the sign of the functional determinant of
+\[ F_{1}, F_{2}, \ldots, F_{p-q}, \psi, \varphi_{1}, \varphi_{2}, \ldots, \varphi_{q-1}. \]
+
+We may always suppose that the functions $F, \varphi$ and $\psi$ have been chosen in such a way that these determinants do not vanish in the domain considered.
+
+We then see that the two determinants are of the same sign if $q$ is even, and of contrary sign if $q$ is odd.
+
+We shall have in the first case
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = N(a^{q-1}, b^{p-q+1}_{j}), \]\ednote{Printed $a^{q-1}$ without the subscript $j$; $a^{q-1}_{j}$ is meant, as in the second case.}
+and in the second case
+\[ N(a^{q}_{i}, b^{p-q}_{i}) = -N(a^{q-1}_{j}, b^{p-q+1}_{j}). \]
+
+As we can always suppose
+\[ N(a^{0}_{i}, b^{p}_{i}) = +1, \]
+we shall find successively
+\[ \begin{gathered} N(a^{1}_{i}, b^{p-1}_{i}) = -1, \qquad N(a^{2}_{i}, b^{p-2}_{i}) = -1, \qquad N(a^{3}_{i}, b^{p-3}_{i}) = +1, \\ N(a^{4}_{i}, b^{p-4}_{i}) = +1, \qquad \ldots. \end{gathered} \]
+
+The only thing to retain is that the number $N(a^{q}_{i}, b^{p-q}_{i})$ depends only on $q$.
+
+This being established, one can form with the numbers $\varepsilon^{q}_{ij}$ a table which I shall call $T_{q}$, and in which the number $\varepsilon^{q}_{ij}$ will occupy the $i^{\text{th}}$ row and the $j^{\text{th}}$ column. In this table $T_{q}$ there will therefore be as many rows as there are $a^{q}_{i}$, and as many columns as there are $a^{q-1}_{j}$.
+
+I have called $\alpha_{q}$ the number of the $a^{q}_{i}$, so that the table $T_{q}$ will have $\alpha_{q}$ rows and $\alpha_{q-1}$ columns. In particular, the table $T_{1}$ will give us the relation between the edges and the vertices, the table $T_{2}$ between the faces and the edges, etc.
+
+I shall call $T'_{q}$ the table which is formed with $P'$ as $T_{q}$ is with $P$. We see that the table $T'_{q}$ is obtained by starting from the table $T_{p-q+1}$ and interchanging the rows with the columns, and conversely.
+\origpage{281}
+
+We have designated (\textsc{c}, \S~3, p.\ 14) by $\alpha_{q} - \alpha'_{q}$ the number of distinct homologies between the $a^{q}_{i}$, and by $\alpha_{q} - \alpha''_{q}$ the number of distinct congruences between the $a^{q}_{i}$ (the $a^{q-1}_{j}$ being eliminated); by
+\[ P_{q} = \alpha'_{q} - \alpha''_{q} + 1 \]
+the Betti number corresponding to the $a^{q}_{i}$.
+
+We have called $\beta_{q}, \beta'_{q}$ and $\beta''_{q}$ the numbers analogous to $\alpha_{q}, \alpha'_{q}$ and $\alpha''$\ednote{Printed $\alpha''$ without the subscript $q$; $\alpha''_{q}$ is meant.}, and relating to the polyhedron $P'$, so that
+\[ \beta_{q} = \alpha_{p-q}. \]
+
+\subsection*{2. Reduction of the tables.}
+
+Let us consider a table $T$ formed of integers arranged in a certain number of rows and columns. Such are our tables $T_{q}$.
+
+Let us suppose that one may perform on this table the following operations:---
+
+1° To add one column to another or to subtract it from it;
+
+2° To interchange two columns and change the sign of one of them;
+
+3° To perform the same operations on the rows.
+
+By combining these operations, one can subject the columns to any linear substitution whatever, provided that the coefficients are integers and the determinant equal to 1. Likewise for the rows.
+
+What is, by means of these operations, the greatest degree of simplicity to which a table can be reduced?---That is what we are going to examine.
+
+Let us suppose first, to fix ideas, that the table $T$ has no more rows than columns.
+
+\emph{Lemma I.}---Let
+\[ \begin{vmatrix} a_{1} & a_{2} & a_{3} & a_{4} & a_{5} \\[1ex] b_{1} & b_{2} & b_{3} & b_{4} & b_{5} \\[1ex] c_{1} & c_{2} & c_{3} & c_{4} & c_{5} \end{vmatrix} \]
+be a table $T$ which I suppose, to fix ideas, to have three rows and five columns.
+
+I suppose that the fifteen numbers $a, b, c$ are relatively prime; I say that one can always find three numbers $\alpha_{1}, \beta_{1}, \gamma_{1}$ such that the five numbers
+\[ h_{1i} = \alpha_{1} a_{i} + \beta_{1} b_{i} + \gamma_{1} c_{i} \qquad (i = 1, 2, 3, 4, 5) \]
+are relatively prime.
+
+For this the numbers $\alpha_{1}, \beta_{1}, \gamma_{1}$ must first fulfil a first
+\origpage{282}
+condition: they must be relatively prime. If this condition is fulfilled, one can find six other numbers
+\[ \alpha_{2}, \beta_{2}, \gamma_{2}; \alpha_{3}, \beta_{3}, \gamma_{3}, \]
+such that the determinant
+\[ \begin{vmatrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3} \end{vmatrix} = 1. \]
+
+Let us then put
+\[ h_{ki} = \alpha_{k} a_{i} + \beta_{k} b_{i} + \gamma_{k} c_{i} \qquad (i = 1, 2, 3, 4, 5; k = 1, 2, 3). \]
+
+Let
+\[ \Delta = \begin{vmatrix} a_{1} & b_{1} & c_{1} \\[1ex] a_{2} & b_{2} & c_{2} \\[1ex] a_{3} & b_{3} & c_{3} \end{vmatrix}; \]
+the rule for the multiplication of determinants will give us
+\[ \begin{vmatrix} h_{11} & h_{12} & h_{13} \\[1ex] h_{21} & h_{22} & h_{23} \\[1ex] h_{31} & h_{32} & h_{33} \end{vmatrix} = \begin{vmatrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3} \end{vmatrix} \begin{vmatrix} a_{1} & b_{1} & c_{1} \\[1ex] a_{2} & b_{2} & c_{2} \\[1ex] a_{3} & b_{3} & c_{3} \end{vmatrix} = \Delta. \]
+Which shows that the greatest common divisor of the three numbers $h_{11}, h_{12}, h_{13}$, and consequently that of the five numbers $h_{1i}$, divides $\Delta$. It must likewise divide all the determinants obtained by suppressing two columns in the table, and consequently the greatest common divisor, $M$, of all these determinants.
+
+Let $p$ be any prime factor of $M$. As our fifteen numbers $a, b, c$ are relatively prime, at least one of them, for example $c_{5}$, will not be divisible by $p$.
+
+If we then take
+\[ \alpha_{1} \equiv 0, \qquad \beta_{1} \equiv 0, \qquad \gamma_{1} \equiv c^{p-2}_{5} \qquad (\text{mod}\ p), \tag{1} \]
+there will come
+\[ h_{15} \equiv c^{p-1}_{5} \equiv 1 \qquad (\text{mod}\ p), \]
+so that the greatest common divisor of the five numbers $h_{1i}$ will not be divisible by $p$.
+
+We shall obtain a system of congruences analogous to (1) for each of the prime factors of $M$. One can satisfy all these congruences at once, since they hold with respect to different prime moduli.
+
+Then the greatest common divisor of the five numbers $h_{1i}$ will be
+\origpage{283}
+divisible by none of the prime factors of $M$; and, as it must divide $M$, it will be equal to 1.
+
+1\textsuperscript{st} \emph{Corollary.}---If one subjects the rows of the table to the linear substitution
+\[ \begin{matrix} \alpha_{1} & \beta_{1} & \gamma_{1} \\[1ex] \alpha_{2} & \beta_{2} & \gamma_{2} \\[1ex] \alpha_{3} & \beta_{3} & \gamma_{3}, \end{matrix} \]
+it is clear that the elements of the $i^{\text{th}}$ column, which were
+\[ a_{i}, \qquad b_{i}, \qquad c_{i} \]
+will become
+\[ h_{1i}, \qquad h_{2i}, \qquad h_{3i}, \]
+whence this consequence:
+
+If the elements of the table are relatively prime, one can reduce the table in such a way that the elements of the first row are relatively prime.
+
+2\textsuperscript{nd} \emph{Corollary.}---If the elements of the table have $\delta$ for greatest common divisor, one can reduce the table in such a way that the elements of the first row have $\delta$ for greatest common divisor.
+
+\emph{Theorem.}---Let $m$ be the number of columns and $n$ that of rows $(m \geqq n)$; let $M_{0}$ be the greatest common divisor of all the determinants obtained by suppressing in the table any $m-n$ columns; let $M_{1}$ be the greatest common divisor of all the determinants obtained by suppressing in the table $m-n+1$ columns and one row; let $M_{2}$ be that of the determinants obtained by suppressing $m-n+2$ columns and two rows, etc.; let finally $M_{n-1}$ be that of the determinants obtained by suppressing $m-1$ columns and $n-1$ rows, that is to say, in other words, that of all the elements.
+
+These numbers $M_{0}, M_{1}, \ldots, M_{n-1}$ will not be altered by the operations performed either on the rows or on the columns.
+
+It goes without saying that the number $M_{k}$ would have to be regarded as null if all the corresponding determinants were null.
+
+We can then state our corollary in the following form:---
+
+3\textsuperscript{rd} \emph{Corollary.}---One can reduce the table in such a way that the greatest common divisor of the elements of the first row is $M_{n-1}$.
+
+\emph{Lemma II.}---One can, by a transformation among the columns, reduce the table in such a way that the first element of the first
+\origpage{284}
+row becomes $M_{n-1}$, and all the other elements of the first row become null.
+
+We shall in fact subject the columns (supposed, as above, to be $m = 5$ in number) to the linear substitution
+\[ \begin{vmatrix} \alpha_{1} & \alpha_{2} & \alpha_{3} & \alpha_{4} & \alpha_{5} \\[1ex] \beta_{1} & \ldots & & \ldots & \beta_{5} \\[1ex] \gamma_{1} & \ldots & & \ldots & \gamma_{5} \\[1ex] \delta_{1} & \ldots & & \ldots & \delta_{5} \\[1ex] \zeta_{1} & \ldots & & \ldots & \zeta_{5} \end{vmatrix}, \tag{2} \]
+whose determinant must be equal to 1. Let
+\[ a_{1}, \qquad a_{2}, \qquad a_{3}, \qquad a_{4}, \qquad a_{5} \]
+be the elements of the first row. After the reductions which the table has already undergone, the greatest common divisor of these five numbers has become $M_{n-1}$. We can then choose the substitution (2) in such a way that one has
+\[ \Sigma \alpha_{i} a_{i} = M_{n-1}, \qquad \Sigma \beta_{i} a_{i} = \Sigma \gamma_{i} a_{i} = \Sigma \delta_{i} a_{i} = \Sigma \zeta_{i} a_{i} = 0. \]
+Then, after the transformation, the elements of the first row will be
+\[ M_{n-1}, \qquad 0, \qquad 0, \qquad 0, \qquad 0. \]
+
+\emph{Lemma III.}---I now say that one can, by a transformation among the rows, reduce to zero all the elements of the first column, except the first, which remains equal to $M_{n-1}$.
+
+Indeed, after the reductions already made, the elements of the first column (supposed to be $n = 3$ in number) are
+\[ M_{n-1}, q_{2} M_{n-1}, q_{3} M_{n-1}, \]
+$q_{2}$ and $q_{3}$ being integers; and indeed, according to our hypotheses, all our elements are divisible by $M_{n-1}$.
+
+If, then, we subtract from the second row the first row multiplied by $q_{2}$, and from the third row the first row multiplied by $q_{3}$, the first column becomes
+\[ M_{n-1}, \qquad 0, \qquad 0. \]
+Moreover the first row does not change.
+
+If one now suppressed the first row and the first column of the table $T$, there would remain a table $T'$ of $m-1$ columns and $n-1$ rows, with respect to which the numbers
+\[ \frac{M_{0}}{M_{n-1}}, \qquad \frac{M_{1}}{M_{n-1}}, \qquad \ldots \]
+\origpage{285}
+would play the same role as the numbers $M_{0}, M_{1}, \ldots$ with respect to the table $T$.
+
+In particular,
+\[ \text{the greatest common divisor of the elements of } T' \text{ is } \frac{M_{n-2}}{M_{n-1}}. \]
+
+We can now continue the reduction, but operating only on the last $m-1$ columns and on the last $n-1$ rows. The first row will no longer change, since its last $m-1$ elements are null, nor will the first column either, since its last $n-1$ elements are null.
+
+One can operate on the table $T'$ as we have operated on the table $T$. After this new reduction:
+
+1° All the elements of the first row and those of the first column have remained null, except the first element of the first row and of the first column, which has remained equal to $M_{n-1}$.
+
+2° All the elements of the second row and those of the second column have become null, except the second element of the second row and of the second column, which has become $\dfrac{M_{n-2}}{M_{n-1}}$.
+
+3° If one suppresses the first two rows and the first two columns, one obtains a table $T''$ of $m-2$ columns and $n-2$ rows, with respect to which the numbers
+\[ \frac{M_{0}}{M_{n-2}}, \qquad \frac{M_{1}}{M_{n-2}}, \qquad \ldots, \qquad \frac{M_{n-3}}{M_{n-2}} \]
+play the same role as the numbers $M_{0}, M_{1}, \ldots, M_{n-1}$ with respect to the table $T$. And so on.
+
+At the end of the reduction, the element which belongs to the $i^{\text{th}}$ row and to the $j^{\text{th}}$ column is null if $i$ is not equal to $j$; the element which belongs to the $i^{\text{th}}$ row and to the $i^{\text{th}}$ column is equal to $\dfrac{M_{n-i}}{M_{n-i+1}}$.
+
+The $n$ numbers
+\[ M_{n-1}, \qquad \frac{M_{n-2}}{M_{n-1}}, \qquad \frac{M_{n-3}}{M_{n-2}}, \qquad \ldots, \qquad \frac{M_{1}}{M_{2}}, \qquad \frac{M_{0}}{M_{1}} \tag{3} \]
+may be called the \emph{invariants} of the table $T$.
+
+One may remark:
+
+1° That each of these invariants divides the following one;
+
+2° That some of these invariants may be null, but that, if one of them is, all those which follow it are so as well.
+
+If the table $T$ had more rows than columns, the reduction would be made in the same manner, only it would be necessary to interchange the roles of the rows and the columns.
+\origpage{286}
+
+One would then have $m<n$; the number $M_{0}$ would be the greatest common divisor of the determinants obtained by suppressing $n-m$ rows; in general, $M_{i}$ would be the greatest common divisor of the determinants obtained by suppressing any $n-m+i$ rows and $i$ columns. Finally, the greatest common divisor of the elements of the table $T$ would be $M_{m-1}$.
+
+In general, the number of invariants would be the smaller of the two numbers $n$ and $m$.
+
+\subsection*{3. Comparison of the tables $T_{q}$ and $T'_{q}$.}
+
+The table $T_{q}$ makes known to us the relations between the $a^{q}_{i}$ and the $a^{q-1}_{j}$ in the polyhedron $P$. To each row of this table there corresponds an $a^{q}_{i}$, and to each column an $a^{q-1}_{j}$. To each row of this table there corresponds likewise a congruence
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j} \tag{1} \]
+between the $a^{q}_{i}$ and the $a^{q-1}_{j}$, and a homology
+\[ \Sigma \varepsilon^{q}_{ij} a^{q-1} \backsim 0 \tag{2} \]\ednote{Printed $a^{q-1}$ without the subscript $j$; $a^{q-1}_{j}$ is meant, as in the homology (2) of p. 278.}
+between the $a^{q-1}_{j}$.
+
+What will happen now if, by the operations of the preceding section, one reduces the table $T_{q}$?---To each row of the reduced table there will correspond a linear combination of the $a^{q}_{i}$, to each column a linear combination of the $a^{q-1}_{j}$. I have explained (\textsc{c}, \S~8, p.\ 41) according to what rules these linear combinations must be formed. Here is how these rules can be summarized.
+
+Let us suppose that, to pass from the table $T_{q}$ to the reduced table, one applies to the rows of $T_{q}$ a certain linear substitution $S$, and to the columns another linear substitution $\sigma$. Let $\sigma'$ be the contragredient substitution of $\sigma$ (I mean that, if one has two series of $\alpha_{q-1}$ variables $x_{i}$ and $y_{i}$, and one applies the substitution $\sigma$ to the first series and the substitution $\sigma'$ to the second, the form $\Sigma x_{i} y_{i}$ must not be altered).
+
+Let us then suppose that $S$ changes $a^{q}_{i}$ into
+\[ c^{q}_{i} = \sum_{j=1}^{\alpha_{q}} \lambda_{ij} a^{q}_{j}, \]
+and that $\sigma'$ changes $a^{q-1}_{i}$ into
+\[ d^{q-1}_{i} = \sum_{i=1}^{\alpha_{q-1}} \mu_{ij} a^{q-1}_{j}. \]\ednote{The summation index is printed $i=1$; the sum runs over $j$, so $j=1$ is meant.}
+\origpage{287}
+We shall make correspond to the $i^{\text{th}}$ row of the reduced table the linear combination $c^{q}_{i}$, and to the $i^{\text{th}}$ column the linear combination $d^{q-1}_{i}$.
+
+In our reduced table all the elements are null, except those of the $i^{\text{th}}$ row and of the $i^{\text{th}}$ column, which are given, according to the preceding section, by the formula
+\[ \frac{M_{n-i}}{M_{n-i-1}}. \]\ednote{Printed $M_{n-i-1}$ in the denominator; p. 285 gives $M_{n-i+1}$. The sign shows no trace of a lost vertical stroke.}
+I shall designate, for brevity, by $\omega^{q}_{i}$ this element of the $i^{\text{th}}$ row and of the $i^{\text{th}}$ column; and I shall agree that $\omega^{q}_{i}$ must be regarded as null if $i$ is greater than the smaller of the two numbers $\alpha_{q}$ and $\alpha_{q-1}$ (number of rows and number of columns).
+
+To the $i^{\text{th}}$ row of the reduced table there will then correspond the congruence
+\[ c^{q}_{i} \equiv \omega^{q}_{i} d^{q-1}_{i} \tag{1 \textit{bis}} \]
+and the homology
+\[ \omega^{q}_{i} d^{q-1}_{i} \backsim 0. \tag{2 \textit{bis}} \]
+
+The congruences and the homologies (1~\emph{bis}) and (2~\emph{bis}) can be deduced from the congruences and homologies (1) and (2) by addition, subtraction, multiplication, \emph{but without division}, and conversely.
+
+If $\alpha_{q-1} > \alpha_{q}$, and if $i > \alpha_{q}$, $\omega^{q}_{i}$ is null, so that the congruence and the homology (1~\emph{bis}) and (2~\emph{bis}) reduce to
+\[ c^{q}_{i} \equiv 0 \qquad \text{and} \qquad 0 \backsim 0. \]
+
+The numbers $\omega^{q}_{i}$ are what I called in the preceding section the \emph{invariants} of the table $T_{q}$. Let us suppose that \emph{among these invariants there are $\gamma_{q}$ which are not null}; one will have, of course,
+\[ \gamma_{q} \leqq \alpha_{q}, \qquad \gamma_{q} \leqq \alpha_{q-1}. \]
+
+Among the congruences (1~\emph{bis}), the first $\gamma_{q}$ will contain both $c^{q}_{i}$ and $d^{q-1}_{i}$, since $\omega^{q}_{i}$ will not be null. On the contrary, the last $\alpha_{q} - \gamma_{q}$ will be written
+\[ c^{q}_{i} \equiv 0, \]
+and will no longer contain the $a^{q-1}_{i}$; it is clear that all these congruences are distinct, and that one thus obtains all the congruences between the $a^{q}_{i}$ from which the $a^{q-1}_{j}$ are eliminated. We shall therefore have
+\[ \alpha_{q} - \alpha''_{q} = \alpha_{q} - \gamma_{q}, \qquad \alpha''_{q} = \gamma_{q}. \]
+
+Now, among the homologies (2~\emph{bis}), the last $\alpha_{q} - \gamma_{q}$ reduce to identities, but the first $\gamma_{q}$ are distinct; one therefore has
+\[ \alpha_{q-1} - \alpha'_{q-1} = \gamma_{q}, \]
+\origpage{288}
+whence for the Betti number
+\[ P_{q} = \alpha_{q} - \gamma_{q+1} - \gamma_{q} + 1. \]
+
+Let us now compare the table $T_{q}$ with the corresponding table $T'_{p-q+1}$ relating to the reciprocal polyhedron $P'$. This table, which is deduced from $T_{q}$ by interchanging the rows with the columns, has $\beta_{p-q+1} = \alpha_{q-1}$ rows and $\beta_{p-q} = \alpha_{q}$ columns. The number $\gamma_{q}$ is the same for the two tables, so that there comes
+\[ \begin{gathered} \beta''_{p-q+1} = \gamma_{q} = \alpha''_{q}, \qquad \beta_{p-q} - \beta'_{p-q} = \gamma_{q}, \\ \beta'_{p=q} = \beta_{p-q} - \gamma_{q} = \alpha_{q} - \alpha''_{q}; \end{gathered} \]\ednote{The index of $\beta'$ in the second line is printed $p=q$; $p-q$ is meant.}
+whence
+\[ \beta'_{p-q+1} = \alpha_{q-1} - \gamma_{q-1}, \]
+and for the Betti number $P'_{p-q+1}$ relating to the polyhedron $P'$
+\[ P'_{p-q+1} = \beta'_{p-q+1} - \beta''_{p-q+1} + 1 = \alpha_{q-1} - \gamma_{q-1} - \gamma_{q} + 1. \]
+
+We deduce from this
+\[ P'_{p-q} = P_{q}, \]
+which, if one recalls that the Betti numbers relating to the two reciprocal polyhedra $P$ and $P'$ are the same, shows that the Betti numbers equally distant from the extremes are equal.
+
+Let us return to the homologies (2~\emph{bis}). If one grants that one has the right to divide homologies by an integer different from zero, the first $\gamma_{q}$ homologies will give us
+\[ d^{q-1}_{i} \backsim 0 \qquad (i = 1, 2, \ldots, \gamma_{q}), \]
+and the most general of the homologies between the $a^{q-1}_{j}$ will be written
+\[ \sum_{i=1}^{\gamma_{q}} \lambda_{i} d^{q-1}_{i} \backsim 0, \tag{3} \]
+the $\lambda_{i}$ being any integers whatever. If, on the contrary, one does not grant that one has the right to divide homologies, the most general homology will be written
+\[ \sum_{i=1}^{\gamma_{q}} \lambda_{i} \omega^{q}_{i} d^{q-1}_{i} \backsim 0, \tag{4} \]
+the $\lambda_{i}$ being integers. In order that the two definitions of the Betti numbers (\textsc{c}, \S~1, p.\ 2) coincide, it is necessary and sufficient that the two formulae (3) and (4) agree, that is to say that all the invariants $\omega^{q}_{i}$ which are not null be equal to 1 (\textsc{c}, \S~9, p.\ 48).
+
+Let us now consider the linear combinations of the $a^{q-1}_{j}$ which would be homologous to zero by virtue of the homologies (3), and let us ask which among these combinations remain distinct
+\origpage{289}
+if, abandoning the homologies (3), one confines oneself to the homologies (4) without granting the right to divide homologies.
+
+We shall see at once that the number of these expressions which are thus distinct is precisely the product
+\[ \omega^{q}_{1} \omega^{q}_{2} \ldots \omega^{q}_{\gamma_{q}}. \]
+Now, referring to the notations of the preceding section, one sees that this product is nothing other than one of the numbers of the sequence
+\[ M_{0}, M_{1}, M_{2}, \ldots, \]
+and precisely the first number of this sequence which is not null (\textsc{c}, \S~9, p.\ 48).
+
+What precedes shows how important it is to distinguish two sorts of manifolds.
+
+Those of the first sort, which I shall call \emph{manifolds without torsion}, will be those for which the invariants of all the tables $T_{q}$ are all equal to 0 or to 1; for which, consequently, the two formulae (3) and (4) agree and the two definitions of the Betti numbers are in accord.
+
+Those of the second sort, which I shall call \emph{manifolds with torsion}, will be those for which some of these invariants are equal neither to 0 nor to 1, and for which, consequently, the two definitions of the Betti numbers are not in accord. In this case we shall always adopt, unless notice is given to the contrary, the second definition (\textsc{c}, \S~1).
+
+This denomination is justified because the presence of invariants greater than 1 is due, as we shall see further on, to a circumstance comparable to a veritable torsion of the manifold upon itself.
+
+\subsection*{4. Application to some examples.}
+
+Wishing to apply what precedes to the examples indicated in the “Analysis Situs” (p.\ 49, sqq.), I must first make a distinction between several sorts of polyhedra.
+
+The ordinary polyhedra, or those of the first sort, will be those all of whose $a^{q}_{i}$ are simply connected polyhedra (homeomorphic to hyperspheres) and such that all the elements of these $a^{q}_{i}$ are distinct; for example, in ordinary space, the tetrahedron will be a polyhedron of the first sort because it admits four faces which are triangles and, consequently, simply connected polygons (homeomorphic to circles), and because each of these triangles has its three sides distinct, as well as its three vertices.
+\origpage{290}
+
+The polyhedra of the second sort will be those all of whose $a^{q}_{i}$ are simply connected polyhedra, but such that the elements of these $a^{q}_{i}$ are not all distinct. Let there be, for example, a torus in ordinary space; through a point $A$ of the surface of this torus let us draw a meridian and a parallel. These two cuts will not divide the surface of the torus into two regions, but they will render it simply connected. This surface, thus rendered simply connected, will be homeomorphic to a rectangle, two opposite sides of which would correspond to the two lips of the meridian cut, and the two other sides to the two lips of the parallel cut. The torus thus forms a kind of polyhedron which has only a single face; this face is a quadrilateral; it is therefore simply connected; but the four sides of this quadrilateral are not distinct, two coincide with the meridian cut and two with the parallel cut; likewise the four vertices are not distinct, since all four coincide with the point $A$. The polyhedron thus defined is therefore a polyhedron of the second sort.
+
+Finally, the polyhedra of the third sort will be those whose $a^{q}_{i}$ are not all simply connected.
+
+The properties of the polyhedra of the first sort extend for the most part to those of the second sort. Let us observe, however, one difference. In a polyhedron of the first sort, every $a^{p-1}_{j}$ separates two $a^{p}_{i}$ from one another, and belongs to no other $a^{p}_{i}$. Consequently, in each column of the table $T_{p}$ there will be one of the numbers $\varepsilon^{p}_{ij}$ which will be equal to $+1$, another to $-1$, and all the others to 0.
+
+It is no longer so with the polyhedra of the second sort. It may happen that two of the $a^{p-1}_{j}$ of one and the same $a^{p}_{i}$ are not distinct. In this case, after having crossed this $a^{p-1}_{j}$, one will find oneself again in this same $a^{p}_{i}$ in which one already was before having passed it. Thus, to take up again our torus of a moment ago, which was a polyhedron with a single face: after having passed the meridian cut, for example, one will always find oneself again in this same and unique face in which one was before the passage. It then happens that this $a^{p-1}_{j}$ has a relation only with this $a^{p}_{i}$; and moreover, it is twice in relation with this same $a^{p}_{i}$, once in direct relation, another time in inverse relation, so that, the two relations compensating each other, the corresponding number $\varepsilon^{p}_{ij}$ is equal to zero. In this case, all the numbers $\varepsilon^{p}_{ij}$ which appear in the corresponding column of the table $T_{p}$ are null.
+
+In the examples in question (p.\ 49 sqq.), the closed manifolds of
+\origpage{291}
+three dimensions which are considered can be regarded as polyhedra of the second sort. Each of these polyhedra has a single cell (which in the first, third, and fourth examples is a cube, and in the fifth an octahedron), but the faces of this cell coincide two by two.
+
+1\textsuperscript{st} \emph{Example.}---
+
+1\textsuperscript{st} face $ABDC = A'B'D'C'$, 1\textsuperscript{st} edge $AB = CD = A'B' = C'D'$;
+
+2\textsuperscript{nd} ,, $ACC'A' = BDD'A'$\ednote{Printed $BDD'A'$; the face of the cube opposite $ACC'A'$ is $BDD'B'$, as in the 4e exemple.}, 2\textsuperscript{nd} ,, $AC = BD = A'C' = B'D'$;
+
+3\textsuperscript{rd} ,, $CDD'C' = ABB'A'$, 3\textsuperscript{rd} ,, $AA' = BB' = CC' = DD'$;
+
+A single cell, a single vertex.
+
+The three tables $T_{1}, T_{2}$ and $T_{3}$ are composed solely of zeros. All their invariants are therefore null.
+
+3\textsuperscript{rd} \emph{Example.}---
+
+1\textsuperscript{st} face $ABDC = B'D'C'A'$, 1\textsuperscript{st} edge $AB = B'D' = C'C$;
+
+2\textsuperscript{nd} ,, $ABB'A' = C'CDD'$, 2\textsuperscript{nd} ,, $AC = DD' = B'A'$;
+
+3\textsuperscript{rd} ,, $ACC'A' = DD'B'B$, 3\textsuperscript{rd} ,, $AA' = C'D' = DB$;
+
+4\textsuperscript{th} ,, $CD = BB' = A'C'$;
+
+1\textsuperscript{st} vertex $A = B' = C' = D$, 2\textsuperscript{nd} vertex $B = D' = A' = C$.
+\[ \begin{gathered} \text{Table } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{2}. \\ \begin{vmatrix} +1 & -1 & -1 & -1 \\[1ex] +1 & +1 & -1 & +1 \\[1ex] -1 & +1 & -1 & -1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{1}. \\ \begin{vmatrix} +1 & -1 \\[1ex] +1 & -1 \\[1ex] +1 & -1 \\[1ex] -1 & +1 \end{vmatrix}. \end{gathered} \]
+
+The table $T_{3}$ has only one invariant, which is null; the table $T_{1}$ has two, which are 0 and 1; the table $T_{2}$ has three, which are
+\[ 1, 2 \text{ and } 2. \]
+
+4\textsuperscript{th} \emph{Example.}---
+
+1\textsuperscript{st} face $ABDC = B'D'C'A'$, 1\textsuperscript{st} edge $AA' = CC' = BB' = DD'$;
+
+2\textsuperscript{nd} ,, $ABB'A' = CDD'C'$, 2\textsuperscript{nd} ,, $AB = CD = B'D' = A'C'$;
+
+3\textsuperscript{rd} ,, $ACC'A' = BDD'B'$, 3\textsuperscript{rd} ,, $AC = BD = D'C' = B'A'$;
+
+A single cell, a single vertex.
+\origpage{292}
+\[ \begin{gathered} \text{Table } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{2}. \\ \begin{vmatrix} 0 & 0 & 0 \\[1ex] 0 & +1 & +1 \\[1ex] 0 & +1 & -1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{1}. \\ \begin{vmatrix} 0 \\[1ex] 0 \\[1ex] 0 \end{vmatrix}. \end{gathered} \]
+
+The tables $T_{1}$ and $T_{3}$ have only one invariant, which is 0; the table $T_{2}$ has three, which are
+\[ 1, 2 \text{ and } 0. \]
+
+5\textsuperscript{th} \emph{Example.}---
+
+1\textsuperscript{st} face $ABC = FED$, 1\textsuperscript{st} edge $AB = FE$, 1\textsuperscript{st} vertex $A = F$;
+
+2\textsuperscript{nd} ,, $ACE = FDB$, 2\textsuperscript{nd} ,, $AC = FD$, 2\textsuperscript{nd} ,, $B = E$;
+
+3\textsuperscript{rd} ,, $AED = FBC$, 3\textsuperscript{rd} ,, $AE = FB$, 3\textsuperscript{rd} ,, $C = D$;
+
+4\textsuperscript{th} ,, $ADB = FCE$, 4\textsuperscript{th} ,, $AD = FC$;
+
+5\textsuperscript{th} ,, $BC = ED$;
+
+6\textsuperscript{th} ,, $CE = DB$.
+\[ \begin{gathered} \text{Table } T_{3}. \\ \begin{vmatrix} 0 & 0 & 0 & 0 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{2}. \\ \begin{vmatrix} +1 & -1 & 0 & 0 & +1 & 0 \\[1ex] 0 & +1 & -1 & 0 & 0 & +1 \\[1ex] 0 & 0 & +1 & -1 & +1 & 0 \\[1ex] -1 & 0 & 0 & +1 & 0 & +1 \end{vmatrix}. \end{gathered} \qquad \begin{gathered} \text{Table } T_{1}. \\ \begin{vmatrix} +1 & -1 & 0 \\[1ex] +1 & 0 & -1 \\[1ex] +1 & -1 & 0 \\[1ex] +1 & -1 & 0 \\[1ex] 0 & +1 & -1 \\[1ex] 0 & -1 & +1 \end{vmatrix}. \end{gathered} \]\ednote{The fourth row of $T_{1}$ is printed $+1,\ -1,\ 0$; the 4e arête $AD = FC$ joins the 1er sommet $A = F$ to the 3e sommet $C = D$, which would give $+1,\ 0,\ -1$.}
+
+The invariants are:
+\[ 0 \text{ for } T_{3}; \qquad 2, 1, 1 \text{ and } 1 \text{ for } T_{2}; \qquad 0, 1 \text{ and } 1 \text{ for } T_{1}. \]
+
+Let us now pass to the sixth example (p.\ 57).
+
+As has been seen (\S~14, p.\ 71), the fundamental equivalences are written
+\[ \begin{aligned} &C_{1} + C_{2} \equiv C_{2} + C_{1},\\ &C_{1} + C_{3} \equiv C_{3} + \alpha C_{1} + \gamma C_{2},\\ &C_{2} + C_{3} \equiv C_{3} + \beta C_{1} + \delta C_{2}. \end{aligned} \]
+
+To write the homologies which can be deduced from the fundamental homologies by addition and multiplication, \emph{but without division}, it suffices to give oneself the right to invert the order of the terms in the two members of these fundamental equivalences; one thus finds
+\[ 0 \backsim 0; \qquad (\alpha-1) C_{1} + \gamma C_{2} \backsim 0; \qquad \beta C_{1} + (\delta-1) C_{2} \backsim 0. \]
+\origpage{293}
+The determinant
+\[ (\alpha-1)(\delta-1) - \beta\gamma \]
+is equal to
+\[ 2 - \alpha - \delta. \]
+
+Let, on the other hand, $\mu$ be the greatest common divisor of the four numbers
+\[ \alpha-1, \delta-1, \beta, \gamma; \]
+the examination of the homologies which we have just written shows that the two invariants of the table $T_{2}$ which are not equal to 0 or to 1 are equal to
+\[ \mu \text{ and } \frac{2-\alpha-\delta}{\mu}. \]
+(The number $\mu$ may, moreover, be equal to 1.)
+
+As for the invariants of the tables $T_{1}$ and $T_{2}$\ednote{Printed $T_{2}$, whose invariants were just given as $\mu$ and $(2-\alpha-\delta)/\mu$; $T_{3}$ appears to be meant.}, they are always all, as we shall see further on, equal to 0 or to 1.
+
+Let, for example,
+\[ \alpha = -1, \beta = 1, \gamma = -1, \delta = 0. \]
+One has
+\[ \mu = 1, \qquad 2-\alpha-\delta = 3, \]
+so that one of our invariants is equal to 3 and the other to 1.
+
+This can moreover be verified by forming the table $T_{2}$. Let
+\[ \begin{gathered} (x+1, y, z),\\ (x, y+1, z),\\ (-x+y, -x, z+1) \end{gathered} \]
+be the three substitutions of the group $G$, which I shall call $S_{1}, S_{2}$ and $S_{3}$, and which will correspond to the three fundamental contours $C_{1}, C_{2}, C_{3}$ (\S~13, p.\ 68).
+
+The manifold studied can be regarded as generated by the cube $ABCDA'B'C'D'$ (\S~10, p.\ 49). Only the face $ABCD$ must be considered as decomposed into two triangles $ABD$ and $ACD$, just as the face $A'B'C'D'$ into two triangles $D'A'B'$ and $C'D'A'$.
+
+It is easy to see that the face $ABB'A'$ is changed into $CDD'C'$ by the substitution $S_{2}$, the face $ACC'A'$ into $BDD'B'$ by the substitution $S_{1}$, the face $ABD$ into $D'A'B'$ by the substitution $S_{3} S_{1} S_{2}$, the face $ACD$ into $C'D'A'$ by the substitution $S_{3} S_{2}$.
+
+Our polyhedron therefore has:
+
+1° A single cell;
+
+2° Four faces, namely:
+
+1\textsuperscript{st} face $ABB'A' = CDD'C'$,
+
+2\textsuperscript{nd} ,, $ACC'A' = BDD'B'$,
+
+3\textsuperscript{rd} ,, $ABD = D'A'B'$,
+
+4\textsuperscript{th} ,, $ACD = C'D'A'$;
+\origpage{294}
+
+3° Four edges, namely:
+
+1\textsuperscript{st} edge $AA' = BB' = CC' = DD'$,
+
+2\textsuperscript{nd} ,, $AB = CD = D'A'$,
+
+3\textsuperscript{rd} ,, $AC = BD = C'D' = A'B'$,
+
+4\textsuperscript{th} ,, $AD = C'A' = D'B'$;
+
+4° A single vertex.
+
+The tables $T_{1}$ and $T_{3}$ are entirely composed of zeros.
+
+Here is the table $T_{2}$:
+\[ \begin{vmatrix} 0 & +1 & -1 & 0 \\[1ex] 0 & 0 & +1 & +1 \\[1ex] 0 & +1 & +1 & -1 \\[1ex] 0 & +1 & +1 & -1 \end{vmatrix}. \]
+One sees that the invariants of this table are
+\[ 1, 1, 3, 0. \]
+
+Let us now pass to the example of Mr.~Heegaard. Let $x_{1}, x_{2}, y_{1}, y_{2}, z_{1}, z_{2}$ be the coordinates of a point in space of six dimensions; let
+\[ \begin{aligned} x &= x_{1} + x\sqrt{-1} = |x| e^{\xi\sqrt{-1}},\\ y &= y_{1} + y_{2}\sqrt{-1} = |y| e^{\eta\sqrt{-1}},\\ z &= z_{1} + z_{2}\sqrt{-1} = |z| e^{\zeta\sqrt{-1}}. \end{aligned} \]\ednote{The first line is printed $x = x_{1} + x\sqrt{-1}$; $x_{2}\sqrt{-1}$ is meant, as in the lines for $y$ and $z$.}
+
+Our manifold will have for equations
+\[ z^{2} = xy, \qquad x^{2}_{1} + x^{2}_{2} + y^{2}_{1} + y^{2}_{2} = 1, \]
+whence
+\[ |z^{2}| = |xy|, \qquad \zeta = \frac{\xi+\eta}{2}, \qquad |x^{2}| + |y^{2}| = 1. \]
+
+To obtain the whole manifold, we must make
+
+1° $|x|$ vary from 0 to 1, which makes $|y|$ vary at the same time from 1 to 0;
+
+2° $\eta$ vary from 0 to $2\pi$;
+
+3° $\xi+\eta$ vary from 0 to $4\pi$.
+
+The polyhedron thus obtained has a single cell, defined by the inequalities
+\[ 0 < |x| < 1, \qquad 0 < \eta < 2\pi, \qquad 0 < \xi+\eta < 4\pi. \]
+It has two faces, defined by the following relations:---
+
+1\textsuperscript{st} face
+\[ \eta = 0, \qquad 0 < |x| < 1, \qquad 0 < \xi < 4\pi; \]
+this face is identical with the following:---
+\[ \eta = 2\pi, \qquad 0 < |x| < 1, \qquad -2\pi < \xi < 2\pi. \]
+\origpage{295}
+
+2\textsuperscript{nd} face
+\[ \xi+\eta = 0, \qquad 0 < |x| < 1, \qquad 0 < \eta < 2\pi; \]
+this face is identical with the following:---
+\[ \xi+\eta = 4\pi, \qquad 0 < |x| < 1, \qquad 0 < \eta < 2\pi. \]
+
+It has three edges, defined by the following relations:---
+
+1\textsuperscript{st} edge
+\[ \xi = \eta = 0, \qquad 0 < |x| < 1; \]
+this edge is identical with the three following:---
+\[ \begin{aligned} &\xi = 0, \qquad \eta = 2\pi, \qquad 0 < |x| < 1;\\ &\xi = -2\pi, \qquad \eta = 2\pi, \qquad 0 < |x| < 1;\\ &\xi = \eta = 2\pi, \qquad 0 < |x| < 1; \end{aligned} \]
+
+2\textsuperscript{nd} edge $x_{1} = x_{2} = 0, \qquad 0 < \eta < 2\pi$;
+
+3\textsuperscript{rd} ,, $y_{1} = y_{2} = 0, \qquad-2\pi < \xi < 0$, identical with the two following:---
+\[ \begin{aligned} &y_{1} = y_{2} = 0, \qquad 0 < \xi < 2\pi;\\ &y_{1} = y_{2} = 0, \qquad 2\pi < \xi < 4\pi. \end{aligned} \]
+
+It has, finally, two vertices, namely:
+
+1\textsuperscript{st} vertex $x_{1} = x_{2} = 0, \qquad\eta = 0$, identical with the following:---
+\[ x_{1} = x_{2} = 0, \qquad \eta = 2\pi; \]
+
+2\textsuperscript{nd} ,, $y_{1} = y_{2} = 0, \qquad\xi = -2\pi$, identical with the three following:---
+\[ \begin{aligned} &y_{1} = y_{2} = 0, \qquad \xi = 0;\\ &y_{1} = y_{2} = 0, \qquad \xi = 2\pi;\\ &y_{1} = y_{2} = 0, \qquad \xi = 4\pi. \end{aligned} \]
+
+The table $T_{3}$ is entirely composed of zeros; as for the tables $T_{1}$ and $T_{2}$, they are written
+\[ T_{2} = \begin{vmatrix} 0 & 0 & +2 \\[1ex] 0 & 1 & 1 \end{vmatrix}; \qquad T_{1} = \begin{vmatrix} +0 & -1 \\[1ex] 0 & 0 \\[1ex] 0 & 0 \end{vmatrix}. \]
+One sees that the invariants are 0, 2 and 1 for $T_{2}$, 0 and 1 for $T_{1}$.
+
+\subsection*{5. Extension to the general case of a theorem of the first Supplement.}
+
+I should like to return to one of the questions treated in one of the earlier memoirs (\textsc{c}, \S~10). In the place cited I considered only the case of $p = 3$, and I should like to show how the same reasonings can be extended to the general case. Here is what it is about:
+\origpage{296}
+
+Let there be two reciprocal polyhedra $P$ and $P'$; let us consider on the one hand the elements $a^{q}_{i}$ of $P$, and on the other hand the elements $b^{q}_{i}$ of $P'$. I suppose that one has found a congruence
+\[ \Sigma \lambda_{i} a^{q}_{i} \equiv 0 \tag{1} \]
+between the $a^{q}_{i}$; I say that one can make correspond to this congruence another congruence between the $b^{q}_{i}$
+\[ \Sigma \mu_{i} b^{q}_{i} \equiv 0, \tag{2} \]
+and this in such a way that one has the homology
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim \Sigma \mu_{i} b^{q}_{i}. \tag{3} \]
+
+Conversely, to every congruence of the form (2) one can make correspond a congruence of the form (1), and this in such a way that the first members of these two congruences are connected by the homology (3).
+
+Such is the theorem which is to be proved. I have given a simple proof of it in the case of $p = 3$, and it is a matter of extending this proof to the general case. I shall first make a preliminary remark.
+
+Let us consider the congruences
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ij} a^{q-1}_{j}. \tag{4} \]
+We know that by combining them linearly one can eliminate the $a^{q-1}_{j}$ from them and obtain congruences of the form
+\[ \Sigma \zeta_{i} a^{q}_{i} \equiv 0. \tag{5} \]
+
+The number of distinct congruences of the form (5) is the one which we have called $\alpha_{q} - \alpha''_{q}$.
+
+Let us now suppose that we consider the different elements $a^{h}_{i}$ of the polyhedron $P$, where the number $h$ of dimensions must be greater than $q$, but may be equal to $q+1, q+2, \ldots, p-1$ or $p$. We give this number $h$ a determinate value once and for all.
+
+We shall then distribute the congruences (4) into groups, putting two of these congruences in the same group if the two corresponding $a^{q}_{i}$ belong to one and the same $a^{h}_{i}$; it is clear that there will be as many groups as there are $a^{h}_{i}$, and that one and the same congruence may be found again in several groups, since an $a^{q}_{i}$ forms part of several $a^{h}_{i}$.
+
+By combining linearly the congruences (4) \emph{of one and the same group}, one will then be able to eliminate the $a^{q-1}_{j}$ and obtain congruences of the form
+\[ \Sigma \zeta'_{i} a^{q}_{i} \equiv 0. \tag{5 \textit{bis}} \]
+\origpage{297}
+
+The congruences (5~\emph{bis}) evidently form part of the system of congruences (5), since this latter system is that of \emph{all} the distinct congruences of this form which one can obtain by the combination of the congruences (4). On the other hand, there may be in the system (5) congruences which do not form part of the system (5~\emph{bis}); and indeed we obtained this latter system by imposing restrictions on our faculty of combining the congruences (4), since we could combine only those of one and the same group.
+
+I say first that the congruence (5~\emph{bis}) entails the homology
+\[ \Sigma \zeta'_{i} a^{q}_{i} \backsim 0. \tag{6} \]
+
+Indeed, the congruence (5~\emph{bis}) is a congruence between the elements of the polyhedron $a^{h}_{i}$, and, \emph{as by hypothesis this polyhedron is simply connected}, this congruence must entail the corresponding homology.
+
+Conversely, if the homology (6) holds, the corresponding congruence will form part of the system (5~\emph{bis}). Indeed, the homology (6), holding between the elements of the polyhedron $a^{h}_{i}$, must entail the corresponding congruence, and this congruence must be deducible from the fundamental congruences of the form (4) \emph{relating to the polyhedron $a^{h}_{i}$}, that is to say belonging to one and the same group.
+
+It follows from this that the number of distinct congruences of the system (5~\emph{bis}) is $\alpha_{q} - \alpha'_{q}$.
+
+The system (5~\emph{bis}) therefore always remains the same, whatever the value attributed to the number $h$.
+
+We see at the same time that this consideration would make it possible to find the Betti number $P_{q}$ by considering only the table $T_{q}$, provided that one knew in addition whether or not two congruences (4) belong to one and the same group.
+
+Let us now introduce a notion which can be regarded as the generalization of the notion of pyramid. Let $a_{q}$ be a domain belonging to a plane space $P_{q}$ of $q$ dimensions; let $b_{m}$ be a domain belonging to another plane space $P'_{m}$ of $m$ dimensions. I shall suppose that these two plane spaces have no point in common. I can then pass through these two spaces a plane space $\Pi$ of $q+m+1$ dimensions, and only one.
+
+This being established, let us join by straight lines each of the points of the domain $a_{q}$ to each of the points of the domain $b_{m}$. The ensemble of these straight lines will generate a certain domain belonging to the plane space $\Pi$, having $q+m+1$ dimensions, which I shall designate by the notation $a_{q} b_{m}$, and which I may call a rectilinear generalized pyramid.
+
+If, indeed, the domain $a_{q}$ reduced to a plane polygon ($q = 2$),
+\origpage{298}
+and the domain $b_{m}$ to a point ($m = 0$), the domain $a_{q} b_{m}$ would reduce to an ordinary pyramid having $a_{q}$ for base and $b_{m}$ for apex.
+
+Every figure homeomorphic to a rectilinear generalized pyramid may be called a generalized pyramid.
+
+This being established, let us consider an element $a^{q}_{i}$ of the polyhedron $P$ and an element $b^{m}_{j}$ of the reciprocal polyhedron $P'$; this element $b^{m}_{j}$ corresponds to an element $a^{p-m}_{j}$ of the polyhedron $P$. I suppose that the element $a^{q}_{i}$ forms part of the element $a^{p-m}_{j}$; we shall therefore have
+\[ q < p-m; \qquad p \geqq q+m+1. \]
+
+I remark further that every point of $b^{m}_{j}$ will form part of one of the $a^{p}_{k}$ of which $a^{p-m}_{j}$ forms part, and consequently of one of the $a^{p}_{k}$ of which $a^{q}_{i}$ forms part. It suffices to show this for the vertices of $b^{m}_{j}$; now, if $b^{0}_{k}$ is one of these vertices, it will be in the interior of $a^{p}_{k}$, and as $b^{0}_{k}$ belongs to $b^{m}_{j}$, by virtue of the very definition of reciprocal polyhedra, $a^{p-m}_{j}$ will belong to $a^{p}_{k}$.
+
+This being established, we can, in the interior of each of the $a^{p}_{k}$, define a system of lines $L$ such that through any two points interior to this $a^{p}_{k}$ one can draw a line $L$, and only one. The system of lines $L$ therefore enjoys the same qualitative properties as the system of straight lines. This is because $a^{p}_{k}$ is supposed simply connected.
+
+Let us now join each of the points of $b^{m}_{j}$ to each of the points of $a^{q}_{i}$ by a line $L$ situated in that one of the $a^{p}_{k}$ to which both $a^{q}_{i}$ and the point considered of $b^{m}_{j}$ belong.
+
+The ensemble of these lines $L$ will generate a figure which I shall call $a^{q}_{i} b^{m}_{j}$, which will be homeomorphic to a rectilinear generalized pyramid, and which will have $q+m+1 \leqq p$ dimensions.
+
+What will be the boundary of this manifold $a^{q}_{i} b^{m}_{j}$? Let us suppose that one has the congruences
+\[ a^{q}_{i} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h}; \qquad b^{m}_{j} \equiv \Sigma \varepsilon'^{m}_{jk} b^{m-1}. \]\ednote{The last term is printed $b^{m-1}$ without a lower index; $b^{m-1}_{k}$ is meant, as in (7).}
+
+The boundary will be composed of the generalized pyramids $a^{q-1}_{h} b^{m}_{i}$\ednote{Printed $b^{m}_{i}$, possibly a $j$ whose descender did not print; the index $j$ is meant, as in (7).} and $a^{q}_{i} b^{m-1}_{k}$, and one will have
+\[ a^{q}_{i} b^{m}_{j} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} + \Sigma \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}. \tag{7} \]
+
+This would no longer be true if one had $m = 0$. In this case, indeed, the manifold $a^{q}_{i}$ would have $q = (q+m+1)-1$ dimensions; it would therefore have to
+\origpage{299}
+form part of the complete boundary of $a^{q}_{i} b^{m}_{j}$, and the congruence (7) would become
+\[ a^{q}_{i} b^{0}_{j} \equiv \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{0}_{j} - a^{q}_{i} \tag{7 \textit{bis}} \]
+(the terms in $\varepsilon'$ disappearing); likewise for $q = 0$ one would have
+\[ a^{0}_{i} b^{m}_{j} \equiv \Sigma \varepsilon'^{m}_{jk} a^{0}_{i} b^{m-1}_{k} + b^{m}_{j}. \tag{7 \textit{ter}} \]
+
+From the congruences (7), (7~\emph{bis}) and (7~\emph{ter}) are deduced the homologies
+\[ \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}, \tag{8} \]
+\[ a^{q}_{i} \backsim \Sigma \varepsilon^{q}_{ih} a^{q-1}_{h} b^{0}_{j}, \tag{8 \textit{bis}} \]
+\[ b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{0}_{i} b^{m-1}_{k}. \tag{8 \textit{ter}} \]
+
+The congruence (8~\emph{bis}) supposes that $a^{q}_{i}$ forms part of $a^{p}_{j}$; it is the one which we have considered elsewhere (\textsc{c}, \S~\textsc{x}., p.\ 49, eq.~2).
+
+Let us now suppose that we have found a congruence of the form
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \equiv 0. \tag{9} \]
+I say that we can find a congruence of the same form, but in which the number $q$ has increased by one unit and the number $m$ diminished by one unit, and this in such a way that the first members of the two congruences are homologous.
+
+Indeed, we have identically, by virtue of (7),
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \equiv \Sigma \lambda_{ij} \varepsilon^{q}_{ih} a^{q-1}_{h} b^{m}_{j} + \Sigma \lambda_{ij} \varepsilon'^{m}_{jk} a^{q}_{i} b^{m-1}_{k}. \]
+One must therefore have (by annulling in the second member the coefficient of $a^{q-1}_{h} b^{m}_{j}$)
+\[ \Sigma_{i} \lambda_{ij} \varepsilon^{q}_{ih} = 0. \]
+One deduces from this the congruence
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \equiv \Sigma_{i} \lambda_{ij} \varepsilon^{q}_{ih} a^{q-1}_{h} \equiv 0. \tag{10} \]
+
+All the elements $a^{q}_{i}$ which appear in the first member of (10) belong to $a^{p-m}_{j}$; now $a^{p-m}_{j}$ by hypothesis \emph{is simply connected}; every congruence between its elements therefore entails the corresponding homology, so that one has
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \backsim 0, \]
+whence
+\[ \Sigma_{i} \lambda_{ij} a^{q}_{i} \equiv \Sigma_{\rho} \mu_{\rho j} a^{q+1}_{\rho}, \]
+the $\mu$ being integer coefficients and the $a^{q+1}_{\rho}$ being elements belonging to $a^{p-m}_{j}$.
+
+Now
+\[ \Sigma_{\rho} \mu_{\rho j} a^{q+1}_{\rho} \equiv \Sigma_{\rho i} \mu_{\rho j} \varepsilon^{q+1}_{\rho i} a^{q}_{i}. \]
+One therefore has
+\[ \lambda_{i} = \Sigma_{\rho} \mu_{\rho j} \varepsilon^{q+1}_{\rho i}. \]\ednote{Printed $\lambda_{i}$; elsewhere in this argument the coefficients carry two indices, $\lambda_{ij}$.}
+\origpage{300}
+
+The congruence (9) can then be written
+\[ \Sigma \mu_{\rho j} \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{m}_{j} \equiv 0 \]
+(the summation extends over the three indices $\rho, i, j$).
+
+Now we can form the following homology, which is none other than one of the homologies (8):---
+\[ \Sigma \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{m}_{j} \backsim -\Sigma \varepsilon'^{m}_{jk} a^{q+1}_{\rho} b^{m-1}_{k}. \tag{11} \]
+One then has
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{m}_{j} \backsim -\Sigma \mu_{\rho j} \varepsilon'^{m}_{jk} a^{q+1}_{\rho} b^{m-1}_{k}, \]
+which proves the theorem stated.
+
+The case of $m = 0$ is, of course, left aside and must be treated separately. In this case the homology (11) must be replaced by the following, which is one of the homologies (8~\emph{bis}):---
+\[ \Sigma \varepsilon^{q+1}_{\rho i} a^{q}_{i} b^{0}_{j} \backsim a^{q+1}_{\rho}, \tag{11 \textit{bis}} \]
+whence
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{0}_{j} \backsim \Sigma \mu_{\rho j} a^{q+1}_{\rho}. \]
+
+Therefore to the congruence
+\[ \Sigma \lambda_{ij} a^{q}_{i} b^{0}_{j} \equiv 0 \tag{9 \textit{bis}} \]
+there will correspond the congruence
+\[ \Sigma \mu_{\rho j} a^{q+1}_{\rho} \equiv 0 \]
+which is of the form (1), and the first members of these two congruences will be homologous.
+
+Let now
+\[ \Sigma \lambda_{j} b^{q}_{j} \equiv 0 \tag{2} \]
+be a congruence of the form (2); one will have, by a homology analogous to (8~\emph{ter}),
+\[ b^{q}_{j} \backsim -\Sigma \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k}, \]
+if $b^{p-1}_{i}$ is one of the elements of $P'$ to which $b^{q}_{i}$ belongs.\ednote{Printed $b^{p-1}_{i}$ and $b^{q}_{i}$; the display above has $b^{q}_{j}$, and the element of $P'$ corresponding to the vertex $a^{0}_{i}$ is $p$-dimensional.}
+
+We therefore have the homology
+\[ \Sigma \lambda_{j} b^{q}_{j} \backsim -\Sigma \lambda_{j} \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k}, \]
+so that to our congruence (2) there will correspond a congruence
+\[ -\Sigma \lambda_{j} \varepsilon'^{q}_{jk} a^{0}_{i} b^{q-1}_{k} \equiv 0 \tag{12} \]
+whose first member is homologous to that of (2).
+
+If, then, we have a congruence of the form (2), we shall deduce from it the congruence (12), which is a congruence of the form (9) in which the numbers that we called $q$ and $m$ above have respectively the values 0 and $q-1$. We shall then deduce from it another
+\origpage{301}
+congruence, likewise of the form (9), but in which these two numbers will have the values 1 and $q-2$, and so on; one will end by arriving at a congruence of the form (9~\emph{bis}), that is to say at a congruence in which these two numbers will have the values $q-1$ and 0; and we shall then finally deduce from it a congruence of the form (1).
+
+The first members of all these congruences will be homologous to one another.
+
+The theorem stated at the beginning of this section is thus proved.
+
+In order to draw from it all the consequences which it involves, we must remark this: We must distinguish several sorts of homologies. Let $v_{q}$ be any manifold of $q$ dimensions forming part of our manifold $v$, and $v_{q-1}$ its complete boundary, which is expressed by the congruence
+\[ v_{q} \equiv v_{q-1}. \]
+We deduce from it the homology
+\[ v_{q-1} \backsim 0. \]
+The homologies thus obtained are the fundamental homologies.
+
+By combining the fundamental homologies by addition, subtraction, and multiplication, one obtains others from them, which are the \emph{homologies without division}. Finally, by combining them by addition, multiplication, and division, one obtains still others, which are the \emph{homologies by division}.
+
+Well then, \emph{all the homologies which we have met in this section are homologies without division}.
+
+This being established, let us return to our tables $T_{q}$ and $T'_{q}$ and to their invariants, and in particular to those of these invariants which are equal neither to 0 nor to 1, and which we shall call \emph{torsion coefficients}.
+
+Let us suppose that we have the following homology:---
+\[ \Sigma k \lambda_{i} a^{q}_{i} \backsim 0, \tag{13} \]
+where the $\lambda_{i}$ are relatively prime integers; that (13) is a homology without division, but that the homology
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim 0 \tag{14} \]
+can be obtained only by division. According to what we have seen in one of the preceding sections, this will mean that $k$ is one of the torsion coefficients of the table $T_{q}$.
+
+We shall have the congruence
+\[ \Sigma \lambda_{i} a^{q}_{i} \equiv 0. \tag{14 \textit{bis}} \]
+\origpage{302}
+
+From (14~\emph{bis}) we can, by the procedure of this section, deduce a congruence between the $b^{q}_{i}$, which I shall write
+\[ \Sigma \mu_{i} b^{q}_{i} \equiv 0. \tag{14 \textit{ter}} \]
+
+One would have, moreover, according to the theorem which we have just established,
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim \Sigma \mu_{i} b^{q}_{i}. \]
+That is a homology without division, and one would immediately deduce from it, likewise without division,
+\[ \Sigma k \lambda_{i} a^{q}_{i} \backsim \Sigma k \mu_{i} b^{q}_{i}. \]
+From this one deduces that one has, without division,
+\[ \Sigma k \mu_{i} b^{q}_{i} \backsim 0, \]
+and that one does not have, without division,
+\[ \Sigma \mu_{i} b^{q}_{i} \backsim 0, \]
+for otherwise one would have, without division,
+\[ \Sigma \lambda_{i} a^{q}_{i} \backsim 0, \]
+which is contrary to the hypothesis.
+
+That means that $k$ is a torsion coefficient of the table $T'_{q}$.
+
+Thus the torsion coefficients of the two tables $T_{q}$ and $T'_{q}$ are equal (the proof is easy to complete), and, if one observes that the two tables $T'_{q}$ and $T_{p-q}$\ednote{Printed $T_{p-q}$. On p.\ 280 the tableau $T'_{q}$ is obtained from $T_{p-q+1}$ by exchanging rows and columns, which would give $T_{p-q+1}$ here.} have the same invariants, one will conclude that \emph{the tables equally distant from the extremes have the same torsion coefficients}.
+
+One could arrive at the same result by another route.
+
+We have seen in one of the earlier memoirs (\S~16) the definition of the operation which we called annexation; I suppose that two elements of a polyhedron, for example $a^{q}_{i}$ and $a^{q}_{j}$, are separated from one another by an element $a^{q-1}_{k}$, that this is the only element of $q-1$ dimensions common to $a^{q}_{i}$ and to $a^{q}_{j}$, and finally that $a^{q-1}_{k}$ belongs to no element of $q$ dimensions apart from $a^{q}_{i}$ and $a^{q}_{j}$; one will therefore have $\varepsilon^{q}_{ik} = 1$, $\varepsilon^{q}_{jk} = -1$; all the other $\varepsilon^{q}_{hk}$ will be null whatever the index $h$, as will all the products $\varepsilon^{q}_{ih} \varepsilon^{q}_{jh}$.
+
+Under these conditions, one can annex the two elements $a^{q}_{i}$ and $a^{q}_{j}$ to one another by suppressing the element $a^{q-1}_{k}$. What is the effect of this operation on our tables $T_{q}$? The table $T_{q}$ loses one row and one column; the table $T_{q-1}$ loses one row. One of the invariants of $T_{q}$ equal to 1 disappears; as for the table $T_{q-1}$, it loses an invariant if it has
+\origpage{303}
+no more rows than columns; in this case, the invariant which it loses is equal to zero. All the other invariants of the two tables do not change; these two tables therefore preserve their torsion coefficients.
+
+Now it is easy to form a polyhedron derived at once from $P$ and from $P'$; one could then go back from this polyhedron either to $P$ or to $P'$ by regular annexations. As these annexations do not alter the torsion coefficients, the tables $T_{q}$ and $T'_{q}$ must have the same torsion coefficients.
+
+\subsection*{6. Interior torsion of manifolds.}
+
+Let us consider one of our tables $T_{q}$. We shall say that a sequence of elements of this table, all distinct, arranged in a certain order, forms a \emph{chain} if each element of odd rank belongs to the same row as the following element and to the same column as the preceding element. The chain will be \emph{closed} if the last element is identical with the first. It is clear that a closed chain will always contain an odd number of elements and an even number of \emph{distinct} elements. For example, the elements
+\[ \varepsilon^{q}_{11}, \varepsilon^{q}_{12}, \varepsilon^{q}_{22}, \varepsilon^{q}_{23}, \varepsilon^{q}_{33}, \varepsilon^{q}_{31}, \varepsilon^{q}_{11} \tag{1} \]
+will form a closed chain.
+
+As all the elements of the table $T_{q}$ are equal to 0, $+1$ or $-1$, the product of the distinct elements of a closed chain will always be 0, $+1$ or $-1$.
+
+Let us suppose that the elements of the chain (1) have the following values:---
+\[ \varepsilon^{q}_{12} = \varepsilon^{q}_{23} = \varepsilon^{q}_{31} = 1, \qquad \varepsilon^{q}_{11} = \varepsilon^{q}_{22} = \varepsilon^{q}_{33} = -1; \]
+the product of the elements of the chain will be $-1$; let us then consider the three manifolds $a^{q}_{1}, a^{q}_{2}, a^{q}_{3}$, and the three manifolds $a^{q-1}_{1}, a^{q-1}_{2}, a^{q-1}_{3}$; by suppressing the manifolds $a^{q-1}_{1}, a^{q-1}_{2}$ and $a^{q-1}_{3}$, one annexes to one another the three manifolds $a^{q}_{1}, a^{q}_{2}$ and $a^{q}_{3}$, and the manifold thus obtained
+\[ a^{q}_{1} + a^{q}_{2} + a^{q}_{3} \]
+\emph{is a two-sided manifold}.
+
+If, on the contrary, we have
+\[ \varepsilon^{q}_{12} = \varepsilon^{q}_{23} = \varepsilon^{q}_{31} = 1, \qquad \varepsilon^{q}_{22} = \varepsilon^{q}_{33} = -1, \qquad \varepsilon^{q}_{11} = 1, \]
+one will still be able to suppress $a^{q-1}_{1}, a^{q-1}_{2}$ and $a^{q-1}_{3}$ and obtain by annexation the manifold $a^{q}_{1} + a^{q}_{2} + a^{q}_{3}$; but \emph{this manifold will be one-sided}.
+
+More generally, if all the elements of the chain (1) are equal
+\origpage{304}
+to $+1$ and to $-1$, we shall first suppress $a^{q-1}_{2}$ and $a^{q-1}_{3}$; we shall thus obtain by annexation the manifold
+\[ a^{q}_{1} - \varepsilon^{q}_{12} \varepsilon^{q}_{22} a^{q}_{2} + \varepsilon^{q}_{12} \varepsilon^{q}_{22} \varepsilon^{q}_{13} \varepsilon^{q}_{23} a^{q}_{3}. \tag{2} \]\ednote{Printed $\varepsilon^{q}_{13} \varepsilon^{q}_{23}$ in the last term. The elements of the chain (1) that join $a^{q}_{2}$ to $a^{q}_{3}$ through $a^{q-1}_{3}$ are $\varepsilon^{q}_{23}$ and $\varepsilon^{q}_{33}$, and the annexion requires the coefficient $\varepsilon^{q}_{12} \varepsilon^{q}_{22} \varepsilon^{q}_{23} \varepsilon^{q}_{33}$; apparently a misprint.}
+Suppressing next $a^{q-1}_{1}$, we see that the manifold (2) is henceforth formed of a closed chain of $a^{q}_{i}$ in the sense of section 8 (p.\ 26) of the “Analysis Situs,” and that this chain is two-sided or one-sided according as the product of the distinct elements of the chain (1) is equal to $-1$ or to $+1$.
+
+We shall say in the first case that the chain (1) is two-sided, in the second case that it is one-sided.
+
+We are therefore led to distinguish three categories among the closed chains formed by means of elements of the tables $T_{q}$:
+
+1° The \emph{null} chains, that is to say those in which the product of the elements is null.
+
+2° The \emph{two-sided} chains.
+
+It is easy to see that these are those in which the product of the elements is $+1$ if the number of elements is a multiple of 4, or those in which this product is $-1$ if the number of elements is a multiple of 4 plus 2.
+
+3° The \emph{one-sided} chains.
+
+These are those in which this product is $-1$ if the number of elements is a multiple of 4, or $+1$ if this number is a multiple of 4 plus 2.
+
+This being established, we shall say that the table $T_{q}$ (or more generally any table or any determinant all of whose elements are 0, $+1$ or $-1$) is \emph{two-sided} if it contains only null or two-sided chains.
+
+It follows from this definition:
+
+1° That a two-sided table remains two-sided if one changes all the signs of a column, or all the signs of a row; or again if one interchanges two columns or two rows.
+
+\emph{Theorem.}---A two-sided determinant can be equal only to 0, $+1$ or $-1$.
+
+Indeed, one can always, by changing if need be all the signs of certain columns, arrange that all the elements of the first row are 0 or $+1$.
+
+Let us suppose, for example, that the first two elements of the first row are equal to $+1$, and that I subtract the first column from the second; the value of the determinant will not be changed; I say that the determinant will remain two-sided.
+
+Let us consider, indeed, in the original determinant a chain whose first and last elements belong to the second column
+\origpage{305}
+and all the other elements to other columns. Let $a$ and $c$ be this first and this last element; let $\xi$ be the product of all the other elements of the chain; let $b$ and $d$ be the elements of the first column which are respectively in the same row as $a$ and $c$.
+
+The product of the elements of our chain, which I shall call the chain (1), will be $ac\xi$, and we shall have
+\[ \begin{aligned} &ac\xi = 0 \text{ or } 1 \qquad \text{if the number of elements} \equiv 0 \qquad (\text{mod}\ 4),\\ &ac\xi = 0 \text{ or } -1 \qquad \text{,,} \qquad \text{,,} \qquad \text{,,} \qquad \equiv 2 \qquad (\text{mod}\ 4). \end{aligned} \]
+
+The product of the elements of the chain which I shall call (2), and which is formed with the corresponding elements of the new determinant, will be
+\[ (a-b)(c-d)\xi, \]
+and indeed the elements of our chain do not change, except the elements $a$ and $c$, which become $a-b$ and $c-d$.
+
+The chain formed in the original determinant by the two elements of the first row and by the elements $a$ and $b$ must be two-sided, so that one must have
+\[ a-b = 0 \qquad \text{or} \qquad a = 0 \qquad \text{or} \qquad b = 0. \]
+
+One must have likewise
+\[ c-d = 0 \qquad \text{or} \qquad c = 0 \qquad \text{or} \qquad d = 0. \]
+
+If $(a-b)$ or $(c-d)$ is null, the theorem is proved, since the product $(a-b)(c-d)\xi = 0$.
+
+If $b = d = 0$, one has
+\[ (a-b)(c-d)\xi = ac\xi, \]
+and the theorem is proved, since the two products of the chains (1) and (2) are the same, the number of elements is the same, and (1) is two-sided or null.
+
+If $a = c = 0$, one has
+\[ (a-b)(c-d)\xi = bd\xi. \]
+
+The chain (3) which belongs to the original determinant, and which has the same elements as the chain (1), except that $a$ and $c$ are replaced by $b$ and $d$---this chain (3), I say, is two-sided or null; it has the same number of elements as (2), and its product is $bd\xi$, equal in this case to the product of (2). Therefore, in this case also, the chain (2) is two-sided or null.
+
+If $a = d = 0$, one has
+\[ (a-b)(c-d)\xi = -bc\xi. \]
+
+This time one must consider in the original determinant a
+\origpage{306}
+chain (4) whose elements will be the two elements of the first row, the elements $b$ and $c$, and the elements of the chain (1) except $a$ and $c$. This chain (4) must be two-sided or null.
+
+It contains two elements more than the chain (2).
+
+Its product is equal to $bc\xi$ and consequently equal and of contrary sign to the product of (2).
+
+Therefore (2) is two-sided or null.
+
+If, finally, $b = c = 0$, one has
+\[ (a-b)(c-d)\xi = -ad\xi, \]
+and one would prove, quite as in the preceding case, that the chain (2) is two-sided or null.
+
+We have just treated the case of the chains two of whose elements belong to the second column. The result is the same whatever the number of elements belonging to the second column, a number which, moreover, must always be even.
+
+If this number is null, the theorem is evident, for the chain of the new determinant does not differ from that of the original determinant.
+
+Let us suppose that this number is 4, to fix ideas. Let $a, c, e, g$ be four elements of the second column, and let us imagine that one meets successively the element $a$, various elements $\xi$ belonging to other columns, the elements $c$ and $e$, various elements $\eta$ belonging to other columns, and finally $g$. Our chain will be closed.
+\[ a\xi ce\eta ge \]\ednote{Printed $a\xi ce\eta ge$. A closed chain ends on its first element, and the chain is decomposed below into $a\xi ca$ and $e\eta ge$, which would suggest $a\xi ce\eta ga$; apparently a misprint.}
+can be decomposed into two closed chains
+\[ a\xi ca, \qquad e\eta ge, \]
+and, in order that it be two-sided, it suffices that the two components be so. One is therefore brought back to the case of chains having only two elements in the second column.
+
+I shall add that all the elements of the new determinant are 0, $+1$ or $-1$. Indeed, as one has
+\[ a-b = 0 \qquad \text{or} \qquad a = 0 \qquad \text{or} \qquad b = 0, \]\ednote{The middle of the minus in $a-b$ did not print; it shows as two short dashes.}
+one will have
+\[ a-b = 0, \qquad a \qquad \text{or} \qquad -b, \]
+whence
+\[ a-b = 0, \qquad 1 \qquad \text{or} \qquad -1. \]
+
+This being established, let us subtract in this way the first column from all the columns whose first element is $+1$. The determinant will preserve its value; it will remain two-sided; but all the elements of the first row will be null, except the first, which will be $+1$.
+\origpage{307}
+
+This reasoning is applicable in all cases, except if all the elements of the first row are null; but then the determinant is null and the theorem is evident.
+
+If one now suppresses the first row and the first column, one will obtain a new determinant which will be equal to the first and, like it, two-sided. On this new determinant, which has one row and one column fewer than the first, one will operate in the same way, and one will end by arriving at a determinant which will have only a single element, which must be 0, $+1$ or $-1$.
+
+Our determinant is therefore equal to 0, $+1$ or $-1$.
+
+1\textsuperscript{st} \emph{Corollary.}---If a table $T_{q}$ is two-sided, its invariants are all 0 or 1.
+
+2\textsuperscript{nd} \emph{Corollary.}---If a polyhedron has all its tables $T_{q}$ two-sided, that is to say if one cannot compose with its elements $a^{q}_{i}$ a one-sided manifold, this polyhedron has no torsion coefficients.
+
+One sees that the existence of torsion coefficients (which necessitates the distinction between the two definitions of the Betti numbers, or between the homologies by division and without division) is due to the fact that the elements of the polyhedron can generate one-sided manifolds, that is to say that the polyhedron is, so to speak, twisted upon itself.
+
+It is this which justifies the expression torsion coefficients, or that of manifolds with or without torsion.
+
+If the manifold $V$ formed by the ensemble of the elements $a^{p}_{i}$ of the polyhedron $P$ is not itself one-sided, the two tables $T_{1}$ and $T_{p}$ are two-sided.
+
+Indeed, each row for the one, each column for the other, has all its elements null except two, which are equal to $+1$ and $-1$. If, then, a chain is not null, its elements are two by two equal and of contrary sign; it is therefore two-sided.
+
+It follows from this that the extreme tables $T_{1}$ and $T_{p}$ have all their invariants equal to 0 or to 1. This is what explains why one does not meet torsion coefficients with the polyhedra of ordinary space; these polyhedra indeed involve only two tables $T_{1}$ and $T_{2}$.
+
+This would no longer be true if the manifold $V$ were one-sided. Thus the manifold considered in the seventh example (\S~15, p.\ 87) can be subdivided into a polyhedron, and, according to the manner in which the subdivision is made, one finds for the table $T_{2}$
+\[ \begin{vmatrix} 2 \end{vmatrix}, \qquad \begin{vmatrix} +1 & +1 \\[1ex] +1 & -1 \end{vmatrix}, \qquad \ldots \]
+\origpage{308}
+
+In order not to lengthen this work too much, I shall confine myself to stating the following theorem, the proof of which would require some developments:---
+
+\emph{Every polyhedron which has all its Betti numbers equal to 1 and all its tables $T_{q}$ two-sided is simply connected, that is to say homeomorphic to the hypersphere}.
+
+\end{document}

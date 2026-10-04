@@ -1,0 +1,1465 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose is translated.
+%
+% TERMINOLOGY. Classical period English mathematical terminology:
+%   * Sammenhang = "connectivity"
+%   * Sammenhangstal = "connectivity numbers"
+%   * Mangfoldighed = "manifold"
+%   * lukket / aaben Mangfoldighed = "closed / open manifold"
+%   * Flade = "surface"
+%   * Normalform = "normal form"
+%   * Normalflade = "normal surface"
+%   * Hank / Hanke = "handle / handles"
+%   * Hul / Huller = "hole / holes"
+%   * Traad / Traade = "thread / threads"
+%   * Hinde / Hinder = "membrane / membranes"
+%   * Baererplan = "carrier plane"
+%   * Kotetal = "coordinate levels" / "elevations"
+%   * Delingsflade = "dividing surface"
+%   * Torsionstal = "torsion coefficients"
+%   * Snit = "cut"
+%   * Kredssnit = "circular cut"
+%   * Randsnit = "boundary cut"
+%   * Rand / Rande = "boundary / boundaries"
+%   * Randkurve = "boundary curve"
+%   * Mangefoldspunkt = "multiple point"
+%   * Dobbeltpunkt = "double point"
+%   * Dobbeltkurve / Dobbeltlinie = "double curve / double line"
+%   * Spidskurve = "cuspidal curve"
+%   * Forgreningsflade / Forgreningslinie / Forgreningspunkt = "branch surface / line / point"
+%   * kontinuert Deformation = "continuous deformation"
+%   * eentydig = "one-to-one"
+%   * omvendt eentydig = "one-to-one and invertible"
+%
+% See notation.md for full notation decisions.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{1}
+\section*{Introduction}
+
+It is well known what growth the theory of functions of one complex variable attained when imaginary values of the independent variable were taken into consideration and the theory was linked to a geometric representation of imaginary quantities.
+
+If one were to construct a theory of functions of two independent variables, it would therefore be natural to seek a similar representation. That so long a time has elapsed before this natural extension has been taken up in earnest is due, among other things, to the fact that investigations for two independent variables are far more difficult than for one. The multiplicity of possibilities gives rise to circumstances to which no analogies exist in the theory of one independent variable. Picard thus remarks: „On voit, par ce qui précède, les différences profondes qui séparent la théorie des fonctions algébriques d'une variable de la théorie des fonctions algébriques de deux variables indépendantes. L'analogie qui souvent est un guide excellent, peut devenir içi bien trompeuse.“
+
+A difficulty for an intuitive representation naturally also lies in the fact that the geometric configurations,
+
+\origpage{2}
+which were to play the role of Riemann surfaces, would have to be 4-dimensional.
+
+Although the analogy may be misleading in our investigations of details, a general survey of the means that have been employed in the theory of one independent variable will nevertheless provide a good plan of work. Let us then consider such a survey.
+
+The theory of functions of one independent variable is most intimately connected with the theory of algebraic curves. The geometry on such a curve therefore becomes of fundamental importance.
+
+The investigations have been conducted from very different points of view. The most important rest
+
+I. \emph{upon elementary algebraic theorems.}
+
+Under this may be mentioned:
+
+$\alpha$) Investigations of the \emph{adjoint polynomials}, a theory created by Brill and Nöther in the memoir: \emph{Ueber die algebraischen Functionen} (M.~A. Bd.~7, 1873).
+
+$\beta$) The Italians' investigations of \emph{linear groups of points}. They have attempted to free the previous theory from its projective form, so that they developed it independently of the concepts of degree, class, etc., cf.\ a report by Castelnuovo and Enriques (\emph{Sur quelques récents resultats dans la théorie des surfaces algébriques}. M.~A. Bd.~48, p.~242, 1897).
+
+$\gamma$) \emph{enumerative-geometric investigations}, especially a series of memoirs by Zeuthen (e.g.\ M.~A. Bd.~3 and Bd.~9).
+
+II. \emph{upon the study of the transcendental functions associated with the algebraic curve.}
+
+These investigations, which may well be said to stem from Riemann's pioneering work (1857), are so widely
+
+\origpage{3}
+known that there is no reason to discuss them further.
+
+III. \emph{upon topological investigations of the Riemann surfaces representing the algebraic curve.}
+
+Here again two somewhat different paths have been taken:
+
+$\alpha$) Either one determines the connectivity numbers of the surface by means of a theorem that may be regarded as a generalization of Euler's theorem on polyhedra (Riemann, Neumann).
+
+$\beta$) Or one punctures the Riemann surface and then brings it by continuous deformation into a \emph{normal form}. So far as we know, this procedure has been carried out only by Jul.\ Petersen (\emph{Forelæsninger over Funktionsteori}, Kap.~IV). To be sure, Listing employs such a procedure to form the “diagram” of a spatial figure in order thereby to arrive at an extension of Euler's theorem (\emph{Census räumlicher Complexe}, 1862), and Betti (1871) employs such a consideration in his investigations of connectivity numbers for $n$-dimensional spaces in general, but both memoirs seem to have remained unnoticed for a long time. This method gives an extraordinarily intuitive representation of the circumstances treated.
+
+For the theory of functions of two variables, the transformations of algebraic surfaces play an analogous role. There already exist a number of works, mainly from recent times, in which the subject has been treated from points of view corresponding to those enumerated.
+
+I. \emph{Elementary algebraic investigations.}
+
+$\alpha$) \emph{Adjoint polynomials.} This theory dates from Clebsch (C.~R. Dec.\ 1868) and Nöther (\emph{Zur eindeutigen Entsprechen\dots} I \& II, M.~A. Bd.~2, 1869, and
+
+\origpage{4}
+Bd.~8, 1874).
+
+$\beta$) \emph{Linear systems of curves.} The Italians have created a theory of linear systems of curves on surfaces, analogous to the one previously mentioned for groups of points on curves. By means of this they determine invariants for surfaces (cf.\ the aforementioned report by Castelnuovo and Enriques).
+
+$\gamma$) \emph{Transformations of surfaces} have also been investigated enumerative-geometrically by Zeuthen (\emph{Études géométriques\dots}, M.~A. Bd.~4).
+
+II. \emph{Investigations by transcendental functions.}
+
+Already in his memoir in M.~A. Bd.~2, Nöther considers integrals of the form
+\[
+\iint \frac{Q(x, y, z)\,dx\,dy}{f'_z}.
+\]
+
+Picard introduces integrals of the form
+\[
+\int_{x_0, y_0, z_0}^{x, y, z} (P\,dx + Q\,dy),
+\]
+where $P$ and $Q$ satisfy the integrability condition (Liouville Journ.\ 1885 \& 86). Finally, Picard, in his prize memoir: \emph{Mémoire sur la théorie des fonctions algébriques de deux variables} (Liouv.\ Journ.\ 4th series, Bd.~5, 1889) and in the recently published book on the same subject (Picard et Simart: \emph{Théorie des fonctions algébriques de deux variables indépendantes}, 1897), has given a coherent presentation of this entire theory.
+
+Poincaré's memoir: “Sur les résidus\dots” (\emph{Acta mathematica}, Bd.~9, 1887) must also be mentioned in this connection.
+
+\origpage{5}
+III. \emph{Topological investigations.}
+
+In this direction there is not much. In Picard's works there is indeed a good deal, but nothing carried out thoroughly, since he everywhere prefers the analytical presentation. The difficulty lies in the fact that the Riemann--Betti theory of connectivity numbers is very incomplete and difficult to apply when it is a question of manifolds of more than 2 dimensions. Poincaré has sought to complete it (\emph{Analysis Situs}, Journ.\ de l'école polytechnique, 2nd series, Cah.~1, 1895), without, however, in our opinion having succeeded. Later Picard has made his contribution; W.~Dyck had already previously occupied himself with the question (\emph{Beiträge zur Analysis situs}, M.~A. Bd.~32 and 37), but nowhere is there found a fully satisfactory theory. Prior to investigations in this direction there must therefore come a theory of the topological correspondence of manifolds of dimension greater than 2. What already exists in this direction must be ranked alongside what was mentioned under III$\alpha$). There exist no investigations analogous to those mentioned under III$\beta$).
+
+The following pages contain no finished whole, only studies; the difficulty of the subject must serve as an excuse for this. In order that the investigations may appear in the proper light, it would perhaps be advantageous first to set forth the train of thought that has guided my investigations.
+
+By chance I had noticed that the Zeuthen--Halphen extension of the genus theorem (M.~A. Bd.~3; \emph{Bull.\ de la Soc.\ math.\ de France}, Bd.~5) could be proved by a purely topological argument; namely, on the two Riemann surfaces between whose points a $(\mu, \nu)$-valued correspondence is assumed to exist, one can construct
+
+\origpage{6}
+new Riemann surfaces which correspond one-to-one to each other. The equation expressing that the two constructed surfaces have equal connectivity numbers then states precisely the theorem in question. A new light is thereby shed on the circumstance, so important for enumerative geometry, that the extended genus theorem can be applied without infinitesimal investigations at the points of coincidence (or substitutes for such), whereas these investigations on the contrary are necessary for the other correspondence formulas (cf.\ \emph{Acta mathem.}, Bd.~1, p.~171). I shall not enter further here into the proof of this theorem, all the less so since I subsequently found it in a memoir by Hurwitz (M.~A. Bd.~39).
+
+My thought was now that one ought to be able to form a similar theorem for algebraic surfaces, but there was first a great work to be done: for algebraic surfaces something had to be created that corresponded to the Riemann surfaces of algebraic curves; then topological criteria had to be established for their one-to-one correspondence. And, as already touched upon, the material previously existing for such an investigation was either incomplete or full of errors. It is in the attempts to correct these errors and fill these gaps that the contents of the following pages have arisen.
+
+\origpage{7}
+\section*{FIRST SECTION. On an Intuitive Representation of the Complex Points of an Algebraic Surface.}
+
+\subsection*{§ 1. Intuitive Representation of a 4-Dimensional Manifold.}
+
+In order to obtain a clear view of the connectivity between the points of an algebraic curve $y = f(x)$, one first chooses a doubly infinite collection of points (a plane or a sphere), in which one interprets the complex values of the independent variable. Over this, one then constructs a Riemann surface on which the values of the dependent variable can be spread out in a single-valued manner. What then essentially interests us are the topological properties of this surface; for these are independent of the manner in which the surface is represented; they persist even if the surface is subjected to a continuous deformation, and they are therefore common to all surfaces that can be brought into one-to-one correspondence with the given surface.
+
+If one were to proceed in an analogous manner for an algebraic surface $z = f(x, y)$, one would first have to form an image of the 4-dimensional manifold
+
+\origpage{8}
+$(x, y)$, which is obtained by letting $x$ and $y$, independently of each other, assume all possible complex values. By covering this manifold multiple times and by suitably introducing “branch surfaces” and connecting these with 3-dimensional configurations through which the different “sheets” are brought into connection with each other, one can create a 4-dimensional manifold in which the connectivity of algebraic surfaces can be studied.
+
+This problem, however, has until quite recently had to remain unsolved, because one entirely lacked the means to obtain an intuitive view of a 4-dimensional manifold and to operate with such configurations in a manner similar to surfaces in our ordinary space.
+
+In recent times a couple of attempts have been made to remedy this.
+
+G.~Veronese has constructed a multidimensional geometry in which he operates with multidimensional spaces in exactly the same manner as in ordinary geometry with our space (e.g.\ \emph{Fondamenti di Geometria a piu dimensioni}, 1891). For us, however, this method would have the great defect that it entirely excludes the intuitiveness which is the main goal of our efforts.
+
+L.~Schläfli, in his posthumous memoir: \emph{Theorie der vielfachen Continuität} (Züricher Denkschriften, Bd.~38, 1898), uses a projection method whereby manifolds of multiple dimensions are mapped onto our space. Schläfli's main purpose, however, is to investigate regular polyhedra in $n$-dimensional spaces, and his method is therefore not directly applicable to our purposes.
+
+H.~Poincaré, in his previously mentioned memoir: \emph{Analysis Situs}, has given a number of rules for the treatment of multidimensional manifolds; these rules, however, are so incomplete and so little intuitive that they stand in great need of supplementation.
+
+We shall here seek to remedy this deficiency by presenting a method for giving an intuitive representation of a 4-dimensional manifold.
+
+We conceive of a 4-dimensional space $T$ in which a point is determined by four real coordinates $(x_1, x_2, y_1, y_2)$. In order to be able to operate with this space, we must rely on notions drawn from our ordinary 3-dimensional space $P$. It is, for example, very difficult
+
+\origpage{9}
+to form a distinct, comprehensive idea of the collection of straight lines in space that forms the “neighborhood” of a straight line; on the other hand, it is easy to form clear mental images of the neighborhood of a point on a surface and of a point in space. Now, however, we do not know of any 4-dimensional manifold in which a point is directly the element. In our space $P$, to be sure, we know manifolds of higher dimension, for example the collection of all straight lines in space, which forms a 4-dimensional manifold; but these can be used only with difficulty, because they lack immediate intuitiveness.
+
+We shall therefore take another path, employing an analogy with the manner in which a surveyor maps an undulating earth surface onto a plane. The surveyor imagines the earth's surface projected orthogonally onto a horizontal plane; in order to know the height of the points above this plane, he assigns to each point a number (coordinate level), which indicates the height. In order to obtain a quick overview of the terrain, he draws curves through points with the same coordinate level (coordinate level lines, contour lines). In a similar manner we shall proceed.
+
+In our 4-dimensional space $T$ we imagine a rectangular coordinate system with axes $X_1, X_2, Y_1, Y_2$. The 3-dimensional space spanned by $X_1, X_2, Y_1$ we call our ordinary space $P$. A point $M$ in $T$ with coordinates $(x_1, x_2, y_1, y_2)$ is projected orthogonally onto $P$ at the point $M'$ with coordinates $(x_1, x_2, y_1, 0)$; its fourth coordinate $y_2$ we call its \emph{coordinate level}. The point $M$ is then completely determined by its projection $M'$ in $P$ and its coordinate level $y_2$.
+
+Hereby it is achieved that every point in $T$ is represented by a point in our ordinary space $P$ furnished with a coordinate level.
+
+\origpage{10}
+We can then, in analogy with the surveyor's approach, say that the points in our 4-dimensional space are represented by projection into ordinary space, understanding by the projection of a point that point which we obtain when we delete its coordinate level (or rather: change it to 0).
+
+For reasons of convenience, we shall make use of a number of names and designations whose analogy with familiar relations is easy to recognize.
+
+The space spanned by $X_1, X_2, Y_1$ we call our space $P$; points with coordinate level 0 we call real points.
+
+A manifold of 1 dimension in $T$ is represented by a curve in $P$ (the carrier curve), whose points are furnished with coordinate levels. The points of the carrier have in general different coordinate levels, so that the curve can be regarded as a series of points with continuous coordinate levels.
+
+A manifold of 2 dimensions is represented by a surface in $P$ (the carrier surface), whose points are furnished with coordinate levels. In order to obtain an overview of the coordinate levels on this surface, we draw curves on it through points with the same coordinate level; these curves we call \emph{level lines}. Such a manifold can thus be represented by a surface traced over with a system of level lines.
+
+A manifold of 3 dimensions is represented by a space in $P$ (the carrier space), whose points have coordinate levels; through points with the same coordinate level one passes surfaces (\emph{level surfaces}).
+
+The carrier of a curve may in special cases degenerate into a point; this point must then be furnished with a singly infinite series of coordinate levels.
+
+The carrier of a surface may degenerate into a curve; this curve must then be furnished with a system of coordinate levels, such that to each point of the curve there corresponds a singly infinite series of coordinate levels. The carrier may also degenerate into a point; this must then be furnished with a doubly infinite series of coordinate levels.
+
+The carrier of a surface is in general a surface;
+
+\origpage{11}
+in order easily to obtain an overview of the coordinate levels on this surface, we draw curves on it through points with the same coordinate levels. The sought-for surface is completely determined by the system of level lines with which the carrier surface is in this way covered.
+
+Just as the projection of a surface onto a plane generally covers parts of the plane multiple times, and just as these parts are bounded by curves (the apparent contour), so the projection of a space onto $P$ will generally be a space covering parts of $P$ multiple times, and these parts will be bounded by surfaces (the contour surfaces). The coordinate levels are determined by level surfaces through points with the same coordinate level.
+
+In continuous deformations of the forms described, one must observe both what happens to the carrier and investigate what displacements the coordinate levels undergo.
+
+On the given basis one can easily define what is to be understood by straight line, plane, and flat space in $T$, and develop their general descriptive properties. Spatial collineation can be reduced to central projection, etc. Into this we shall not enter.
+
+The metric geometry in $T$ could, for example, be based upon a definition of the distance between two points
+\[
+d = \sqrt{(x_1 - \xi_1)^2 + (x_2 - \xi_2)^2 + (y_1 - \eta_1)^2 + (y_2 - \eta_2)^2},
+\]
+or by developing the concept of congruence on the basis of the definition given below of rotation about a plane, thereby reducing the question to one concerning our space.
+
+In order to state the aforementioned definition of rotation, we shall first define what is to be understood by a circle in a “perpendicular” plane. The projection of such a circle shall
+
+\origpage{12}
+be a straight line segment $ab$ on the trace of the plane in $P$, and the coordinate levels on this segment shall be determined by
+\[
+y_2 = c \pm r \sin \theta,
+\]
+where $c$ is a real constant, $2r = ab$, and where $r \cos \theta$ is the distance from the midpoint of $ab$ to the variable point. The midpoint with coordinate level $c$ is called its center, $r$ its radius. A point is rotated about a “horizontal” plane by letting the point describe the “vertical” circle which passes through it, and which is projected onto a straight line through the projection of the point, perpendicular to the projection of the horizontal plane. During the rotation the projection moves back and forth on a straight line whose endpoints lie symmetrically with respect to the projection of the plane of rotation. The square of its maximum distance from this projection is equal to the sum of the square of the distance at an arbitrary moment and the square of the associated coordinate level. The point passes alternately “above” and “below” the plane of rotation.
+
+A flat space intersects $P$ in a plane, and every figure contained in it can therefore be revolved into $P$ by a rotation about the trace.
+
+It is now not difficult to develop the fundamental metric concepts of angle, distance, etc.
+
+It is likewise easy to see how one by rotation can bring two symmetrical bodies into coincidence with one another (e.g.\ by rotation about a plane of symmetry), and likewise that one by rotation can bring a point situated inside a closed surface in $P$ to the outside of this surface without passing through the boundary.
+
+\origpage{13}
+\subsection*{§ 2. The Straight Line.}
+
+Our presentation of analytic plane geometry has the advantage that the intuitive results arrived at there by restricting oneself to real coordinates enter as special cases of the intuitive results we reach here. For the points with coordinate level 0 situated in the $X_1 Y_1$-plane are namely the ordinary real points.
+
+We shall first investigate the collection of points given by the equation
+\[
+y = ax.
+\]
+Setting
+\[
+\begin{aligned}
+x &= x_1 + i x_2, \\
+y &= y_1 + i y_2, \\
+a &= a_1 + i a_2,
+\end{aligned}
+\]
+and separating real and imaginary parts, we obtain
+\[
+y_1 = a_1 x_1 - a_2 x_2, \tag{1}
+\]
+\[
+y_2 = a_2 x_1 + a_1 x_2. \tag{2}
+\]
+
+(1) is the equation for the carrier surface in a rectangular coordinate system having $X_1, X_2$, and $Y_1$ as axes. It represents a plane through the origin. If one constructs the point $x_1 + i x_2 = 1 : a$\ednote{Author erratum (p.\ 98): reads $1 : a\ i\ (X_1 X_2)$, corrected to $1 : a\ \text{i}\ (X_1 X_2)$.} in $(X_1 X_2)$, the line connecting this point with the origin will be perpendicular to the trace of the plane; the value of $y_1$ at this point is 1. Thereby the position of the plane is easily determined.
+
+(2) determines the projections of the level lines onto the plane $(X_1 X_2)$, where $y_2$ is regarded as a parameter. Since these projections are perpendicular to the trace of the plane (1), the level lines become the plane's \emph{lines of slope}.
+
+The line of slope through the origin corresponds to
+
+\origpage{14}
+$y_2 = 0$; it contains the point previously constructed, determined by $x_1 + i x_2 = 1 : a = \frac{a_1 - i a_2}{a_1^2 + a_2^2}$\ednote{Author erratum (p.\ 98): reads $\frac{a_1 - i a_2}{a_1 + a_2}$, corrected to $\frac{a_1 - i a_2}{a_1^2 + a_2^2}$.}. Moreover, the coordinate levels of the various lines of slope are proportional to their distances from the level line $y_2 = 0$. It is therefore sufficient to know the coordinate level for one further line of slope. The point of the trace of the plane in $(X_1 X_2)$ which has coordinate level 1 has coordinates
+\[
+\xi_1 = -\frac{a_2}{a_1^2 + a_2^2}, \qquad \eta_1 = \frac{a_1}{a_1^2 + a_2^2},
+\]
+and is thus obtained, according to the above, by multiplying the point $1 : a$ by $i$.
+
+The plane in $\mathbf{T}$ representing $y = a x$ is thus determined in the following manner: At the point $1 : a$ of $(X_1 X_2)$ a perpendicular of length $+1$ is erected; a plane is passed through this point and the vector obtained by rotating the vector from the origin to the point $1 : a$ through an angle equal to $+90^\circ$ in the positive direction of rotation. The line of slope through the origin is given the coordinate level 0, and the line of slope through the other endpoint of the rotated vector the coordinate level 1.
+
+Conversely, when a plane through the origin in our space is given, it is easy by this rule to determine both the slope of the straight line for which it becomes the carrier plane, and also the coordinate levels with which the lines of slope are to be equipped. To slopes with the same modulus there correspond planes with the same inclination and the same distance between lines of slope of the same designation. The greater the modulus is, the more steeply the carrier plane lies, and the closer two lines of slope with given coordinate levels come to each other. For $a = 0$ we obtain the $X$-axis, which is thus represented by the $X_1 X_2$-plane (everywhere with coordinate level 0);
+
+\origpage{15}
+for $a = \infty$ we obtain the $Y$-axis, which is represented by a plane through $Y_1$, perpendicular to our space $P$.${}^{*)}$
+
+It is now easy to see how the line
+\[
+y = ax + q \qquad (q = q_1 + i q_2)
+\]
+is represented. Equations (1) and (2) are changed into
+\[
+\begin{aligned}
+y_1 &= (a_1 x_1 - a_2 x_2) + q_1, \\
+y_2 &= (a_2 x_1 + a_1 x_2) + q_2,
+\end{aligned}
+\]
+which show that the carrier plane undergoes a parallel displacement by the amount $q_1$, and that the coordinate levels of all the lines of slope are increased by $q_2$.
+
+Straight lines parallel to the $X$-axis are represented by horizontal planes with constant coordinate levels; straight lines parallel to the $Y$-axis are represented by planes perpendicular to $P$ and having their trace in the latter along $Y_1$.
+
+\subsection*{§ 3. Algebraic Curves.}
+
+Let $F(x, y) = 0$ be the equation of an algebraic curve of order $n$; it is assumed to be in general position. Separating real and imaginary parts, we obtain two equations of the form
+\[
+y_1 = \varphi(x_1, x_2), \tag{1}
+\]
+\[
+y_2 = \psi(x_1, x_2), \tag{2}
+\]
+where $\varphi$ and $\psi$ are $n$-valued functions of $x_1$ and $x_2$.
+
+(1) is the equation for the carrier surface. To each point in $(X_1 X_2)$ there must correspond $n$ real values of $y_1$. The carrier surface
+
+\textbf{*)} strictly speaking, also the entire space covered with infinitely large coordinate levels, cf.\ §~4. Thereby the continuous transition from lines with finite slope is obtained, as the carrier plane passes into a plane through $Y$, in which line all lines of slope with finite coordinate levels have contracted, while the level line $y_2 = \infty$ has spread over the entire remaining plane.
+
+\origpage{16}
+must therefore consist of $n$ real sheets spreading out along the entire infinite plane $(X_1 X_2)$; the surface evidently cannot have any apparent contour on $(X_1 X_2)$, whereas 2 values of $y_1$ may well coincide along a double curve.
+
+The system of curves (2), where $y_2$ is a parameter, represents the projections of the level lines. Since $y$ is a monogenic function of $x$,
+\[
+\frac{\partial \varphi}{\partial x_1} = \frac{\partial \psi}{\partial x_2}, \qquad
+\frac{\partial \varphi}{\partial x_2} = -\frac{\partial \psi}{\partial x_1},
+\]
+which shows that the two systems of curves (1) and (2) (with $y_1$ and $y_2$ respectively as parameters) are systems of orthogonal trajectories. From this it follows that the level lines on the carrier surface must be its lines of steepest descent.
+
+The equation
+\[
+\frac{\partial^2 \varphi}{\partial x_1^2} + \frac{\partial^2 \varphi}{\partial x_2^2} = 0
+\]
+shows that $\frac{\partial^2 \varphi}{\partial x_1^2} \frac{\partial^2 \varphi}{\partial x_2^2} - \left(\frac{\partial^2 \varphi}{\partial x_1\,\partial x_2}\right)^2$ must be negative; the curvature of the carrier surface is therefore everywhere hyperbolic.
+
+An easy calculation shows that the tangent to an ordinary point of the curve is represented by a plane tangent to the carrier surface of the algebraic curve at the point under consideration; the line of slope through the point of contact is tangent to the line of slope on the carrier surface --- naturally with the same coordinate level.
+
+By means of the rule on p.~14, it thus becomes easy to determine to which side on the carrier surface the coordinate levels of the lines of slope increase. If one climbs up the surface, one has the increasing coordinate levels on one's left hand.
+
+\origpage{17}
+\emph{Singular points.} To the substitution
+\[
+\begin{aligned}
+x &= x' + a, \\
+y &= y' + b,
+\end{aligned}
+\]
+corresponds a parallel displacement of the coordinate frame and the addition of a constant to the coordinate levels. One can therefore imagine the singular point under consideration placed at the origin; the appearance of the carrier surface and the course of the level lines will be unchanged. The neighborhood of the singular point is represented by series of the form
+\[
+y = A x^\alpha + B x^\beta + \dots \qquad \left(\alpha = \frac{p}{q}, \; \beta = \frac{r}{q}, \dots\right),
+\]
+where the exponents increase steadily and all have a common denominator. We fix our attention on \emph{one} complete branch of the curve.
+
+Introducing the modulus of the abscissa, $\rho$, and the argument, $\varphi$, one obtains
+\[
+y_1 + i y_2 = A \rho^\alpha (\cos \alpha\varphi + i \sin \alpha\varphi) + B \rho^\beta (\cos \beta\varphi + i \sin \beta\varphi) + \dots
+\]
+Setting
+\[
+\begin{aligned}
+A &= r (\cos \nu + i \sin \nu), \\
+B &= r_1 (\cos \nu_1 + i \sin \nu_1), \\
+&\quad\dots,
+\end{aligned}
+\]
+one obtains
+\[
+y_1 = r \rho^\alpha \cos (\nu + \alpha\varphi) + r_1 \rho^\beta \cos (\nu_1 + \beta\varphi) + \dots, \tag{1}
+\]
+\[
+y_2 = r \rho^\alpha \sin (\nu + \alpha\varphi) + r_1 \rho^\beta \sin (\nu_1 + \beta\varphi) + \dots \tag{2}
+\]
+
+(1) is the equation for the carrier surface in semi-polar coordinates; (2) determines the projections of the level lines onto $(X_1 X_2)$. If only the first term is included, the latter system
+
+\origpage{18}
+can be obtained from the projections of the level curves by a rotation through $\frac{\pi}{2\alpha}$ about the origin. We shall consider some special cases.
+
+$1^\circ$. $q = 1$, $\alpha = 2$. $y = A x^2 + B x^3 + \dots$
+
+The point is an ordinary point with the $X$-axis as tangent. The appearance of the carrier surface in the neighborhood of the origin is determined by
+\[
+y_1 = r \rho^2 \cos (\nu + 2\varphi).
+\]
+
+This surface is obtained by constructing the branch of the parabola $y_1 = r x_1^2$ that corresponds to positive values of $x_1$, rotating its plane through the angle $\varphi$ about $Y_1$, and at the same time multiplying its ordinates by $\cos (\nu + 2\varphi)$; the entire surface is then obtained by letting $\varphi$ assume all values from 0 to $2\pi$. The curve of intersection with a cylinder about $Y_1$ is an undulating line which passes 4 times through $(X_1 X_2)$.
+
+At a point of an algebraic curve where $\frac{dy}{dx} = 0$ (without there being other peculiarities), the carrier surface acquires a saddle point with a horizontal tangent plane which intersects the surface in two mutually perpendicular branches of curves. The system of level lines is of the same type as the system of hyperbolas with common asymptotes. Just as in the latter a hyperbola passes via its asymptotes into the conjugate hyperbola, so lines of slope with coordinate levels greater than that of the point of contact pass into lines of slope with smaller coordinate levels through a curve with a double point. The mutually perpendicular branches of this curve are tangent to the horizontal
+
+\origpage{19}
+tangent plane and intersect each other at a right angle; one runs above the plane, the other below. The tangents at the double point bisect the angles between the principal tangents of the carrier surface.
+
+$2^\circ$. $q = 2$, $\alpha = \frac{1}{2}$. $y = A x^{1/2} + \dots$
+
+One obtains here
+\[
+\begin{aligned}
+y_1 &= r \rho^{1/2} \cos \left(\nu + \frac{1}{2}\varphi\right) + \dots, \\
+y_2 &= r \rho^{1/2} \sin \left(\nu + \frac{1}{2}\varphi\right) + \dots
+\end{aligned}
+\]
+
+In the analogous investigation of the carrier surface, it is seen that the undulating line on the cylinder goes 2 times around before closing, and during this executes one complete oscillation. The appearance recalls an ordinary branch point on a Riemann surface, there being a double line which at the point under consideration has a \emph{pinch-point}, so that the double line thereafter runs isolated and loses significance for us.
+
+If only the first term is included, the projections of the level curves become a system of confocal parabolas. The projections of the lines of slope are obtained by rotating these through $180^\circ$ about the origin (the focus). To each projection there correspond in the two sheets two branches which intersect each other on the double line. The transition between the two sets of lines of slope takes place through a vertical parabola.
+
+Hereby the appearance of the carrier surface is described at an ordinary point where $\frac{dy}{dx} = \infty$.
+
+$3^\circ$. $q = 1$, $\alpha = 3$. $y = A x^3 + B x^4 + \dots$
+
+\origpage{20}
+An inflection point with horizontal tangent. The undulating line closes after one revolution with 3 oscillations. The carrier surface consists of one sheet, the level line $y_2 = 0$ has a triple point, and the other level lines send 3 tongues in alternately into one set of 3 openings between the branches and into the other set.
+
+In a similar manner behaves $y = A x^p + B x^{p+1} + \dots$
+
+$4^\circ$. $q = 2$, $\alpha = \frac{3}{2}$\ednote{Author erratum (p.\ 98): fraction printed in superscript, corrected to inline fraction.}. $y = A x^{3/2} + \dots$ A cusp.
+\[
+\begin{aligned}
+y_1 &= r \rho^{3/2} \cos \left(\nu + \frac{3}{2}\varphi\right) + \dots, \\
+y_2 &= r \rho^{3/2} \sin \left(\nu + \frac{3}{2}\varphi\right) + \dots
+\end{aligned}
+\]
+
+The undulating line goes 3 times around and executes 3 oscillations. The surface is described (approximately) by using the undulating line, in a manner similar to before, as directrix for the positive branch of the curve $y_1 = r x_1^{3/2}$ rotating about $Y_1$. $(X_1 X_2)$ is covered 2 times, and one obtains 3 branch lines which meet at the point under angles of $120^\circ$. The further course of these double lines as isolated lines does not interest us.
+
+$5^\circ$. In a similar manner an arbitrary complete branch of the curve can be investigated. The form of the surface and the number of branch lines are obtained by examining the undulating line in which the cylinder about $Y_1$ is intersected. It contains $p$ oscillations and goes $q$ times around the cylinder; there are $p(q - 1)$ branch lines radiating from the point, for a segment of the undulating line from a maximum point to a minimum point (or vice versa) is traversed during each of the $q - 1$ following
+
+\origpage{21}
+revolutions 1 time, so that in total there are $p(q - 1)$ intersection points. If the first exponent can be reduced, the conditions become somewhat more complicated; we will not, however, pursue this matter further.
+
+\emph{Conic Sections.} When in the equation of a conic section one splits between real and imaginary in the usual way, one arrives at two equations of the form
+\[
+\begin{aligned}
+y_2^2 + a_1 y_2 + a_2 &= 0, \\
+y_2^2 + b_1 y_2 + b_2 &= 0,
+\end{aligned}
+\]
+where the coefficients are polynomials in $x_1, x_2$ and $y_1$ of the degrees indicated by the indices. Subtraction yields an equation of the form
+\[
+c_1 y_2 + c_2 = 0, \tag{1}
+\]
+and elimination of $y_2$ yields
+\[
+c_2^2 - c_1 a_1 c_2 + c_1^2 a_2 = 0. \tag{2}
+\]
+
+The carrier surface is thus formed by an algebraic surface of the 4th order. (1) gives for each point on this surface 1 corresponding value of $y_2$, except when the point lies on the conic section in which the plane $c_1 = 0$ is intersected by $c_2 = 0$. The carrier surface has 2 \emph{pinch-points} corresponding to the two points in which $\frac{dy}{dx} = \infty$; at infinity its course essentially coincides with that of the asymptotes. From all this it can be inferred that the two sheets of the carrier surface intersect each other in two double lines which, coming from infinity, terminate in 2 pinch-points, and that these lines constitute parts of a hyperbola. This may in particular decompose into 2 intersecting straight lines. The branch lines of the carrier surface can then either merely be parts of one of these, or else consist of a bounded segment of the one line
+
+\origpage{22}
+and the whole of the other line, which must then intersect the bounded segment. A double point on the branch line is obtained for an arbitrary algebraic curve whenever the tangents at two points with the same abscissa are parallel, while the real parts of their ordinates are equal; this holds, for example, for a hyperbola when the tangents parallel to the $X$-axis are imaginary. As examples of what has been stated, the curves $y^2 = \pm x^2 + 1$ may serve, whose carrier surfaces are easily investigated. As an example of a curve with an asymptote $\neq Y$-axis, $xy = a$ may serve. The projection of the level curves and the coordinate lines is formed by two systems of circles tangent to $X_1$ and $X_2$ at the origin.
+
+If the conic section is allowed to decompose into two straight lines, the carrier surface passes over into consisting of two planes, the branch line consists of their line of intersection, and the two \emph{pinch-points} have coincided in the point corresponding to the point of intersection of the straight lines. In the reverse process, two pinch-points thus separate from the point of intersection; on the intermediate segment, the connectivity of the sheets is interchanged.
+
+\emph{The Carrier Surface in General.} We consider a general algebraic curve of the $n$-th order with $n'$ tangents parallel to the $Y$-axis, with $d$ double points, $e$ cusps, and assume that it occupies no special position with respect to the straight line at infinity and the coordinate system. The behavior of its sheets at very great distances is determined by the asymptotes. Thus $n(n - 1)$ branch lines extend to infinity. The $n'$ branch points which correspond to $\frac{dy}{dx} = \infty$ we shall call of the 1st kind; from each of them emanates 1 branch line. To the $e$ cusps correspond branch points which
+
+\origpage{23}
+we shall call of the 2nd kind; from these emanate 3 branch lines. Double points on the branch line, as described above, do not occur in general, whereas triple points do, in which 3 sheets intersect one another.
+
+If we let the curve be infinitely close to decomposing into $n$ straight lines, it is easy to account for the course of the branch lines: from each of the $n(n - 1)$ branch points of the 1st kind there radiates a branch line extending to infinity, and conversely, every branch line coming from infinity terminates in a branch point. There are $n(n - 1)(n - 2)$ triple points on the branch lines. When a double point arises through continuous changes, this occurs by two branch points uniting; if a cusp arises on the curve, a branch point of the 2nd kind will be formed on the carrier surface, as 3 branch points of the 1st kind move together. There might seem to be a possibility of treating the appearance of the carrier surface in general by the “method of continuous changes”; difficulties arise against this, however. In part there is no obstacle to the number of triple points changing, and in part the course of the branch lines can be altered by the formation of double points on them, as described above. The latter, however, cannot produce any essential change in their course, since one easily proves that a branch line radiating from a branch point cannot in general terminate in another, but must extend to infinity. For if a branch line connects two such points,
+
+\origpage{24}
+it is easily seen by the rule on p.~16 concerning the increase of coordinate levels that the branch line must be intersected by another branch line (in order that the connectivity of the sheets may be interchanged); but as this double point resolves, the connection between the two branch points is broken.
+
+\subsection*{§ 4. The Plane.}
+
+We now proceed to investigate how we are to understand the elements at infinity in $T$, in order that the latter may correspond to the plane $(XY)$ defined in projective geometry. (Concerning other points of view, later). In this plane:
+1) all straight lines have 1 point at infinity;
+2) parallel straight lines have a common point at infinity;
+3) all points at infinity together form a straight line.
+
+The collection of points at infinity in our space, $P$, we shall denote by $U$. Every direction in $P$ determines a point in $U$.
+
+The elements in $T$ which correspond to the points at infinity of the plane are obtained partly from the points at infinity of the space by assigning arbitrary coordinate levels to them, and partly from the points of the space at finite distance by assigning infinitely large coordinate levels to them. The relations, however, are rather complicated. All the points at infinity of a carrier plane, equipped with their associated coordinate levels, must represent the same point, namely the point at infinity of the corresponding straight line. From this it follows that the point in $U$ which is determined by the lines of greatest slope in parallel planes represents the same point of $(XY)$, with whatever finite coordinate level it may be endowed. Conversely, a point in $U$ determined by a direction which is neither horizontal nor vertical will correspond to the point at infinity of a straight line,
+
+\origpage{25}
+whose carrier plane has lines of greatest slope in the direction of the given point, with whatever finite coordinate level the point may be endowed.
+
+All the points at infinity in the carrier plane that lie in directions different from the lines of greatest slope receive infinitely large coordinate levels. Conversely, an arbitrary point in $U$ with infinite coordinate levels corresponds to an entire collection of points at infinity in $(XY)$, namely to those belonging to lines whose corresponding carrier planes are parallel to the direction in $P$ in which the point in $U$ lies, without the lines of greatest slope proceeding in this direction.
+
+The points at infinity of the horizontal planes represent the point at infinity of the $X$-axis if the coordinate level is finite, whereas the connection is indeterminate if the coordinate level is infinite. Points in $U$ determined by the vertical direction with arbitrary coordinate levels correspond to the point at infinity of the $Y$-axis, and the same applies to points in $P$ at finite distances with infinitely large coordinate levels. As can be seen, the relations are rather complicated.
+
+For the sake of intuition, we shall imagine the plane $(XY)$ dissected into parts that are easily and conveniently represented individually. Then the 4-dimensional manifolds representing the parts are joined together again, or one simply indicates how the points in the bounding spaces correspond to one another.
+
+\emph{Spherical Spaces.} We shall first investigate the 3-dimensional manifold determined by the equation
+\[
+x_1^2 + x_2^2 + y_1^2 + y_2^2 = r^2,
+\]
+and which we shall call a \emph{spherical space}. $y_2 = 0$ determines a spherical surface which becomes a contour, in that the part of $P$ lying within it becomes the carrier partly for a space situated above, partly for one situated
+
+\origpage{26}
+below $P$. The coordinate surfaces for both spaces become concentric spherical surfaces, which for $y_2 = \pm r$ shrink to the center. (Compare with the representation of a spherical surface by the projections of its level curves on a horizontal diametral plane).
+
+The spherical space divides $T$ into two parts, containing the points whose distances from the origin are respectively less than or greater than $r$. The former points are projected onto $P$ inside the contour, and their coordinate levels lie in value between the two coordinate levels found on the spherical space vertically above and below the point.
+
+The line of intersection between the spherical space and the plane representing $y = ax$ is determined by
+\[
+\begin{aligned}
+y_1 &= a_1 x_1 - a_2 x_2, \\
+y_2 &= a_2 x_1 + a_1 x_2, \\
+x_1^2 + x_2^2 + y_1^2 + y_2^2 &= r^2.
+\end{aligned}
+\]
+
+The equation for the projection of the carrier curve onto $(X_1 X_2)$ is
+\[
+(1 + a_1^2 + a_2^2)(x_1^2 + x_2^2) = r^2.
+\]
+
+The carrier curve is therefore an ellipse whose major axis is the diameter in the contour sphere intercepted on the line of greatest slope of the carrier plane through the origin; the minor axis is obtained by rotating the projection of the major axis onto $(X_1 X_2)$ through an angle of $90^\circ$. The endpoints of the major axis divide the ellipse into two parts whose coordinate levels have opposite signs, so that one part runs above $P$, the other below; at the endpoints of the minor axis, the coordinate levels reach their greatest numerical value.
+
+\origpage{27}
+For $a$ infinitely large, the line of intersection becomes the vertical circle
+\[
+\begin{aligned}
+x_1 &= 0, \\
+x_2 &= 0, \\
+y_1^2 + y_2^2 &= r^2.
+\end{aligned}
+\]
+
+Every straight line through the origin is thus divided by the spherical space into two simply connected surface pieces; one of these contains the point at infinity of the line and is determined by the inequality
+\[
+|x| \ge \frac{r}{\sqrt{1 + |a|^2}}
+\]
+(for $a$ infinitely large, by $|y| \ge r$).
+
+The entire plane $(XY)$ is described by the line $y = ax$ as $a$ assumes all complex values. We first cut out the 4-dimensional manifold $A$ lying within the spherical space, $\Sigma$, with center at the origin and radius $r$. The remaining part of $(XY)$, which completely contains the line at infinity of the plane, is next divided into two parts in the following manner:
+
+Every line $y = ax$ for which $|a| = 1$ has a surface piece situated outside $\Sigma$, and this is determined by $|x| \ge r / \sqrt{2}$. All these surface pieces determine a space, $T$, which dissects the aforementioned part of $(XY)$ into two parts, which we shall designate by $B'$ and $C'$; $B'$ shall be the part containing the point at infinity of the $X$-axis, $C'$ the part containing that of the $Y$-axis. The space $T$ emanates from a surface, $\tau$, in $\Sigma$, which is described by the boundaries of the aforementioned surface pieces. $T$ was determined by
+\[
+|a| = 1, \qquad |x| \ge \frac{r}{\sqrt{2}}
+\]
+
+\origpage{28}
+$\tau$ is determined by
+\[
+|a| = 1, \qquad |x| = \frac{r}{\sqrt{2}},
+\]
+or, since $y = ax$, by
+\[
+|x| = |y| = \frac{r}{\sqrt{2}}.
+\]
+
+The projection onto $P$ is a cylindrical surface whose axis is $Y_1$, whose radius is $r / \sqrt{2}$, and which is bounded by two circles in the contour of $\Sigma$. It can be described by vertical circles carried by the generators of the cylinder.
+
+$\Sigma$ is divided by $\tau$ into two parts, $\Sigma_1$ and $\Sigma_2$, through which $A$ is in connection with $B'$ and $C'$, respectively.
+
+We shall now transform $B'$ and $C'$ so that their points come to lie at a finite distance.
+
+$B'$ is determined by
+\[
+|a| \le 1, \qquad |x| \ge \frac{r}{\sqrt{1 + |a|^2}}; \tag{1}
+\]
+$a$ and $1 : x$ are therefore finite everywhere in $B'$.
+
+In a similar manner $C'$ is determined by
+\[
+|a| \ge 1, \qquad |y| \ge \frac{|a| \cdot r}{\sqrt{1 + |a|^2}},
+\]
+or, setting $a \cdot \beta = 1$, by
+\[
+|\beta| \le 1, \qquad |y| \ge \frac{r}{\sqrt{1 + |\beta|^2}}; \tag{2}
+\]
+in $C'$, $\beta$ and $1 : y$ are everywhere finite.
+
+$B'$ and $C'$ are now transformed respectively by
+\[
+\xi = a, \qquad \eta = \frac{r}{\sqrt{1 + |a|^2}} \frac{1}{x} \tag{3}
+\]
+
+\origpage{29}
+and by
+\[
+\xi' = \beta, \qquad \eta' = \frac{r}{\sqrt{1 + |\beta|^2}} \frac{1}{y} \tag{4}
+\]
+into 2 manifolds $B$ and $C$, defined respectively by
+\[
+|\xi| \le 1, \qquad |\eta| \le 1
+\]
+and by
+\[
+|\xi'| \le 1, \qquad |\eta'| \le 1.
+\]
+
+Interpreting $\xi$ and $\eta$ in a 4-dimensional manifold in the usual manner, and likewise $\xi'$ and $\eta'$, we thereby obtain $B'$ and $C'$ changed into two simple 4-dimensional manifolds situated entirely in the finite. The first of these is described by vertical circular disks of radius 1, with centers in the circular disk $|\xi| \le 1, \eta = 0$, and whose projections onto $P$ are vertical line segments. The projection of the entire manifold onto $P$ is a right circular cylinder. The boundary consists partly of a vertical space $T(B)$ corresponding to $T$, which is projected into the curved surface of the aforementioned cylinder, and which is determined by
+\[
+|\xi| = 1, \qquad |\eta| \le 1;
+\]
+and partly of a space $\Sigma_1(B)$ corresponding to $\Sigma_1$, whose projection doubly covers the part of $P$ contained in the cylinder; this space is determined by
+\[
+|\xi| \le 1, \qquad |\eta| = 1.
+\]
+
+These two boundaries are separated from each other by a surface $\tau(A)$ corresponding to $\tau$, which is described by the vertical circles
+\[
+|\xi| = 1, \qquad |\eta| = 1.
+\]
+
+\origpage{30}
+Concerning $C$, completely analogous remarks apply.
+
+The line at infinity in $(XY)$ is represented by two horizontal circular disks, one in $B$, the other in $C$, determined respectively by $\eta = 0$ and $\eta' = 0$. Their boundaries $|\xi| = 1, \eta = 0$ and $|\xi'| = 1, \eta' = 0$ are the loci of the centers of the vertical circles that generate $T(B)$ and $T(C)$.
+
+We shall now conclude with a brief overview of how the boundaries of the three manifolds $A, B$, and $C$ correspond to one another.
+
+$B$ and $C$ are to be joined in the spaces $T(B)$ and $T(C)$ according to the formulas
+\[
+\begin{aligned}
+\xi \cdot \xi' &= 1, \\
+\eta &= \eta',
+\end{aligned} \tag{5}
+\]
+as is seen from formulas (3) and (4). The combined manifold, $B + C$, is bounded by $\Sigma_1(B)$ and $\Sigma_2(C)$, and this must now, topologically speaking, be of the same kind as the spherical space $\Sigma$. (To this we shall return later). Formulas (3) and (4) show the connection.
+
+\subsection*{§ 5. Algebraic Surfaces.}
+
+Let $F(x, y, z) = 0$ be the equation of an algebraic surface of the $n$-th order; we shall assume that this surface, regarded as a point-locus, is a general surface (without double curves, cuspidal edge, or multiple points), and that it occupies a general position with respect to the coordinate system and the plane at infinity.
+
+Just as an algebraic function of 1 independent vari-
+
+\origpage{31}
+able can be spread $n$-valued over a spherical surface representing the points of a straight line, so the algebraic function $z = f(x, y)$ defined by the above equation must be capable of being spread $n$-valued in the 4-dimensional manifold representing the plane $(XY)$. To each point in the plane corresponds a value of $z$; these will all be distinct when the straight line through the point and $=/\!=$\ednote{Author erratum (p.\ 98): reads $=/\!=$ og, corrected to og $=/\!=$.} to the $Z$-axis intersects the surface in $n$ distinct points. The collection of points in $T$ for which this does not occur we call the \emph{branch surface}. This will be the surface representing the contour of the algebraic surface on the plane $(XY)$.
+
+The contour is an algebraic curve whose order is $n(n - 1)$ and whose class is $n(n - 1)^2$. The number of cusps is equal to the number of principal tangents to the surface parallel to the $Z$-axis; this number is $n(n - 1)(n - 2)$. The number of double points is equal to the number of double tangents to the surface parallel to the $Z$-axis, equal to
+\[
+\frac{1}{2} n(n - 1)(n - 2)(n - 3).
+\]
+
+The branch surface, which we shall designate by $\Phi$, is thus formed by $n(n - 1)$ sheets along $(X_1 X_2)$ with $n(n - 1)^2$ branch points of the first type and $n(n - 1)(n - 2)$ branch points of the second type.
+
+We now consider each of the parts $A, B$, and $C$ separately.
+
+The radius of $\Sigma$, $r$, we shall imagine to be infinitely large, so that $A$ contains all the branch points of the branch surface. The part of $\Phi$ lying in $A$ we denote by $\Phi(A)$; it is bounded by $n(n - 1)$ closed curves which approximately can be cut out of $\Sigma$ by means of the asymptotes of the contour. We may without any essential restriction assume that these curves lie entirely in the part of $\Sigma$ that we have called $\Sigma_1$; in other words: assume that the infinitely
+
+\origpage{32}
+distant parts of the contour lie entirely in $B$. For it will not produce any essential change in the division of the plane set forth in §~4 if, instead of determining $T$ by $|a| = 1$, one determines it by $|a| = k$, where $k$ is an arbitrary positive number.
+
+The parts of $\Phi$ that run in $B$ are represented (approximately) by $n(n - 1)$ vertical circular disks
+\[
+\begin{aligned}
+\xi &= a_1, \qquad &|\eta| &\le 1, \\
+\xi &= a_2, \qquad &|\eta| &\le 1, \\
+&\dots \\
+\xi &= a_{n(n-1)}, \qquad &|\eta| &\le 1,
+\end{aligned}
+\]
+where $a_1, a_2, \dots, a_{n(n-1)}$ are the slopes of the asymptotes of the contour. These surfaces we shall designate by $\varphi_1(B), \varphi_2(B), \dots, \varphi_{n(n-1)}(B)$.
+
+Now, in order to spread the values of $z$ in $A$, we cut through this manifold with a vertical space, $\Psi$, whose projection onto $P$ is $\Phi(A)$, and which is otherwise determined by having each point in the projection endowed with coordinate levels whose values lie between that with which the point must be equipped to belong to $\Phi$ and that with which the point must be equipped to belong to the uppermost part of $\Sigma$; in other words: the space is that part of $A$ which lies vertically above $\Phi(A)$.
+
+Two lines in $A$ which have the same endpoints and do not intersect $\Psi$ can be connected by a surface piece which likewise does not intersect $\Psi$. Namely, we simply connect the projection of the lines in $P$ by a surface piece and endow its points with an arbitrary coordinate level which, if the surface piece intersects the projection of $\Phi$, need only be less than the smallest coordinate level on the line of intersection. The boundaries of this surface piece are easily connected to the given lines by verti-
+
+\origpage{33}
+cal surface pieces, and one has constructed a surface with the required property.
+
+In a similar manner it is seen that two arbitrary points in $A$ can always be connected by lines that do not intersect $\Psi$.
+
+At a point $a$ of $A$ we place one of the $n$ values of $z$ belonging to the point. If we let $a$ move to a point $b$ along two different paths that do not intersect $\Psi$, and if we let the value of $z$ vary continuously in accordance with the equation $F(x, y, z) = 0$, we must end both times with the same value; this follows from the fact that the two paths together form the boundary of a surface piece that does not intersect $\Psi$. The entire manifold $A$, cut through by $\Psi$, can therefore be endowed in a one-to-one manner with values of $z$ starting from the given one. By proceeding in a similar manner from the $n - 1$ other values of $z$, $n$ sheets are obtained spread over $A$. Two points lying directly opposite each other in the boundaries towards $\Psi$ carry the same $n$ values (but not in the same order); in accordance with this, the sheets are joined together.
+
+The 4-dimensional manifold spread in this way in $n$ sheets over $A$ is denoted by $A'$; it is bounded by a space $\Sigma'$. Every surface piece in $A$ becomes the carrier of a piece of a Riemann surface in $A'$, and the branch points lie at the intersection points of the surface piece with $\Phi(A)$.
+
+The spreading of the values of $z$ in $C$ presents no difficulties, since no points of the branch surface are found in it at all; one obtains $n$ manifolds $C_1, C_2, \dots, C_n$ completely analogous to $C$.
+
+The branch surface, as remarked earlier, sends $n(n - 1)$ surface pieces into $B$; the values of $z$ are easily spread here, for example by means of $n(n - 1)$ branch spaces radiating from one of the vertical circular disks of $B$ and terminating
+
+\origpage{34}
+in $\varphi_1(B), \dots, \varphi_{n(n-1)}(B)$. That this entire manifold, $B'$, forms a unified whole follows from the fact that the plane at infinity intersects $F(x, y, z) = 0$ in an algebraic curve $\Phi$ which, according to our assumption, is irreducible. The part $\Phi(B)$ of this curve that runs in $B'$ is carried by the circular disk $|\xi| \le 1, \eta = 0$. The remainder consists of $n$ elementary surfaces carried by $|\xi'| \le 1, \eta' = 0$ in $C$. The whole of $B'$ can be described by vertical circular disks with centers in the Riemann surface piece $\Phi(B')$.
+
+\origpage{35}
+\section*{SECOND SECTION. On Topological Connectivity Numbers.}
+
+\subsection*{§ 6. Topology.}
+
+Descartes' analytical method was indeed a universal method for the solution of geometric problems, but as a rule it gave constructions that in simplicity and elegance fell far short of those of the Greeks. In attempting to penetrate into the principles of the peculiar geometric analysis which the latter employed, Leibniz set forth a series of considerations which he designated as \emph{Analysis situs} or \emph{Geometria situs}. (Leibnizens gesammelte Werke herausg.\ von G.~H.~Pertz, 1858, mathematische Schriften Bd.\ 1, p.\ 178: De Analysi situs). In connection with this, Leibniz has sometimes been named as the father of modern topology: of that branch of mathematics which aims at qualitative properties of things without concerning itself with quantitative, metric ones. Leibniz remarks in one place on the occasion of his theory: “Figura in universum praeter quantitatem continet qualitatem seu formam”, but in reality his theory
+
+\origpage{36}
+has no points of similarity with what is now understood by topology.
+
+In recent times, mathematicians have begun to interest themselves in a large number of topological questions. One needs only to recall Tait's, Simony's, and others' investigations of knots, networks, and the like; of graphs; of the appearance of graphical curves; of the problem of coloring, and thereby distinguishing, the countries on a map by means of 4 different colors; of the stamp-folding problem; and, last not least, of the extensive attempts to form a theory of the connectivity numbers of $n$-dimensional manifolds and to generalize Euler's polyhedron theorem --- 2 attempts that are closely linked to each other. (A good survey of the literature is found in W.~Dyck: Beiträge zur Analysis situs, M.~A. Bd.\ 32).
+
+The linguistic usage is somewhat wavering, but the most reasonable course will be to reserve for the latter kind of investigations the name \emph{Analysis situs}, and on the other hand to use the word \emph{Topology} for all investigations of a qualitative nature, as Listing proposed (Vorstudien zur Topologie).
+
+\subsection*{§ 7. Analysis situs.}
+
+It will surely be very difficult to establish general theorems concerning the connectivity of an $n$-dimensional manifold in an unassailable manner; in any case it will surely be advantageous if one studies concrete cases, more than has hitherto been done, instead of immediately attacking the matter in its abstract generality. Theoretically speaking, logic ought to be sufficient for mathematical development, but practice shows what a powerful
+
+\origpage{37}
+lever that tact is which is developed when one applies a theory to a large number of concrete cases; even if a theory appears ever so logical and seductive, it easily harbors errors which only come to light when it is concurrently controlled by intuition.
+
+Riemann and Betti are the first who attempted to generalize the theory of the connectivity of surfaces which Riemann himself had applied with such great success in the theory of Abelian integrals. After Riemann's death, Betti came forward with a treatise on the said subject (Sugli spazii di un numero qualunque di dimensioni, Ann.\ di matem.\ 2den Række, Bd.\ 4, 1871). He mentions no collaboration with Riemann; but judging from the fragments of a theory which Weber collected together from notes Riemann had written down (Riemann: Gesammelte mathematische Werke, 2.\ Aufl.\ Fragment XXIX), Riemann during his stay in Italy (Ges.\ Werke, p.\ 555) made a substantial contribution to the ideas expressed in Betti's treatise. In this treatise is found for the first time the definition of connectivity numbers of manifolds whose dimension number exceeds 2. Later, various authors have sought to improve and complete the theory: Dyck in “Beiträge zur Analysis situs” (M.~A. Bd.\ 32 and Bd.\ 37), Poincaré in the memoir “Analysis Situs”, and Picard in his works on functions of two variables (see p.\ 5).
+
+Even before I knew of these latter works, I had decided to attempt another path than the Riemann--Betti one, namely to try to generalize Jul.~Petersen's puncturing method, which I recalled from lectures. (Listing's “Diagram” and “Trema” I only came to know much later, and the same applies to those of Betti's investigations related to this,
+
+\origpage{38}
+and which until recently I had known only through the brief report in the “Fortschritte der Mathematik”). Among other things, it seemed to me unfortunate that the $n$ connectivity numbers were not sufficient, topologically speaking, to characterize a manifold when $n > 2$. When I became acquainted with the memoirs mentioned later, especially Poincaré's, I began to waver in my choice, comparing the elegant methods I encountered there with the somewhat heavy and cumbersome theory with which I myself was working; but when I believed I discovered that the path I had chosen shed light on relations that did not stand out clearly in the other way, and since I furthermore gained the means in hand to find sufficient criteria for $n$-dimensional manifolds to be equivalent, I decided to continue despite the great difficulties I encountered. That two manifolds are equivalent means that they correspond to each other point for point, such that any two points in the one approach coincidence whenever the two corresponding points in the other manifold do so. (To the relation between Poincaré's concept of homéomorphisme, Analysis Situs § 2, and the concept of equivalence defined here, we shall return later).
+
+The question that places itself in the foreground is what cuts one must place in a closed manifold (\emph{variété fermée}; Poincaré l.~c.\ § 1) in order to make it simply connected. For the solution of this, we then employ the following procedure: The manifold is \emph{punctured}, that is: the elementary manifold forming the neighborhood of a point is removed. Through the puncturing, a boundary arises, and this is expanded by continuous deformation, so that more and more of the given manifold is removed. Thus one continues until parts of
+
+\origpage{39}
+the boundary meet other parts thereof; at such places one then halts the deformation when the distance between the parts that meet has become infinitely small. If one continues in this manner, one ends with a \emph{diagram}, formed by a system of manifolds of lower dimension than the given one --- or rather: formed by the immediate neighborhood of this system, thus by a manifold that is infinitely small in the $n$-th dimension. The system of manifolds of lower dimension which is the limit of the diagram we call its \emph{core}.
+
+This diagram has a twofold significance. \emph{Firstly}, it represents a manifold equivalent to the given one after the latter has been punctured. If one succeeds in setting up normal forms to which the diagrams can be reduced, the necessary and sufficient condition for two closed manifolds to be equivalent becomes that the normal forms of the diagrams are identical. For the elementary manifolds removed by puncturing are indeed always equivalent. \emph{Secondly}, the diagram core indicates the cuts one must make to render the given manifold \emph{simply connected}; for if the aforementioned process of expansion is performed in reverse order, the manifold that remains when one makes the cuts determined by the diagram will contract back to the elementary manifold that was removed by the puncturing.
+
+We shall later return to a comparison between the results found by this path and the Riemann--Betti theory of connectivity numbers.
+
+\origpage{40}
+\subsection*{§ 8. The Diagram for Riemann Surfaces.}
+
+Although the theory of the connectivity numbers of Riemann surfaces is well known and, moreover, is treated in a manner very similar to that set forth here by Jul.~Petersen (Funktionsteori, Chap.\ IV), we will nevertheless, with a view to what follows, briefly sketch a development of this theory, especially to show that it can be built exclusively on the basis of the diagram, thus without using the extended Eulerian theorem (the theorem on the invariant number $t - f$ of surfaces).
+
+We shall imagine the Riemann surface carried by a spherical surface; from a point $a$ on the latter we draw arcs of great circles to the $n$ points that carry the branch points of the surface; these we shall assume to have orders $k_1 - 1, k_2 - 1, \dots, k_f - 1$. At some location we puncture all $n$ sheets, and by expanding the punctures their boundaries are brought to the branch points and in along the drawn arcs of great circles to $a$. Of the surface there then remains, after retracting some blind-ending strips: 1)~$f$ elementary surfaces around the branch points, 2)~$n$ elementary surfaces over $a$, and 3)~$k_1 + k_2 + \dots + k_f$ strips connecting the first-mentioned elementary surfaces with the latter. We cut across $n - 1$ strips whose boundaries belong to different boundary curves, and the stumps are retracted. The surface now represents a diagram corresponding to 1~puncture. This contains in total $f + n$ elementary surfaces, connected by $\Sigma(k) - n + 1$ strips; we use $f + n - 1$ of these strips to connect the $f + n$ elementary surfaces, so that the whole forms 1~elementary surface. From its boundary emanate
+
+\origpage{41}
+\[
+\begin{aligned}
+&\sum_1^f (k) - n + 1 - f - n + 1 \\
+&= \sum_1^f (k - 1) - 2n + 2
+\end{aligned}
+\]
+handles, which are easily paired into double handles. If $m$ denotes the multiplicity of an arbitrary complete branch of the algebraic curve corresponding to the surface, we have $\Sigma(k - 1) = \Sigma(m - 1) + n'$ (the summation extended over all branches of the curve where $m > 1$). The number of handles thus becomes the number well known from geometry:
+\[
+\Sigma(m - 1) + n' - 2n + 2 = 2p.
+\]
+We thus arrive at a normal form with $p$ double handles, and the necessary and sufficient condition for two Riemann surfaces to be topologically equivalent is therefore that they have the same $p$.
+
+If we wish to have a normal form for the closed Riemann surface, we can at each double handle let the two mouths of one handle slide out onto the middle of the other, and then, by making it continuously wider, let its mouths absorb the boundaries of the other handle. By subsequently closing the surface with an elementary manifold, one obtains Klein's normal form: a spherical surface with $p$ tubular handles.
+
+What has been set forth here can serve as a kind of program for the investigations to be undertaken. We shall mention yet another method of treating the matter, which is well suited to being extended to algebraic surfaces. We assume that the algebraic curve $\varphi_n$ is without singular points. (How matters stand when such are present can
+
+\origpage{42}
+be found by a passage to the limit from the curve considered here). If the curve is varied continuously without introducing singular points, and with the degree remaining unchanged, one obtains equivalent Riemann surfaces. We shall let it change into a curve $\psi_n$ which is infinitely close to decomposing into $n$ arbitrarily situated straight lines. That this can always be done is seen, e.g., by considering the linear pencil $\varphi_n + \lambda \psi_n = 0$; the curves only acquire singular points for a definite, finite number of values of $\lambda$, and one will therefore always be able to let $\lambda$ go from $0$ to $\infty$ without passing through these. The straight lines are represented by $n$ concentric spherical surfaces of the same radius; as one passes over to $\psi_n$ by resolving the $\frac{1}{2} n(n - 1)$ double points, two branch points arise from each double point; such paired branch points lie infinitely close to one another and are connected by branch lines. By two circles around two such paired branch points, each in its own sheet, these are cut out of the surface; the excised part is transformed into a tube; this is repeated for the other pairs, and the $\frac{1}{2} n(n - 1)$ tubes are again added in the proper manner to the holes on the $n$ spherical surfaces, after these have first been moved apart from one another; $n - 1$ tubes are used to transform the spherical surfaces into 1~spherical surface, and from this there accordingly emanate $\frac{1}{2} n(n - 1) - n - 1$\ednote{Misprint in original for $-(n-1)$ or $-n+1$.} $= \frac{1}{2}(n - 1)(n - 2) = p$ tubular handles, that is: we have once again arrived at Klein's normal form.
+
+Were a closed surface unilateral, its diagram would, alongside the double handles, contain a certain number of single handles, each with 1~torsion.
+
+\origpage{43}
+\subsection*{§ 9. The Diagram for 3-Dimensional Manifolds.}
+
+Let a closed 3-dimensional manifold be defined by
+\[
+x_i = \theta_i(y_1, y_2, y_3) \qquad (i = 1, 2, \dots, n)
+\]
+and by a certain number of inequalities of the form
+\[
+\psi(y_1, y_2, y_3) > 0
+\]
+and by the analytic continuation of this space (cf.\ Poincaré, Analysis Situs § 3), or, to bring the expression more into agreement with the essence of topology: let it be defined as arising by joining together elementary spaces whose boundaries are divided by a network of lines into areas that are to be joined pairwise in a definite manner; this must take place in such a way that in the closed manifold the neighbourhood of every point originating from one of the lines in the network becomes an elementary space. If the defined manifold is to be connected, these spaces must initially be capable of being joined into 1~elementary space, whose surface then satisfies the same conditions. No difficulty presents itself in following with intuition the expansion of a puncture.
+
+The diagram core will be formed by surface pieces meeting along curve segments; these meet in points, the nodes of the diagram core. We may imagine the surfaces to be simply connected, since otherwise one can place curve segments having their endpoints in the curve segments of the diagram and dissecting the surface pieces into simply connected parts; the curve segments thus introduced can then be counted among the others.
+
+We now proceed to consider the diagram itself.
+
+\origpage{44}
+Every node is surrounded by an elementary manifold, to which we may, e.g., give spherical form; the curve segments connecting these are surrounded by thread-like spaces which are attached to the spherical surfaces just mentioned at small elementary surfaces. Let us call these spaces \emph{threads}; they can be described by an elementary surface moving from one of the spherical surfaces to another of them (this can, moreover, occur in two essentially different ways; see below, § 11). The space that surrounds one of the diagram's elementary surface pieces is a plate-shaped space bounded by two elementary surfaces that form the sides of the plate, and by a surface strip of the connectivity of an annulus which forms the boundary of the plate; this space, which we shall call a \emph{plate}, is attached by its boundary along a surface strip on the surface of the body formed by the node spheres and the threads. Let the diagram have in all $a$ node spheres, $b$ threads, and $c$ plates. By $a - 1$ threads the $a$ spheres are connected into 1~elementary space, which is given spherical form, and from this central sphere there emanate $b - a + 1 = p$ threads; on the surface, whose connectivity number is $2p + 1$, there run $c$ closed curves along which the boundaries of the plates are to be attached.
+
+\emph{The necessary and sufficient condition for such a system of threads with attachment curves for plates to be able to represent the diagram of a closed space is that the attachment curves be formed by $p$ circular cuts that do not disconnect the surface of the thread system.}
+
+For the necessary and sufficient condition is that the surface, after the addition of the plates, is equivalent to the surface $\varkappa$ of the elementary space removed by the puncture, that is: is of the same connectivity as a spherical surface.
+
+\origpage{45}
+If the diagram truly corresponds to a closed manifold, the two sides of an arbitrary plate will correspond to two simply connected areas on $\varkappa$. If the plate is removed from the diagram, the connectivity of its surface is changed, the two sides of the plate being replaced by the strip along which the plate was attached, and which is equivalent to an annulus. In order to let $\varkappa$ undergo the same change in connectivity, one cuts out the two corresponding areas and connects them with a tube. Continuing in this manner until all plates have been removed, $\varkappa$ is replaced by a spherical surface provided with just as many tubular handles as there were plates; this surface must be of the same connectivity as the surface of the thread system. (By this it is by no means said that the space which it bounds must be of the same connectivity as the thread system itself). We can conclude from this that the number of plates must be $p$. The connection between the two surfaces is such that lines which on the surface of the thread system run through one of the $p$ attachment strips correspond to lines which on the other surface cross one of the $p$ handles (meridian curves). The surface of the thread system is therefore not disconnected when one removes the attachment strips.
+
+That the stated condition is sufficient is seen by noting that those surfaces are equivalent which remain when one lays in two equivalent closed surfaces arbitrary systems of the maximum number of non-disconnecting circular cuts. The surface remaining when one removes the $p$ attachment strips from the surface of the thread system is therefore equivalent to a spherical surface with $2p$ holes. The surface of the body obtained by at-
+
+\origpage{46}
+taching the plates is therefore equivalent to the spherical surface that can be obtained by closing the $2p$ holes with elementary surfaces.
+
+\subsection*{§ 10. Oriented Manifolds.}
+
+* \emph{Indicatrix.} Before we continue the investigation of the diagram, it becomes necessary to interpose some remarks. Three points $a$, $b$, and $c$ on a closed curve determine a positive direction on it; in a surface, a positive sense of circulation can be established by prescribing a positive direction on a small, closed, non-self-intersecting curve; by this, in turn, a positive and a negative side of the surface can be determined in that part of space which immediately surrounds the small closed curve. Extending this determination to the whole surface, it turns out that one must distinguish between unilateral and bilateral surfaces. One sees that here is a field of investigation that must be extended to manifolds of higher dimensions; senses of circulation on curves and the positive and negative sides of surfaces are topological fundamental concepts.
+
+The neighbourhood of a point on a curve is a small line segment whose endpoints we shall designate by 1 and 2, so that $12$ indicates the positive direction of the line segment; we shall call $12$ an \emph{indicatrix of the 1st order} (cf.\ Dyck, M.~A. Vol.\ 32, p.\ 473), and we say that a curve provided with an indicatrix is \emph{oriented}. The neighbourhood of a point in a surface is a small closed curve; if it is oriented, the surface piece bounded thereby is called an \emph{indicatrix of the 2nd order}. In a space defined in the manner described, the neighbourhood of a point is a surface of the type of the spherical surface; if this is provided with an indicatrix of the 2nd order, one obtains
+
+\origpage{47}
+the space's indicatrix of the 3rd order. In quite a similar manner we can form an indicatrix of the 4th order in $T$ or in a 4-dimensional manifold obtained by joining together elementary manifolds in $T$. The definition can well be extended to analytically defined manifolds of any dimension whatsoever, but becomes difficult to apply in this form when the manifold does not present itself to intuition. For us, therefore, the investigations only have significance when the number of dimensions is less than 5. An indicatrix of the $n$th order contains a sequence of successive indicatrices of orders $n - 1, n - 2, \dots, 1$; this last is the line segment $12$.
+
+The indicatrix can be displaced in the manifold; one can let it return to the original position, so that the successive indicatrices up to the one of 2nd order coincide with one another; there are then two possibilities: either $12$ can be brought into its old position $12$, or it can be brought into the position $21$. If the former is the case for all possible displacements in the manifold, it is said to be \emph{bilateral}, otherwise \emph{unilateral}. A bilateral manifold can be oriented in two different ways; the two manifolds are called \emph{opposite}.
+
+I had already worked with these definitions when I saw Poincaré's treatment (Analysis Situs, § 4 and § 8); I nevertheless continued to use my own, as Poincaré's are essentially designed for topological investigations in analytic form. I have observed that the definition found in Picard and Simart's book (p.\ 23) agrees in substance with mine, but I have nevertheless preferred here to follow my original form, which gives intuition something more tangible to rely upon.
+
+The boundary of a bilateral and oriented $n$-dimen-
+
+\origpage{48}
+sional manifold $M$ we can imagine oriented by the indicatrix of the manifold itself. For the latter can be displaced so that that part of its boundary which is formed by the indicatrix of $(n - 1)$\ednote{Author erratum (p.\ 98): reads $(n - 1)^{\text{e}}$, corrected to $(n - 1)^{\text{te}}$.} order comes to lie in the boundary of $M$, and this (with all those of lower order which it contains) can then be used to orient the boundary. Conversely, one can in a similar manner orient the manifold itself by means of the indicatrix of the boundary. In the following we constantly require that the boundary be oriented in accordance with the indicatrix of the manifold.
+
+(The usual definition of the positive and negative side of a surface on the basis of its positive sense of circulation presupposes that one has specified the indicatrix of space or a surrogate for it---right hand, a clock, or the like).
+
+\emph{Oriented Corners.} Let an $m$-dimensional manifold be defined by the totality of points
+\[
+(y) = (y_1, y_2, \dots, y_m),
+\]
+where the real $y$-values are not subject to any condition in their variation. The point $(0, 0, \dots, 0)$ we call $o$. Through this point and each of the $m$ points $(a), (b), \dots, (k)$, the half-lines $A, B, \dots, K$ are drawn (that is: that part of the straight lines which proceeds from $o$ in the positive direction). We assume that the points have such a general position that the determinant $\Delta = |a, b, \dots, k|$ is different from 0. If $p$ denotes an integer between 1 and $m$, one can in that case be certain that one can never through $p$ of the lines pass a flat manifold of $(p - 1)$th dimension. To each half-line corresponds a flat manifold of $(m - 1)$th order which passes through the
+
+\origpage{49}
+$m - 1$ remaining half-lines. These $m$ flat manifolds in conjunction with the half-lines form what we shall call an \emph{$m$-dimensional corner} with $o$ as vertex and the half-lines as edges; we call it \emph{oriented} when the order in which the edges are mentioned is established. $m - 1$ of the half-lines determine in turn, in the flat manifold in which they are situated, an $(m - 1)$-dimensional corner, and so forth; in general: $p$ arbitrary edges lie in a $p$-dimensional manifold and determine in it a $p$-dimensional corner, subordinate to the given one and oriented in accordance with it.
+
+We can easily establish a connection between the order in which the edges are mentioned and the determination of the indicatrix in the manifold $(y)$. As the boundary for the indicatrix we choose, e.g., the spherical manifold $\Sigma(y^2) = r^2$. This is intersected by the edge $A$ at a point $a'$; the neighbourhood of $a'$ is taken as the indicatrix of $(m - 1)$th order, and is conceived as bounded by the intersection manifold between $\Sigma(y^2) = r^2$ and the flat manifold of $(m - 1)$th dimension through $B, \dots, K$. This manifold is treated in the same manner: the neighbourhood of the point $b'$ at which $B$ intersects the spherical manifold is taken as the indicatrix of $(m - 2)$nd order and bounded by means of the flat manifold through $C, \dots, K$. Continuing in this manner following the order of the edges established by the orientation of the corner, one ends with a closed curve (intersection between $\Sigma(y^2) = r^2$ and the plane through the last two edges $I$ and $K$). $I$'s point of intersection we designate by $i'$, and $K$'s we designate by $1$; $K$'s negative extension intersects at a point which we call $2$. As the indicatrix of $1^{\text{st}}$ order we take the line segment $1\,i'\,2$, and with this the indicatrix of $n^{\text{th}}$ order is determined. The con-
+
+\origpage{50}
+nection between this and the corner can briefly be stated by saying that the first edge of the corner meets the boundary of the indicatrix at a point of the indicatrix of $(m - 1)$th order, its second edge at a point of the indicatrix of $(m - 2)$nd order, etc., its $(m - 1)$th edge at a point of the indicatrix of first order, and finally its $m$th edge at the point 1, and its negative extension at the point 2.
+
+Under continuous displacements of the corner we constantly maintain the requirement that $p$ edges must never come to lie in the same flat manifold of $(p - 1)$th dimension. If the vertex of the corner is displaced to the point $(t)$, and the edges of the corner are determined by the points $(a'), (b'), \dots, (k')$, the determinant
+\[
+|a' - t, \; b' - t, \; \dots, \; k' - t|
+\]
+will have the same sign as $\Delta$ in the initial position.
+
+The corner can be displaced so that the first $m - 1$ edges coincide with the corresponding edges in a given $m$-dimensional corner; according as the $m$th edge can be brought to coincide with the $m$th or not, the corners are said to be of the \emph{same} or \emph{opposite kind}.
+
+We shall imagine the indicatrix in $(y)$ determined in accordance with the coordinate corner, that is: the corner whose vertex is at $o$, and whose edges pass through the points
+\[
+\begin{gathered}
+(1, \; 0, \; \dots, \; 0) \\
+(0, \; 1, \; \dots, \; 0) \\
+\dots\dots\dots\dots\dots \\
+(0, \; 0, \; \dots, \; 1)
+\end{gathered}
+\]
+
+\origpage{51}
+Here $\Delta = 1$; for all corners that are oriented in accordance with the indicatrix of $(y)$, $\Delta'$ will thus be positive, and conversely.
+
+\emph{Comparison with Poincaré's Theory.} (Analysis situs § 8). An elementary manifold determined by (Anal.\ sit.\ § 3)
+\[
+y_i = \theta_i(v_1, v_2, \dots, v_m) \qquad (i = 1, 2, \dots, m)
+\]
+in conjunction with inequalities of the form
+\[
+\psi(y_1, y_2, \dots, y_m) > 0
+\]
+can be regarded as a mapping of an elementary manifold in $(y)$ determined by the inequalities $\psi(y) > 0$. We orient it by an indicatrix that is the image of the one in $(y)$.
+
+We shall now indicate how one can see that our presentation is in agreement with Poincaré's. The problem is the following:
+
+There are given two elementary manifolds of $m^{\text{th}}$ order, $v_1$ determined by
+\[
+\begin{gathered}
+x_i = \theta_i(y_1, y_2, \dots, y_m), \tag{1} \\
+|y_k| < \beta_k;
+\end{gathered}
+\]
+and $v_2$ determined by
+\[
+\begin{gathered}
+x_i = {\theta'}_i(z_1, z_2, \dots, z_m), \tag{2} \\
+|z_k| < \gamma_k.
+\end{gathered}
+\]
+
+It is assumed that $v_1$ and $v_2$ have an elementary manifold $v'$ in common. \emph{Poincaré} then defines the order of the parameters $z$ by means of the order of the parameters $y$---or, what is essentially the same: the order of the $y$'s by that of the $z$'s---by requiring that the functional determinant
+
+\origpage{52}
+\[
+\frac{\partial(y_1, y_2, \dots, y_m)}{\partial(z_1, z_2, \dots, z_m)}
+\]
+be positive for points in $v'$.
+
+We define the order of the $z$'s by requiring that the indicatrices in $v'$ corresponding to the coordinate corners in $(y)$ and $(z)$ shall agree.
+
+We shall show that these two definitions give the same result. Let
+\[
+(y^0) = (y_1^0, y_2^0, \dots, y_m^0)
+\]
+and
+\[
+(z^0) = (z_1^0, z_2^0, \dots, z_m^0)
+\]
+be two points of $(y)$ and $(z)$ that correspond to the same point in $v'$. We consider the corner in $(z)$ having its vertex at $(z^0)$, and whose edges pass through the points
+\[
+\begin{gathered}
+(z_1^0 + dr, \; z_2^0 \hphantom{{} + dr}, \; \dots, \; z_m^0 \hphantom{{} + dr}), \\
+(z_1^0 \hphantom{{} + dr}, \; z_2^0 + dr, \; \dots, \; z_m^0 \hphantom{{} + dr}), \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots, \\
+(z_1^0 \hphantom{{} + dr}, \; z_2^0 \hphantom{{} + dr}, \; \dots, \; z_m^0 + dr),
+\end{gathered}
+\]
+where $dr$ is a positive, infinitely small quantity. Since the determinant $\Delta'$ here becomes $(dr)^m$, this corner is of the same kind as the coordinate corner in $(z)$; the indicatrix it determines is thus in agreement with the orientation $(z)$. According to \emph{our} definition, the indicatrix in $(y)$ can be determined by mapping that part of $(z)$ which corresponds to $v'$ into $(y)$ by means of equations (1) and (2) and simultaneously mapping the indicatrix of $(z)$. It now remains to show that a corner corresponding to the indicatrix thus constructed is of the same kind as the coordinate corner when the latter is oriented according to \emph{Poincaré's} definition. That corner is, however, defined by having its vertex at $(y^0)$ and its edges passing through the points
+
+\origpage{53}
+\[
+\begin{gathered}
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_1}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_1}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_1}\right)_0 dr\right), \\
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_2}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_2}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_2}\right)_0 dr\right), \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots, \\
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_m}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_m}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_m}\right)_0 dr\right),
+\end{gathered}
+\]
+where the marks on the partial differential quotients indicate that one is to take their values at the point $(z^0)$. For this corner $\Delta'$ has the value
+\[
+\frac{\partial(y_1, y_2, \dots, y_m)}{\partial(z_1, z_2, \dots, z_m)} \cdot (dr)^m,
+\]
+which, when one follows Poincaré's definition, is positive, q.~e.~d.
+
+An interchange of two of the corner's edges and a reversal of the positive direction on an edge causes the corner to change kind.
+
+\subsection*{§ 11. Continued Investigation of the Diagram for 3-Dimensional Manifolds.}
+
+We return to the diagram. The problem that ought to be solved was to reduce it to a normal form; I have not succeeded in finding such a form, but I shall nevertheless present some remarks concerning the solution of the problem.
+
+What, in the first place, is the condition for the closed 3-dimensional manifold defined by the diagram to be bilateral? Any closed curve in it
+
+\origpage{54}
+can, first of all, be made to run entirely within the diagram, and its course in the latter can in turn be restricted to the thread system. The necessary and sufficient condition is therefore that, by traversing a line through an arbitrary one of the threads, one returns to the central sphere with unchanged indicatrix. The two mouths of the thread are elementary surfaces on the surface of the central sphere. On the boundary of one of them we establish a positive direction, e.g., clockwise (viewed from outside). If one displaces the closed curve along the surface of the thread until it covers the boundary of the other mouth, there is established on the latter a positive direction which runs either clockwise or counterclockwise. (The central sphere is constantly assumed situated in our space. If the first of the two cases occurs, the joinings of the thread ends with the central sphere cannot actually be carried out in our space, but certainly in $T$). In the first case the manifold is evidently unilateral; if the second occurs for all threads, then the manifold is bilateral.
+
+The thread system for a bilateral manifold can always be conceived as running in our space; by cutting a thread, suitably twisting it, and subsequently correctly joining the thread ends, one can achieve that the attachment strips run along the surface of the thread without twisting around it.
+
+The diagram can be transformed into equivalent forms by continuous deformation; we mention in particular:
+
+1)~The attachment strips can be displaced arbitrarily on the surface of the thread system, provided only that the various strips never come into contact with one another.
+
+2)~Any of the thread mouths can be displaced along the surface formed by the central sphere and the
+
+\origpage{55}
+$p - 1$ threads, provided only that it does not pass any strip during its motion; the strips running to the thread mouth under consideration must follow it and are otherwise displaced in accordance with 1).
+
+3)~The attachment strips can, in addition to the displacement mentioned in 1), undergo one across one side of a plate. The result of the displacement is formed most easily by letting the strip form a loop toward a point of the strip corresponding to the plate, then breaking the first strip at a point near the second, and inserting a circuit along this second strip before closing again.
+
+By means of these displacements a great number of simplifications can be performed in the diagram. If, e.g., a strip returns from a thread mouth to the same mouth without in the meantime having passed other threads, the loop that the strip has thereby formed can be removed. If a strip is restricted to having only one branch running on one of the threads across which it runs, one can by the displacements 2) and 3) achieve that the strip piece comes to run once across the thread and then back into itself without coming to run across other threads, and furthermore achieve that all other strip pieces are removed from the thread. Once this has happened, the thread can evidently be retracted into the central sphere by means of the plate belonging to the strip, and is from now on without interest. That the stated condition for a strip piece to be removable from the diagram is also a necessary condition is probably correct, but I have not succeeded in giving any completely unassailable proof thereof.
+
+One might be tempted to believe that one would succeed, by continuous deformation, in having the $p$ strips
+
+\origpage{56}
+separated, so that each ran on its own of the $p$ threads. This can, however, be proved to be impossible, and therefore the problem of reducing the diagram to a normal form is probably very difficult. We shall restrict ourselves to considering such cases where the separation can be carried out, but beforehand we shall briefly mention the various classes of non-disconnecting circular cuts that exist on a torus surface (situated in our space), reckoning in one class all such curves that can be transformed into one another by continuous displacement.
+
+The first class comprises the \emph{meridian curves}, which run around the torus surface; they can form the boundary of simply connected surface pieces that are situated entirely in the space inside the surface; no other of the curves considered have this property. Another class is formed by the \emph{curves of latitude}, which are defined by their being able to form the boundary of simply connected surface pieces lying in the space outside the torus surface.
+
+If we draw a meridian curve, $\lambda$, and a curve of latitude, $\beta$ (provided with positive senses of circulation), one can construct new classes of circular cuts by, e.g., going $n$ times around along $\beta$ in the positive direction, and then closing the curve by a line along $\lambda$ either in the positive or in the negative direction; let us designate such a curve by $[n\beta \pm \lambda]$. In a similar manner, $[\beta \pm n\lambda]$ represents a class of curves represented by one that goes once around along $\beta$, but which, before being closed, makes $n$ circuits along $\lambda$. If the torus is cut open by a cut through a meridian curve, one of the end pieces then twisted $n$ times in a suitable direction, and the body rejoined in the proper manner, the curve can be reduced to a curve of latitude; (the original curve of latitude naturally ceases to
+
+\origpage{57}
+be such). The complete classification is quite difficult, and there is no reason here at this place to pursue the matter further.
+
+A thread in the diagram can be transformed into a torus connected with the central sphere by a cylinder. On the surface of the latter runs the associated attachment strip; it follows one of the curves just mentioned. For according to our assumption, each strip could indeed be brought to run alone, each on its own thread. If the strip is a curve of latitude, as previously remarked the torus and the plate can be retracted into the central sphere and then play no role. The case where the strips everywhere run as meridian curves is especially simple, and the circumstances are entirely analogous to those we encountered in the investigation of surfaces. If we imagine the diagram lying in our space, but this space in turn situated in $T$, one easily forms a closed space having the given one as its diagram. If a plate is to be attached to a strip, we place it in $T$ above our space, $P$, and so that its projection onto $P$ falls in one of the elementary surface pieces in the diagram bounded by the strip. The boundary of the surface is bent down into our space and attached to the diagram along the strip. We now imagine every torus transformed once again into a thread. Thereupon we let the plate become thicker, so that the attachment strip takes up the entire surface of the thread. The manifold thus formed is closed by an elementary manifold whose projection is the central sphere. One has arrived at a form that corresponds entirely to Klein's normal form for surfaces. The apparent contour on $P$ of the closed 3-dimensional manifold is formed precisely by such a surface, and the manifold consists moreover of two parts whose projections both form the body in $P$ bounded by the contour, the one part situated, e.g., above, the other below $P$.
+
+\origpage{58}
+One can say that it arises by attaching a certain number of handles to a spherical space. Such a handle is formed by removing two elementary manifolds from the spherical space; the boundary of one of these is moved away from the spherical space and then brought so that it covers the boundary of the other, naturally in such a way that the manifold becomes bilateral. The neighbourhood of a closed curve in $T$ is bounded by a space of the kind described here.
+
+Every closed surface in $T$ is surrounded by a 4-dimensional manifold bounded by a 3-dimensional one, which we shall call the \emph{sheath} of the surface. (In a similar manner the sheath is determined for any closed manifold whatsoever or for a point situated in a given manifold). Let us now determine the diagram of the sheath for a torus surface in $T$. This consists of three threads; each of the three strips runs on two of the threads and with two branches in opposite directions to each other. One visualizes the appearance most easily by letting the central sphere lie with its center at the origin of a rectangular coordinate system in space, and letting the threads follow the three axes, these being conceived as continued through infinity. The lines of intersection with the three coordinate planes then indicate the course of the strips. Here one has an example of a diagram in which the strips cannot be brought to run each on its own thread. This diagram illustrates the example mentioned in Picard and Simart's book, Chap.\ II, No.\ 18. Similar diagrams are obtained, moreover, for the sheaths of closed surfaces in $T$. With these examples the variety of diagrams is nevertheless not exhausted.
+
+We previously considered a diagram formed by a torus, on whose surface the attachment line ran as a meridian
+
+\origpage{59}
+curve; it can, however, run in infinitely many ways. We consider merely an example to which we shall return later, namely where the attachment line is a curve $[2\beta + \lambda]$; if the torus is pressed flat so that the strip becomes its boundary, Möbius's well-known unilateral surface piece arises.
+
+As already remarked earlier, the diagram's core indicates which cuts (line and surface pieces) one must make in order to render the punctured manifold simply connected. To determine these cuts, we can moreover also take a somewhat different path; for the diagram is indeed equivalent to the punctured manifold; but in order to make it simply connected one can first pierce each of the $p$ plates with a channel; the threads we can sever by cutting surfaces having meridian curves as boundaries, and in order that these shall become cuts in the diagram, one must for each point of intersection between a meridian curve and a strip piece let the cutting surface send a tongue into the plate and up to the channel that pierces the plate. The boundary of the cutting surface thus runs at such a point of intersection from the meridian curve onto one side of the plate, up to the channel, in along its surface, and back to the meridian curve along the other side of the plate. This system of cuts can naturally conversely be conceived as a diagram for the original manifold, if one imagines precisely those parts of it remaining which were previously removed. The channels then become threads emanating from the manifold that is removed in the original puncture; the surface cuts become plates. There is a kind of dual relation between the two diagrams: the threads in the one correspond to the plates in the other and conversely; as
+
+\origpage{60}
+many strips as run across a thread, just as many strip pieces bound the corresponding plate; as many plates as send strips across a particular thread, just as many threads have strips from a particular plate, etc. The latter method for the formation of the diagram was used by Betti.
+
+If the diagram is closed by connecting its surface with the surface of a sphere, one obtains, as stated, a manifold which is equivalent to the given one. The parts can, moreover, be separated in a somewhat different manner, in that the plates, instead of being added to the thread system, can be added to the surface of the sphere by their two sides. One thereby obtains a body with $p$ handles which entirely resembles the thread system. The surfaces are to be joined together; it is sufficient to know the system of non-disconnecting circular cuts on the one that corresponds to the curves $\beta$ on the thread surface of the other, and the system that corresponds to the curves $\lambda$. For example, two tori whose boundaries are joined so that meridian curves coincide with curves of latitude and conversely will correspond to a diagram with one thread whose strip is a curve of latitude. The manifold itself is equivalent to a spherical space. This also agrees with the fact that the space inside a torus surface can be transformed into the space outside the torus surface, in such a way that the curves of latitude on the surface become meridian curves and conversely---all under the assumption that the infinitely distant parts of space are regarded as equivalent to the neighbourhood of a point, so that everything lying outside a certain spherical surface can by inversion be brought inside it. As another example, we take two tori whose boundaries are joined so that curves of latitude coincide with curves of latitude, and longitudinal curves with longitudinal curves; we then have the manifold,
+
+\origpage{61}
+which is equivalent to the sheath of a closed curve in $T$. Finally, we choose two tori, where curves of latitude and meridian curves on the one correspond to the curves $[2\beta + \lambda]$ and $\beta$ on the other; this corresponds to the previously mentioned diagram with the attachment strip $[2\beta + \lambda]$.
+
+It remains merely to call attention to a circumstance that evidently causes the theory to become more difficult when the number of dimensions exceeds 2. If on the diagram for a closed, bilateral surface one cuts across a handle, the rejoining afterwards can essentially take place in only 1~way if the surface is to remain bilateral, and by the rejoining one therefore securely returns to a diagram that is equivalent to the first. If, on the other hand, one has for example a 3-dimensional manifold, such as the one forming the boundary of a neighborhood of a torus surface in $T$, then this manifold can be cut across by a torus surface (corresponding to a meridian curve on the surface whose sheath one is investigating). The rejoining can, however, take place in infinitely many essentially different ways: $\beta$ and $\lambda$ in the one boundary can be joined with any two whatsoever of the previously mentioned ring cuts, provided only that these intersect each other in only one point.
+
+\subsection*{§ 12. Comparison with Earlier Presentations.}
+
+As we compare the results we have arrived at here with earlier presentations, we shall substantially restrict ourselves to the following works (for which we introduce some designations for brevity):
+
+1) \emph{Riemann}: Fragment aus der Analysis Situs (Fragment XXIX. Gesammelte mathematische Werke, 2nd ed.
+
+\origpage{62}
+by H.~Weber; 1892) --- designated by \emph{R.~Fr.}
+
+2) \emph{Betti}: Sugli spazi di un numero qualunque di dimensioni (Annali di matematica; 2nd series, Vol.\ 4; 1871) --- designated by \emph{B.~Spz.}
+
+3) \emph{Poincaré}: Analysis Situs (Journal de l'école polytechnique; 2nd series, Cah.\ 1; 1895) --- designated by \emph{Poinc.~A.~S.}
+
+4) \emph{Picard}: Mémoire sur la théorie des fonctions algébriques de deux variables (Liouville Journal; 4th series, 5th Vol.; 1889) --- designated as \emph{Pic.~Mém.}
+
+5) \emph{Picard et Simart}: Théorie des fonctions algébriques de deux variables indépendantes, 1st Vol.; 1897, especially the 2nd Chapter --- designated as \emph{P.\ \& S.}
+
+\emph{W.~Dyck's} works in M.~A. Vol.\ 32 and Vol.\ 37 (Beiträge zur Analysis situs, 1888 and 1890), proceed in a different direction from the investigations we have conducted here, so that there is no occasion for comparison.
+
+A criticism of Riemann's Fragment would be unfair, since it contains only preliminary drafts that were not intended for publication. For the rest, in the face of errors in Riemann and Betti, one can on many points simply restrict oneself to drawing a parallel between the investigations in question and the correspondingly modified ones in Picard and Poincaré; on such points an in-depth criticism would therefore be superfluous and, moreover, difficult, since the definitions of the concepts in the former are often very vague.
+
+This applies already to the definition of the manifolds that are to be investigated. In Riemann no definition is mentioned; Betti realized that one must place oneself on an analytic foundation in order to be able to define an $n$-dimensional manifold (B.~Spz.; Section 1);
+
+\origpage{63}
+thought is capable of generalizing the concept of function to any number whatsoever of independent variables, but the power of intuition is not capable of generalizing the conception of 3-dimensional space. The definition is kept, however, somewhat too general for the subsequent investigations to become exact. In order to see what specifying additions one must give to the definition, one can compare it with the beautiful presentation that Poincaré gives (Poinc.\ A.~S. § 1, § 2, § 3, § 4 and § 8) --- a presentation whose method ought to be regarded as a model for that by which investigations of this kind should be treated, once they have been worked through to clarity and their utility for science has been demonstrated.
+
+Both in Riemann and in Betti, the definition of connectivity numbers is supported by a theorem analogous to that on which Riemann himself supports his definition of the surface's connectivity numbers. (R.~Fr.: Es seien $a_1, a_2, \dots, a_n$ and B.~Spz.\ Section 3: Per giustificare\dots) Remarkably enough, Poincaré sets forth the definition of connectivity numbers without this justification (A.~S. § 5 and § 6), but in Picard and Simart the matter is found treated in the 2nd Chapter, Nos.\ 12 and 13. In No.\ 12 Riemann's lemma is found in a specified form (in Poincaré this matter is found essentially in the form of his assertion that homologies can be added just like equations). If the presentation in No.\ 13 deviates from the Riemann--Betti treatment, the reason must be sought in the fact that in the latter there is a gap in the proof. In order really to be able in the described manner (B.~Spz.\ Section 3: Se $t$ spazii chiusi\dots) successively to replace the $A$'s with the $B$'s, one must namely be sure that the $A$'s and $B$'s can be paired together two by two, so that each pair constitutes a part of or the whole
+
+\origpage{64}
+boundary of its own manifold of $(m + 1)$th dimension. That this can be done can be proved by Poincaré's homologies; there is, however, no reason to develop this further, since the basic idea of such a proof essentially coincides with the presentation in P.\ \& S.; 2nd Chap.\ No.\ 13.
+
+Moreover, it must be noted that the definition is only justified when it has furthermore been proved that a system of manifolds such as that mentioned in the definition really exists. Here it seems as if the modern presentations (P.\ \& S.; 2nd Chap.\ No.\ 11 and Poinc.\ A.~S. § 5 and § 6) are not sufficiently clear. The definition of the connectivity number depends both on how one defines the manifolds $V_1, V_2, \dots$ mentioned in it, and on what meaning one attaches to the word ``bound'' (\emph{former frontière}). $V_1, V_2, \dots$ must among other things be bilateral and be what we call oriented, and it is required that these orientations, in our phrasing, must be in agreement with the orientation of the manifold they bound (P.\ \& S.; 2nd Chap.\ No.\ 8). If these demands are adhered to literally, one will encounter difficulties. On a torus surface, a meridian curve and a latitude curve (both provided with positive directions) will not, as is usually assumed, form boundaries with all closed curves on the surface that cannot bound alone --- not even if one is permitted to include $\beta$ $k_1$ times and $\lambda$ $k_2$ times. They cannot, for example, bound any surface piece together with $[\beta + \lambda]$, if one adheres to the demand of the dependence between the indicatrix of the surface piece and that of the boundary. On the whole, there is something unclear in what one is to understand, for example, by curves on a surface bounding when these
+
+\origpage{65}
+intersect each other. Does a small, closed, planar curve in the form of a figure eight bound any part of the plane? The answer yes could at any rate only be obtained by artificial additions. If we draw a circle around the curve, two different positive directions can be established on it. Which of these bounds together with the given curve? We encounter completely the same difficulties with Poincaré's homologies (Poinc.\ A.~S. § 5). They can presumably be removed by the following definition:
+
+A system of $m$-dimensional manifolds $V_1, V_2, \dots$ is said to be \emph{homologous} to another system of $m$-dimensional manifolds $W_1, W_2, \dots$, all situated in a manifold $S_n$:
+\[
+V_1 + V_2 + \dots \sim W_1 + W_2 + \dots,
+\]
+if by continuous deformation in $S_n$ of the first system one can reduce it either directly to the latter system (with the correct indicatrices) or to one that can be derived from the second by the following two kinds of modifications: Either some closed $(m - 1)$-dimensional cuts are made in the $m$-dimensional manifolds; the boundaries arising thereby are removed again by connecting them (bilaterally) with $m$-dimensional manifolds that can be divided into 2~groups, of which the parts of the one constantly run infinitely close to those of the other and are oppositely oriented. Or else the neighborhood of some manifolds whose dimensions are less than $m - 1$ is removed, and the boundaries arising thereby are removed again by connecting them with manifolds that are infinitely close to coinciding with manifolds of lower dimension than $m$. If $V_1, V_2, \dots$ are homologous to the sheath of a point, they are said to be homologous to 0:
+\[
+V_1 + V_2 + \dots \sim 0.
+\]
+(The
+
+\origpage{66}
+added manifolds will have no significance for the corresponding integrals).
+
+To explain further, the following examples may serve: A spherical surface enclosing two spherical surfaces (all oriented so that the indicatrices of the bounded spheres are of the same kind) can be reduced to these connected by an infinitely thin tube. The latter can conversely be reduced to the former after cutting it open along a great circle and connecting the boundaries with two circular disks. A similar situation holds for a spherical surface enclosing a suitably oriented torus surface. The curves $[\beta, \lambda]$ on a torus surface can be reduced to the curves $[\beta]$ and $[\lambda]$ after both of these have been cut across, and the endpoints connected with two line segments running alongside each other.
+
+In B.~Spz.\ 4th and 5th Sections are found investigations that are not found again in later authors; the content, as we shall see, is not reliable either. Probably, however, the frequently asserted theorem $p_m = p_{n-m}$ (see below) was inspired by these investigations (cf.\ B.~Spz.\ Section 5: \emph{Ora ciascuno degli spazii A sarà intersecato da una e da una soltanto delle sezioni trasverse di $n - m$ dimensioni che fanno parte di quelle che rendono $R$ semplicemente connesso}). In Section 4 is found the definition of transverse cut (\emph{sezione trasversa}) in manifolds with boundary; it is required that the boundary of the transverse cut shall fall entirely within that of the manifold. Thereupon a presentation is given of how a manifold (if it is closed, it must first be punctured) by continuous deformation can lose one dimension --- thus a presentation of what we have called the diagram, although in Betti this is only regarded as an equivalent for the given
+
+\origpage{67}
+(possibly punctured) manifold; on the other hand, it is not observed that the diagram provides cuts that make the manifold simply connected. The theorem is asserted that of the connectivity numbers of a closed manifold, none is changed by 1~puncturing, and only that of highest order by $s + 1$ puncturings; it is namely increased by $s$.
+
+In Section 5 the following theorem is stated:
+
+\emph{In order to make a finite $n$-dimensional space $R$ simply connected by means of transverse cuts, it is necessary and sufficient to make $p_{n-1}$ transverse cuts of 1~dimension, $p_{n-2}$ of 2, $p_{n-3}$ of 3, \dots, and $p_1$ of $n - 1$ dimensions, where $p_1 + 1, p_2 + 1, \dots, p_{n-1} + 1$ are respectively the connectivity numbers of 1st, 2nd, \dots, $(n - 1)$th order.}
+
+It must here be maintained that a transverse cut is defined in such a way that its boundary must lie entirely in the original boundary of the manifold, and thus must not fall on the new boundary created by the transverse cuts that have already been made; this is obviously not an indifferent formalism; for if this requirement is not maintained, it would be meaningless to speak of the condition being necessary, since otherwise one could make as many cuts as one pleases that make it simply connected. If, for example, in a sphere one makes a canal from one point of the boundary to another, the space can again be made simply connected by a cut whose boundary runs partly along the boundary of the canal, and this operation one can repeat as often as one pleases.
+
+Let us for a moment restrict ourselves to 3-dimensional manifolds, and let us for example consider that which we have designated as a spherical space with $p$ handles. Here $p_1 = p_2 = p$. The diagram consists of threads, each
+
+\origpage{68}
+traversing its handle and emanating from a central sphere in the spherical space; the plates are attached to the thread at meridian cuts, and each cuts across its handle. The plates are easily deformed so that the strips slide onto the surface of the central sphere, and one has realized the manifold simply connected by $p_2$ transverse cuts of 1~dimension and $p_1$ transverse cuts of 2~dimensions. If we next take the punctured manifold whose diagram is a thread on which the attachment strip for the plate runs along the curve $[2\beta + \lambda]$, this can obviously be made simply connected by a certain line cut that goes from the puncture back to itself, and by a surface cut whose boundary runs in the surface of the line cut and the puncture along a line $[2\beta + \lambda]$; but this surface cut cannot be made into any transverse cut, since the attachment strip cannot be brought down onto the surface of the puncture. As will be mentioned later, in this case $p_1 = 1$ and $p_2 = 0$ (with Betti's conditions; with Picard's latest: $p_1 = 2$, $p_2 = 1$). Thus the theorem does not fit at all here.
+
+It is not difficult to find errors in the proof. In the first place, it is not established that one can reduce the whole of the given manifold to the system $A$ (see Betti's designations) connected with manifolds of $n - 2$ dimensions; this can be done in the first of our examples, but not in the second. Nor is it self-evident that the connectivity numbers of orders $n - 2, n - 3, \dots$ are not changed when one in the indicated manner derives a line cut in the original manifold from a puncture in one of the manifolds $A$; to be sure, they cannot become smaller, but the line cut could possibly make them larger, for example by preventing a line that previously bounded from doing so now. Finally, it has been
+
+\origpage{69}
+overlooked that the subsequent cuts of higher dimensions would possibly have a part of their boundaries running on previously made cuts, so that they do not become transverse cuts (in Betti's sense).
+
+We turn now to the often mentioned theorem $p_m = p_{n-m}$. It has frequently been stated and used, but the first published attempt to prove it is probably to be found in Poincaré (A.~S. pp.\ 33--46). Picard and Simart have rightly felt that ``peut-être plusieurs points auraient-ils besoin d'être complétés'' and content themselves with considering $m = 1$. It appears to us, however, that they have not even succeeded in proving the theorem in this special case, and remarkably enough the erroneous assumption in the proof seems to be the same as in Poincaré.
+
+Poincaré first defines a number $N(V, V')$ for each intersection point between two oriented manifolds, $V$ of $p$ dimensions and $V'$ of $h - p$ dimensions, which both reside in a manifold $U$ of $h$ dimensions, and like the following are assumed closed and bilateral. Assuming for the present that $V$ is of 1~dimension and $V_1, V_2, \dots, V_k$ are of $h - 1$ dimensions, it is proved:
+
+1.~If $\Sigma V_i \sim 0$, then $\Sigma N(V, V_i) = 0$.
+
+2.~If the homology
+\[
+\Sigma V_i \sim 0
+\]
+does \emph{not} hold, then a manifold $V$ can always be found for which
+\[
+\Sigma N(V, V_i) \lessgtr 0.
+\]
+Thereupon an attempt is made to prove the same when $V$ is of $p$ dimensions and $V_1, V_2, \dots, V_k$ of $h - p$
+
+\origpage{70}
+(A.~S., p.\ 43). To begin with, the following assertion is mentioned as a premise: \emph{Quant à $V_1, V_2, \dots, V_k$ nous les définirons de la manière suivante. Nous pourrons toujours trouver $p - 1$ équations}
+\[
+\Phi_1 = \Phi_2 = \dots = \Phi_{p-1} = 0
+\]
+\emph{auxquelles satisfont tous les points de $V_1, V_2, \dots, V_k$; pour définir $V_i$ nous y adjoindrons une $p^{\text{ième}}$ égalité}
+\[
+F_i = 0
+\]
+Each of the manifolds $V_1, V_2, \dots, V_k$ should thus be able to be the complete intersection of $p$ manifolds of $h - 1$ dimensions in $U$. For $h = n, p = n - 1$ this assertion coincides with Picard and Simart's (2nd Chap.\ No.\ 24): \emph{Nous admettrons, que dans une variété $E_n$, on puisse toujours, en vertu de la continuité et de la connexion linéaire, considérer une variété $V_1$ comme l'intersection commune unique de $n - 1$ variétés $V_{n-1}$ contenues dans $E_n$.}
+
+The beginning of the proof can nevertheless be carried through without using the assertion in its entirety.
+
+1. If $\Sigma V_i \sim 0$, this means that in $U$ a manifold $U'$ of $h - p + 1$ dimensions can be placed on which $V_1, V_2, \dots, V_k$ bound. $V$ intersects $U'$ in a closed curve $V'$ (or in a system of such). One has
+\[
+\begin{aligned}
+N(V', V_i) &= N(V, V_i) \\
+\text{and} \quad \Sigma N(V', V_i) &= 0 \\
+\text{hence} \quad \Sigma N(V, V_i) &= 0
+\end{aligned}
+\]
+
+\origpage{71}
+2. When conversely the homology
+\[
+\Sigma V_i \sim 0
+\]
+does \emph{not} hold, then in the first place it is not proved that any $(h - p + 1)$-dimensional manifold $U'$ can be placed through $V_1, V_2, \dots, V_k$ (determined by $\Phi_1 = \Phi_2 = \dots = \Phi_{p-1} = 0$); if we nevertheless assume this to be correct (which it presumably is), we know to be sure that in $U'$ a closed curve $V'$ can be placed such that
+\[
+\Sigma N(V', V_i) \lessgtr 0,
+\]
+but it is \emph{not certain that this curve can be excised by any manifold $V$}. Here use should thus be made of the assertion mentioned. If, for example, $p = 2$, $U'$ would be of $(h - 1)$th dimension and could perhaps divide $U$ into two parts $U_1$ and $U_2$, whose boundaries are thus $U'$. In this runs $V'$, and $V$ would then be divided into 2~parts, each running in its own part of $U$ and having $V'$ as boundary. But there is of course in advance nothing to prevent $V'$ from being precisely one of those curves in the boundary that do not bound any surface piece in $U_1$ or in $U_2$.
+
+The proof of the theorem $P_p = P_{p-1}$ (p.\ 44) is then not even correct for $h = 1$. The inequality
+\[
+\mu \le \lambda
+\]
+is to be sure proved in this case (cf.\ the analogous theorem $p_1 \ge p_{n-1}$ in P.\ \& S.\ 2nd Chap.\ No.\ 26); but on the other hand the theorem
+\[
+\mu \ge \lambda
+\]
+is thus not proved.
+
+\origpage{72}
+Turning now to the proof in Picard and Simart (2nd Chap.\ Nos.\ 24--27), we meet as stated the same remarkable assertion. The proof in No.\ 26 that $p_1 \geqq p_{n-1}$ is, as touched upon, undoubtedly correct, but the attempt in No.\ 27 to prove the converse theorem relies on the assertion mentioned. But not only is the theorem not proved: \emph{It must be incorrect}. We have already repeatedly considered a closed, bilateral, 3-dimensional manifold for which $p_1 = 2$ and $p_2 = 1$; we will, however, wait for a more convenient time to investigate this (cf.\ p.\ 87).
+
+\subsection*{§ 13. Riemann Spaces.}
+
+In the following we will conceive the infinitely distant in our space as a point. A spherical space, $\Sigma$, can then be transformed into our space, $P$, by the following transformation: the part of $\Sigma$ that lies \emph{below} $P$ is bent \emph{up} into it and transformed by inversion with respect to the contour sphere; thereupon the remaining part of $\Sigma$, which after all lay \emph{above} our space, is bent \emph{down} into it.
+
+We will investigate the 3-dimensional manifolds that arise when one extends in $\Sigma$ the function values of an $n$-valued, continuous function of its points. Such a manifold forms an analogy to Riemann surfaces, and we will therefore call it a Riemann space. The $n$ values of the function are assumed to be distinct except on certain closed curves (\emph{the branch line}), on which two of the values are assumed to coincide. If $\Sigma$ is transformed into $P$, these pass into closed curves, all of which can be assumed to run in the finite. For the rest,
+
+\origpage{73}
+we assume that $P_n$ forms a connected whole --- is indecomposable.
+
+We will now construct on $P$ an $n$-sheeted space in which the function values can be distributed single-valuedly. We place a conical surface with vertex at an arbitrary point $o$ and with the branch line, $F$, as directrix; of the generators of the cone, only that part is used which lies between $o$ and the branch line. The conical surface acquires double generators if the branch line seen from $o$ has apparent double points; they extend from $o$ to the nearest branch of the curve. We imagine that $P$ carries $n$ spaces cut open along the mentioned conical surface (\emph{the branch cut}), and these are numbered and designated $1^{\text{st}}\text{ sheet}, \ 2^{\text{nd}}\text{ sheet}, \ \dots, \ n^{\text{th}}\text{ sheet}$. In the $n$ points that are carried by an arbitrary point in $P$, the $n$ values $z_1, z_2, \dots, z_n$ of the function are placed; proceeding from these values, the $n$ sheets can now be covered single-valuedly with function values, so that these succeed one another continuously in each sheet. The latter are now joined together again in accordance with the $z$-values found directly opposite each other on the cut surfaces. The closed manifold formed in this way we call $P_n$${}^{*)}$.
+
+If a circuit around one of the branch curves leaves every $z$-value to assume its original value, this curve can be left entirely out of consideration (cf.\ double points on algebraic curves). All other branch curves we will assume simple, that is: two, and only two, of the $z$-values undergo a substitution upon a circuit.
+
+\textbf{*)} The potential function of an electric current presents considerable resemblance to the mentioned functions, only there $n$ is infinitely large. The branch cut is formed by the magnetic shell, which can replace the electric current.
+
+\origpage{74}
+Sometimes cut surfaces are joined that belong to the same sheet; this occurs for all cut surfaces in the neighborhood of a point of the branch curve except for the two sets that are to interchange two $z$-values upon a circuit around the branch curve in the neighborhood of the point considered. Let it be at a particular point the $r^{\text{th}}$ and $s^{\text{th}}$ sheets whose cuts are alternately connected; if one goes from this point onto the branch cut, it must still be the same two sheets that the cut surfaces alternately connect, right until one meets one of the mentioned double generators. One can then delineate an area on the conical surface across which the $r^{\text{th}}$ and $s^{\text{th}}$ sheets --- and only these --- are alternately connected. It is bounded by \emph{an arc $ab$ of the branch curve and by the two double generators $oa$ and $ob$}, and into this area there extend perhaps radially one or more double generators that do not reach all the way out to $ab$. Of this kind of area there are just as many as the conical surface has double generators ($h$).
+
+At the points $a$ and $b$, the branch curve is arrested by surfaces that come each from its own branch, $A$ and $B$, of the branch curve; we say that the line segment $ab$ is arrested by the branches $A$ and $B$. Each stretch $ab$ is marked with the numbers of the two sheets, $r$ and $s$, that are alternately connected at that part of the conical surface which is bounded by the stretch. $r$ and $s$ are called the \emph{characteristics} of the stretch.
+
+The conditions at a double line we represent schematically by drawing on the paper two mutually perpendicular lines, which are to represent two branches of $F$; one is conceived as running over the other, and $o$ is conceived as lying behind the apparent intersection point of the lines. The branch cut extends down under the paper, in such a way that the branch cut of the lower line pierces that of the upper; the
+
+\origpage{75}
+latter thus arrests both branches of the former. Let the characteristics for the upper line be $r$ and $s$.
+
+There are then 3 possible cases:
+
+$1^{\text{st}}$ Type: One branch of the lower line has the same characteristics, $r$ and $s$.
+
+$2^{\text{nd}}$ Type: It has $r$ as one characteristic, but the other characteristic, $t$, is different from $s$.
+
+$3^{\text{rd}}$ Type: Both characteristics, $t$ and $u$, are different from $r$ and $s$.
+
+We will determine the characteristics for the other branch of the lower line. A circuit around this branch can be modified so that one first pierces the branch cut of the upper line, then that of the first branch, and finally again that of the upper line in the opposite direction. If one begins in the $r^{\text{th}}$ sheet, one will, if the point is of the $1^{\text{st}}$ Type, successively pass into the $s^{\text{th}}$ sheet, into the $r^{\text{th}}$ sheet, and end in the $s^{\text{th}}$. In this way the characteristics are determined, as the tables below show.
+
+\begin{center}
+$1^{\text{st}}$ Type
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+rs\text{ ---} & \text{--- } rs \\
+& rs
+\end{array}
+\qquad\quad
+\begin{array}{c}
+\begin{array}{cccc}
+\text{begun in} & \text{traversed} & \text{ended in} & \begin{array}{c}\text{Charac-}\\\text{teristics}\end{array}
+\end{array} \\
+\left.
+\begin{array}{ccc}
+r & s\,r & s \\
+s & r\,s & r \\
+t & t\,t & t
+\end{array}
+\right\} r\,s
+\end{array}
+\]
+
+\begin{center}
+$2^{\text{nd}}$ Type:
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+rt\text{ ---} & \text{--- } st \\
+& rs
+\end{array}
+\qquad\quad
+\left.
+\begin{array}{ccc}
+r & s\,s & r \\
+s & r\,t & t \\
+t & t\,r & s \\
+u & u\,u & u
+\end{array}
+\right\} s\,t
+\]
+
+\origpage{76}
+\begin{center}
+$3^{\text{rd}}$ Type:
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+tu\text{ ---} & \text{--- } tu \\
+& rs
+\end{array}
+\qquad\quad
+\begin{array}{c}
+\begin{array}{cccc}
+\text{begun in} & \text{traversed} & \text{ended in} & \begin{array}{c}\text{Charac-}\\\text{teristics}\end{array}
+\end{array} \\
+\left.
+\begin{array}{ccc}
+r & s\,s & r \\
+s & r\,r & s \\
+t & t\,u & t \\
+u & u\,t & u
+\end{array}
+\right\} t\,u
+\end{array}
+\]
+
+We place a small spherical surface $\varkappa$ about $o$, and this intersects the branch cut in a curve $G$, which thus becomes the central projection of $F$ onto $\varkappa$, and which divides $\varkappa$ into $\omega$ regions; it has $h$ double points${}^{*)}$. The surface system in $P_n$ carried by $\varkappa$ must consist of $n$ simple, mutually separate spherical surfaces. On $n$ spherical surfaces with the same radius as $\varkappa$ we draw lines congruent with $G$; in a set of $n$ analogous regions on these spheres the numbers $1, 2, \dots, n$ are written, and the spheres are named in accordance with this
+\[
+\varkappa_1, \ \varkappa_2, \ \dots, \ \varkappa_n,
+\]
+the lines $G_1, G_2, \dots, G_n$. The characteristics on $F$ are carried down to the corresponding arcs of $G$. We now imagine the $n$ spheres in $P_n$ that lay over $o$ removed, and each transferred to one of the spheres $\varkappa_1, \varkappa_2, \dots, \varkappa_n$. The numbering can be performed in such a way that $\varkappa_i$ is the sphere in which the region in $P_n$ marked with $i$ lies in the $i$th sheet. By means of the characteristics it is now easy to enter numbers in all the regions of the spheres that indicate to which sheet the number in question belongs. Those stretches of $G_1, G_2, \dots, G_n$ that separate regions with different designations are \emph{drawn more heavily};
+
+\textbf{*)} Since the number of line segments $ab$ is $2\,h$ when the branch line contains only 1 curve, Euler's theorem gives in this case $\omega = h + 2$.
+
+\origpage{77}
+the numbers that stand in the regions which they separate are then the characteristics. If the $n$ spheres are placed so that they cover each other, the heavily drawn lines will together form the line $G$ taken twice.
+
+Let us on every spherical surface investigate the boundary of the 4 regions that meet at the point corresponding to a particular one of the double points of $G$. From the schemes on pp.\ 75 and 76 it is derived that if the point is of the $1^{\text{st}}$ Type, one will on 2 of the spheres alternately be in the $r^{\text{th}}$ and $s^{\text{th}}$ sheets, while on the remaining ones one stays in the same sheet.
+\[
+\begin{array}{c|c}
+& rs \\
+rs\text{ ---} & \text{--- } rs \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+r & s \\
+\hline\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline\hline
+r & s
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline
+t & t
+\end{array}
+\]
+
+If the point is of the $2^{\text{nd}}$ Type, one stays in the same sheet in $n-3$ spheres; the others show the appearance
+\[
+\begin{array}{c|c}
+& rs \\
+rt\text{ ---} & \text{--- } st \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c|c}
+r & s \\
+\hline\hline
+t & t
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline\hline
+r & s
+\end{array}
+\]
+
+If the point is finally of the $3^{\text{rd}}$ Type, one will stay in the same sheet in $n-4$ spheres, while the others show the appearance
+\[
+\begin{array}{c|c}
+& rs \\
+tu\text{ ---} & \text{--- } tu \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c||c}
+r & s \\
+\hline
+r & s
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline\hline
+u & u
+\end{array}
+\qquad
+\begin{array}{c|c}
+u & u \\
+\hline\hline
+t & t
+\end{array}
+\]
+
+\origpage{78}
+There are thus in all cases among the series of double points that correspond to a particular double point on $\varkappa$, \emph{two and only two for which the branch through the double point corresponding to the lower branch on $F$ is heavily drawn}. Through the remaining $n - 2$ double points there runs either no heavily drawn branch or a single one, corresponding to the upper part of the branch line.
+
+After these preparations we will attempt to form the diagram for $P_n$. To begin with, we puncture \emph{all} $n$ sheets, for example at their infinitely distant point. $P_n$ is now bounded by $n$ spherical surfaces with large radii; we imagine these varying in such a way that they are all carried by the same surface in $P$; this can be conceived as modified into a surface constructed in the following manner: in the regions of $\varkappa$, closed curves are placed that follow closely along the branches of $G$ and at the double points pass over from one branch to the other. $\varkappa$ is thereby divided into $\omega$ simply connected surface pieces and a strip piece enclosing $G$. Thereupon we enclose the branch cut in a surface that emanates from the closed curves and closes around it like a cap, bending around at the boundary of the branch cut. The mentioned surface is then constructed by closing the cap with the surface pieces on $\varkappa$. The course of the surface at a double line can, for example, be visualized by setting up on a table a quarto-sized book with its spine upward, and by setting up on both sides of it two identical octavo books, also with their spines upward and perpendicular to the first-mentioned, such that the one appears to be the continuation of the other; the tabletop then corresponds to a part of $\varkappa$.
+
+After the $n$ puncturings, $P_n$ can be reduced to a manifold carried by that part of $P$ which the mentioned surface bounds. From this manifold we have
+
+\origpage{79}
+already removed $n$ spheres, which we have brought into the positions $\varkappa_1, \varkappa_2, \dots, \varkappa_n$; it is now a matter of bringing the remaining part into a simple form and attaching it to these spheres.
+
+Around every double line we determine a prism-like body in $P$; in the mentioned example, it is the body that is cut out of the quarto book when one imagines the octavo books continued through it. If the curve $G$ has altogether $h$ double points, the space, $\Lambda$, bounded by the cap surface and $\varkappa$'s strip system will contain $h$ such prisms. The remainder of $\Lambda$ consists of $h$ plate-shaped bodies, which partly are to be attached to the strip system, partly attached up and down along prisms, and finally bounded by two prisms, while the remaining part of the boundary runs freely along a part of $F$.
+
+The manifold in $P_n$ carried by one of the prisms consists of $n - 2$ congruent, mutually separate prisms and 1 doubly covered prism with a branch line through it; this latter is also easily converted into a simply covered prism. These bodies must now be attached to the spheres; in order conveniently to find the points to which they are to be attached, we will on each side of $G$, beside the original characteristics, add two new ones indicating the curves on the two spheres on which the arc is drawn in full; these we call the \emph{derived characteristics}. To determine these on a particular branch, one goes from a point on the branch along one path or another into the region by means of which the sphere was numbered. One begins the journey carrying the characteristics of the branch, and each time one passes a branch where a characteristic agrees with one of the two numbers one currently carries, this is changed to the other
+
+\origpage{80}
+characteristic on the branch. The derived characteristics are then to be the two numbers with which one enters the fundamental region. In accordance with the theorem emphasized on p.\ 78, the derived characteristics must be identical on the two branches that at a double point correspond to the lower branch of $F$. If we now take the $(n - 2) + 1$ prisms that correspond to a particular double line, these are to be joined to the spheres $\varkappa_1, \varkappa_2, \dots, \varkappa_n$ at the $n$ double points that correspond to the double line. The prism that was originally covered is with each of its ends to be joined to a sphere, namely connecting the two spheres whose numbers are indicated by the derived characteristics corresponding to the lower branch of $F$. The remaining $n - 2$ prisms are placed with their one endpoint each at its own double point of the remaining spheres.
+
+We now lack only those manifolds in $P_n$ that are carried by the $h$ plates. Each such carries partly $n - 2$ congruent, mutually separate plates, partly 1 doubly covered with a branch, $ab$, of $F$ as branch line. The latter can also be converted into a simply covered plate. The first group of plates is to be attached to the spheres along the strip pieces that are not heavily drawn, and otherwise to the prisms; since they all \emph{acquire a free boundary}, they can be retracted completely and play no further role. The plates of the second group, $h$ in number, are to be attached with their boundaries: 1) along the heavily drawn branches, 2) up and down along the prisms that have a free endpoint, 3) along the prisms that connect the spheres; they acquire no free boundaries. The prisms mentioned under 2) can be absorbed into the plates.
+
+In order to form the diagram (provisionally corresponding to $n$ puncturings), one can thus proceed in the following manner: First one notes the $h$ stretches on $G$ which
+
+\origpage{81}
+are each provided with definite characteristics; they run from a double point where the corresponding branch of $F$ is undermost, to the double point where the same occurs next time. On the $n$ spheres $\varkappa_1, \varkappa_2, \dots, \varkappa_n$, the heavily drawn lines are then drawn by means of the derived characteristics. (Compare the schematic drawings on p.\ 77 and the theorem emphasized on p.\ 78). These two characteristics indicate the numbers of the two spheres on which the double points are found to which the endpoints of the associated thread are to be attached; these two points we call the \emph{junction points} belonging to the double point. The schematic drawings show the course of the solid line at such junction points, according as the double point is of the $1^{\text{st}}$, $2^{\text{nd}}$, or $3^{\text{rd}}$ type. To each line segment $ab$ there corresponds a plate, and it is easy to determine the line on the spheres and threads along which the boundary of the plate is to be attached. On $ab$ we fix a positive direction from $a$ to $b$, and on all the heavily drawn segments that together correspond to $ab$ taken twice, positive directions are thereby also fixed. We now start from one of the junction points corresponding to $a$, and traverse the branch corresponding to $ab$ that emanates from it; this we follow until we---constantly proceeding in the positive direction---meet a junction point corresponding to $b$, while, each time we meet a junction point beforehand, running along the thread over to the other sphere. At the junction point corresponding to $b$, we run along the thread over to the other junction point and now traverse, in a similar manner as before, the remaining pieces in the negative direction until we arrive at the other junction point corresponding to $a$; by running along the thread, the curve is closed.
+
+To obtain the diagram corresponding to a single punc-
+
+\origpage{82}
+ture, one need only pierce and then remove $n - 1$ suitably chosen plates; the diagram, which now consists of $n$ spheres connected by $h$ threads and $h - n + 1$ plates, is reduced in the usual way to one with 1 central sphere, $h - n + 1$ threads, and $h - n + 1$ plates.
+
+Up to this point, the investigation could be carried out quite analogously to that of Riemann surfaces (p.\ 40 and following). In the case of the latter, the connectivity number could be determined on the basis of the material found, but nothing similar can be carried out here. One of the reasons for this has already been mentioned on p.\ 61; moreover, it is noted that while the connectivity number for Riemann surfaces depends only on the number of sheets and branch lines, the connectivity numbers for Riemann spaces depend, in addition to the number of sheets, the number of closed lines that together make up the branch curve, their loops and knots, \emph{furthermore} on the characteristics, which as a rule within certain limits can be given values independent of the former numbers. We shall therefore not pursue the matter further in its generality, but restrict ourselves to considering some simple cases.
+
+It will be convenient to imagine the branch curve infinitely close to being planar. This can be done, since the connectivity of the manifold is not altered by continuous displacements of the branch line, provided only that no parts of it thereby intersect one another. One does well first to remove all loops and knots that can be removed. It will also be convenient to imagine the $n$ spheres transformed into circular disks lying underneath one another beneath the plane along which the boundary line now runs; as curves $G_1, G_2, \dots, G_n$ we can choose the projections of $F$ down onto the disks'
+
+\origpage{83}
+upper surfaces. At a double point of the $3^{\text{rd}}$ type, it is indifferent which branch is imagined to be uppermost.
+
+\subsection*{§ 14. Applications.}
+
+1. If $n = 2$, and $F$ is formed by a simple, closed line without knots, the diagram becomes a point. $P_2$ is equivalent to a spherical space.
+
+2. The branch line consists of 2 simple, closed lines without knots and not linked; $n = 2$. To begin with, one obtains two tubular bodies connecting the two central disks; (if one runs from a point on a central disk \emph{inside} the attachment line of the tube along the surface of the tube, one arrives on the other central disk \emph{outside} the attachment line of the tube). One tube must be punctured and is thereby reduced to a thread. The diagram is a thread to which the plate is joined along a meridian curve.
+
+3. The branch line consists of $\nu$ simple, closed curves without knots and not linked; the space is assumed to be $n$-sheeted, and the characteristics of the branch lines are chosen such that it is irreducible. The diagram consists of $n$ disks connected by $\nu - n + 1$ tubes running as in the previous example and by $n - 1$ threads; since the surface is equivalent to a spherical surface, one can arrange the threads to run so that the first goes from $\varkappa_1$ to $\varkappa_2$, the next from $\varkappa_2$ to $\varkappa_3, \dots$, the last from $\varkappa_{n-1}$ to $\varkappa_n$. The threads and the disks are then contracted to a central sphere. It presents no difficulties to see that each of the tubes can be transformed into a thread to which a plate is joined along a meridian curve. The
+
+\origpage{84}
+given space is \emph{equivalent to a spherical space provided with $\nu - n + 1$ handles}.
+
+4. The branch line is a closed curve forming a simple knot; $n = 3$. The projection acquires the appearance of a curve of the $4^{\text{th}}$ order with 3 double points without loops; all 3 become of the $2^{\text{nd}}$ type. The construction of the diagram is a simple application of the preceding theories, and we restrict ourselves to mentioning the result: one obtains a thread to which the plate is attached along a latitude curve; the diagram thus reduces to consisting of a central sphere, and the given manifold is equivalent to a spherical space.
+
+5. Same branch line as in 4, but $n = 2$. All 3 double points become of the $1^{\text{st}}$ type; the diagram is a thread to which the plate is attached along a curve $[3\beta + \lambda]$.
+
+6. The branch line consists of two simply linked closed curves without knots; $n = 2$. The projection can be formed by 2 intersecting circles, and both double points are of the $2^{\text{nd}}$ kind. The diagram is \emph{a thread to which the plate is attached along a curve $[2\beta + \lambda]$}.
+
+We shall draw some applications of what has been set forth to the theory of algebraic surfaces. The neighborhood of a general point of the surface is bounded by a space equivalent to a spherical one. We shall determine of what kind the boundary is when the point is singular. As boundary for the neighborhood of a point in $\mathbf{T}$, one can take a spherical space, but it will often be convenient instead to determine the neighborhood as the 4-dimensional manifold described by a sphere in $P$ when this is assigned all coordinate levels from a number $\alpha$ to a number $\beta$.
+
+7. \emph{The neighborhood of a general point on the}
+
+\origpage{85}
+\emph{algebraic surface's branch curve is equivalent to a spherical space}. The boundary is formed by the Riemann space mentioned in Ex.\ 1.
+
+8. Let the point be a \emph{branch point of the $1^{\text{st}}$ kind on the branch curve}. The neighborhood is bounded by a 3-sheeted Riemann space; the branch line is a closed curve (p.\ 19) that makes 2 circuits on the branch surface before it closes, but forms no knot; it can therefore be transformed into a simple closed curve. Ex.\ 1 (p.\ 83) shows that \emph{the boundary is equivalent to a spherical space}.
+
+9. Let the point be a \emph{branch point of the $2^{\text{nd}}$ kind}. The branch line forms a simple knot (p.\ 20); the point arises indeed because a principal tangent to the algebraic surface becomes parallel to the $Z$-axis (p.\ 31): since this intersects the surface in 3 coinciding points, one obtains a 3-sheeted Riemann space.
+
+The boundary is formed by a Riemann space like that in Ex.\ 4, and is thus \emph{equivalent to a spherical space}.
+
+10. We shall assume that the algebraic surface has an \emph{isolated double point} whose tangent cone surface is an irreducible cone surface of the $2^{\text{nd}}$ order. In order to investigate the neighborhood of such a point, it is sufficient to investigate the neighborhood of the vertex on an irreducible cone surface of the $2^{\text{nd}}$ order. Its contour on the $XY$-plane is formed by two straight lines intersecting each other at the vertex; these are represented in $\mathbf{T}$ by two planes intersecting a spherical space $\Sigma$ with center at the origin in two closed curves; if the spherical space is transformed into $P$ in the manner previously indicated (p.\ 72), it is easily seen that these curves pass into two simple, simply linked curves (Ex.\ 6). The carrier curves in $\Sigma$ for the two closed
+
+\origpage{86}
+curves are namely 2 ellipses, of which the one corresponding to the greatest value of the modulus of the direction coefficient encloses the other, because the projections on the $X_1 Y_1$-plane are concentric circles (p.\ 26). The two halves of the ellipses that carry negative coordinate levels are inverted, but thereby the branch that was formerly inner is brought to the outside, q.\ e.\ d.
+
+If one wishes this manifold analytically defined, one need only, for example, in
+\[
+z^2 = x^2 - y^2
+\]
+distinguish between real and imaginary parts:
+\[
+\begin{aligned}
+z_1^2 - z_2^2 &= x_1^2 - x_2^2 - y_1^2 + y_2^2 \\
+z_1\,z_2 &= x_1\,x_2 - y_1\,y_2
+\end{aligned}
+\]
+and to this add the equation
+\[
+x_1^2 + x_2^2 + y_1^2 + y_2^2 = 1.
+\]
+
+This shows that the manifold belongs to the kind to which the Poincaré--Picard theory should be applicable, which moreover also appears from our earlier investigations.
+
+The neighborhood of each of the points mentioned in Ex.\ 7, 8, and 9 is a 4-dimensional elementary manifold. This can be seen, for example, by constructing a 3-dimensional pencil of curves radiating from the point we are investigating, so that through each point in the manifold there passes 1 and only 1 of the curves; if a curve has a point in the branch surface, it must run entirely within it, and likewise if it has a point in a double line of the branch surface. When the boundary of the neighborhood is then transformed into a spherical space, $\Sigma$, in $\mathbf{T}$, the neighborhood itself can be transformed into that part of $\mathbf{T}$ which lies inside $\Sigma$, by letting the curves in the pencil mentioned correspond to the ra-
+
+\origpage{87}
+dii to the points in $\Sigma$ corresponding to the endpoints of the curves. Moreover, the matter also follows from the fact that by a translation of the surface relative to the coordinate system, one can achieve that the point no longer lies on the branch surface.
+
+This cannot be achieved for an isolated multiple point, and in Ex.\ 10 we have already seen that the neighborhood of an isolated double point with an irreducible tangent cone surface was not an elementary manifold. The boundary was equivalent to $P$ doubly covered, since the branch line was formed by 2 simply linked circles. It is the same manifold that we have repeatedly encountered (p.\ 59, 61, and 72). It could also be produced by joining two tori, where latitude curves and meridian curves on one were joined with the curves $[\beta]$ and $[2\beta + \lambda]$ on the other. The diagram is formed by a thread to which the plate is attached along the line $[2\beta + \lambda]$.
+
+We shall now give the promised proof that this manifold has the connectivity numbers $p_1 = 2, \ p_2 = 1$.
+
+In order to find the closed curves that cannot be contracted to a point, we note that all closed curves in the manifold can be brought to run entirely in the thread of the diagram. One may assume that it constantly runs around in the same direction and without forming knots. A curve that traverses the thread 2 times before it is closed can then be brought to run entirely in the attachment strip and can therefore through the plate be contracted to a point. If the curve runs around $2p$ times, one can successively $p$ times separate 2 consecutive circuits and remove them. The curve can thus be contracted to a point. If there are $2p + 1$ circuits, one ends
+
+\origpage{88}
+up with a curve that goes around 1 time. This cannot be contracted to a point. For let us assume that the curve bounded a bilateral surface patch in the manifold. We drill in this a tubular canal along the curve, whereby the manifold acquires as boundary a torus surface. Imagining the manifold defined by joining two torus surfaces in the manner indicated above (p.\ 87), this canal will run once around in one torus, and the surface patch will be bounded by a latitude curve in the surface of the canal. After this canal has been drilled, one will be able to allow the manifold to contract to a torus (situated in $P$): in this the surface patch mentioned is situated and is bounded by a latitude curve on the surface of the torus. This latitude curve runs once around the axis of the torus, but at the same time bounds a surface patch in the torus, that is, a surface patch in $P$ that does not intersect the axis of the torus; but this is impossible. Thus $p_1 = 2$\ednote{Author erratum (p.\ 98): reads $p_2$, corrected to $p_1$}.
+
+All closed surfaces in the manifold (both bilateral and unilateral) can be brought to run entirely in the diagram, and those parts of such a surface that are located in the plate can be brought to be simple elementary surface patches with the boundary in the boundary of the surface and thus through the attachment strip of the plate standing in connection with the remaining part of the surface. If this has only 1 such elementary surface patch running in the plate, its boundary will be a curve $[2\beta + \lambda]$ on the surface of the thread; this curve will thus bound a surface patch running in the thread; however, there exists no bilateral surface patch in the thread that can be bounded by this curve, since it runs twice around the axis of the torus in the same direction. On the other hand, it can be closed with Möbius's uni-
+
+\origpage{89}
+lateral surface patch. If the surface next has several elementary surface patches in the plate, one can puncture two consecutive ones and connect the boundaries with a tube; if the original surface did not bound, neither does the new one. If there is an \emph{even} number of surface patches in the plate, all the patches can be subjected to this process pairwise, whereupon they are all easily pushed out of the plate, so that the surface comes to run entirely in the thread. If there is an \emph{odd} number, one can in the same way remove all of them except 1, and one has returned to the first-mentioned case, where we saw that the surface had to be unilateral. If, therefore, there is to exist a non-bounding, closed, bilateral surface in our manifold, then there must exist such a surface in the thread; but every closed, bilateral surface in the thread can be contracted to a point, or to a point from which curves emanate that return to the point, i.e., all such surfaces are homologous to 0. \emph{Thus $p_2 = 1$}.
+
+We see from this that \emph{the manifold that represents an algebraic surface with isolated multiple points contains points for which the neighborhood is not an elementary manifold}. Such points we shall call \emph{topological singularity points}.
+
+But the manifolds that Picard and Poincaré define contain only points whose neighborhood is simply connected (P.\ \& S., $2^{\text{nd}}$ Chap., No.\ 2 and No.\ 3. Poincaré A.\ S.\ § 2 and § 3), that is, no topological singularity points. How does the matter stand, then, with the theorem: ``Every algebraic surface with arbitrary singularities can be brought into birational correspondence with a surface that has no other singularities than a double curve with triple points, since these singularities are the
+
+\origpage{90}
+most general of their kind''? (P.\ \& S., $4^{\text{th}}$ Chap., No.\ 8). In the first case, topological singularity points can be found, but, as one easily sees, in the latter case none are found! The explanation for this is easily discovered when one follows the transformations by which the surface is brought into the form mentioned. An isolated multiple point becomes an exceptional point for the transformation, so that it comes to correspond to an algebraic curve that does not pass through multiple points. The boundary of the neighborhood of the double point is then equivalent to the hull of the corresponding algebraic curve. In the Picard theory, surfaces are thus freed from their topological singularity points.
+
+In topological respects, there is thus an essential difference between Riemann surfaces and the manifolds that represent algebraic surfaces. For while on the former the neighborhood of \emph{every} point is an elementary manifold (also the helicoid about a branch point), this is not always the case for the latter. For the coordinates in the neighborhood of every point on an algebraic curve, one easily forms holomorphic series expansions in one parameter; on the other hand, no one has succeeded in representing the coordinates in the neighborhood of every point on an algebraic surface by such series with 2 parameters, and this is apparently connected with the existence of such singularity points. Corresponding to the theorem that by a finite system of such series one can represent the entire neighborhood of every point on the surface, one has that the neighborhood of a topological singularity point can be assembled from a finite number of elementary manifolds; this follows from the fact that the boundary can be assembled
+
+\origpage{91}
+from a finite number of elementary manifolds. (The ``cone'' that has its vertex at the point and has the diagram of the boundary as directrix, will as a cut make the neighborhood simply connected).
+
+If the original surface is denoted by $f$ and that which one obtains by freeing $f$ of its topological singularity points by $F$, one can pose the problem of constructing the manifold that represents $f$ when one knows the one that represents $F$. One seeks out the closed surfaces corresponding to each isolated multiple point and to the other fundamental points of the transformation in $f$. Neighborhoods of these closed surfaces are excised, and the manifold is closed again with manifolds that are equivalent to the surroundings of the corresponding points in $f$. Those points in $F$ that are exceptional points are treated in the reverse manner.
+
+In the example considered earlier, we succeeded in finding the connectivity numbers from the diagram. In its generality, this problem is apparently difficult to solve. The diagram may, however, serve to find \emph{upper bounds for the connectivity numbers}, but the difficulty consists in deciding whether the manifolds that one has found by means of the diagram, and which one conjectures are homologically independent, really are so. \emph{The theory of integrals can serve as an aid to this} (cf.\ P.\ \& S., $4^{\text{th}}$ Chap., No.\ 9), \emph{but not as an exhaustive one}. The general theorem put forward by Poincaré and Picard, that the number of linearly independent periods of (more precisely defined) integrals taken along closed $m$-dimensional manifolds is $p_m - 1$ (Poinc.\ A.\ S., § 7 end; P.\ \& S., $2^{\text{nd}}$
+
+\origpage{92}
+Chap., No.\ 16), is namely not reliable. In the repeatedly mentioned example, there did indeed exist a closed curve that did not bound. \emph{Yet all the integrals mentioned taken along this curve must be 0}; for if one traverses the curve twice, one obtains a curve that can be contracted to a point, hence the integral must be 0. One also sees from this \emph{that one cannot always conclude from the homology $2\,V \sim 0$ to $V \sim 0$}. (Poinc.\ A.\ S., p.\ 19, l.\ 4).
+
+\origpage{93}
+\section*{CONCLUSION}
+
+One might perhaps think that it were hopeless to attempt to form a topological theory for the connectivity of algebraic surfaces, when no one has even succeeded in carrying out such a theory in its generality for 3-dimensional manifolds. To this it must however be remarked that the 4-dimensional manifold that represents an algebraic surface is a \emph{special} one, and that one can expect that, topologically speaking, it is relatively simple. Picard's theorem that in an algebraic surface without multiple points there are no closed lines that do not bound, points in this direction. (P.~\&~S., 4th Chap.\ III).
+
+I have not yet succeeded in reaching any finished result; I shall only in conclusion present some scattered remarks. What has decided me to publish these preliminary studies has \emph{partly} been the feeling that I had to seek to penetrate to the bottom of the other viewpoints of transcendental, algebraic, and enumerative geometric nature, from which algebraic surfaces have been studied, \emph{partly} the appearance of Picard and Simart's book, both on account of those parts of it that agreed with my own investigations, and on account of those that were in conflict with them.
+
+\origpage{94}
+As regards the connectivity numbers of the \emph{plane}, we have, with respect to the infinitely distant elements, taken a projective-geometric standpoint \emph{and therefore cannot arrive at the same result as Picard} (P.~\&~S., 4th Chap., No.~9). According to his definition, the line at infinity of the plane consists 1) of a set of points $x = \infty$, $y$ arbitrarily finite, 2) of a set of points $y = \infty$, $x$ arbitrarily finite, 3) of the point $x = \infty$, $y = \infty$. \emph{We} regard each of the first two sets of points as one point (the infinitely distant point of the $X$-axis and that of the $Y$-axis), and by taking into account the different values of $\lim(y:x)$ for $x = \infty$, $y = \infty$, an entire set of points is formed from the point 3). Resting upon the results from \S~4, we easily determine the diagram for the projectively defined plane. We puncture the manifold $\mathbf{A}$; this can be entirely removed, whereby $\Sigma_1(\mathbf{B})$ and $\Sigma_2(\mathbf{C})$ become free boundaries for $\mathbf{B}$ and $\mathbf{C}$. These can be contracted to the neighborhood of the closed surface that represents the line at infinity; here one thus has the diagram. One thus obtains
+\[
+p_1 = 1, \quad p_2 = 2, \quad p_3 = 1.
+\]
+
+In order that $\mathbf{B} + \mathbf{C}$ be bounded by a space that is equivalent to a spherical space, it is necessary to join $\mathbf{B}$ and $\mathbf{C}$ in a specific way, namely in the way determined by equations (5) in \S~4.---It is the spaces $\Sigma_1(\mathbf{B})$ and $\Sigma_2(\mathbf{C})$ that are to be joined; they are bounded by $\tau(\mathbf{B})$ and $\tau(\mathbf{C})$; these are joined so that the meridian curves on the former cover the meridian curves on the latter, while the latitude curves on the former ($\eta$ constant) correspond to curves of the type $[\beta + \lambda]$ on the latter. One also easily sees that the diagram for $\Sigma_1(\mathbf{B}) + \Sigma_2(\mathbf{C})$ (joined according to this rule) becomes a point. Had one joined according to the formulas $\xi = \xi'$ and $\eta = \eta'$, the
+
+\origpage{95}
+boundary would have received the connectivity numbers $p_1 = 2$, $p_2 = 2$ (cf.\ p.\ 60), thus not have been equivalent to a spherical space.
+
+Two closed surfaces, for example of genus 0, situated in a 4-dimensional manifold, are always equivalent, but as we see, their \emph{surroundings} are not necessarily equivalent. One sees from this the difference between what we have called \emph{equivalence} and what Poincaré calls \emph{homéomorphisme} (Poinc.\ A.~S. \S~2).
+
+\emph{For the surface of the 2nd order, $F_2$,} I have found
+\[
+p_1 = 1, \quad p_2 = 3, \quad p_3 = 1
+\]
+by forming the diagram, relying upon the development in \S~5. The core of the diagram consists of two closed surfaces of genus 0 intersecting each other in a point. The same result is found very easily in the following way: a variable generator in one generating system is determined by the cross ratio $x$ to 3 fixed generators; in a similar manner, a generator in the other system is determined by a cross ratio $y$. Every point on the surface is then completely determined by the $x$ and $y$ of the generators that pass through the point, \emph{and conversely}. $(\infty, \infty)$ is only one point; $(\infty, y)$ and $(x, \infty)$ correspond to two generators that intersect each other in the point $(\infty, \infty)$. According to Picard's standpoint, the plane thus becomes what we according to our projective conception call a surface of the 2nd order. If the 4-dimensional manifold $(x, y)$ is punctured at the point $(0, 0)$, the puncture can be expanded until the boundary meets the two closed, mutually intersecting surfaces that correspond to $(\infty, y)$ and $(x, \infty)$. One then arrives at the same result as before; compare moreover P.~\&~S., 4th Chap., No.~9, 2nd Chap., No.~16.
+
+\origpage{96}
+The connectivity numbers found for the plane and the surface of the 2nd order agree with the number of fundamental points in \emph{Chasles}'s well-known one-to-one transformation.
+
+\emph{The surface of the 3rd order, $F_3$,} I first sought to investigate in a similar manner to $F_2$, relying upon the investigations in \S~5. Here, however, I met with difficulties from the double lines in the projection of the branch surface onto $P$ and from their triple points. I then sought by transformation to find the connectivity numbers. In part, I transformed it into a surface of the 2nd order, $F_2$, by letting the two systems of conics that are cut out by the planes through two mutually non-intersecting straight lines $A$ and $B$ on $F_2$\ednote{Printed $F_2$; evidently a misprint for $F_3$.} correspond one-to-one to the two generating systems on $F_2$. The transformation acquires 5 fundamental points in the plane, namely those points that correspond to the 5 pairs of planes through $A$ and $B$ that intersect each other in 1 of the 5 of $F_3$'s 27 straight lines that intersect $A$ and $B$. In order to transform $F_3$ into a plane, I used a transformation where the line connecting corresponding points intersected two fixed, mutually non-intersecting straight lines $A$ and $B$ on $F_3$; in the plane one obtains, first, 5 fundamental points at the points of intersection with the 5 straight lines on $F_3$ that intersect $A$ and $B$; furthermore, two fundamental points at the points of intersection, $a$ and $b$, with $A$ and $B$; to these correspond two conics $\varphi$ and $\psi$ on $F_3$ determined by the planes $(Ab)$ and $(Ba)$. Their point of intersection ($ab$'s 3rd point of intersection with $F_3$) becomes a fundamental point on $F_3$, since to this there corresponds in the plane the line $ab$. More easily, one may use the usual birational transformation, which is found for example in Salmon (Geometry of three dimensions; 4 ed.\ p.\ 556); there are 6 fundamental points in the plane corresponding to a double six on $F_3$.
+
+\origpage{97}
+These transformations lead to the connectivity numbers
+\[
+p_1 = 1, \quad p_2 = 8, \quad p_3 = 1.
+\]
+
+It is not particularly difficult by topological means to prove Picard's theorem that $p_1 = p_2 = 1$, when the surface has no multiple points. In order to find $p_2$, I have attempted to proceed as at the end of \S~8, by imagining the surface infinitely close to decomposing into $n$ planes; it is of particular interest to investigate $n = 2$ and $n = 3$. All these investigations I hope one day to obtain in such a complete form that they can be published as a continuation of these studies. One ought also to elucidate the connection between the topological connectivity numbers $p_1$, $p_2$, and $p_3$ on the one hand and the various invariants $p_g$, $p_n$, $p^{(1)}$, $p^{(2)}$, etc.\ on the other.
+
+As one sees, there is a wide field for future investigations---investigations that are rendered difficult both by the intricate character of the subject and by the broad basis of the methods of investigation.
+
+\origpage{98}
+\section*{ERRATA}
+
+\[
+\begin{array}{llll}
+\text{p.\ 13, l.\ 20} & 1 : a\ i\ (X_1\ X_2) & \text{read} & 1 : a\ \text{in}\ (X_1\ X_2) \\[6pt]
+\text{p.\ 14, l.\ 2}  & \frac{\alpha_1 - i\alpha_2}{\alpha_1 + \alpha_2} & \text{''} & \frac{\alpha_1 - i\alpha_2}{\alpha_1^2 + \alpha_2^2} \\[12pt]
+\text{p.\ 20, l.\ 9}  & \alpha = {}^{\frac{3}{2}} & \text{''} & \alpha = \frac{3}{2} \\[6pt]
+\text{p.\ 31, l.\ 7}  & =/\!=\ \text{and} & \text{''} & \text{and}\ =/\!= \\[6pt]
+\text{p.\ 48, l.\ 4}  & (n-1)\text{ e} & \text{''} & (n-1)\text{th} \\[6pt]
+\text{p.\ 88, l.\ 18} & p_2 & \text{''} & p_1
+\end{array}
+\]
+
+\origpage{99}
+\section*{THESES}
+
+1.~Despite the \emph{Poincaré--Picard} revision of the \emph{Riemann--Betti} theory of connectivity numbers, the latter still stands in need of improvement (cf.\ \S~12). The theorem that for closed manifolds
+\[
+p_r = p_{n-r},
+\]
+is incorrect. The 4-dimensional manifolds that represent the complex points of algebraic surfaces do not belong to those defined by Poincaré and Picard when the surfaces contain isolated multiple points.
+
+2.~\emph{Cauchy's proof} on the occasion of the 9th definition in \emph{Euclid's} 11th book (cf.\ Journ.\ de l'école polyt.\ cah.\ 16 and \emph{Ramus}'s Geometri, p.\ 228) is not satisfactory.
+
+3.~The theory of total differentials can and ought to be developed by means of the theory of functions of one real, independent variable.
+
+4.~Operations that form a group are numerals (cf.\ \emph{Thiele}: Om Definitionerne for Tallet, o.\ s.\ v.).
+
+5.~Many theorems of function theory are proved most easily when one includes complex values of the independent variables; this is admittedly due in part to the fact that the validity of some fundamental theorems
+
+\origpage{100}
+becomes completely general, but furthermore also to the fact that one restricts oneself to considering monogenic functions. For applications, the corresponding investigations in which one adheres to real variables may therefore be more valuable. (Ex.: The proofs of Fourier's series).
+
+6.~The proof, known already from antiquity (\emph{Democritus}, \emph{Epicurus}, \emph{Lucretius}), that the space in which we exist is infinite (cf.\ \emph{Lange}, Gesch.\ d.\ Materialism.\ p.\ 105), is false, since it operates with conceptions that we precisely ought to prove. We can know nothing at all about the properties of space in this respect, and mathematical investigations in this direction are purely formal.
+
+7.~The law of physics on the conservation of inertia cannot be justified solely by the principle of causality, among other reasons because physicists by the concept of force understand a cause of change of motion \emph{that is due to specific bodies in the surroundings} (cf.\ \emph{Kroman}: Vor Naturerkendelse, p.\ 292).
+
+8.~The development of mathematical science depends on sympathetic cooperation between those scientists whose talents run especially in a formal direction, and those whose talents especially urge them to bring to mathematics new ideas and new material that are well-founded, but not in a systematic way (cf.\ \emph{Klein}: Gött.\ Nachr.\ Gesch.\ Mittheil.\ 1895. Issue~2).
+
+9.~The hypotheses of natural science ought \emph{scientifically} speaking not to be understood as attempts to explain the real nature of the surrounding world, but only as statements that in a few formulas are able to reproduce a large group of properties of things, so that by a purely formal path we can obtain an overview of and master their mutual relations.
+\end{document}

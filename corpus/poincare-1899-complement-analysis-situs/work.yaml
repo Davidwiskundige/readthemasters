@@ -1,0 +1,109 @@
+id: poincare-1899-complement-analysis-situs
+title: Complément à l'Analysis situs.
+title_en: Supplement to Analysis situs.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare  # https://mathshistory.st-andrews.ac.uk/Biographies/Poincare/
+publication:
+  year: 1899
+  venue: rendiconti-palermo
+  volume: "13"
+  pages: 285–343
+  title_full: '"Complément à l''Analysis situs", Rendiconti del Circolo Matematico
+    di Palermo, tomo XIII, parte 1a (1899), pp. 285–343 (adunanza del 26 marzo 1899).'
+edition:
+  year: 1899
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1899 printing in the Rendiconti del Circolo
+    Matematico di Palermo, tomo XIII, pp. 285–343, as digitized by Google and deposited
+    on the Internet Archive (rendicontidelci05palegoog, leaves 294–352). A faithful
+    photographic reproduction of a public-domain edition, carrying no modern critical
+    apparatus, commentary, or re-typesetting. Only Poincaré's own text is transcribed;
+    running heads and signature lines are not.
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: fr
+type: paper
+relations:
+- to: poincare-1895-analysis-situs
+  kind: builds-on
+  recommended: primary
+  note: The Complément corrects and completes the memoir of 1895, which it cites throughout
+    by page as "Analysis situs".
+- to: heegaard-1898-forstudier-topologisk-teori
+  kind: builds-on
+  note: Heegaard's objection to the proof of the duality theorem in Analysis situs
+    is the starting point of the Complément, which answers it by a new, combinatorial
+    definition of the Betti numbers.
+significance: >-
+  The first of Poincaré's five complements to Analysis situs[1], and the paper in which homology
+  becomes combinatorial. Heegaard's dissertation of 1898[2] had declared the duality theorem of
+  1895 false and its proofs worthless. Poincaré replies by separating two definitions of the Betti
+  numbers, Betti's own and his by homologies, which may be divided by an integer, and by granting
+  that his earlier proof does not hold as it stands (§ I). He answers by cutting the manifold into a
+  polyhedron and recording only which cells bound which: the schéma of § II attaches to each
+  incident pair of cells a number $\varepsilon$ equal to $+1$, $-1$ or $0$, and a congruence
+  $\equiv$ lists a cell's boundary. From these tables he defines the reduced Betti numbers (§ III),
+  shows that subdividing the polyhedron does not change them (§§ IV–VI), and builds the reciprocal
+  (dual) polyhedron, whose cells correspond to those of the original in complementary dimension
+  (§ VII), to prove the duality theorem afresh (§ VIII). § IX isolates the homologies that hold
+  only after division by an integer, the phenomenon later called torsion, and reduces the question
+  of when the two definitions agree to the greatest common divisors of determinants taken from the
+  incidence tables. § X gives an arithmetic proof of one of the theorems of § VII, and § XI argues
+  that every manifold can be subdivided into generalized tetrahedra, so that the method always
+  applies.
+significance_sources:
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique (2) 1 (1895), pp. 1–121, in
+      this corpus.
+    url: "/works/poincare-1895-analysis-situs/"
+  - citation: >-
+      P. Heegaard, "Forstudier til en topologisk Teori for de algebraiske Fladers Sammenhæng",
+      doctoral dissertation, Copenhagen (1898), in this corpus.
+    url: "/works/heegaard-1898-forstudier-topologisk-teori/"
+external_translations:
+- language: en
+  title: 'Supplement to Analysis situs (in Papers on Topology: Analysis Situs and Its Five Supplements)'
+  translator: John Stillwell
+  year: 2010
+  license: in-copyright
+  url: https://bookstore.ams.org/hmath-37
+source:
+  scan_url: https://archive.org/details/rendicontidelci05palegoog/page/n293/mode/2up
+  scan_id: archive.org:rendicontidelci05palegoog (Rend. Circ. Mat. Palermo t. XIII,
+    1899, pp. 285–343)
+sources:
+  death_date: wikidata:Q81082
+  publication_date: archive.org:rendicontidelci05palegoog (title page "Tomo XIII.
+    — Anno 1899"; p. 297 signature line "Stampato il 14 giugno 1899")
+  edition: archive.org:rendicontidelci05palegoog (Rend. Circ. Mat. Palermo t. XIII,
+    1899, pp. 285–343)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1899
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-09-30'

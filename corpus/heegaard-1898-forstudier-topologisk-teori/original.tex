@@ -1,0 +1,1432 @@
+\documentclass{article}
+\usepackage{readmasters}
+
+\begin{document}
+
+\origpage{1}
+\section*{Indledning}
+
+Det er almindelig bekendt, hvilken Vækst Teorien for Funktioner af én kompleks variabel fik, da man tog imaginære Værdier af den uafhængig variable med i Betragtningen og knyttede Teorien til en geometrisk Fremstilling af de imaginære Størrelser.
+
+Skulde man opbygge en Teori for Funktioner af to uafhængig variable, vilde det derfor være naturligt at søge en lignende Fremstilling. At der er hengaaet saa lang Tid, inden man for Alvor har taget fat paa denne naturlige Udvidelse, ligger vel blandt andet i, at Undersøgelserne for to uafhængig variable ere langt vanskeligere end for én. Mulighedernes Mangfoldighed frembringe Forhold, til hvilke der ingen Analogier findes i Teorien for én uafhængig variabel. Picard bemærker saaledes: „On voit, par ce qui précède, les différences profondes qui séparent la théorie des fonctions algébriques d'une variable de la théorie des fonctions algébriques de deux variables indépendantes. L'analogie qui souvent est un guide excellent, peut devenir içi bien trompeuse.“
+
+En Vanskelighed for anskuelsesmæssig Fremstilling ligger naturligvis ogsaa deri, at de geometriske Dannelser,
+
+\origpage{2}
+som skulde spille de Riemannske Fladers Rolle, skulde være 4-dimensionale.
+
+Kan Analogien end være vildledende ved vore Undersøgelser i Enkelthederne, vil en almindelig Oversigt over de Midler, man har anvendt i Teorien for én uafhængig variabel, dog give en god Arbejdsplan. Lad os da betragte en saadan Oversigt.
+
+Teorien for Funktioner af én uafhængig variabel hænger paa det nøjeste sammen med de algebraiske Kurvers Teori. Geometrien paa en saadan Kurve bliver derfor af fundamental Betydning.
+
+Undersøgelserne ere anstillede fra højst forskellige Synspunkter. De vigtigste støtte sig
+
+I. \emph{paa elementære algebraiske Sætninger.}
+
+Herunder kan nævnes
+
+$\alpha$) Undersøgelser af de \emph{adjungerede Polynomier}, en Teori, skabt af Brill og Nöther i Afhandlingen: \emph{Ueber die algebraischen Functionen} (M.~A. Bd.~7, 1873).
+
+$\beta$) Italienernes Undersøgelser af \emph{lineære Punktgrupper}. De have forsøgt at befri den forrige Teori for dens projektive Form, saa at de udviklede den uafhængig af Begreberne Grad, Klasse o.~s.~v., kfr. et Referat af Castelnuovo og Enriques (\emph{Sur quelques récents resultats dans la théorie des surfaces algébriques}. M.~A. Bd.~48, p.~242, 1897).
+
+$\gamma$) \emph{antalgeometriske Undersøgelser}, særlig en Række Afhandlinger af Zeuthen (f.~Eks. M.~A. Bd.~3 og Bd.~9).
+
+II. \emph{paa Studiet af de til den algebraiske Kurve hørende transcendente Funktioner.}
+
+Disse Undersøgelser, der vel kunne siges at stamme fra Riemanns banebrydende Arbejde (1857), ere saa al-
+
+\origpage{3}
+mindelig bekendte, at der ingen Grund er til at omtale dem nærmere.
+
+III. \emph{paa topologiske Undersøgelser af de Riemannske Flader, der repræsentere den algebraiske Kurve.}
+
+Her er man atter gaaet to noget forskellige Veje:
+
+$\alpha$) Enten bestemmer man Fladens Sammenhængstal ved Hjælp af en Sætning, der kan opfattes som en Generalisation af Eulers Sætning om Polyedre (Riemann, Neumann).
+
+$\beta$) Eller man punkterer den Riemannske Flade og bringer den derpaa ved kontinuert Deformation over i en \emph{Normalform}. Saavidt os bekendt, findes denne Fremgangsmaade kun gennemført af Jul. Petersen (\emph{Forelæsninger over Funktionsteori}, Kap.~IV). Listing benytter ganske vist en saadan Fremgangsmaade til at danne „Diagrammet“ af en Rumfigur for herved at komme til en Udvidelse af Eulers Sætning (\emph{Census räumlicher Complexe}, 1862), og Betti (1871) benytter en saadan Betragtning ved sine Undersøgelser af Sammenhængstal for $n$-dimensionale Rum i Almindelighed, men begge Afhandlinger synes at have været upaaagtede i lang Tid. Denne Metode giver en særdeles anskuelig Fremstilling af de behandlede Forhold.
+
+For Teorien for Funktioner af to variable spille Transformationerne af algebraiske Flader en analog Rolle. Der findes allerede en Del Arbejder væsentlig fra den nyeste Tid, i hvilke Sagen er behandlet fra Synspunkter svarende til de opregnede.
+
+I. \emph{Elementær-algebraiske Undersøgelser.}
+
+$\alpha$) \emph{Adjungerede Polynomier.} Denne Teori skriver sig fra Clebsch (C.~R. Dec. 1868) og Nöther (\emph{Zur eindeutigen Entsprechen\dots} I \& II, M.~A. Bd.~2, 1869, og
+
+\origpage{4}
+Bd.~8, 1874).
+
+$\beta$) \emph{Lineære Kurvesystemer.} Italienerne have skabt en Teori for lineære Kurvesystemer paa Flader, analog med den før omtalte for Punktgrupper paa Kurver. Ved Hjælp af denne bestemme de Invarianter for Flader (kfr. det omtalte Referat af Castelnuovo og Enriques).
+
+$\gamma$) \emph{Fladetransformationer} ere ogsaa undersøgte antalgeometrisk af Zeuthen (\emph{Études géométriques\dots}, M.~A. Bd.~4).
+
+II. \emph{Undersøgelser ved transcendente Funktioner.}
+
+Allerede i sin Afhandling i M.~A. Bd.~2 betragter Nöther Integraler af Formen
+\[
+\iint \frac{Q(x, y, z)\,dx\,dy}{f'_z}.
+\]
+
+Picard indfører Integraler af Formen
+\[
+\int_{x_0, y_0, z_0}^{x, y, z} (P\,dx + Q\,dy),
+\]
+hvor $P$ og $Q$ tilfredsstille Integrabilitetsbetingelsen (Liouville Journ. 1885 \& 86). Endelig har Picard i sin priskronede Afhandling: \emph{Mémoire sur la théorie des fonctions algébriques de deux variables} (Liouv. Journ. 4de Række. Bd.~5, 1889) og i den nylig udkomne Bog om samme Emne (Picard et Simart: \emph{Théorie des fonctions algébriques de deux variables indépendantes}, 1897) givet en sammenhængende Fremstilling af hele denne Teori.
+
+Poincarés Afhandling: „Sur les residus\dots“ (\emph{Acta mathematica}, Bd.~9, 1887) maa ogsaa nævnes i denne Sammenhæng.
+
+\origpage{5}
+III. \emph{Topologiske Undersøgelser.}
+
+I denne Retning findes ikke meget. I Picards Arbejder findes vel en Del, men ikke noget gennemført, da han overalt foretrækker den analytiske Fremstilling. Vanskeligheden ligger i, at den Riemann-Bettiske Teori for Sammenhængstal er meget mangelfuld og vanskelig at anvende, naar Talen er om Mangfoldigheder af mere end 2 Dimensioner. Poincaré har søgt at fuldstændiggøre den (\emph{Analysis Situs}, Journ. de l'école polytechnique, 2den Række, Cah.~1, 1895), uden at det dog efter vor Formening er lykkedes. Senere har Picard givet sit Bidrag; W.~Dyck har allerede tidligere beskæftiget sig med Spørgsmaalet (\emph{Beiträge zur Analysis situs}, M.~A. Bd.~32 og 37), men ingen Steder findes en fuldtud tilfredsstillende Teori. Forud for Undersøgelser i denne Retning maa derfor gaa en Teori for topologisk Sammensvaren af Mangfoldigheder af højere Dimensionstal end 2. Hvad der allerede findes i denne Retning, maa sidestilles det under III$\alpha$) nævnte. Der findes ingen Undersøgelser analoge med de under III$\beta$) nævnte.
+
+De efterfølgende Blade indeholde intet afsluttet Hele, kun Studier; Emnets Vanskelighed maa tjene til Undskyldning herfor. For at Undersøgelserne kunne komme til at staa i det rette Lys, vilde det maaske være heldigt først at fremsætte den Tankerække, der har været den ledende ved mine Undersøgelser.
+
+Ved et Tilfælde havde jeg bemærket, at den Zeuthen-Halphenske Udvidelse af Slægtsætningen (M.~A. Bd.~3; \emph{Bull. de la Soc. math. de France}, Bd.~5) kunde bevises ved et rent topologisk Ræsonnement; man kan nemlig paa de to Riemannske Flader, mellem hvis Punkter der antages at være en $(\mu, \nu)$-tydig Korrespondance, konstruere
+
+\origpage{6}
+ny Riemannske Flader, som svare eentydig til hinanden. Den Ligning, som udtrykker, at de to konstruerede Flader have lige store Sammenhængstal, udsiger da netop den omtalte Sætning. Der kastes herved et nyt Lys over den for Antalgeometrien saa vigtige Omstændighed, at den udvidede Slægtsætning kan anvendes uden infinitesimale Undersøgelser ved Coincidenspunkterne (eller Erstatninger for saadanne), medens disse Undersøgelser derimod ere nødvendige ved de andre Korrespondanceformler (kfr. \emph{Acta mathem.}, Bd.~1, p.~171). Jeg skal ikke her komme nærmere ind paa Beviset for denne Sætning, saa meget des mindre som jeg senere har fundet det i en Afhandling af Hurwitz (M.~A. Bd.~39).
+
+Min Tanke var nu, at man maatte kunne danne en lignende Sætning for algebraiske Flader, men der var først et stort Arbejde, som maatte gøres: der maatte for de algebraiske Flader skabes noget, som svarede til de algebraiske Kurvers Riemannske Flader; derpaa maatte der opstilles topologiske Kriterier for disses een-eentydige Korrespondance. Og, som det allerede er berørt, Materialet, der iforvejen fandtes til en saadan Undersøgelse, var enten mangelfuldt eller opfyldt af Fejltagelser. Det er under Forsøgene paa at rette disse Fejl og fylde disse Huller, at de efterfølgende Blades Indhold er opstaaet.
+
+\origpage{7}
+\section*{FØRSTE AFSNIT. Om en anskuelig Fremstilling af en algebraisk Flades komplekse Punkter.}
+
+\subsection*{§ 1. Anskuelig Fremstilling af en 4-dimensional Mangfoldighed.}
+
+For at skaffe sig Overblik over Sammenhængen mellem Punkterne af en algebraisk Kurve $y = f(x)$, vælger man sig først en dobbelt uendelig Samling Punkter (Plan eller Kugle), i hvilken man tyder den uafhængig variables komplekse Værdier. Over denne konstruerer man da en Riemannsk Flade, paa hvilken den afhængig variables Værdier kunne udbredes entydig. Hvad der da væsentlig interesserer os, er de topologiske Egenskaber ved denne Flade; disse ere nemlig uafhængige af den Maade, hvorpaa Fladen er fremstillet; de vedblive at bestaa, selv om Fladen underkastes en kontinuert Deformation, og de ere derfor fælles for alle Flader, der kunne bringes til at svare een-eentydig til den givne Flade.
+
+Skulde man gaa frem paa en analog Maade for en algebraisk Flade $z = f(x, y)$, maatte man først danne sig et Billede af den 4-dimensionale Mangfoldighed
+
+\origpage{8}
+$(x, y)$, som man kan faa ved at lade $x$ og $y$ uafhængig af hinanden antage alle mulige komplekse Værdier. Ved at overdække denne flere Gange og ved paa passende Maade at indføre „Forgreningsflader“ og forbinde disse med 3-dimensionale Dannelser, gennem hvilke de forskellige „Lag“ sættes i Forbindelse med hinanden, kan man skabe en 4-dimensional Mangfoldighed, i hvilken de algebraiske Fladers Sammenhæng maa kunne studeres.
+
+Denne Opgave har imidlertid indtil den allersidste Tid maattet henstaa som uløst, fordi man aldeles savnede Midler til at skaffe sig et anskueligt Overblik over en 4-dimensional Mangfoldighed og til at operere med saadanne Dannelser paa en lignende Maade som med Flader i vort sædvanlige Rum.
+
+Der er i den senere Tid gjort et Par Forsøg paa at raade Bod herpaa.
+
+G.~Veronese har opbygget en flerdimensional Geometri, i hvilken han opererer med de flerdimensionale Rum paa ganske samme Maade som i den sædvanlige Geometri med vort Rum (f.~Eks. \emph{Fondamenti di Geometria a piu dimensioni}, 1891). For os vilde denne Metode dog have den store Mangel, at den aldeles udelukker den Anskuelighed, som er Hovedformaalet for vore Bestræbelser.
+
+L.~Schläfli benytter i sin efterladte Afhandling: \emph{Theorie der vielfachen Continuität} (Züricher Denkschriften, Bd.~38, 1898) en Projektionsmetode, hvorved Mangfoldigheder af flere Dimensioner afbildes paa vort Rum. Schläflis Hovedformaal er imidlertid at undersøge regulære Polyedre i $n$-dimensionale Rum, og hans Metode er derfor ikke umiddelbart anvendelig til vore Formaal.
+
+H.~Poincaré har i sin før omtalte Afhandling: \emph{Analysis Situs} givet en Del Regler for Behandlingen af flerdimensionale Mangfoldigheder; disse Regler ere imidlertid saa ufuldstændige og saa lidet anskuelige, at de i høj Grad trænge til at suppleres.
+
+Vi ville her søge at raade Bod paa dette Savn ved at fremstille en Metode til at give et anskueligt Billede af en 4-dimensional Mangfoldighed.
+
+Vi tænke os et 4-dimensionalt Rum $T$, i hvilket et Punkt er bestemt ved fire reelle Koordinater $(x_1, x_2, y_1, y_2)$. For at kunne operere med dette Rum, maa vi støtte os til Forestillinger, hentede fra vort sædvanlige 3-dimensionale Rum $P$. Det er f.~Eks. meget vanskeligt
+
+\origpage{9}
+at danne sig en tydelig samlet Forestilling om den Samling af rette Linier i Rummet, som danner „Omgivelserne“ af en ret Linie; derimod er det let at danne sig klare Forestillingsbilleder af Omgivelserne af et Punkt i en Flade og af et Punkt i Rummet. Nu kende vi imidlertid ikke nogen 4-dimensional Mangfoldighed, i hvilken et Punkt uden videre er Element. I vort Rum $P$ kende vi vel Mangfoldigheder af højere Dimensionstal, f.~Eks. Samlingen af alle rette Linier i Rummet, som danner en 4-dimensional Mangfoldighed; men disse lade sig vanskelig anvende, fordi de mangle den umiddelbare Anskuelighed.
+
+Vi ville derfor gaa en anden Vej, idet vi benytte en Analogi med den Maade, hvorpaa Landmaaleren afbilder en bakket Jordoverflade paa en Plan. Landmaaleren tænker sig Jordoverfladen projiceret vinkelret paa en vandret Plan; for at kende Punkternes Højde over denne, forsyner han hvert Punkt med et Tal (Kotetal), som angiver Højden. For at faa et hurtigt Overblik over Terrænet, lægger han Kurver gennem Punkter med samme Kotetal (Kotelinier, Højdekurver). Paa lignende Maade ville vi gaa frem.
+
+I vort 4-dimensionale Rum $T$ tænke vi os et retvinklet Koordinatsystem med Akserne $X_1, X_2, Y_1, Y_2$. Det 3-dimensionale Rum, som udspændes af $X_1, X_2, Y_1$, kalde vi vort sædvanlige Rum $P$. Et Punkt $M$ i $T$ med Koordinaterne $(x_1, x_2, y_1, y_2)$ projiceres vinkelret paa $P$ i Punktet $M'$ med Koordinaterne $(x_1, x_2, y_1, 0)$; dets fjerde Koordinat $y_2$ kalde vi dets \emph{Kotetal}. Punktet $M$ er da fuldstændig bestemt ved sin Projektion $M'$ i $P$ og sit Kotetal $y_2$.
+
+Herved opnaas, at ethvert Punkt i $T$ fremstilles ved et Punkt i vort sædvanlige Rum $P$ forsynet med et Kotetal.
+
+\origpage{10}
+Vi kunne da i Analogi med Landmaalerens Betragtning sige, at Punkterne i vort 4-dimensionale Rum fremstilles ved Projektion ind paa det sædvanlige Rum, idet vi ved Projektionen af et Punkt forstaa det Punkt, vi faa, naar vi slette dets Kotetal (eller rettere: forandre det til 0).
+
+Af Bekvemmelighedshensyn ville vi benytte en Del Navne og Betegnelser, hvis Analogi med bekendte Forhold er let at indse.
+
+Det Rum, der udspændes af $X_1, X_2, Y_1$, kalde vi vort Rum $P$; Punkter med Kotetal 0 kalde vi reelle Punkter.
+
+En Mangfoldighed af 1 Dimension i $T$ fremstilles ved en Kurve i $P$ (Bærerkurven), hvis Punkter ere forsynede med Kotetal. Bærerens Punkter have i Almindelighed forskellige Kotetal, saa at Kurven kan opfattes som en Række Punkter med kontinuerte Kotetal.
+
+En Mangfoldighed af 2 Dimensioner fremstilles ved en Flade i $P$ (Bærerfladen), hvis Punkter ere forsynede med Kotetal. For at faa et Overblik over Kotetallene paa denne Flade, lægge vi Kurver paa den gennem Punkter med samme Kotetal; disse Kurver kalde vi \emph{Kotelinier}. En saadan Mangfoldighed kan altsaa fremstilles ved en Flade overstrøget med et System af Kotelinier.
+
+En Mangfoldighed af 3 Dimensioner fremstilles ved et Rum i $P$ (Bærerrummet), hvis Punkter have Kotetal; gennem Punkter med samme Kotetal lægges Flader (\emph{Koteflader}).
+
+Bæreren for en Kurve kan i specielle Tilfælde udarte til et Punkt; dette Punkt maa da være forsynet med en enkelt uendelig Række Kotetal.
+
+Bæreren for en Flade kan udarte til en Kurve; denne Kurve maa da forsynes med et System af Kotetal, saaledes at der til hvert Punkt af Kurven svarer en enkelt uendelig Række Kotetal. Bæreren kan ogsaa udarte til et Punkt; dette maa da være forsynet med en dobbelt uendelig Række Kotetal.
+
+Bæreren for en Flade er i Almindelighed en Flade;
+
+\origpage{11}
+for let at faa Overblik over Kotetallene paa denne, lægge vi Kurver paa den gennem Punkter med de samme Kotetal. Den søgte Flade er fuldstændig bestemt ved det System af Kotelinier, som Bærerfladen paa denne Maade overtrækkes med.
+
+Ligesom Projektionen af en Flade paa en Plan i Reglen overdækker Dele af Planen flere Gange, og ligesom disse Dele ere begrænsede af Kurver (Konturen), saaledes vil Projektionen af et Rum paa $P$ i Reglen være et Rum, som overdækker Dele af $P$ flere Gange, og disse Dele ville være begrænsede af Flader (Konturfladerne). Kotetallene bestemmes ved Koteflader gennem Punkter med samme Kotetal.
+
+Ved kontinuerte Deformationer af de beskrevne Former maa man saavel iagttage, hvad der sker med Bæreren, som undersøge, hvilke Forskydninger Kotetallene undergaa.
+
+Paa det givne Grundlag kan man let definere, hvad der skal forstaas ved ret Linie, Plan og plant Rum i $T$, og udvikle disses almindelige, deskriptive Egenskaber. Den rumlige Kollineation kan føres tilbage til Centralprojektion o.~s.~v. Herpaa skulle vi ikke komme ind.
+
+Den metriske Geometri i $T$ kunde man f.~Eks. grunde paa en Definition af Afstanden mellem to Punkter
+\[
+d = \sqrt{(x_1 - \xi_1)^2 + (x_2 - \xi_2)^2 + (y_1 - \eta_1)^2 + (y_2 - \eta_2)^2},
+\]
+eller ved at udvikle Begrebet Kongruens paa Grundlag af nedenstaaende Definition af Drejning om en Plan og derved reducere Spørgsmaalet til et vort Rum angaaende.
+
+For at fremsætte den omtalte Definition af Drejning ville vi først definere, hvad der skal forstaas ved en Cirkel i en „perpendikulær“ Plan. Projektionen af en saadan skal
+
+\origpage{12}
+være et ret Liniestykke $ab$ paa Planens Spor i $P$, og Kotetallene paa dette skulle bestemmes ved
+\[
+y_2 = c \pm r \sin \theta,
+\]
+hvor $c$ er en reel Konstant, $2r = ab$, og hvor $r \cos \theta$ er Afstanden fra Midtpunktet af $ab$ til det variable Punkt. Midtpunktet med Kotetal $c$ kaldes dens Centrum, $r$ dens Radius. Et Punkt drejes om en „horizontal“ Plan, ved at man lader Punktet beskrive den „vertikale“ Cirkel, som gaar gennem det, og som projiceres paa en ret Linie gennem Punktets Projektion, vinkelret paa den horizontale Plans Projektion. Ved Drejningen løber Projektionen frem og tilbage paa en ret Linie, hvis Endepunkter ligge symmetrisk med Hensyn til Drejningsplanens Projektion. Kvadratet paa dets største Afstand fra denne Projektion er lig Summen af Kvadratet paa Afstanden i et vilkaarligt Øjeblik og Kvadratet paa det tilhørende Kotetal. Punktet passerer afvekslende „over“ og „under“ Drejningsplanen.
+
+Et plant Rum skærer $P$ i en Plan, og enhver Figur, som findes i det, kan derfor nedlægges i $P$ ved en Drejning om Sporet.
+
+Det er nu ikke vanskeligt at udvikle de metriske Grundbegreber Vinkel, Afstand o.~s.~v.
+
+Det er ligeledes let at se, hvorledes man ved Drejning kan bringe to symmetriske Legemer over i hinanden (f.~Eks. ved Drejning om en Symmetriplan), ligeledes, at man ved Drejning kan føre et Punkt, der befinder sig indenfor en lukket Flade i $P$, udenfor denne uden at passere Begrænsningen.
+
+\origpage{13}
+\subsection*{§ 2. Den rette Linie.}
+
+Vor Fremstilling af den analytiske Plangeometri har den Fordel, at de Anskuelsesresultater, som man der kommer til ved at holde sig til reelle Koordinater, indgaa som specielle Tilfælde af de Anskuelsesresultater, vi her naa. Punkterne med Kotetal 0 beliggende i $X_1 Y_1$-Planen ere nemlig de sædvanlige reelle Punkter.
+
+Vi ville først undersøge den Samling Punkter, der er given ved Ligningen
+\[
+y = ax.
+\]
+Sættes
+\[
+\begin{aligned}
+x &= x_1 + i x_2, \\
+y &= y_1 + i y_2, \\
+a &= a_1 + i a_2,
+\end{aligned}
+\]
+og spaltes mellem reelt og imaginært, faas
+\[
+y_1 = a_1 x_1 - a_2 x_2, \tag{1}
+\]
+\[
+y_2 = a_2 x_1 + a_1 x_2. \tag{2}
+\]
+
+(1) er Ligningen for Bærerfladen i et retvinklet Koordinatsystem med $X_1, X_2$ og $Y_1$ til Akser. Den fremstiller en Plan gennem Begyndelsespunktet. Konstrueres Punktet $x_1 + i x_2 = 1 : a$\ednote{Author erratum (p.\ 98): reads $1 : a\ i\ (X_1 X_2)$, corrected to $1 : a\ \text{i}\ (X_1 X_2)$.} i $(X_1 X_2)$, vil Linien, der forbinder dette Punkt med Begyndelsespunktet, staa vinkelret paa Planens Spor; $y_1$'s Værdi i dette Punkt er 1. Herved bestemmes let Planens Beliggenhed.
+
+(2) bestemmer Koteliniernes Projektioner paa Planen $(X_1 X_2)$, idet $y_2$ opfattes som Parameter. Da disse Projektioner staa vinkelret paa Sporet af Planen (1), blive Kotelinierne Planens \emph{Faldlinier}.
+
+Faldlinien gennem Begyndelsespunktet svarer til
+
+\origpage{14}
+$y_2 = 0$; den indeholder det før konstruerede Punkt, bestemt ved $x_1 + i x_2 = 1 : a = \frac{a_1 - i a_2}{a_1^2 + a_2^2}$\ednote{Author erratum (p.\ 98): reads $\frac{a_1 - i a_2}{a_1 + a_2}$, corrected to $\frac{a_1 - i a_2}{a_1^2 + a_2^2}$.}. Iøvrig ere de forskellige Faldliniers Kotetal proportionale med deres Afstande fra Kotelinien $y_2 = 0$. Det er derfor tilstrækkeligt at kende Kotetallet for endnu en Faldlinie. Det Punkt af Planens Spor i $(X_1 X_2)$, som har Kotetallet 1, har Koordinaterne
+\[
+\xi_1 = -\frac{a_2}{a_1^2 + a_2^2}, \qquad \eta_1 = \frac{a_1}{a_1^2 + a_2^2},
+\]
+og faas altsaa ifølge ovenstaaende ved at multiplicere Punktet $1 : a$ med $i$.
+
+Den Plan i $\mathbf{T}$, der fremstiller $y = a x$, bestemmes altsaa paa følgende Maade: I Punktet $1 : a$ af $(X_1 X_2)$ oprejses en Vinkelret af Længden $+1$; en Plan lægges gennem dette Punkt og den Vektor, som faas ved at dreje Vektoren fra Begyndelsespunktet til Punktet $1 : a$ en Vinkel lig $+90^\circ$ i positiv Omløbsretning. Faldlinien gennem Begyndelsespunktet gives Kotetallet 0, og Faldlinien gennem den drejede Vektors andet Endepunkt Kotetallet 1.
+
+Naar der omvendt er givet et Punkt gennem Begyndelsespunktet i vort Rum, er det ved denne Regel let at bestemme saavel Retningskoefficienten for den rette Linie, den bliver Bærerplan for, som ogsaa Kotetallene, som Faldlinierne skulle udstyres med. Til Retningskoefficienter med samme Modulus svare Planer med samme Hældning og samme Afstand mellem ensbenævnte Faldlinier. Jo større Modulus er, des stejlere ligger Bærerplanen, og des nærmere komme to Faldlinier med opgivne Kotetal til hinanden. For $a = 0$ faa vi $X$-Aksen, som altsaa fremstilles ved $X_1 X_2$-Planen (overalt med Kotetallet 0);
+
+\origpage{15}
+for $a = \infty$ faa vi $Y$-Aksen, der fremstilles ved en Plan gennem $Y_1$, perpendikulær paa vort Rum $P$.${}^{*)}$
+
+Det er nu let at se, hvorledes Linien
+\[
+y = ax + q \qquad (q = q_1 + i q_2)
+\]
+fremstilles. Ligningerne (1) og (2) ændres til
+\[
+\begin{aligned}
+y_1 &= (a_1 x_1 - a_2 x_2) + q_1, \\
+y_2 &= (a_2 x_1 + a_1 x_2) + q_2,
+\end{aligned}
+\]
+der vise, at Bærerplanen parallelforskydes Stykket $q_1$, og at alle Faldliniernes Kotetal forøges med $q_2$.
+
+Rette Linier, parallele med $X$-Aksen fremstilles ved vandrette Planer med konstante Kotetal; rette Linier parallele med $Y$-Aksen fremstilles ved Planer, perpendikulære paa $P$ og med Spor i denne $Y_1$.
+
+\subsection*{§ 3. Algebraiske Kurver.}
+
+Lad $F(x, y) = 0$ være Ligningen for en algebraisk Kurve af $n$-te Orden; den forudsættes at have en almindelig Beliggenhed. Spalte vi mellem reelt og imaginært, faa vi to Ligninger af Formen
+\[
+y_1 = \varphi(x_1, x_2), \tag{1}
+\]
+\[
+y_2 = \psi(x_1, x_2), \tag{2}
+\]
+hvor $\varphi$ og $\psi$ ere $n$-tydige Funktioner af $x_1$ og $x_2$.
+
+(1) er Ligningen for Bærerfladen. Til hvert Punkt i $(X_1 X_2)$ skal svare $n$ reelle Værdier af $y_1$. Bærerfladen
+
+\textbf{*)} egl.\ desuden hele Rummet belagt med uendelig store Kotetal kfr.\ §~4. Herved faas den kontinuerte Overgang fra Linier med endelig Retningskoefficient, idet Bærerplanen gaar over til en Plan gennem $Y$, i hvilken Linie alle Faldlinier med endelige Kotetal have trukket sig sammen, mens Kotelinien $y_2 = \infty$ har udbredt sig over hele den resterende Plan.
+
+\origpage{16}
+maa derfor bestaa af $n$ reelle Blade, der udbrede sig langs hele den uendelig Plan $(X_1 X_2)$; Fladen kan aabenbart ikke have nogen Kontur paa $(X_1 X_2)$, hvorimod 2 Værdier af $y_1$ godt kunne falde sammen paa en Dobbeltkurve.
+
+Kurvesystemet (2), hvor $y_2$ er Parameter, fremstiller Projektionerne af Kotelinierne. Da $y$ er en monogen Funktion af $x$, er
+\[
+\frac{\partial \varphi}{\partial x_1} = \frac{\partial \psi}{\partial x_2}, \qquad
+\frac{\partial \varphi}{\partial x_2} = -\frac{\partial \psi}{\partial x_1},
+\]
+hvilket viser, at de to Kurvesystemer (1) og (2) (med henholdsvis $y_1$ og $y_2$ som Parametre) ere ortogonale Trajektoriesystemer. Heraf følger, at Kotelinierne paa Bærerfladen maa være dennes Linier af størst Fald.
+
+Ligningen
+\[
+\frac{\partial^2 \varphi}{\partial x_1^2} + \frac{\partial^2 \varphi}{\partial x_2^2} = 0
+\]
+viser, at $\frac{\partial^2 \varphi}{\partial x_1^2} \frac{\partial^2 \varphi}{\partial x_2^2} - \left(\frac{\partial^2 \varphi}{\partial x_1\,\partial x_2}\right)^2$ maa være negativ; Bærerfladens Krumning er derfor overalt hyperbolsk.
+
+En let Regning viser, at Tangenten til et ordinært Punkt af Kurven fremstilles ved en Plan, der tangerer den algebraiske Kurves Bærerflade i det betragtede Punkt; Faldlinien gennem Røringspunktet er Tangent til Faldlinien paa Bærerfladen --- selvfølgelig med samme Kotetal.
+
+Ved Hjælp af Reglen Pag.~14 bliver det altsaa let at afgøre, til hvilken Side paa Bærerfladen Faldliniernes Kotetal vokse. Kravler man op ad Fladen, har man de voksende Kotetal paa venstre Haand.
+
+\origpage{17}
+\emph{Singulære Punkter.} Til Substitutionen
+\[
+\begin{aligned}
+x &= x' + a, \\
+y &= y' + b,
+\end{aligned}
+\]
+svarer en Parallelforskydning af Aksehjørnet og Addition af en Konstant til Kotetallene. Man kan derfor tænke sig det singulære Punkt, man betragter, anbragt i Begyndelsespunktet; Bærerfladens Udseende og Koteliniernes Forløb vil være uforandret. Omegnen af det singulære Punkt fremstilles ved Rækker af Formen
+\[
+y = A x^\alpha + B x^\beta + \dots \qquad \left(\alpha = \frac{p}{q}, \; \beta = \frac{r}{q}, \dots\right),
+\]
+hvor Eksponenterne stadig vokse, og alle have fælles Nævner. Vi fæste Opmærksomheden paa \emph{éen} fuldstændig Kurvegren.
+
+Indføres Abscissens Modulus, $\rho$, og Argument, $\varphi$, faar man
+\[
+y_1 + i y_2 = A \rho^\alpha (\cos \alpha\varphi + i \sin \alpha\varphi) + B \rho^\beta (\cos \beta\varphi + i \sin \beta\varphi) + \dots
+\]
+Sættes
+\[
+\begin{aligned}
+A &= r (\cos \nu + i \sin \nu), \\
+B &= r_1 (\cos \nu_1 + i \sin \nu_1), \\
+&\quad\dots,
+\end{aligned}
+\]
+faas
+\[
+y_1 = r \rho^\alpha \cos (\nu + \alpha\varphi) + r_1 \rho^\beta \cos (\nu_1 + \beta\varphi) + \dots, \tag{1}
+\]
+\[
+y_2 = r \rho^\alpha \sin (\nu + \alpha\varphi) + r_1 \rho^\beta \sin (\nu_1 + \beta\varphi) + \dots \tag{2}
+\]
+
+(1) er Ligningen for Bærerfladen i semipolære Koordinater, (2) bestemmer Koteliniernes Projektioner paa $(X_1 X_2)$. Medtages kun første Led, kan det sidste System
+
+\origpage{18}
+faas af Niveaukurvernes Projektioner ved en Drejning paa $\frac{\pi}{2\alpha}$ om Begyndelsespunktet. Vi ville betragte nogle specielle Tilfælde.
+
+$1^\circ$. $q = 1$, $\alpha = 2$. $y = A x^2 + B x^3 + \dots$
+
+Punktet er et ordinært Punkt med $X$-aksen til Tangent. Bærerfladens Udseende i Omegnen af Begyndelsespunktet bestemmes ved
+\[
+y_1 = r \rho^2 \cos (\nu + 2\varphi).
+\]
+
+Denne Flade faas ved at konstruere den Gren af Parablen $y_1 = r x_1^2$, der svarer til positive Værdier af $x_1$, dreje dens Plan Vinklen $\varphi$ om $Y_1$ og samtidig multiplicere dens Ordinater med $\cos (\nu + 2\varphi)$; hele Fladen faas da ved at lade $\varphi$ antage alle Værdier fra 0 til $2\pi$. Skæringskurven med en Cylinder om $Y_1$ er en Bølgelinie, der 4 Gange passerer $(X_1 X_2)$.
+
+I et Punkt af en algebraisk Kurve, hvor $\frac{dy}{dx} = 0$ (uden at der findes andre Særegenheder), faar Bærerfladen et saddelformet Punkt med en vandret Tangentplan, der skærer Fladen i to paa hinanden vinkelrette Kurvegrene. Systemet af Kotelinier er af samme Type som Systemet af Hyperbler med fælles Asymptoter. Ligesom i dette en Hyperbel gennem sine Asymptoter gaar over til den konjugerede Hyperbel, saaledes gaar Faldlinier med Kotetal større end Røringspunktets over til Faldlinier med mindre Kotetal igennem en Kurve med Dobbeltpunkt. Dennes paa hinanden vinkelrette Grene tangere den vandrette
+
+\origpage{19}
+Tangentplan og skære hinanden under en ret Vinkel; den ene løber over Planen, den anden under. Tangenterne i Dobbeltpunktet halvere Vinklerne mellem Bærerfladens Hovedtangenter.
+
+$2^\circ$. $q = 2$, $\alpha = \frac{1}{2}$. $y = A x^{1/2} + \dots$
+
+Man faar her
+\[
+\begin{aligned}
+y_1 &= r \rho^{1/2} \cos \left(\nu + \frac{1}{2}\varphi\right) + \dots, \\
+y_2 &= r \rho^{1/2} \sin \left(\nu + \frac{1}{2}\varphi\right) + \dots
+\end{aligned}
+\]
+
+Ved den analoge Undersøgelse af Bærerfladen ses, at Bølgelinien paa Cylinderen gaar 2 Gange rundt, før den lukkes, og herunder udfører en fuldstændig Oscillation. Udseendet minder om et almindeligt Forgreningspunkt paa en Riemannsk Flade, idet der er en Dobbeltlinie, der i det betragtede Punkt har et \emph{pinch-point}, saa at Dobbeltlinien derefter forløber isoleret og mister Betydning for os.
+
+Medtages kun første Led, blive Niveaukurvernes Projektioner et System af konfokale Parabler. Faldliniernes Projektioner faas ved at dreje disse $180^\circ$ om Begyndelsespunktet (Brændpunktet). Til hver Projektion svarer i de to Blade to Grene, der skære hinanden paa Dobbeltlinien. Overgangen mellem de to Sæt Faldlinier sker gennem en lodret Parabel.
+
+Hermed er Bærerfladens Udseende beskrevet i et ordinært Punkt, hvor $\frac{dy}{dx} = \infty$.
+
+$3^\circ$. $q = 1$, $\alpha = 3$. $y = A x^3 + B x^4 + \dots$
+
+\origpage{20}
+Et Vendepunkt med vandret Tangent. Bølgelinien lukker sig efter én Omdrejning med 3 Oscillationer. Bærerfladen bestaar af eet Blad, Kotelinien $y_2 = 0$ har et 3-dobbelt Punkt, og de andre Kotelinier sende 3 Tunger ind afvekslende i det ene Sæt paa 3 Aabninger mellem Grenene og i det andet Sæt.
+
+Paa lignende Maade forholder $y = A x^p + B x^{p+1} + \dots$ sig.
+
+$4^\circ$. $q = 2$, $\alpha = \frac{3}{2}$\ednote{Author erratum (p.\ 98): fraction printed in superscript, corrected to inline fraction.}. $y = A x^{3/2} + \dots$ En Spids.
+\[
+\begin{aligned}
+y_1 &= r \rho^{3/2} \cos \left(\nu + \frac{3}{2}\varphi\right) + \dots, \\
+y_2 &= r \rho^{3/2} \sin \left(\nu + \frac{3}{2}\varphi\right) + \dots
+\end{aligned}
+\]
+
+Bølgelinien gaar 3 Gange rundt og udfører 3 Oscillationer. Fladen beskrives (tilnærmelsesvis), idet Bølgelinien paa lignende Maade som før bruges til Ledelinie for den positive Gren af Kurven $y_1 = r x_1^{3/2}$, der drejer sig om $Y_1$. $(X_1 X_2)$ bliver overdækket 2 Gange, og man faar 3 Forgreningslinier, der træffe sammen i Punktet under Vinkler paa $120^\circ$. Disse Dobbeltliniers videre Forløb som isolerede Linier interesserer os ikke.
+
+$5^\circ$. Paa lignende Maade kan en vilkaarlig fuldstændig Kurvegren undersøges. Fladens Form og Forgreningsliniernes Antal faas ved at undersøge Bølgelinien, i hvilken Cylinderen om $Y_1$ skæres. Den indeholder $p$ Oscillationer og gaar $q$ Gange omkring Cylinderen; der er $p(q - 1)$ Forgreningslinier, som udstraale fra Punktet, thi et Stykke af Bølgelinien fra et Maksimumspunkt til et Minimumspunkt (eller omvendt) passeres ved enhver af de $q - 1$ følgende
+
+\origpage{21}
+Omdrejninger 1 Gang, saa at der i det Hele bliver $p(q - 1)$ Skæringspunkter. Hvis den første Eksponent kan forkortes, blive Forholdene noget mere indviklede; vi ville dog ikke forfølge denne Ting videre.
+
+\emph{Keglesnit.} Naar man i Ligningen for et Keglesnit paa sædvanlig Maade spalter mellem reelt og imaginært, kommer man til to Ligninger af Formen
+\[
+\begin{aligned}
+y_2^2 + a_1 y_2 + a_2 &= 0, \\
+y_2^2 + b_1 y_2 + b_2 &= 0,
+\end{aligned}
+\]
+hvor Koefficienterne ere Polynomier i $x_1, x_2$ og $y_1$ af de Grader, Indices angive. Subtraktion giver en Ligning af Formen
+\[
+c_1 y_2 + c_2 = 0, \tag{1}
+\]
+og Elimination af $y_2$ giver
+\[
+c_2^2 - c_1 a_1 c_2 + c_1^2 a_2 = 0. \tag{2}
+\]
+
+Bærerfladen dannes altsaa af en algebraisk Flade af 4de Orden. (1) giver til hvert Punkt paa denne 1 tilsvarende Værdi af $y_2$, undtagen naar Punktet ligger paa det Keglesnit, i hvilket Planen $c_1 = 0$ skæres af $c_2 = 0$. Bærerfladen har 2 \emph{pinch-points} svarende til de to Punkter, i hvilke $\frac{dy}{dx} = \infty$; i det uendelig fjærne falder dens Forløb i det væsentlige sammen med Asymptoternes. Af alt dette kan sluttes, at Bærerfladens to Blade skære hinanden i to Dobbeltlinier, der kommende fra det uendelig fjærne standse i 2 pinch-points, og at disse Linier udgøre Dele af en Hyperbel. Denne kan specielt opløse sig i 2 hinanden skærende, rette Linier. Bærerfladens Forgreningslinier kunne da enten blot være Dele af den ene af disse eller ogsaa bestaa af et begrænset Stykke af den ene Linie
+
+\origpage{22}
+og hele den anden Linie, som da maa skære det begrænsede Stykke. Et Dobbeltpunkt paa Forgreningslinien faas for en vilkaarlig algebraisk Kurve, hver Gang Tangenterne til to Punkter med samme Abscisse ere parallele, samtidig med at deres Ordinaters reelle Dele ere lige store; det gælder f.~Eks. for en Hyperbel, naar Tangenterne parallele med $X$-Aksen ere imaginære. Som Eksempler paa det anførte kan tjene Kurverne $y^2 = \pm x^2 + 1$, hvis Bærerflader let undersøges. Som Eksempel paa en Kurve med Asymptote $\neq Y$-Aksen kan tjene $xy = a$. Projektionen af Niveaukurverne og Kotelinierne dannes af to Cirkelsystemer rørende $X_1$ og $X_2$ i Begyndelsespunktet.
+
+Lader man Keglesnittet opløse sig i to rette Linier, gaar Bærerfladen over til at bestaa af to Planer, Forgreningslinien bestaar af disses Skæringslinie, og de to \emph{pinch-points} ere faldne sammen i det Punkt, der svarer til de rette Liniers Skæringspunkt. Ved den omvendte Proces udskiller der sig altsaa fra Skæringspunktet to pinch-points; paa den mellemliggende Strækning ombyttes Bladenes Sammenhæng.
+
+\emph{Bærerfladen i sin Almindelighed.} Vi betragte en almindelig algebraisk Kurve af $n$-te Orden med $n'$ Tangenter parallele med $Y$-Aksen, med $d$ Dobbeltpunkter, $e$ Spidser og forudsætte, at den ikke indtager nogen speciel Stilling mod den uendelig fjærne, rette Linie og Koordinatsystemet. Den Blades Forløb i meget store Afstande bestemmes ved Asymptoterne. Der strækker sig altsaa $n(n - 1)$ Forgreningslinier ud i det uendelige. De $n'$ Forgreningspunkter, som svarer til $\frac{dy}{dx} = \infty$, ville vi kalde af 1ste Art; fra hvert af dem udgaar 1 Forgreningslinie. Til de $e$ Spidser svare Forgreningspunkter, som
+
+\origpage{23}
+vi ville kalde af 2den Art; fra disse udgaa 3 Forgreningslinier. Dobbeltpunkter paa Forgreningslinien, som ovenfor beskrevet, findes i Almindelighed ikke, derimod nok tredobbelte Punkter, i hvilke 3 Blade skære hinanden.
+
+Lade vi Kurven være uendelig nær ved at opløse sig i $n$ rette Linier, er det let at gøre sig Rede for Forgreningsliniernes Forløb: fra ethvert af de $n(n - 1)$ Forgreningspunkter af 1ste Art udstraaler der en Forgreningslinie, der strækker sig i det uendelige, og omvendt ender enhver fra det uendelige kommende Forgreningslinie i et Forgreningspunkt. Der er $n(n - 1)(n - 2)$ tredobbelte Punkter paa Forgreningslinierne. Naar der ved kontinuerte Ændringer opstaar et Dobbeltpunkt, sker dette ved, at to Forgreningspunkter forenes; opstaar der paa Kurven en Spids, vil der paa Bærerfladen dannes et Forgreningspunkt af 2den Art, idet 3 Forgreningspunkter af 1ste Art rykke sammen. Der skulde synes at være Mulighed for at behandle Bærerfladens Udseende i Almindelighed ved „de kontinuerte Ændringers Metode“; der rejser sig dog Vanskeligheder herfor. Dels er der vel ikke noget i Vejen for, at Antallet af tredobbelte Punkter kan ændres, dels kan Forgreningsliniernes Forløb ændres ved Dannelsen af Dobbeltpunkter paa dem, som ovenfor beskrevet. Dette sidste kan dog ikke frembringe nogen væsentlig Ændring i deres Forløb, idet man let beviser, at en Forgreningslinie, der udstraaler fra et Forgreningspunkt, i Almindelighed ikke kan ende i et andet, men maa strække sig i det uendelige. Hvis en Forgreningslinie nemlig forbinder saadanne to Punkter,
+
+\origpage{24}
+indses let ved Reglen Pag.~16 om Kotetallenes Voksen, at Forgreningslinien maa skæres af en anden Forgreningslinie (for at Bladenes Sammenhæng skal kunne ombyttes); men idet dette Dobbeltpunkt opløses, brydes Forbindelsen mellem de to Forgreningspunkter.
+
+\subsection*{§ 4. Planen.}
+
+Vi gaa nu over til at undersøge, hvorledes vi skulle opfatte de uendelig fjærne Elementer i $T$, for at denne kan svare til den projektiv-geometrisk definerede Plan $(XY)$. (Om andre Synspunkter senere). I denne have
+1) alle rette Linier 1 uendelig fjærnt Punkt;
+2) parallele rette Linier have fælles uendelig fjærnt Punkt;
+3) alle de uendelig fjærne Punkter danne tilsammen en ret Linie.
+
+Samlingen af de uendelig fjærne Punkter i vort Rum, $P$, ville vi betegne med $U$. Enhver Retning i $P$ bestemmer et Punkt i $U$.
+
+De Elementer i $T$, som svare til Planens uendelig fjærne Punkter, faas dels af Rummets uendelig fjærne Punkter ved at belægge disse med vilkaarlige Kotetal, dels af Rummets Punkter i endelig Afstand ved at belægge disse med uendelig store Kotetal. Forholdene ere imidlertid ret indviklede. Alle en Bærerplans uendelig fjærne Punkter udstyrede med deres tilhørende Kotetal skulle fremstille det samme Punkt, nemlig den tilhørende rette Linies uendelig fjærne Punkt. Heraf følger, at det Punkt i $U$, der er bestemt ved Faldlinierne i parallele Planer, fremstiller det samme Punkt af $(XY)$, hvilket endeligt Kotetal det end belægges med. Omvendt vil et Punkt i $U$ bestemt ved en Retning, der hverken er vandret eller lodret, svare til det uendelig fjærne Punkt af en ret Linie,
+
+\origpage{25}
+hvis Bærerplan har Faldlinier i Retning af det givne Punkt, hvilket endeligt Kotetal Punktet end belægges med.
+
+Alle de uendelig fjærne Punkter i Bærerplanen, der ligge i Retninger forskellige fra Faldlinierne, faa uendelig store Kotetal. Omvendt svarer et vilkaarligt Punkt i $U$ med uendelige Kotetal til en hel Samling af uendelig fjærne Punkter i $(XY)$, nemlig til dem, der tilhøre Linier, hvis tilsvarende Bærerplaner ere parallele med den Retning i $P$, i hvilken Punktet i $U$ ligger, uden at Faldlinierne gaa i denne Retning.
+
+De vandrette Planers uendelig fjærne Punkter fremstille $X$-Aksens uendelig fjærne Punkt, hvis Kotetallet er endeligt, hvorimod Sammenhængen er ubestemt, hvis Kotetallet er uendeligt. Punkter i $U$, som bestemmes ved den lodrette Retning med vilkaarlige Kotetal, svare til $Y$-Aksens uendelig fjærne Punkt, og det samme gælder Punkter i $P$ i endelige Afstande med uendelig store Kotetal. Som man ser, ere Forholdene temmelig indviklede.
+
+For Anskuelighedens Skyld ville vi tænke os Planen $(XY)$ sønderskaaren i saadanne Dele, der let og bekvemt fremstilles hver for sig. Dernæst sammenføjes atter de 4-dimensionale Mangfoldigheder, der fremstille Delene, eller man angiver blot, hvorledes Punkterne i de begrænsende Rum høre sammen.
+
+\emph{Sfæriske Rum.} Vi ville først undersøge den 3-dimensionale Mangfoldighed, som bestemmes ved Ligningen
+\[
+x_1^2 + x_2^2 + y_1^2 + y_2^2 = r^2,
+\]
+og som vi ville kalde et \emph{sfærisk Rum}. $y_2 = 0$ bestemmer en Kugleflade, der bliver Kontur, idet den Del af $P$, som ligger indenfor den, bliver Bærer dels for et Rum, der befinder sig over, dels for et, der befinder sig
+
+\origpage{26}
+under $P$. Kotefladerne blive for begge Rum koncentriske Kugleflader, der for $y_2 = \pm r$ svinde ind til Centrum. (Sammenlign med en Kugleflades Fremstilling ved sine Niveaukurvers Projektioner paa en vandret Diametralplan).
+
+Det sfæriske Rum deler $T$ i to Dele, der indeholde de Punkter, hvis Afstande fra Begyndelsespunktet ere henholdsvis mindre end eller større end $r$. De første Punkter projiceres paa $P$ indenfor Konturen, og deres Kotetal ligge i Værdi mellem de to Kotetal, som findes paa det sfæriske Rum vertikalt over og under Punktet.
+
+Skæringslinien mellem det sfæriske Rum og den Plan, der fremstiller $y = ax$, er bestemt ved
+\[
+\begin{aligned}
+y_1 &= a_1 x_1 - a_2 x_2, \\
+y_2 &= a_2 x_1 + a_1 x_2, \\
+x_1^2 + x_2^2 + y_1^2 + y_2^2 &= r^2.
+\end{aligned}
+\]
+
+Ligningen for Projektionen af Bærerkurven paa $(X_1 X_2)$ er
+\[
+(1 + a_1^2 + a_2^2)(x_1^2 + x_2^2) = r^2.
+\]
+
+Bærerkurven er derfor en Ellipse, hvis store Akse er den Diameter i Konturkuglen, som afskæres paa Bærerplanens Faldlinie gennem Begyndelsespunktet; den lille Akse faas ved at dreje den store Akses Projektion paa $(X_1 X_2)$ en Vinkel paa $90^\circ$. Endepunkterne af den store Akse dele Ellipsen i to Dele, hvis Kotetal have modsatte Fortegn, saa at den ene Del løber over $P$, den anden under; i Endepunkterne af den lille Akse naa Kotetallene deres største numeriske Værdi.
+
+\origpage{27}
+For $a$ uendelig stor bliver Skæringslinien den vertikale Cirkel
+\[
+\begin{aligned}
+x_1 &= 0, \\
+x_2 &= 0, \\
+y_1^2 + y_2^2 &= r^2.
+\end{aligned}
+\]
+
+Enhver ret Linie gennem Begyndelsespunktet deles saaledes af det sfæriske Rum i to enkelt sammenhængende Fladestykker; det ene af disse indeholder Liniens uendelig fjærne Punkt og er bestemt ved Uligheden
+\[
+|x| \ge \frac{r}{\sqrt{1 + |a|^2}}
+\]
+(for $a$ uendelig stor ved $|y| \ge r$).
+
+Hele Planen $(XY)$ beskrives af Linien $y = ax$, idet $a$ antager alle komplekse Værdier. Vi udskære først den 4-dimensionale Mangfoldighed $A$, som ligger indenfor det sfæriske Rum, $\Sigma$, med Centrum i Begyndelsespunktet og Radius $r$. Den resterende Del af $(XY)$, der indeholder Planens uendelig fjærne Linie fuldstændig, overskæres dernæst i to Dele paa følgende Maade:
+
+Enhver Linie $y = ax$, for hvilken $|a| = 1$, har et Fladestykke beliggende udenfor $\Sigma$, og dette bestemmes ved $|x| \ge r / \sqrt{2}$. Alle disse Fladestykker bestemme et Rum, $T$, der sønderskærer den omtalte Del af $(XY)$ i to Dele, som vi ville betegne ved $B'$ og $C'$; $B'$ skal være den Del, som indeholder $X$-Aksens uendelig fjærne Punkt, $C'$ den Del, som indeholder $Y$-Aksens. Rummet $T$ udgaar fra en Flade, $\tau$, i $\Sigma$, som beskrives af de omtalte Fladestykkers Rande. $T$ bestemtes ved
+\[
+|a| = 1, \qquad |x| \ge \frac{r}{\sqrt{2}}
+\]
+
+\origpage{28}
+$\tau$ bestemmes ved
+\[
+|a| = 1, \qquad |x| = \frac{r}{\sqrt{2}},
+\]
+eller, da $y = ax$, ved
+\[
+|x| = |y| = \frac{r}{\sqrt{2}}.
+\]
+
+Projektionen paa $P$ er en Cylinderflade, hvis Akse er $Y_1$, hvis Radius er $r / \sqrt{2}$, og som begrænses af to Cirkler i Konturen af $\Sigma$. Den kan beskrives af vertikale Cirkler, der bæres af Cylinderens Frembringere.
+
+$\Sigma$ deles af $\tau$ i to Dele, $\Sigma_1$ og $\Sigma_2$, gennem hvilke $A$ staar i Forbindelse med henholdsvis $B'$ og $C'$.
+
+Vi ville nu transformere $B'$ og $C'$, saa at deres Punkter komme til at ligge i det endelige.
+
+$B'$ er bestemt ved
+\[
+|a| \le 1, \qquad |x| \ge \frac{r}{\sqrt{1 + |a|^2}}; \tag{1}
+\]
+$a$ og $1 : x$ ere derfor endelige overalt i $B'$.
+
+Paa lignende Maade bestemmes $C'$ ved
+\[
+|a| \ge 1, \qquad |y| \ge \frac{|a| \cdot r}{\sqrt{1 + |a|^2}},
+\]
+eller, idet $a \cdot \beta = 1$, ved
+\[
+|\beta| \le 1, \qquad |y| \ge \frac{r}{\sqrt{1 + |\beta|^2}}; \tag{2}
+\]
+i $C'$ ere $\beta$ og $1 : y$ overalt endelige.
+
+$B'$ og $C'$ transformeres nu henholdsvis ved
+\[
+\xi = a, \qquad \eta = \frac{r}{\sqrt{1 + |a|^2}} \frac{1}{x} \tag{3}
+\]
+
+\origpage{29}
+og ved
+\[
+\xi' = \beta, \qquad \eta' = \frac{r}{\sqrt{1 + |\beta|^2}} \frac{1}{y} \tag{4}
+\]
+til 2 Mangfoldigheder $B$ og $C$, der defineres henholdsvis ved
+\[
+|\xi| \le 1, \qquad |\eta| \le 1
+\]
+og ved
+\[
+|\xi'| \le 1, \qquad |\eta'| \le 1.
+\]
+
+Idet vi paa sædvanlig Maade tyde $\xi$ og $\eta$ i en 4-dimensional Mangfoldighed og ligeledes $\xi'$ og $\eta'$, faa vi herved $B'$ og $C'$ ændrede til to simple helt i det endelige beliggende 4-dimensionale Mangfoldigheder. Den første af disse beskrives af vertikale Cirkelflader med Radius 1, med Centre i Cirkelfladen $|\xi| \le 1, \eta = 0$, og hvis Projektion paa $P$ ere lodrette Liniestykker. Projektionen af hele Mangfoldigheden paa $P$ er en ret, cirkulær Cylinder. Begrænsningen bestaar dels af et vertikalt Rum $T(B)$ svarende til $T$, der projiceres i den omtalte Cylinders krumme Overflade, og som er bestemt ved
+\[
+|\xi| = 1, \qquad |\eta| \le 1;
+\]
+dels af et Rum $\Sigma_1(B)$ svarende til $\Sigma_1$, hvis Projektion overdækker den Del af $P$, som indeholdes i Cylinderen, dobbelt; dette Rum bestemmes ved
+\[
+|\xi| \le 1, \qquad |\eta| = 1.
+\]
+
+Disse to Begrænsninger adskilles fra hinanden ved en Flade $\tau(A)$ svarende til $\tau$, der beskrives af de vertikale Cirkler
+\[
+|\xi| = 1, \qquad |\eta| = 1.
+\]
+
+\origpage{30}
+Om $C$ gælder ganske analoge Bemærkninger.
+
+Den uendelig fjærne Linie i $(XY)$ er fremstillet ved to horizontale Cirkelflader, den ene i $B$, den anden i $C$, og bestemte henholdsvis ved $\eta = 0$ og $\eta' = 0$. Deres Rande $|\xi| = 1, \eta = 0$ og $|\xi'| = 1, \eta' = 0$ ere geometriske Steder for Centrerne af de vertikale Cirkler, der frembringe $T(B)$ og $T(C)$.
+
+Vi ville nu slutte med en kort Oversigt over, hvorledes Begrænsningerne af de tre Mangfoldigheder $A, B$ og $C$ svare til hinanden.
+
+$B$ og $C$ skulle sammenføjes i Rummene $T(B)$ og $T(C)$ efter Formlerne
+\[
+\begin{aligned}
+\xi \cdot \xi' &= 1, \\
+\eta &= \eta',
+\end{aligned} \tag{5}
+\]
+hvilket ses af Formlerne (3) og (4). Den samlede Mangfoldighed, $B + C$, begrænses af $\Sigma_1(B)$ og $\Sigma_2(C)$, og denne maa nu, topologisk set, være af samme Art som det sfæriske Rum $\Sigma$. (Hertil komme vi senere tilbage). Formlerne (3) og (4) vise Sammenhængen.
+
+\subsection*{§ 5. Algebraiske Flader.}
+
+Lad $F(x, y, z) = 0$ være Ligningen for en algebraisk Flade af $n$-te Orden; vi ville forudsætte, at denne, opfattet som Punktfrembringelse, er en almindelig Flade (uden Dobbeltkurver, Spidskant eller Mangefoldspunkter), og at den indtager en almindelig Stilling i Forhold til Koordinatsystemet og den uendelig fjærne Plan.
+
+Ligesom en algebraisk Funktion af 1 uafhængig vari-
+
+\origpage{31}
+abel kan udbredes $n$-tydig paa en Kugleflade, der fremstiller en ret Linies Punkter, saaledes maa den ved ovenstaaende Ligning definerede algebraiske Funktion $z = f(x, y)$ kunne udbredes $n$-tydig i den 4-dimensionale Mangfoldighed, der fremstiller Planen $(XY)$. Til hvert Punkt i Planen svarer en Værdi af $z$; disse ville alle være forskellige, naar den rette Linie gennem Punktet og $=/\!=$\ednote{Author erratum (p.\ 98): reads $=/\!=$ og, corrected to og $=/\!=$.} $Z$-Aksen skærer Fladen i $n$ adskilte Punkter. Samlingen af Punkter i $T$, for hvilken dette ikke finder Sted, kalde vi \emph{Forgreningsfladen}. Denne vil være den Flade, som fremstiller Konturen af den algebraiske Flade paa Planen $(XY)$.
+
+Konturen er en algebraisk Kurve, hvis Orden er $n(n - 1)$, og hvis Klasse er $n(n - 1)^2$. Antallet af Spidser er lig Antallet af Hovedtangenter til Fladen parallele med $Z$-Aksen; dette Antal er $n(n - 1)(n - 2)$. Antallet af Dobbeltpunkter er lig Antallet af Dobbelttangenter til Fladen, parallele med $Z$-Aksen, lige stor med
+\[
+\frac{1}{2} n(n - 1)(n - 2)(n - 3).
+\]
+
+Forgreningsfladen, som vi ville betegne med $\Phi$, dannes altsaa af $n(n - 1)$ Blade langs $(X_1 X_2)$ med $n(n - 1)^2$ Forgreningspunkter af første Type og $n(n - 1)(n - 2)$ Forgreningspunkter af anden Type.
+
+Vi betragte nu hver af Delene $A, B$ og $C$ for sig.
+
+$\Sigma$'s Radius, $r$, ville vi tænke os som uendelig stor, saa at $A$ indeholder alle Forgreningsfladens Forgreningspunkter. Den Del af $\Phi$, som ligger i $A$, betegne vi ved $\Phi(A)$; den begrænses af $n(n - 1)$ lukkede Kurver, der tilnærmelsesvis kunne udskæres af $\Sigma$ ved Hjælp af Konturens Asymptoter. Vi kunne uden nogen væsentlig Indskrænkning forudsætte, at disse Kurver helt forløbe i den Del af $\Sigma$, vi have kaldt $\Sigma_1$; med andre Ord: forudsætte, at Konturens uendelig
+
+\origpage{32}
+fjærne Dele helt forløbe i $B$. Det vil nemlig ikke fremkalde nogen væsentlig Ændring i den i §~4 fremsatte Deling af Planen, hvis man i Stedet for at bestemme $T$ ved $|a| = 1$, bestemmer den ved $|a| = k$, hvor $k$ er et vilkaarligt positivt Tal.
+
+De Dele af $\Phi$, som forløbe i $B$, fremstilles (tilnærmelsesvis) af $n(n - 1)$ vertikale Cirkelflader
+\[
+\begin{aligned}
+\xi &= a_1, \qquad &|\eta| &\le 1, \\
+\xi &= a_2, \qquad &|\eta| &\le 1, \\
+&\dots \\
+\xi &= a_{n(n-1)}, \qquad &|\eta| &\le 1,
+\end{aligned}
+\]
+hvor $a_1, a_2, \dots, a_{n(n-1)}$ ere Retningskoefficienterne til Konturens Asymptoter. Disse Flader ville vi betegne ved $\varphi_1(B), \varphi_2(B), \dots, \varphi_{n(n-1)}(B)$.
+
+For nu at udbrede $z$'s Værdier i $A$, gennemskære vi denne Mangfoldighed med et vertikalt Rum, $\Psi$, hvis Projektion paa $P$ er $\Phi(A)$, og som iøvrigt er bestemt ved, at hvert Punkt i Projektionen skal belægges med Kotetal, der i Værdier ligge mellem det, som Punktet skal udstyres med for at tilhøre $\Phi$, og det, som Punktet skal udstyres med for at tilhøre den øverste Del af $\Sigma$; med andre Ord: Rummet er den Del af $A$, som ligger vertikalt over $\Phi(A)$.
+
+To Linier i $A$, der have de samme Endepunkter og ikke skære $\Psi$, kunne forbindes med et Fladestykke, der heller ikke skærer $\Psi$. Vi forbinde nemlig blot Liniernes Projektion i $P$ med et Fladestykke og udstyre dets Punkter med et vilkaarligt Kotetal, der, hvis Fladestykket skærer $\Phi$'s Projektion, blot skal være mindre end det mindste Kotetal, der er paa Skæringslinien. Randene af dette Fladestykke forbindes let med de givne Linier ved verti-
+
+\origpage{33}
+kale Fladestykker, og man har konstrueret en Flade med den forlangte Egenskab.
+
+Paa lignende Maade ses, at to vilkaarlige Punkter i $A$ altid kunne forbindes med Linier, der ikke skære $\Psi$.
+
+I et Punkt $a$ af $A$ anbringe vi en af de $n$ $z$-Værdier, der høre til Punktet. Lade vi $a$ bevæge sig til et Punkt $b$ ad to forskellige Veje, der ikke skære $\Psi$, og lade vi $z$-Værdien ændre sig kontinuert i Overensstemmelse med Ligningen $F(x, y, z) = 0$, maa vi begge Gange ende med samme Værdi; dette følger af, at de to Veje tilsammen danne Begrænsningen for et Fladestykke, der ikke skærer $\Psi$. Hele den af $\Psi$ gennemskaarne Mangfoldighed $A$ kan altsaa eentydig belægges med $z$-Værdier ud fra den givne. Ved paa lignende Maade at gaa ud fra de $n - 1$ andre $z$-Værdier faas $n$ Lag udbredte over $A$. To Punkter, der ligge lige overfor hinanden i Begrænsningerne mod $\Psi$, bære de samme $n$ Værdier (men ikke i samme Orden); i Overensstemmelse dermed sammenføjes Lagene.
+
+Den 4-dimensionale Mangfoldighed, som paa denne Maade i $n$ Lag udbredes over $A$, betegnes med $A'$; den begrænses af et Rum $\Sigma'$. Ethvert Fladestykke i $A$ bliver Bærer for et Stykke af en Riemannsk Flade i $A'$, og Forgreningspunkterne ligge i Fladestykkets Skæringspunkter med $\Phi(A)$.
+
+$z$-Værdiernes Udbredelse i $C$ frembyder ingen Vanskeligheder, da der slet ikke findes Punkter af Forgreningsfladen i dem; man faar $n$ Mangfoldigheder $C_1, C_2, \dots, C_n$ aldeles analoge med $C$.
+
+Forgreningsfladen sender, som tidligere bemærket, $n(n - 1)$ Fladestykker ind i $B$; $z$-Værdierne udbredes let her f.~Eks. ved Hjælp af $n(n - 1)$ Forgreningsrum udstraalende fra en af $B$'s vertikale Cirkelflader og endende
+
+\origpage{34}
+i $\varphi_1(B), \dots, \varphi_{n(n-1)}(B)$. At hele denne Mangfoldighed, $B'$, danner et samlet Hele, følger af, at den uendelig fjærne Plan skærer $F(x, y, z) = 0$ i en algebraisk Kurve $\Phi$, der efter vor Forudsætning er usammensat. Den Del $\Phi(B)$ af denne Kurve, der forløber i $B'$, bæres af Cirkelfladen $|\xi| \le 1, \eta = 0$. Resten bestaar af $n$ Elementarflader, der bæres af $|\xi'| \le 1, \eta' = 0$ i $C$. Hele $B'$ kan beskrives af vertikale Cirkelflader med Centre i det Riemannske Fladestykke $\Phi(B')$.
+
+\origpage{35}
+\section*{ANDET AFSNIT. Om topologiske Sammenhængstal.}
+
+\subsection*{§ 6. Topologi.}
+
+Descartes' analytiske Metode var vel en Universalmetode til Løsning af geometriske Opgaver, men i Reglen gav den Konstruktioner, der i Simpelhed og Elegance stode langt tilbage for Grækernes. Under Forsøgene paa at trænge ind i Principperne for den ejendommelige geometriske Analyse, disse anvendte, opstillede Leibniz en Række Betragtninger, som han betegnede som \emph{Analysis situs} eller \emph{Geometria situs}. (Leibnizens gesammelte Werke herausg.\ von G.~H.~Pertz, 1858, mathematische Schriften Bd.\ 1, p.\ 178: De Analysi situs). Man har undertiden i Sammenhæng hermed nævnet Leibniz som Faderen til den moderne Topologi: til den Gren af Matematikken, som tager Sigte paa kvalitative Egenskaber ved Tingene uden at beskæftige sig med kvantitative, metriske. Leibniz bemærker et Sted i Anledning af sin Teori: „Figura in universum praeter quantitatem continet qualitatem seu formam“, men i Realiteten har hans Teori
+
+\origpage{36}
+ingen Lighedspunkter med, hvad man nu forstaar ved Topologi.
+
+I den nyere Tid have Matematikerne begyndt at interessere sig for en stor Mængde topologiske Spørgsmaal. Man behøver blot at erindre om Taits, Simonys og andres Undersøgelser af Knuder, Net o.~l.; om Grafer; om grafiske Kurvers Udseende; om den Opgave at bemale, og derved adskille, Landene paa et Landkort ved Hjælp af 4 forskellige Farver; om Frimærkefoldningsproblemet og, last not least, om de omfattende Forsøg paa at danne en Teori for $n$-dimensionale Mangfoldigheders Sammenhængstal og paa at almindeliggøre Eulers Polyedersætning --- 2 Forsøg, der ere nøje knyttede til hinanden. (En god Litteraturoversigt findes i W.~Dyck: Beiträge zur Analysis situs, M.~A. Bd.\ 32).
+
+Sprogbrugen er noget vaklende, men det rimeligste vil være at forbeholde den sidstnævnte Slags Undersøgelser Navnet \emph{Analysis situs} og derimod bruge Ordet \emph{Topologi} om alle Undersøgelser af kvalitativ Natur, saaledes som Listing har foreslaaet (Vorstudien zur Topologie).
+
+\subsection*{§ 7. Analysis situs.}
+
+Det vil vistnok være meget vanskeligt paa en uangribelig Maade at opstille almindelige Sætninger angaaende en $n$-dimensional Mangfoldigheds Sammenhæng; i hvert Fald vil det vistnok være heldigt, om man, mere end det hidtil er sket, studerer konkrete Tilfælde i Stedet for straks at gaa løs paa Sagen i sin abstrakte Almindelighed. Teoretisk set burde Logik være tilstrækkelig til matematisk Udvikling, men Praksis viser, hvilken mægtig
+
+\origpage{37}
+Løftestang den Taktfølelse er, som bliver udviklet, naar man anvender en Teori paa en stor Del konkrete Tilfælde; selv om en Teori ser nok saa logisk og bestikkende ud, rummer den dog let Fejl, som først komme for Dagen, naar den ved Siden af kontrolleres af Anskuelsen.
+
+Riemann og Betti ere de første, som have forsøgt at almindeliggøre den Teori for Fladers Sammenhæng, som Riemann selv med saa stort Held har anvendt i de Abelske Integralers Teori. Efter Riemanns Død fremkom Betti med en Afhandling om det nævnte Emne (Sugli spazii di un numero qualunque di dimensioni, Ann.\ di matem.\ 2den Række, Bd.\ 4, 1871). Han omtaler ikke noget Samarbejde med Riemann; men at dømme efter de Fragmenter til en Teori, som Weber har samlet sammen af Noter, Riemann havde nedskrevet (Riemann: Gesammelte mathematische Werke, 2.\ Aufl.\ Fragment XXIX), saa har Riemann under sit Ophold i Italien (Ges.\ Werke, p.\ 555) givet et væsentligt Bidrag til de Tanker, der findes udtalt i Bettis Afhandling. I denne findes første Gang Definitionen paa Sammenhængstal af Mangfoldigheder, hvis Dimensionstal overstige 2. Senere have forskellige søgt at forbedre og fuldstændiggøre Teorien: Dyck i „Beiträge zur Analysis situs“ (M.~A. Bd.\ 32 og Bd.\ 37), Poincaré i Afhandlingen „Analysis Situs“ og Picard i Arbejderne over Funktioner af to variable (se p.\ 5).
+
+Allerede før jeg kendte disse sidstnævnte Arbejder, havde jeg besluttet at forsøge en anden Vej end den Riemann-Bettiske, nemlig at prøve paa at almindeliggøre Jul.~Petersens Punkteringsmetode, som jeg erindrede fra Forelæsninger. (Listings „Diagram“ og „Trema“ lærte jeg først langt senere at kende, og det samme gælder de af Undersøgelserne hos Betti, som ere beslægtede hermed,
+
+\origpage{38}
+og som jeg indtil for nylig kun har kendt gennem det kortfattede Referat i „Fortschritte der Mathematik“). Blandt andet forekom det mig uheldigt, at de $n$ Sammenhængstal ikke vare tilstrækkelige til, topologisk set, at karakterisere en Mangfoldighed, naar $n > 2$. Da jeg stiftede Bekendtskab med de senere nævnte Afhandlinger, særlig Poincarés, begyndte jeg at vakle i mit Valg, idet jeg sammenlignede de elegante Metoder, jeg her traf, med den noget tunge og ubehjælpsomme Teori, jeg selv arbejdede med; men da jeg mente at opdage, at den Vej, jeg havde valgt, kastede Lys over Forhold, som ikke traadte klart frem paa den anden Maade, og da jeg desuden fik Midler i Hænde til at finde tilstrækkelige Kriterier paa, at $n$-dimensionale Mangfoldigheder ere ækvivalente, saa besluttede jeg mig til at fortsætte trods de store Vanskeligheder, jeg mødte. At to Mangfoldigheder ere ækvivalente, vil sige, at de svare til hinanden Punkt for Punkt, saa at to vilkaarlige Punkter i den ene nærme sig til at falde sammen, naar de to tilsvarende Punkter i den anden Mangfoldighed gøre det. (Sammenhængen mellem Poincarés Begreb Homéomorphisme, Analysis Situs § 2, og det her definerede Begreb Ækvivalens komme vi senere tilbage til).
+
+Det Spørgsmaal, der stiller sig i Forgrunden, er, hvilke Snit man skal anbringe i en lukket Mangfoldighed (\emph{variété fermée}; Poincaré l.~c.\ § 1) for at faa den gjort enkelt sammenhængende. Til Løsningen heraf benytte vi da følgende Fremgangsmaade: Mangfoldigheden \emph{punkteres} ɔ: den Elementarmangfoldighed, der danner Omegnen af et Punkt, borttages. Ved Punkteringen opstaar der en Begrænsning, og denne udvides ved kontinuert Deformation, saa at der borttages mere og mere af den givne Mangfoldighed. Saaledes vedbliver man, indtil Dele af
+
+\origpage{39}
+Begrænsningen møde andre Dele af denne; paa saadanne Steder standser man da Deformationen, naar Afstanden mellem de Dele, der mødes, er bleven uendelig lille. Fortsætter man paa denne Maade, ender man med et \emph{Diagram}, dannet af et System af Mangfoldigheder af lavere Dimension end den givne --- eller rettere: dannet af dette Systems nærmeste Omegn, altsaa af en Mangfoldighed, der i den $n$'te Dimension er uendelig lille. Systemet af Mangfoldigheder af lavere Dimension, som er Grænsen for Diagrammet, kalde vi dets \emph{Kærne}.
+
+Dette Diagram har en dobbelt Betydning. \emph{For det første} fremstiller det en Mangfoldighed, der er ækvivalent med den givne, efter at denne er bleven punkteret. Lykkes det at opstille Normalformer, til hvilke Diagrammerne kunne reduceres, bliver den nødvendige og tilstrækkelige Betingelse for, at to lukkede Mangfoldigheder ere ækvivalente, at Diagrammernes Normalformer ere identiske. De ved Punkteringen borttagne Elementarmangfoldigheder ere jo nemlig altid ækvivalente. \emph{Men} Diagramkærnen angiver de Snit, man skal lægge for at gøre den givne Mangfoldighed \emph{enkelt sammenhængende}; foretages nemlig den omtalte Udvidelsesproces i baglæns Orden, vil den Mangfoldighed, som bliver tilbage, naar man lægger de ved Diagrammet bestemte Snit, trække sig tilbage til den Elementarmangfoldighed, som borttages ved Punkteringen.
+
+Vi skulle senere komme tilbage til en Sammenligning mellem de Resultater, man finder ad denne Vej, og den Riemann-Bettiske Teori for Sammenhængstal.
+
+\origpage{40}
+\subsection*{§ 8. Diagrammet til Riemannske Flader.}
+
+Omend Teorien for de Riemannske Fladers Sammenhængstal er vel bekendt og oven i Købet findes behandlet paa en Maade, der meget ligner den her fremsatte, hos Jul.~Petersen (Funktionsteori, Kap.\ IV), ville vi dog af Hensyn til det følgende kort antyde en Udvikling af denne Teori særlig for at vise, at denne kan bygges udelukkende paa Grundlag af Diagrammet altsaa uden at benytte den udvidede Eulerske Sætning (Teoremet om Fladers invariante Tal $t - f$).
+
+Vi ville tænke os den Riemannske Flade baaret af en Kugleflade; fra et Punkt $a$ i denne lægge vi Storcirkelbuer hen til de $n$ Punkter, der bære Fladens Forgreningspunkter; disse ville vi antage have Ordnerne $k_1 - 1, k_2 - 1, \dots, k_f - 1$. Vi punktere et Sted alle $n$ Blade, og ved Udvidelse af Punkteringerne føres deres Rande hen til Forgreningspunkterne og ind langs de tegnede Storcirkelbuer til $a$. Af Fladen bliver der da tilbage, efter at man har inddraget nogle blindtendende Strimler, 1)~$f$ Elementarflader omkring Forgreningspunkterne, 2)~$n$ Elementarflader over $a$ og 3)~$k_1 + k_2 + \dots + k_f$ Strimler, som forbinde de førstnævnte Elementarflader med de sidstnævnte. Vi overskære $n - 1$ Strimler, hvis Begrænsninger høre til forskellige Randkurver, og Stumperne inddrages. Fladen repræsenterer nu et Diagram svarende til 1~Punktering. Dette indeholder i alt $f + n$ Elementarflader, forbundne med $\Sigma(k) - n + 1$ Strimler; vi benytte $f + n - 1$ af disse Strimler til at forbinde de $f + n$ Elementarflader med, saa at det hele danner 1~Elementarflade. Fra dennes Rand udgaa
+
+\origpage{41}
+\[
+\begin{aligned}
+&\sum_1^f (k) - n + 1 - f - n + 1 \\
+&= \sum_1^f (k - 1) - 2n + 2
+\end{aligned}
+\]
+Hanke, der let parres sammen til Dobbelthanke. Betegner $m$ Mangefoldsgraden af en vilkaarlig fuldstændig Kurvegren paa den til Fladen svarende algebraiske Kurve, bliver $\Sigma(k - 1) = \Sigma(m - 1) + n'$ (Summationen udstrakt til alle Kurvegrene, hvor $m > 1$). Antallet af Hanke bliver altsaa det fra Geometrien bekendte Tal
+\[
+\Sigma(m - 1) + n' - 2n + 2 = 2p.
+\]
+Vi komme altsaa til en Normalform med $p$ Dobbelthanke, og den nødvendige og tilstrækkelige Betingelse for, at to Riemannske Flader topologisk set ere ækvivalente, er altsaa, at de have samme $p$.
+
+Ville vi have en Normalform for den lukkede Riemannske Flade, kunne vi ved hver Dobbelthank lade den ene Hanks to Mundinger glide ud paa Midten af den anden, og dernæst ved stadig at gøre den bredere lade dens Mundinger optage den anden Hanks Rande. Ved derpaa at lukke Fladen med en Elementarmangfoldighed faas Kleins Normalform: en Kugleflade med $p$ rørformede Hanke.
+
+Det her fremsatte kan tjene som et Slags Program for de Undersøgelser, der skulle anstilles. Vi ville nævne endnu en Metode at behandle Sagen paa, der er vel skikket til at udvides til algebraiske Flader. Vi antage, at den algebraiske Kurve $\varphi_n$ er uden singulære Punkter. (Hvorledes Forholdene ere, naar der findes saadanne, kan
+
+\origpage{42}
+findes ved Grænseovergang fra den her betragtede Kurve). Ændres Kurven kontinuert, uden at der indføres singulære Punkter, og idet Graden bliver uforandret, faar man ækvivalente Riemannske Flader. Vi ville lade den ændre sig til en Kurve $\psi_n$, som er uendelig nær ved at opløse sig i $n$ vilkaarlig beliggende, rette Linier. At dette altid lader sig gøre, ses f.~Eks.\ ved at betragte det lineære Bundt $\varphi_n + \lambda \psi_n = 0$; Kurverne faa kun singulære Punkter for et bestemt, endeligt Antal Værdier af $\lambda$, og man vil derfor altid kunne lade $\lambda$ gaa fra $0$ til $\infty$ uden at passere disse. De rette Linier fremstilles ved $n$ koncentriske Kugleflader med samme Radius; idet man gaar over til $\psi_n$ ved at opløse de $\frac{1}{2} n(n - 1)$ Dobbeltpunkter, opstaar der to Forgreningspunkter af hvert Dobbeltpunkt; saadanne parrede Forgreningspunkter ligge uendelig nær ved hinanden og forbindes med Forgreningslinier. Ved to Cirkler om to saadanne parrede Forgreningspunkter hver i sit Blad udskæres disse af Fladen; den udskaarne Del omdannes til et Rør; dette gentages ved de andre Par, og de $\frac{1}{2} n(n - 1)$ Rør tilføjes atter paa rette Maade i Hullerne paa de $n$ Kugleflader, efter at disse først ere flyttede ud fra hinanden; $n - 1$ Rør benyttes til at omdanne Kuglefladen til 1~Kugleflade, og fra denne udspringer der altsaa $\frac{1}{2} n(n - 1) - n - 1$\ednote{Misprint in original for $-(n-1)$ or $-n+1$.} $= \frac{1}{2}(n - 1)(n - 2) = p$ rørformede Hanke ɔ: vi ere atter komne til Kleins Normalform.
+
+Var en lukket Flade unilateral, vilde dens Diagram ved Siden af Dobbelthankene indeholde et vist Antal enkelte Hanke, hver med 1~Torsion.
+
+\origpage{43}
+\subsection*{§ 9. Diagrammet til 3-dimensionale Mangfoldigheder.}
+
+Lad en lukket 3-dimensional Mangfoldighed være defineret ved
+\[
+x_i = \theta_i(y_1, y_2, y_3) \qquad (i = 1, 2, \dots, n)
+\]
+og ved et vist Antal Uligheder af Formen
+\[
+\psi(y_1, y_2, y_3) > 0
+\]
+og ved den analytiske Fortsættelse af dette Rum (kfr.\ Poincaré, Analysis Situs § 3), eller for at bringe Udtrykket mere i Overensstemmelse med Topologiens Væsen: lad den være defineret ved, at den skal opstaa ved Sammenføjning af Elementarrum, hvis Begrænsninger ved et Net af Linier ere delte i Arealer, der paa bestemt Maade to og to skulle sammenføjes; dette skal ske saaledes, at i den lukkede Mangfoldighed Omegnen af ethvert Punkt, som skriver sig fra en af Linierne i Nettet, bliver et Elementarrum. Skal den definerede Mangfoldighed være usammensat, maa disse Rum til en Begyndelse kunne sammenføjes til 1~Elementarrum, hvis Overflade da tilfredsstiller de samme Betingelser. Der frembyder sig ingen Vanskeligheder for med Anskuelsen at følge Udvidelsen af en Punktering.
+
+Diagramkærnen vil dannes af Fladestykker, der støde sammen i Kurvestykker; disse mødes i Punkter, Diagramkærnens Knudepunkter. Fladerne kunne vi tænke os enkelt sammenhængende, da man i modsat Fald kan lægge Kurvestykker med Endepunkter i Diagrammets Kurvestykker og sønderskærende Fladestykkerne i enkelt sammenhængende Dele; de lagte Kurvestykker kunne da henregnes til de øvrige.
+
+Vi gaa nu over til at betragte selve Diagrammet.
+
+\origpage{44}
+Ethvert Knudepunkt er omgivet af en Elementarmangfoldighed, som vi f.~Eks.\ kunne give Kugleform; Kurvestykkerne, som forbinde disse, ere omgivne af traadformede Rum, der ere tilfæstede til de lige omtalte Kugleflader ved smaa Elementarflader. Lad os kalde disse Rum \emph{Traade}; de kunne beskrives af en Elementarflade, der bevæger sig fra en af Kuglefladerne til en anden af dem (dette kan i øvrigt ske paa to væsentlig forskellige Maader; se nedenfor § 11). Det Rum, der omgiver et af Diagrammets Elementarfladestykker, er et pladeformet Rum, der er begrænset af to Elementarflader, der danne Pladens Sider, og af en Fladestrimmel af Cirkelringens Sammenhæng, der danner Pladens Rand; dette Rum, som vi ville kalde en \emph{Plade}, tilhæftes med sin Rand langs en Fladestrimmel paa Overfladen af det Legeme, som dannes af Knudepunktskuglerne og Traadene. Lad Diagrammet i alt have $a$ Knudepunktskugler, $b$ Traade og $c$ Plader. Ved $a - 1$ Traade forbindes de $a$ Kugler til 1~Elementarrum, der gives Kugleform, og fra denne Centralkugle udspringer $b - a + 1 = p$ Traade; paa Overfladen, hvis Sammenhængstal er $2p + 1$, løber der $c$ lukkede Kurver, langs hvilke Pladernes Rande skulle tilhæftes.
+
+\emph{Den nødvendige og tilstrækkelige Betingelse for, at et saadant System af Traade med Tilhæftningskurver for Plader kan fremstille Diagrammet for et lukket Rum, er, at Tilhæftningskurverne dannes af $p$ Ringsnit, der ikke sønderdele Overfladen af Traadsystemet.}
+
+Den nødvendige og tilstrækkelige Betingelse er nemlig, at Overfladen efter Tilføjelse af Pladerne er ækvivalent med Overfladen $\varkappa$ af det ved Punkturen udtagne Elementarrum ɔ: er af samme Sammenhæng som en Kugleflade.
+
+\origpage{45}
+Hvis Diagrammet virkelig svarer til en lukket Mangfoldighed, vil en vilkaarlig Plades to Sider svare til to enkeltsammenhængende Arealer paa $\varkappa$. Borttages Pladen af Diagrammet, ændres Sammenhængen af dettes Overflade, idet Pladens to Sider erstattes med den Strimmel, langs hvilken Pladen var tilhæftet, og som er ækvivalent med en Cirkelring. For at lade $\varkappa$ undergaa samme Ændring i Sammenhæng udskærer man de to tilsvarende Arealer og forbinder dem med et Rør. Fortsætter man paa denne Maade, til alle Plader ere borttagne, erstattes $\varkappa$ med en Kugleflade, forsynet med ligesaa mange rørformede Hanke, som der var Plader; denne Flade skal være af samme Sammenhæng som Traadsystemets Overflade. (Dermed siges ingenlunde, at det Rum, som den begrænser, skal være af samme Sammenhæng som Traadsystemet selv). Vi kunne heraf slutte, at Pladernes Antal maa være $p$. Sammenhængen mellem de to Flader er en saadan, at Linier, der paa Traadsystemets Overflade løbe gennem en af de $p$ Tilhæftningsstrimler, svare til Linier, der paa den anden Flade overskære en af de $p$ Hanke (Meridiankurver). Overfladen af Traadsystemet sønderdeles derfor ikke, naar man borttager Tilhæftningsstrimlerne.
+
+At den nævnte Betingelse er tilstrækkelig, ses ved at bemærke, at de Flader ere ækvivalente, der blive tilbage, naar man i to ækvivalente, lukkede Flader lægger vilkaarlige Systemer af det højeste Antal ikke sønderdelende Ringsnit. Den Flade, der bliver tilbage, naar man af Traadsystemets Overflade borttager de $p$ Tilhæftningsstrimler, er derfor ækvivalent med en Kugleflade med $2p$ Huller. Overfladen af det Legeme, man faar ved at til-
+
+\origpage{46}
+hæfte Pladerne, er derfor ækvivalent med den Kugleflade, man kan faa ved at tillukke de $2p$ Huller med Elementarflader.
+
+\subsection*{§ 10. Orienterede Mangfoldigheder.}
+
+* \emph{Indikatrix.} Inden vi fortsætte Undersøgelsen af Diagrammet, bliver det nødvendigt at indskyde nogle Bemærkninger. Tre Punkter $a$, $b$ og $c$ paa en lukket Kurve bestemme en positiv Retning paa denne; i en Flade kan fastlægges en positiv Omløbsretning ved paa en lille, lukket Kurve, som ikke skærer sig selv, at fastsætte en positiv Retning; herved kan atter bestemmes en positiv og en negativ Side af Fladen i den Del af Rummet, der nærmest omgiver den lille, lukkede Kurve. Udstrækker man denne Bestemmelse til hele Fladen, viser det sig, at man maa skelne mellem unilaterale og bilaterale Flader. Man ser, at her er et Felt for Undersøgelser, som maa udstrækkes til Mangfoldigheder af højere Dimensioner; Omløbsretninger paa Kurver og Fladers positive og negative Sider ere topologiske Fundamentalbegreber.
+
+Omegnen af et Punkt paa en Kurve er et lille Liniestykke, hvis Endepunkter vi ville betegne ved 1 og 2, saa at $12$ angiver Liniestykkets positive Retning; $12$ ville vi kalde en \emph{Indikatrix af 1ste Orden} (kfr.\ Dyck, M.~A. Bd.\ 32, p.\ 473), og vi sige, at en med Indikatrix forsynet Kurve er \emph{orienteret}. Omegnen af et Punkt i en Flade er en lille, lukket Kurve; er den orienteret, kaldes Fladestykket, der derved begrænses, for en \emph{Indikatrix af 2den Orden}. I et paa den omtalte Maade defineret Rum er Omegnen af et Punkt en Flade af Kuglefladens Type; forsynes denne med en Indikatrix af 2den Orden, faas
+
+\origpage{47}
+Rummets Indikatrix af 3die Orden. Paa ganske lignende Maade kunne vi danne en Indikatrix af 4de Orden i $T$ eller i en 4-dimensional Mangfoldighed, som faas ved Sammenføjning af Elementarmangfoldigheder i $T$. Definitionen kan godt udvides til analytisk definerede Mangfoldigheder af en hvilkensomhelst Dimension, men bliver vanskelig at anvende i denne Skikkelse, naar Mangfoldigheden ikke frembyder sig for Anskuelsen. For os have Undersøgelserne derfor kun Betydning, naar Dimensionstallet er mindre end 5. Indikatrix af $n$'te Orden indeholder en Række successive Indikatricer af Ordnerne $n - 1, n - 2, \dots, 1$; denne sidste er Liniestykket $12$.
+
+Indikatrix kan forskydes i Mangfoldigheden; man kan lade den vende tilbage til den oprindelige Stilling, saa at de successive Indikatricer indtil den af 2den Orden dække hinanden; der er da to Muligheder: enten kan $12$ bringes i sin gamle Stilling $12$, eller den kan bringes i Stillingen $21$. Hvis det første er Tilfældet for alle mulige Forskydninger i Mangfoldigheden, siges den at være \emph{bilateral}, ellers \emph{unilateral}. En bilateral Mangfoldighed kan orienteres paa to forskellige Maader; de to Mangfoldigheder kaldes \emph{modsatte}.
+
+Disse Definitioner havde jeg allerede arbejdet med, da jeg saa Poincarés Behandling (Analysis Situs, § 4 og § 8); jeg vedblev dog at benytte mine egne, da Poincarés væsentlig ere beregnede paa topologiske Undersøgelser i analytisk Form. Jeg har bemærket, at den Definition, der findes i Picards og Simarts Bog (p.\ 23), efter sit Indhold stemmer med min, men jeg har dog her foretrukket at følge min oprindelige Form, som giver Anskuelsen noget mere haandgribeligt at støtte sig til.
+
+Begrænsningen af en bilateral og orienteret $n$-dimen-
+
+\origpage{48}
+sional Mangfoldighed $M$ kunne vi tænke os orienteret ved selve Mangfoldighedens Indikatrix. Denne kan nemlig forskydes, saa at den Del af dens Begrænsning, som dannes af Indikatrix af $(n - 1)$\ednote{Author erratum (p.\ 98): reads $(n - 1)^{\text{e}}$, corrected to $(n - 1)^{\text{te}}$.} Orden, kommer til at ligge i Begrænsningen af $M$, og denne (med alle dem af lavere Orden, som den indeholder) kan da bruges til at orientere Begrænsningen med. Omvendt kan man paa lignende Maade orientere selve Mangfoldigheden ved Hjælp af Begrænsningens Indikatrix. I det følgende fordre vi stadig, at Begrænsningen er orienteret i Overensstemmelse med Mangfoldighedens Indikatrix.
+
+(Den sædvanlige Definition af en Flades positive og negative Side paa Grundlag af dens positive Omløbsretning forudsætter, at man har opgivet Rummets Indikatrix eller et Surrogat for denne --- højre Haand, et Ur eller lignende).
+
+\emph{Orienterede Hjørner.} Lad en $m$-dimensional Mangfoldighed være defineret ved Indbegrebet af Punkterne
+\[
+(y) = (y_1, y_2, \dots, y_m),
+\]
+hvor de reelle $y$-Værdier ikke ere underkastede nogen Betingelse i deres Variation. Punktet $(0, 0, \dots, 0)$ kalde vi $o$. Gennem dette Punkt og ethvert af de $m$ Punkter $(a), (b), \dots, (k)$ trækkes Halvlinierne $A, B, \dots, K$ (ɔ: den Del af de rette Linier, der fra $o$ gaar i positiv Retning). Vi forudsætte, at Punkterne have en saa almindelig Beliggenhed, at Determinanten $\Delta = |a, b, \dots, k|$ er forskellig fra 0. Idet $p$ betyder et helt Tal mellem 1 og $m$, kan man i saa Fald være sikker paa, at man aldrig gennem $p$ af Linierne kan lægge en plan Mangfoldighed af $(p - 1)$'te Dimension. Til hver Halvlinie svarer en plan Mangfoldighed af $(m - 1)$'te Orden, som gaar gennem de
+
+\origpage{49}
+$m - 1$ øvrige Halvlinier. Disse $m$ plane Mangfoldigheder i Forbindelse med Halvlinierne danne, hvad vi ville kalde et \emph{$m$-dimensionalt Hjørne} med $o$ til Toppunkt og Halvlinierne til Kanter; vi kalde det \emph{orienteret}, naar den Orden, i hvilken Kanterne nævnes, er fastslaaet. $m - 1$ af Halvlinierne bestemme atter i den plane Mangfoldighed, i hvilken de befinde sig, et $(m - 1)$-dimensionalt Hjørne og saaledes videre; i Almindelighed: $p$ vilkaarlige Kanter ligge i en $p$-dimensional Mangfoldighed og bestemme i denne et $p$-dimensionalt Hjørne, underordnet det givne og orienteret i Overensstemmelse med det.
+
+Vi kunne let knytte en Forbindelse mellem den Orden, i hvilken Kanterne nævnes, og Bestemmelsen af Indikatrix i Mangfoldigheden $(y)$. Som Begrænsning for Indikatrix vælge vi f.~Eks.\ den sfæriske Mangfoldighed $\Sigma(y^2) = r^2$. Denne skæres af Kanten $A$ i et Punkt $a'$; Omegnen af $a'$ tages til Indikatrix af $(m - 1)$'te Orden, og tænkes begrænset af Skæringsmangfoldigheden mellem $\Sigma(y^2) = r^2$ og den plane Mangfoldighed af $(m - 1)$'te Dimension gennem $B, \dots, K$. Denne Mangfoldighed behandles paa samme Maade: Omegnen af det Punkt, $b'$, i hvilket $B$ skærer den sfæriske Mangfoldighed, tages til Indikatrix af $(m - 2)$'den Orden og begrænses ved Hjælp af den plane Mangfoldighed gennem $C, \dots, K$. Idet man fortsætter paa denne Maade følgende den ved Hjørnets Orientering fastlagte Orden af Kanterne, saa ender man med en lukket Kurve (Skæring mellem $\Sigma(y^2) = r^2$ og Planen gennem de sidste to Kanter $I$ og $K$). $I$'s Skæringspunkt benævne vi $i'$, og $K$'s benævne vi $1$; $K$'s negative Forlængelse skærer i et Punkt, vi kalde $2$. Som Indikatrix af $1^{\text{ste}}$ Orden tage vi Liniestykket $1\,i'\,2$, og hermed er Indikatrix af $n^{\text{te}}$ Orden bestemt. Sammen-
+
+\origpage{50}
+hængen mellem denne og Hjørnet kan kort angives derved, at Hjørnets første Kant træffer Begrænsningen af Indikatrix i et Punkt af Indikatrix af $(m - 1)$'te Orden, dets anden Kant i et Punkt af Indikatrix af $(m - 2)$'den Orden o.~s.~v., dets $(m - 1)$'te Kant i et Punkt af Indikatrix af første Orden, og endelig dets $m$'te Kant i Punktet 1, og den negative Forlængelse af den i Punktet 2.
+
+Ved kontinuerte Forskydninger af Hjørnet opretholde vi stadig Fordringen, at $p$ Kanter aldrig maa komme til at ligge i samme plane Mangfoldighed af $(p - 1)$'te Dimension. Er Hjørnets Toppunkt forskudt til Punktet $(t)$, og bestemmes Hjørnets Kanter ved Punkterne $(a'), (b'), \dots, (k')$, vil Determinanten
+\[
+|a' - t, \; b' - t, \; \dots, \; k' - t|
+\]
+have samme Fortegn som $\Delta$ i Udgangsstillingen.
+
+Hjørnet kan forskydes, saa at de $m - 1$ første Kanter dække de tilsvarende Kanter i et givet $m$-dimensionalt Hjørne; eftersom den $m$'te Kant kan bringes til at dække den $m$'te eller ikke, siges Hjørnerne at være af \emph{samme} eller \emph{modsat Art}.
+
+Vi ville tænke os Indikatrix i $(y)$ bestemt i Overensstemmelse med Koordinathjørnet ɔ: det Hjørne, hvis Toppunkt er i $o$, og hvis Kanter gaa gennem Punkterne
+\[
+\begin{gathered}
+(1, \; 0, \; \dots, \; 0) \\
+(0, \; 1, \; \dots, \; 0) \\
+\dots\dots\dots\dots\dots \\
+(0, \; 0, \; \dots, \; 1)
+\end{gathered}
+\]
+
+\origpage{51}
+Her er $\Delta = 1$; for alle Hjørner, der ere orienterede i Overensstemmelse med $(y)$'s Indikatrix, vil altsaa $\Delta'$ være positiv, og omvendt.
+
+\emph{Sammenligning med Poincarés Teori.} (Analysis situs § 8). En Elementarmangfoldighed bestemt ved (Anal.\ sit.\ § 3)
+\[
+y_i = \theta_i(v_1, v_2, \dots, v_m) \qquad (i = 1, 2, \dots, m)
+\]
+i Forbindelse med Uligheder af Formen
+\[
+\psi(y_1, y_2, \dots, y_m) > 0
+\]
+kan betragtes som en Afbildning af en Elementarmangfoldighed i $(y)$ bestemt ved Ulighederne $\psi(y) > 0$. Vi orientere den ved en Indikatrix, der er Billedet af den i $(y)$.
+
+Vi ville nu antyde, hvorledes man kan se, at vor Fremstilling er i Overensstemmelse med Poincarés. Problemet er følgende:
+
+Der er givet to Elementarmangfoldigheder af $m^{\text{te}}$ Orden, $v_1$ bestemt ved
+\[
+\begin{gathered}
+x_i = \theta_i(y_1, y_2, \dots, y_m), \tag{1} \\
+|y_k| < \beta_k;
+\end{gathered}
+\]
+og $v_2$ bestemt ved
+\[
+\begin{gathered}
+x_i = {\theta'}_i(z_1, z_2, \dots, z_m), \tag{2} \\
+|z_k| < \gamma_k.
+\end{gathered}
+\]
+
+Det antages, at $v_1$ og $v_2$ have en Elementarmangfoldighed $v'$ fælles. \emph{Poincaré} definerer da Ordenen af Parametrene $z$ ved Hjælp af Ordenen af Parametrene $y$ --- eller, hvad der væsentlig er det samme: $y$'ernes Orden ved $z$'ernes --- idet han forlanger, at Funktionaldeterminanten
+
+\origpage{52}
+\[
+\frac{\partial(y_1, y_2, \dots, y_m)}{\partial(z_1, z_2, \dots, z_m)}
+\]
+skal være positiv for Punkter i $v'$.
+
+Vi definere Ordenen af $z$'erne ved at forlange, at de Indikatricer i $v'$, der svare til Koordinathjørnerne i $(y)$ og $(z)$, skulle stemme overens.
+
+Vi ville vise, at disse to Definitioner give samme Resultat. Lad
+\[
+(y^0) = (y_1^0, y_2^0, \dots, y_m^0)
+\]
+og
+\[
+(z^0) = (z_1^0, z_2^0, \dots, z_m^0)
+\]
+være to Punkter af $(y)$ og $(z)$, som svare til det samme Punkt i $v'$. Vi betragte det Hjørne i $(z)$, der har Toppunkt i $(z^0)$, og hvis Kanter gaa gennem Punkterne
+\[
+\begin{gathered}
+(z_1^0 + dr, \; z_2^0 \hphantom{{} + dr}, \; \dots, \; z_m^0 \hphantom{{} + dr}), \\
+(z_1^0 \hphantom{{} + dr}, \; z_2^0 + dr, \; \dots, \; z_m^0 \hphantom{{} + dr}), \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots, \\
+(z_1^0 \hphantom{{} + dr}, \; z_2^0 \hphantom{{} + dr}, \; \dots, \; z_m^0 + dr),
+\end{gathered}
+\]
+hvor $dr$ er en positiv, uendelig lille Størrelse. Da Determinanten $\Delta'$ her bliver $(dr)^m$, er dette Hjørne af samme Art som Koordinathjørnet i $(z)$; den Indikatrix, det bestemmer, er altsaa i Overensstemmelse med Orienteringen $(z)$. Efter \emph{vor} Definition kan Indikatrix i $(y)$ bestemmes, idet man ved Hjælp af Ligningerne (1) og (2) afbilder den Del af $(z)$, der svarer til $v'$, i $(y)$ og samtidig afbilder $(z)$'s Indikatrix. Det gælder nu om at vise, at et Hjørne, der svarer til den saaledes konstruerede Indikatrix, er af samme Art som Koordinathjørnet, naar dette er orienteret efter \emph{Poincarés} Definition. Hint Hjørne er imidlertid defineret ved at have Toppunkt i $(y^0)$ og Kanterne gaaende gennem Punkterne
+
+\origpage{53}
+\[
+\begin{gathered}
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_1}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_1}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_1}\right)_0 dr\right), \\
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_2}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_2}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_2}\right)_0 dr\right), \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots, \\
+\left(y_1^0 + \left(\frac{\partial y_1}{\partial z_m}\right)_0 dr, \; y_2^0 + \left(\frac{\partial y_2}{\partial z_m}\right)_0 dr, \; \dots, \; y_m^0 + \left(\frac{\partial y_m}{\partial z_m}\right)_0 dr\right),
+\end{gathered}
+\]
+hvor Mærkerne ved de partielle Differentialkvotienter antyde, at man skal tage deres Værdier i Punktet $(z^0)$. $\Delta'$ har for dette Hjørne Værdien
+\[
+\frac{\partial(y_1, y_2, \dots, y_m)}{\partial(z_1, z_2, \dots, z_m)} \cdot (dr)^m,
+\]
+som, naar man følger Poincarés Definition, er positiv, q.~e.~d.
+
+En Ombytning af to af Hjørnets Kanter og en Ombytning af den positive Retning paa en Kant faar Hjørnet til at skifte Art.
+
+\subsection*{§ 11. Fortsat Undersøgelse af Diagrammet til 3-dimensionale Mangfoldigheder.}
+
+Vi vende tilbage til Diagrammet. Den Opgave, der burde løses, var at reducere det til en Normalform; det er ikke lykkedes mig at finde en saadan, men jeg skal dog fremsætte nogle Bemærkninger angaaende Opgavens Løsning.
+
+Hvad er for det første Betingelsen for, at den ved Diagrammet definerede lukkede, 3-dimensionale Mangfoldighed er bilateral? Enhver lukket Kurve i den
+
+\origpage{54}
+kan for det første bringes til helt at løbe i Diagrammet, og dens Forløb i dette kan atter indskrænkes til Traadsystemet. Den nødvendige og tilstrækkelige Betingelse bliver derfor, at man ved at gennemløbe en Linie gennem en vilkaarlig af Traadene kommer tilbage til Centralkuglen med uforandret Indikatrix. Traadens to Mundinger ere Elementarflader paa Centralkuglens Overflade. Paa Randen af den ene fastlægge vi en positiv Retning, f.~Eks.\ med Uret (set ude fra). Hvis man forskyder den lukkede Kurve langs Traadens Overflade, indtil den dækker den anden Mundings Rand, fastlægges der paa denne en positiv Retning, der enten gaar med eller mod Uret. (Centralkuglen forudsættes stadig beliggende i vort Rum. Finder det første af de to Tilfælde Sted, kan Sammenføjningerne af Traadenderne med Centralkuglen ikke virkelig gennemføres i vort Rum, derimod nok i $T$). I det første Tilfælde er Mangfoldigheden aabenbart unilateral; finder det andet Sted for alle Traade, saa er Mangfoldigheden bilateral.
+
+Traadsystemet til en bilateral Mangfoldighed kan altid tænkes forløbende i vort Rum; ved Overskæring af en Traad, passende Snoning og paafølgende rigtig Sammenføjning af Traadenderne kan man opnaa, at Tilhæftningsstrimlerne løbe langs Traadens Overflade uden at sno sig om den.
+
+Diagrammet kan overføres i ækvivalente Former ved kontinuert Deformation; vi nævne særlig:
+
+1)~Tilhæftningsstrimlerne kunne forskydes vilkaarlig paa Overfladen af Traadsystemet, naar blot de forskellige Strimler aldrig komme til at berøre hinanden.
+
+2)~Enhver af Traadmundingerne kan forskydes hen ad den Overflade, der dannes af Centralkuglen og de
+
+\origpage{55}
+$p - 1$ Traade, naar den blot ikke passerer nogen Strimmel under sin Bevægelse; de Strimler, der løbe hen til den betragtede Traadmunding, maa følge med denne og forskydes i øvrigt i Overensstemmelse med 1).
+
+3)~Tilhæftningsstrimlerne kunne foruden den i 1) omtalte Forskydning undergaa en henover en Plades ene Side. Resultatet af Forskydningen dannes lettest ved at lade Strimlen danne en Bugt hen mod et Punkt af den Strimmel, der svarer til Pladen, derpaa afbryde den første Strimmel i et Punkt nær ved den anden og indskyde et Omløb langs denne anden Strimmel, inden man igen lukker.
+
+Ved Hjælp af disse Forskydninger kan der foretages en stor Mængde Simplifikationer i Diagrammet. Hvis f.~Eks.\ en Strimmel vender tilbage fra en Traadmunding til den samme uden i Mellemtiden at have passeret andre Traade, kan den Bugt, Strimlen herved har dannet, fjernes. Hvis en Strimmel indskrænker sig til blot at have een Gren løbende paa een af de Traade, den løber hen over, kan man ved Forskydningerne 2) og 3) opnaa, at Strimmelstykket kommer til at løbe een Gang hen over Traaden og derpaa tilbage i sig selv uden at komme til at løbe hen over andre Traade, og desuden opnaa, at alle andre Strimmelstykker fjærnes fra Traaden. Er dette sket, kan denne aabenbart inddrages i Centralkuglen ved Hjælp af den Plade, som hører til Strimlen, og er fra nu af uden Interesse. At den nævnte Betingelse for, at et Strimmelstykke skal kunne fjernes af Diagrammet, ogsaa er en nødvendig Betingelse, er vistnok rigtigt, men det er ikke lykkedes mig at give noget fuldt uangribeligt Bevis derfor.
+
+Man kunde fristes til at tro, at det maatte kunne lykkes ved kontinuert Deformation at faa de $p$ Strimler
+
+\origpage{56}
+adskilte, saa at hver løb paa sin af de $p$ Traade. Dette kan imidlertid bevises at være umuligt, og derfor er sandsynligvis Problemet at reducere Diagrammet til en Normalform meget vanskeligt. Vi ville indskrænke os til at betragte saadanne Tilfælde, hvor Adskillelsen lader sig gennemføre, men forinden ville vi kort omtale de forskellige Klasser af ikke sønderdelende Ringsnit, som findes paa en Torusflade (beliggende i vort Rum), idet vi til en Klasse henregne alle saadanne Kurver, der ved kontinuert Forskydning kunne overføres i hverandre.
+
+Den første Klasse omfatter \emph{Meridiankurverne}, der løbe omkring Torusfladen; de kunne danne Grænsen for enkelt sammenhængende Fladestykker, der helt befinde sig i Rummet indenfor Fladen; ingen andre af de betragtede Kurver have denne Egenskab. En anden Klasse dannes af \emph{Breddekurverne}, der defineres ved, at de kunne danne Begrænsning for enkelt sammenhængende Fladestykker, som ligge i Rummet udenfor Torusfladen.
+
+Tegne vi en Meridiankurve, $\lambda$, og en Breddekurve, $\beta$, (forsynede med positive Omløbsretninger), saa kan man konstruere ny Klasser af Ringsnit, idet man f.~Eks.\ gaar $n$ Gange rundt langs $\beta$ i positiv Retning, og derpaa lukker Kurven ved en Linie langs $\lambda$ enten i positiv eller i negativ Retning; lad os betegne en saadan Kurve ved $[n\beta \pm \lambda]$. Paa lignende Maade fremstiller $[\beta \pm n\lambda]$ en Klasse Kurver, der repræsenteres ved en, der gaar een Gang rundt langs $\beta$, men som, forinden den lukkes, foretager $n$ Omløb langs $\lambda$. Skæres Toren over ved et Snit gennem en Meridiankurve, snos derpaa et af Endestykkerne $n$ Gange i passende Retning, og sammenføjes Legemet igen paa rette Maade, vil Kurven kunne reduceres til en Breddekurve; (den oprindelige Breddekurve hører naturligvis op med at
+
+\origpage{57}
+være en saadan). Den fuldstændige Klassifikation er ret vanskelig, og der er ingen Grund til her paa dette Sted nærmere at forfølge Sagen.
+
+En Traad paa Diagrammet kan omformes til en Torus forbundet med Centralkuglen ved en Cylinder. Paa dennes Overflade løber den tilhørende Tilhæftningsstrimmel; den følger en af de lige nævnte Kurver. Efter vor Forudsætning kunde jo nemlig hver Strimmel bringes til at løbe alene, hver paa sin Traad. Er Strimlen en Breddekurve, kan som tidligere bemærket Toren og Pladen inddrages i Centralkuglen og spiller da ingen Rolle. Det Tilfælde, hvor Strimlerne overalt løbe som Meridiankurver, er særlig simpelt, og Forholdene ere ganske analoge med dem, vi traf ved Undersøgelsen af Flader. Tænke vi os Diagrammet liggende i vort Rum, men dette atter beliggende i $T$, danner man let et lukket Rum, som til Diagram har det givne. Skal en Plade fæstes til en Strimmel, anbringe vi den i $T$ over vort Rum, $P$, og saa at dens Projektion paa $P$ falder i et af de Elementarfladestykker i Diagrammet, som Strimlen begrænser. Randen af Fladen bøjes ned i vort Rum og fæstes til Diagrammet langs Strimlen. Vi tænke os nu atter enhver Torus omdannet til en Traad. Derpaa lade vi Pladen blive tykkere, saa at Tilhæftningsstrimlen optager hele Traadens Overflade. Den saaledes dannede Mangfoldighed lukkes ved en Elementarmangfoldighed, hvis Projektion er Centralkuglen. Man er kommen til en Form, der ganske svarer til Kleins Normalform for Flader. Konturen paa $P$ af den lukkede 3-dimensionale Mangfoldighed dannes netop af en saadan Flade, og Mangfoldigheden bestaar i øvrigt af to Dele, hvis Projektioner begge danne det Legeme i $P$, som Konturen begrænser, den ene Del f.~Eks.\ beliggende over, den anden under $P$.
+
+\origpage{58}
+Man kan sige, at det opstaar ved at anbringe et vist Antal Hanke paa et sfærisk Rum. En saadan Hank dannes ved at udtage to Elementarmangfoldigheder af det sfæriske Rum; Begrænsningen af den ene af disse bevæges bort fra det sfæriske Rum og derpaa hen, saa at den dækker Begrænsningen for den anden, naturligvis saaledes, at Mangfoldigheden bliver bilateral. Omegnen af en lukket Kurve i $T$ begrænses af et Rum af den her beskrevne Art.
+
+Enhver lukket Flade i $T$ omgives af en 4-dimensional Mangfoldighed, som begrænses af en 3-dimensional, som vi ville kalde Fladens \emph{Hylster}. (Paa lignende Maade bestemmes Hylstret for en hvilkensomhelst lukket Mangfoldighed eller et Punkt, beliggende i en given Mangfoldighed). Lad os nu bestemme Diagrammet til Hylstret for en Toreflade i $T$. Dette bestaar af tre Traade; enhver af de tre Strimler løbe paa to af Traadene og med to Grene i modsat Retning af hinanden. Lettest anskueliggør man sig Udseendet ved at lade Centralkuglen ligge med Centrum i et retvinklet Koordinatsystem i Rummet, og lade Traadene følge de tre Akser, idet disse tænkes fortsatte gennem det uendelig fjerne. Skæringslinierne med de tre Koordinatplaner angive da Strimlernes Forløb. Her har man et Eksempel paa et Diagram, hvor Strimlerne ikke kunne bringes til at løbe hver paa sin Traad. Dette Diagram illustrerer det Eksempel, som nævnes i Picards og Simarts Bog, Kap.\ II, No.\ 18. Lignende Diagrammer faas i øvrigt for Hylstrene til lukkede Flader i $T$. Med disse Eksempler er Diagrammernes Mangfoldighed dog ikke udtømt.
+
+Vi betragtede før et Diagram dannet af en Torus, paa hvis Overflade Tilhæftningslinien løb som en Meridian-
+
+\origpage{59}
+kurve; den kan jo imidlertid løbe paa uendelig mange Maader. Vi betragte blot et Eksempel, vi senere skulle komme tilbage til, nemlig hvor Tilhæftningslinien er en Kurve $[2\beta + \lambda]$; klemmes Toren flad, saa at Strimlen bliver dens Rand, opstaar Møbius' bekendte unilaterale Fladestykke.
+
+Som allerede tidligere bemærket angiver Diagrammets Kærne, hvilke Snit (Linie- og Fladestykker) man skal lægge for at gøre den punkterede Mangfoldighed enkelt sammenhængende. For at bestemme disse Snit, kunne vi i øvrigt ogsaa gaa en noget anden Vej; Diagrammet er jo nemlig ækvivalent med den punkterede Mangfoldighed; men for at gøre det enkelt sammenhængende kan man først gennembore hver af de $p$ Plader med en Kanal; Traadene kunne vi overskære ved Snitflader, der til Begrænsning have Meridiankurver, og for at disse skulle blive Snit i Diagrammet, maa man for hvert Skæringspunkt mellem en Meridiankurve og et Strimmelstykke lade Snitfladen sende en Tunge ind i Pladen og hen til Kanalen, der gennemborer Pladen. Randen af Snitfladen løber altsaa ved et saadant Skæringspunkt fra Meridiankurven over paa Pladens ene Side, hen til Kanalen, ind langs dennes Overflade og tilbage til Meridiankurven langs Pladens anden Side. Dette System af Snit kan naturligvis omvendt opfattes som et Diagram til den oprindelige Mangfoldighed, naar man netop tænker sig de Dele af den blivende tilbage, der før borttoges. Kanalerne blive da Traade udspringende fra den Mangfoldighed, som man borttager ved den oprindelige Punktering; Fladesnittene blive til Plader. Der er en Slags dualistisk Sammenhæng mellem de to Diagrammer: Traadene i det ene svare til Pladerne i det andet og omvendt; lige
+
+\origpage{60}
+saa mange Strimler der løbe hen over en Traad, ligesaa mange Strimmelstykker begrænse den tilhørende Plade; ligesaa mange Plader der sende Strimler over en bestemt Traad, lige saa mange Traade have Strimler fra en bestemt Plade o.~s.~v. Den sidstnævnte Metode til Dannelse af Diagrammet er bleven benyttet af Betti.
+
+Lukkes Diagrammet ved at forbinde dets Overflade med Overfladen af en Kugle, faas som sagt en Mangfoldighed, som er ækvivalent med den givne. Delene kunne i øvrigt adskilles paa en noget anden Maade, idet Pladerne i Stedet for at tilføjes til Traadsystemet kunne tilføjes til Kuglens Overflade med deres to Sider. Man faar derved et Legeme med $p$ Hanke, som ganske ligner Traadsystemet. Overfladerne skulle sammenføjes; det er tilstrækkeligt at kende det System af ikke sønderdelende Ringsnit paa den ene, der svarer til Kurverne $\beta$ paa den andens Traadoverflade, og det System, der svarer til Kurverne $\lambda$. Eksempelvis ville to Torer, hvis Begrænsninger sammenføjes, saa at Meridiankurver dække Breddekurver og omvendt, svare til et Diagram med en Traad, hvis Strimmel er en Breddekurve. Selve Mangfoldigheden er ækvivalent med et sfærisk Rum. Dette stemmer ogsaa med, at Rummet indenfor en Torusflade kan transformeres til Rummet udenfor Torusfladen, saaledes at Breddekurverne paa Overfladen blive Meridiankurver og omvendt --- alt under Forudsætning af, at Rummets uendelig fjærne Dele betragtes som ækvivalent med Omegnen af et Punkt, saa at alt, hvad der ligger udenfor en vis Kugleflade, ved Inversion kan bringes indenfor denne. Som andet Eksempel tage vi to Torer, hvis Begrænsninger sammenføjes, saa at Breddekurver dække Breddekurver, og Længdekurver Længdekurver; vi have da den Mangfoldighed,
+
+\origpage{61}
+der er ækvivalent med Hylstret for en lukket Kurve i $T$. Endelig vælge vi to Torer, hvor Breddekurver og Meridiankurver paa den ene svare til Kurverne $[2\beta + \lambda]$ og $\beta$ paa den anden; dette svarer til det før omtalte Diagram med Tilhæftningsstrimlen $[2\beta + \lambda]$.
+
+Endnu skal blot gøres opmærksom paa en Omstændighed, som aabenbart bevirker, at Teorien bliver vanskeligere, naar Dimensionstallet overstiger 2. Hvis man paa Diagrammet for en lukket, bilateral Flade overskærer en Hank, kan Sammenføjningen bagefter i det væsentlige kun ske paa 1~Maade, hvis Fladen skal vedblive at være bilateral, og man kommer altsaa ved Sammenføjningen sikkert tilbage til et Diagram, der er ækvivalent med det første. Har man derimod f.~Eks.\ en 3-dimensional Mangfoldighed, som den der danner Begrænsningen for en Toreflades Omegn i $T$, saa vil denne Mangfoldighed kunne overskæres ved en Toreflade (svarende til en Meridiankurve paa den Flade, hvis Hylster man undersøger). Sammenføjningen kan imidlertid ske paa uendelig mange væsentlig forskellige Maader: $\beta$ og $\lambda$ i den ene Begrænsning kunne sammenføjes med to hvilke som helst af de tidligere omtalte Ringsnit, naar blot disse kun skære hinanden i eet Punkt.
+
+\subsection*{§ 12. Sammenligning med tidligere Fremstillinger.}
+
+Idet vi sammenligne de Resultater, vi her ere komne til, med tidligere Fremstillinger, ville vi væsentlig holde os til følgende Arbejder (for hvilke vi for Kortheds Skyld indføre nogle Betegnelser):
+
+1) \emph{Riemann}: Fragment aus der Analysis Situs (Fragment XXIX. Gesammelte mathematische Werke, 2.\ Udg.
+
+\origpage{62}
+ved H.~Weber; 1892) --- betegnes med \emph{R.~Fr.}
+
+2) \emph{Betti}: Sugli spazi di un numero qualunque di dimensioni (Annali di matematica; 2den Række, Bd.\ 4; 1871) --- betegnes med \emph{B.~Spz.}
+
+3) \emph{Poincaré}: Analysis Situs (Journal de l'école polytechnique; 2den Række, Cah.\ 1; 1895) --- betegnes ved \emph{Poinc.~A.~S.}
+
+4) \emph{Picard}: Mémoire sur la théorie des fonctions algébriques de deux variables (Liouville Journal; 4de Række, 5te Bind; 1889) --- betegnes som \emph{Pic.~Mém.}
+
+5) \emph{Picard et Simart}: Théorie des fonctions algébriques de deux variables indépendantes, 1ste Bind; 1897, særlig 2det Kapitel --- betegnes som \emph{P.\ \& S.}
+
+\emph{W.~Dycks} Arbejder i M.~A. Bd.\ 32 og Bd.\ 37 (Beiträge zur Analysis situs, 1888 og 1890), gaa i en anden Retning end de Undersøgelser, vi her have anstillet, saa at der ingen Anledning er til Sammenligning.
+
+En Kritik af Riemanns Fragment vilde være ubillig, eftersom det kun indeholder foreløbige Udkast, som ikke have været beregnede til Offentliggørelse. I øvrigt kan man paa mange Punkter overfor Fejltagelser hos Riemann og Betti blot indskrænke sig til at parallelisere de paagældende Undersøgelser med de tilsvarende ændrede hos Picard og Poincaré; paa saadanne Punkter vilde en indgaaende Kritik derfor være overflødig og desuden vanskelig, da Begrebernes Definitioner hos hine ofte ere meget svævende.
+
+Dette gælder allerede Definitionen af de Mangfoldigheder, som skulle undersøges. Hos Riemann findes ingen Definition nævnet; Betti har indset, at man maa stille sig paa et analytisk Grundlag for at kunne definere en $n$-dimensional Mangfoldighed (B.~Spz.; Afsnit 1);
+
+\origpage{63}
+Tanken formaar at generalisere Funktionsbegrebet til et hvilket som helst Antal uafhængig variable, men Anskuelsesevnen formaar ikke at generalisere Forestillingen om det 3-dimensionale Rum. Definitionen er imidlertid holdt noget for almindelig til, at de følgende Undersøgelser kunne blive eksakte. For at se, hvilke præciserende Tilføjelser man maa give Definitionen, kan man sammenligne den med den smukke Fremstilling, som Poincaré giver (Poinc.\ A.~S. § 1, § 2, § 3, § 4 og § 8) --- en Fremstilling, hvis Metode bør betragtes som Type for den, ved hvilken Undersøgelser af denne Art skulle behandles, naar de ere gennemarbejdede til Klarhed, og deres Nytte for Videnskaben er godtgjort.
+
+Baade hos Riemann og Betti støttes Definitionen af Sammenhængstal paa en Sætning analog med den, paa hvilken Riemann selv støtter sin Definition af Fladens Sammenhængstal. (R.~Fr.: Es seien $a_1, a_2, \dots, a_n$ og B.~Spz.\ Afsnit 3: Per giustificare\dots) Poincaré fremsætter mærkelig nok Definitionen paa Sammenhængstal uden denne Retfærdiggørelse (A.~S. § 5 og § 6), men hos Picard og Simart findes Sagen behandlet i 2det Kapitel, No.\ 12 og 13. I No.\ 12 findes Riemanns Lemma i en præciseret Skikkelse (hos Poincaré findes denne Ting i det væsentlige i Form af hans Paastand om, at Homologier kunne adderes lige som Ligninger). Naar Fremstillingen i No.\ 13 er afvigende fra den Riemann-Bettiske Behandling, maa Grunden søges i, at der i denne findes et Hul i Beviset. For virkelig paa den beskrevne Maade (B.~Spz.\ Afsnit 3: Se $t$ spazii chiusi\dots) successive at kunne erstatte $A$'erne med $B$'erne, maa man nemlig være sikker paa, at $A$'erne og $B$'erne kunne parres sammen to og to, saa at hvert Par udgør en Del af eller hele Be-
+
+\origpage{64}
+grænsningen for hver sin Mangfoldighed af $(m + 1)$'te Dimension. At dette kan lade sig gøre, kan bevises ved Poincaré's Homologier; der er dog ingen Grund til nærmere at udvikle dette, da Grundtanken ved et saadant Bevis i det væsentlige falder sammen med Fremstillingen i P.\ \& S.; 2det Kap.\ No.\ 13.
+
+I øvrigt maa bemærkes, at Definitionen først er retfærdiggjort, naar der desuden er bevist, at et System af Mangfoldigheder som det i Definitionen omtalte virkelig eksisterer. Her synes det, som om de moderne Fremstillinger (P.\ \& S.; 2det Kap.\ No.\ 11 og Poinc.\ A.~S. § 5 og § 6), ikke ere tilstrækkelig klare. Definitionen af Sammenhængstallet afhænger baade af, hvorledes man definerer de Mangfoldigheder $V_1, V_2, \dots$, som omtales i den, og af, hvilken Betydning man tillægger Ordet „begrænse“ (\emph{former frontière}). $V_1, V_2, \dots$ skulle blandt andet være bilaterale og være, hvad vi kalde orienterede, og der forlanges, at disse Orienteringer med vor Udtryksmaade skulle være i Overensstemmelse med Orienteringen af den Mangfoldighed, de begrænse (P.\ \& S.; 2det Kap.\ No.\ 8). Fastholdes disse Fordringer bogstavelig, vil man støde paa Vanskeligheder. Paa en Torusflade vil en Meridiankurve og en Breddekurve (begge forsynede med positive Retninger) ikke, som det sædvanlig antages, danne Begrænsninger med alle lukkede Kurver paa Fladen, som ikke kunne begrænse alene --- ikke engang, hvis man har Lov til at medtage $\beta$ $k_1$ Gange og $\lambda$ $k_2$ Gange. De kunne f.~Eks.\ ikke begrænse noget Fladestykke sammen med $[\beta + \lambda]$, naar man fastholder Fordringen om Afhængigheden mellem Fladestykkets og Begrænsningens Indikatrix. I det Hele er der noget uklart i, hvad man skal forstaa f.~Eks.\ ved, at Kurver paa en Flade begrænse, naar disse
+
+\origpage{65}
+skære hinanden. Begrænser en lille, lukket, plan Kurve af Form som et Ottetal nogen Del af Planen? Svaret Ja vil i alt Fald kun kunne faas ved kunstige Tilføjelser. Tegne vi en Cirkel om Kurven, kan der paa denne fastlægges to forskellige positive Retninger. Hvilke af disse begrænse sammen med den givne Kurve? Fuldstændig de samme Vanskeligheder træffe vi ved Poincarés Homologier (Poinc.\ A.~S. § 5). De kunne vistnok fjærnes ved følgende Definition:
+
+Et System af $m$-dimensionale Mangfoldigheder $V_1, V_2, \dots$, siges at være \emph{homologt} med et andet System af $m$-dimensionale Mangfoldigheder $W_1, W_2, \dots$ alle beliggende i en Mangfoldighed $S_n$:
+\[
+V_1 + V_2 + \dots \sim W_1 + W_2 + \dots,
+\]
+hvis man ved kontinuert Deformation i $S_n$ af det første System kan reducere dette enten ligefrem til det sidste System (med de rigtige Indikatricer) eller til et, der kan udledes af det andet ved følgende to Arter af Ændringer: Enten lægges i de $m$-dimensionale Mangfoldigheder nogle lukkede $(m - 1)$-dimensionale Snit; de derved opstaaede Begrænsninger fjærnes atter ved at forbinde dem (bilateralt) med $m$-dimensionale Mangfoldigheder, der kunne deles i 2~Grupper, af hvilke den enes Dele stadig løbe uendelig nær ved den andens og ere modsat orienterede. Eller ogsaa udtages Omegnen af nogle Mangfoldigheder, hvis Dimensionstal ere mindre end $m - 1$, og de derved opstaaede Begrænsninger fjærnes atter ved at forbinde dem med Mangfoldigheder, som ere uendelig nær ved at falde sammen med Mangfoldigheder af lavere Dimensionstal end $m$. Ere $V_1, V_2, \dots$ homologe med Hylstret for et Punkt, siges de at være homologe med 0:
+\[
+V_1 + V_2 + \dots \sim 0.
+\]
+(De
+
+\origpage{66}
+tilføjede Mangfoldigheder ville ingen Betydning faa for de tilhørende Integraler).
+
+Til nærmere Forklaring kunne følgende Eksempler tjene: En Kugleflade, som omslutter to Kugleflader (alle orienterede, saa at Indikatricerne for de begrænsede Kugler ere af samme Art) kan reduceres til disse forbundne med et uendelig tyndt Rør. De sidste kunne omvendt reduceres til den første, efter at man har skaaret den op langs en Storcirkel og forbundet Randene med to Cirkelplader. Paa lignende Maade forholder det sig med en Kugleflade, som omslutter en passende orienteret Torusflade. Kurverne $[\beta, \lambda]$ paa en Torusflade kunne reduceres til Kurverne $[\beta]$ og $[\lambda]$, efter at disse begge ere overskaarne, og Endepunkterne forbundne med to Liniestykker, der løbe ved Siden af hinanden.
+
+I B.~Spz.\ 4de og 5te Afsnit findes Undersøgelser, som ikke genfindes hos de senere Forfattere; Indholdet er, som vi skulle se, heller ikke paalideligt. Sandsynligvis er dog den oftere fremsatte Sætning $p_m = p_{n-m}$ (se det følgende) inspireret af disse Undersøgelser (kfr.\ B.~Spz.\ Afsnit 5: \emph{Ora ciascuno degli spazii A sarà intersecato da una e da una soltanto delle sezioni trasverse di $n - m$ dimensioni che fanno parte di quelle che rendono $R$ semplicemente connesso}). I Afsnit 4 findes Definitionen paa Tværsnit (\emph{sezione trasversa}) i Mangfoldigheder med Begrænsning; der forlanges, at Tværsnittets Begrænsning helt skal falde i Mangfoldighedens. Derpaa gives en Fremstilling af, hvorledes en Mangfoldighed (hvis den er lukket, maa den først punkteres) ved kontinuert Deformation kan miste een Dimension altsaa en Fremstilling af, hvad vi have kaldt Diagrammet, idet dette dog kun hos Betti betragtes som et Ækvivalent for den givne
+
+\origpage{67}
+(eventuelt punkterede) Mangfoldighed; derimod er det ikke bemærket, at Diagrammet leverer Snit, som gør Mangfoldigheden enkelt sammenhængende. Den Sætning fremsættes, at af en lukket Mangfoldigheds Sammenhængstal ændres ingen ved 1~Punktering, og kun den af højest Orden ved $s + 1$ Punkteringer; den forøges nemlig med $s$.
+
+I Afsnit 5 fremsættes følgende Sætning:
+
+\emph{For at gøre et endeligt $n$-dimensionalt Rum $R$ enkelt sammenhængende ved Hjælp af Tværsnit, er det nødvendigt og tilstrækkeligt at lægge $p_{n-1}$ Tværsnit af 1~Dimension, $p_{n-2}$ af 2, $p_{n-3}$ af 3, \dots, og $p_1$ af $n - 1$ Dimensioner, hvor $p_1 + 1, p_2 + 1, \dots, p_{n-1} + 1$ ere henholdsvis Sammenhængstallene af 1ste, 2den, \dots, $(n - 1)$'te Orden.}
+
+Det maa her fastholdes, at et Tværsnit er defineret saaledes, at dets Begrænsning helt skal ligge i Mangfoldighedens oprindelige Begrænsning, altsaa ikke maa falde paa den ny Begrænsning, der er skabt ved de Tværsnit, som allerede ere lagte; dette er aabenbart ikke nogen ligegyldig Formalisme; thi fastholdes denne Fordring ikke, vilde det være meningsløst at tale om, at Betingelsen er nødvendig, da man i modsat Fald kan lægge ligesaa mange Snit, som det skal være, der gøre den enkelt sammenhængende. Hvis man f.~Eks.\ i en Kugle lægger en Kanal fra et Punkt af Begrænsningen til et andet, kan Rummet atter gøres enkelt sammenhængende ved et Snit, hvis Begrænsning delvis løber langs Kanalens Begrænsning, og denne Operation kan man gentage ligesaa ofte, det skal være.
+
+Lad os et Øjeblik holde os til 3-dimensionale Mangfoldigheder, og lad os f.~Eks.\ betragte den, vi have betegnet som et sfærisk Rum med $p$ Hanke. Her er $p_1 = p_2 = p$. Diagrammet bestaar af Traade, hver gen-
+
+\origpage{68}
+nemløbende sin Hank og udgaaende fra en Centralkugle i det sfæriske Rum; Pladerne ere hæftede til Traaden ved Meridiansnit, og hver overskærer sin Hank. Pladerne deformeres let, saa at Strimlerne glide ind paa Centralkuglens Overflade, og man har virkeliggjort Mangfoldigheden enkelt sammenhængende ved $p_2$ Tværsnit af 1~Dimension og $p_1$ Tværsnit af 2~Dimensioner. Tage vi dernæst den punkterede Mangfoldighed, hvis Diagram er en Traad, paa hvilken Tilhæftningsstrimlen for Pladen løber langs Kurven $[2\beta + \lambda]$, kan denne aabenbart gøres enkelt sammenhængende ved et vist Liniesnit, der gaar fra Punkteringen tilbage til denne, og ved et Fladesnit, hvis Begrænsning løber i Liniesnittets og Punkteringens Overflade langs en Linie $[2\beta + \lambda]$; men dette Fladesnit kan ikke gøres til noget Tværsnit, da Tilhæftningsstrimlen ikke kan føres ned paa Punkteringens Overflade. Som senere skal omtales, er i dette Tilfælde $p_1 = 1$ og $p_2 = 0$ (med Bettis Betingelser; med Picards seneste: $p_1 = 2$, $p_2 = 1$). Altsaa Sætningen passer aldeles ikke her.
+
+Det er ikke svært at finde Fejl i Beviset. Det er for det første ikke godtgjort, at man kan reducere hele den givne Mangfoldighed til Systemet $A$ (se Bettis Betegnelser) forbundet med Mangfoldigheder af $n - 2$ Dimensioner; dette kan lade sig gøre i det første af vore Eksempler, men ikke i det andet. Det er heller ikke selvindlysende, at Sammenhængstallene af Ordenerne $n - 2, n - 3, \dots$ ikke forandres, naar man paa den angivne Maade af en Punktering i en af Mangfoldighederne $A$ afleder et Liniesnit i den oprindelige Mangfoldighed; de kunne ganske vist ikke blive mindre, men Liniesnittet kunde muligvis gøre dem større, ved f.~Eks.\ at forhindre en Linie, der før begrænsede, i nu at gøre det. Endelig er det
+
+\origpage{69}
+overset, at de følgende Snit af højere Dimensioner muligvis ville faa en Del af deres Begrænsninger løbende paa tidligere lagte Snit, saa at de ikke blive Tværsnit (i Bettis Forstand).
+
+Vi vende os nu til den ofte omtalte Sætning $p_m = p_{n-m}$. Den er oftere fremsat og benyttet, men det første offentliggjorte Forsøg paa at bevise den findes vistnok hos Poincaré (A.~S. p.\ 33--46). Picard og Simart have med Rette følt, at „peut-être plusieurs points auraient-ils besoin d'être complétés“ og nøjes med at betragte $m = 1$. Det forekommer os imidlertid, at det ikke engang er lykkedes dem at bevise Sætningen i dette specielle Tilfælde, og mærkelig nok synes den fejle Forudsætning i Beviset at være den samme som hos Poincaré.
+
+Poincaré definerer først et Tal $N(V, V')$ for hvert Skæringspunkt mellem to orienterede Mangfoldigheder, $V$ af $p$ Dimensioner og $V'$ af $h - p$ Dimensioner, der begge befinde sig i en Mangfoldighed $U$ af $h$ Dimensioner, og ligesom de følgende forudsættes lukkede og bilaterale. Idet det foreløbig antages, at $V$ er af 1~Dimension og $V_1, V_2, \dots, V_k$ ere af $h - 1$ Dimensioner, bevises:
+
+1.~Hvis $\Sigma V_i \sim 0$ saa er $\Sigma N(V, V_i) = 0$.
+
+2.~Hvis Homologien
+\[
+\Sigma V_i \sim 0
+\]
+\emph{ikke} finder Sted, da kan der altid findes en Mangfoldighed $V$, for hvilken
+\[
+\Sigma N(V, V_i) \lessgtr 0.
+\]
+Derpaa gøres Forsøg paa at bevise det samme, naar $V$ er af $p$ Dimensioner, og $V_1, V_2, \dots, V_k$ af $h - p$
+
+\origpage{70}
+(A.~S., p.\ 43). Til en Begyndelse nævnes som Forudsætning følgende Paastand: \emph{Quant à $V_1, V_2, \dots, V_k$ nous les définirons de la manière suivante. Nous pourrons toujours trouver $p - 1$ équations}
+\[
+\Phi_1 = \Phi_2 = \dots = \Phi_{p-1} = 0
+\]
+\emph{auxquelles satisfont tous les points de $V_1, V_2, \dots, V_k$; pour définir $V_i$ nous y adjoindrons une $p^{\text{ième}}$ égalité}
+\[
+F_i = 0
+\]
+Enhver af Mangfoldighederne $V_1, V_2, \dots, V_k$ skulde altsaa kunne være den fuldstændige Skæring mellem $p$ Mangfoldigheder af $h - 1$ Dimensioner i $U$. For $h = n, p = n - 1$ falder denne Paastand sammen med Picard og Simarts (2det Kap.\ No.\ 24): \emph{Nous admettrons, que dans une variété $E_n$, on puisse toujours, en vertu de la continuité et de la connexion linéaire, considérer une variété $V_1$ comme l'intersection commune unique de $n - 1$ variétés $V_{n-1}$ contenues dans $E_n$.}
+
+Begyndelsen af Beviset kan dog gennemføres uden at benytte Paastanden i sin Helhed.
+
+1. Hvis $\Sigma V_i \sim 0$ betyder dette, at der i $U$ kan lægges en Mangfoldighed $U'$ af $h - p + 1$ Dimensioner, paa hvilken $V_1, V_2, \dots, V_k$ begrænse. $V$ skærer $U'$ i en lukket Kurve $V'$ (eller i et System af saadanne). Man har
+\[
+\begin{aligned}
+N(V', V_i) &= N(V, V_i) \\
+\text{og} \quad \Sigma N(V', V_i) &= 0 \\
+\text{altsaa} \quad \Sigma N(V, V_i) &= 0
+\end{aligned}
+\]
+
+\origpage{71}
+2. Naar omvendt Homologien
+\[
+\Sigma V_i \sim 0
+\]
+\emph{ikke} finder Sted, saa er det for det første ikke bevist, at der kan lægges nogen $(h - p + 1)$-dimensional Mangfoldighed $U'$ gennem $V_1, V_2, \dots, V_k$ (bestemt ved $\Phi_1 = \Phi_2 = \dots = \Phi_{p-1} = 0$); antage vi dog dette for rigtigt (hvad det vistnok er), vide vi ganske vist, at der i $U'$ kan lægges en lukket Kurve $V'$, saa at
+\[
+\Sigma N(V', V_i) \lessgtr 0,
+\]
+men det er \emph{ikke sikkert, at denne Kurve kan udskæres af nogen Mangfoldighed $V$}. Her skulde altsaa gøres Brug af den omtalte Paastand. Hvis f.~Eks.\ $p = 2$, vilde $U'$ være af $(h - 1)$'te Dimension og kunde maaske dele $U$ i to Dele $U_1$ og $U_2$, hvis Begrænsninger altsaa ere $U'$. I denne løber $V'$, og $V$ vilde da blive delt i 2~Dele, hver løbende i sin Del af $U$ og havende $V'$ til Begrænsning. Men der er jo paa Forhaand intet i Vejen for, at $V'$ netop er en af den Slags Kurver i Begrænsningen, der ikke begrænse noget Fladestykke i $U_1$ eller i $U_2$.
+
+Beviset for Sætningen $P_p = P_{p-1}$ (p.\ 44) er da ikke engang rigtigt for $h = 1$. Uligheden
+\[
+\mu \le \lambda
+\]
+er ganske vist bevist i dette Tilfælde (kfr.\ den analoge Sætning $p_1 \ge p_{n-1}$ hos P.\ \& S.\ 2det Kap.\ No.\ 26); men derimod er Sætningen
+\[
+\mu \ge \lambda
+\]
+altsaa ikke bevist.
+
+\origpage{72}
+Vende vi os nu til Beviset hos Picard og Simart (2det Kap.\ No.\ 24--27), træffe vi som sagt den samme mærkelige Paastand. Beviset i No.\ 26, for at $p_1 \geqq p_{n-1}$ er, som berørt, utvivlsom rigtigt, men Forsøget i No.\ 27 paa at bevise den omvendte Sætning støtter sig paa den omtalte Paastand. Men ikke nok med, at Sætningen ikke er bevist: \emph{Den maa være urigtig}. Vi have allerede gentagne Gange betragtet en lukket, bilateral, 3-dimensional Mangfoldighed, for hvilken $p_1 = 2$ og $p_2 = 1$; vi ville dog vente til et mere belejligt Tidspunkt med at undersøge denne (kfr.\ p.\ 87).
+
+\subsection*{§ 13. Riemannske Rum.}
+
+I det følgende ville vi opfatte det uendelig fjerne i vort Rum som et Punkt. Et sfærisk Rum, $\Sigma$, kan da omdannes til vort Rum, $P$, ved følgende Transformation: den Del af $\Sigma$, som ligger \emph{under} $P$, bøjes \emph{op} i dette og omformes ved Inversion med Hensyn til Konturkuglen; derpaa bøjes den resterende Del af $\Sigma$, som jo laa \emph{over} vort Rum, \emph{ned} i dette.
+
+Vi ville undersøge de 3-dimensionale Mangfoldigheder, som fremkomme, naar man i $\Sigma$ udbreder Funktionsværdierne af en $n$-tydig, kontinuert Funktion af dennes Punkter. En saadan Mangfoldighed danner en Analogi til de Riemannske Flader, og vi ville derfor kalde den et Riemannsk Rum. Funktionens $n$ Værdier antages at være forskellige undtagen paa visse lukkede Kurver (\emph{Forgreningslinien}), paa hvilke to af Værdierne antages at falde sammen. Transformeres $\Sigma$ til $P$, gaa disse over til lukkede Kurver, der alle kunne antages at løbe i det endelige. Iøvrig
+
+\origpage{73}
+forudsætte vi, at $P_n$ danner et sammenhængende Hele --- er usammensat.
+
+Vi ville nu paa $P$ konstruere et $n$-laget Rum, i hvilket Funktionsværdierne kunne udbredes entydig. Vi lægge en Kegleflade med Toppunkt i et vilkaarligt Punkt $o$ og med Forgreningslinien, $F$, til Ledelinie; af Keglens Frembringere benyttes kun den Del, som ligger mellem $o$ og Forgreningslinien. Keglefladen faar Dobbeltfrembringere, dersom Forgreningslinien set fra $o$ har tilsyneladende Dobbeltpunkter; de strække sig fra $o$ til den nærmeste Kurvegren. Vi tænke os, at $P$ bærer $n$ Rum opskaarne efter den omtalte Kegleflade (\emph{Forgreningssnittet}), og disse nummereres og benævnes $1^{\text{ste}}\text{ Lag}, \ 2^{\text{det}}\text{ Lag}, \ \dots, \ n^{\text{te}}\text{ Lag}$. I de $n$ Punkter, som bæres af et vilkaarligt Punkt i $P$, anbringes Funktionens $n$ Værdier $z_1, z_2, \dots, z_n$; idet vi gaa ud fra disse Værdier, kunne nu de $n$ Lag belægges entydig med Funktionsværdier, saa at disse følge hinanden kontinuert i hvert Lag. Disse sidste sammenføjes nu atter i Overensstemmelse med de $z$-Værdier, der findes lige overfor hinanden paa Snitfladerne. Den saaledes dannede, lukkede Mangfoldighed kalde vi $P_n$${}^{*)}$.
+
+Hvis et Omløb om en af Forgreningskurverne lader enhver $z$-Værdi antage sin oprindelige Værdi, kan denne Kurve helt lades ude af Betragtningen (kfr.\ Dobbeltpunkter paa algebraiske Kurver). Alle øvrige Forgreningskurver ville vi antage simple ɔ: to, og kun to af $z$-Værdierne undergaa en Substitution ved et Omløb.
+
+\textbf{*)} Potentialfunktionen for en elektrisk Strøm frembyder en Del Lighed med de nævnte Funktioner, kun er der $n$ uendelig stor. Forgreningssnittet dannes af det magnetiske Blad, som kan erstatte den elektriske Strøm.
+
+\origpage{74}
+Undertiden sammenføjes Snitflader, der tilhøre samme Lag; dette finder Sted for alle Snitfladerne i Nærheden af et Punkt af Forgreningskurven undtagen for de to Sæt, der skulle ombytte 2 $z$-Værdier ved Omløb om Forgreningskurven i Nærheden af det betragtede Punkt. Lad det i et bestemt Punkt være det $r^{\text{te}}$ og $s^{\text{te}}$ Lag, hvis Snit vekselvis forbindes; gaar man fra dette Punkt ind paa Forgreningssnittet, maa det stadig være de samme to Lag, som Snitfladerne vekselvis forbinde, lige indtil man træffer en af de omtalte Dobbeltfrembringere. Man kan da afgrænse et Areal paa Keglefladen, gennem hvilket det $r^{\text{te}}$ og $s^{\text{te}}$ Lag --- og kun disse --- vekselvis forbindes. Det begrænses af \emph{en Bue $ab$ af Forgreningskurven og af de to Dobbeltfrembringere $oa$ og $ob$}, og ind i dette Areal strækker sig maaske straaleformet en eller flere Dobbeltfrembringere, som ikke naa helt ud til $ab$. Af denne Slags Arealer findes lige saa mange, som Keglefladen har Dobbeltfrembringere ($h$).
+
+I Punkterne $a$ og $b$ standses Forgreningskurven af Flader, der komme hver fra sin Gren, $A$ og $B$, af Forgreningskurven; vi sige, at Liniestykket $ab$ standses af Grenene $A$ og $B$. Hver Strækning $ab$ mærkes med Numrene paa de to Lag, $r$ og $s$, der vekselvis forbindes ved den Del af Keglefladen, der begrænses af Strækningen. $r$ og $s$ kaldes Strækningens \emph{Karakteristikker}.
+
+Forholdene ved en Dobbeltlinie fremstille vi skematisk ved i Papiret at trække to paa hinanden vinkelrette Linier, som skulle forestille to Grene af $F$; den ene tænkes løbende over den anden, og $o$ tænkes liggende bag Liniernes tilsyneladende Skæringspunkt. Forgreningssnittet strækker sig ned under Papiret, saaledes at den underste Linies Forgreningssnit gennembryder den øverstes; denne
+
+\origpage{75}
+sidste standser altsaa begge Grenene paa den første. Lad Karakteristikkerne for den øverste Linie være $r$ og $s$.
+
+Der er da 3 Tilfælde mulige:
+
+$1^{\text{ste}}$ Type: Den ene Gren af den underste Linie har de samme Karakteristikker, $r$ og $s$.
+
+$2^{\text{den}}$ Type: Den har $r$ som den ene Karakteristik, men den anden Karakteristik, $t$, er forskellig fra $s$.
+
+$3^{\text{die}}$ Type: Begge Karakteristikker, $t$ og $u$, ere forskellige fra $r$ og $s$.
+
+Vi ville bestemme Karakteristikkerne for den anden Gren af den underste Linie. Et Omløb om denne Gren kan ændres, saa at man først gennembryder den øverste Linies Forgreningssnit, derpaa den første Grens, og endelig atter den øverste Linies i modsat Retning. Begynder man i $r^{\text{te}}$ Lag, vil man, hvis Punktet er af $1^{\text{ste}}$ Type, efterhaanden komme ind i $s^{\text{te}}$ Lag, i det $r^{\text{te}}$ Lag og slutte i det $s^{\text{te}}$. Paa denne Maade ere Karakteristikkerne bestemte, som nedenstaaende Tabeller vise.
+
+\begin{center}
+$1^{\text{ste}}$ Type
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+rs\text{ ---} & \text{--- } rs \\
+& rs
+\end{array}
+\qquad\quad
+\begin{array}{c}
+\begin{array}{cccc}
+\text{begyndes i} & \text{gennemløbes} & \text{sluttes i} & \begin{array}{c}\text{Karak-}\\\text{teristikkerne}\end{array}
+\end{array} \\
+\left.
+\begin{array}{ccc}
+r & s\,r & s \\
+s & r\,s & r \\
+t & t\,t & t
+\end{array}
+\right\} r\,s
+\end{array}
+\]
+
+\begin{center}
+$2^{\text{den}}$ Type:
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+rt\text{ ---} & \text{--- } st \\
+& rs
+\end{array}
+\qquad\quad
+\left.
+\begin{array}{ccc}
+r & s\,s & r \\
+s & r\,t & t \\
+t & t\,r & s \\
+u & u\,u & u
+\end{array}
+\right\} s\,t
+\]
+
+\origpage{76}
+\begin{center}
+$3^{\text{die}}$ Type:
+\end{center}
+\[
+\begin{array}{c|c}
+& rs \\
+tu\text{ ---} & \text{--- } tu \\
+& rs
+\end{array}
+\qquad\quad
+\begin{array}{c}
+\begin{array}{cccc}
+\text{begyndes i} & \text{gennemløbes} & \text{sluttes i} & \begin{array}{c}\text{Karak-}\\\text{teristikkerne}\end{array}
+\end{array} \\
+\left.
+\begin{array}{ccc}
+r & s\,s & r \\
+s & r\,r & s \\
+t & t\,u & t \\
+u & u\,t & u
+\end{array}
+\right\} t\,u
+\end{array}
+\]
+
+Vi lægge en lille Kugleflade $\varkappa$ om $o$, og denne skærer Forgreningssnittet i en Kurve $G$, som altsaa bliver Centralprojektion af $F$ ind paa $\varkappa$, og som deler $\varkappa$ i $\omega$ Felter; den har $h$ Dobbeltpunkter${}^{*)}$. Det Fladesystem i $P_n$, som bæres af $\varkappa$, maa bestaa af $n$ simple, indbyrdes adskilte Kugleflader. Paa $n$ Kugleflader med samme Radius som $\varkappa$ tegne vi Linier kongruente med $G$; i et Sæt af $n$ analoge Felter paa disse Kugler skrives Tallene $1, 2, \dots, n$, og Kuglerne benævnes i Overensstemmelse hermed
+\[
+\varkappa_1, \ \varkappa_2, \ \dots, \ \varkappa_n,
+\]
+Linierne $G_1, G_2, \dots, G_n$. Karakteristikkerne paa $F$ føres ned paa de tilsvarende Buer af $G$. Vi tænke os nu de $n$ Kugler i $P_n$, som laa over $o$, udtagne, og hver ført hen paa en af Kuglerne $\varkappa_1, \varkappa_2, \dots, \varkappa_n$. Nummereringen kan foretages saaledes, at $\varkappa_i$ er den Kugle, i hvilken det med $i$ mærkede Felt i $P_n$ ligger i det $i$'ende Lag. Ved Hjælp af Karakteristikkerne er det nu let i alle Kuglernes Felter at indføre Tal, der angive, til hvilket Lag det paagældende Tal hører. De Strækninger af $G_1, G_2, \dots, G_n$, der adskille Felter med forskellig Benævning, \emph{trækkes stærkere op};
+
+\textbf{*)} Da Antallet af Liniestykker $ab$ er $2\,h$, naar Forgreningslinien kun indeholder 1 Kurve, giver Eulers Sætning i dette Tilfælde $\omega = h + 2$.
+
+\origpage{77}
+de Tal, der staa i de Felter, som de adskille, ere da Karakteristikkerne. Anbringes de $n$ Kugler, saa at de dække hinanden, ville de stærkt optrukne Linier tilsammen danne Linien $G$ taget to Gange.
+
+Lad os paa enhver Kugleflade undersøge Begrænsningen af de 4 Felter, som støde sammen i det Punkt, der svarer til et bestemt af $G$'s Dobbeltpunkter. Af Skemaerne p.\ 75 og 76 udledes det, at hvis Punktet er af $1^{\text{ste}}$ Type, vil man paa 2 af Kuglerne skiftevis være i det $r^{\text{te}}$ og $s^{\text{te}}$ Lag, mens man paa de øvrige bliver i samme Lag.
+\[
+\begin{array}{c|c}
+& rs \\
+rs\text{ ---} & \text{--- } rs \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+r & s \\
+\hline\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline\hline
+r & s
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline
+t & t
+\end{array}
+\]
+
+Er Punktet af $2^{\text{den}}$ Type, bliver man i $n-3$ Kugler i samme Lag; de øvrige vise Udseendet
+\[
+\begin{array}{c|c}
+& rs \\
+rt\text{ ---} & \text{--- } st \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c|c}
+r & s \\
+\hline\hline
+t & t
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline\hline
+r & s
+\end{array}
+\]
+
+Er Punktet endelig af $3^{\text{die}}$ Type, vil man i $n-4$ Kugler blive i samme Lag, mens de øvrige vise Udseendet
+\[
+\begin{array}{c|c}
+& rs \\
+tu\text{ ---} & \text{--- } tu \\
+& rs
+\end{array}
+\qquad
+\begin{array}{c||c}
+s & r \\
+\hline
+s & r
+\end{array}
+\qquad
+\begin{array}{c||c}
+r & s \\
+\hline
+r & s
+\end{array}
+\qquad
+\begin{array}{c|c}
+t & t \\
+\hline\hline
+u & u
+\end{array}
+\qquad
+\begin{array}{c|c}
+u & u \\
+\hline\hline
+t & t
+\end{array}
+\]
+
+\origpage{78}
+Der bliver altsaa i alle Tilfælde ved den Række Dobbeltpunkter, der svare til et bestemt Dobbeltpunkt paa $\varkappa$, \emph{to og kun to, for hvilke den Gren gennem Dobbeltpunktet, der svarer til den underste Gren paa $F$, er stærkt optrukken}. Gennem de øvrige $n - 2$ Dobbeltpunkter løber enten ingen stærkt optrukken Gren eller en enkelt, svarende til Forgreningsliniens øverste Del.
+
+Efter disse Forberedelser ville vi forsøge at danne Diagrammet til $P_n$. Vi punktere til en Begyndelse \emph{alle} $n$ Lag f.\ Eks.\ i deres uendelig fjærne Punkt. $P_n$ begrænses nu af $n$ Kugleflader med store Radier; vi tænke os disse varierende saaledes, at de alle bæres af den samme Flade i $P$; denne kan tænkes ændret til en Flade, der konstrueres paa følgende Maade: i $\varkappa$'s Felter lægges lukkede Kurver, der følge tæt langs $G$'s Grene og ved Dobbeltpunkterne gaa over fra den ene Gren til den anden. $\varkappa$ deles derved i $\omega$ enkelt sammenhængende Fladestykker og et Strimmelstykke, der indeslutter $G$. Derpaa indeslutte vi Forgreningssnittet i en Flade, der udgaar fra de lukkede Kurver og slutter om det som en Hætte, idet det bøjer om ved Forgreningssnittets Rand. Den omtalte Flade konstrueres da ved at lukke Hætten med Fladestykkerne paa $\varkappa$. Fladens Forløb ved en Dobbeltlinie kan f.\ Eks.\ anskueliggøres ved paa et Bord at opstille en Bog i Kvartformat med Ryggen i Vejret og ved paa begge Sider af den at opstille to ens Bøger i Oktav ogsaa med Ryggen i Vejret og vinkelret paa den førstnævnte saaledes, at den ene synes at være Fortsættelsen af den anden; Bordpladen svarer da til en Del af $\varkappa$.
+
+Efter de $n$ Punkteringer kan $P_n$ reduceres til en Mangfoldighed, der bæres af den Del af $P$, som den omtalte Flade begrænser. Af denne Mangfoldighed have vi
+
+\origpage{79}
+allerede udtaget $n$ Kugler, som vi have bragt hen i Stillingerne $\varkappa_1, \varkappa_2, \dots, \varkappa_n$; det gælder nu om at bringe den resterende Del i en simpel Form og hæfte den til disse Kugler.
+
+Omkring enhver Dobbeltlinie bestemme vi et prismeagtigt Legeme i $P$; det er i det nævnte Eksempel det Legeme, som udskæres af Kvartbogen, naar man tænker sig Oktavbøgerne fortsat gennem denne. Har Kurven $G$ i det hele $h$ Dobbeltpunkter, vil det Rum, $\Lambda$, som begrænses af Hættefladen og $\varkappa$'s Strimmelsystem, indeholde $h$ saadanne Prismer. Resten af $\Lambda$ bestaar af $h$ pladeformede Legemer, som dels skulle indhæftes paa Strimmelsystemet, dels indhæftes op og ned langs Prismer, og endelig begrænses ved to Prismer, mens den øvrige Del af Randen løber frit langs en Del af $F$.
+
+Den Mangfoldighed i $P_n$, som bæres af et af Prismerne, bestaar af $n - 2$ kongruente, indbyrdes adskilte Prismer og 1 dobbelt overdækket med en Forgreningslinie igennem; dette sidste omdannes ogsaa let til et enkelt overdækket Prisme. Disse Legemer skulle nu hæftes til Kuglerne; for bekvemt at finde de Punkter, til hvilke de skulle hæftes, ville vi paa hver Side af $G$ ved Siden af de oprindelige Karakteristikker føje to ny, som angive Kurverne paa de to Kugler, paa hvilke Buen er fuldt optrukken; disse kalde vi de \emph{afledede Karakteristikker}. For at bestemme disse paa en bestemt Gren, gaar man fra et Punkt paa Grenen ad en eller anden Vej ind i det Felt, ved Hjælp af hvilket Kuglen er bleven nummereret. Man begynder Vandringen medførende Grenens Karakteristikker, og hver Gang man passerer en Gren, hvor en Karakteristik stemmer med et af de to Tal, man i Øjeblikket fører med sig, skiftes dette om til den anden
+
+\origpage{80}
+Karakteristik paa Grenen. De afledede Karakteristikker skulle da være de to Tal, med hvilke man kommer ind i Grundfeltet. I Overensstemmelse med den p.\ 78 udhævede Sætning, maa de afledede Karakteristikker være lige store paa de to Grene, der ved et Dobbeltpunkt svare til $F$'s underste Gren. Tage vi nu de $(n - 2) + 1$ Prismer, der svare til en bestemt Dobbeltlinie, skulle disse føjes til Kuglerne $\varkappa_1, \varkappa_2, \dots, \varkappa_n$ i de $n$ Dobbeltpunkter, der svare til Dobbeltlinien. Det Prisme, som oprindelig var overdækket, skal med enhver af sine Ender føjes til en Kugle, nemlig forbinde de to Kugler, hvis Numre angives af de afledede Karakteristikker svarende til $F$'s underste Gren. De øvrige $n - 2$ Prismer anbringes med deres ene Endepunkt hvert i sit af de resterende Kuglers Dobbeltpunkt.
+
+Vi mangle nu blot de Mangfoldigheder i $P_n$, som bæres af de $h$ Plader. Enhver saadan bærer dels $n - 2$ kongruente, indbyrdes adskilte Plader, dels 1 dobbelt overdækket med en Gren, $ab$, af $F$ til Forgreningslinie. Den sidste kan ogsaa omdannes til en enkelt overdækket Plade. Den første Gruppe Plader skal hæftes til Kuglerne langs de Strimmelstykker, der ikke ere stærkt optrukne, og i øvrigt til Prismerne; da de alle \emph{faa en fri Rand}, kunne de helt inddrages og spille ikke mere nogen Rolle. Pladerne af den anden Gruppe, i Antal $h$, skulle med deres Rande indhæftes 1) langs de stærkt optrukne Grene, 2) op og ned langs de Prismer, der have et frit Endepunkt, 3) hen langs de Prismer, der forbinde Kuglerne; de faa ingen fri Rande. De under 2) nævnte Prismer kunne optages i Pladerne.
+
+For at danne Diagrammet (foreløbig svarende til $n$ Punkteringer) kan man altsaa gaa frem paa følgende Maade: Først mærker man sig de $h$ Strækninger paa $G$, som
+
+\origpage{81}
+hver for sig ere forsynede med bestemte Karakteristikker; de gaa fra et Dobbeltpunkt, hvor den tilsvarende Gren af $F$ er underst, til det Dobbeltpunkt, hvor det samme næste Gang indtræder. Paa de $n$ Kugler $\varkappa_1, \varkappa_2, \dots, \varkappa_n$ tegnes derpaa de stærkt optrukne Linier ved Hjælp af de afledede Karakteristikker. (Sammenlign de skematiske Tegninger p.\ 77 og den p.\ 78 udhævede Sætning). Disse to Karakteristikker angive Numrene paa de to Kugler, paa hvilke de Dobbeltpunkter findes, til hvilke den tilhørende Traads Endepunkter skulle fæstes; disse to Punkter kalde vi de til Dobbeltpunktet hørende \emph{Knudepunkter}. De skematiske Tegninger vise den fuldt optrukne Linies Forløb ved saadanne Knudepunkter, eftersom Dobbeltpunktet er af $1^{\text{ste}}$, $2^{\text{den}}$ eller $3^{\text{die}}$ Type. Til hvert Liniestykke $ab$ svarer en Plade, og det er let at bestemme den Linie paa Kuglerne og Traadene, langs hvilken Pladens Rand skal fæstes. Paa $ab$ fastsætte vi en positiv Retning fra $a$ til $b$, og paa alle de stærkt optrukne Strækninger, der tilsammen svare til $ab$ taget to Gange, fastsættes herved ogsaa positive Retninger. Vi gaa nu ud fra et af Knudepunkterne, der svarer til $a$, og gennemløbe den til $ab$ svarende Gren, som udgaar herfra; denne følge vi, indtil vi --- stadig gaaende i positiv Retning --- træffe et Knudepunkt svarende til $b$, idet vi dog, hver Gang vi forinden træffe et Knudepunkt, løbe langs Traaden over paa den anden Kugle. Ved det til $b$ svarende Knudepunkt løbe vi langs Traaden over til det andet Knudepunkt og gennemløbe nu paa lignende Maade som før de resterende Stykker i negativ Retning, indtil vi komme til det andet Knudepunkt, som svarer til $a$; ved at løbe langs Traaden lukkes Kurven.
+
+For at faa Diagrammet svarende til en enkelt Punk-
+
+\origpage{82}
+tering, behøver man blot at gennembore og derpaa fjærne $n - 1$ passende valgte Plader; Diagrammet, som nu bestaar af $n$ Kugler forbundne med $h$ Traade og $h - n + 1$ Plader, reduceres paa sædvanlig Maade til et med 1 Centralkugle, $h - n + 1$ Traade og $h - n + 1$ Plader.
+
+Indtil dette Punkt kunde Undersøgelsen gennemføres ganske analogt med den af Riemanske Flader (p.\ 40 og følgende). For de sidstes Vedkommende kunde Sammenhængstallet bestemmes paa Grundlag af det fundne Materiale, men noget lignende lader sig ikke gennemføre her. En af Grundene hertil er allerede omtalt p.\ 61; i øvrigt bemærkes, at mens Sammenhængstallet for Riemannske Flader kun afhænger af Bladenes og Forgreningsliniernes Antal, saa afhænge Sammenhængstallene for Riemannske Rum foruden af Lagenes Antal, Antallet af de lukkede Linier, som tilsammen udgøre Forgreningskurven, disses Slyngninger og Knuder, \emph{desuden} af Karakteristikkerne, som i Reglen indenfor visse Grænser kunne gives Værdier uafhængige af de første Tal. Vi ville derfor ikke drive Sagen videre i sin Almindelighed, men indskrænke os til at betragte nogle simple Tilfælde.
+
+Det vil være bekvemt at tænke sig Forgreningskurven uendelig nær ved at være plan. Dette kan man gøre, da Mangfoldighedens Sammenhæng ikke ændres ved kontinuerte Forskydninger af Forgreningslinien, naar blot ingen Dele af den derved komme til at skære hinanden. Man staar sig ved først at fjærne alle Slyngninger og Knuder, som kunne fjærnes. Det vil ogsaa være bekvemt at tænke sig de $n$ Kugler omdannede til cirkelformede Skiver, som ligge neden under hinanden under den Plan, langs hvilken Begrænsningslinien nu løber; som Kurver $G_1, G_2, \dots, G_n$ kunne vi vælge Projektionerne af $F$ ned paa Skivens
+
+\origpage{83}
+øverste Flader. Ved et Dobbeltpunkt af $3^{\text{die}}$ Type er det ligegyldigt, hvilken Gren man tænker sig øverst.
+
+\subsection*{§ 14. Anvendelser.}
+
+1. Er $n = 2$, og dannes $F$ af en simpel, lukket Linie uden Knuder, bliver Diagrammet et Punkt. $P_2$ er ækvivalent med et sfærisk Rum.
+
+2. Forgreningslinien bestaar af 2 simple, lukkede Linier uden Knuder og ikke sammenkædede; $n = 2$. Til en Begyndelse faar man to rørformede Legemer, der forbinde de to Centralskiver; (løber man fra et Punkt paa en Centralskive \emph{inden for} Rørets Tilhæftningslinie hen langs Rørets Overflade kommer man ud paa den anden Centralskive \emph{uden for} Rørets Tilhæftningslinie). Det ene Rør skal punkteres og reduceres derved til en Traad. Diagrammet er en Traad, til hvilken Pladen er føjet langs en Meridiankurve.
+
+3. Forgreningslinien bestaar af $\nu$ simple, lukkede Kurver uden Knuder og ikke sammenkædede; Rummet antages $n$-laget, og Forgreningsliniernes Karakteristikker ere valgte saaledes, at det er usammensat. Diagrammet bestaar af $n$ Skiver forbundne med $\nu - n + 1$ Rør forløbende som i forrige Eksempel og med $n - 1$ Traade; da Overfladen er ækvivalent med en Kugleflade, kan man faa Traadene til at forløbe, saa at den første gaar fra $\varkappa_1$ til $\varkappa_2$, den næste fra $\varkappa_2$ til $\varkappa_3, \dots$, den sidste fra $\varkappa_{n-1}$ til $\varkappa_n$. Traadene og Skiverne trækkes derpaa sammen til en Centralkugle. Det frembyder ingen Vanskeligheder at se, at ethvert af Rørene kan omdannes til en Traad, til hvilken er føjet en Plade langs en Meridiankurve. Det
+
+\origpage{84}
+givne Rum er \emph{ækvivalent med et sfærisk Rum forsynet med $\nu - n + 1$ Hanke}.
+
+4. Forgreningslinien er en lukket Kurve, der danner en simpel Knude; $n = 3$. Projektionen faar Udseende som en Kurve af $4^{\text{de}}$ Orden med 3 Dobbeltpunkter uden Sløjfer; alle 3 blive af $2^{\text{den}}$ Type. Diagrammets Konstruktion er en simpel Anvendelse af de foregaaende Teorier, og vi indskrænke os til at nævne Resultatet: man faar en Traad, til hvilken Pladen hæftes langs en Breddekurve; Diagrammet indskrænker sig altsaa til at bestaa af en Centralkugle, og den forelagte Mangfoldighed er ækvivalent med et sfærisk Rum.
+
+5. Samme Forgreningslinie som i 4, men $n = 2$. Alle 3 Dobbeltpunkter blive af $1^{\text{ste}}$ Type; Diagrammet er en Traad, til hvilken Pladen hæftes langs en Kurve $[3\beta + \lambda]$.
+
+6. Forgreningslinien bestaar af to enkelt sammenkædede, lukkede Kurver uden Knuder; $n = 2$. Projektionen kan dannes af 2 hinanden skærende Cirkler, og begge Dobbeltpunkter ere af $2^{\text{den}}$ Art. Diagrammet er \emph{en Traad til hvilken Pladen hæftes langs en Kurve $[2\beta + \lambda]$}.
+
+Vi ville drage nogle Anvendelser af det fremsatte paa de algebraiske Fladers Teori. Omegnen af et almindeligt Punkt af Fladen begrænses af et Rum ækvivalent med et sfærisk. Vi ville bestemme, af hvad Art Begrænsningen er, naar Punktet er singulært. Man kan som Begrænsning for Omegnen af et Punkt i $\mathbf{T}$ tage et sfærisk Rum, men det vil ofte være bekvemt i Stedet herfor at bestemme Omegnen som den 4-dimensionale Mangfoldighed, der beskrives af en Kugle i $P$, naar denne belægges med alle Kotetal fra et Tal $\alpha$ til et Tal $\beta$.
+
+7. \emph{Omegnen for et almindeligt Punkt paa den}
+
+\origpage{85}
+\emph{algebraiske Flades Forgreningskurve er ækvivalent med et sfærisk Rum}. Begrænsningen dannes af det i Eks.\ 1 omtalte Riemannske Rum.
+
+8. Lad Punktet være et \emph{Forgreningspunkt af $1^{\text{ste}}$ Art paa Forgreningskurven}. Omegnen begrænses af et 3-laget Riemannsk Rum; Forgreningslinien er en lukket Kurve (p.\ 19), der foretager 2 Omløb paa Forgreningsfladen, inden den lukkes, men danner ikke nogen Knude; den kan derfor omdannes til en simpel lukket Kurve. Eks.\ 1 (p.\ 83) viser, at \emph{Begrænsningen er ækvivalent med et sfærisk Rum}.
+
+9. Lad Punktet være et \emph{Forgreningspunkt af $2^{\text{den}}$ Art}. Forgreningslinien danner en simpel Knude (p.\ 20); Punktet fremkommer jo ved, at en Hovedtangent til den algebraiske Flade bliver parallel med $Z$-Aksen (p.\ 31): da denne skærer Fladen i 3 sammenfaldende Punkter, faar man et 3-laget Riemannsk Rum.
+
+Begrænsningen dannes af et Riemannsk Rum, som det i Eks.\ 4, og er altsaa \emph{ækvivalent med et sfærisk Rum}.
+
+10. Vi ville antage, at den algebraiske Flade har et \emph{isoleret Dobbeltpunkt}, hvis Tangentkegleflade er en usammensat Kegleflade af $2^{\text{den}}$ Orden. For at undersøge Omegnen af et saadant Punkt er det tilstrækkeligt at undersøge Omegnen af Toppunktet paa en usammensat Kegleflade af $2^{\text{den}}$ Orden. Konturen af denne paa $XY$-Planen dannes af to rette Linier, der skære hinanden i Toppunktet; disse fremstilles i $\mathbf{T}$ ved to Planer, der skære et sfærisk Rum $\Sigma$ med Centrum i Begyndelsespunktet i to lukkede Kurver; omdannes det sfæriske Rum til $P$ paa den tidligere angivne Maade (p.\ 72), ses det let, at disse Kurver gaa over til to simple, enkelt sammenkædede Kurver (Eks.\ 6). Bærerkurverne i $\Sigma$ for de to lukkede
+
+\origpage{86}
+Kurver ere jo nemlig 2 Ellipser, af hvilke den, der svarer til den største Værdi af Retningskoefficientens Modulus, omslutter den anden, fordi Projektionerne paa $X_1 Y_1$-Planen ere koncentriske Cirkler (p.\ 26). De to Halvdele af Ellipserne, der bære negative Kotetal, inverteres, men derved bringes den Gren, der før var inderst, yderst, q.\ e.\ d.
+
+Ønskes denne Mangfoldighed analytisk defineret, behøver man f.\ Eks.\ blot i
+\[
+z^2 = x^2 - y^2
+\]
+at adskille mellem reelt og imaginært:
+\[
+\begin{aligned}
+z_1^2 - z_2^2 &= x_1^2 - x_2^2 - y_1^2 + y_2^2 \\
+z_1\,z_2 &= x_1\,x_2 - y_1\,y_2
+\end{aligned}
+\]
+og hertil føje Ligningen
+\[
+x_1^2 + x_2^2 + y_1^2 + y_2^2 = 1.
+\]
+
+Dette viser, at Mangfoldigheden hører til den Slags, paa hvilke den Poincaré-Picardske Teori skal kunne anvendes, hvilket i øvrigt ogsaa fremgaar af vore tidligere Undersøgelser.
+
+Omegnen af ethvert af de i Eks.\ 7, 8 og 9 omtalte Punkter ere 4-dimensionale Elementarmangfoldigheder. Dette kan ses f.\ Eks.\ ved at konstruere et 3-dimensionalt Knippe Kurver udstraalende fra det Punkt, vi undersøge, saa at der gennem hvert Punkt i Mangfoldigheden gaar 1 og kun 1 af Kurverne; hvis en Kurve har et Punkt i Forgreningsfladen, skal den helt forløbe i den, og ligeledes, hvis den har et Punkt i en Dobbeltlinie af Forgreningsfladen. Naar Omegnens Begrænsning saa transformeres til et sfærisk Rum, $\Sigma$, i $\mathbf{T}$, kan Omegnen selv transformeres til den Del af $\mathbf{T}$, som ligger inden for $\Sigma$, ved at lade Kurverne i det omtalte Knippe svare til Ra-
+
+\origpage{87}
+dierne til de Punkter i $\Sigma$, der korrespondere til Kurvernes Endepunkter. I øvrigt følger Tingen ogsaa deraf, at man ved en Flytning af Fladen i Forhold til Koordinatsystemet kan opnaa, at Punktet ikke længer ligger paa Forgreningsfladen.
+
+Dette kan man ikke opnaa for et isoleret Mangefoldspunkt, og i Eks.\ 10 have vi allerede set, at Omegnen af et isoleret Dobbeltpunkt med usammensat Tangentkegleflade ikke var nogen Elementarmangfoldighed. Begrænsningen var ækvivalent med $P$ 2 Gange overdækket, idet Forgreningslinien dannedes af 2 enkelt sammenkædede Cirkler. Det er den samme Mangfoldighed, vi gentagne Gange have truffet paa (p.\ 59, 61 og 72). Den kunde ogsaa fremstilles ved Sammenføjning af to Torer, idet Breddekurver og Meridiankurver paa den ene sammenføjedes med Kurverne $[\beta]$ og $[2\beta + \lambda]$ paa den anden. Diagrammet dannes af en Traad, til hvilken Pladen er hæftet langs Linien $[2\beta + \lambda]$.
+
+Vi ville nu føre det lovede Bevis for, at denne Mangfoldighed har Sammenhængstallene $p_1 = 2, \ p_2 = 1$.
+
+For at finde de lukkede Kurver, der ikke kunne trækkes sammen til et Punkt, bemærke vi, at alle lukkede Kurver i Mangfoldigheden kunne bringes til helt at forløbe i Diagrammets Traad. Man kan forudsætte, at den stadig løber rundt i samme Retning og uden at danne Knuder. En Kurve, der gennemløber Traaden 2 Gange, inden den lukkes, kan da bringes til helt at forløbe i Strimmelstykket og kan derfor gennem Pladen trækkes sammen til et Punkt. Løber Kurven $2p$ Gange rundt, kan man successive $p$ Gange udskille 2 paa hinanden følgende Omløb og fjærne dem. Kurven kan altsaa sammentrækkes til et Punkt. Findes $2p + 1$ Omløb, ender
+
+\origpage{88}
+man med en Kurve, der gaar 1 Gang rundt. Denne kan ikke trækkes sammen til et Punkt. Lad os nemlig antage, at Kurven begrænsede et bilateralt Fladestykke i Mangfoldigheden. Vi bore i denne en rørformet Kanal langs Kurven, hvorved Mangfoldigheden til Begrænsning faar en Toreflade. Idet vi tænke os Mangfoldigheden defineret ved Sammenføjning af to Toreflader, paa den ovenfor angivne Maade (p.\ 87), vil denne Kanal løbe en Gang rundt i den ene Torus, og Fladestykket vil begrænses af en Breddekurve i Kanalens Overflade. Efter at denne Kanal er boret, vil man kunne lade Mangfoldigheden trække sig sammen til en Torus (beliggende i $P$): i denne befinder det omtalte Fladestykke sig og er begrænset af en Breddekurve paa Torens Overflade. Denne Breddekurve løber en Gang rundt om Torens Akse, men begrænser samtidig et Fladestykke i Toren, altsaa et Fladestykke i $P$, som ikke skærer Torens Akse; men dette er umuligt. Altsaa er $p_1 = 2$\ednote{Author erratum (p.\ 98): reads $p_2$, corrected to $p_1$}.
+
+Alle lukkede Flader i Mangfoldigheden (baade bilaterale og unilaterale) kunne bringes til helt at forløbe i Diagrammet, og de Dele af en saadan Flade, der befinde sig i Pladen, kunne bringes til at være simple Elementarfladestykker med Randen i Fladens Rand og altsaa gennem Pladens Tilhæftningsstrimmel staaende i Forbindelse med den resterende Del af Fladen. Har denne kun 1 saadant Elementarfladestykke forløbende i Pladen, vil dettes Rand være en Kurve $[2\beta + \lambda]$ paa Traadens Overflade; denne Kurve vil altsaa begrænse et Fladestykke, der forløber i Traaden; der eksisterer imidlertid intet bilateralt Fladestykke i Traaden, der kan begrænses af denne Kurve, da den løber to Gange rundt om Torens Akse i samme Retning. Derimod kan den lukkes med Møbius's uni-
+
+\origpage{89}
+\emph{laterale Fladestykke}. Hvis Fladen dernæst har flere Elementarfladestykker i Pladen, kan man punktere to paa hinanden følgende og forbinde Randene med et Rør; hvis den oprindelige Flade ikke begrænsede, gør den ny det heller ikke. Hvis der er et \emph{lige} Antal Fladestykker i Pladen, kunne alle Pladerne parvis underkastes denne Proces, hvorpaa de alle let skubbes ud af Pladen, saa at Fladen kommer til at løbe helt i Traaden. Hvis der er et \emph{ulige} Antal, kan man paa samme Maade fjerne dem alle paa 1 nær, og man er kommet tilbage til det førstnævnte Tilfælde, hvor vi saa, at Fladen maatte være unilateral. Hvis der altsaa skal findes en ikke begrænsende, lukket, bilateral Flade i vor Mangfoldighed, saa skal der findes en saadan i Traaden; men enhver lukket, bilateral Flade i Traaden kan trækkes sammen til et Punkt, eller til et Punkt, fra hvilket der udgaar Kurver, der vende tilbage til Punktet ɔ: alle saadanne Flader ere homologe med 0. \emph{Altsaa er $p_2 = 1$}.
+
+Vi se heraf, at \emph{den Mangfoldighed, som fremstiller en algebraisk Flade med isolerede Mangefoldspunkter, indeholder Punkter, for hvilke Omegnen ikke er en Elementarmangfoldighed}. Saadanne Punkter ville vi kalde \emph{topologiske Singularitetspunkter}.
+
+Men de Mangfoldigheder, Picard og Poincaré definere, indeholde kun Punkter, hvis Omegn er enkeltsammenhængende (P.\ \& S., $2^{\text{det}}$ Kap., No.\ 2 og No.\ 3. Poincaré A.\ S.\ § 2 og § 3), altsaa ingen topologiske Singularitetspunkter. Hvorledes forholder det sig da med Sætningen: „Enhver algebraisk Flade med vilkaarlige Singulariteter kan bringes til at korrespondere birationalt med en Flade, der ikke har andre Singulariteter end en Dobbeltkurve med tredobbelte Punkter, idet disse Singulariteter ere de
+
+\origpage{90}
+almindeligste af deres Art.“? (P.\ \& S., $4^{\text{de}}$ Kap., No.\ 8). I det første Tilfælde kan der findes topologiske Singularitetspunkter, men, som man let ser, i sidste Tilfælde findes ingen! Forklaringen herpaa opdages let, naar man følger de Transformationer, ved hvilke Fladen bringes paa den omtalte Form. Et isoleret Mangefoldspunkt bliver Undtagelsespunkt for Transformationen, saa at det kommer til at svare til en algebraisk Kurve, der ikke gaar gennem Mangefoldspunkter. Begrænsningen for Omegnen af Dobbeltpunktet er da ækvivalent med Hylstret til den tilsvarende algebraiske Kurve. I den Picardske Teori ere Fladerne saaledes befriede for deres topologiske Singularitetspunkter.
+
+I topologisk Henseende er der altsaa en væsentlig Forskel mellem de Riemannske Flader og de Mangfoldigheder, som fremstille de algebraiske Flader. Thi mens paa de første Omegnen af \emph{ethvert} Punkt er en Elementarmangfoldighed (ogsaa Skruefladen om et Forgreningspunkt), saa er dette ikke altid Tilfældet for de sidste. For Koordinaterne i Omegnen af ethvert Punkt paa en algebraisk Kurve danner man let holomorfe Rækkeudviklinger af en Parameter; det er derimod ikke lykkedes at fremstille Koordinaterne i Omegnen af ethvert Punkt paa en algebraisk Flade ved saadanne Rækker med 2 Parametre, og dette hænger aabenbart sammen med Eksistensen af saadanne Singularitetspunkter. Svarende til Sætningen om, at man ved et endeligt System af saadanne Rækker kan fremstille hele Omegnen af ethvert Punkt paa Fladen, har man, at Omegnen af et topologisk Singularitetspunkt kan sammenføjes af et endeligt Antal Elementarmangfoldigheder; dette følger af, at Begrænsningen kan sammen-
+
+\origpage{91}
+føjes af et endeligt Antal Elementarmangfoldigheder. (Den „Kegle“, der har Toppunkt i Punktet og til Direktrix har Begrænsningens Diagram, vil som Snit gøre Omegnen enkeltsammenhængende).
+
+Betegnes den oprindelige Flade ved $f$ og den, som man faar ved at befri $f$ for sine topologiske Singularitetspunkter, ved $F$, saa kan man stille sig den Opgave, at konstruere den Mangfoldighed, der fremstiller $f$, naar man kender den, der fremstiller $F$. Man opleder de lukkede Flader, der svare til hvert isoleret Mangefoldspunkt og til Transformationens øvrige Fundamentalpunkter i $f$. Omegnen af disse lukkede Flader udskæres, og Mangfoldigheden lukkes atter med Mangfoldigheder, som ere ækvivalente med Omgivelserne af de tilsvarende Punkter i $f$. De Punkter i $F$, som ere Undtagelsespunkter, behandles paa omvendt Maade.
+
+I det før betragtede Eksempel lykkedes det os af Diagrammet at finde Sammenhængstallene. I sin Almindelighed er denne Opgave aabenbart vanskelig at løse. Dog kan Diagrammet tjene til at finde \emph{højere Grænser for Sammenhængstallene}, men Vanskeligheden bestaar i at afgøre, om de Mangfoldigheder, man ved Diagrammets Hjælp har fundet, og som man formoder ere homologt uafhængige, virkelig ere det. \emph{Integralteorien kan tjene som et Hjælpemiddel hertil} (kfr.\ P.\ \& S., $4^{\text{de}}$ Kap., No.\ 9), \emph{men ikke som et udtømmende}. Den af Poincaré og Picard fremsatte almindelige Sætning, at Antallet af lineært uafhængige Perioder af (nærmere definerede) Integraler tagne langs lukkede $m$-dimensionale Mangfoldigheder, er $p_m - 1$ (Poinc.\ A.\ S., § 7 Slutn.; P.\ \& S., $2^{\text{det}}$
+
+\origpage{92}
+Kap., No.\ 16), er nemlig ikke paalidelig. I det oftere omtalte Eksempel eksisterede der jo en lukket Kurve, der ikke begrænsede. \emph{Men alle de omtalte Integraler tagne langs denne Kurve maa være 0}; gennemløber man nemlig Kurven to Gange, faar man en Kurve, der kan trækkes sammen til et Punkt, altsaa Integralet maa være 0. Man ser ogsaa heraf, \emph{at man ikke altid kan slutte fra Homologien $2\,V \sim 0$ til $V \sim 0$}. (Poinc.\ A.\ S., p.\ 19, L.\ 4).
+
+\origpage{93}
+\section*{SLUTNING}
+
+Man kunde maaske synes, at det var haabløst at forsøge paa at danne en topologisk Teori for algebraiske Fladers Sammenhæng, naar det ikke engang er lykkedes at gennemføre en saadan i sin Almindelighed for 3-dimensionale Mangfoldigheder. Hertil maa dog bemærkes, at den 4-dimensionale Mangfoldighed, som fremstiller en algebraisk Flade, er en \emph{speciel}, og at man kan vente, at den topologisk set er forholdsvis simpel. Picards Sætning om, at der i en algebraisk Flade uden Mangefoldspunkter ingen lukkede Linier findes, som ikke begrænse, tyder i denne Retning. (P.~\&~S., 4de Kap.\ III).
+
+Det er endnu ikke lykkedes mig at naa til noget færdigt Resultat; jeg skal kun til Slutning fremkomme med nogle spredte Bemærkninger. Det, der har bestemt mig til Udgivelse af disse Forstudier, har \emph{dels} været Følelsen af, at jeg maatte søge at trænge til Bunds i de andre Synspunkter af transcendent, algebraisk og antalgeometrisk Natur, ud fra hvilke man har studeret de algebraiske Flader, \emph{dels} Fremkomsten af Picards og Simarts Bog, baade paa Grund af de Dele af den, der stemmede med mine egne Undersøgelser, og paa Grund af dem, der var i Modstrid med dem.
+
+\origpage{94}
+Hvad Sammenhængstallene for \emph{Planen} angaa, have vi med Hensyn til de uendelig fjerne Elementer stillet os paa et projektiv-geometrisk Standpunkt \emph{og kunne derfor ikke komme til samme Resultat som Picard} (P.~\&~S., 4de Kap., Nr.~9). Efter hans Definition bestaar Planens uendelig fjærne Linie 1) af en Punktsamling $x = \infty$, $y$ vilkaarlig endelig, 2) af en Punktsamling $y = \infty$, $x$ vilkaarlig endelig, 3) af Punktet $x = \infty$, $y = \infty$. \emph{Vi} opfatte de to første Punktsamlinger hver som et Punkt ($X$-Aksens og $Y$-Aksens uendelig fjærne Punkt), og ved at tage Hensyn til de forskellige Værdier af $\lim(y:x)$ for $x = \infty$, $y = \infty$ dannes en hel Punktsamling af Punktet 3). Idet vi støtte os paa Resultaterne fra \S~4, bestemme vi let Diagrammet for den projektivt definerede Plan. Vi punktere Mangfoldigheden $\mathbf{A}$; denne kan helt fjærnes, hvorved $\Sigma_1(\mathbf{B})$ og $\Sigma_2(\mathbf{C})$ blive fri Begrænsninger for $\mathbf{B}$ og $\mathbf{C}$. Disse kunne trækkes sammen til Omegnen af den lukkede Flade, der fremstiller den uendelig fjærne Linie; her har man altsaa Diagrammet. Man faar saaledes
+\[
+p_1 = 1, \quad p_2 = 2, \quad p_3 = 1.
+\]
+
+For at $\mathbf{B} + \mathbf{C}$ skal blive begrænset af et Rum, der er ækvivalent med et sfærisk Rum, er det nødvendigt at sammenføje $\mathbf{B}$ og $\mathbf{C}$ paa en bestemt Maade, nemlig paa den, der bestemmes ved Ligningerne (5) i \S~4. --- Det er Rummene $\Sigma_1(\mathbf{B})$ og $\Sigma_2(\mathbf{C})$, som skulle sammenføjes; de begrænses af $\tau(\mathbf{B})$ og $\tau(\mathbf{C})$; disse sammenføjes, saa at Meridiankurverne paa den første dække Meridiankurverne paa den sidste, medens Breddekurverne paa den første ($\eta$ konstant) svare til Kurver af Typen $[\beta + \lambda]$ paa den sidste. Man ser ogsaa let, at Diagrammet for $\Sigma_1(\mathbf{B}) + \Sigma_2(\mathbf{C})$ (sammenføjede efter denne Regel) bliver et Punkt. Havde man sammenføjet efter Formlerne $\xi = \xi'$ og $\eta = \eta'$, vilde
+
+\origpage{95}
+Begrænsningen have faaet Sammenhængstallene $p_1 = 2$, $p_2 = 2$ (kfr.\ p.\ 60), altsaa ikke været ækvivalent med et sfærisk Rum.
+
+To lukkede Flader, f.\ Eks.\ af Slægten 0, beliggende i en 4-dimensional Mangfoldighed, ere altid ækvivalente, men som vi se, ere deres \emph{Omgivelser} ikke med Nødvendighed ækvivalente. Man ser heraf Forskellen mellem det, vi have kaldt \emph{Ækvivalens}, og det, som Poincaré kalder \emph{homéomorphisme} (Poinc.\ A.~S. \S~2).
+
+\emph{For Fladen af 2den Orden, $F_2$,} har jeg fundet
+\[
+p_1 = 1, \quad p_2 = 3, \quad p_3 = 1
+\]
+ved at danne Diagrammet støttende mig paa Udviklingen i \S~5. Diagrammets Kærne bestaar af to lukkede Flader af Slægten 0, der skære hinanden i et Punkt. Det samme Resultat findes meget let paa følgende Maade: en variabel Frembringer i det ene Frembringersystem bestemmes ved Dobbeltforholdet $x$ til 3 faste Frembringere; paa lignende Maade bestemmes en Frembringer i det andet System ved et Dobbeltforhold $y$. Ethvert Punkt paa Fladen er da fuldstændig bestemt ved $x$ og $y$ til de Frembringere, der gaa gennem Punktet, \emph{og omvendt}. $(\infty, \infty)$ er kun eet Punkt; $(\infty, y)$ og $(x, \infty)$ svare til to Frembringere, der skære hinanden i Punktet $(\infty, \infty)$. Efter Picards Standpunkt bliver Planen altsaa det, som vi efter vor projektive Opfattelse kalde en Flade af 2den Orden. Punkteres den 4-dimensionale Mangfoldighed $(x, y)$ i Punktet $(0, 0)$, kan Punkturen udvides, indtil Begrænsningen træffer de to lukkede, hinanden skærende Flader, der svare til $(\infty, y)$ og $(x, \infty)$. Man kommer da til samme Resultat som før; sammenlign i øvrigt P.~\&~S., 4de Kap., No.~9, 2det Kap., No.~16.
+
+\origpage{96}
+De fundne Sammenhængstal for Planen og Fladen af 2den Orden stemme med Antallet af Fundamentalpunkter i \emph{Chasles} bekendte entydige Transformation.
+
+\emph{Fladen af 3die Orden, $F_3$,} har jeg først søgt at undersøge paa lignende Maade som $F_2$ støttende mig paa Undersøgelserne i \S~5. Her mødte jeg imidlertid Vanskeligheder fra Dobbeltlinierne i Forgreningsfladens Projektion paa $P$ og fra deres 3-dobbelte Punkter. Jeg søgte da ved Transformation at finde Sammenhængstallene. Dels transformerede jeg den til en Flade af 2den Orden, $F_2$, ved at lade de to Systemer af Keglesnit, som udskæres af Planen gennem to hinanden ikke skærende rette Linier $A$ og $B$ paa $F_2$\ednote{Printed $F_2$; evidently a misprint for $F_3$.}, svare en-entydig til de to Frembringersystemer paa $F_2$. Transformationen faar 5 Fundamentalpunkter i Planen, nemlig de Punkter, der svare til de 5 Planpar gennem $A$ og $B$, der skære hinanden i 1 af de 5 af $F_3$'s 27 rette Linier, som skære $A$ og $B$. For at transformere $F_3$ til en Plan benyttede jeg en Transformation, hvor Forbindelseslinien mellem korresponderende Punkter skar to faste, hinanden ikke skærende, rette Linier $A$ og $B$ paa $F_3$; i Planen faar man for det første 5 Fundamentalpunkter i Skæringspunkterne med de 5 rette Linier paa $F_3$, som skære $A$ og $B$; desuden to Fundamentalpunkter i Skæringspunkterne, $a$ og $b$, med $A$ og $B$; til disse svare to Keglesnit $\varphi$ og $\psi$ paa $F_3$ bestemte ved Planerne $(Ab)$ og $(Ba)$. Disses Skæringspunkt ($ab$'s 3die Skæringspunkt med $F_3$) bliver Fundamentalpunkt paa $F_3$, idet der til dette i Planen svarer Linien $ab$. Lettere bruges den sædvanlige birationale Transformation, som f.\ Eks.\ findes hos Salmon (Geometry of three dimensions; 4 ed.\ p.\ 556); der er 6 Fundamentalpunkter i Planen svarende til en Dobbeltseks paa $F_3$.
+
+\origpage{97}
+Disse Transformationer føre til Sammenhængstallene
+\[
+p_1 = 1, \quad p_2 = 8, \quad p_3 = 1.
+\]
+
+Det er ikke særlig vanskeligt ad topologisk Vej at bevise Picards Sætning, at $p_1 = p_2 = 1$, naar Fladen ingen Mangefoldspunkter har. For at finde $p_2$ har jeg forsøgt at gaa frem som i Slutningen af \S~8, idet Fladen tænkes uendelig nær ved at opløse sig i $n$ Planer; særlig Interesse har det at undersøge $n = 2$ og $n = 3$. Alle disse Undersøgelser haaber jeg engang at kunne faa i en saa fuldstændig Skikkelse, at de kunne udgives som en Fortsættelse af disse Studier. Man bør ogsaa opklare Forbindelsen mellem de topologiske Sammenhængstal $p_1$, $p_2$ og $p_3$ paa den ene Side og de forskellige Invarianter $p_g$, $p_n$, $p^{(1)}$, $p^{(2)}$, o.\ s.\ v.\ paa den anden.
+
+Som man ser, er der et vidt Felt for fremtidige Undersøgelser --- Undersøgelser, der vanskeliggøres saavel ved Emnets indviklede Karakter som ved Undersøgelsesmetodernes brede Basis.
+
+\origpage{98}
+\section*{TRYKFEJL}
+
+\[
+\begin{array}{llll}
+\text{p.\ 13, L.\ 20} & 1 : a\ i\ (X_1\ X_2) & \text{læs} & 1 : a\ \text{i}\ (X_1\ X_2) \\[6pt]
+\text{p.\ 14, L.\ 2}  & \frac{\alpha_1 - i\alpha_2}{\alpha_1 + \alpha_2} & \text{''} & \frac{\alpha_1 - i\alpha_2}{\alpha_1^2 + \alpha_2^2} \\[12pt]
+\text{p.\ 20, L.\ 9}  & \alpha = {}^{\frac{3}{2}} & \text{''} & \alpha = \frac{3}{2} \\[6pt]
+\text{p.\ 31, L.\ 7}  & =/\!=\ \text{og} & \text{''} & \text{og}\ =/\!= \\[6pt]
+\text{p.\ 48, L.\ 4}  & (n-1)\text{ e} & \text{''} & (n-1)\text{te} \\[6pt]
+\text{p.\ 88, L.\ 18} & p_2 & \text{''} & p_1
+\end{array}
+\]
+
+\origpage{99}
+\section*{TESER}
+
+1.~Trods den \emph{Poincaré-Picardske} Revision af den \emph{Riemann-Bettiske} Teori for Sammenhængstal trænger denne stadig til Forbedring (kfr.\ \S~12). Sætningen om, at for lukkede Mangfoldigheder
+\[
+p_r = p_{n-r},
+\]
+er urigtig. De 4-dimensionale Mangfoldigheder, som fremstille de algebraiske Fladers komplekse Punkter, høre ikke til de af Poincaré og Picard definerede, naar Fladerne indeholde isolerede Mangefoldspunkter.
+
+2.~\emph{Cauchys Bevis} i Anledning af 9de Definition i \emph{Euklids} 11te Bog (kfr.\ Journ.\ de l'école polyt.\ cah.\ 16 og \emph{Ramus} Geometri, p.\ 228) er ikke tilfredsstillende.
+
+3.~Læren om totale Differentialer kan og bør udvikles ved Teorien om Funktioner af een reel, uafhængig variabel.
+
+4.~Operationer, der danne en Gruppe, ere Numeraler (kfr.\ \emph{Thiele}: Om Definitionerne for Tallet, o.\ s.\ v.).
+
+5.~Mange Sætninger fra Funktionsteorien bevises lettest, naar man medtager komplekse Værdier af de uafhængig variable; dette beror ganske vist for en Del paa, at nogle Fundamentalsætningers Gyldighed
+
+\origpage{100}
+bliver fuldstændig almindelig, men desuden ogsaa derpaa, at man indskrænker sig til at betragte monogene Funktioner. For Anvendelserne kunne derfor de tilsvarende Undersøgelser, hvor man holder sig til reelle variable, være mere værdifulde. (Eks.: Beviserne for Fouriers Række).
+
+6.~Det allerede fra Oldtiden (\emph{Demokrit}, \emph{Epikur}, \emph{Lucretius}) kendte Bevis for, at det Rum, vi befinde os i, er uendeligt (kfr.\ \emph{Lange}, Gesch.\ d.\ Materialism.\ p.\ 105), er falskt, da det opererer med Forestillingsbilleder, vi netop skulle bevise. Vi kunne overhovedet intet vide om Rummets Egenskaber i denne Henseende, og Matematikkens Undersøgelser i denne Retning ere rent formelle.
+
+7.~Fysikkens Lov om Inertiens Vedligeholdelse kan ikke begrundes udelukkende ved Aarsagssætningen, blandt andet af den Grund, at Fysikerne ved Begrebet Kraft forstaa en Bevægelsesændringsaarsag, \emph{der skyldes bestemte Legemer i Omgivelserne} (kfr.\ \emph{Kroman}: Vor Naturerkendelse, p.\ 292).
+
+8.~Den matematiske Videnskabs Udvikling beror paa forstaaende Samarbejde mellem de Videnskabsmænd, hvis Evner særlig gaa i formel Retning, og dem, hvis Evner særlig opfordre dem til at tilføre Matematikken nye Ideer og nyt Stof, der vel er begrundet, men ikke paa systematisk Maade (kfr.\ \emph{Klein}: Gött.\ Nachr.\ Gesch.\ Mittheil.\ 1895. Hefte~2).
+
+9.~De naturvidenskabelige Hypoteser bør \emph{videnskabelig} set ikke opfattes som Forsøg paa at forklare Omverdenens virkelige Natur, men kun som Udtalelser, der i faa Formler formaa at gengive en stor Gruppe Egenskaber ved Tingene, saa at vi ad ren formel Vej kunne faa Overblik over og beherske disses gensidige Relationer.
+
+\end{document}

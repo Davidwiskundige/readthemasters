@@ -63,6 +63,42 @@ def test_a_marker_named_in_a_comment_is_not_counted(tmp_path):
     assert issues.errors == [] and issues.warnings == []
 
 
+def test_roman_front_matter_then_text_passes(tmp_path):
+    """Klein 1882: Vorrede and Inhalt on pp. iii-viii, then the text from p. 1."""
+    body = "\n\n".join(f"\\origpage{{{p}}}\nx" for p in
+                       ["iii", "iv", "v", "vi", "vii", "viii", "1", "2", "3"])
+    issues = _check(tmp_path, body)
+    assert issues.errors == [] and issues.warnings == []
+
+
+def test_roman_after_arabic_is_an_error(tmp_path):
+    issues = _check(tmp_path, "\\origpage{1}\na\n\n\\origpage{2}\nb\n\n\\origpage{iii}\nc")
+    assert any("follows an arabic" in e for e in issues.errors)
+
+
+def test_duplicate_roman_marker_is_an_error(tmp_path):
+    issues = _check(tmp_path, "\\origpage{iv}\na\n\n\\origpage{iv}\nb")
+    assert any("duplicate" in e and "iv" in e for e in issues.errors)
+
+
+def test_roman_gap_warns_in_roman(tmp_path):
+    issues = _check(tmp_path, "\\origpage{iii}\na\n\n\\origpage{vii}\nb")
+    assert issues.errors == []
+    assert any("skip page(s): iv-vi" in w for w in issues.warnings)
+
+
+def test_a_marker_that_is_neither_arabic_nor_lower_roman_is_an_error(tmp_path):
+    issues = _check(tmp_path, "\\origpage{III}\na\n\n\\origpage{1}\nb")
+    assert any("neither an arabic" in e for e in issues.errors)
+
+
+def test_roman_numeral_parsing():
+    assert [validate.roman_to_int(s) for s in ("i", "iv", "viii", "xiv", "xl")] == [1, 4, 8, 14, 40]
+    assert validate.roman_to_int("iiii") is None       # non-canonical
+    assert validate.roman_to_int("vx") is None
+    assert validate.int_to_roman(9) == "ix"
+
+
 def test_a_work_with_no_transcription_is_skipped(tmp_path):
     work = tmp_path / "metadata-only"
     work.mkdir()
