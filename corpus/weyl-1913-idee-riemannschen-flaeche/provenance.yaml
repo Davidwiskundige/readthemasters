@@ -1,5 +1,7 @@
 changelog:
   - date: "2026-10-04"
+    summary: "Add front matter (Vorwort und Einleitung pp. v–ix, Inhaltsverzeichnis p. x) and format side-by-side figures (pp. 25, 26)."
+  - date: "2026-10-04"
     summary: "Complete transcription of weyl-1913-idee-riemannschen-flaeche (pp. 1-169, §§ 1-21 complete, Figures 1-27, Verzeichnis der Begriffsnamen)."
   - date: "2026-10-04"
     summary: "Transcription draft extended to pp. 1-162 (§§ 1-20 complete, § 21 in progress, Figures 1-27)."
