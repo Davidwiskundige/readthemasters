@@ -1,0 +1,49 @@
+changelog:
+  - date: "2026-10-04"
+    summary: "Add front matter (Vorwort und Einleitung pp. v–ix, Inhaltsverzeichnis p. x) and format side-by-side figures (pp. 25, 26)."
+  - date: "2026-10-04"
+    summary: "Complete transcription of weyl-1913-idee-riemannschen-flaeche (pp. 1-169, §§ 1-21 complete, Figures 1-27, Verzeichnis der Begriffsnamen)."
+  - date: "2026-10-04"
+    summary: "Transcription draft extended to pp. 1-162 (§§ 1-20 complete, § 21 in progress, Figures 1-27)."
+  - date: "2026-10-04"
+    summary: "Transcription draft extended to pp. 1-154 (§§ 1-19 complete, § 20 in progress, Figures 1-27)."
+  - date: "2026-10-04"
+    summary: "Transcription draft extended to pp. 1-146 (§§ 1-18 complete, § 19 in progress, Figures 1-25)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-138 (§§ 1-17 complete, § 18 in progress, Figures 1-23)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-130 (§§ 1-16 complete, § 17 in progress, Figures 1-23)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-122 (§§ 1-16 complete, § 17 in progress, Figures 1-23)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-114 (§§ 1-15 complete, § 16 in progress, Figures 1-23)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-106 (§§ 1-14 complete, § 15 in progress, Figures 1-23)."
+  - date: "2026-10-02"
+    summary: "Transcription draft extended to pp. 1-98 (§ 14 in progress, Figures 1-23)."
+  - date: "2026-09-27"
+    summary: "Transcription draft extended to pp. 1-90 (§§ 1-13 complete, Figures 1-22)."
+  - date: "2026-09-27"
+    summary: "Transcription draft extended to pp. 1-82 (Chap. I complete, Chap. II opening, Figures 1-22)."
+  - date: "2026-09-26"
+    summary: "Transcription draft extended to pp. 1-74 (§§ 1-10 complete, § 11 in progress, Figures 1-20)."
+  - date: "2026-09-26"
+    summary: "Transcription draft extended to pp. 1-66 (§§ 1-10 complete, Figures 1-20)."
+  - date: "2026-09-26"
+    summary: "Transcription draft extended to pp. 1-58 (§§ 1-9 complete, § 10 opening, Figures 1-15)."
+  - date: "2026-09-26"
+    summary: "Transcription draft extended to pp. 1-50 (§§ 1-8 complete, § 9 opening, Figures 1-12)."
+  - date: "2026-09-23"
+    summary: "Transcription draft extended to pp. 1-42 (§§ 1-7 complete, with Figures 1-9)."
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-04"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-10-04"
+  uncertainty_flags: 0
