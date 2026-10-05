@@ -1,0 +1,1441 @@
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{45}
+\section*{Cinquième complément à l'Analysis Situs.}
+
+Par M.~H.~Poincaré, à Paris.
+
+\emph{Adunanza del 22 novembre 1903.}
+
+\subsection*{\S~1.}
+
+J'ai déjà eu souvent l'occasion de m'occuper d'Analysis Situs; j'ai d'abord publié un mémoire sur ce sujet dans le tome du «~Centenaire du Journal de l'École Polytechnique~»; ce mémoire a été suivi de quatre compléments qui ont paru dans le tome XIII des «~Rendiconti del Circolo Matematico di Palermo~», dans le tome XXXVII\ednote{Printed XXXVII; on p.~104 the same volume of the Proceedings is cited as vol.~32.} des «~Proceedings of the London Mathematical Society~», dans le «~Bulletin de la Société Mathématique de France~» en 1901, et enfin dans le «~Journal de Liouville~» en 1901.
+
+Je reviens encore aujourd'hui sur cette même question, persuadé qu'on n'en pourra venir à bout que par des efforts répétés et qu'elle est assez importante pour les mériter.
+
+Cette fois je me suis borné à l'étude de certaines variétés à trois dimensions, mais les méthodes que j'ai employées pourront être sans doute d'un usage plus général. En passant je me suis étendu assez longuement sur certaines propriétés des courbes fermées que l'on peut tracer sur les surfaces fermées de l'espace ordinaire.
+
+Le résultat final que j'avais en vue est le suivant. Dans le second complément j'ai montré que pour caractériser une variété, il ne suffit pas de connaître ses nombres de Betti, mais que certains coefficients que j'ai appelés coefficients de torsion (second complément, \S~5, page 301) jouaient un rôle important.
+
+\origpage{46}
+
+On pourrait alors se demander si la considération de ces coefficients suffit; si une variété dont tous les nombres de Betti et les coefficients de torsion sont égaux à 1 est pour cela simplement connexe au sens propre du mot, c'est-à-dire homéomorphe à l'hypersphère; ou si, au contraire, il est nécessaire, avant d'affirmer qu'une variété est simplement connexe, d'étudier son \emph{groupe fondamental}, tel que je l'ai défini dans le «~Journal de l'École Polytechnique~», \S~12, page 60.
+
+Nous pouvons maintenant répondre à cette question; j'ai formé en effet un exemple d'une variété dont tous les nombres de Betti et les coefficients de torsion sont égaux à 1, et qui pourtant n'est pas simplement connexe.
+
+\subsection*{\S~2.}
+
+Je considère une variété $V$ à $m$ dimensions située dans l'espace à $k$ dimensions. Soit ensuite
+\[ \varphi(x_{1}, x_{2}, \ldots, x_{k}) = t \]
+l'équation d'une surface à $k - 1$ dimensions située dans ce même espace et que j'appellerai la surface $\varphi(t)$; dans cette équation $x_{1}, x_{2}, \ldots, x_{k}$ sont les coordonnées d'un point dans l'espace à $k$ dimensions et $t$ un paramètre arbitraire tel que la surface $\varphi(t)$ se déforme d'une manière continue quand $t$ varie d'une manière continue. Je supposerai que la fonction $\varphi$ est uniforme de telle façon que par un point quelconque passe une surface $\varphi(t)$ et une seule.
+
+La surface $\varphi(t)$ coupera $V$ suivant un certain nombre de variétés à $m - 1$ dimensions
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+dont l'ensemble formera le système $W(t)$.
+
+Quand $t$ variera d'une manière continue de $-\infty$ à $+\infty$, le système $W(t)$ variera d'une manière continue et \emph{engendrera} la variété $V$. Si la variété $V$ est fermée, les variétés $w(t)$ le seront également.
+
+Cela posé, je vais définir ce que j'appellerai le \emph{squelette} de la variété $V$. A chacune des variétés partielles $w_{1}(t), w_{2}(t), \ldots, w_{p}(t)$ je ferai correspondre un point dans l'espace ordinaire. L'une des coordonnées de ce point, $x$ par exemple, sera égale au paramètre $t$, les deux autres seront choisies arbitrairement, en s'assujettissant seulement aux conditions suivantes~:
+
+\origpage{47}
+
+1° Si deux variétés $w_{i}(t)$, $w_{i}(t + \varepsilon)$ sont très peu différentes l'une de l'autre, les deux points correspondants devront être très voisins l'un de l'autre.
+
+2° Il peut arriver que pour certaines valeurs de $t$, pour $t = t_{0}$ par exemple, une des variétés $w(t)$ se décompose en deux autres; dans ce cas par exemple la variété $w_{1}(t_{0} - \varepsilon)$ différera très peu de l'ensemble des deux variétés $w_{1}(t_{0} + \varepsilon) + w_{2}(t_{0} + \varepsilon)$. Dans ce cas, on doit s'arranger de façon que les deux points qui représentent les deux variétés $w_{1}(t_{0} + \varepsilon)$ et $w_{2}(t_{0} + \varepsilon)$ qui résultent du dédoublement de $w_{1}(t_{0} - \varepsilon)$, que ces deux points, dis-je, diffèrent très-peu l'un de l'autre et très-peu du point représentatif de $w_{1}(t_{0} - \varepsilon)$.
+
+Dans ces conditions, quand $t$ variera d'une manière continue, les points représentatifs des $p$ variétés
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+engendreront $p$ lignes continues
+\[ L_{1}, \qquad L_{2}, \qquad \ldots, \qquad L_{p}; \]
+du moins tant que le nombre $p$ ne varie pas. Mais ce nombre peut varier pour $t = t_{0}$, si l'une des variétés se décompose en deux, ou si, au contraire, deux variétés se réunissent en une seule. Dans le premier cas l'une des lignes $L$ se bifurque, dans le second deux des lignes $L$ se réunissent en une seule.
+
+On obtient ainsi une sorte de réseau de lignes, et c'est ce réseau que j'appelle le \emph{squelette} de $V$. J'ai tracé ce réseau dans l'espace à 3 dimensions et non dans le plan, parce qu'on peut ainsi toujours éviter que deux lignes se coupent en d'autres points que les points de bifurcation.
+
+Si nous suivons l'une de ces lignes, $L_{1}$ par exemple, décrite par le point représentatif de $w_{1}(t)$, nous voyons que cette variété $w_{1}(t)$ reste constamment homéomorphe à elle-même [et cela de telle façon que sur les deux variétés très voisines $w_{1}(t)$ et $w_{1}(t + \varepsilon)$, deux points correspondants diffèrent très peu l'un de l'autre] \emph{tant que l'on ne passe pas par une valeur de $t$ telle que $w_{1}(t)$ ait un point singulier}.
+
+Nous devons donc marquer sur les lignes de notre réseau les points qui correspondent aux variétés $w(t)$ qui ont des points singuliers. Ce seront des points de division qui partageront nos lignes en tronçons, mais tant qu'on suivra l'un de ces tronçons, la variété $w(t)$ correspondante restera homéomorphe à elle-même.
+
+\origpage{48}
+
+Remarquons que si l'on considère une des valeurs $t_{0}$ qui correspondent aux points de bifurcation, et pour lesquelles une des variétés $w_{i}$ se dédouble, la variété $w_{i}(t_{0})$ admet également un point singulier. Cela va donc nous obliger à étudier ces points singuliers.
+
+Mais avant de procéder à cette étude, je dois faire encore quelques remarques. Si je veux que la variété $V$ soit fermée, il faut d'abord que les variétés $w(t)$ soient fermées elles-mêmes. La seconde condition c'est que, si l'une de mes lignes $L$ aboutit à un cul de sac, de telle façon qu'elle s'arrête pour $t = t_{1}$ par exemple, la variété correspondante tende à se réduire à un point quand $t$ tend vers $t_{1}$, c'est-à-dire quand on se rapproche du cul de sac.
+
+En second lieu, j'ai dit que je choisissais la fonction $\varphi$ uniforme, de telle façon que par un point de l'espace passe une surface $\varphi = t$ et une seule. Dans ces conditions le système $W(t)$ n'est pas quelconque. Cette restriction ne m'a pas empêché de montrer que toute variété $V$ est susceptible de ce mode de génération, mais on peut s'en affranchir, et considérer un système quelconque $W(t)$ de variétés fermées
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+pourvu que ces variétés varient d'une manière continue avec $t$, en supposant bien entendu que pour certaines valeurs de $t$, une de ces variétés puisse se réduire à un point, ou se décomposer en deux autres.
+
+Dans ces conditions le système $W(t)$ engendrera encore une variété $V$ et on pourra en définir le squelette d'après les mêmes principes auxquels il n'y aura rien à changer.
+
+Il y a cependant un cas où on pourra avec avantage y faire un léger changement. J'imagine que pour deux valeurs de $t$, par exemple pour $t = 0$ et pour $t = 2\pi$, le système $W(t)$ soit le même, ou mieux, j'imagine que les deux systèmes $W(t)$ et $W(t + 2\pi)$ soient identiques. Il suffit alors de faire varier $t$ de 0 à $2\pi$, et il convient par conséquent de choisir le point représentatif de la variété $w(t)$, non plus de telle façon que l'on ait $x = t$, mais de telle façon que $\mathrm{arc\,tg}\,\dfrac{y}{x} = t$, c'est-à-dire que les points représentatifs de $w(t)$ et $w(t + 2\pi)$ puissent être identiques.
+
+Si nous supposons par exemple que $W(t)$ se réduise à une seule variété $w(t)$, le squelette de $V$ se réduira dans ces conditions à une courbe fermée.
+
+\origpage{49}
+
+Pour prendre un exemple tout à fait simple, considérons un tore qui sera notre variété $V$ et regardons-le comme engendré par son cercle méridien qui sera notre variété $w(t)$, identique à $w(t + 2\pi)$. Avec nos nouvelles conventions, le squelette de ce tore se réduit à une courbe fermée.
+
+Abordons maintenant l'étude des points singuliers des variétés $w(t)$. La portion d'une de ces variétés voisine du point singulier pourra être représentée par les équations suivantes~:
+\[ \begin{aligned} x_{i} &= \psi_{i}(y_{1}, y_{2}, \ldots, y_{q}) \qquad (i = 1, 2, \ldots k)\\ \varphi_{h}(y_{1}, y_{2}, \ldots, y_{q}) &= 0 \qquad (h = 1, 2, \ldots, q - m), \end{aligned} \]
+auxquelles il conviendrait d'adjoindre certaines inégalités dont nous n'avons pas à nous occuper.
+
+Dans la région envisagée, les fonctions $\varphi$ et $\psi$ sont holomorphes. Nous pouvons toujours supposer que le point singulier correspond à
+\[ y_{1} = y_{2} = \ldots = y_{q} = 0 \]
+et que pour cette valeur les dérivées partielles du 1\textsuperscript{er} ordre des fonctions $\varphi$ ne sont pas toutes nulles, \emph{sauf pour l'une d'entre elles $\varphi_{1}$}.
+
+Alors, des équations
+\[ \varphi_{2} = \varphi_{3} = \ldots = \varphi_{q-m} = 0 \]
+nous pourrons tirer tous les $y$ en fonctions de $m + 1$ d'entre eux, lesquelles fonctions resteront holomorphes dans le voisinage du point singulier. Je remplacerai donc les $y$ par les expressions ainsi trouvées de sorte que tout se trouvera exprimé en fonction de $m + 1$ des quantités $y$, par exemple de $y_{1}, y_{2}, \ldots, y_{m+1}$ et que nos équations prendront la forme~:
+\[ \begin{aligned} x_{i} &= \psi_{i}(y_{1}, y_{2}, \ldots, y_{m+1})\\ \varphi_{1}(y_{1}, y_{2}, \ldots, y_{m+1}) &= 0. \end{aligned} \]
+
+La fonction $\varphi_{1}$ est développable suivant les puissances des $y$ et ce développement commence par des termes du 2\textsuperscript{d} degré dont l'ensemble constitue une forme quadratique
+\[ f(y_{1}, y_{2}, \ldots, y_{m+1}). \]
+
+Il est inutile d'envisager les points singuliers des autres types; car s'il y en avait, il suffirait pour les faire disparaître de changer très peu la fonction $\varphi(x_{1}, \ldots, x_{k})$ qui définit les surfaces $\varphi(t)$, du moins si l'on suppose que la variété $V$ est elle-même dépourvue de point singulier.
+
+\origpage{50}
+Nous sommes ainsi amenés à étudier le cône du second degré
+\[ f(y_{1}, y_{2}, \ldots, y_{m+1}) = 0 \]
+dans l'espace à $m + 1$ dimensions des $y$, et son intersection avec l'hypersphère
+\[ y^{2}_{1} + y^{2}_{2} + \ldots + y^{2}_{m+1} = 1. \]
+
+Soit $C$ cette intersection. Tout dépendra du nombre des dimensions et du nombre des carrés positifs et négatifs dans la décomposition de la forme $f$ en une somme de carrés.
+
+Nous pouvons toujours par un changement de coordonnées ramener $f$ à la forme~:
+\[ f = \sum A_{i} y^{2}_{i} - \sum B_{k} y^{2}_{k}, \]
+les coefficients $A$ et $B$ étant positifs, de façon qu'il y ait $q$ carrés positifs et $m + 1 - q$ carrés négatifs et que l'indice $i$ varie de 1 à $q$ et l'indice $k$ de $q + 1$ à $m + 1$.
+
+Je puis écrire alors~:
+\[ \sum A_{i} y^{2}_{i} = \sum B_{k} y^{2}_{k} = \lambda^{2}; \]
+d'où
+\[ y_{i} = \eta_{i} \lambda, \qquad y_{k} = \eta_{k} \lambda, \]
+les $\eta$ étant des solutions quelconques des équations~:
+\[ \sum A_{i} \eta^{2}_{i} = 1, \qquad \sum B_{k} \eta^{2}_{k} = 1. \tag{1} \]
+
+On en déduit~:
+\[ \lambda^{2}\left(\sum \eta^{2}_{i} + \sum \eta^{2}_{k}\right) = 1. \]
+
+En tenant compte des équations (1) on verra que les limites supérieure et inférieure de $\displaystyle\sum \eta^{2}_{i}$ sont les inverses du plus petit et du plus grand des coefficients $A$. On trouvera de même une limite supérieure et inférieure de $\displaystyle\sum \eta^{2}_{k}$. On en conclura que $\lambda$ est une fonction continue des $\eta$ [supposés liés par les équations (1)] et que cette fonction ne peut ni s'annuler ni devenir infinie. Nous pouvons donc supposer que $\lambda$ reste toujours positif; et alors $\lambda$ sera une fonction continue et parfaitement determinée des $\eta$; il en sera donc de même des $y$.
+
+Plusieurs cas peuvent se présenter~:
+
+1° Si $q$ est nul ou égal à $m + 1$ de façon que tous les carrés soient de même signe, il est clair que le cône se réduit à un point et que $C$ n'existe pas.
+
+2° Si $q$ n'est pas égal à 1, on pourra passer d'une façon continue
+
+\origpage{51}
+d'une solution quelconque de l'équation $\displaystyle\sum A_{i} \eta^{2}_{i} = 1$ à une autre solution quelconque; si au contraire $q = 1$, cette équation ne comportera que deux solutions~: $\eta_{1} = \pm \dfrac{1}{\sqrt{A_{1}}}$ et on ne pourra passer de l'une à l'autre d'une manière continue.
+
+De même si $q$ n'est pas égal à $m$, on pourra passer d'une façon continue d'une solution quelconque de l'équation $\displaystyle\sum B_{k} \eta^{2}_{k} = 1$ à une autre solution quelconque; si au contraire $q = m$, l'équation n'aura que deux solutions et le passage sera impossible.
+
+Outre le cas examiné plus haut, il y en a donc 3.
+
+Si $1 < q < m$, $C$ est d'un seul tenant.
+
+Si $1 = q < m$, ou si $1 < q = m$, $C$ se compose de deux morceaux.
+
+Si $1 = q = m$, $C$ se compose de quatre morceaux, ou mieux se réduit à quatre points discrets.
+
+Dans ce dernier cas on a $m = 1$, et la variété $V$ n'a que deux dimensions; cela nous avertit que nous allons rencontrer une différence entre les variétés de deux ou de plus de deux dimensions.
+
+Supposons d'abord que $V$ ait deux dimensions ($m = 1$); nous pouvons avoir alors~:
+
+1° $q = 0$ ou $q = 2$. Dans ce cas $C$ n'existe pas; quand $t$ passe par la valeur qui correspond à un pareil point singulier nous voyons une nouvelle variété $w(t)$ apparaître (ou disparaître)~: elle se réduit d'abord à un point, puis à une petite courbe fermée. Ce point singulier correspond donc à un cul de sac du squelette.
+
+2° $q = 1$. Dans ce cas $C$ se réduit à 4 points que je puis numéroter 1, 2, 3, 4. La variété $w(t)$ se réduit à une courbe qui admet, comme point singulier, un point double ordinaire où se croisent deux branches de courbe qui sont les branches 1.3 et 2.4. Je suppose que le point singulier se présente pour $t = 0$; j'appellerai $1'$, $2'$, $3'$, $4'$ les points de la variété $w(t)$ qui, pour des valeurs de $t$ très petites, sont respectivement très voisins des points 1, 2, 3, 4 de la variété $w(0)$.
+
+Je commence par observer que la branche de courbe qui, partie du point double va au point 1, doit revenir au point double, puisque toutes nos courbes sont fermées; il peut y revenir par un des trois autres points 2, 3, 4. Il en résulte que nos points 1, 2, 3, 4 sont associés deux à deux, par exemple 1 avec 2, et 3 avec 4, de telle façon que l'on
+
+\origpage{52}
+puisse aller de 1 à 2 et de 3 à 4 en suivant la courbe $w(0)$ et sans passer dans le voisinage du point double. De même on pourra aller de $1'$ à $2'$ et de $3'$ à $4'$ en suivant la courbe $w(t)$ et sans passer dans le voisinage du point double, et cela pour toutes les petites valeurs de $t$, qu'elles soient positives ou négatives.
+
+Maintenant, si nous considérons le voisinage du point double, nous voyons que pour $t < 0$, par exemple, on peut passer de $1'$ à $2'$ et de $3'$ à $4'$ en suivant $w(t)$ et en passant près du point double, tandis qu'on ne peut pas passer de la sorte de $1'$ à $4'$ et de $2'$ à $3'$. Au contraire, pour $t > 0$, on peut passer de $1'$ à $4'$ et de $2'$ à $3'$, mais pas de $1'$ à $2'$ et de $3'$ à $4'$.
+
+Il en résulte que pour $t < 0$, les branches envisagées de $w(t)$ forment deux courbes fermées distinctes, tandis que pour $t > 0$, elles n'en forment plus qu'une.
+
+Notre point singulier correspond donc à une bifurcation du squelette.
+
+Il en est de même si 1 est associé avec 4, et 2 avec 3.
+
+Mais supposons maintenant que 1 soit associé avec 3, et 2 avec 4. Nous voyons alors que pour $t < 0$, comme pour $t > 0$, notre variété $w(t)$ se réduit à une seule courbe fermée; seulement pour $t < 0$ cette courbe passe successivement par les points $1'3'4'2'1'$, et pour $t > 0$ par les points $1'3'2'4'1'$. Notre point singulier ne correspond plus alors à une bifurcation.
+
+Mais je dis que, dans ce cas, la variété $V$ est unilatère.
+
+Pour nous en rendre compte, prenons une surface fermée quelconque à deux dimensions (bilatère ou unilatère) décomposons-la (en la laissant d'un seul morceau) de façon à pouvoir la développer sur un plan; nous obtiendrons ainsi un polygone, analogue aux polygones fuchsiens, dont les côtés seront conjugués deux à deux, deux côtés conjugués correspondant aux deux lèvres d'une même coupure.
+
+Soient $AB$ et $A'B'$ deux côtés conjugués, de telle façon que le sommet $A$ soit conjugué de $A'$ et le sommet $B$ de $B'$. Si en allant de $A$ en $B$ ou à l'intérieur\ednote{The print reads “ou à l'intérieur” here and in the three similar clauses that follow; the clause then has no verb, and “on a l'intérieur” is evidently meant.} du polygone, à sa gauche par exemple, et si en allant de $A'$ en $B'$ ou à l'intérieur à sa droite, nous dirons que la conjugaison est \emph{directe}.
+
+Si au contraire en allant de $A$ en $B$ ou à l'intérieur à sa gauche, et si en allant de $A'$ en $B'$ ou à l'intérieur également à sa gauche, nous dirons que la conjugaison est \emph{inverse}. (Cette convention surprendra d'abord
+
+\origpage{53}
+mais elle se justifie avec un peu de réflexion). Cela posé, si toutes les paires de côtés sont conjugués \emph{directement} (ainsi qu'il arrive pour les polygones fuchsiens) c'est que la surface d'où l'on était parti était bilatère. Si pour une paire de côtés, la conjugaison est inverse, c'est que cette surface était unilatère.
+
+Supposons par exemple que notre polygone soit un rectangle dont les sommets se succèdent dans l'ordre circulaire $ABCD$ et dont les côtés opposés soient conjugués. Si $AB$ est conjugué de $DC$, et $AD$ de $BC$, la conjugaison est directe, et le polygone peut être regardé comme provenant du développement d'un tore, surface bilatère. Si $AB$ est conjugué de $CD$, et $AD$ de $BC$, la conjugaison est inverse pour l'une des paires et directe pour l'autre, et le polygone provient du développement d'une surface unilatère analogue à celle de Möbius. Si $AB$ est conjugué de $CD$, et $AD$ de $CB$, la conjugaison est inverse pour les deux paires et le polygone provient du développement du «~plan projectif~» qui est une surface unilatère.
+
+\rmfigure{figures/fig-01.png}{Fig.~1.}{Part of the developed polygon: two straight lines E1O3E' and H2O4H' crossing at the singular point O; four hyperbola-like arcs B1'2'C, D2'3'A', B'3'4'C' and D'4'1'A bend away from O between them; the ends of the arcs and lines lie on four short boundary segments AEB, CHD, A'E'B' and C'H'D'.}
+
+Cela posé, appliquons ces règles à notre variété $V$, découpons-la et appliquons-la sur un plan de façon à obtenir notre polygone. Je ne représente sur la figure que la partie du polygone qui nous intéresse.
+
+\origpage{54}
+
+Nous avons en $O$ le point singulier; les lignes $CHD$, $AEB$, $C'H'D'$, $A'E'B'$ représentent une portion du contour du polygone. Les deux lignes $E1O3E'$ et $H2O4H'$ qui se croisent en $O$ sont le développement de la courbe $w(0)$. Les lignes $B1'2'C$, $B'3'4'C'$ sont le développement de la courbe $w(t)$ pour $t < 0$. Les lignes $D2'3'A'$ et $D'4'1'A$ sont le développement de la courbe $w(t)$ pour $t > 0$. Par hypothèse cette courbe $w(t)$ se ferme sur elle même de façon que la branche $1'$ se raccorde à la branche $3'$ et la branche $2'$ à la branche $4'$. Donc $A$ doit venir se recoller à $A'$, c'est-à-dire que $A$ est conjugué de $A'$ et de même $B$ de $B'$, $C$ de $C'$, $D$ de $D'$. Ainsi, sur notre polygone, $AB$ est conjugué de $A'B'$, et $CD$ de $C'D'$; la conjugaison est inverse. Donc notre surface est unilatère. C.~Q.~F.~D.
+
+Si donc $V$ a deux dimensions et est bilatère, son squelette n'aura d'autre point singulier que les culs de sac et les bifurcations. C'est là le secret de la simplicité relative de l'Analysis Situs des surfaces ordinaires.
+
+J'arrive aux variétés $V$ à 3 dimensions ($m = 3$)\ednote{Printed $m = 3$. The text is inconsistent here: p.~46 introduces $V$ as a variety of $m$ dimensions, which agrees with $m = 3$; but p.~51 gives a $V$ of two dimensions $m = 1$, and on that convention three dimensions give $m = 2$, which matches the cases below, $q = 0$ or $q = 3 = m + 1$ (cf.~p.~50) and $q = 1$ or $q = m$.} auxquelles je me bornerai pour le moment. Nous avons encore à distinguer deux cas~:
+
+1° $q = 0$ ou $q = 3$; alors $C$ n'existe pas, et le point singulier correspond à un cul de sac du squelette.
+
+2° $q = 1$ ou $q = 2$; alors $C$ se compose de deux morceaux; la variété $w(0)$ présente un point conique ordinaire (si le point singulier correspond à $t = 0$); les parties de cette variété voisines du point singulier sont assimilables à un cône du 2\textsuperscript{d} degré ordinaire. Donnons maintenant à $t$ des valeurs très petites. Les parties de $w(t)$ voisines du point singulier seront assimilables, par exemple, à un hyperboloïde à une nappe pour $t < 0$ et à un hyperboloïde à deux nappes pour $t > 0$.
+
+Considérons l'ellipse de gorge $E$ de l'hyperboloïde à une nappe; cette ellipse pour $t = -\varepsilon$ (où $\varepsilon$ est positif et très petit) est un cycle fermé très petit tracé sur $w(t)$; pour $t = 0$, elle se réduit à un point et, pour $t = +\varepsilon$, elle disparaît.
+
+Ce que nous avons appelé $C$ (intersection du cône et de l'hypersphère) se compose ici de deux courbes fermées (on est dans le cas de $q = 1$, ou $q = m$), et nous devons distinguer deux cas, ou bien on ne peut pas passer d'une de ces deux courbes fermées à l'autre en restant sur $w(t)$ et sans passer dans le voisinage du point singulier, ou bien ce passage est possible.
+
+Dans le premier cas, l'ellipse $E$ partage la variété $w(-\varepsilon)$ en deux
+
+\origpage{55}
+parties, car on ne peut pas passer du voisinage de l'une des courbes $C$ au voisinage de l'autre courbe $C$ sans passer dans le voisinage du point singulier, c'est-à-dire sans couper l'ellipse de gorge $E$. On aura donc sur $w(-\varepsilon)$
+\[ E \backsim 0. \]
+
+Dans le second cas, au contraire, $E$ ne divisera pas $w(-\varepsilon)$.
+
+Dans le premier cas, les nappes de $w(t)$ qui vont passer dans le voisinage du point singulier forment une seule surface fermée pour $t = -\varepsilon$ puisqu'on peut toujours passer d'un point à l'autre d'une de ces nappes et en particulier du voisinage de l'une des courbes $C$ à celui de l'autre en traversant l'ellipse $E$. Au contraire pour $t = +\varepsilon$, elles formeront deux surfaces fermées, puisque on ne peut plus passer d'une des courbes $C$ à l'autre.
+
+\emph{Dans ce premier cas, notre point singulier correspond donc à une bifurcation du squelette}.
+
+Dans le second cas, au contraire, ces nappes de $w(t)$ forment toujours une seule surface fermée, aussi bien pour $t = -\varepsilon$ que pour $t = +\varepsilon$ puisqu'on peut toujours passer d'une courbe $C$ à l'autre sans passer près du point singulier.
+
+\emph{Dans ce second cas, notre point singulier ne correspond pas à une bifurcation}.
+
+Ce second cas se subdivise lui-même. Considérons un chemin permettant de passer d'une courbe $C$ à l'autre sans passer près du point singulier. Quand on suivra ce chemin, si l'on veut conserver la forme des équations, il faudra de temps en temps changer de variables et remplacer les variables $y$, par d'autres variables $y'$, puis les $y'$ par de nouvelles variables $y''$, etc. Nous supposerons toujours que ces changements de variables aient été faits de telle sorte que le déterminant fonctionnel des nouvelles variables par rapport aux anciennes soit positif. Soient $\chi_{1}, \chi_{2}, \ldots, \chi_{m+1}$ les variables finales quand on reviendra dans le voisinage du point singulier. Nous aurons donc les $x$ en fonctions des $\chi$, mais comme dans le voisinage du point singulier, nos équations qui donnent les $x$ en fonctions des $y$ redeviennent valables, les séries redevenant convergentes, nous aurons les $\chi$ en fonctions des $y$; deux cas peuvent donc se présenter selon que le déterminant fonctionnel des $\chi$ par rapport aux $y$ est positif ou négatif. Dans le premier cas le chemin est bilatère, dans le second cas unilatère. C'est ce que j'ai expliqué dans l'Analysis Situs, en définissant les variétés unilatères.
+
+\origpage{56}
+
+Alors, s'il existe des chemins qui permettent de passer d'une courbe $C$ à l'autre sans passer dans le voisinage du point singulier~: ou bien tous ces chemins seront bilatères, ou bien les uns seront bilatères et les autres unilatères, ou bien enfin ils seront tous unilatères.
+
+\emph{Pour le moment nous nous bornerons au cas où toutes les surfaces $w(t)$ seront bilatères}. Tous nos chemins, s'ils existent, seront donc bilatères.
+
+Nous savons que pour une surface bilatère, le nombre de Betti est toujours impair. Si donc une surface bilatère est $2p + 1$ fois connexe, elle admettra $2p$ cycles distincts, c'est-à-dire dont aucune combinaison linéaire n'est homologue à zéro. Envisageons donc les $2p$ cycles de la surface $w(-\varepsilon)$, nous ferons d'abord entre eux une distinction, ceux qui rencontrent l'ellipse de gorge $E$ et ceux qui ne la rencontrent pas. Si un cycle $K$ rencontre $E$, nous devrons distinguer les points de rencontre en deux catégories suivant le signe d'un certain déterminant, ainsi que je l'ai expliqué dans l'Analysis Situs, page 33. Nous définirons ainsi le nombre $N(K, E)$ (Cf.\ Analysis Situs, page 35), qui sera la différence des nombres des points d'intersection des deux catégories. Si le nombre $N$ relatif au cycle $K$ est nul, le cycle $K$ sera homologue à un cycle qui rencontre $E$\ednote{Printed “qui rencontre $E$”. The contrast with the next sentence, where for $N$ not zero “tous les cycles homologues à $K$ rencontreront $E$”, and the argument that follows require “qui ne rencontre pas $E$”. In the copy scanned here a handwritten caret after “qui” marks an insertion at this point; it is not part of the print.}. Si, au contraire, ce nombre $N$ n'est pas nul, tous les cycles homologues à $K$ rencontreront $E$.
+
+Qu'arrive-t-il alors, quand $t$ variant d'une façon continue passe de la valeur $-\varepsilon$ à la valeur $+\varepsilon$? On pourra trouver sur $w(+\varepsilon)$ une ligne $K'$ infiniment peu différente du cycle $K$ tracé sur $w(-\varepsilon)$; seulement si $K$ ne rencontre pas $E$ la ligne $K'$ est fermée et constitue un nouveau cycle sur $w(\varepsilon)$; si au contraire $K$ rencontre $E$ la ligne $K'$ ne peut être fermée. Donc pour qu'il y ait sur $w(\varepsilon)$ des cycles infiniment peu différents d'un cycle homologue à $K$, il faut et il suffit que le nombre $N(K, E)$ soit nul.
+
+En d'autres termes tous les cycles pour lesquels ce nombre n'est pas nul, disparaitront quand $t$ passera de $-\varepsilon$ à $+\varepsilon$, tous les autres subsisteront.
+
+Soit $K$ un cycle de $w(-\varepsilon)$ qui subsiste, et $K'$ le cycle correspondant de $w(\varepsilon)$.
+
+Dans quels cas aura-t-on~:
+\[ K' \backsim 0? \]
+
+Si l'on a $K' \backsim 0$, il existera sur $w(\varepsilon)$ une aire $A'$ limitée par $K'$;
+
+\origpage{57}
+on pourra trouver sur $w(-\varepsilon)$ une aire $A$ infiniment peu différente de $A'$, et cette aire sera limitée par $K$ seulement ou par $K$ et par l'ellipse de gorge $E$, de sorte qu'on aura
+\[ K \backsim 0 \quad \text{ ou } \quad K \backsim E. \]
+
+J'ajoute que si nous traçons sur $w(\varepsilon)$ un cycle quelconque $K'$, nous pourrons toujours trouver sur $w(-\varepsilon)$ un cycle $K$ qui en diffère très-peu, et que l'on ne peut avoir $K \backsim 0$ sans avoir $K' \backsim 0$; car s'il existe sur $w(-\varepsilon)$ une aire $A$ limitée par $K$, il existera sur $w(\varepsilon)$ une aire $A'$ limitée par $K'$ et très-peu différente de $A$.
+
+Donc, quand $t$ passe de $-\varepsilon$ à $+\varepsilon$, certains cycles peuvent disparaitre, mais des cycles nouveaux ne peuvent pas apparaitre, certains cycles peuvent devenir homologues à zéro, mais aucun cycle ne peut cesser de l'être, de sorte que le nombre de Betti $2p + 1$ peut décroître, mais ne peut pas croître.
+
+Il résulte de là que deux cas seulement peuvent se présenter~:
+
+1° ou bien $E \backsim 0$ sur $w(-\varepsilon)$; dans ce cas nous avons vu que quand $t$ passe de $-\varepsilon$ à $+\varepsilon$, la variété $w(t)$ se décompose en deux autres.
+
+Les cycles de $w(-\varepsilon)$ ne peuvent pas disparaître; en effet comme on a $E \backsim 0$, on aura $N(K, E) = 0$ pour tous les cycles $K$. De plus aucun de ces cycles $K$ ne peut devenir homologue à zéro. Nous avons vu en effet quelles étaient les nouvelles homologies qui pouvaient s'introduire entre les cycles $K$ par suite du passage de $t$ de $-\varepsilon$ à $+\varepsilon$; on peut toutes les déduire de l'homologie nouvelle $E \backsim 0$; et en effet nous avons dit que pour que l'on ait $K' \backsim 0$ sans avoir $K \backsim 0$, il faut que l'on ait $K \backsim E$. Or dans le cas qui nous occupe nous avons $E \backsim 0$ aussi bien sur $w(-\varepsilon)$ que sur $w(\varepsilon)$. Il ne s'introduit donc pas d'homologie nouvelle.
+
+Le nombre total des cycles distincts demeure donc le même; si $w(-\varepsilon)$ est $2p + 1$ fois connexe, $w(\varepsilon)$ se décomposera en deux surfaces qui seront respectivement $2p' + 1$ fois et $2p'' + 1$ fois connexes, où $p' + p'' = p$.
+
+2° Dans le second cas on n'a pas $E \backsim 0$ sur $w(-\varepsilon)$, nous avons vu que dans ce cas $w(t)$ ne se décompose pas; nous supposons que $w(-\varepsilon)$ est $2p + 1$ fois connexe et possède $2p$ cycles distincts. Au moment où $t$ devient positif, certains cycles $K$ disparaîssent; ce sont ceux qui sont tels que $N(K, E)$ ne soit pas nul. Mais si l'on a deux
+
+\origpage{58}
+cycles $K_{1}$ et $K_{2}$ tels que
+\[ N(K_{1}, E) = m_{1}, \qquad N(K_{2}, E) = m_{2}, \]
+alors on aura~:
+\[ N(m_{2} K_{1} - m_{1} K_{2}, E) = 0, \]
+de sorte que le cycle $m_{2} K_{1} - m_{1} K_{2}$ ne disparait pas. Il résulte de là que tous les cycles qui disparaissent sont toujours une combinaison linéaire de \emph{l'un} d'entre eux et des cycles qui ne disparaîssent pas. Le nombre des cycles distincts diminue donc \emph{de ce fait} d'une unité, et d'une seule.
+
+D'autre part, entre les cycles subsistants, s'introduit une homologie nouvelle, et une seule,
+\[ E \backsim 0, \]
+de sorte que le nombre des cycles diminue encore d'une unité.
+
+En résumé, le nombre total des cycles distincts diminue en tout de deux unités, de sorte que $w(\varepsilon)$ est $2p - 1$ fois connexe.
+
+\subsection*{\S~3.}
+
+Avant d'aller plus loin, nous devons rappeler brièvement ce que l'on sait sur les surfaces à deux dimensions, ou plutôt celles des propriétés de ces surfaces qui nous seront utiles dans la suite; je commencerai par les surfaces bilatères.
+
+On sait qu'une surface fermée bilatère $2p + 1$ fois connexes admet $2p$ cycles distincts. Soient
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p} \]
+$2p$ cycles fondamentaux de la surface, choisis de telle façon que tout cycle de la surface soit homologue à une combinaison linéaire de ces $2p$ cycles.
+
+Soient maintenant~:
+\[ X \backsim \sum x_{i} C_{i}, \qquad Y = \sum y_{i} C_{i} \]
+deux de ces combinaisons linéaires où les coefficients $x$ et $y$ sont des entiers quelconques. Envisageons le nombre $N(X, Y)$ relatif aux intersections de ces deux cycles $X$ et $Y$; ce nombre est égal à
+\[ N(X, Y) = F(x, y), \]
+$F(x, y)$ étant une forme bilinéaire par rapport aux variables $x$ et $y$.
+
+\origpage{59}
+
+Cette forme a tous ses coefficients entiers, elle change de signe quand on permute $x$ et $y$ de sorte que
+\[ F(x, y) = -F(y, x), \]
+enfin son discriminant est égal à 1.
+
+On peut choisir les cycles fondamentaux $C$ (et cela d'une infinité de manières) de telle façon que la forme $F(x, y)$ soit \emph{réduite}, c'est-à-dire qu'elle se réduise à
+\[ x_{1}y_{2} - x_{2}y_{1} + x_{3}y_{4} - x_{4}y_{3} + x_{5}y_{6} - x_{6}y_{5} + \ldots \]
+
+On voit que si la forme $F$ est réduite, $N(C_{i}, C_{k})$ sera nul si les indices $i$ et $k$ sont de même parité; c'est-à-dire que, si $i$ et $k$ sont de même parité, les cycles $C_{i}$ et $C_{k}$ ne se couperont pas, ou seront homologues à des cycles qui ne se coupent pas.
+
+Il nous sera souvent utile dans la suite de remplacer notre surface par un polygone fuchsien; cela peut se faire de deux manières. Supposons que la forme $F$ étant réduite, on considère les $p$ cycles de rang impair
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}, \]
+qui, nous pouvons le supposer, ne se coupent pas.
+
+Voici d'ailleurs comment on peut se rendre compte de la génération de ces cycles. Formons le \emph{squelette} de notre surface; ce squelette sera un réseau où l'on pourra décrire $p$ chemins fermés distincts; en choisissant convenablement $p$ points sur ce réseau, les $p$ chemins fermés seront coupés, le réseau restant néanmoins d'un seul tenant. Chacun de ces points représentera une courbe fermée [qui sera la variété $w(t)$ du \S\ précédent]. Nous aurons donc $p$ courbes fermées qui n'auront aucun point commun et qui seront nos $p$ cycles
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+Découpons notre surface suivant ces $p$ courbes; elle reste d'un seul tenant, mais elle peut maintenant être développée sur un plan, et après le développement elle se réduira à une aire plane, limitée par $2p$ courbes fermées. Une de ces $2p$ courbes la limite extérieurement et les autres intérieurement. Ces $2p$ courbes sont conjuguées deux à deux, deux courbes conjuguées correspondant aux deux lèvres d'une même coupure. Cette aire sera ainsi assimilable à un polygone fuchsien de la 3\textsuperscript{e} famille; et on pourra avoir avantage à envisager le groupe fuchsien qu'il engendre, et la décomposition du plan en une infinité de polygones congruents au polygone générateur.
+
+\origpage{60}
+
+Supposons maintenant que nous découpions notre surface suivant les $2p$ cycles. Les $2p$ cycles auront pu être tracés de façon à passer tous par un même point et à n'avoir pas d'autre point commun. Si, après ce découpage, on développe la surface sur un plan, on obtiendra un polygone de $4p$ côtés conjugués deux à deux, et assimilable à un polygone fuchsien de la 1\textsuperscript{ère} famille. Nous pourrons choisir ce polygone fuchsien (qui n'aura qu'un seul cycle de sommets), de telle façon que la somme de ces angles soit égale à $2\pi$. Si la forme $F$ est réduite, la loi de conjugaison des côtés sera la suivante~: 1 avec 3, 2 avec 4, 5 avec 7, 6 avec 8, 9 avec 11, 10 avec 12, etc. Ici aussi il y aura lieu d'envisager le groupe fuchsien et la décomposition du cercle fondamental en polygones congruents.
+
+Mais ici se pose une question qui va nous arrêter quelque temps. Le groupe fuchsien en question n'est autre chose que ce que j'ai appelé à la page 60 de l'Analysis Situs le groupe fondamental de la surface. La notion de ce groupe est fondée sur la notion \emph{d'équivalence} des cycles et sur la distinction entre cette notion et celle d'homologie (Cf.\ pages 18 et 62 de l'Analysis Situs).
+
+Considérons deux cycles $K$, et $K'$; partant d'un même point $M$ et y aboutissant, j'écrirai «~l'équivalence~»~:
+\[ K \equiv K' \]
+si l'on peut passer de l'un à l'autre par déformation continue et sans quitter la variété envisagée. Il pourra se faire alors que le cycle $K'$ venant repasser plusieurs fois par le point initial $M$ se décompose en plusieurs autres et équivale ainsi à plusieurs cycles consécutifs $K_{1}, K_{2}, K_{3}$ se succédant dans l'ordre indiqué; nous pourrons alors écrire~:
+\[ K \equiv K_{1} + K_{2} + K_{3}, \]
+mais nous n'avons pas le droit d'intervertir l'ordre des termes et d'écrire par exemple~:
+\[ K \equiv K_{1} + K_{3} + K_{2}. \]
+
+C'est precisément ce qui distingue les équivalences des homologies; dans ces dernières on a le droit d'intervertir cet ordre de sorte que de l'équivalence
+\[ K \equiv K_{1} + K_{2} + K_{3} \]
+nous avons le droit de déduire non seulement l'homologie~:
+\[ K \backsim K_{1} + K_{2} + K_{3} \]
+
+\origpage{61}
+mais encore l'homologie~:
+\[ K \backsim K_{1} + K_{3} + K_{2}. \]
+
+De même supposons que $K'$, au lieu de partir du point $M$, parte d'un autre point $M'$ et y aboutisse. Soit $L$ un chemin quelconque allant de $M$ en $M'$. Alors le cycle $L + K' - L$ ira comme $K$ de $M$ en $M$. Supposons qu'on ait l'équivalence~:
+\[ K \equiv L + K' - L, \]
+comme nous n'avons pas le droit d'intervertir l'ordre des termes, nous ne pouvons en conclure l'équivalence $K \equiv K'$, mais seulement l'homologie $K \backsim K'$.
+
+Ainsi dans les homologies, les termes se composent d'après les règles de l'addition ordinaire; dans les équivalences, les termes se composent d'après les mêmes règles que les substitutions d'un groupe; c'est pour cela que l'ensemble des équivalences peut pour ainsi dire être symbolisé par un groupe qui est le groupe fondamental de la variété.
+
+Dans le cas qui nous occupe, envisageons le cercle fondamental décomposé comme nous l'avons dit en polygones fuchsiens congruents. Chacun de ces polygones a $4p$ côtés. Un cycle quelconque sera représenté soit par une ligne fermée, soit par une ligne allant d'un point du plan à un autre point «~congruent~» (c'est-à-dire transformé du premier par une des substitutions du groupe fuchsien).
+
+Dans le 1\textsuperscript{er} cas le cycle est équivalent à zéro, dans le second il ne l'est pas.
+
+Le groupe fondamental est alors le groupe fuchsien lui-même, groupe dérivé des $2p$ substitutions correspondant aux $2p$ cycles fondamentaux $C_{i}$; dans le cas où la forme $F$ étant réduite, la loi de conjugaison des côtés du polygone fuchsien est celle que j'ai dite plus haut, on a entre les $2p$ cycles une seule équivalence qui s'écrit~:
+\[ 0 \equiv C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} + C_{5} + C_{6} - C_{5} - C_{6} + \ldots \]
+
+Cette équivalence suffit pour définir le groupe fondamental.
+
+On peut chercher à former un cycle qui soit homologue à zéro sans être équivalent à zéro. On voit d'abord qu'il ne peut y en avoir si $p = 1$, car alors l'équivalence que je viens d'écrire devient
+\[ C_{1} + C_{2} \equiv C_{2} + C_{1} \]
+et signifie que deux cycles quelconques sont permutables (au point de
+
+\origpage{62}
+vue de l'équivalence). On sait d'ailleurs que dans ce cas, les fonctions fuchsiennes se réduisent aux fonctions elliptiques, le groupe fuchsien a toutes ses substitutions permutables.
+
+Si $p > 1$, supposons que la loi de conjugaison des côtés soit celle que nous avons dite plus haut, c'est-à-dire 1 avec 3, 2 avec 4, etc. Soient 0 et 1 les deux sommets du côté 1; soient 1 et 2 ceux du côté 2, etc.; soient enfin $4p - 1$ et $4p = 0$, ceux du côté $4p$. Joignons les sommets 0 et 4 par une ligne restant à l'intérieur du polygone. Cette ligne représentera un cycle qui sera équivalent à
+\[ C_{1} + C_{2} - C_{1} - C_{2}. \]
+
+Il sera donc homologue à zéro; mais il ne sera pas équivalent à zéro.
+
+Ayons recours maintenant à l'autre mode de représentation; représentons donc notre surface par un polygone fuchsien de la 3\textsuperscript{e} famille limité par $2p$ courbes fermées conjuguées deux à deux, l'une d'elles limitant le polygone extérieurement, les autres intérieurement.
+
+Soit $k$ l'une de ces courbes fermées, correspondant au cycle $C_{2}$, soit $k'$ sa conjuguée. Soit $M$ un point de $k$, $M'$ le point correspondant de $k'$; joignons $M$ à $M'$ par un trait $MPM'$ qui correspondra au cycle $C_{1}$. Traçons maintenant à l'intérieur du polygone une courbe fermée $K$ enveloppant $k$ et $k'$, mais n'enveloppant aucune des autres courbes qui forment le contour du polygone.
+
+Soit $Q$ un point sur $k$ d'où part et où aboutit ce cycle. Soit $L$ une ligne allant de $Q$ en $M$. Il est clair qu'on aura l'équivalence~:
+\[ K \equiv L + k + MPM' + k' - MPM' - L, \]
+c'est-à-dire~:
+\[ K \equiv L + C_{2} + C_{1} - C_{2} - C_{1} - L; \]
+de cette équivalence on peut conclure $K \backsim 0$, c'est-à-dire que $K$ est homologue à zéro sans être équivalent à zéro.
+
+Voyons enfin ce qui se passe sur la surface elle même, et bornons-nous aux cycles \emph{non-bouclés}, c'est à-dire \emph{aux cycles qui ne se recoupent pas eux-mêmes}.
+
+Soit $C$ un pareil cycle homologue à zéro; il décomposera la surface $2p + 1$ fois connexe en deux parties, de sorte que si on étranglait la surface de façon à réduire ce cycle $C$ à un point, cette surface se décomposerait en deux autres. Si l'une des deux surfaces ainsi obtenues est simplement connexe, c'est alors que le cycle $C$ était équivalent à zéro.
+
+\origpage{63}
+Si ces deux surfaces sont $2p' + 1$ fois et $2p'' + 1$ fois connexes, où $p' > 0$, $p'' > 0$, $p' + p'' = p$, c'est au contraire que le cycle $C$ était homologue à zéro, sans être équivalent à zéro.
+
+Il est aisé de voir, et on sait d'ailleurs depuis longtemps, que deux surfaces bilatères, à 2 dimensions, ayant même nombre de Betti, sont toujours homéomorphes. Il suffit de remarquer que chacune d'elles peut être remplacée par un polygone fuchsien de la 3\textsuperscript{e} famille, limité par $2p$ courbes fermées et que deux pareils polygones, c'est-à-dire deux aires limitées extérieurement par une courbe fermée et intérieurement par $2p - 1$ courbes fermées sont évidemment toujours homéomorphes l'une à l'autre.
+
+Mais on peut aller plus loin. Soit $S$ une surface $2p + 1$ fois connexe; traçons sur cette surface deux systèmes de $2p$ cycles
+\[ \begin{matrix} C_{1}, & C_{2}, & \ldots, & C_{2p} \\[1ex] C'_{1}, & C'_{2}, & \ldots, & C'_{2p}. \end{matrix} \]
+La surface $S$ peut toujours être regardée comme homéomorphe à elle-même; c'est-à-dire qu'à un point $M$ de la surface nous pouvons faire correspondre un autre point $M'$ de cette surface; de telle façon que la loi de correspondance soit continue et doublement univoque. Dans quels cas cette correspondance peut-elle être choisie de telle sorte que, quand le point $M$ décrit les cycles
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p}, \]
+le point $M'$ décrive~:
+
+1° ou bien les cycles
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p}, \]
+
+2° ou bien des cycles équivalents à
+\[ C'_{1}, \qquad C'_{2}. \qquad \ldots, \qquad C'_{2p}, \]
+
+3° ou bien des cycles homologues à
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p}. \]
+
+Je ne traiterai que la 3\textsuperscript{e} question qui est la plus facile. Je considère la forme $F(x, y)$ qui représente le nombre $N$ relatif à l'intersection des cycles $\displaystyle\sum x C$ et $\displaystyle\sum y C$. Je considère de même la forme $F'(x', y')$ relative à l'intersection des cycles $\displaystyle\sum x' C'$ et $\displaystyle\sum y' C'$.
+
+Il est clair d'abord que si la correspondance est possible de telle façon que $M'$ décrive un cycle homologue à $C'_{i}$ quand $M$ décrit un cycle homologue à $C_{i}$, les deux formes devront être identiques, c'est-à-dire
+
+\origpage{64}
+ne différer que par la substitution des variables $x'$, $y'$ aux variables $x$ et $y$. Si, par exemple, nous supposons que $F$ est réduite et que
+\[ F = x_{1}y_{2} - x_{2}y_{1} + x_{3}y_{4} - x_{4}y_{3} + \ldots, \]
+on devra avoir~:
+\[ F' = x'_{1}y'_{2} - x'_{2}y'_{1} + x'_{3}y'_{4} - x'_{4}y'_{3} + \ldots \]
+Les cycles $C'$ sont des combinaisons linéaires des cycles $C$ et, si nous supposons
+\[ \sum x C = \sum x' C', \qquad \sum y C = \sum y' C', \]
+les nouvelles variables $x'$ et $y'$ seront également des combinaisons linéaires à coefficients entiers des $x$ et des $y$. Il faut donc que la forme $F$ ne soit pas altérée par la substitution linéaire qui fait passer des $x$ aux $x'$ et des $y$ aux $y'$.
+
+\emph{Je dis que cette condition nécessaire est également suffisante}.
+
+Pour le démontrer, voyons quelles sont les substitutions linéaires qui n'altèrent pas la forme $F$ que nous supposerons réduite.
+
+1° Si nous supposons que l'on ait~:
+\[ \begin{aligned} &x'_{1} = x_{1} + x_{2}, \qquad x'_{i} = x_{i} \qquad (i > 1),\\ &y'_{1} = y_{1} + y_{2}, \qquad y'_{i} = y_{i} \qquad (i > 1), \end{aligned} \]
+il est clair que l'on aura~:
+\[ x'_{1}y'_{2} - x'_{2}y'_{1} + \ldots = x_{1}y_{2} - x_{2}y_{1} + \ldots \]
+
+Il est clair qu'il en sera encore de même, si nous posons
+\[ x'_{2} = x_{1} + x_{2}, \]
+ou bien
+\[ x'_{3} = x_{3} + x_{4}, \]
+ou bien
+\[ x'_{4} = x_{4} + x_{3}, \]
+ou, plus généralement,
+\[ x'_{2k-1} = x_{2k-1} + x_{2k}; \]
+ou bien enfin
+\[ x'_{2k} = x_{2k-1} + x_{2k}, \]
+tous les autres $x'_{i}$ étant égaux à l'$x_{i}$ correspondant.
+
+Il en sera encore de même si les $x$ subissent des substitutions inverses des précédentes, c'est-à-dire si l'on pose~:
+\[ x'_{2k-1} = x_{2k-1} - x_{2k}, \]
+ou bien
+\[ x'_{2k} = x_{2k} - x_{2k-1}, \]
+tous les autres $x'_{i}$ étant égaux à l'$x_{i}$ correspondant.
+
+\origpage{65}
+
+Il va sans dire que la substitution linéaire qui fait passer des $y$ aux $y'$ est identique à celle qui fait passer des $x$ aux $x'$.
+
+Voilà donc un premier type de substitutions linéaires qui n'altèrent pas la forme réduite $F$.
+
+2° En voici maintenant un second type.
+
+Supposons que l'on pose~:
+\[ \begin{gathered} x'_{1} = x_{1} + x_{3}, \qquad x'_{4} = x_{4} - x_{2} \\ x'_{i} = x_{i} \qquad (\text{sauf pour } i = 1 \text{ et pour } i = 4), \end{gathered} \]
+ou plus généralement~:
+\[ \begin{gathered} x'_{2K-1} = x_{2K-1} + x_{2j-1}, \qquad x'_{2j} = x_{2j} - x_{2K} \\ x'_{i} = x_{i} \qquad (\text{sauf pour } i = 2K - 1 \text{ et pour } i = 2j); \end{gathered} \]
+il est clair que la forme réduite $F$ n'est pas altérée.
+
+Elle n'est pas altérée non plus par la substitution inverse~:
+\[ \begin{gathered} x'_{2K-1} = x_{2K-1} - x_{2j-1}, \qquad x'_{2j} = x_{2j} + x_{2K} \\ x'_{i} = x_{i} \qquad (\text{sauf pour } i = 2K - 1 \text{ pour } i = 2j). \end{gathered} \]\ednote{The print has no “et” before the second “pour” here; the parallel clause two displays above reads “et pour”.}
+
+Voilà notre second type.
+
+Or il est aisé de voir que toute substitution qui n'altère pas la forme réduite $F$ peut être considérée comme une combinaison de substitutions rentrant dans ces deux types.
+
+Il suffit donc de démontrer le théorème pour les substitutions de ces deux types.
+
+En ce qui concerne d'abord le second type, nous pourrons représenter notre surface par un polygone fuchsien de la 3\textsuperscript{e} famille, limité tant extérieurement qu'intérieurement par $2p$ courbes fermées~:
+\[ A_{1}, \qquad A'_{1}; \qquad A_{3}, \qquad A'_{3}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+conjuguées deux à deux et correspondant aux $p$ cycles d'indice impair
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+Pour construire les $p$ cycles d'indice pair, il suffit d'opérer de la façon suivante.
+
+Soient
+\[ P_{1}, \qquad P_{3}, \qquad \ldots, \qquad P_{2p-1} \]
+$p$ points pris arbitrairement sur les courbes $A_{1}, A_{3}, \ldots, A_{2p-1}$; soient $P'_{1}, P'_{3}, \ldots, P'_{2p-1}$ les points correspondants sur les courbes conjuguées $A'_{1}, A'_{3}, \ldots, A'_{2p-1}$. Joignons $P_{1}$ à $P'_{1}$, $P_{3}$ à $P'_{3}$, \ldots, $P_{2p-1}$ à $P'_{2p-1}$
+
+\origpage{66}
+par $p$ lignes
+\[ L_{1}, \qquad L_{3}, \qquad \ldots, \qquad L_{2p-1} \]
+tracées de manière à ne pas se couper mutuellement. Ces $p$ lignes seront homologues aux $p$ cycles d'indice pair~:
+\[ C_{2}, \qquad C_{4}, \qquad \ldots, \qquad C_{2p}. \]
+
+Pour simplifier, nous supposerons que ce soit la courbe $A_{5}$ (qui ne jouera aucun rôle dans ce qui va suivre), qui limite extérieurement notre polygone fuchsien. Construisons une courbe $B$ qui enveloppe les deux courbes $A_{1}$ et $A_{3}$, et n'en enveloppant pas d'autres; cette courbe $B$ représentera un cycle homologue à
+\[ C_{1} + C_{3}. \]
+
+Soit $R$ la région limitée extérieurement par cette courbe $B$ et intérieurement par $A_{1}$ et $A_{3}$. Envisageons la substitution du groupe fuchsien qui change $A_{1}$ en $A'_{1}$ (et qui correspond d'ailleurs au cycle $C_{2}$). Soit $R'$ la transformée de la région $R$ par cette substitution; elle sera limitée extérieurement par $A'_{1}$ et intérieurement par deux courbes fermées $B'$ et $A''_{3}$ transformées de $B$ et $A_{3}$.
+
+Modifions le polygone fuchsien en retranchant la région $R$ et en y ajoutant la région $R'$. Notre nouveau polygone fuchsien sera limité extérieurement par $A_{5}$ et intérieurement par
+\[ A'_{5}; \qquad B; \qquad B'; \qquad A'_{3}, \qquad A''_{3}; \qquad A_{7}, \qquad A'_{7}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1}. \]
+
+Deux points du plan, transformés l'un de l'autre par une substitution du groupe fuchsien, correspondent évidemment à un même point de la surface $S$. Notre nouveau polygone fuchsien correspondra donc comme l'ancien à la surface $S$ tout entière puisque la région $R$ supprimée a été remplacée par sa transformée $R'$. D'ailleurs ces deux polygones qui sont tous deux des aires planes limitées par $2p$ courbes fermées sont homéomorphes l'une à l'autre et de telle façon que
+\[ A_{1}, \qquad A'_{1}; \qquad A_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+correspondent à~:
+\[ B, \qquad B'; \qquad A''_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1}. \]
+
+Il en résulte que dans cet homéomorphisme, les cycles impairs
+\[ C_{1}, \qquad C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1} \]
+correspondront à des cycles homologues à
+\[ C_{1} + C_{3}, \qquad C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+\origpage{67}
+
+A quoi correspondront les cycles d'ordre pair? Chacun de ces cycles correspond à une substitution du groupe fuchsien, par exemple $C_{2}$ à la substitution $T_{1}$ qui change $A_{1}$ en $A'_{1}$, $C_{4}$ à la substitution $T_{3}$ qui change $A_{3}$ en $A'_{3}$, etc. Il est évident d'ailleurs que dans l'homéomorphisme en question la substitution $T_{1}$ est remplacée par celle qui change $B$ en $B'$ (cycles qui correspondent à $A_{1}$ et $A'_{1}$) et qui est encore $T_{1}$, la substitution $T_{3}$ par celle qui change $A''_{3}$ en $A'_{3}$ et qui est $T^{-1}_{1} T_{3}$, et que les autres substitutions ne changent pas. Cela nous fait déjà prévoir que les cycles
+\[ C_{2}, \qquad C_{4}, \qquad C_{6}, \qquad \ldots \]
+correspondront à
+\[ C_{2}, \qquad C_{4} - C_{2}, \qquad C_{6}, \qquad \ldots \]
+
+Mais un doute pourrait subsister, car la substitution $T_{1}$ ne correspond pas seulement au cycle $C_{2}$, mais à tous les cycles $C_{2} + K$, $K$ étant une combinaison linéaire quelconque des cycles d'ordre impair.
+
+Il nous faut donc revenir aux lignes $L$ que nous venons de définir; nous pouvons toujours supposer qu'aucune de ces lignes ne coupe $B$, à l'exception des lignes $L_{1}$ et $L_{3}$ qui couperont $B$ en $N_{1}$ et $N_{3}$; je désignerai par $M_{1}$ et $M'_{1}$, $M_{3}$ et $M'_{3}$ les points d'intersection de $A_{1}$ et $A'_{1}$ avec $L_{1}$, de $A_{3}$ et $A'_{3}$ avec $L_{3}$; par $N'_{1}$ et $N'_{3}$ les transformés de $N_{1}$ et $N_{3}$ par $T_{1}$ qui sont sur $B'$, et j'envisagerai les tronçons $N'_{1}M'_{1}$, $N'_{3}M''_{3}$ qui sont les transformés par $T_{1}$ des tronçons de $N_{1}M_{1}$ et $N_{3}M_{3}$ des lignes $L_{1}$ et $L_{3}$. Le point $M''_{3}$ est sur $A''_{3}$. Les lignes $L$ et les nouveaux tronçons $N'_{1}M'_{1}$, $N'_{3}M''_{3}$ ne se coupent en aucun point.
+
+Nous considérerons encore les tronçons $N_{3}N_{1}$ sur $B$ et $N'_{3}N'_{1}$ sur $B'$, ou mieux des tronçons $N_{3}N^{0}_{1}$ et $N'_{3}N'^{0}_{1}$ aboutissant à des points $N^{0}_{1}$ et $N'^{0}_{1}$ situés sur $B$ et $B'$ infiniment près de $N_{1}$ et $N'_{1}$, et de telle façon que $N_{1}$ et $N'_{1}$ ne soient pas sur les arcs $N_{3}N^{0}_{1}$ et $N'_{3}N'^{0}_{1}$; j'envisagerai en outre une ligne $N'^{0}_{1}M'^{0}_{1}N^{0}_{1}$ infiniment voisine de $N'_{1}M'_{1}N_{1}$ et ne la coupant pas; à l'aide de ces divers tronçons je pourrai construire les lignes
+\[ L'_{1}, \qquad L'_{3}, \qquad \ldots \]
+correspondant dans notre homéomorphisme aux lignes
+\[ L_{1}, \qquad L_{3}, \qquad \ldots \]
+La première sera la ligne $N_{1}M'_{1}N'_{1}$; la seconde qui doit aller de $M''_{3}$ en $M'_{3}$ sera $M''_{3}N'_{3} + N'_{3}N'^{0}_{1} + N'^{0}_{1}M'^{0}_{1}N^{0}_{1} + N^{0}_{1}N_{3} + N_{3}M_{3}$; d'ailleurs
+
+\origpage{68}
+$L'_{5}$ sera identique à $L_{5}$, $L'_{7}$ à $L_{7}$, etc. Il suffit pour s'en rendre compte de vérifier que ces diverses lignes ne se coupent pas.
+
+On voit alors que ces lignes sont homologues à~:
+\[ L_{1}, \qquad L_{3} - L_{1}, \qquad L_{5}, \qquad \ldots, \]
+ce qui veut dire qu'aux cycles $C_{2}$, $C_{4}$, etc. correspondent~:
+\[ C_{2}, \qquad C_{4} - C_{2}, \qquad C_{6}, \qquad \ldots \]
+Nous avons donc en résumé $C'_{i} \backsim C_{i}$ sauf pour $i = 1$ ou 4, et
+\[ C'_{1} \backsim C_{1} + C_{3}, \qquad C'_{4} \backsim C_{4} - C_{2}. \]
+
+Si donc nous supposons $\displaystyle\sum x C = \displaystyle\sum x' C'$, on aura $x_{i} = x'_{i}$ sauf pour $i = 2$ et 3 et
+\[ x'_{3} = x_{3} - x_{1}, \qquad x'_{2} = x_{2} + x_{4}. \]
+Si l'on avait voulu avoir~:
+\[ x'_{3} = x_{3} + x_{1}, \qquad x'_{2} = x_{2} - x_{4}, \]
+il aurait fallu tracer $B$ autour de $A_{1}$ et $A'_{3}$ et non autour de $A_{1}$ et $A_{3}$. Si on avait voulu avoir~:
+\[ x'_{1} = x_{1} - x_{3}, \qquad x'_{4} = x_{2} + x_{4}, \]
+il aurait fallu tracer $B$ autour de $A_{1}$ et $A_{3}$ et transformer la région $R$, non plus par $T_{1}$, mais par $T_{3}$.
+
+Ce procédé est donc applicable à toutes les substitutions du 2\textsuperscript{d} type.
+
+On opérera d'une façon analogue pour les substitutions du 1\textsuperscript{er} type; je suppose par exemple
+\[ x'_{1} = x_{1} + x_{2} \qquad x'_{i} = x_{i} \qquad (i > 1), \]
+c'est-à-dire~:
+\[ C_{1} \backsim C'_{1}, \qquad C'_{2} \backsim C_{2} - C_{1}. \]
+
+Je ne représenterai notre surface par un polygone fuchsien de la 3\textsuperscript{e} famille, ni un polygone fuchsien de la 1\textsuperscript{ère} famille comme je l'ai fait plus haut, mais j'emploirai un mode de représentation analogue et pour ainsi dire intermédiaire.
+
+Remarquons en effet que rien ne nous oblige à nous restreindre à des polygones fuchsiens proprement dits, c'est-à-dire à des polygones limités par des arcs de cercle coupant orthogonalement un même cercle fondamental. Dans une question comme celle qui nous occupe, rien n'empêche de remplacer, par exemple, un polygone fuchsien de la 1\textsuperscript{ère} famille
+
+\origpage{69}
+par un autre polygone curviligne qui lui soit homéomorphe, mais qui soit d'ailleurs quelconque.
+
+Nous pouvons profiter de cette élasticité pour adopter le mode de représentation suivant.
+
+Notre polygone sera limité extérieurement par un quadrilatère curviligne et intérieurement par $2p - 2$ courbes fermées. Les côtés opposés du quadrilatère seront conjugués et d'autre part les $2p - 2$ courbes fermées seront conjuguées deux a deux d'une manière quelconque.
+
+Soient $abcd$ les quatre sommets du quadrilatère,
+\[ A_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+les $2p - 2$ courbes fermées conjuguées deux à deux; ces courbes fermées correspondront à $p - 1$ des cycles d'ordre impair
+\[ C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+Les côtés $ab$ et $dc$, du quadrilatère correspondront au cycle $C_{1}$; les côtés $ad$ et $bc$ au cycle $C_{2}$.
+
+Nous prendrons sur les courbes fermées $A_{i}$ des points quelconques $P_{i}$; nous joindrons chacun des points $P_{i}$ au point correspondant $P_{i}$\ednote{Printed $P_{i}$ without a prime; the next sentence, which joins $P_{i}$ to $P'_{i}$, requires $P'_{i}$ here.} de la courbe $A'_{i}$. La ligne $L_{i}$ qui joint $P_{i}$ à $P'_{i}$ correspondra au cycle $C_{i+1}$, à la condition que ces lignes $L$ aient été tracées de façon à ne pas couper les côtés du quadrilatère et à ne pas se couper mutuellement.
+
+Joignons les sommets opposés $a$ et $c$ du quadrilatère par une diagonale curviligne $ac$, qui divisera ce quadrilatère en deux triangles $acb$ et $acd$ et qui devra être tracée de telle façon que toutes les courbes fermées $A$ et $A'$ soient à l'intérieur du 1\textsuperscript{er} triangle $acb$.
+
+Le groupe qui jouera le rôle de nos groupes fuchsiens de tout à l'heure, sera dérivé des substitutions suivantes~: $T_{1}$ qui change $ad$ en $bc$; $T_{2}$ qui change $ab$ en $dc$; $T_{i}$ $(i = 3, 5, \ldots, 2p - 1)$ qu\ednote{Printed “qu” for “qui” at the end of the line.} change $A_{i}$ en $A'_{i}$.
+
+Soit $bcf$ le transformé du triangle $adc$ par $T_{1}$.
+
+On peut remplacer le triangle $adc$ par le triangle $bcf$ et par conséquent on peut remplacer notre polygone générateur par un nouveau polygone limité extérieurement par le quadrilatère $abfc$ et intérieurement par les $2p - 2$ courbes fermées $A$ et $A'$; ces courbes fermées sont encore conjuguées deux à deux et les côtés opposés du quadrilatère sont conjugués.
+
+Ces deux polygones (qui tous deux correspondent à la surface $S$
+
+\origpage{70}
+tout entière) sont homéomorphes l'un à l'autre et de telle façon que
+\[ ab, \qquad bc, \qquad cd, \qquad da, \qquad A_{i}, \qquad A'_{i}, \qquad L_{i} \]
+correspondent respectivement à~:
+\[ ab, \qquad bf, \qquad fc, \qquad ca, \qquad A_{i}, \qquad A'_{i}, \qquad L_{i}. \]
+Les cycles
+\[ C_{1}, \qquad C_{2}, \qquad C_{i}, \qquad C_{i+1} \]
+correspondront donc dans cet homéomorphisme à
+\[ C_{1}, \qquad C_{2} + C_{1}, \qquad C_{i}, \qquad C_{i+1}. \]
+
+Donc la surface $S$ est homéomorphe à elle-même de telle façon qu'au cycle $C_{k}$ corresponde le cycle $C'_{k}$, en supposant
+\[ \begin{aligned} &C'_{k} = C_{k} \qquad (k = 1, 3, 4, 5, \ldots, 2p)\\ &C'_{2} = C_{2} + C_{1}. \end{aligned} \]
+Dans ce cas on a
+\[ x'_{1} = x_{1} - x_{2}, \qquad x'_{2} = x_{2}, \qquad x'_{3} = x_{3}, \qquad \ldots, \qquad x'_{2p} = x_{2p}. \]
+C'est donc une substitution du 1\textsuperscript{er} type pour lequel le théorème se trouve démontré, et il est clair qu'on le démontrerait de même pour toutes les autres substitutions du 1\textsuperscript{er} type.
+
+Nous pouvons donc dire en résumé~:
+
+\emph{La condition nécessaire et suffisante pour que la surface $S$ soit homéomorphe à elle-même de telle façon qu'aux cycles $C_{i}$ correspondent des cycles homologues aux cycles $C'_{i}$, c'est que la forme $F(x, y)$ relative aux cycles $C$ soit identique à la forme $F(x', y')$ relative aux cycles $C'$}.
+
+Il est aisé de conclure de là qu'un cycle $\displaystyle\sum a_{i} C_{i}$ est toujours homologue à un cycle \emph{non bouclé}, c'est-à-dire ne se coupant pas lui-même, si les entiers $a_{i}$ sont premiers entre eux. Si au contraire ces entiers $a_{i}$ ne sont pas premiers entre eux, il ne peut être homologue à un cycle non bouclé.
+
+Établissons d'abord le 1\textsuperscript{er} point.
+
+Il suffira de démontrer que l'on peut trouver $2p$ cycles
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p} \]
+tels que
+\[ C'_{1} = \sum a_{i} C_{i} \]
+et que la forme $F(x', y')$ relative aux cycles $C'$ soit identique à la forme $F(x, y)$ relative aux cycles $C$; de telle façon que l'on ait~:
+\[ F(x', y') = x'_{1}y'_{2} - x'_{2}y'_{1} + x'_{3}y'_{4} - x'_{4}y'_{3} + \ldots \]
+
+\origpage{71}
+si nous supposons, comme nous le faisons d'ordinaire, que les cycles $C$ aient été choisis de telle sorte que la forme $F(x, y)$ soit réduite.
+
+En effet, si les cycles $C'$ satisfont à cette condition, la surface $S$ sera homéomorphe à elle-même de telle sorte qu'au cycle $C_{i}$ corresponde un cycle homologue à $C'_{i}$. Donc on pourra trouver un cycle homologue à $C'_{1}$ qui dans cet homéomorphisme correspondra à $C_{1}$ et qui par conséquent ne sera pas bouclé, puisque $C_{1}$ n'est pas bouclé.
+
+Remarquons d'abord que si les entiers $a_{i}$ sont premiers entre eux, on pourra trouver $2p$ cycles
+\[ C''_{1}, \qquad C''_{2}, \qquad \ldots, \qquad C''_{2p} \]
+tels que
+\[ \begin{aligned} C''_{1} &= C'_{1} = \sum a_{i} C_{i}, \\ C''_{k} &= \sum b_{ik} C_{i}, \end{aligned} \]
+les $a_{i}$ et les $b_{ik}$ étant des entiers dont le déterminant soit égal à 1.
+
+Soit $F(x'', y'')$ la forme relative aux cycles $C'$\ednote{Printed $C'$; the form $F(x'', y'')$ is the one relative to the cycles $C''$.}.
+
+Quelle relation doit-il y avoir entre les variables $x'$ et $x''$? Le cycle $C'_{1}$ devant être identique à $C''_{1}$, il est clair que
+\[ x'_{2}, \qquad x'_{3}, \qquad \ldots, \qquad x'_{2p} \]
+devront être des combinaisons linéaires de
+\[ x''_{2}, \qquad x''_{3}, \qquad \ldots, \qquad x''_{2p} \]
+et qu'il en devra être de même de la différence $x'_{1} - x''_{1}$.
+
+Il reste à démontrer qu'il existe un changement linéaire de variables qui satisfasse à cette condition et qui en même temps soit tel que la forme $F(x', y')$ soit réduite.
+
+Or nous pouvons écrire~:
+\[ F(x'', y'') = x''_{1} Y_{2} - y''_{2} X_{2} + \Phi(x'', y''), \]\ednote{Printed $y''_{2}$; the reduced form of $F$ requires $y''_{1}$ in the second term, as the substitution $y'_{1} = y''_{1} - Y'$ on p.~72 confirms.}
+où $X_{2}$ est une combinaison linéaire de $x''_{2}, x''_{3}, \ldots, x''_{2p}$ dont les coefficients sont des entiers premiers entre eux; où $Y_{2}$ est la même combinaison de $y''_{2}, y''_{3}, \ldots, y''_{2p}$; où enfin $\Phi$ est une forme bilinéaire de
+\[ x''_{2}, \qquad x''_{3}, \qquad \ldots, \qquad x''_{2p}; \qquad y''_{2}, \qquad y''_{3}, \qquad \ldots, \qquad y''_{2p}. \]
+
+J'ai dit que les coefficients de $X_{2}$ sont des entiers premiers entre eux, et en effet, si le plus grand commun diviseur était $a > 1$, le déterminant de la forme $F(x'', y'')$ serait divisible par $a^{2}$; ce qui est impossible puisque ce déterminant est égal à 1.
+
+Ces coefficients étant premiers entre eux, nous pouvons trouver
+
+\origpage{72}
+$2p - 1$ combinaisons linéaires
+\[ X_{2}, \qquad X_{3}, \qquad \ldots, \qquad X_{2p} \]
+de $x''_{2}, x''_{3}, \ldots, x''_{2p}$, dont la première soit précisément $X_{2}$ et dont les coefficients soient des entiers dont le déterminant soit égal à 1.
+
+Dans ces conditions $\Phi$ sera une forme bilinéaire de
+\[ X_{2}, \qquad X_{3}, \qquad \ldots, \qquad X_{2p} \]
+et des combinaisons correspondantes
+\[ Y_{2}, \qquad Y_{3}, \qquad \ldots, \qquad Y_{2p} \]
+formées avec les $y''$. Nous pourrons alors écrire~:
+\[ \Phi = X_{2} Y' - Y_{2} X' + \psi(X, Y), \]
+où $X'$ est une combinaison linéaire de $X_{3}, X_{4}, \ldots, X_{2p}$; où $Y'$ est la même combinaison des $Y$; où $\psi$ est une forme bilinéaire des $4p - 4$ variables
+\[ X_{3}, \qquad X_{4}, \qquad \ldots, \qquad X_{2p}; \qquad Y_{3}, \qquad Y_{4}, \qquad \ldots, \qquad Y_{2p}. \]
+
+Le déterminant de cette forme $\psi$ devra diviser celui de $F$; il sera donc égal à 1. La forme $\psi$ ayant pour déterminant 1, on peut trouver $2p - 2$ combinaisons linéaires
+\[ x'_{3}, \qquad x'_{4}, \qquad \ldots, \qquad x'_{2p} \]
+des variables $X_{3}, X_{4}, \ldots, X_{2p}$, telles que la forme $\psi$ soit réduite quand on prend les $x'$ pour variables nouvelles, avec les combinaisons correspondantes $y'$ des $Y$.
+
+Si alors nous posons
+\[ \begin{aligned} x'_{1} &= x''_{1} - X', &\qquad y'_{1} &= y''_{1} - Y', \\ x'_{2} &= X_{2}, & y'_{2} &= Y_{2}, \end{aligned} \]
+il viendra~:
+\[ F = x'_{1}y'_{2} - x'_{2}y'_{1} + \psi. \]
+
+La forme $\psi$ étant réduite, il en sera de même de $F$, de sorte que nos nouvelles variables $x'$ répondent bien à la question.
+
+Le premier point est donc établi.
+
+Supposons maintenant que les $a_{i}$ ne soient pas premiers entre eux; je dis que tout cycle homologue à $\displaystyle\sum a_{i} C_{i}$ est bouclé. Soit en effet
+\[ a_{i} = b_{i} d, \]
+$d$ étant le plus grand commun diviseur des $a_{i}$, et les $b_{i}$ étant premiers
+
+\origpage{73}
+entre eux. Soit alors~:
+\[ \sum b_{i} C_{i} = C'_{1}, \qquad \sum a_{i} C_{i} = dC'_{1}. \]
+D'après ce qui précède, la surface $S$ sera homéomorphe à elle-même, de telle façon que $C_{1}$ corresponde à $C'_{1}$. Il nous suffit donc de montrer que tout cycle homologue à $dC_{1}$ est bouclé; puisque dans notre homéomorphisme tout cycle homologue à $\displaystyle\sum a_{i} C_{i}$ correspondra à un cycle homologue à $dC_{1}$.
+
+Pour cela, reprenons la représentation de notre surface $S$ par un polygone fuchsien $R_{0}$ de $4p$ côtés et de la 1\textsuperscript{ère} famille, polygone qui avec ses différents transformés remplira la surface du cercle fondamental.
+
+Soit $K$ notre cycle que nous supposons homologue à $dC_{1}$. Ce cycle sera représenté par une certaine ligne $amb$, allant d'un certain point $a$ intérieur au cercle fondamental à un point $b$ transformé de $a$ par une substitution du groupe fuchsien. Outre cette ligne nous devons envisager toutes ses transformées par les différentes substitutions du groupe fuchsien; car une quelconque de ces transformées représente comme la ligne elle-même le cercle $C$\ednote{Printed cercle $C$; the line $amb$ represents the cycle $K$ named in the preceding sentences.}.
+
+Nous envisagerons en particulier les arcs de la ligne $amb$ ou de ses transformées qui seront à l'intérieur du polygone $R_{0}$. L'ensemble de ces arcs sera ce que j'appellerai \emph{l'image} du cycle $K$.
+
+Cette image se composera d'un certain nombre d'arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n} \]
+allant de certains points $A_{1}, A_{2}, \ldots, A_{n}$ situés sur le périmètre de $R_{0}$ à d'autres points $B_{1}, B_{2}, \ldots, B_{n}$, situés également sur le périmètre de $R_{0}$. Pour que le cycle soit continu et fermé, il faut que les points $B_{1}$ et $A_{2}$, $B_{2}$ et $A_{3}$, \ldots, $B_{n-1}$ et $A_{n}$, $B_{n}$ et $A_{1}$ correspondent à un même point de $S$, et, par conséquent, que ce soient des points \emph{conjugués} du périmètre de $R_{0}$, c'est-à-dire des points correspondants sur deux côtés conjugués.
+
+Faisons correspondre un nombre à chaque point du périmètre de $R_{0}$ et cela de la façon suivante~: 1° les nombres correspondant aux points $A_{i}$ et $B_{i}$ seront des entiers; 2° les nombres correspondant aux autres points du périmètre seront égaux à des entiers $+ \frac{1}{2}$; 3° en suivant le périmètre dans le sens direct, notre nombre ne variera que quand on passera par un point $A_{i}$ ou par un point $B_{i}$; 4° il augmentera brusquement d'une unité quand on franchira l'un des points $A_{i}$, et il diminuera
+
+\origpage{74}
+brusquement d'une unité quand on franchira l'un des points $B_{i}$; 5° la valeur du nombre en un des points $A_{i}$ ou en un des points $B_{i}$ sera la moyenne arithmétique entre les deux valeurs constantes de ce nombre le long des deux arcs qui aboutiront à ce point. Si, par exemple, en suivant le périmètre dans le sens direct on rencontre successivement les points
+\[ A_{3} \qquad A_{2} \qquad B_{1} \qquad B_{2} \qquad A_{1} \qquad B_{3} \]
+le nombre sera égal à 0 en $A_{3}$, à $\frac{1}{2}$ sur l'arc $A_{3}A_{2}$, à 1 en $A_{2}$, à $1 + \frac{1}{2}$ sur l'arc $A_{2}B_{1}$, à 1 en $B_{1}$, à $\frac{1}{2}$ sur l'arc $B_{1}B_{2}$, à 0 en $B_{2}$, à $-\frac{1}{2}$ sur l'arc $B_{2}A_{1}$, à 0 en $A_{1}$, à $\frac{1}{2}$ sur l'arc $A_{1}B_{3}$, à 0 en $B_{3}$ et enfin à $-\frac{1}{2}$ sur l'arc $B_{3}A_{3}$.
+
+Comme il y a autant de points $A$ que de points $B$, on retombera sur la valeur initiale après avoir parcouru le périmètre tout entier.
+
+Cela posé, je dis d'abord que si le cycle n'est pas bouclé, ou, ce qui revient au même, si les arcs $A_{i}B_{i}$ ne se coupent pas mutuellement, les deux points $A_{i}$ et $B_{i}$ correspondent à un même nombre. Soit en effet $\alpha$ l'un des deux arcs, qui sur le périmètre de $R_{0}$ vont de $A_{i}$ en $B_{i}$. Si le point $A_{k}$ se trouve sur cet arc $\alpha$, le point $B_{k}$ devra s'y trouver également; car si les deux couples de points $A_{i}B_{i}$, $A_{k}B_{k}$ étaient \emph{croisés}, c'est-à-dire s'ils étaient placés sur le périmètre de façon à se séparer mutuellement, les deux arcs $A_{i}B_{i}$ et $A_{k}B_{k}$ devraient se couper. Il résulte de là qu'il y a sur l'arc $\alpha$ autant de points $A$ que de points $B$, ce qui revient à dire que les deux extrémités $A_{i}$ et $B_{i}$ de l'arc $\alpha$ correspondent à un même nombre. C.~Q.~F.~D.
+
+Comparons maintenant les nombres correspondants aux points $B_{i}$ et $A_{i+1}$ (pour plus de symétrie dans les notations, je désignerai indifféremment le point $A_{1}$ par les notations $A_{1}$ et $A_{n+1}$).
+
+Ces points $A_{i}$ et $B_{i+1}$\ednote{Printed $A_{i}$ and $B_{i+1}$; the preceding sentence and p.~73 give $B_{i}$ and $A_{i+1}$ as the conjugate pair. The same pairing $A_{i}$, $B_{i+1}$ recurs on p.~76.}, nous l'avons dit, sont \emph{conjugués} sur le périmètre de $R_{0}$.
+
+Comment exprimerons-nous que notre cycle $K$ est homologue à $dC_{1}$; cela veut dire que si l'on considère les intersections du cycle $K$ avec les différents cycles fondamentaux $C_{i}$, et qu'on convienne de regarder ces intersections comme positives ou négatives suivant le sens dans lequel les deux cycles se couperont (cf.\ \emph{Analysis situs}, Journal de l'École Polytechnique) le nombre des intersections positives sera le même que celui des intersections négatives pour tous les cycles $C_{i}$ sauf pour
+
+\origpage{75}
+$C_{2}$, et que pour $C_{2}$ le premier nombre surpasse le second de $d$ unités. (Je dis $C_{2}$, parce que $C_{1}$ coupe $C_{2}$ en un point, et ne coupe pas les autres cycles $C_{i}$, si nous choisissons les cycles fondamentaux de façon que la forme $F$ soit réduite).
+
+En d'autres termes, soient
+\[ P_{1}, \qquad P_{2}, \qquad P'_{1}, \qquad P'_{2}, \qquad P_{3}, \qquad P_{4}, \qquad P'_{3}, \qquad P'_{4} \]
+les côtés successifs de $R_{0}$; je suppose $p = 2$ pour fixer les idées; dans ce cas les côtés $P_{1}, P_{2}, P_{3}, P_{4}$ sont respectivement conjugués de $P'_{1}, P'_{2}, P'_{3}, P'_{4}$. Le côté $P_{i}$ correspond au cycle $C_{i}$ et le côté $P'_{i}$ au cycle $C_{i}$ parcouru en sens invers. Telle est bien la loi de conjugaison des côtés quand la forme $F$ est réduite.
+
+Soit alors $N_{i}$ le nombre des points $A$ qui se trouvent sur $P_{i}$ moins le nombre des points $B$ qui se trouvent sur ce même côté $P_{i}$; soit $N'_{i}$ la différence correspondante pour le côté $P'_{i}$.
+
+On aura alors
+\[ N_{2} = d, \qquad N'_{2} = -d, \qquad N_{1} = N_{3} = N_{4} = N'_{1} = N'_{3} = N'_{4} = 0. \]
+
+Voilà les conditions qui expriment que le cycle $K$ est homologue à $dC_{1}$.
+
+Nous représenterons par $Q_{i}$, $S_{i}$ les deux sommets du côté $P_{i}$ de telle façon qu'en parcourant ce côté dans le sens direct on aille de $Q_{i}$ en $S_{i}$; de même $Q'_{i}$, $S'_{i}$ seront les deux sommets de $P'_{i}$. Il est clair d'après cette définition, que le sommet $S_{1}$ sera identique au sommet $Q_{2}$, le sommet $S_{2}$ au sommet $Q'_{1}$, etc.
+
+Le nombre correspondant à $S_{i}$ sera égal à celui qui correspond à $Q_{i}$ augmenté de $N_{i}$; et comme tous les $N$ et les $N'$ sont des multiples de $d$, nous devons conclure que les nombres correspondant aux divers sommets de $R_{0}$ diffèrent entre eux de multiples de $d$.
+
+Considérons maintenant deux côtés conjugués $P_{i}$ et $P'_{i}$ et imaginons deux points parcourant le premier le côté $P_{i}$ dans le sens direct en allant de $Q_{i}$ en $S_{i}$ et le second le côté $P'_{i}$ dans le sens invers en allant de $S'_{i}$ en $Q'_{i}$ et \emph{de façon à rester constamment conjugués}. Quand le premier passera par un point $A$, le second passera par le point conjugué qui sera un point $B$; le nombre relatif au premier augmentera d'une unité, et il en sera de même du nombre relatif au second puisqu'on est passé par un point $B$ \emph{en marchant dans le sens invers}. De même quand le premier point passera par un point $B$, le second passera par un point $A$ et les deux nombres diminueront d'une unité.
+
+\origpage{76}
+
+La différence des deux nombres demeure donc constante et comme elle était originairement un multiple de $d$, elle sera toujours un multiple de $d$.
+
+Ainsi \emph{les deux nombres relatifs aux deux points conjugués $A_{i}$ et $B_{i+1}$ diffèrent d'un multiple de $d$}; et comme le nombre relatif à $B_{i}$ est égal au nombre relatif à $A_{i}$, nous conclurons finalement que les nombres relatifs aux $2n$ points
+\[ \begin{matrix} A_{1}, & A_{2}, & \ldots, & A_{n} \\[1ex] B_{1}, & B_{2}, & \ldots, & B_{n} \end{matrix} \]
+diffèrent entre eux de multiples de $d$.
+
+Or suivons le périmètre de $R_{0}$ dans le sens positif et envisageons deux points consécutifs $A_{i}A_{k}$, ou $A_{i}B_{k}$, ou $B_{i}B_{k}$; d'après notre définition les nombres relatifs à ces deux points seront égaux ou différeront d'une unité. Si les différences ne peuvent être que des multiples de $d$, il faudra conclure que tous les nombres relatifs aux points $A$ et $B$ sont égaux, entre eux, et, par exemple, tous égaux à zéro.
+
+Alors pour les autres points du périmètre, notre nombre sera $\pm \frac{1}{2}$. Si donc nous considérons en particulier deux sommets de $R_{0}$, la différence des deux nombres sera 0 ou $\pm 1$. Or pour les deux sommets $P_{2}$\ednote{Printed $P_{2}$; the two vertices of the side $P_{2}$ are named $Q_{2}$ and $S_{2}$ on p.~75.} et $Q_{2}$ cette différence est $N_{2} = d$.
+
+Nous sommes donc conduits à une contradiction; ce qui veut dire que l'hypothèse faite au début était absurde et que \emph{le cycle $K$ doit être bouclé}. C.~Q.~F.~D.
+
+\subsection*{\S~4.}
+
+Nous avons vu au \S\ précédent qu'il est relativement aisé de reconnaitre si un cycle donné est homologue à un cycle non bouclé, ou si deux cycles donnés sont respectivement homologues à deux cycles qui ne se coupent pas. Nous allons dans le présent \S\ examiner une question analogue~:
+
+Comment reconnaître si un cycle donné est \emph{équivalent} à un cycle non bouclé, ou si deux cycles donnés sont équivalents à deux cycles qui ne se coupent pas.
+
+Mais avant d'aborder cette question, revenons sur la définition de l'équivalence.
+
+Jusqu'ici nous avons toujours entendu cette équivalence de la façon suivante~:
+
+\origpage{77}
+
+Quand nous écrivons
+\[ C \equiv C' \]
+nous entendons que le point initial et final du cycle fermé $C$ est le même que le point initial et final de $C'$, et qu'il existe entre $C$ et $C'$ une aire simplement connexe dont la frontière complète est formée par $C$ et $C'$. Ou, en d'autres termes, que l'on peut passer de $C$ à $C'$ en faisant varier $C$ d'une manière continue et de façon que le cycle reste constamment formé d'une seule courbe fermée et que le point initial et final demeure invariable. C'est ce qu'on peut appeler \emph{l'équivalence propre}.
+
+Nous pouvons avoir avantage à écrire
+\[ C \equiv C' \qquad (\text{impr.}) \]
+quand on peut passer de $C$ à $C'$ en faisant varier $C$ d'une manière continue de façon que le cycle reste constamment formé d'une seule courbe fermée \emph{mais en faisant varier le point initial et final}. C'est ce qu'on peut appeler \emph{l'équivalence impropre}. En d'autres termes, on aura l'équivalence impropre
+\[ C \equiv C' \qquad (\text{impr.}) \]
+quand on aura l'équivalence propre
+\[ C \equiv -\alpha + C' + \alpha, \]
+$\alpha$ étant un arc quelconque, allant du point initial et final de $C'$ au point initial et final de $C$.
+
+Nous aurons donc quatre sortes de relations~: les équivalences propres, où l'on n'a pas le droit d'intervertir l'ordre des termes; les équivalences impropres, où l'on peut changer l'ordre des termes, mais à la condition d'en respecter \emph{l'ordre circulaire}; les homologies sans division où l'on peut intervertir cet ordre d'une manière quelconque et qu'on peut additionner, soustraire et multiplier; enfin les homologies par division qu'on peut en outre diviser.
+
+Quand il n'y aura pas d'avis contraire, et que nous parlerons d'une équivalence il s'agira toujours d'une équivalence propre.
+
+On peut se placer, dans l'étude de la question qui nous occupe, à plusieurs points de vue différents. Représentons d'abord notre surface par un polygone fuchsien $R_{0}$ de la 1\textsuperscript{ère} famille, construisons les différents transformés de ce polygone par les transformations du groupe fuchsien correspondant $G$; ces transformés rempliront le cercle fondamental. Un cycle quelconque $C$ sera alors représenté par un arc de
+
+\origpage{78}
+courbe $MM'$, allant d'un point $M$ à un de ses transformés $M'$. Deux cycles proprement équivalents seront représentés par deux arcs de courbe $MPM'$ et $MQM'$ ayant mêmes extrémités et réciproquement deux arcs ayant mêmes extrémités représenteront deux cycles équivalents. Un arcs\ednote{Printed “arcs” after “Un”; read “arc”.} $M_{1}QM'_{1}$ représentera un cycle improprement équivalent au cycle représenté par l'arc $MM'$, si la même substitution du groupe $G$ qui change $M$ en $M'$ change également $M_{1}$ en $M'_{1}$.
+
+Soit un arc $MPM'$ représentant un cycle $C$; considérons les divers transformés de cet arc par les substitutions du groupe $G$; tous ces transformés représenteront également le cycle $C$. La condition pour que le cycle $C$ ne soit pas bouclé, c'est que l'arc $MPM'$ ne coupe aucun de ses transformés.
+
+De même soient $MPM'$, $M_{1}QM'_{1}$ deux arcs représentant deux cycles $C$ et $C'$; la condition pour que les deux cycles $C$ et $C'$ ne se coupent pas, c'est que l'arc $MPM'$ ne coupe ni l'arc $M_{1}QM'_{1}$ ni aucun de ses transformés.
+
+Cela posé, cherchons si parmi les cycles improprement équivalents à $C$ il y en a qui ne soient pas bouclés; reprenons l'arc $MPM'$ et la substitution $S$ du groupe $G$ qui change $M$ en $M'$. Cette substitution est hyperbolique; en effet dans le cas qui nous occupe, qui est celui d'un polygone $R_{0}$ de la 1\textsuperscript{ère} famille dont les sommets forment un cycle unique et dont la somme des angles est $4\pi$\ednote{Printed $4\pi$. Page 60 gives $2\pi$ for the sum of the angles of this polygon, whose vertices form a single cycle.}, toutes les substitutions de $G$ sont hyperboliques.
+
+La substitution $S$ a donc deux points doubles $\alpha$ et $\beta$ sur le cercle fondamental.
+
+Joignons ces deux points par une droite non euclidienne, c'est-à-dire, d'après la terminologie adoptée dans la théorie des fonctions fuchsiennes, par un cercle coupant orthogonalement le cercle fondamental. Soit $M_{1}$ un point quelconque de cette droite non-euclidienne $\alpha\beta$, son transformé $M'_{1}$ par la substitution $S$ sera également sur cette droite $\alpha\beta$. Soit $M_{1}QM'_{1}$ l'arc de la droite non-euclidienne compris entre $M_{1}$ et $M'_{1}$. Il représentera un cycle improprement équivalent au cycle $MPM'$.
+
+Considérons maintenant les transformés de $M_{1}QM'_{1}$ par les diverses transformations de $G$, ce seront aussi des arcs de droite non-euclidienne. Les transformés par la substitution $S$ et ses multiples nous donneront la droite $\alpha\beta$ tout entière; les autres transformés nous donneront d'autres droites non-euclidiennes, à savoir les droites $\alpha'\beta'$ qui joignent les deux
+
+\origpage{79}
+points doubles $\alpha'$ et $\beta'$ des diverses substitutions transformées de $S$ par les substitutions de $G$, c'est-à-dire des diverses substitutions hyperboliques $T^{-1}ST$, $T$ étant une transformation de $G$.
+
+Le cycle $M_{1}QM'_{1}$ ne sera donc pas bouclé, si ces diverses droites non-euclidiennes ne se coupent pas; et pour qu'elles ne se coupent pas, il faut et il suffit que pour aucune des substitutions $T^{-1}ST$, les deux points doubles $\alpha'$ et $\beta'$ ne se \emph{croisent} sur le cercle fondamental avec les deux points doubles $\alpha$ et $\beta$, c'est-à-dire ne se présentent dans l'ordre circulaire $\alpha\alpha'\beta\beta'$ ou dans l'ordre inverse.
+
+Réciproquement, je suppose que deux de nos droites non-euclidiennes se coupent; je dis que tous les cycles improprement équivalents à $MPM'$ seront bouclés. Si elles se coupent en effet, c'est que les points doubles $\alpha$, $\beta$ et $\alpha'$, $\beta'$ de $S$ et de $T^{-1}ST$ se \emph{croisent}. Considérons un arc quelconque $M_{2}M'_{2}$ improprement équivalent à $MPM'$; alors $M'_{2}$ est le transformé de $M_{2}$ par $S$; considérons d'abord les transformés de l'arc $M_{2}M'_{2}$ par la substitution $S$ et ses multiples; ils joindront entre eux les transformés successifs de $M_{2}$ par les multiples de $S$; ils formeront donc un trait continu qui ira de $\alpha$ en $\beta$.
+
+Pour la même raison les transformés de l'arc $M_{2}M'_{2}$ par les substitutions $S^{m}T$ (où $m$ est un entier positif ou négatif) formeront un trait continu qui ira de $\alpha'$ en $\beta'$; comme les points $\alpha$, $\beta$; $\alpha'$, $\beta'$ sont croisés, il faut que ces deux traits continus se coupent, c'est-à-dire que deux des transformés de l'arc $M_{2}M'_{2}$ se coupent, c'est-à-dire que le cycle $M_{2}M'_{2}$ soit bouclé. C.~Q.~F.~D.
+
+De même soient $MPM'$ et $NQN'$ deux arcs représentant deux cycles fermés.
+
+Parmi les cycles improprement équivalents à $MPM'$ et $NQN'$ y en a-t-il qui ne se coupent pas? Soient $S$ et $S_{1}$ les substitutions qui changent $M$ en $M'$, et $N$ en $N'$. Soient $\alpha$ et $\beta$ les points doubles de $S$; $\alpha_{1}$ et $\beta_{1}$ les points doubles de $S_{1}$. Traçons les deux droites non-euclidiennes $\alpha\beta$ et $\alpha_{1}\beta_{1}$, prenons sur ces deux droites deux points quelconques $M_{1}$ et $N_{1}$; soit $M'_{1}$ le transformé de $M_{1}$ par $S$, et $N'_{1}$ celui de $N_{1}$ par $S_{1}$; le point $M'_{1}$ sera sur la droite $\alpha\beta$ et le point $N'_{1}$ sur la drote\ednote{Printed “drote”; read “droite”.} $\alpha_{1}\beta_{1}$.
+
+Considérons les arcs de droite non-euclidienne $M_{1}M'_{1}$ et $N_{1}N'_{1}$; ils représenteront deux cycles improprement équivalents à $MPM'$ et à $NQN'$.
+
+\origpage{80}
+
+Par un raisonnement tout pareil à celui qui précède, on verrait que si les points doubles $\alpha$ et $\beta$ de $S$ ne se croisent pas avec les points doubles $\alpha_{1}$ et $\beta_{1}$ de $S_{1}$, ni avec les points doubles des diverses transformées $T^{-1}S_{1}T$ de $S_{1}$, les cycles $M_{1}M'_{1}$ et $N_{1}N'_{1}$ ne se coupent pas; et que si au contraire $\alpha$ et $\beta$ se croisent, soit avec $\alpha_{1}$ et $\beta_{1}$, soit avec les points doubles de l'une des transformées $T^{-1}S_{1}T$, non-seulement les cycles $M_{1}M'_{1}$ et $N_{1}N'_{1}$ se coupent, mais qu'il en est de même de deux cycles quelconques improprement équivalents à $MPM'$ et à $NQN'$.
+
+On peut encore présenter la chose sous une autre forme. Supposons que le cycle $M_{1}M'_{1}$ ne soit pas bouclé; alors la droite non-euclidienne $\alpha\beta$ et ses diverses transformées ne se coupent pas; ces droites non-euclidiennes partageront alors la surface du cercle fondamental en une infinité de régions. Si le point $N$ appartient à l'une de ces régions et si le point $N'$ transformé de $N$ par $S_{1}$ appartient à une autre région, les cycles $M_{1}M'_{1}$ et $NN'$ se couperont ainsi que les cycles improprement équivalents; si les deux points $N$ et $N'$ appartiennent à la même région, ces cycles ne se couperont pas.
+
+Plaçons-nous maintenant à un autre point de vue. Envisageons un cycle $C$ représenté par un arc $MPM'$; et tous les transformés de cet arc. Le cycle sera bouclé si deux de ces transformés se coupent; mais s'il existe une intersection de deux transformés, il y en aura une infinité qui se déduiront les unes des autres par les substitutions de $G$ et en particulier, il y en aura une à l'intérieur de $R_{0}$.
+
+Il suffira donc d'envisager les portions de l'arc $MPM'$ et de ses transformés qui sont à l'intérieur de $R_{0}$. Notre cycle sera alors représenté par un certain nombre d'arcs $A_{i}B_{i}$ qui iront d'un point du périmètre de $R_{0}$ à un autre point de ce périmètre.
+
+Quand un point décrira sur la surface fermée $S$ le cycle fermé $C$ tout entier, le point correspondant sur $R_{0}$ décrira successivement les arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n}. \]
+
+Les points $A$ et $B$ appartiendront au périmètre de $R_{0}$, on sait que ce périmètre se compose d'un certain nombre de côtés conjugués deux à deux; il est clair que les points $B_{1}$ et $A_{2}$, $B_{2}$ et $A_{3}$, \ldots, $B_{n-1}$ et $A_{n}$, $B_{n}$ et $A_{1}$ doivent être conjugués.
+
+Si les arcs $A_{i}B_{i}$ ne se coupent pas entre eux, le cycle n'est pas bouclé.
+
+De même, si au lieu d'un cycle, nous en considérons deux ou plusieurs,
+
+\origpage{81}
+et si les arcs représentatifs de ces divers cycles ne se coupent pas entre eux, ces divers cycles ne se couperont pas entre eux.
+
+Supposons, pour fixer les idées, $p = 2$. Alors le polygone $R_{0}$ est un octogone dont les côtés consécutifs représentent respectivement les cycles
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \]
+ce qui montre d'abord que l'on a entre les 4 cycles fondamentaux l'équivalence
+\[ C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} \equiv 0, \tag{26} \]
+puisque le polygone $R_{0}$ est une aire simplement connexe.
+
+Soit $M$ un point intérieur à $R_{0}$, $N$ un point situé sur un des côtés de $R_{0}$, et $N'$ le point correspondant sur le côté conjugué. Nous voyons tout de suite que le cycle $MN' + NM$ est improprement équivalent
+\[ \left\{ \begin{matrix} \text{à}\ +C_{2} & \text{si} & \text{le} & \text{point} & N & \text{est} & \text{sur} & \text{le} & \text{côté} & +C_{1} \\ \text{à}\ -C_{1} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{2} \\ \text{à}\ -C_{2} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{1} \\ \text{à}\ +C_{1} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{2} \\ \text{à}\ +C_{4} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{3} \\ \text{à}\ -C_{3} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{4} \\ \text{à}\ -C_{4} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{3} \\ \text{à}\ +C_{3} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{4}. \end{matrix} \right. \tag{27} \]
+Cela posé, nous verrons que l'arc $A_{i}B_{i}$ est équivalent à l'arc $A_{i}MB_{i}$; par conséquent notre cycle
+\[ C = A_{1}B_{1} + A_{2}B_{2} + \ldots + A_{n}B_{n} \]
+sera équivalent à
+\[ A_{1}MB_{1} + A_{2}MB_{2} + \ldots + A_{n}MB_{n} \]
+et par conséquent improprement équivalent à
+\[ (MB_{n} + A_{1}M) + (MB_{1} + A_{2}M) + \ldots + (MB_{n-1} + A_{n}M). \]
+Or l'une quelconque des expressions entre parenthèses, par exemple $MB_{1} + A_{2}M$, est analogue au cycle $MN' + NM$ dont nous venons de parler. Elle sera donc équivalente à l'un des cycles fondamentaux $\pm C_{1}$, $\pm C_{2}$, $\pm C_{3}$, $\pm C_{4}$ et pour savoir auquel de ces cycles, il suffira d'examiner sur quel côté de $R_{0}$ se trouve le point $A_{i}$ et de se reporter au tableau (27).
+
+\origpage{82}
+
+Nous voyons ainsi que notre cycle $C$ est improprement équivalent à une combinaison des cycles fondamentaux et nous avons le moyen de déterminer cette combinaison. La combinaison ainsi trouvée n'est pas la seule à laquelle $C$ soit équivalent car nous pouvons transformer l'équivalence ainsi obtenue en nous servant de l'equivalence (26) qui est la seule qui ait lieu entre les cycles fondamentaux.
+
+Inversement, étant donnée une combinaison $K$ quelconque des cycles fondamentaux, nous avons le moyen de former un cycle équivalent représenté par une série d'arcs $A_{1}B_{1}, A_{2}B_{2}, \ldots, A_{n}B_{n}$.
+
+Écrivons notre combinaison $K$, par exemple sous la forme
+\[ K = +C_{1} + C_{1} + C_{2} - C_{3} + C_{4} + C_{4} - C_{1} - C_{2} - C_{2} \]
+ou sous une forme analogue; chacun des termes de la combinaison sera un des cycles fondamentaux $C_{i}$ affecté du coefficient $+1$ ou $-1$. L'ensemble de deux termes consécutifs s'appellera une \emph{séquence} et j'appellerai aussi séquence l'ensemble du dernier et du premier terme, de sorte qu'il y aura dans notre combinaison autant de séquences que de termes.
+
+A chaque séquence correspondra un arc $A_{i}B_{i}$; le point $A_{i}$ se trouvera sur le côté
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \]
+si le 1\textsuperscript{er} terme de la séquence est respectivement
+\[ +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}, \]
+et le point $B_{i}$ se trouvera sur le côté
+\[ -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{2}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}, \qquad +C_{4}, \]
+si le 2\textsuperscript{d} terme de la séquence est respectivement
+\[ +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}. \]
+
+Deux arcs $A_{i}B_{i}$ et $A_{k}B_{k}$ se couperont forcément si les points $A_{i}B_{i}$ \emph{se croisent} avec les points $A_{k}B_{k}$ sur le périmètre de $R_{0}$. Nous dirons alors que les deux séquences correspondantes sont \emph{incompatibles}. Si au contraire ces quatre points ne se croisent pas, nous pourrons tracer les deux arcs de façon qu'ils ne se rencontrent pas.
+
+Comment reconnaîtrons-nous si deux séquences sont incompatibles; cela ne présentera aucune difficulté si les quatre points $A_{i}B_{i}A_{k}B_{k}$ sont sur quatre côtés différents; l'ordre circulaire de ces quatre points sera celui des quatre côtés qui est connu.
+
+Mais si par exemple $A_{i}$ et $A_{k}$ sont sur un même côté, il faut envisager
+
+\origpage{83}
+deux séquences consécutives $A_{i-1}B_{i-1} + A_{i}B_{i}$ et $A_{k-1}B_{k-1} + A_{k}B_{k}$. Nous voulons que les points $A_{i-1}B_{i-1}$ et $A_{k-1}B_{k-1}$ d'une part ne se croisent pas et que les points $A_{i}B_{i}$ et $A_{k}B_{k}$ d'autre part ne se croisent pas non plus. Pour désigner un côté sur lequel se trouve un des points $A_{i}$ etc., nous emploierons cette même lettre $A_{i}$.
+
+Par hypothèse les points $A_{i}$ et $A_{k}$ se trouveront sur un même côté $A_{i}A_{k}$, et il en résulte que les points $B_{i-1}$ et $B_{k-1}$ se trouvent également sur un même côté $B_{i-1}B_{k-1}$ conjugué de $A_{i}A_{k}$.
+
+Cela posé, parcourons le périmètre de $R_{0}$ de façon à rencontrer successivement les côtés $A_{i-1}$, $B_{i-1}B_{k-1}$, $A_{k-1}$; les points $A_{i-1}B_{i-1}$ et $A_{k-1}B_{k-1}$ ne devant pas être croisés, nous rencontrerons $B_{i-1}$ avant $B_{k-1}$.
+
+Parcourons maintenant le périmètre de $R_{0}$ \emph{en sens contraire}, quand nous parcourrons le côté conjugué $A_{i}A_{k}$, nous devrons rencontrer $A_{i}$ avant $A_{k}$, puisque $A_{i}$ est conjugué de $B_{i-1}$, et $A_{k}$ de $B_{k-1}$; et comme les points $A_{i}B_{i}$ et $A_{k}B_{k}$ ne doivent pas être croisés, nous rencontrerons les côtés $B_{i}$, $A_{i}A_{k}$ et $B_{k}$ dans l'ordre que je viens d'indiquer.
+
+Donc pour que les séquences soient compatibles, il faut que pour rencontrer successivement les côtés $A_{i-1}$, $B_{i-1}B_{k-1}$, $A_{k-1}$ ou bien pour rencontrer successivement les côtes $B_{i}$, $A_{i}A_{k}$, $B_{k}$ on doive parcourir $R_{0}$ dans deux sens opposés.
+
+Les autres cas douteux se ramèneraient au précédent en renversant l'un des deux arcs $A_{i}B_{i}$ ou $A_{k}B_{k}$.
+
+Cela posé, un cycle dont toutes les séquences sont compatibles sera équivalent à un cycle non bouclé; un cycle qui aura des séquences incompatibles ne sera pas équivalent à un cycle non bouclé, à moins qu'on ne puisse faire disparaître ces séquences par le moyen de l'équivalence (26). On reconnaîtrait de la même manière si deux ou plusieurs cycles sont équivalents à des cycles qui ne se coupent pas.
+
+L'application de ces règles nous apprend par exemple que de toutes les combinaisons des cycles impairs $C_{1}$ et $C_{3}$, les seules qui soient équivalentes à des cycles non bouclés sont les suivantes~:
+\[ C_{1}, \qquad C_{3}, \qquad C_{1} + C_{3}, \qquad C_{3} + C_{1}. \]
+
+Mais pour ce qui va suivre, j'ai besoin de me placer encore à un autre point de vue.
+
+Représentons notre surface par un polygone fuchsien $R'_{0}$ de la 3\textsuperscript{e} famille qui, pour $p = 2$, sera limité extérieurement par un cercle et intérieurement
+
+\origpage{84}
+par 3 autres cercles. Construisons les divers transformés de $R'_{0}$ par les substitutions du groupe correspondant $G'$; ils rempliront cette fois le plan tout entier, sauf une infinité de points singuliers répartis sur la circonférence du cercle fondamental.
+
+Un cycle sera encore représenté par un arc $MM'$ allant d'un point $M$ à l'un de ses transformés $M'$.
+
+Mais deux arcs ayant mêmes extrémités ne représenteront pas toujours deux cycles équivalents; il faut en outre que dans l'aire comprise entre ces deux arcs, il n'y ait pas de point singulier. A part cela, ce que nous avons dit pour les polygones fuchsiens de la 1\textsuperscript{ère} famille subsiste.
+
+Construisons les divers transformés de l'arc $MM'$ par les substitutions de $G'$; conservons ensuite les portions de ces transformés qui sont à l'intérieur de $R'_{0}$; notre cycle se trouvera alors représenté par une série d'arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n} \]
+allant d'un point du périmètre de $R'_{0}$ à un autre point de ce périmètre, et tels que les points $B_{i-1}$ et $A_{i}$, $B_{n}$ et $A_{1}$ soient conjugués.
+
+Pour qu'un cycle ne soit pas bouclé, ou pour que deux cycles ne se coupent pas, la condition c'est que les arcs $A_{i}B_{i}$ qui représentent ce ou ces cycles ne se coupent pas; et on le reconnaîtra par des moyens analogues à ceux que nous venons d'exposer.
+
+Mais il nous reste une question à traiter. Étant donné un cycle représenté par un certain nombre d'arcs $A_{i}B_{i}$, à quelle combinaison des cycles fondamentaux est-il équivalent?
+
+\rmfigure{figures/fig-02.png}{Fig.~2.}{The polygon R'0: a large circle, the circle +A, with the point D at its top. Inside it lie a small circle -A carrying the point D', a small circle -B carrying the point E', and a circle +B carrying the point E and enclosing a smaller closed curve with D'' and M'. From D, one arc runs to D' (the cut DD'), a closed curve DMD runs down around the circle -B and the cut DE', and another arc runs to E on +B. The numbers 1 to 8 mark the vertices of the cut-open polygon near D, D', E and D''.}
+
+Pour résoudre cette question, cherchons à revenir au cas du polygone de la 1\textsuperscript{ère} famille $R_{0}$.
+
+\origpage{85}
+
+Notre polygone $R'_{0}$ est limité extérieurement par le cercle $+A$ et intérieurement par le cercle $-A$ conjugué de $+A$ et par les cercles $+B$ et $-B$ conjugués l'un de l'autre. Je vais chercher à modifier $R'_{0}$ de façon à le transformer en un polygone $R''_{0}$ homéomorphe de $R_{0}$.
+
+Soient $D$ et $D'$ deux points conjugués sur $+A$ et $-A$; soient $E$ et $E'$ deux points conjugués sur $+B$ et $-B$. Joignons $DD'$, $DE$, $DE'$ par des arcs de courbe qui seront regardés comme des coupures. Enveloppons la coupure $DE'$ et le cercle $-B$ par une courbe fermée $DMD$ qui en reste très peu distante. Considérons la figure $DE'M$ comprise entre cette courbe fermée et $-B$ et sa transformée $D''EM'$ par la substitution de $G'$ qui change $-B$ en $+B$. Retranchons du polygone $R'_{0}$ la figure $DE'M$ et annexons-lui en revanche la figure $D''EM'$, nous obtiendrons un nouveau polygone $R''_{0}$ qui représentera la surface fermée au même titre que $R'_{0}$; ce polygone sera limité extérieurement par le cercle $+A$ et intérieurement par le cercle $-A$ et les courbes fermées $DMD$ et $D''M'D''$; mais ce polygone $R''_{0}$, grâce aux coupures $DD'$, $DE$, $DE'$, $D''E$ sera devenu simplement connexe; les numéros 1, 2, \ldots, à 8 marqués sur la figure indiquent l'ordre dans lequel on rencontrera les sommets de ce polygone simplement connexe quand on en parcourra le périmètre. On voit, par l'ordre de conjugaison des côtés, que ce polygone est homéomorphe à $R_{0}$ et de telle façon qu'aux côtés de $R''_{0}$
+\[ 81, \qquad 12, \qquad 23, \qquad 34, \qquad 45, \qquad 56, \qquad 67, \qquad 78 \]
+correspondent les côtés de $R_{0}$
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3} \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}. \]
+
+Étant ainsi ramenés au cas de $R_{0}$ il nous est aisé d'énoncer la règle.
+
+A chacun des arcs $A_{i}B_{i}$ qui traversent $R'_{0}$, pourront correspondre plusieurs arcs analogues traversant $R''_{0}$, parce que l'arc primitif peut être partagé en plusieurs tronçons par les coupures. A chacun des arcs partiels traversant $R''_{0}$ correspondra, d'après la règle démontrée dans le cas de $R_{0}$, un terme et un seul dans la combinaison de cycles fondamentaux cherchée. A chacun de nos arcs primitifs $A_{i}B_{i}$ correspondra donc un ou plusieurs termes de cette combinaison.
+
+Le premier de ces termes dépend de la position du point initial $A_{i}$; si ce point est sur les cercles
+\[ +A, \qquad -A, \qquad +B, \qquad -B, \]
+
+\origpage{86}
+ce premier terme sera respectivement
+\[ +C_{2}, \qquad -C_{2}, \qquad -C_{4}, \qquad +C_{4}. \]
+
+Les termes suivants dépendent des coupures $DD'$, $DE$, $DE'$ successivement rencontrées par l'arc $A_{i}B_{i}$; si cet arc rencontre en allant de gauche à droite
+\[ DD', \qquad \text{ ou } \qquad DE, \qquad \text{ ou } \qquad DE', \]
+les termes correspondants seront respectivement
+\[ +C_{1}, \qquad +C_{3}, \qquad -C_{4} - C_{3} + C_{4}; \]
+et si ces coupures sont rencontrées de droite à gauche, ils seront
+\[ -C_{1}, \qquad -C_{3}, \qquad -C_{4} + C_{3} + C_{4}. \]
+
+Il est donc aisé d'après cette règle de former la combinaison cherchée.
+
+Dans tout ce chapitre, je me suis placé au point de vue de l'équivalence impropre; si l'on voulait déduire de là des théorèmes analogues pour l'équivalence propre, il suffirait d'observer que toute surface fermée est homéomorphe à elle-même de telle façon qu'un point quelconque $A$ de cette surface corresponde à un autre point quelconque $A'$ de cette même surface.
+
+\subsection*{\S~5.}
+
+Envisageons en particulier une variété $V$ à 3 dimensions définie comme au \S~2; son \emph{squelette} se réduira à un simple segment de droite le long duquel la variable que nous avons appelée $t$ variera de 0 à 1. Le système $W(t)$ se composera d'une variété unique; cette variété sera une surface fermée ordinaire que nous supposerons bilatère, qui se reduira à un point pour $t = 0$ et dont l'ordre de connexion ira sans cesse en croissant quand $t$ croitra de 0 à 1 et sera égal à $2p + 1$ pour $t = 1$.
+
+Il résulte de cette définition que \emph{la variété $V$ n'est pas fermée}.
+
+D'après ce que nous avons vu au \S~2, la droite qui forme le squelette de $V$ sera subdivisée en tronçons par certaines valeurs remarquables de $t$.
+
+Soient
+\[ t_{1}, \qquad t_{2}, \qquad \ldots, \qquad t_{p} \]
+ces valeurs remarquables; ce seront celles pour lesquelles la surface $W(t)$ a un point singulier et, d'après nos hypothèses, celles pour lesquelles l'ordre de connexion de cette surface augmente de 2 unités.
+
+\origpage{87}
+
+Ainsi $W$ sera 1 fois connexe pour $t$ compris entre 0 et $t_{1}$, 3 fois pour $t$ compris entre $t_{1}$ et $t_{2}$, \ldots, $2q + 1$ fois entre $t_{q}$ et $t_{q+1}$, \ldots, et enfin $2p + 1$ fois entre $t_{p}$ et 1.
+
+La surface $W$ reste homéomorphe à elle-même tant que la variable $t$ reste sur un même tronçon.
+
+Supposons que nous fassions décroître $t$ et que $t$ passe par une des valeurs remarquables; il arrive alors comme nous l'avons vu au \S~2 qu'un des cycles $C$ de la surface $S$ se réduit à un point; que tous les cycles équivalents à $C$ deviennent équivalents à zéro; et d'autre part que tous les cycles qui rencontraient $C$ cessent d'exister.
+
+C'est ainsi que le nombre des cycles réellement distincts, et par conséquent l'ordre de connexion se trouve diminué de deux unités.
+
+Nous allons maintenant définir le cycle $K_{q}$. Pour $t = t_{q} + \varepsilon$, il existe sur $W(t_{q} + \varepsilon)$ un cycle infiniment petit qui se réduit à un point pour $t = t_{q}$.
+
+C'est ce cycle que j'appelle $K_{q}$. La surface $W(t)$ reste homéomorphe à elle-même quand $t$ varie de $t_{q}$ à $t_{q+1}$; [et l'on peut supposer que l'homéomorphisme est tel que pour deux valeurs infiniment voisines $t$ et $t'$, les deux points correspondants sur $W(t)$ et $W(t')$ soient infiniment peu différents l'un de l'autre]. La surface $W(t)$ reste donc homéomorphe à $W(t_{q} + \varepsilon)$ et au cycle $K_{q}$ correspondra sur $W(t)$ un cycle que j'appellerai encore $K_{q}$. Pour définir $K_{q}$ sur la surface $W(t_{q+1} + \varepsilon)$, il suffit de dire que ce cycle doit différer très peu du même cycle sur la surface $W(t_{q+1} - \varepsilon)$; comme $W(t)$ reste homéomorphe à elle-même pour toutes les valeurs de $t$ comprises entre $t_{q+1}$ et $t_{q+2}$, on peut définir comme plus haut le cycle $K_{q}$ pour ces valeurs de $t$, et ainsi de suite.
+
+Le cycle $K_{q}$ étant ainsi défini, j'arrive à la propriété essentielle, à savoir que deux cycles $K_{\alpha}$ et $K_{\beta}$ ne se coupent pas. Soit $\beta > \alpha$, et soit d'abord $t = t_{\beta} + \varepsilon$; alors $K_{\beta}$ est très petit, et je dis que $K_{\alpha}$ ne coupe pas $K_{\beta}$. En effet, d'après sa définition le cycle $K_{\alpha}$ existe encore pour $t < t_{\beta}$, or j'ai dit que les cycles qui coupent le cycle très petit $K_{\beta}$ disparaîssent quand $t$ devient $< t_{\beta}$. Faisons varier $t$ de $t_{\beta}$ à $t_{\beta+1}$. Entre ces limites toutes les surfaces $W(t)$ sont homéomorphes entre elles et comme sur l'une d'elles les cycles $K_{\alpha}$ et $K_{\beta}$ ne se coupent pas, les cycles correspondants $K_{\alpha}$ et $K_{\beta}$ ne se couperont sur aucune d'elles. Comme $K_{\alpha}$ et $K_{\beta}$ ne se coupent pas sur $W(t_{\beta+1} - \varepsilon)$, on conclura que
+
+\origpage{88}
+sur la surface infiniment voisine $W(t_{\beta+1} + \varepsilon)$, les deux cycles $K_{\alpha}$ et $K_{\beta}$ ne se couperont pas non plus; pour $t_{\beta+1} < t < t_{\beta+2}$, toutes les surfaces $W(t)$ sont homéomorphes et comme sur l'une d'elles les cycles $K_{\alpha}$ et $K_{\beta}$ ne se coupent pas, ils ne se couperont sur aucune d'elles; et ainsi de suite.
+
+Donc les cycles $K_{\alpha}$ et $K_{\beta}$ ne se coupent pas. C.~Q.~F.~D.
+
+J'ajoute que le cycle $K_{q}$ n'est pas bouclé; il ne l'est pas pour $t = t_{q} + \varepsilon$ puisqu'il se réduit à une courbe fermée très petite; donc à cause de l'homéomorphisme il ne l'est pas pour $t_{q} < t < t_{q+1}$; il ne l'est pas pour $t = t_{q+1} + \varepsilon$, parce qu'alors il diffère très peu de ce qu'il est pour $t = t_{q+1} - \varepsilon$; et ainsi de suite.
+
+Faisons varier $t$ depuis $t_{q}$ jusqu'à 1, le cycle $K_{q}$ variera d'une façon continue; pour $t = t_{q}$ il se réduit à un point et pour $t > t_{q}$ à une courbe fermée unique. Il engendrera donc une aire simplement connexe que j'appelle $A_{q}$.
+
+\emph{Deux aires $A_{\alpha}$ et $A_{\beta}$ n'ont aucun point commun}; et en effet s'ils en avaient un, ce point appartiendrait à une surface $W(t)$ et sur cette surface aux deux cycles $K_{\alpha}$ et $K_{\beta}$; or nous venons de voir que ces deux cycles ne se coupent pas.
+
+Désignons encore par $B_{q}$ l'aire partielle engendrée par $K_{q}$ quand $t$ varie depuis $t_{q}$ jusqu'à $t (t < 1)$ et qui comme $A_{q}$ est simplement connexe. Nous allons traiter $K_{q}$, $A_{q}$ et $B_{q}$ comme des \emph{coupures}; à cet effet, considérons deux cycles $K'_{q}$ et $K''_{q}$ infiniment peu différents de $K_{q}$; nous pouvons supposer que ces deux cycles ne se coupent pas. La portion très petite de la surface $W(t)$ comprise entre ces deux cycles s'appellera $S_{q}(t)$. Les deux cycles $K'_{q}$ et $K''_{q}$ engendreront deux aires $A'_{q}$ et $A''_{q}$ quand $t$ variera de $t_{q}$ à 1 et deux aires $B'_{q}$ et $B''_{q}$ quand $t$ variera de $t_{q}$ à $t$.
+
+Cela posé, retranchons de la surface fermée $W(t)$ les aires très petites
+\[ S_{1}(t), \qquad S_{2}(t), \qquad \ldots, \qquad S_{p}(t). \]
+
+Après cette opération, la surface restante $W - \displaystyle\sum S_{q}$ ne sera plus une surface fermée, elle admettra pour frontières les $2p$ courbes fermées $K'_{q}$ et $K''_{q}$.
+
+Ajoutons ensuite à cette surface les aires $B'_{q}$ et $B''_{q}$; le résultat de cette addition sera une surface
+\[ W_{1}(t) = W - \sum S_{q} + \sum B'_{q} + \sum B''_{q} \]
+
+\origpage{89}
+qui sera fermée puisque $B'_{q}$ admet $K'_{q}$ comme frontière complète et que $B''_{q}$ admet $K''_{q}$.
+
+Je dis que la surface $W_{1}(t)$ ainsi obtenue est \emph{simplement connexe} et sans singularité. Elle n'a pas de singularité, parce que ses différentes parties ne se coupent pas et n'ont d'autres points communs que ceux des courbes $K'_{q}$ et $K''_{q}$ qui leur servent de frontières. Et en effet, $W(t)$ ne peut avoir aucun point commun avec $B'_{q}$ ou $B''_{q}$, en dehors de $K'_{q}$ et $K''_{q}$; et d'autre part comme les aires $B_{\alpha}$ et $B_{\beta}$ ne se coupent pas les aires $B'_{q}$, $B''_{q}$, $B'_{\alpha}$, $B''_{\alpha}$, etc.\ n'auront non plus aucun point commun.
+
+D'autre part, la surface non fermée $W - \displaystyle\sum S_{q}$ est homéomorphe à une aire plane limitée extérieurement par une courbe fermée et intérieurement par $2p - 1$ autres courbes fermées (cela n'est pas autre chose que la représentation de la surface $W$ par un polygone fuchsien de la 3\textsuperscript{e} famille dont il a été question plus haut au \S~3) ou ce qui revient au même à une aire sphérique, comprenant ce qui reste d'une sphère quand on en a retranché $2p$ petites aires $\alpha$ simplement connexes et extérieures les unes aux autres.
+
+D'un autre côté, les $2p$ aires $B'$ et $B''$ peuvent être considérées comme homéomorphes aux $2p$ aires $\alpha$; on verra ainsi, en faisant attention à la façon dont se fait le raccordement, que la surface totale
+\[ W_{1} = W - \sum S + \sum B' + \sum B'' \]
+est homéomorphe à la sphère entière, c'est-à-dire simplement connexe. C.~Q.~F.~D.
+
+Faisons varier maintenant $t$ depuis 0 jusqu'à 1, et en même temps imaginons que les cycles $K'_{q}$ et $K''_{q}$ se rapprochent de $K_{q}$ de façon à se confondre avec $K_{q}$ pour $t = 1$.
+
+Je suppose que les positions successives de $K'_{q}$ et de $K''_{q}$ n'aient aucun point commun, pas plus par conséquent que les positions successives des aires $A'_{q}$ et $A''_{q}$, $B'_{q}$ ou $B''_{q}$. Dans ces conditions tout point intérieur à $V$ (les points des aires $A_{q}$ exceptés) appartiendra à l'une des surfaces $W_{1}$ et à une seule. Les points de la surface limite $W(1)$ appartiendront à $W_{1}(1)$. Pour $t = 1$, les aires $B'_{q}$ et $B''_{q}$ se réduiront à $A'_{q}$ et $A''_{q}$, et celles-ci elles-mêmes se réduiront aux aires $A_{q}$ puisque pour $t = 1$ les cycles $K'_{q}$ et $K''_{q}$ se réduisent à $K_{q}$.
+
+Si nous considérons donc un point de $A_{q}$, ce point se trouvera encore $W_{1}(1)$\ednote{A word appears to be missing: “se trouvera encore sur $W_{1}(1)$” is expected.} mais à ce point de $A_{q}$ correspondront deux points de $W_{1}(1)$,
+
+\origpage{90}
+l'un de ces points devant être considéré comme appartenant à $B'_{q} = A'_{q}$ et l'autre à $B''_{q} = A''_{q}$.
+
+Les surfaces simplement connexes $W_{1}(t)$ s'emboîtant mutuellement engendreront (cf.\ \S~1) une variété simplement connexe.
+
+On peut donc dire qu'en pratiquant dans $V$ les $p$ coupures $A_{q}$ on rend cette variété simplement connexe. Pratiquons ces $p$ coupures, et déformons notre variété de façon à écarter les deux lèvres de ces coupures; la variété nouvelle $U$ ainsi obtenue sera simplement connexe, limitée par une surface simplement connexe $H$ homéomorphe à une sphère. Sur cette surface simplement connexe nous distinguerons $2p$ aires simplement connexes qui seront les deux lèvres des $p$ coupures, et que j'appellerai les \emph{cicatrices}, ces cicatrices seront conjuguées deux à deux.
+
+A chaque point de $U$ correspondra un point de $V$ et un seul; de même à chaque point de $V$ correspondra un point de $U$ et un seul, sauf pour les points des aires $A_{q}$ à chacun desquels correspondront deux points de $U$ situés sur deux cicatrices conjuguées.
+
+Considérons deux variétés analogues à $U$; chacune d'elles sera simplement connexe, chacune d'elles sera limitée par une surface simplement connexe portant $2p$ cicatrices simplement connexes conjuguées deux à deux et extérieures les unes aux autres. Il est clair que les deux figures ainsi formées seront homéomorphes entre elles et homéomorphes à la figure formée par une sphère dont la surface porte $2p$ cicatrices constituées par des petits cercles extérieurs les uns aux autres.
+
+D'où cette conséquence importante~: toutes les variétés engendrées comme $V$ et pour lesquelles le nombre entier appelé plus haut $p$ est le même sont homéomorphes entre elles.
+
+Supposons que dans l'espace ordinaire on construise une surface fermée $2p + 1$ fois connexe et sans singularité. Cette surface partagera l'espace en deux régions, l'une intérieure et l'autre extérieure. Soit $R$ la région intérieure. C'est une variété non fermée à 3 dimensions susceptible de la même génération que $V$. Donc $V$ est homéomorphe à $R$ pourvu que le nombre $p$ soit le même.
+
+Donc, si j'appelle \emph{développables} les variétés non fermées qui sont homéomorphes à une portion de l'espace plan, \emph{toutes les variétés engendrées comme $V$ sont développables}.
+
+On peut en tirer en passant une conséquence; considérons dans l'espace ordinaire deux surfaces fermées $S$ et $S'$, l'une et l'autre $2p + 1$ fois connexes.
+
+\origpage{91}
+
+Soit $R$ le volume intérieure\ednote{Printed “intérieure”; the same sentence has the masculine “le volume intérieur à $S'$”.} à $S$, et $R'$ le volume intérieur à $S'$. On sait que les deux surfaces $S$ et $S'$ sont homéomorphes; mais l'on pourrait se demander s'il en est de même des deux volumes $R$ et $R'$ et au premier abord on pourrait être tenté de répondre négativement à cette question. On pourrait se représenter les diverses nappes de la surface $S'$ s'enchevêtrant les unes dans les autres d'une façon compliquée et formant des nœuds qu'il serait impossible de dénouer sans sortir de l'espace à trois dimensions. Loin de là, nous sommes maintenant en état de conclure que les deux volumes $R$ et $R'$ sont toujours homéomorphes, puisque ces deux volumes peuvent être engendrés comme $V$, et que deux variétés engendrées comme $V$ sont toujours homéomorphes.
+
+J'arrive maintenant à une question importante pour ce qui va suivre. Je reprends la variété $V$ limitée par la surface $V(1)$\ednote{The print has $V(1)$; the boundary surface of $V$ is called $W(1)$ in the next paragraph and on p.~92.}, et engendrée par la surface $W(t)$.
+
+La même variété pourrait-elle être engendrée par une autre surface $W'(t)$, qui comme $W(t)$ se réduirait à un point pour $t = 0$, aurait un ordre de connexion constamment croissant et finalement se réduirait à $W(1)$ pour $t = 1$? Il est évident que $V$ est susceptible d'une infinité de manières d'une pareille génération. Il s'agit de comparer ces divers modes de génération.
+
+Je désignerai par $K'_{1}, \ldots, K'_{p}$ les $p$ cycles qui jouent dans la nouvelle génération le même rôle que les cycles $K_{1}, \ldots, K_{p}$ dans l'ancienne.
+
+Quelle relation y a-t-il entre les cycles $K$ et $K'$? Peut-on choisir arbitrairement les cycles $K'$, et quelles conditions doivent remplir $p$ cycles de la surface $W(1)$ pour pouvoir être choisis pour jouer le rôle des cycles $K'$?
+
+1° Ces cycles ne doivent pas être bouclés. 2° Ils ne doivent pas se couper.
+
+Mais ce n'est pas tout. Le cycle $K_{q}$, \emph{par rapport à la variété $V$}, est équivalent à zéro, puisqu'il forme la frontière complète de l'aire $A_{q}$ qui fait partie de $V$. Nous aurons donc les équivalences
+\[ K_{1} \equiv K_{2} \equiv \ldots \equiv K_{q} \equiv 0 \qquad (\text{mod}\ V) \tag{1} \]\ednote{The print ends the list with $K_{q}$; the paragraphs above name the $p$ cycles $K_{1}, \ldots, K_{p}$.}
+et toutes celles qui s'en déduisent. Je dis que nous n'en aurons pas d'autres.
+
+Je veux dire par là que si nous avons par rapport à $V$ une équivalence
+
+\origpage{92}
+de la forme suivante~:
+\[ C \equiv 0 \qquad (\text{mod}\ V), \tag{2} \]
+$C$ étant un cycle de la surface frontière $W(1)$, que j'appellerai pour abréger $W$, nous aurons, \emph{par rapport à cette surface frontière $W$} une équivalence de la forme
+\[ C \equiv -\alpha_{1} + \beta_{1} + \alpha_{1} - \alpha_{2} + \beta_{2} + \alpha_{2} - \ldots - \alpha_{n} + \beta_{n} + \alpha_{n} \qquad (\text{mod}\ W), \tag{3} \]
+où les $\alpha_{i}$ sont des cycles quelconques de $W$ et où les $\beta_{i}$ sont des cycles de cette surface tels que
+\[ \beta_{i} \equiv mK \qquad (\text{mod}\ W), \]
+$m$ étant un entier positif ou négatif et $K$ l'un des cycles $K_{1}, K_{2}, \ldots, K_{q}$\ednote{The print ends the list with $K_{q}$; on p.~91 the $p$ cycles are named $K_{1}, \ldots, K_{p}$.}; et en effet si l'équivalence (3) a lieu, on aura a fortiori
+\[ C \equiv \sum (-\alpha + \beta + \alpha) \qquad (\text{mod}\ V) \]
+ou, à cause des équivalences (1) qui entraînent $\beta \equiv 0$~:
+\[ C \equiv \sum (-\alpha + \alpha) \equiv 0 \qquad (\text{mod}\ V). \]
+L'équivalence (2) est donc une conséquence des équivalences (1).
+
+Pour établir la proposition énoncée, je suppose que l'équivalence (2) ait lieu; elle signifie que le cycle $C$ est la frontière complète d'une certaine aire simplement connexe $D$ située dans $V$.
+
+Cette aire pourra couper l'aire $A_{q}$ suivant une ligne $L_{q}$ qui ira d'un point de $C$ à un autre point de $C$, puisque les extrémités de $L_{q}$ ne peuvent se trouver que sur la frontière de $A_{q}$ c'est-à-dire sur $W$, ou puisqu'elles sont sur $D$, sur l'intersection de $W$ et de $D$, c'est-à-dire sur $C$. L'aire $D$ pourra aussi ne pas couper $A_{q}$, ou la couper suivant plusieurs lignes distinctes $L_{q}$. Dans tous les cas les différentes lignes $L$ ne se couperont pas puisque les diverses aires $A$ ne se coupent pas et puisqu'on peut toujours supposer que les aires $A$ et $D$ n'ont pas de singularité et déformer au besoin un peu $D$ de façon que les surfaces $D$ et $A$ ne se touchent pas.
+
+Chacune des lignes $L$ partage l'aire $D$ en deux parties puisque cette aire est simplement connexe. Cette aire $D$ sera donc divisée par les diverses lignes $L$ en un certain nombre d'aires partielles $\Delta_{1}, \Delta_{2}, \ldots$ On peut parcourir successivement les contours des diverses aires partielles $\Delta$ de la façon suivante que je ferai mieux comprendre par un exemple que par des explications.
+
+\origpage{93}
+
+Sur la figure le cycle $ABCDEFGHNIKLMPA$ est le cycle $C$; les lignes $CE$, $BF$, $GK$, $HI$, $LP$ sont les lignes $L$.
+
+\rmfigure{figures/fig-03.png}{Fig.~3.}{An oval contour with the points A, B, C, D, E, F, G, H, N, I, K, L, M, P marked around it, A at the bottom and G at the top. Five arcs inside the oval join C to E and B to F on the right, H to I and G to K at the upper left, and L to P at the lower left.}
+
+Il est clair que le cycle total peut être remplacé par la somme des arcs suivants
+\[ \sum = \left\{ \begin{aligned} &(ABCDE + ECBA) + (ABCE + EF + FBA)\\ &+ ABF + FGH + HNI + IHGFBA)\\ &+ (ABFGHI + IK + KGFBA) + (ABFGK + KL + LPA)\\ &+ (APL + LMP + PA). \end{aligned} \right. \tag{4} \]\ednote{The opening parenthesis before $ABF$ in the second line did not print; the third parenthesis is $(ABF + FGH + HNI + IHGFBA)$.}
+
+On voit en effet que le dernier terme de chaque parenthèse est détruit par le premier terme de la parenthèse suivante et qu'en supprimant les termes ainsi détruits on retrouve le cycle total $C$.
+
+Prenons maintenant l'une de ces parenthèses, la troisième par exemple; elle peut s'écrire~:
+\[ ABFGH + HNIH + HGFBA. \]
+
+On voit que le premier et le dernier terme représentent un même arc $ABFGH$ parcouru une fois dans le sens direct, une fois dans le sens invers, et que le second terme représente le contour de l'une des aires partielles $\Delta$, à savoir de l'aire $HIN$; il en est de même pour les autres parenthèses de l'expression $\displaystyle\sum$ qui peut s'écrire~:
+\[ \sum = \left\{ \begin{aligned} &(ABC + CDEC - CBA) + (AB + BCEFB + BA)\\ &+ (ABFGH + HNIH + HGFBA)\\ &+ (ABFG + GHIKG + GFBA)\\ &+ (ABFGKLPA) + (AP + PLMP + PA). \end{aligned} \right. \tag{5} \]\ednote{The first parenthesis is printed $(ABC + CDEC - CBA)$; every other parenthesis ends with $+$, and the first and last terms of each parenthesis are said to cancel, which would require $+CBA$.}
+
+Je vais encore modifier le chemin $\displaystyle\sum$. Ce chemin se compose d'arcs faisant partie du contour primitif $C$ et d'arcs formés par les lignes $L_{q}$. Ces derniers arcs se détruisent comme on l'a vu parce que dans l'expression (4) le dernier terme de chaque parenthèse est détruit par
+
+\origpage{94}
+le premier de la suivante. Nous pouvons transformer ces derniers arcs; nous remplacerons la ligne $L_{q}$ par un arc appartenant au cycle $K_{q}$ et ayant mêmes extrémités. Cela est possible parce que les deux extrémités de la ligne $L_{q}$ sont sur le cycle $K_{q}$; cela est permis d'ailleurs parce que ces nouveaux arcs, mis à la place des anciens, se détruiront comme se détruisaient les anciens. Et si j'appelle $\displaystyle\sum'$ ce que devient le chemin $\displaystyle\sum$ après cette transformation, le cycle primitif $C$ peut donc aussi bien être considéré comme identique au chemin $\displaystyle\sum'$ qu'au chemin $\displaystyle\sum$.
+
+Ce chemin $\displaystyle\sum'$ pourra être mis comme $\displaystyle\sum$ sous la forme (5); il suffit simplement d'admettre que, dans le second membre de (5), $CE$ par exemple représente, non la ligne $L_{q}$ qui a pour extrémités $C$ et $E$, mais l'arc du cycle $K_{q}$ qui va de $C$ en $E$.
+
+L'avantage de cette transformation c'est que tous les points du chemin $\displaystyle\sum'$ sont sur la surface limite $W$, tandis qu'il n'en aurait pas été de même de tous les points du chemin $\displaystyle\sum$.
+
+Revenons à la variété simplement connexe $U$ définie plus haut.
+
+Cette variété a pour frontière une surface simplement connexe que nous avons appelée $H$ et qui porte $2p$ cicatrices. Les parties de $H$ extérieures aux cicatrices correspondent alors à la surface $W$ et les cicatrices, comme nous l'avons vu, aux aires $A_{q}$.
+
+Un contour fermé quelconque $Q$ tracé sur cette surface $K$\ednote{Printed $K$; the surface carrying the cicatrices is $H$.} et restant en dehors des cicatrices sera équivalent à zéro par rapport à la variété $V$, \emph{en vertu des équivalences} (1). En effet ce contour enveloppera un certain nombre de cicatrices; supposons pour fixer les idées qu'elle enveloppe deux cicatrices $A_{1}$ et $A_{2}$. Soit $M$ le point initial et final du contour fermé $Q$; soient de même $M_{1}$ et $M_{2}$ les points initiaux et finaux des deux contours fermés $K_{1}$ et $K_{2}$ qui servent respectivement de périmètre aux deux cicatrices $A_{1}$ et $A_{2}$.
+
+Joignons $M$ à $M_{1}$ et à $M_{2}$ par deux arcs $MM_{1}$ et $MM_{2}$; on aura~:
+\[ Q \equiv MM_{1} + K_{1} + M_{1}M + MM_{2} + K_{2} + M_{2}M \qquad (\text{mod}\ W) \]
+puisque la partie de la surface $H$ comprise entre les contours $Q$, $K_{1}$ et $K_{2}$ appartient à cette région de $H$ qui correspond à $W$.
+
+Mais en vertu des équivalences (1)
+\[ K_{1} \equiv K_{2} \equiv 0 \qquad (\text{mod}\ V); \]
+donc
+\[ Q \equiv MM_{1} + M_{1}M + MM_{2} + M_{2}M \equiv 0 \qquad (\text{mod}\ V) \]
+et cela a lieu comme je l'avais annoncé \emph{en vertu des équivalences} (1).
+
+\origpage{95}
+
+Or si nous envisageons le second terme de chaque parenthèse dans l'expression (5) du chemin $\displaystyle\sum'$, ce second terme représente sur $W$ un contour fermé; il représentera également sur $H$ un contour fermé; cela n'est pas évident et cela ne serait pas vrai pour un contour fermé de $W$ qui rencontrerait l'un des cycles $K_{q}$; à chaque point de $K_{q}$ correspondent sur $U$ deux points distincts, de telle façon que quand un chemin continu sur $W$ rencontre $K_{q}$, le chemin correspondant sur $U$ saute brusquement d'un de ces deux points à l'autre et devient discontinu. Mais ici cette circonstance ne peut se présenter puisque le contour fermé que nous envisageons ne \emph{franchit} jamais $K_{q}$ et se borne à le \emph{longer}.
+
+Le second terme de chaque parenthèse, est donc équivalent à zéro \emph{en vertu des équivalences} (1). Donc il en est de même de la parenthèse entière, puisque le premier et le dernier termes se détruisent. Donc il en est de même du chemin $\displaystyle\sum'$ tout entier et par conséquent de $C$.
+
+Donc il n'y a pas d'autre équivalence entre les cycles de $W$ que celles qui sont des conséquences des équivalences (1). C.~Q.~F.~D.
+
+Nous pouvons donc ajouter une troisième condition à celles qui, nous l'avons vu, sont nécessaires pour que $p$ cycles de $W$ puissent être choisis pour jouer le rôle des cycles $K'$.
+
+Le système des équivalences
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \]
+ne doit pas différer du système des équivalences
+\[ K_{1} \equiv K_{2} \equiv \ldots \equiv K_{p} \equiv 0, \]
+de sorte que chacun de ces systèmes doit être une conséquence de l'autre.
+
+Ces trois conditions sont-elles suffisantes?
+
+Soient $K'_{1}, K'_{2}, \ldots K'_{p}$, $p$ cycles non bouclés, ne se coupant pas mutuellement et tels que l'on ait~:
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \qquad (\text{mod}\ V). \]
+
+L'équivalence $K'_{q} \equiv 0$ nous montre qu'il existe une aire $A'_{q}$ simplement connexe et dont la frontière complète est $K'_{q}$. Je dis que l'on peut toujours supposer que les diverses aires $A'_{q}$ n'ont aucun point commun.
+
+Imaginons en effet que $A'_{1}, A'_{2}, \ldots A'_{q-1}$ ne se coupent pas, mais qu'une ou plusieurs de ces $q - 1$ aires soit coupée par $A'_{q}$. Soit $E_{i}$ l'intersection de l'aire $A'_{q}$ et de l'aire $A'_{i}$; cette intersection n'aura aucun
+
+\origpage{96}
+point sur $K'_{q}$, puisque $K'_{q}$ ne pourrait rencontrer $A'_{i}$ que sur $W$, et par conséquent sur $K'_{i}$ et que $K'_{i}$ ne rencontre pas $K'_{q}$ par hypothèse. Cette intersection est donc tout entière à l'intérieur de $A'_{q}$; nous pouvons supposer que la surface $A'_{i}$ n'a pas de singularité, et n'est pas tangente à la surface $A'_{q}$, sans quoi il suffirait de la déformer légèrement; il en résulte que notre intersection est une courbe sans point double, elle doit donc se composer de plusieurs courbes fermées ne se coupant pas mutuellement.
+
+De plus l'intersection de $A'_{i}$ avec $A'_{q}$ ne coupera pas celle de $A'_{k}$ avec $A'_{q}$ (si $i$ et $k$ sont $< q$) puisque $A'_{i}$ ne coupe pas $A'_{k}$ par l'hypothèse.
+
+Les diverses intersections $E_{i}$ et $E_{k}$ se composeront donc d'un certain nombre de courbes fermées n'ayant aucun point commun. Si nous envisageons deux de ces courbes, ou bien elles seront extérieures l'une à l'autre, ou bien l'une d'elles sera intérieure à l'autre; ces mots extérieur ou intérieur doivent s'entendre par rapport à l'aire simplement connexe $A'_{q}$. Parmi nos courbes fermées nous ne conserverons que celles qui ne sont intérieures à aucune autre; elles seront alors toutes extérieures les unes aux autres. Soit $h_{i}$ l'une des courbes fermées conservées, appartenant à $E_{i}$. Cette courbe $h_{i}$ limitera une portion de l'aire simplement connexe $A'_{q}$ que j'appellerai $G_{i}$ et qui sera elle-même simplement connexe; de même elle limitera une portion de l'aire simplement connexe $A'_{i}$ que j'appellerai $M_{i}$ et qui sera elle-meme simplement connexe.
+
+Nous pourrons tracer sur $A'_{q}$ une courbe fermée $h'_{i}$ à laquelle $h_{i}$ sera intérieure et qui en différera très peu. Alors $h'_{i}$ limitera une portion de l'aire $A'_{q}$ que j'appellerai $G'_{i}$ et qui sera simplement connexe; de même $h'_{i}$ limitera une aire simplement connexe $M'_{i}$ qui différera infiniment peu de $M_{i}$ et qui ne coupera pas l'aire $A'_{i}$.
+
+Formons alors une aire $A''_{q}$ en enlevant de $A'_{q}$ toutes les aires $G'_{i}$ et en y ajoutant toutes les aires $M'_{i}$~:
+\[ A''_{q} = A'_{q} + \sum M'_{i} - \sum G'_{i}. \]
+
+On voit que $A''_{q}$ sera comme $A'_{q}$ une aire simplement connexe limitée par $K'_{q}$ puisqu'on remplace l'aire $G'_{i}$ par une autre aire simplement connexe limitée également par $h'_{i}$. Mais l'aire $A''_{q}$ ne coupera ni $A'_{1}$, ni $A'_{2}$, \ldots, ni $A'_{q-1}$.
+
+Nous pouvons donc supposer que les $q$ premières aires $A'$ ne se coupent pas, et en continuant de la sorte on verrait qu'on peut supposer
+
+\origpage{97}
+que deux quelconques des $p$ aires $A'_{i}$ ne se coupent pas. C'est ce que nous ferons.
+
+Un raisonnement analogue montrerait que les cycles $K'$ n'étant pas bouclés on peut toujours supposer que les aires $A'$ sont des surfaces sans courbe double.
+
+Je me propose maintenant d'établir que les cycles $K'$ qui satisfont aux trois conditions énoncées peuvent jouer le rôle des cycles $K$, c'est-à-dire~: 1° que $V$ peut être engendré par une surface $W'(t)$ qui se réduit à un point pour $t = 0$ et à $W$ pour $t = 1$, et qui pour $t_{q} < t < t_{q+1}$ est $2q + 1$ fois connexe; 2° que pour $t_{q} < t < t_{q+1}$ $W(t)$ coupe les aires $A'_{1}, A'_{2}, \ldots, A'_{q}$ suivant une seule courbe fermée et ne coupe pas les aires $A'_{q+1}, A'_{q+2}, \ldots, A'_{p}$.
+
+Je suppose que cela ait été démontré pour une variété $V_{1}$ développable, c'est-à-dire homéomorphe à une portion de l'espace plan ordinaire et limitée par une surface $2p - 1$ fois connexe et je me propose de le démontrer pour une variété $V$ développable et limitée par une surface $W$ de connexion $2p + 1$.
+
+Pratiquons dans $V$ la coupure $A'_{p}$ et déformons légèrement cette variété après avoir séparé les deux lèvres de la coupure, nous obtiendrons une nouvelle variété développable $V_{1}$ limitée par une surface $2p - 1$ fois connexe, cette surface $W_{1}$ se composera de deux parties, dont l'une correspond à la surface $W$ dans laquelle a été pratiquée la coupure $K'_{p}$, et l'autre est formée des deux cicatrices correspondant aux deux lèvres de la coupure.
+
+Nous pouvons particulariser cette variété développable $V_{1}$ et cette surface $W_{1}$ de la façon suivante. Considérons un point intérieur à $V$ et soit $\delta$ la plus courte distance de ce point à la surface limite $W$ ou à la coupure $A'_{p}$. Les points tels que $\delta > \varepsilon$ ($\varepsilon$ petit) formeront le domaine $V_{1}$; les points tels que $\delta = \varepsilon$ formeront la surface $W_{1}$; les points tels que $\delta < \varepsilon$ formeront le domaine $V - V_{1}$. On voit aisément que la surface $W_{1}$ est $2p - 1$ fois connexe, et qu'elle est homéomorphe à la frontière du domaine obtenu en pratiquant dans $V$ la coupure $A'_{p}$.
+
+La surface $W_{1}$ ne coupera pas l'aire $A'_{p}$, et coupera chacune des autres aires $A'_{q}$ suivant un cycle $K''_{q}$ peu différent de $K'_{q}$. Ces cycles $K''_{q}$ ne seront pas bouclés, ils ne se couperont pas mutuellement. De plus le cycle $K''_{q}$ découpera dans l'aire simplement connexe $A'_{q}$ un domaine $A''_{q}$ simplement connexe dont il sera la frontière complète. Ce
+
+\origpage{98}
+domaine $A''_{q}$ est la portion commune de $A'_{q}$ et de $V_{1}$; cela montre que $K''_{q} \equiv 0$ par rapport à $V_{1}$. Cela montre que les cycles $K''$ satisfont par rapport à $V_{1}$ aux conditions du théorème; or le théorème est supposé démontré pour $V_{1}$.
+
+Donc $V_{1}$ peut être engendré par une surface $W'(t)$ qui pour $t = 0$ se réduit à un point, pour $t = u$ (où $t_{p-1} < u < t_{p}$) se réduit à $W_{1}$, qui pour $t_{q} < t < t_{q+1}$ coupe $A''_{1}, A''_{2}, \ldots, A''_{q}$ et par conséquent $A'_{1}, A'_{2}, \ldots, A'_{q}$ suivant une seule courbe fermée et ne coupe pas $A''_{q+1}, A''_{q+2}, \ldots, A''_{p-1}$, ni par conséquent $A'_{q+1}, A'_{q+2}, \ldots, A'_{p-1}$, ni d'ailleurs $A'_{p}$, puisque cette aire n'a aucun point commun avec $V_{1}$ et que les $A'_{i}$ n'ont d'autres points communs avec $V_{1}$ que ceux de $A''_{i}$.
+
+Envisageons maintenant le domaine $V - V_{1}$ limité extérieurement par la surface $W$ qui est $2p + 1$ fois connexe et intérieurement par la surface $W_{1}$ qui est $2p - 1$ fois connexe et qui ne coupe pas l'aire $A'_{p}$ laquelle se trouve tout entière à l'intérieur de $V - V_{1}$. Il est clair que nous pourrons prendre sur $A'_{p}$ un point $M$ et construire une surface $W_{2}$ tout entière intérieure à $V - V_{1}$, admettant ce point $M$ comme point conique et n'ayant aucun autre point commun avec $A'_{p}$, puis engendrer le domaine $V - V_{1}$ par une surface $W'(t)$ qui pour $t = u$ se réduit à $W_{1}$; qui pour $u < t < t_{p}$ est $2p - 1$ fois connexe, ne coupe pas $A'_{p}$ et coupe les autres $A'_{q}$ suivant une seule courbe fermée; qui pour $t = t_{p}$ se réduit à $W_{2}$; qui pour $t_{p} < t < 1$ est $2p + 1$ fois connexe et coupe tous les $A'_{q}$, y compris $A'_{p}$ suivant une seule courbe fermée; qui enfin pour $t = 1$ se réduit à $W_{1}$.\ednote{Printed $W_{1}$. The surface $W'(t)$ already reduces to $W_{1}$ for $t = u$, and the statement being proved (p.~97) requires it to reduce to the outer boundary $W$ for $t = 1$; the print does not show which reading is intended.}
+
+Nous voyons que la variété $V$ pourra être engendrée par une surface $W'(t)$ satisfaisant à l'énoncé du théorème; le théorème est donc démontré et les trois conditions énoncées sont non-seulement nécessaires, mais suffisantes.
+
+Il y a plus; pour démontrer le dernier théorème je me suis appuyé seulement sur ce fait que les équivalences $K' \equiv 0$ sont une conséquence des équivalences $K \equiv 0$ et je n'ai pas eu à m'appuyer sur le fait inverse, que les équivalences $K \equiv 0$ sont une conséquence des équivalences $K' \equiv 0$. Donc si les cycles $K'$ ne sont pas bouclés et ne se coupent pas mutuellement et si les équivalences $K \equiv 0$ entraînent les équivalences $K' \equiv 0$, inversement les équivalences $K' \equiv 0$ entraîneront les équivalences $K \equiv 0$. C'est ce qu'on pourrait vérifier directement.
+
+\origpage{99}
+
+\subsection*{\S~6.}
+
+Considérons maintenant une variété $V$ à 3 dimensions dont le squelette se réduira à un segment de droite le long duquel la variable $t$ variera de 0 à 1. Le système $W(t)$ se composera d'une variété unique; cette variété sera une surface fermée bilatère, qui se réduira à un point pour $t = 0$ et pour $t = 1$, et dont l'ordre de connexion ira en croissant de $t = 0$ à $t = \frac{1}{2}$ et en décroissant de $t = \frac{1}{2}$ à $t = 1$. \emph{Notre variété $V$ est donc fermée}.
+
+Nous aurons $2p$ valeurs remarquables de $t$, satisfaisant aux inégalités~:
+\[ 0 < t_{1} < t_{2} < \ldots < t_{p} < \frac{1}{2} < t'_{p} < \ldots < t'_{2} < t'_{1} < 1, \]
+de telle façon que, quand $t$ passera de la valeur $t_{q} - \varepsilon$ à la valeur $t_{q} + \varepsilon$, la surface $W(t)$ passera de la connexion $2q - 1$ à la connexion $2q + 1$, et que quand $t$ passera de la valeur $t'_{q} - \varepsilon$ à la valeur $t'_{q} + \varepsilon$, la surface $W(t)$ passera de la connexion $2q + 1$ à la connexion $2q - 1$.
+
+La variété $V$ pourra se décomposer en deux autres $V'$ et $V''$ correspondant, la première aux valeurs de $t$ comprises entre 0 et $\frac{1}{2}$, la seconde aux valeurs de $t$ comprises entre $\frac{1}{2}$ et 1. Chacune de ces deux variétés partielles répond aux conditions du \S\ précédent; elle est donc développable et c'est la variété $V$ formée par leur réunion qu'il s'agit maintenant d'étudier.
+
+Ces deux variétés $V'$ et $V''$ ont pour frontière commune la surface $W\left(\frac{1}{2}\right)$ que j'appellerai $W$ et qui est $2p + 1$ fois connexe.
+
+Sur cette surface, je puis tracer d'une part les $p$ cycles
+\[ K'_{1}, \qquad K'_{2}, \qquad \ldots, \qquad K'_{p} \]
+définis par rapport à la variété $V'$ comme l'ont été dans le \S\ précédent les cycles $K_{1}, K_{2}, \ldots, K_{p}$ par rapport à la variété $V$ du \S\ précédent.
+
+Ces $p$ cycles ne sont pas bouclés et ne se coupent pas. De plus on a les équivalences
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \qquad (\text{mod}\ V'). \tag{1} \]
+D'autre part, sur cette même surface $W$, je puis tracer les $p$ cycles~:
+\[ K''_{1}, \qquad K''_{2}, \qquad \ldots, \qquad K''_{p} \]
+définis par rapport à $V''$ comme l'ont été au \S\ précédent les cycles $K_{q}$ par rapport à la variété $V$ du \S\ précédent.
+
+\origpage{100}
+
+Les $p$ cycles $K''$ ne sont pas bouclés et ne se coupent pas; et l'on a les équivalences
+\[ K''_{1} \equiv K''_{2} \equiv \ldots \equiv K''_{p} \qquad (\text{mod}\ V''). \tag{2} \]\ednote{Printed without the final $\equiv 0$ that equivalence (1) carries; the text later uses (2) as $K''_{i} \equiv 0$ (mod $V''$), p.~102.}
+
+Les cycles $K'$ seront alors les cycles \emph{principaux} de $V'$ et les cycles $K''$ ceux de $V''$.
+
+Considérons maintenant un cycle $C$ quelconque intérieur à $V$; si $M$ est un point quelconque de ce cycle, nous pouvons envisager le point correspondant $N$ du squelette. Quand le point $M$ décrira le cycle tout entier, le point $N$ restera sur la droite $01$ qui constitue le squelette et exécutera sur cette droite une série de mouvements oscillatoires à la suite desquels il reviendra à son point de départ.
+
+Soient $A$ et $B$ les deux positions extrêmes du point $N$ dans cette oscillation. Supposons que le point $A$ soit compris entre $t_{q}$ et $t_{q+1}$ et que le point $N$ partant de la valeur $t_{q+1} - \varepsilon$ décroisse jusqu'à $A$ pour revenir à la valeur $t_{q+1} - \varepsilon$. Soit $H$ l'arc correspondant du cycle $C$; soit $M$ un point de cet arc $H$, il appartiendra à la surface $W(t)$, $t$ étant compris entre $A$ et $t_{q+1} - \varepsilon$. Nous savons que la surface $W(t)$ reste homéomorphe à elle-même quand $t$ varie de $t_{q+1} - \varepsilon$ à $t_{q} + \varepsilon$, et par conséquent quand $t$ varie de $t_{q+1} - \varepsilon$ à $A$, puisque $A$ est plus grand que $t_{q}$. Donc $W(t)$ est homéomorphe à $W(t_{q+1} - \varepsilon)$. Soit donc $M'$ le point de $W(t_{q+1} - \varepsilon)$ qui correspond à $M$. Quand le point $M$ décrira l'arc $H$, le point $M'$ décrira l'arc $H'$ situé tout entier sur $W(t_{q+1} - \varepsilon)$. Je dis qu'on a l'équivalence
+\[ H \equiv H' \qquad (\text{mod}\ V). \]
+
+En effet, considérons les différentes surfaces $W(t)$, où $t$ a une valeur intermédiaire entre celle qui correspond au point $M$ et la valeur $t_{q+1} - \varepsilon$ qui correspond à $M'$. Considérons sur chacune de ces différentes surfaces qui sont toutes homéomorphes entre elles, le point qui correspond à $M$. Ce point engendrera une ligne $L$ dont les extrémités seront $M$ et $M'$; quand le point $M$ décrira l'arc $H$, cette ligne $L$ engendrera une aire simplement connexe qui aura pour frontière complète les deux arcs $H$ et $H'$; ce qui démontre l'équivalence annoncée.
+
+Considérons maintenant les deux surfaces $W(t_{q+1} - \varepsilon)$ et $W(t_{q+1} + \varepsilon)$; sur la première nous avons l'arc $H'$ dont les deux extrémités $D$ et $E$ appartiennent à l'arc $H$ et par conséquent au cycle $C$; sur la seconde nous avons les deux points $D'$ et $E'$, infiniment voisins de $D$ et de $E$ et qui appartiennent aussi à $C$, de telle façon que $DD'$ et $EE'$ soient
+
+\origpage{101}
+deux arcs infiniment petits de ce cycle $C$. Nous pouvons tracer sur la surface $W(t_{q+1} + \varepsilon)$ un arc $H''$ allant de $D'$ en $E'$ et infiniment peu différent de $H'$. Ce dernier point mérite quelque attention. Les deux surfaces $W(t_{q+1} - \varepsilon)$ et $W(t_{q+1} + \varepsilon)$ n'ont pas le même ordre de connexion; il pourrait donc se faire bien que ces deux surfaces diffèrent très peu l'une de l'autre qu'on ne puisse pas tracer sur l'une un trait continu très peu différent d'un trait continu tracé sur l'autre. Si sur celle dont la connexion est la plus élevée, on avait un trait continu $L$ passant près du point singulier et coupant le cycle qui se réduit à un point pour $t = t_{q+1}$, on ne pourrait tracer sur l'autre un trait continu très peu différent de $L$. Par exemple, considérons trois surfaces très peu différentes l'une de l'autre; la 1\textsuperscript{ère} sera un hyperboloïde à une nappe, la 2\textsuperscript{de} un cône, la 3\textsuperscript{e} un hyperboloïde à 2 nappes, le cycle qui se réduit à un point est l'ellipse de gorge de l'hyperboloïde à une nappe. Une génératrice rectiligne de l'hyperboloïde à une nappe coupera cette ellipse et il sera impossible de tracer sur la 3\textsuperscript{e} surface un trait continu très peu différent de cette génératrice. Mais ici cette difficulté n'est pas à craindre puisque c'est $W(t_{q+1} + \varepsilon)$ qui a la connexion la plus élevée. Notre arc $H''$ existera donc toujours et l'on aura~:
+\[ H'' \equiv D'D + H + EE' \qquad (\text{mod}\ V); \]
+alors posons
+\[ C = C_{1} + D'D + H + EE' \]
+de telle façon que notre cycle $C$ se décompose en deux arcs, le premier $C_{1}$ et le second $D'D + H + EE'$, ayant tous deux pour extrémités $D'$ et $E'$. Nous aurons~:
+\[ C \equiv C_{1} + H'' \qquad (\text{mod}\ V). \]
+
+Nous avons ainsi remplacé le cycle $C$ par un autre cycle équivalent $C_{1} + H''$, qui jouit des mêmes propriétés, mais qui en diffère parce que le point représentatif $N$ au lieu d'aller jusqu'en $A$ dans ses oscillations ne dépasse plus $t_{q+1} + \varepsilon$.
+
+Supposons d'abord que la valeur $t = \frac{1}{2}$ soit comprise entre les points $A$ et $B$ entre lesquels oscille le point $N$, et que le point $A$ soit compris entre $t_{q}$ et $t_{q+1}$, et le point $B$ entre $t'_{h}$ et $t'_{h+1}$. Nous pouvons par le procédé que je viens d'exposer remplacer le cycle $C$ par un autre où le point $N$ oscillera entre $B$ et le point $t_{q+1} + \varepsilon$, ce dernier point n'étant plus compris comme le point $A$ entre $t_{q}$ et $t_{q+1}$, mais bien entre $t_{q+1}$ et $t_{q+2}$. Nous pouvons, en d'autres termes, ramener le point $A$ entre
+
+\origpage{102}
+\ednote{The leaf carrying pp.~102--103 is missing from the copy scanned here. Their text is supplied from the reprint in Poincaré's Œuvres, t.~VI (1953), pp.~489--491; the break between pp.~102 and 103 cannot be located there, so p.~103 has no marker. That edition is re-set, and its spelling and punctuation may differ from the 1904 print.}
+$t_{q+1}$ et $t_{q+2}$; en continuant nous le ramènerons entre $t_{q+2}$ et $t_{q+3}$, etc., puis enfin entre $t_{p}$ et $\frac{1}{2}$. En opérant sur $B$ et $V''$ comme nous l'avons fait sur $A$ et $V'$, nous ramènerons de même le point $B$ entre $\frac{1}{2}$ et $t'_{p}$.
+
+En résumé, nous aurons remplacé le cycle $C$ par un autre cycle équivalent $C'$, tel que le point $N$ reste toujours compris entre $t_{p}$ et $t'_{p}$. Mais quand $t$ est compris entre $t_{p}$ et $t'_{p}$ la surface $W(t)$ reste homéomorphe à elle-même et à $W\left(\frac{1}{2}\right)$ ou $W$. Soit donc $M$ un point quelconque du cycle $C'$ appartenant à $W(t)$ et $M'$ le point correspondant de $W$. Quand le point $M$ décrira le cycle $C'$, le point $M'$ décrira un cycle $C''$ situé sur $W$ et l'on aura
+\[ C' \equiv C'' \]
+par un raisonnement tout pareil à celui qui nous a montré que $H \equiv H'$. On aura donc
+\[ C \equiv C'' \qquad (\text{mod}\ V). \]
+
+Si les points $A$ et $B$ n'étaient pas situés de part et d'autre de $\frac{1}{2}$, si par exemple $t$ restait $< \frac{1}{2}$ pour le cycle $C$ tout entier, on remplacerait le cycle $C$ par le cycle équivalent
+\[ C + \alpha - \alpha, \]
+où l'arc $\alpha$, qui est parcouru successivement dans le sens direct, puis dans le sens inverse, s'étendrait depuis le point final du cycle $C$, jusqu'à un point quelconque de $V$ tel que $t > \frac{1}{2}$. On serait ainsi ramené au cas précédent. Nous sommes donc conduits à la conclusion générale suivante~:
+
+\emph{Tout cycle de $V$ est équivalent à un cycle de $W$}.
+
+Maintenant entre les cycles de $W$ nous avons les équivalences (1) et (2)
+\[ K'_{i} \equiv 0 \qquad (\text{mod}\ V'), \qquad K''_{i} \equiv 0 \qquad (\text{mod}\ V'') \]
+et nous aurons a fortiori
+\[ K'_{i} \equiv K''_{i} \equiv 0 \qquad (\text{mod}\ V). \tag{3} \]
+Je dis maintenant qu'il n'y en aura pas d'autres.
+
+Si, en effet, il y a une équivalence
+\[ K \equiv 0 \qquad (\text{mod}\ V), \]
+$K$ étant un cycle de $W$, cela veut dire qu'il existe dans $V$ une aire simplement connexe $A$ dont la frontière est formée par le cycle $K$. Cela posé, nous distinguerons dans $A$ les points qui appartiennent à $V'$ et qui formeront l'aire $A'$, laquelle pourra ne pas être d'un seul tenant, et les points qui appartiennent à $V''$ et qui formeront l'aire $A''$. Si l'aire $A'$ n'est pas d'un seul tenant, elle sera formée de plusieurs aires séparées $A'_{1}, A'_{2}, \ldots$, dont chacune sera d'un seul tenant. De même pour $A''$. Si nous considérons l'une de ces aires partielles, $A'_{1}$ par exemple, il pourra se faire qu'elle ne soit pas simplement connexe. Supposons, par exemple, qu'elle soit triplement connexe et limitée, par conséquent, extérieurement par une courbe fermée $L$, et intérieurement par deux courbes fermées $L'$ et $L''$ (les mots extérieurement et intérieurement doivent s'entendre par rapport à l'aire totale $A$). Joignons un point de $L$ à un point de $L'$ par une coupure $P'$ et, de même, un point de $L$ à un point de $L''$ par une coupure $P''$; ces deux coupures $P'$ et $P''$ seront des arcs de courbe situés sur $A'_{1}$ et elles rendront $A'_{1}$ simplement connexe. Soit $B'_{1}$ l'aire simplement connexe ainsi obtenue; et soit $D'_{1}$ son contour qui sera formé des courbes fermées $L$, $L'$ et $L''$ et des deux coupures parcourues une fois dans le sens direct et une fois dans le sens inverse. L'aire $B'_{1}$ fera tout entière partie de $V'$ et l'on aura
+\[ D'_{1} \equiv 0 \qquad (\text{mod}\ V'). \]
+On opérera de même pour les aires $A'_{2}, \ldots$ et l'on obtiendra une série d'équivalences
+\[ D'_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V'). \]
+On opérera de même pour les aires $A''_{1}, A''_{2}, \ldots$, dont l'ensemble forme $A''$, ce qui donnera les équivalences
+\[ D''_{1} \equiv D''_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V''). \]
+Comme l'aire $A$ est formée par la réunion des aires $B'_{1}, B'_{2}, \ldots; B''_{1}, B''_{2}, \ldots$; l'équivalence $K \equiv 0$ où $K$ est le contour de l'aire totale $A$ sera une conséquence des équivalences
+\[ \begin{aligned} &D'_{1} \equiv D'_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V'),\\ &D''_{1} \equiv D''_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V''), \end{aligned} \]
+où $D'_{1}, D'_{2}, \ldots; D''_{1}, D''_{2}, \ldots$ sont les contours des aires partielles $B'_{1}, B'_{2}, \ldots; B''_{1}, B''_{2}, \ldots$.
+
+Notre équivalence est donc une conséquence de diverses équivalences prises les unes par rapport à $V'$, les autres par rapport à $V''$. Or toutes les équivalences par rapport à $V'$ sont des conséquences des équivalences (1) d'après le paragraphe précédent. Toutes les équivalences par rapport à $V''$ sont des conséquences des équivalences (2). Donc notre équivalence est
+
+\origpage{104}
+une conséquence des équivalences (1) et (2) ou ce qui revient au même des équivalences (3). C.~Q.~F.~D.
+
+Possédant ainsi toutes les équivalences possibles, il est aisé d'en déduire toutes les homologies sans division possibles; il suffit d'intervertir l'ordre des termes dans les premiers membres de ces équivalences. Soient
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p} \]
+les $2p$ cycles fondamentaux de la surface $W$.
+
+Nous aurons des homologies de la forme~:
+\[ K'_{i} \backsim m'_{i.1} C_{1} + m'_{i.2} C_{2} + \ldots + m'_{i.2p} C_{2p} \qquad (\text{mod}\ W) \]
+et de la forme
+\[ K''_{i} \backsim m''_{i.1} C_{1} + m''_{i.2} C_{2} + \ldots + m''_{i.2p} C_{2p} \qquad (\text{mod}\ W) \]
+(les $m'$ et les $m''$ étant des entiers) de sorte que nous aurons les homologies suivantes déduites des équivalences (3)~:
+\[ \left\{ \begin{aligned} &m'_{i.1} C_{1} + m'_{i.2} C_{2} + \ldots + m'_{i.2p} C_{2p} \backsim 0\\ &m''_{i.1} C_{1} + m''_{i.2} C_{2} + \ldots + m''_{i.2p} C_{2p} \backsim 0, \end{aligned} \right. \qquad (\text{mod}\ V) \tag{4} \]
+et nous n'en aurons pas d'autres.
+
+Discutons ces homologies; formons le déterminant $\Delta$ des entiers $m'$ et $m''$.
+
+Trois cas sont à distinguer~:
+
+1° On a
+\[ |\Delta| > 1. \]
+
+Donc $\Delta$ est un entier qui n'est égal ni à 0, ni à $+1$, ni à $-1$; nous pouvons alors déduire des homologies (4) \emph{sans faire de division}~:
+\[ \Delta C_{i} \backsim 0 \qquad (i = 1, 2, \ldots, 2p) \]
+et en faisant une division~:
+\[ C_{i} \backsim 0. \]
+
+\emph{Le nombre de Betti relatif aux homologies par division est donc égal à} 1.
+
+Mais on ne pourrait obtenir $C_{i} \backsim 0$ sans faire de division de sorte que les «~coefficients de torsion~» (Cf.\ Proceedings of the London Mathematical Society, vol.\ 32, n\textsuperscript{os} 727-729, page 301) \emph{ne sont pas égaux à} 1.
+
+2° On a
+\[ |\Delta| = 1; \]
+on en déduit alors \emph{sans division}
+\[ C_{i} \backsim 0. \]
+
+\origpage{105}
+
+Donc dans ce cas, \emph{non seulement le nombre de Betti, mais les coefficients de torsion sont égaux à} 1.
+
+Le nombre de Betti et les coefficients de torsion sont donc les mêmes que pour une variété simplement connexe. Cela ne veut pas dire comme nous le verrons bientôt, que la variété $V$ soit simplement connexe.
+
+3° On a
+\[ \Delta = 0. \]
+
+Des homologies (4) nous ne pouvons plus alors déduire
+\[ C_{i} \backsim 0 \]
+même en faisant une division.
+
+\emph{Le nombre de Betti est donc plus grand que} 1.
+
+Il est égal à 2; si le determinant $\Delta$ s'annule, mais si tous ses mineurs du 1\textsuperscript{er} ordre ne s'annulent pas.
+
+Il est égal à $k$, si le déterminant s'annule ainsi que tous ses mineurs des $k - 2$ premiers ordres, mais si tous les mineurs du $k - 1$° ordre ne s'annulent pas.
+
+Revenons au cas où $\Delta$ est égal à $\pm 1$. Dans ce cas, on peut se demander si la variété est simplement connexe, puisqu'elle a même nombre de Betti et mêmes coefficients de torsion que les variétés simplement connexes. Nous allons voir, et c'est là le but principal de ce travail, qu'il n'en est pas toujours ainsi, et pour cela nous nous bornerons à donner un exemple.
+
+Supposons que $p = 2$, c'est-à-dire que la surface $W$ soit 5 fois connexe. Je supposerai de plus que les cycles $K'_{1}$ et $K'_{2}$ sont deux des cycles fondamentaux de $W$, à savoir~:
+\[ K'_{1} = C_{1}, \qquad K'_{2} = C_{3}. \]
+
+Je représenterai la surface $W$ par un polygone fuchsien $R_{0}$ de la 3\textsuperscript{e} famille limité par 4 circonférences ne se coupant pas. Pour cela nous n'avons qu'à tracer sur la surface $W$ les deux cycles $C_{1}$ et $C_{3}$ qui ne se coupent pas; à découper la surface le long de ces deux cycles regardés comme des coupures et à la développer ensuite sur un plan.
+
+Les cycles $K''_{1}$ et $K''_{2}$ seront représentés alors sur ce plan par un certain nombre d'arcs de courbe allant d'un point du périmètre du polygone fuchsien $R_{0}$ à un autre point de ce périmètre.
+
+Voici à quelles conditions sont assujettis ces arcs de courbe~:
+
+1° Ils ne doivent pas se couper mutuellement; c'est là la condition
+
+\origpage{106}
+nécessaire et suffisante pour que les cycles $K''_{1}$ et $K''_{2}$ ne soient pas bouclés et ne se coupent pas.
+
+2° Considérons alors la série d'arcs dont l'ensemble représente le cycle $K''_{1}$. Ces arcs doivent être parcourus dans un certain ordre et chacun d'eux va d'un certain point initial situé sur le périmètre de $R_{0}$ à un certain point final situé également sur le périmètre de $R_{0}$. Observons que le périmètre de $R_{0}$ se compose de 4 cercles conjugués deux a deux; à chaque point de l'un des cercles correspond sur le cercle conjugué un point que j'appelle le conjugué du premier.
+
+Cela posé, le point final de chacun des arcs qui représentent $K''_{1}$ doit être conjugué du point initial de l'arc suivant, et le point final du dernier arc doit être le conjugué du point initial du premier arc.
+
+De même pour les arcs qui représentent $K''_{2}$.
+
+\rmfigure{figures/fig-04.png}{Fig.~4.}{A large circle representing the perimeter region of the fuchsian polygon, containing three smaller circles labelled minus A, plus B and minus B, the fourth circle plus A being the outer one; numbered points 1 to 7 on the circles are joined by solid and dotted arcs carrying arrowheads, dash-dot lines run from a point D on the outer circle to points D prime, E and E prime, and curved arrows near each circle mark its sense.}
+
+Voici l'explication de la figure~: le périmètre de $R_{0}$ est représenté par les quatre cercles $+A$, $-A$, $+B$, $-B$ représentés en trait plein; les cercles $+A$ et $-A$ sont conjugués et correspondent à $K'_{1} = C_{1}$; les cercles $+B$ et $-B$ sont conjugués et correspondent à $K'_{2} = C_{3}$; les cycles $K''_{1}$ et $K''_{2}$ sont représentés par des arcs de courbe allant d'un point à l'autre du périmètre de $R_{0}$.
+
+Les arcs qui représentent $K''_{1}$ sont en trait plein; ceux qui représentent $K''_{2}$ sont en trait pointillé. Une pointe de flèche placée sur le trait lui-même indique dans quel sens ce trait doit être parcouru.
+
+Les points où ces arcs coupent les cercles $\pm A$ et $\pm B$ sont désignés par des numéros; ces numéros nous font connaître en même
+
+\origpage{107}
+temps quels sont ceux de ces points qui sont conjugués; ainsi le point $+B5$ est conjugué de $-B5$, le point $+A5$ de $-A5$.
+
+Près de chacun des quatre cercles $\pm A$, $\pm B$ est placée une flèche dont voici la signification; quand un point décrit l'un des cercles dans le sens de la flèche, le point conjugué doit décrire le cercle conjugué dans le sens de la flèche.
+
+On vérifie aisément qu'en suivant soit $+A$, soit $-A$, dans le sens de la flèche on rencontre successivement
+\[ 1, \qquad 2, \qquad 3, \qquad 4, \qquad 6, \qquad 5, \qquad 7 \]
+et qu'en suivant soit $+B$, soit $-B$ dans le sens de la flèche on rencontre successivement
+\[ 1, \qquad 5, \qquad 2, \qquad 3, \qquad 4. \]
+L'ordre de conjugaison de nos points a donc été convenablement choisi.
+
+Le cycle $K''_{1}$ est alors représenté par 7 arcs qui se succèdent dans l'ordre suivant~:
+\[ \begin{gathered} +A1 \text{ à } -A2; \qquad +A2 \text{ à } -A3;\\ +A3 \text{ à } -A4; \qquad +A4 \text{ à } +B1; \qquad -B1 \text{ à } +A5;\\ -A5 \text{ à } +B2; \qquad -B2 \text{ à } -A1. \end{gathered} \]
+
+Le cycle $K''_{2}$ est représenté par les 5 arcs~:
+\[ \begin{gathered} +B3 \text{ à } -B4; \qquad +B4 \text{ à } +A6; \qquad -A6 \text{ à } +B5;\\ -B5 \text{ à } +A7; \qquad -A7 \text{ à } -B3. \end{gathered} \]
+Il est aisé de voir sur la figure que ces 12 arcs ne se coupent pas; nos deux cycles ne sont donc pas bouclés et ne se coupent pas.
+
+Nous pouvons donc construire une variété $V'$, admettant les cycles $K'_{1} = C_{1}$ et $K'_{2} = C_{3}$ pour cycles principaux et une variété $V''$ admettant les cycles $K''_{1}$ et $K''_{2}$ comme cycles principaux. La réunion des deux variétés $V'$ et $V''$ nous donnera $V$.
+
+On s'en rendra mieux compte encore de la façon suivante.
+
+Reprenons notre figure et découpons le polygone $R_{0}$ suivant les 12 arcs qui représentent $K''_{1}$ et $K''_{2}$; nous aurons ainsi décomposé $R_{0}$ en 10 polygones partiels; recollons ensuite ces polygones les uns aux autres en collant chacun des arcs des divers cercles $\pm A$, $\pm B$ aux arcs correspondants du cercle conjugué; par exemple l'arc $+A3. +A4$ à l'arc $-A3. -A4$; nous obtiendrons ainsi un nouveau polygone qui au même titre que $R_{0}$ représentera.\ednote{A stray period is printed after “représentera”.} la surface $W$ avec cette différence que les coupures au lieu d'être faites suivant les cycles $K'_{1}$ et $K'_{2}$ seront faites suivant les cycles $K''_{1}$ et $K''_{2}$.
+
+\origpage{108}
+
+La figure ainsi obtenue est tout à fait pareille à la figure 1,\ednote{Printed “figure 1”; Fig.~1 is the figure of p.~53, in \S~2, while the comparison here seems to be with Fig.~4 (p.~106), the figure of the circles $\pm A$, $\pm B$.} mais la signification en est différente. Les cercles $+A$ et $-A$ représentent $K''_{1}$ et non plus $K'_{1}$, les cercles $+B$ et $-B$ représentent $K''_{2}$; les arcs en trait plein à l'intérieur de la figure représentent $K'_{1}$ et non plus $K''_{1}$; les arcs en trait pointillé représentent $K'_{2}$.
+
+Les points
+\[ \pm A1, \qquad \pm A2, \qquad \pm A3, \qquad \pm A4, \qquad \pm A6, \qquad \pm A5, \qquad \pm A7 \]
+représentent respectivement les points
+\[ \pm A1, \qquad \pm A2, \qquad \pm A3, \qquad \pm A4, \qquad \pm B1, \qquad \pm A5, \qquad \pm B2. \]
+
+Les points
+\[ \pm B1, \qquad \pm B5, \qquad \pm B2, \qquad \pm B3, \qquad \pm B4 \]
+représentent respectivement
+\[ \pm A6, \qquad \pm B5, \qquad \pm A7, \qquad \pm B3, \qquad \pm B4. \]
+
+On ne doit pas s'étonner de ce signe $\pm$; les deux points $+A1$ et $-A1$ correspondent en effet à un même point de la surface $W$.
+
+L'identité des deux figures nous montre que la surface $W$ est homéomorphe à elle-même de telle façon qu'aux cycles
+\[ K'_{1}, \qquad K'_{2}, \qquad K''_{1}, \qquad K''_{2} \]
+correspondent les cycles
+\[ K''_{1}, \qquad K''_{2}, \qquad K'_{1}, \qquad K'_{2}. \]
+Cherchons à exprimer $K''_{1}$ et $K''_{2}$ en fonctions des quatre cycles fondamentaux $C_{1}, C_{2}, C_{3}, C_{4}$. Pour cela nous n'avons qu'à appliquer la règle de la fin du \S~4, et pour faciliter l'application de cette règle nous avons tracé en trait mixte --- $\cdot\cdot$ --- les trois coupures $DD'$, $DE$, $DE'$ qui figurent dans son énoncé.
+
+L'arc $+A1 - A2$ part de $+A$ ce qui donne $+C_{2}$.
+
+L'arc $+A2 - A3$ part de $+A$ ce qui donne $+C_{2}$.
+
+L'arc $+A3 - A4$ part de $+A$ ce qui donne $+C_{2}$ et rencontre $DD'$ de gauche à droite ce qui donne $+C_{1}$.
+
+L'arc $+A4 + B1$ part de $+A$ ce qui donne $+C_{2}$ et rencontre $DE$ de droite à gauche ce qui donne $+C_{3}$.\ednote{Printed $+C_{3}$; the rule at the end of \S~4 (p.~86) gives $-C_{3}$ for $DE$ met from right to left, and the sum for $K''_{1}$ below has $-C_{3}$ in the corresponding place.}
+
+L'arc $-B1 + A5$ part de $-B$ ce qui donne $+C_{4}$.
+
+L'arc $-A5 + B2$ part de $-A$ ce qui donne $-C_{2}$ et rencontre $DE'$ de gauche à droite ce qui donne $-C_{4} - C_{3} + C_{4}$.
+
+L'arc $-B2 - A1$ part de $-B$ ce qui donne $+C_{4}$.
+Donc~:
+\[ K''_{1} \equiv 3C_{2} + C_{1} + C_{2} - C_{3} + C_{4} - C_{2} - C_{4} - C_{3} + 2C_{4}. \]
+
+\origpage{109}
+
+Passons à $K''_{2}$.
+
+L'arc $+B3 - B4$ part de $+B$ ce qui donne $-C_{4}$ et rencontre $DD'$ de droite à gauche ce qui donne $-C_{4} + C_{3} + C_{4}$.\ednote{The cut is printed $DD'$, but the value $-C_{4} + C_{3} + C_{4}$ is the one the rule at the end of \S~4 (p.~86) gives for $DE'$ met from right to left, and that rule gives $-C_{1}$ for $DD'$; the print does not show which is intended.}
+
+L'arc $+B4 + A6$ part de $+B$ ce qui donne $-C_{4}$.
+
+L'arc $-A6 + B5$ part de $-A$ ce qui donne $-C_{2}$ et rencontre $DE'$ de gauche à droite ce qui donne $-C_{4} - C_{3} + C_{4}$.
+
+L'arc $-B5 + A7$ part de $-B$ ce qui donne $+C_{4}$.
+
+L'arc $-A7 - B3$ part de $-A$ ce qui donne $-C_{2}$.
+Donc~:
+\[ K''_{2} \equiv -2C_{4} + C_{3} - C_{2} - C_{4} - C_{3} + 2C_{4} - C_{2}. \]
+
+Nous avons donc~:
+\[ \begin{gathered} K'_{1} \equiv C_{1}, \qquad K'_{2} \equiv C_{3},\\ K''_{1} \equiv 3C_{2} + C_{1} + C_{2} - C_{3} + C_{4} - C_{2} - C_{4} - C_{3} + 2C_{4}\\ K''_{2} \equiv -2C_{4} + C_{3} - C_{2} - C_{4} - C_{3} + 2C_{4} - C_{2}. \end{gathered} \]
+
+Par rapport à $V$ nous avons les équivalences~:
+\[ \left\{ \begin{aligned} &C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} \equiv 0\\ &K'_{1} \equiv K'_{2} \equiv 0, \qquad K''_{1} \equiv 0, \qquad K''_{2} \equiv 0. \end{aligned} \right. \tag{1} \]
+Les équivalences $K'_{1} \equiv K'_{2} \equiv 0$ ou $C_{1} \equiv C_{3} \equiv 0$ permettent de simplifier les autres; l'équivalence (1) se réduit à
+\[ C_{2} - C_{2} + C_{4} - C_{4} \equiv 0, \]
+c'est-à-dire à une identité; l'équivalence $K''_{1} \equiv 0$ se réduit à
+\[ 4C_{2} + C_{4} - C_{2} + C_{4} \equiv 0 \tag{2} \]
+et l'équivalence $K''_{2} \equiv 0$ se réduit à
+\[ -2C_{4} - C_{2} + C_{4} - C_{2} \equiv 0. \tag{3} \]
+En résumé, il nous reste deux cycles distincts $C_{2}$ et $C_{4}$ entre lesquels nous n'avons pas d'autre équivalence que (2) et (3).
+
+Si nous transformons ces équivalences en homologies, il vient~:
+\[ \begin{gathered} 3C_{2} + 2C_{4} \backsim 0,\\ -C_{4} - 2C_{2} \backsim 0. \end{gathered} \]
+
+Le déterminant est égal à $-1$; nous sommes donc dans le cas où $\Delta = \pm 1$, où le nombre de Betti et les coefficients de torsion sont égaux à 1. Et cependant $V$ n'est pas simplement connexe; car son groupe fondamental ne se réduit pas à la substitution identique; en d'autres termes, des équivalences (2) et (3) on ne peut déduire
+\[ C_{2} \equiv 0, \qquad C_{4} \equiv 0. \]
+
+\origpage{110}
+Pour le montrer, j'adjoins à (2) et à (3) l'équivalence
+\[ -C_{2} + C_{4} - C_{2} + C_{4} \equiv 0, \tag{4} \]
+d'où~:
+\[ C_{4} - C_{2} + C_{4} - C_{2} \equiv 0. \]
+
+De (2), (3) et (4) on déduira~:
+\[ \left\{ \begin{aligned} &-C_{2} + C_{4} - C_{2} + C_{4} \equiv 0,\\ &5C_{2} \equiv 0, \qquad 3C_{4} \equiv 0. \end{aligned} \right. \tag{5} \]
+Or les relations (5) sont les relations de structure qui ont lieu entre les deux substitutions $C_{2}$ et $C_{4}$ qui engendrent le \emph{groupe icosaédrique}. On ne saurait donc en déduire $C_{2} \equiv 0$, $C_{4} \equiv 0$, ni a fortiori déduire ces deux équivalences de (2) et de (3) seulement.
+
+Il y a donc deux cycles de $V$ qui ne sont pas équivalents à zéro; donc $V$ n'est pas simplement connexe.
+
+En d'autres termes, le groupe fondamental de $V$ ne saurait se réduire à la substitution identique, puisqu'il contient comme sous-groupe le groupe icosaédrique.
+
+Il resterait une question à traiter~:
+
+Est-il possible que le groupe fondamental de $V$ se réduise à la substitution identique, et que pourtant $V$ ne soit pas simplement connexe?
+
+En d'autres termes, peut-on tracer les cycles $K''_{1}$ et $K''_{2}$ de telle façon qu'ils ne soient pas bouclés et ne se coupent pas; que les équivalences
+\[ K'_{1} \equiv K'_{2} \equiv 0, \qquad K''_{1} \equiv K''_{2} \equiv 0 \]
+entraînent les équivalences
+\[ C_{1} \equiv C_{2} \equiv C_{3} \equiv C_{4} \equiv 0 \]
+et que cependant la surface $W$ ne puisse pas être regardée comme homéomorphe à elle-même de telle façon qu'aux cycles $C_{1}, C_{2}, C_{3}, C_{4}$ correspondent les cycles $C'_{1}, C'_{2}, C'_{3}, C'_{4}$; que les équivalences
+\[ K'_{1} \equiv K'_{2} \equiv 0 \]
+entraînent $C'_{1} \equiv C'_{3} \equiv 0$ et réciproquement; et qu'enfin les équivalences
+\[ K''_{1} \equiv K''_{2} \equiv 0 \]
+entraînent $C'_{2} \equiv C'_{4} \equiv 0$ et réciproquement?
+
+Mais cette question nous entraînerait trop loin.
+
+Paris, 3 novembre 1903.
+
+H.~Poincaré.
+
+\end{document}

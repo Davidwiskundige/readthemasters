@@ -1,0 +1,112 @@
+id: poincare-1904-cinquieme-complement-analysis-situs
+title: Cinquième complément à l'Analysis Situs.
+title_en: Fifth supplement to Analysis situs.
+authors:
+- name: Henri Poincaré
+  wikidata_id: Q81082
+  birth_year: 1854
+  death_year: 1912
+  mactutor: Poincare  # https://mathshistory.st-andrews.ac.uk/Biographies/Poincare/
+publication:
+  year: 1904
+  venue: rendiconti-palermo
+  volume: '18'
+  pages: 45–110
+  title_full: '"Cinquième complément à l''Analysis Situs", Rendiconti del Circolo
+    Matematico di Palermo, tomo XVIII (1904), pp. 45–110 (adunanza del 22 novembre 1903).'
+edition:
+  year: 1904
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original 1904 printing in the Rendiconti del Circolo
+    Matematico di Palermo, tomo XVIII, pp. 45–110, as digitized by Google and deposited
+    on the Internet Archive (rendicontidelci16palegoog, leaves 82–145). That copy
+    lacks the leaf carrying pp. 102–103; their text is supplied from the reprint in
+    Poincaré's Œuvres, t. VI (Paris, Gauthier-Villars, 1953), pp. 489–491 (archive.org
+    uvresdehenripoin06poin), Poincaré's own text only, without that edition's editorial
+    notes. Otherwise a faithful photographic reproduction of a public-domain edition,
+    carrying no modern critical apparatus, commentary, or re-typesetting. Running
+    heads and signature lines are not transcribed.
+discipline: mathematics
+tags:
+- topology
+- geometry
+language: fr
+type: paper
+relations:
+- to: poincare-1902-quatrieme-complement-analysis-situs
+  kind: builds-on
+  recommended: primary
+  note: The last of the five complements, following the Quatrième.
+- to: poincare-1895-analysis-situs
+  kind: builds-on
+  note: The memoir of 1895 that the complements correct and complete.
+- to: poincare-1900-second-complement-analysis-situs
+  kind: builds-on
+  note: The torsion coefficients of the second complement, and its claim about the hypersphere,
+    which the fifth refutes.
+significance: >-
+  The last of Poincaré's five complements to Analysis situs[1], and the paper that ends with the
+  question now known as the Poincaré conjecture. The second complement[2] had introduced torsion
+  coefficients and closed by asserting that a manifold whose Betti numbers and torsion coefficients
+  are all 1 is homeomorphic to the hypersphere. Here Poincaré tests that claim on three-dimensional
+  manifolds. § 2 studies a manifold through a family of surfaces $\varphi = t$ and follows how
+  their connectivity changes as $t$ passes a singular value; §§ 3–4 work out which cycles on a
+  closed surface are homologous or equivalent to simple closed curves, or to curves that do not
+  meet, representing the surface by a Fuchsian polygon; § 5 builds three-dimensional manifolds from
+  surfaces that grow and shrink as $t$ runs from 0 to 1. In § 6 one such manifold has Betti number
+  and torsion coefficients equal to 1, yet its fundamental group contains the icosahedral group, so
+  it is not simply connected: homology alone does not characterize the sphere. The paper closes by
+  asking whether a manifold whose fundamental group reduces to the identity could still fail to be
+  simply connected, and leaves it there, as a question that would lead too far.
+significance_sources:
+  - citation: >-
+      H. Poincaré, "Analysis situs", Journal de l'École Polytechnique (2) 1 (1895), pp. 1–121, in
+      this corpus.
+    url: "/works/poincare-1895-analysis-situs/"
+  - citation: >-
+      H. Poincaré, "Second complément à l'Analysis situs", Proceedings of the London Mathematical
+      Society 32 (1900), pp. 277–308, in this corpus.
+    url: "/works/poincare-1900-second-complement-analysis-situs/"
+external_translations:
+- language: en
+  title: 'Fifth supplement to Analysis situs (in Papers on Topology: Analysis Situs
+    and Its Five Supplements)'
+  translator: John Stillwell
+  year: 2010
+  license: in-copyright
+  url: https://bookstore.ams.org/hmath-37
+source:
+  scan_url: https://archive.org/details/rendicontidelci16palegoog/page/n82/mode/2up
+  scan_id: archive.org:rendicontidelci16palegoog (Rend. Circ. Mat. Palermo t. XVIII,
+    1904, pp. 45–110)
+sources:
+  death_date: wikidata:Q81082
+  publication_date: archive.org:rendicontidelci16palegoog (title page "Tomo XVIII.
+    — Anno 1904")
+  edition: archive.org:rendicontidelci16palegoog (Rend. Circ. Mat. Palermo t. XVIII,
+    1904, pp. 45–110); pp. 102–103 from archive.org:uvresdehenripoin06poin (Œuvres
+    t. VI, 1953, pp. 489–491)
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1912
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1904
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-10-01'
