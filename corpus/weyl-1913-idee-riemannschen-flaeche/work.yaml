@@ -6,6 +6,14 @@ authors:
   wikidata_id: Q71029
   birth_year: 1885
   death_year: 1955
+  mactutor: Weyl
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Hermann Weyl
+    credit: >-
+      Photograph of Hermann Weyl, ETH-Bibliothek Zürich, Bildarchiv (Portr_00890).
+      Wikimedia Commons, CC BY-SA 3.0.
+    source: "https://commons.wikimedia.org/wiki/File:Hermann_Weyl_ETH-Bib_Portr_00890.jpg"
 publication:
   year: 1913
   venue: book
@@ -36,6 +44,45 @@ relations:
   recommended: primary
 - to: riemann-1857-abelsche-functionen
   kind: builds-on
+- to: klein-1882-riemanns-theorie
+  kind: builds-on
+- to: hilbert-1904-dirichletsche-prinzip
+  kind: builds-on
+significance: >-
+  Hermann Weyl's 1913 book created the modern theory of Riemann surfaces and formulated
+  the first rigorous intrinsic definition of a two-dimensional complex manifold.[1]
+  Following Bernhard Riemann's pioneering work, the subject had fractured: while Alfred Clebsch,
+  Alexander Brill, and Max Noether reformulated the theory in the language of algebraic curves
+  in the plane, and Karl Weierstrass based function theory on power series, the Riemann surface
+  itself was often treated merely as an auxiliary device or visual aid distilled a posteriori
+  from an algebraic relation.[1] Felix Klein had vigorously pushed back in 1882, insisting that
+  to recover Riemann's true train of thought the surface must be conceived as the *prius*—an entity
+  existing prior to any functions upon it—though Klein had relied on physical intuition of
+  fluid flows on surfaces in space.[2]
+
+  Weyl took up Klein's foundational conviction and brought it to rigorous mathematical fruition.
+  By severing all dependence on an ambient embedding or multi-sheeted branched coverings of the plane,
+  Weyl defined a Riemann surface abstractly as a two-dimensional topological manifold covered by
+  overlapping coordinate charts with conformal transition functions, creating the prototype
+  for the modern concept of a manifold.[1] In Part I, he developed the combinatorial topology
+  of surfaces, triangulations, and universal coverings, giving a geometric foundation to the
+  Koebe–Poincaré uniformization theorem. In Part II, he harnessed David Hilbert's 1904 direct
+  method in the calculus of variations to rehabilitate the Dirichlet principle, introducing
+  orthogonal projection of differentials (the forerunner of Hodge theory and Weyl's lemma)
+  to construct harmonic potentials, Abelian integrals, and algebraic functions on abstract
+  surfaces.[3]
+significance_sources:
+  - citation: >-
+      Hermann Weyl, "Die Idee der Riemannschen Fläche" (Leipzig: B. G. Teubner, 1913).
+    url: "/works/weyl-1913-idee-riemannschen-flaeche/"
+  - citation: >-
+      Felix Klein, "Über Riemann's Theorie der algebraischen Functionen und ihrer Integrale"
+      (Leipzig: B. G. Teubner, 1882), in this corpus.
+    url: "/works/klein-1882-riemanns-theorie/"
+  - citation: >-
+      David Hilbert, "Über das Dirichletsche Prinzip", Mathematische Annalen 59 (1904),
+      pp. 161–186, in this corpus.
+    url: "/works/hilbert-1904-dirichletsche-prinzip/"
 source:
   scan_url: https://archive.org/details/dieideederrieman00weyluoft
   scan_id: archive.org:dieideederrieman00weyluoft (University of Toronto scan)

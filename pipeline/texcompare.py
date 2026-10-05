@@ -50,7 +50,7 @@ def _strip(latex: str) -> str:
 # insert, or move the surrounding math. \operatorname{...} is deliberately NOT included: it names a
 # mathematical operator, not translatable prose.
 _TEXT_INSERT_RE = re.compile(
-    r"\\(text|textrm|textnormal|textup|textit|textbf|textsf|texttt|mbox|hbox)\{[^{}]*\}"
+    r"\\(text|textrm|textnormal|textup|textit|textbf|textsf|texttt|mbox|hbox)\{(?:[^{}]|\{[^{}]*\})*\}"
 )
 
 

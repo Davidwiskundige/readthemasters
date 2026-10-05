@@ -1,4 +1,6 @@
 changelog:
+  - date: "2026-10-05"
+    summary: "Add complete English translation (pp. v–x, 1–169, §§ 1–21 and index) translated from transcription."
   - date: "2026-10-04"
     summary: "Add front matter (Vorwort und Einleitung pp. v–ix, Inhaltsverzeichnis p. x) and format side-by-side figures (pp. 25, 26)."
   - date: "2026-10-04"
@@ -47,3 +49,22 @@ transcription:
     flagged_pages: []
     date: "2026-10-04"
   uncertainty_flags: 0
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-05"
+    glossary: glossary.yaml
+    uncertainty_flags: 0
+    note: >-
+      English translation of the entire work (pp. v–x front matter, pp. 1–169 body text and index),
+      made only from our own transcription (original.tex), never from an existing published translation.
+      Translated in 23 sections, each verified with pipeline/texcompare.py and pipeline/houselint.py.
+      The assembled translation passes texcompare and houselint without error. Every math expression,
+      \tag{}, \origpage{N} marker, \ednote, and figure is preserved. Prose inside \text{...} inserts
+      is translated per HOUSESTYLE R21. Terminology follows glossary.yaml. Status ai-draft.
