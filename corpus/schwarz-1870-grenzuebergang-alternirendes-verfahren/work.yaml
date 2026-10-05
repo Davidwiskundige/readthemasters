@@ -6,6 +6,15 @@ authors:
   wikidata_id: Q61223
   birth_year: 1843
   death_year: 1921
+  mactutor: Schwarz
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Hermann Amandus Schwarz by Louis Zipfel, c. 1890
+    credit: >-
+      Photograph of Hermann Amandus Schwarz by Louis Zipfel (c. 1890), restored by
+      Adam Cuerden. Collection of the ETH-Bibliothek Zürich, published on Wikimedia Commons
+      in cooperation with Wikimedia CH. Public domain (life+70, PDM).
+    source: https://commons.wikimedia.org/wiki/File:Hermann_Amand_Schwarz_(1843-1921)_by_Louis_Zipfel.jpg
 publication:
   year: 1870
   venue: vierteljahrsschrift-zuerich
