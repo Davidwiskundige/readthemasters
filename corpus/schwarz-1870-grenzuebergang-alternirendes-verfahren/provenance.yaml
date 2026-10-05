@@ -1,5 +1,7 @@
 changelog:
   - date: "2026-10-05"
+    summary: Translation (en) added (AI draft).
+  - date: "2026-10-05"
     summary: Transcription added (AI draft), pp. 272–286 from Vierteljahrsschrift der Naturforschenden Gesellschaft in Zürich (1870).
 
 transcription:
@@ -39,3 +41,21 @@ transcription:
     APPARATUS & COMPOSITOR ERROR. One compositor error on p. 286 ("Stèlle" with a grave accent on the first e,
     due to a wrong sort from the type case) is preserved and flagged with \ednote per HOUSESTYLE R4 and R18.
     Zero uncertainty flags (\uncertain) or illegible markers.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-05"
+    uncertainty_flags: 0
+    note: >-
+      English translation of the entire paper (pp. 272–286), made only from our own transcription
+      (original.tex), never from an existing published translation. Passes pipeline/texcompare.py
+      and pipeline/houselint.py without error. Every math expression, symbol, \origpage{N} marker,
+      and \ednote is preserved. Prose inside \text{...} inserts is translated per HOUSESTYLE R21.
+      Status ai-draft.
+
