@@ -1,0 +1,41 @@
+changelog:
+  - date: "2026-10-05"
+    summary: Transcription added (AI draft), pp. 272–286 from Vierteljahrsschrift der Naturforschenden Gesellschaft in Zürich (1870).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-05"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-10-05"
+  uncertainty_flags: 0
+  note: >-
+    Full German text of Hermann Amandus Schwarz's seminal paper "Ueber einen Grenzübergang durch
+    alternirendes Verfahren", printed pages 272–286, from Vierteljahrsschrift der Naturforschenden
+    Gesellschaft in Zürich, 15. Jahrgang, 3. Heft (1870). Digital facsimile read from Internet Archive
+    / Biodiversity Heritage Library (item vierteljahrsschr15natu, scan leaves n279–n293).
+
+    METHOD. 15 pages transcribed in 4 batches (pp. 272–275, 276–279, 280–283, 284–286) against
+    high-resolution 300dpi scans, with upfront notation scan codified in notation.md. Followed by
+    whole-document text-only proofreading and line-by-line scan verification.
+
+    FIGURE. One schematic woodcut on p. 277 illustrating overlapping domains T_1 (disk) and T_2 (square)
+    with intersection T^* and boundary pieces L_0, L_1, L_2, L_3. Extracted cleanly as figures/fig-01.png
+    and embedded before the paragraph it stands beside per HOUSESTYLE R30.
+
+    NOTATION. Faithful to 1870 print: Laplace operator \Delta u = 0, partial derivatives with \partial,
+    explicit centered dots in products, Fraktur \mathfrak{P} and \mathfrak{P}_1 for planar regions (R13),
+    elliptic functions and integrals on p. 285 (\sin\mathrm{am}\, Kz, \operatorname{arc\,sin} z,
+    \operatorname{tg}^2). Displays wrapped in \[ ... \] with aligned environments per HOUSESTYLE R16.
+
+    ORTHOGRAPHY. Antiqua German orthography preserved faithfully (Ueber, alternirendes, convergirt,
+    Constante, Theil, Werthe, dass, giebt). Spaced type (Sperrdruck) mapped to \emph per HOUSESTYLE R20/R24.
+
+    APPARATUS & COMPOSITOR ERROR. One compositor error on p. 286 ("Stèlle" with a grave accent on the first e,
+    due to a wrong sort from the type case) is preserved and flagged with \ednote per HOUSESTYLE R4 and R18.
+    Zero uncertainty flags (\uncertain) or illegible markers.

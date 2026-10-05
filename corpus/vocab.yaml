@@ -333,6 +333,23 @@ venues:
     archives:
       - label: "HathiTrust"
         url: "https://catalog.hathitrust.org/Record/009324539"
+  vierteljahrsschrift-zuerich:
+    name: "Vierteljahrsschrift der Naturforschenden Gesellschaft in Zürich"
+    aka: "Vierteljahrsschrift NGZH"
+    founded: 1856
+    place: "Zürich"
+    publisher: "Naturforschende Gesellschaft in Zürich"
+    note: >-
+      Quarterly journal of the Naturforschende Gesellschaft in Zürich, founded in 1856; published
+      H. A. Schwarz's seminal papers during his professorship at the Federal Polytechnic Institute
+      (ETH) and University of Zurich (1869–1875).
+    archives:
+      - label: "E-Periodica"
+        url: "https://www.e-periodica.ch/cntmng?pid=vng-001"
+      - label: "Internet Archive"
+        url: "https://archive.org/search?query=%22Vierteljahrsschrift+der+Naturforschenden+Gesellschaft+in+Z%C3%BCrich%22"
+      - label: "Biodiversity Heritage Library"
+        url: "https://www.biodiversitylibrary.org/bibliography/5121"
   book:
     name: "(published as a book / monograph)"
     kind: book
