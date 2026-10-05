@@ -1,0 +1,182 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. All mathematical formulas, symbols, labels, and \origpage markers are preserved
+% unchanged; only the prose is translated.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{272}
+
+\section*{On a Limiting Process by an Alternating Method}
+
+\subsection*{By \textbf{H.~A. Schwarz.}}
+
+\emph{(From a lecture delivered on May 30.)}
+
+
+The mode of inference known under the name of \emph{Dirichlet}'s principle, which in a certain sense must be regarded as the foundation of the branch of the theory of analytic functions developed by \emph{Riemann}, is subject, as is now generally conceded, to very well-founded objections regarding its rigor, the complete removal of which, so far as I know, has hitherto eluded the efforts of mathematicians.
+
+Through the continuation of certain investigations concerning specific kinds of mapping problems, part of which was published in Volume~70 of \emph{Borchardt}'s Journal and in the essay accompanying the program of the Federal Polytechnic School for the winter semester of 1869--70: ``Zur Theorie der Abbildung'', I have been led to a method of proof by which, as I believe I have convinced myself, all theorems whose proof \emph{Riemann} sought to establish in his published memoirs by means of \emph{Dirichlet}'s principle can be proved with rigor.
+
+\origpage{273}
+
+The following communication is essentially an excerpt from a memoir concerning the integration of the partial differential equation $\Delta u = 0$, which I communicated in November of last year to Mr.~\emph{Kronecker} and several other mathematicians close to me.
+
+It is essentially only a matter of establishing the existence of a function $u$ which, for a certain given region $T$ of the independent real variables $x$ and $y$, satisfies the partial differential equation
+\[
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+\]
+and in addition satisfies certain prescribed boundary and discontinuity conditions.
+
+For brevity, I restrict myself here to the case in which the auxiliary conditions are boundary conditions only, in which it is therefore required that the function $u$ shall always be finite and shall have along the boundary of the region $T$ prescribed finite values belonging to one or more continuous sequences. For to this case, indeed, the general case can be reduced by the procedure to be communicated below.
+
+For the applicability of the intended method of proof, it is by no means necessary to make the assumption that the boundary line of $T$ possesses only a finite number of corners and in general at every point a finite, determinate radius of curvature, an assumption which Messrs.~\emph{Weber} and \emph{Neumann} made in their investigations directed toward the same goal. (See \emph{Borchardt}'s Journal, Volume~71, p.~29, and
+\origpage{274}
+Berichte der mathematisch-physischen Classe der K. Sächs. Gesellschaft der Wissenschaften, meeting of April 21, 1870.) Continuity in the change of direction of the tangent to the boundary line is not even required; it suffices rather to know that the boundary line can be divided into a finite number of pieces such that in the interior of each of these pieces the change in the direction of the tangent always occurs in the same sense, even if it takes place discontinuously infinitely often, so that the boundary line may thus possess infinitely many corners.
+
+Cusps on the boundary line are likewise not excluded. For such cusps as arise from the contact of two analytic curves which in the neighborhood of the point of contact have the character of algebraic curves, I have carried out the investigation; however, in order to avoid unnecessary prolixity here, no consideration is given in the following to the occurrence of cusps.
+
+The success of the proof, whose fundamental idea is communicated here, rests in the final analysis on the following lemma:
+
+The boundary line of a region $T$, for which it is possible to integrate the partial differential equation $\Delta u = 0$ according to arbitrary boundary conditions, shall be divided into a finite number of segments (parts). Let these be arranged into two groups, such that at least one segment is contained in each group. To the individual segments let there be assigned, according as they belong to the first or second group, odd or even order numbers
+\origpage{275}
+and let the points that separate the segments with even order number from those with odd order number be designated by $P$. In the interior of $T$, let there be conceived given a finite number of analytic curves $L$ which have in common with the segments of odd order number either no point or only endpoints $P$ thereof, without however touching them at these points.
+
+Thereupon, let there be conceived determined for the region $T$ a function $u$ which satisfies the partial differential equation $\Delta u = 0$ and has at all points of the boundary of $T$ the value $0$ or $+1$, according as the order number of the segment in whose interior the point in question lies is even or odd. Then the upper limit, respectively the maximum, of all values which the function $u$ assumes along the curves $L$ is a positive number $q$ which is less than $1$.
+
+If now, for the same region $T$ with the same division of the boundary into segments with even and odd order numbers and for the same curves $L$, a function $u_1$ is determined which satisfies the differential equation $\Delta u_1 = 0$, has on the boundary of $T$ along the segments with even order number the value zero, and whose arbitrarily prescribed value along the segments with odd order number does not exceed in absolute value the magnitude $g$, then the absolute value of the values which the function $u_1$ can assume at the points of the curves $L$ nowhere exceeds the value $g \cdot q$, where $q$ has the meaning given above, and is therefore less than $1$. ---
+
+\origpage{276}
+
+For the area of a circle and for all simply connected surfaces whose conformal mapping onto the area of a circle is known, the integration of the partial differential equation $\Delta u = 0$ under prescribed boundary conditions presents no difficulty. With regard to this problem, let it be permitted to refer to a short paper communicated in this journal (pp.~113--128 of the current volume); in it, to be sure, discontinuities in the series of values prescribed for the function $u$ along the boundary were explicitly excluded for brevity; nevertheless, the arguments developed there apply \emph{mutatis mutandis} even when, at a finite number of boundary points, the series of prescribed boundary values undergoes an interruption of continuity.
+
+Having shown that for a number of simpler regions the differential equation $\Delta u = 0$ can be integrated according to arbitrary boundary conditions, it is now a matter of demonstrating that for a less simple region, composed of those in a certain manner, the integration of the differential equation according to arbitrary boundary conditions is likewise possible. To prove this proposition, a limiting process may serve which bears great analogy to the well-known method used to produce an evacuated space by means of a \emph{two-cylinder} air pump. The period of the operation consists namely, in the one case as in the other, of two individual operations taking effect alternately, which
+\origpage{277}
+indeed have the same purpose, but with regard to the manner of their action are not identical, but in a certain sense symmetrical.
+
+Such a limiting process may for brevity be called a limiting process by an alternating method.
+
+\rmfigure{figures/fig-01.png}{}{Schematic figure of two overlapping regions T_1 (circle) and T_2 (square) with intersection region T* and boundary pieces L_0, L_1, L_2, L_3.}
+
+Let there be given two regions $T_1$ and $T_2$ which have one or more regions $T^*$ in common and whose boundary lines do not touch each other. (In the adjoining schematic figure, $T_1$ is the area of a circle, $T_2$ the area of a square.)
+
+The system of all parts of the boundary of $T_1$ that lie outside $T_2$ shall be designated by $L_0$, and the system of all remaining parts, lying inside $T_2$, by $L_2$.
+
+Likewise, the boundary of $T_2$ decomposes into the systems $L_1$ and $L_3$, namely when $L_1$ designates the system of all pieces lying within the domain $T_1$, and $L_3$ designates the system of all pieces lying outside $T_1$.
+
+It is assumed that it is possible, both for the region $T_1$ and for the region $T_2$, to integrate the differential equation $\Delta u = 0$ according to arbitrary boundary conditions; it is a matter of showing that this is also possible for the region $T_1 + T_2 - T^* = T$, which contains the regions $T_1$ and
+\origpage{278}
+$T_2$ as parts, but in which the domain $T^*$ common to the domains $T_1$ and $T_2$ is to be counted only once.
+
+Both for the domain $T_1$ and the system $L_1$, and for the domain $T_2$ and the system $L_2$, the conditions of the previously mentioned lemma are satisfied; in the first case let the system $L_0$, in the second the system $L_3$, take the place of the group of segments with even order number. It is therefore possible to determine two numbers $q_1$ and $q_2$ which play the role of the number $q$ in the lemma, and both of which are less than $1$.
+
+Maintaining the above analogy, the receiver of the air pump corresponds to the domain $T^*$, the interior of the two pump cylinders to the domains $T_1 - T^*$, $T_2 - T^*$, and the valves to the curves $L_1$ and $L_2$.
+
+Let the values for the function $u$ be arbitrarily prescribed on the boundary of $T$, that is, along $L_0$ and $L_3$; let $g$ be the upper, $k$ the lower bound of these values; let the difference $g - k$ be denoted by $G$.
+
+Now assume arbitrarily a series of values along $L_2$, e.g., the value $k$ at all points of $L_2$, and determine for the domain $T_1$ a function $u_1$ which along $L_0$ has the prescribed values, along $L_2$ has the value $k$, and in the interior of $T_1$ satisfies the differential equation $\Delta u_1 = 0$. By the assumption made concerning the domain $T_1$, such a function exists. (First stroke of the first piston.)
+
+Conceive the values which the function $u_1$ has along $L_1$ to be fixed, and determine for the
+\origpage{279}
+domain $T_2$ a function $u_2$ which along $L_3$ has the prescribed values, along $L_1$ coincides with the previously determined function $u_1$, and for which $\Delta u_2 = 0$. By the assumption made concerning the domain $T_2$, such a function exists. (First stroke of the second piston.)
+
+The value of $u_2 - u_1$ or of $u_2 - k$ along $L_2$ is less than $g - k = G$.
+
+Now determine for the domain $T_1$ a function $u_3$ which along $L_0$ has the prescribed values, along $L_2$ coincides with $u_2$, and for which $\Delta u_3 = 0$. (Second stroke of the first piston.)
+
+The difference $u_3 - u_1$ is at no point negative in the interior of $T_1$ and is in absolute value less than $G$, but along $L_1$, according to the aforementioned lemma, it is less than $G \cdot q_1$, because $u_3 - u_1$ has the value zero along $L_0$ and is less than $G$ along $L_2$.
+
+Conceive the value of the function $u_3$ along $L_1$ to be fixed, and determine for the domain $T_2$ a function $u_4$ which along $L_1$ coincides with $u_3$, along $L_3$ has the prescribed values, and for which $\Delta u_4 = 0$. (Second stroke of the second piston.)
+
+The difference $u_4 - u_2$ has along $L_3$ the value zero and along $L_1$, where it coincides with $u_3 - u_1$, is positive and less than $G \cdot q_1$; therefore in the interior of $T_2$, $u_4 - u_2$ is nowhere negative and constantly less than $G \cdot q_1$, but along $L_2$ is less than $G \cdot q_1 \cdot q_2$.
+
+By continuing this alternating procedure, one arrives at a series of infinitely many functions with odd and with even index. The former are defined for the domain $T_1$, the latter for the domain $T_2$, in such a way that they respectively have along
+\origpage{280}
+$L_0$ and $L_3$ the prescribed values and in the interior of the domains for which they are defined satisfy the partial differential equation $\Delta u = 0$.
+
+For the domain $T^*$, both the functions with odd index and those with even index are defined, and indeed they coincide with each other alternately along $L_1$ and along $L_2$. Along $L_1$, namely, $u_{2n-1} = u_{2n}$ and along $L_2$, $u_{2n+1} = u_{2n}$.
+
+It is now not difficult to prove that the functions with odd index and those with even index approach indefinitely, with increasing index, definite limit functions $u'$ and $u''$, which are defined by the equations
+\[
+\begin{aligned}
+u' &= u_1 + (u_3 - u_1) + (u_5 - u_3) + \dots \\
+   &\qquad + (u_{2n+1} - u_{2n-1}) + \dots \text{ in inf.} \\
+u'' &= u_2 + (u_4 - u_2) + (u_6 - u_4) + \dots \\
+   &\qquad + (u_{2n+2} - u_{2n}) + \dots \text{ in inf.}
+\end{aligned}
+\]
+The series standing on the right-hand side converge unconditionally and to the same degree for all pairs of values $x, y$ under consideration; namely, one has
+\[
+\begin{aligned}
+(u_{2n+1} - u_{2n-1}) & < G \cdot (q_1 \cdot q_2)^{n-1} \quad\text{and}\\
+(u_{2n+2} - u_{2n}) & < G \cdot (q_1 \cdot q_2)^{n-1} \cdot q_1.
+\end{aligned}
+\]
+
+Both along $L_1$ and along $L_2$, $u' = u''$. In the interior of $T_1$, $\Delta u' = 0$, and in the interior of $T_2$, $\Delta u'' = 0$; therefore for every point of $T^*$, $u' = u''$, because on the entire boundary of $T^*$ both functions coincide with each other.
+
+The two functions $u'$ and $u''$ are therefore values of the same function $u$, which is defined for the whole domain $T = T_1 + T_2 - T^*$, in its interior satisfies the partial differential equation $\Delta u = 0$
+\origpage{281}
+and on the boundary $L_0 + L_3$ assumes the prescribed values.
+
+Herewith the proof of the assertion stated above is indicated: under the specified assumptions, it is possible also for the region $T$ to integrate the partial differential equation $\Delta u = 0$ according to arbitrarily prescribed boundary conditions. ---
+
+By repeated application and suitable modification of the mentioned limiting process by alternating method, the existence of a function $u$ for a given domain can be demonstrated---even when, in addition to boundary conditions, discontinuity conditions, or as in the case of \emph{Abel}ian integrals, discontinuity conditions alone are prescribed---in the cases for which \emph{Riemann} in his memoirs asserted existence and sought to prove it by means of \emph{Dirichlet}'s principle.
+
+The method of proof explained extends not merely to the case in which the simply or multiply connected \emph{Riemann} surface representing the domain $T$ is contained throughout its entire extent in the same plane or on the same spherical surface, but remains valid essentially unchanged even when this surface is spread out over a polyhedral surface composed of several plane or spherical surfaces.
+
+With the aid of this extension, among other things, the proof can also be given that a simply connected region spread out over such a polyhedral surface can be conformally mapped
+\origpage{282}
+onto the area of a circle, if it possesses a closed boundary line, and onto the surface of a sphere, if the region is a simply connected and closed region.
+
+Herewith the question as to the possibility of the determination of constants, to which the conformal mapping of the simply connected surface of a polyhedron bounded by plane faces onto a sphere can be reduced (see \emph{Borchardt}'s Journal, Vol.~70, p.~119), is also answered.
+
+A special case of the mapping problem just mentioned occurs when it is a matter of conformally mapping the simply connected area of a plane polygon bounded by straight line segments onto the area of a circle, whether the area of the polygon lies entirely in the finite domain, or contains the infinitely distant point of the plane one or more times in its interior; branch points in its interior are likewise not excluded. In this problem the only difficulty likewise lies in demonstrating the possibility of determining a certain number of constants, partly real, partly conjugate complex, upon which the mapping function is made to depend, in such a way that all conditions of the problem are satisfied.
+
+This difficulty can be overcome by applying a method developed by Mr.~\emph{Weierstrass}. The application of the above limiting process affords a new means of overcoming it.
+
+A similar remark applies to demonstrating the
+\origpage{283}
+possibility of that determination of constants to which the problem of the conformal mapping of a simply connected figure bounded by circular arc segments onto the area of a circle is reduced. (\emph{Loc.~cit.} p.~117.)
+
+In this case also, the surface may contain branch points or the point at infinity in its interior.
+
+\emph{Addendum.} Recently, three memoirs by Mr.~\emph{Christoffel} have come to my knowledge (Annali di Matematica diretti da Brioschi e Cremona, Tomo IV${}^\circ$, pp.~1--9; Nachrichten von der K.~Gesellschaft der Wissenschaften zu Göttingen 1870, pp.~283--298 and 359--369), whose content, relating to the above communication, gives occasion for a few remarks.
+
+On p.~1 of the fourth volume of the Annali one reads: ``\dots\ la determinazione delle temperature stazionarie sopra una superficie rettangolare $F$ non offre alcuna difficoltà, il problema associato delle temperature stazionarie sulla superficie complementare $F'$ è rimasto completamente inaccessibile ai metodi adoperati finquì\dots''
+
+and on p.~284 of the aforementioned Nachrichten: ``\dots\ one is then led to a remarkable class of problems, which presents such striking difficulties that the solution of a problem of this kind, notwithstanding all efforts, had hitherto succeeded only in the single, entirely elementary case where the boundary of $\mathfrak{P}_1$ (--- the surface extending in all directions to infinity which remains of a plane when from it
+\origpage{284}
+a simply connected, finite piece $\mathfrak{P}$ is excised ---) is a circle. In particular, what will find its explanation in the following, all attempts have failed to treat any of the special, eminently interesting cases where $\mathfrak{P}_1$ is bounded by a rectilinear figure.''
+
+In contrast to this assertion, it appears appropriate to call attention to a few simple examples which perhaps also in and of themselves may offer some interest to those to whom they are new.
+
+1.~Let there be given in the plane of the complex variable $z$ a \emph{parabola} whose focus is the point $z = 0$ and whose vertex is the point $z = +1$. By means of the function $Z = \operatorname{tg}^2\!\left(\frac{\pi}{4} \cdot \sqrt{z}\right)$ the interior, and by means of the function $Z_1 = \frac{2}{\sqrt{z}} - 1$ the exterior, of the parabolic region is mapped continuously and similar in the smallest parts onto the area of a circle, whereby, as is well known, the corresponding heat problem for the exterior and for the interior of the parabola is to be regarded as solved.
+
+2.~Let there be given the equation of an \emph{ellipse} $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$; $a^2 - b^2 = 1$. By means of the function $Z = \sin\mathrm{am}\left(\frac{2K}{\pi} \operatorname{arc\,sin} z\right)$, $q = \left(\frac{a - b}{a + b}\right)^2$, the interior, and by means of the function $Z_1 = \frac{z - \sqrt{z^2 - 1}}{a - b}$ the exterior, of the ellipse is conformally mapped onto the area of a circle, whereby the corresponding heat problem for this case as well is to be regarded as solved.
+
+3.~Let there be given a \emph{square} whose vertices
+\origpage{285}
+are formed by the four points $z = +1, +i, -1, -i$. By means of the function $Z = \sin\mathrm{am}\, Kz$, $k = i$, the interior of the square is conformally mapped onto the area of a circle, and by means of the function
+\[
+z = -\frac{1}{C} \int^{Z_1} \frac{\sqrt{1 - Z_1^4}}{Z_1^2} \, dZ_1, \qquad C = \int_0^{\frac{\pi}{2}} \sqrt{\sin\varphi} \, d\varphi
+\]
+conversely, the area of the circle described with radius $1$ about the origin in the plane of the complex variable $Z_1$ is conformally mapped onto the exterior of that square, if the complex variable of integration $Z_1$ is restricted to that circular disk and the constant of integration is determined from the condition that $\lim \left(z - \frac{1}{CZ_1}\right)$ for $Z_1 = 0$ is also equal to $0$. By means of the indicated mappings, however, the heat problem for the interior and for the exterior of the square may be regarded as solved. (Cf. \emph{Borchardt}'s Journ. Vol.~70, p.~115.)
+
+4.~Let there be given a \emph{circular arc triangle}. The conformal mapping of the area of a circle onto the interior and onto the exterior of a circular arc triangle can be carried out without difficulty by means of hypergeometric series. (\emph{Loc.~cit.} p.~117.)
+
+The number of these examples could be further increased. ---
+
+It must not be left unmentioned here that substantial objections are also to be raised against the remaining content of the cited memoirs.
+
+Upon a complete proof the requirement would without doubt have to be made that it also
+\origpage{286}
+be proved that it is in fact possible to determine all constants upon whose determination it depends, in such a way that all conditions of the problem are satisfied.
+
+It is further to be observed that in the two aforementioned memoirs in the Göttingen Nachrichten the investigation is expressly restricted to the case in which the boundary line of the region to be mapped is given by an ``indecomposable equation''. Thereby, then, there are excluded from the outset both the cases in which the boundary line consists of several pieces of different analytic curves, and the case in which this line at no point\ednote{In the German text printed ``Stèlle'', with a grave accent on the first e: an apparent compositor's error for Stelle.} possesses the character of an algebraic curve.
+
+Finally, it is not to be overlooked that in a very large number of cases, to which also belongs the simple case of the conformal mapping of the interior of an \emph{ellipse} onto the interior of a circle, the concluding formulas established in the cited memoirs still remain afflicted with an unresolved difficulty, a circumstance which makes it appear questionable whether these formulas may be regarded as a proof of the possibility of solving the general problem proposed.
+
+August 1870.
+
+\end{document}
