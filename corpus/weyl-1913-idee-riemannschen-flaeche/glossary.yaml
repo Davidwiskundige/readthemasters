@@ -1,0 +1,143 @@
+# Term renderings for weyl-1913-idee-riemannschen-flaeche, applied consistently across the whole
+# translation. Format: `terms: {German as printed: English}`.
+
+terms:
+  # --- surfaces and topology ---
+  Fläche: surface
+  Flächen: surfaces
+  Riemannsche Fläche: Riemann surface
+  Riemannschen Fläche: Riemann surface
+  Riemannschen Flächen: Riemann surfaces
+  geschlossene Fläche: closed surface
+  geschlossene Riemannsche Fläche: closed Riemann surface
+  offene Fläche: open surface
+  offene Riemannsche Fläche: open Riemann surface
+  Teilfläche: sub-surface
+  Teilflächen: sub-surfaces
+  Überlagerungsfläche: covering surface
+  Überlagerungsflächen: covering surfaces
+  unverzweigte Überlagerungsfläche: unramified covering surface
+  universelle Überlagerungsfläche: universal covering surface
+  schlichtartig: schlichtartig
+  schlichtartige Fläche: schlichtartig surface
+  schlichtartigen Flächen: schlichtartig surfaces
+  einfach zusammenhängend: simply connected
+  zusammenhängend: connected
+  Zusammenhang: connectivity
+  Zusammenhangszahl: connectivity number
+  Geschlecht: genus
+  Geschlechtszahl: genus
+  Zerschneidung: dissection
+  Zerschneidungen: dissections
+  kanonische Zerschneidung: canonical dissection
+  Querschnitt: crosscut
+  Querschnitte: crosscuts
+  Rückkehrschnitt: loop cut
+  Rückkehrschnitte: loop cuts
+  Ufer: bank
+  Ufern: banks
+  Zweiseitigkeit: two-sidedness
+  Einseitigkeit: one-sidedness
+  zweiseitig: two-sided
+  einseitig: one-sided
+  Orientierung: orientation
+  Triangulation: triangulation
+  Teilung: partition
+  Rand: boundary
+  Berandung: boundary
+
+  # --- point set topology and neighborhoods ---
+  Umgebung: neighborhood
+  Umgebungen: neighborhoods
+  Punktmenge: point set
+  Punktmengen: point sets
+  Menge: set
+  Teilmenge: subset
+  Häufungspunkt: accumulation point
+  Grenzpunkt: limit point
+  innerer Punkt: interior point
+  äußerer Punkt: exterior point
+  Randpunkt: boundary point
+  abgeschlossen: closed
+  offen: open
+  kompakt: compact
+  zusammenhängende Menge: connected set
+  Gebiet: domain
+  Bereich: region
+
+  # --- complex analysis and function theory ---
+  analytische Funktion: analytic function
+  analytischen Funktion: analytic function
+  analytische Funktionen: analytic functions
+  analytisches Gebilde: analytic configuration
+  analytischen Gebildes: analytic configuration
+  analytische Gebilde: analytic configurations
+  Funktionselement: function element
+  Funktionselemente: function elements
+  Potenzreihe: power series
+  Stelle: place
+  Stellen: places
+  Konvergenzbereich: domain of convergence
+  Konvergenzkreis: circle of convergence
+  analytische Fortsetzung: analytic continuation
+  Zweig: branch
+  Zweige: branches
+  Verzweigungspunkt: branch point
+  Windungspunkt: winding point
+  Blatt: sheet
+  Blätter: sheets
+  eindeutig: single-valued
+  mehrdeutig: multiple-valued
+  Pol: pole
+  Pole: poles
+  wesentlich singuläre Stelle: essential singularity
+  Residuum: residue
+  Residuensatz: residue theorem
+  Monodromiesatz: monodromy theorem
+  Cauchyscher Integralsatz: Cauchy's integral theorem
+
+  # --- potential theory and existence proofs ---
+  Dirichletsches Prinzip: Dirichlet's principle
+  Dirichletsche Prinzip: Dirichlet's principle
+  Dirichletsches Integral: Dirichlet integral
+  Dirichletschen Integrals: Dirichlet integral
+  Harmonische Funktion: harmonic function
+  harmonische Funktion: harmonic function
+  harmonische Funktionen: harmonic functions
+  Potentialfunktion: potential function
+  Potentialtheorie: potential theory
+  Poissonsches Integral: Poisson integral
+  Poissonsche Integral: Poisson integral
+  Randwertaufgabe: boundary value problem
+  Randwerte: boundary values
+  Elementardifferential: elementary differential
+  Elementardifferentiale: elementary differentials
+  Differential: differential
+  Differentiale: differentials
+  Abelsches Integral: Abelian integral
+  Abelsche Integrale: Abelian integrals
+  Abelschen Integrale: Abelian integrals
+  Abelsches Theorem: Abel's theorem
+  Riemann-Rochscher Satz: Riemann-Roch theorem
+  Stammfunktion: primitive function
+  Perioden: periods
+  Periodizitätsmoduln: periods of periodicity
+
+  # --- uniformization and group theory ---
+  Uniformisierung: uniformization
+  Uniformisierungstheorie: uniformization theory
+  Uniformisierende: uniformizing variable
+  Uniformisierungsprinzip: uniformization principle
+  Grenzkreis: limit circle
+  Hauptkreis: principal circle
+  Fundamentalbereich: fundamental domain
+  Fundamentalpolygongruppe: fundamental polygon group
+  Diskontinuitätsbereich: domain of discontinuity
+  eigentlich diskontinuierlich: properly discontinuous
+  Deckbewegung: deck transformation
+  Deckbewegungen: deck transformations
+  Gruppe: group
+  Untergruppe: subgroup
+  algebraischer Funktionenkörper: algebraic function field
+  Körper: field
+  zweidimensionaler Nicht-Euklidischer Kristall: two-dimensional non-Euclidean crystal
