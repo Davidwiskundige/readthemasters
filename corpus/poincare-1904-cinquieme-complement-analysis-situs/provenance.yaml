@@ -1,0 +1,90 @@
+changelog:
+  - date: "2026-10-05"
+    summary: Transcription added (AI draft).
+  - date: "2026-10-05"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-05"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: []
+    date: "2026-10-05"
+  uncertainty_flags: 0
+  note: >-
+    Henri Poincaré, "Cinquième complément à l'Analysis Situs", Rendiconti del Circolo Matematico di
+    Palermo, tomo XVIII (1904), pp. 45–110 (adunanza del 22 novembre 1903). COMPLETE: every printed
+    page of the paper is transcribed. \origpage markers run 45–110 with no gaps or duplicates except
+    that p. 103 has no marker (see below). Running heads, page numbers and signature lines are not
+    transcribed. Four figures (Fig. 1, p. 53; Fig. 2, p. 84; Fig. 3, p. 93; Fig. 4, p. 106) are
+    cropped from the scan without their printed captions, as figures/fig-01.png to fig-04.png;
+    fig-02 comes from a low-resolution page and is small and soft. pipeline/houselint.py and the
+    site's KaTeX math lint pass.
+
+
+    PP. 102–103 ARE NOT FROM THE 1904 PRINT. The copy scanned (Google's, archive.org
+    rendicontidelci16palegoog) lacks the leaf carrying pp. 102–103; no other copy of tomo XVIII was
+    reachable (HathiTrust's are full view in the US only), and no offprint was found. Their text is
+    supplied from the reprint in Poincaré's Œuvres, t. VI (Gauthier-Villars, 1953), pp. 489–491
+    (archive.org uvresdehenripoin06poin), Poincaré's text only, as one fragment under \origpage{102}
+    with an \ednote saying so. The break between pp. 102 and 103 cannot be located in a re-set
+    edition, so p. 103 has no marker (validate.py warns of the gap by design). Its spelling,
+    punctuation and paragraphing follow the Œuvres. One reading there, $A'_{1}$ (Œuvres p. 490,
+    worn subscript), was settled from the sentences that follow rather than from the glyph.
+
+
+    HOW THIS WAS PRODUCED. The scan is a 2008 Google bitonal digitization (3360 px wide). At one
+    prepared image per page the 1568px cap left about 950 px of text width, so every page was split
+    into OVERLAPPING HALF-PAGE CROPS (top and bottom, ~400 source px shared), each prepared at
+    ~1510–1568 px wide with its own zoom map. Three pages (pp. 84, 100, 104) survive only as
+    low-resolution greyscale inserts (956×1827) and were read whole; for these, doubtful readings
+    were checked against the Œuvres (p. 84: subscripts in $A_{1}B_{1}, \ldots$, $B_{i-1}$, $R'_{0}$,
+    and the accents of "circonférence", "extrémités", "reconnaîtra"; p. 100: the indices
+    $t_{q+1} - \varepsilon$, $t_{q} + \varepsilon$; p. 104: the shaded top lines), the 1904 reading
+    governing wherever it was legible. Transcription ran in five sequential batch subagents (13
+    fragments each) sharing notation.md, seeded from the first four Compléments (the first being in
+    the same journal and type). The assembled text was proofread as text (no scans); its questions
+    went to sixteen concurrent scan verifiers (4–5 pages each), which also had the Œuvres as a
+    second copy for settling doubtful readings only. Magnified regions: 51 at transcription, 35 at
+    verification, mostly worn subscripts and accents. Read the zero flag count in that light.
+    Verification corrected: the p. 51/52 page break (p. 52 opens mid-sentence); paragraph breaks
+    before "Donc~:" on pp. 108 and 109 and after three displays on p. 102; accents "reduira" (p. 86,
+    as printed), "disparaître", "reconnaîtrait" (p. 83), "entraînerait" (p. 110); and it added or
+    reworded the notes listed below.
+
+
+    PRINTER'S ERRORS AND CONFLICTS are reproduced and marked with \ednote (R4/R29), 30 notes in all,
+    each citing only the print or the text itself: p. 45 "tome XXXVII" against p. 104's "vol. 32";
+    p. 52 "ou à l'intérieur" (four times) for "on a l'intérieur"; p. 54 "m = 3" against the
+    convention of pp. 50–51; p. 56 "qui rencontre E" where the argument needs "qui ne rencontre pas
+    E" (a reader's pen caret in the scanned copy is not part of the print); p. 65 a missing "et";
+    p. 69 $P_{i}$ without prime, "qu" for "qui"; p. 71 $C'$ for $C''$, $y''_{2}$ for $y''_{1}$; p. 73
+    "cercle C" for the cycle K; p. 74 the conjugate pair $A_{i}$, $B_{i+1}$ (recurring p. 76); p. 76
+    $P_{2}$ for $S_{2}$; p. 78 "Un arcs", and "4π" against p. 60's "2π"; p. 79 "drote"; p. 89 a
+    missing "sur"; p. 91 "intérieure", $V(1)$ for $W(1)$, and $K_{q}$ closing the list of the $p$
+    cycles (also p. 92); p. 93 an unprinted parenthesis in (4) and "− CBA" against the cancellation
+    in (5); p. 94 surface "K" for H; p. 98 $W_{1}$ where the theorem needs $W$; p. 100 equivalence
+    (2) without its final "≡ 0"; p. 107 a stray period; p. 108 "figure 1" where Fig. 4 seems meant,
+    and "+C_3" against the rule of p. 86; p. 109 the cut "DD'" with the value of DE'. Readings that
+    are odd but clearly printed are kept without a note, e.g. "en 1901" twice on p. 45 (the third
+    and fourth Compléments appeared in 1902), p. 58 "X ∽ … , Y = …" and "fois connexes", p. 60
+    "precisément", p. 62 "c'est à-dire", p. 63 a period in the 2° list, pp. 69 and 106 "deux a
+    deux", p. 82 "l'equivalence", p. 83 "côtes", p. 90 "(cf. § 1)", p. 105 "determinant", p. 109
+    "Le déterminant est égal à −1" (the printed homologies give +1), p. 110 "ni a fortiori". The
+    edition's own forms are kept: "Analysis Situs" (italic, lower-case "situs" once, on p. 74),
+    "1\textsuperscript{er}", "2\textsuperscript{d}", indices $m'_{i.1}$ with a period.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-sonnet-5-5
+    effort: null
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-05"

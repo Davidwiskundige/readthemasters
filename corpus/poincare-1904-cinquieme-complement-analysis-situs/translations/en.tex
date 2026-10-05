@@ -1,0 +1,1475 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. Every mathematical expression, formula, symbol, \origpage{N} marker, tag,
+% environment, and structural anchor is reproduced unchanged; only the prose (and the prose inside
+% \text{...} inserts, R21: the connectives of the Table (27) and of the lists on p. 107) is
+% translated. The editorial notes (\ednote) of the transcription are carried over unchanged, since
+% they are already in English and some carry mathematics.
+%
+% TERMINOLOGY. Poincaré's own terms are rendered literally and consistently, following the English
+% translations of poincare-1895-analysis-situs and its first four Complements, which this paper
+% continues:
+%   * variété = "manifold"; variété fermée / développable = "closed" / "developable manifold";
+%     homéomorphe = "homeomorphic"; unilatère / bilatère = "one-sided" / "two-sided"; simplement
+%     connexe, n fois connexe = "simply connected", "n times connected"
+%   * squelette = "skeleton" (emphasized at its definition); cul de sac = "dead end"; tronçon =
+%     "segment"; bifurcation = "bifurcation"; ellipse de gorge = "throat ellipse"; nappe = "sheet"
+%   * cycle / cycle non bouclé = "cycle" / "non-looped cycle"; cycles fondamentaux = "fundamental
+%     cycles"; cycles principaux = "principal cycles"; cicatrice = "scar"; coupure = "cut";
+%     lèvre = "lip"; sequence / incompatible = "sequence" / "incompatible"
+%   * equivalence (propre, impropre) = "equivalence" ("proper", "improper"); homologie sans / par
+%     division = "homology without / with division"; groupe fondamental = "fundamental group";
+%     coefficients de torsion = "torsion coefficients"; nombre de Betti = "Betti number"
+%   * polygone fuchsien de la 1re / 3e famille = "Fuchsian polygon of the 1st / 3rd family";
+%     cercle fondamental = "fundamental circle"; droite non-euclidienne = "non-Euclidean line";
+%     point double = "double point"; croiser = "cross" (of pairs of points on a circle)
+%   * C. Q. F. D. = "Q. E. D."; "M.~X" before a name = "Mr.~X"; the French space before a colon
+%     (~:) is set tight, as in English; titles of periodicals are cited as printed; the ditto marks
+%     » of Table (27) are kept as printed
+%
+% PRINTER'S ERRORS. The transcription's hedged \ednote on each apparent misprint is carried over
+% verbatim. Where a misprint is a word whose literal rendering would be meaningless in English
+% ("Un arcs", "drote", "qu", "intérieure"), the intended word is translated and the note records
+% what is printed. Readings that still make sense in English are rendered as printed (p. 45
+% "1901" twice; p. 109 "the determinant is equal to -1"), and all misprints inside formulae are, of
+% course, reproduced as printed.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{45}
+\section*{Fifth supplement to the Analysis Situs.}
+
+By Mr.~H.~Poincaré, in Paris.
+
+\emph{Session of 22 November 1903.}
+
+\subsection*{\S~1.}
+
+I have already had frequent occasion to occupy myself with Analysis Situs; I first published a memoir on this subject in the volume of the ``Centenary of the Journal de l'École Polytechnique''; this memoir was followed by four supplements, which appeared in vol.~XIII of the ``Rendiconti del Circolo Matematico di Palermo'', in vol.~XXXVII\ednote{Printed XXXVII; on p.~104 the same volume of the Proceedings is cited as vol.~32.} of the ``Proceedings of the London Mathematical Society'', in the ``Bulletin de la Société Mathématique de France'' in 1901, and finally in the ``Journal de Liouville'' in 1901.
+
+I return once more today to this same question, persuaded that it can be mastered only by repeated efforts and that it is important enough to deserve them.
+
+This time I have confined myself to the study of certain manifolds of three dimensions, but the methods that I have employed will doubtless be of more general use. In passing I have dwelt at some length on certain properties of the closed curves that one can draw on the closed surfaces of ordinary space.
+
+The final result that I had in view is the following. In the second supplement I showed that to characterize a manifold it is not enough to know its Betti numbers, but that certain coefficients which I called torsion coefficients (second supplement, \S~5, page 301) played an important role.
+
+\origpage{46}
+
+One might then ask whether the consideration of these coefficients suffices; whether a manifold all of whose Betti numbers and torsion coefficients are equal to 1 is for that reason simply connected in the proper sense of the word, that is, homeomorphic to the hypersphere; or whether, on the contrary, it is necessary, before asserting that a manifold is simply connected, to study its \emph{fundamental group}, as I defined it in the ``Journal de l'École Polytechnique'', \S~12, page 60.
+
+We can now answer this question; I have indeed formed an example of a manifold all of whose Betti numbers and torsion coefficients are equal to 1, and which nevertheless is not simply connected.
+
+\subsection*{\S~2.}
+
+I consider a manifold $V$ of $m$ dimensions situated in space of $k$ dimensions. Let next
+\[ \varphi(x_{1}, x_{2}, \ldots, x_{k}) = t \]
+be the equation of a surface of $k - 1$ dimensions situated in this same space, which I shall call the surface $\varphi(t)$; in this equation $x_{1}, x_{2}, \ldots, x_{k}$ are the coordinates of a point in space of $k$ dimensions and $t$ is an arbitrary parameter such that the surface $\varphi(t)$ deforms continuously when $t$ varies continuously. I shall suppose that the function $\varphi$ is single-valued, so that through any point there passes one surface $\varphi(t)$ and only one.
+
+The surface $\varphi(t)$ will cut $V$ along a certain number of manifolds of $m - 1$ dimensions
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+whose totality will form the system $W(t)$.
+
+When $t$ varies continuously from $-\infty$ to $+\infty$, the system $W(t)$ will vary continuously and will \emph{generate} the manifold $V$. If the manifold $V$ is closed, the manifolds $w(t)$ will be so too.
+
+This being so, I am going to define what I shall call the \emph{skeleton} of the manifold $V$. To each of the partial manifolds $w_{1}(t), w_{2}(t), \ldots, w_{p}(t)$ I shall make correspond a point in ordinary space. One of the coordinates of this point, $x$ for example, will be equal to the parameter $t$; the other two will be chosen arbitrarily, subject only to the following conditions:
+
+\origpage{47}
+
+1° If two manifolds $w_{i}(t)$, $w_{i}(t + \varepsilon)$ differ very little from one another, the two corresponding points must be very near one another.
+
+2° It may happen that for certain values of $t$, for $t = t_{0}$ for example, one of the manifolds $w(t)$ decomposes into two others; in that case, for instance, the manifold $w_{1}(t_{0} - \varepsilon)$ will differ very little from the set of the two manifolds $w_{1}(t_{0} + \varepsilon) + w_{2}(t_{0} + \varepsilon)$. In that case one must arrange matters so that the two points which represent the two manifolds $w_{1}(t_{0} + \varepsilon)$ and $w_{2}(t_{0} + \varepsilon)$ resulting from the splitting of $w_{1}(t_{0} - \varepsilon)$, that these two points, I say, differ very little from one another and very little from the representative point of $w_{1}(t_{0} - \varepsilon)$.
+
+Under these conditions, when $t$ varies continuously, the representative points of the $p$ manifolds
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+will generate $p$ continuous lines
+\[ L_{1}, \qquad L_{2}, \qquad \ldots, \qquad L_{p}; \]
+at least as long as the number $p$ does not vary. But this number may vary for $t = t_{0}$, if one of the manifolds decomposes into two, or if, on the contrary, two manifolds unite into a single one. In the first case one of the lines $L$ bifurcates, in the second two of the lines $L$ unite into a single one.
+
+One thus obtains a sort of network of lines, and it is this network that I call the \emph{skeleton} of $V$. I have drawn this network in space of 3 dimensions and not in the plane, because one can thus always avoid two lines cutting one another at points other than the points of bifurcation.
+
+If we follow one of these lines, $L_{1}$ for example, described by the representative point of $w_{1}(t)$, we see that this manifold $w_{1}(t)$ remains constantly homeomorphic to itself [and this in such a way that on the two very close manifolds $w_{1}(t)$ and $w_{1}(t + \varepsilon)$, two corresponding points differ very little from one another] \emph{as long as one does not pass through a value of $t$ such that $w_{1}(t)$ has a singular point}.
+
+We must therefore mark on the lines of our network the points which correspond to the manifolds $w(t)$ that have singular points. These will be points of division which will cut our lines into segments, but as long as one follows one of these segments, the corresponding manifold $w(t)$ will remain homeomorphic to itself.
+
+\origpage{48}
+
+Let us remark that if one considers one of the values $t_{0}$ which correspond to the points of bifurcation, and for which one of the manifolds $w_{i}$ splits, the manifold $w_{i}(t_{0})$ likewise admits a singular point. This will therefore oblige us to study these singular points.
+
+But before proceeding to this study, I must still make a few remarks. If I want the manifold $V$ to be closed, it is first necessary that the manifolds $w(t)$ be closed themselves. The second condition is that, if one of my lines $L$ ends in a dead end, so that it stops for $t = t_{1}$ for example, the corresponding manifold must tend to reduce to a point when $t$ tends to $t_{1}$, that is, when one approaches the dead end.
+
+In the second place, I said that I chose the function $\varphi$ single-valued, so that through a point of space there passes one surface $\varphi = t$ and only one. Under these conditions the system $W(t)$ is not arbitrary. This restriction did not prevent me from showing that every manifold $V$ is susceptible of this mode of generation, but one can free oneself from it, and consider any system $W(t)$ of closed manifolds
+\[ w_{1}(t), \qquad w_{2}(t), \qquad \ldots, \qquad w_{p}(t) \]
+provided that these manifolds vary continuously with $t$, supposing of course that for certain values of $t$, one of these manifolds may reduce to a point, or decompose into two others.
+
+Under these conditions the system $W(t)$ will still generate a manifold $V$ and one will be able to define its skeleton according to the same principles, in which there will be nothing to change.
+
+There is, however, a case in which one can with advantage make a slight change. I imagine that for two values of $t$, for example for $t = 0$ and for $t = 2\pi$, the system $W(t)$ is the same, or better, I imagine that the two systems $W(t)$ and $W(t + 2\pi)$ are identical. It then suffices to make $t$ vary from 0 to $2\pi$, and it is consequently appropriate to choose the representative point of the manifold $w(t)$, no longer so that one has $x = t$, but so that $\mathrm{arc\,tg}\,\dfrac{y}{x} = t$, that is, so that the representative points of $w(t)$ and $w(t + 2\pi)$ may be identical.
+
+If we suppose for example that $W(t)$ reduces to a single manifold $w(t)$, the skeleton of $V$ will under these conditions reduce to a closed curve.
+
+\origpage{49}
+
+To take a perfectly simple example, let us consider a torus, which will be our manifold $V$, and regard it as generated by its meridian circle, which will be our manifold $w(t)$, identical with $w(t + 2\pi)$. With our new conventions, the skeleton of this torus reduces to a closed curve.
+
+Let us now approach the study of the singular points of the manifolds $w(t)$. The portion of one of these manifolds near the singular point can be represented by the following equations:
+\[ \begin{aligned} x_{i} &= \psi_{i}(y_{1}, y_{2}, \ldots, y_{q}) \qquad (i = 1, 2, \ldots k)\\ \varphi_{h}(y_{1}, y_{2}, \ldots, y_{q}) &= 0 \qquad (h = 1, 2, \ldots, q - m), \end{aligned} \]
+to which one would need to adjoin certain inequalities with which we need not concern ourselves.
+
+In the region considered, the functions $\varphi$ and $\psi$ are holomorphic. We can always suppose that the singular point corresponds to
+\[ y_{1} = y_{2} = \ldots = y_{q} = 0 \]
+and that for this value the partial derivatives of the 1\textsuperscript{st} order of the functions $\varphi$ are not all zero, \emph{except for one of them $\varphi_{1}$}.
+
+Then, from the equations
+\[ \varphi_{2} = \varphi_{3} = \ldots = \varphi_{q-m} = 0 \]
+we can draw all the $y$ as functions of $m + 1$ of them, which functions will remain holomorphic in the neighborhood of the singular point. I shall therefore replace the $y$ by the expressions thus found, so that everything will be expressed as a function of $m + 1$ of the quantities $y$, for example of $y_{1}, y_{2}, \ldots, y_{m+1}$, and our equations will take the form:
+\[ \begin{aligned} x_{i} &= \psi_{i}(y_{1}, y_{2}, \ldots, y_{m+1})\\ \varphi_{1}(y_{1}, y_{2}, \ldots, y_{m+1}) &= 0. \end{aligned} \]
+
+The function $\varphi_{1}$ is expandable in powers of the $y$ and this expansion begins with terms of the 2\textsuperscript{nd} degree whose totality constitutes a quadratic form
+\[ f(y_{1}, y_{2}, \ldots, y_{m+1}). \]
+
+It is useless to consider the singular points of the other types; for if there were any, it would suffice to make them disappear to change very slightly the function $\varphi(x_{1}, \ldots, x_{k})$ which defines the surfaces $\varphi(t)$, at least if one supposes that the manifold $V$ is itself free of singular points.
+
+\origpage{50}
+We are thus led to study the cone of the second degree
+\[ f(y_{1}, y_{2}, \ldots, y_{m+1}) = 0 \]
+in the space of $m + 1$ dimensions of the $y$, and its intersection with the hypersphere
+\[ y^{2}_{1} + y^{2}_{2} + \ldots + y^{2}_{m+1} = 1. \]
+
+Let $C$ be this intersection. Everything will depend on the number of dimensions and on the number of positive and negative squares in the decomposition of the form $f$ into a sum of squares.
+
+We can always, by a change of coordinates, reduce $f$ to the form:
+\[ f = \sum A_{i} y^{2}_{i} - \sum B_{k} y^{2}_{k}, \]
+the coefficients $A$ and $B$ being positive, so that there are $q$ positive squares and $m + 1 - q$ negative squares and that the index $i$ varies from 1 to $q$ and the index $k$ from $q + 1$ to $m + 1$.
+
+I can then write:
+\[ \sum A_{i} y^{2}_{i} = \sum B_{k} y^{2}_{k} = \lambda^{2}; \]
+whence
+\[ y_{i} = \eta_{i} \lambda, \qquad y_{k} = \eta_{k} \lambda, \]
+the $\eta$ being any solutions of the equations:
+\[ \sum A_{i} \eta^{2}_{i} = 1, \qquad \sum B_{k} \eta^{2}_{k} = 1. \tag{1} \]
+
+From this one deduces:
+\[ \lambda^{2}\left(\sum \eta^{2}_{i} + \sum \eta^{2}_{k}\right) = 1. \]
+
+Taking equations (1) into account one will see that the upper and lower limits of $\displaystyle\sum \eta^{2}_{i}$ are the inverses of the smallest and of the largest of the coefficients $A$. One will find likewise an upper and a lower limit of $\displaystyle\sum \eta^{2}_{k}$. One will conclude that $\lambda$ is a continuous function of the $\eta$ [supposed connected by equations (1)] and that this function can neither vanish nor become infinite. We can therefore suppose that $\lambda$ always remains positive; and then $\lambda$ will be a continuous and perfectly determined function of the $\eta$; the same will therefore hold for the $y$.
+
+Several cases may present themselves:
+
+1° If $q$ is zero or equal to $m + 1$, so that all the squares have the same sign, it is clear that the cone reduces to a point and that $C$ does not exist.
+
+2° If $q$ is not equal to 1, one will be able to pass continuously
+
+\origpage{51}
+from any solution of the equation $\displaystyle\sum A_{i} \eta^{2}_{i} = 1$ to any other solution; if on the contrary $q = 1$, this equation will admit only two solutions: $\eta_{1} = \pm \dfrac{1}{\sqrt{A_{1}}}$ and one will not be able to pass from one to the other continuously.
+
+Likewise if $q$ is not equal to $m$, one will be able to pass continuously from any solution of the equation $\displaystyle\sum B_{k} \eta^{2}_{k} = 1$ to any other solution; if on the contrary $q = m$, the equation will have only two solutions and the passage will be impossible.
+
+Besides the case examined above, there are therefore 3.
+
+If $1 < q < m$, $C$ is in one piece.
+
+If $1 = q < m$, or if $1 < q = m$, $C$ is composed of two pieces.
+
+If $1 = q = m$, $C$ is composed of four pieces, or better reduces to four discrete points.
+
+In this last case one has $m = 1$, and the manifold $V$ has only two dimensions; this warns us that we are going to meet a difference between manifolds of two dimensions and of more than two dimensions.
+
+Let us suppose first that $V$ has two dimensions ($m = 1$); we may then have:
+
+1° $q = 0$ or $q = 2$. In this case $C$ does not exist; when $t$ passes through the value which corresponds to such a singular point we see a new manifold $w(t)$ appear (or disappear): it first reduces to a point, then to a small closed curve. This singular point therefore corresponds to a dead end of the skeleton.
+
+2° $q = 1$. In this case $C$ reduces to 4 points which I can number 1, 2, 3, 4. The manifold $w(t)$ reduces to a curve which admits, as singular point, an ordinary double point where two branches of curve cross, which are the branches 1.3 and 2.4. I suppose that the singular point occurs for $t = 0$; I shall call $1'$, $2'$, $3'$, $4'$ the points of the manifold $w(t)$ which, for very small values of $t$, are respectively very near the points 1, 2, 3, 4 of the manifold $w(0)$.
+
+I begin by observing that the branch of curve which, starting from the double point, goes to the point 1, must return to the double point, since all our curves are closed; it can return there through one of the three other points 2, 3, 4. It follows that our points 1, 2, 3, 4 are associated in pairs, for example 1 with 2, and 3 with 4, in such a way that one
+
+\origpage{52}
+can go from 1 to 2 and from 3 to 4 following the curve $w(0)$ and without passing in the neighborhood of the double point. Likewise one will be able to go from $1'$ to $2'$ and from $3'$ to $4'$ following the curve $w(t)$ and without passing in the neighborhood of the double point, and this for all small values of $t$, whether positive or negative.
+
+Now, if we consider the neighborhood of the double point, we see that for $t < 0$, for example, one can pass from $1'$ to $2'$ and from $3'$ to $4'$ following $w(t)$ and passing near the double point, whereas one cannot pass in this way from $1'$ to $4'$ and from $2'$ to $3'$. On the contrary, for $t > 0$, one can pass from $1'$ to $4'$ and from $2'$ to $3'$, but not from $1'$ to $2'$ and from $3'$ to $4'$.
+
+It follows that for $t < 0$, the branches considered of $w(t)$ form two distinct closed curves, whereas for $t > 0$, they form only one.
+
+Our singular point therefore corresponds to a bifurcation of the skeleton.
+
+It is the same if 1 is associated with 4, and 2 with 3.
+
+But let us now suppose that 1 is associated with 3, and 2 with 4. We then see that for $t < 0$, as for $t > 0$, our manifold $w(t)$ reduces to a single closed curve; only for $t < 0$ this curve passes successively through the points $1'3'4'2'1'$, and for $t > 0$ through the points $1'3'2'4'1'$. Our singular point then no longer corresponds to a bifurcation.
+
+But I say that, in this case, the manifold $V$ is one-sided.
+
+To see this, let us take any closed surface of two dimensions (two-sided or one-sided), and cut it up (leaving it in a single piece) so as to be able to develop it onto a plane; we shall thus obtain a polygon, analogous to the Fuchsian polygons, whose sides will be conjugate in pairs, two conjugate sides corresponding to the two lips of one and the same cut.
+
+Let $AB$ and $A'B'$ be two conjugate sides, so that the vertex $A$ is conjugate to $A'$ and the vertex $B$ to $B'$. If in going from $A$ to $B$ or to the interior\ednote{The print reads “ou à l'intérieur” here and in the three similar clauses that follow; the clause then has no verb, and “on a l'intérieur” is evidently meant.} of the polygon, on its left for example, and if in going from $A'$ to $B'$ or to the interior on its right, we shall say that the conjugation is \emph{direct}.
+
+If on the contrary in going from $A$ to $B$ or to the interior on its left, and if in going from $A'$ to $B'$ or to the interior likewise on its left, we shall say that the conjugation is \emph{inverse}. (This convention will at first surprise
+
+\origpage{53}
+but it is justified with a little reflection.) This being so, if all the pairs of sides are conjugated \emph{directly} (as happens for the Fuchsian polygons) it is because the surface from which one started was two-sided. If for one pair of sides the conjugation is inverse, it is because this surface was one-sided.
+
+Suppose for example that our polygon is a rectangle whose vertices follow one another in the circular order $ABCD$ and whose opposite sides are conjugate. If $AB$ is conjugate to $DC$, and $AD$ to $BC$, the conjugation is direct, and the polygon can be regarded as arising from the development of a torus, a two-sided surface. If $AB$ is conjugate to $CD$, and $AD$ to $BC$, the conjugation is inverse for one of the pairs and direct for the other, and the polygon arises from the development of a one-sided surface analogous to that of Möbius. If $AB$ is conjugate to $CD$, and $AD$ to $CB$, the conjugation is inverse for both pairs and the polygon arises from the development of the ``projective plane'' which is a one-sided surface.
+
+\rmfigure{figures/fig-01.png}{Fig.~1.}{Part of the developed polygon: two straight lines E1O3E' and H2O4H' crossing at the singular point O; four hyperbola-like arcs B1'2'C, D2'3'A', B'3'4'C' and D'4'1'A bend away from O between them; the ends of the arcs and lines lie on four short boundary segments AEB, CHD, A'E'B' and C'H'D'.}
+
+This being so, let us apply these rules to our manifold $V$, cut it up and lay it out on a plane so as to obtain our polygon. I represent in the figure only the part of the polygon that interests us.
+
+\origpage{54}
+
+We have at $O$ the singular point; the lines $CHD$, $AEB$, $C'H'D'$, $A'E'B'$ represent a portion of the boundary of the polygon. The two lines $E1O3E'$ and $H2O4H'$ which cross at $O$ are the development of the curve $w(0)$. The lines $B1'2'C$, $B'3'4'C'$ are the development of the curve $w(t)$ for $t < 0$. The lines $D2'3'A'$ and $D'4'1'A$ are the development of the curve $w(t)$ for $t > 0$. By hypothesis this curve $w(t)$ closes upon itself in such a way that the branch $1'$ joins the branch $3'$ and the branch $2'$ the branch $4'$. Hence $A$ must come to be glued to $A'$, that is, $A$ is conjugate to $A'$ and likewise $B$ to $B'$, $C$ to $C'$, $D$ to $D'$. Thus, on our polygon, $AB$ is conjugate to $A'B'$, and $CD$ to $C'D'$; the conjugation is inverse. Hence our surface is one-sided. Q.~E.~D.
+
+If therefore $V$ has two dimensions and is two-sided, its skeleton will have no other singular points than the dead ends and the bifurcations. That is the secret of the relative simplicity of the Analysis Situs of ordinary surfaces.
+
+I come to the manifolds $V$ of 3 dimensions ($m = 3$)\ednote{Printed $m = 3$. The text is inconsistent here: p.~46 introduces $V$ as a variety of $m$ dimensions, which agrees with $m = 3$; but p.~51 gives a $V$ of two dimensions $m = 1$, and on that convention three dimensions give $m = 2$, which matches the cases below, $q = 0$ or $q = 3 = m + 1$ (cf.~p.~50) and $q = 1$ or $q = m$.} to which I shall confine myself for the moment. We still have to distinguish two cases:
+
+1° $q = 0$ or $q = 3$; then $C$ does not exist, and the singular point corresponds to a dead end of the skeleton.
+
+2° $q = 1$ or $q = 2$; then $C$ is composed of two pieces; the manifold $w(0)$ presents an ordinary conical point (if the singular point corresponds to $t = 0$); the parts of this manifold near the singular point can be likened to an ordinary cone of the 2\textsuperscript{nd} degree. Let us now give $t$ very small values. The parts of $w(t)$ near the singular point will be comparable, for example, to a hyperboloid of one sheet for $t < 0$ and to a hyperboloid of two sheets for $t > 0$.
+
+Let us consider the throat ellipse $E$ of the hyperboloid of one sheet; this ellipse for $t = -\varepsilon$ (where $\varepsilon$ is positive and very small) is a very small closed cycle drawn on $w(t)$; for $t = 0$, it reduces to a point and, for $t = +\varepsilon$, it disappears.
+
+What we have called $C$ (intersection of the cone and the hypersphere) is composed here of two closed curves (one is in the case $q = 1$, or $q = m$), and we must distinguish two cases: either one cannot pass from one of these two closed curves to the other while remaining on $w(t)$ and without passing in the neighborhood of the singular point, or this passage is possible.
+
+In the first case, the ellipse $E$ divides the manifold $w(-\varepsilon)$ into two
+
+\origpage{55}
+parts, for one cannot pass from the neighborhood of one of the curves $C$ to the neighborhood of the other curve $C$ without passing in the neighborhood of the singular point, that is, without cutting the throat ellipse $E$. One will therefore have on $w(-\varepsilon)$
+\[ E \backsim 0. \]
+
+In the second case, on the contrary, $E$ will not divide $w(-\varepsilon)$.
+
+In the first case, the sheets of $w(t)$ which are going to pass in the neighborhood of the singular point form a single closed surface for $t = -\varepsilon$ since one can always pass from one point to another of one of these sheets and in particular from the neighborhood of one of the curves $C$ to that of the other by crossing the ellipse $E$. On the contrary for $t = +\varepsilon$, they will form two closed surfaces, since one can no longer pass from one of the curves $C$ to the other.
+
+\emph{In this first case, our singular point therefore corresponds to a bifurcation of the skeleton}.
+
+In the second case, on the contrary, these sheets of $w(t)$ always form a single closed surface, as well for $t = -\varepsilon$ as for $t = +\varepsilon$ since one can always pass from one curve $C$ to the other without passing near the singular point.
+
+\emph{In this second case, our singular point does not correspond to a bifurcation}.
+
+This second case subdivides in its turn. Let us consider a path allowing one to pass from one curve $C$ to the other without passing near the singular point. When one follows this path, if one wishes to preserve the form of the equations, it will be necessary from time to time to change variables and replace the variables $y$ by other variables $y'$, then the $y'$ by new variables $y''$, etc. We shall always suppose that these changes of variables have been made in such a way that the functional determinant of the new variables with respect to the old ones is positive. Let $\chi_{1}, \chi_{2}, \ldots, \chi_{m+1}$ be the final variables when one returns to the neighborhood of the singular point. We shall thus have the $x$ as functions of the $\chi$, but as in the neighborhood of the singular point our equations which give the $x$ as functions of the $y$ become valid again, the series becoming convergent again, we shall have the $\chi$ as functions of the $y$; two cases can therefore present themselves according as the functional determinant of the $\chi$ with respect to the $y$ is positive or negative. In the first case the path is two-sided, in the second case one-sided. This is what I explained in the Analysis Situs, in defining one-sided manifolds.
+
+\origpage{56}
+
+Then, if there exist paths which allow one to pass from one curve $C$ to the other without passing in the neighborhood of the singular point: either all these paths will be two-sided, or some will be two-sided and the others one-sided, or finally they will all be one-sided.
+
+\emph{For the moment we shall confine ourselves to the case where all the surfaces $w(t)$ are two-sided}. All our paths, if they exist, will therefore be two-sided.
+
+We know that for a two-sided surface, the Betti number is always odd. If therefore a two-sided surface is $2p + 1$ times connected, it admits $2p$ distinct cycles, that is, cycles no linear combination of which is homologous to zero. Let us then consider the $2p$ cycles of the surface $w(-\varepsilon)$; we shall first make a distinction among them, between those which meet the throat ellipse $E$ and those which do not meet it. If a cycle $K$ meets $E$, we shall have to distinguish the points of meeting into two categories according to the sign of a certain determinant, as I explained in the Analysis Situs, page 33. We shall thus define the number $N(K, E)$ (Cf.\ Analysis Situs, page 35), which will be the difference of the numbers of the points of intersection of the two categories. If the number $N$ relative to the cycle $K$ is zero, the cycle $K$ will be homologous to a cycle which meets $E$\ednote{Printed “qui rencontre $E$”. The contrast with the next sentence, where for $N$ not zero “tous les cycles homologues à $K$ rencontreront $E$”, and the argument that follows require “qui ne rencontre pas $E$”. In the copy scanned here a handwritten caret after “qui” marks an insertion at this point; it is not part of the print.}. If, on the contrary, this number $N$ is not zero, all the cycles homologous to $K$ will meet $E$.
+
+What happens then, when $t$, varying continuously, passes from the value $-\varepsilon$ to the value $+\varepsilon$? One will be able to find on $w(+\varepsilon)$ a line $K'$ infinitely little different from the cycle $K$ drawn on $w(-\varepsilon)$; only, if $K$ does not meet $E$ the line $K'$ is closed and constitutes a new cycle on $w(\varepsilon)$; if on the contrary $K$ meets $E$ the line $K'$ cannot be closed. Hence in order that there may be on $w(\varepsilon)$ cycles infinitely little different from a cycle homologous to $K$, it is necessary and sufficient that the number $N(K, E)$ be zero.
+
+In other words all the cycles for which this number is not zero will vanish when $t$ passes from $-\varepsilon$ to $+\varepsilon$, all the others will subsist.
+
+Let $K$ be a cycle of $w(-\varepsilon)$ which subsists, and $K'$ the corresponding cycle of $w(\varepsilon)$.
+
+In what cases shall we have:
+\[ K' \backsim 0? \]
+
+If one has $K' \backsim 0$, there will exist on $w(\varepsilon)$ an area $A'$ bounded by $K'$;
+
+\origpage{57}
+one will be able to find on $w(-\varepsilon)$ an area $A$ infinitely little different from $A'$, and this area will be bounded by $K$ alone or by $K$ and by the throat ellipse $E$, so that one will have
+\[ K \backsim 0 \quad \text{ or } \quad K \backsim E. \]
+
+I add that if we draw on $w(\varepsilon)$ any cycle $K'$, we shall always be able to find on $w(-\varepsilon)$ a cycle $K$ which differs from it very little, and that one cannot have $K \backsim 0$ without having $K' \backsim 0$; for if there exists on $w(-\varepsilon)$ an area $A$ bounded by $K$, there will exist on $w(\varepsilon)$ an area $A'$ bounded by $K'$ and differing very little from $A$.
+
+Hence, when $t$ passes from $-\varepsilon$ to $+\varepsilon$, certain cycles may vanish, but new cycles cannot appear, certain cycles may become homologous to zero, but no cycle can cease to be so, so that the Betti number $2p + 1$ may decrease, but cannot increase.
+
+It follows that only two cases can present themselves:
+
+1° either $E \backsim 0$ on $w(-\varepsilon)$; in this case we have seen that when $t$ passes from $-\varepsilon$ to $+\varepsilon$, the manifold $w(t)$ decomposes into two others.
+
+The cycles of $w(-\varepsilon)$ cannot vanish; indeed since one has $E \backsim 0$, one will have $N(K, E) = 0$ for all the cycles $K$. Moreover none of these cycles $K$ can become homologous to zero. We have seen indeed what the new homologies were that could be introduced among the cycles $K$ as a result of the passage of $t$ from $-\varepsilon$ to $+\varepsilon$; they can all be deduced from the new homology $E \backsim 0$; and indeed we said that in order to have $K' \backsim 0$ without having $K \backsim 0$, one must have $K \backsim E$. Now in the case which occupies us we have $E \backsim 0$ as well on $w(-\varepsilon)$ as on $w(\varepsilon)$. No new homology is therefore introduced.
+
+The total number of distinct cycles thus remains the same; if $w(-\varepsilon)$ is $2p + 1$ times connected, $w(\varepsilon)$ will decompose into two surfaces which will be respectively $2p' + 1$ times and $2p'' + 1$ times connected, where $p' + p'' = p$.
+
+2° In the second case one does not have $E \backsim 0$ on $w(-\varepsilon)$; we have seen that in this case $w(t)$ does not decompose; we suppose that $w(-\varepsilon)$ is $2p + 1$ times connected and possesses $2p$ distinct cycles. At the moment when $t$ becomes positive, certain cycles $K$ vanish; these are those which are such that $N(K, E)$ is not zero. But if one has two
+
+\origpage{58}
+cycles $K_{1}$ and $K_{2}$ such that
+\[ N(K_{1}, E) = m_{1}, \qquad N(K_{2}, E) = m_{2}, \]
+then one will have:
+\[ N(m_{2} K_{1} - m_{1} K_{2}, E) = 0, \]
+so that the cycle $m_{2} K_{1} - m_{1} K_{2}$ does not vanish. It follows that all the cycles which vanish are always a linear combination of \emph{one} of them and of the cycles which do not vanish. The number of distinct cycles therefore decreases \emph{on this account} by one unit, and by one only.
+
+On the other hand, among the subsisting cycles, there is introduced a new homology, and only one,
+\[ E \backsim 0, \]
+so that the number of cycles decreases by yet another unit.
+
+In sum, the total number of distinct cycles decreases in all by two units, so that $w(\varepsilon)$ is $2p - 1$ times connected.
+
+\subsection*{\S~3.}
+
+Before going further, we must recall briefly what is known about surfaces of two dimensions, or rather those of the properties of these surfaces which will be useful to us in what follows; I shall begin with the two-sided surfaces.
+
+It is known that a closed two-sided surface $2p + 1$ times connected admits $2p$ distinct cycles. Let
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p} \]
+be $2p$ fundamental cycles of the surface, chosen in such a way that every cycle of the surface is homologous to a linear combination of these $2p$ cycles.
+
+Let now:
+\[ X \backsim \sum x_{i} C_{i}, \qquad Y = \sum y_{i} C_{i} \]
+be two of these linear combinations where the coefficients $x$ and $y$ are any integers. Let us consider the number $N(X, Y)$ relative to the intersections of these two cycles $X$ and $Y$; this number is equal to
+\[ N(X, Y) = F(x, y), \]
+$F(x, y)$ being a bilinear form with respect to the variables $x$ and $y$.
+
+\origpage{59}
+
+This form has all its coefficients integers, it changes sign when $x$ and $y$ are interchanged so that
+\[ F(x, y) = -F(y, x), \]
+finally its discriminant is equal to 1.
+
+One can choose the fundamental cycles $C$ (and this in infinitely many ways) in such a way that the form $F(x, y)$ is \emph{reduced}, that is, reduces to
+\[ x_{1}y_{2} - x_{2}y_{1} + x_{3}y_{4} - x_{4}y_{3} + x_{5}y_{6} - x_{6}y_{5} + \ldots \]
+
+One sees that if the form $F$ is reduced, $N(C_{i}, C_{k})$ will be zero if the indices $i$ and $k$ are of the same parity; that is, if $i$ and $k$ are of the same parity, the cycles $C_{i}$ and $C_{k}$ will not cut one another, or will be homologous to cycles which do not cut one another.
+
+It will often be useful to us in what follows to replace our surface by a Fuchsian polygon; this can be done in two ways. Suppose that, the form $F$ being reduced, one considers the $p$ cycles of odd rank
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}, \]
+which, we may suppose, do not cut one another.
+
+Here moreover is how one can account for the generation of these cycles. Let us form the \emph{skeleton} of our surface; this skeleton will be a network on which $p$ distinct closed paths can be described; by choosing $p$ points suitably on this network, the $p$ closed paths will be cut, the network nevertheless remaining in one piece. Each of these points will represent a closed curve [which will be the manifold $w(t)$ of the preceding \S]. We shall thus have $p$ closed curves which will have no point in common and which will be our $p$ cycles
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+Let us cut our surface along these $p$ curves; it remains in one piece, but it can now be developed onto a plane, and after the development it will reduce to a plane area, bounded by $2p$ closed curves. One of these $2p$ curves bounds it externally and the others internally. These $2p$ curves are conjugate in pairs, two conjugate curves corresponding to the two lips of one and the same cut. This area will thus be likened to a Fuchsian polygon of the 3\textsuperscript{rd} family; and it may be advantageous to consider the Fuchsian group which it generates, and the decomposition of the plane into infinitely many polygons congruent to the generating polygon.
+
+\origpage{60}
+
+Let us now suppose that we cut our surface along the $2p$ cycles. The $2p$ cycles will have been able to be drawn so as to pass all through one and the same point and to have no other point in common. If, after this cutting, one develops the surface onto a plane, one will obtain a polygon of $4p$ sides conjugate in pairs, and likened to a Fuchsian polygon of the 1\textsuperscript{st} family. We shall be able to choose this Fuchsian polygon (which will have only a single cycle of vertices) in such a way that the sum of its angles is equal to $2\pi$. If the form $F$ is reduced, the law of conjugation of the sides will be the following: 1 with 3, 2 with 4, 5 with 7, 6 with 8, 9 with 11, 10 with 12, etc. Here too there will be occasion to consider the Fuchsian group and the decomposition of the fundamental circle into congruent polygons.
+
+But here a question arises which is going to detain us for some time. The Fuchsian group in question is nothing other than what I called on page 60 of the Analysis Situs the fundamental group of the surface. The notion of this group is founded on the notion of \emph{equivalence} of cycles and on the distinction between this notion and that of homology (Cf.\ pages 18 and 62 of the Analysis Situs).
+
+Let us consider two cycles $K$, and $K'$; starting from one and the same point $M$ and ending there, I shall write ``the equivalence'':
+\[ K \equiv K' \]
+if one can pass from one to the other by continuous deformation and without leaving the manifold considered. It may then happen that the cycle $K'$, coming to pass again several times through the initial point $M$, decomposes into several others and thus is equivalent to several consecutive cycles $K_{1}, K_{2}, K_{3}$ following one another in the order indicated; we shall then be able to write:
+\[ K \equiv K_{1} + K_{2} + K_{3}, \]
+but we have no right to interchange the order of the terms and to write for example:
+\[ K \equiv K_{1} + K_{3} + K_{2}. \]
+
+That is precisely what distinguishes equivalences from homologies; in the latter one has the right to interchange this order so that from the equivalence
+\[ K \equiv K_{1} + K_{2} + K_{3} \]
+we have the right to deduce not only the homology:
+\[ K \backsim K_{1} + K_{2} + K_{3} \]
+
+\origpage{61}
+but also the homology:
+\[ K \backsim K_{1} + K_{3} + K_{2}. \]
+
+Likewise suppose that $K'$, instead of starting from the point $M$, starts from another point $M'$ and ends there. Let $L$ be any path going from $M$ to $M'$. Then the cycle $L + K' - L$ will go like $K$ from $M$ to $M$. Suppose that one has the equivalence:
+\[ K \equiv L + K' - L, \]
+as we have no right to interchange the order of the terms, we cannot conclude from it the equivalence $K \equiv K'$, but only the homology $K \backsim K'$.
+
+Thus in homologies, the terms combine according to the rules of ordinary addition; in equivalences, the terms combine according to the same rules as the substitutions of a group; this is why the set of equivalences can, so to speak, be symbolized by a group which is the fundamental group of the manifold.
+
+In the case which occupies us, let us consider the fundamental circle decomposed as we have said into congruent Fuchsian polygons. Each of these polygons has $4p$ sides. Any cycle will be represented either by a closed line, or by a line going from a point of the plane to another ``congruent'' point (that is, transform of the first by one of the substitutions of the Fuchsian group).
+
+In the 1\textsuperscript{st} case the cycle is equivalent to zero, in the second it is not.
+
+The fundamental group is then the Fuchsian group itself, group derived from the $2p$ substitutions corresponding to the $2p$ fundamental cycles $C_{i}$; in the case where, the form $F$ being reduced, the law of conjugation of the sides of the Fuchsian polygon is the one that I stated above, one has among the $2p$ cycles a single equivalence which is written:
+\[ 0 \equiv C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} + C_{5} + C_{6} - C_{5} - C_{6} + \ldots \]
+
+This equivalence suffices to define the fundamental group.
+
+One may seek to form a cycle which is homologous to zero without being equivalent to zero. One sees first that there can be none if $p = 1$, for then the equivalence which I have just written becomes
+\[ C_{1} + C_{2} \equiv C_{2} + C_{1} \]
+and signifies that any two cycles are permutable (from the point of
+
+\origpage{62}
+view of equivalence). It is known moreover that in this case, the Fuchsian functions reduce to elliptic functions, the Fuchsian group has all its substitutions permutable.
+
+If $p > 1$, suppose that the law of conjugation of the sides is the one we stated above, that is, 1 with 3, 2 with 4, etc. Let 0 and 1 be the two vertices of side 1; let 1 and 2 be those of side 2, etc.; let finally $4p - 1$ and $4p = 0$ be those of side $4p$. Let us join the vertices 0 and 4 by a line remaining inside the polygon. This line will represent a cycle which will be equivalent to
+\[ C_{1} + C_{2} - C_{1} - C_{2}. \]
+
+It will therefore be homologous to zero; but it will not be equivalent to zero.
+
+Let us now have recourse to the other mode of representation; let us therefore represent our surface by a Fuchsian polygon of the 3\textsuperscript{rd} family bounded by $2p$ closed curves conjugate in pairs, one of them bounding the polygon externally, the others internally.
+
+Let $k$ be one of these closed curves, corresponding to the cycle $C_{2}$, let $k'$ be its conjugate. Let $M$ be a point of $k$, $M'$ the corresponding point of $k'$; let us join $M$ to $M'$ by a stroke $MPM'$ which will correspond to the cycle $C_{1}$. Let us now draw inside the polygon a closed curve $K$ enclosing $k$ and $k'$, but enclosing none of the other curves which form the boundary of the polygon.
+
+Let $Q$ be a point on $k$ from which this cycle starts and where it ends. Let $L$ be a line going from $Q$ to $M$. It is clear that one will have the equivalence:
+\[ K \equiv L + k + MPM' + k' - MPM' - L, \]
+that is:
+\[ K \equiv L + C_{2} + C_{1} - C_{2} - C_{1} - L; \]
+from this equivalence one can conclude $K \backsim 0$, that is, $K$ is homologous to zero without being equivalent to zero.
+
+Let us see finally what happens on the surface itself, and let us confine ourselves to the \emph{non-looped} cycles, that is, \emph{to cycles which do not cut themselves}.
+
+Let $C$ be such a cycle homologous to zero; it will decompose the surface $2p + 1$ times connected into two parts, so that if one were to pinch the surface so as to reduce this cycle $C$ to a point, this surface would decompose into two others. If one of the two surfaces thus obtained is simply connected, then the cycle $C$ was equivalent to zero.
+
+\origpage{63}
+If these two surfaces are $2p' + 1$ times and $2p'' + 1$ times connected, where $p' > 0$, $p'' > 0$, $p' + p'' = p$, then on the contrary the cycle $C$ was homologous to zero, without being equivalent to zero.
+
+It is easy to see, and it has moreover long been known, that two two-sided surfaces, of 2 dimensions, having the same Betti number, are always homeomorphic. It suffices to remark that each of them can be replaced by a Fuchsian polygon of the 3\textsuperscript{rd} family, bounded by $2p$ closed curves and that two such polygons, that is, two areas bounded externally by a closed curve and internally by $2p - 1$ closed curves, are evidently always homeomorphic to one another.
+
+But one can go further. Let $S$ be a surface $2p + 1$ times connected; let us draw on this surface two systems of $2p$ cycles
+\[ \begin{matrix} C_{1}, & C_{2}, & \ldots, & C_{2p} \\[1ex] C'_{1}, & C'_{2}, & \ldots, & C'_{2p}. \end{matrix} \]
+The surface $S$ can always be regarded as homeomorphic to itself; that is, to a point $M$ of the surface we can make correspond another point $M'$ of this surface; in such a way that the law of correspondence is continuous and doubly single-valued. In what cases can this correspondence be chosen so that, when the point $M$ describes the cycles
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p}, \]
+the point $M'$ describes:
+
+1° either the cycles
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p}, \]
+
+2° or cycles equivalent to
+\[ C'_{1}, \qquad C'_{2}. \qquad \ldots, \qquad C'_{2p}, \]
+
+3° or cycles homologous to
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p}. \]
+
+I shall treat only the 3\textsuperscript{rd} question, which is the easiest. I consider the form $F(x, y)$ which represents the number $N$ relative to the intersection of the cycles $\displaystyle\sum x C$ and $\displaystyle\sum y C$. I consider likewise the form $F'(x', y')$ relative to the intersection of the cycles $\displaystyle\sum x' C'$ and $\displaystyle\sum y' C'$.
+
+It is clear first that if the correspondence is possible in such a way that $M'$ describes a cycle homologous to $C'_{i}$ when $M$ describes a cycle homologous to $C_{i}$, the two forms must be identical, that is,
+
+\origpage{64}
+differ only by the substitution of the variables $x'$, $y'$ for the variables $x$ and $y$. If, for example, we suppose that $F$ is reduced and that
+\[ F = x_{1}y_{2} - x_{2}y_{1} + x_{3}y_{4} - x_{4}y_{3} + \ldots, \]
+one must have:
+\[ F' = x'_{1}y'_{2} - x'_{2}y'_{1} + x'_{3}y'_{4} - x'_{4}y'_{3} + \ldots \]
+The cycles $C'$ are linear combinations of the cycles $C$ and, if we suppose
+\[ \sum x C = \sum x' C', \qquad \sum y C = \sum y' C', \]
+the new variables $x'$ and $y'$ will likewise be linear combinations with integer coefficients of the $x$ and the $y$. It is therefore necessary that the form $F$ not be altered by the linear substitution which takes one from the $x$ to the $x'$ and from the $y$ to the $y'$.
+
+\emph{I say that this necessary condition is likewise sufficient}.
+
+To prove it, let us see what are the linear substitutions which do not alter the form $F$, which we shall suppose reduced.
+
+1° If we suppose that one has:
+\[ \begin{aligned} &x'_{1} = x_{1} + x_{2}, \qquad x'_{i} = x_{i} \qquad (i > 1),\\ &y'_{1} = y_{1} + y_{2}, \qquad y'_{i} = y_{i} \qquad (i > 1), \end{aligned} \]
+it is clear that one will have:
+\[ x'_{1}y'_{2} - x'_{2}y'_{1} + \ldots = x_{1}y_{2} - x_{2}y_{1} + \ldots \]
+
+It is clear that it will still be the same, if we put
+\[ x'_{2} = x_{1} + x_{2}, \]
+or else
+\[ x'_{3} = x_{3} + x_{4}, \]
+or else
+\[ x'_{4} = x_{4} + x_{3}, \]
+or, more generally,
+\[ x'_{2k-1} = x_{2k-1} + x_{2k}; \]
+or finally
+\[ x'_{2k} = x_{2k-1} + x_{2k}, \]
+all the other $x'_{i}$ being equal to the corresponding $x_{i}$.
+
+It will still be the same if the $x$ undergo substitutions inverse to the preceding ones, that is, if one puts:
+\[ x'_{2k-1} = x_{2k-1} - x_{2k}, \]
+or else
+\[ x'_{2k} = x_{2k} - x_{2k-1}, \]
+all the other $x'_{i}$ being equal to the corresponding $x_{i}$.
+
+\origpage{65}
+
+It goes without saying that the linear substitution which takes one from the $y$ to the $y'$ is identical with that which takes one from the $x$ to the $x'$.
+
+Here then is a first type of linear substitutions which do not alter the reduced form $F$.
+
+2° Here now is a second type.
+
+Suppose that one puts:
+\[ \begin{gathered} x'_{1} = x_{1} + x_{3}, \qquad x'_{4} = x_{4} - x_{2} \\ x'_{i} = x_{i} \qquad (\text{except for } i = 1 \text{ and for } i = 4), \end{gathered} \]
+or more generally:
+\[ \begin{gathered} x'_{2K-1} = x_{2K-1} + x_{2j-1}, \qquad x'_{2j} = x_{2j} - x_{2K} \\ x'_{i} = x_{i} \qquad (\text{except for } i = 2K - 1 \text{ and for } i = 2j); \end{gathered} \]
+it is clear that the reduced form $F$ is not altered.
+
+It is not altered either by the inverse substitution:
+\[ \begin{gathered} x'_{2K-1} = x_{2K-1} - x_{2j-1}, \qquad x'_{2j} = x_{2j} + x_{2K} \\ x'_{i} = x_{i} \qquad (\text{except for } i = 2K - 1 \text{ for } i = 2j). \end{gathered} \]\ednote{The print has no “et” before the second “pour” here; the parallel clause two displays above reads “et pour”.}
+
+That is our second type.
+
+Now it is easy to see that every substitution which does not alter the reduced form $F$ can be considered as a combination of substitutions falling under these two types.
+
+It therefore suffices to prove the theorem for the substitutions of these two types.
+
+As regards first the second type, we can represent our surface by a Fuchsian polygon of the 3\textsuperscript{rd} family, bounded both externally and internally by $2p$ closed curves:
+\[ A_{1}, \qquad A'_{1}; \qquad A_{3}, \qquad A'_{3}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+conjugate in pairs and corresponding to the $p$ cycles of odd index
+\[ C_{1}, \qquad C_{3}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+To construct the $p$ cycles of even index, it suffices to proceed in the following way.
+
+Let
+\[ P_{1}, \qquad P_{3}, \qquad \ldots, \qquad P_{2p-1} \]
+be $p$ points taken arbitrarily on the curves $A_{1}, A_{3}, \ldots, A_{2p-1}$; let $P'_{1}, P'_{3}, \ldots, P'_{2p-1}$ be the corresponding points on the conjugate curves $A'_{1}, A'_{3}, \ldots, A'_{2p-1}$. Let us join $P_{1}$ to $P'_{1}$, $P_{3}$ to $P'_{3}$, \ldots, $P_{2p-1}$ to $P'_{2p-1}$
+
+\origpage{66}
+by $p$ lines
+\[ L_{1}, \qquad L_{3}, \qquad \ldots, \qquad L_{2p-1} \]
+drawn in such a way as not to cut one another mutually. These $p$ lines will be homologous to the $p$ cycles of even index:
+\[ C_{2}, \qquad C_{4}, \qquad \ldots, \qquad C_{2p}. \]
+
+To simplify, we shall suppose that it is the curve $A_{5}$ (which will play no role in what follows) that bounds our Fuchsian polygon externally. Let us construct a curve $B$ which encloses the two curves $A_{1}$ and $A_{3}$, and encloses no others; this curve $B$ will represent a cycle homologous to
+\[ C_{1} + C_{3}. \]
+
+Let $R$ be the region bounded externally by this curve $B$ and internally by $A_{1}$ and $A_{3}$. Let us consider the substitution of the Fuchsian group which changes $A_{1}$ into $A'_{1}$ (and which corresponds moreover to the cycle $C_{2}$). Let $R'$ be the transform of the region $R$ by this substitution; it will be bounded externally by $A'_{1}$ and internally by two closed curves $B'$ and $A''_{3}$, transforms of $B$ and $A_{3}$.
+
+Let us modify the Fuchsian polygon by cutting off the region $R$ and adding to it the region $R'$. Our new Fuchsian polygon will be bounded externally by $A_{5}$ and internally by
+\[ A'_{5}; \qquad B; \qquad B'; \qquad A'_{3}, \qquad A''_{3}; \qquad A_{7}, \qquad A'_{7}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1}. \]
+
+Two points of the plane, transforms of one another by a substitution of the Fuchsian group, correspond evidently to one and the same point of the surface $S$. Our new Fuchsian polygon will therefore correspond like the old one to the whole surface $S$ since the suppressed region $R$ has been replaced by its transform $R'$. Moreover these two polygons, which are both plane areas bounded by $2p$ closed curves, are homeomorphic to one another and in such a way that
+\[ A_{1}, \qquad A'_{1}; \qquad A_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+correspond to:
+\[ B, \qquad B'; \qquad A''_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1}. \]
+
+It follows that in this homeomorphism, the odd cycles
+\[ C_{1}, \qquad C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1} \]
+will correspond to cycles homologous to
+\[ C_{1} + C_{3}, \qquad C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+\origpage{67}
+
+To what will the cycles of even order correspond? Each of these cycles corresponds to a substitution of the Fuchsian group, for example $C_{2}$ to the substitution $T_{1}$ which changes $A_{1}$ into $A'_{1}$, $C_{4}$ to the substitution $T_{3}$ which changes $A_{3}$ into $A'_{3}$, etc. It is evident moreover that in the homeomorphism in question the substitution $T_{1}$ is replaced by that which changes $B$ into $B'$ (cycles which correspond to $A_{1}$ and $A'_{1}$) and which is still $T_{1}$, the substitution $T_{3}$ by that which changes $A''_{3}$ into $A'_{3}$ and which is $T^{-1}_{1} T_{3}$, and that the other substitutions do not change. This already lets us foresee that the cycles
+\[ C_{2}, \qquad C_{4}, \qquad C_{6}, \qquad \ldots \]
+will correspond to
+\[ C_{2}, \qquad C_{4} - C_{2}, \qquad C_{6}, \qquad \ldots \]
+
+But a doubt might remain, for the substitution $T_{1}$ corresponds not only to the cycle $C_{2}$, but to all the cycles $C_{2} + K$, $K$ being any linear combination of the cycles of odd order.
+
+We must therefore return to the lines $L$ which we have just defined; we can always suppose that none of these lines cuts $B$, with the exception of the lines $L_{1}$ and $L_{3}$ which will cut $B$ at $N_{1}$ and $N_{3}$; I shall denote by $M_{1}$ and $M'_{1}$, $M_{3}$ and $M'_{3}$ the points of intersection of $A_{1}$ and $A'_{1}$ with $L_{1}$, of $A_{3}$ and $A'_{3}$ with $L_{3}$; by $N'_{1}$ and $N'_{3}$ the transforms of $N_{1}$ and $N_{3}$ by $T_{1}$ which are on $B'$, and I shall consider the segments $N'_{1}M'_{1}$, $N'_{3}M''_{3}$ which are the transforms by $T_{1}$ of the segments of $N_{1}M_{1}$ and $N_{3}M_{3}$ of the lines $L_{1}$ and $L_{3}$. The point $M''_{3}$ is on $A''_{3}$. The lines $L$ and the new segments $N'_{1}M'_{1}$, $N'_{3}M''_{3}$ cut one another at no point.
+
+We shall further consider the segments $N_{3}N_{1}$ on $B$ and $N'_{3}N'_{1}$ on $B'$, or better the segments $N_{3}N^{0}_{1}$ and $N'_{3}N'^{0}_{1}$ ending at points $N^{0}_{1}$ and $N'^{0}_{1}$ situated on $B$ and $B'$ infinitely near $N_{1}$ and $N'_{1}$, and in such a way that $N_{1}$ and $N'_{1}$ are not on the arcs $N_{3}N^{0}_{1}$ and $N'_{3}N'^{0}_{1}$; I shall consider moreover a line $N'^{0}_{1}M'^{0}_{1}N^{0}_{1}$ infinitely near $N'_{1}M'_{1}N_{1}$ and not cutting it; with the aid of these various segments I shall be able to construct the lines
+\[ L'_{1}, \qquad L'_{3}, \qquad \ldots \]
+corresponding in our homeomorphism to the lines
+\[ L_{1}, \qquad L_{3}, \qquad \ldots \]
+The first will be the line $N_{1}M'_{1}N'_{1}$; the second which must go from $M''_{3}$ to $M'_{3}$ will be $M''_{3}N'_{3} + N'_{3}N'^{0}_{1} + N'^{0}_{1}M'^{0}_{1}N^{0}_{1} + N^{0}_{1}N_{3} + N_{3}M_{3}$; moreover
+
+\origpage{68}
+$L'_{5}$ will be identical with $L_{5}$, $L'_{7}$ with $L_{7}$, etc. To convince oneself of this it suffices to verify that these various lines do not cut one another.
+
+One sees then that these lines are homologous to:
+\[ L_{1}, \qquad L_{3} - L_{1}, \qquad L_{5}, \qquad \ldots, \]
+which means that to the cycles $C_{2}$, $C_{4}$, etc. there correspond:
+\[ C_{2}, \qquad C_{4} - C_{2}, \qquad C_{6}, \qquad \ldots \]
+We have therefore in sum $C'_{i} \backsim C_{i}$ except for $i = 1$ or 4, and
+\[ C'_{1} \backsim C_{1} + C_{3}, \qquad C'_{4} \backsim C_{4} - C_{2}. \]
+
+If therefore we suppose $\displaystyle\sum x C = \displaystyle\sum x' C'$, one will have $x_{i} = x'_{i}$ except for $i = 2$ and 3 and
+\[ x'_{3} = x_{3} - x_{1}, \qquad x'_{2} = x_{2} + x_{4}. \]
+If one had wished to have:
+\[ x'_{3} = x_{3} + x_{1}, \qquad x'_{2} = x_{2} - x_{4}, \]
+it would have been necessary to draw $B$ around $A_{1}$ and $A'_{3}$ and not around $A_{1}$ and $A_{3}$. If one had wished to have:
+\[ x'_{1} = x_{1} - x_{3}, \qquad x'_{4} = x_{2} + x_{4}, \]
+it would have been necessary to draw $B$ around $A_{1}$ and $A_{3}$ and to transform the region $R$, no longer by $T_{1}$, but by $T_{3}$.
+
+This procedure is therefore applicable to all the substitutions of the 2\textsuperscript{nd} type.
+
+One will operate in an analogous way for the substitutions of the 1\textsuperscript{st} type; I suppose for example
+\[ x'_{1} = x_{1} + x_{2} \qquad x'_{i} = x_{i} \qquad (i > 1), \]
+that is:
+\[ C_{1} \backsim C'_{1}, \qquad C'_{2} \backsim C_{2} - C_{1}. \]
+
+I shall represent our surface neither by a Fuchsian polygon of the 3\textsuperscript{rd} family, nor by a Fuchsian polygon of the 1\textsuperscript{st} family as I did above, but I shall employ an analogous mode of representation and, so to speak, an intermediate one.
+
+Let us remark indeed that nothing obliges us to restrict ourselves to Fuchsian polygons properly so called, that is, to polygons bounded by arcs of circles cutting one and the same fundamental circle orthogonally. In a question like the one which occupies us, nothing prevents us from replacing, for example, a Fuchsian polygon of the 1\textsuperscript{st} family
+
+\origpage{69}
+by another curvilinear polygon homeomorphic to it, but which is moreover arbitrary.
+
+We can take advantage of this elasticity to adopt the following mode of representation.
+
+Our polygon will be bounded externally by a curvilinear quadrilateral and internally by $2p - 2$ closed curves. The opposite sides of the quadrilateral will be conjugate and on the other hand the $2p - 2$ closed curves will be conjugate in pairs in any manner whatever.
+
+Let $abcd$ be the four vertices of the quadrilateral,
+\[ A_{3}, \qquad A'_{3}; \qquad A_{5}, \qquad A'_{5}; \qquad \ldots; \qquad A_{2p-1}, \qquad A'_{2p-1} \]
+the $2p - 2$ closed curves conjugate in pairs; these closed curves will correspond to $p - 1$ of the cycles of odd order
+\[ C_{3}, \qquad C_{5}, \qquad \ldots, \qquad C_{2p-1}. \]
+
+The sides $ab$ and $dc$ of the quadrilateral will correspond to the cycle $C_{1}$; the sides $ad$ and $bc$ to the cycle $C_{2}$.
+
+We shall take on the closed curves $A_{i}$ any points $P_{i}$; we shall join each of the points $P_{i}$ to the corresponding point $P_{i}$\ednote{Printed $P_{i}$ without a prime; the next sentence, which joins $P_{i}$ to $P'_{i}$, requires $P'_{i}$ here.} of the curve $A'_{i}$. The line $L_{i}$ which joins $P_{i}$ to $P'_{i}$ will correspond to the cycle $C_{i+1}$, on condition that these lines $L$ have been drawn so as not to cut the sides of the quadrilateral and not to cut one another mutually.
+
+Let us join the opposite vertices $a$ and $c$ of the quadrilateral by a curvilinear diagonal $ac$, which will divide this quadrilateral into two triangles $acb$ and $acd$ and which must be drawn in such a way that all the closed curves $A$ and $A'$ are inside the 1\textsuperscript{st} triangle $acb$.
+
+The group which will play the role of our Fuchsian groups of a moment ago will be derived from the following substitutions: $T_{1}$ which changes $ad$ into $bc$; $T_{2}$ which changes $ab$ into $dc$; $T_{i}$ $(i = 3, 5, \ldots, 2p - 1)$ which\ednote{Printed “qu” for “qui” at the end of the line.} change $A_{i}$ into $A'_{i}$.
+
+Let $bcf$ be the transform of the triangle $adc$ by $T_{1}$.
+
+One can replace the triangle $adc$ by the triangle $bcf$ and consequently one can replace our generating polygon by a new polygon bounded externally by the quadrilateral $abfc$ and internally by the $2p - 2$ closed curves $A$ and $A'$; these closed curves are still conjugate in pairs and the opposite sides of the quadrilateral are conjugate.
+
+These two polygons (which both correspond to the surface $S$
+
+\origpage{70}
+as a whole) are homeomorphic to one another and in such a way that
+\[ ab, \qquad bc, \qquad cd, \qquad da, \qquad A_{i}, \qquad A'_{i}, \qquad L_{i} \]
+correspond respectively to:
+\[ ab, \qquad bf, \qquad fc, \qquad ca, \qquad A_{i}, \qquad A'_{i}, \qquad L_{i}. \]
+The cycles
+\[ C_{1}, \qquad C_{2}, \qquad C_{i}, \qquad C_{i+1} \]
+will therefore correspond in this homeomorphism to
+\[ C_{1}, \qquad C_{2} + C_{1}, \qquad C_{i}, \qquad C_{i+1}. \]
+
+Hence the surface $S$ is homeomorphic to itself in such a way that to the cycle $C_{k}$ there corresponds the cycle $C'_{k}$, supposing
+\[ \begin{aligned} &C'_{k} = C_{k} \qquad (k = 1, 3, 4, 5, \ldots, 2p)\\ &C'_{2} = C_{2} + C_{1}. \end{aligned} \]
+In this case one has
+\[ x'_{1} = x_{1} - x_{2}, \qquad x'_{2} = x_{2}, \qquad x'_{3} = x_{3}, \qquad \ldots, \qquad x'_{2p} = x_{2p}. \]
+It is therefore a substitution of the 1\textsuperscript{st} type for which the theorem is found proved, and it is clear that it would be proved in the same way for all the other substitutions of the 1\textsuperscript{st} type.
+
+We can therefore say in sum:
+
+\emph{The necessary and sufficient condition for the surface $S$ to be homeomorphic to itself in such a way that to the cycles $C_{i}$ there correspond cycles homologous to the cycles $C'_{i}$, is that the form $F(x, y)$ relative to the cycles $C$ be identical with the form $F(x', y')$ relative to the cycles $C'$}.
+
+It is easy to conclude from this that a cycle $\displaystyle\sum a_{i} C_{i}$ is always homologous to a \emph{non-looped} cycle, that is, one not cutting itself, if the integers $a_{i}$ are relatively prime. If on the contrary these integers $a_{i}$ are not relatively prime, it cannot be homologous to a non-looped cycle.
+
+Let us establish first the 1\textsuperscript{st} point.
+
+It will suffice to prove that one can find $2p$ cycles
+\[ C'_{1}, \qquad C'_{2}, \qquad \ldots, \qquad C'_{2p} \]
+such that
+\[ C'_{1} = \sum a_{i} C_{i} \]
+and that the form $F(x', y')$ relative to the cycles $C'$ be identical with the form $F(x, y)$ relative to the cycles $C$; in such a way that one has:
+\[ F(x', y') = x'_{1}y'_{2} - x'_{2}y'_{1} + x'_{3}y'_{4} - x'_{4}y'_{3} + \ldots \]
+
+\origpage{71}
+if we suppose, as we ordinarily do, that the cycles $C$ have been chosen so that the form $F(x, y)$ is reduced.
+
+Indeed, if the cycles $C'$ satisfy this condition, the surface $S$ will be homeomorphic to itself in such a way that to the cycle $C_{i}$ there corresponds a cycle homologous to $C'_{i}$. Hence one will be able to find a cycle homologous to $C'_{1}$ which in this homeomorphism will correspond to $C_{1}$ and which consequently will not be looped, since $C_{1}$ is not looped.
+
+Let us remark first that if the integers $a_{i}$ are relatively prime, one will be able to find $2p$ cycles
+\[ C''_{1}, \qquad C''_{2}, \qquad \ldots, \qquad C''_{2p} \]
+such that
+\[ \begin{aligned} C''_{1} &= C'_{1} = \sum a_{i} C_{i}, \\ C''_{k} &= \sum b_{ik} C_{i}, \end{aligned} \]
+the $a_{i}$ and the $b_{ik}$ being integers whose determinant is equal to 1.
+
+Let $F(x'', y'')$ be the form relative to the cycles $C'$\ednote{Printed $C'$; the form $F(x'', y'')$ is the one relative to the cycles $C''$.}.
+
+What relation must there be between the variables $x'$ and $x''$? The cycle $C'_{1}$ having to be identical with $C''_{1}$, it is clear that
+\[ x'_{2}, \qquad x'_{3}, \qquad \ldots, \qquad x'_{2p} \]
+must be linear combinations of
+\[ x''_{2}, \qquad x''_{3}, \qquad \ldots, \qquad x''_{2p} \]
+and that the same must hold of the difference $x'_{1} - x''_{1}$.
+
+It remains to prove that there exists a linear change of variables which satisfies this condition and which at the same time is such that the form $F(x', y')$ is reduced.
+
+Now we can write:
+\[ F(x'', y'') = x''_{1} Y_{2} - y''_{2} X_{2} + \Phi(x'', y''), \]\ednote{Printed $y''_{2}$; the reduced form of $F$ requires $y''_{1}$ in the second term, as the substitution $y'_{1} = y''_{1} - Y'$ on p.~72 confirms.}
+where $X_{2}$ is a linear combination of $x''_{2}, x''_{3}, \ldots, x''_{2p}$ whose coefficients are relatively prime integers; where $Y_{2}$ is the same combination of $y''_{2}, y''_{3}, \ldots, y''_{2p}$; where finally $\Phi$ is a bilinear form of
+\[ x''_{2}, \qquad x''_{3}, \qquad \ldots, \qquad x''_{2p}; \qquad y''_{2}, \qquad y''_{3}, \qquad \ldots, \qquad y''_{2p}. \]
+
+I said that the coefficients of $X_{2}$ are relatively prime integers, and indeed, if the greatest common divisor were $a > 1$, the determinant of the form $F(x'', y'')$ would be divisible by $a^{2}$; which is impossible since this determinant is equal to 1.
+
+These coefficients being relatively prime, we can find
+
+\origpage{72}
+$2p - 1$ linear combinations
+\[ X_{2}, \qquad X_{3}, \qquad \ldots, \qquad X_{2p} \]
+of $x''_{2}, x''_{3}, \ldots, x''_{2p}$, the first of which is precisely $X_{2}$ and whose coefficients are integers whose determinant is equal to 1.
+
+Under these conditions $\Phi$ will be a bilinear form of
+\[ X_{2}, \qquad X_{3}, \qquad \ldots, \qquad X_{2p} \]
+and of the corresponding combinations
+\[ Y_{2}, \qquad Y_{3}, \qquad \ldots, \qquad Y_{2p} \]
+formed with the $y''$. We shall then be able to write:
+\[ \Phi = X_{2} Y' - Y_{2} X' + \psi(X, Y), \]
+where $X'$ is a linear combination of $X_{3}, X_{4}, \ldots, X_{2p}$; where $Y'$ is the same combination of the $Y$; where $\psi$ is a bilinear form of the $4p - 4$ variables
+\[ X_{3}, \qquad X_{4}, \qquad \ldots, \qquad X_{2p}; \qquad Y_{3}, \qquad Y_{4}, \qquad \ldots, \qquad Y_{2p}. \]
+
+The determinant of this form $\psi$ must divide that of $F$; it will therefore be equal to 1. The form $\psi$ having determinant 1, one can find $2p - 2$ linear combinations
+\[ x'_{3}, \qquad x'_{4}, \qquad \ldots, \qquad x'_{2p} \]
+of the variables $X_{3}, X_{4}, \ldots, X_{2p}$, such that the form $\psi$ is reduced when one takes the $x'$ for new variables, with the corresponding combinations $y'$ of the $Y$.
+
+If then we put
+\[ \begin{aligned} x'_{1} &= x''_{1} - X', &\qquad y'_{1} &= y''_{1} - Y', \\ x'_{2} &= X_{2}, & y'_{2} &= Y_{2}, \end{aligned} \]
+there will result:
+\[ F = x'_{1}y'_{2} - x'_{2}y'_{1} + \psi. \]
+
+The form $\psi$ being reduced, the same will hold of $F$, so that our new variables $x'$ do answer the question.
+
+The first point is therefore established.
+
+Let us suppose now that the $a_{i}$ are not relatively prime; I say that every cycle homologous to $\displaystyle\sum a_{i} C_{i}$ is looped. Let indeed
+\[ a_{i} = b_{i} d, \]
+$d$ being the greatest common divisor of the $a_{i}$, and the $b_{i}$ being relatively prime
+
+\origpage{73}
+to one another. Let then:
+\[ \sum b_{i} C_{i} = C'_{1}, \qquad \sum a_{i} C_{i} = dC'_{1}. \]
+According to what precedes, the surface $S$ will be homeomorphic to itself, in such a way that $C_{1}$ corresponds to $C'_{1}$. It therefore suffices for us to show that every cycle homologous to $dC_{1}$ is looped; since in our homeomorphism every cycle homologous to $\displaystyle\sum a_{i} C_{i}$ will correspond to a cycle homologous to $dC_{1}$.
+
+For this, let us take up again the representation of our surface $S$ by a Fuchsian polygon $R_{0}$ of $4p$ sides and of the 1\textsuperscript{st} family, a polygon which with its various transforms will fill the surface of the fundamental circle.
+
+Let $K$ be our cycle which we suppose homologous to $dC_{1}$. This cycle will be represented by a certain line $amb$, going from a certain point $a$ inside the fundamental circle to a point $b$ transform of $a$ by a substitution of the Fuchsian group. Besides this line we must consider all its transforms by the various substitutions of the Fuchsian group; for any one of these transforms represents, like the line itself, the circle $C$\ednote{Printed cercle $C$; the line $amb$ represents the cycle $K$ named in the preceding sentences.}.
+
+We shall consider in particular the arcs of the line $amb$ or of its transforms which will be inside the polygon $R_{0}$. The set of these arcs will be what I shall call the \emph{image} of the cycle $K$.
+
+This image will be composed of a certain number of arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n} \]
+going from certain points $A_{1}, A_{2}, \ldots, A_{n}$ situated on the perimeter of $R_{0}$ to other points $B_{1}, B_{2}, \ldots, B_{n}$, situated likewise on the perimeter of $R_{0}$. In order that the cycle be continuous and closed, it is necessary that the points $B_{1}$ and $A_{2}$, $B_{2}$ and $A_{3}$, \ldots, $B_{n-1}$ and $A_{n}$, $B_{n}$ and $A_{1}$ correspond to one and the same point of $S$, and, consequently, that they be \emph{conjugate} points of the perimeter of $R_{0}$, that is, corresponding points on two conjugate sides.
+
+Let us make a number correspond to each point of the perimeter of $R_{0}$ and this in the following way: 1° the numbers corresponding to the points $A_{i}$ and $B_{i}$ will be integers; 2° the numbers corresponding to the other points of the perimeter will be equal to integers $+ \frac{1}{2}$; 3° in following the perimeter in the direct sense, our number will vary only when one passes through a point $A_{i}$ or through a point $B_{i}$; 4° it will increase suddenly by one unit when one crosses one of the points $A_{i}$, and it will decrease
+
+\origpage{74}
+suddenly by one unit when one crosses one of the points $B_{i}$; 5° the value of the number at one of the points $A_{i}$ or at one of the points $B_{i}$ will be the arithmetic mean between the two constant values of this number along the two arcs which end at this point. If, for example, in following the perimeter in the direct sense one meets successively the points
+\[ A_{3} \qquad A_{2} \qquad B_{1} \qquad B_{2} \qquad A_{1} \qquad B_{3} \]
+the number will be equal to 0 at $A_{3}$, to $\frac{1}{2}$ on the arc $A_{3}A_{2}$, to 1 at $A_{2}$, to $1 + \frac{1}{2}$ on the arc $A_{2}B_{1}$, to 1 at $B_{1}$, to $\frac{1}{2}$ on the arc $B_{1}B_{2}$, to 0 at $B_{2}$, to $-\frac{1}{2}$ on the arc $B_{2}A_{1}$, to 0 at $A_{1}$, to $\frac{1}{2}$ on the arc $A_{1}B_{3}$, to 0 at $B_{3}$ and finally to $-\frac{1}{2}$ on the arc $B_{3}A_{3}$.
+
+As there are as many points $A$ as points $B$, one will fall back on the initial value after having traversed the whole perimeter.
+
+This being so, I say first that if the cycle is not looped, or, what comes to the same, if the arcs $A_{i}B_{i}$ do not cut one another mutually, the two points $A_{i}$ and $B_{i}$ correspond to one and the same number. Let indeed $\alpha$ be one of the two arcs which on the perimeter of $R_{0}$ go from $A_{i}$ to $B_{i}$. If the point $A_{k}$ lies on this arc $\alpha$, the point $B_{k}$ must lie there also; for if the two pairs of points $A_{i}B_{i}$, $A_{k}B_{k}$ were \emph{crossed}, that is, if they were placed on the perimeter so as to separate one another mutually, the two arcs $A_{i}B_{i}$ and $A_{k}B_{k}$ would have to cut. It follows that there are on the arc $\alpha$ as many points $A$ as points $B$, which amounts to saying that the two extremities $A_{i}$ and $B_{i}$ of the arc $\alpha$ correspond to one and the same number. Q.~E.~D.
+
+Let us now compare the numbers corresponding to the points $B_{i}$ and $A_{i+1}$ (for more symmetry in the notation, I shall denote the point $A_{1}$ indifferently by the notations $A_{1}$ and $A_{n+1}$).
+
+These points $A_{i}$ and $B_{i+1}$\ednote{Printed $A_{i}$ and $B_{i+1}$; the preceding sentence and p.~73 give $B_{i}$ and $A_{i+1}$ as the conjugate pair. The same pairing $A_{i}$, $B_{i+1}$ recurs on p.~76.}, we have said, are \emph{conjugate} on the perimeter of $R_{0}$.
+
+How shall we express that our cycle $K$ is homologous to $dC_{1}$; this means that if one considers the intersections of the cycle $K$ with the various fundamental cycles $C_{i}$, and if one agrees to regard these intersections as positive or negative according to the sense in which the two cycles cut one another (cf.\ \emph{Analysis situs}, Journal de l'École Polytechnique) the number of positive intersections will be the same as that of negative intersections for all the cycles $C_{i}$ except for
+
+\origpage{75}
+$C_{2}$, and that for $C_{2}$ the first number exceeds the second by $d$ units. (I say $C_{2}$, because $C_{1}$ cuts $C_{2}$ in one point, and does not cut the other cycles $C_{i}$, if we choose the fundamental cycles so that the form $F$ is reduced.)
+
+In other words, let
+\[ P_{1}, \qquad P_{2}, \qquad P'_{1}, \qquad P'_{2}, \qquad P_{3}, \qquad P_{4}, \qquad P'_{3}, \qquad P'_{4} \]
+be the successive sides of $R_{0}$; I suppose $p = 2$ to fix ideas; in this case the sides $P_{1}, P_{2}, P_{3}, P_{4}$ are respectively conjugate to $P'_{1}, P'_{2}, P'_{3}, P'_{4}$. The side $P_{i}$ corresponds to the cycle $C_{i}$ and the side $P'_{i}$ to the cycle $C_{i}$ traversed in the inverse sense. Such indeed is the law of conjugation of the sides when the form $F$ is reduced.
+
+Let then $N_{i}$ be the number of the points $A$ which are found on $P_{i}$ minus the number of the points $B$ which are found on this same side $P_{i}$; let $N'_{i}$ be the corresponding difference for the side $P'_{i}$.
+
+One will then have
+\[ N_{2} = d, \qquad N'_{2} = -d, \qquad N_{1} = N_{3} = N_{4} = N'_{1} = N'_{3} = N'_{4} = 0. \]
+
+These are the conditions which express that the cycle $K$ is homologous to $dC_{1}$.
+
+We shall denote by $Q_{i}$, $S_{i}$ the two vertices of the side $P_{i}$ in such a way that in traversing this side in the direct sense one goes from $Q_{i}$ to $S_{i}$; likewise $Q'_{i}$, $S'_{i}$ will be the two vertices of $P'_{i}$. It is clear from this definition that the vertex $S_{1}$ will be identical with the vertex $Q_{2}$, the vertex $S_{2}$ with the vertex $Q'_{1}$, etc.
+
+The number corresponding to $S_{i}$ will be equal to that which corresponds to $Q_{i}$ increased by $N_{i}$; and as all the $N$ and $N'$ are multiples of $d$, we must conclude that the numbers corresponding to the various vertices of $R_{0}$ differ from one another by multiples of $d$.
+
+Let us now consider two conjugate sides $P_{i}$ and $P'_{i}$ and imagine two points, the first traversing the side $P_{i}$ in the direct sense going from $Q_{i}$ to $S_{i}$ and the second the side $P'_{i}$ in the inverse sense going from $S'_{i}$ to $Q'_{i}$ and \emph{so as to remain constantly conjugate}. When the first passes through a point $A$, the second will pass through the conjugate point which will be a point $B$; the number relative to the first will increase by one unit, and the same will hold of the number relative to the second since one has passed through a point $B$ \emph{walking in the inverse sense}. Likewise when the first point passes through a point $B$, the second will pass through a point $A$ and the two numbers will decrease by one unit.
+
+\origpage{76}
+
+The difference of the two numbers therefore remains constant and as it was originally a multiple of $d$, it will always be a multiple of $d$.
+
+Thus \emph{the two numbers relative to the two conjugate points $A_{i}$ and $B_{i+1}$ differ by a multiple of $d$}; and as the number relative to $B_{i}$ is equal to the number relative to $A_{i}$, we shall conclude finally that the numbers relative to the $2n$ points
+\[ \begin{matrix} A_{1}, & A_{2}, & \ldots, & A_{n} \\[1ex] B_{1}, & B_{2}, & \ldots, & B_{n} \end{matrix} \]
+differ from one another by multiples of $d$.
+
+Now let us follow the perimeter of $R_{0}$ in the positive sense and consider two consecutive points $A_{i}A_{k}$, or $A_{i}B_{k}$, or $B_{i}B_{k}$; according to our definition the numbers relative to these two points will be equal or will differ by one unit. If the differences can only be multiples of $d$, it will be necessary to conclude that all the numbers relative to the points $A$ and $B$ are equal to one another, and, for example, all equal to zero.
+
+Then for the other points of the perimeter, our number will be $\pm \frac{1}{2}$. If therefore we consider in particular two vertices of $R_{0}$, the difference of the two numbers will be 0 or $\pm 1$. Now for the two vertices $P_{2}$\ednote{Printed $P_{2}$; the two vertices of the side $P_{2}$ are named $Q_{2}$ and $S_{2}$ on p.~75.} and $Q_{2}$ this difference is $N_{2} = d$.
+
+We are thus led to a contradiction; which means that the hypothesis made at the beginning was absurd and that \emph{the cycle $K$ must be looped}. Q.~E.~D.
+
+\subsection*{\S~4.}
+
+We saw in the preceding \S\ that it is relatively easy to recognize whether a given cycle is homologous to a non-looped cycle, or whether two given cycles are respectively homologous to two cycles which do not cut one another. We are going in the present \S\ to examine an analogous question:
+
+How to recognize whether a given cycle is \emph{equivalent} to a non-looped cycle, or whether two given cycles are equivalent to two cycles which do not cut one another.
+
+But before approaching this question, let us return to the definition of equivalence.
+
+Up to now we have always understood this equivalence in the following way:
+
+\origpage{77}
+
+When we write
+\[ C \equiv C' \]
+we mean that the initial and final point of the closed cycle $C$ is the same as the initial and final point of $C'$, and that there exists between $C$ and $C'$ a simply connected area whose complete boundary is formed by $C$ and $C'$. Or, in other words, that one can pass from $C$ to $C'$ by making $C$ vary continuously and in such a way that the cycle remains constantly formed of a single closed curve and that the initial and final point remains invariable. This is what may be called \emph{proper equivalence}.
+
+It may be advantageous for us to write
+\[ C \equiv C' \qquad (\text{impr.}) \]
+when one can pass from $C$ to $C'$ by making $C$ vary continuously in such a way that the cycle remains constantly formed of a single closed curve \emph{but by making the initial and final point vary}. This is what may be called \emph{improper equivalence}. In other words, one will have the improper equivalence
+\[ C \equiv C' \qquad (\text{impr.}) \]
+when one has the proper equivalence
+\[ C \equiv -\alpha + C' + \alpha, \]
+$\alpha$ being any arc going from the initial and final point of $C'$ to the initial and final point of $C$.
+
+We shall thus have four sorts of relations: the proper equivalences, in which one has no right to interchange the order of the terms; the improper equivalences, in which one may change the order of the terms, but on condition of respecting their \emph{circular order}; the homologies without division, in which one may interchange this order in any manner whatever and which one may add, subtract and multiply; finally the homologies with division, which one may moreover divide.
+
+When there is no notice to the contrary, and when we speak of an equivalence, it will always be a proper equivalence that is meant.
+
+One may place oneself, in the study of the question which occupies us, at several different points of view. Let us first represent our surface by a Fuchsian polygon $R_{0}$ of the 1\textsuperscript{st} family, let us construct the various transforms of this polygon by the transformations of the corresponding Fuchsian group $G$; these transforms will fill the fundamental circle. Any cycle $C$ will then be represented by an arc of
+
+\origpage{78}
+curve $MM'$, going from a point $M$ to one of its transforms $M'$. Two properly equivalent cycles will be represented by two arcs of curve $MPM'$ and $MQM'$ having the same extremities and conversely two arcs having the same extremities will represent two equivalent cycles. An arc\ednote{Printed “arcs” after “Un”; read “arc”.} $M_{1}QM'_{1}$ will represent a cycle improperly equivalent to the cycle represented by the arc $MM'$, if the same substitution of the group $G$ which changes $M$ into $M'$ also changes $M_{1}$ into $M'_{1}$.
+
+Let there be an arc $MPM'$ representing a cycle $C$; let us consider the various transforms of this arc by the substitutions of the group $G$; all these transforms will likewise represent the cycle $C$. The condition for the cycle $C$ not to be looped is that the arc $MPM'$ cut none of its transforms.
+
+Likewise let $MPM'$, $M_{1}QM'_{1}$ be two arcs representing two cycles $C$ and $C'$; the condition for the two cycles $C$ and $C'$ not to cut one another is that the arc $MPM'$ cut neither the arc $M_{1}QM'_{1}$ nor any of its transforms.
+
+This being so, let us inquire whether among the cycles improperly equivalent to $C$ there are any which are not looped; let us take up again the arc $MPM'$ and the substitution $S$ of the group $G$ which changes $M$ into $M'$. This substitution is hyperbolic; indeed in the case which occupies us, which is that of a polygon $R_{0}$ of the 1\textsuperscript{st} family whose vertices form a single cycle and the sum of whose angles is $4\pi$\ednote{Printed $4\pi$. Page 60 gives $2\pi$ for the sum of the angles of this polygon, whose vertices form a single cycle.}, all the substitutions of $G$ are hyperbolic.
+
+The substitution $S$ therefore has two double points $\alpha$ and $\beta$ on the fundamental circle.
+
+Let us join these two points by a non-Euclidean straight line, that is, according to the terminology adopted in the theory of Fuchsian functions, by a circle cutting the fundamental circle orthogonally. Let $M_{1}$ be any point of this non-Euclidean line $\alpha\beta$; its transform $M'_{1}$ by the substitution $S$ will likewise be on this line $\alpha\beta$. Let $M_{1}QM'_{1}$ be the arc of the non-Euclidean line comprised between $M_{1}$ and $M'_{1}$. It will represent a cycle improperly equivalent to the cycle $MPM'$.
+
+Let us now consider the transforms of $M_{1}QM'_{1}$ by the various transformations of $G$; they will also be arcs of non-Euclidean line. The transforms by the substitution $S$ and its multiples will give us the whole line $\alpha\beta$; the other transforms will give us other non-Euclidean lines, namely the lines $\alpha'\beta'$ which join the two
+
+\origpage{79}
+double points $\alpha'$ and $\beta'$ of the various substitutions transforms of $S$ by the substitutions of $G$, that is, of the various hyperbolic substitutions $T^{-1}ST$, $T$ being a transformation of $G$.
+
+The cycle $M_{1}QM'_{1}$ will therefore not be looped if these various non-Euclidean lines do not cut one another; and in order that they may not cut one another, it is necessary and sufficient that for none of the substitutions $T^{-1}ST$ do the two double points $\alpha'$ and $\beta'$ \emph{cross} on the fundamental circle with the two double points $\alpha$ and $\beta$, that is, present themselves in the circular order $\alpha\alpha'\beta\beta'$ or in the inverse order.
+
+Conversely, I suppose that two of our non-Euclidean lines cut one another; I say that all the cycles improperly equivalent to $MPM'$ will be looped. If they do cut one another, it is because the double points $\alpha$, $\beta$ and $\alpha'$, $\beta'$ of $S$ and of $T^{-1}ST$ \emph{cross}. Let us consider any arc $M_{2}M'_{2}$ improperly equivalent to $MPM'$; then $M'_{2}$ is the transform of $M_{2}$ by $S$; let us consider first the transforms of the arc $M_{2}M'_{2}$ by the substitution $S$ and its multiples; they will join to one another the successive transforms of $M_{2}$ by the multiples of $S$; they will therefore form a continuous stroke which will go from $\alpha$ to $\beta$.
+
+For the same reason the transforms of the arc $M_{2}M'_{2}$ by the substitutions $S^{m}T$ (where $m$ is a positive or negative integer) will form a continuous stroke which will go from $\alpha'$ to $\beta'$; as the points $\alpha$, $\beta$; $\alpha'$, $\beta'$ are crossed, these two continuous strokes must cut, that is, two of the transforms of the arc $M_{2}M'_{2}$ cut, that is, the cycle $M_{2}M'_{2}$ is looped. Q.~E.~D.
+
+Likewise let $MPM'$ and $NQN'$ be two arcs representing two closed cycles.
+
+Among the cycles improperly equivalent to $MPM'$ and $NQN'$ are there any which do not cut one another? Let $S$ and $S_{1}$ be the substitutions which change $M$ into $M'$, and $N$ into $N'$. Let $\alpha$ and $\beta$ be the double points of $S$; $\alpha_{1}$ and $\beta_{1}$ the double points of $S_{1}$. Let us draw the two non-Euclidean lines $\alpha\beta$ and $\alpha_{1}\beta_{1}$, let us take on these two lines any two points $M_{1}$ and $N_{1}$; let $M'_{1}$ be the transform of $M_{1}$ by $S$, and $N'_{1}$ that of $N_{1}$ by $S_{1}$; the point $M'_{1}$ will be on the line $\alpha\beta$ and the point $N'_{1}$ on the line\ednote{Printed “drote”; read “droite”.} $\alpha_{1}\beta_{1}$.
+
+Let us consider the arcs of non-Euclidean line $M_{1}M'_{1}$ and $N_{1}N'_{1}$; they will represent two cycles improperly equivalent to $MPM'$ and to $NQN'$.
+
+\origpage{80}
+
+By a reasoning entirely like the preceding one, one would see that if the double points $\alpha$ and $\beta$ of $S$ do not cross with the double points $\alpha_{1}$ and $\beta_{1}$ of $S_{1}$, nor with the double points of the various transforms $T^{-1}S_{1}T$ of $S_{1}$, the cycles $M_{1}M'_{1}$ and $N_{1}N'_{1}$ do not cut one another; and that if on the contrary $\alpha$ and $\beta$ cross, either with $\alpha_{1}$ and $\beta_{1}$, or with the double points of one of the transforms $T^{-1}S_{1}T$, not only do the cycles $M_{1}M'_{1}$ and $N_{1}N'_{1}$ cut one another, but the same holds of any two cycles improperly equivalent to $MPM'$ and to $NQN'$.
+
+One may still present the matter under another form. Suppose that the cycle $M_{1}M'_{1}$ is not looped; then the non-Euclidean line $\alpha\beta$ and its various transforms do not cut one another; these non-Euclidean lines will then divide the surface of the fundamental circle into infinitely many regions. If the point $N$ belongs to one of these regions and if the point $N'$ transform of $N$ by $S_{1}$ belongs to another region, the cycles $M_{1}M'_{1}$ and $NN'$ will cut one another, as will the improperly equivalent cycles; if the two points $N$ and $N'$ belong to the same region, these cycles will not cut one another.
+
+Let us now place ourselves at another point of view. Let us consider a cycle $C$ represented by an arc $MPM'$; and all the transforms of this arc. The cycle will be looped if two of these transforms cut one another; but if there exists an intersection of two transforms, there will be infinitely many of them which are deduced from one another by the substitutions of $G$ and in particular, there will be one inside $R_{0}$.
+
+It will therefore suffice to consider the portions of the arc $MPM'$ and of its transforms which are inside $R_{0}$. Our cycle will then be represented by a certain number of arcs $A_{i}B_{i}$ which will go from a point of the perimeter of $R_{0}$ to another point of this perimeter.
+
+When a point describes on the closed surface $S$ the whole closed cycle $C$, the corresponding point on $R_{0}$ will describe successively the arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n}. \]
+
+The points $A$ and $B$ will belong to the perimeter of $R_{0}$, one knows that this perimeter is composed of a certain number of sides conjugate in pairs; it is clear that the points $B_{1}$ and $A_{2}$, $B_{2}$ and $A_{3}$, \ldots, $B_{n-1}$ and $A_{n}$, $B_{n}$ and $A_{1}$ must be conjugate.
+
+If the arcs $A_{i}B_{i}$ do not cut one another, the cycle is not looped.
+
+Likewise, if instead of one cycle, we consider two or several,
+
+\origpage{81}
+and if the representative arcs of these various cycles do not cut one another, these various cycles will not cut one another.
+
+Let us suppose, to fix ideas, $p = 2$. Then the polygon $R_{0}$ is an octagon whose consecutive sides represent respectively the cycles
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \]
+which shows first that one has among the 4 fundamental cycles the equivalence
+\[ C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} \equiv 0, \tag{26} \]
+since the polygon $R_{0}$ is a simply connected area.
+
+Let $M$ be a point inside $R_{0}$, $N$ a point situated on one of the sides of $R_{0}$, and $N'$ the corresponding point on the conjugate side. We see at once that the cycle $MN' + NM$ is improperly equivalent
+\[ \left\{ \begin{matrix} \text{to}\ +C_{2} & \text{if} & \text{the} & \text{point} & N & \text{is} & \text{on} & \text{the} & \text{side} & +C_{1} \\ \text{to}\ -C_{1} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{2} \\ \text{to}\ -C_{2} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{1} \\ \text{to}\ +C_{1} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{2} \\ \text{to}\ +C_{4} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{3} \\ \text{to}\ -C_{3} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & +C_{4} \\ \text{to}\ -C_{4} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{3} \\ \text{to}\ +C_{3} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & \text{»} & -C_{4}. \end{matrix} \right. \tag{27} \]
+This being so, we shall see that the arc $A_{i}B_{i}$ is equivalent to the arc $A_{i}MB_{i}$; consequently our cycle
+\[ C = A_{1}B_{1} + A_{2}B_{2} + \ldots + A_{n}B_{n} \]
+will be equivalent to
+\[ A_{1}MB_{1} + A_{2}MB_{2} + \ldots + A_{n}MB_{n} \]
+and consequently improperly equivalent to
+\[ (MB_{n} + A_{1}M) + (MB_{1} + A_{2}M) + \ldots + (MB_{n-1} + A_{n}M). \]
+Now any one of the expressions between parentheses, for example $MB_{1} + A_{2}M$, is analogous to the cycle $MN' + NM$ of which we have just spoken. It will therefore be equivalent to one of the fundamental cycles $\pm C_{1}$, $\pm C_{2}$, $\pm C_{3}$, $\pm C_{4}$ and to know to which of these cycles, it will suffice to examine on which side of $R_{0}$ the point $A_{i}$ is found and to refer to the table (27).
+
+\origpage{82}
+
+We see thus that our cycle $C$ is improperly equivalent to a combination of the fundamental cycles and we have the means of determining this combination. The combination thus found is not the only one to which $C$ is equivalent for we can transform the equivalence thus obtained by making use of the equivalence (26) which is the only one that holds among the fundamental cycles.
+
+Conversely, a combination $K$ of the fundamental cycles being given, we have the means of forming an equivalent cycle represented by a series of arcs $A_{1}B_{1}, A_{2}B_{2}, \ldots, A_{n}B_{n}$.
+
+Let us write our combination $K$, for example in the form
+\[ K = +C_{1} + C_{1} + C_{2} - C_{3} + C_{4} + C_{4} - C_{1} - C_{2} - C_{2} \]
+or in an analogous form; each of the terms of the combination will be one of the fundamental cycles $C_{i}$ affected by the coefficient $+1$ or $-1$. The set of two consecutive terms will be called a \emph{sequence} and I shall also call sequence the set of the last and the first term, so that there will be in our combination as many sequences as terms.
+
+To each sequence there will correspond an arc $A_{i}B_{i}$; the point $A_{i}$ will be found on the side
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \]
+if the 1\textsuperscript{st} term of the sequence is respectively
+\[ +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}, \]
+and the point $B_{i}$ will be found on the side
+\[ -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{2}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}, \qquad +C_{4}, \]
+if the 2\textsuperscript{nd} term of the sequence is respectively
+\[ +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{1}, \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}, \qquad +C_{3}. \]
+
+Two arcs $A_{i}B_{i}$ and $A_{k}B_{k}$ will necessarily cut if the points $A_{i}B_{i}$ \emph{cross} the points $A_{k}B_{k}$ on the perimeter of $R_{0}$. We shall then say that the two corresponding sequences are \emph{incompatible}. If on the contrary these four points do not cross, we shall be able to draw the two arcs in such a way that they do not meet.
+
+How shall we recognize whether two sequences are incompatible; this will present no difficulty if the four points $A_{i}B_{i}A_{k}B_{k}$ are on four different sides; the circular order of these four points will be that of the four sides, which is known.
+
+But if for example $A_{i}$ and $A_{k}$ are on the same side, one must consider
+
+\origpage{83}
+two consecutive sequences $A_{i-1}B_{i-1} + A_{i}B_{i}$ and $A_{k-1}B_{k-1} + A_{k}B_{k}$. We want the points $A_{i-1}B_{i-1}$ and $A_{k-1}B_{k-1}$ on the one hand not to cross and the points $A_{i}B_{i}$ and $A_{k}B_{k}$ on the other hand not to cross either. To designate a side on which one of the points $A_{i}$ etc.\ is found, we shall employ this same letter $A_{i}$.
+
+By hypothesis the points $A_{i}$ and $A_{k}$ will be found on the same side $A_{i}A_{k}$, and it follows that the points $B_{i-1}$ and $B_{k-1}$ are found likewise on the same side $B_{i-1}B_{k-1}$ conjugate to $A_{i}A_{k}$.
+
+This being so, let us traverse the perimeter of $R_{0}$ so as to meet successively the sides $A_{i-1}$, $B_{i-1}B_{k-1}$, $A_{k-1}$; the points $A_{i-1}B_{i-1}$ and $A_{k-1}B_{k-1}$ having not to be crossed, we shall meet $B_{i-1}$ before $B_{k-1}$.
+
+Let us now traverse the perimeter of $R_{0}$ \emph{in the contrary sense}; when we traverse the conjugate side $A_{i}A_{k}$, we must meet $A_{i}$ before $A_{k}$, since $A_{i}$ is conjugate to $B_{i-1}$, and $A_{k}$ to $B_{k-1}$; and as the points $A_{i}B_{i}$ and $A_{k}B_{k}$ must not be crossed, we shall meet the sides $B_{i}$, $A_{i}A_{k}$ and $B_{k}$ in the order that I have just indicated.
+
+Hence, for the sequences to be compatible, it is necessary that in order to meet successively the sides $A_{i-1}$, $B_{i-1}B_{k-1}$, $A_{k-1}$ or else in order to meet successively the sides $B_{i}$, $A_{i}A_{k}$, $B_{k}$ one must traverse $R_{0}$ in two opposite senses.
+
+The other doubtful cases would reduce to the preceding by reversing one of the two arcs $A_{i}B_{i}$ or $A_{k}B_{k}$.
+
+This being so, a cycle all of whose sequences are compatible will be equivalent to a non-looped cycle; a cycle which has incompatible sequences will not be equivalent to a non-looped cycle, unless one can make these sequences disappear by means of the equivalence (26). One would recognize in the same manner whether two or more cycles are equivalent to cycles which do not cut one another.
+
+The application of these rules teaches us for example that of all the combinations of the odd cycles $C_{1}$ and $C_{3}$, the only ones which are equivalent to non-looped cycles are the following:
+\[ C_{1}, \qquad C_{3}, \qquad C_{1} + C_{3}, \qquad C_{3} + C_{1}. \]
+
+But for what follows, I need to place myself yet at another point of view.
+
+Let us represent our surface by a Fuchsian polygon $R'_{0}$ of the 3\textsuperscript{rd} family which, for $p = 2$, will be bounded externally by a circle and internally
+
+\origpage{84}
+by 3 other circles. Let us construct the various transforms of $R'_{0}$ by the substitutions of the corresponding group $G'$; they will this time fill the whole plane, except for infinitely many singular points distributed on the circumference of the fundamental circle.
+
+A cycle will still be represented by an arc $MM'$ going from a point $M$ to one of its transforms $M'$.
+
+But two arcs having the same extremities will not always represent two equivalent cycles; it is necessary in addition that in the area comprised between these two arcs there be no singular point. Apart from that, what we have said for the Fuchsian polygons of the 1\textsuperscript{st} family subsists.
+
+Let us construct the various transforms of the arc $MM'$ by the substitutions of $G'$; let us then keep the portions of these transforms which are inside $R'_{0}$; our cycle will then be represented by a series of arcs
+\[ A_{1}B_{1}, \qquad A_{2}B_{2}, \qquad \ldots, \qquad A_{n}B_{n} \]
+going from a point of the perimeter of $R'_{0}$ to another point of this perimeter, and such that the points $B_{i-1}$ and $A_{i}$, $B_{n}$ and $A_{1}$ are conjugate.
+
+For a cycle not to be looped, or for two cycles not to cut one another, the condition is that the arcs $A_{i}B_{i}$ which represent this or these cycles do not cut one another; and one will recognize it by means analogous to those which we have just set forth.
+
+But there remains a question for us to treat. Given a cycle represented by a certain number of arcs $A_{i}B_{i}$, to what combination of the fundamental cycles is it equivalent?
+
+\rmfigure{figures/fig-02.png}{Fig.~2.}{The polygon R'0: a large circle, the circle +A, with the point D at its top. Inside it lie a small circle -A carrying the point D', a small circle -B carrying the point E', and a circle +B carrying the point E and enclosing a smaller closed curve with D'' and M'. From D, one arc runs to D' (the cut DD'), a closed curve DMD runs down around the circle -B and the cut DE', and another arc runs to E on +B. The numbers 1 to 8 mark the vertices of the cut-open polygon near D, D', E and D''.}
+
+To resolve this question, let us seek to return to the case of the polygon of the 1\textsuperscript{st} family $R_{0}$.
+
+\origpage{85}
+
+Our polygon $R'_{0}$ is bounded externally by the circle $+A$ and internally by the circle $-A$ conjugate to $+A$ and by the circles $+B$ and $-B$ conjugate to one another. I am going to seek to modify $R'_{0}$ so as to transform it into a polygon $R''_{0}$ homeomorphic to $R_{0}$.
+
+Let $D$ and $D'$ be two conjugate points on $+A$ and $-A$; let $E$ and $E'$ be two conjugate points on $+B$ and $-B$. Let us join $DD'$, $DE$, $DE'$ by arcs of curve which will be regarded as cuts. Let us enclose the cut $DE'$ and the circle $-B$ by a closed curve $DMD$ which remains at a very small distance from them. Let us consider the figure $DE'M$ comprised between this closed curve and $-B$ and its transform $D''EM'$ by the substitution of $G'$ which changes $-B$ into $+B$. Let us cut off from the polygon $R'_{0}$ the figure $DE'M$ and annex to it in exchange the figure $D''EM'$, we shall obtain a new polygon $R''_{0}$ which will represent the closed surface in the same right as $R'_{0}$; this polygon will be bounded externally by the circle $+A$ and internally by the circle $-A$ and the closed curves $DMD$ and $D''M'D''$; but this polygon $R''_{0}$, thanks to the cuts $DD'$, $DE$, $DE'$, $D''E$ will have become simply connected; the numbers 1, 2, \ldots, to 8 marked on the figure indicate the order in which one will meet the vertices of this simply connected polygon when one traverses its perimeter. One sees, by the order of conjugation of the sides, that this polygon is homeomorphic to $R_{0}$ and in such a way that to the sides of $R''_{0}$
+\[ 81, \qquad 12, \qquad 23, \qquad 34, \qquad 45, \qquad 56, \qquad 67, \qquad 78 \]
+there correspond the sides of $R_{0}$
+\[ +C_{1}, \qquad +C_{2}, \qquad -C_{1}, \qquad -C_{2}, \qquad +C_{3} \qquad +C_{4}, \qquad -C_{3}, \qquad -C_{4}. \]
+
+Being thus brought back to the case of $R_{0}$ it is easy for us to state the rule.
+
+To each of the arcs $A_{i}B_{i}$ which cross $R'_{0}$, there may correspond several analogous arcs crossing $R''_{0}$, because the primitive arc may be divided into several segments by the cuts. To each of the partial arcs crossing $R''_{0}$ there will correspond, according to the rule proved in the case of $R_{0}$, one term and only one in the combination of fundamental cycles sought. To each of our primitive arcs $A_{i}B_{i}$ there will therefore correspond one or several terms of this combination.
+
+The first of these terms depends on the position of the initial point $A_{i}$; if this point is on the circles
+\[ +A, \qquad -A, \qquad +B, \qquad -B, \]
+
+\origpage{86}
+this first term will be respectively
+\[ +C_{2}, \qquad -C_{2}, \qquad -C_{4}, \qquad +C_{4}. \]
+
+The following terms depend on the cuts $DD'$, $DE$, $DE'$ successively met by the arc $A_{i}B_{i}$; if this arc meets, going from left to right,
+\[ DD', \qquad \text{ or } \qquad DE, \qquad \text{ or } \qquad DE', \]
+the corresponding terms will be respectively
+\[ +C_{1}, \qquad +C_{3}, \qquad -C_{4} - C_{3} + C_{4}; \]
+and if these cuts are met from right to left, they will be
+\[ -C_{1}, \qquad -C_{3}, \qquad -C_{4} + C_{3} + C_{4}. \]
+
+It is therefore easy by this rule to form the combination sought.
+
+In this whole chapter, I have placed myself at the point of view of improper equivalence; if one wished to deduce from it analogous theorems for proper equivalence, it would suffice to observe that every closed surface is homeomorphic to itself in such a way that any point $A$ of this surface corresponds to any other point $A'$ of this same surface.
+
+\subsection*{\S~5.}
+
+Let us consider in particular a manifold $V$ of 3 dimensions defined as in \S~2; its \emph{skeleton} will reduce to a simple segment of straight line along which the variable that we have called $t$ will vary from 0 to 1. The system $W(t)$ will be composed of a single manifold; this manifold will be an ordinary closed surface which we shall suppose two-sided, which will reduce to a point for $t = 0$ and whose order of connection will go on constantly increasing when $t$ increases from 0 to 1 and will be equal to $2p + 1$ for $t = 1$.
+
+It results from this definition that \emph{the manifold $V$ is not closed}.
+
+According to what we saw in \S~2, the line which forms the skeleton of $V$ will be subdivided into segments by certain remarkable values of $t$.
+
+Let
+\[ t_{1}, \qquad t_{2}, \qquad \ldots, \qquad t_{p} \]
+be these remarkable values; they will be those for which the surface $W(t)$ has a singular point and, according to our hypotheses, those for which the order of connection of this surface increases by 2 units.
+
+\origpage{87}
+
+Thus $W$ will be 1 time connected for $t$ comprised between 0 and $t_{1}$, 3 times for $t$ comprised between $t_{1}$ and $t_{2}$, \ldots, $2q + 1$ times between $t_{q}$ and $t_{q+1}$, \ldots, and finally $2p + 1$ times between $t_{p}$ and 1.
+
+The surface $W$ remains homeomorphic to itself as long as the variable $t$ remains on one and the same segment.
+
+Suppose that we make $t$ decrease and that $t$ passes through one of the remarkable values; it then happens, as we saw in \S~2, that one of the cycles $C$ of the surface $S$ reduces to a point; that all the cycles equivalent to $C$ become equivalent to zero; and on the other hand that all the cycles which met $C$ cease to exist.
+
+Thus it is that the number of really distinct cycles, and consequently the order of connection, is found diminished by two units.
+
+We are now going to define the cycle $K_{q}$. For $t = t_{q} + \varepsilon$, there exists on $W(t_{q} + \varepsilon)$ an infinitely small cycle which reduces to a point for $t = t_{q}$.
+
+It is this cycle that I call $K_{q}$. The surface $W(t)$ remains homeomorphic to itself when $t$ varies from $t_{q}$ to $t_{q+1}$; [and one can suppose that the homeomorphism is such that for two infinitely near values $t$ and $t'$, the two corresponding points on $W(t)$ and $W(t')$ differ infinitely little from one another]. The surface $W(t)$ therefore remains homeomorphic to $W(t_{q} + \varepsilon)$ and to the cycle $K_{q}$ there will correspond on $W(t)$ a cycle which I shall still call $K_{q}$. To define $K_{q}$ on the surface $W(t_{q+1} + \varepsilon)$, it suffices to say that this cycle must differ very little from the same cycle on the surface $W(t_{q+1} - \varepsilon)$; as $W(t)$ remains homeomorphic to itself for all the values of $t$ comprised between $t_{q+1}$ and $t_{q+2}$, one can define as above the cycle $K_{q}$ for these values of $t$, and so on.
+
+The cycle $K_{q}$ being thus defined, I come to the essential property, namely that two cycles $K_{\alpha}$ and $K_{\beta}$ do not cut one another. Let $\beta > \alpha$, and let first $t = t_{\beta} + \varepsilon$; then $K_{\beta}$ is very small, and I say that $K_{\alpha}$ does not cut $K_{\beta}$. Indeed, according to its definition the cycle $K_{\alpha}$ still exists for $t < t_{\beta}$, now I said that the cycles which cut the very small cycle $K_{\beta}$ vanish when $t$ becomes $< t_{\beta}$. Let us make $t$ vary from $t_{\beta}$ to $t_{\beta+1}$. Between these limits all the surfaces $W(t)$ are homeomorphic to one another and as on one of them the cycles $K_{\alpha}$ and $K_{\beta}$ do not cut one another, the corresponding cycles $K_{\alpha}$ and $K_{\beta}$ will not cut one another on any of them. As $K_{\alpha}$ and $K_{\beta}$ do not cut one another on $W(t_{\beta+1} - \varepsilon)$, we shall conclude that
+
+\origpage{88}
+on the infinitely near surface $W(t_{\beta+1} + \varepsilon)$, the two cycles $K_{\alpha}$ and $K_{\beta}$ will not cut one another either; for $t_{\beta+1} < t < t_{\beta+2}$, all the surfaces $W(t)$ are homeomorphic and as on one of them the cycles $K_{\alpha}$ and $K_{\beta}$ do not cut one another, they will not cut one another on any of them; and so on.
+
+Hence the cycles $K_{\alpha}$ and $K_{\beta}$ do not cut one another. Q.~E.~D.
+
+I add that the cycle $K_{q}$ is not looped; it is not so for $t = t_{q} + \varepsilon$ since it reduces to a very small closed curve; hence because of the homeomorphism it is not so for $t_{q} < t < t_{q+1}$; it is not so for $t = t_{q+1} + \varepsilon$, because then it differs very little from what it is for $t = t_{q+1} - \varepsilon$; and so on.
+
+Let us make $t$ vary from $t_{q}$ to 1, the cycle $K_{q}$ will vary continuously; for $t = t_{q}$ it reduces to a point and for $t > t_{q}$ to a single closed curve. It will therefore generate a simply connected area which I call $A_{q}$.
+
+\emph{Two areas $A_{\alpha}$ and $A_{\beta}$ have no point in common}; and indeed if they had one, this point would belong to a surface $W(t)$ and on this surface to the two cycles $K_{\alpha}$ and $K_{\beta}$; now we have just seen that these two cycles do not cut one another.
+
+Let us denote further by $B_{q}$ the partial area generated by $K_{q}$ when $t$ varies from $t_{q}$ to $t (t < 1)$ and which like $A_{q}$ is simply connected. We are going to treat $K_{q}$, $A_{q}$ and $B_{q}$ as \emph{cuts}; to this end, let us consider two cycles $K'_{q}$ and $K''_{q}$ infinitely little different from $K_{q}$; we can suppose that these two cycles do not cut one another. The very small portion of the surface $W(t)$ comprised between these two cycles will be called $S_{q}(t)$. The two cycles $K'_{q}$ and $K''_{q}$ will generate two areas $A'_{q}$ and $A''_{q}$ when $t$ varies from $t_{q}$ to 1 and two areas $B'_{q}$ and $B''_{q}$ when $t$ varies from $t_{q}$ to $t$.
+
+This being so, let us cut off from the closed surface $W(t)$ the very small areas
+\[ S_{1}(t), \qquad S_{2}(t), \qquad \ldots, \qquad S_{p}(t). \]
+
+After this operation, the remaining surface $W - \displaystyle\sum S_{q}$ will no longer be a closed surface, it will admit as boundaries the $2p$ closed curves $K'_{q}$ and $K''_{q}$.
+
+Let us then add to this surface the areas $B'_{q}$ and $B''_{q}$; the result of this addition will be a surface
+\[ W_{1}(t) = W - \sum S_{q} + \sum B'_{q} + \sum B''_{q} \]
+
+\origpage{89}
+which will be closed since $B'_{q}$ admits $K'_{q}$ as complete boundary and $B''_{q}$ admits $K''_{q}$.
+
+I say that the surface $W_{1}(t)$ thus obtained is \emph{simply connected} and without singularity. It has no singularity, because its different parts do not cut one another and have no other points in common than those of the curves $K'_{q}$ and $K''_{q}$ which serve them as boundaries. And indeed, $W(t)$ cannot have any point in common with $B'_{q}$ or $B''_{q}$, apart from $K'_{q}$ and $K''_{q}$; and on the other hand as the areas $B_{\alpha}$ and $B_{\beta}$ do not cut one another the areas $B'_{q}$, $B''_{q}$, $B'_{\alpha}$, $B''_{\alpha}$, etc.\ will likewise have no point in common.
+
+On the other hand, the non-closed surface $W - \displaystyle\sum S_{q}$ is homeomorphic to a plane area bounded externally by a closed curve and internally by $2p - 1$ other closed curves (this is nothing other than the representation of the surface $W$ by a Fuchsian polygon of the 3\textsuperscript{rd} family of which there was question above in \S~3) or, what comes to the same, to a spherical area, comprising what remains of a sphere when one has cut off from it $2p$ small simply connected areas $\alpha$ exterior to one another.
+
+On the other hand, the $2p$ areas $B'$ and $B''$ can be considered as homeomorphic to the $2p$ areas $\alpha$; one will thus see, paying attention to the way in which the junction is made, that the total surface
+\[ W_{1} = W - \sum S + \sum B' + \sum B'' \]
+is homeomorphic to the entire sphere, that is, simply connected. Q.~E.~D.
+
+Let us now make $t$ vary from 0 to 1, and at the same time imagine that the cycles $K'_{q}$ and $K''_{q}$ approach $K_{q}$ so as to merge with $K_{q}$ for $t = 1$.
+
+I suppose that the successive positions of $K'_{q}$ and of $K''_{q}$ have no point in common, no more consequently than the successive positions of the areas $A'_{q}$ and $A''_{q}$, $B'_{q}$ or $B''_{q}$. Under these conditions every point interior to $V$ (the points of the areas $A_{q}$ excepted) will belong to one of the surfaces $W_{1}$ and to only one. The points of the limit surface $W(1)$ will belong to $W_{1}(1)$. For $t = 1$, the areas $B'_{q}$ and $B''_{q}$ will reduce to $A'_{q}$ and $A''_{q}$, and these themselves will reduce to the areas $A_{q}$ since for $t = 1$ the cycles $K'_{q}$ and $K''_{q}$ reduce to $K_{q}$.
+
+If we consider therefore a point of $A_{q}$, this point will still be found $W_{1}(1)$\ednote{A word appears to be missing: “se trouvera encore sur $W_{1}(1)$” is expected.} but to this point of $A_{q}$ there will correspond two points of $W_{1}(1)$,
+
+\origpage{90}
+one of these points having to be considered as belonging to $B'_{q} = A'_{q}$ and the other to $B''_{q} = A''_{q}$.
+
+The simply connected surfaces $W_{1}(t)$ nesting inside one another will generate (cf.\ \S~1) a simply connected manifold.
+
+One can therefore say that by making in $V$ the $p$ cuts $A_{q}$ one renders this manifold simply connected. Let us make these $p$ cuts, and deform our manifold so as to separate the two lips of these cuts; the new manifold $U$ thus obtained will be simply connected, bounded by a simply connected surface $H$ homeomorphic to a sphere. On this simply connected surface we shall distinguish $2p$ simply connected areas which will be the two lips of the $p$ cuts, and which I shall call the \emph{scars}, these scars will be conjugate in pairs.
+
+To each point of $U$ there will correspond a point of $V$ and only one; likewise to each point of $V$ there will correspond a point of $U$ and only one, except for the points of the areas $A_{q}$ to each of which there will correspond two points of $U$ situated on two conjugate scars.
+
+Let us consider two manifolds analogous to $U$; each of them will be simply connected, each of them will be bounded by a simply connected surface bearing $2p$ simply connected scars conjugate in pairs and exterior to one another. It is clear that the two figures thus formed will be homeomorphic to one another and homeomorphic to the figure formed by a sphere whose surface bears $2p$ scars constituted by small circles exterior to one another.
+
+Whence this important consequence: all the manifolds generated like $V$ and for which the integer called $p$ above is the same are homeomorphic to one another.
+
+Suppose that in ordinary space one constructs a closed surface $2p + 1$ times connected and without singularity. This surface will divide space into two regions, one interior and the other exterior. Let $R$ be the interior region. It is a non-closed manifold of 3 dimensions susceptible of the same generation as $V$. Hence $V$ is homeomorphic to $R$ provided that the number $p$ is the same.
+
+Hence, if I call \emph{developable} the non-closed manifolds which are homeomorphic to a portion of plane space, \emph{all the manifolds generated like $V$ are developable}.
+
+One can draw from this in passing a consequence; let us consider in ordinary space two closed surfaces $S$ and $S'$, both $2p + 1$ times connected.
+
+\origpage{91}
+
+Let $R$ be the volume interior\ednote{Printed “intérieure”; the same sentence has the masculine “le volume intérieur à $S'$”.} to $S$, and $R'$ the volume interior to $S'$. It is known that the two surfaces $S$ and $S'$ are homeomorphic; but one might ask whether the same holds of the two volumes $R$ and $R'$ and at first sight one might be tempted to answer this question in the negative. One might picture the various sheets of the surface $S'$ entangling one another in a complicated way and forming knots that it would be impossible to untie without leaving space of three dimensions. Far from it, we are now in a position to conclude that the two volumes $R$ and $R'$ are always homeomorphic, since these two volumes can be generated like $V$, and since two manifolds generated like $V$ are always homeomorphic.
+
+I come now to a question that is important for what follows. I take up again the manifold $V$ bounded by the surface $V(1)$\ednote{The print has $V(1)$; the boundary surface of $V$ is called $W(1)$ in the next paragraph and on p.~92.}, and generated by the surface $W(t)$.
+
+Could the same manifold be generated by another surface $W'(t)$, which like $W(t)$ would reduce to a point for $t = 0$, would have a constantly increasing order of connection and would finally reduce to $W(1)$ for $t = 1$? It is evident that $V$ is susceptible of such a generation in infinitely many ways. It is a matter of comparing these various modes of generation.
+
+I shall denote by $K'_{1}, \ldots, K'_{p}$ the $p$ cycles which play in the new generation the same role as the cycles $K_{1}, \ldots, K_{p}$ in the old one.
+
+What relation is there between the cycles $K$ and $K'$? Can the cycles $K'$ be chosen arbitrarily, and what conditions must $p$ cycles of the surface $W(1)$ fulfil in order to be able to be chosen to play the role of the cycles $K'$?
+
+1° These cycles must not be looped. 2° They must not cut one another.
+
+But that is not all. The cycle $K_{q}$, \emph{with respect to the manifold $V$}, is equivalent to zero, since it forms the complete boundary of the area $A_{q}$ which is part of $V$. We shall therefore have the equivalences
+\[ K_{1} \equiv K_{2} \equiv \ldots \equiv K_{q} \equiv 0 \qquad (\text{mod}\ V) \tag{1} \]\ednote{The print ends the list with $K_{q}$; the paragraphs above name the $p$ cycles $K_{1}, \ldots, K_{p}$.}
+and all those which are deduced from them. I say that we shall have no others.
+
+I mean by this that if we have with respect to $V$ an equivalence
+
+\origpage{92}
+of the following form:
+\[ C \equiv 0 \qquad (\text{mod}\ V), \tag{2} \]
+$C$ being a cycle of the boundary surface $W(1)$, which I shall call for brevity $W$, we shall have, \emph{with respect to this boundary surface $W$} an equivalence of the form
+\[ C \equiv -\alpha_{1} + \beta_{1} + \alpha_{1} - \alpha_{2} + \beta_{2} + \alpha_{2} - \ldots - \alpha_{n} + \beta_{n} + \alpha_{n} \qquad (\text{mod}\ W), \tag{3} \]
+where the $\alpha_{i}$ are any cycles of $W$ and where the $\beta_{i}$ are cycles of this surface such that
+\[ \beta_{i} \equiv mK \qquad (\text{mod}\ W), \]
+$m$ being a positive or negative integer and $K$ one of the cycles $K_{1}, K_{2}, \ldots, K_{q}$\ednote{The print ends the list with $K_{q}$; on p.~91 the $p$ cycles are named $K_{1}, \ldots, K_{p}$.}; and indeed if the equivalence (3) holds, one will have a fortiori
+\[ C \equiv \sum (-\alpha + \beta + \alpha) \qquad (\text{mod}\ V) \]
+or, because of the equivalences (1) which entail $\beta \equiv 0$:
+\[ C \equiv \sum (-\alpha + \alpha) \equiv 0 \qquad (\text{mod}\ V). \]
+The equivalence (2) is therefore a consequence of the equivalences (1).
+
+To establish the proposition stated, I suppose that the equivalence (2) holds; it means that the cycle $C$ is the complete boundary of a certain simply connected area $D$ situated in $V$.
+
+This area will be able to cut the area $A_{q}$ along a line $L_{q}$ which will go from a point of $C$ to another point of $C$, since the extremities of $L_{q}$ can lie only on the boundary of $A_{q}$, that is, on $W$, or since they are on $D$, on the intersection of $W$ and of $D$, that is, on $C$. The area $D$ may also not cut $A_{q}$, or cut it along several distinct lines $L_{q}$. In all cases the different lines $L$ will not cut one another since the various areas $A$ do not cut one another and since one can always suppose that the areas $A$ and $D$ have no singularity and deform $D$ a little if need be so that the surfaces $D$ and $A$ do not touch.
+
+Each of the lines $L$ divides the area $D$ into two parts since this area is simply connected. This area $D$ will therefore be divided by the various lines $L$ into a certain number of partial areas $\Delta_{1}, \Delta_{2}, \ldots$ One can traverse successively the contours of the various partial areas $\Delta$ in the following way, which I shall make better understood by an example than by explanations.
+
+\origpage{93}
+
+On the figure the cycle $ABCDEFGHNIKLMPA$ is the cycle $C$; the lines $CE$, $BF$, $GK$, $HI$, $LP$ are the lines $L$.
+
+\rmfigure{figures/fig-03.png}{Fig.~3.}{An oval contour with the points A, B, C, D, E, F, G, H, N, I, K, L, M, P marked around it, A at the bottom and G at the top. Five arcs inside the oval join C to E and B to F on the right, H to I and G to K at the upper left, and L to P at the lower left.}
+
+It is clear that the total cycle can be replaced by the sum of the following arcs
+\[ \sum = \left\{ \begin{aligned} &(ABCDE + ECBA) + (ABCE + EF + FBA)\\ &+ ABF + FGH + HNI + IHGFBA)\\ &+ (ABFGHI + IK + KGFBA) + (ABFGK + KL + LPA)\\ &+ (APL + LMP + PA). \end{aligned} \right. \tag{4} \]\ednote{The opening parenthesis before $ABF$ in the second line did not print; the third parenthesis is $(ABF + FGH + HNI + IHGFBA)$.}
+
+One sees indeed that the last term of each parenthesis is destroyed by the first term of the following parenthesis and that by suppressing the terms thus destroyed one recovers the total cycle $C$.
+
+Let us now take one of these parentheses, the third for example; it can be written:
+\[ ABFGH + HNIH + HGFBA. \]
+
+One sees that the first and the last term represent one and the same arc $ABFGH$ traversed once in the direct sense, once in the inverse sense, and that the second term represents the contour of one of the partial areas $\Delta$, namely of the area $HIN$; the same holds for the other parentheses of the expression $\displaystyle\sum$ which can be written:
+\[ \sum = \left\{ \begin{aligned} &(ABC + CDEC - CBA) + (AB + BCEFB + BA)\\ &+ (ABFGH + HNIH + HGFBA)\\ &+ (ABFG + GHIKG + GFBA)\\ &+ (ABFGKLPA) + (AP + PLMP + PA). \end{aligned} \right. \tag{5} \]\ednote{The first parenthesis is printed $(ABC + CDEC - CBA)$; every other parenthesis ends with $+$, and the first and last terms of each parenthesis are said to cancel, which would require $+CBA$.}
+
+I am going to modify the path $\displaystyle\sum$ once more. This path is composed of arcs forming part of the primitive contour $C$ and of arcs formed by the lines $L_{q}$. These latter arcs destroy one another as we have seen because in the expression (4) the last term of each parenthesis is destroyed by
+
+\origpage{94}
+the first of the following one. We can transform these latter arcs; we shall replace the line $L_{q}$ by an arc belonging to the cycle $K_{q}$ and having the same extremities. This is possible because the two extremities of the line $L_{q}$ are on the cycle $K_{q}$; this is permitted moreover because these new arcs, put in place of the old ones, will destroy one another as the old ones destroyed one another. And if I call $\displaystyle\sum'$ what the path $\displaystyle\sum$ becomes after this transformation, the primitive cycle $C$ can therefore as well be considered as identical with the path $\displaystyle\sum'$ as with the path $\displaystyle\sum$.
+
+This path $\displaystyle\sum'$ can be put, like $\displaystyle\sum$, in the form (5); it suffices simply to admit that, in the second member of (5), $CE$ for example represents, not the line $L_{q}$ which has $C$ and $E$ for extremities, but the arc of the cycle $K_{q}$ which goes from $C$ to $E$.
+
+The advantage of this transformation is that all the points of the path $\displaystyle\sum'$ are on the limit surface $W$, whereas it would not have been the same for all the points of the path $\displaystyle\sum$.
+
+Let us return to the simply connected manifold $U$ defined above.
+
+This manifold has for boundary a simply connected surface which we have called $H$ and which bears $2p$ scars. The parts of $H$ exterior to the scars then correspond to the surface $W$ and the scars, as we have seen, to the areas $A_{q}$.
+
+Any closed contour $Q$ drawn on this surface $K$\ednote{Printed $K$; the surface carrying the cicatrices is $H$.} and remaining outside the scars will be equivalent to zero with respect to the manifold $V$, \emph{by virtue of the equivalences} (1). Indeed this contour will enclose a certain number of scars; let us suppose to fix ideas that it encloses two scars $A_{1}$ and $A_{2}$. Let $M$ be the initial and final point of the closed contour $Q$; let likewise $M_{1}$ and $M_{2}$ be the initial and final points of the two closed contours $K_{1}$ and $K_{2}$ which serve respectively as perimeter to the two scars $A_{1}$ and $A_{2}$.
+
+Let us join $M$ to $M_{1}$ and to $M_{2}$ by two arcs $MM_{1}$ and $MM_{2}$; we shall have:
+\[ Q \equiv MM_{1} + K_{1} + M_{1}M + MM_{2} + K_{2} + M_{2}M \qquad (\text{mod}\ W) \]
+since the part of the surface $H$ comprised between the contours $Q$, $K_{1}$ and $K_{2}$ belongs to that region of $H$ which corresponds to $W$.
+
+But by virtue of the equivalences (1)
+\[ K_{1} \equiv K_{2} \equiv 0 \qquad (\text{mod}\ V); \]
+hence
+\[ Q \equiv MM_{1} + M_{1}M + MM_{2} + M_{2}M \equiv 0 \qquad (\text{mod}\ V) \]
+and this holds as I had announced \emph{by virtue of the equivalences} (1).
+
+\origpage{95}
+
+Now if we consider the second term of each parenthesis in the expression (5) of the path $\displaystyle\sum'$, this second term represents on $W$ a closed contour; it will likewise represent on $H$ a closed contour; this is not evident and it would not be true for a closed contour of $W$ which met one of the cycles $K_{q}$; to each point of $K_{q}$ there correspond on $U$ two distinct points, in such a way that when a continuous path on $W$ meets $K_{q}$, the corresponding path on $U$ jumps suddenly from one of these two points to the other and becomes discontinuous. But here this circumstance cannot occur since the closed contour that we are considering never \emph{crosses} $K_{q}$ and confines itself to \emph{running along} it.
+
+The second term of each parenthesis is therefore equivalent to zero \emph{by virtue of the equivalences} (1). Hence the same holds of the entire parenthesis, since the first and the last terms destroy one another. Hence the same holds of the entire path $\displaystyle\sum'$ and consequently of $C$.
+
+Hence there is no other equivalence among the cycles of $W$ than those which are consequences of the equivalences (1). Q.~E.~D.
+
+We can therefore add a third condition to those which, as we have seen, are necessary in order that $p$ cycles of $W$ may be chosen to play the role of the cycles $K'$.
+
+The system of equivalences
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \]
+must not differ from the system of equivalences
+\[ K_{1} \equiv K_{2} \equiv \ldots \equiv K_{p} \equiv 0, \]
+so that each of these systems must be a consequence of the other.
+
+Are these three conditions sufficient?
+
+Let $K'_{1}, K'_{2}, \ldots K'_{p}$ be $p$ non-looped cycles, not cutting one another mutually and such that one has:
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \qquad (\text{mod}\ V). \]
+
+The equivalence $K'_{q} \equiv 0$ shows us that there exists a simply connected area $A'_{q}$ whose complete boundary is $K'_{q}$. I say that one can always suppose that the various areas $A'_{q}$ have no point in common.
+
+Let us imagine indeed that $A'_{1}, A'_{2}, \ldots A'_{q-1}$ do not cut one another, but that one or several of these $q - 1$ areas is cut by $A'_{q}$. Let $E_{i}$ be the intersection of the area $A'_{q}$ and of the area $A'_{i}$; this intersection will have no
+
+\origpage{96}
+point on $K'_{q}$, since $K'_{q}$ could meet $A'_{i}$ only on $W$, and consequently on $K'_{i}$ and since $K'_{i}$ does not meet $K'_{q}$ by hypothesis. This intersection is therefore entirely inside $A'_{q}$; we can suppose that the surface $A'_{i}$ has no singularity, and is not tangent to the surface $A'_{q}$, failing which it would suffice to deform it slightly; it follows that our intersection is a curve without double point, it must therefore be composed of several closed curves not cutting one another mutually.
+
+Moreover the intersection of $A'_{i}$ with $A'_{q}$ will not cut that of $A'_{k}$ with $A'_{q}$ (if $i$ and $k$ are $< q$) since $A'_{i}$ does not cut $A'_{k}$ by hypothesis.
+
+The various intersections $E_{i}$ and $E_{k}$ will therefore be composed of a certain number of closed curves having no point in common. If we consider two of these curves, either they will be exterior to one another, or one of them will be interior to the other; these words exterior or interior must be understood with respect to the simply connected area $A'_{q}$. Among our closed curves we shall keep only those which are interior to no other; they will then all be exterior to one another. Let $h_{i}$ be one of the closed curves kept, belonging to $E_{i}$. This curve $h_{i}$ will bound a portion of the simply connected area $A'_{q}$ which I shall call $G_{i}$ and which will itself be simply connected; likewise it will bound a portion of the simply connected area $A'_{i}$ which I shall call $M_{i}$ and which will itself be simply connected.
+
+We shall be able to draw on $A'_{q}$ a closed curve $h'_{i}$ to which $h_{i}$ will be interior and which will differ very little from it. Then $h'_{i}$ will bound a portion of the area $A'_{q}$ which I shall call $G'_{i}$ and which will be simply connected; likewise $h'_{i}$ will bound a simply connected area $M'_{i}$ which will differ infinitely little from $M_{i}$ and which will not cut the area $A'_{i}$.
+
+Let us then form an area $A''_{q}$ by removing from $A'_{q}$ all the areas $G'_{i}$ and adding to it all the areas $M'_{i}$:
+\[ A''_{q} = A'_{q} + \sum M'_{i} - \sum G'_{i}. \]
+
+One sees that $A''_{q}$ will be, like $A'_{q}$, a simply connected area bounded by $K'_{q}$ since one replaces the area $G'_{i}$ by another simply connected area likewise bounded by $h'_{i}$. But the area $A''_{q}$ will cut neither $A'_{1}$, nor $A'_{2}$, \ldots, nor $A'_{q-1}$.
+
+We can therefore suppose that the first $q$ areas $A'$ do not cut one another, and by continuing in this way one would see that one can suppose
+
+\origpage{97}
+that any two of the $p$ areas $A'_{i}$ do not cut one another. That is what we shall do.
+
+A similar reasoning would show that, the cycles $K'$ not being looped, one can always suppose that the areas $A'$ are surfaces without double curve.
+
+I now propose to establish that the cycles $K'$ which satisfy the three conditions stated can play the role of the cycles $K$, that is: 1° that $V$ can be generated by a surface $W'(t)$ which reduces to a point for $t = 0$ and to $W$ for $t = 1$, and which for $t_{q} < t < t_{q+1}$ is $2q + 1$ times connected; 2° that for $t_{q} < t < t_{q+1}$ $W(t)$ cuts the areas $A'_{1}, A'_{2}, \ldots, A'_{q}$ along a single closed curve and does not cut the areas $A'_{q+1}, A'_{q+2}, \ldots, A'_{p}$.
+
+I suppose that this has been proved for a developable manifold $V_{1}$, that is, one homeomorphic to a portion of ordinary plane space and bounded by a surface $2p - 1$ times connected, and I propose to prove it for a developable manifold $V$ bounded by a surface $W$ of connection $2p + 1$.
+
+Let us make in $V$ the cut $A'_{p}$ and deform this manifold slightly after having separated the two lips of the cut, we shall obtain a new developable manifold $V_{1}$ bounded by a surface $2p - 1$ times connected, this surface $W_{1}$ will be composed of two parts, one of which corresponds to the surface $W$ in which the cut $K'_{p}$ has been made, and the other is formed of the two scars corresponding to the two lips of the cut.
+
+We can particularize this developable manifold $V_{1}$ and this surface $W_{1}$ in the following way. Let us consider a point interior to $V$ and let $\delta$ be the shortest distance from this point to the limit surface $W$ or to the cut $A'_{p}$. The points such that $\delta > \varepsilon$ ($\varepsilon$ small) will form the domain $V_{1}$; the points such that $\delta = \varepsilon$ will form the surface $W_{1}$; the points such that $\delta < \varepsilon$ will form the domain $V - V_{1}$. One sees easily that the surface $W_{1}$ is $2p - 1$ times connected, and that it is homeomorphic to the boundary of the domain obtained by making in $V$ the cut $A'_{p}$.
+
+The surface $W_{1}$ will not cut the area $A'_{p}$, and will cut each of the other areas $A'_{q}$ along a cycle $K''_{q}$ little different from $K'_{q}$. These cycles $K''_{q}$ will not be looped, they will not cut one another mutually. Moreover the cycle $K''_{q}$ will cut out in the simply connected area $A'_{q}$ a simply connected domain $A''_{q}$ of which it will be the complete boundary. This
+
+\origpage{98}
+domain $A''_{q}$ is the common portion of $A'_{q}$ and of $V_{1}$; this shows that $K''_{q} \equiv 0$ with respect to $V_{1}$. This shows that the cycles $K''$ satisfy with respect to $V_{1}$ the conditions of the theorem; now the theorem is supposed proved for $V_{1}$.
+
+Hence $V_{1}$ can be generated by a surface $W'(t)$ which for $t = 0$ reduces to a point, for $t = u$ (where $t_{p-1} < u < t_{p}$) reduces to $W_{1}$, which for $t_{q} < t < t_{q+1}$ cuts $A''_{1}, A''_{2}, \ldots, A''_{q}$ and consequently $A'_{1}, A'_{2}, \ldots, A'_{q}$ along a single closed curve and does not cut $A''_{q+1}, A''_{q+2}, \ldots, A''_{p-1}$, nor consequently $A'_{q+1}, A'_{q+2}, \ldots, A'_{p-1}$, nor moreover $A'_{p}$, since this area has no point in common with $V_{1}$ and since the $A'_{i}$ have no other points in common with $V_{1}$ than those of $A''_{i}$.
+
+Let us now consider the domain $V - V_{1}$ bounded externally by the surface $W$ which is $2p + 1$ times connected and internally by the surface $W_{1}$ which is $2p - 1$ times connected and which does not cut the area $A'_{p}$ which is found entirely inside $V - V_{1}$. It is clear that we shall be able to take on $A'_{p}$ a point $M$ and construct a surface $W_{2}$ entirely interior to $V - V_{1}$, admitting this point $M$ as conical point and having no other point in common with $A'_{p}$, then generate the domain $V - V_{1}$ by a surface $W'(t)$ which for $t = u$ reduces to $W_{1}$; which for $u < t < t_{p}$ is $2p - 1$ times connected, does not cut $A'_{p}$ and cuts the other $A'_{q}$ along a single closed curve; which for $t = t_{p}$ reduces to $W_{2}$; which for $t_{p} < t < 1$ is $2p + 1$ times connected and cuts all the $A'_{q}$, including $A'_{p}$, along a single closed curve; which finally for $t = 1$ reduces to $W_{1}$.\ednote{Printed $W_{1}$. The surface $W'(t)$ already reduces to $W_{1}$ for $t = u$, and the statement being proved (p.~97) requires it to reduce to the outer boundary $W$ for $t = 1$; the print does not show which reading is intended.}
+
+We see that the manifold $V$ can be generated by a surface $W'(t)$ satisfying the statement of the theorem; the theorem is therefore proved and the three conditions stated are not only necessary, but sufficient.
+
+There is more; to prove the last theorem I relied only on the fact that the equivalences $K' \equiv 0$ are a consequence of the equivalences $K \equiv 0$ and I did not have to rely on the converse fact, that the equivalences $K \equiv 0$ are a consequence of the equivalences $K' \equiv 0$. Hence if the cycles $K'$ are not looped and do not cut one another mutually and if the equivalences $K \equiv 0$ entail the equivalences $K' \equiv 0$, conversely the equivalences $K' \equiv 0$ will entail the equivalences $K \equiv 0$. This is what one could verify directly.
+
+\origpage{99}
+
+\subsection*{\S~6.}
+
+Let us now consider a manifold $V$ of 3 dimensions whose skeleton will reduce to a segment of straight line along which the variable $t$ will vary from 0 to 1. The system $W(t)$ will be composed of a single manifold; this manifold will be a closed two-sided surface, which will reduce to a point for $t = 0$ and for $t = 1$, and whose order of connection will go on increasing from $t = 0$ to $t = \frac{1}{2}$ and decreasing from $t = \frac{1}{2}$ to $t = 1$. \emph{Our manifold $V$ is therefore closed}.
+
+We shall have $2p$ remarkable values of $t$, satisfying the inequalities:
+\[ 0 < t_{1} < t_{2} < \ldots < t_{p} < \frac{1}{2} < t'_{p} < \ldots < t'_{2} < t'_{1} < 1, \]
+in such a way that, when $t$ passes from the value $t_{q} - \varepsilon$ to the value $t_{q} + \varepsilon$, the surface $W(t)$ passes from connection $2q - 1$ to connection $2q + 1$, and that when $t$ passes from the value $t'_{q} - \varepsilon$ to the value $t'_{q} + \varepsilon$, the surface $W(t)$ passes from connection $2q + 1$ to connection $2q - 1$.
+
+The manifold $V$ can be decomposed into two others $V'$ and $V''$ corresponding, the first to the values of $t$ comprised between 0 and $\frac{1}{2}$, the second to the values of $t$ comprised between $\frac{1}{2}$ and 1. Each of these two partial manifolds answers to the conditions of the preceding \S; it is therefore developable and it is the manifold $V$ formed by their union that it is now a question of studying.
+
+These two manifolds $V'$ and $V''$ have for common boundary the surface $W\left(\frac{1}{2}\right)$ which I shall call $W$ and which is $2p + 1$ times connected.
+
+On this surface, I can draw on the one hand the $p$ cycles
+\[ K'_{1}, \qquad K'_{2}, \qquad \ldots, \qquad K'_{p} \]
+defined with respect to the manifold $V'$ as the cycles $K_{1}, K_{2}, \ldots, K_{p}$ were in the preceding \S\ with respect to the manifold $V$ of the preceding \S.
+
+These $p$ cycles are not looped and do not cut one another. Moreover one has the equivalences
+\[ K'_{1} \equiv K'_{2} \equiv \ldots \equiv K'_{p} \equiv 0 \qquad (\text{mod}\ V'). \tag{1} \]
+On the other hand, on this same surface $W$, I can draw the $p$ cycles:
+\[ K''_{1}, \qquad K''_{2}, \qquad \ldots, \qquad K''_{p} \]
+defined with respect to $V''$ as the cycles $K_{q}$ were in the preceding \S\ with respect to the manifold $V$ of the preceding \S.
+
+\origpage{100}
+
+The $p$ cycles $K''$ are not looped and do not cut one another; and one has the equivalences
+\[ K''_{1} \equiv K''_{2} \equiv \ldots \equiv K''_{p} \qquad (\text{mod}\ V''). \tag{2} \]\ednote{Printed without the final $\equiv 0$ that equivalence (1) carries; the text later uses (2) as $K''_{i} \equiv 0$ (mod $V''$), p.~102.}
+
+The cycles $K'$ will then be the \emph{principal} cycles of $V'$ and the cycles $K''$ those of $V''$.
+
+Let us now consider any cycle $C$ interior to $V$; if $M$ is any point of this cycle, we can consider the corresponding point $N$ of the skeleton. When the point $M$ describes the whole cycle, the point $N$ will remain on the line $01$ which constitutes the skeleton and will execute on this line a series of oscillatory movements as a result of which it will return to its point of departure.
+
+Let $A$ and $B$ be the two extreme positions of the point $N$ in this oscillation. Suppose that the point $A$ is comprised between $t_{q}$ and $t_{q+1}$ and that the point $N$, starting from the value $t_{q+1} - \varepsilon$, decreases to $A$ to return to the value $t_{q+1} - \varepsilon$. Let $H$ be the corresponding arc of the cycle $C$; let $M$ be a point of this arc $H$, it will belong to the surface $W(t)$, $t$ being comprised between $A$ and $t_{q+1} - \varepsilon$. We know that the surface $W(t)$ remains homeomorphic to itself when $t$ varies from $t_{q+1} - \varepsilon$ to $t_{q} + \varepsilon$, and consequently when $t$ varies from $t_{q+1} - \varepsilon$ to $A$, since $A$ is greater than $t_{q}$. Hence $W(t)$ is homeomorphic to $W(t_{q+1} - \varepsilon)$. Let then $M'$ be the point of $W(t_{q+1} - \varepsilon)$ which corresponds to $M$. When the point $M$ describes the arc $H$, the point $M'$ will describe the arc $H'$ situated entirely on $W(t_{q+1} - \varepsilon)$. I say that one has the equivalence
+\[ H \equiv H' \qquad (\text{mod}\ V). \]
+
+Indeed, let us consider the different surfaces $W(t)$, where $t$ has a value intermediate between that which corresponds to the point $M$ and the value $t_{q+1} - \varepsilon$ which corresponds to $M'$. Let us consider on each of these different surfaces, which are all homeomorphic to one another, the point which corresponds to $M$. This point will generate a line $L$ whose extremities will be $M$ and $M'$; when the point $M$ describes the arc $H$, this line $L$ will generate a simply connected area which will have for complete boundary the two arcs $H$ and $H'$; which proves the announced equivalence.
+
+Let us now consider the two surfaces $W(t_{q+1} - \varepsilon)$ and $W(t_{q+1} + \varepsilon)$; on the first we have the arc $H'$ whose two extremities $D$ and $E$ belong to the arc $H$ and consequently to the cycle $C$; on the second we have the two points $D'$ and $E'$, infinitely near $D$ and $E$ and which also belong to $C$, in such a way that $DD'$ and $EE'$ are
+
+\origpage{101}
+two infinitely small arcs of this cycle $C$. We can draw on the surface $W(t_{q+1} + \varepsilon)$ an arc $H''$ going from $D'$ to $E'$ and infinitely little different from $H'$. This last point deserves some attention. The two surfaces $W(t_{q+1} - \varepsilon)$ and $W(t_{q+1} + \varepsilon)$ do not have the same order of connection; it might therefore happen, although these two surfaces differ very little from one another, that one cannot draw on one a continuous stroke very little different from a continuous stroke drawn on the other. If on that whose connection is the higher, one had a continuous stroke $L$ passing near the singular point and cutting the cycle which reduces to a point for $t = t_{q+1}$, one could not draw on the other a continuous stroke very little different from $L$. For example, let us consider three surfaces very little different from one another; the 1\textsuperscript{st} will be a hyperboloid of one sheet, the 2\textsuperscript{nd} a cone, the 3\textsuperscript{rd} a hyperboloid of 2 sheets, the cycle which reduces to a point is the throat ellipse of the hyperboloid of one sheet. A rectilinear generator of the hyperboloid of one sheet will cut this ellipse and it will be impossible to draw on the 3\textsuperscript{rd} surface a continuous stroke very little different from this generator. But here this difficulty is not to be feared since it is $W(t_{q+1} + \varepsilon)$ that has the higher connection. Our arc $H''$ will therefore always exist and one will have:
+\[ H'' \equiv D'D + H + EE' \qquad (\text{mod}\ V); \]
+then let us put
+\[ C = C_{1} + D'D + H + EE' \]
+in such a way that our cycle $C$ decomposes into two arcs, the first $C_{1}$ and the second $D'D + H + EE'$, both having for extremities $D'$ and $E'$. We shall have:
+\[ C \equiv C_{1} + H'' \qquad (\text{mod}\ V). \]
+
+We have thus replaced the cycle $C$ by another equivalent cycle $C_{1} + H''$, which enjoys the same properties, but which differs from it in that the representative point $N$ instead of going as far as $A$ in its oscillations no longer passes beyond $t_{q+1} + \varepsilon$.
+
+Let us suppose first that the value $t = \frac{1}{2}$ is comprised between the points $A$ and $B$ between which the point $N$ oscillates, and that the point $A$ is comprised between $t_{q}$ and $t_{q+1}$, and the point $B$ between $t'_{h}$ and $t'_{h+1}$. We can by the procedure that I have just set forth replace the cycle $C$ by another in which the point $N$ will oscillate between $B$ and the point $t_{q+1} + \varepsilon$, this last point being no longer comprised like the point $A$ between $t_{q}$ and $t_{q+1}$, but between $t_{q+1}$ and $t_{q+2}$. We can, in other words, bring the point $A$ back between
+
+\origpage{102}
+\ednote{The leaf carrying pp.~102--103 is missing from the copy scanned here. Their text is supplied from the reprint in Poincaré's Œuvres, t.~VI (1953), pp.~489--491; the break between pp.~102 and 103 cannot be located there, so p.~103 has no marker. That edition is re-set, and its spelling and punctuation may differ from the 1904 print.}
+$t_{q+1}$ and $t_{q+2}$; continuing we shall bring it back between $t_{q+2}$ and $t_{q+3}$, etc., then finally between $t_{p}$ and $\frac{1}{2}$. By operating on $B$ and $V''$ as we have done on $A$ and $V'$, we shall bring the point $B$ back in the same way between $\frac{1}{2}$ and $t'_{p}$.
+
+In sum, we shall have replaced the cycle $C$ by another equivalent cycle $C'$, such that the point $N$ remains always comprised between $t_{p}$ and $t'_{p}$. But when $t$ is comprised between $t_{p}$ and $t'_{p}$ the surface $W(t)$ remains homeomorphic to itself and to $W\left(\frac{1}{2}\right)$ or $W$. Let then $M$ be any point of the cycle $C'$ belonging to $W(t)$ and $M'$ the corresponding point of $W$. When the point $M$ describes the cycle $C'$, the point $M'$ will describe a cycle $C''$ situated on $W$ and one will have
+\[ C' \equiv C'' \]
+by a reasoning entirely like that which showed us that $H \equiv H'$. One will therefore have
+\[ C \equiv C'' \qquad (\text{mod}\ V). \]
+
+If the points $A$ and $B$ were not situated on either side of $\frac{1}{2}$, if for example $t$ remained $< \frac{1}{2}$ for the whole cycle $C$, one would replace the cycle $C$ by the equivalent cycle
+\[ C + \alpha - \alpha, \]
+where the arc $\alpha$, which is traversed successively in the direct sense, then in the inverse sense, would extend from the final point of the cycle $C$ to any point of $V$ such that $t > \frac{1}{2}$. One would thus be brought back to the preceding case. We are therefore led to the following general conclusion:
+
+\emph{Every cycle of $V$ is equivalent to a cycle of $W$}.
+
+Now among the cycles of $W$ we have the equivalences (1) and (2)
+\[ K'_{i} \equiv 0 \qquad (\text{mod}\ V'), \qquad K''_{i} \equiv 0 \qquad (\text{mod}\ V'') \]
+and we shall have a fortiori
+\[ K'_{i} \equiv K''_{i} \equiv 0 \qquad (\text{mod}\ V). \tag{3} \]
+I say now that there will be no others.
+
+If, indeed, there is an equivalence
+\[ K \equiv 0 \qquad (\text{mod}\ V), \]
+$K$ being a cycle of $W$, this means that there exists in $V$ a simply connected area $A$ whose boundary is formed by the cycle $K$. This being so, we shall distinguish in $A$ the points which belong to $V'$ and which will form the area $A'$, which may not be in one piece, and the points which belong to $V''$ and which will form the area $A''$. If the area $A'$ is not in one piece, it will be formed of several separate areas $A'_{1}, A'_{2}, \ldots$, each of which will be in one piece. Likewise for $A''$. If we consider one of these partial areas, $A'_{1}$ for example, it may happen that it is not simply connected. Suppose, for example, that it is triply connected and bounded, consequently, externally by a closed curve $L$, and internally by two closed curves $L'$ and $L''$ (the words externally and internally must be understood with respect to the total area $A$). Let us join a point of $L$ to a point of $L'$ by a cut $P'$ and, likewise, a point of $L$ to a point of $L''$ by a cut $P''$; these two cuts $P'$ and $P''$ will be arcs of curve situated on $A'_{1}$ and they will render $A'_{1}$ simply connected. Let $B'_{1}$ be the simply connected area thus obtained; and let $D'_{1}$ be its contour which will be formed of the closed curves $L$, $L'$ and $L''$ and of the two cuts traversed once in the direct sense and once in the inverse sense. The area $B'_{1}$ will form entirely part of $V'$ and one will have
+\[ D'_{1} \equiv 0 \qquad (\text{mod}\ V'). \]
+One will operate likewise for the areas $A'_{2}, \ldots$ and one will obtain a series of equivalences
+\[ D'_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V'). \]
+One will operate likewise for the areas $A''_{1}, A''_{2}, \ldots$, whose set forms $A''$, which will give the equivalences
+\[ D''_{1} \equiv D''_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V''). \]
+As the area $A$ is formed by the union of the areas $B'_{1}, B'_{2}, \ldots; B''_{1}, B''_{2}, \ldots$; the equivalence $K \equiv 0$ where $K$ is the contour of the total area $A$ will be a consequence of the equivalences
+\[ \begin{aligned} &D'_{1} \equiv D'_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V'),\\ &D''_{1} \equiv D''_{2} \equiv \ldots \equiv 0 \qquad (\text{mod}\ V''), \end{aligned} \]
+where $D'_{1}, D'_{2}, \ldots; D''_{1}, D''_{2}, \ldots$ are the contours of the partial areas $B'_{1}, B'_{2}, \ldots; B''_{1}, B''_{2}, \ldots$.
+
+Our equivalence is therefore a consequence of various equivalences taken some with respect to $V'$, the others with respect to $V''$. Now all the equivalences with respect to $V'$ are consequences of the equivalences (1) according to the preceding paragraph. All the equivalences with respect to $V''$ are consequences of the equivalences (2). Hence our equivalence is
+
+\origpage{104}
+a consequence of the equivalences (1) and (2) or, what comes to the same, of the equivalences (3). Q.~E.~D.
+
+Possessing thus all the possible equivalences, it is easy to deduce from them all the possible homologies without division; it suffices to interchange the order of the terms in the first members of these equivalences. Let
+\[ C_{1}, \qquad C_{2}, \qquad \ldots, \qquad C_{2p} \]
+be the $2p$ fundamental cycles of the surface $W$.
+
+We shall have homologies of the form:
+\[ K'_{i} \backsim m'_{i.1} C_{1} + m'_{i.2} C_{2} + \ldots + m'_{i.2p} C_{2p} \qquad (\text{mod}\ W) \]
+and of the form
+\[ K''_{i} \backsim m''_{i.1} C_{1} + m''_{i.2} C_{2} + \ldots + m''_{i.2p} C_{2p} \qquad (\text{mod}\ W) \]
+(the $m'$ and the $m''$ being integers) so that we shall have the following homologies deduced from the equivalences (3):
+\[ \left\{ \begin{aligned} &m'_{i.1} C_{1} + m'_{i.2} C_{2} + \ldots + m'_{i.2p} C_{2p} \backsim 0\\ &m''_{i.1} C_{1} + m''_{i.2} C_{2} + \ldots + m''_{i.2p} C_{2p} \backsim 0, \end{aligned} \right. \qquad (\text{mod}\ V) \tag{4} \]
+and we shall have no others.
+
+Let us discuss these homologies; let us form the determinant $\Delta$ of the integers $m'$ and $m''$.
+
+Three cases are to be distinguished:
+
+1° One has
+\[ |\Delta| > 1. \]
+
+Hence $\Delta$ is an integer which is equal neither to 0, nor to $+1$, nor to $-1$; we can then deduce from the homologies (4) \emph{without performing any division}:
+\[ \Delta C_{i} \backsim 0 \qquad (i = 1, 2, \ldots, 2p) \]
+and by performing a division:
+\[ C_{i} \backsim 0. \]
+
+\emph{The Betti number relative to the homologies with division is therefore equal to} 1.
+
+But one could not obtain $C_{i} \backsim 0$ without performing a division so that the ``torsion coefficients'' (Cf.\ Proceedings of the London Mathematical Society, vol.\ 32, Nos.\ 727-729, page 301) \emph{are not equal to} 1.
+
+2° One has
+\[ |\Delta| = 1; \]
+one then deduces \emph{without division}
+\[ C_{i} \backsim 0. \]
+
+\origpage{105}
+
+Hence in this case, \emph{not only the Betti number, but the torsion coefficients are equal to} 1.
+
+The Betti number and the torsion coefficients are therefore the same as for a simply connected manifold. This does not mean, as we shall soon see, that the manifold $V$ is simply connected.
+
+3° One has
+\[ \Delta = 0. \]
+
+From the homologies (4) we can then no longer deduce
+\[ C_{i} \backsim 0 \]
+even by performing a division.
+
+\emph{The Betti number is therefore greater than} 1.
+
+It is equal to 2; if the determinant $\Delta$ vanishes, but if all its minors of the 1\textsuperscript{st} order do not vanish.
+
+It is equal to $k$, if the determinant vanishes as well as all its minors of the first $k - 2$ orders, but if all the minors of the $k - 1$° order do not vanish.
+
+Let us return to the case where $\Delta$ is equal to $\pm 1$. In this case, one may ask whether the manifold is simply connected, since it has the same Betti number and the same torsion coefficients as the simply connected manifolds. We are going to see, and that is the principal aim of this work, that it is not always so, and for that we shall confine ourselves to giving an example.
+
+Let us suppose that $p = 2$, that is, that the surface $W$ is 5 times connected. I shall suppose moreover that the cycles $K'_{1}$ and $K'_{2}$ are two of the fundamental cycles of $W$, namely:
+\[ K'_{1} = C_{1}, \qquad K'_{2} = C_{3}. \]
+
+I shall represent the surface $W$ by a Fuchsian polygon $R_{0}$ of the 3\textsuperscript{rd} family bounded by 4 circumferences not cutting one another. For this we have only to draw on the surface $W$ the two cycles $C_{1}$ and $C_{3}$ which do not cut one another; to cut the surface along these two cycles regarded as cuts and to develop it then onto a plane.
+
+The cycles $K''_{1}$ and $K''_{2}$ will then be represented on this plane by a certain number of arcs of curve going from a point of the perimeter of the Fuchsian polygon $R_{0}$ to another point of this perimeter.
+
+Here are the conditions to which these arcs of curve are subject:
+
+1° They must not cut one another mutually; this is the condition
+
+\origpage{106}
+necessary and sufficient for the cycles $K''_{1}$ and $K''_{2}$ not to be looped and not to cut one another.
+
+2° Let us then consider the series of arcs whose set represents the cycle $K''_{1}$. These arcs must be traversed in a certain order and each of them goes from a certain initial point situated on the perimeter of $R_{0}$ to a certain final point situated likewise on the perimeter of $R_{0}$. Let us observe that the perimeter of $R_{0}$ is composed of 4 circles conjugate in pairs; to each point of one of the circles there corresponds on the conjugate circle a point which I call the conjugate of the first.
+
+This being so, the final point of each of the arcs which represent $K''_{1}$ must be conjugate to the initial point of the following arc, and the final point of the last arc must be the conjugate of the initial point of the first arc.
+
+Likewise for the arcs which represent $K''_{2}$.
+
+\rmfigure{figures/fig-04.png}{Fig.~4.}{A large circle representing the perimeter region of the fuchsian polygon, containing three smaller circles labelled minus A, plus B and minus B, the fourth circle plus A being the outer one; numbered points 1 to 7 on the circles are joined by solid and dotted arcs carrying arrowheads, dash-dot lines run from a point D on the outer circle to points D prime, E and E prime, and curved arrows near each circle mark its sense.}
+
+Here is the explanation of the figure: the perimeter of $R_{0}$ is represented by the four circles $+A$, $-A$, $+B$, $-B$ drawn solid; the circles $+A$ and $-A$ are conjugate and correspond to $K'_{1} = C_{1}$; the circles $+B$ and $-B$ are conjugate and correspond to $K'_{2} = C_{3}$; the cycles $K''_{1}$ and $K''_{2}$ are represented by arcs of curve going from one point to another of the perimeter of $R_{0}$.
+
+The arcs which represent $K''_{1}$ are drawn solid; those which represent $K''_{2}$ are drawn dotted. An arrowhead placed on the stroke itself indicates in which sense this stroke is to be traversed.
+
+The points where these arcs cut the circles $\pm A$ and $\pm B$ are designated by numbers; these numbers make known to us at the same
+
+\origpage{107}
+time which of these points are conjugate; thus the point $+B5$ is conjugate to $-B5$, the point $+A5$ to $-A5$.
+
+Near each of the four circles $\pm A$, $\pm B$ is placed an arrow whose meaning is as follows; when a point describes one of the circles in the sense of the arrow, the conjugate point must describe the conjugate circle in the sense of the arrow.
+
+One verifies easily that in following either $+A$, or $-A$, in the sense of the arrow one meets successively
+\[ 1, \qquad 2, \qquad 3, \qquad 4, \qquad 6, \qquad 5, \qquad 7 \]
+and that in following either $+B$, or $-B$ in the sense of the arrow one meets successively
+\[ 1, \qquad 5, \qquad 2, \qquad 3, \qquad 4. \]
+The order of conjugation of our points has therefore been suitably chosen.
+
+The cycle $K''_{1}$ is then represented by 7 arcs which follow one another in the following order:
+\[ \begin{gathered} +A1 \text{ to } -A2; \qquad +A2 \text{ to } -A3;\\ +A3 \text{ to } -A4; \qquad +A4 \text{ to } +B1; \qquad -B1 \text{ to } +A5;\\ -A5 \text{ to } +B2; \qquad -B2 \text{ to } -A1. \end{gathered} \]
+
+The cycle $K''_{2}$ is represented by the 5 arcs:
+\[ \begin{gathered} +B3 \text{ to } -B4; \qquad +B4 \text{ to } +A6; \qquad -A6 \text{ to } +B5;\\ -B5 \text{ to } +A7; \qquad -A7 \text{ to } -B3. \end{gathered} \]
+It is easy to see on the figure that these 12 arcs do not cut one another; our two cycles are therefore not looped and do not cut one another.
+
+We can therefore construct a manifold $V'$, admitting the cycles $K'_{1} = C_{1}$ and $K'_{2} = C_{3}$ for principal cycles and a manifold $V''$ admitting the cycles $K''_{1}$ and $K''_{2}$ as principal cycles. The union of the two manifolds $V'$ and $V''$ will give us $V$.
+
+One will account for this still better in the following way.
+
+Let us take up our figure again and cut the polygon $R_{0}$ along the 12 arcs which represent $K''_{1}$ and $K''_{2}$; we shall thus have decomposed $R_{0}$ into 10 partial polygons; let us then paste these polygons to one another by pasting each of the arcs of the various circles $\pm A$, $\pm B$ to the corresponding arcs of the conjugate circle; for example the arc $+A3. +A4$ to the arc $-A3. -A4$; we shall thus obtain a new polygon which in the same right as $R_{0}$ will represent.\ednote{A stray period is printed after “représentera”.} the surface $W$ with this difference that the cuts instead of being made along the cycles $K'_{1}$ and $K'_{2}$ will be made along the cycles $K''_{1}$ and $K''_{2}$.
+
+\origpage{108}
+
+The figure thus obtained is quite like the figure 1,\ednote{Printed “figure 1”; Fig.~1 is the figure of p.~53, in \S~2, while the comparison here seems to be with Fig.~4 (p.~106), the figure of the circles $\pm A$, $\pm B$.} but its signification is different. The circles $+A$ and $-A$ represent $K''_{1}$ and no longer $K'_{1}$, the circles $+B$ and $-B$ represent $K''_{2}$; the arcs drawn solid inside the figure represent $K'_{1}$ and no longer $K''_{1}$; the arcs drawn dotted represent $K'_{2}$.
+
+The points
+\[ \pm A1, \qquad \pm A2, \qquad \pm A3, \qquad \pm A4, \qquad \pm A6, \qquad \pm A5, \qquad \pm A7 \]
+represent respectively the points
+\[ \pm A1, \qquad \pm A2, \qquad \pm A3, \qquad \pm A4, \qquad \pm B1, \qquad \pm A5, \qquad \pm B2. \]
+
+The points
+\[ \pm B1, \qquad \pm B5, \qquad \pm B2, \qquad \pm B3, \qquad \pm B4 \]
+represent respectively
+\[ \pm A6, \qquad \pm B5, \qquad \pm A7, \qquad \pm B3, \qquad \pm B4. \]
+
+One must not be astonished at this sign $\pm$; the two points $+A1$ and $-A1$ correspond indeed to one and the same point of the surface $W$.
+
+The identity of the two figures shows us that the surface $W$ is homeomorphic to itself in such a way that to the cycles
+\[ K'_{1}, \qquad K'_{2}, \qquad K''_{1}, \qquad K''_{2} \]
+there correspond the cycles
+\[ K''_{1}, \qquad K''_{2}, \qquad K'_{1}, \qquad K'_{2}. \]
+Let us seek to express $K''_{1}$ and $K''_{2}$ as functions of the four fundamental cycles $C_{1}, C_{2}, C_{3}, C_{4}$. For this we have only to apply the rule at the end of \S~4, and to facilitate the application of this rule we have drawn in dash-dot line --- $\cdot\cdot$ --- the three cuts $DD'$, $DE$, $DE'$ which appear in its statement.
+
+The arc $+A1 - A2$ starts from $+A$ which gives $+C_{2}$.
+
+The arc $+A2 - A3$ starts from $+A$ which gives $+C_{2}$.
+
+The arc $+A3 - A4$ starts from $+A$ which gives $+C_{2}$ and meets $DD'$ from left to right which gives $+C_{1}$.
+
+The arc $+A4 + B1$ starts from $+A$ which gives $+C_{2}$ and meets $DE$ from right to left which gives $+C_{3}$.\ednote{Printed $+C_{3}$; the rule at the end of \S~4 (p.~86) gives $-C_{3}$ for $DE$ met from right to left, and the sum for $K''_{1}$ below has $-C_{3}$ in the corresponding place.}
+
+The arc $-B1 + A5$ starts from $-B$ which gives $+C_{4}$.
+
+The arc $-A5 + B2$ starts from $-A$ which gives $-C_{2}$ and meets $DE'$ from left to right which gives $-C_{4} - C_{3} + C_{4}$.
+
+The arc $-B2 - A1$ starts from $-B$ which gives $+C_{4}$.
+Hence:
+\[ K''_{1} \equiv 3C_{2} + C_{1} + C_{2} - C_{3} + C_{4} - C_{2} - C_{4} - C_{3} + 2C_{4}. \]
+
+\origpage{109}
+
+Let us pass to $K''_{2}$.
+
+The arc $+B3 - B4$ starts from $+B$ which gives $-C_{4}$ and meets $DD'$ from right to left which gives $-C_{4} + C_{3} + C_{4}$.\ednote{The cut is printed $DD'$, but the value $-C_{4} + C_{3} + C_{4}$ is the one the rule at the end of \S~4 (p.~86) gives for $DE'$ met from right to left, and that rule gives $-C_{1}$ for $DD'$; the print does not show which is intended.}
+
+The arc $+B4 + A6$ starts from $+B$ which gives $-C_{4}$.
+
+The arc $-A6 + B5$ starts from $-A$ which gives $-C_{2}$ and meets $DE'$ from left to right which gives $-C_{4} - C_{3} + C_{4}$.
+
+The arc $-B5 + A7$ starts from $-B$ which gives $+C_{4}$.
+
+The arc $-A7 - B3$ starts from $-A$ which gives $-C_{2}$.
+Hence:
+\[ K''_{2} \equiv -2C_{4} + C_{3} - C_{2} - C_{4} - C_{3} + 2C_{4} - C_{2}. \]
+
+We have therefore:
+\[ \begin{gathered} K'_{1} \equiv C_{1}, \qquad K'_{2} \equiv C_{3},\\ K''_{1} \equiv 3C_{2} + C_{1} + C_{2} - C_{3} + C_{4} - C_{2} - C_{4} - C_{3} + 2C_{4}\\ K''_{2} \equiv -2C_{4} + C_{3} - C_{2} - C_{4} - C_{3} + 2C_{4} - C_{2}. \end{gathered} \]
+
+With respect to $V$ we have the equivalences:
+\[ \left\{ \begin{aligned} &C_{1} + C_{2} - C_{1} - C_{2} + C_{3} + C_{4} - C_{3} - C_{4} \equiv 0\\ &K'_{1} \equiv K'_{2} \equiv 0, \qquad K''_{1} \equiv 0, \qquad K''_{2} \equiv 0. \end{aligned} \right. \tag{1} \]
+The equivalences $K'_{1} \equiv K'_{2} \equiv 0$ or $C_{1} \equiv C_{3} \equiv 0$ allow us to simplify the others; the equivalence (1) reduces to
+\[ C_{2} - C_{2} + C_{4} - C_{4} \equiv 0, \]
+that is, to an identity; the equivalence $K''_{1} \equiv 0$ reduces to
+\[ 4C_{2} + C_{4} - C_{2} + C_{4} \equiv 0 \tag{2} \]
+and the equivalence $K''_{2} \equiv 0$ reduces to
+\[ -2C_{4} - C_{2} + C_{4} - C_{2} \equiv 0. \tag{3} \]
+In sum, there remain for us two distinct cycles $C_{2}$ and $C_{4}$ between which we have no other equivalence than (2) and (3).
+
+If we transform these equivalences into homologies, there results:
+\[ \begin{gathered} 3C_{2} + 2C_{4} \backsim 0,\\ -C_{4} - 2C_{2} \backsim 0. \end{gathered} \]
+
+The determinant is equal to $-1$; we are therefore in the case where $\Delta = \pm 1$, where the Betti number and the torsion coefficients are equal to 1. And nevertheless $V$ is not simply connected; for its fundamental group does not reduce to the identical substitution; in other words, from the equivalences (2) and (3) one cannot deduce
+\[ C_{2} \equiv 0, \qquad C_{4} \equiv 0. \]
+
+\origpage{110}
+To show this, I adjoin to (2) and to (3) the equivalence
+\[ -C_{2} + C_{4} - C_{2} + C_{4} \equiv 0, \tag{4} \]
+whence:
+\[ C_{4} - C_{2} + C_{4} - C_{2} \equiv 0. \]
+
+From (2), (3) and (4) one will deduce:
+\[ \left\{ \begin{aligned} &-C_{2} + C_{4} - C_{2} + C_{4} \equiv 0,\\ &5C_{2} \equiv 0, \qquad 3C_{4} \equiv 0. \end{aligned} \right. \tag{5} \]
+Now the relations (5) are the structure relations which hold between the two substitutions $C_{2}$ and $C_{4}$ which generate the \emph{icosahedral group}. One cannot therefore deduce from them $C_{2} \equiv 0$, $C_{4} \equiv 0$, still less deduce these two equivalences from (2) and (3) alone.
+
+There are therefore two cycles of $V$ which are not equivalent to zero; hence $V$ is not simply connected.
+
+In other words, the fundamental group of $V$ cannot reduce to the identical substitution, since it contains the icosahedral group as a subgroup.
+
+There would remain a question to treat:
+
+Is it possible that the fundamental group of $V$ reduces to the identical substitution, and that nevertheless $V$ is not simply connected?
+
+In other words, can one draw the cycles $K''_{1}$ and $K''_{2}$ in such a way that they are not looped and do not cut one another; that the equivalences
+\[ K'_{1} \equiv K'_{2} \equiv 0, \qquad K''_{1} \equiv K''_{2} \equiv 0 \]
+entail the equivalences
+\[ C_{1} \equiv C_{2} \equiv C_{3} \equiv C_{4} \equiv 0 \]
+and that nevertheless the surface $W$ cannot be regarded as homeomorphic to itself in such a way that to the cycles $C_{1}, C_{2}, C_{3}, C_{4}$ there correspond the cycles $C'_{1}, C'_{2}, C'_{3}, C'_{4}$; that the equivalences
+\[ K'_{1} \equiv K'_{2} \equiv 0 \]
+entail $C'_{1} \equiv C'_{3} \equiv 0$ and conversely; and that finally the equivalences
+\[ K''_{1} \equiv K''_{2} \equiv 0 \]
+entail $C'_{2} \equiv C'_{4} \equiv 0$ and conversely?
+
+But this question would lead us too far.
+
+Paris, 3 November 1903.
+
+H.~Poincaré.
+
+\end{document}
