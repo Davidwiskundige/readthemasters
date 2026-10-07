@@ -1,0 +1,119 @@
+id: abel-1827-recherches-fonctions-elliptiques
+title: Recherches sur les fonctions elliptiques.
+title_en: Researches on the elliptic functions.
+authors:
+- name: Niels Henrik Abel
+  wikidata_id: Q13538
+  birth_year: 1802
+  death_year: 1829
+  mactutor: Abel
+  portrait:
+    file: portrait.jpg
+    alt: Portrait of Niels Henrik Abel
+    credit: Engraving after the portrait by Johan Gørbitz (1782–1853), the standard
+      likeness of Abel. Public domain (PD-Art).
+    source: https://commons.wikimedia.org/wiki/File:Niels_Henrik_Abel.jpg
+publication:
+  year: 1827
+  venue: crelle
+  volume: '2'
+  pages: 101–181
+  title_full: '"Recherches sur les fonctions elliptiques" (No. 12), Journal für die
+    reine und angewandte Mathematik (Crelle''s Journal), Zweiter Band, 2. Heft (Berlin:
+    G. Reimer, 1827), pp. 101–181. This is the first part; the second part appears
+    in the Dritter Band (1828), pp. 160–190, and is not included in this transcription.'
+edition:
+  year: 1827
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the original first printing in Journal für die reine
+    und angewandte Mathematik (Crelle''s Journal), Zweiter Band (Berlin: G. Reimer,
+    1827), pp. 101–181 — an original edition with no modern critical apparatus, commentary,
+    or re-typesetting.'
+discipline: mathematics
+tags:
+- analysis
+language: fr
+type: paper
+
+significance: >-
+  Here Abel turns Legendre's elliptic integral upside down. Legendre had spent decades studying
+  the integral $\displaystyle\int \frac{\partial\theta}{\sqrt{1-c^{2}\sin^{2}\theta}}$ as a
+  function of its upper limit; Abel proposes instead, in the opening pages, to study the inverse
+  function $\Phi\alpha$, defined by $x=\Phi\alpha$ and
+  $\alpha=\displaystyle\int_{0}\frac{\partial x}{\sqrt{[(1-c^{2}x^{2})(1+e^{2}x^{2})]}}$, together with its
+  companions $f\alpha$ and $F\alpha$.[1] It is the step that takes the integral
+  $\displaystyle\int \frac{\partial x}{\sqrt{1-x^{2}}}$ to the sine, and it is what Abel builds everything else on. Once the
+  functions are allowed imaginary arguments, as in §. I, they turn out to have two independent
+  periods, $\omega$ and $\varpi$.[2] The rest of the article follows the consequences. §. II gives
+  the multiplication formulas, expressing $\Phi(n\alpha)$ rationally in $\Phi\alpha$, $f\alpha$,
+  $F\alpha$. §§. III–V take up the equations that arise when one divides the periods into equal
+  parts, reduce the solution to a single further equation of degree $2n+2$, and solve it in
+  special cases, notably the lemniscatic case $e=c$. For that case Abel states, on p. 146, that the
+  whole circumference of the lemniscate can be divided into $m$ equal parts by ruler and compass
+  for exactly those $m$ for which Gauss had shown it possible for the circle. §§. VI–VII end with
+  other expressions for $\Phi(n\beta)$ and with expansions of the three functions in series and
+  infinite products.[3] The article breaks off with "La continuation dans le cahier suivant": the
+  second part appeared in volume 3 of the same journal (1828) and is not included here.[4] Abel
+  died in April 1829, the year in which Jacobi's Fundamenta nova, developed independently,
+  appeared and gave the theory of elliptic functions its other classic foundation.[5]
+
+significance_sources:
+  - citation: >-
+      Read directly from the text of this article: the opening pages (pp. 101–103), where Abel
+      reviews Euler, Lagrange and Legendre, takes Legendre's elliptic integrals as his starting
+      point, and introduces "la fonction inverse" $\Phi\alpha$.
+  - citation: >-
+      Read directly from the text of this article: §. I, where the functions are extended to
+      imaginary arguments (equations (7.) and (8.)) and the two periods $\omega$ and $\varpi$
+      appear.
+  - citation: >-
+      Read directly from the text of this article: the section headings of §§. II–VII, the
+      statement on p. 146 of the ruler-and-compass division of the lemniscate (which Abel
+      compares explicitly with Gauss's theorem for the circle), and the series for $\omega/2$
+      on the final page.
+  - citation: >-
+      Abel's closing note on p. 181, "La continuation dans le cahier suivant"; the second part is
+      the article of the same title in Crelle's Journal, vol. 3 (1828), pp. 160–190, as recorded
+      in this work's publication entry.
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Niels Henrik Abel", MacTutor History of Mathematics
+      Archive, University of St Andrews — for Abel's death in April 1829 and his work on elliptic
+      functions in these years. The appearance of Jacobi's Fundamenta nova in 1829 is recorded in
+      this corpus under jacobi-1829-fundamenta-nova.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Abel/"
+source:
+  scan_url: https://gdz.sub.uni-goettingen.de/id/PPN243919689_0002
+  scan_id: gdz:PPN243919689_0002 (Crelle's Journal, Band 2, 1827, pp. 101–181; image
+    numbers 113–193)
+sources:
+  death_date: Niels Henrik Abel, 1802–1829 (wikidata:Q13538; MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Abel/).
+  publication_date: 'First published 1827 in Journal für die reine und angewandte
+    Mathematik (Crelle''s Journal), Band 2, 2. Heft, pp. 101–181. Volume title page:
+    "Zweiter Band ... Berlin, bei G. Reimer, 1827"; GDZ PPN243919689_0002.'
+  edition: Original first printing, Journal für die reine und angewandte Mathematik,
+    Zweiter Band (1827), pp. 101–181. Digitized by the Göttinger Digitalisierungszentrum
+    (GDZ), PPN243919689_0002.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1829
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1827
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-10-05'
