@@ -1,0 +1,83 @@
+# Term renderings for jacobi-1829-fundamenta-nova (Latin -> English), applied consistently across
+# the whole translation. Format: `terms: {Latin as printed: English}`, the shape pipeline/translate.py
+# reads with --glossary.
+#
+# Principles:
+#   * Period-appropriate terminology over the modern equivalent: functio integra = "integral
+#     function" only where the print says it of a polynomial; "amplitudo" stays "amplitude",
+#     "modulus" stays "modulus", "complementum" is "complement" (k' is the complementary modulus).
+#   * Jacobi's own coinages are met in his own word: "Transformatio prima, secunda" = "first,
+#     second transformation"; "Aequationes modulares" = "modular equations"; "functiones Theta" =
+#     "Theta functions" (not "theta functions").
+#   * Ordinal suffixes inside formulas ($p^{\text{ti}}$ and the like) are translated inside the
+#     \text{...} insert (HOUSESTYLE R21): Latin "ti/tae/tum/to" -> English "th".
+#   * Latin abbreviations stay abbreviated in English where English has the same abbreviation:
+#     "Cl.\ " = "Cl." (Clarissimus -> "the distinguished"), "v.\ g." -> "e.g.", "i.\ e." -> "i.e.",
+#     "pag." = "p.", "§." = "§.".
+
+terms:
+  functiones ellipticae: elliptic functions
+  functiones transcendentes ellipticae: elliptic transcendents
+  integralia elliptica: elliptic integrals
+  integrale elliptici: elliptic integral
+  amplitudo: amplitude
+  modulus: modulus
+  modulus complementarius: complementary modulus
+  complementum: complement
+  quadrans: quadrant
+  periodus: period
+  periodi: periods
+  argumentum: argument
+  functio: function
+  functiones: functions
+  functio integra rationalis: rational integral function
+  functio rationalis: rational function
+  functio algebraica: algebraic function
+  functio transcendens: transcendental function
+  transformatio: transformation
+  transformatio prima: first transformation
+  transformatio secunda: second transformation
+  multiplicatio: multiplication
+  divisio: division
+  aequatio modularis: modular equation
+  aequationes modulares: modular equations
+  multiplicator: multiplier
+  numerus primus: prime number
+  numerus impar: odd number
+  series: series
+  serie: series
+  productum: product
+  producta infinita: infinite products
+  factor: factor
+  factores: factors
+  numerator: numerator
+  denominator: denominator
+  fractio: fraction
+  fractio continua: continued fraction
+  radix: root
+  dignitas: power
+  dignitates: powers
+  exponens: exponent
+  evolvere: expand
+  evolutio: expansion
+  Theorema: Theorem
+  Corollarium: Corollary
+  Propositio: Proposition
+  Problema: Problem
+  Lemma: Lemma
+  Tabula: Table
+  Exempla: Examples
+  Aequationes: Equations
+  imaginarius: imaginary
+  imaginariae: imaginary
+  realis: real
+  reales: real
+  Transformationes reales: Real transformations
+  functiones Theta: Theta functions
+  functio Theta: Theta function
+  Proœmium: Preface
+  Index rerum: Index of contents
+  Corrigenda: Corrigenda
+  auctor: author
+  Geometrae: geometers
+  Cl.: Cl. (kept abbreviated; first occurrence gets an ednote, as in jacobi-1832-considerationes)

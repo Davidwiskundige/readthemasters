@@ -1,0 +1,115 @@
+id: jacobi-1829-fundamenta-nova
+title: Fundamenta nova theoriae functionum ellipticarum
+title_en: New foundations of the theory of elliptic functions
+authors:
+- name: Carl Gustav Jacob Jacobi
+  wikidata_id: Q76564
+  birth_year: 1804
+  death_year: 1851
+  mactutor: Jacobi
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Carl Gustav Jacob Jacobi
+    credit: Portrait of Jacobi, artist and date unknown; the Commons copy is reworked
+      from the Smithsonian Libraries' "Scientific Identity" collection of portraits.
+      Public domain.
+    source: https://commons.wikimedia.org/wiki/File:Carl_Jacobi.jpg
+publication:
+  year: 1829
+  venue: book
+  pages: vi + 191
+  title_full: 'Carl Gustav Jacob Jacobi, Fundamenta nova theoriae functionum ellipticarum
+    (Regiomonti [Königsberg]: Sumtibus fratrum Borntraeger, 1829), vi + 191 pp. and
+    one folded leaf of plates.'
+edition:
+  year: 1829
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: 'Transcribed from the original first edition (Königsberg: Borntraeger,
+    1829), as digitized from the copy of the Department of Mathematics, Kyoto University
+    (Kyoto University Rare Materials Digital Archive, RB00028935, free licence with
+    conditions). The scan is a photographic reproduction of the 1829 print with no
+    modern critical apparatus, commentary or re-typesetting; the library''s own ownership
+    stamps are not transcribed. Only Jacobi''s own text, footnotes and figure labels
+    are transcribed; running heads and signature marks are not.'
+discipline: mathematics
+tags:
+- analysis
+language: la
+type: book
+significance: >-
+  This is the book in which Jacobi, then a professor at Königsberg, set out the foundations of his
+  theory of elliptic functions. In the Preface, dated February 1829, he says that he took up the
+  theory almost two years earlier, was led to questions that seemed to give it a new aspect, and
+  communicated the first results to the geometers, at first without proof and then with it; the
+  book now publishes the foundations on which those investigations rest.[1] It treats the elliptic
+  functions themselves, written $\sin\operatorname{am}u$, $\cos\operatorname{am}u$ and
+  $\Delta\operatorname{am}u$ for the amplitude $\phi=\operatorname{am}u$ of the integral
+  $u=\displaystyle\int\frac{d\phi}{\sqrt{1-k^{2}\sin^{2}\phi}}$, and works out their addition, multiplication
+  and transformation, the modular equations that connect the moduli of related transformations,
+  and their expansion into infinite products and into series of sines and cosines of multiples of
+  the argument. Its most characteristic device is the pair of transcendents $\Theta$ and $H$,
+  which play the part of denominator and numerator, so that each elliptic function appears as a
+  quotient of two everywhere convergent series. The expansions are then applied to number theory,
+  among them the representation of every number as a sum of four squares.[note 1] Jacobi's work
+  and Abel's, begun independently at about the same time, were compared by Legendre to the efforts
+  of two young athletes; Abel died in April 1829, two months after this Preface was written.[2]
+  Jacobi's own note of 1832 on Abelian transcendents, also in this corpus, points back to this
+  book as the place where the doubly periodic elliptic functions were established.
+
+significance_notes:
+  - label: sums of four squares
+    text: >-
+      The book's index announces, as an application of the theory, that every number is the sum of
+      four squares. Jacobi obtains it by comparing two expansions of the fourth power of a theta
+      series; the result itself is older, since Lagrange proved it in 1770, and what is new is
+      the proof from elliptic functions together with the formula for the number of
+      representations.
+
+significance_sources:
+  - citation: >-
+      C. G. J. Jacobi, Fundamenta nova theoriae functionum ellipticarum (Königsberg: Borntraeger,
+      1829), Proœmium (pp. iii–iv) and Index rerum (pp. v–vi), as transcribed in this corpus.
+  - citation: >-
+      J. J. O'Connor and E. F. Robertson, "Carl Gustav Jacob Jacobi", MacTutor History of
+      Mathematics Archive, University of St Andrews — for Legendre's comparison of Jacobi and Abel
+      and for Jacobi's Königsberg professorship.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/"
+
+source:
+  scan_url: https://rmda.kulib.kyoto-u.ac.jp/en/item/rb00028935
+  scan_id: kyoto-rmda:RB00028935 (Kyoto University Rare Materials Digital Archive;
+    IIIF manifest https://rmda.kulib.kyoto-u.ac.jp/iiif/metadata_manifest/RB00028935/manifest.json,
+    107 double-page spreads of the 1829 first edition).
+sources:
+  death_date: Carl Gustav Jacob Jacobi, 1804–1851 (wikidata:Q76564; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/).
+  publication_date: First published 1829 at Königsberg by the Borntraeger brothers
+    (Kyoto University Rare Materials Digital Archive record RB00028935, https://rmda.kulib.kyoto-u.ac.jp/en/item/rb00028935;
+    title page of the scan).
+  edition: 'Original first edition, Regiomonti: Sumtibus fratrum Borntraeger, 1829,
+    vi + 191 pp. plus one folded leaf of plates (Kyoto University Department of Mathematics
+    copy, RB00028935).'
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1851
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1829
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-10-05'

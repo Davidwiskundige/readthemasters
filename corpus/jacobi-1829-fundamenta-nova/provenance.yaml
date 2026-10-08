@@ -1,0 +1,55 @@
+changelog:
+  - date: "2026-10-08"
+    summary: Transcription added (AI draft).
+  - date: "2026-10-08"
+    summary: Translation (en) added (AI draft).
+transcription:
+  status: ai-draft
+  model: claude-sonnet-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-08"
+  verification:
+    model: claude-sonnet-5-5
+    flagged_pages: [10, 25, 51, 62, 76, 79, 80, 88, 99, 104, 114, 117, 131, 164]
+    date: "2026-10-08"
+  uncertainty_flags: 0
+  note: >-
+    Complete Latin text of Jacobi's Fundamenta nova (title page, Proœmium iii–iv, Index rerum v–vi,
+    text pp. 1–188 with the colophon, and the author's Corrigenda pp. 189–191), from the Kyoto
+    University Rare Materials Digital Archive scan RB00028935 (the Department of Mathematics copy of
+    the 1829 first edition; the scan holds two printed pages per image and was split per page). The
+    unnumbered title page is marked i, and iii and v are inferred numbers (v's heading is cropped).
+    Work flow: 17 transcription batches (one subagent each, with the notation glossary notation.md
+    carried across batches), a text-only proofread of the whole assembled text, then a scan
+    verification of every page in groups of four with one magnification budget of three regions per
+    page; verification found and corrected many misread symbols, ellipsis dot counts, product dots
+    and paragraph breaks. Machine verification only; no human has checked any page.
+    Uncertainty flags: zero \uncertain{} remain, but that is not a clean bill. Doubts are
+    recorded in ~110 \ednote{} notes and in the PR body; the magnification cap (three regions per
+    page, shared between transcription and verification) was often exhausted, so most ellipsis dot
+    counts and several small exponents rest on the full-page image, not on a crop. A reviewer
+    should check these first. The prepared page images for scan indices 39, 131, 133, 157 and 179
+    were left uncropped because the automatic crop cut into the print; pages 32, 54, 110, 174 and
+    190 are cropped 28–50px short at the foot (signature marks, not text).
+    The Kyoto scan carries many hand corrections in ink, and the printer's own Corrigenda are
+    inked in on some pages. Rule followed: transcribe the type, never the ink; where the author's
+    Corrigenda name a printed misprint the print's reading is kept and an \ednote cites the
+    Corrigenda. A few of these rest on the Corrigenda rather than on a clearly visible misprint
+    (pp. 10, 25, 76, 80: the print's reading was ambiguous at the available resolution).
+    The unnumbered fold-out sheet of formula tables "Transformationes reales … (§ 25)" (scan
+    index 104 of the Kyoto manifest = halves 207–208, bound in after the Corrigenda and printed
+    rotated 90°) is transcribed last, without a page marker, in the logical panel order A,
+    complementary to A, B, complementary to B; it was rotated upright and read from full-resolution
+    panel crops, transcribed by one agent and checked by a second. Not transcribed: the publisher's
+    advertisement, library stamps, and the pencil and ink notes. No figures appear in the work.
+translations:
+  en:
+    status: ai-draft            # machine output; a human has not yet checked it
+    model: claude-sonnet-5-5
+    effort: medium
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription       # from our own original.tex (PLAN 2.2)
+    produced: "2026-10-08"
