@@ -1,0 +1,835 @@
+% Faithful transcription — original German. Transcribed from Journal für die reine
+% und angewandte Mathematik (Crelle's Journal), Band 74, Heft 3 (1872), pp. 218–253:
+% H. A. Schwarz, "Zur Integration der partiellen Differentialgleichung \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0."
+% Digital facsimile: Göttingen Digitalisierungszentrum (GDZ) / EuDML (eudml.org/doc/148178);
+% printed pp. 218–253.
+%
+% \origpage uses the printed page numbers (pp. 218–253). Running heads ("Schwarz, zur Integration
+% der partiellen Differentialgleichung \Delta u=0.", page numbers, Heft indicators) are apparatus
+% and not transcribed.
+%
+% TYPEFACE AND ORTHOGRAPHY. The text is set in Antiqua (Roman) type. Standard 19th-century
+% German orthography is preserved verbatim: Function, Theil, theilweise, Werthe, Curven, Constante,
+% convergirt, Reellen, Grenz- und Unstetigkeitsbedingungen, Mittheilung, Hülfs-, giebt, dass, etc.
+% Spaced type (Sperrdruck) used for proper names and emphasized terms (Riemann, Dirichlet,
+% Weierstrass, Prym, Neumann, Heine, Christoffel, Gauss, Poisson, Clebsch, Liouville, Kronecker)
+% is rendered as \emph{...}.
+%
+% NOTATION. Laplace operator \Delta u = 0, partial derivatives \partial, centered dots in
+% products preserved. Brackets denoting absolute value [u(r, \varphi)] preserved. Inline
+% integrals and sums use \displaystyle (HOUSESTYLE R2/R16).
+%
+% APPARATUS. Editorial notes (\ednote) flag misprints in the original print (e.g. p. 240 "mir" for "mit").
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{218}
+\section*{Zur Integration der partiellen Differentialgleichung
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
+\]}
+\begin{center}
+(Von Herrn \emph{H.~A. Schwarz} in Zürich.)
+\end{center}
+
+\emph{Im} vierten Hefte des 73.~Bandes dieses Journals hat Herr \emph{Prym} in einer Abhandlung „Zur Integration der Differentialgleichung $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$“ p.~340 bis 364 auf einen im XV.~Jahrgange der Vierteljahrsschrift der Naturforschenden Gesellschaft in Zürich (p.~113 bis 128) veröffentlichten Aufsatz Bezug genommen, durch dessen Abdruck an dieser Stelle einigen Lesern des Journals vielleicht ein Dienst geleistet wird. Bei dieser Gelegenheit sind zu dem erwähnten Aufsatze einige Anmerkungen hinzugefügt worden, welche hauptsächlich die Beziehungen zu anderen Bearbeitungen desselben Gegenstandes oder nahe verwandter Gebiete betreffen. Eine Fortsetzung und theilweise Erweiterung der in jenem Aufsatze enthaltenen Untersuchungen bildet den übrigen Inhalt der vorliegenden Mittheilung.
+
+\subsection*{Ueber die Integration der partiellen Differentialgleichung
+\[
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+\]
+für die Fläche eines Kreises.}
+
+In seiner Inauguraldissertation (Art.~18, 19, 21) und in seiner Abhandlung über die Theorie der Abelschen Functionen (d.~Journ. Bd.~54, p.~112, 114) hat \emph{Riemann} einige die Integration der partiellen Differentialgleichung
+\[
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+\]
+für ein gegebenes Gebiet $T$ unter vorgeschriebenen Grenz- und Unstetigkeitsbedingungen betreffende allgemeine Lehrsätze ausgesprochen, für welche meines Wissens ein strenger Beweis gegenwärtig noch nicht bekannt ist.
+
+\origpage{219}
+Auch für den einfachen und wichtigen Specialfall, in welchem das gegebene Gebiet eine schlichte Kreisfläche ist, können die bisherigen Untersuchungen, soweit meine Kenntniss derselben reicht, nicht als vollständig angesehen werden.
+
+Wenn der Werth der gesuchten Function $u$ in jedem Punkte der Begrenzung des Gebietes vorgeschrieben ist, und diese längs der Begrenzung vorgeschriebene Werthenreihe ausser der Bedingung, stetig zu sein, keiner anderen Beschränkung unterworfen wird, so ist die Annahme nicht zulässig, dass die gesuchte Function $u$ längs der Begrenzung endliche partielle Ableitungen $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$, beziehungsweise $\frac{\partial u}{\partial p}$ besitze, \emph{da unter den gemachten Voraussetzungen partielle Ableitungen der Function $u$ längs des Randes im Allgemeinen überhaupt nicht existiren.} Auf diesen Umstand, auf den vor mehreren Jahren Herr \emph{Weierstrass} in seinen Vorlesungen aufmerksam gemacht hat, ist, soviel ich weiss, bisher nicht Rücksicht genommen worden.
+
+Im Nachfolgenden beschränke ich mich auf die Betrachtung des Falles, in welchem das Gebiet der unabhängigen Variablen $x$ und $y$ eine die Ebene einfach bedeckende Kreisfläche $S$ ist; jedoch mit Ausschliessung von Stetigkeitsunterbrechungen und unendlich grossen Werthen in der für die Function $u$ längs der Begrenzung der Fläche $S$ vorgeschriebenen Werthenreihe.
+
+\subsection*{§.~1.}
+
+In der Ebene $A$, deren Punkte die complexe Grösse
+\[
+z = x + yi = r \cdot e^{i\varphi}
+\]
+geometrisch darstellen, sei gegeben ein ganz im Endlichen liegender, die Ebene allenthalben nur einfach bedeckender Bereich $T$, dessen Begrenzung von einer endlichen Anzahl von Stücken analytischer Linien gebildet wird.
+
+Für den Bereich $T$ sei definirt eine (reelle) Function $u$ der beiden reellen unabhängigen Variablen $x$, $y$ und zwar als eine endliche, stetige und eindeutige Function derselben für alle Punkte im Innern \emph{und} auf der Begrenzung von $T$.
+
+Es wird vorausgesetzt, dass die partiellen Ableitungen
+\[
+\frac{\partial u}{\partial x}, \quad \frac{\partial u}{\partial y}, \quad \frac{\partial^2 u}{\partial x^2}, \quad \frac{\partial^2 u}{\partial y^2}
+\]
+\origpage{220}existiren, endliche, stetige und eindeutige Functionen von $x$ und $y$ sind und die Gleichung
+\[
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+\]
+erfüllen.
+
+Jedoch werden diese, die Ableitungen betreffenden Voraussetzungen entweder
+
+\textbf{I.} \emph{nur für alle inneren Punkte des Gebietes $T$}
+
+oder
+
+\textbf{II.} auch für alle Punkte der Begrenzung von $T$ \emph{einschliesslich} gestellt.
+Hiernach sollen die für $u$ und für die Ableitungen von $u$ gestellten Voraussetzungen im Folgenden als „Bedingungen I“ und „Bedingungen II“ von einander unterschieden werden.${}^{*)}$
+
+\textbf{*)} Herr \emph{Carl Neumann} fordert in zwei Abhandlungen: „Revision einiger allgemeinen Lehrsätze aus der Theorie des Logarithmischen Potentials“, Mathematische Annalen von \emph{Clebsch} und \emph{Neumann}, Bd.~3, p.~325---349 und „Zur Theorie des Logarithmischen und des Newtonschen Potentiales. Zweite Mittheilung“, Berichte der K.~Sächs. Gesellschaft der Wissenschaften, math.-phys. Classe, October 1870, p.~264---321, ausser den in §.~1 angegebenen Bedingungen: \emph{a.}~„gleichmässige“ Stetigkeit und \emph{b.}~die Existenz der Ableitung $\frac{\partial^2 u}{\partial x\,\partial y}$ für das Innere des betrachteten Gebietes. Hierzu ist Folgendes zu bemerken:
+
+\emph{a.} Mit Recht hat Herr \emph{Heine} darauf aufmerksam gemacht (dieses Journal, Bd.~71, p.~361), dass bei der Erklärung der Stetigkeit einer Function zweier oder mehrerer Argumente sorgfältig zu Werke gegangen werden muss, wenn diese Erklärung analytisch brauchbar sein soll. Insbesondere erweist sich folgende Definition: „Eine Function zweier Argumente ist eine stetige Function derselben, wenn diese Function innerhalb des in Betracht kommenden Gebietes für jeden Werth des ersten Arguments eine stetige Function des zweiten und gleichzeitig für jeden Werth des zweiten Arguments eine stetige Function des ersten ist“, in den meisten Fällen als \emph{unzureichend}, wenn es sich darum handelt, aus derselben Schlüsse zu ziehen. Diese Erklärung ist daher als \emph{unbrauchbar} zu verwerfen, ganz abgesehen davon, dass dieselbe, wie Herr \emph{Thomae} bemerkt hat, auch solche Functionen umfasst, welche gewöhnlich \emph{unstetig} genannt werden, wie z.~B. die Function $\frac{2xy}{x^2+y^2}$ in einem den Punkt $x=0$, $y=0$ in seinem Innern enthaltenden Gebiete. Vergl. die Schrift des Herrn \emph{Thomae}: „Abriss einer Theorie der complexen Functionen und der Thetafunctionen einer Veränderlichen“, Halle 1870, Nebert, p.~13---16. --- Bei Beginn meiner mathematischen Studien habe ich folgende Erklärung der Stetigkeit einer Function zweier Argumente kennen gelernt, die ich auch jetzt noch für die richtige halte: „Eine Function $f(x, y)$ ist in der Umgebung des Werthepaares $x_0$, $y_0$ eine stetige Function ihrer beiden (stetig veränderlichen) reellen Argumente, wenn es nach Annahme einer von Null verschiedenen, sonst hinsichtlich ihrer Kleinheit keiner Beschränkung unterworfenen positiven Grösse $\varepsilon$ stets möglich ist, in der Umgebung des Werthepaares $x_0$, $y_0$ einen nach zwei Dimensionen ausgedehnten Bereich abzugrenzen, so dass für \emph{alle}, zugleich dem ursprünglichen Bereiche der Variablen, für den die Function erklärt ist, und dem abgegrenzten Bereiche zugehörenden Werthepaare $x_0 + h$, $y_0 + k$ die Differenz $f(x_0 + h, y_0 + k) - f(x_0, y_0)$ dem absoluten Betrage nach kleiner ist als $\varepsilon$. Hierbei ist die Gestalt jenes abgegrenzten Bereiches im Allgemeinen keinen Beschränkungen unterworfen. Genügt eine Function dieser Bedingung für alle dem Innern und für alle der Begrenzung eines gegebenen Bereiches der unabhängigen Variablen angehörenden Werthepaare $x_0$, $y_0$, so ist die betrachtete Function \emph{für diesen Bereich} eine stetige Function ihrer Argumente“. Es scheint mir kein Bedürfniss vorzuliegen, von dieser Erklärung abzugehen, da mit Hülfe einer von \emph{Bolzano} ersonnenen und von Herrn \emph{Weierstrass} weiter entwickelten Schlussweise ohne Schwierigkeit der Nachweis geführt werden kann, dass jede Function, welche im obigen Sinne für einen gegebenen Bereich eine stetige Function ihrer Argumente ist, für denselben Bereich auch in dem Sinne des Herrn \emph{Heine} gleichmässig stetig ist. Da auch das Umgekehrte stattfindet, so decken sich die beiden Begriffe vollkommen. Auf der anderen Seite erwächst aber aus der Bemerkung des Herrn \emph{Heine} die unabweisbare Forderung, welche insbesondere bei einem Existenzbeweise nicht unerfüllt bleiben darf, dass, wenn die Stetigkeit einer analytisch dargestellten Function \emph{bewiesen} werden soll, durch den Beweis die Stetigkeit der Function \emph{in genau demselben Umfange} dargethan werde, in welchem die Definition der Stetigkeit bei allgemeinen Untersuchungen vorausgesetzt werden muss, um analytisch brauchbar zu sein. Dieser Forderung habe ich in §.~5, in §.~8 und §.~11 zu entsprechen gesucht.
+
+\emph{b.} Die Forderung der Existenz der partiellen Ableitung $\frac{\partial^2 u}{\partial x\,\partial y}$ scheint mir \emph{unnöthig} zu sein, da die Endlichkeit, Stetigkeit und Eindeutigkeit dieser Ableitung für das Innere des betrachteten Gebietes --- man sehe §.~2 bis §.~5 des Textes --- bereits eine nothwendige Folge der übrigen Voraussetzungen ist. Es mag bemerkt werden, dass im Gegentheil die in §.~1 hinsichtlich der zweiten Ableitungen $\frac{\partial^2 u}{\partial x^2}$ und $\frac{\partial^2 u}{\partial y^2}$ gemachten Voraussetzungen noch auf ein geringeres Mass zurückgeführt werden können, da die in §.~2 angeführten Sätze auch dann noch unverändert gelten, wenn in einzelnen Punkten oder längs einzelner Linien von der Forderung der Existenz zweiter Ableitungen abgesehen oder die Erfüllung der Gleichung $\Delta u = 0$ ungewiss gelassen wird. Vergl. die Formulirung der Bedingungen für den im Art.~10 der Dissertation \emph{Riemanns} bewiesenen Lehrsatz.
+
+\origpage{221}
+\subsection*{§.~2.}
+
+\emph{a.} Sind $u$ und $u'$ zwei für denselben Bereich $T$ den Bedingungen II (s. den vorhergehenden Paragraphen) genügende Functionen, so haben die beiden Integrale
+\[
+\int (u\,\Delta u' - u'\,\Delta u)\,dT \quad \text{und} \quad -\int \Bigl(u\,\frac{\partial u'}{\partial p} - u'\,\frac{\partial u}{\partial p}\Bigr)\,ds,
+\]
+von denen das erste über den Bereich $T$ selbst, das zweite über alle Begrenzungslinien desselben zu erstrecken ist, den Werth Null; das erste, weil $\Delta u$ und $\Delta u'$ beständig gleich Null sind, das zweite, weil es durch theilweise Integration aus dem ersten erhalten werden kann (s. \emph{Green}: „An Essay on the Application of mathematical Analysis to the theories of Elec-
+
+\origpage{222}tricity and Magnetism.“ Dieses Journal, Bd.~44, p.~360; \emph{Riemanns} Inaug.-Diss., Art.~7 bis 10).${}^{*)}$
+
+\emph{b.} Setzt man $u' = 1$, also $\frac{\partial u'}{\partial p} = 0$, so ergiebt sich der Satz: Das über alle Begrenzungslinien eines Bereiches $T$, für welchen die Function $u$ den Bedingungen II genügt, zu erstreckende Integral $\displaystyle\int \frac{\partial u}{\partial p}\,ds$ hat den Werth Null.
+
+\subsection*{§.~3.}
+
+Eine Function $u$ genüge für die Fläche $S$ des mit dem Radius $1$ um den Punkt $z = 0$ beschriebenen Kreises den Bedingungen I.
+
+Man setze $u' = \log r$ (s. \emph{Riemanns} Dissertat. Art.~10). Die Curven constanter Werthe von $u'$ sind concentrische Kreise, deren Mittelpunkt der Punkt $z = 0$ ist. Sind $R_1$ und $R_2$ zwei specielle \emph{zwischen} $1$ und $0$ liegende Werthe von $r$ mit der Bedingung $1 > R_1 > R_2 > 0$, so genügen die Functionen $u$ und $u'$ für das von den beiden Kreisen mit dem Mittelpunkte $z = 0$ und den Radien $R_1$ und $R_2$ begrenzte Ringgebiet $T$ den Bedingungen II, und es sind daher die Voraussetzungen des Satzes §.~2, \emph{a} erfüllt.
+
+\textbf{*)} Am angeführten Orte stellt \emph{Green} dieselben Bedingungen, welche in §.~1 als Bedingungen II bezeichnet worden sind. Eine analoge Voraussetzung findet statt bei dem Beweise, den \emph{Gauss} für den Satz
+\[
+\int V \frac{\partial V}{\partial p}\,ds = -\int \Bigl[\Bigl(\frac{\partial V}{\partial x}\Bigr)^2 + \Bigl(\frac{\partial V}{\partial y}\Bigr)^2 + \Bigl(\frac{\partial V}{\partial z}\Bigr)^2\Bigr]\,dT
+\]
+giebt. (Werke, Bd.~V., p.~226.) Derselben Einschränkung sind aber auch die Beweise zu unterwerfen, welche Herr \emph{Durège} in der Schrift: „Elemente der Theorie der Functionen einer complexen veränderlichen Grösse“, Leipzig, Teubner, 1864, p.~203 und Herr \emph{C.~Neumann} in der Schrift: „Das Dirichletsche Princip“, Leipzig, Teubner, 1865 p.~9. gegeben haben, da dieselben nur Uebertragungen des \emph{Gauss}ischen Beweises auf den Fall zweier unabhängigen Variablen sind.
+
+Auf der anderen Seite findet man in dem Aufsatze des Herrn \emph{Betti}: „Sopra le funzioni sferiche“, Annali di Matematica, II.~Serie, Tomo~I., p.~81---87 und in demjenigen des Herrn \emph{Dini}: „Sopra le funzioni di una variable complessa“, ebendaselbst, Tomo~IV., p.~159---174, die Untersuchung auf den Fall beschränkt, in welchem die Erfüllung der Bedingungen II gefordert wird. Hierbei zeigt sich jedoch eine andere Unzuträglichkeit, da die in den Endformeln auftretende, die gegebenen Randwerthe darstellende, sogenannte willkürliche Function keineswegs willkürlich gewählt werden darf, wenn die Bedingung endlicher Differentialcoefficienten einschliesslich des Randes gestellt wird. Welchen beschränkenden Voraussetzungen aber diese Function ausser der Bedingung stetig zu sein in diesem Falle zu unterwerfen ist, geht, wie mir scheint, aus jenen Untersuchungen nicht hervor.
+
+\origpage{223}
+Das über die ganze Begrenzung von $T$ erstreckte Integral
+\[
+\int \Bigl(u\,\frac{\partial u'}{\partial p} - u'\,\frac{\partial u}{\partial p}\Bigr)\,ds
+\]
+hat demnach den Werth Null. Es ist zu zeigen, dass jedes der über die ganze Begrenzung von $T$ erstreckten Integrale
+\[
+\int u\,\frac{\partial u'}{\partial p}\,ds \quad \text{und} \quad \int u'\,\frac{\partial u}{\partial p}\,ds
+\]
+für sich den Werth Null hat.
+
+Längs des Kreises mit dem Radius $R_1$ hat $u'$ den constanten Werth $\log R_1$ und längs des Kreises mit dem Radius $R_2$ den constanten Werth $\log R_2$. Es ist also
+\[
+\int u'\,\frac{\partial u}{\partial p}\,ds = \log R_1 \cdot \int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds + \log R_2 \cdot \int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds.
+\]
+Wendet man den Satz §.~2, \emph{b} auf die Fläche des Kreises mit dem Radius $R_1$ und auf das Ringgebiet $T$ an, so erhält man
+\[
+\int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds = 0, \quad \int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds + \int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds = 0,
+\]
+folglich ist auch
+\[
+\int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds = 0.
+\]
+Daher hat das Integral $\displaystyle\int u'\,\frac{\partial u}{\partial p}\,ds$ und also auch das Integral $\displaystyle\int u\,\frac{\partial u'}{\partial p}\,ds$ den Werth Null, wenn beide Integrale über die ganze Begrenzung von $T$ erstreckt werden.
+
+Es ergiebt sich für $r = R_1$, $\frac{\partial u'}{\partial p} = -\frac{1}{R_1}$ und für $r = R_2$, $\frac{\partial u'}{\partial p} = \frac{1}{R_2}$. Setzt man daher für $ds$ seinen Werth $R_1 \cdot d\varphi$, beziehlich $R_2 \cdot d\varphi$ und bezeichnet den Werth der Function $u$ in dem Punkte $z = r \cdot e^{i\varphi}$ mit $u(r, \varphi)$, so erhält man aus der Gleichung $\displaystyle\int u\,\frac{\partial u'}{\partial p}\,ds = 0$ die folgende
+\[
+\int_0^{2\pi} u(R_2, \varphi)\,d\varphi = \int_0^{2\pi} u(R_1, \varphi)\,d\varphi.
+\]
+
+In dieser Gleichung sind $R_2$ und $R_1$ zwei von einander unabhängige veränderliche Grössen, welche alle Werthe zwischen $0$ und $1$ annehmen können, wobei jedoch die Werthe $0$ und $1$ zunächst noch ausgeschlossen sind. Nun folgt aber aus der Voraussetzung, dass die Function $u$ eine \origpage{224}stetige Function der Variablen $x$ und $y$, also auch der Variablen $r$ und $\varphi$ ist, dass der Werth des Integrals $\displaystyle\int_0^{2\pi} u(r, \varphi)\,d\varphi$ für alle Werthe von $r$ zwischen $0$ und $1$, einschliesslich der Werthe $0$ und $1$, sich mit dem Werthe von $r$ nicht anders als stetig ändern kann. Aus diesem Grunde bleibt die obige Gleichung, obgleich bei deren Herleitung zunächst vorausgesetzt wurde, dass $R_2$ und $R_1$ von $0$ und $1$ verschieden seien, auch dann noch bestehen, wenn $R_2 = 0$ und $R_1 = 1$ gesetzt wird. Für den Werth $R_2 = 0$ geht das Integral auf der linken Seite in $2\pi \cdot u(0)$ über, wenn mit $u(0)$ der Werth von $u$ im Punkte $z = 0$ bezeichnet wird. Es besteht daher die Gleichung
+\[
+u(0) = \frac{1}{2\pi} \int_0^{2\pi} u(1, \varphi)\,d\varphi.
+\]
+
+\subsection*{§.~4.}
+
+Bei zweckmässig geänderter Bestimmung der Function $u'$ führt die im vorhergehenden Paragraphen entwickelte Schlussweise, welche dem Art.~10 der Dissertation \emph{Riemanns} entnommen ist, auch zu einem Ausdruck für den Werth $u(r, \varphi)$ der Function $u$ in einem beliebigen, dem Innern der Kreisfläche angehörenden Punkte $z_0 = r \cdot e^{i\varphi}$, unter der alleinigen Voraussetzung, dass die Function $u$ für die Fläche $S$ den Bedingungen I genüge.
+
+Dem Punkte $z_0 = r \cdot e^{i\varphi}$ innerhalb der Fläche $S$ werde zugeordnet der Punkt $z_0' = \frac{1}{r} e^{i\varphi}$ ausserhalb derselben; $0 < r < 1$. Alle Punkte $z$, deren Abstände von den Punkten $z_0$ und $z_0'$, $[z - z_0]$ und $[z - z_0']$, ein constantes Verhältniss haben, $\frac{[z - z_0]}{[z - z_0']} = r \cdot t$, mit der Einschränkung $0 \le t \le 1$, liegen auf einem der Fläche $S$ angehörenden Kreise, dessen Mittelpunkt $c$ und dessen Radius $R$ durch die Gleichungen
+\[
+c = z_0 \cdot \frac{1 - t^2}{1 - r^2 t^2}, \quad R = \frac{t(1 - r^2)}{1 - r^2 t^2}, \quad z_0 - c = z_0 \cdot R \cdot t
+\]
+gegeben werden. Für $t = 1$ fällt dieser Kreis mit der Begrenzung von $S$ zusammen, für $t = 0$ geht derselbe in einen Punkt, nämlich in den Punkt $z_0$ über.
+
+\origpage{225}
+Zu jedem Punkte $z$ von $S$ gehört nach dem Vorhergehenden, sobald der Punkt $z_0 = r \cdot e^{i\varphi}$ fixirt ist, \emph{ein} Werth von $t$, $0 \le t \le 1$, also auch je \emph{ein} Werth von $c$ und $R$. Setzt man nun $z - c = R \cdot e^{i\psi}$, so entspricht jedem Punkte $z$ von $S$ mit Ausnahme des Punktes $z_0$ \emph{ein} Werth von $\psi$, welcher der Bedingung $0 \le \psi < 2\pi$ genügt, und für den die Gleichung $z - c = R \cdot e^{i\psi}$ erfüllt ist. Da auch umgekehrt zu jedem Werthepaare $t$, $\psi$ nur \emph{ein} Werth von $z$ gehört, so können $t$ und $\psi$ als unabhängige Variable gewählt werden. Es geht dann die Function $u$ von $x$ und $y$ in eine Function von $t$ und $\psi$ über. Der dem Werthepaare $t$, $\psi$ eindeutig entsprechende Werth von $u$ möge mit $u[t; \psi]$ bezeichnet werden. Für die Werthe $t = 1$ und $t = 0$ ergeben sich die Identitäten $u[1; \psi] = u(1, \psi)$, $u[0; \psi] = u(r, \varphi)$. Auch in Beziehung auf die Variablen $t$ und $\psi$ ändert sich die Function $u$ für alle in Betracht kommenden Werthepaare mit beiden Argumenten stetig.
+
+Man setze $u'$ gleich dem reellen Theile der analytischen Function $\log \frac{z - z_0}{z - z_0'}$,
+\[
+u' = \log \frac{[z - z_0]}{[z - z_0']} = \log(r \cdot t).
+\]
+Es seien $t_1$ und $t_2$ zwei specielle Werthe von $t$, welche beide zwischen $1$ und $0$ liegen, mit der Bedingung $1 > t_1 > t_2 > 0$. $R_1$ und $R_2$ seien die Radien der diesen Werthen von $t$ entsprechenden zwei Kreise, $T$ bezeichne das von diesen beiden Kreisen begrenzte Ringgebiet.
+
+Nun genügen die Functionen $u$ und $u'$ für die Fläche $T$, die Function $u$ für die Fläche des Kreises mit dem Radius $R_1$ den Bedingungen II; längs beider Begrenzungslinien von $T$ hat die Function $u'$ je einen constanten Werth. Mittelst derselben Schlüsse wie in §.~3 wird daher gefolgert, dass das über die ganze Begrenzung von $T$ erstreckte Integral $\displaystyle\int u \frac{\partial u'}{\partial p}\,ds$ auch in dem vorliegenden Falle den Werth Null hat.
+
+Man erhält für $\frac{\partial u'}{\partial p}$ längs der beiden den Werthen $t = t_1$, $t = t_2$ entsprechenden Begrenzungslinien von $T$ beziehlich die Werthe
+\[
+-\frac{1}{R_1} \cdot \frac{1 - r^2 t_1^2}{1 - 2r t_1 \cos(\psi - \varphi) + r^2 t_1^2}
+\]
+und
+\[
+\frac{1}{R_2} \cdot \frac{1 - r^2 t_2^2}{1 - 2r t_2 \cos(\psi - \varphi) + r^2 t_2^2}.
+\]
+
+\origpage{226}
+Wenn daher für $ds$ sein Werth $R_1 \cdot d\psi$, beziehlich $R_2 \cdot d\psi$ gesetzt wird, so ergiebt sich aus der Gleichung $\displaystyle\int u \frac{\partial u'}{\partial p}\,ds = 0$ die folgende
+\[
+\begin{gathered}
+\int_0^{2\pi} u[t_2; \psi] \frac{1 - r^2 t_2^2}{1 - 2r t_2 \cos(\psi - \varphi) + r^2 t_2^2} \cdot d\psi = \\
+= \int_0^{2\pi} u[t_1; \psi] \frac{1 - r^2 t_1^2}{1 - 2r t_1 \cos(\psi - \varphi) + r^2 t_1^2} \cdot d\psi.
+\end{gathered}
+\]
+
+Die Grössen $t_1$ und $t_2$ sind von einander unabhängig und können alle Werthe zwischen $1$ und $0$ annehmen, ausgenommen die Werthe $1$ und $0$ selbst. Aus den über die Function $u$ gemachten Voraussetzungen folgt aber, dass für alle Werthe von $t$ zwischen $1$ und $0$, einschliesslich der Werthe $1$ und $0$, der Werth des Integrals
+\[
+\int_0^{2\pi} u[t; \psi] \frac{1 - r^2 t^2}{1 - 2rt \cos(\psi - \varphi) + r^2 t^2}\,d\psi
+\]
+sich mit dem Werthe von $t$ nicht anders als stetig ändern kann; daher bleibt die obige Gleichung auch dann noch bestehen, wenn $t_2 = 0$, $t_1 = 1$ gesetzt wird. Für den Werth $t_2 = 0$ geht die linke Seite der Gleichung in $2\pi \cdot u(r, \varphi)$ über, während die rechte Seite für $t_1 = 1$ in
+\[
+\int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+\]
+übergeht.
+
+Es besteht daher, wenn die Function $u$ für die Kreisfläche $S$ den Bedingungen I genügt, für alle Werthe von $r$, welche kleiner sind als $1$, und für alle Werthe von $\varphi$ die Gleichung
+\[
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+
+(Vergl. C.~\emph{Neumann}: „Ueber die Integration der partiellen Differentialgleichung $\frac{\partial^2 \varPhi}{\partial x^2} + \frac{\partial^2 \varPhi}{\partial y^2} = 0$.`` Dieses Journal, Bd.~59, S.~364.)${}^{*)}$
+
+\textbf{*)} Das bestimmte Integral, auf welches die Untersuchung des §.~4 geführt hat, und die entsprechende Formel, durch welche die partielle Differentialgleichung
+\[
+\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} = 0
+\]
+für das Innere einer Kugel integrirt wird, wenn der Werth der Function $V$ an der Oberfläche der Kugel vorgeschrieben ist und die Bedingungen, denen diese Function unterworfen wird, den in §.~1 angegebenen Bedingungen I analog sind, findet sich in verschiedenen Abhandlungen \emph{Poissons} angegeben: Journal de l'École polytechnique, cah.~18, pag.~422 (1815); cah.~19, pag.~150, 155, 433 (1823). Mémoires de l'Académie des Sciences, année 1823, pag.~575. Additions à la Connaissance des Tems pour l'année 1829, pag.~329; pour l'année 1831, pag.~49. Philosophical Magazine, July 1827. Théorie mathématique de la chaleur, Paris 1835, chap.~VII et VIII.
+
+Man wird auch in dem Beweise, der in §.~5 unter \emph{b.} enthalten ist, die Grundgedanken des \emph{Poissonschen} Beweises leicht wiedererkennen.
+
+Der in §.~3 und in §.~4 enthaltene Beweis beruht im Wesentlichen darauf, dass zunächst eine Formel, welche partielle Ableitungen der Function $u$ nicht mehr enthält, unter Voraussetzung der Bedingungen II hergeleitet und hierauf ein Grenzübergang ausgeführt wird, welcher gestattet, an die Stelle der Bedingungen II die Bedingungen I treten zu lassen. Zu demselben Ziele führt auch folgende Anordnung des Beweises, welche dem entsprechenden \emph{Greenschen} Beweise und der von \emph{Riemann} und anderen Mathematikern in Vorlesungen und Abhandlungen gegebenen Darstellung dieses Beweises vielleicht noch etwas näher steht.
+
+Durch Anwendung der Schlüsse des §.~3 auf die Fläche eines Kreises mit dem Radius $R$, für welche eine Function $u$ den Bedingungen I genügt, ergiebt sich:
+\[
+\tag{I.} 2\pi \cdot u(0) = \int u \frac{\partial\log r}{\partial r}\,ds = \int_0^{2\pi} u(R, \varphi)\,d\varphi.
+\]
+
+Es werde nun um den Punkt $z = 0$ als Mittelpunkt mit dem Radius $R_1$ ($R_1 < R$) ein Kreis beschrieben und ebenso um den Punkt $z_0 = r \cdot e^{i\varphi}$ ($0 < r < R_1$) als Mittelpunkt ein Kreis mit dem Radius $R_2$ ($R_2 < R_1 - r$). Man setze $\frac{R_1^2}{r} e^{i\varphi} = z_0'$ und bezeichne die Abstände irgend eines Punktes $z$ von den Punkten $z_0$ und $z_0'$ beziehlich mit $\varrho$ und $\varrho'$; man setze ferner $u' = \log \varrho - \log \varrho'$ und wende auf das von den Kreisen $r = R_1$ und $\varrho = R_2$ begrenzte Ringgebiet den Satz §.~2, \emph{a} an, so ergiebt sich durch Schlüsse, welche den im Text angegebenen ganz analog sind
+\[
+\int u \frac{\partial\log \varrho}{\partial \varrho}\,ds = \int_0^{2\pi} u(R_1, \psi) \frac{R_1^2 - r^2}{R_1^2 - 2R_1 r \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+Hieraus folgt mit Benutzung der Gleichung (I.) beim Uebergange von $R_1$ in $R$
+\[
+\tag{II.} u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+
+\origpage{227}
+Also ist der Werth der Function $u$ in einem beliebigen Punkte $z = r \cdot e^{i\varphi}$ im Innern der Kreisfläche unter den angegebenen Voraussetzungen nur abhängig von denjenigen Werthen, welche die Function $u$ auf der Peripherie des Kreises annimmt, und ausserdem von den Polarcoordinaten jenes Punktes, bezogen auf den Mittelpunkt des Kreises als Pol; überdiess ist $u(r, \varphi)$ durch die genannten Grössen eindeutig ausgedrückt.
+
+Wenn es daher eine Function $u$ giebt, welche für die Fläche eines Kreises den Bedingungen I Genüge leistet und auf der Peripherie desselben mit einer gegebenen Function $f(\varphi)$ dem Werthe nach übereinstimmt, so ist die Function durch diese Bedingungen bestimmt, und es giebt nur eine solche Function.
+
+\origpage{228}
+\subsection*{§.~5.}
+
+Im Vorhergehenden ist gezeigt worden, dass jede Function $u$, welche für eine Kreisfläche $S$ den Bedingungen I genügt, durch diejenigen Werthe eindeutig bestimmt ist, welche dieselbe auf dem Rande von $S$ annimmt. Es entsteht nun die Frage, ob für eine solche Function $u$ die Reihe der Randwerthe $u(1, \varphi) = f(\varphi)$ willkürlich vorgeschrieben werden kann?
+
+Diese Frage beantwortet folgender Lehrsatz:
+
+Wenn längs des Randes der Kreisfläche $S$ eine für alle Werthe des reellen Argumentes $\varphi$ endliche, stetige und eindeutige reelle Function $f(\varphi)$, welche bei Vermehrung des Argumentes um $2\pi$ periodisch in sich zurückkehrt, sonst aber keiner weiteren Beschränkung unterliegt, willkürlich vorgeschrieben ist, so giebt es jedesmal eine (und nach dem Vorhergehenden nur eine einzige) Function $u$, welche für die Fläche $S$ den Bedingungen I genügt und längs des Randes von $S$ mit der gegebenen Function $f(\varphi)$ übereinstimmt.
+
+Diese Function wird für alle Punkte $z = r \cdot e^{i\varphi}$ im Innern von $S$, $r < 1$, dargestellt durch das Integral
+\[
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+
+Der Beweis dieses Satzes zerfällt in zwei Theile; in dem ersten Theile (\emph{a.}) ist zu zeigen, dass die durch die vorstehende Gleichung definirte Function $u(r, \varphi)$ für alle dem Innern von $S$ angehörenden Punkte $z = r \cdot e^{i\varphi} = x + yi$ in Beziehung auf die Variablen $x$ und $y$ partielle Ableitungen aller Ordnungen besitzt und der partiellen Differentialgleichung $\Delta u = 0$ genügt; in dem zweiten Theile (\emph{b.}) hingegen ist der Nachweis zu führen, dass die Function $u(r, \varphi)$ auch in der Nähe des Werthes $r = 1$ eine stetige Function ihrer Argumente ist und für $r = 1$ in die Function $f(\varphi)$ stetig übergeht.
+
+\emph{a.} Die durch das Integral
+\[
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+\]
+definirte Function $u$ stimmt überein mit dem reellen Theile der durch die Gleichung
+
+\origpage{229}
+\[
+F(z) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{e^{i\psi} + z}{e^{i\psi} - z} \cdot d\psi
+\]
+für alle Werthe von $z$, deren absoluter Betrag $r$ kleiner ist als $1$, mit dem Charakter einer ganzen Function eindeutig definirten analytischen Function $F(z)$ des complexen Argumentes $z = r \cdot e^{i\varphi} = x + yi$.
+
+Daher besitzt die Function $u$ für alle im Innern der Kreisfläche liegenden Punkte $z$ in Beziehung auf die unabhängigen Variablen $x$ und $y$ partielle Ableitungen aller Ordnungen und genügt in demselben Umfange der Differentialgleichung $\Delta u = 0$.
+
+\emph{b.} Wegen der vorausgesetzten Periodicität der Function $f(\psi)$ kann man statt des Integrals
+\[
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+\]
+das Integral
+\[
+\frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\varphi + \psi) \cdot \frac{1 - r^2}{1 - 2r \cos\psi + r^2} \cdot d\psi
+\]
+setzen, und da für alle Werthe von $r$, welche kleiner sind als $1$, den Werth $r = 1$ ausgeschlossen, das Integral
+\[
+\frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1 - r^2}{1 - 2r \cos\psi + r^2} \cdot d\psi
+\]
+den Werth $1$ hat, so gilt in demselben Umfange die Gleichung
+\[
+u(r, \varphi) = f(\varphi) + \frac{1}{2\pi} \int_{-\pi}^{+\pi} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi.
+\]
+
+Es ist nun zu zeigen, dass es möglich ist, für die Differenz $1 - r$ eine Grenze festzusetzen, so dass für alle Werthe von $r$, für welche die Differenz $1 - r$ von Null verschieden ist und jene Grenze nicht überschreitet, und für alle Werthe von $\varphi$ der Werth des Integrals in der vorstehenden Gleichung dem absoluten Betrage nach kleiner ist als eine beliebig kleine vorgeschriebene Grösse.
+
+Wegen der Periodicität der Function $f(\varphi)$ kann das Intervall von $-\pi$ bis $+\pi$, über welches sich die Integration erstreckt, wenn mit $\delta$ eine kleine positive Grösse bezeichnet wird, durch die beiden Intervalle von $\delta$ bis $2\pi - \delta$ und von $-\delta$ bis $+\delta$ ersetzt werden.
+
+Während $\psi$ sich in dem Intervalle von $\delta$ bis $2\pi - \delta$ befindet, ist
+
+\origpage{230}
+der unter dem Integralzeichen vorkommende Nenner stets grösser als $2r(1 - \cos\delta)$. Die Differenz $f(\varphi + \psi) - f(\varphi)$ bleibt stets kleiner als $2g$, wenn $g$ den grössten Werth des absoluten Betrages von $f(\varphi)$ bezeichnet. Folglich ist der Beitrag, den dieses Intervall zu dem Werthe des Integrals liefert, numerisch kleiner als $\frac{g(1 - r^2)}{r(1 - \cos\delta)}$. Wie klein man aber auch die Grösse $\delta$, die immer von Null verschieden bleibt, in der Folge zu wählen für gut finden wird, durch entsprechende Verkleinerung von $1 - r$ kann man über die Kleinheit von $\frac{g(1 - r^2)}{r(1 - \cos\delta)}$ gebieten.${}^{*)}$
+
+Es bleibt noch das Integral
+\[
+\frac{1}{2\pi} \int_{-\delta}^{+\delta} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi
+\]
+zu betrachten.
+
+Bezeichnet man mit $\varepsilon$ eine Grösse, welche der absolute Betrag der Differenz $f(\varphi + \psi) - f(\varphi)$ in dem Intervalle $-\delta \le \psi \le +\delta$ nicht überschreitet, so ist der Werth dieses Integrals numerisch kleiner als
+\[
+\frac{\varepsilon}{2\pi} \int_{-\delta}^{+\delta} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi,
+\]
+also auch kleiner als
+\[
+\frac{\varepsilon}{2\pi} \int_{-\pi}^{+\pi} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi,
+\]
+d.~h. kleiner als $\varepsilon$.
+
+Wegen der vorausgesetzten Stetigkeit der Function $f(\varphi)$ lässt sich nun, wie klein auch die von Null verschiedene Grösse $\varepsilon$ angenommen werden möge, stets eine von Null verschiedene Grösse $\delta$ angeben, so dass für
+
+
+
+\textbf{*)} Noch engere Grenzen ergiebt folgende Schätzung. Das Integral
+\[
+\frac{1}{2\pi} \int_{\delta}^{2\pi - \delta} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi
+\]
+ist dem absoluten Betrage nach kleiner als
+\[
+\frac{g}{\pi} \int_{\delta}^{2\pi - \delta} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi = \frac{2g}{\pi} \operatorname{arc\,tg}\left(\frac{1 - r}{1 + r} \cdot \operatorname{cotg}\frac{1}{2}\delta\right),
+\]
+also auch kleiner als
+\[
+\frac{4g}{\pi(1 + r)} \cdot \frac{1 - r}{\delta}.
+\]
+
+\origpage{231}
+alle dem absoluten Betrage nach die Grösse $\delta$ nicht überschreitenden Werthe von $\psi$ und zugleich für alle Werthe von $\varphi$ der absolute Betrag der Differenz $f(\varphi + \psi) - f(\varphi)$ kleiner ist als $\varepsilon$; es verschwindet daher das angegebene Integral für alle Werthe von $\varphi$ gleichzeitig mit $\delta$.
+
+Hiermit ist der oben ausgesprochene Satz in allen seinen Theilen bewiesen.
+
+Für die Formulirung des hier mitgetheilten Beweises ist eine Forderung massgebend gewesen, welche im Januar d.~J. von Herrn \emph{Heine} brieflich mir gestellt wurde, im Wesentlichen des Inhalts: Wie klein auch eine von Null verschiedene Grösse $\varepsilon'$ angenommen werden mag, es muss möglich sein, eine von Null verschiedene Grösse $\varepsilon$ anzugeben, so dass --- für alle Werthe von $r$, für welche die Differenz $1 - r$ von Null verschieden und kleiner als $\varepsilon$ ist, und zugleich für alle Werthe von $\varphi$ --- der absolute Betrag der Differenz $u(r, \varphi) - f(\varphi)$ kleiner ist als die Grösse $\varepsilon'$.
+
+Näheres über die Bedeutung dieser Forderung enthält eine Abhandlung des Herrn \emph{Heine}: „Ueber trigonometrische Reihen``${}^{*)}$, eine Abhandlung, welche alle Mathematiker mit lebhafter Freude begrüssen werden.
+
+Ein analoges Verfahren führt zu einem strengen Beweise der entsprechenden Formel, durch welche die partielle Differentialgleichung
+\[
+\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} = 0
+\]
+für das Innere eines kugelförmigen Raumes integrirt wird, an dessen Oberfläche die Function $V$ vorgeschriebene Werthe annehmen soll.
+
+Hinsichtlich dieser Aufgabe möge auf zwei Schriften des Herrn C.~\emph{Neumann} verwiesen werden, deren Titel folgen:
+
+„Lösung des allgemeinen Problemes über den stationären Temperaturzustand einer homogenen Kugel.`` Halle, bei H.~W. Schmidt, 1861.
+
+„Allgemeine Lösung des Problemes über den stationären Temperaturzustand eines homogenen Körpers, welcher von irgend zwei nichtconcentrischen Kugelflächen begrenzt wird.`` Halle, bei H.~W. Schmidt, 1862.
+
+\textbf{*)} Dieses Journal, Bd.~71, S.~353.
+
+\origpage{232}
+\subsection*{§.~6.}
+
+Die analytische Function $F(z)$ ist im Vorhergehenden durch ein bestimmtes Integral dargestellt worden. Aus demselben ergiebt sich eine zweite Darstellung der Function $F(z)$ durch eine für alle Werthe von $z$, deren absoluter Betrag kleiner ist als $1$, unbedingt convergirende, nach Potenzen von $z$ mit ganzen positiven Exponenten fortschreitende Reihe
+\[
+F(z) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\psi)\,d\psi + \sum_{(m=1, \, 2, \, \dots \, \infty)} \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) e^{-mi\psi}\,d\psi \cdot z^m.
+\]
+
+Die Function $u(r, \varphi)$ ist der reelle Theil der Function $F(z)$; man erhält daher aus der vorstehenden Gleichung die Entwickelung
+\[
+\begin{gathered}
+u(r, \varphi) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\psi)\,d\psi \\
++ \sum_{(m=1, \, 2, \, \dots \, \infty)} \left( \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \cos m\psi\,d\psi \cdot \cos m\varphi + \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \sin m\psi\,d\psi \cdot \sin m\varphi \right) \cdot r^m.
+\end{gathered}
+\]
+Wird $r$ gleich $1$ gesetzt, so geht die rechte Seite der vorstehenden Gleichung in die \emph{Fouriersche} Reihe für die Function $f$ über.${}^{*)}$
+
+Mitunter ist es nützlich, einen Werth zu kennen, welchen der absolute Betrag der Differenz $u(r, \varphi) - u(0)$ als Function von $r$ nicht überschreiten kann, sobald die Werthe $u(1, \varphi) = f(\varphi)$ eine endliche Grösse $g$ dem absoluten Betrage nach nicht überschreiten.
+
+Man erhält
+\[
+[u(r, \varphi) - u(0)] < [F(z) - F(0)] < 2g \cdot \frac{r}{1 - r};
+\]
+oder
+
+\textbf{*)} In seiner Schrift: „Das Dirichletsche Princip`` ist Herr C.~\emph{Neumann} von der Darstellung einer der Differentialgleichung $\Delta u = 0$ für die Fläche eines Kreises genügenden Function durch das über den Rand der Kreisfläche zu erstreckende \emph{Poissonsche} Integral (s. §.~4 und die Anmerkung p.~226) wieder abgegangen und hat die \emph{Fouriersche} Reihe zum Ausgange gewählt. Einen ähnlichen Gedankengang deutet Herr \emph{Schläfli} im 72.~Bande dieses Journals pag.~283 an. Dass diese Methode nur eine heuristische ist und einer vollständigen Deduction bedarf, ist der Kern der von Herrn \emph{Heine} (d.~Journ., Bd.~71, p.~361) und Herrn \emph{Prym} (d.~Journ., Bd.~73, p.~340) gegen dieselbe geltend gemachten Einwendungen. In welchem Sinne aber, muss man fragen, ist die Behauptung \emph{Riemanns} zu verstehen, welche derselbe am Schlusse des §.~2 seiner Habilitationsschrift („Ueber die Darstellbarkeit einer Function durch eine trigonometrische Reihe``) ausspricht?
+
+\origpage{233}
+\[
+u(r, \varphi) - u(0) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\varphi + \psi) \left( \frac{1 - r^2}{1 - 2r \cos\psi + r^2} - 1 \right) d\psi,
+\]
+\[
+[u(r, \varphi) - u(0)] < \frac{4g}{\pi} \arcsin r.
+\]${}^{*)}$
+
+\begin{flushright}
+Mai 1870.
+\end{flushright}
+
+\subsection*{Fortsetzung und Erweiterung der in den vorhergehenden Paragraphen enthaltenen Untersuchungen.}
+
+\subsection*{§.~7.}
+
+Die für die Fläche eines Kreises mit dem Radius $1$ erhaltenen Untersuchungsergebnisse sind nach verschiedenen Richtungen einer Erweiterung fähig.
+
+Es ist zunächst klar, dass die aufgestellten Formeln für die Fläche eines Kreises mit dem Radius $R$ Gültigkeit erhalten, wenn in denselben $\frac{r}{R}$ an die Stelle von $r$ gesetzt wird. (Hierbei besitzt $R$ natürlich nicht mehr dieselbe Bedeutung wie in §.~4.)
+
+Hierdurch geht die in §.~4 und §.~5 angegebene Formel in die folgende über
+\[
+\begin{aligned}
+u(r, \varphi) &= \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi \\
+&= \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi
+\end{aligned}
+\]
+mit der Bedingung $0 \le r < R$, und dem Zusatze $u(R, \varphi) = f(\varphi)$.
+
+Die Function $f(\varphi)$ des reellen Argumentes $\varphi$ ist bisher den Bedingungen endlich, stetig, eindeutig und mit der Periode $2\pi$ periodisch zu sein unterworfen gewesen. Die angegebene Formel kann aber für das Innere der Kreisfläche eine bestimmte Bedeutung haben, auch ohne dass
+
+\textbf{*)} Wenn insbesondere $u(0)$ den Werth Null hat, so kann der absolute Betrag von $u(r, \varphi)$ als Function von $r$ betrachtet den Werth $\frac{4g}{\pi} \operatorname{arc\,tg} r$ nicht überschreiten. Diese Bestimmung ergiebt zugleich die engste Grenze, welche unter den angegebenen Voraussetzungen zulässig ist.
+
+\origpage{234}
+die Function $f(\varphi)$ für alle dem Intervall von $0$ bis $2\pi$ angehörenden Werthe von $\varphi$ endlich, stetig und eindeutig erklärt ist, und zwar wird dieses stets und nur dann der Fall sein, wenn diese Function im \emph{Riemannschen} Sinne (§.~5 der Habilitationsschrift) durchgehends eine Integration gestattet.
+
+Die Untersuchung soll jedoch hier nicht in dieser Allgemeinheit geführt, sondern (ebenso wie in der Abhandlung des Herrn \emph{Prym}) auf folgenden Fall beschränkt werden.
+
+Die Function $f(\varphi)$ sei --- mit Ausnahme derjenigen Werthe von $\varphi$, welche modulo $2\pi$ einem der $m$ Werthe $\varphi_1, \, \varphi_2, \, \dots \, \varphi_\nu, \, \dots \, \varphi_m$ --- die sämmtlich kleiner als $2\pi$ und von einander verschieden angenommen werden können --- congruent sind --- für alle reellen Werthe von $\varphi$ als eine endliche, stetige und eindeutige, bei Vermehrung des Argumentes um $2\pi$ periodisch sich wiederholende Function des reellen Argumentes $\varphi$ erklärt; bei der Annäherung der Variablen $\varphi$ an einen der ausgeschlossenen Werthe, z.~B. an den Werth $\varphi_\nu$, nähere sich, sowohl wenn $\varphi$ stetig wachsend, als auch, wenn $\varphi$ stetig abnehmend dem Werthe $\varphi_\nu$ sich nähert, der Werth der Function $f(\varphi)$ je einer bestimmten endlichen Grenze, welche nach dem Vorgange \emph{Dirichlets} im ersten Falle mit $f(\varphi_\nu - 0)$, im zweiten mit $f(\varphi_\nu + 0)$ bezeichnet werden soll.
+
+Ist die Differenz $f(\varphi_\nu + 0) - f(\varphi_\nu - 0)$, welche mit $A_\nu$ bezeichnet werden möge, eine von Null verschiedene Grösse, so besitzt die Function $f(\varphi)$ für alle Werthe von $\varphi$, für welche $\varphi \equiv \varphi_\nu \pmod{2\pi}$ ist, zwei Werthe und erfährt in denselben eine Stetigkeitsunterbrechung. Des Folgenden wegen soll jedoch der Fall nicht ausgeschlossen werden, dass $A_\nu$ auch gleich Null sein kann, in welchem Falle der Werth $\varphi_\nu$ und die ihm congruenten mit Rücksicht auf die Stetigkeit der Function $f(\varphi)$ nicht zu den singulären gehören.
+
+Solche Unstetigkeiten, welche durch Abänderung des Werthes der Function in einem Punkte aufgehoben werden können, sogenannte \emph{hebbare Unstetigkeiten}, sollen der Kürze wegen hier und im Folgenden von der Betrachtung ausgeschlossen werden.
+
+Dieselbe Unstetigkeit, welche die Function $f(\varphi)$ in den Punkten besitzt, für welche $\varphi \equiv \varphi_\nu \pmod{2\pi}$, zeigt die Function
+\[
+\frac{A_\nu}{\pi} \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\varphi - \varphi_\nu)}\right) = \frac{A_\nu}{2\pi} (\pi - (\varphi' - \varphi_\nu)),
+\]
+
+\origpage{235}
+vorausgesetzt dass $A_\nu$ von Null verschieden ist, und dass der Variablen $\varphi'$ auf der rechten Seite der vorstehenden Gleichung stets der dem Intervalle $\varphi_\nu \dots \varphi_\nu + 2\pi$ angehörende Werth beigelegt werde, welcher modulo $2\pi$ dem Werthe der Variablen $\varphi$ congruent ist.
+
+Hier und im Folgenden, mit Ausnahme einer Stelle in §.~9, bedeutet die Function arcus tangens den zwischen $-\frac{\pi}{2}$ und $+\frac{\pi}{2}$ liegenden eindeutig bestimmten Bogen, dessen Tangente den vorgeschriebenen Werth hat.
+
+Wird nun die Differenz
+\[
+f(\varphi) - \frac{1}{\pi} \sum A_\nu \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\varphi - \varphi_\nu)}\right) \quad (\nu = 1, \, 2, \, \dots \, m)
+\]
+gebildet und mit $f_0(\varphi)$ bezeichnet, so ist durch diese Festsetzung die Function $f_0(\varphi)$ für alle Werthe von $\varphi$ mit Ausnahme der den Werthen $\varphi_\nu$ congruenten als eine endliche, stetige und eindeutige Function ihres Argumentes erklärt und zwar besteht für alle Werthe von $\nu$ die Gleichung
+\[
+f_0(\varphi_\nu - 0) = f_0(\varphi_\nu + 0).
+\]
+
+Wird daher für diejenigen Werthe von $\varphi$, auf welche die Erklärung der Function $f_0(\varphi)$ sich nicht erstreckt, die ergänzende Bestimmung getroffen, es solle, wenn $\varphi \equiv \varphi_\nu \pmod{2\pi}$ ist, der Werth der Function durch die Gleichung $f_0(\varphi_\nu) = f_0(\varphi_\nu - 0) = f_0(\varphi_\nu + 0)$ bestimmt werden, so genügt die durch diese erweiterte Definition für alle reellen Werthe von $\varphi$ eindeutig erklärte Function $f_0(\varphi)$ in voller Strenge den in §.~5 angegebenen Bedingungen.
+
+Es werde nun angenommen, für alle Punkte der Fläche $S$ des mit dem Radius $1$ um den Nullpunkt beschriebenen Kreises, mit Ausnahme einer endlichen Anzahl von Punkten des Randes, nämlich der Punkte $z_\nu = e^{i\varphi_\nu}$, sei eine reelle Function $u$ der beiden reellen Argumente $x$ und $y$ so erklärt, dass dieselbe für diese Fläche $S$ \emph{mit Ausnahme der angegebenen Punkte des Randes} den in §.~1 angegebenen Bedingungen I genüge und längs des Randes mit Ausnahme der Punkte $z_\nu$ mit der Function $f(\varphi)$ übereinstimme.
+
+Dies ist aber so zu verstehen: man denke sich für jeden der singulären Punkte ein Gebiet construirt, welches denselben ganz in seinem Innern enthält, und dessen Begrenzung eine beliebige Gestalt haben darf; am einfachsten ist es, jeden der singulären Punkte als Mittelpunkt einer Kreisfläche mit dem Radius $\varrho$ zu betrachten, wo $\varrho$ eine veränderliche
+
+\origpage{236}
+Grösse bezeichnet, welche keiner anderen Bedingung unterworfen ist, als positiv und von Null verschieden zu sein. Werden nun alle diejenigen Theile des Gebietes $S$ ausgeschieden, welche im Innern eines dieser Kreise liegen, so soll die Function $u$, wie klein auch $\varrho$ gewählt werden möge, für den übrigen Bereich den Bedingungen I in aller Strenge genügen und auf dem frei gebliebenen Rande von $S$ mit $f(\varphi)$ übereinstimmen.
+
+Es wird nun von dem Verhalten der Function $u$ in der Nähe der singulären Punkte abhängen, ob die Function $u$ durch ihre Randwerthe $u(1, \varphi) = f(\varphi)$ und die übrigen Bedingungen bestimmt ist, und in wiefern eine der in §.~4 angegebenen analoge Schlussweise auch in diesem Falle gestattet ist.
+
+Es bezeichne $R$ eine von $r$, $\varphi$, $\psi$ unabhängige veränderliche Grösse, deren Veränderlichkeit zunächst auf solche Werthe beschränkt wird, die \emph{kleiner als $1$} sind. Dann ist nach der am Anfange dieses Paragraphen angeführten Formel für alle Werthe von $r$, welche kleiner als $R$ sind,
+\[
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+
+Wenn nun die Function $u$ in der Nähe der singulären Punkte sich so verhält, dass geschlossen werden kann, es gehe das Integral auf der rechten Seite der vorstehenden Gleichung für $\lim R = 1$ \emph{stetig} in das Integral
+\[
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+\]
+über, so wird, und nur in diesem Falle, die Schlussweise des §.~4 mit ihren Folgerungen sich unverändert auf den vorliegenden Fall übertragen lassen.
+
+Ein zur Vorsicht mahnendes, sehr einfaches Beispiel zeigt, dass dieser Schluss nicht ohne eine specielle Voraussetzung zulässig ist.
+
+Man setze
+\[
+u = \Re\left(\frac{1 - z}{1 + z}\right) = \frac{1 - r^2}{1 + 2r \cos\varphi + r^2},
+\]
+wo der vorgesetzte Buchstabe $\Re$ nach der Bezeichnungsweise des Herrn \emph{Weierstrass} bedeutet, dass der reelle Theil des nachfolgenden Ausdruckes genommen werden soll.
+
+Die Curven constanter Werthe von $u$ bilden eine Schaar von Kreisen, welche einander und die Begrenzung von $S$ im Punkte $z = -1$ berühren. Mit Ausnahme dieses Punktes, für welchen die Function nicht
+
+\origpage{237}
+erklärt ist, genügt dieselbe für die Fläche $S$ den Bedingungen I und hat auf dem Rande von $S$ überall, wo sie erklärt ist, den Werth Null. Es steht daher frei, den Werth von $u$ für den Punkt $z = -1$ durch eine besondere Definition zu fixiren, und zwar möge $u(1, \pi) = 0$ gesetzt werden. Dann ist
+\[
+\frac{1}{2\pi} \int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+\]
+für jeden Werth von $r$ und $\varphi$ gleich Null und stimmt also mit der vorher erklärten Function \emph{nicht} überein. Unter den angegebenen Festsetzungen ist demnach ein Grenzübergang aus dem über die Peripherie des Kreises mit dem Radius $R$ zu erstreckenden Integrale in das über den Rand von $S$ zu erstreckende Integral nicht gestattet. Der Grund hiervon liegt in dem Umstande, dass in diesem Falle der Werth von $u(r, \varphi)$ bei der Annäherung des Punktes $z = r \cdot e^{i\varphi}$ an den Punkt $z = -1$ \emph{unendlich gross} oder näher bestimmt, \emph{unendlich gross erster Ordnung} werden kann.
+
+Bei Anwendung des von Herrn \emph{Prym} gewählten Systems von Polarcoordinaten $\varrho$, $\tau$ mit dem Pole $z = -1$ ergiebt sich:
+\[
+z = -1 + i\varrho \cdot e^{-\tau i}
+\]
+und
+\[
+\frac{1 - r^2}{1 + 2r \cos\varphi + r^2} = \Re\left(\frac{1 - z}{1 + z}\right) = \Re\left(\frac{2}{1 + z}\right) - 1 = \frac{2\sin\tau}{\varrho} - 1.
+\]
+
+Anders verhält es sich in dem folgenden Falle. Es werde gesetzt
+\[
+u^*(r, \varphi) = \operatorname{arc\,tg}\frac{y}{1 + x} = \operatorname{arc\,tg}\frac{r\sin\varphi}{1 + r\cos\varphi} = \Re\frac{\log(1 + z)}{i} = \frac{\pi}{2} - \tau.
+\]
+
+Das System der Linien, längs welcher $u^*$ constante Werthe hat, ist ein geradliniges Strahlbüschel, dessen Mittelpunkt im Punkte $z = -1$ liegt. Auch in diesem Falle ist die Function $u^*$ für den Punkt $z = -1$ \emph{nicht} erklärt. Von dem vorhergehenden unterscheidet sich aber der gegenwärtige Fall wesentlich dadurch, dass die Function $u^*$ bei der Annäherung an den singulären Punkt \emph{endlich bleibt}; denn, ein wie kleines den Punkt $z = -1$ enthaltendes Gebiet man auch aus der Fläche $S$ ausscheiden mag, für das übrig bleibende Gebiet genügt die Function $u^*$ den Bedingungen I (sogar den engeren Bedingungen II), und der absolute Betrag von $u^*$ überschreitet nirgends den Werth $\frac{\pi}{2}$.
+
+Im Folgenden soll nun gezeigt werden, dass für die Function $u^*$ der erwähnte Grenzübergang mit voller Strenge gestattet ist. Um jedoch
+
+\origpage{238}
+dem Beweise gleich eine etwas allgemeinere Fassung zu geben, möge die Grösse, welche der absolute Betrag von $u^*$ nirgends überschreitet, mit $g$ bezeichnet werden.
+
+Es gilt, wenn $R$ dieselbe Bedeutung hat, wie vorher, für alle Werthe von $r$, welche kleiner als $R$ sind, und für alle Werthe von $\varphi$ die Gleichung
+\[
+u^*(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u^*(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+\]
+
+Bei dem Uebergange von $R$ in den Werth $1$ hört die Stetigkeit der Function $u^*(R, \psi)$ bei dem Werthe $\psi = \pi$ auf. Man ersetze daher, diese Unstetigkeitsstelle durch das Intervall $\pi - \delta \dots \pi + \delta$ ausschliessend, wo $\delta$ eine positive Grösse bezeichnet, das Intervall von $0$ bis $2\pi$ durch zwei andere Intervalle, nämlich durch das Intervall von $-\pi + \delta$ bis $\pi - \delta$ und das Intervall von $\pi - \delta$ bis $\pi + \delta$, welche Ersetzung wegen der Periodicität der Function $u^*(R, \psi)$ als Function von $\psi$ gestattet ist.
+
+Das dem ersten Intervalle entsprechende Integral ist zufolge der Voraussetzung sicher eine stetige Function von $R$ und zwar \emph{einschliesslich} für den Werth $R = 1$.
+
+Man kann daher das dem ersten Intervalle entsprechende Integral der Summe
+\[
+\frac{1}{2\pi} \int_{-\pi+\delta}^{\pi-\delta} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi + \varepsilon_1
+\]
+gleichsetzen, und zwar bedeutet in dieser Gleichung $\varepsilon_1$ eine Grösse von der Eigenschaft, dass nach vorausgegangener Annahme von $\delta$ durch die Festsetzung, die Differenz $1 - R$ dürfe eine gewisse Grenze $\varrho$ nicht überschreiten, über die Kleinheit des absoluten Betrages von $\varepsilon_1$ verfügt werden kann.
+
+Da nun die Function $u^*$ zufolge der Voraussetzung an keiner Stelle die Grösse $g$ dem absoluten Betrage nach überschreitet, so kann man setzen
+\[
+\frac{1}{2\pi} \int_{-\pi+\delta}^{\pi-\delta} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi = \frac{1}{2\pi} \int_{-\pi}^{+\pi} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi + \varepsilon_2,
+\]
+wobei für $u^*(1, \pi)$ und $u^*(1, -\pi)$ die Werthe $u^*(1, \pi - 0)$ und $u^*(1, -\pi + 0)$ einzusetzen sind (die Bezeichnung erläutert die Art des
+
+\origpage{239}
+Grenzüberganges), und wobei $\varepsilon_2$ dem absoluten Betrage nach kleiner als $\frac{2g}{1 - r} \cdot \delta$ ist.
+
+Der Werth des dem zweiten Intervalle entsprechenden Integrales ist dem absoluten Betrage nach kleiner als $g \cdot \frac{R + r}{R - r} \cdot \delta$ und möge bezeichnet werden mit $\varepsilon_3$.
+
+Hieraus ergiebt sich die Gleichung
+\[
+u^*(r, \varphi) - \frac{1}{2\pi} \int_{-\pi}^{+\pi} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi = \varepsilon_1 + \varepsilon_2 + \varepsilon_3.
+\]
+
+Da nun über die Kleinheit des absoluten Betrages von $\varepsilon_2$ und von $\varepsilon_3$, also auch von $\varepsilon_2 + \varepsilon_3$ durch gehörig kleine Wahl von $\delta$, und nach getroffener Wahl von $\delta$ durch gehörig kleine Wahl von $\varrho$, beziehungsweise $1 - R$, über die Kleinheit des absoluten Betrages von $\varepsilon_1$ verfügt werden kann, und da überdies der Werth der Differenz auf der linken Seite der vorstehenden Gleichung von der Wahl der Grössen $\delta$ und $R$ überhaupt unabhängig ist, so folgt, dass jene Differenz den Werth Null hat. Dieses sollte bewiesen werden.
+
+Dem vorstehenden Beweise ist gleich eine solche Fassung gegeben worden, dass derselbe ohne Schwierigkeit auf den Fall ausgedehnt werden kann, in welchem eine Function $u^*$ für die Fläche $S$ eines Kreises mit dem Radius $R$ mit Ausnahme einer endlichen Anzahl von Punkten des Randes ($z_\nu = R \cdot e^{i\varphi_\nu}$, $\nu = 1, \, 2, \, \dots \, m$) so erklärt ist, dass dieselbe für alle übrigen Punkte den Bedingungen I genügt, wenn ausserdem bekannt ist, dass der Werth von $u^*$ bei der Annäherung des Punktes $z$ an einen der singulären Punkte des Randes stets \emph{endlich bleibt}, d.~h. eine bestimmte endliche von dem Grade jener Annäherung unabhängige Grösse $g$ dem absoluten Betrage nach niemals überschreitet.
+
+Die hieraus sich ergebenden Schlüsse sind den in den beiden letzten Absätzen des §.~4 gezogenen völlig analog. Die Function $u^*$ ist also durch die angegebenen Bedingungen eindeutig bestimmt.
+
+Dieser Beweis unterscheidet sich in mehrfacher Beziehung von dem Beweise, den Herr \emph{Prym} in dem §.~5 seiner oben erwähnten Abhandlung gegeben hat, insbesondere dadurch, dass über die \emph{Art} der Unstetigkeit der Function $u^*$, beziehungsweise deren Vieldeutigkeit bei der Annäherung des Punktes $z$ an einen singulären Punkt des Randes keinerlei andere Voraus-
+
+\origpage{240}
+setzung gemacht wird als die, dass die Function $u^*$ im erklärten Sinne bei der Annäherung an die singulären Punkte \emph{endlich bleibe}.
+
+Auch Herr C.~\emph{Neumann} macht (\emph{Berichte d.~K.~Sächs.~Ges.~d.~W.} 1870, p.~278 und 279) eine solche specielle Voraussetzung.
+
+Jede solche im Voraus gemachte specielle Annahme über die \emph{Art} des Verhaltens einer Function $u$ bei der Annäherung an einen singulären Punkt unterliegt jedoch, wenn dieselbe mehr enthält als die unerlässliche Forderung, dass die Function bei der Annäherung \emph{endlich bleibe}, wie mir scheint, nicht unerheblichen Bedenken. Sobald nämlich \emph{nur} die Endlichkeit der Function $u$ in der Nähe des singulären Punktes gewiss ist, zeigt sich, dass die gesuchte Function $u$ durch diese und die übrigen Bedingungen bereits bestimmt ist, so dass sich also eine vorhergehende speciellere Annahme als \emph{unnöthig} erweist. Ueberhaupt scheint mir das Verhalten einer Function $u$ in der Nähe eines solchen Punktes, wenn deren Endlichkeit in der Umgebung desselben vorausgesetzt wird, Gegenstand der \emph{Untersuchung}, nicht aber Gegenstand der vorhergehenden \emph{freien Verfügung} zu sein, da jede andere specielle Annahme, als diejenige, die die Herren C.~\emph{Neumann} und \emph{Prym} gemacht haben, zur Folge haben würde, dass keine Function existirt, welche den gestellten Bedingungen genügt.
+
+Dass aber andererseits die Annahme, welche Herr C.~\emph{Neumann} gemacht hat, \emph{nicht allgemein genug} ist, zeigt sich, sobald die Begrenzung des Bereiches $T$ Spitzen enthält, denn für diese reicht die Annahme des Herrn C.~\emph{Neumann} nicht mehr aus, es müsste vielmehr an die Stelle derselben eine Annahme treten, welche mit dem von mir in dem Monatsberichte der Berliner Akademie vom October 1870, p.~777 ausgesprochenen Lehrsatze sich in Einklang befindet. ---
+
+Durch den vorhergehenden Beweis ist speciell auch die Richtigkeit der Gleichung
+\[
+\operatorname{arc\,tg}\frac{r\sin\varphi}{1 + r\cos\varphi} = \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1}{2}\psi \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+\]
+für alle Werthe von $r$, welche kleiner als $1$ sind, bewiesen, eine Gleichung, welche übrigens leicht auch auf anderem Wege vermittelst Reihenentwickelungen erhalten werden kann.
+
+Wird nun in dieser Gleichung die Variable $\varphi$ mit $\pi - (\varphi - \varphi_\nu)$ vertauscht und die Function, in welche der Ausdruck auf der linken Seite hierdurch übergeht, mit\ednote{Druckfehler: im Original steht mir statt mit.} $u_\nu^*$ bezeichnet, so ergiebt sich
+
+\origpage{241}
+\[
+\begin{aligned}
+u_\nu^* = \operatorname{arc\,tg}\frac{r\sin(\varphi - \varphi_\nu)}{1 - r\cos(\varphi - \varphi_\nu)} &= \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1}{2}\psi \cdot \frac{1 - r^2}{1 - 2r\cos(\psi - \pi + \varphi - \varphi_\nu) + r^2}\,d\psi \\
+&= \frac{1}{2\pi} \int_0^{2\pi} \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\psi - \varphi_\nu)}\right) \cdot \frac{1 - r^2}{1 - 2r\cos(\psi - \varphi) + r^2}\,d\psi,
+\end{aligned}
+\]
+eine Gleichung, von welcher im folgenden Paragraphen Gebrauch gemacht werden wird.
+
+\subsection*{§.~8.}
+
+Es handelt sich nun darum, analog der in §.~5 durchgeführten Untersuchung den Existenzbeweis zu führen, und das Verhalten des die gesuchte Function darstellenden Integrals in der Nähe der singulären Punkte $z_\nu = e^{i\varphi_\nu}$ zu untersuchen, in welchen entweder die Reihe der vorgeschriebenen Randwerthe eine Stetigkeitsunterbrechung erfährt, oder die Stetigkeit der Function $u^*$ ungewiss ist.
+
+Die Untersuchung lässt sich leicht auf den in §.~5 betrachteten Fall zurückführen. Unter Beibehaltung der übrigen in §.~7 erklärten Bezeichnungen möge die Function $u^*(r, \varphi)$ für alle Werthe von $r$, welche kleiner als $1$ sind, durch die Gleichung
+\[
+u^*(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+\]
+und für $r = 1$ durch die Gleichung $u^*(1, \varphi) = f(\varphi)$, soweit diese nämlich einen bestimmten Sinn hat, erklärt sein.
+
+Für jeden ganz im Innern von $S$ liegenden Bereich genügt diese Function (vergl. den Beweis in §.~5 unter \emph{a.}) den Bedingungen II, es handelt sich also nur darum, das Verhalten der Function für $\lim r = 1$ zu untersuchen.
+
+Zu diesem Zwecke werde an die Stelle von $f(\psi)$ die Summe
+\[
+f(\psi) = f_0(\psi) + \frac{1}{\pi} \sum A_\nu \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\psi - \varphi_\nu)}\right) \quad (\nu = 1, \, 2, \, \dots \, m)
+\]
+(s. den vorhergehenden Paragraphen) gesetzt; hierdurch geht der Ausdruck für $u^*(r, \varphi)$ in eine Summe von $m + 1$ ebenso gebildeten Integralen über. Bezeichnet man nun das dem ersten Gliede $f_0(\psi)$ entsprechende Integral, welches sich ganz im Falle des in §.~5 betrachteten befindet, mit $u_0(r, \varphi)$
+
+\origpage{242}
+oder mit $u_0$, die übrigen dagegen zufolge der letzten Gleichung in §.~7, so ergiebt sich
+\[
+u^* = u_0 + \frac{1}{\pi} \sum A_\nu \cdot u_\nu^* \quad (\nu = 1, \, 2, \, \dots \, m).
+\]
+Durch diese Darstellung ist die Stetigkeit der analytisch dargestellten Function $u^*$ längs des Randes mit Ausnahme der Umgebung der singulären Punkte $z_\nu = e^{i\varphi_\nu}$ bewiesen und gleichzeitig die Art des Verhaltens dieser Function in der Umgebung dieser Punkte charakterisirt. In der Umgebung eines singulären Punktes $z_\nu = e^{i\varphi_\nu}$ unterscheidet sich nämlich die Function $u^*$ von der Function $\frac{1}{\pi} A_\nu \cdot u_\nu^*$ nur durch eine in diesem Punkte vollkommen stetige Function.
+
+Hiermit ist also die Existenz einer den angegebenen Bedingungen genügenden Function dargethan, und zwar hat sich hierbei ergeben, dass die besondere Art ihres Verhaltens in der Nähe der singulären Punkte in dem betrachteten Falle eine \emph{Folge} der übrigen Eigenschaften ist.
+
+Die dargestellte Function genügt also für das Gebiet, für welches sie erklärt ist, mit Ausnahme derjenigen singulären Punkte $z_\nu = e^{i\varphi_\nu}$ des Randes, für welche das entsprechende $A_\nu$ von Null verschieden ist, im angegebenen Sinne den Bedingungen I, stimmt für alle Punkte des Randes mit Ausnahme der erwähnten singulären mit der gegebenen Function $f(\varphi)$ überein und bleibt zugleich bei der Annäherung an jene singulären Punkte \emph{endlich}.
+
+Der hier mitgetheilte Beweis, der übrigens ebensowenig wie der im vorhergehenden Paragraphen vorgetragene darauf Anspruch macht, neue Gedanken zu enthalten, scheint mir etwas einfacher zu sein als derjenige, dessen Herr \emph{Prym} in seiner mehrfach erwähnten Abhandlung sich bedient hat.
+
+Wird nun die Voraussetzung gemacht, dass $A_\nu$ für einen speciellen Werth von $\nu$ gleich Null sei, so liegt in dem Vorhergehenden bereits zugleich der Beweis dafür, dass die einzige, den übrigen Bedingungen genügende Function in der Umgebung des Punktes $z_\nu$ \emph{ebenfalls stetig} ist, während bei der Herleitung (s.~§.~7) die Stetigkeit in diesem Punkte ungewiss gelassen und nur festgesetzt war, dass die Function in der Umgebung dieses Punktes \emph{endlich} bleiben solle.${}^{*)}$
+
+\textbf{*)} Es kann erwähnt werden, dass dieser Satz sich folgendermassen verallgemeinern lässt: Wenn für irgend einen von einer endlichen Anzahl analytischer Linien begrenzten Bereich $T$ mit Ausnahme einer endlichen Anzahl von Punkten im Innern oder auf dem Rande eine Function $u$ so erklärt ist, dass dieselbe
+
+1.~für den Bereich $T$ mit Ausnahme jener Punkte, für welche es ungewiss oder noch unentschieden ist, im angegebenen Sinne den Bedingungen I genügt,
+
+2.~bei der Annäherung an jene Punkte endlich bleibt, während
+
+3.~hebbare Unstetigkeiten ausgeschlossen bleiben,
+
+so ist diese Function eo ipso auch für alle inneren Punkte und für diejenigen Punkte des Randes stetig, in welchen die Reihe der Randwerthe eine Stetigkeitsunterbrechung nicht erfährt.
+
+Auf den strengen Beweis dieses Satzes kann ich jedoch, soweit sich derselbe auf solche singulären Punkte bezieht, die am Rande liegen, in dieser Mittheilung nicht eingehen, da derselbe mich hier zu weit vom nächsten Zwecke entfernen würde, und ich muss mich daher damit begnügen, hinsichtlich dieses Beweises einstweilen auf die in dem Monatsberichte der Berliner Akademie vom October 1870, pag.~775--777 gegebenen Andeutungen zu verweisen.
+
+\origpage{243}
+Es gilt auch hier die Bemerkung, dass, wenn an die Stelle der Kreisfläche mit dem Radius $1$ eine solche tritt, deren Radius $R$ ist, dann in der aufgestellten Formel $\frac{r}{R}$ an die Stelle von $r$ zu setzen ist.
+
+Bezeichnet nun $g$ die obere, $k$ die untere Grenze aller derjenigen Werthe, welche die Function $f(\varphi)$ annehmen kann, von der vorausgesetzt werden möge, dass sie nicht constant sei, so ist von den Differenzen $f(\varphi) - g$ und $f(\varphi) - k$ die erste nie positiv, die zweite nie negativ. Hieraus folgt, dass von den beiden Differenzen $u(r, \varphi) - g$ und $u(r, \varphi) - k$, wenn $r < 1$ ist, die erste nur negative, die zweite nur positive Werthe annehmen kann, da diese Differenzen beziehlich mit den Integralen
+\[
+\frac{1}{2\pi} \int_0^{2\pi} (f(\psi) - g) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+\]
+und
+\[
+\frac{1}{2\pi} \int_0^{2\pi} (f(\psi) - k) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+\]
+übereinstimmen.
+
+Es liegt daher der Werth von $u$ für einen \emph{inneren} Punkt von $S$ stets \emph{zwischen} $g$ und $k$, d.~h. dem Werthe der oberen und unteren Grenze aller derjenigen Werthe, welche diese Function längs des Randes von $S$ annehmen kann.
+
+\subsection*{§.~9.}
+
+Den Inhalt dieses und des folgenden Paragraphen entnehme ich
+
+\origpage{244}
+einer Abhandlung über die Integration der partiellen Differentialgleichung $\Delta u = 0$, welche ich im November 1869 Herrn \emph{Kronecker} und Herrn \emph{Weierstrass} mitgetheilt habe. Der zunächst befolgte Gedankengang ist demjenigen, welchen \emph{Riemann} im 54.~Bande dieses Journals auf p.~101 und 102 (p.~1 und 2 des Separatabdruckes) entwickelt hat, und der, wie bekannt, in der Theorie der analytischen Functionen häufig zur Anwendung gelangt, vollkommen entsprechend. Es freut mich, constatiren zu können, dass ich mich in diesem Theile der Untersuchung hinsichtlich der Methode der Beweisführung mit Herrn \emph{C.~Neumann} ganz in Uebereinstimmung befinde. Man vergl. Mathematische Annalen von \emph{Clebsch} und \emph{Neumann}, Bd.~3, p.~338--339 (October 1870) und Monatsbericht der Berliner Akademie vom October 1870, p.~770--771. ---
+
+Unter den Bedingungen I sei für den Bereich $T$ eine Function $u$ definirt; im Innern von $T$ denke man sich einen Kreis, dessen Mittelpunkt die Coordinaten $x_0$ und $y_0$ haben möge, dessen Radius gleich $R$ ist und dessen ganze Fläche dem Innern von $T$ angehört.
+
+Für die Fläche dieses Kreises ist die Function $u$ mit den Bedingungen II erklärt, es ist also nach dem Vorhergehenden die Existenz höherer Ableitungen von $u$ für alle inneren Punkte $x_0$, $y_0$ des Gebietes $T$, sowie die Entwickelbarkeit des Werthes von $u$ für die dem Punkte $x_0$, $y_0$ benachbarten Punkte $x$, $y$ nach Potenzen von $x - x_0$ und $y - y_0$ beziehungsweise nach Producten aus Potenzen von $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ und den Sinus und Cosinus der gleichnamigen Vielfachen von $\varphi = \operatorname{arc\,tg}\frac{y - y_0}{x - x_0}$ eine nothwendige Folge der Voraussetzungen I.
+
+Die Zahlencoefficienten der einzelnen Glieder des Functionenelementes $u(r, \varphi)$, welches die Werthe von $u$ für alle in der Umgebung des Punktes $x_0$, $y_0$ liegenden Punkte darstellt, sind unabhängig von der Grösse des Radius $R$ desjenigen Kreises, welcher zur Bestimmung dieses Functionenelementes gewählt wird; denn zwei Functionenelemente, hergeleitet mittelst zweier Kreise, welche die Radien $R$ und $R'$ haben, wo $R' > R$, müssen für alle Werthe von $r < R$ mit einander übereinstimmen und hieraus folgt die Gleichheit aller entsprechenden Glieder beider Elemente. Es haben daher auch beide Elemente denselben Bereich der Convergenz.
+
+Daher convergirt die nach Potenzen von $r$ fortschreitende Reihe, durch welche ein solches Functionenelement dargestellt wird, sicher, wenn
+
+\origpage{245}
+$r$ kleiner ist als der kürzeste Abstand des Punktes $x_0$, $y_0$ von der Begrenzung des Bereiches $T$, beziehlich vom nächsten Punkte, für welchen die gestellten Bedingungen zu gelten aufhören.
+
+Hieraus wird gefolgert: Wenn zwei Functionen $u_1$ und $u_2$, welche für zwei Bereiche $T_1$ und $T_2$, die ein einfach zusammenhängendes Gebiet $T^*$ von zwei Dimensionen gemeinsam haben, den Bedingungen I genügen, in einem noch so kleinen Theile dieses gemeinsamen Gebietes mit einander übereinstimmen, so stimmen sie für alle Punkte desselben mit einander überein, lassen sich unter Beibehaltung der Bedingungen I beide simultan gleich weit analytisch fortsetzen und stimmen längs jeder solchen Fortsetzung mit einander überein.
+
+Um diesen Schluss machen zu können, ist nach dem Vorhergehenden nur nöthig zu wissen, die beiden Functionen stimmen auf der Peripherie eines Kreises mit einander überein, für dessen Fläche beide mit den Bedingungen I erklärt sind.
+
+Wenn daher eine Function $u$ im Innern von $T$ in einem noch so kleinen Bereiche von zwei Dimensionen oder auf der Peripherie eines Kreises mit beliebig kleinem Radius, dessen Inneres ganz im Innern von $T$ liegt, für welches Gebiet die Function $u$ den Bedingungen I genügt, \emph{constant} ist, so ist diese Function, soweit sie unter Aufrechterhaltung der Bedingungen I fortgesetzt wird, constant.
+
+\subsection*{§.~10.}
+
+Der Werth $u(0)$ von $u$ für den Mittelpunkt eines Kreises, für dessen Fläche $u$ mit den Bedingungen I erklärt ist, ist gleich dem über die Peripherie des Kreises zu erstreckenden Integrale
+\[
+\frac{1}{2\pi} \int_0^{2\pi} u \cdot d\varphi,
+\]
+also gleich dem arithmetischen Mittel aus allen den Werthen, welche $u$ auf der Peripherie des Kreises annimmt. Wenn nun $u$ nicht überhaupt constant ist, so muss es unter den Werthen von $u$ auf der Peripherie des Kreises sowohl solche geben, welche grösser sind als der Werth $u(0)$, als auch solche, die kleiner sind, und zwar gilt dieser Schluss, wie klein auch der Radius des Kreises sein möge.
+
+Hieraus folgt, wenn $u$ nicht constant ist, so giebt es für jeden inne-
+
+\origpage{246}
+ren Punkt von $T$ solche benachbarten Punkte, für welche $u$ einen grösseren, und solche, für welche $u$ einen kleineren Werth besitzt als für den erstbetrachteten Punkt.
+
+Es kann also $u$ für keinen inneren Punkt des Gebietes ein Maximum oder Minimum sein. (Vergl. \emph{Riemanns} Inauguraldissertation, Art.~11.~III.)
+
+Nun ist nach den Voraussetzungen I der Werth von $u$ endlich, stetig und eindeutig erklärt für alle Punkte von $T$, einschliesslich der Begrenzung. Folglich giebt es für diese Werthe eine \emph{obere Grenze} $g$.
+
+Nach einer Beweismethode, welche Herr \emph{Weierstrass} in seinen Vorlesungen über die Theorie der analytischen Functionen mitzutheilen pflegt, lässt sich zeigen, dass es in der Ebene des Gebietes $T$ mindestens einen Punkt $z'$ von der Beschaffenheit giebt, dass, wenn ein beliebig kleines Gebiet, ein Theil von $T$, in der Umgebung desselben abgegrenzt wird, die obere Grenze aller derjenigen Werthe von $u$, die zu Punkten dieses Gebietes gehören, \emph{ebenfalls noch} $g$ ist.
+
+Keiner dieser Punkte kann im Innern von $T$ liegen, denn erstens würde in einem solchen Punkte wegen der vorausgesetzten Stetigkeit von $u$ die obere Grenze $g$ wirklich \emph{erreicht}, zweitens müsste es dann --- wenn $u$ nicht überhaupt constant ist --- in der Umgebung jenes Punktes noch grössere Werthe von $u$ geben, gegen die Voraussetzung, dass $g$ die obere Grenze ist.
+
+Es liegen also alle jene Punkte $z'$ \emph{ausserhalb} des Innern von $T$.
+
+Da die Begrenzung von $T$ nach der Voraussetzung aus Stücken analytischer Linien besteht, welche in jedem Punkte den Charakter einer algebraischen Curve haben, und eine solche Linie jeden Punkt der Ebene, dem sie unendlich nahe kommt, wirklich erreicht, so liegt jeder der Punkte $z'$ in der Begrenzung von $T$ und wegen der Stetigkeit von $u$ wird die obere Grenze $g$ in jedem dieser Punkte $z'$ wirklich \emph{erreicht}.
+
+In analoger Weise wird gezeigt, dass die \emph{untere Grenze} $k$ aller Werthe von $u$ mindestens in einem Punkte der Begrenzung, aber in keinem inneren Punkte von $T$ wirklich erreicht wird.
+
+Also liegen, wenn $u$ nicht constant ist, alle Werthe, welche $u$ für die inneren Punkte des Bereiches $T$ unter den angegebenen Voraussetzungen I annehmen kann, \emph{zwischen} dem grössten Werthe $g$ und dem kleinsten Werthe $k$ unter denjenigen Werthen, welche $u$ auf der Begrenzung von $T$ annimmt.
+
+\origpage{247}
+Hieraus folgt, dass eine Function $u$, welche unter den Bedingungen I für einen Bereich $T$ erklärt ist und für alle Punkte der Begrenzung den Werth Null hat, auch für alle inneren Punkte von $T$ den Werth Null hat.
+
+Und:
+
+Wenn zwei Functionen $u$ und $u_1$ für dasselbe Gebiet $T$ den Bedingungen I genügen und für alle Punkte der Begrenzung des Gebietes mit einander übereinstimmen, so stimmen sie in ihren Werthen ganz mit einander überein.
+
+Wenn es daher eine Function $u$ giebt, welche für einen gegebenen Bereich $T$ den Bedingungen I genügt, und in jedem Punkte der Begrenzung einen vorgeschriebenen und längs derselben stetig sich ändernden Werth besitzt, so giebt es nur \emph{eine} solche Function.${}^{*)}$
+
+\subsection*{§.~11.}
+
+Wenn die Integration der partiellen Differentialgleichung $\Delta u = 0$ für die Fläche eines Kreises durchgeführt ist, hat es keine Schwierigkeit, die analogen Untersuchungen für den Fall eines von zwei concentrischen Kreisen begrenzten Ringgebietes denselben Anforderungen der Strenge entsprechend auszuführen.
+
+Es seien $r = 1$ und $r = R$, wo $R > 1$ sein möge, die Radien der das Ringgebiet begrenzenden concentrischen Kreise, und es seien die Grenzbedingungen der Einfachheit wegen $u(R, \varphi) = f(\varphi)$, $u(1, \varphi) = 0$, auf welchen Fall bekanntlich der allgemeinere leicht zurückgeführt werden kann. Die Function $f(\varphi)$ habe dieselben Eigenschaften wie in §.~7.
+
+Für diesen Fall ergiebt sich nach den bekannten Methoden (vergl. die schon in §.~4 citirte Abhandlung des Herrn \emph{C.~Neumann}, dieses Journal, Bd.~59.):
+
+\textbf{*)} Die in diesem Paragraphen enthaltenen Sätze lassen eine solche Verallgemeinerung zu, dass sie auch noch den Fall umfassen, in welchem die Stetigkeit der Function $u$ für eine endliche Anzahl von Punkten des Bereiches $T$ entweder aufhört oder ungewiss ist, vorausgesetzt, dass die Function $u$ bei der Annäherung an diese Punkte endlich bleibt, und ohne dass es nöthig ist, über das Verhalten der Function $u$ in der Nähe der singulären Punkte eine \emph{specielle} Voraussetzung zu machen. Man vergl. §.~8.
+
+\origpage{248}
+\[
+u(r, \varphi) = \frac{1}{2} b_0 \cdot \frac{\log r}{\log R} + \sum \frac{r^m - r^{-m}}{R^m - R^{-m}} \cdot (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, \dots \, \infty),
+\]
+wo $a_m$ und $b_m$ durch die Gleichungen
+\[
+a_m = \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \sin m\psi \cdot d\psi, \quad b_m = \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \cos m\psi \cdot d\psi
+\]
+definirt sind.
+
+Diese Reihe ist für $\frac{1}{R} < r < R$ unbedingt und in gleichem Grade convergent, und die durch diese Reihe dargestellte Function genügt, als Function von $x$ und $y$ betrachtet, für das Innere des Bereiches, für welchen sie erklärt ist, der Differentialgleichung $\Delta u = 0$. Da die Kreislinie $r = 1$ \emph{im Innern} des Convergenzgebietes liegt, so folgt die Stetigkeit der Function in der Nähe des Werthes $r = 1$ aus den bekannten Sätzen über die Stetigkeit von Potenzreihen im Innern ihres Convergenzbereiches. Für $r = 1$ ist in der That $u(r, \varphi) = 0$.
+
+Es bleibt also nur noch übrig zu beweisen, dass diese Function für $\lim r = R$ mit Ausnahme derjenigen Punkte, in denen die vorgeschriebenen Randwerthe eine Stetigkeitsunterbrechung erfahren, stetig in die Function $f(\varphi)$ übergeht.
+
+Zu diesem Zwecke subtrahire man von der Function $u(r, \varphi)$ die Function
+\[
+u_1(r, \varphi) = \frac{1}{2} b_0 + \sum \frac{r^m}{R^m} (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, 2, \, \dots \, \infty),
+\]
+welche (vergl. §.~6) für $r < R$ mit
+\[
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2} \cdot d\psi
+\]
+übereinstimmt, und deren Stetigkeit aus dem Beweise in §.~8 in dem dort angegebenen Umfange folgt, so zeigt sich, dass der Convergenzbereich der Potenzreihe, welche mit Hinzunahme eines Gliedes, das dem Logarithmus von $r$ proportional ist, die Differenz $u - u_1$ darstellt, \emph{weiter} ist als derjenige Bereich, für welchen die in den Ausdrücken für $u$ und für $u_1$ vorkommenden Potenzreihen gleichzeitig convergiren, da dieser Convergenzbereich sich von $r = \frac{1}{R}$ bis zu $r = R^3$ erstreckt (excl. der Grenzen). Da hiernach die Kreislinie $r = R$ nicht mehr an der Grenze, sondern \emph{innerhalb} des Convergenzgebietes der Reihe für den Ausdruck
+
+\origpage{249}
+\[
+u - u_1 - \frac{1}{2} b_0 \frac{\log r}{\log R}
+\]
+liegt, so folgt hieraus die Stetigkeit dieser Function in der Umgebung von $r = R$; überdies ergiebt sich, dass die Function $u - u_1$ für $r = R$ den Werth Null hat.
+
+Es genügt daher die dargestellte Function den gestellten Bedingungen. Dieselbe ist zugleich die einzige, welche diese Eigenschaft besitzt. Die Richtigkeit dieser Behauptung ergiebt sich für den Fall, in welchem die Function $u$ für alle Punkte des betrachteten Gebietes den Bedingungen I genügt, aus §.~10.
+
+\subsection*{§.~12.}
+
+An die in den Paragraphen 9 und 11 enthaltenen Entwickelungen können nun leicht Betrachtungen angeschlossen werden, welche denjenigen, die in der Theorie der Functionen complexen Arguments mit dem \emph{Cauchy}schen und dem \emph{Laurent}schen Satze über die Entwickelbarkeit einer Function in eine nach Potenzen der unabhängigen Variablen fortschreitende Reihe verbunden werden und für diese Theorie fundamentale Bedeutung haben, in vieler Beziehung analog sind.
+
+Wenn eine Function $u$ für das Innere eines beliebig grossen um den Nullpunkt mit dem Radius $R$ beschriebenen Kreises den Bedingungen I gemäss erklärt werden kann, so ist dieselbe für jeden beliebig grossen Bereich durch eine für alle endlichen Werthe von $x$ und $y$ convergirende Reihe darstellbar.
+
+Wenn nun überdies bekannt ist, dass dabei der Werth von $u$, wie gross auch $R$ sein möge, dem absoluten Betrage nach kleiner bleibt als eine endliche (von $R$ unabhängige) Grösse $g$, so ist $u$ eine Constante.
+
+Wird nämlich der Grösse $r$ ein bestimmter endlicher Werth beigelegt und ist $R$ grösser als $r$, so ergiebt sich:
+\[
+u(r, \varphi) - u(0) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \left(\frac{R^2 - r^2}{R^2 - 2Rr\cos(\psi - \varphi) + r^2} - 1\right) d\psi.
+\]
+Da nun sämmtliche Elemente dieses Integrals dem absoluten Betrage nach kleiner sind als $g \cdot \frac{2r}{R - r} \cdot d\psi$, so ist der absolute Betrag von $u(r, \varphi) - u(0)$
+
+\origpage{250}
+für alle Werthe von $\varphi$ kleiner als $2g \cdot \frac{r}{R - r}$. Hieraus ergiebt sich, dass diese Differenz für unendlich grosse Werthe von $R$ unendlich klein wird; da dieselbe jedoch von dem Werthe von $R$ ganz unabhängig ist, so folgt, dass sie den Werth Null hat. Aus §.~9 folgt daher, dass die Function $u$ unter den angegebenen Voraussetzungen überhaupt für alle Punkte der Ebene denselben constanten Werth $u(0)$ besitzt. Dieser Satz ist als ein Fundamentalsatz zu betrachten und ist dem entsprechenden Satze in der Theorie der Functionen complexen Arguments analog, den bekanntlich Herr \emph{Liouville} zuerst für doppelt periodische Functionen ausgesprochen hat. (Comptes rendus 1844, 2\textsuperscript{me} Semestre, pag.~1262.)
+
+Wenn hingegen unter übrigens unveränderten Voraussetzungen nur bekannt ist, dass das Product $R^{-\mu} \cdot u(R, \varphi)$ für unendlich grosse Werthe von $R$ endlich bleibt, wo $\mu$ eine positive Zahl und $n$ die nächst \emph{grössere} ganze Zahl bezeichnet, so ist in analoger Weise zu schliessen, dass die Reihe für die Function $u(r, \varphi)$ nur $n$ Glieder hat:
+\[
+u(r, \varphi) = \frac{1}{2} b_0 + \sum r^m (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, 2, \, \dots \, n - 1),
+\]
+dass also in diesem Falle die Function $u$ als Function von $x$ und $y$ betrachtet eine ganze Function $(n - 1)$\textsuperscript{ten} Grades ist.
+
+Aus §.~11 folgt: Wenn eine Function $u(r, \varphi)$ für ein von zwei concentrischen Kreisen mit den Radien $r = R_1$ und $r = R_2$, $R_2 < R_1$ begrenztes Ringgebiet $T$ den Bedingungen I in §.~1 genügt und für die Punkte der Begrenzung $z = R_1 \cdot e^{i\varphi}$ und $z = R_2 \cdot e^{i\varphi}$ für jeden Werth von $\varphi$ beziehlich mit den Functionen $f_1(\varphi)$ und $f_2(\varphi)$ übereinstimmt, so ist diese Function durch diese Bedingungen bestimmt, und es giebt, wenn die Functionen $f_1(\varphi)$ und $f_2(\varphi)$ den in §.~5 für die Function $f(\varphi)$ angegebenen Bedingungen genügen, stets eine solche Function.
+
+Diese Function wird für alle Werthe von $r$, für welche $R_2 < r < R_1$ ist, analytisch dargestellt durch die Gleichung
+\[
+\begin{aligned}
+u(r, \varphi) &= \frac{1}{2} B_0 + B_0' \cdot \log r \\
+&\quad + \sum \{(A_m r^m + A_{-m} r^{-m}) \sin m\varphi + (B_m r^m + B_{-m} r^{-m}) \cos m\varphi\} \quad (m = 1, \, 2, \, \dots \, \infty),
+\end{aligned}
+\]
+
+\origpage{251}
+und zwar haben die in derselben vorkommenden Coefficienten $A$ und $B$ die Werthe
+\[
+\begin{aligned}
+B_0 &= \frac{b_{2\,0} \log R_1 - b_{1\,0} \log R_2}{\log R_1 - \log R_2}, & B_0' &= \frac{b_{1\,0} - b_{2\,0}}{\log R_1 - \log R_2}, \\
+A_m &= \frac{a_{1\,m} R_1^m - a_{2\,m} R_2^m}{R_1^{2m} - R_2^{2m}}, & B_m &= \frac{b_{1\,m} R_1^m - b_{2\,m} R_2^m}{R_1^{2m} - R_2^{2m}}, \\
+A_{-m} &= \frac{a_{1\,m} R_1^{-m} - a_{2\,m} R_2^{-m}}{R_1^{-2m} - R_2^{-2m}}, & B_{-m} &= \frac{b_{1\,m} R_1^{-m} - b_{2\,m} R_2^{-m}}{R_1^{-2m} - R_2^{-2m}},
+\end{aligned}
+\]
+wenn in diesen Ausdrücken
+\[
+\left. \begin{array}{c} a_{\lambda\,m} \\ b_{\lambda\,m} \end{array} \right\} = \frac{1}{\pi} \int_0^{2\pi} u(R_\lambda, \psi) \left\{ \begin{array}{c} \sin m\psi \\ \cos m\psi \end{array} \right\} d\psi, \quad u(R_\lambda, \psi) = f_\lambda(\psi), \quad \begin{array}{c} (m = 0, \, 1, \, \dots \, \infty) \\ (\lambda = 1, \, 2) \end{array}
+\]
+gesetzt wird.
+
+Die angegebene Reihe convergirt unbedingt, wenn $R_2 < r < R_1$ ist. Es ist wichtig zu bemerken, dass eine Function $u(r, \varphi)$ für denselben Bereich nur auf eine einzige Weise durch einen Ausdruck von der angegebenen Form dargestellt werden kann. Für jeden Werth von $r$, für den $R_2 < r < R_1$ ist, ergeben sich nämlich, wenn der obige Ausdruck für $u(r, \varphi)$ zu Grunde gelegt wird, die Gleichungen
+\[
+\int_0^{2\pi} u(r, \varphi) \, d\varphi = (B_0 + B_0' \log r) \pi
+\]
+und
+\[
+\int_0^{2\pi} u(r, \varphi) \left\{ \begin{array}{c} \sin m\varphi \\ \cos m\varphi \end{array} \right\} d\varphi = \left\{ \begin{array}{c} A_m r^m + A_{-m} r^{-m} \\ B_m r^m + B_{-m} r^{-m} \end{array} \right\} \cdot \pi,
+\]
+da unter den angegebenen Voraussetzungen die Integration an den einzelnen Gliedern ausgeführt werden darf. Werden nun in diesen Gleichungen der Grösse $r$ zwei von einander verschiedene Werthe $R_1'$ und $R_2'$ beigelegt, für welche $R_2 < R_2' < R_1' < R_1$ ist, und werden die Ausdrücke, in welche $a_{\lambda\,m}$ und $b_{\lambda\,m}$ übergehen, wenn $R_\lambda'$ an die Stelle von $R_\lambda$ gesetzt wird, beziehlich mit $a_{\lambda\,m}'$ und $b_{\lambda\,m}'$ bezeichnet, wobei dem Index $\lambda$ wie vorhin der Werth $1$ und der Werth $2$ beizulegen ist, so ergeben sich hieraus die Werthe der Coefficienten $A$ und $B$ \emph{eindeutig} ausgedrückt durch die Grössen
+
+\origpage{252}
+$a'$, $b'$, $R_1'$ und $R_2'$. Die so erhaltenen Ausdrücke haben dieselbe Form wie die oben angegebenen, in welche dieselben bei dem Grenzübergange
+\[
+\lim R_1' = R_1, \quad \lim R_2' = R_2
+\]
+übergehen.
+
+Hieraus wird analog wie in §.~9 geschlossen: Wenn die Function $u$, beziehungsweise deren analytische Fortsetzung nicht bloss für den Bereich
+\[
+R_2 \leqq r \leqq R_1,
+\]
+sondern für einen noch weiteren Bereich
+\[
+R_2'' \leqq r \leqq R_1',
+\]
+der jenen ersten als Theil enthält, den Bedingungen I genügt, so convergirt die gefundene Reihe, welche zur analytischen Darstellung der Function $u$ innerhalb des engeren Bereiches dient, auch noch für das Innere des weiteren Bereiches und die Summe derselben stimmt mit der Function $u$ oder der analytischen Fortsetzung derselben auch in dem weiteren Bereiche überein.
+
+Wenn daher eine Function $u$ für das Innere einer Kreisfläche $S$ mit dem Radius $R_1$ mit einziger Ausnahme von deren Mittelpunkt $z = 0$, für den es noch ungewiss ist, den Bedingungen I genügt, so ist diese Function darstellbar durch einen Ausdruck von der soeben angegebenen Form, und zwar convergirt die in demselben vorkommende Reihe für alle Werthe von $r$, welche kleiner als $R_1$ und von Null verschieden sind.
+
+Wenn nun von dem Verhalten der Function $u$ in der Nähe des singulären Punktes $z = 0$ weiter nichts bekannt ist, als dass dieselbe bei der Annäherung an denselben in dem in §.~7 angegebenen Sinne \emph{endlich} bleibt, so kann geschlossen werden, dass die Coefficienten $B_0'$, $A_{-m}$, $B_{-m}$ einzeln den Werth Null haben, und zwar folgt dies aus dem Bildungsgesetze für diese Grössen, da bei dem Grenzübergange $\lim R_2 = 0$ die Grössen $a_{2\,m}$ und $b_{2\,m}$ unter der angegebenen Voraussetzung endlich bleiben.
+
+Es ist daher, wenn der Werth der Function $u$ auch für den Punkt $z = 0$ durch den Werth der Reihe erklärt wird, die Function $u$ unter den angegebenen Bedingungen auch in der Umgebung des Punktes $z = 0$ stetig und genügt mit Einschluss dieses Punktes für die Fläche $S$ den Bedingungen I.
+
+Man vergl. hiermit \emph{Riemanns} Dissertation, Art.~12.
+
+\origpage{253}
+Tritt an die Stelle der Bedingung
+\[
+[u(r, \varphi)] < g
+\]
+die Bedingung
+\[
+r^\mu \cdot [u(r, \varphi)] < g,
+\]
+wo $\mu$ eine positive Zahl bedeutet, so folgt durch analoge Schlüsse, dass der Ausdruck für die Function $u$ ausser anderen Gliedern jedenfalls nur eine endliche Anzahl solcher Glieder enthält, in denen $r$ zu einer Potenz mit \emph{negativem} Exponenten erhoben ist.
+
+Zürich, im September 1871.${}^{*)}$
+
+\textbf{*)} Nach der Einsendung des Textes der obigen Mittheilung und der denselben begleitenden Anmerkungen an den Herrn Herausgeber dieses Journals ist eine Mittheilung des Herrn \emph{Christoffel}: „Ueber die Integration von partiellen Differentialgleichungen“ veröffentlicht worden, welche in Nr.~18 der Nachrichten von der Königl. Gesellschaft der Wissenschaften zu Göttingen vom 13.~September 1871, pag.~435--453 abgedruckt ist.
+
+In dem Inhalte dieser Mittheilung erblicke ich eine Bestätigung für die Auffassung dass der früher übliche Nachweis der Stetigkeit der durch das \emph{Poisson}sche Integral oder eine gleichgeltende Formel dargestellten Function in der Nähe des Randes den Anforderungen der Strenge nicht vollkommen entspreche, welche in Folge der in Bd.~71 d.~Journ. veröffentlichten Bemerkung des Herrn \emph{Heine}, wie mir scheint, gestellt werden müssen.
+
+Ferner dürfte bezüglich einer auf pag.~445 derselben Mittheilung enthaltenen Bemerkung: „Endlich gehört hierhin die Voraussetzung, dass $v$ zweite Derivirten habe, was, wenn $u + iv$ als Function von $x + iy$ definirt wird, nicht gefordert ist und eine Folge aus weniger weit gehenden Bedingungen ist“ geltend zu machen sein, dass \emph{Riemann} im Art.~12 seiner Inauguraldissertation die Ergebnisse der im Art.~10 derselben angestellten Untersuchung zunächst nicht auf die Bestandtheile $u$ und $iv$ der als Function des complexen Arguments $x + iy$ definirten Function $u + iv$, sondern auf den reellen Theil $U = \displaystyle\int(u\,dx - v\,dy)$ der aus jener durch Integration hervorgehenden Function $\displaystyle\int(u + iv)(dx + i\,dy)$ anwendet, und dass für diesen die oben als Bedingungen I bezeichneten Voraussetzungen erfüllt sind. Als eine Folge des im Art.~10 der Inaugural-Dissertation bewiesenen Lehrsatzes ergiebt sich dann, dass auch die Functionen $\frac{\partial U}{\partial x} = u$, $\frac{\partial U}{\partial y} = -v$ für das Innere des betrachteten Gebietes partielle Ableitungen aller Ordnungen besitzen und der partiellen Differentialgleichung $\Delta u = 0$ genügen. Hieraus scheint mir aber hervorzugehen, dass die beiden Voraussetzungen „es ist $\Delta u = 0$“ und „es ist $\frac{\partial u}{\partial y} \cdot dx - \frac{\partial u}{\partial x} \cdot dy$ ein vollständiges Differential einer Function von $x$ und $y$“ mit Rücksicht auf den vorliegenden Zweck vollkommen äquivalent sind.
+
+März 1872.
+
+\end{document}

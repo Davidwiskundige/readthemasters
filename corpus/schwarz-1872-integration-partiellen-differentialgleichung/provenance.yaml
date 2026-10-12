@@ -1,0 +1,51 @@
+changelog:
+  - date: "2026-10-11"
+    summary: Transcription added (AI draft), pp. 218–253 from Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 74 (1872).
+  - date: "2026-10-12"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: gemini-3-8-flash
+  effort: high
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-11"
+  verification:
+    model: gemini-3-8-flash
+    flagged_pages: []
+    date: "2026-10-11"
+  uncertainty_flags: 0
+  note: >-
+    Full German text of Hermann Amandus Schwarz's memoir "Zur Integration der partiellen Differentialgleichung
+    \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0", printed pages 218–253 (36 pages),
+    from Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 74, Heft 3 (1872). Digital facsimile
+    from Göttingen Digitalisierungszentrum (GDZ) / EuDML (doc/148178).
+
+    METHOD. 36 pages transcribed in 9 batches of 4 pages each against high-resolution GDZ IIIF scans and
+    cross-referenced with the Gesammelte Mathematische Abhandlungen text, with upfront global notation scan
+    codified in notation.md. Followed by whole-document delimiter balance and structural verification.
+
+    FIGURES. No figures or plates are present in the original printed text.
+
+    NOTATION. Strictly faithful to the 1872 print: Laplace operator \Delta u = 0, partial derivatives \partial,
+    explicit centered dots in products, absolute values in brackets [u(r, \varphi)] preserved verbatim,
+    Poisson integrals, trigonometric functions (\operatorname{arc\,tg}, \operatorname{tg}), and series expansions.
+    Displays wrapped in \[ ... \] with aligned environments per HOUSESTYLE R16. Inline integrals set with \displaystyle.
+
+    ORTHOGRAPHY. Antiqua German orthography preserved faithfully (Function, Theil, theilweise, Werthe, Curven,
+    Constante, convergirt, Reellen, Grenz- und Unstetigkeitsbedingungen, Mittheilung, Hülfs-, giebt, dass).
+    Spaced type (Sperrdruck) mapped to \emph per HOUSESTYLE R20/R24.
+
+    APPARATUS & COMPOSITOR ERROR. One compositor error on p. 240 ("mir" for "mit") flagged with \ednote
+    per HOUSESTYLE R4 and R18. Zero uncertainty flags (\uncertain) or illegible markers.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-12"
