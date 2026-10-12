@@ -1,0 +1,1658 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+
+% translation. All mathematical formulas, symbols, labels, and \origpage markers are preserved
+
+% unchanged; only the prose is translated.
+
+\documentclass{article}
+
+\usepackage{readmasters}
+
+\begin{document}
+
+
+
+\origpage{218}
+
+\section*{On the Integration of the Partial Differential Equation
+
+\[
+
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
+
+\]}
+
+\begin{center}
+
+(By Mr.~\emph{H.~A. Schwarz} in Zurich.)
+
+\end{center}
+
+
+
+\emph{In} the fourth issue of Volume~73 of this Journal, Mr.~\emph{Prym}, in a memoir ``Zur Integration der Differentialgleichung $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$'' pp.~340 to 364, referred to an article published in Volume~XV of the \emph{Vierteljahrsschrift der Naturforschenden Gesellschaft in Zürich} (pp.~113 to 128), by the reprint of which in this place a service may perhaps be rendered to some readers of the Journal. On this occasion, several notes have been added to the mentioned article, mainly concerning the relations to other treatments of the same subject or closely related areas. A continuation and partial extension of the investigations contained in that article forms the remaining content of the present communication.
+
+
+
+\subsection*{On the Integration of the Partial Differential Equation
+
+\[
+
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+
+\]
+
+for the Area of a Circle.}
+
+
+
+In his inaugural dissertation (Arts.~18, 19, 21) and in his memoir on the theory of Abelian functions (this Journal, Vol.~54, pp.~112, 114), \emph{Riemann} stated several general theorems concerning the integration of the partial differential equation
+
+\[
+
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+
+\]
+
+for a given region $T$ under prescribed boundary and discontinuity conditions, for which to my knowledge a rigorous proof is at present not yet known.
+
+
+
+\origpage{219}
+
+Even for the simple and important special case in which the given region is a simple circular disk, the investigations hitherto, so far as my knowledge of them extends, cannot be regarded as complete.
+
+
+
+If the value of the sought function $u$ is prescribed at each point of the boundary of the region, and this series of values prescribed along the boundary is subjected to no other restriction than the condition of being continuous, then the assumption is not admissible that the sought function $u$ possesses along the boundary finite partial derivatives $\frac{\partial u}{\partial x}$, $\frac{\partial u}{\partial y}$, respectively $\frac{\partial u}{\partial p}$, \emph{since under the hypotheses made, partial derivatives of the function $u$ along the boundary in general do not exist at all.} To this circumstance, to which several years ago Mr.~\emph{Weierstrass} drew attention in his lectures, no regard has hitherto been paid, so far as I know.
+
+
+
+In what follows, I restrict myself to the consideration of the case in which the region of the independent variables $x$ and $y$ is a circular disk $S$ simply covering the plane; however, with the exclusion of interruptions of continuity and infinitely large values in the series of values prescribed for the function $u$ along the boundary of the disk $S$.
+
+
+
+\subsection*{§.~1.}
+
+
+
+In the plane $A$, whose points geometrically represent the complex quantity
+
+\[
+
+z = x + yi = r \cdot e^{i\varphi}
+
+\]
+
+let there be given a region $T$ lying entirely in the finite, everywhere simply covering the plane, whose boundary is formed by a finite number of segments of analytic curves.
+
+
+
+For the region $T$, let there be defined a (real) function $u$ of the two real independent variables $x$, $y$, namely as a finite, continuous, and single-valued function thereof for all points in the interior \emph{and} on the boundary of $T$.
+
+
+
+It is assumed that the partial derivatives
+
+\[
+
+\frac{\partial u}{\partial x}, \quad \frac{\partial u}{\partial y}, \quad \frac{\partial^2 u}{\partial x^2}, \quad \frac{\partial^2 u}{\partial y^2}
+
+\]
+
+\origpage{220}exist, are finite, continuous, and single-valued functions of $x$ and $y$, and satisfy the equation
+
+\[
+
+\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0
+
+\]
+
+
+
+However, these hypotheses concerning the derivatives are posited either
+
+\textbf{I.} \emph{only for all interior points of the region $T$}
+
+
+
+or
+
+
+
+\textbf{II.} also for all points of the boundary of $T$ \emph{inclusively}.
+
+Accordingly, the hypotheses made for $u$ and for the derivatives of $u$ shall in the following be distinguished from one another as ``Conditions~I'' and ``Conditions~II.''${}^{*)}$
+
+
+
+
+
+
+
+\textbf{*)} Mr.~\emph{Carl Neumann} requires in two memoirs: ``Revision einiger allgemeinen Lehrsätze aus der Theorie des Logarithmischen Potentials,'' Mathematische Annalen of \emph{Clebsch} and \emph{Neumann}, Vol.~3, pp.~325---349 and ``Zur Theorie des Logarithmischen und des Newtonschen Potentiales. Zweite Mittheilung,'' Berichte der K.~Sächs. Gesellschaft der Wissenschaften, math.-phys. Classe, October 1870, pp.~264---321, in addition to the conditions stated in §.~1: \emph{a.}~``uniform'' continuity and \emph{b.}~the existence of the derivative $\frac{\partial^2 u}{\partial x\,\partial y}$ for the interior of the region considered. On this, the following is to be noted:
+
+
+
+\emph{a.} With good reason, Mr.~\emph{Heine} has drawn attention to the fact (this Journal, Vol.~71, p.~361) that in defining the continuity of a function of two or more arguments one must proceed carefully if this definition is to be analytically useful. In particular, the following definition: ``A function of two arguments is a continuous function thereof if, within the region under consideration, for each value of the first argument this function is a continuous function of the second, and simultaneously for each value of the second argument a continuous function of the first,'' proves in most cases to be \emph{inadequate} when it comes to drawing conclusions from it. This definition is therefore to be rejected as \emph{unusable}, quite apart from the fact that, as Mr.~\emph{Thomae} has noted, it also encompasses functions that are usually called \emph{discontinuous}, such as for example the function $\frac{2xy}{x^2+y^2}$ in a region containing the point $x=0$, $y=0$ in its interior. Cf.~the work of Mr.~\emph{Thomae}: ``Abriss einer Theorie der complexen Functionen und der Thetafunctionen einer Veränderlichen,'' Halle 1870, Nebert, pp.~13---16. --- At the beginning of my mathematical studies I became acquainted with the following definition of the continuity of a function of two arguments, which I still consider the correct one: ``A function $f(x, y)$ is in the neighborhood of the pair of values $x_0$, $y_0$ a continuous function of its two (continuously variable) real arguments if, after assuming a positive quantity $\varepsilon$ different from zero and otherwise subject to no restriction as to its smallness, it is always possible to delimit in the neighborhood of the pair of values $x_0$, $y_0$ a region extended in two dimensions such that for \emph{all} pairs of values $x_0 + h$, $y_0 + k$ belonging simultaneously to the original region of the variables for which the function is defined and to the delimited region, the difference $f(x_0 + h, y_0 + k) - f(x_0, y_0)$ is in absolute value smaller than $\varepsilon$. Here the shape of that delimited region is in general subject to no restrictions. If a function satisfies this condition for all pairs of values $x_0$, $y_0$ belonging to the interior and to the boundary of a given region of the independent variables, then the function under consideration is \emph{for this region} a continuous function of its arguments.'' There seems to me to be no need to depart from this definition, since by means of a mode of inference devised by \emph{Bolzano} and further developed by Mr.~\emph{Weierstrass}, it can be demonstrated without difficulty that every function which in the above sense is a continuous function of its arguments for a given region is also uniformly continuous for the same region in the sense of Mr.~\emph{Heine}. Since the converse also holds, the two concepts coincide completely. On the other hand, from Mr.~\emph{Heine}'s remark arises the inescapable requirement, which in particular in an existence proof must not remain unfulfilled, that if the continuity of an analytically represented function is to be \emph{proved}, the proof must establish the continuity of the function \emph{to precisely the same extent} to which the definition of continuity must be presupposed in general investigations in order to be analytically useful. I have sought to satisfy this requirement in §.~5, in §.~8 and §.~11.
+
+
+
+\emph{b.} The requirement of the existence of the partial derivative $\frac{\partial^2 u}{\partial x\,\partial y}$ seems to me to be \emph{unnecessary}, since the finiteness, continuity, and single-valuedness of this derivative for the interior of the region considered --- see §.~2 to §.~5 of the text --- is already a necessary consequence of the remaining hypotheses. It may be remarked that, on the contrary, the hypotheses made in §.~1 regarding the second derivatives $\frac{\partial^2 u}{\partial x^2}$ and $\frac{\partial^2 u}{\partial y^2}$ can even be reduced to a lesser degree, since the theorems cited in §.~2 still hold unchanged if at individual points or along individual lines one dispenses with the requirement of the existence of second derivatives or leaves the fulfillment of the equation $\Delta u = 0$ undetermined. Cf.~the formulation of the conditions for the theorem proved in Art.~10 of \emph{Riemann}'s dissertation.
+
+
+
+\origpage{221}
+
+\subsection*{§.~2.}
+
+
+
+\emph{a.} If $u$ and $u'$ are two functions satisfying Conditions~II for the same region $T$ (see the preceding section), then the two integrals
+
+\[
+
+\int (u\,\Delta u' - u'\,\Delta u)\,dT \quad \text{and} \quad -\int \Bigl(u\,\frac{\partial u'}{\partial p} - u'\,\frac{\partial u}{\partial p}\Bigr)\,ds,
+
+\]
+
+the first of which is to be extended over the region $T$ itself, the second over all boundary curves thereof, have the value zero; the first because $\Delta u$ and $\Delta u'$ are constantly equal to zero, the second because it can be obtained by integration by parts from the first (see \emph{Green}: ``An Essay on the Application of mathematical Analysis to the theories of Elec-
+
+
+
+\origpage{222}tricity and Magnetism.'' This Journal, Vol.~44, p.~360; \emph{Riemann}'s Inaug.-Diss., Arts.~7 to 10).${}^{*)}$
+
+
+
+\emph{b.} If one sets $u' = 1$, hence $\frac{\partial u'}{\partial p} = 0$, there results the theorem: The integral $\displaystyle\int \frac{\partial u}{\partial p}\,ds$ to be extended over all boundary curves of a region $T$ for which the function $u$ satisfies Conditions~II has the value zero.
+
+
+
+\subsection*{§.~3.}
+
+
+
+Let a function $u$ satisfy Conditions~I for the area $S$ of the circle described with radius $1$ about the point $z = 0$.
+
+
+
+Let $u' = \log r$ (see \emph{Riemann}'s Dissertat. Art.~10). The curves of constant values of $u'$ are concentric circles whose center is the point $z = 0$. If $R_1$ and $R_2$ are two special values of $r$ lying \emph{between} $1$ and $0$ with the condition $1 > R_1 > R_2 > 0$, then the functions $u$ and $u'$ satisfy Conditions~II for the annular region $T$ bounded by the two circles with center $z = 0$ and radii $R_1$ and $R_2$, and the hypotheses of theorem §.~2, \emph{a} are therefore satisfied.
+
+
+
+
+
+
+
+\textbf{*)} At the cited place \emph{Green} posits the same conditions that in §.~1 have been designated as Conditions~II. An analogous hypothesis occurs in the proof that \emph{Gauss} gives for the theorem
+
+\[
+
+\int V \frac{\partial V}{\partial p}\,ds = -\int \Bigl[\Bigl(\frac{\partial V}{\partial x}\Bigr)^2 + \Bigl(\frac{\partial V}{\partial y}\Bigr)^2 + \Bigl(\frac{\partial V}{\partial z}\Bigr)^2\Bigr]\,dT
+
+\]
+
+(Werke, Vol.~V, p.~226). To the same restriction, however, the proofs are also subject that Mr.~\emph{Durège} has given in the work: ``Elemente der Theorie der Functionen einer complexen veränderlichen Grösse,'' Leipzig, Teubner, 1864, p.~203, and Mr.~\emph{C.~Neumann} in the work: ``Das Dirichletsche Princip,'' Leipzig, Teubner, 1865, p.~9, since these are only transfers of \emph{Gauss}'s proof to the case of two independent variables.
+
+
+
+On the other hand, in the paper of Mr.~\emph{Betti}: ``Sopra le funzioni sferiche,'' Annali di Matematica, 2nd~Series, Vol.~I, pp.~81---87, and in that of Mr.~\emph{Dini}: ``Sopra le funzioni di una variable complessa,'' ibid., Vol.~IV, pp.~159---174, one finds the investigation restricted to the case in which the fulfillment of Conditions~II is required. Here, however, another drawback appears, since the so-called arbitrary function appearing in the final formulas and representing the given boundary values may by no means be chosen arbitrarily if the condition of finite differential coefficients including the boundary is posited. What restrictive hypotheses, however, this function must be subjected to in this case, besides the condition of being continuous, does not, as it seems to me, emerge from those investigations.
+
+
+
+\origpage{223}
+
+The integral
+
+\[
+
+\int \Bigl(u\,\frac{\partial u'}{\partial p} - u'\,\frac{\partial u}{\partial p}\Bigr)\,ds
+
+\]
+
+extended over the entire boundary of $T$ accordingly has the value zero. It is to be shown that each of the integrals
+
+\[
+
+\int u\,\frac{\partial u'}{\partial p}\,ds \quad \text{and} \quad \int u'\,\frac{\partial u}{\partial p}\,ds
+
+\]
+
+extended over the entire boundary of $T$ has the value zero by itself.
+
+
+
+Along the circle with radius $R_1$, $u'$ has the constant value $\log R_1$, and along the circle with radius $R_2$, the constant value $\log R_2$. It is therefore
+
+\[
+
+\int u'\,\frac{\partial u}{\partial p}\,ds = \log R_1 \cdot \int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds + \log R_2 \cdot \int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds.
+
+\]
+
+Applying theorem §.~2, \emph{b} to the area of the circle with radius $R_1$ and to the annular region $T$, one obtains
+
+\[
+
+\int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds = 0, \quad \int_{(r = R_1)} \frac{\partial u}{\partial p}\,ds + \int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds = 0,
+
+\]
+
+consequently also
+
+\[
+
+\int_{(r = R_2)} \frac{\partial u}{\partial p}\,ds = 0.
+
+\]
+
+Therefore the integral $\displaystyle\int u'\,\frac{\partial u}{\partial p}\,ds$ and hence also the integral $\displaystyle\int u\,\frac{\partial u'}{\partial p}\,ds$ has the value zero when both integrals are extended over the entire boundary of $T$.
+
+
+
+For $r = R_1$ one obtains $\frac{\partial u'}{\partial p} = -\frac{1}{R_1}$, and for $r = R_2$, $\frac{\partial u'}{\partial p} = \frac{1}{R_2}$. If one therefore sets for $ds$ its value $R_1 \cdot d\varphi$, respectively $R_2 \cdot d\varphi$, and designates the value of the function $u$ at the point $z = r \cdot e^{i\varphi}$ by $u(r, \varphi)$, one obtains from the equation $\displaystyle\int u\,\frac{\partial u'}{\partial p}\,ds = 0$ the following
+
+\[
+
+\int_0^{2\pi} u(R_2, \varphi)\,d\varphi = \int_0^{2\pi} u(R_1, \varphi)\,d\varphi.
+
+\]
+
+
+
+In this equation $R_2$ and $R_1$ are two mutually independent variable quantities which can assume all values between $0$ and $1$, where however the values $0$ and $1$ are for the present still excluded. But now it follows from the hypothesis that the function $u$ is a \origpage{224}continuous function of the variables $x$ and $y$, and hence also of the variables $r$ and $\varphi$, that the value of the integral $\displaystyle\int_0^{2\pi} u(r, \varphi)\,d\varphi$ for all values of $r$ between $0$ and $1$, including the values $0$ and $1$, can vary only continuously with the value of $r$. For this reason, the above equation, although in its derivation it was initially assumed that $R_2$ and $R_1$ were different from $0$ and $1$, continues to hold even when $R_2 = 0$ and $R_1 = 1$ are set. For the value $R_2 = 0$, the integral on the left-hand side passes into $2\pi \cdot u(0)$, if by $u(0)$ the value of $u$ at the point $z = 0$ is denoted. There exists therefore the equation
+
+\[
+
+u(0) = \frac{1}{2\pi} \int_0^{2\pi} u(1, \varphi)\,d\varphi.
+
+\]
+
+
+
+\subsection*{§.~4.}
+
+
+
+With an appropriately altered determination of the function $u'$, the mode of inference developed in the preceding section, which is taken from Art.~10 of \emph{Riemann}'s dissertation, also leads to an expression for the value $u(r, \varphi)$ of the function $u$ at an arbitrary point $z_0 = r \cdot e^{i\varphi}$ belonging to the interior of the circular disk, under the sole hypothesis that the function $u$ satisfies Conditions~I for the disk $S$.
+
+
+
+To the point $z_0 = r \cdot e^{i\varphi}$ inside the disk $S$ let there be assigned the point $z_0' = \frac{1}{r} e^{i\varphi}$ outside it; $0 < r < 1$. All points $z$ whose distances from the points $z_0$ and $z_0'$, $[z - z_0]$ and $[z - z_0']$, have a constant ratio, $\frac{[z - z_0]}{[z - z_0']} = r \cdot t$, with the restriction $0 \le t \le 1$, lie on a circle belonging to the disk $S$, whose center $c$ and whose radius $R$ are given by the equations
+
+\[
+
+c = z_0 \cdot \frac{1 - t^2}{1 - r^2 t^2}, \quad R = \frac{t(1 - r^2)}{1 - r^2 t^2}, \quad z_0 - c = z_0 \cdot R \cdot t
+
+\]
+
+For $t = 1$ this circle coincides with the boundary of $S$; for $t = 0$ it reduces to a point, namely the point $z_0$.
+
+
+
+\origpage{225}
+
+To each point $z$ of $S$ there belongs, according to the foregoing, as soon as the point $z_0 = r \cdot e^{i\varphi}$ is fixed, \emph{one} value of $t$, $0 \le t \le 1$, and therefore also \emph{one} value each of $c$ and $R$. Setting now $z - c = R \cdot e^{i\psi}$, there corresponds to each point $z$ of $S$, with the exception of the point $z_0$, \emph{one} value of $\psi$ which satisfies the condition $0 \le \psi < 2\pi$, and for which the equation $z - c = R \cdot e^{i\psi}$ is satisfied. Since conversely also to each pair of values $t$, $\psi$ only \emph{one} value of $z$ belongs, $t$ and $\psi$ may be chosen as independent variables. The function $u$ of $x$ and $y$ then transforms into a function of $t$ and $\psi$. Let the value of $u$ uniquely corresponding to the pair of values $t$, $\psi$ be denoted by $u[t; \psi]$. For the values $t = 1$ and $t = 0$ there result the identities $u[1; \psi] = u(1, \psi)$, $u[0; \psi] = u(r, \varphi)$. With respect to the variables $t$ and $\psi$ as well, the function $u$ varies continuously with both arguments for all pairs of values under consideration.
+
+
+
+Let $u'$ be set equal to the real part of the analytic function $\log \frac{z - z_0}{z - z_0'}$,
+
+\[
+
+u' = \log \frac{[z - z_0]}{[z - z_0']} = \log(r \cdot t).
+
+\]
+
+Let $t_1$ and $t_2$ be two special values of $t$, both lying between $1$ and $0$, with the condition $1 > t_1 > t_2 > 0$. Let $R_1$ and $R_2$ be the radii of the two circles corresponding to these values of $t$, and let $T$ denote the annular region bounded by these two circles.
+
+
+
+Now the functions $u$ and $u'$ for the region $T$, and the function $u$ for the area of the circle with radius $R_1$, satisfy Conditions~II; along both boundary curves of $T$ the function $u'$ has a constant value. By means of the same conclusions as in §.~3 it is therefore inferred that the integral $\displaystyle\int u \frac{\partial u'}{\partial p}\,ds$ extended over the entire boundary of $T$ has the value zero in the present case as well.
+
+
+
+Along the two boundary curves of $T$ corresponding to the values $t = t_1$, $t = t_2$, one obtains for $\frac{\partial u'}{\partial p}$ respectively the values
+
+\[
+
+-\frac{1}{R_1} \cdot \frac{1 - r^2 t_1^2}{1 - 2r t_1 \cos(\psi - \varphi) + r^2 t_1^2}
+
+\]
+
+and
+
+\[
+
+\frac{1}{R_2} \cdot \frac{1 - r^2 t_2^2}{1 - 2r t_2 \cos(\psi - \varphi) + r^2 t_2^2}.
+
+\]
+
+
+
+\origpage{226}
+
+If therefore for $ds$ its value $R_1 \cdot d\psi$, respectively $R_2 \cdot d\psi$ is set, there results from the equation $\displaystyle\int u \frac{\partial u'}{\partial p}\,ds = 0$ the following
+
+\[
+
+\begin{gathered}
+
+\int_0^{2\pi} u[t_2; \psi] \frac{1 - r^2 t_2^2}{1 - 2r t_2 \cos(\psi - \varphi) + r^2 t_2^2} \cdot d\psi = \\
+
+= \int_0^{2\pi} u[t_1; \psi] \frac{1 - r^2 t_1^2}{1 - 2r t_1 \cos(\psi - \varphi) + r^2 t_1^2} \cdot d\psi.
+
+\end{gathered}
+
+\]
+
+
+
+The quantities $t_1$ and $t_2$ are independent of each other and can assume all values between $1$ and $0$, except the values $1$ and $0$ themselves. From the hypotheses made concerning the function $u$, however, it follows that for all values of $t$ between $1$ and $0$, including the values $1$ and $0$, the value of the integral
+
+\[
+
+\int_0^{2\pi} u[t; \psi] \frac{1 - r^2 t^2}{1 - 2rt \cos(\psi - \varphi) + r^2 t^2}\,d\psi
+
+\]
+
+can vary only continuously with the value of $t$; therefore the above equation continues to hold even when $t_2 = 0$, $t_1 = 1$ are set. For the value $t_2 = 0$ the left-hand side of the equation passes into $2\pi \cdot u(r, \varphi)$, while the right-hand side for $t_1 = 1$ passes into
+
+\[
+
+\int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+
+\]
+
+
+
+There exists therefore, whenever the function $u$ satisfies Conditions~I for the circular disk $S$, for all values of $r$ that are less than $1$, and for all values of $\varphi$, the equation
+
+\[
+
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+
+
+(Cf.~C.~\emph{Neumann}: ``Ueber die Integration der partiellen Differentialgleichung $\frac{\partial^2 \varPhi}{\partial x^2} + \frac{\partial^2 \varPhi}{\partial y^2} = 0$.'' This Journal, Vol.~59, p.~364.)${}^{*)}$
+
+
+
+
+
+
+
+\textbf{*)} The definite integral to which the investigation of §.~4 has led, and the corresponding formula by which the partial differential equation
+
+\[
+
+\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} = 0
+
+\]
+
+is integrated for the interior of a sphere when the value of the function $V$ on the surface of the sphere is prescribed and the conditions to which this function is subjected are analogous to Conditions~I given in §.~1, is found given in various memoirs of \emph{Poisson}: Journal de l'École polytechnique, cah.~18, pag.~422 (1815); cah.~19, pag.~150, 155, 433 (1823). Mémoires de l'Académie des Sciences, année 1823, pag.~575. Additions à la Connaissance des Tems pour l'année 1829, pag.~329; pour l'année 1831, pag.~49. Philosophical Magazine, July 1827. Théorie mathématique de la chaleur, Paris 1835, chap.~VII et VIII.
+
+
+
+One will also easily recognize in the proof contained in §.~5 under \emph{b.} the basic ideas of \emph{Poisson}'s proof.
+
+
+
+The proof contained in §.~3 and in §.~4 rests essentially on the fact that first a formula which no longer contains partial derivatives of the function $u$ is derived under the hypothesis of Conditions~II, and thereupon a limiting process is carried out which allows Conditions~I to take the place of Conditions~II. The following arrangement of the proof, which stands perhaps even somewhat closer to the corresponding \emph{Green}'s proof and to the presentation of this proof given by \emph{Riemann} and other mathematicians in lectures and memoirs, also leads to the same goal.
+
+
+
+By applying the inferences of §.~3 to the area of a circle with radius $R$ for which a function $u$ satisfies Conditions~I, one obtains:
+
+\[
+
+\tag{I.} 2\pi \cdot u(0) = \int u \frac{\partial\log r}{\partial r}\,ds = \int_0^{2\pi} u(R, \varphi)\,d\varphi.
+
+\]
+
+
+
+Let there now be described about the point $z = 0$ as center a circle with radius $R_1$ ($R_1 < R$), and likewise about the point $z_0 = r \cdot e^{i\varphi}$ ($0 < r < R_1$) as center a circle with radius $R_2$ ($R_2 < R_1 - r$). Set $\frac{R_1^2}{r} e^{i\varphi} = z_0'$ and denote the distances of any point $z$ from the points $z_0$ and $z_0'$ respectively by $\varrho$ and $\varrho'$; set further $u' = \log \varrho - \log \varrho'$ and apply to the annular region bounded by the circles $r = R_1$ and $\varrho = R_2$ the theorem §.~2, \emph{a}; there results by inferences entirely analogous to those given in the text:
+
+\[
+
+\int u \frac{\partial\log \varrho}{\partial \varrho}\,ds = \int_0^{2\pi} u(R_1, \psi) \frac{R_1^2 - r^2}{R_1^2 - 2R_1 r \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+From this it follows, using equation (I.), upon passing from $R_1$ to $R$:
+
+\[
+
+\tag{II.} u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+
+
+\origpage{227}
+
+Thus the value of the function $u$ at an arbitrary point $z = r \cdot e^{i\varphi}$ in the interior of the circular disk depends, under the stated hypotheses, only on those values which the function $u$ assumes on the circumference of the circle, and in addition on the polar coordinates of that point referred to the center of the circle as pole; moreover, $u(r, \varphi)$ is uniquely expressed by the named quantities.
+
+
+
+If therefore there exists a function $u$ which satisfies Conditions~I for the area of a circle and agrees in value on the circumference thereof with a given function $f(\varphi)$, then the function is determined by these conditions, and there exists only one such function.
+
+
+
+\origpage{228}
+
+\subsection*{§.~5.}
+
+
+
+In the foregoing it has been shown that every function $u$ which satisfies Conditions~I for a circular disk $S$ is uniquely determined by those values which it assumes on the boundary of $S$. The question now arises whether for such a function $u$ the series of boundary values $u(1, \varphi) = f(\varphi)$ can be arbitrarily prescribed?
+
+
+
+This question is answered by the following theorem:
+
+
+
+If along the boundary of the circular disk $S$ an arbitrary real function $f(\varphi)$, finite, continuous, and single-valued for all values of the real argument $\varphi$, returning periodically into itself upon increasing the argument by $2\pi$, but otherwise subject to no further restriction, is arbitrarily prescribed, then there exists in each case one (and according to the foregoing only a single) function $u$ which satisfies Conditions~I for the disk $S$ and agrees along the boundary of $S$ with the given function $f(\varphi)$.
+
+
+
+This function is represented for all points $z = r \cdot e^{i\varphi}$ in the interior of $S$, $r < 1$, by the integral
+
+\[
+
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+
+
+The proof of this theorem divides into two parts; in the first part (\emph{a.}) it is to be shown that the function $u(r, \varphi)$ defined by the preceding equation possesses for all points $z = r \cdot e^{i\varphi} = x + yi$ belonging to the interior of $S$ partial derivatives of all orders with respect to the variables $x$ and $y$ and satisfies the partial differential equation $\Delta u = 0$; in the second part (\emph{b.}), on the other hand, the proof is to be given that the function $u(r, \varphi)$ is also in the vicinity of the value $r = 1$ a continuous function of its arguments and passes continuously for $r = 1$ into the function $f(\varphi)$.
+
+
+
+\emph{a.} The function $u$ defined by the integral
+
+\[
+
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+
+\]
+
+coincides with the real part of the analytic function $F(z)$ of the complex argument $z = r \cdot e^{i\varphi} = x + yi$ uniquely defined for all values of $z$ whose absolute value $r$ is less than $1$ with the character of an entire function by the equation
+
+
+
+\origpage{229}
+
+\[
+
+F(z) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{e^{i\psi} + z}{e^{i\psi} - z} \cdot d\psi
+
+\]
+
+
+
+Therefore the function $u$ possesses for all points $z$ lying in the interior of the circular disk partial derivatives of all orders with respect to the independent variables $x$ and $y$ and satisfies in the same extent the differential equation $\Delta u = 0$.
+
+
+
+\emph{b.} On account of the assumed periodicity of the function $f(\psi)$, one may substitute for the integral
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+
+\]
+
+the integral
+
+\[
+
+\frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\varphi + \psi) \cdot \frac{1 - r^2}{1 - 2r \cos\psi + r^2} \cdot d\psi
+
+\]
+
+and since for all values of $r$ that are less than $1$, the value $r = 1$ excluded, the integral
+
+\[
+
+\frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1 - r^2}{1 - 2r \cos\psi + r^2} \cdot d\psi
+
+\]
+
+has the value $1$, the equation
+
+\[
+
+u(r, \varphi) = f(\varphi) + \frac{1}{2\pi} \int_{-\pi}^{+\pi} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi.
+
+\]
+
+holds in the same extent.
+
+
+
+It is now to be shown that it is possible to fix a bound for the difference $1 - r$ such that for all values of $r$ for which the difference $1 - r$ is different from zero and does not exceed that bound, and for all values of $\varphi$, the value of the integral in the preceding equation is in absolute value smaller than an arbitrarily small prescribed quantity.
+
+
+
+On account of the periodicity of the function $f(\varphi)$, the interval from $-\pi$ to $+\pi$ over which the integration extends can, if $\delta$ denotes a small positive quantity, be replaced by the two intervals from $\delta$ to $2\pi - \delta$ and from $-\delta$ to $+\delta$.
+
+
+
+While $\psi$ is in the interval from $\delta$ to $2\pi - \delta$,
+
+
+
+\origpage{230}
+
+the denominator occurring under the integral sign is always greater than $2r(1 - \cos\delta)$. The difference $f(\varphi + \psi) - f(\varphi)$ always remains smaller than $2g$, if $g$ denotes the greatest value of the absolute value of $f(\varphi)$. Consequently, the contribution that this interval delivers to the value of the integral is numerically smaller than $\frac{g(1 - r^2)}{r(1 - \cos\delta)}$. However small one may find it good in the sequel to choose the quantity $\delta$, which always remains different from zero, one can by corresponding reduction of $1 - r$ command the smallness of $\frac{g(1 - r^2)}{r(1 - \cos\delta)}$.${}^{*)}$
+
+
+
+There still remains to consider the integral
+
+\[
+
+\frac{1}{2\pi} \int_{-\delta}^{+\delta} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi
+
+\]
+
+
+
+If one denotes by $\varepsilon$ a quantity which the absolute value of the difference $f(\varphi + \psi) - f(\varphi)$ does not exceed in the interval $-\delta \le \psi \le +\delta$, then the value of this integral is numerically smaller than
+
+\[
+
+\frac{\varepsilon}{2\pi} \int_{-\delta}^{+\delta} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi,
+
+\]
+
+hence also smaller than
+
+\[
+
+\frac{\varepsilon}{2\pi} \int_{-\pi}^{+\pi} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi,
+
+\]
+
+i.e., smaller than $\varepsilon$.
+
+
+
+On account of the assumed continuity of the function $f(\varphi)$, however small the quantity $\varepsilon$ different from zero may be assumed, one can always specify a quantity $\delta$ different from zero such that for
+
+
+
+
+
+
+
+\textbf{*)} Even narrower bounds are given by the following estimate. The integral
+
+\[
+
+\frac{1}{2\pi} \int_{\delta}^{2\pi - \delta} [f(\varphi + \psi) - f(\varphi)] \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi
+
+\]
+
+is in absolute value smaller than
+
+\[
+
+\frac{g}{\pi} \int_{\delta}^{2\pi - \delta} \frac{1 - r^2}{1 - 2r \cos\psi + r^2}\,d\psi = \frac{2g}{\pi} \operatorname{arc\,tg}\left(\frac{1 - r}{1 + r} \cdot \operatorname{cotg}\frac{1}{2}\delta\right),
+
+\]
+
+hence also smaller than
+
+\[
+
+\frac{4g}{\pi(1 + r)} \cdot \frac{1 - r}{\delta}.
+
+\]
+
+
+
+\origpage{231}
+
+all values of $\psi$ not exceeding in absolute value the quantity $\delta$, and simultaneously for all values of $\varphi$, the absolute value of the difference $f(\varphi + \psi) - f(\varphi)$ is smaller than $\varepsilon$; therefore the specified integral vanishes for all values of $\varphi$ simultaneously with $\delta$.
+
+
+
+Hereby the theorem stated above is proved in all its parts.
+
+
+
+For the formulation of the proof communicated here, a requirement was decisive which was put to me in January of this year in a letter from Mr.~\emph{Heine}, essentially to the effect: However small a quantity $\varepsilon'$ different from zero may be assumed, it must be possible to specify a quantity $\varepsilon$ different from zero such that --- for all values of $r$ for which the difference $1 - r$ is different from zero and smaller than $\varepsilon$, and simultaneously for all values of $\varphi$ --- the absolute value of the difference $u(r, \varphi) - f(\varphi)$ is smaller than the quantity $\varepsilon'$.
+
+
+
+Further details on the significance of this requirement are contained in a memoir of Mr.~\emph{Heine}: ``Ueber trigonometrische Reihen''${}^{*)}$, a memoir which all mathematicians will greet with lively pleasure.
+
+
+
+An analogous procedure leads to a rigorous proof of the corresponding formula by which the partial differential equation
+
+\[
+
+\frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial z^2} = 0
+
+\]
+
+is integrated for the interior of a spherical region, on whose surface the function $V$ is to assume prescribed values.
+
+
+
+With regard to this problem, reference may be made to two writings of Mr.~C.~\emph{Neumann}, whose titles follow:
+
+
+
+``Lösung des allgemeinen Problemes über den stationären Temperaturzustand einer homogenen Kugel.'' Halle, H.~W. Schmidt, 1861.
+
+
+
+``Allgemeine Lösung des Problemes über den stationären Temperaturzustand eines homogenen Körpers, welcher von irgend zwei nichtconcentrischen Kugelflächen begrenzt wird.'' Halle, H.~W. Schmidt, 1862.
+
+
+
+\textbf{*)} This Journal, Vol.~71, p.~353.
+
+
+
+\origpage{232}
+
+\subsection*{§.~6.}
+
+
+
+The analytic function $F(z)$ has been represented in the foregoing by a definite integral. From this results a second representation of the function $F(z)$ by a series proceeding in powers of $z$ with positive integer exponents, absolutely convergent for all values of $z$ whose absolute value is less than $1$:
+
+\[
+
+F(z) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\psi)\,d\psi + \sum_{(m=1, \, 2, \, \dots \, \infty)} \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) e^{-mi\psi}\,d\psi \cdot z^m.
+
+\]
+
+
+
+The function $u(r, \varphi)$ is the real part of the function $F(z)$; from the preceding equation one therefore obtains the expansion
+
+\[
+
+\begin{gathered}
+
+u(r, \varphi) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\psi)\,d\psi \\
+
++ \sum_{(m=1, \, 2, \, \dots \, \infty)} \left( \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \cos m\psi\,d\psi \cdot \cos m\varphi + \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \sin m\psi\,d\psi \cdot \sin m\varphi \right) \cdot r^m.
+
+\end{gathered}
+
+\]
+
+If $r$ is set equal to $1$, the right-hand side of the preceding equation passes into the \emph{Fourier} series for the function $f$.${}^{*)}$
+
+
+
+It is sometimes useful to know a value which the absolute value of the difference $u(r, \varphi) - u(0)$ as a function of $r$ cannot exceed, as soon as the values $u(1, \varphi) = f(\varphi)$ do not exceed in absolute value a finite quantity $g$.
+
+
+
+One obtains
+
+\[
+
+[u(r, \varphi) - u(0)] < [F(z) - F(0)] < 2g \cdot \frac{r}{1 - r};
+
+\]
+
+or
+
+
+
+
+
+
+
+
+
+\textbf{*)} In his work: ``Das Dirichletsche Princip,'' Mr.~C.~\emph{Neumann} departed again from the representation of a function satisfying the differential equation $\Delta u = 0$ for the area of a circle by the \emph{Poisson} integral to be extended over the boundary of the circular disk (see §.~4 and the note p.~226) and chose the \emph{Fourier} series as the starting point. A similar line of thought is indicated by Mr.~\emph{Schläfli} in Volume~72 of this Journal, page~283. That this method is only a heuristic one and requires a complete deduction is the core of the objections raised against it by Mr.~\emph{Heine} (this Journal, Vol.~71, p.~361) and Mr.~\emph{Prym} (this Journal, Vol.~73, p.~340). In what sense, however, one must ask, is the assertion of \emph{Riemann} to be understood which he expresses at the end of §.~2 of his habilitation address (``Ueber die Darstellbarkeit einer Function durch eine trigonometrische Reihe'')?
+
+
+
+\origpage{233}
+
+\[
+
+u(r, \varphi) - u(0) = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(\varphi + \psi) \left( \frac{1 - r^2}{1 - 2r \cos\psi + r^2} - 1 \right) d\psi,
+
+\]
+
+\[
+
+[u(r, \varphi) - u(0)] < \frac{4g}{\pi} \arcsin r.
+
+\]${}^{*)}$
+
+
+
+\begin{flushright}
+
+May 1870.
+
+\end{flushright}
+
+
+
+
+
+
+
+\subsection*{Continuation and Extension of the Investigations Contained in the Preceding Sections.}
+
+
+
+\subsection*{§.~7.}
+
+
+
+The results of investigation obtained for the area of a circle with radius $1$ are capable of extension in various directions.
+
+
+
+It is clear first of all that the established formulas remain valid for the area of a circle with radius $R$ if in them $\frac{r}{R}$ is substituted for $r$. (Here $R$ naturally no longer possesses the same meaning as in §.~4.)
+
+
+
+Thereby the formula given in §.~4 and §.~5 passes into the following
+
+\[
+
+\begin{aligned}
+
+u(r, \varphi) &= \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi \\
+
+&= \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi
+
+\end{aligned}
+
+\]
+
+with the condition $0 \le r < R$, and the addition $u(R, \varphi) = f(\varphi)$.
+
+
+
+The function $f(\varphi)$ of the real argument $\varphi$ has hitherto been subjected to the conditions of being finite, continuous, single-valued, and periodic with period $2\pi$. The given formula can, however, have a definite meaning for the interior of the circular disk even without
+
+
+
+
+
+
+
+\textbf{*)} If in particular $u(0)$ has the value zero, the absolute value of $u(r, \varphi)$ regarded as a function of $r$ cannot exceed the value $\frac{4g}{\pi} \operatorname{arc\,tg} r$. This determination yields at the same time the narrowest bound admissible under the stated hypotheses.
+
+
+
+\origpage{234}
+
+the function $f(\varphi)$ being defined as finite, continuous, and single-valued for all values of $\varphi$ belonging to the interval from $0$ to $2\pi$, and indeed this will always and only then be the case when this function everywhere admits an integration in the \emph{Riemannian} sense (§.~5 of the habilitation address).
+
+
+
+The investigation shall, however, not be conducted here in this generality, but (just as in the memoir of Mr.~\emph{Prym}) shall be restricted to the following case.
+
+
+
+Let the function $f(\varphi)$ --- with the exception of those values of $\varphi$ which modulo $2\pi$ are congruent to one of the $m$ values $\varphi_1, \, \varphi_2, \, \dots \, \varphi_\nu, \, \dots \, \varphi_m$, all of which can be assumed to be less than $2\pi$ and distinct from one another --- be defined for all real values of $\varphi$ as a finite, continuous, and single-valued function of the real argument $\varphi$, repeating itself periodically upon increasing the argument by $2\pi$; upon the approach of the variable $\varphi$ to one of the excluded values, for example to the value $\varphi_\nu$, whether $\varphi$ approaches the value $\varphi_\nu$ continuously increasing, or $\varphi$ continuously decreasing, let the value of the function $f(\varphi)$ approach in each case a definite finite limit, which following the example of \emph{Dirichlet} shall be denoted in the first case by $f(\varphi_\nu - 0)$, and in the second by $f(\varphi_\nu + 0)$.
+
+
+
+If the difference $f(\varphi_\nu + 0) - f(\varphi_\nu - 0)$, which may be denoted by $A_\nu$, is a quantity different from zero, then the function $f(\varphi)$ possesses for all values of $\varphi$ for which $\varphi \equiv \varphi_\nu \pmod{2\pi}$ two values, and undergoes an interruption of continuity in them. For the sake of what follows, however, the case shall not be excluded that $A_\nu$ can also be equal to zero, in which case the value $\varphi_\nu$ and those congruent to it do not belong to the singular values with regard to the continuity of the function $f(\varphi)$.
+
+
+
+Such discontinuities as can be removed by altering the value of the function at a point, so-called \emph{removable discontinuities}, shall for the sake of brevity be excluded from consideration here and in the following.
+
+
+
+The same discontinuity which the function $f(\varphi)$ possesses at the points for which $\varphi \equiv \varphi_\nu \pmod{2\pi}$ is exhibited by the function
+
+\[
+
+\frac{A_\nu}{\pi} \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\varphi - \varphi_\nu)}\right) = \frac{A_\nu}{2\pi} (\pi - (\varphi' - \varphi_\nu)),
+
+\]
+
+
+
+\origpage{235}
+
+provided that $A_\nu$ is different from zero, and that to the variable $\varphi'$ on the right-hand side of the preceding equation there is always assigned that value belonging to the interval $\varphi_\nu \dots \varphi_\nu + 2\pi$ which is congruent modulo $2\pi$ to the value of the variable $\varphi$.
+
+
+
+Here and in the following, with the exception of one place in §.~9, the inverse tangent function means the uniquely determined arc lying between $-\frac{\pi}{2}$ and $+\frac{\pi}{2}$ whose tangent has the prescribed value.
+
+
+
+If now the difference
+
+\[
+
+f(\varphi) - \frac{1}{\pi} \sum A_\nu \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\varphi - \varphi_\nu)}\right) \quad (\nu = 1, \, 2, \, \dots \, m)
+
+\]
+
+is formed and denoted by $f_0(\varphi)$, then by this stipulation the function $f_0(\varphi)$ is defined for all values of $\varphi$ with the exception of those congruent to the values $\varphi_\nu$ as a finite, continuous, and single-valued function of its argument, and indeed for all values of $\nu$ there exists the equation
+
+\[
+
+f_0(\varphi_\nu - 0) = f_0(\varphi_\nu + 0).
+
+\]
+
+
+
+If therefore for those values of $\varphi$ to which the definition of the function $f_0(\varphi)$ does not extend, the supplementary determination is made that, whenever $\varphi \equiv \varphi_\nu \pmod{2\pi}$, the value of the function shall be determined by the equation $f_0(\varphi_\nu) = f_0(\varphi_\nu - 0) = f_0(\varphi_\nu + 0)$, then the function $f_0(\varphi)$ uniquely defined for all real values of $\varphi$ by this extended definition satisfies in full rigor the conditions stated in §.~5.
+
+
+
+Let it now be assumed that for all points of the disk $S$ of the circle described with radius $1$ about the origin, with the exception of a finite number of points of the boundary, namely the points $z_\nu = e^{i\varphi_\nu}$, a real function $u$ of the two real arguments $x$ and $y$ is defined in such a way that it satisfies Conditions~I stated in §.~1 for this disk $S$ \emph{with the exception of the specified points of the boundary}, and agrees along the boundary with the function $f(\varphi)$ with the exception of the points $z_\nu$.
+
+
+
+This is, however, to be understood as follows: one conceives constructed for each of the singular points a region containing it entirely in its interior, whose boundary may have an arbitrary shape; most simply, each of the singular points is regarded as the center of a circular disk with radius $\varrho$, where $\varrho$ denotes a variable
+
+
+
+\origpage{236}
+
+quantity subjected to no other condition than that of being positive and different from zero. If now all those parts of the region $S$ are excised which lie in the interior of one of these circles, then the function $u$, however small $\varrho$ may be chosen, shall satisfy Conditions~I in all rigor for the remaining region, and shall agree with $f(\varphi)$ on the remaining boundary of $S$.
+
+
+
+It will now depend on the behavior of the function $u$ in the vicinity of the singular points whether the function $u$ is determined by its boundary values $u(1, \varphi) = f(\varphi)$ and the remaining conditions, and to what extent a mode of inference analogous to that given in §.~4 is permitted in this case as well.
+
+
+
+Let $R$ denote a variable quantity independent of $r$, $\varphi$, $\psi$, whose variability is initially restricted to such values as are \emph{less than $1$}. Then, according to the formula cited at the beginning of this section, for all values of $r$ that are less than $R$,
+
+\[
+
+u(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+
+
+If now the function $u$ behaves in the vicinity of the singular points in such a manner that it can be concluded that the integral on the right-hand side of the preceding equation passes \emph{continuously} for $\lim R = 1$ into the integral
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+
+\]
+
+then, and only in this case, can the mode of inference of §.~4 with its consequences be transferred unchanged to the present case.
+
+
+
+A very simple example counseling caution shows that this conclusion is not admissible without a special hypothesis.
+
+
+
+Let
+
+\[
+
+u = \Re\left(\frac{1 - z}{1 + z}\right) = \frac{1 - r^2}{1 + 2r \cos\varphi + r^2},
+
+\]
+
+where the prefixed letter $\Re$ signifies, according to the notation of Mr.~\emph{Weierstrass}, that the real part of the subsequent expression is to be taken.
+
+
+
+The curves of constant values of $u$ form a family of circles which touch one another and the boundary of $S$ at the point $z = -1$. With the exception of this point, for which the function is not
+
+
+
+\origpage{237}
+
+defined, it satisfies Conditions~I for the disk $S$ and has the value zero on the boundary of $S$ everywhere where it is defined. It is therefore permissible to fix the value of $u$ for the point $z = -1$ by a special definition, and let $u(1, \pi) = 0$ be set. Then
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} u(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+
+\]
+
+is equal to zero for every value of $r$ and $\varphi$, and therefore does \emph{not} agree with the function previously defined. Under the stated stipulations, therefore, a passage to the limit from the integral to be extended over the circumference of the circle with radius $R$ to the integral to be extended over the boundary of $S$ is not permitted. The reason for this lies in the circumstance that in this case the value of $u(r, \varphi)$ upon the approach of the point $z = r \cdot e^{i\varphi}$ to the point $z = -1$ can become \emph{infinitely large}, or more specifically, \emph{infinitely large of the first order}.
+
+
+
+Applying the system of polar coordinates $\varrho$, $\tau$ with pole $z = -1$ chosen by Mr.~\emph{Prym}, there results:
+
+\[
+
+z = -1 + i\varrho \cdot e^{-\tau i}
+
+\]
+
+and
+
+\[
+
+\frac{1 - r^2}{1 + 2r \cos\varphi + r^2} = \Re\left(\frac{1 - z}{1 + z}\right) = \Re\left(\frac{2}{1 + z}\right) - 1 = \frac{2\sin\tau}{\varrho} - 1.
+
+\]
+
+
+
+The situation is different in the following case. Let there be set
+
+\[
+
+u^*(r, \varphi) = \operatorname{arc\,tg}\frac{y}{1 + x} = \operatorname{arc\,tg}\frac{r\sin\varphi}{1 + r\cos\varphi} = \Re\frac{\log(1 + z)}{i} = \frac{\pi}{2} - \tau.
+
+\]
+
+
+
+The system of lines along which $u^*$ has constant values is a rectilinear pencil of rays whose center lies at the point $z = -1$. In this case too, the function $u^*$ is \emph{not} defined for the point $z = -1$. The present case differs essentially from the preceding one, however, in that the function $u^*$ \emph{remains finite} upon approaching the singular point; for however small a region containing the point $z = -1$ one may excise from the disk $S$, the function $u^*$ satisfies Conditions~I (even the narrower Conditions~II) for the remaining region, and the absolute value of $u^*$ nowhere exceeds the value $\frac{\pi}{2}$.
+
+
+
+In what follows it shall now be shown that for the function $u^*$ the mentioned passage to the limit is permitted with full rigor. However, in order
+
+
+
+\origpage{238}
+
+to give the proof at once a somewhat more general formulation, let the quantity which the absolute value of $u^*$ nowhere exceeds be denoted by $g$.
+
+
+
+If $R$ has the same meaning as before, the equation
+
+\[
+
+u^*(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} u^*(R, \psi) \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2}\,d\psi.
+
+\]
+
+holds for all values of $r$ that are less than $R$, and for all values of $\varphi$.
+
+
+
+In passing from $R$ to the value $1$, the continuity of the function $u^*(R, \psi)$ ceases at the value $\psi = \pi$. Excluding this point of discontinuity by the interval $\pi - \delta \dots \pi + \delta$, where $\delta$ denotes a positive quantity, one therefore replaces the interval from $0$ to $2\pi$ by two other intervals, namely by the interval from $-\pi + \delta$ to $\pi - \delta$ and the interval from $\pi - \delta$ to $\pi + \delta$, which replacement is permitted on account of the periodicity of the function $u^*(R, \psi)$ as a function of $\psi$.
+
+
+
+The integral corresponding to the first interval is, according to the hypothesis, certainly a continuous function of $R$, namely \emph{inclusively} for the value $R = 1$.
+
+
+
+One can therefore equate the integral corresponding to the first interval to the sum
+
+\[
+
+\frac{1}{2\pi} \int_{-\pi+\delta}^{\pi-\delta} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi + \varepsilon_1
+
+\]
+
+and in this equation $\varepsilon_1$ denotes a quantity of such property that, after a preliminary choice of $\delta$, the smallness of the absolute value of $\varepsilon_1$ can be commanded by the stipulation that the difference $1 - R$ must not exceed a certain bound $\varrho$.
+
+
+
+Since now the function $u^*$, according to the hypothesis, nowhere exceeds in absolute value the quantity $g$, one can set
+
+\[
+
+\frac{1}{2\pi} \int_{-\pi+\delta}^{\pi-\delta} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi = \frac{1}{2\pi} \int_{-\pi}^{+\pi} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi + \varepsilon_2,
+
+\]
+
+where for $u^*(1, \pi)$ and $u^*(1, -\pi)$ the values $u^*(1, \pi - 0)$ and $u^*(1, -\pi + 0)$ are to be substituted (the notation explains the kind of
+
+
+
+\origpage{239}
+
+passage to the limit), and where $\varepsilon_2$ is in absolute value smaller than $\frac{2g}{1 - r} \cdot \delta$.
+
+
+
+The value of the integral corresponding to the second interval is in absolute value smaller than $g \cdot \frac{R + r}{R - r} \cdot \delta$ and may be denoted by $\varepsilon_3$.
+
+
+
+From this results the equation
+
+\[
+
+u^*(r, \varphi) - \frac{1}{2\pi} \int_{-\pi}^{+\pi} u^*(1, \psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi = \varepsilon_1 + \varepsilon_2 + \varepsilon_3.
+
+\]
+
+
+
+Since now the smallness of the absolute value of $\varepsilon_2$ and of $\varepsilon_3$, and hence also of $\varepsilon_2 + \varepsilon_3$, can be commanded by a suitably small choice of $\delta$, and after the choice of $\delta$ has been made, the smallness of the absolute value of $\varepsilon_1$ can be commanded by a suitably small choice of $\varrho$, respectively $1 - R$, and since moreover the value of the difference on the left-hand side of the preceding equation is completely independent of the choice of the quantities $\delta$ and $R$, it follows that that difference has the value zero. This was to be proved.
+
+
+
+The preceding proof has at once been given such a formulation that it can be extended without difficulty to the case in which a function $u^*$ is defined for the area $S$ of a circle with radius $R$ with the exception of a finite number of points of the boundary ($z_\nu = R \cdot e^{i\varphi_\nu}$, $\nu = 1, \, 2, \, \dots \, m$) in such a way that it satisfies Conditions~I for all other points, when it is known in addition that the value of $u^*$ upon the approach of the point $z$ to one of the singular points of the boundary always \emph{remains finite}, i.e., never exceeds in absolute value a definite finite quantity $g$ independent of the degree of that approach.
+
+
+
+The conclusions resulting from this are completely analogous to those drawn in the last two paragraphs of §.~4. The function $u^*$ is therefore uniquely determined by the stated conditions.
+
+
+
+This proof differs in several respects from the proof which Mr.~\emph{Prym} has given in §.~5 of his above-mentioned memoir, in particular in that regarding the \emph{manner} of the discontinuity of the function $u^*$, respectively its multiformity upon the approach of the point $z$ to a singular point of the boundary, no other hypothesis is made
+
+
+
+\origpage{240}
+
+than that the function $u^*$ in the explained sense \emph{remains finite} upon approaching the singular points.
+
+
+
+Mr.~C.~\emph{Neumann} also makes (\emph{Berichte d.~K.~Sächs.~Ges.~d.~W.} 1870, pp.~278 and 279) such a special hypothesis.
+
+
+
+Every such special assumption made in advance regarding the \emph{nature} of the behavior of a function $u$ upon approaching a singular point is, however, subject, if it contains more than the indispensable requirement that the function \emph{remain finite} upon approach, to no inconsiderable objections, as it seems to me. Namely, as soon as \emph{only} the finiteness of the function $u$ in the vicinity of the singular point is certain, it turns out that the sought function $u$ is already determined by this and the remaining conditions, so that a prior more special assumption proves to be \emph{unnecessary}. In general, the behavior of a function $u$ in the vicinity of such a point, when its finiteness in the neighborhood thereof is assumed, seems to me to be an object of \emph{investigation}, not an object of prior \emph{free disposal}, since any other special assumption than that which Messrs.~C.~\emph{Neumann} and \emph{Prym} made would have the consequence that no function exists satisfying the posited conditions.
+
+
+
+That, on the other hand, the assumption which Mr.~C.~\emph{Neumann} made is \emph{not general enough} becomes apparent as soon as the boundary of the region $T$ contains cusps, for in that case the assumption of Mr.~C.~\emph{Neumann} no longer suffices; rather, in place thereof an assumption would have to step which is in agreement with the theorem stated by me in the Monthly Report of the Berlin Academy of October 1870, p.~777. ---
+
+
+
+By the preceding proof, the correctness of the equation
+
+\[
+
+\operatorname{arc\,tg}\frac{r\sin\varphi}{1 + r\cos\varphi} = \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1}{2}\psi \cdot \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+
+\]
+
+is in particular also proved for all values of $r$ that are less than $1$, an equation which, moreover, can easily be obtained in another way by means of series expansions.
+
+
+
+If now in this equation the variable $\varphi$ is exchanged with $\pi - (\varphi - \varphi_\nu)$ and the function into which the expression on the left-hand side thereby passes is denoted by\ednote{Misprint: the original has mir instead of mit.} $u_\nu^*$, there results
+
+
+
+\origpage{241}
+
+\[
+
+\begin{aligned}
+
+u_\nu^* = \operatorname{arc\,tg}\frac{r\sin(\varphi - \varphi_\nu)}{1 - r\cos(\varphi - \varphi_\nu)} &= \frac{1}{2\pi} \int_{-\pi}^{+\pi} \frac{1}{2}\psi \cdot \frac{1 - r^2}{1 - 2r\cos(\psi - \pi + \varphi - \varphi_\nu) + r^2}\,d\psi \\
+
+&= \frac{1}{2\pi} \int_0^{2\pi} \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\psi - \varphi_\nu)}\right) \cdot \frac{1 - r^2}{1 - 2r\cos(\psi - \varphi) + r^2}\,d\psi,
+
+\end{aligned}
+
+\]
+
+an equation of which use will be made in the following section.
+
+
+
+\subsection*{§.~8.}
+
+
+
+It is now a matter, analogously to the investigation carried out in §.~5, of giving the existence proof, and of investigating the behavior of the integral representing the sought function in the vicinity of the singular points $z_\nu = e^{i\varphi_\nu}$ in which either the series of prescribed boundary values undergoes an interruption of continuity, or the continuity of the function $u^*$ is undetermined.
+
+
+
+The investigation can easily be reduced to the case considered in §.~5. Retaining the remaining notations defined in §.~7, let the function $u^*(r, \varphi)$ be defined for all values of $r$ that are less than $1$ by the equation
+
+\[
+
+u^*(r, \varphi) = \frac{1}{2\pi} \int_0^{2\pi} f(\psi) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2}\,d\psi
+
+\]
+
+and for $r = 1$ by the equation $u^*(1, \varphi) = f(\varphi)$, so far as the latter has a definite meaning.
+
+
+
+For each region lying entirely in the interior of $S$, this function satisfies Conditions~II (cf.~the proof in §.~5 under \emph{a.}); it is therefore only a matter of investigating the behavior of the function for $\lim r = 1$.
+
+
+
+For this purpose, let there be substituted in place of $f(\psi)$ the sum
+
+\[
+
+f(\psi) = f_0(\psi) + \frac{1}{\pi} \sum A_\nu \operatorname{arc\,tg}\left(\frac{1}{\operatorname{tg}\frac{1}{2}(\psi - \varphi_\nu)}\right) \quad (\nu = 1, \, 2, \, \dots \, m)
+
+\]
+
+(see the preceding section); thereby the expression for $u^*(r, \varphi)$ passes into a sum of $m + 1$ similarly formed integrals. If one now denotes the integral corresponding to the first term $f_0(\psi)$, which is entirely in the case of that considered in §.~5, by $u_0(r, \varphi)$
+
+
+
+\origpage{242}
+
+or by $u_0$, and the remaining ones, on the other hand, in accordance with the last equation in §.~7, there results
+
+\[
+
+u^* = u_0 + \frac{1}{\pi} \sum A_\nu \cdot u_\nu^* \quad (\nu = 1, \, 2, \, \dots \, m).
+
+\]
+
+By this representation the continuity of the analytically represented function $u^*$ along the boundary with the exception of the neighborhood of the singular points $z_\nu = e^{i\varphi_\nu}$ is proved, and simultaneously the nature of the behavior of this function in the neighborhood of these points is characterized. In the neighborhood of a singular point $z_\nu = e^{i\varphi_\nu}$, namely, the function $u^*$ differs from the function $\frac{1}{\pi} A_\nu \cdot u_\nu^*$ only by a function completely continuous at this point.
+
+
+
+Hereby the existence of a function satisfying the stated conditions is established, and indeed it has turned out here that the particular nature of its behavior in the vicinity of the singular points in the case considered is a \emph{consequence} of the remaining properties.
+
+
+
+The represented function therefore satisfies Conditions~I in the specified sense for the region for which it is defined, with the exception of those singular points $z_\nu = e^{i\varphi_\nu}$ of the boundary for which the corresponding $A_\nu$ is different from zero, agrees with the given function $f(\varphi)$ for all points of the boundary with the exception of the mentioned singular points, and simultaneously remains \emph{finite} upon approaching those singular points.
+
+
+
+The proof communicated here, which moreover makes as little claim to contain new ideas as that presented in the preceding section, seems to me to be somewhat simpler than that which Mr.~\emph{Prym} employed in his frequently mentioned memoir.
+
+
+
+If the hypothesis is now made that $A_\nu$ is equal to zero for a particular value of $\nu$, there already lies in the foregoing at the same time the proof that the unique function satisfying the remaining conditions is \emph{likewise continuous} in the neighborhood of the point $z_\nu$, whereas in the derivation (see §.~7) the continuity at this point was left undetermined and it was only stipulated that the function should remain \emph{finite} in the neighborhood of this point.${}^{*)}$
+
+
+
+
+
+
+
+\textbf{*)} It may be mentioned that this theorem can be generalized as follows: If for any region $T$ bounded by a finite number of analytic curves, with the exception of a finite number of points in the interior or on the boundary, a function $u$ is defined in such a way that it
+
+1.~satisfies Conditions~I in the specified sense for the region $T$ with the exception of those points for which it is uncertain or not yet decided,
+
+2.~remains finite upon approaching those points, while
+
+3.~removable discontinuities remain excluded,
+
+then this function is eo ipso continuous also for all interior points and for those points of the boundary at which the series of boundary values does not undergo an interruption of continuity.
+
+
+
+
+
+
+
+Upon the rigorous proof of this theorem, so far as it relates to such singular points as lie on the boundary, I cannot, however, enter in this communication, since it would remove me too far from the immediate purpose here, and I must therefore content myself with referring for the time being to the indications given in the Monthly Report of the Berlin Academy of October 1870, pages~775--777, regarding this proof.
+
+
+
+\origpage{243}
+
+The remark also holds here that if in place of the circular disk with radius $1$ there occurs one whose radius is $R$, then in the established formula $\frac{r}{R}$ is to be substituted for $r$.
+
+
+
+If now $g$ denotes the upper limit, $k$ the lower limit of all those values which the function $f(\varphi)$ can assume, which may be assumed not to be constant, then of the differences $f(\varphi) - g$ and $f(\varphi) - k$ the first is never positive, the second never negative. From this it follows that of the two differences $u(r, \varphi) - g$ and $u(r, \varphi) - k$, when $r < 1$, the first can assume only negative values, the second only positive values, since these differences coincide respectively with the integrals
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} (f(\psi) - g) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+
+\]
+
+and
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} (f(\psi) - k) \frac{1 - r^2}{1 - 2r \cos(\psi - \varphi) + r^2} \cdot d\psi
+
+\]
+
+
+
+The value of $u$ for an \emph{interior} point of $S$ therefore lies always \emph{between} $g$ and $k$, i.e., the values of the upper and lower limits of all those values which this function can assume along the boundary of $S$.
+
+
+
+\subsection*{§.~9.}
+
+
+
+The content of this and the following section I take
+
+
+
+\origpage{244}
+
+from a memoir on the integration of the partial differential equation $\Delta u = 0$ which I communicated in November 1869 to Mr.~\emph{Kronecker} and Mr.~\emph{Weierstrass}. The line of thought pursued first is completely corresponding to that which \emph{Riemann} developed in Volume~54 of this Journal on pp.~101 and 102 (pp.~1 and 2 of the separate reprint), and which, as is known, frequently finds application in the theory of analytic functions. I am glad to be able to state that in this part of the investigation I find myself in complete agreement with Mr.~\emph{C.~Neumann} regarding the method of proof. Cf.~Mathematische Annalen of \emph{Clebsch} and \emph{Neumann}, Vol.~3, pp.~338--339 (October 1870) and Monthly Report of the Berlin Academy of October 1870, pp.~770--771. ---
+
+
+
+Under Conditions~I let a function $u$ be defined for the region $T$; in the interior of $T$ imagine a circle whose center may have the coordinates $x_0$ and $y_0$, whose radius is equal to $R$, and whose entire area belongs to the interior of $T$.
+
+
+
+For the area of this circle the function $u$ is defined with Conditions~II; according to the foregoing, therefore, the existence of higher derivatives of $u$ for all interior points $x_0$, $y_0$ of the region $T$, as well as the expandability of the value of $u$ for the points $x$, $y$ neighboring the point $x_0$, $y_0$ in powers of $x - x_0$ and $y - y_0$, respectively in products of powers of $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ and the sines and cosines of the like-named multiples of $\varphi = \operatorname{arc\,tg}\frac{y - y_0}{x - x_0}$, is a necessary consequence of hypotheses~I.
+
+
+
+The numerical coefficients of the individual terms of the function-element $u(r, \varphi)$ which represents the values of $u$ for all points lying in the neighborhood of the point $x_0$, $y_0$ are independent of the magnitude of the radius $R$ of that circle which is chosen for the determination of this function-element; for two function-elements derived by means of two circles having radii $R$ and $R'$, where $R' > R$, must agree with each other for all values of $r < R$, and from this follows the equality of all corresponding terms of both elements. Both elements therefore also have the same domain of convergence.
+
+
+
+Therefore the series proceeding in powers of $r$ by which such a function-element is represented converges certainly whenever
+
+
+
+\origpage{245}
+
+$r$ is smaller than the shortest distance of the point $x_0$, $y_0$ from the boundary of the region $T$, respectively from the nearest point for which the posited conditions cease to hold.
+
+
+
+From this it is inferred: If two functions $u_1$ and $u_2$ which satisfy Conditions~I for two regions $T_1$ and $T_2$ that have in common a simply connected region $T^*$ of two dimensions agree with each other in an ever so small part of this common region, then they agree with each other for all points thereof, can both be simultaneously analytically continued equally far while maintaining Conditions~I, and agree with each other along every such continuation.
+
+
+
+In order to be able to make this inference, it is only necessary according to the foregoing to know that the two functions agree with each other on the circumference of a circle for whose area both are defined with Conditions~I.
+
+
+
+If therefore a function $u$ is \emph{constant} in the interior of $T$ in an ever so small region of two dimensions or on the circumference of a circle of arbitrarily small radius whose interior lies entirely in the interior of $T$, for which region the function $u$ satisfies Conditions~I, then this function is constant so far as it is continued while maintaining Conditions~I.
+
+
+
+\subsection*{§.~10.}
+
+
+
+The value $u(0)$ of $u$ for the center of a circle for whose area $u$ is defined with Conditions~I is equal to the integral
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} u \cdot d\varphi,
+
+\]
+
+to be extended over the circumference of the circle, hence equal to the arithmetic mean of all the values which $u$ assumes on the circumference of the circle. If now $u$ is not constant altogether, there must be among the values of $u$ on the circumference of the circle both such as are greater than the value $u(0)$, and such as are smaller, and indeed this conclusion holds however small the radius of the circle may be.
+
+
+
+From this it follows, if $u$ is not constant, that for every inte-
+
+
+
+\origpage{246}
+
+rior point of $T$ there exist neighboring points for which $u$ possesses a greater, and such for which $u$ possesses a smaller value than for the point first considered.
+
+
+
+Thus $u$ can be a maximum or minimum for no interior point of the region. (Cf.~\emph{Riemann}'s inaugural dissertation, Art.~11.~III.)
+
+
+
+Now, according to hypotheses~I, the value of $u$ is defined finite, continuous, and single-valued for all points of $T$, including the boundary. Consequently there exists for these values an \emph{upper limit} $g$.
+
+
+
+According to a method of proof which Mr.~\emph{Weierstrass} is accustomed to communicate in his lectures on the theory of analytic functions, it can be shown that in the plane of the region $T$ there exists at least one point $z'$ of such nature that, if an arbitrarily small region, a part of $T$, is delimited in the neighborhood thereof, the upper limit of all those values of $u$ that belong to points of this region is \emph{likewise still} $g$.
+
+
+
+None of these points can lie in the interior of $T$; for firstly, at such a point, on account of the assumed continuity of $u$, the upper limit $g$ would actually be \emph{attained}; secondly, there would then have to be --- if $u$ is not constant altogether --- in the neighborhood of that point still greater values of $u$, contrary to the hypothesis that $g$ is the upper limit.
+
+
+
+All those points $z'$ therefore lie \emph{outside} the interior of $T$.
+
+
+
+Since the boundary of $T$, according to the hypothesis, consists of segments of analytic curves which at each point have the character of an algebraic curve, and such a curve actually reaches every point of the plane to which it comes infinitely close, each of the points $z'$ lies on the boundary of $T$, and on account of the continuity of $u$ the upper limit $g$ is actually \emph{attained} at each of these points $z'$.
+
+
+
+In an analogous manner it is shown that the \emph{lower limit} $k$ of all values of $u$ is actually attained in at least one point of the boundary, but in no interior point of $T$.
+
+
+
+Thus, if $u$ is not constant, all values which $u$ can assume for the interior points of the region $T$ under the stated hypotheses~I lie \emph{between} the greatest value $g$ and the smallest value $k$ among those values which $u$ assumes on the boundary of $T$.
+
+
+
+\origpage{247}
+
+From this it follows that a function $u$ which is defined under Conditions~I for a region $T$ and has the value zero for all points of the boundary also has the value zero for all interior points of $T$.
+
+
+
+And:
+
+
+
+If two functions $u$ and $u_1$ satisfy Conditions~I for the same region $T$ and agree with each other for all points of the boundary of the region, then they agree completely with each other in their values.
+
+
+
+If therefore there exists a function $u$ which satisfies Conditions~I for a given region $T$ and possesses at each point of the boundary a prescribed value varying continuously along it, then there exists only \emph{one} such function.${}^{*)}$
+
+
+
+\subsection*{§.~11.}
+
+
+
+When the integration of the partial differential equation $\Delta u = 0$ for the area of a circle has been carried out, it presents no difficulty to carry out the analogous investigations for the case of an annular region bounded by two concentric circles, corresponding to the same requirements of rigor.
+
+
+
+Let $r = 1$ and $r = R$, where $R > 1$, be the radii of the concentric circles bounding the annular region, and let the boundary conditions for simplicity be $u(R, \varphi) = f(\varphi)$, $u(1, \varphi) = 0$, to which case, as is well known, the more general one can easily be reduced. Let the function $f(\varphi)$ have the same properties as in §.~7.
+
+
+
+For this case there results according to known methods (cf.~the memoir of Mr.~\emph{C.~Neumann} already cited in §.~4, this Journal, Vol.~59):
+
+
+
+
+
+
+
+
+
+\textbf{*)} The theorems contained in this section admit of such a generalization that they also encompass the case in which the continuity of the function $u$ for a finite number of points of the region $T$ either ceases or is undetermined, provided that the function $u$ remains finite upon approaching these points, and without it being necessary to make a \emph{special} hypothesis concerning the behavior of the function $u$ in the vicinity of the singular points. Cf.~§.~8.
+
+
+
+\origpage{248}
+
+\[
+
+u(r, \varphi) = \frac{1}{2} b_0 \cdot \frac{\log r}{\log R} + \sum \frac{r^m - r^{-m}}{R^m - R^{-m}} \cdot (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, \dots \, \infty),
+
+\]
+
+where $a_m$ and $b_m$ are defined by the equations
+
+\[
+
+a_m = \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \sin m\psi \cdot d\psi, \quad b_m = \frac{1}{\pi} \int_{-\pi}^{+\pi} f(\psi) \cos m\psi \cdot d\psi
+
+\]
+
+
+
+This series is absolutely and uniformly convergent for $\frac{1}{R} < r < R$, and the function represented by this series, regarded as a function of $x$ and $y$, satisfies the differential equation $\Delta u = 0$ for the interior of the region for which it is defined. Since the circle $r = 1$ lies \emph{in the interior} of the domain of convergence, the continuity of the function in the vicinity of the value $r = 1$ follows from the known theorems on the continuity of power series in the interior of their domain of convergence. For $r = 1$ one indeed has $u(r, \varphi) = 0$.
+
+
+
+It therefore remains only to prove that this function passes continuously into the function $f(\varphi)$ for $\lim r = R$, with the exception of those points in which the prescribed boundary values undergo an interruption of continuity.
+
+
+
+For this purpose, subtract from the function $u(r, \varphi)$ the function
+
+\[
+
+u_1(r, \varphi) = \frac{1}{2} b_0 + \sum \frac{r^m}{R^m} (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, 2, \, \dots \, \infty),
+
+\]
+
+which (cf.~§.~6) agrees for $r < R$ with
+
+\[
+
+\frac{1}{2\pi} \int_0^{2\pi} f(\psi) \cdot \frac{R^2 - r^2}{R^2 - 2Rr \cos(\psi - \varphi) + r^2} \cdot d\psi
+
+\]
+
+and whose continuity follows from the proof in §.~8 to the extent specified there; it then appears that the domain of convergence of the power series which, with the addition of a term proportional to the logarithm of $r$, represents the difference $u - u_1$, is \emph{wider} than that domain for which the power series occurring in the expressions for $u$ and for $u_1$ simultaneously converge, since this domain of convergence extends from $r = \frac{1}{R}$ up to $r = R^3$ (excl. the boundaries). Since according to this the circle $r = R$ lies no longer at the boundary, but \emph{within} the domain of convergence of the series for the expression
+
+
+
+\origpage{249}
+
+\[
+
+u - u_1 - \frac{1}{2} b_0 \frac{\log r}{\log R}
+
+\]
+
+the continuity of this function in the neighborhood of $r = R$ follows from this; moreover, it results that the function $u - u_1$ has the value zero for $r = R$.
+
+
+
+The represented function therefore satisfies the posited conditions. It is at the same time the only one that possesses this property. The correctness of this assertion results for the case in which the function $u$ satisfies Conditions~I for all points of the region considered from §.~10.
+
+
+
+\subsection*{§.~12.}
+
+
+
+To the developments contained in Sections~9 and 11, considerations can now easily be connected which are in many respects analogous to those that in the theory of functions of a complex argument are associated with \emph{Cauchy}'s and \emph{Laurent}'s theorems on the expandability of a function in a series proceeding in powers of the independent variable, and have fundamental significance for this theory.
+
+
+
+If a function $u$ can be defined in accordance with Conditions~I for the interior of an arbitrarily large circle described about the origin with radius $R$, then for each arbitrarily large region it is representable by a series convergent for all finite values of $x$ and $y$.
+
+
+
+If now it is known moreover that the value of $u$, however large $R$ may be, remains smaller in absolute value than a finite quantity $g$ (independent of $R$), then $u$ is a constant.
+
+
+
+Namely, if a definite finite value is assigned to the quantity $r$ and $R$ is greater than $r$, there results:
+
+\[
+
+u(r, \varphi) - u(0) = \frac{1}{2\pi} \int_0^{2\pi} u(R, \psi) \left(\frac{R^2 - r^2}{R^2 - 2Rr\cos(\psi - \varphi) + r^2} - 1\right) d\psi.
+
+\]
+
+Since now all elements of this integral are smaller in absolute value than $g \cdot \frac{2r}{R - r} \cdot d\psi$, the absolute value of $u(r, \varphi) - u(0)$ is
+
+
+
+\origpage{250}
+
+for all values of $\varphi$ smaller than $2g \cdot \frac{r}{R - r}$. From this it results that this difference becomes infinitely small for infinitely large values of $R$; since it is, however, entirely independent of the value of $R$, it follows that it has the value zero. From §.~9 it therefore follows that under the stated hypotheses the function $u$ possesses altogether the same constant value $u(0)$ for all points of the plane. This theorem is to be regarded as a fundamental theorem, and is analogous to the corresponding theorem in the theory of functions of a complex argument which, as is known, Mr.~\emph{Liouville} first stated for doubly periodic functions. (Comptes rendus 1844, 2\textsuperscript{me} Semestre, pag.~1262.)
+
+
+
+If on the other hand, under otherwise unchanged hypotheses, it is known only that the product $R^{-\mu} \cdot u(R, \varphi)$ remains finite for infinitely large values of $R$, where $\mu$ denotes a positive number and $n$ the next \emph{greater} integer, it is to be concluded in an analogous manner that the series for the function $u(r, \varphi)$ has only $n$ terms:
+
+\[
+
+u(r, \varphi) = \frac{1}{2} b_0 + \sum r^m (a_m \sin m\varphi + b_m \cos m\varphi) \quad (m = 1, \, 2, \, \dots \, n - 1),
+
+\]
+
+so that in this case the function $u$, regarded as a function of $x$ and $y$, is an entire function of degree $(n - 1)$.
+
+
+
+From §.~11 it follows: If a function $u(r, \varphi)$ satisfies Conditions~I in §.~1 for an annular region $T$ bounded by two concentric circles with radii $r = R_1$ and $r = R_2$, $R_2 < R_1$, and agrees for the points of the boundary $z = R_1 \cdot e^{i\varphi}$ and $z = R_2 \cdot e^{i\varphi}$ for each value of $\varphi$ respectively with the functions $f_1(\varphi)$ and $f_2(\varphi)$, then this function is determined by these conditions, and there exists, whenever the functions $f_1(\varphi)$ and $f_2(\varphi)$ satisfy the conditions stated in §.~5 for the function $f(\varphi)$, always such a function.
+
+
+
+This function is analytically represented for all values of $r$ for which $R_2 < r < R_1$ by the equation
+
+\[
+
+\begin{aligned}
+
+u(r, \varphi) &= \frac{1}{2} B_0 + B_0' \cdot \log r \\
+
+&\quad + \sum \{(A_m r^m + A_{-m} r^{-m}) \sin m\varphi + (B_m r^m + B_{-m} r^{-m}) \cos m\varphi\} \quad (m = 1, \, 2, \, \dots \, \infty),
+
+\end{aligned}
+
+\]
+
+
+
+\origpage{251}
+
+and indeed the coefficients $A$ and $B$ occurring in it have the values
+
+\[
+
+\begin{aligned}
+
+B_0 &= \frac{b_{2\,0} \log R_1 - b_{1\,0} \log R_2}{\log R_1 - \log R_2}, & B_0' &= \frac{b_{1\,0} - b_{2\,0}}{\log R_1 - \log R_2}, \\
+
+A_m &= \frac{a_{1\,m} R_1^m - a_{2\,m} R_2^m}{R_1^{2m} - R_2^{2m}}, & B_m &= \frac{b_{1\,m} R_1^m - b_{2\,m} R_2^m}{R_1^{2m} - R_2^{2m}}, \\
+
+A_{-m} &= \frac{a_{1\,m} R_1^{-m} - a_{2\,m} R_2^{-m}}{R_1^{-2m} - R_2^{-2m}}, & B_{-m} &= \frac{b_{1\,m} R_1^{-m} - b_{2\,m} R_2^{-m}}{R_1^{-2m} - R_2^{-2m}},
+
+\end{aligned}
+
+\]
+
+if in these expressions one sets
+
+\[
+
+\left. \begin{array}{c} a_{\lambda\,m} \\ b_{\lambda\,m} \end{array} \right\} = \frac{1}{\pi} \int_0^{2\pi} u(R_\lambda, \psi) \left\{ \begin{array}{c} \sin m\psi \\ \cos m\psi \end{array} \right\} d\psi, \quad u(R_\lambda, \psi) = f_\lambda(\psi), \quad \begin{array}{c} (m = 0, \, 1, \, \dots \, \infty) \\ (\lambda = 1, \, 2) \end{array}
+
+\]
+
+
+
+The stated series converges absolutely whenever $R_2 < r < R_1$. It is important to note that a function $u(r, \varphi)$ can be represented for the same region in only a single way by an expression of the given form. For each value of $r$ for which $R_2 < r < R_1$, namely, if the above expression for $u(r, \varphi)$ is taken as a basis, there result the equations
+
+\[
+
+\int_0^{2\pi} u(r, \varphi) \, d\varphi = (B_0 + B_0' \log r) \pi
+
+\]
+
+and
+
+\[
+
+\int_0^{2\pi} u(r, \varphi) \left\{ \begin{array}{c} \sin m\varphi \\ \cos m\varphi \end{array} \right\} d\varphi = \left\{ \begin{array}{c} A_m r^m + A_{-m} r^{-m} \\ B_m r^m + B_{-m} r^{-m} \end{array} \right\} \cdot \pi,
+
+\]
+
+since under the stated hypotheses the integration may be performed term by term. If now in these equations there are assigned to the quantity $r$ two distinct values $R_1'$ and $R_2'$ for which $R_2 < R_2' < R_1' < R_1$, and if the expressions into which $a_{\lambda\,m}$ and $b_{\lambda\,m}$ pass when $R_\lambda'$ is substituted for $R_\lambda$ are denoted respectively by $a_{\lambda\,m}'$ and $b_{\lambda\,m}'$, where to the index $\lambda$ as before the value $1$ and the value $2$ are to be assigned, there result from this the values of the coefficients $A$ and $B$ \emph{uniquely} expressed by the quantities
+
+
+
+\origpage{252}
+
+$a'$, $b'$, $R_1'$ and $R_2'$. The expressions thus obtained have the same form as those given above, into which they pass in the limiting process
+
+\[
+
+\lim R_1' = R_1, \quad \lim R_2' = R_2
+
+\]
+
+
+
+From this it is concluded, analogously as in §.~9: If the function $u$, respectively its analytic continuation, satisfies Conditions~I not merely for the region
+
+\[
+
+R_2 \leqq r \leqq R_1,
+
+\]
+
+but for a still wider region
+
+\[
+
+R_2'' \leqq r \leqq R_1',
+
+\]
+
+which contains that first one as a part, then the series found, which serves for the analytic representation of the function $u$ within the narrower region, converges also for the interior of the wider region, and its sum agrees with the function $u$ or the analytic continuation thereof in the wider region as well.
+
+
+
+If therefore a function $u$ satisfies Conditions~I for the interior of a circular disk $S$ with radius $R_1$ with the sole exception of its center $z = 0$, for which it is still undetermined, then this function is representable by an expression of the form just given, and the series occurring in it converges for all values of $r$ which are less than $R_1$ and different from zero.
+
+
+
+If now nothing further is known of the behavior of the function $u$ in the vicinity of the singular point $z = 0$ than that it remains \emph{finite} upon approaching it in the sense specified in §.~7, then it can be concluded that the coefficients $B_0'$, $A_{-m}$, $B_{-m}$ individually have the value zero, and this follows from the law of formation for these quantities, since in the passage to the limit $\lim R_2 = 0$ the quantities $a_{2\,m}$ and $b_{2\,m}$ remain finite under the stated hypothesis.
+
+
+
+If therefore the value of the function $u$ is defined also for the point $z = 0$ by the value of the series, the function $u$ under the stated conditions is continuous also in the neighborhood of the point $z = 0$, and satisfies Conditions~I for the disk $S$ with inclusion of this point.
+
+
+
+Cf.~with this \emph{Riemann}'s dissertation, Art.~12.
+
+
+
+\origpage{253}
+
+If in place of the condition
+
+\[
+
+[u(r, \varphi)] < g
+
+\]
+
+there steps the condition
+
+\[
+
+r^\mu \cdot [u(r, \varphi)] < g,
+
+\]
+
+where $\mu$ denotes a positive number, then it follows by analogous inferences that the expression for the function $u$, besides other terms, in any case contains only a finite number of such terms in which $r$ is raised to a power with a \emph{negative} exponent.
+
+
+
+Zurich, September 1871.${}^{*)}$
+
+
+
+\textbf{*)} After the submission of the text of the above communication and the notes accompanying it to the editor of this Journal, a communication of Mr.~\emph{Christoffel}: ``Ueber die Integration von partiellen Differentialgleichungen'' was published, which is printed in No.~18 of the Nachrichten von der Königl. Gesellschaft der Wissenschaften zu Göttingen of September 13, 1871, pages~435--453.
+
+
+
+
+
+
+
+In the content of this communication I see a confirmation of the view that the previously customary proof of the continuity of the function represented by the \emph{Poisson} integral or an equivalent formula in the vicinity of the boundary does not fully satisfy the requirements of rigor which, as it seems to me, must be made in consequence of the remark of Mr.~\emph{Heine} published in Vol.~71 of this Journal.
+
+
+
+
+
+
+
+Furthermore, with regard to a remark contained on page~445 of the same communication: ``Finally, hereto belongs the assumption that $v$ has second derivatives, which, if $u + iv$ is defined as a function of $x + iy$, is not required and is a consequence of less far-reaching conditions,'' it may be asserted that in Art.~12 of his inaugural dissertation \emph{Riemann} applies the results of the investigation instituted in Art.~10 thereof initially not to the components $u$ and $iv$ of the function $u + iv$ defined as a function of the complex argument $x + iy$, but to the real part $U = \displaystyle\int(u\,dx - v\,dy)$ of the function $\displaystyle\int(u + iv)(dx + i\,dy)$ arising from it by integration, and that for this real part the hypotheses designated above as Conditions~I are satisfied. As a consequence of the theorem proved in Art.~10 of the inaugural dissertation it then results that the functions $\frac{\partial U}{\partial x} = u$, $\frac{\partial U}{\partial y} = -v$ also possess partial derivatives of all orders for the interior of the region considered and satisfy the partial differential equation $\Delta u = 0$. From this, however, it seems to me to emerge that the two hypotheses ``it is $\Delta u = 0$'' and ``$\frac{\partial u}{\partial y} \cdot dx - \frac{\partial u}{\partial x} \cdot dy$ is an exact differential of a function of $x$ and $y$'' are completely equivalent with regard to the present purpose.
+
+
+
+
+
+March 1872.
+
+
+
+\end{document}
+

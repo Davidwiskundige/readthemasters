@@ -1,6 +1,8 @@
 changelog:
   - date: "2026-10-11"
     summary: Transcription added (AI draft), pp. 218–253 from Journal für die reine und angewandte Mathematik (Crelle's Journal), Band 74 (1872).
+  - date: "2026-10-12"
+    summary: Translation (en) added (AI draft).
 
 transcription:
   status: ai-draft
@@ -37,3 +39,13 @@ transcription:
 
     APPARATUS & COMPOSITOR ERROR. One compositor error on p. 240 ("mir" for "mit") flagged with \ednote
     per HOUSESTYLE R4 and R18. Zero uncertainty flags (\uncertain) or illegible markers.
+
+translations:
+  en:
+    status: ai-draft
+    model: gemini-3-8-flash
+    effort: high
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-12"
