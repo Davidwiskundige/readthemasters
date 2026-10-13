@@ -40,10 +40,21 @@ work, the artifact it belongs to (original or a named translation), and the `\or
 appears under, so a result can deep-link to that page in the correct panel. The index is produced at
 deploy time and never committed.
 
+The index SHALL be compact: each work's URL, title and artifact labels are stored once, and an entry
+refers to its work by position, so the per-hit URL and label are rebuilt only for the results shown.
+The host serves no single file over 25 MiB (Cloudflare Pages), so the build MUST fail when the index
+exceeds a 24 MiB budget, catching an over-size index in the pull request's build check rather than in
+the deploy on `main`.
+
 #### Scenario: Every published formula is indexed
 
 - **WHEN** the site is built
 - **THEN** each inline and display formula in every published artifact has an index entry carrying its raw LaTeX, normalized tokens, work, artifact, and page
+
+#### Scenario: An over-size index fails the build, not the deploy
+
+- **WHEN** the serialized index exceeds the 24 MiB budget
+- **THEN** the site build fails with a message giving the index size and the budget
 
 ### Requirement: Wildcard query matching
 

@@ -165,6 +165,7 @@ import Base from "../layouts/Base.astro";
     import renderMathInElement from "katex/contrib/auto-render";
     import "katex/dist/katex.min.css";
     import { parseQuery, matchFormula } from "../lib/mathnorm.js";
+    import { expandEntry } from "../lib/mathindex.js";
 
     const $ = (id) => document.getElementById(id);
     const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -208,13 +209,15 @@ import Base from "../layouts/Base.astro";
           "Run <code>npm run build &amp;&amp; npm run preview</code> to search locally.";
         return;
       }
+      // Entries are compact arrays whose last element is the token list (see buildIndex in
+      // mathindex.js); only the hits that are shown get expanded into URL, title and label.
       const hits = [];
-      for (const e of idx) {
-        const m = matchFormula(query, e.tokens);
+      for (const e of idx.entries) {
+        const m = matchFormula(query, e[5]);
         if (m) hits.push({ e, score: m.score });
       }
       hits.sort((a, b) => b.score - a.score);
-      results.innerHTML = hits.slice(0, 60).map(({ e }) =>
+      results.innerHTML = hits.slice(0, 60).map(({ e }) => expandEntry(idx, e)).map((e) =>
         `<li class="mres"><a class="mformula" href="${escAttr(e.url)}">$${esc(e.tex)}$</a>` +
         `<div class="meta"><a href="${escAttr(e.url)}">${esc(e.title)}</a> · ${esc(e.where)}</div></li>`
       ).join("");
