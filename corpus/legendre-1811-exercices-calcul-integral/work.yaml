@@ -1,0 +1,116 @@
+id: legendre-1811-exercices-calcul-integral
+title: Exercices de calcul intégral sur divers ordres de transcendantes et sur les
+  quadratures
+title_en: Exercises in the integral calculus on various orders of transcendents and
+  on quadratures
+authors:
+- name: Adrien-Marie Legendre
+  wikidata_id: Q191021
+  birth_year: 1752
+  death_year: 1833
+  mactutor: Legendre  # https://mathshistory.st-andrews.ac.uk/Biographies/Legendre/
+  portrait:
+    file: portrait.jpg
+    alt: "Caricature portrait of Adrien-Marie Legendre in profile, with wild white hair"
+    credit: >-
+      Watercolour caricature of Legendre by Julien-Léopold Boilly (1820), the only portrait
+      known to show him. Public domain (PD-old-100).
+    source: "https://commons.wikimedia.org/wiki/File:Legendre.jpg"
+publication:
+  year: 1811
+  venue: book
+  title_full: 'A.-M. Legendre, Exercices de calcul intégral sur divers ordres de transcendantes
+    et sur les quadratures, tome premier (Paris: Courcier, 1811), comprising the première
+    partie (Des fonctions elliptiques), the seconde partie (Des intégrales eulériennes)
+    and the troisième partie (Des quadratures), with the table of matters.'
+edition:
+  year: 1811
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed from the original first edition (Paris, Veuve Courcier,
+    1811), as digitized from the copy of the University of California Libraries (Internet
+    Archive, exercicescalculi01legerich). The scan is a photographic reproduction
+    of the 1811 print with no modern critical apparatus, commentary or re-typesetting;
+    the library's own ownership stamps are not transcribed. Only Legendre's own text,
+    footnotes and tables are transcribed; running heads and signature marks are not.
+discipline: mathematics
+tags:
+- analysis
+language: fr
+type: book
+significance: >-
+  This is the first volume of the book in which Legendre gathered, rebuilt and extended his
+  decades of work on integrals that cannot be done in closed form. In the opening pages he
+  traces the history he builds on: Fagnano's comparison of arcs of the lemniscate, Euler's
+  integral of a differential equation made of two such terms, Landen's reduction of the
+  hyperbola to the ellipse, and Lagrange's transformations; he then recalls his own
+  memoirs of 1786 and 1793 and says that returning to the subject after a long interruption
+  led him to improve it, above all for the third species, and to present it in a new
+  order.[1] The first part classifies the integrals $\displaystyle\int\frac{P\,dx}{R}$, with $P$
+  rational and $R$ the square root of a quartic, reduces them to three species of elliptic
+  function, compares and approximates each species by sequences of moduli of the kind that
+  Landen's transformation gives, and applies them to the lemniscate, the pendulum and the surfaces of the cone and the ellipsoid.
+  The second part treats two kinds of definite integral to which Legendre gives the name
+  Eulerian, the first denoted $\left(\frac{p}{q}\right)$ and the second written
+  $\Gamma(a)$ and regarded as a continuous function of $a$, with a table of $\log\Gamma(a)$
+  for computing it.[2] The third part, on quadratures, supplies the means of evaluating
+  transcendents that the tables do not cover, a general formula expressing an integral by
+  finite differences with corrections, and then a collection of definite integrals
+  taken from Euler and Laplace.[3] Abel's memoir of 1827 on elliptic functions, also in this
+  corpus, names Legendre as the one who had gone deepest into these functions, and cites
+  this book;[4] Jacobi's Fundamenta nova of 1829, also here, calls him the founder of the
+  theory of elliptic functions.[5]
+
+significance_sources:
+  - citation: >-
+      A.-M. Legendre, Exercices de calcul intégral, tome premier (Paris: Courcier, 1811), opening
+      pages of the first part (pp. 1–4), as transcribed in this corpus.
+  - citation: >-
+      Legendre, Exercices de calcul intégral, opening of the second part, on the Eulerian
+      integrals and the function $\Gamma(a)$, as transcribed in this corpus.
+  - citation: >-
+      Legendre, Exercices de calcul intégral, opening of the third part, on quadratures, as
+      transcribed in this corpus.
+  - citation: >-
+      N. H. Abel, Recherches sur les fonctions elliptiques (1827), opening pages, with its
+      footnote citing Legendre's Exercices de calcul intégral, as transcribed in this corpus.
+  - citation: >-
+      C. G. J. Jacobi, Fundamenta nova theoriae functionum ellipticarum (Königsberg: Borntraeger,
+      1829), Proœmium, as transcribed in this corpus; and J. J. O'Connor and E. F. Robertson,
+      "Adrien-Marie Legendre", MacTutor History of Mathematics Archive, University of St Andrews.
+    url: "https://mathshistory.st-andrews.ac.uk/Biographies/Legendre/"
+
+source:
+  scan_url: https://archive.org/details/exercicescalculi01legerich
+  scan_id: archive.org:exercicescalculi01legerich
+sources:
+  death_date: Adrien-Marie Legendre, 1752–1833 (wikidata:Q191021; MacTutor archive,
+    https://mathshistory.st-andrews.ac.uk/Biographies/Legendre/).
+  publication_date: Title page of the transcribed scan ("PARIS, Mme Ve COURCIER, imprimeur-libraire
+    pour les mathématiques, 1811."); Internet Archive record for the University of
+    California copy, vol. 1.
+  edition: First edition, Paris, Courcier, 1811. Scanned copy of the University of
+    California Libraries on the Internet Archive, exercicescalculi01legerich.
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1833
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1811
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-10-08'

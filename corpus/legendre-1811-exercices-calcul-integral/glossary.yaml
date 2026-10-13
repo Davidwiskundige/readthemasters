@@ -1,0 +1,30 @@
+# Term renderings for legendre-1811-exercices-calcul-integral, applied consistently across the whole
+# translation. Format: `terms: {French as printed: English}` (the shape pipeline/translate.py reads).
+# Legendre's own technical words are rendered literally, not by modern equivalents; historical
+# context belongs in the significance note.
+terms:
+  Géomètre: geometer            # period word for mathematician
+  transcendante: transcendent   # noun, as in "transcendents of the first order"; not "transcendental function"
+  fonction elliptique: elliptic function
+  intégrale eulérienne: Eulerian integral
+  quadrature: quadrature
+  module: modulus
+  amplitude: amplitude          # Legendre's own word; keep
+  complément: complement
+  arc d'ellipse: arc of an ellipse
+  arc d'hyperbole: arc of a hyperbola
+  espèce: species               # "fonctions de première, seconde, troisième espèce" -> "functions of the first, second, third species"
+  ordre: order
+  échelle: scale                # "échelle des modules" -> "scale of moduli"
+  tables: tables
+  rectification: rectification
+  fraction continue: continued fraction
+  lemniscate: lemniscate
+  ensorte que: so that
+  intégrale définie: definite integral
+  intégrale complète: complete integral
+  équation différentielle: differential equation
+  développement: development      # of a function in series / expansion
+  série: series
+  réduction: reduction
+  sin.: sin.                      # math notation, untouched
