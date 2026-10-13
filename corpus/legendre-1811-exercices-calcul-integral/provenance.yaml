@@ -1,0 +1,70 @@
+changelog:
+  - date: "2026-10-13"
+    summary: Transcription added (AI draft), with figure crops and house-style math.
+  - date: "2026-10-13"
+    summary: Translation (en) added (AI draft).
+
+transcription:
+  status: ai-draft
+  model: claude-opus-5-5
+  effort: null
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-13"
+  verification:
+    model: claude-opus-5-5
+    flagged_pages: [349]
+    date: "2026-10-13"
+  uncertainty_flags: 2
+  note: >-
+    Complete tome premier of Legendre's Exercices de calcul intégral (Paris, Courcier, 1811): title
+    page, the three continuously paginated parts (Des fonctions elliptiques, Des intégrales
+    eulériennes, Des quadratures; printed pp. 1–376), the Table des matières (pp. 377–386), the
+    Errata (unnumbered, \origpage{387} by sequence) and the 14 figures of the folded plate. Source:
+    the University of California Libraries copy on the Internet Archive
+    (exercicescalculi01legerich, 400 ppi, scan leaves 5–395; printed page = leaf − 6). The
+    Supplément of 1816 that the same scan contains after the plates is not transcribed here (a
+    separate work). Not transcribed: running heads, signature marks, catchwords, library stamps,
+    and the many pencil and ink notes added by readers (rule followed: transcribe the type, never
+    the ink; where the print and a reader's ink disagree the print's reading is kept).
+    Models: every subagent that read the scans (transcription batches, proofreaders, scan
+    verifiers, figure cropping) ran on claude-opus-5-5; the orchestrating session (work.yaml,
+    notation decisions, assembly, mechanical fixes, provenance) ran on claude-sonnet-5-5. The
+    `model` and `verification.model` fields above name the model that did the reading.
+    Work flow: 33 transcription batches of 12 leaves (one subagent each, with the notation glossary
+    notation.md carried across batches), a text-only proofread of the whole assembled text in four
+    chunks, then a scan verification of every page in groups of four leaves, each with its own
+    budget of three magnified regions per page; the verifiers also settled the proofreaders' open
+    questions. Verification corrected many paragraph breaks (the most frequent error), a few
+    catchwords or page-boundary words that had been misplaced, and a handful of readings. About 141
+    \ednote{} notes record apparent printer's errors kept as printed (several confirmed by the
+    printer's own Errata); the log Γ table (printed pp. 302–306) was checked numerically cell by
+    cell and three misprints are noted. Machine verification only; no human has checked any page.
+    Uncertainty flags: two \uncertain{} remain (printed p. 349, two words under a blot; the
+    contributor judged both readings possible). Three doubts the verifiers had flagged were settled
+    by the contributor on 2026-10-13 from context: the art. reference "42" on p. 88 (it had been
+    adjusted in ink in this copy) and the § VI page number "352" in the Table on p. 385 (a reader's
+    ink overwrites the last digit; the latter keeps an \ednote{}). This is a check of those
+    readings only, not a page-by-page review, so the status stays ai-draft. Doubts about
+    mathematics that cannot sit inside a macro are in the \ednote{} notes. Several readings on
+    pp. 189–190 (θ/ω mixed, unprimed b and c) were confirmed as printed but not worked through
+    mathematically and carry no note.
+    Scan conditions: 73 of 391 prepared pages came out under 1000 px of text width (narrowest
+    870 px), so a zero flag count on a page reflects magnification doing the work, not an easy page.
+    The right edge of the folded plate is cut off in the scan: in Fig. 3 point E, which the text
+    names, is not on the scan and in Fig. 6 the label A is half cut; the right-hand column of the
+    log Γ table (printed p. 306) is clipped at the gutter and its last digits could only be checked
+    numerically. The figures were cropped from the plate at native resolution; where a rectangular
+    crop caught a neighbouring figure's marks, those marks were painted over with blank paper
+    copied from beside them (Figs. 9, 13 and 14). The helper magnify.py once mapped crops to the
+    wrong place on one leaf (leaf 11); the indent was read from the prepared image there.
+
+translations:
+  en:
+    status: ai-draft
+    model: claude-sonnet-5-5
+    effort: null
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-13"
