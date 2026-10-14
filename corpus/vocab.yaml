@@ -112,6 +112,24 @@ venues:
         url: "https://gdz.sub.uni-goettingen.de/id/PPN252457072"
       - label: "EuDML"
         url: "https://eudml.org/journal/10176"
+  leipzig-berichte-mathphys:
+    name: >-
+      Berichte über die Verhandlungen der Königlich Sächsischen Gesellschaft der Wissenschaften
+      zu Leipzig, Mathematisch-Physische Classe
+    aka: "Sächsische Berichte"
+    founded: 1849
+    ceased: 1918
+    place: "Leipzig"
+    publisher: "Königlich Sächsische Gesellschaft der Wissenschaften zu Leipzig"
+    note: >-
+      The proceedings of the Saxon Society of Sciences in Leipzig, issued in a mathematical-physical
+      and a philological-historical class from 1849 (the Society became the Saxon Academy of Sciences
+      in 1919). Carl Neumann's potential-theory papers of 1870 appeared in volume 22.
+    archives:
+      - label: "Bayerische Staatsbibliothek (MDZ), vol. 22 (1870)"
+        url: "https://www.digitale-sammlungen.de/en/view/bsb10534056"
+      - label: "SAW Leipzig archive"
+        url: "https://archiv.saw-leipzig.de/saw-archive/publikationen-quellen/publikationen/berichte-ueber-die-verhandlungen-der-koeniglich-saechsischen-gesellschaft-der-wissenschaften-zu-leipzig-mathematisch-physische-klasse-bd-1"
   phil-trans:
     name: "Philosophical Transactions of the Royal Society"
     aka: "Phil. Trans."

@@ -1,0 +1,103 @@
+id: neumann-1870-logarithmischen-newtonschen-potentiales-i
+title: Zur Theorie des Logarithmischen und des Newtonschen Potentiales. Erste Mittheilung.
+title_en: On the Theory of the Logarithmic and the Newtonian Potential. First Communication.
+authors:
+- name: Carl Neumann
+  wikidata_id: Q77313
+  birth_year: 1832
+  death_year: 1925
+  mactutor: Neumann_Carl
+  portrait:
+    file: portrait.jpg
+    alt: Photographic portrait of Carl Neumann in later life
+    credit: >-
+      Photograph of Carl Neumann, photographer and date not recorded; image as hosted on
+      Wikimedia Commons (uploaded 2006), where it is marked public domain (Public Domain Mark 1.0).
+    source: https://commons.wikimedia.org/wiki/File:Neumann_Carl.jpg
+publication:
+  year: 1870
+  venue: leipzig-berichte-mathphys
+  volume: '22'
+  pages: 49–56
+  title_full: Berichte über die Verhandlungen der Königlich Sächsischen Gesellschaft
+    der Wissenschaften zu Leipzig, Mathematisch-Physische Classe, 22. Band (1870),
+    pp. 49–56 (session of 21 April 1870).
+edition:
+  year: 1870
+  is_transcribed_edition: true
+  rights_cleared: true
+  rights_note: Transcribed directly from the original publication in the Berichte
+    über die Verhandlungen der Königlich Sächsischen Gesellschaft der Wissenschaften
+    zu Leipzig, Mathematisch-Physische Classe, Band 22 (1870), from the Bayerische
+    Staatsbibliothek digitisation of the library's own copy. No modern apparatus or
+    editorial material is included.
+discipline: mathematics
+tags:
+- analysis
+language: de
+type: paper
+significance: >-
+  This is the announcement, without proofs, of Neumann's method of the arithmetic mean for the
+  Dirichlet problem: a way of producing a function with prescribed boundary values that satisfies
+  Laplace's equation without the Dirichlet principle, whose inference Weierstrass had shown to be
+  unsound[1]. For a region bounded by one convex curve $S$ and continuous boundary values $f$, he
+  forms at each boundary point the mean $v_s$ of $f$ weighted by the angle each boundary element
+  subtends there, then averages the result again, giving $v_s', v_s'', \ldots$. These means
+  converge to a constant, the oscillation of $v_s^{(n)}$ shrinking at least like
+  $(M-m)\varkappa^{n+1}$ with $\varkappa<1$ a constant of the curve, and an alternating sum of the
+  means gives the sought function inside $S$ and, in the coordinates $\xi, \eta$ obtained by the
+  inversion $(x+iy)(\xi+i\eta)=1$, outside it[note 1]. The same function is also written as the
+  logarithmic potential of a distribution of mass on $S$ or of a double layer. The note closes by
+  reserving a method of combination, for several or non-convex boundary curves, and a treatment of
+  space for later communications; the second communication, read on 31 October 1870, follows in the
+  same volume. Schwarz's alternating method, published the same year, attacks the same problem by
+  a different route[2].
+significance_sources:
+  - citation: >-
+      Weierstrass, "On the so-called Dirichlet principle", read to the Berlin Academy in 1870, in
+      this corpus.
+    url: "/works/weierstrass-1895-dirichletsche-princip/"
+  - citation: >-
+      Schwarz, "On a limiting process by an alternating method" (1870), in this corpus.
+    url: "/works/schwarz-1870-grenzuebergang-alternirendes-verfahren/"
+significance_notes:
+  - label: In modern terms
+    text: >-
+      The angle subtended by a boundary element is the kernel of the double-layer potential, so the
+      moment of $f$ about a boundary point is the double-layer integral operator applied to $f$. The
+      successive means $v_s, v_s', v_s'', \ldots$ are then the iterates of that operator, and the
+      alternating sum of them is what is now called the Neumann series; convexity is what makes
+      the iteration contract, at the rate $\varkappa<1$.
+source:
+  scan_url: https://www.digitale-sammlungen.de/en/view/bsb10534056
+  scan_id: bsb:bsb10534056 (Bayerische Staatsbibliothek / MDZ, IIIF manifest https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10534056/manifest)
+sources:
+  death_date: wikidata:Q77313 (Carl Gottfried Neumann, 7 May 1832 – 27 March 1925;
+    MacTutor archive, https://mathshistory.st-andrews.ac.uk/Biographies/Neumann_Carl/)
+  publication_date: Bayerische Staatsbibliothek bsb10534056, Berichte ... Mathematisch-Physische
+    Classe, Zweiundzwanzigster Band, 1870; SAW Leipzig archive record (session of
+    21 April 1870, pp. 49–56)
+  edition: bsb:bsb10534056
+copyright_assessment:
+  public_domain: true
+  evaluated:
+    pma_70:
+      verdict: pass
+      inputs:
+        death_years:
+        - 1925
+        term: 70
+    us_publication:
+      verdict: pass
+      inputs:
+        publication_year: 1870
+        term: 95
+    edition_rights:
+      verdict: pass
+      inputs:
+        rights_cleared: true
+    translation_source:
+      verdict: pass
+      inputs:
+        external_translations: 0
+  evaluated_at: '2026-10-14'

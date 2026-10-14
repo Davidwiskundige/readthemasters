@@ -1,0 +1,211 @@
+% Faithful transcription — original German. Transcribed from Berichte über die Verhandlungen der
+% Königlich Sächsischen Gesellschaft der Wissenschaften zu Leipzig, Mathematisch-Physische Classe,
+% 22. Band (1870), pp. 49–56 (session of 21 April 1870):
+% Carl Neumann, "Zur Theorie des Logarithmischen und des Newtonschen Potentiales.
+% Erste Mittheilung."
+% Digital facsimile: Bayerische Staatsbibliothek / MDZ, bsb10534056; printed pp. 49–56
+% correspond to scan leaves 75–82.
+%
+% \origpage uses the printed page numbers (pp. 49–56). Running heads ("Carl Neumann," /
+% "Zur Theorie des Potentiales.", and on p. 56 "Carl Neumann, Zur Theorie des Potentiales."),
+% page numbers, the signature marks ("4", "4*") and the short separator rules between the
+% article's sections are apparatus and are not transcribed. The byline "Carl Neumann," that
+% precedes the title in the print is not repeated in the heading (the author is in work.yaml).
+%
+% TYPEFACE AND ORTHOGRAPHY. The text is set in Antiqua (Roman) type, with round s throughout
+% (so no eszett: dass, Grösse, gewisse). 19th-century German orthography is kept verbatim:
+% Werthe, Puncte, Functionen, convex, Curve, conformen, ächter, Radiusvector. Both italic and
+% letterspaced (Sperrdruck) emphasis, including the italic statement of the general problem on
+% pp. 50 and the spaced words on pp. 51, 55 and 56, are rendered as \emph{...} (HOUSESTYLE R20,
+% R24).
+%
+% NOTATION. Mathematical Fraktur \mathfrak{P} preserved (R13). The Greek letters follow the
+% print's italic forms; see notation.md.
+
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{49}
+
+\section*{Sitzung am 21. April 1870.}
+
+\section*{Zur Theorie des Logarithmischen und des Newtonschen Potentiales. Erste Mittheilung.}
+
+Unter diesem Titel beabsichtige ich eine Reihe von Mittheilungen zu machen über die vielfach behandelten Probleme der conformen Abbildung, des stationären Temperaturzustandes, des elektrostatischen und elektrokinetischen Gleichgewichts, und \emph{gewisse allgemeine, von der Wahl eines geeigneten Coordinatensystems unabhängige Methoden} darzulegen, durch welche diese Probleme fast in allen Fällen gelöst werden können, wie die Begrenzung des zu behandelnden Gebietes auch beschaffen sein mag.
+
+Ich werde diese Methoden, welche nicht nur zur Vermeidung des (mit Recht für bedenklich erklärten) \emph{Dirichlet}'schen Princips, sondern auch in vielfachen andern Beziehungen von Wichtigkeit sein dürften, hier nur in flüchtigen Umrissen hinzeichnen; die dabei erforderlichen Begründungen, Entwicklungen und Beweise aber einer andern ausführlicheren Exposition vorbehalten.
+
+Die unendliche Ebene mag --- nach dem Vorgange \emph{Riemann's} --- angesehen werden als eine \emph{geschlossene} Fläche, etwa als eine unendlich grosse Kugelfläche. Auf dieser Fläche sei eine in sich zurücklaufende Curve $S$ gegeben, welche mit all' ihren Puncten in der Endlichkeit liegt. Von den beiden Theilen, in welche die geschlossene Fläche durch diese Curve zerlegt wird, mag der den unendlich fernen Punct der Fläche enthaltende Theil mit $\Omega$, der andere mit $\mathfrak{P}$ bezeichnet werden.
+
+Das Problem der conformen Abbildung kann bekanntlich
+\origpage{50}
+mit Bezug auf die Fläche $\mathfrak{P}$ angesehen werden als ein Specialfall von folgendem \emph{allgemeinern Problem:}
+
+\emph{Es soll eine Function $\varphi$ der rechtwinkligen Coordinaten $x$, $y$ ermittelt werden, welche I) innerhalb $\mathfrak{P}$ überall der Gleichung $\dfrac{\partial^{2}\varphi}{\partial x^{2}}+\dfrac{\partial^{2}\varphi}{\partial y^{2}}=0$ genügt, welche II) sammt ihren Ableitungen $\dfrac{\partial\varphi}{\partial x}$, $\dfrac{\partial\varphi}{\partial y}$ innerhalb $\mathfrak{P}$ überall eindeutig und stetig ist, und welche endlich III) am Rande von $\mathfrak{P}$, d.\ i.\ auf der Curve $S$ vorgeschriebene Werthe $f$ besitzt.}
+
+Um andrerseits das Problem der conformen Abbildung mit Bezug auf die Fläche $\Omega$ aussprechen zu können, bedarf es einiger Vorbereitungen. Es seien $x$, $y$ die rechtwinkligen Coordinaten eines beliebigen zu $\Omega$ gehörigen Punctes, und es werde gesetzt:
+\[
+(x+iy)(\xi+i\eta)=1, \quad (i=\sqrt{-1}),
+\]
+mithin
+\[
+\begin{aligned}
+x &= \frac{+\xi}{\xi^{2}+\eta^{2}}, & \xi &= \frac{+x}{x^{2}+y^{2}},\\
+y &= \frac{-\eta}{\xi^{2}+\eta^{2}}, & \eta &= \frac{-y}{x^{2}+y^{2}}.
+\end{aligned}
+\]
+
+Alsdann werden durch Angabe von $\xi$, $\eta$ die Werthe von $x$, $y$ eindeutig bestimmt sein. Man kann daher als Coordinaten eines zu $\Omega$ gehörigen Punctes die Grössen $x$, $y$, mit demselben Recht aber auch die Grössen $\xi$, $\eta$ benutzen. Bei Einführung dieser \emph{neuen} Coordinaten $\xi$, $\eta$ lässt sich nun das Problem der conformen Abbildung mit Bezug auf die Fläche $\Omega$, oder vielmehr das zugehörige \emph{allgemeinere Problem} folgendermassen aussprechen:
+
+\emph{Es soll eine Function $\psi$ der Coordinaten $x$, $y$ oder $\xi$, $\eta$ ermittelt werden, welche I) innerhalb $\Omega$ überall der Gleichung $\dfrac{\partial^{2}\psi}{\partial\xi^{2}}+\dfrac{\partial^{2}\psi}{\partial\eta^{2}}=0$ Genüge leistet, welche II) sammt ihren Ableitungen $\dfrac{\partial\psi}{\partial\xi}$, $\dfrac{\partial\psi}{\partial\eta}$ innerhalb $\Omega$ überall eindeutig und stetig ist, und welche endlich III) am Rande von $\Omega$, d.\ i.\ auf der Curve $S$ die vorgeschriebenen Werthe $f$ besitzt. Der grösseren Bequemlichkeit willen mag angenommen werden, dass diese vorgeschriebenen Randwerthe $f$ für $\psi$ dieselben sind, wie für $\varphi$.}
+
+Was nun die Lösung dieser beiden Probleme anbelangt, so mag --- wenigstens vorläufig --- vorausgesetzt werden, dass die gegebene Curve $S$ überall convex und überall stetig gekrümmt
+\origpage{51}
+sei, andrerseits, dass die vorgeschriebenen Werthe $f$ längs der Curve $S$ überall stetig zusammenhängen.
+
+Als positive Richtung der Curve $S$ werde diejenige festgesetzt, welche angezeigt ist durch eine positive Umlaufung der Fläche $\mathfrak{P}$. Gleichzeitig mögen die in positiver Richtung aufeinanderfolgenden Puncte der Curve bezeichnet werden mit
+\[
+a,\; b,\; c,\; d,\; \ldots\ldots\; s,\; \ldots\ldots;
+\]
+demgemäss werden $ab$, $bc$, $cd$, $\ldots$ die aufeinanderfolgenden unendlich kleinen Elemente der Curve vorstellen. Endlich mögen unter
+\[
+f_{a},\; f_{b},\; f_{c},\; f_{d},\; \ldots\ldots\; f_{s},\; \ldots
+\]
+die Werthe verstanden werden, welche die gegebene Function $f$ besitzt in jenen Puncten $a$, $b$, $c$, $d$, $\ldots$ $s$, $\ldots$
+
+Es sei $z$ ein beliebig gegebener (innerhalb $\mathfrak{P}$, oder innerhalb $\Omega$, oder auch auf der Curve $S$ gelegener) Punct; ferner seien $za$, $zb$, $zc$, $zd$, $\ldots\ldots$ die von $z$ aus nach den einzelnen Puncten der Curve gezogenen Radiivectores. Unter dem \emph{Moment des Curvenelements $ab$ in Bezug auf $z$} mag diejenige Drehung verstanden werden, welche für den Radiusvector $za$ durch jenes Element $ab$ indicirt ist. Ist also $\vartheta$ der absolute Betrag des Winkels $azb$, so wird jenes Moment den Werth $+\vartheta$ oder den Werth $-\vartheta$ besitzen, jenachdem der Radiusvector $za$ bei Durchlaufung des Winkelraumes $azb$ eine positive oder eine negative Drehung auszuführen hat. Bezeichnet man diese den einzelnen Elementen
+\[
+ab,\; bc,\; cd,\; \ldots\ldots
+\]
+mit Bezug auf $z$ zugehörigen Momente mit
+\[
+(ab)_{z},\; (bc)_{z},\; (cd)_{z},\; \ldots\ldots,
+\]
+und bezeichnet man ferner die Summe aller dieser Elementarmomente mit $\Sigma_{z}$
+\[
+\Sigma_{z}=(ab)_{z}+(bc)_{z}+(cd)_{z}+\ldots\ldots,
+\]
+so wird, wie leicht zu erkennen, der Werth von $\Sigma_{z}$ sehr verschieden sein je nach der Lage des Punctes $z$, nämlich $=2\pi$, $=\pi$, oder $=0$ sein, jenachdem der Punct $z$ innerhalb $\mathfrak{P}$, auf $S$, oder innerhalb $\Omega$ sich befindet.
+
+Unter dem \emph{Moment der gegebenen Function $f$ in Bezug auf $z$}
+\origpage{52}
+mag verstanden werden die Summe sämmtlicher Elementarmomente der gegebenen Curve $S$, jedes multiplicirt mit dem zugehörigen Werthe $f$.
+
+Dieses Moment, es mag $\Omega_{z}$ heissen, wird also den Werth haben:
+\[
+\Omega_{z}=f_{a}(ab)_{z}+f_{b}(bc)_{z}+f_{c}(cd)_{z}+\ldots\ldots,
+\]
+die Summation ausgedehnt über sämmtliche Elemente der Curve. Der Punct $z$ kann drei wesentlich verschiedene Lagen besitzen, und mag demgemäss verschieden bezeichnet werden, nämlich mit $p$, mit $s$, oder mit $q$, je nachdem er innerhalb $\mathfrak{P}$, auf $S$, oder innerhalb $\Omega$ sich befindet. Entsprechend diesen verschiedenen Lagen des Punctes $z$ sind bei dem Momente $\Omega_{z}$ dreierlei Werthe zu unterscheiden, die Werthe $\Omega_{p}$, $\Omega_{s}$, und $\Omega_{q}$. Diese Werthe gehen keineswegs stetig in einander über, und mögen daher zur leichtern Unterscheidung durch verschiedene Buchstaben markirt werden; es werde nämlich gesetzt:
+\[
+\Omega_{p}=U_{p}, \quad \Omega_{s}=V_{s}, \quad \Omega_{q}=W_{q}.
+\]
+
+Halten wir fest an der schon genannten Voraussetzung, dass $f$ längs $S$ stetig ist, so sind die Functionen $U_{p}$, $V_{s}$, $W_{q}$ ebenfalls stetig, und zwar die erste für sämmtliche Puncte $p$, die zweite für sämmtliche Puncte $s$, endlich die dritte für sämmtliche Puncte $q$. Zugleich treten in Betreff dieser Functionen folgende merkwürdige Relationen${}^{*)}$ zu Tage:
+\[
+\begin{gathered}
+U_{s}=V_{s}+\pi f_{s},\\
+W_{s}=V_{s}-\pi f_{s}.
+\end{gathered}
+\]
+
+Dabei ist unter $s$ ein beliebiger Punct der Curve $S$ zu verstehen; $f_{s}$ und $V_{s}$ sind die \emph{Werthe} der Functionen $f$ und $V$ in diesem Punct; andererseits repräsentiren $U_{s}$ und $W_{s}$ die \emph{Grenzwerthe}, gegen welche $U_{p}$ und $W_{q}$ convergiren, falls die Puncte $p$ und $q$ näher und näher an $s$ heranrücken.
+
+Zweckmässig erscheint es, die Bezeichnung der Momente $U_{p}$, $V_{s}$, $W_{q}$ noch ein wenig zu modificiren, nämlich zu setzen
+\[
+\frac{1}{2\pi}U_{p}=u_{p}, \quad \frac{1}{\pi}V_{s}=v_{s}, \quad \frac{1}{2\pi}W_{q}=w_{q},
+\]
+
+\textbf{*)} Der strenge Beweis dieser Relationen wird ungemein erleichtert durch Benutzung eines eleganten von \emph{P. du Bois Reymond} gefundenen Satzes (\emph{Borch.} Journal. Bd.\ 69. p.\ 82.), für welchen später eine einfachere Deduction gegeben worden ist von \emph{H. Hankel} (\emph{Schlömilch}'s Zeitschrift. Jahrgg.\ 14. p.\ 436).
+
+\origpage{53}
+jenen Momenten also einen gewissen Divisor beizugesellen, welcher für $U$ und $W$ den Werth $2\pi$, für $V$ hingegen den Werth $\pi$ besitzt. In unmittelbarem Anschluss an eine allgemein übliche Ausdrucksweise, mag es gestattet sein, die Grösse $u_{p}$ zu bezeichnen als das \emph{arithmetische Mittel der gegebenen Functionswerthe $f$ in Bezug auf den Punct $p$}. Und ebenso mögen $v_{s}$ und $w_{q}$ bezeichnet werden als die \emph{arithmetischen Mittel jener Werthe $f$ in Bezug auf $s$ und $q$}.
+
+Bei Einführung dieser \emph{arithmetischen Mittel} an Stelle der \emph{Momente} gewinnen die vorhin angegebenen Relationen folgende Gestalt:
+\[
+\begin{gathered}
+2u_{s}=v_{s}+f_{s},\\
+2w_{s}=v_{s}-f_{s}.
+\end{gathered}
+\]
+
+Ebenso wie aus den gegebenen Werthen $f$ die Functionen
+\[
+u_{p},\; v_{s},\; w_{q}
+\]
+abgeleitet wurden; in genau derselben Weise mögen aus den Werthen $v$ die Functionen
+\[
+u'_{p},\; v'_{s},\; w'_{q}
+\]
+entspringen [so dass also unter $u'_{p}$, $v'_{s}$, $w'_{q}$ die arithmetischen Mittel der Werthe $v$ in Bezug auf die Puncte $p$, $s$, $q$ zu verstehen sind]; in genau derselben Weise mögen ferner aus den Werthen $v'$ die Functionen
+\[
+u''_{p},\; v''_{s},\; w''_{q}
+\]
+entspringen; u.\ s.\ w.\ u.\ s.\ w.
+
+Nun lässt sich nachweisen, dass die Functionen
+\[
+f_{s},\; v_{s},\; v'_{s},\; v''_{s},\; \ldots\ldots\; v_{s}^{(n)},\; \ldots
+\]
+\emph{in stetiger Weise gegen eine Constante convergiren}, nämlich nachweisen, dass sämmtliche Werthe der Function $v_{s}^{(n)}$ von einander um weniger als eine a priori gegebene beliebig kleine Grösse differiren werden, falls man nur $n$ gehörig gross macht. Um auf diesen Gegenstand genauer eingehen zu können, mögen $a$ und $s$ irgend zwei Puncte der gegebenen Curve $S$ sein, von denen der erstere nach Belieben gewählt, aber \emph{fest}, der zweite hingegen längs der Curve \emph{beweglich} ist. Alsdann lässt sich nachweisen, dass bei einer solchen Bewegung des Punctes $s$ die Differenz
+\[
+v_{s}^{(n)}-v_{a}^{(n)}
+\]
+\origpage{54}
+ihrem absoluten Betrage nach niemals grösser werden kann als das Product
+\[
+(M-m)\,\varkappa^{n+1}.
+\]
+
+Hier ist $M-m$ eine den gegebenen Functionswerthen $f$ eigenthümliche Constante; denn es bedeutet $M$ den \emph{grössten}, und $m$ den \emph{kleinsten} unter jenen Werthen. Andererseits ist $\varkappa$ eine der gegebenen Curve $S$ eigenthümlich zugehörige Constante, welche leicht genauer definirt werden kann, und deren Werth nothwendig \emph{kleiner} als 1, nämlich jederzeit ein \emph{positiver ächter Bruch ist.} Somit kann das Product $(M-m)\,\varkappa^{n+1}$ durch Vergrösserung von $n$ beliebig nahe an 0 herangedrückt werden, wodurch alsdann gleichzeitig sämmtliche Werthe von $v_{s}^{(n)}$ beliebig nahe an $v_{a}^{(n)}$ herangedrückt werden.
+
+Nunmehr endlich kann die Lösung der vorgelegten Probleme augenblicklich hingestellt werden. Die Werthe nämlich, welche die gesuchten Functionen $\varphi$ und $\psi$ in irgend zwei Puncten $p$ und $q$ besitzen, sind folgende:
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+2\left[u_{p}-u'_{p}+u''_{p}-u'''_{p}\ldots\ldots-u_{p}^{(2n+1)}\right]\\
+\psi_{q} &= v_{a}^{(2n+1)}-2\left[w_{q}+w'_{q}+w''_{q}+w'''_{q}\ldots\ldots+w_{q}^{(2n+1)}\right]
+\end{aligned}
+\]
+wo $v_{a}^{(2n+1)}$ den Werth der Function $v_{s}^{(2n+1)}$ in dem (vorhin genannten) \emph{festen} Puncte $a$ repräsentirt, mithin eine \emph{Constante} ist. Es lässt sich nämlich zeigen, dass die durch diese Formeln bestimmten Functionen $\varphi_{p}$ und $\psi_{q}$ einerseits den Bedingungen I) und II) mit absoluter Strenge entsprechen, und dass sie andrerseits, was die Bedingung III) betrifft, Randwerthe besitzen, deren Abweichungen von den vorgeschriebenen Randwerthen $f$ nirgends grösser sein können als
+\[
+(M-m)\,\varkappa^{2n+2}.
+\]
+Während also die Bedingungen I) und II) beständig in absoluter Strenge befriedigt sind, kann gleichzeitig, durch Vergrösserung der Zahl $n$, die Bedingung III) in jedem gewünschten Grade der Annäherung erfüllt werden.
+
+Zu bemerken ist, dass die Functionen $\varphi_{p}$ und $\psi_{q}$ mit Leichtigkeit sich darstellen lassen als die Logarithmischen Potentiale einer gewissen \emph{Massenbelegung} der Curve $S$. Man findet nämlich:
+\origpage{55}
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+\int ds\,\varrho_{s}^{(2n)}L_{sp},\\
+\psi_{q} &= v_{a}^{(2n+1)}+\int ds\,\varrho_{s}^{(2n)}L_{sq},
+\end{aligned}
+\]
+die Integrationen hinerstreckt über alle Elemente $ds$ der Curve $S$. Dabei sind unter $L_{sp}$ und $L_{sq}$ die natürlichen Logarithmen derjenigen Abstände zu verstehen welche $ds$ besitzt von $p$, und von $q$ aus. Die Function $\varrho_{s}^{(2n)}$ repräsentirt die Dichtigkeit der genannten Massenbelegung, und besitzt einen Werth, welcher darstellbar ist nach Belieben entweder durch die Formel:
+\[
+\varrho_{s}^{(2n)}=\frac{2}{\pi}\,\frac{\partial\left[u_{s}+u_{s}''+u_{s}''''\ldots\ldots+u_{s}^{(2n)}\right]}{\partial N},
+\]
+oder durch die Formel:
+\[
+\varrho_{s}^{(2n)}=\frac{2}{\pi}\,\frac{\partial\left[w_{s}+w_{s}''+w_{s}''''\ldots\ldots+w_{s}^{(2n)}\right]}{\partial N},
+\]
+wo $N$ die auf $ds$ errichtete, in die Fläche $\mathfrak{P}$ hineinlaufende Normale repräsentiren soll.
+
+Endlich mag bemerkt werden, dass die Functionen $\varphi_{p}$ und $\psi_{q}$ sich auch darstellen lassen als die Logarithmischen Potentiale gewisser \emph{Doppelbelegungen} der Curve $S$. Man findet nämlich die Formeln:
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+\int \frac{ds\left[-f_{s}+v_{s}-v_{s}'\ldots\ldots+v_{s}^{(2n)}\right]}{\pi}\,\frac{\partial L_{sp}}{\partial N},\\
+\psi_{q} &= v_{a}^{(2n+1)}+\int \frac{ds\left[+f_{s}+v_{s}+v_{s}'\ldots\ldots+v_{s}^{(2n)}\right]}{\pi}\,\frac{\partial L_{sq}}{\partial N},
+\end{aligned}
+\]
+wo $L_{sp}$, $L_{sq}$, $N$ die schon genannten Bedeutungen besitzen, und die Integrationen hinerstreckt sind über sämmtliche Elemente $ds$ der Curve $S$.
+
+Die hier exponirte Methode kann füglich bezeichnet werden als die \emph{Methode des arithmetischen Mittels.} Sondern wir, was die gemachten Voraussetzungen anbelangt, diejenigen Voraussetzungen, welche nur leichte Modificationen bedingen von denen ab, welche bei Anwendung dieser Methode unentbehrlich sind, so bleiben als wirklich nothwendige Voraussetzungen nur noch folgende übrig:
+\origpage{56}
+
+1) das betrachtete Flächengebiet darf nur \emph{eine} Randcurve haben,
+
+2) diese Randcurve muss \emph{überall convex} sein.
+
+Die durch diese Voraussetzungen ausgeschlossenen Fälle \emph{mehrerer} Randcurven und \emph{beliebig gestalteter} Randcurven lassen sich aber auf den hier behandelten Fall einer \emph{einzigen, überall convexen} Randcurve reduciren. Die zu dieser Reduction erforderliche Methode, welche ihrer Beschaffenheit nach etwa zu bezeichnen sein würde als die \emph{Methode der Combination}, beabsichtige ich in einer folgenden Mittheilung darzulegen. Sodann endlich gedenke ich die analogen Methoden zu exponiren für diejenigen Probleme, welche sich auf den \emph{Raum}, d.\ i.\ auf ein Gebiet von \emph{drei} Dimensionen beziehen.
+
+\end{document}
