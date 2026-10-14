@@ -1,0 +1,190 @@
+% English translation, made from our own transcription (original.tex), not from any existing
+% translation. All mathematical formulas, symbols, labels, and \origpage markers are preserved
+% unchanged; only the prose is translated.
+\documentclass{article}
+\usepackage{readmasters}
+\begin{document}
+
+\origpage{49}
+
+\section*{Session of April 21, 1870.}
+
+\section*{On the Theory of the Logarithmic and the Newtonian Potential. First Communication.}
+
+Under this title I intend to give a series of communications on the much-treated problems of conformal mapping, of the stationary state of temperature, and of electrostatic and electrokinetic equilibrium, and to set out \emph{certain general methods, independent of the choice of a suitable coordinate system}, by which these problems can be solved in almost all cases, whatever the boundary of the region to be treated may be.
+
+I shall merely outline these methods here, in rough strokes. They should be of importance not only for avoiding the principle of \emph{Dirichlet} (rightly declared to be questionable), but also in many other respects; the justifications, developments and proofs required for them I reserve for another, more detailed exposition.
+
+The infinite plane may --- following \emph{Riemann's} example --- be regarded as a \emph{closed} surface, say as an infinitely large spherical surface. On this surface let a curve $S$ be given, returning into itself, all of whose points lie at finite distance. Of the two parts into which this curve divides the closed surface, let the part containing the point of the surface at infinity be denoted by $\Omega$, the other by $\mathfrak{P}$.
+
+The problem of conformal mapping can, as is well known,
+\origpage{50}
+be regarded with respect to the surface $\mathfrak{P}$ as a special case of the following \emph{more general problem:}
+
+\emph{A function $\varphi$ of the rectangular coordinates $x$, $y$ is to be determined which I) satisfies the equation $\dfrac{\partial^{2}\varphi}{\partial x^{2}}+\dfrac{\partial^{2}\varphi}{\partial y^{2}}=0$ everywhere inside $\mathfrak{P}$, which II) together with its derivatives $\dfrac{\partial\varphi}{\partial x}$, $\dfrac{\partial\varphi}{\partial y}$ is everywhere single-valued and continuous inside $\mathfrak{P}$, and which finally III) has prescribed values $f$ at the boundary of $\mathfrak{P}$, i.e.\ on the curve $S$.}
+
+In order, on the other hand, to be able to state the problem of conformal mapping with respect to the surface $\Omega$, some preparations are needed. Let $x$, $y$ be the rectangular coordinates of an arbitrary point belonging to $\Omega$, and let there be set:
+\[
+(x+iy)(\xi+i\eta)=1, \quad (i=\sqrt{-1}),
+\]
+hence
+\[
+\begin{aligned}
+x &= \frac{+\xi}{\xi^{2}+\eta^{2}}, & \xi &= \frac{+x}{x^{2}+y^{2}},\\
+y &= \frac{-\eta}{\xi^{2}+\eta^{2}}, & \eta &= \frac{-y}{x^{2}+y^{2}}.
+\end{aligned}
+\]
+
+Then the values of $x$, $y$ will be uniquely determined by the specification of $\xi$, $\eta$. One may therefore use as coordinates of a point belonging to $\Omega$ the quantities $x$, $y$, but with equal right also the quantities $\xi$, $\eta$. On introducing these \emph{new} coordinates $\xi$, $\eta$, the problem of conformal mapping with respect to the surface $\Omega$, or rather the corresponding \emph{more general problem}, can now be stated as follows:
+
+\emph{A function $\psi$ of the coordinates $x$, $y$ or $\xi$, $\eta$ is to be determined which I) satisfies the equation $\dfrac{\partial^{2}\psi}{\partial\xi^{2}}+\dfrac{\partial^{2}\psi}{\partial\eta^{2}}=0$ everywhere inside $\Omega$, which II) together with its derivatives $\dfrac{\partial\psi}{\partial\xi}$, $\dfrac{\partial\psi}{\partial\eta}$ is everywhere single-valued and continuous inside $\Omega$, and which finally III) has the prescribed values $f$ at the boundary of $\Omega$, i.e.\ on the curve $S$. For greater convenience it may be assumed that these prescribed boundary values $f$ are the same for $\psi$ as for $\varphi$.}
+
+As regards the solution of these two problems, it may be assumed --- at least provisionally --- that the given curve $S$ is everywhere convex and everywhere continuously curved
+\origpage{51}
+and, on the other hand, that the prescribed values $f$ are continuously connected along the curve $S$.
+
+As the positive direction of the curve $S$ let that be fixed which is indicated by a positive circuit of the surface $\mathfrak{P}$. At the same time let the points of the curve that follow one another in the positive direction be denoted by
+\[
+a,\; b,\; c,\; d,\; \ldots\ldots\; s,\; \ldots\ldots;
+\]
+accordingly $ab$, $bc$, $cd$, $\ldots$ will represent the successive infinitely small elements of the curve. Finally, let
+\[
+f_{a},\; f_{b},\; f_{c},\; f_{d},\; \ldots\ldots\; f_{s},\; \ldots
+\]
+be understood to mean the values which the given function $f$ has at those points $a$, $b$, $c$, $d$, $\ldots$ $s$, $\ldots$
+
+Let $z$ be an arbitrarily given point (lying inside $\mathfrak{P}$, or inside $\Omega$, or also on the curve $S$); further let $za$, $zb$, $zc$, $zd$, $\ldots\ldots$ be the radii vectores drawn from $z$ to the individual points of the curve. By the \emph{moment of the curve element $ab$ with respect to $z$} shall be understood that rotation which is indicated for the radius vector $za$ by that element $ab$. If therefore $\vartheta$ is the absolute value of the angle $azb$, then that moment will have the value $+\vartheta$ or the value $-\vartheta$, according as the radius vector $za$ has to perform a positive or a negative rotation in traversing the angular space $azb$. If one denotes these moments, belonging with respect to $z$ to the individual elements
+\[
+ab,\; bc,\; cd,\; \ldots\ldots
+\]
+by
+\[
+(ab)_{z},\; (bc)_{z},\; (cd)_{z},\; \ldots\ldots,
+\]
+and if one further denotes the sum of all these elementary moments by $\Sigma_{z}$
+\[
+\Sigma_{z}=(ab)_{z}+(bc)_{z}+(cd)_{z}+\ldots\ldots,
+\]
+then, as is easily seen, the value of $\Sigma_{z}$ will be very different according to the position of the point $z$, namely $=2\pi$, $=\pi$, or $=0$, according as the point $z$ is situated inside $\mathfrak{P}$, on $S$, or inside $\Omega$.
+
+By the \emph{moment of the given function $f$ with respect to $z$}
+\origpage{52}
+shall be understood the sum of all the elementary moments of the given curve $S$, each multiplied by the corresponding value $f$.
+
+This moment, let it be called $\Omega_{z}$, will therefore have the value:
+\[
+\Omega_{z}=f_{a}(ab)_{z}+f_{b}(bc)_{z}+f_{c}(cd)_{z}+\ldots\ldots,
+\]
+the summation extending over all the elements of the curve. The point $z$ can have three essentially different positions, and may accordingly be denoted differently, namely by $p$, by $s$, or by $q$, according as it is situated inside $\mathfrak{P}$, on $S$, or inside $\Omega$. Corresponding to these different positions of the point $z$, three kinds of values are to be distinguished for the moment $\Omega_{z}$, the values $\Omega_{p}$, $\Omega_{s}$, and $\Omega_{q}$. These values do not pass into one another continuously at all, and may therefore be marked by different letters for easier distinction; let there be set, namely:
+\[
+\Omega_{p}=U_{p}, \quad \Omega_{s}=V_{s}, \quad \Omega_{q}=W_{q}.
+\]
+
+If we hold to the assumption already mentioned, that $f$ is continuous along $S$, then the functions $U_{p}$, $V_{s}$, $W_{q}$ are likewise continuous, the first for all points $p$, the second for all points $s$, and the third for all points $q$. At the same time the following remarkable relations${}^{*)}$ come to light in regard to these functions:
+\[
+\begin{gathered}
+U_{s}=V_{s}+\pi f_{s},\\
+W_{s}=V_{s}-\pi f_{s}.
+\end{gathered}
+\]
+
+Here $s$ is to be understood as an arbitrary point of the curve $S$; $f_{s}$ and $V_{s}$ are the \emph{values} of the functions $f$ and $V$ at this point; on the other hand $U_{s}$ and $W_{s}$ represent the \emph{limit values} towards which $U_{p}$ and $W_{q}$ converge if the points $p$ and $q$ approach closer and closer to $s$.
+
+It seems convenient to modify the notation of the moments $U_{p}$, $V_{s}$, $W_{q}$ somewhat further, namely to set
+\[
+\frac{1}{2\pi}U_{p}=u_{p}, \quad \frac{1}{\pi}V_{s}=v_{s}, \quad \frac{1}{2\pi}W_{q}=w_{q},
+\]
+
+\textbf{*)} The rigorous proof of these relations is made exceedingly easier by the use of an elegant theorem found by \emph{P. du Bois Reymond} (\emph{Borch.} Journal, vol.\ 69, p.\ 82), for which a simpler deduction was later given by \emph{H. Hankel} (\emph{Schlömilch}'s Zeitschrift, year 14, p.\ 436).
+
+\origpage{53}
+so as to attach to those moments a certain divisor, which has the value $2\pi$ for $U$ and $W$, but the value $\pi$ for $V$. In close connection with a commonly used manner of speaking, it may be permitted to call the quantity $u_{p}$ the \emph{arithmetic mean of the given function values $f$ with respect to the point $p$}. And likewise $v_{s}$ and $w_{q}$ may be called the \emph{arithmetic means of those values $f$ with respect to $s$ and $q$}.
+
+On the introduction of these \emph{arithmetic means} in place of the \emph{moments}, the relations given above take the following form:
+\[
+\begin{gathered}
+2u_{s}=v_{s}+f_{s},\\
+2w_{s}=v_{s}-f_{s}.
+\end{gathered}
+\]
+
+Just as from the given values $f$ the functions
+\[
+u_{p},\; v_{s},\; w_{q}
+\]
+were derived; in exactly the same way there may arise from the values $v$ the functions
+\[
+u'_{p},\; v'_{s},\; w'_{q}
+\]
+[so that $u'_{p}$, $v'_{s}$, $w'_{q}$ are to be understood as the arithmetic means of the values $v$ with respect to the points $p$, $s$, $q$]; in exactly the same way there may further arise from the values $v'$ the functions
+\[
+u''_{p},\; v''_{s},\; w''_{q}
+\]
+and so on, and so on.
+
+Now it can be proved that the functions
+\[
+f_{s},\; v_{s},\; v'_{s},\; v''_{s},\; \ldots\ldots\; v_{s}^{(n)},\; \ldots
+\]
+\emph{converge in a continuous manner towards a constant}, namely that all values of the function $v_{s}^{(n)}$ will differ from one another by less than an arbitrarily small quantity given a priori, provided only that one makes $n$ sufficiently large. To be able to enter more closely into this matter, let $a$ and $s$ be any two points of the given curve $S$, of which the former is chosen at will but \emph{fixed}, while the second, on the other hand, is \emph{movable} along the curve. Then it can be proved that under such a motion of the point $s$ the difference
+\[
+v_{s}^{(n)}-v_{a}^{(n)}
+\]
+\origpage{54}
+can never become greater in absolute value than the product
+\[
+(M-m)\,\varkappa^{n+1}.
+\]
+
+Here $M-m$ is a constant peculiar to the given function values $f$; for $M$ denotes the \emph{greatest}, and $m$ the \emph{least} of those values. On the other hand $\varkappa$ is a constant peculiar to the given curve $S$, which can easily be defined more exactly, and whose value is necessarily \emph{less} than 1, namely always a \emph{positive proper fraction.} Thus the product $(M-m)\,\varkappa^{n+1}$ can be pressed arbitrarily close to 0 by increasing $n$, whereby all values of $v_{s}^{(n)}$ are at the same time pressed arbitrarily close to $v_{a}^{(n)}$.
+
+At last the solution of the problems proposed can now be set down at once. The values, namely, which the sought functions $\varphi$ and $\psi$ have at any two points $p$ and $q$ are the following:
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+2\left[u_{p}-u'_{p}+u''_{p}-u'''_{p}\ldots\ldots-u_{p}^{(2n+1)}\right]\\
+\psi_{q} &= v_{a}^{(2n+1)}-2\left[w_{q}+w'_{q}+w''_{q}+w'''_{q}\ldots\ldots+w_{q}^{(2n+1)}\right]
+\end{aligned}
+\]
+where $v_{a}^{(2n+1)}$ represents the value of the function $v_{s}^{(2n+1)}$ at the (previously mentioned) \emph{fixed} point $a$, and is therefore a \emph{constant}. For it can be shown that the functions $\varphi_{p}$ and $\psi_{q}$ determined by these formulas on the one hand satisfy conditions I) and II) with absolute rigour, and on the other hand, as regards condition III), have boundary values whose deviations from the prescribed boundary values $f$ can nowhere be greater than
+\[
+(M-m)\,\varkappa^{2n+2}.
+\]
+While therefore conditions I) and II) are constantly satisfied in absolute rigour, condition III) can at the same time be fulfilled to any desired degree of approximation by increasing the number $n$.
+
+It is to be remarked that the functions $\varphi_{p}$ and $\psi_{q}$ can easily be represented as the logarithmic potentials of a certain \emph{distribution of mass} on the curve $S$. One finds, namely:
+\origpage{55}
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+\int ds\,\varrho_{s}^{(2n)}L_{sp},\\
+\psi_{q} &= v_{a}^{(2n+1)}+\int ds\,\varrho_{s}^{(2n)}L_{sq},
+\end{aligned}
+\]
+the integrations extending over all elements $ds$ of the curve $S$. Here $L_{sp}$ and $L_{sq}$ are to be understood as the natural logarithms of those distances which $ds$ has from $p$, and from $q$. The function $\varrho_{s}^{(2n)}$ represents the density of the said distribution of mass, and has a value which can be represented at will either by the formula:
+\[
+\varrho_{s}^{(2n)}=\frac{2}{\pi}\,\frac{\partial\left[u_{s}+u_{s}''+u_{s}''''\ldots\ldots+u_{s}^{(2n)}\right]}{\partial N},
+\]
+or by the formula:
+\[
+\varrho_{s}^{(2n)}=\frac{2}{\pi}\,\frac{\partial\left[w_{s}+w_{s}''+w_{s}''''\ldots\ldots+w_{s}^{(2n)}\right]}{\partial N},
+\]
+where $N$ is to represent the normal erected on $ds$ and running into the surface $\mathfrak{P}$.
+
+Finally it may be remarked that the functions $\varphi_{p}$ and $\psi_{q}$ can also be represented as the logarithmic potentials of certain \emph{double layers} on the curve $S$. One finds, namely, the formulas:
+\[
+\begin{aligned}
+\varphi_{p} &= v_{a}^{(2n+1)}+\int \frac{ds\left[-f_{s}+v_{s}-v_{s}'\ldots\ldots+v_{s}^{(2n)}\right]}{\pi}\,\frac{\partial L_{sp}}{\partial N},\\
+\psi_{q} &= v_{a}^{(2n+1)}+\int \frac{ds\left[+f_{s}+v_{s}+v_{s}'\ldots\ldots+v_{s}^{(2n)}\right]}{\pi}\,\frac{\partial L_{sq}}{\partial N},
+\end{aligned}
+\]
+where $L_{sp}$, $L_{sq}$, $N$ have the meanings already mentioned, and the integrations extend over all elements $ds$ of the curve $S$.
+
+The method set out here may fittingly be called the \emph{method of the arithmetic mean.} If we separate, as regards the assumptions made, those assumptions which entail only slight modifications from those which are indispensable in applying this method, then the only assumptions that remain as truly necessary are the following:
+\origpage{56}
+
+1) the region of the surface considered must have only \emph{one} boundary curve,
+
+2) this boundary curve must be \emph{everywhere convex.}
+
+The cases excluded by these assumptions, of \emph{several} boundary curves and of boundary curves of \emph{arbitrary shape}, can however be reduced to the case treated here of a \emph{single}, \emph{everywhere convex} boundary curve. The method required for this reduction, which by its nature might be called the \emph{method of combination}, I intend to set out in a following communication. Thereafter I finally intend to expound the analogous methods for those problems which relate to \emph{space}, i.e.\ to a region of \emph{three} dimensions.
+
+\end{document}

@@ -1,0 +1,23 @@
+changelog:
+  - date: "2026-10-14"
+    summary: Transcription added (AI draft).
+  - date: "2026-10-14"
+    summary: Translation (en) added (AI draft).
+transcription:
+  status: ai-draft
+  model: claude-sonnet-5-5
+  effort: medium
+  prompt_version: transcribe-v1
+  submitted_via: skill
+  produced: "2026-10-14"
+  verification: { model: claude-sonnet-5-5, flagged_pages: [], date: "2026-10-14" }
+  uncertainty_flags: 0
+translations:
+  en:
+    status: ai-draft
+    model: claude-sonnet-5-5
+    effort: medium
+    prompt_version: translate-v1
+    submitted_via: skill
+    source: transcription
+    produced: "2026-10-14"
